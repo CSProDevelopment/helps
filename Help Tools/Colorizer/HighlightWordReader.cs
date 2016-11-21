@@ -13,7 +13,7 @@ namespace Colorizer
 
         public HighlightWordReader(string wordFilename)
         {
-            _fileLines = File.ReadAllLines(ReferenceFile.Locate(wordFilename));
+            _fileLines = File.ReadAllLines(HelperFunctions.ReferenceFileLocate(wordFilename));
             _lineItr = 0;
         }
 
@@ -40,7 +40,7 @@ namespace Colorizer
                 if( trimmedWord[0] == '#' ) // a comment
                     continue;
 
-                words.Add(trimmedWord);
+                words.Add(trimmedWord.ToUpper());
             }
 
             return words;
