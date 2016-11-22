@@ -41,32 +41,40 @@ namespace Colorizer
 
         public static string HtmlizeWhitespace(string text)
         {
+            return ReplaceWhitespace(text,"&nbsp;");
+        }
+
+        public static string ReplaceWhitespace(string text,string replacement)
+        {
             StringBuilder sb = new StringBuilder();
 
             bool lastCharacterWasSpace = false;
+            bool firstCharacter = true;
 
             foreach( char ch in text )
             {
-                if( Char.IsWhiteSpace(ch) )
+                bool outputCharacter = true;
+
+                if( ch == ' ' )
                 {
-                    if( lastCharacterWasSpace )
+                    if( lastCharacterWasSpace || firstCharacter )
                     {
-                        sb.Append("&nbsp;");
+                        sb.Append(replacement);
                         lastCharacterWasSpace = false;
+                        outputCharacter = false;
                     }
 
                     else
-                    {
-                        sb.Append(' ');
                         lastCharacterWasSpace = true;
-                    }
-                } 
+                }
 
                 else
-                {
-                    sb.Append(ch);
                     lastCharacterWasSpace = false;
-                }
+
+                if( outputCharacter )
+                    sb.Append(ch);
+
+                firstCharacter = false;
             }
 
             return sb.ToString();

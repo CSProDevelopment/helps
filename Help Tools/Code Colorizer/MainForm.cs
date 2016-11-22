@@ -205,7 +205,8 @@ namespace Code_Colorizer
         private void buttonCopyHtml_Click(object sender,EventArgs e)
         {
             string text = HelperFunctions.TrimTrailingSpace(editControl.Text);
-            string formattedText = _pffColorizer.Colorize(new PffColorizerHtml(),text);
+            string formattedText = _formattingLogic ?
+                _logicColorizer.Colorize(new LogicColorizerHtml(),text) : _pffColorizer.Colorize(new PffColorizerHtml(),text);
 
             // html to clipboard code from: http://blogs.msdn.com/b/jmstall/archive/2007/01/21/sample-code-html-clipboard.aspx
             string htmlCopyText = "Format:HTML Format Version:1.0\nStartHTML:<<<<<<<1\nEndHTML:<<<<<<<2\nStartFragment:<<<<<<<3\nEndFragment:<<<<<<<4\n";
@@ -234,8 +235,11 @@ namespace Code_Colorizer
 
         private void buttonCopyUsersForum_Click(object sender,EventArgs e)
         {
-            MessageBox.Show("TODO: buttonCopyUsersForum_Click");
-        }
+            string text = HelperFunctions.TrimTrailingSpace(editControl.Text);
+            string formattedText = _logicColorizer.Colorize(new LogicColorizerUsersForum(),text);
 
+            Clipboard.Clear();
+            Clipboard.SetText(formattedText,TextDataFormat.UnicodeText);
+        }
     }
 }
