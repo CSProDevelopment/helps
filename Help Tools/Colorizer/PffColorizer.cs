@@ -20,6 +20,8 @@ namespace Colorizer
 
         public string Colorize(PffColorizerInterface pffColorizer,string sourceText)
         {
+            sourceText = HelperFunctions.TabsToSpaces(sourceText);
+
             StringBuilder sb = new StringBuilder();
 
             pffColorizer.StartBlock(sb);

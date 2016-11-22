@@ -26,12 +26,38 @@ namespace Colorizer
 
         public static string Htmlize(string text)
         {
-            return HtmlizeWhitespace(TabsToSpaces(HtmlizeEscapes(text)));
+            return HtmlizeWhitespace(HtmlizeEscapes(text));
         }
 
         public static string TabsToSpaces(string text)
         {
-            return text.Replace("\t","    ");
+            const int SpacesInTab = 4;
+
+            StringBuilder sb = new StringBuilder();
+            int column = 0;
+
+            foreach( char ch in text )
+            {
+                if( ch == '\t' )
+                {
+                    int spacesToAdd = SpacesInTab - ( column % SpacesInTab );
+                    sb.Append(' ',spacesToAdd);
+                    column += spacesToAdd;
+                }
+
+                else
+                {
+                    sb.Append(ch);
+
+                    if( ch == '\r' || ch == '\n' )
+                        column = 0;
+
+                    else
+                        column++;
+                }
+            }
+
+            return sb.ToString();
         }
 
         public static string HtmlizeEscapes(string text)

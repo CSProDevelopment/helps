@@ -46,7 +46,7 @@ namespace Colorizer
 
         private string PrepareText(string text)
         {
-            return HelperFunctions.ReplaceWhitespace(HelperFunctions.TabsToSpaces(text),"[sp][/sp]");
+            return HelperFunctions.ReplaceWhitespace(text,"[sp][/sp]");
         }
     }
 }

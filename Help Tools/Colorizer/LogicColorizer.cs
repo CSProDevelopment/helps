@@ -18,15 +18,18 @@ namespace Colorizer
 
         public string Colorize(LogicColorizerInterface logicColorizer,string sourceText)
         {
+            sourceText = HelperFunctions.TabsToSpaces(sourceText);
+
             StringBuilder sb = new StringBuilder();
+
+            logicColorizer.StartBlock(sb);
+
             int lastTextStartBlock = 0;
             int lastWordStartBlock = 0;
             int numBracketComments = 0;
             Char quoteChar = '\'';
             ProcessType processType = ProcessType.None;
             
-            logicColorizer.StartBlock(sb);
-
             for( int i = 0; i < sourceText.Length; i++ )
             {
                 bool additionalCharacterExists = ( ( i + 1 ) < sourceText.Length );
@@ -142,6 +145,12 @@ namespace Colorizer
                     else
                         processType = ProcessType.None;
                 }
+
+                
+                // anything that doesn't fit the above checks
+                else
+                    processPreviousBlock = false;
+
 
                 // process the block if there is no more code to read
                 bool atEndOfBuffer = ( i + 1 ) == sourceText.Length;
