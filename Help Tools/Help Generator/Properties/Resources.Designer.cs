@@ -98,6 +98,16 @@ namespace Help_Generator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TODO
+        ///.
+        /// </summary>
+        internal static string SettingsHelp {
+            get {
+                return ResourceManager.GetString("SettingsHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html&gt;
         ///&lt;head&gt;&lt;meta http-equiv=&apos;Content-Type&apos; content=&apos;text/html; charset=UTF-8&apos; /&gt;&lt;title&gt;CSPro Help Generator Syntax&lt;/title&gt;&lt;/head&gt;

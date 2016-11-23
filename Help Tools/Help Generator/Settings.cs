@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Help_Generator
 {
-    class Settings
+    class Settings : TextEditableInterface
     {
         private string _projectPath;
         private string _projectName;
@@ -33,6 +33,20 @@ namespace Help_Generator
                 tw.WriteLine(AttributesResourceFile + fillInOrDeleteText);
             }
         }
+
+        // elements of the TextEditableInterface
+        public string Filename { get { return _settingsFilename; } }
+
+        public string Title { get { return "Project Settings File"; } }
+
+        public string HelpText { get { return Properties.Resources.SettingsHelp; } }
+
+        public string Compile(string[] lines)
+        {
+            return "TODO";
+        }
+
+
 
         private readonly string AttributesTitle = "Title";
         private readonly string AttributesDefaultTopic = "DefaultTopic";

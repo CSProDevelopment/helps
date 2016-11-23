@@ -76,6 +76,7 @@
     <Compile Include="SyntaxHelp.Designer.cs">
       <DependentUpon>SyntaxHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextEditableInterface.cs" />
     <Compile Include="TextEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,10 +122,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\syntax.html" />
+    <None Include="Resources\syntaxHelp.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Help Generator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingsHelp.txt" />
   </ItemGroup>
   <Import Project="..\Colorizer\Colorizer.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

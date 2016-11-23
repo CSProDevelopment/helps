@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Help_Generator
 {
-    public partial class CreateProjectForm : Form
+    partial class CreateProjectForm : Form
     {
         private string  _projectPath;
         public string ProjectPath { get { return _projectPath; } }

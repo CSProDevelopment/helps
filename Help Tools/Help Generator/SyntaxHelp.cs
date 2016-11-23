@@ -2,7 +2,7 @@
 
 namespace Help_Generator
 {
-    public partial class SyntaxHelp : Form
+    partial class SyntaxHelp : Form
     {
         public SyntaxHelp()
         {

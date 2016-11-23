@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Help_Generator
 {
-    public partial class MainForm : Form
+    partial class MainForm : Form
     {
         private string _hhcExe;
         private string _projectPath;
@@ -48,33 +48,83 @@ namespace Help_Generator
             LoadProject();
         }
 
+        private void MainForm_Activated(object sender,EventArgs e)
+        {
+            foreach( Form form in MdiChildren )
+            {
+                if( form is TextEditForm )
+                    ((TextEditForm)form).CheckExternalFileEdit();
+            }
+        }
+
+        private void fileMenuItem_DropDownOpening(object sender,EventArgs e)
+        {
+            bool formOpened = false;
+            bool currentFileSaveable = false;
+            bool saveableFileOpened = false;
+
+            foreach( Form form in MdiChildren )
+            {
+                formOpened = true;
+
+                if( form is TextEditForm )
+                {
+                    saveableFileOpened = true;
+
+                    if( ActiveMdiChild == form )
+                        currentFileSaveable = true;
+                }
+            }
+
+            fileCloseMenuItem.Enabled = formOpened;
+            fileCloseAllMenuItem.Enabled = formOpened;
+            fileSaveMenuItem.Enabled = currentFileSaveable;
+            fileSaveAllMenuItem.Enabled = saveableFileOpened;
+        }
+
         private void fileNewMenuItem_Click(object sender,EventArgs e)
         {
             MessageBox.Show("TODO: fileNewMenuItem_Click");
-
         }
 
         private void fileCloseMenuItem_Click(object sender,EventArgs e)
         {
-            MessageBox.Show("TODO: fileCloseMenuItem_Click");
+            if( ActiveMdiChild != null )
+                ActiveMdiChild.Close();
+        }
 
+        private void fileCloseAllMenuItem_Click(object sender,EventArgs e)
+        {
+            for( int i = MdiChildren.Length - 1; i >= 0; i-- )
+                MdiChildren[i].Close();
         }
 
         private void fileSaveMenuItem_Click(object sender,EventArgs e)
         {
-            MessageBox.Show("TODO: fileSaveMenuItem_Click");
+            if( ActiveMdiChild != null )
+            {
+                if( ActiveMdiChild is TextEditForm )
+                    ((TextEditForm)ActiveMdiChild).SaveFile();
+            }
+        }
 
+        private void fileSaveAllMenuItem_Click(object sender,EventArgs e)
+        {
+            foreach( Form form in MdiChildren )
+            {
+                if( form is TextEditForm )
+                    ((TextEditForm)ActiveMdiChild).SaveFile();
+            }
         }
 
         private void fileExitMenuItem_Click(object sender,EventArgs e)
         {
-            // TODO: check if any files are not saved
             Close();
         }
 
         private void viewSettingsMenuItem_Click(object sender,EventArgs e)
         {
-            MessageBox.Show("TODO: viewSettingsMenuItem_Click");
+            ShowOrCreateForm(_settings);
         }
 
         private void viewTableOfContentsMenuItem_Click(object sender,EventArgs e)
@@ -92,6 +142,17 @@ namespace Help_Generator
             MessageBox.Show("TODO: viewTopicsMenuItem_Click");
         }
 
+        private void generateMenuItem_DropDownOpening(object sender,EventArgs e)
+        {
+            generateCompileMenuItem.Enabled = ( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm );
+        }
+
+        private void generateCompileMenuItem_Click(object sender,EventArgs e)
+        {
+            if( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm )
+                ((TextEditForm)this.ActiveMdiChild).Compile();
+        }
+
         private void generateRefreshMenuItem_Click(object sender,EventArgs e)
         {
             try
@@ -101,9 +162,7 @@ namespace Help_Generator
 
             catch( Exception exception )
             {
-                // TODO: make sure everything is saved before closing
                 MessageBox.Show(exception.Message);
-                Close();
             }                
         }
 
@@ -112,9 +171,18 @@ namespace Help_Generator
             MessageBox.Show("TODO: generateHelpsMenuItem_Click");
         }
 
+        private void helpContextMenuItem_Click(object sender,EventArgs e)
+        {
+            if( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm )
+                ((TextEditForm)this.ActiveMdiChild).ShowHelp();
+
+            else
+                ShowOrCreateForm(typeof(SyntaxHelp));
+        }
+
         private void helpSyntaxMenuItem_Click(object sender,EventArgs e)
         {
-            new SyntaxHelp().Show();
+            ShowOrCreateForm(typeof(SyntaxHelp));
         }
 
 
@@ -147,6 +215,27 @@ namespace Help_Generator
                 MessageBox.Show(exception.Message);
                 Close();
             }
+        }
+
+        private void ShowOrCreateForm(Object formObject)
+        {
+            bool isSyntaxHelp = ( formObject is Type && ((Type)formObject) == typeof(SyntaxHelp) );
+            bool isTextEditableInterface = ( formObject is TextEditableInterface );
+
+            foreach( Form form in MdiChildren )
+            {
+                if( ( isSyntaxHelp && form is SyntaxHelp ) ||
+                    ( isTextEditableInterface && form is TextEditForm && ((TextEditForm)form).IsOfType(((TextEditableInterface)formObject)) ) )
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            // open a new form
+            Form newForm = isSyntaxHelp ? (Form)(new SyntaxHelp()) : (Form)(new TextEditForm((TextEditableInterface)formObject));
+            newForm.MdiParent = this;
+            newForm.Show();
         }
 
     }
