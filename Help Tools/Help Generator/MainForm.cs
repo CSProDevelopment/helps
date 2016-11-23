@@ -7,6 +7,10 @@ namespace Help_Generator
     public partial class MainForm : Form
     {
         private string _hhcExe;
+        private string _projectPath;
+
+        private Settings _settings;
+        private Preprocessor _preprocessor;
 
         public MainForm()
         {
@@ -23,6 +27,25 @@ namespace Help_Generator
                 Close();
                 return;
             }
+
+            Array commandArgs = Environment.GetCommandLineArgs();
+
+            if( commandArgs.Length == 1 )
+            {
+                if( !CreateProject() )
+                {
+                    Close();
+                    return;
+                }
+            }
+
+            else
+            {
+                // TODO: add way to build the helps from the command line
+                _projectPath = Path.GetDirectoryName((string)commandArgs.GetValue(1));
+            }
+
+            LoadProject();
         }
 
         private void fileNewMenuItem_Click(object sender,EventArgs e)
@@ -71,7 +94,17 @@ namespace Help_Generator
 
         private void generateRefreshMenuItem_Click(object sender,EventArgs e)
         {
-            MessageBox.Show("TODO: generateRefreshMenuItem_Click");
+            try
+            {
+                _preprocessor.Refresh();
+            }
+
+            catch( Exception exception )
+            {
+                // TODO: make sure everything is saved before closing
+                MessageBox.Show(exception.Message);
+                Close();
+            }                
         }
 
         private void generateHelpsMenuItem_Click(object sender,EventArgs e)
@@ -82,6 +115,38 @@ namespace Help_Generator
         private void helpSyntaxMenuItem_Click(object sender,EventArgs e)
         {
             new SyntaxHelp().Show();
+        }
+
+
+        private bool CreateProject()
+        {
+            CreateProjectForm dlg = new CreateProjectForm();
+            
+            if( dlg.ShowDialog() == DialogResult.OK )
+            {
+                _projectPath = dlg.ProjectPath;
+                return true;
+            }
+
+            else
+                return false;
+        }
+
+        private void LoadProject()
+        {
+            try
+            {
+                _settings = new Settings(_projectPath);
+
+                _preprocessor = Preprocessor.Create(_projectPath);
+                _preprocessor.Refresh();
+            }
+
+            catch( Exception exception )
+            {
+                MessageBox.Show(exception.Message);
+                Close();
+            }
         }
 
     }

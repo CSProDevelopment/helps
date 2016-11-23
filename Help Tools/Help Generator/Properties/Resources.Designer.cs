@@ -71,6 +71,33 @@ namespace Help_Generator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to images.
+        /// </summary>
+        internal static string ImagesDirectoryName {
+            get {
+                return ResourceManager.GetString("ImagesDirectoryName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to zhg_preprocessor.bin.
+        /// </summary>
+        internal static string PreprocessorFilename {
+            get {
+                return ResourceManager.GetString("PreprocessorFilename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .cshelp.
+        /// </summary>
+        internal static string SettingsFileExtension {
+            get {
+                return ResourceManager.GetString("SettingsFileExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html&gt;
         ///&lt;head&gt;&lt;meta http-equiv=&apos;Content-Type&apos; content=&apos;text/html; charset=UTF-8&apos; /&gt;&lt;title&gt;CSPro Help Generator Syntax&lt;/title&gt;&lt;/head&gt;
@@ -84,6 +111,15 @@ namespace Help_Generator.Properties {
         internal static string SyntaxHelp {
             get {
                 return ResourceManager.GetString("SyntaxHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to html.
+        /// </summary>
+        internal static string TopicsDirectoryName {
+            get {
+                return ResourceManager.GetString("TopicsDirectoryName", resourceCulture);
             }
         }
     }
