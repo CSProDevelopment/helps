@@ -10,7 +10,7 @@ namespace Help_Generator
     class Preprocessor
     {
         [Serializable]
-        class TopicPreprocessor
+        public class TopicPreprocessor
         {
             private string _title;
             public string Title { get { return _title == null ? Path.GetFileName(Filename) : _title; } set { _title = value; } }
@@ -37,7 +37,7 @@ namespace Help_Generator
         }
 
         [Serializable]
-        class ImagePreprocessor
+        public class ImagePreprocessor
         {
             public string Filename { get; set; }
 
@@ -59,7 +59,7 @@ namespace Help_Generator
         public static Preprocessor Create(string projectPath)
         {
             Preprocessor preprocessor = null;
-            string preprocessorFilename = Path.Combine(projectPath,Properties.Resources.PreprocessorFilename);
+            string preprocessorFilename = Path.Combine(projectPath,Constants.PreprocessorFilename);
 
             if( File.Exists(preprocessorFilename) )
             {
@@ -108,7 +108,7 @@ namespace Help_Generator
                 _topics.Remove(name);
 
             // process the topics folder
-            string topicsPath = Path.Combine(_projectPath,Properties.Resources.TopicsDirectoryName);
+            string topicsPath = Path.Combine(_projectPath,Constants.TopicsDirectoryName);
 
             if( Directory.Exists(topicsPath) )
             {
@@ -117,24 +117,26 @@ namespace Help_Generator
 
                 foreach( FileInfo fi in diTopics.GetFiles("*",SearchOption.AllDirectories) )
                 {
-                    if( topicNames.Contains(fi.Name) ) // duplicate topic
+                    string topicKey = fi.Name.ToUpper();
+
+                    if( topicNames.Contains(topicKey) ) // duplicate topic
                         throw new Exception("You cannot have more than one topic named " + fi.Name);
 
-                    bool addTopic = !_topics.ContainsKey(fi.Name); // a new topic
+                    bool addTopic = !_topics.ContainsKey(topicKey); // a new topic
 
-                    if( !addTopic && _topics[fi.Name].ModifiedDate != fi.LastWriteTimeUtc ) // a modified topic
+                    if( !addTopic && _topics[topicKey].ModifiedDate != fi.LastWriteTimeUtc ) // a modified topic
                     {
-                        _topics.Remove(fi.Name);
+                        _topics.Remove(topicKey);
                         addTopic = true;
                     }
 
                     if( addTopic )
                     {
-                        _topics.Add(fi.Name,new TopicPreprocessor(fi));
+                        _topics.Add(topicKey,new TopicPreprocessor(fi));
                         savePreprocessor = true;
                     }
 
-                    topicNames.Add(fi.Name);
+                    topicNames.Add(topicKey);
                 }
             }
 
@@ -155,7 +157,7 @@ namespace Help_Generator
                 _images.Remove(name);
 
             // process the images folder
-            string imagesPath = Path.Combine(_projectPath,Properties.Resources.ImagesDirectoryName);
+            string imagesPath = Path.Combine(_projectPath,Constants.ImagesDirectoryName);
 
             if( Directory.Exists(imagesPath) )
             {
@@ -164,16 +166,18 @@ namespace Help_Generator
 
                 foreach( FileInfo fi in diImages.GetFiles("*",SearchOption.AllDirectories) )
                 {
-                    if( imageNames.Contains(fi.Name) ) // duplicate image
+                    string imageKey = fi.Name.ToUpper();
+
+                    if( imageNames.Contains(imageKey) ) // duplicate image
                         throw new Exception("You cannot have more than one image named " + fi.Name);
 
-                    if( !_images.ContainsKey(fi.Name) ) // a new image
+                    if( !_images.ContainsKey(imageKey) ) // a new image
                     {
-                        _images.Add(fi.Name,new ImagePreprocessor(fi));
+                        _images.Add(imageKey,new ImagePreprocessor(fi));
                         savePreprocessor = true;
                     }
 
-                    imageNames.Add(fi.Name);
+                    imageNames.Add(imageKey);
                 }
             }
 
@@ -185,6 +189,16 @@ namespace Help_Generator
             }
             
             return savePreprocessor;
+        }
+
+        public TopicPreprocessor GetTopic(string filename)
+        {
+            string topicKey = filename.ToUpper();
+
+            if( !_topics.ContainsKey(topicKey) )
+                throw new Exception("The topic filename could not be located: " + filename);
+
+            return _topics[topicKey];
         }
     }
 }

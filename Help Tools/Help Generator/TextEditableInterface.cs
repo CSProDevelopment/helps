@@ -5,6 +5,6 @@
         string Filename { get; }
         string Title { get; }
         string HelpText { get; }
-        string Compile(string[] lines);
+        void Compile(string[] lines,Preprocessor preprocessor);
     }
 }

@@ -9,14 +9,16 @@ namespace Help_Generator
     partial class TextEditForm : Form
     {
         private TextEditableInterface _textEditableInterface;
+        Preprocessor _preprocessor;
         private string _filename;
         private DateTime _modifiedDate;
 
-        public TextEditForm(TextEditableInterface textEditableInterface)
+        public TextEditForm(TextEditableInterface textEditableInterface,Preprocessor preprocessor)
         {
             InitializeComponent();
 
             _textEditableInterface = textEditableInterface;
+            _preprocessor = preprocessor;
             _filename = textEditableInterface.Filename;
 
             labelTitle.Text = _textEditableInterface.Title;
@@ -52,7 +54,16 @@ namespace Help_Generator
             for( int i = 0; i < lines.Length; i++ )
                 lines[i] = editControl.Lines[i].Text;
 
-            textBoxResults.Text = _textEditableInterface.Compile(lines);
+            try
+            {
+                _textEditableInterface.Compile(lines,_preprocessor);
+                textBoxResults.Text = Constants.CompilationSuccessfulMessage;
+            }
+
+            catch( Exception exception )
+            {
+                textBoxResults.Text = Constants.ComplationErrorMessage + exception.Message;
+            }            
         }
 
         public bool IsOfType(TextEditableInterface otherTextEditableInterface)
@@ -131,6 +142,5 @@ namespace Help_Generator
                 }
             }
         }
-
     }
 }

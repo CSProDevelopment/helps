@@ -204,6 +204,8 @@ namespace Help_Generator
         {
             try
             {
+                Directory.SetCurrentDirectory(_projectPath);
+
                 _settings = new Settings(_projectPath);
 
                 _preprocessor = Preprocessor.Create(_projectPath);
@@ -233,7 +235,7 @@ namespace Help_Generator
             }
 
             // open a new form
-            Form newForm = isSyntaxHelp ? (Form)(new SyntaxHelp()) : (Form)(new TextEditForm((TextEditableInterface)formObject));
+            Form newForm = isSyntaxHelp ? (Form)(new SyntaxHelp()) : (Form)(new TextEditForm((TextEditableInterface)formObject,_preprocessor));
             newForm.MdiParent = this;
             newForm.Show();
         }

@@ -32,8 +32,8 @@ namespace Help_Generator
                     else
                         Directory.CreateDirectory(_projectPath);
 
-                    Directory.CreateDirectory(Path.Combine(_projectPath,Properties.Resources.TopicsDirectoryName));
-                    Directory.CreateDirectory(Path.Combine(_projectPath,Properties.Resources.ImagesDirectoryName));
+                    Directory.CreateDirectory(Path.Combine(_projectPath,Constants.TopicsDirectoryName));
+                    Directory.CreateDirectory(Path.Combine(_projectPath,Constants.ImagesDirectoryName));
                 }
 
                 catch( Exception exception )

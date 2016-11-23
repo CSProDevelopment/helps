@@ -71,35 +71,12 @@ namespace Help_Generator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to images.
-        /// </summary>
-        internal static string ImagesDirectoryName {
-            get {
-                return ResourceManager.GetString("ImagesDirectoryName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to zhg_preprocessor.bin.
-        /// </summary>
-        internal static string PreprocessorFilename {
-            get {
-                return ResourceManager.GetString("PreprocessorFilename", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .cshelp.
-        /// </summary>
-        internal static string SettingsFileExtension {
-            get {
-                return ResourceManager.GetString("SettingsFileExtension", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to TODO
-        ///.
+        ///   Looks up a localized string similar to Title=&lt;helps title&gt;
+        ///DefaultTopic=&lt;filename of the default topic&gt;
+        ///DefinitionsFile=&lt;optional path with definitions that can be retrieved using the definition tag&gt;
+        ///ResourceFile=&lt;optional path pointing to the header files used to define context sensitive helps&gt;
+        ///ResourceFile=&lt;multiple ResourceFile entries are allowed&gt;
+        ///# Comment.
         /// </summary>
         internal static string SettingsHelp {
             get {
@@ -121,15 +98,6 @@ namespace Help_Generator.Properties {
         internal static string SyntaxHelp {
             get {
                 return ResourceManager.GetString("SyntaxHelp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to html.
-        /// </summary>
-        internal static string TopicsDirectoryName {
-            get {
-                return ResourceManager.GetString("TopicsDirectoryName", resourceCulture);
             }
         }
     }

@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttributesParser.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="CreateProjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,7 +86,7 @@
       <DependentUpon>TextEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Topic.cs" />
-    <Compile Include="TopicPreprocessor.cs" />
+    <Compile Include="Preprocessor.cs" />
     <EmbeddedResource Include="CreateProjectForm.resx">
       <DependentUpon>CreateProjectForm.cs</DependentUpon>
     </EmbeddedResource>
