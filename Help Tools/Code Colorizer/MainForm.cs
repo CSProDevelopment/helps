@@ -19,11 +19,6 @@ namespace Code_Colorizer
         {
             InitializeComponent();
 
-            editControl.StyleResetDefault();
-            editControl.Styles[ScintillaNET.Style.Default].Font = "Courier New";
-            editControl.Styles[ScintillaNET.Style.Default].Size = 10;
-            editControl.StyleClearAll();
-
             _initialWindowTitle = this.Text;
         }
 

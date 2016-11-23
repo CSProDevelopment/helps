@@ -39,7 +39,7 @@
             this.languageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logicMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pffMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editControl = new ScintillaNET.Scintilla();
+            this.editControl = new Colorizer.EditControl();
             this.buttonCopyHtml = new System.Windows.Forms.Button();
             this.buttonCopyUsersForum = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
@@ -197,7 +197,7 @@
         private System.Windows.Forms.ToolStripMenuItem pffMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private ScintillaNET.Scintilla editControl;
+        private Colorizer.EditControl editControl;
         private System.Windows.Forms.Button buttonCopyHtml;
         private System.Windows.Forms.Button buttonCopyUsersForum;
     }

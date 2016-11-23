@@ -68,6 +68,12 @@
     <Compile Include="SyntaxHelp.Designer.cs">
       <DependentUpon>SyntaxHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextEditForm.Designer.cs">
+      <DependentUpon>TextEditForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +89,9 @@
     </Compile>
     <EmbeddedResource Include="SyntaxHelp.resx">
       <DependentUpon>SyntaxHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextEditForm.resx">
+      <DependentUpon>TextEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
