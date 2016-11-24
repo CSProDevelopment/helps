@@ -15,28 +15,13 @@ namespace Help_Generator
             public TopicListNode ChildNode;
             public TopicListNode SiblingNode;
 
-            private TopicListNode(Preprocessor.TopicPreprocessor topic,string title,bool titleSpecified)
+            public TopicListNode(Preprocessor.TopicPreprocessor topic,string title)
             {
                 Topic = topic;
-                Title = title;
-                TitleSpecified = titleSpecified;
+                TitleSpecified = ( title != null );
+                Title = TitleSpecified ? title : topic.Title;
                 ChildNode = null;
                 SiblingNode = null;
-            }
-
-            public TopicListNode(Preprocessor.TopicPreprocessor topic) :
-                this(topic,topic.Title,false)
-            {
-            }
-
-            public TopicListNode(Preprocessor.TopicPreprocessor topic,string title) :
-                this(topic,title,true)
-            {
-            }
-
-            public TopicListNode(string title) :
-                this(null,title,true)
-            {
             }
         }
 
@@ -89,23 +74,26 @@ namespace Help_Generator
                     string filename = ( pipePos >= 0 ) ? line.Substring(0,pipePos).Trim() : line;
                     string title = ( pipePos >= 0 ) ? line.Substring(pipePos + 1).Trim() : null;
 
+                    if( title != null && String.IsNullOrWhiteSpace(title) )
+                        throw new Exception("has a blank title");
+
                     Preprocessor.TopicPreprocessor topic = String.IsNullOrWhiteSpace(filename) ? null : preprocessor.GetTopic(filename);
 
-                    TopicListNode newNode = null;
-
-                    if( _indexParser )
+                    if( _indexParser ) // index
                     {
                         if( topic == null )
                             throw new Exception("must specify a topic filename");
-
-                        newNode = ( title == null ) ? new TopicListNode(topic) : new TopicListNode(topic,title);                        
                     }
 
-                    else
-                        System.Diagnostics.Debug.Assert(false); // TODO
+                    else // table of contents
+                    {
+                        if( rootNode == null && topic != null )
+                            throw new Exception("must be a chapter because it is the first node");
+                    }
+                    
+                    TopicListNode newNode = new TopicListNode(topic,title);
 
-
-                    if( parentNodes.Count == 0 ) // the root node
+                    if( rootNode == null ) // the root node
                     {
                         rootNode = newNode;
                         parentNodes.Add(rootNode);
@@ -113,6 +101,9 @@ namespace Help_Generator
 
                     else if( zeroBasedLevel == parentNodes.Count ) // child node
                     {
+                        if( !_indexParser && parentNodes[zeroBasedLevel - 1].Topic != null )
+                            throw new Exception("is invalid because nothing can come at a level under a topic");
+
                         parentNodes[zeroBasedLevel - 1].ChildNode = newNode;
                         parentNodes.Add(newNode);                        
                     }
@@ -121,6 +112,9 @@ namespace Help_Generator
                     {
                         while( parentNodes.Count > ( zeroBasedLevel + 1 ) )
                             parentNodes.RemoveAt(parentNodes.Count - 1);
+
+                        if( !_indexParser && newNode.Topic != null && parentNodes[zeroBasedLevel].Topic == null )
+                            throw new Exception("is invalid because a topic cannot come after a chapter at the same level");
 
                         parentNodes[zeroBasedLevel].SiblingNode = newNode;
                         parentNodes[zeroBasedLevel] = newNode; 
@@ -212,11 +206,16 @@ namespace Help_Generator
 
                 sb.Append('\t',level);
 
-                if( node.Topic != null )
+                if( node.Topic == null )
+                    sb.Append("|" + node.Title);
+
+                else
+                {
                     sb.Append(Path.GetFileName(node.Topic.Filename));
 
-                if( node.TitleSpecified )
-                    sb.Append(" | " + node.Title);
+                    if( node.TitleSpecified )
+                        sb.Append(" | " + node.Title);
+                }
 
                 int lineLength = sb.Length + level * ( SpacesInTab - 1 );
                 int spacingTabs = ( CommentColumn - lineLength ) / SpacesInTab;

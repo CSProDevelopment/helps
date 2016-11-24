@@ -10,6 +10,7 @@ namespace Help_Generator
         private string _projectPath;
 
         private Settings _settings;
+        private TableOfContents _tableOfContents;        
         private Index _index;
         private Preprocessor _preprocessor;
 
@@ -130,7 +131,7 @@ namespace Help_Generator
 
         private void viewTableOfContentsMenuItem_Click(object sender,EventArgs e)
         {
-            MessageBox.Show("TODO: viewTableOfContentsMenuItem_Click");
+            ShowOrCreateForm(_tableOfContents);
         }
 
         private void viewIndexMenuItem_Click(object sender,EventArgs e)
@@ -216,6 +217,7 @@ namespace Help_Generator
                 Directory.SetCurrentDirectory(_projectPath);
 
                 _settings = new Settings(_projectPath);
+                _tableOfContents = new TableOfContents(_projectPath);                
                 _index = new Index(_projectPath);
 
                 _preprocessor = Preprocessor.Create(_projectPath);

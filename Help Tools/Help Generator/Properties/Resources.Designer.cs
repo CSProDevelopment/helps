@@ -71,12 +71,11 @@ namespace Help_Generator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Title=&lt;helps title&gt;
-        ///DefaultTopic=&lt;filename of the default topic&gt;
-        ///DefinitionsFile=&lt;optional path with definitions that can be retrieved using the definition tag&gt;
-        ///ResourceFile=&lt;optional path pointing to the header files used to define context sensitive helps&gt;
-        ///ResourceFile=&lt;multiple ResourceFile entries are allowed&gt;
-        ///# Comment	.
+        ///   Looks up a localized string similar to &lt;topic filename&gt;
+        ///&lt;topic filename&gt; | &lt;title to override the topic title&gt;
+        ///	&lt;subtopic filename&gt;
+        ///	&lt;subtopic filename&gt; | &lt;title to override the subtopic title&gt;
+        ///# comment.
         /// </summary>
         internal static string IndexHelp {
             get {
@@ -86,11 +85,11 @@ namespace Help_Generator.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Title=&lt;helps title&gt;
-        ///DefaultTopic=&lt;filename of the default topic&gt;
+        ///DefaultTopic=&lt;topic filename of the default topic&gt;
         ///DefinitionsFile=&lt;optional path with definitions that can be retrieved using the definition tag&gt;
         ///ResourceFile=&lt;optional path pointing to the header files used to define context sensitive helps&gt;
         ///ResourceFile=&lt;multiple ResourceFile entries are allowed&gt;
-        ///# Comment.
+        ///# comment.
         /// </summary>
         internal static string SettingsHelp {
             get {
@@ -112,6 +111,20 @@ namespace Help_Generator.Properties {
         internal static string SyntaxHelp {
             get {
                 return ResourceManager.GetString("SyntaxHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to | &lt;chapter name&gt;
+        ///	&lt;topic filename&gt;
+        ///	&lt;topic filename&gt; | &lt;title to override the topic title&gt;
+        ///	| &lt;subchapter name&gt;
+        ///		&lt;topic filename&gt;
+        ///# comment.
+        /// </summary>
+        internal static string TableOfContentsHelp {
+            get {
+                return ResourceManager.GetString("TableOfContentsHelp", resourceCulture);
             }
         }
     }

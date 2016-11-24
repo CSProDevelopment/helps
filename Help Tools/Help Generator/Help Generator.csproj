@@ -79,6 +79,7 @@
     <Compile Include="SyntaxHelp.Designer.cs">
       <DependentUpon>SyntaxHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableOfContents.cs" />
     <Compile Include="TextEditableInterface.cs" />
     <Compile Include="TextEditForm.cs">
       <SubType>Form</SubType>
@@ -136,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\indexHelp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tableOfContentsHelp.txt" />
   </ItemGroup>
   <Import Project="..\Colorizer\Colorizer.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
