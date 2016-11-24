@@ -76,6 +76,20 @@ namespace Help_Generator.Properties {
         ///DefinitionsFile=&lt;optional path with definitions that can be retrieved using the definition tag&gt;
         ///ResourceFile=&lt;optional path pointing to the header files used to define context sensitive helps&gt;
         ///ResourceFile=&lt;multiple ResourceFile entries are allowed&gt;
+        ///# Comment	.
+        /// </summary>
+        internal static string IndexHelp {
+            get {
+                return ResourceManager.GetString("IndexHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title=&lt;helps title&gt;
+        ///DefaultTopic=&lt;filename of the default topic&gt;
+        ///DefinitionsFile=&lt;optional path with definitions that can be retrieved using the definition tag&gt;
+        ///ResourceFile=&lt;optional path pointing to the header files used to define context sensitive helps&gt;
+        ///ResourceFile=&lt;multiple ResourceFile entries are allowed&gt;
         ///# Comment.
         /// </summary>
         internal static string SettingsHelp {

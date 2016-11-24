@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace Help_Generator
 {
     [Serializable]
-    class Preprocessor
+    public class Preprocessor
     {
         [Serializable]
         public class TopicPreprocessor
@@ -199,6 +199,16 @@ namespace Help_Generator
                 throw new Exception("The topic filename could not be located: " + filename);
 
             return _topics[topicKey];
+        }
+
+        public HashSet<TopicPreprocessor> GetAllTopics()
+        {
+            HashSet<TopicPreprocessor> topicsHashSet = new HashSet<TopicPreprocessor>();
+
+            foreach( var kp in _topics )
+                topicsHashSet.Add(kp.Value);
+
+            return topicsHashSet;
         }
     }
 }

@@ -63,6 +63,7 @@
     <Compile Include="CreateProjectForm.Designer.cs">
       <DependentUpon>CreateProjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Index.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +88,7 @@
     </Compile>
     <Compile Include="Topic.cs" />
     <Compile Include="Preprocessor.cs" />
+    <Compile Include="TopicListParser.cs" />
     <EmbeddedResource Include="CreateProjectForm.resx">
       <DependentUpon>CreateProjectForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settingsHelp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indexHelp.txt" />
   </ItemGroup>
   <Import Project="..\Colorizer\Colorizer.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -47,23 +47,42 @@ namespace Help_Generator
             textBoxResults.Text = _textEditableInterface.HelpText;
         }
 
-        public void Compile()
+        private string[] GetLinesArray()
         {
             string[] lines = new string[editControl.Lines.Count];
 
             for( int i = 0; i < lines.Length; i++ )
                 lines[i] = editControl.Lines[i].Text;
 
+            return lines;
+        }
+
+        public void Compile()
+        {
             try
             {
-                _textEditableInterface.Compile(lines,_preprocessor);
+                _textEditableInterface.Compile(GetLinesArray(),_preprocessor);
                 textBoxResults.Text = Constants.CompilationSuccessfulMessage;
             }
 
             catch( Exception exception )
             {
                 textBoxResults.Text = Constants.ComplationErrorMessage + exception.Message;
-            }            
+            }
+        }
+
+        public void Format()
+        {
+            try
+            {
+                editControl.Text = _textEditableInterface.Format(GetLinesArray(),_preprocessor);
+                textBoxResults.Text = Constants.FormattedSuccessfulMessage;
+            }
+
+            catch( Exception exception )
+            {
+                textBoxResults.Text = Constants.ComplationErrorMessage + exception.Message;
+            }
         }
 
         public bool IsOfType(TextEditableInterface otherTextEditableInterface)

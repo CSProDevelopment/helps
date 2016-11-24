@@ -10,6 +10,7 @@ namespace Help_Generator
         private string _projectPath;
 
         private Settings _settings;
+        private Index _index;
         private Preprocessor _preprocessor;
 
         public MainForm()
@@ -134,7 +135,7 @@ namespace Help_Generator
 
         private void viewIndexMenuItem_Click(object sender,EventArgs e)
         {
-            MessageBox.Show("TODO: viewIndexMenuItem_Click");
+            ShowOrCreateForm(_index);
         }
 
         private void viewTopicsMenuItem_Click(object sender,EventArgs e)
@@ -144,13 +145,21 @@ namespace Help_Generator
 
         private void generateMenuItem_DropDownOpening(object sender,EventArgs e)
         {
-            generateCompileMenuItem.Enabled = ( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm );
+            bool isTextEditForm = ( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm );
+            generateCompileMenuItem.Enabled = isTextEditForm;
+            generateFormatMenuItem.Enabled = isTextEditForm;
         }
 
         private void generateCompileMenuItem_Click(object sender,EventArgs e)
         {
             if( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm )
                 ((TextEditForm)this.ActiveMdiChild).Compile();
+        }
+
+        private void generateFormatMenuItem_Click(object sender,EventArgs e)
+        {
+            if( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm )
+                ((TextEditForm)this.ActiveMdiChild).Format();
         }
 
         private void generateRefreshMenuItem_Click(object sender,EventArgs e)
@@ -207,6 +216,7 @@ namespace Help_Generator
                 Directory.SetCurrentDirectory(_projectPath);
 
                 _settings = new Settings(_projectPath);
+                _index = new Index(_projectPath);
 
                 _preprocessor = Preprocessor.Create(_projectPath);
                 _preprocessor.Refresh();

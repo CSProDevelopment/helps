@@ -43,7 +43,12 @@ namespace Help_Generator
             {
                 string line = lines[i].Trim();
 
-                if( line.Length == 0 || line[0] == '#' ) // an empty line or a comment
+                int hashPos = line.IndexOf('#');
+
+                if( hashPos >= 0 ) // a comment
+                    line = line.Substring(0,hashPos).Trim();
+
+                if( line.Length == 0 ) // an empty line
                     continue;
 
                 try
@@ -88,7 +93,7 @@ namespace Help_Generator
 
                 catch( Exception exception )
                 {
-                    throw new Exception(String.Format("The attributes line #{0} \"{1}\" {2}",i+ 1,line,exception.Message));
+                    throw new Exception(String.Format("The attributes line #{0} \"{1}\" {2}",i + 1,line,exception.Message));
                 }
             }
 

@@ -54,6 +54,7 @@
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpSyntaxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateFormatMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -199,6 +200,7 @@
             // 
             this.generateMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generateCompileMenuItem,
+            this.generateFormatMenuItem,
             this.toolStripSeparator1,
             this.generateRefreshMenuItem,
             this.toolStripSeparator3,
@@ -266,6 +268,14 @@
             this.helpSyntaxMenuItem.Text = "Topic &Syntax";
             this.helpSyntaxMenuItem.Click += new System.EventHandler(this.helpSyntaxMenuItem_Click);
             // 
+            // generateFormatMenuItem
+            // 
+            this.generateFormatMenuItem.Name = "generateFormatMenuItem";
+            this.generateFormatMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.generateFormatMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.generateFormatMenuItem.Text = "&Format File";
+            this.generateFormatMenuItem.Click += new System.EventHandler(this.generateFormatMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,6 +325,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileSaveAllMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem fileCloseAllMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateFormatMenuItem;
     }
 }
 

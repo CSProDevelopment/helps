@@ -7,8 +7,6 @@ namespace Help_Generator
 {
     class Settings : TextEditableInterface
     {
-        private string _projectPath;
-        private string _projectName;
         private string _settingsFilename;
 
         private string _helpsTitle;
@@ -21,9 +19,11 @@ namespace Help_Generator
 
         public Settings(string projectPath)
         {
-            _projectPath = projectPath;
-            _projectName = new DirectoryInfo(_projectPath).Name;
-            _settingsFilename = Path.Combine(projectPath,_projectName + Constants.SettingsFileExtension);
+            string projectName = new DirectoryInfo(projectPath).Name;
+            _settingsFilename = Path.Combine(projectPath,projectName + Constants.SettingsFileExtension);
+
+            if( !File.Exists(_settingsFilename) )
+                CreateNewSettingsFile();
 
             _settingAttributesParser = new AttributesParser(new AttributesParser.AttributeType[]
                 {
@@ -35,9 +35,6 @@ namespace Help_Generator
             );
 
             _definitionAttributesParser = new AttributesParser(null);
-
-            if( !File.Exists(_settingsFilename) )
-                CreateNewSettingsFile();
         }
 
         private void CreateNewSettingsFile()
@@ -97,6 +94,10 @@ namespace Help_Generator
             Compile(File.ReadAllLines(_settingsFilename),preprocessor);
         }
 
+        public string Format(string[] lines,Preprocessor preprocessor)
+        {
+            throw new Exception("The settings file does not support automatic formatting.");
+        }
 
         private readonly string AttributesTitle = "Title";
         private readonly string AttributesDefaultTopic = "DefaultTopic";
