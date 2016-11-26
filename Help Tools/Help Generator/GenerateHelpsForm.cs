@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -15,8 +16,8 @@ namespace Help_Generator
         private string _outputChmFilename;
         private string _temporaryFilesPath;
 
-        private List<string> outputTopicFilenames;
-        private HashSet<string> usedImageFilenames;
+        private Dictionary<Preprocessor.TopicPreprocessor,string> _outputTopicFilenames;
+        private HashSet<string> _usedImageFilenames;
 
         private BackgroundWorker _backgroundThread;
 
@@ -31,8 +32,8 @@ namespace Help_Generator
             _outputChmFilename = Path.Combine(_helpComponents.projectPath,_projectName + ".chm");
             _temporaryFilesPath = Path.Combine(_helpComponents.projectPath,Constants.TemporaryFileDirectoryName);
 
-            outputTopicFilenames = new List<string>();
-            usedImageFilenames = new HashSet<string>();
+            _outputTopicFilenames = new Dictionary<Preprocessor.TopicPreprocessor,string>();
+            _usedImageFilenames = new HashSet<string>();
 
             _backgroundThread = new BackgroundWorker();
         }
@@ -104,6 +105,9 @@ namespace Help_Generator
 
                     else if( args.UserState is String )
                         textBoxLog.AppendText((string)args.UserState + "\r\n\r\n");
+
+                    else if( args.UserState is DataReceivedEventArgs )
+                        textBoxLog.AppendText(String.Format("HTML Help Compiler: {0}\r\n",(string)((DataReceivedEventArgs)args.UserState).Data));
                 });
 
             _backgroundThread.RunWorkerAsync();
@@ -210,7 +214,56 @@ namespace Help_Generator
             string tableOfContentsFilename = Path.Combine(_temporaryFilesPath,_projectName + ".hhc");
             string indexFilename = Path.Combine(_temporaryFilesPath,_projectName + ".hhk");
 
-            // TODO: generate the help file
+            File.Delete(_outputChmFilename);
+
+            _helpComponents.settings.SaveForChm(settingsFilename,_outputChmFilename,tableOfContentsFilename,indexFilename,
+                _outputTopicFilenames,_usedImageFilenames);
+
+            _helpComponents.tableOfContents.SaveForChm(tableOfContentsFilename,_outputTopicFilenames);
+
+            _helpComponents.index.SaveForChm(indexFilename,_outputTopicFilenames);
+
+            // compile the file
+            ProcessStartInfo processStartInfo = new ProcessStartInfo();
+            processStartInfo.CreateNoWindow = true;
+            processStartInfo.RedirectStandardOutput = true;
+            processStartInfo.UseShellExecute = false;
+            processStartInfo.FileName = _helpComponents.htmlHelpCompilerExecutable;
+            processStartInfo.Arguments = "\"" + settingsFilename + "\"";
+
+            int numErrors = 0;
+
+            Process process = new Process();
+            process.StartInfo = processStartInfo;
+            process.EnableRaisingEvents = true;
+            process.OutputDataReceived += new DataReceivedEventHandler
+            (
+                delegate(object sender,DataReceivedEventArgs e)
+                {
+                    string hhcOutput = (string)e.Data;
+
+                    if( !String.IsNullOrWhiteSpace(hhcOutput) )
+                    {
+                        if( hhcOutput.Contains("HHC") && hhcOutput.Contains("Error") )
+                            numErrors++;
+
+                        _backgroundThread.ReportProgress(0,e);
+                    }
+                }
+            );
+
+            process.Start();
+            process.BeginOutputReadLine();
+            process.WaitForExit();
+            process.CancelOutputRead();
+
+            if( numErrors > 2 ) // there will be two errors because of false reports about problems compiling the jump buttons
+            {
+                if( File.Exists(_outputChmFilename) )
+                    File.Delete(_outputChmFilename);
+
+                throw new Exception("The HTML Help Compiler reported errors.");
+            }
         }
     }
 }

@@ -103,5 +103,57 @@ namespace Help_Generator
         private readonly string AttributesDefaultTopic = "DefaultTopic";
         private readonly string AttributesDefinitionsFile = "DefinitionsFile";
         private readonly string AttributesResourceFile = "ResourceFile";
+
+        public void SaveForChm(string filename,string outputChmFilename,string tableOfContentsFilename,string indexFilename,
+            Dictionary<Preprocessor.TopicPreprocessor,string> outputTopicFilenames,HashSet<string> usedImageFilenames)
+        {
+            using( TextWriter tw = new StreamWriter(filename,false,Encoding.ASCII) )
+            {
+                tw.WriteLine("[OPTIONS]");
+
+                tw.WriteLine("Compiled File={0}",outputChmFilename);
+                tw.WriteLine("Title={0}",_helpsTitle);
+                tw.WriteLine("Contents File={0}",tableOfContentsFilename);
+                tw.WriteLine("Index File={0}",indexFilename);
+                tw.WriteLine("Default topic={0}",outputTopicFilenames[_defaultTopic]);
+                tw.WriteLine("Default Window=main");
+                tw.WriteLine("Auto Index=No");
+                tw.WriteLine("Binary Index=Yes");
+                tw.WriteLine("Binary TOC=No");
+                tw.WriteLine("Flat=No");
+                tw.WriteLine("Full-text search=Yes");
+                tw.WriteLine("Language=0x409 English (United States)");
+
+
+                tw.WriteLine("[WINDOWS]");
+
+                tw.WriteLine("main=\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",\"{8}\",{9},{10},{11},{12}",
+                    "", // window caption
+                    tableOfContentsFilename,
+                    indexFilename,
+                    "", // default topic
+                    outputTopicFilenames[_defaultTopic], // home topic
+                    Constants.ChmButtonLink1,
+                    Constants.ChmButtonText1,
+                    Constants.ChmButtonLink2,
+                    Constants.ChmButtonText2,
+                    "0x60520", // HHWIN_PROP_ settings from htmlhelp.h
+                    0, // navigation pane width
+                    "0xc284e", // HHWIN_BUTTON_ settings
+                    "[0,0,800,600]"); // default window position
+
+
+                tw.WriteLine("[FILES]");
+
+                foreach( var kp in outputTopicFilenames )
+                    tw.WriteLine(kp.Value);
+
+                foreach( string imageFilename in usedImageFilenames )
+                    tw.WriteLine(imageFilename);
+
+
+                // TODO: context sensitive helps
+            }
+        }
     }
 }

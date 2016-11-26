@@ -4,6 +4,11 @@ namespace Help_Generator
 {
     class Constants
     {
+        public static readonly string ChmButtonText1 = "CSPro";
+        public static readonly string ChmButtonLink1 = "http://www.census.gov/population/international/software/cspro/";
+        public static readonly string ChmButtonText2 = "Forum";
+        public static readonly string ChmButtonLink2 = "http://www.csprousers.org/forum/";
+
         public static readonly string TopicsDirectoryName = "topics";
         public static readonly string ImagesDirectoryName = "images";
         public static readonly string TemporaryFileDirectoryName = "zhg_temp";

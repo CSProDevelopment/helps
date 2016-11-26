@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Help_Generator
@@ -43,6 +44,47 @@ namespace Help_Generator
         {
             Compile(lines,preprocessor);
             return TopicListParser.Format(_tableOfContentsRootNode,false);
+        }
+
+        public void SaveForChm(string filename,Dictionary<Preprocessor.TopicPreprocessor,string> outputTopicFilenames)
+        {
+            using( TextWriter tw = new StreamWriter(filename,false,Encoding.ASCII) )
+            {
+                tw.WriteLine("<html>");
+                tw.WriteLine("<object type=\"text/site properties\">");
+                tw.WriteLine("<param name=\"SiteType\" value=\"toc\" />");
+                tw.WriteLine("<param name=\"Image Width\" value=\"16\" />");
+                tw.WriteLine("</object>");
+
+                SaveForChmNode(tw,outputTopicFilenames,_tableOfContentsRootNode);
+
+                tw.WriteLine("</html>");
+            }
+        }
+
+        private void SaveForChmNode(TextWriter tw,Dictionary<Preprocessor.TopicPreprocessor,string> outputTopicFilenames,TopicListParser.TopicListNode node)
+        {
+            tw.WriteLine("<ul>");
+            
+            while( node != null )
+            {
+                tw.WriteLine("<li><object type=\"text/sitemap\">");
+                tw.WriteLine("<param name=\"Name\" value=\"{0}\" />",node.Title);
+
+                if( node.Topic != null )
+                    tw.WriteLine("<param name=\"Local\" value=\"{0}\" />",outputTopicFilenames[node.Topic]);
+
+                tw.WriteLine("</object>");
+
+                if( node.ChildNode != null )
+                    SaveForChmNode(tw,outputTopicFilenames,node.ChildNode);
+
+                tw.WriteLine("</li>");
+
+                node = node.SiblingNode;
+            }
+
+            tw.WriteLine("</ul>");
         }
     }
 }
