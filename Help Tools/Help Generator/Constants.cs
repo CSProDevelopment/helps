@@ -4,8 +4,9 @@ namespace Help_Generator
 {
     class Constants
     {
-        public static readonly string TopicsDirectoryName = "html";
+        public static readonly string TopicsDirectoryName = "topics";
         public static readonly string ImagesDirectoryName = "images";
+        public static readonly string TemporaryFileDirectoryName = "zhg_temp";
 
         public static readonly string SettingsFileExtension = ".hghelp";
         public static readonly string IndexFileExtension = ".hgindex";

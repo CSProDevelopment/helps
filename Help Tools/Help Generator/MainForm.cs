@@ -6,31 +6,28 @@ namespace Help_Generator
 {
     partial class MainForm : Form
     {
-        private string _hhcExe;
-        private string _projectPath;
-
-        private Settings _settings;
-        private TableOfContents _tableOfContents;        
-        private Index _index;
-        private Preprocessor _preprocessor;
+        private HelpComponents _helpComponents;
 
         public MainForm()
         {
             InitializeComponent();
+
+            _helpComponents = new HelpComponents();
         }
 
         private void MainForm_Load(object sender,EventArgs e)
         {
-            _hhcExe = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),@"HTML Help Workshop\hhc.exe");
+            _helpComponents.htmlHelpCompilerExecutable = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),@"HTML Help Workshop\hhc.exe");
 
-            if( !File.Exists(_hhcExe) )
+            if( !File.Exists(_helpComponents.htmlHelpCompilerExecutable) )
             {
-                MessageBox.Show("Could not find the HTML Help Compiler here:\n\n" + _hhcExe);
+                MessageBox.Show("Could not find the HTML Help Compiler here:\n\n" + _helpComponents.htmlHelpCompilerExecutable);
                 Close();
                 return;
             }
 
             Array commandArgs = Environment.GetCommandLineArgs();
+            bool generateAndClose = false;
 
             if( commandArgs.Length == 1 )
             {
@@ -43,11 +40,20 @@ namespace Help_Generator
 
             else
             {
-                // TODO: add way to build the helps from the command line
-                _projectPath = Path.GetDirectoryName((string)commandArgs.GetValue(1));
+                if( commandArgs.Length > 2 && ((string)commandArgs.GetValue(1)).Equals("/generate",StringComparison.InvariantCultureIgnoreCase) )
+                    generateAndClose = true;
+
+                _helpComponents.projectPath = Path.GetDirectoryName((string)commandArgs.GetValue(generateAndClose ? 2 : 1));
             }
 
-            LoadProject();
+            if( LoadProject() )
+            {
+                if( generateAndClose )
+                {
+                    GenerateHelps(true);
+                    Close();
+                }
+            }
         }
 
         private void MainForm_Activated(object sender,EventArgs e)
@@ -126,17 +132,17 @@ namespace Help_Generator
 
         private void viewSettingsMenuItem_Click(object sender,EventArgs e)
         {
-            ShowOrCreateForm(_settings);
+            ShowOrCreateForm(_helpComponents.settings);
         }
 
         private void viewTableOfContentsMenuItem_Click(object sender,EventArgs e)
         {
-            ShowOrCreateForm(_tableOfContents);
+            ShowOrCreateForm(_helpComponents.tableOfContents);
         }
 
         private void viewIndexMenuItem_Click(object sender,EventArgs e)
         {
-            ShowOrCreateForm(_index);
+            ShowOrCreateForm(_helpComponents.index);
         }
 
         private void viewTopicsMenuItem_Click(object sender,EventArgs e)
@@ -167,7 +173,7 @@ namespace Help_Generator
         {
             try
             {
-                _preprocessor.Refresh();
+                _helpComponents.preprocessor.Refresh();
             }
 
             catch( Exception exception )
@@ -178,7 +184,26 @@ namespace Help_Generator
 
         private void generateHelpsMenuItem_Click(object sender,EventArgs e)
         {
-            MessageBox.Show("TODO: generateHelpsMenuItem_Click");
+            // make sure that all of the files are saved
+            foreach( Form form in MdiChildren )
+            {
+                if( form is TextEditForm )
+                {
+                    if( !((TextEditForm)ActiveMdiChild).IsFileReady() )
+                        return;
+                }
+            }
+
+            try
+            {
+                _helpComponents.preprocessor.Refresh();
+                GenerateHelps(false);
+            }
+
+            catch( Exception exception )
+            {
+                MessageBox.Show(exception.Message);
+            }                
         }
 
         private void helpContextMenuItem_Click(object sender,EventArgs e)
@@ -202,7 +227,7 @@ namespace Help_Generator
             
             if( dlg.ShowDialog() == DialogResult.OK )
             {
-                _projectPath = dlg.ProjectPath;
+                _helpComponents.projectPath = dlg.ProjectPath;
                 return true;
             }
 
@@ -210,25 +235,30 @@ namespace Help_Generator
                 return false;
         }
 
-        private void LoadProject()
+        private bool LoadProject()
         {
             try
             {
-                Directory.SetCurrentDirectory(_projectPath);
+                Directory.SetCurrentDirectory(_helpComponents.projectPath);
 
-                _settings = new Settings(_projectPath);
-                _tableOfContents = new TableOfContents(_projectPath);                
-                _index = new Index(_projectPath);
+                _helpComponents.settings = new Settings(_helpComponents.projectPath);
+                _helpComponents.tableOfContents = new TableOfContents(_helpComponents.projectPath);                
+                _helpComponents.index = new Index(_helpComponents.projectPath);
 
-                _preprocessor = Preprocessor.Create(_projectPath);
-                _preprocessor.Refresh();
+                _helpComponents.preprocessor = Preprocessor.Create(_helpComponents.projectPath);
+                _helpComponents.preprocessor.Refresh();
+
+                this.Text = String.Format("{0} - {1}",Path.GetFileName(_helpComponents.projectPath),this.Text);
             }
 
             catch( Exception exception )
             {
                 MessageBox.Show(exception.Message);
                 Close();
+                return false;
             }
+
+            return true;
         }
 
         private void ShowOrCreateForm(Object formObject)
@@ -247,10 +277,15 @@ namespace Help_Generator
             }
 
             // open a new form
-            Form newForm = isSyntaxHelp ? (Form)(new SyntaxHelp()) : (Form)(new TextEditForm((TextEditableInterface)formObject,_preprocessor));
+            Form newForm = isSyntaxHelp ? (Form)(new SyntaxHelp()) : (Form)(new TextEditForm((TextEditableInterface)formObject,_helpComponents.preprocessor));
             newForm.MdiParent = this;
             newForm.Show();
         }
 
+        private void GenerateHelps(bool generateAndClose)
+        {
+            GenerateHelpsForm dlg = new GenerateHelpsForm(_helpComponents,generateAndClose);
+            dlg.ShowDialog();
+        }
     }
 }

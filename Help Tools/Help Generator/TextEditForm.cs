@@ -3,14 +3,17 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Colorizer;
 
 namespace Help_Generator
 {
-    partial class TextEditForm : Form
+    partial class TextEditForm : Form, TextModifiedHandlerInterface
     {
         private TextEditableInterface _textEditableInterface;
-        Preprocessor _preprocessor;
+        private Preprocessor _preprocessor;
         private string _filename;
+        private bool _modified;
+        private string _baseWindowTitle;
         private DateTime _modifiedDate;
 
         public TextEditForm(TextEditableInterface textEditableInterface,Preprocessor preprocessor)
@@ -21,6 +24,10 @@ namespace Help_Generator
             _preprocessor = preprocessor;
             _filename = textEditableInterface.Filename;
 
+            _modified = false;
+            _baseWindowTitle = String.Format("{0} - {1}",_textEditableInterface.Title,this.Text);
+            editControl.SetTextModifiedHandler(this);
+
             labelTitle.Text = _textEditableInterface.Title;
             linkLabelFilename.Text = _filename;
 
@@ -29,17 +36,8 @@ namespace Help_Generator
 
         private void TextEditForm_FormClosing(object sender,FormClosingEventArgs e)
         {
-            if( editControl.Modified )
-            {
-                string query = String.Format("Save file {0} ?",new FileInfo(_filename).Name);
-                DialogResult result = MessageBox.Show(query,this.Text,MessageBoxButtons.YesNoCancel);
-
-                if( result == DialogResult.Yes )
-                    SaveFile();
-
-                else if( result == DialogResult.Cancel )
-                    e.Cancel = true;
-            }
+            if( _modified && ( QueryAndSave() == DialogResult.Cancel ) )
+                e.Cancel = true;
         }
 
         public void ShowHelp()
@@ -106,6 +104,28 @@ namespace Help_Generator
             catch( Exception )
             {
             }
+        }
+
+        public bool IsFileReady()
+        {
+            return ( !_modified || ( QueryAndSave() == DialogResult.Yes ) );
+        }
+
+        public void SetTextModified(bool modified)
+        {
+            _modified = modified;
+            this.Text = ( modified ? "*" : "" ) + _baseWindowTitle;
+        }
+
+        private DialogResult QueryAndSave()
+        {
+            string query = String.Format("Save file {0} ?",new FileInfo(_filename).Name);
+            DialogResult result = MessageBox.Show(query,this.Text,MessageBoxButtons.YesNoCancel);
+
+            if( result == DialogResult.Yes )
+                SaveFile();
+
+            return result;
         }
 
         private void LoadFile()

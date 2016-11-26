@@ -2,8 +2,15 @@
 
 namespace Colorizer
 {
+    interface TextModifiedHandlerInterface
+    {
+        void SetTextModified(bool modified);
+    };
+
     class EditControl : Scintilla
     {
+        private TextModifiedHandlerInterface _textModifiedHandler = null;
+
         public EditControl()
         {
             this.StyleResetDefault();
@@ -15,6 +22,8 @@ namespace Colorizer
                 margin.Width = 0;
 
             this.CharAdded += new System.EventHandler<ScintillaNET.CharAddedEventArgs>(EditControl_CharAdded);
+            this.SavePointLeft += EditControl_SavePointLeft;
+            this.SavePointReached += EditControl_SavePointReached;
         }
 
         private void EditControl_CharAdded(object sender,ScintillaNET.CharAddedEventArgs e)
@@ -25,6 +34,23 @@ namespace Colorizer
                 this.CurrentPosition = this.CurrentPosition + ( this.Lines[this.CurrentLine].Indentation / this.TabWidth );
                 this.SelectionStart = this.CurrentPosition;
             }
+        }
+
+        public void SetTextModifiedHandler(TextModifiedHandlerInterface textModifiedHandler)
+        {
+            _textModifiedHandler = textModifiedHandler;
+        }
+
+        private void EditControl_SavePointReached(object sender,System.EventArgs e)
+        {
+            if( _textModifiedHandler != null )
+                _textModifiedHandler.SetTextModified(false);
+        }
+
+        private void EditControl_SavePointLeft(object sender,System.EventArgs e)
+        {
+            if( _textModifiedHandler != null )
+                _textModifiedHandler.SetTextModified(true);
         }
     }
 }

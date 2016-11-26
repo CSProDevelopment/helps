@@ -63,6 +63,13 @@
     <Compile Include="CreateProjectForm.Designer.cs">
       <DependentUpon>CreateProjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenerateHelpsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateHelpsForm.Designer.cs">
+      <DependentUpon>GenerateHelpsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpComponents.cs" />
     <Compile Include="Index.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -92,6 +99,9 @@
     <Compile Include="TopicListParser.cs" />
     <EmbeddedResource Include="CreateProjectForm.resx">
       <DependentUpon>CreateProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateHelpsForm.resx">
+      <DependentUpon>GenerateHelpsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -140,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tableOfContentsHelp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\base_checkmark_32.png" />
   </ItemGroup>
   <Import Project="..\Colorizer\Colorizer.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
