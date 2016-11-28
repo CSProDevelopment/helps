@@ -77,6 +77,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewTopicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewTopicForm.Designer.cs">
+      <DependentUpon>NewTopicForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
@@ -96,6 +102,18 @@
     </Compile>
     <Compile Include="Topic.cs" />
     <Compile Include="Preprocessor.cs" />
+    <Compile Include="TopicEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopicEditForm.Designer.cs">
+      <DependentUpon>TopicEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemListForm.Designer.cs">
+      <DependentUpon>ItemListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TopicListParser.cs" />
     <EmbeddedResource Include="CreateProjectForm.resx">
       <DependentUpon>CreateProjectForm.cs</DependentUpon>
@@ -105,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewTopicForm.resx">
+      <DependentUpon>NewTopicForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,6 +142,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TextEditForm.resx">
       <DependentUpon>TextEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopicEditForm.resx">
+      <DependentUpon>TopicEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemListForm.resx">
+      <DependentUpon>ItemListForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

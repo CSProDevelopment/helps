@@ -47,6 +47,7 @@
             this.viewTopicsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateCompileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateFormatMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.generateRefreshMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -54,7 +55,7 @@
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpSyntaxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generateFormatMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewImagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,7 +160,8 @@
             this.viewSettingsMenuItem,
             this.viewTableOfContentsMenuItem,
             this.viewIndexMenuItem,
-            this.viewTopicsMenuItem});
+            this.viewTopicsMenuItem,
+            this.viewImagesMenuItem});
             this.viewMenuItem.Name = "viewMenuItem";
             this.viewMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewMenuItem.Text = "&View";
@@ -218,6 +220,14 @@
             this.generateCompileMenuItem.Text = "&Compile File";
             this.generateCompileMenuItem.Click += new System.EventHandler(this.generateCompileMenuItem_Click);
             // 
+            // generateFormatMenuItem
+            // 
+            this.generateFormatMenuItem.Name = "generateFormatMenuItem";
+            this.generateFormatMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.generateFormatMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.generateFormatMenuItem.Text = "&Format File";
+            this.generateFormatMenuItem.Click += new System.EventHandler(this.generateFormatMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -268,13 +278,13 @@
             this.helpSyntaxMenuItem.Text = "Topic &Syntax";
             this.helpSyntaxMenuItem.Click += new System.EventHandler(this.helpSyntaxMenuItem_Click);
             // 
-            // generateFormatMenuItem
+            // viewImagesMenuItem
             // 
-            this.generateFormatMenuItem.Name = "generateFormatMenuItem";
-            this.generateFormatMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.generateFormatMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.generateFormatMenuItem.Text = "&Format File";
-            this.generateFormatMenuItem.Click += new System.EventHandler(this.generateFormatMenuItem_Click);
+            this.viewImagesMenuItem.Name = "viewImagesMenuItem";
+            this.viewImagesMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
+            this.viewImagesMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.viewImagesMenuItem.Text = "I&mages";
+            this.viewImagesMenuItem.Click += new System.EventHandler(this.viewImagesMenuItem_Click);
             // 
             // MainForm
             // 
@@ -326,6 +336,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem fileCloseAllMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateFormatMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewImagesMenuItem;
     }
 }
 

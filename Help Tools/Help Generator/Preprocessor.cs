@@ -210,5 +210,15 @@ namespace Help_Generator
 
             return topicsHashSet;
         }
+
+        public HashSet<ImagePreprocessor> GetAllImages()
+        {
+            HashSet<ImagePreprocessor> imageHashSet = new HashSet<ImagePreprocessor>();
+
+            foreach( var kp in _images )
+                imageHashSet.Add(kp.Value);
+
+            return imageHashSet;
+        }
     }
 }

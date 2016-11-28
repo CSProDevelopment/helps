@@ -92,7 +92,13 @@ namespace Help_Generator
 
         private void fileNewMenuItem_Click(object sender,EventArgs e)
         {
-            MessageBox.Show("TODO: fileNewMenuItem_Click");
+            NewTopicForm dlg = new NewTopicForm(_helpComponents);
+
+            if( dlg.ShowDialog() == DialogResult.OK )
+            {
+                UpdateItemLists();
+                ShowOrCreateForm(dlg.PreprocessedTopic);
+            }
         }
 
         private void fileCloseMenuItem_Click(object sender,EventArgs e)
@@ -121,7 +127,7 @@ namespace Help_Generator
             foreach( Form form in MdiChildren )
             {
                 if( form is TextEditForm )
-                    ((TextEditForm)ActiveMdiChild).SaveFile();
+                    ((TextEditForm)form).SaveFile();
             }
         }
 
@@ -147,7 +153,12 @@ namespace Help_Generator
 
         private void viewTopicsMenuItem_Click(object sender,EventArgs e)
         {
-            MessageBox.Show("TODO: viewTopicsMenuItem_Click");
+            ShowOrCreateForm(new ItemListForm(_helpComponents.preprocessor,true));
+        }
+
+        private void viewImagesMenuItem_Click(object sender,EventArgs e)
+        {
+            ShowOrCreateForm(new ItemListForm(_helpComponents.preprocessor,false));
         }
 
         private void generateMenuItem_DropDownOpening(object sender,EventArgs e)
@@ -174,6 +185,7 @@ namespace Help_Generator
             try
             {
                 _helpComponents.preprocessor.Refresh();
+                UpdateItemLists();
             }
 
             catch( Exception exception )
@@ -189,7 +201,7 @@ namespace Help_Generator
             {
                 if( form is TextEditForm )
                 {
-                    if( !((TextEditForm)ActiveMdiChild).IsFileReady() )
+                    if( !((TextEditForm)form).IsFileReady() )
                         return;
                 }
             }
@@ -261,15 +273,19 @@ namespace Help_Generator
             return true;
         }
 
-        private void ShowOrCreateForm(Object formObject)
+        public void ShowOrCreateForm(Object formObject)
         {
             bool isSyntaxHelp = ( formObject is Type && ((Type)formObject) == typeof(SyntaxHelp) );
+            bool isItemListForm = ( formObject is ItemListForm );
             bool isTextEditableInterface = ( formObject is TextEditableInterface );
+            bool isTopic = ( formObject is Preprocessor.TopicPreprocessor );
 
+            // multiple item lists are allowed but otherwise multiple windows of a given type are not
             foreach( Form form in MdiChildren )
             {
                 if( ( isSyntaxHelp && form is SyntaxHelp ) ||
-                    ( isTextEditableInterface && form is TextEditForm && ((TextEditForm)form).IsOfType(((TextEditableInterface)formObject)) ) )
+                    ( isTextEditableInterface && form is TextEditForm && ((TextEditForm)form).IsOfType(((TextEditableInterface)formObject)) ) ||
+                    ( isTopic && form is TopicEditForm && ((TopicEditForm)form).PreprocessedTopic == (Preprocessor.TopicPreprocessor)formObject ) )
                 {
                     form.Activate();
                     return;
@@ -277,15 +293,40 @@ namespace Help_Generator
             }
 
             // open a new form
-            Form newForm = isSyntaxHelp ? (Form)(new SyntaxHelp()) : (Form)(new TextEditForm((TextEditableInterface)formObject,_helpComponents.preprocessor));
-            newForm.MdiParent = this;
-            newForm.Show();
+            Form newForm = null;
+
+            if( isSyntaxHelp )
+                newForm = new SyntaxHelp();
+
+            else if( isItemListForm )
+                newForm = (Form)formObject;
+            
+            else if( isTextEditableInterface )
+                newForm = new TextEditForm((TextEditableInterface)formObject,_helpComponents.preprocessor);
+
+            else if( isTopic )
+                newForm = new TopicEditForm((Preprocessor.TopicPreprocessor)formObject,_helpComponents);
+
+            if( newForm != null )
+            {
+                newForm.MdiParent = this;
+                newForm.Show();
+            }
         }
 
         private void GenerateHelps(bool generateAndClose)
         {
             GenerateHelpsForm dlg = new GenerateHelpsForm(_helpComponents,generateAndClose);
             dlg.ShowDialog();
+        }
+
+        public void UpdateItemLists()
+        {
+            foreach( Form form in MdiChildren )
+            {
+                if( form is ItemListForm )
+                    ((ItemListForm)form).UpdateList(true);
+            }
         }
     }
 }

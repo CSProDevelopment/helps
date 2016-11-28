@@ -17,6 +17,7 @@ namespace Help_Generator
         public static readonly string SettingsFileExtension = ".hghelp";
         public static readonly string IndexFileExtension = ".hgindex";
         public static readonly string TableOfContentsFileExtension = ".hgtoc";
+        public static readonly string TopicExtension = ".hgt";
         public static readonly string PreprocessorFilename = "zhg_preprocessor.bin";
 
         public static string CompilationSuccessfulMessage { get { return "Compiled successfully at " + DateTime.Now.ToLongTimeString(); } }
