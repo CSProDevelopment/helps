@@ -18,6 +18,7 @@ namespace Help_Generator
 
         private Dictionary<Preprocessor.TopicPreprocessor,string> _outputTopicFilenames;
         private HashSet<string> _usedImageFilenames;
+        private Dictionary<Preprocessor.TopicPreprocessor,List<string>> _contextSensitiveHelps;
 
         private BackgroundWorker _backgroundThread;
 
@@ -34,6 +35,7 @@ namespace Help_Generator
 
             _outputTopicFilenames = new Dictionary<Preprocessor.TopicPreprocessor,string>();
             _usedImageFilenames = new HashSet<string>();
+            _contextSensitiveHelps = new Dictionary<Preprocessor.TopicPreprocessor,List<string>>();
 
             _backgroundThread = new BackgroundWorker();
         }
@@ -217,7 +219,7 @@ namespace Help_Generator
             File.Delete(_outputChmFilename);
 
             _helpComponents.settings.SaveForChm(settingsFilename,_outputChmFilename,tableOfContentsFilename,indexFilename,
-                _outputTopicFilenames,_usedImageFilenames);
+                _outputTopicFilenames,_usedImageFilenames,_contextSensitiveHelps);
 
             _helpComponents.tableOfContents.SaveForChm(tableOfContentsFilename,_outputTopicFilenames);
 

@@ -16,6 +16,7 @@ namespace Help_Generator
 
         private AttributesParser _settingAttributesParser;
         private AttributesParser _definitionAttributesParser;
+        private string _resourceFileRootDirectory;
 
         public Settings(string projectPath)
         {
@@ -35,6 +36,7 @@ namespace Help_Generator
             );
 
             _definitionAttributesParser = new AttributesParser(null);
+            _resourceFileRootDirectory = null;
         }
 
         private void CreateNewSettingsFile()
@@ -81,11 +83,14 @@ namespace Help_Generator
 
             foreach( string resourceFilename in _settingAttributesParser.GetValues(AttributesResourceFile) )
             {
-                if( File.Exists(resourceFilename) )
-                    _resourceFiles.Add(resourceFilename);
+                string evaluatedResourceFilename = EvaluateResourceFilename(resourceFilename);
+
+                if( File.Exists(evaluatedResourceFilename) )
+                    _resourceFiles.Add(evaluatedResourceFilename);
 
                 else
-                    throw new Exception("The resource file could not be located: " + resourceFilename);
+                    throw new Exception(String.Format("The resource file could not be located: {0}{1}",evaluatedResourceFilename,
+                        ( _resourceFileRootDirectory == null ) ? ( "\r\n\r\nPerhaps add a resource file root directory specification file with the name " + Constants.ResourceFileRootDirectoryFilename) : ""));
             }
         }
 
@@ -105,7 +110,8 @@ namespace Help_Generator
         private readonly string AttributesResourceFile = "ResourceFile";
 
         public void SaveForChm(string filename,string outputChmFilename,string tableOfContentsFilename,string indexFilename,
-            Dictionary<Preprocessor.TopicPreprocessor,string> outputTopicFilenames,HashSet<string> usedImageFilenames)
+            Dictionary<Preprocessor.TopicPreprocessor,string> outputTopicFilenames,HashSet<string> usedImageFilenames,
+            Dictionary<Preprocessor.TopicPreprocessor,List<string>> contextSensitiveHelps)
         {
             using( TextWriter tw = new StreamWriter(filename,false,Encoding.ASCII) )
             {
@@ -152,7 +158,52 @@ namespace Help_Generator
                     tw.WriteLine(imageFilename);
 
 
-                // TODO: context sensitive helps
+                if( contextSensitiveHelps.Count > 0 )
+                {
+                    tw.WriteLine("[ALIAS]");
+
+                    foreach( var kp in contextSensitiveHelps )
+                    {
+                        foreach( var alias in kp.Value )
+                            tw.WriteLine("{0}={1}",alias,outputTopicFilenames[kp.Key]);
+                    }
+                }
+
+                if( _resourceFiles.Count > 0 )
+                {
+                    tw.WriteLine("[MAP]");
+
+                    foreach( string resourceFile in _resourceFiles )
+                        tw.WriteLine("#include {0}",resourceFile);
+                }
+            }
+        }
+
+        private string EvaluateResourceFilename(string filename)
+        {
+            if( !File.Exists(filename) )
+            {
+                if( _resourceFileRootDirectory == null )
+                    _resourceFileRootDirectory = CalculateResourceFileRoot(Directory.GetCurrentDirectory());
+
+                if( _resourceFileRootDirectory != null )
+                    filename = Path.GetFullPath(Path.Combine(_resourceFileRootDirectory,filename));
+            }
+
+            return filename;
+        }
+
+        private string CalculateResourceFileRoot(string directory)
+        {
+            string possibleFilename = Path.Combine(directory,Constants.ResourceFileRootDirectoryFilename);
+
+            if( File.Exists(possibleFilename) )
+                return File.ReadAllLines(possibleFilename)[0].Trim();
+
+            else
+            {
+                string parentDirectory = Path.GetFullPath(Path.Combine(directory,".."));
+                return parentDirectory.Equals(directory) ? null : CalculateResourceFileRoot(parentDirectory);
             }
         }
     }
