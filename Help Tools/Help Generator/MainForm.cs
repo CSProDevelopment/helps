@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace Help_Generator
 {
@@ -28,6 +30,7 @@ namespace Help_Generator
 
             Array commandArgs = Environment.GetCommandLineArgs();
             bool generateAndClose = false;
+            string initialTopicFilename = null;
 
             if( commandArgs.Length == 1 )
             {
@@ -43,17 +46,69 @@ namespace Help_Generator
                 if( commandArgs.Length > 2 && ((string)commandArgs.GetValue(1)).Equals("/generate",StringComparison.InvariantCultureIgnoreCase) )
                     generateAndClose = true;
 
-                _helpComponents.projectPath = Path.GetDirectoryName((string)commandArgs.GetValue(generateAndClose ? 2 : 1));
-            }
+                string fileArgument = (string)commandArgs.GetValue(generateAndClose ? 2 : 1);
 
-            if( LoadProject() )
-            {
-                if( generateAndClose )
+                if( File.Exists(fileArgument) )
                 {
-                    GenerateHelps(true);
-                    Close();
+                    // loading the settings file
+                    if( Path.GetExtension(fileArgument).Equals(Constants.SettingsFileExtension,StringComparison.InvariantCultureIgnoreCase) )
+                        _helpComponents.projectPath = Path.GetDirectoryName(fileArgument);
+
+                    // loading a topic
+                    else if( Path.GetExtension(fileArgument).Equals(Constants.TopicExtension,StringComparison.InvariantCultureIgnoreCase) )
+                    {
+                        initialTopicFilename = Path.GetFileName(fileArgument);
+
+                        // find the settings file by looking at parent folders
+                        string directory = Path.GetDirectoryName(fileArgument);
+                        string parentDirectory = null;
+
+                        while( !( parentDirectory = Path.GetFullPath(Path.Combine(directory,"..")) ).Equals(directory) )
+                        {
+                            if( new DirectoryInfo(parentDirectory).GetFiles("*" + Constants.SettingsFileExtension).Length > 0 )
+                            {
+                                _helpComponents.projectPath = parentDirectory;
+                                break;
+                            }
+
+                            directory = parentDirectory;
+                        }
+
+                        if( _helpComponents.projectPath == null )
+                        {
+                            MessageBox.Show("The help settings file could not be located.");
+                            Close();
+                            return;
+                        }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("The file type cannot be loaded: " + fileArgument);
+                        Close();
+                        return;
+                    }
                 }
             }
+
+            if( _helpComponents.projectPath == null )
+            {
+                MessageBox.Show("The program was loaded with invalid parameters.");
+                Close();
+                return;
+            }
+
+            if( !LoadProject() )
+                return;
+
+            if( generateAndClose )
+            {
+                GenerateHelps(true);
+                Close();
+            }
+
+            else if( initialTopicFilename != null )
+                ShowOrCreateForm(_helpComponents.preprocessor.GetTopic(initialTopicFilename));
         }
 
         private void MainForm_Activated(object sender,EventArgs e)
@@ -215,6 +270,32 @@ namespace Help_Generator
             catch( Exception exception )
             {
                 MessageBox.Show(exception.Message);
+            }                
+        }
+
+        private void toolsRegisterFileAssociationsMenuItem_Click(object sender,EventArgs e)
+        {
+            try
+            {
+                const string registryPath = @"HKEY_CURRENT_USER\Software\Classes\";
+                string executableFilename = Application.ExecutablePath;
+
+                for( int i = 0; i < 2; i++ )
+                {
+                    string documentName = ( i == 0 ) ? Constants.RegistrySettingsDocumentName : Constants.RegistryTopicDocumentName;
+                    string extension = ( i == 0 ) ? Constants.SettingsFileExtension : Constants.TopicExtension;
+
+                    Registry.SetValue(registryPath + extension,"",documentName);
+                    Registry.SetValue(registryPath + documentName + @"\DefaultIcon","",executableFilename + ",0");
+                    Registry.SetValue(registryPath + documentName + @"\shell\Open\command","","\"" + executableFilename + "\" \"%1\"");
+                }
+
+                MessageBox.Show("Registry settings changed successfully.");
+            }
+
+            catch( Exception exception )
+            {
+                MessageBox.Show("There was an error modifying the registry: " + exception.Message);
             }                
         }
 

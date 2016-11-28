@@ -45,6 +45,7 @@
             this.viewTableOfContentsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewIndexMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTopicsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewImagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateCompileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateFormatMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,8 @@
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpSyntaxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewImagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsRegisterFileAssociationsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +67,7 @@
             this.fileMenuItem,
             this.viewMenuItem,
             this.generateMenuItem,
+            this.toolsMenuItem,
             this.helpMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
@@ -198,6 +201,14 @@
             this.viewTopicsMenuItem.Text = "&Topics";
             this.viewTopicsMenuItem.Click += new System.EventHandler(this.viewTopicsMenuItem_Click);
             // 
+            // viewImagesMenuItem
+            // 
+            this.viewImagesMenuItem.Name = "viewImagesMenuItem";
+            this.viewImagesMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
+            this.viewImagesMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.viewImagesMenuItem.Text = "I&mages";
+            this.viewImagesMenuItem.Click += new System.EventHandler(this.viewImagesMenuItem_Click);
+            // 
             // generateMenuItem
             // 
             this.generateMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -267,24 +278,31 @@
             // 
             this.helpContextMenuItem.Name = "helpContextMenuItem";
             this.helpContextMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.helpContextMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.helpContextMenuItem.Size = new System.Drawing.Size(152, 22);
             this.helpContextMenuItem.Text = "&Help";
             this.helpContextMenuItem.Click += new System.EventHandler(this.helpContextMenuItem_Click);
             // 
             // helpSyntaxMenuItem
             // 
             this.helpSyntaxMenuItem.Name = "helpSyntaxMenuItem";
-            this.helpSyntaxMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.helpSyntaxMenuItem.Size = new System.Drawing.Size(152, 22);
             this.helpSyntaxMenuItem.Text = "Topic &Syntax";
             this.helpSyntaxMenuItem.Click += new System.EventHandler(this.helpSyntaxMenuItem_Click);
             // 
-            // viewImagesMenuItem
+            // toolsMenuItem
             // 
-            this.viewImagesMenuItem.Name = "viewImagesMenuItem";
-            this.viewImagesMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
-            this.viewImagesMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.viewImagesMenuItem.Text = "I&mages";
-            this.viewImagesMenuItem.Click += new System.EventHandler(this.viewImagesMenuItem_Click);
+            this.toolsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolsRegisterFileAssociationsMenuItem});
+            this.toolsMenuItem.Name = "toolsMenuItem";
+            this.toolsMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsMenuItem.Text = "&Tools";
+            // 
+            // toolsRegisterFileAssociationsMenuItem
+            // 
+            this.toolsRegisterFileAssociationsMenuItem.Name = "toolsRegisterFileAssociationsMenuItem";
+            this.toolsRegisterFileAssociationsMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.toolsRegisterFileAssociationsMenuItem.Text = "&Register File Associations";
+            this.toolsRegisterFileAssociationsMenuItem.Click += new System.EventHandler(this.toolsRegisterFileAssociationsMenuItem_Click);
             // 
             // MainForm
             // 
@@ -337,6 +355,8 @@
         private System.Windows.Forms.ToolStripMenuItem fileCloseAllMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateFormatMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewImagesMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolsRegisterFileAssociationsMenuItem;
     }
 }
 

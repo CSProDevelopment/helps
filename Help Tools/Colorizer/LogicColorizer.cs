@@ -158,7 +158,7 @@ namespace Colorizer
                 if( atEndOfBuffer )
                 {
                     processPreviousBlock = true;
-                    processPreviousBlockIncludeThisCharacter = true;
+                    processPreviousBlockIncludeThisCharacter = ( processType != ProcessType.Newline );
                 }
 
 
@@ -179,12 +179,17 @@ namespace Colorizer
                     
                     else if( savedProcessType == ProcessType.Keyword )
                     {
-                        string keyword = sourceText.Substring(lastWordStartBlock,savedI - lastWordStartBlock);
+                        bool includeLastCharacter = ( processPreviousBlockIncludeThisCharacter && processType == ProcessType.Keyword );
+                        bool outputLastCharacterAsText = ( atEndOfBuffer && !includeLastCharacter && processPreviousBlockIncludeThisCharacter && processType != ProcessType.Keyword );
+                        string keyword = sourceText.Substring(lastWordStartBlock,savedI - lastWordStartBlock + ( includeLastCharacter ? 1 : 0 ));
 
                         if( _reservedWords.Contains(keyword.ToUpper()) )
                         {
-                            logicColorizer.AddText(sb,text.Substring(0,text.Length - keyword.Length));
+                            logicColorizer.AddText(sb,text.Substring(0,text.Length - keyword.Length - ( outputLastCharacterAsText ? 1 : 0 )));
                             logicColorizer.AddKeyword(sb,keyword);
+
+                            if( outputLastCharacterAsText )
+                                logicColorizer.AddText(sb,text.Substring(keyword.Length));
                         }
 
                         else if( processType == ProcessType.Newline || atEndOfBuffer )
