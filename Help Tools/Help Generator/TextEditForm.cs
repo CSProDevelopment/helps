@@ -15,7 +15,9 @@ namespace Help_Generator
         private bool _modified;
         private string _baseWindowTitle;
         private DateTime _modifiedDate;
+
         private TextEditFormTopicCompilerSettings _topicCompilerSettings;
+        private TopicViewerForm _topicViewerForm;
 
         public TextEditForm(TextEditableInterface textEditableInterface,HelpComponents helpComponents)
         {
@@ -43,6 +45,9 @@ namespace Help_Generator
         {
             if( _modified && ( QueryAndSave() == DialogResult.Cancel ) )
                 e.Cancel = true;
+
+            if( _topicViewerForm != null && !_topicViewerForm.IsDisposed )
+                _topicViewerForm.Close();
         }
 
         public void ShowHelp()
@@ -68,6 +73,16 @@ namespace Help_Generator
                 {
                     string html = ((Topic)_textEditableInterface).CompileForHtml(GetLinesArray(),_helpComponents.preprocessor,_topicCompilerSettings);
                     UpdateWindowTitle();
+
+                    // update the HTML view
+                    if( _topicViewerForm == null || _topicViewerForm.IsDisposed )
+                    {
+                        _topicViewerForm = new TopicViewerForm();
+                        _topicViewerForm.MdiParent = this.ParentForm;
+                        _topicViewerForm.Show();
+                    }
+
+                    _topicViewerForm.UpdateContents(GetTitle(),html);
                 }
 
                 else
@@ -126,9 +141,14 @@ namespace Help_Generator
             return ( !_modified || ( QueryAndSave() == DialogResult.Yes ) );
         }
 
+        private string GetTitle()
+        {
+            return ( _topicCompilerSettings != null && _topicCompilerSettings.Title != null ) ? _topicCompilerSettings.Title : _textEditableInterface.Title;
+        }
+
         private void UpdateWindowTitle()
         {
-            string title = ( _topicCompilerSettings != null && _topicCompilerSettings.Title != null ) ? _topicCompilerSettings.Title : _textEditableInterface.Title;
+            string title = GetTitle();
             labelTitle.Text = title;
             this.Text = String.Format("{0}{1} - {2}",_modified ? "*" : "",title,_baseWindowTitle);
         }

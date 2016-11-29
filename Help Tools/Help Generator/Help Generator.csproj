@@ -110,6 +110,12 @@
     </Compile>
     <Compile Include="TopicCompilerSettings.cs" />
     <Compile Include="TopicListParser.cs" />
+    <Compile Include="TopicViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopicViewerForm.Designer.cs">
+      <DependentUpon>TopicViewerForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreateProjectForm.resx">
       <DependentUpon>CreateProjectForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemListForm.resx">
       <DependentUpon>ItemListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopicViewerForm.resx">
+      <DependentUpon>TopicViewerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

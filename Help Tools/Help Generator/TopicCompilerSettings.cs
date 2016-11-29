@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Help_Generator
@@ -15,11 +16,10 @@ namespace Help_Generator
     {
         public string GetHtmlFilename(object preprocessorObject)
         {
-            if( preprocessorObject is Preprocessor.TopicPreprocessor )
-                return ((Preprocessor.TopicPreprocessor)preprocessorObject).Filename;
+            string filename = ( preprocessorObject is Preprocessor.TopicPreprocessor ) ?
+                ((Preprocessor.TopicPreprocessor)preprocessorObject).Filename :  ((Preprocessor.ImagePreprocessor)preprocessorObject).Filename;
 
-            else
-                return ((Preprocessor.ImagePreprocessor)preprocessorObject).Filename;
+            return new Uri(filename).AbsoluteUri;
         }
 
         public string Title { get; set; }
