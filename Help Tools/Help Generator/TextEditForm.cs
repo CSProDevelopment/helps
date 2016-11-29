@@ -15,6 +15,7 @@ namespace Help_Generator
         private bool _modified;
         private string _baseWindowTitle;
         private DateTime _modifiedDate;
+        private TextEditFormTopicCompilerSettings _topicCompilerSettings;
 
         public TextEditForm(TextEditableInterface textEditableInterface,HelpComponents helpComponents)
         {
@@ -25,11 +26,15 @@ namespace Help_Generator
             _filename = textEditableInterface.Filename;
 
             _modified = false;
-            _baseWindowTitle = String.Format("{0} - {1}",_textEditableInterface.Title,this.Text);
+            _baseWindowTitle = this.Text;
+            UpdateWindowTitle();
+
             editControl.SetTextModifiedHandler(this);
 
-            labelTitle.Text = _textEditableInterface.Title;
             linkLabelFilename.Text = _filename;
+
+            if( _textEditableInterface is Topic )
+                _topicCompilerSettings = new TextEditFormTopicCompilerSettings();
 
             LoadFile();
         }
@@ -59,7 +64,15 @@ namespace Help_Generator
         {
             try
             {
-                _textEditableInterface.Compile(GetLinesArray(),_helpComponents.preprocessor);
+                if( _textEditableInterface is Topic )
+                {
+                    string html = ((Topic)_textEditableInterface).CompileForHtml(GetLinesArray(),_helpComponents.preprocessor,_topicCompilerSettings);
+                    UpdateWindowTitle();
+                }
+
+                else
+                    _textEditableInterface.Compile(GetLinesArray(),_helpComponents.preprocessor);
+
                 textBoxResults.Text = Constants.CompilationSuccessfulMessage;
             }
 
@@ -113,10 +126,17 @@ namespace Help_Generator
             return ( !_modified || ( QueryAndSave() == DialogResult.Yes ) );
         }
 
+        private void UpdateWindowTitle()
+        {
+            string title = ( _topicCompilerSettings != null && _topicCompilerSettings.Title != null ) ? _topicCompilerSettings.Title : _textEditableInterface.Title;
+            labelTitle.Text = title;
+            this.Text = String.Format("{0}{1} - {2}",_modified ? "*" : "",title,_baseWindowTitle);
+        }
+
         public void SetTextModified(bool modified)
         {
             _modified = modified;
-            this.Text = ( modified ? "*" : "" ) + _baseWindowTitle;
+            UpdateWindowTitle();
         }
 
         private DialogResult QueryAndSave()

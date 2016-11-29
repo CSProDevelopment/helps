@@ -19,96 +19,87 @@ namespace Help_Generator
 
         private void MainForm_Load(object sender,EventArgs e)
         {
-            _helpComponents.htmlHelpCompilerExecutable = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),@"HTML Help Workshop\hhc.exe");
-
-            if( !File.Exists(_helpComponents.htmlHelpCompilerExecutable) )
+            try
             {
-                MessageBox.Show("Could not find the HTML Help Compiler here:\n\n" + _helpComponents.htmlHelpCompilerExecutable);
-                Close();
-                return;
-            }
+                _helpComponents.htmlHelpCompilerExecutable = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),@"HTML Help Workshop\hhc.exe");
 
-            Array commandArgs = Environment.GetCommandLineArgs();
-            bool generateAndClose = false;
-            string initialTopicFilename = null;
+                if( !File.Exists(_helpComponents.htmlHelpCompilerExecutable) )
+                    throw new Exception("Could not find the HTML Help Compiler here:\n\n" + _helpComponents.htmlHelpCompilerExecutable);
 
-            if( commandArgs.Length == 1 )
-            {
-                if( !CreateProject() )
+                Array commandArgs = Environment.GetCommandLineArgs();
+                bool generateAndClose = false;
+                string initialTopicFilename = null;
+
+                if( commandArgs.Length == 1 )
                 {
-                    Close();
-                    return;
+                    if( !CreateProject() )
+                        throw new Exception("");
                 }
-            }
 
-            else
-            {
-                if( commandArgs.Length > 2 && ((string)commandArgs.GetValue(1)).Equals("/generate",StringComparison.InvariantCultureIgnoreCase) )
-                    generateAndClose = true;
-
-                string fileArgument = (string)commandArgs.GetValue(generateAndClose ? 2 : 1);
-
-                if( File.Exists(fileArgument) )
+                else
                 {
-                    // loading the settings file
-                    if( Path.GetExtension(fileArgument).Equals(Constants.SettingsFileExtension,StringComparison.InvariantCultureIgnoreCase) )
-                        _helpComponents.projectPath = Path.GetDirectoryName(fileArgument);
+                    if( commandArgs.Length > 2 && ((string)commandArgs.GetValue(1)).Equals("/generate",StringComparison.InvariantCultureIgnoreCase) )
+                        generateAndClose = true;
 
-                    // loading a topic
-                    else if( Path.GetExtension(fileArgument).Equals(Constants.TopicExtension,StringComparison.InvariantCultureIgnoreCase) )
+                    string fileArgument = (string)commandArgs.GetValue(generateAndClose ? 2 : 1);
+
+                    if( File.Exists(fileArgument) )
                     {
-                        initialTopicFilename = Path.GetFileName(fileArgument);
+                        // loading the settings file
+                        if( Path.GetExtension(fileArgument).Equals(Constants.SettingsFileExtension,StringComparison.InvariantCultureIgnoreCase) )
+                            _helpComponents.projectPath = Path.GetDirectoryName(fileArgument);
 
-                        // find the settings file by looking at parent folders
-                        string directory = Path.GetDirectoryName(fileArgument);
-                        string parentDirectory = null;
-
-                        while( !( parentDirectory = Path.GetFullPath(Path.Combine(directory,"..")) ).Equals(directory) )
+                        // loading a topic
+                        else if( Path.GetExtension(fileArgument).Equals(Constants.TopicExtension,StringComparison.InvariantCultureIgnoreCase) )
                         {
-                            if( new DirectoryInfo(parentDirectory).GetFiles("*" + Constants.SettingsFileExtension).Length > 0 )
+                            initialTopicFilename = Path.GetFileName(fileArgument);
+
+                            // find the settings file by looking at parent folders
+                            string directory = Path.GetDirectoryName(fileArgument);
+                            string parentDirectory = null;
+
+                            while( !( parentDirectory = Path.GetFullPath(Path.Combine(directory,"..")) ).Equals(directory) )
                             {
-                                _helpComponents.projectPath = parentDirectory;
-                                break;
+                                if( new DirectoryInfo(parentDirectory).GetFiles("*" + Constants.SettingsFileExtension).Length > 0 )
+                                {
+                                    _helpComponents.projectPath = parentDirectory;
+                                    break;
+                                }
+
+                                directory = parentDirectory;
                             }
 
-                            directory = parentDirectory;
+                            if( _helpComponents.projectPath == null )
+                                throw new Exception("The help settings file could not be located.");
                         }
 
-                        if( _helpComponents.projectPath == null )
-                        {
-                            MessageBox.Show("The help settings file could not be located.");
-                            Close();
-                            return;
-                        }
-                    }
-
-                    else
-                    {
-                        MessageBox.Show("The file type cannot be loaded: " + fileArgument);
-                        Close();
-                        return;
+                        else
+                            throw new Exception("The file type cannot be loaded: " + fileArgument);
                     }
                 }
+
+                if( _helpComponents.projectPath == null )
+                    throw new Exception("The program was loaded with invalid parameters.");
+
+                LoadProject();
+
+                if( generateAndClose )
+                {
+                    GenerateHelps(true);
+                    Close();
+                }
+
+                else if( initialTopicFilename != null )
+                    ShowOrCreateForm(_helpComponents.preprocessor.GetTopic(initialTopicFilename));
             }
 
-            if( _helpComponents.projectPath == null )
+            catch( Exception exception )
             {
-                MessageBox.Show("The program was loaded with invalid parameters.");
-                Close();
-                return;
-            }
+                if( !String.IsNullOrWhiteSpace(exception.Message) )
+                    MessageBox.Show(exception.Message);
 
-            if( !LoadProject() )
-                return;
-
-            if( generateAndClose )
-            {
-                GenerateHelps(true);
                 Close();
             }
-
-            else if( initialTopicFilename != null )
-                ShowOrCreateForm(_helpComponents.preprocessor.GetTopic(initialTopicFilename));
         }
 
         private void MainForm_Activated(object sender,EventArgs e)
@@ -335,30 +326,18 @@ namespace Help_Generator
                 return false;
         }
 
-        private bool LoadProject()
+        private void LoadProject()
         {
-            try
-            {
-                Directory.SetCurrentDirectory(_helpComponents.projectPath);
+            Directory.SetCurrentDirectory(_helpComponents.projectPath);
 
-                _helpComponents.settings = new Settings(_helpComponents.projectPath);
-                _helpComponents.tableOfContents = new TableOfContents(_helpComponents.projectPath);                
-                _helpComponents.index = new Index(_helpComponents.projectPath);
+            _helpComponents.settings = new Settings(_helpComponents.projectPath);
+            _helpComponents.tableOfContents = new TableOfContents(_helpComponents.projectPath);                
+            _helpComponents.index = new Index(_helpComponents.projectPath);
 
-                _helpComponents.preprocessor = Preprocessor.Create(_helpComponents.projectPath);
-                _helpComponents.preprocessor.Refresh();
+            _helpComponents.preprocessor = Preprocessor.Create(_helpComponents.projectPath);
+            _helpComponents.preprocessor.Refresh();
 
-                this.Text = String.Format("{0} - {1}",Path.GetFileName(_helpComponents.projectPath),this.Text);
-            }
-
-            catch( Exception exception )
-            {
-                MessageBox.Show(exception.Message);
-                Close();
-                return false;
-            }
-
-            return true;
+            this.Text = String.Format("{0} - {1}",Path.GetFileName(_helpComponents.projectPath),this.Text);
         }
 
         public void ShowOrCreateForm(Object formObject)

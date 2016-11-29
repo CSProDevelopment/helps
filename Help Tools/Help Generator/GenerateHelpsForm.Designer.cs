@@ -141,6 +141,7 @@
             this.progressBarTopics.Location = new System.Drawing.Point(199, 127);
             this.progressBarTopics.Name = "progressBarTopics";
             this.progressBarTopics.Size = new System.Drawing.Size(773, 30);
+            this.progressBarTopics.Step = 1;
             this.progressBarTopics.TabIndex = 8;
             this.progressBarTopics.Visible = false;
             // 

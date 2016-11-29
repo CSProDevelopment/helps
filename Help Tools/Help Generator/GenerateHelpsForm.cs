@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Help_Generator
@@ -17,8 +18,7 @@ namespace Help_Generator
         private string _temporaryFilesPath;
 
         private Dictionary<Preprocessor.TopicPreprocessor,string> _outputTopicFilenames;
-        private HashSet<string> _usedImageFilenames;
-        private Dictionary<Preprocessor.TopicPreprocessor,List<string>> _contextSensitiveHelps;
+        private GenerateHelpsFormTopicCompilerSettings _topicCompilerSettings;
 
         private BackgroundWorker _backgroundThread;
 
@@ -34,8 +34,7 @@ namespace Help_Generator
             _temporaryFilesPath = Path.Combine(_helpComponents.projectPath,Constants.TemporaryFileDirectoryName);
 
             _outputTopicFilenames = new Dictionary<Preprocessor.TopicPreprocessor,string>();
-            _usedImageFilenames = new HashSet<string>();
-            _contextSensitiveHelps = new Dictionary<Preprocessor.TopicPreprocessor,List<string>>();
+            _topicCompilerSettings = new GenerateHelpsFormTopicCompilerSettings();
 
             _backgroundThread = new BackgroundWorker();
         }
@@ -81,7 +80,12 @@ namespace Help_Generator
                                 break;
 
                             case ThreadUpdateMessage.TopicsProgress:
-                                progressBarTopics.Value = args.ProgressPercentage;
+                                if( args.ProgressPercentage == 0 )
+                                    progressBarTopics.PerformStep();
+
+                                else
+                                    progressBarTopics.Maximum = args.ProgressPercentage;
+
                                 break;
 
                             case ThreadUpdateMessage.TopicsComplete:
@@ -148,8 +152,10 @@ namespace Help_Generator
 
                     else if( processingStep == 3 )
                     {
-                        // TODO: process topics
-                        _backgroundThread.ReportProgress(0,ThreadUpdateMessage.TopicsComplete);
+                        ProcessTopics();
+
+                        if( !_backgroundThread.CancellationPending )
+                            _backgroundThread.ReportProgress(0,ThreadUpdateMessage.TopicsComplete);
                     }
 
                     else if( processingStep == 4 )
@@ -210,6 +216,29 @@ namespace Help_Generator
             }
         }
 
+        private void ProcessTopics()
+        {
+            HashSet<Preprocessor.TopicPreprocessor> allTopics = _helpComponents.preprocessor.GetAllTopics();
+            _backgroundThread.ReportProgress(allTopics.Count,ThreadUpdateMessage.TopicsProgress);
+
+            foreach( Preprocessor.TopicPreprocessor preprocessedTopic in allTopics )
+            {
+                string htmlFilename = _topicCompilerSettings.GetHtmlFilename(preprocessedTopic);
+                _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
+                htmlFilename = Path.Combine(_temporaryFilesPath,htmlFilename);
+
+                Topic topic = new Topic(preprocessedTopic);
+                string html = topic.CompileForHtml(File.ReadAllLines(preprocessedTopic.Filename),_helpComponents.preprocessor,_topicCompilerSettings);
+
+                File.WriteAllText(htmlFilename,html,Encoding.UTF8);
+
+                _backgroundThread.ReportProgress(0,ThreadUpdateMessage.TopicsProgress);
+
+                if( _backgroundThread.CancellationPending )
+                    return;
+            }
+        }
+
         private void GenerateChm()
         {
             string settingsFilename = Path.Combine(_temporaryFilesPath,_projectName + ".hhp");
@@ -218,8 +247,12 @@ namespace Help_Generator
 
             File.Delete(_outputChmFilename);
 
-            _helpComponents.settings.SaveForChm(settingsFilename,_outputChmFilename,tableOfContentsFilename,indexFilename,
-                _outputTopicFilenames,_usedImageFilenames,_contextSensitiveHelps);
+            _helpComponents.settings.SaveForChm(settingsFilename,_outputChmFilename,
+                Path.GetFileName(tableOfContentsFilename),
+                Path.GetFileName(indexFilename),
+                _outputTopicFilenames,
+                _topicCompilerSettings.UsedImageFilenames,
+                _topicCompilerSettings.ContextSensitiveHelps);
 
             _helpComponents.tableOfContents.SaveForChm(tableOfContentsFilename,_outputTopicFilenames);
 

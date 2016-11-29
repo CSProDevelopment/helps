@@ -105,7 +105,7 @@ namespace Help_Generator
                 DirectoryInfo diTopics = new DirectoryInfo(topicsPath);
                 HashSet<string> topicNames = new HashSet<string>();
 
-                foreach( FileInfo fi in diTopics.GetFiles("*",SearchOption.AllDirectories) )
+                foreach( FileInfo fi in diTopics.GetFiles("*" + Constants.TopicExtension,SearchOption.AllDirectories) )
                 {
                     string topicKey = fi.Name.ToUpper();
 

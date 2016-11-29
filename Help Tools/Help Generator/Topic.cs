@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 
 namespace Help_Generator
 {
@@ -31,6 +32,13 @@ namespace Help_Generator
             throw new Exception("The topic file does not support automatic formatting.");
         }
 
+        public string CompileForHtml(string[] lines,Preprocessor preprocessor,TopicCompilerSettingsInterface topicCompilerSettings)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            return sb.ToString();
+        }
+
         public static string CompileForTitle(string filename)
         {
             try
@@ -59,6 +67,5 @@ namespace Help_Generator
 
 
         private const string TagTitle = "title";
-
     }
 }
