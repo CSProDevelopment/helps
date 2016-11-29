@@ -302,10 +302,17 @@ namespace Help_Generator
         private void helpContextMenuItem_Click(object sender,EventArgs e)
         {
             if( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm )
-                ((TextEditForm)this.ActiveMdiChild).ShowHelp();
+            {
+                TextEditForm textEditForm = (TextEditForm)this.ActiveMdiChild;
 
-            else
-                ShowOrCreateForm(typeof(SyntaxHelp));
+                if( textEditForm.PreprocessedTopic == null )
+                {
+                    textEditForm.ShowHelp();
+                    return;
+                }
+            }
+
+            ShowOrCreateForm(typeof(SyntaxHelp));
         }
 
         private void helpSyntaxMenuItem_Click(object sender,EventArgs e)
@@ -366,7 +373,7 @@ namespace Help_Generator
             {
                 if( ( isSyntaxHelp && form is SyntaxHelp ) ||
                     ( isTextEditableInterface && form is TextEditForm && ((TextEditForm)form).IsOfType(((TextEditableInterface)formObject)) ) ||
-                    ( isTopic && form is TopicEditForm && ((TopicEditForm)form).PreprocessedTopic == (Preprocessor.TopicPreprocessor)formObject ) )
+                    ( isTopic && form is TextEditForm && ((TextEditForm )form).PreprocessedTopic == (Preprocessor.TopicPreprocessor)formObject ) )
                 {
                     form.Activate();
                     return;
@@ -383,10 +390,10 @@ namespace Help_Generator
                 newForm = (Form)formObject;
             
             else if( isTextEditableInterface )
-                newForm = new TextEditForm((TextEditableInterface)formObject,_helpComponents.preprocessor);
+                newForm = new TextEditForm((TextEditableInterface)formObject,_helpComponents);
 
             else if( isTopic )
-                newForm = new TopicEditForm((Preprocessor.TopicPreprocessor)formObject,_helpComponents);
+                newForm = new TextEditForm(new Topic((Preprocessor.TopicPreprocessor)formObject),_helpComponents);
 
             if( newForm != null )
             {

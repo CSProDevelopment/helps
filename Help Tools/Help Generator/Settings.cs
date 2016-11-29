@@ -104,10 +104,10 @@ namespace Help_Generator
             throw new Exception("The settings file does not support automatic formatting.");
         }
 
-        private readonly string AttributesTitle = "Title";
-        private readonly string AttributesDefaultTopic = "DefaultTopic";
-        private readonly string AttributesDefinitionsFile = "DefinitionsFile";
-        private readonly string AttributesResourceFile = "ResourceFile";
+        private const string AttributesTitle = "Title";
+        private const string AttributesDefaultTopic = "DefaultTopic";
+        private const string AttributesDefinitionsFile = "DefinitionsFile";
+        private const string AttributesResourceFile = "ResourceFile";
 
         public void SaveForChm(string filename,string outputChmFilename,string tableOfContentsFilename,string indexFilename,
             Dictionary<Preprocessor.TopicPreprocessor,string> outputTopicFilenames,HashSet<string> usedImageFilenames,

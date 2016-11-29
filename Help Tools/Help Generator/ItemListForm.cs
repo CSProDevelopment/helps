@@ -134,7 +134,7 @@ namespace Help_Generator
             {
                 foreach( Form form in this.ParentForm.MdiChildren )
                 {
-                    if( form is TopicEditForm && ((TopicEditForm)form).PreprocessedTopic == selectedTag )
+                    if( form is TextEditForm && ((TextEditForm)form).PreprocessedTopic == selectedTag )
                     {
                         MessageBox.Show("You cannot delete the topic while it is being edited.");
                         return;

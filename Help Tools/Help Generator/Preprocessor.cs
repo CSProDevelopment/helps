@@ -22,17 +22,7 @@ namespace Help_Generator
             {
                 Filename = fi.FullName;
                 ModifiedDate = fi.LastWriteTimeUtc;
-
-                try
-                {
-                    Topic topic = new Topic(fi.FullName);
-                    Title = topic.Title;
-                }
-
-                catch( Exception )
-                {
-                    Title = null;
-                }
+                Title = Topic.CompileForTitle(fi.FullName);
             }
         }
 

@@ -10,18 +10,18 @@ namespace Help_Generator
     partial class TextEditForm : Form, TextModifiedHandlerInterface
     {
         private TextEditableInterface _textEditableInterface;
-        private Preprocessor _preprocessor;
+        private HelpComponents _helpComponents;
         private string _filename;
         private bool _modified;
         private string _baseWindowTitle;
         private DateTime _modifiedDate;
 
-        public TextEditForm(TextEditableInterface textEditableInterface,Preprocessor preprocessor)
+        public TextEditForm(TextEditableInterface textEditableInterface,HelpComponents helpComponents)
         {
             InitializeComponent();
 
             _textEditableInterface = textEditableInterface;
-            _preprocessor = preprocessor;
+            _helpComponents = helpComponents;
             _filename = textEditableInterface.Filename;
 
             _modified = false;
@@ -59,7 +59,7 @@ namespace Help_Generator
         {
             try
             {
-                _textEditableInterface.Compile(GetLinesArray(),_preprocessor);
+                _textEditableInterface.Compile(GetLinesArray(),_helpComponents.preprocessor);
                 textBoxResults.Text = Constants.CompilationSuccessfulMessage;
             }
 
@@ -73,7 +73,7 @@ namespace Help_Generator
         {
             try
             {
-                editControl.Text = _textEditableInterface.Format(GetLinesArray(),_preprocessor);
+                editControl.Text = _textEditableInterface.Format(GetLinesArray(),_helpComponents.preprocessor);
                 textBoxResults.Text = Constants.FormattedSuccessfulMessage;
             }
 
@@ -87,6 +87,8 @@ namespace Help_Generator
         {
             return ( _textEditableInterface.GetType() == otherTextEditableInterface.GetType() );
         }
+
+        public Preprocessor.TopicPreprocessor PreprocessedTopic { get { return ( _textEditableInterface is Topic ) ? ((Topic)_textEditableInterface).PreprocessedTopic : null; } }
 
         public void CheckExternalFileEdit()
         {

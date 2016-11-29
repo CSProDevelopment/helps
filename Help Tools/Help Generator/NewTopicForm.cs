@@ -30,7 +30,8 @@ namespace Help_Generator
                         throw new Exception("Enter a topic filename.");
 
                     string topicsPath = Path.Combine(_helpComponents.projectPath,Constants.TopicsDirectoryName);
-                    string topicFilename = Path.Combine(topicsPath,textBoxTopicFilename.Text.Trim() + Constants.TopicExtension);
+                    string topicFilenameWithoutSpaces = textBoxTopicFilename.Text.Trim().Replace(' ','_');
+                    string topicFilename = Path.Combine(topicsPath,topicFilenameWithoutSpaces + Constants.TopicExtension);
 
                     if( File.Exists(topicFilename) )
                         throw new Exception("A topic with the filename already exists: " + topicFilename);
