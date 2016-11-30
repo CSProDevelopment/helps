@@ -39,7 +39,7 @@ namespace Help_Generator
             _backgroundThread = new BackgroundWorker();
         }
 
-        private enum ThreadUpdateMessage { Cancel, Complete, SettingsComplete, TableOfContentsComplete, IndexComplete, TopicsProgress, TopicsComplete, ChmComplete };
+        private enum ThreadUpdateMessage { Cancel, Complete, SettingsComplete, TableOfContentsComplete, IndexComplete, TopicsProgress, TopicsComplete, ChmComplete, HideProgressBar };
 
         private void GenerateHelpsForm_Load(object sender,EventArgs e)
         {
@@ -95,6 +95,10 @@ namespace Help_Generator
 
                             case ThreadUpdateMessage.ChmComplete:
                                 pictureBoxCheckmarkChm.Visible = true;
+                                break;
+
+                            case ThreadUpdateMessage.HideProgressBar:
+                                progressBarTopics.Visible = false;
                                 break;
 
                             case ThreadUpdateMessage.Complete:
@@ -176,6 +180,7 @@ namespace Help_Generator
 
             catch( Exception exception )
             {
+                _backgroundThread.ReportProgress(0,ThreadUpdateMessage.HideProgressBar);
                 _backgroundThread.ReportProgress(0,String.Format("Help Generation Error ({0}):\r\n\r\n{1}",stepStrings[processingStep],exception.Message));
             }
 
@@ -224,11 +229,14 @@ namespace Help_Generator
             foreach( Preprocessor.TopicPreprocessor preprocessedTopic in allTopics )
             {
                 string htmlFilename = _topicCompilerSettings.GetHtmlFilename(preprocessedTopic);
+
+                _backgroundThread.ReportProgress(0,String.Format("Processing topic \"{0}\" to {1}...",preprocessedTopic.Title,htmlFilename));
+
                 _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
                 htmlFilename = Path.Combine(_temporaryFilesPath,htmlFilename);
 
                 Topic topic = new Topic(preprocessedTopic);
-                string html = topic.CompileForHtml(File.ReadAllLines(preprocessedTopic.Filename),_helpComponents.preprocessor,_topicCompilerSettings);
+                string html = topic.CompileForHtml(File.ReadAllLines(preprocessedTopic.Filename),_helpComponents,_topicCompilerSettings);
 
                 File.WriteAllText(htmlFilename,html,Encoding.UTF8);
 

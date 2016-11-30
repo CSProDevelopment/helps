@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 
 namespace Help_Generator
 {
@@ -32,12 +31,6 @@ namespace Help_Generator
             throw new Exception("The topic file does not support automatic formatting.");
         }
 
-        public string CompileForHtml(string[] lines,Preprocessor preprocessor,TopicCompilerSettingsInterface topicCompilerSettings)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            return sb.ToString();
-        }
 
         public static string CompileForTitle(string filename)
         {
@@ -45,8 +38,8 @@ namespace Help_Generator
             {
                 string text = File.ReadAllText(filename);
 
-                string openTag = "<" + TagTitle + ">";
-                string closeTag = "</" + TagTitle + ">";
+                string openTag = "<" + TopicCompiler.TagTitle + ">";
+                string closeTag = "</" + TopicCompiler.TagTitle + ">";
 
                 int openTagPos = text.IndexOf(openTag);
                 int closeTagPos = text.IndexOf(closeTag);
@@ -65,7 +58,10 @@ namespace Help_Generator
             return null;
         }
 
-
-        private const string TagTitle = "title";
+        public string CompileForHtml(string[] lines,HelpComponents helpComponents,TopicCompilerSettingsInterface topicCompilerSettings)
+        {
+            TopicCompiler topicCompiler = new TopicCompiler(helpComponents,_preprocessedTopic,topicCompilerSettings);
+            return topicCompiler.CompileForHtml(lines);
+        }
     }
 }

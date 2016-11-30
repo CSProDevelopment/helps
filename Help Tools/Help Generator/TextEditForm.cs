@@ -71,7 +71,7 @@ namespace Help_Generator
             {
                 if( _textEditableInterface is Topic )
                 {
-                    string html = ((Topic)_textEditableInterface).CompileForHtml(GetLinesArray(),_helpComponents.preprocessor,_topicCompilerSettings);
+                    string html = ((Topic)_textEditableInterface).CompileForHtml(GetLinesArray(),_helpComponents,_topicCompilerSettings);
                     UpdateWindowTitle();
 
                     // update the HTML view
