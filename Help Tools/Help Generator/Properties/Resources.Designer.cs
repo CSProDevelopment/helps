@@ -116,7 +116,9 @@ namespace Help_Generator.Properties {
         ///
         ///&lt;p&gt;&lt;strong&gt;Page Title:&lt;/strong&gt; &amp;lt;title&amp;gt;page title&amp;lt;/title&amp;gt;&lt;/p&gt;
         ///
-        ///&lt;p&gt;&lt;strong&gt;Context Sensitive Help:&lt;/strong&gt; &amp;lt;context HIDD_FIELD_COLORS_DLG /&amp;gt; &amp;lt;context HIDD_FIELD_COLORS_DLG,500121  [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;&lt;strong&gt;Context Sensitive Help:&lt;/strong&gt; &amp;lt;context HIDD_FIELD_COLORS_DLG /&amp;gt;&lt;/p&gt;
+        ///
+        ///&lt;p&gt;&lt;strong&gt;New Paragraph:&lt;/strong&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SyntaxHelp {
             get {
@@ -135,6 +137,60 @@ namespace Help_Generator.Properties {
         internal static string TableOfContentsHelp {
             get {
                 return ResourceManager.GetString("TableOfContentsHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to body
+        ///{
+        ///	margin: 0;
+        ///	padding: 0;
+        ///	background: #000000;
+        ///	font-family: Arial, Helvetica, sans-serif;
+        ///	font-size: 14px;
+        ///	color: #ffffff;
+        ///}
+        ///
+        ///h1, h2, h3
+        ///{
+        ///	margin: 0;
+        ///	padding: 0;
+        ///	font-weight: normal;
+        ///	color: #0088a5;
+        ///}
+        ///
+        ///h1
+        ///{
+        ///	font-size: 2em;
+        ///}
+        ///
+        ///h2
+        ///{
+        ///	padding: 0px 0px 20px 0px;
+        ///	letter-spacing: -2px;
+        ///	font-size: 2.8em;
+        ///}
+        ///
+        ///h3
+        ///{
+        ///	font-size: 1.6em;
+        ///}
+        ///
+        ///p, ul, ol
+        ///{
+        ///	margin-top: 0;
+        ///	line-height: 150%;
+        ///}
+        ///
+        ///a
+        ///{
+        ///	color: #51cdec;
+        ///}
+        ///.
+        /// </summary>
+        internal static string TopicStylesheet {
+            get {
+                return ResourceManager.GetString("TopicStylesheet", resourceCulture);
             }
         }
     }

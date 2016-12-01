@@ -7,6 +7,7 @@ namespace Help_Generator
     interface TopicCompilerSettingsInterface
     {
         string GetHtmlFilename(object preprocessorObject);
+        string GetTopicStylesheet();
         string Title { set; }
         void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId);
         bool ChmCreationMode { get; }
@@ -27,6 +28,11 @@ namespace Help_Generator
 
             else
                 return new Uri(((Preprocessor.ImagePreprocessor)preprocessorObject).Filename).AbsoluteUri;
+        }
+        
+        public string GetTopicStylesheet()
+        {
+            return "<style>" + Properties.Resources.TopicStylesheet + "</style>";
         }
 
         public string Title { get; set; }
@@ -64,6 +70,11 @@ namespace Help_Generator
                 UsedImageFilenames.Add(filename);
                 return Path.GetFileName(filename);
             }
+        }
+
+        public string GetTopicStylesheet()
+        {
+            return String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\" />",Constants.TopicStylesheetFilename);
         }
 
         public string Title { get; set; }

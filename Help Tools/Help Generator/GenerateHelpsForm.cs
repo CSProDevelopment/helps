@@ -255,6 +255,8 @@ namespace Help_Generator
 
             File.Delete(_outputChmFilename);
 
+            File.WriteAllText(Path.Combine(_temporaryFilesPath,Constants.TopicStylesheetFilename),Properties.Resources.TopicStylesheet,Encoding.ASCII);
+
             _helpComponents.settings.SaveForChm(settingsFilename,_outputChmFilename,
                 Path.GetFileName(tableOfContentsFilename),
                 Path.GetFileName(indexFilename),

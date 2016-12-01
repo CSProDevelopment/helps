@@ -38,7 +38,7 @@ namespace Help_Generator
 
                     // create a blank topic file
                     using( TextWriter tw = new StreamWriter(topicFilename,false,Encoding.UTF8) )
-                        tw.WriteLine("<title>{0}</title>",textBoxTopicFilename.Text);
+                        tw.WriteLine("<title>{0}</title> <titleheader />",textBoxTopicFilename.Text);
 
                     _helpComponents.preprocessor.Refresh();
                     _preprocessedTopic = _helpComponents.preprocessor.GetTopic(Path.GetFileName(topicFilename));                    

@@ -63,17 +63,18 @@ namespace Help_Generator
             _tagSettings.Add(TagTitle,new TagSettings(true,null,null,null,EndTitleHandler,0,0));
             _tagSettings.Add(ContextTag,new TagSettings(false,null,null,StartContextHandler,null,1,1));
             //_tagSettings.Add(IndentTag,new TagSettings(true,"","",null,null,0,0));
-            //_tagSettings.Add(CenterTag,new TagSettings(true,"","",null,null,0,0));
+            _tagSettings.Add(CenterTag,new TagSettings(true,"<div align=\"center\">","</div>",null,null,0,0));
             _tagSettings.Add(BoldTag,new TagSettings("<b>","</b>"));
             _tagSettings.Add(ItalicsTag,new TagSettings("<i>","</i>"));
             //_tagSettings.Add(MonospaceTag,new TagSettings(true,"","",null,null,0,0));
             //_tagSettings.Add(FontColorTag,new TagSettings(true,"","",null,null,0,0));
-            //_tagSettings.Add(FontSizeTag,new TagSettings(true,"","",null,null,0,0));
+            _tagSettings.Add(FontSizeTag,new TagSettings(true,null,"</div>",StartFontSizeHandler,null,1,1));
             //_tagSettings.Add(UnorderedListTag,new TagSettings(true,"","",null,null,0,0));
             //_tagSettings.Add(OrderedListTag,new TagSettings(true,"","",null,null,0,0));
             //_tagSettings.Add(ListItemTag,new TagSettings(true,"","",null,null,0,0));
-            //_tagSettings.Add(HeaderTag,new TagSettings(true,"","",null,null,0,0));
-            //_tagSettings.Add(SubheaderTag,new TagSettings(true,"","",null,null,0,0));
+            _tagSettings.Add(HeaderTag,new TagSettings("<div class=\"header_size header\">","</div>"));
+            _tagSettings.Add(TitleHeaderTag,new TagSettings(false,null,null,StartTitleHeaderHandler,null,0,0));
+            _tagSettings.Add(SubheaderTag,new TagSettings("<div class=\"subheader_size subheader\">","</div>"));
             _tagSettings.Add(ImageTag,new TagSettings(false,null,null,StartImageHandler,null,1,2));
             _tagSettings.Add(TopicTag,new TagSettings(false,null,null,StartTopicHandler,null,1,1));
             _tagSettings.Add(LinkTag,new TagSettings(true,null,"</a>",StartLinkHandler,null,1,1));
@@ -91,13 +92,18 @@ namespace Help_Generator
         public string CompileForHtml(string[] lines)
         {
             _sb.Append(
-                "<html><head>" +
+                "<html>" +
+                "<head>" +
                 "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />" +
                 "<title>");
 
             int titlePos = _sb.Length;
 
-            _sb.Append("</title></head><body>");
+            _sb.Append("</title>");
+            _sb.Append(_topicCompilerSettings.GetTopicStylesheet());
+            _sb.Append(
+                "</head>" +
+                "<body>");
 
             List<string> paragraphs = LinesToParagraphs(lines);
 
@@ -106,7 +112,7 @@ namespace Help_Generator
                 string html = ProcessParagraph(paragraph);
 
                 if( html.Length > 0 )
-                    _sb.AppendFormat("<div>{0}</div>",html);
+                    _sb.AppendFormat("<div>{0}</div>\n",html);
             }
 
             if( _title == null )
@@ -116,7 +122,9 @@ namespace Help_Generator
 
             _topicCompilerSettings.Title = _title;
 
-            _sb.Append("</body></html>");
+            _sb.Append(
+                "</body>" +
+                "</html>");
 
             return _sb.ToString();
         }
@@ -338,6 +346,31 @@ namespace Help_Generator
             return "";
         }
 
+        private string StartFontSizeHandler(string[] startTagComponents)
+        {
+            if( startTagComponents[0].Equals(HeaderTag) || startTagComponents[0].Equals(SubheaderTag) )
+                return String.Format("<div class=\"{0}_size\">",startTagComponents[0]);
+
+            try
+            {
+                double em = double.Parse(startTagComponents[0]);
+                return String.Format("<div style=\"font-size: {0}em;\">",em);
+            }
+
+            catch( Exception )
+            {
+                throw new Exception("The fontsize tag takes either: header, subheader, or an em value.");
+            }
+        }
+
+        private string StartTitleHeaderHandler(string[] startTagComponents)
+        {
+            if( _title == null )
+                throw new Exception("You cannot use a title header until a title has been defined.");
+
+            return String.Format("<div class=\"header_size header\">{0}</div>",_title);
+        }
+
         private string StartImageHandler(string[] startTagComponents)
         {
             if( startTagComponents.Length == 2 )
@@ -426,6 +459,7 @@ namespace Help_Generator
         public const string OrderedListTag = "ol";
         public const string ListItemTag = "li";
         public const string HeaderTag = "header";
+        public const string TitleHeaderTag = "titleheader";
         public const string SubheaderTag = "subheader";
         public const string ImageTag = "image";
         public const string ImageNoChmAttribute = "nochm";

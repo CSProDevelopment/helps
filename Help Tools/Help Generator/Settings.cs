@@ -157,6 +157,8 @@ namespace Help_Generator
                 foreach( string imageFilename in usedImageFilenames )
                     tw.WriteLine(imageFilename);
 
+                tw.WriteLine(Constants.TopicStylesheetFilename);
+
 
                 if( contextSensitiveHelps.Count > 0 )
                 {
