@@ -9,17 +9,24 @@ namespace Help_Generator
         string GetHtmlFilename(object preprocessorObject);
         string Title { set; }
         void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId);
+        bool ChmCreationMode { get; }
     }
 
 
     class TextEditFormTopicCompilerSettings : TopicCompilerSettingsInterface
     {
+        public TextEditFormTopicCompilerSettings()
+        {
+            ChmCreationMode = true;
+        }
+
         public string GetHtmlFilename(object preprocessorObject)
         {
-            string filename = ( preprocessorObject is Preprocessor.TopicPreprocessor ) ?
-                ((Preprocessor.TopicPreprocessor)preprocessorObject).Filename :  ((Preprocessor.ImagePreprocessor)preprocessorObject).Filename;
+            if( preprocessorObject is Preprocessor.TopicPreprocessor )
+                return TopicViewerForm.TopicUrlPrefix + Path.GetFileName(((Preprocessor.TopicPreprocessor)preprocessorObject).Filename);
 
-            return new Uri(filename).AbsoluteUri;
+            else
+                return new Uri(((Preprocessor.ImagePreprocessor)preprocessorObject).Filename).AbsoluteUri;
         }
 
         public string Title { get; set; }
@@ -27,6 +34,8 @@ namespace Help_Generator
         public void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId)
         {
         }
+
+        public bool ChmCreationMode { get; set; }
     }
 
 
@@ -66,5 +75,7 @@ namespace Help_Generator
 
             ContextSensitiveHelps[preprocessedTopic].Add(defineId); 
         }
+
+        public bool ChmCreationMode { get { return true; } }
     }
 }

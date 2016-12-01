@@ -201,6 +201,16 @@ namespace Help_Generator
             return topicsHashSet;
         }
 
+        public ImagePreprocessor GetImage(string filename)
+        {
+            string imageKey = filename.ToUpper();
+
+            if( !_images.ContainsKey(imageKey) )
+                throw new Exception("The image filename could not be located: " + filename);
+
+            return _images[imageKey];
+        }
+
         public HashSet<ImagePreprocessor> GetAllImages()
         {
             HashSet<ImagePreprocessor> imageHashSet = new HashSet<ImagePreprocessor>();

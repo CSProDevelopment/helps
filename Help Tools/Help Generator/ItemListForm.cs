@@ -49,8 +49,9 @@ namespace Help_Generator
             if( buttonView.Enabled != itemSelected )
             {
                 buttonView.Enabled = itemSelected;
-                buttonCopyFilename.Enabled = itemSelected;
                 buttonDelete.Enabled = itemSelected;
+                buttonCopyFilename.Enabled = itemSelected;
+                buttonCopyForTopicSource.Enabled = itemSelected;
             }
         }
 
@@ -100,6 +101,23 @@ namespace Help_Generator
             EnableButtons(e.IsSelected);
         }
 
+        private void listViewItems_KeyUp(object sender,KeyEventArgs e)
+        {
+            e.Handled = true;
+
+            if( e.KeyCode == Keys.Enter )
+                buttonView_Click(sender,e);
+
+            else if( e.KeyCode == Keys.Delete )
+                buttonDelete_Click(sender,e);
+
+            else if( e.KeyCode == Keys.Space )
+                buttonCopyForTopicSource_Click(sender,e);
+
+            else
+                e.Handled = false;
+        }
+
         private void buttonView_Click(object sender,EventArgs e)
         {
             if( listViewItems.SelectedItems.Count == 0 )
@@ -117,17 +135,11 @@ namespace Help_Generator
             }
         }
 
-        private void buttonCopyFilename_Click(object sender,EventArgs e)
-        {
-            object selectedTag = listViewItems.SelectedItems[0].Tag;
-            string filename = radioButtonTopics.Checked ? ((Preprocessor.TopicPreprocessor)selectedTag).Filename : ((Preprocessor.ImagePreprocessor)selectedTag).Filename;
-
-            Clipboard.Clear();
-            Clipboard.SetText(Path.GetFileName(filename));
-        }
-
         private void buttonDelete_Click(object sender,EventArgs e)
         {
+            if( listViewItems.SelectedItems.Count == 0 )
+                return;
+
             object selectedTag = listViewItems.SelectedItems[0].Tag;
 
             if( radioButtonTopics.Checked )
@@ -158,6 +170,27 @@ namespace Help_Generator
                     MessageBox.Show(String.Format("There was an error deleting {0}\n\n{1}",filename,exception.Message));
                 }
             }
+        }
+
+        private void buttonCopyFilename_Click(object sender,EventArgs e)
+        {
+            object selectedTag = listViewItems.SelectedItems[0].Tag;
+            string filename = radioButtonTopics.Checked ? ((Preprocessor.TopicPreprocessor)selectedTag).Filename : ((Preprocessor.ImagePreprocessor)selectedTag).Filename;
+
+            Clipboard.Clear();
+            Clipboard.SetText(Path.GetFileName(filename));
+        }
+
+        private void buttonCopyForTopicSource_Click(object sender,EventArgs e)
+        {
+            if( listViewItems.SelectedItems.Count == 0 )
+                return;
+
+            object selectedTag = listViewItems.SelectedItems[0].Tag;
+            string filename = radioButtonTopics.Checked ? ((Preprocessor.TopicPreprocessor)selectedTag).Filename : ((Preprocessor.ImagePreprocessor)selectedTag).Filename;
+
+            Clipboard.Clear();
+            Clipboard.SetText(String.Format("<{0} {1} />",radioButtonTopics.Checked ? TopicCompiler.TopicTag : TopicCompiler.ImageTag,Path.GetFileName(filename)));
         }
     }
 }

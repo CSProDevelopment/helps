@@ -264,6 +264,13 @@ namespace Help_Generator
             }                
         }
 
+        private void settingsViewTopicsInHelpsFormatMenuItem_Click(object sender,EventArgs e)
+        {
+            settingsViewTopicsInHelpsFormatMenuItem.Checked = !settingsViewTopicsInHelpsFormatMenuItem.Checked;
+        }
+
+        public bool ChmCreationMode { get { return settingsViewTopicsInHelpsFormatMenuItem.Checked; } }
+
         private void toolsRegisterFileAssociationsMenuItem_Click(object sender,EventArgs e)
         {
             try

@@ -37,6 +37,7 @@
             this.buttonView = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.listViewItems = new System.Windows.Forms.ListView();
+            this.buttonCopyForTopicSource = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +56,7 @@
             this.radioButtonTopics.Location = new System.Drawing.Point(72, 11);
             this.radioButtonTopics.Name = "radioButtonTopics";
             this.radioButtonTopics.Size = new System.Drawing.Size(57, 17);
-            this.radioButtonTopics.TabIndex = 4;
+            this.radioButtonTopics.TabIndex = 5;
             this.radioButtonTopics.TabStop = true;
             this.radioButtonTopics.Text = "Topics";
             this.radioButtonTopics.UseVisualStyleBackColor = true;
@@ -67,7 +68,7 @@
             this.radioButtonImages.Location = new System.Drawing.Point(135, 11);
             this.radioButtonImages.Name = "radioButtonImages";
             this.radioButtonImages.Size = new System.Drawing.Size(59, 17);
-            this.radioButtonImages.TabIndex = 5;
+            this.radioButtonImages.TabIndex = 6;
             this.radioButtonImages.Text = "Images";
             this.radioButtonImages.UseVisualStyleBackColor = true;
             this.radioButtonImages.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
@@ -88,17 +89,17 @@
             this.textBoxFilter.Location = new System.Drawing.Point(72, 40);
             this.textBoxFilter.Name = "textBoxFilter";
             this.textBoxFilter.Size = new System.Drawing.Size(306, 20);
-            this.textBoxFilter.TabIndex = 6;
+            this.textBoxFilter.TabIndex = 7;
             this.textBoxFilter.TextChanged += new System.EventHandler(this.textBoxFilter_TextChanged);
             // 
             // buttonCopyFilename
             // 
             this.buttonCopyFilename.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonCopyFilename.Enabled = false;
-            this.buttonCopyFilename.Location = new System.Drawing.Point(143, 542);
+            this.buttonCopyFilename.Location = new System.Drawing.Point(213, 507);
             this.buttonCopyFilename.Name = "buttonCopyFilename";
-            this.buttonCopyFilename.Size = new System.Drawing.Size(104, 23);
-            this.buttonCopyFilename.TabIndex = 2;
+            this.buttonCopyFilename.Size = new System.Drawing.Size(165, 23);
+            this.buttonCopyFilename.TabIndex = 3;
             this.buttonCopyFilename.Text = "Copy Filename";
             this.buttonCopyFilename.UseVisualStyleBackColor = true;
             this.buttonCopyFilename.Click += new System.EventHandler(this.buttonCopyFilename_Click);
@@ -107,11 +108,11 @@
             // 
             this.buttonView.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonView.Enabled = false;
-            this.buttonView.Location = new System.Drawing.Point(16, 542);
+            this.buttonView.Location = new System.Drawing.Point(16, 507);
             this.buttonView.Name = "buttonView";
-            this.buttonView.Size = new System.Drawing.Size(104, 23);
+            this.buttonView.Size = new System.Drawing.Size(165, 23);
             this.buttonView.TabIndex = 1;
-            this.buttonView.Text = "View";
+            this.buttonView.Text = "View (Enter)";
             this.buttonView.UseVisualStyleBackColor = true;
             this.buttonView.Click += new System.EventHandler(this.buttonView_Click);
             // 
@@ -119,11 +120,11 @@
             // 
             this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonDelete.Enabled = false;
-            this.buttonDelete.Location = new System.Drawing.Point(274, 542);
+            this.buttonDelete.Location = new System.Drawing.Point(16, 542);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(104, 23);
-            this.buttonDelete.TabIndex = 3;
-            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.Size = new System.Drawing.Size(165, 23);
+            this.buttonDelete.TabIndex = 2;
+            this.buttonDelete.Text = "Delete (Del)";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
@@ -137,19 +138,33 @@
             this.listViewItems.Location = new System.Drawing.Point(16, 73);
             this.listViewItems.MultiSelect = false;
             this.listViewItems.Name = "listViewItems";
-            this.listViewItems.Size = new System.Drawing.Size(362, 455);
+            this.listViewItems.Size = new System.Drawing.Size(362, 428);
             this.listViewItems.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listViewItems.TabIndex = 0;
             this.listViewItems.UseCompatibleStateImageBehavior = false;
             this.listViewItems.View = System.Windows.Forms.View.List;
             this.listViewItems.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listViewItems_ItemSelectionChanged);
             this.listViewItems.DoubleClick += new System.EventHandler(this.buttonView_Click);
+            this.listViewItems.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listViewItems_KeyUp);
+            // 
+            // buttonCopyForTopicSource
+            // 
+            this.buttonCopyForTopicSource.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonCopyForTopicSource.Enabled = false;
+            this.buttonCopyForTopicSource.Location = new System.Drawing.Point(213, 542);
+            this.buttonCopyForTopicSource.Name = "buttonCopyForTopicSource";
+            this.buttonCopyForTopicSource.Size = new System.Drawing.Size(165, 23);
+            this.buttonCopyForTopicSource.TabIndex = 4;
+            this.buttonCopyForTopicSource.Text = "Copy for Topic Source (Space)";
+            this.buttonCopyForTopicSource.UseVisualStyleBackColor = true;
+            this.buttonCopyForTopicSource.Click += new System.EventHandler(this.buttonCopyForTopicSource_Click);
             // 
             // ItemListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 577);
+            this.Controls.Add(this.buttonCopyForTopicSource);
             this.Controls.Add(this.listViewItems);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonView);
@@ -180,5 +195,6 @@
         private System.Windows.Forms.Button buttonView;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.ListView listViewItems;
+        private System.Windows.Forms.Button buttonCopyForTopicSource;
     }
 }

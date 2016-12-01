@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -71,13 +72,23 @@ namespace Help_Generator
             {
                 if( _textEditableInterface is Topic )
                 {
+                    _topicCompilerSettings.ChmCreationMode = ((MainForm)this.ParentForm).ChmCreationMode;
+
                     string html = ((Topic)_textEditableInterface).CompileForHtml(GetLinesArray(),_helpComponents,_topicCompilerSettings);
                     UpdateWindowTitle();
 
                     // update the HTML view
                     if( _topicViewerForm == null || _topicViewerForm.IsDisposed )
                     {
-                        _topicViewerForm = new TopicViewerForm();
+                        _topicViewerForm = new TopicViewerForm(_helpComponents.preprocessor);
+
+                        // position the new window to the right of the text editor (with some spacing)
+                        const int SpacingGap = 15;
+                        const int MinWidth = 100;
+                        int thisRightMostPosition = this.Location.X + this.Width;
+                        _topicViewerForm.Location = new Point(thisRightMostPosition + SpacingGap,this.Location.Y);
+                        _topicViewerForm.Size = new Size(Math.Max(MinWidth,this.ParentForm.Width - thisRightMostPosition - 4 * SpacingGap),this.Height);
+
                         _topicViewerForm.MdiParent = this.ParentForm;
                         _topicViewerForm.Show();
                     }

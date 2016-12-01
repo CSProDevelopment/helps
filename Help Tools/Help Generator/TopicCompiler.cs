@@ -7,29 +7,33 @@ namespace Help_Generator
 {
     class TopicCompiler
     {
-        private delegate string TagHandlerDelegate(string[] startTagComponents,string endTagInnerText);
+        private delegate string StartTagHandlerDelegate(string[] startTagComponents);
+        private delegate string EndTagHandlerDelegate(string endTagInnerText);
 
         private class TagSettings
         {
             public bool IsPairedTag;
             public string StartHtmlTag;
             public string EndHtmlTag;
-            public TagHandlerDelegate TagHandler;
+            public StartTagHandlerDelegate StartTagHandler;
+            public EndTagHandlerDelegate EndTagHandler;
             public int MinTagComponents;
             public int MaxTagComponents;
 
-            public TagSettings(bool isPairedTag,string startHtmlTag,string endHtmlTag,TagHandlerDelegate tagHandler,int minTagComponents,int maxTagComponents)
+            public TagSettings(bool isPairedTag,string startHtmlTag,string endHtmlTag,StartTagHandlerDelegate startTagHandler,
+                EndTagHandlerDelegate endTagHandler,int minTagComponents,int maxTagComponents)
             {
                 IsPairedTag = isPairedTag;
                 StartHtmlTag = startHtmlTag;
                 EndHtmlTag = endHtmlTag;
-                TagHandler = tagHandler;
+                StartTagHandler = startTagHandler;
+                EndTagHandler = endTagHandler;
                 MinTagComponents = minTagComponents;
                 MaxTagComponents = maxTagComponents;
             }
 
             public TagSettings(string startHtmlTag,string endHtmlTag) :
-                this(true,startHtmlTag,endHtmlTag,null,0,0)
+                this(true,startHtmlTag,endHtmlTag,null,null,0,0)
             {
             }
         }
@@ -52,26 +56,27 @@ namespace Help_Generator
             _sb = new StringBuilder();
 
             _tagSettings = new Dictionary<string,TagSettings>();
-            _tagSettings.Add(TagTitle,new TagSettings(true,null,null,TitleHandler,0,0));
-            _tagSettings.Add(ContextTag,new TagSettings(false,null,null,ContextHandler,1,1));
-            //_tagSettings.Add(IndentTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(CenterTag,new TagSettings(true,"","",null,0,0));
+            _tagSettings.Add(TagTitle,new TagSettings(true,null,null,null,EndTitleHandler,0,0));
+            _tagSettings.Add(ContextTag,new TagSettings(false,null,null,StartContextHandler,null,1,1));
+            //_tagSettings.Add(IndentTag,new TagSettings(true,"","",null,null,0,0));
+            //_tagSettings.Add(CenterTag,new TagSettings(true,"","",null,null,0,0));
             _tagSettings.Add(BoldTag,new TagSettings("<b>","</b>"));
             _tagSettings.Add(ItalicsTag,new TagSettings("<i>","</i>"));
-            //_tagSettings.Add(MonospaceTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(FontColorTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(FontSizeTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(UnorderedListTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(OrderedListTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(ListItemTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(HeaderTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(SubheaderTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(ImageTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(LinkTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(LogicTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(PffTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(HtmlTag,new TagSettings(true,"","",null,0,0));
-            //_tagSettings.Add(DefinitionTag,new TagSettings(true,"","",null,0,0));
+            //_tagSettings.Add(MonospaceTag,new TagSettings(true,"","",null,null,0,0));
+            //_tagSettings.Add(FontColorTag,new TagSettings(true,"","",null,null,0,0));
+            //_tagSettings.Add(FontSizeTag,new TagSettings(true,"","",null,null,0,0));
+            //_tagSettings.Add(UnorderedListTag,new TagSettings(true,"","",null,null,0,0));
+            //_tagSettings.Add(OrderedListTag,new TagSettings(true,"","",null,null,0,0));
+            //_tagSettings.Add(ListItemTag,new TagSettings(true,"","",null,null,0,0));
+            //_tagSettings.Add(HeaderTag,new TagSettings(true,"","",null,null,0,0));
+            //_tagSettings.Add(SubheaderTag,new TagSettings(true,"","",null,null,0,0));
+            _tagSettings.Add(ImageTag,new TagSettings(false,null,null,StartImageHandler,null,1,2));
+            _tagSettings.Add(TopicTag,new TagSettings(false,null,null,StartTopicHandler,null,1,1));
+            _tagSettings.Add(LinkTag,new TagSettings(true,null,"</a>",StartLinkHandler,null,1,1));
+            //_tagSettings.Add(LogicTag,new TagSettings(true,"","",null,null,0,0));
+            //_tagSettings.Add(PffTag,new TagSettings(true,"","",null,null,0,0));
+            //_tagSettings.Add(HtmlTag,new TagSettings(true,"","",null,null,0,0));
+            //_tagSettings.Add(DefinitionTag,new TagSettings(true,"","",null,null,0,0));
         }
 
         public string CompileForHtml(string[] lines)
@@ -160,9 +165,9 @@ namespace Help_Generator
             string fullTag = text.Substring(startTagPos + 1,endTagPos - startTagPos - 1).Trim();
             string afterTagText = text.Substring(endTagPos + 1);
 
-            string[] tagComponents = Regex.Split(fullTag,@"\s+");
+            string[] fullTagComponents = Regex.Split(fullTag,@"\s+");
 
-            string tag = tagComponents[0];
+            string tag = fullTagComponents[0];
 
             if( String.IsNullOrWhiteSpace(tag) )
                 throw new Exception("Empty tag around: " + text.Substring(startTagPos));
@@ -194,7 +199,15 @@ namespace Help_Generator
 
             TagSettings thisTagSettings = _tagSettings[tag];
 
-            int numTagComponents = tagComponents.Length - 1;
+            if( !thisTagSettings.IsPairedTag ) // check that the tag ends correctly
+            {
+                if( fullTagComponents.Length == 1 || !fullTagComponents[fullTagComponents.Length - 1].Equals("/") )
+                    throw new Exception(String.Format("The tag {0} is not paired and must end with / around: {1}",tag,text.Substring(startTagPos)));
+            }
+
+            int numTagComponents = fullTagComponents.Length - 1 - ( thisTagSettings.IsPairedTag ? 0 : 1 );
+            string[] tagComponents = new string[numTagComponents];
+            Array.Copy(fullTagComponents,1,tagComponents,0,numTagComponents);
 
             if( numTagComponents < thisTagSettings.MinTagComponents )
                 throw new Exception(String.Format("The tag {0} must have at least {1} argument{2} around: {3}",
@@ -225,63 +238,107 @@ namespace Help_Generator
 
         private string StartTag(TagSettings thisTagSettings,string[] tagComponents)
         {
-            if( thisTagSettings.TagHandler == null )
+            if( thisTagSettings.StartTagHandler == null )
                 return thisTagSettings.StartHtmlTag;
 
             else
-                return thisTagSettings.TagHandler(tagComponents,null);
+                return thisTagSettings.StartTagHandler(tagComponents);
         }
 
         private string EndTag(TagSettings thisTagSettings,string innerText)
         {
-            if( thisTagSettings.TagHandler == null )
+            if( thisTagSettings.EndTagHandler == null )
                 return thisTagSettings.EndHtmlTag;
 
             else
-                return thisTagSettings.TagHandler(null,innerText);
+                return thisTagSettings.EndTagHandler(innerText);
         }
 
 
-        private string TitleHandler(string[] startTagComponents,string endTagInnerText)
+        private string EndTitleHandler(string endTagInnerText)
         {
-            if( endTagInnerText != null ) // end tag
-            {
-                if( _title != null )
-                    throw new Exception("Only one title can be defined.");
+            if( _title != null )
+                throw new Exception("Only one title can be defined.");
 
-                _title = endTagInnerText;
+            _title = endTagInnerText;
+
+            return "";
+        }
+
+        private string StartContextHandler(string[] startTagComponents)
+        {
+            _topicCompilerSettings.AddContextSensitiveHelp(_preprocessedTopic,startTagComponents[0]);
+            return "";
+        }
+
+        private string StartImageHandler(string[] startTagComponents)
+        {
+            if( startTagComponents.Length == 2 )
+            {
+                if( startTagComponents[0].Equals(ImageNoChmAttribute) )
+                {
+                    if( _topicCompilerSettings.ChmCreationMode )
+                        return "";
+                }
+
+                else
+                    throw new Exception(String.Format("Unknown image tags {0} / {1}",startTagComponents[0],startTagComponents[1]));
             }
 
-            return "";
+            Preprocessor.ImagePreprocessor image = _helpComponents.preprocessor.GetImage(startTagComponents[startTagComponents.Length - 1]);
+
+            return String.Format("<img src=\"{0}\" />",_topicCompilerSettings.GetHtmlFilename(image));
         }
 
-        private string ContextHandler(string[] startTagComponents,string endTagInnerText)
+        private string StartTopicHandler(string[] startTagComponents)
         {
-            _topicCompilerSettings.AddContextSensitiveHelp(_preprocessedTopic,startTagComponents[1]);
-            return "";
+            Preprocessor.TopicPreprocessor topic = _helpComponents.preprocessor.GetTopic(startTagComponents[0]);
+            return String.Format("<a href=\"{0}\">{1}</a>",_topicCompilerSettings.GetHtmlFilename(topic),topic.Title);
+        }
+
+        private string StartLinkHandler(string[] startTagComponents)
+        {
+            string url;
+
+            try
+            {
+                Preprocessor.TopicPreprocessor topic = _helpComponents.preprocessor.GetTopic(startTagComponents[0]);
+                url = _topicCompilerSettings.GetHtmlFilename(topic);
+            }
+
+            catch( Exception ) // the topic wasn't found so it should be a URL
+            {
+                url = startTagComponents[0];
+
+                if( url.IndexOf("http") < 0 )
+                    throw new Exception(String.Format("The URL {0} is invalid and must begin with http",url));
+            }
+
+            return String.Format("<a href=\"{0}\">",url);
         }
 
 
         public const string TagTitle = "title";
-        private const string ContextTag = "context";
-        private const string IndentTag = "indent";
-        private const string CenterTag = "center";
-        private const string BoldTag = "b";
-        private const string ItalicsTag = "i";
-        private const string MonospaceTag = "monospace";
-        private const string FontColorTag = "fontcolor";
-        private const string FontSizeTag = "fontsize";
-        private const string UnorderedListTag = "ul";
-        private const string OrderedListTag = "ol";
-        private const string ListItemTag = "li";
-        private const string HeaderTag = "header";
-        private const string SubheaderTag = "subheader";
-        private const string ImageTag = "image";
-        private const string ImageNoChmAttribute = "nochm";
-        private const string LinkTag = "link";
-        private const string LogicTag = "logic";
-        private const string PffTag = "pff";
-        private const string HtmlTag = "html";
-        private const string DefinitionTag = "definition";
+        public const string ContextTag = "context";
+        public const string IndentTag = "indent";
+        public const string CenterTag = "center";
+        public const string BoldTag = "b";
+        public const string ItalicsTag = "i";
+        public const string MonospaceTag = "monospace";
+        public const string FontColorTag = "fontcolor";
+        public const string FontSizeTag = "fontsize";
+        public const string UnorderedListTag = "ul";
+        public const string OrderedListTag = "ol";
+        public const string ListItemTag = "li";
+        public const string HeaderTag = "header";
+        public const string SubheaderTag = "subheader";
+        public const string ImageTag = "image";
+        public const string ImageNoChmAttribute = "nochm";
+        public const string TopicTag = "topic";
+        public const string LinkTag = "link";
+        public const string LogicTag = "logic";
+        public const string PffTag = "pff";
+        public const string HtmlTag = "html";
+        public const string DefinitionTag = "definition";
     }
 }
