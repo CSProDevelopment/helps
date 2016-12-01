@@ -206,5 +206,20 @@ namespace Help_Generator
                 return parentDirectory.Equals(directory) ? null : CalculateResourceFileRoot(parentDirectory);
             }
         }
+
+        public string GetDefinition(string attribute,Preprocessor preprocessor)
+        {
+            attribute = attribute.ToUpper();
+
+            // compile the file if it hasn't been compiled yet or if the definition is missing (because
+            // the definitions file may have changed since the last compilation)
+            if( _definitions == null || !_definitions.ContainsKey(attribute) )
+                Compile(preprocessor);
+
+            if( !_definitions.ContainsKey(attribute) )
+                throw new Exception(String.Format("The definition with attribute {0} has not been defined.",attribute));
+
+            return _definitions[attribute];
+        }
     }
 }

@@ -76,7 +76,7 @@ namespace Help_Generator
             //_tagSettings.Add(LogicTag,new TagSettings(true,"","",null,null,0,0));
             //_tagSettings.Add(PffTag,new TagSettings(true,"","",null,null,0,0));
             //_tagSettings.Add(HtmlTag,new TagSettings(true,"","",null,null,0,0));
-            //_tagSettings.Add(DefinitionTag,new TagSettings(true,"","",null,null,0,0));
+            _tagSettings.Add(DefinitionTag,new TagSettings(false,null,null,StartDefinitionHandler,null,1,1));
         }
 
         public string CompileForHtml(string[] lines)
@@ -315,6 +315,11 @@ namespace Help_Generator
             }
 
             return String.Format("<a href=\"{0}\">",url);
+        }
+
+        private string StartDefinitionHandler(string[] startTagComponents)
+        {
+            return _helpComponents.settings.GetDefinition(startTagComponents[0],_helpComponents.preprocessor);
         }
 
 
