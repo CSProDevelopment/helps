@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using Colorizer;
 
 namespace Help_Generator
 {
@@ -39,7 +40,10 @@ namespace Help_Generator
         }
 
         private Dictionary<string,TagSettings> _tagSettings;
+        private Dictionary<string,string> _blockTags;
+
         private Stack<string> _tagStack;
+        private bool _inBlockTag;
 
         private HelpComponents _helpComponents;
         private Preprocessor.TopicPreprocessor _preprocessedTopic;
@@ -73,10 +77,15 @@ namespace Help_Generator
             _tagSettings.Add(ImageTag,new TagSettings(false,null,null,StartImageHandler,null,1,2));
             _tagSettings.Add(TopicTag,new TagSettings(false,null,null,StartTopicHandler,null,1,1));
             _tagSettings.Add(LinkTag,new TagSettings(true,null,"</a>",StartLinkHandler,null,1,1));
-            //_tagSettings.Add(LogicTag,new TagSettings(true,"","",null,null,0,0));
-            //_tagSettings.Add(PffTag,new TagSettings(true,"","",null,null,0,0));
-            //_tagSettings.Add(HtmlTag,new TagSettings(true,"","",null,null,0,0));
+            _tagSettings.Add(LogicTag,new TagSettings(true,"","",null,EndLogicHandler,0,0));
+            _tagSettings.Add(PffTag,new TagSettings(true,"","",null,EndPffHandler,0,0));
+            _tagSettings.Add(HtmlTag,new TagSettings("",""));
             _tagSettings.Add(DefinitionTag,new TagSettings(false,null,null,StartDefinitionHandler,null,1,1));
+
+            _blockTags = new Dictionary<string,string>();
+            _blockTags.Add(MakeTag(LogicTag,true),MakeTag(LogicTag,false));
+            _blockTags.Add(MakeTag(PffTag,true),MakeTag(PffTag,false));
+            _blockTags.Add(MakeTag(HtmlTag,true),MakeTag(HtmlTag,false));
         }
 
         public string CompileForHtml(string[] lines)
@@ -112,19 +121,47 @@ namespace Help_Generator
             return _sb.ToString();
         }
 
+        public static string MakeTag(string tag,bool startTag)
+        {
+            return String.Format("<{0}{1}>",startTag ? "" : "/",tag);
+        }
+
         private List<string> LinesToParagraphs(string[] lines)
         {
             List<string> paragraphs = new List<string>();
             string constructedLine = "";
+            string inBlockEndTag = null;
 
             for( int i = 0; i < lines.Length; i++ )
             {
-                string line = lines[i].Trim();
+                string line = lines[i];
+                bool lineIsBlank = String.IsNullOrWhiteSpace(line);
 
-                if( line.Length > 0 )
-                    constructedLine = constructedLine + ( ( constructedLine.Length > 0 ) ? " " : "" ) + line;
+                if( inBlockEndTag != null )
+                    constructedLine = constructedLine + "\r\n" + line.TrimEnd();
 
-                if( line.Length == 0 || ( i + 1 ) == lines.Length )
+                else if( !lineIsBlank )
+                    constructedLine = constructedLine + ( ( constructedLine.Length > 0 ) ? " " : "" ) + line.Trim();
+
+                if( inBlockEndTag == null ) // see if there is a block tag specifier
+                {
+                    foreach( var kp in _blockTags )
+                    {
+                        if( line.Contains(kp.Key) )
+                        {
+                            inBlockEndTag = kp.Value;
+                            break;
+                        }
+                    }
+                }
+
+                if( inBlockEndTag != null ) // if in a block, see if it has ended
+                {
+                    if( line.Contains(inBlockEndTag) )
+                        inBlockEndTag = null;
+                }
+
+                if( ( inBlockEndTag == null && !lineIsBlank ) || ( i + 1 ) == lines.Length )
                 {
                     if( constructedLine.Length > 0 )
                         paragraphs.Add(constructedLine);
@@ -133,6 +170,9 @@ namespace Help_Generator
                 }
             }
 
+            if( inBlockEndTag != null )
+                throw new Exception(String.Format("The block ending tag {0} was not found.",inBlockEndTag));
+
             return paragraphs;
         }
 
@@ -140,11 +180,15 @@ namespace Help_Generator
         private string ProcessParagraph(string paragraph)
         {
             _tagStack = new Stack<string>();
+            _inBlockTag = false;
 
-            string html = ProcessText(ref paragraph);
+            string html = "";
+
+            while( !String.IsNullOrWhiteSpace(paragraph) )
+                html = html + ProcessText(ref paragraph);
 
             if( _tagStack.Count > 0 )
-                throw new Exception("Missing end tag at the end of the paragraph: " + paragraph);
+                throw new Exception(String.Format("Missing end tag {0} at the end of the paragraph: {1}",_tagStack.Pop(),paragraph));
 
             return html;
         }
@@ -154,7 +198,11 @@ namespace Help_Generator
             int startTagPos = text.IndexOf('<');
 
             if( startTagPos < 0 ) // no more tags so get out
-                return text;
+            {
+                string savedText = text;
+                text = "";
+                return savedText;
+            }
 
             int endTagPos = text.IndexOf('>',startTagPos + 1);
 
@@ -162,10 +210,11 @@ namespace Help_Generator
                 throw new Exception("Invalid tag construction around: " + text.Substring(startTagPos));
 
             string beforeTagText = text.Substring(0,startTagPos);
-            string fullTag = text.Substring(startTagPos + 1,endTagPos - startTagPos - 1).Trim();
+            string fullTag = text.Substring(startTagPos,endTagPos - startTagPos + 1);
+            string fullTagContents = fullTag.Substring(1,fullTag.Length - 2).Trim();
             string afterTagText = text.Substring(endTagPos + 1);
 
-            string[] fullTagComponents = Regex.Split(fullTag,@"\s+");
+            string[] fullTagComponents = Regex.Split(fullTagContents,@"\s+");
 
             string tag = fullTagComponents[0];
 
@@ -182,20 +231,40 @@ namespace Help_Generator
                 if( _tagStack.Count == 0 )
                     throw new Exception("End tag without a start tag around: " + text.Substring(startTagPos));
 
+                // if in a block, ignore ending tags unless they are ending the block tag
+                if( _inBlockTag && !_tagStack.Peek().Equals(tag) )
+                {
+                    text = afterTagText;
+                    return beforeTagText + fullTag;
+                }
+
                 string lastStartTag = _tagStack.Pop();
 
                 if( !lastStartTag.Equals(tag) )
                     throw new Exception(String.Format("End tag </{0}> does not match the last start tag <{1}> around: {2}",tag,lastStartTag,text.Substring(startTagPos)));
 
-                text = afterTagText;
+                _inBlockTag = false;
 
+                text = afterTagText;
                 return beforeTagText;
             }
 
 
             // processing start tags
+
+            // only definition tags are allowed while in a block
+            if( _inBlockTag && !tag.Equals(DefinitionTag) )
+            {
+                text = text.Substring(startTagPos + 1);
+                return beforeTagText + "<" + ProcessText(ref text);
+            }
+
             if( !_tagSettings.ContainsKey(tag) )
                 throw new Exception("Invalid tag around: " + text.Substring(startTagPos));
+
+            // see if this is a block tag
+            if( _blockTags.ContainsKey(MakeTag(tag,true)) )
+                _inBlockTag = true;
 
             TagSettings thisTagSettings = _tagSettings[tag];
 
@@ -225,14 +294,12 @@ namespace Help_Generator
                 _tagStack.Push(tag);
 
                 string innerText = ProcessText(ref afterTagText);
-                string endTagOutput = EndTag(thisTagSettings,innerText);
-                endOutput = innerText + endTagOutput;
+                endOutput = EndTag(thisTagSettings,innerText);
             }
 
             string html = beforeTagText + startOutput + endOutput + ProcessText(ref afterTagText);
 
             text = afterTagText;
-
             return html;
         }
 
@@ -245,13 +312,13 @@ namespace Help_Generator
                 return thisTagSettings.StartTagHandler(tagComponents);
         }
 
-        private string EndTag(TagSettings thisTagSettings,string innerText)
+        private string EndTag(TagSettings thisTagSettings,string endTagInnerText)
         {
             if( thisTagSettings.EndTagHandler == null )
-                return thisTagSettings.EndHtmlTag;
+                return endTagInnerText + thisTagSettings.EndHtmlTag;
 
             else
-                return thisTagSettings.EndTagHandler(innerText);
+                return thisTagSettings.EndTagHandler(endTagInnerText);
         }
 
 
@@ -315,6 +382,29 @@ namespace Help_Generator
             }
 
             return String.Format("<a href=\"{0}\">",url);
+        }
+
+        private string TrimOnlyOneNewlineBothEnds(string text)
+        {
+            int startTrimChars = ( text.Length >= 2 && text[0] == '\r' && text[1] == '\n' ) ? 2 : 0;
+            int endTrimChars = ( text.Length >= ( 2 + startTrimChars ) && text[text.Length - 2] == '\r' && text[text.Length - 1] == '\n' ) ? 2 : 0;
+            return text.Substring(startTrimChars,text.Length - startTrimChars - endTrimChars);
+        }
+
+        private string EndLogicHandler(string endTagInnerText)
+        {
+            if( _helpComponents._logicColorizer == null )
+                _helpComponents._logicColorizer = new LogicColorizer(new LogicColorizerHtmlHelp());
+
+            return _helpComponents._logicColorizer.Colorize(TrimOnlyOneNewlineBothEnds(endTagInnerText));
+        }
+
+        private string EndPffHandler(string endTagInnerText)
+        {
+            if( _helpComponents._pffColorizer == null )
+                _helpComponents._pffColorizer = new Colorizer.PffColorizer(new PffColorizerHtmlHelp());
+
+            return _helpComponents._pffColorizer.Colorize(TrimOnlyOneNewlineBothEnds(endTagInnerText));
         }
 
         private string StartDefinitionHandler(string[] startTagComponents)

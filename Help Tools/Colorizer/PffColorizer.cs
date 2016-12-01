@@ -9,6 +9,7 @@ namespace Colorizer
         private SortedSet<string> _typeWords;
         private SortedSet<string> _headingWords;
         private SortedSet<string> _attributeWords;
+        private PffColorizerInterface _defaultPffColorizer;
 
         public PffColorizer()
         {
@@ -16,6 +17,16 @@ namespace Colorizer
             _typeWords = hwr.ReadWordBlock(true);
             _headingWords = hwr.ReadWordBlock(true);
             _attributeWords = hwr.ReadWordBlock(true);
+       }
+
+        public PffColorizer(PffColorizerInterface defaultPffColorizer) : this()
+        {
+            _defaultPffColorizer = defaultPffColorizer;
+        }
+
+        public string Colorize(string sourceText)
+        {
+            return Colorize(_defaultPffColorizer,sourceText);
         }
 
         public string Colorize(PffColorizerInterface pffColorizer,string sourceText)

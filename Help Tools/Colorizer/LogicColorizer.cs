@@ -7,11 +7,22 @@ namespace Colorizer
     class LogicColorizer
     {
         private SortedSet<string> _reservedWords;
+        private LogicColorizerInterface _defaultLogicColorizer;
 
         public LogicColorizer()
         {
             HighlightWordReader hwr = new HighlightWordReader(HighlightWordReader.LogicFilename);
             _reservedWords = hwr.ReadWordBlock(false);
+        }
+
+        public LogicColorizer(LogicColorizerInterface defaultLogicColorizer) : this()
+        {
+            _defaultLogicColorizer = defaultLogicColorizer;
+        }
+
+        public string Colorize(string sourceText)
+        {
+            return Colorize(_defaultLogicColorizer,sourceText);
         }
 
         private enum ProcessType { LineComment, BracketComment, QuotedString, Number, Keyword, Newline, None };

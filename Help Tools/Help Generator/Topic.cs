@@ -38,16 +38,16 @@ namespace Help_Generator
             {
                 string text = File.ReadAllText(filename);
 
-                string openTag = "<" + TopicCompiler.TagTitle + ">";
-                string closeTag = "</" + TopicCompiler.TagTitle + ">";
+                string startTag = TopicCompiler.MakeTag(TopicCompiler.TagTitle,true);
+                string endTag = TopicCompiler.MakeTag(TopicCompiler.TagTitle,false);
 
-                int openTagPos = text.IndexOf(openTag);
-                int closeTagPos = text.IndexOf(closeTag);
+                int startTagPos = text.IndexOf(startTag);
+                int endTagPos = text.IndexOf(endTag);
 
-                if( openTagPos >= 0 && closeTagPos > openTagPos )
+                if( startTagPos >= 0 && endTagPos > startTagPos )
                 {
-                    int titlePos = openTagPos + openTag.Length;
-                    return text.Substring(titlePos,closeTagPos - titlePos);
+                    int titlePos = startTagPos + startTag.Length;
+                    return text.Substring(titlePos,endTagPos - titlePos);
                 }
             }
 
