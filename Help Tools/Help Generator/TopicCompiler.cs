@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 using System.Text.RegularExpressions;
 using Colorizer;
@@ -66,9 +67,7 @@ namespace Help_Generator
             _tagSettings.Add(CenterTag,new TagSettings(true,"<div align=\"center\">","</div>",null,null,0,0));
             _tagSettings.Add(BoldTag,new TagSettings("<b>","</b>"));
             _tagSettings.Add(ItalicsTag,new TagSettings("<i>","</i>"));
-            //_tagSettings.Add(MonospaceTag,new TagSettings(true,"","",null,null,0,0));
-            //_tagSettings.Add(FontColorTag,new TagSettings(true,"","",null,null,0,0));
-            _tagSettings.Add(FontSizeTag,new TagSettings(true,null,"</div>",StartFontSizeHandler,null,1,1));
+            _tagSettings.Add(FontTag,new TagSettings(true,null,"</div>",StartFontHandler,null,1,3));
             //_tagSettings.Add(UnorderedListTag,new TagSettings(true,"","",null,null,0,0));
             //_tagSettings.Add(OrderedListTag,new TagSettings(true,"","",null,null,0,0));
             //_tagSettings.Add(ListItemTag,new TagSettings(true,"","",null,null,0,0));
@@ -346,21 +345,62 @@ namespace Help_Generator
             return "";
         }
 
-        private string StartFontSizeHandler(string[] startTagComponents)
+        private string StartFontHandler(string[] startTagComponents)
         {
-            if( startTagComponents[0].Equals(HeaderTag) || startTagComponents[0].Equals(SubheaderTag) )
-                return String.Format("<div class=\"{0}_size\">",startTagComponents[0]);
+            string classes = "";
+            string styles = "";
+            int numTypes = 0;
+            int numSizes = 0;
+            int numColors = 0;
 
-            try
+            foreach( string startTagComponent in startTagComponents )
             {
-                double em = double.Parse(startTagComponents[0]);
-                return String.Format("<div style=\"font-size: {0}em;\">",em);
+                double em = 0;
+
+                // check for the font type
+                if( startTagComponent.Equals(FontMonospaceAttribute) )
+                {
+                    classes = classes + "monospace ";
+                    numTypes++;
+                }
+
+                // check for the font size
+                else if( startTagComponent.Equals(HeaderTag) || startTagComponent.Equals(SubheaderTag) )
+                {
+                    classes = classes + String.Format("{0}_size ",startTagComponent);
+                    numSizes++;
+                }
+
+                else if( double.TryParse(startTagComponent,out em) )
+                {
+                    styles = styles + String.Format("font-size: {0}em; ",em);
+                    numSizes++;
+                }
+
+                // check for font color
+                else
+                {
+                    try
+                    {
+                        Color color = ColorTranslator.FromHtml(startTagComponent);
+                        styles = styles + String.Format("color: {0}; ",ColorTranslator.ToHtml(color));
+                        numColors++;
+                    }
+
+                    catch( Exception )
+                    {
+                        throw new Exception("The font tag has an invalid attribute: " + startTagComponent);
+                    }
+                }
+
+                if( numTypes > 1 || numSizes > 1 || numColors > 1)
+                    throw new Exception("The font tag cannot have more than one type, size, or color attribute.");
             }
 
-            catch( Exception )
-            {
-                throw new Exception("The fontsize tag takes either: header, subheader, or an em value.");
-            }
+            classes = ( classes.Length > 0 ) ? String.Format(" class=\"{0}\"",classes) : "";
+            styles = ( styles.Length > 0 ) ? String.Format(" style=\"{0}\"",styles) : "";
+
+            return String.Format("<div{0}{1}>",classes,styles);
         }
 
         private string StartTitleHeaderHandler(string[] startTagComponents)
@@ -452,9 +492,8 @@ namespace Help_Generator
         public const string CenterTag = "center";
         public const string BoldTag = "b";
         public const string ItalicsTag = "i";
-        public const string MonospaceTag = "monospace";
-        public const string FontColorTag = "fontcolor";
-        public const string FontSizeTag = "fontsize";
+        public const string FontTag = "font";
+        public const string FontMonospaceAttribute = "monospace";
         public const string UnorderedListTag = "ul";
         public const string OrderedListTag = "ol";
         public const string ListItemTag = "li";
