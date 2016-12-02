@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using Colorizer;
@@ -211,7 +212,7 @@ namespace Help_Generator
             int newlinePos = -1;
 
             // if a newline immediately follows or preceeds a tag, it won't be considered a break
-            while( ( newlinePos = text.IndexOf(NewLineSignifier,newlinePos + 1) ) >= 0 )
+            while( ( ( newlinePos + 1 ) < text.Length ) && ( ( newlinePos = text.IndexOf(NewLineSignifier,newlinePos + 1) ) >= 0 ) )
             {
                 if( ( newlinePos > 0 && text[newlinePos - 1] == '>' ) ||
                     ( ( newlinePos + NewLineSignifier.Length ) < text.Length && text[newlinePos + NewLineSignifier.Length] == '<' ) )
@@ -538,7 +539,10 @@ namespace Help_Generator
 
             Preprocessor.ImagePreprocessor image = _helpComponents.preprocessor.GetImage(startTagComponents[startTagComponents.Length - 1]);
 
-            return String.Format("<img src=\"{0}\" />",_topicCompilerSettings.GetHtmlFilename(image));
+            // for accessibility, set the title to the name of the image, replacing underscores with spaces
+            string imageTitle = Path.GetFileNameWithoutExtension(image.Filename).Replace('_',' ');
+
+            return String.Format("<img src=\"{0}\" title=\"{1}\"/>",_topicCompilerSettings.GetHtmlFilename(image),imageTitle);
         }
 
         private string StartTopicHandler(string[] startTagComponents)

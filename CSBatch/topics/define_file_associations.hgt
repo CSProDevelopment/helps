@@ -1,0 +1,32 @@
+﻿<title>Define File Associations</title> <titleheader />
+<context HIDD_PIFDLG />
+
+CSBatch requires a minimum of two files before it can run (an Input Data File and a Listing File), although the minimum number you will be solicited for from the Define File Associations dialog is three (you optionally have the choice of specifying an Output File).
+
+However, some applications use more files. For example, there may be one or more external lookup files. In addition, usage of the <b>write</b> and <b>impute</b> commands require file associations to be supplied.
+
+So you will always see the "Define File Associations" dialog box—what will vary is what is being asked of you. The following shows the order in which files will be solicited from you, and why:
+
+<subheader>Input Data File</subheader>
+
+This is the file that your program will run upon. For example, if your program contains a series of edits to be performed on your data files, this is your place to name those files. Please note that only one data file can be used in any run—and you must supply it, as CSBatch can not run without it. But rest assured, if you only use this data file as the input data, it will never be altered.
+
+<subheader>External File (dict_name)</subheader>
+
+For each lookup file your application uses, you must supply the data file to which the lookup dictionary refers. CSBatch will not allow you to run your application without naming this file. The name in parenthesis is the unique (internal) dictionary name. A separate line entry will be given for each lookup file attached to your application.
+
+<subheader>Output File</subheader>
+
+This is where the modified input data file will be saved. For example, if your program contains a series of edits, the original data file will never be modified. Rather, the changes that you make will be saved in whatever output file you supply, on a case-by-case basis. If no output file is named, no changes will be saved. This is useful when you are debugging or developing your program, as you might prefer to see what's going on by using the errmsg function (which go to the Listing File), rather than seeing the modified data file.
+
+<subheader>Write File</subheader>
+
+If your program includes one or more <logiccolor>write</logiccolor> functions, CSBatch will ask you for the file to write them all to. If you fail to name a file, all <logiccolor>write</logiccolor> function text will be placed in the listing file.
+
+<subheader>Impute Freq File</subheader>
+
+If your program includes one or more <logiccolor>impute</logiccolor> functions, CSBatch will ask you for the file to save these imputations to. If you do not provide this file, CSBatch will run on your data, but you will receive an error message about the expected file being missing.
+
+<subheader>Listing File</subheader>
+
+This file contains a summary of the results of your run and must be provided. It will tell you the input data file used, start and stop times, the number of records read, and how many had a "bad structure" (i.e., required records were missing). If there are any errmsg functions in your program, they will be written to this file after the summary information just described.
