@@ -111,5 +111,25 @@ namespace Colorizer
 
             return sb.ToString();
         }
+
+        public string ColorizeWord(string word)
+        {
+            StringBuilder sb = new StringBuilder();
+            string upperCaseWord = word.ToUpper();
+
+            if( _headingWords.Contains(upperCaseWord) )
+                _defaultPffColorizer.AddHeading(sb,word);
+
+            else if( _typeWords.Contains(upperCaseWord) )
+                _defaultPffColorizer.AddType(sb,word);
+
+            else if( _attributeWords.Contains(upperCaseWord) )
+                _defaultPffColorizer.AddAttribute(sb,word);
+
+            else
+                throw new Exception("PFF files do not have the word " + word);
+
+            return sb.ToString();
+        }
     }
 }

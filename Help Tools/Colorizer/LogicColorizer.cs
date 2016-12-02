@@ -232,5 +232,19 @@ namespace Colorizer
 
             return sb.ToString();
         }
+
+        public string ColorizeWord(string word)
+        {
+            StringBuilder sb = new StringBuilder();
+            string upperCaseWord = word.ToUpper();
+
+            if( _reservedWords.Contains(upperCaseWord) )
+                _defaultLogicColorizer.AddKeyword(sb,word);
+
+            else
+                throw new Exception("Logic files do not have the word " + word);
+
+            return sb.ToString();
+        }
     }
 }

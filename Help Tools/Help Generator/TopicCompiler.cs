@@ -40,7 +40,7 @@ namespace Help_Generator
 
         private Stack<string> _tagStack;
         private bool _inBlockTag;
-        private Stack<string> _indentStack;
+        private Stack<string> _filledEndTagStack;
 
         private HelpComponents _helpComponents;
         private Preprocessor.TopicPreprocessor _preprocessedTopic;
@@ -59,14 +59,13 @@ namespace Help_Generator
             _tagSettings = new Dictionary<string,TagSettings>();
             _tagSettings.Add(TagTitle,new TagSettings(true,null,(EndTagHandlerDelegate)EndTitleHandler,0,0));
             _tagSettings.Add(ContextTag,new TagSettings(false,(StartTagHandlerDelegate)StartContextHandler,null,1,1));
-            _tagSettings.Add(IndentTag,new TagSettings(true,(StartTagHandlerDelegate)StartIndentHandler,(EndTagHandlerDelegate)EndIndentHandler,0,1));
+            _tagSettings.Add(IndentTag,new TagSettings(true,(StartTagHandlerDelegate)StartIndentHandler,(EndTagHandlerDelegate)EndTagHandlerUsingFilledEndTagStack,0,1));
             _tagSettings.Add(CenterTag,new TagSettings("<div align=\"center\">","</div>"));
             _tagSettings.Add(BoldTag,new TagSettings("<b>","</b>"));
             _tagSettings.Add(ItalicsTag,new TagSettings("<i>","</i>"));
             _tagSettings.Add(FontTag,new TagSettings(true,(StartTagHandlerDelegate)StartFontHandler,"</div>",1,3));
-            //_tagSettings.Add(UnorderedListTag,new TagSettings(true,"","",null,null,0,0));
-            //_tagSettings.Add(OrderedListTag,new TagSettings(true,"","",null,null,0,0));
-            //_tagSettings.Add(ListItemTag,new TagSettings(true,"","",null,null,0,0));
+            _tagSettings.Add(ListTag,new TagSettings(true,(StartTagHandlerDelegate)StartListHandler,(EndTagHandlerDelegate)EndTagHandlerUsingFilledEndTagStack,0,1));
+            _tagSettings.Add(ListItemTag,new TagSettings("<li>","</li>"));
             _tagSettings.Add(HeaderTag,new TagSettings("<div class=\"header_size header\">","</div>"));
             _tagSettings.Add(TitleHeaderTag,new TagSettings(false,(StartTagHandlerDelegate)StartTitleHeaderHandler,null,0,0));
             _tagSettings.Add(SubheaderTag,new TagSettings("<div class=\"subheader_size subheader\">","</div>"));
@@ -74,7 +73,9 @@ namespace Help_Generator
             _tagSettings.Add(TopicTag,new TagSettings(false,(StartTagHandlerDelegate)StartTopicHandler,null,1,1));
             _tagSettings.Add(LinkTag,new TagSettings(true,(StartTagHandlerDelegate)StartLinkHandler,"</a>",1,1));
             _tagSettings.Add(LogicTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicHandler,0,0));
+            _tagSettings.Add(LogicColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicColorHandler,0,0));
             _tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
+            _tagSettings.Add(PffColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffColorHandler,0,0));
             _tagSettings.Add(HtmlTag,new TagSettings("",""));
 
             _blockTags = new Dictionary<string,string>();
@@ -183,7 +184,7 @@ namespace Help_Generator
         {
             _tagStack = new Stack<string>();
             _inBlockTag = false;
-            _indentStack = new Stack<string>();
+            _filledEndTagStack = new Stack<string>();
 
             string preprocessedParagraph = ProcessDefinitions(paragraph);
             string text = "";
@@ -395,6 +396,11 @@ namespace Help_Generator
         }
 
 
+        private string EndTagHandlerUsingFilledEndTagStack(string endTagInnerText)
+        {
+            return endTagInnerText + _filledEndTagStack.Pop();
+        }
+
         private string EndTitleHandler(string endTagInnerText)
         {
             if( _title != null )
@@ -427,14 +433,9 @@ namespace Help_Generator
                 endText = endText + "</div>";
             }
 
-            _indentStack.Push(endText);
+            _filledEndTagStack.Push(endText);
 
             return text;
-        }
-
-        private string EndIndentHandler(string endTagInnerText)
-        {
-            return endTagInnerText + _indentStack.Pop();
         }
 
         private string StartFontHandler(string[] startTagComponents)
@@ -493,6 +494,24 @@ namespace Help_Generator
             styles = ( styles.Length > 0 ) ? String.Format(" style=\"{0}\"",styles) : "";
 
             return String.Format("<div{0}{1}>",classes,styles);
+        }
+
+        private string StartListHandler(string[] startTagComponents)
+        {
+            bool unorderedList = true;
+
+            if( ( startTagComponents.Length == 1 ) )
+            {
+                if( startTagComponents[0].Equals(ListOrderedAttribute) )
+                    unorderedList = false;
+
+                else
+                    throw new Exception("The list tag has an invalid attribute: " + startTagComponents[0]);
+            }
+
+            _filledEndTagStack.Push(unorderedList ? "</ul>" : "</ol>");
+
+            return unorderedList ? "<ul>" : "<ol>";
         }
 
         private string StartTitleHeaderHandler(string[] startTagComponents)
@@ -556,20 +575,37 @@ namespace Help_Generator
             return text.Substring(startTrimChars,text.Length - startTrimChars - endTrimChars);
         }
 
-        private string EndLogicHandler(string endTagInnerText)
+        private void CreateLogicPffColorizers()
         {
             if( _helpComponents._logicColorizer == null )
                 _helpComponents._logicColorizer = new LogicColorizer(new LogicColorizerHtmlHelp());
 
+            if( _helpComponents._pffColorizer == null )
+                _helpComponents._pffColorizer = new Colorizer.PffColorizer(new PffColorizerHtmlHelp());
+        }
+
+        private string EndLogicHandler(string endTagInnerText)
+        {
+            CreateLogicPffColorizers();
             return _helpComponents._logicColorizer.Colorize(TrimOnlyOneNewlineBothEnds(endTagInnerText));
         }
 
+        private string EndLogicColorHandler(string endTagInnerText)
+        {
+            CreateLogicPffColorizers();
+            return _helpComponents._logicColorizer.ColorizeWord(endTagInnerText.Trim());
+        }        
+
         private string EndPffHandler(string endTagInnerText)
         {
-            if( _helpComponents._pffColorizer == null )
-                _helpComponents._pffColorizer = new Colorizer.PffColorizer(new PffColorizerHtmlHelp());
-
+            CreateLogicPffColorizers();
             return _helpComponents._pffColorizer.Colorize(TrimOnlyOneNewlineBothEnds(endTagInnerText));
+        }
+
+        private string EndPffColorHandler(string endTagInnerText)
+        {
+            CreateLogicPffColorizers();
+            return _helpComponents._pffColorizer.ColorizeWord(endTagInnerText.Trim());
         }
 
 
@@ -581,8 +617,8 @@ namespace Help_Generator
         public const string ItalicsTag = "i";
         public const string FontTag = "font";
         public const string FontMonospaceAttribute = "monospace";
-        public const string UnorderedListTag = "ul";
-        public const string OrderedListTag = "ol";
+        public const string ListTag = "list";
+        public const string ListOrderedAttribute= "ordered";
         public const string ListItemTag = "li";
         public const string HeaderTag = "header";
         public const string TitleHeaderTag = "titleheader";
@@ -592,7 +628,9 @@ namespace Help_Generator
         public const string TopicTag = "topic";
         public const string LinkTag = "link";
         public const string LogicTag = "logic";
+        public const string LogicColorTag = "logiccolor";
         public const string PffTag = "pff";
+        public const string PffColorTag = "pffcolor";
         public const string HtmlTag = "html";
         public const string DefinitionTag = "definition";
 
