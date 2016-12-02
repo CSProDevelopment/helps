@@ -4,30 +4,19 @@ namespace Colorizer
 {
     class LogicColorizerHtml : LogicColorizerInterface
     {
-        protected virtual void StartBlockBeforeDiv(StringBuilder sb)
+        public virtual void StartBlock(StringBuilder sb)
         {
             sb.Append(
                 "<!doctype html>\n" +
                 "<html>\n" +
                 "<head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8' /></head>\n" +
-                "<body>\n");
+                "<body>\n" +
+                "<div style='word-wrap:break-word;margin:0px;padding:0px;border:0px;background-color:#ffffff;color:#000000;font-family:Courier New;font-size:10pt;'>\n");
         }
 
-        public void StartBlock(StringBuilder sb)
+        public virtual void EndBlock(StringBuilder sb)
         {
-            StartBlockBeforeDiv(sb);
-            sb.Append("<div style='word-wrap:break-word;margin:0px;padding:0px;border:0px;background-color:#ffffff;color:#000000;font-family:Courier New;font-size:10pt;'>\n");
-        }
-
-        public void EndBlock(StringBuilder sb)
-        {
-            sb.Append("</div>\n");
-            EndBlockAfterDiv(sb);
-        }
-
-        protected virtual void EndBlockAfterDiv(StringBuilder sb)
-        {
-            sb.Append("</body>\n</html>\n");
+            sb.Append("</div>\n</body>\n</html>\n");
         }
 
         public void AddComment(StringBuilder sb,string comment)
@@ -63,12 +52,14 @@ namespace Colorizer
 
     class LogicColorizerHtmlHelp : LogicColorizerHtml
     {
-        protected override void StartBlockBeforeDiv(StringBuilder sb)
+        public override void StartBlock(StringBuilder sb)
         {
+            sb.Append("<div class=\"code_colorization\">");
         }
 
-        protected override void EndBlockAfterDiv(StringBuilder sb)
+        public override void EndBlock(StringBuilder sb)
         {
+            sb.Append("</div>");
         }
     }
 }

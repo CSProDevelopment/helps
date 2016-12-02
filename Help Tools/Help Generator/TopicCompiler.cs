@@ -40,6 +40,7 @@ namespace Help_Generator
 
         private Stack<string> _tagStack;
         private bool _inBlockTag;
+        private Stack<string> _indentStack;
 
         private HelpComponents _helpComponents;
         private Preprocessor.TopicPreprocessor _preprocessedTopic;
@@ -58,7 +59,7 @@ namespace Help_Generator
             _tagSettings = new Dictionary<string,TagSettings>();
             _tagSettings.Add(TagTitle,new TagSettings(true,null,(EndTagHandlerDelegate)EndTitleHandler,0,0));
             _tagSettings.Add(ContextTag,new TagSettings(false,(StartTagHandlerDelegate)StartContextHandler,null,1,1));
-            //_tagSettings.Add(IndentTag,new TagSettings(true,"","",null,null,0,0));
+            _tagSettings.Add(IndentTag,new TagSettings(true,(StartTagHandlerDelegate)StartIndentHandler,(EndTagHandlerDelegate)EndIndentHandler,0,1));
             _tagSettings.Add(CenterTag,new TagSettings("<div align=\"center\">","</div>"));
             _tagSettings.Add(BoldTag,new TagSettings("<b>","</b>"));
             _tagSettings.Add(ItalicsTag,new TagSettings("<i>","</i>"));
@@ -183,14 +184,24 @@ namespace Help_Generator
         {
             _tagStack = new Stack<string>();
             _inBlockTag = false;
+            _indentStack = new Stack<string>();
 
+            string savedParagraph = paragraph;
             string html = "";
 
-            while( !String.IsNullOrWhiteSpace(paragraph) )
-                html = html + ProcessText(ref paragraph);
+            try
+            {
+                while( !String.IsNullOrWhiteSpace(paragraph) )
+                    html = html + ProcessText(ref paragraph);
 
-            if( _tagStack.Count > 0 )
-                throw new Exception(String.Format("Missing end tag {0} at the end of the paragraph: {1}",_tagStack.Pop(),paragraph));
+                if( _tagStack.Count > 0 )
+                    throw new Exception(String.Format("Missing end tag {0} at the end of the paragraph.",_tagStack.Pop()));
+            }
+
+            catch( Exception exception )
+            {
+                throw new Exception(String.Format("Error \"{0}\" processing: {1}",exception.Message,savedParagraph));
+            }
 
             return html;
         }
@@ -355,6 +366,32 @@ namespace Help_Generator
         {
             _topicCompilerSettings.AddContextSensitiveHelp(_preprocessedTopic,startTagComponents[0]);
             return "";
+        }
+
+        private string StartIndentHandler(string[] startTagComponents)
+        {
+            int numIndents = 1;
+
+            if( ( startTagComponents.Length == 1 && !Int32.TryParse(startTagComponents[0],out numIndents) ) || numIndents < 1 )
+                throw new Exception("The indent tag has an invalid attribute: " + startTagComponents[0]);
+
+            string text = "";
+            string endText = "";
+
+            for( int i = 0; i < numIndents; i++ )
+            {
+                text = text + "<div class=\"indent\">";
+                endText = endText + "</div>";
+            }
+
+            _indentStack.Push(endText);
+
+            return text;
+        }
+
+        private string EndIndentHandler(string endTagInnerText)
+        {
+            return endTagInnerText + _indentStack.Pop();
         }
 
         private string StartFontHandler(string[] startTagComponents)
