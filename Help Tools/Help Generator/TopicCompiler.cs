@@ -76,7 +76,6 @@ namespace Help_Generator
             _tagSettings.Add(LogicTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicHandler,0,0));
             _tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
             _tagSettings.Add(HtmlTag,new TagSettings("",""));
-            _tagSettings.Add(DefinitionTag,new TagSettings(false,(StartTagHandlerDelegate)StartDefinitionHandler,null,1,1));
 
             _blockTags = new Dictionary<string,string>();
             _blockTags.Add(MakeTag(LogicTag,true),MakeTag(LogicTag,false));
@@ -137,14 +136,14 @@ namespace Help_Generator
 
             for( int i = 0; i < lines.Length; i++ )
             {
-                string line = lines[i];
+                string line = lines[i].TrimEnd();
                 bool lineIsBlank = String.IsNullOrWhiteSpace(line);
 
                 if( inBlockEndTag != null )
-                    constructedLine = constructedLine + "\r\n" + line.TrimEnd();
+                    constructedLine = constructedLine + "\r\n" + line;
 
                 else if( !lineIsBlank )
-                    constructedLine = constructedLine + ( ( constructedLine.Length > 0 ) ? " " : "" ) + line.Trim();
+                    constructedLine = constructedLine + ( ( constructedLine.Length > 0 ) ? NewLineSignifier : "" ) + line.TrimStart();
 
                 if( inBlockEndTag == null ) // see if there is a block tag specifier
                 {
@@ -164,7 +163,7 @@ namespace Help_Generator
                         inBlockEndTag = null;
                 }
 
-                if( ( inBlockEndTag == null && !lineIsBlank ) || ( i + 1 ) == lines.Length )
+                if( ( inBlockEndTag == null && lineIsBlank ) || ( i + 1 ) == lines.Length )
                 {
                     if( constructedLine.Length > 0 )
                         paragraphs.Add(constructedLine);
@@ -186,13 +185,13 @@ namespace Help_Generator
             _inBlockTag = false;
             _indentStack = new Stack<string>();
 
-            string savedParagraph = paragraph;
-            string html = "";
+            string preprocessedParagraph = ProcessDefinitions(paragraph);
+            string text = "";
 
             try
             {
-                while( !String.IsNullOrWhiteSpace(paragraph) )
-                    html = html + ProcessText(ref paragraph);
+                while( !String.IsNullOrWhiteSpace(preprocessedParagraph) )
+                    text = text + ProcessText(ref preprocessedParagraph);
 
                 if( _tagStack.Count > 0 )
                     throw new Exception(String.Format("Missing end tag {0} at the end of the paragraph.",_tagStack.Pop()));
@@ -200,10 +199,54 @@ namespace Help_Generator
 
             catch( Exception exception )
             {
-                throw new Exception(String.Format("Error \"{0}\" processing: {1}",exception.Message,savedParagraph));
+                throw new Exception(String.Format("Error \"{0}\" processing: {1}",exception.Message,paragraph));
             }
 
-            return html;
+            return ReplaceNewlinesWithBreaks(text);
+        }
+
+        private string ReplaceNewlinesWithBreaks(string text)
+        {
+            int newlinePos = -1;
+
+            // if a newline immediately follows or preceeds a tag, it won't be considered a break
+            while( ( newlinePos = text.IndexOf(NewLineSignifier,newlinePos + 1) ) >= 0 )
+            {
+                if( ( newlinePos > 0 && text[newlinePos - 1] == '>' ) ||
+                    ( ( newlinePos + NewLineSignifier.Length ) < text.Length && text[newlinePos + NewLineSignifier.Length] == '<' ) )
+                {
+                    text = text.Remove(newlinePos,NewLineSignifier.Length);
+                }
+            }
+            
+            return text.Replace(NewLineSignifier,"<br />\n");
+        }
+
+        private string ProcessDefinitions(string text)
+        {
+            int startTagPos = text.IndexOf('<');
+
+            if( startTagPos < 0 )
+                return text;
+
+            int endTagPos = text.IndexOf('>',startTagPos + 1);
+
+            if( endTagPos > startTagPos )
+            {
+                string beforeTagText = text.Substring(0,startTagPos);
+                string fullTag = text.Substring(startTagPos,endTagPos - startTagPos + 1);
+                string fullTagContents = fullTag.Substring(1,fullTag.Length - 2).Trim();
+
+                string[] fullTagComponents = Regex.Split(fullTagContents,@"\s+");
+
+                if( fullTagComponents.Length == 3 && fullTagComponents[0].Equals(DefinitionTag) && fullTagComponents[2].Equals("/") )
+                    return beforeTagText + _helpComponents.settings.GetDefinition(fullTagComponents[1],_helpComponents.preprocessor) + ProcessDefinitions(text.Substring(endTagPos + 1));
+
+                else
+                    return beforeTagText + "<" + ProcessDefinitions(text.Substring(startTagPos + 1));
+            }
+
+            return text;
         }
 
         private string ProcessText(ref string text)
@@ -265,8 +308,8 @@ namespace Help_Generator
 
             // processing start tags
 
-            // only definition tags are allowed while in a block
-            if( _inBlockTag && !tag.Equals(DefinitionTag) )
+            // tags are ignored while in a block
+            if( _inBlockTag )
             {
                 text = text.Substring(startTagPos + 1);
                 return beforeTagText + "<" + ProcessText(ref text);
@@ -529,11 +572,6 @@ namespace Help_Generator
             return _helpComponents._pffColorizer.Colorize(TrimOnlyOneNewlineBothEnds(endTagInnerText));
         }
 
-        private string StartDefinitionHandler(string[] startTagComponents)
-        {
-            return _helpComponents.settings.GetDefinition(startTagComponents[0],_helpComponents.preprocessor);
-        }
-
 
         public const string TagTitle = "title";
         public const string ContextTag = "context";
@@ -557,5 +595,7 @@ namespace Help_Generator
         public const string PffTag = "pff";
         public const string HtmlTag = "html";
         public const string DefinitionTag = "definition";
+
+        private const string NewLineSignifier = "~!~";
     }
 }
