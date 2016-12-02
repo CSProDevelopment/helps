@@ -1,0 +1,50 @@
+﻿<title>Run Production Concatenates</title> <titleheader />
+
+To run production concatenates, you'll need to customize its behavior by creating a PFF file. You can then use the PFF file as a command line parameter in DOS or in a Windows icon for CSConcat.exe (the associated filename of this utility). For example, if you name your PFF "MyConcat.pff", then you can run the concatenation program by invoking:
+
+<indent><font monospace>C:\Program Files (x86)\CSPro <definition version />\CSConcat.exe MyConcat.pff</font></indent>
+
+This assumes CSPro was installed in the default directory. Your PFF file must have a ".pff" extension.
+
+You can create a PFF file in one of two ways: either [1] create it yourself using a text editor (such as Notepad or Wordpad), or [2] simply run CSConcat once, and a PFF file will be automatically created for you—it will always be called "CSConcat.pff," and it will be placed in the same folder as your output data file.
+
+The following section shows the options available to you in a CSConcat PFF file. Note that you may use any combination of upper and lower case text.
+
+<pff>
+[Run Information]
+Version=CSPro <definition version />
+AppType=Concatenate
+
+[Files]
+InputData=.\File01.dat
+InputData=.\File02.dat
+InputData=.\File03.dat
+InputData=.\File04.dat
+OutputData=.\BigFile.dat
+
+[Parameters]
+ViewListing=OnError
+ViewResults=No
+</pff>
+
+<subheader>[Run Information]</subheader>
+
+The <pffcolor>[Run Information]</pffcolor> block is required and must appear exactly as shown in the example above.
+
+<subheader>[Files]</subheader>
+
+The <pffcolor>[Files]</pffcolor> block is required and names the file(s) to be concatenated and the output data file. At a minimum, you must name one input file and one output file. Of course if you only name one input file the concatenation operation will essentially be just a file copy.
+
+<subheader>[Parameters]</subheader>
+
+The <pffcolor>[Parameters]</pffcolor> block is optional. <pffcolor>ViewListing</pffcolor> determines whether the .lst file is viewed. There are three options:
+
+<list>
+	<li>"<pffcolor>ViewListing</pffcolor>=Always" means you will always see the generated listing file.</li>
+	<li>"<pffcolor>ViewListing</pffcolor>=Never" means you will never see the generated listing file.</li>
+	<li>"<pffcolor>ViewListing</pffcolor>=OnError" means you will see the generated listing file only if an error(s) occurred during the run.</li>
+</list>
+
+If the "<pffcolor>ViewListing</pffcolor>=" entry is missing, the default action will be Always.
+
+<pffcolor>ViewResults</pffcolor> determines whether or not the concatenated file(s) are displayed with TextViewer at the end of the run. The available choices are Yes or No. If the "<pffcolor>ViewResults</pffcolor>=" entry is missing, the resultant data file will be displayed.
