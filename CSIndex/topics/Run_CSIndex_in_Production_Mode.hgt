@@ -1,0 +1,48 @@
+﻿<title>Run CSIndex in Production Mode</title> <titleheader />
+
+To create one or more indices in production mode, you can customize the behavior of CSIndex by creating a PFF file.
+
+You can create a PFF file in one of two ways: either create it yourself using a text editor such as Notepad, or simply run CSIndex once and a PFF file will automatically be created for you. It is always called "CSIndex.pff" and it will be placed in the same folder as your input or output data files.
+
+The following section shows the options available to you in a CSIndex PFF file. Note that you may use any combination of upper and lower case text.
+
+<pff>
+[Run Information]
+Version=CSPro 6.3
+AppType=Index
+
+[Files]
+InputData=.\File01.dat
+InputData=.\File02.dat
+InputData=.\File03.dat
+InputData=.\File04.dat
+OutputData=.\<filename>Fixed<.extension>
+Listing=.\CSIndex.lst
+InputDict=.\DictionaryName.dcf
+
+[Parameters]
+ViewListing=Never
+Silent=Yes
+DeletePrompt=No
+</pff>
+
+<subheader>[Run Information]</subheader>
+
+The <pffcolor>[Run Information]</pffcolor> block is required and must appear exactly as shown in the example above.
+
+<subheader>[Files]</subheader>
+
+The <pffcolor>[Files]</pffcolor> block is required and names the file(s) to be indexed. At a minimum you must name one input file (<pffcolor>InputData</pffcolor>). If you specify an output file (<pffcolor>OutputData</pffcolor>), CSIndex will attempt to remove duplicates from the input data file(s) and create an output file with the duplicates removed. If more than one input data file is selected, the output file name must use wildcards (see <topic Specify_Files.hgt /> for more information).
+
+<subheader>[Parameters]</subheader>
+
+
+The <pffcolor>[Parameters]</pffcolor> block is optional:
+
+<list>
+	<li><pffcolor>ViewListing</pffcolor> determines whether the listing file is viewed. "<pffcolor>ViewListing</pffcolor>=Always" means that you will always see the generated listing file, while "<pffcolor>ViewListing</pffcolor>=Never" means that you will never see the generated listing file.</li>
+	<li><pffcolor>Silent</pffcolor> indicates whether you want CSIndex to show its progress during the production run ("<pffcolor>Silent</pffcolor>=No"), or if you want it to run silently in the background ("<pffcolor>Silent</pffcolor>=Yes").</li>
+	<li><pffcolor>DeletePrompt</pffcolor> tells CSIndex whether or not you want duplicate cases removed automatically ("<pffcolor>DeletePrompt</pffcolor>=No") or if you want the user to be prompted about what duplicates to remove ("<pffcolor>DeletePrompt</pffcolor>=Yes"). Note that modes "<pffcolor>DeletePrompt</pffcolor>=Yes" and "<pffcolor>Silent</pffcolor>=Yes" are incompatible with each other and in that case CSIndex will default to "<pffcolor>Silent</pffcolor>=No."</li>
+</list>
+
+The default values are "<pffcolor>ViewListing</pffcolor>=Always," "<pffcolor>Silent</pffcolor>=No," and "<pffcolor>DeletePrompt</pffcolor>=Yes."

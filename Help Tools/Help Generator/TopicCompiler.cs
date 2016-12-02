@@ -145,7 +145,7 @@ namespace Help_Generator
                     constructedLine = constructedLine + "\r\n" + line;
 
                 else if( !lineIsBlank )
-                    constructedLine = constructedLine + ( ( constructedLine.Length > 0 ) ? NewLineSignifier : "" ) + line.TrimStart();
+                    constructedLine = constructedLine + ( ( constructedLine.Length > 0 ) ? NewLineMarker : "" ) + line.TrimStart();
 
                 if( inBlockEndTag == null ) // see if there is a block tag specifier
                 {
@@ -212,16 +212,16 @@ namespace Help_Generator
             int newlinePos = -1;
 
             // if a newline immediately follows or preceeds a tag, it won't be considered a break
-            while( ( ( newlinePos + 1 ) < text.Length ) && ( ( newlinePos = text.IndexOf(NewLineSignifier,newlinePos + 1) ) >= 0 ) )
+            while( ( ( newlinePos + 1 ) < text.Length ) && ( ( newlinePos = text.IndexOf(NewLineMarker,newlinePos + 1) ) >= 0 ) )
             {
                 if( ( newlinePos > 0 && text[newlinePos - 1] == '>' ) ||
-                    ( ( newlinePos + NewLineSignifier.Length ) < text.Length && text[newlinePos + NewLineSignifier.Length] == '<' ) )
+                    ( ( newlinePos + NewLineMarker.Length ) < text.Length && text[newlinePos + NewLineMarker.Length] == '<' ) )
                 {
-                    text = text.Remove(newlinePos,NewLineSignifier.Length);
+                    text = text.Remove(newlinePos,NewLineMarker.Length);
                 }
             }
             
-            return text.Replace(NewLineSignifier,"<br />\n");
+            return text.Replace(NewLineMarker,"<br />\n");
         }
 
         private string ProcessDefinitions(string text)
@@ -565,8 +565,8 @@ namespace Help_Generator
             {
                 url = startTagComponents[0];
 
-                if( url.IndexOf("http") < 0 )
-                    throw new Exception(String.Format("The URL {0} is invalid and must begin with http",url));
+                if( ( url.IndexOf("http") < 0 ) && ( url.IndexOf("mailto") < 0 ) )
+                    throw new Exception(String.Format("The URL {0} is invalid and must begin with http or mailto",url));
             }
 
             return String.Format("<a href=\"{0}\">",url);
@@ -638,6 +638,6 @@ namespace Help_Generator
         public const string HtmlTag = "html";
         public const string DefinitionTag = "definition";
 
-        private const string NewLineSignifier = "~!~";
+        private const string NewLineMarker = "~!~";
     }
 }
