@@ -1,0 +1,22 @@
+﻿<title>Run in Parts</title> <titleheader />
+<context HIDD_SELECTDLG />
+
+Usually you tabulate an entire data set at one time to produce the tables. This is generally the case in tabulating a survey. However, there may be times when it is not convenient to do so.
+
+For example, In the case of a census the data may be captured and edited in phases, province by province. You may not want to wait until the entire census data set is ready to run the lower level tabulations. Even if the entire data set is ready, due to it large size and the time it takes to tabulate it, you may want to break it into pieces (say, by province) and produce tables at lower levels, perhaps on different computers, then produce the national tables at the end. This "divide and conquer" strategy is often used in census tabulation with area processing. CSPro's "Run in Parts" facility allows you to do this.
+
+<center><image run_in_parts.png /></center>
+
+There are three "parts" you can run, and they must be run in the order shown to produce the tables. When there is area processing, you must run all three parts. With no area processing, you do not run the <b>Consolidate</b> part.
+
+<subheader>Tabulate</subheader>
+
+This will read the data files(s) and produce the raw numbers (cell values) that will go into the final tables. The output is a .TAB file that contains these cell values in binary format, along with other information. The .TAB is of no use by itself - you must later run Format (or Consolidate, if there is area processing). Tabulation can be a time-consuming process, so sometimes it is a good idea to do this just once for a given set of data files.
+
+<subheader>Consolidate</subheader>
+
+This part is necessary if and only it there is area processing. CSPro will read .TAB file(s) produced in the previous step and consolidate the table cell values according to the specification defined in the "Area" dialog box to produce higher level tables. The output is another .TAB file with the new set of table cell values in binary format. This part generally runs very quickly (a few seconds or less).
+
+<subheader>Format</subheader>
+
+This part reads the .TAB file(s) produced in <b>Tabulate</b> or <b>Consolidate</b> and assembles the final tables according to the table specifications. The output is a .TBW file, which contains the final tables and can be viewed using CSPro's Table Viewer. This part generally runs very quickly (a few seconds or less).
