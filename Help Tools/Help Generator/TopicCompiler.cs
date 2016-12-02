@@ -15,27 +15,22 @@ namespace Help_Generator
         private class TagSettings
         {
             public bool IsPairedTag;
-            public string StartHtmlTag;
-            public string EndHtmlTag;
-            public StartTagHandlerDelegate StartTagHandler;
-            public EndTagHandlerDelegate EndTagHandler;
+            public object StartHtmlObject;
+            public object EndHtmlObject;
             public int MinTagComponents;
             public int MaxTagComponents;
 
-            public TagSettings(bool isPairedTag,string startHtmlTag,string endHtmlTag,StartTagHandlerDelegate startTagHandler,
-                EndTagHandlerDelegate endTagHandler,int minTagComponents,int maxTagComponents)
+            public TagSettings(bool isPairedTag,object startHtmlObject,object endHtmlObject,int minTagComponents,int maxTagComponents)
             {
                 IsPairedTag = isPairedTag;
-                StartHtmlTag = startHtmlTag;
-                EndHtmlTag = endHtmlTag;
-                StartTagHandler = startTagHandler;
-                EndTagHandler = endTagHandler;
+                StartHtmlObject = startHtmlObject;
+                EndHtmlObject = endHtmlObject;
                 MinTagComponents = minTagComponents;
                 MaxTagComponents = maxTagComponents;
             }
 
             public TagSettings(string startHtmlTag,string endHtmlTag) :
-                this(true,startHtmlTag,endHtmlTag,null,null,0,0)
+                this(true,startHtmlTag,endHtmlTag,0,0)
             {
             }
         }
@@ -61,26 +56,26 @@ namespace Help_Generator
             _sb = new StringBuilder();
 
             _tagSettings = new Dictionary<string,TagSettings>();
-            _tagSettings.Add(TagTitle,new TagSettings(true,null,null,null,EndTitleHandler,0,0));
-            _tagSettings.Add(ContextTag,new TagSettings(false,null,null,StartContextHandler,null,1,1));
+            _tagSettings.Add(TagTitle,new TagSettings(true,null,(EndTagHandlerDelegate)EndTitleHandler,0,0));
+            _tagSettings.Add(ContextTag,new TagSettings(false,(StartTagHandlerDelegate)StartContextHandler,null,1,1));
             //_tagSettings.Add(IndentTag,new TagSettings(true,"","",null,null,0,0));
-            _tagSettings.Add(CenterTag,new TagSettings(true,"<div align=\"center\">","</div>",null,null,0,0));
+            _tagSettings.Add(CenterTag,new TagSettings("<div align=\"center\">","</div>"));
             _tagSettings.Add(BoldTag,new TagSettings("<b>","</b>"));
             _tagSettings.Add(ItalicsTag,new TagSettings("<i>","</i>"));
-            _tagSettings.Add(FontTag,new TagSettings(true,null,"</div>",StartFontHandler,null,1,3));
+            _tagSettings.Add(FontTag,new TagSettings(true,(StartTagHandlerDelegate)StartFontHandler,"</div>",1,3));
             //_tagSettings.Add(UnorderedListTag,new TagSettings(true,"","",null,null,0,0));
             //_tagSettings.Add(OrderedListTag,new TagSettings(true,"","",null,null,0,0));
             //_tagSettings.Add(ListItemTag,new TagSettings(true,"","",null,null,0,0));
             _tagSettings.Add(HeaderTag,new TagSettings("<div class=\"header_size header\">","</div>"));
-            _tagSettings.Add(TitleHeaderTag,new TagSettings(false,null,null,StartTitleHeaderHandler,null,0,0));
+            _tagSettings.Add(TitleHeaderTag,new TagSettings(false,(StartTagHandlerDelegate)StartTitleHeaderHandler,null,0,0));
             _tagSettings.Add(SubheaderTag,new TagSettings("<div class=\"subheader_size subheader\">","</div>"));
-            _tagSettings.Add(ImageTag,new TagSettings(false,null,null,StartImageHandler,null,1,2));
-            _tagSettings.Add(TopicTag,new TagSettings(false,null,null,StartTopicHandler,null,1,1));
-            _tagSettings.Add(LinkTag,new TagSettings(true,null,"</a>",StartLinkHandler,null,1,1));
-            _tagSettings.Add(LogicTag,new TagSettings(true,"","",null,EndLogicHandler,0,0));
-            _tagSettings.Add(PffTag,new TagSettings(true,"","",null,EndPffHandler,0,0));
+            _tagSettings.Add(ImageTag,new TagSettings(false,(StartTagHandlerDelegate)StartImageHandler,null,1,2));
+            _tagSettings.Add(TopicTag,new TagSettings(false,(StartTagHandlerDelegate)StartTopicHandler,null,1,1));
+            _tagSettings.Add(LinkTag,new TagSettings(true,(StartTagHandlerDelegate)StartLinkHandler,"</a>",1,1));
+            _tagSettings.Add(LogicTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicHandler,0,0));
+            _tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
             _tagSettings.Add(HtmlTag,new TagSettings("",""));
-            _tagSettings.Add(DefinitionTag,new TagSettings(false,null,null,StartDefinitionHandler,null,1,1));
+            _tagSettings.Add(DefinitionTag,new TagSettings(false,(StartTagHandlerDelegate)StartDefinitionHandler,null,1,1));
 
             _blockTags = new Dictionary<string,string>();
             _blockTags.Add(MakeTag(LogicTag,true),MakeTag(LogicTag,false));
@@ -310,22 +305,39 @@ namespace Help_Generator
             return html;
         }
 
-        private string StartTag(TagSettings thisTagSettings,string[] tagComponents)
+        private string StartTag(TagSettings thisTagSettings,string[] startTagComponents)
         {
-            if( thisTagSettings.StartTagHandler == null )
-                return thisTagSettings.StartHtmlTag;
+            string text = "";
 
-            else
-                return thisTagSettings.StartTagHandler(tagComponents);
+            if( thisTagSettings.StartHtmlObject != null )
+            {
+                if( thisTagSettings.StartHtmlObject is string )
+                    text = (string)thisTagSettings.StartHtmlObject;
+
+                else if( thisTagSettings.StartHtmlObject is StartTagHandlerDelegate )
+                    text = ((StartTagHandlerDelegate)thisTagSettings.StartHtmlObject)(startTagComponents);
+            }
+
+            return text;
         }
 
         private string EndTag(TagSettings thisTagSettings,string endTagInnerText)
         {
-            if( thisTagSettings.EndTagHandler == null )
-                return endTagInnerText + thisTagSettings.EndHtmlTag;
+            string text = "";
+
+            if( thisTagSettings.EndHtmlObject != null )
+            {
+                if( thisTagSettings.EndHtmlObject is string )
+                    text = endTagInnerText + (string)thisTagSettings.EndHtmlObject;
+
+                else if( thisTagSettings.EndHtmlObject is EndTagHandlerDelegate )
+                    text = ((EndTagHandlerDelegate)thisTagSettings.EndHtmlObject)(endTagInnerText);
+            }
 
             else
-                return thisTagSettings.EndTagHandler(endTagInnerText);
+                text = endTagInnerText;
+
+            return text;
         }
 
 
