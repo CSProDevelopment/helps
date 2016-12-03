@@ -1,0 +1,12 @@
+﻿<title>Relative Path Names</title> <titleheader />
+
+CSPro applications generally consist of several different files, and use relative path names to reference these files. For example, a form file (.fmf file) might contain a line:
+
+<indent><font monospace>
+[Dictionaries]
+File=..\Dictionaries\Census.dcf
+</font></indent>
+
+Here, the path ..\Dictionaries\ is relative to the directory where the .fmf file is located.
+
+The ZIP file created by CSPack will include relative paths for the application's files. This makes it possible to unzip the file into another subdirectory, and run the application from the new location.

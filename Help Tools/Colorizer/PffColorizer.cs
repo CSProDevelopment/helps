@@ -77,7 +77,10 @@ namespace Colorizer
                     string preWordText = sourceText.Substring(lastTextStartBlock,lastTextBlockLength);
 
                     if( ( preWordText.Length > 0 ) && ( !keepProcessing || newLine || iWordType > 0 ) )
+                    {
                         pffColorizer.AddText(sb,preWordText);
+                        lastTextStartBlock = i;
+                    }
 
                     if( iWordType > 0 )
                     {
@@ -98,6 +101,7 @@ namespace Colorizer
 
                 if( newLine )
                 {
+                    pffColorizer.AddText(sb,sourceText.Substring(lastTextStartBlock,i - lastTextStartBlock));
                     pffColorizer.AddNewLine(sb);
 
                     if( ( sourceText[i] == '\r' ) && ( ( i + 1 ) < sourceText.Length ) && ( sourceText[i + 1] == '\n' ) )
@@ -106,6 +110,9 @@ namespace Colorizer
                     lastTextStartBlock = i + 1;
                 }
             }
+
+            // add any final text at the end
+            pffColorizer.AddText(sb,sourceText.Substring(lastTextStartBlock));
 
             pffColorizer.EndBlock(sb);
 
