@@ -1,0 +1,54 @@
+﻿<title>Prepare for Conversion</title> <titleheader />
+
+To prepare for conversion, you will need to create a TXT file for each DBF file you have. To do this you can use a spreadsheet program such as Excel.
+
+1) Open one of the DBF files, such as PROV.DBF, using the spreadsheet program. The first row in the spreadsheet will contain column headings. Each of the other rows represents information for a polygon in the corresponding SHP file.
+
+2) Modify the spreadsheet by so that the columns contain the following information:
+
+<list>
+	<li>Column 1: Text name of the geographic area</li>
+	<li>Column 2: Province code</li>
+	<li>Column 3: District code (if district level or below)</li>
+	<li>Column 4: Village code (if village level or below)</li>
+	<li>. . .</li>
+</list>
+
+The first row should contain:
+
+<list>
+	<li>Column 1: Name of the map (e.g. the country name)</li>
+	<li>Column 2: Name of the 1st level (e.g. "Province" or "State")</li>
+	<li>Column 3: Name of the 2nd level (e.g. "District" or "County")</li>
+	<li>Column 4: Name of the 3rd level (e.g. "Village")</li>
+	<li>. . .</li>
+</list>
+
+This can be done most easily by deleting unwanted columns from the existing spreadsheet and rearranging the columns with names and codes in the desired order. DO NOT INSERT, DELETE, OR SORT THE ROWS. The order of the rows is critical in matching up correctly with the SHP and SHX files. The order names in the resulting maps will be in code order.
+
+For the province level, the spreadsheet should look something like:
+
+<indent><font monospace>
+Popstan&nbsp;&nbsp;Province
+Tango&nbsp;&nbsp;&nbsp;&nbsp;1
+Idfu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2
+Jumma&nbsp;&nbsp;&nbsp;&nbsp;3
+Kars&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4
+. . .
+</font></indent>
+
+For the district level, the spreadsheet should look something like:
+
+<indent><font monospace>
+Popstan&nbsp;&nbsp;Province&nbsp;&nbsp;District
+Dongo&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1
+Copal&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2
+Dari&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3
+Eris&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4
+.&nbsp;.&nbsp;.
+Baja&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1
+Bassac&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2
+Chile&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3
+</font></indent>
+
+3) Use <b>File/Save As</b> to save the spreadsheet as a <b>Text (Tab delimited) (*.txt)</b> file. Save the file as tab delimited will allow you to easily bring it back into your speadsheet program to make any changes that may be necessary.
