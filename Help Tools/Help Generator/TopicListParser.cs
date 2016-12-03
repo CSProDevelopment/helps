@@ -78,10 +78,15 @@ namespace Help_Generator
                         throw new Exception("has a blank title");
 
                     Preprocessor.TopicPreprocessor topic = String.IsNullOrWhiteSpace(filename) ? null : preprocessor.GetTopic(filename);
+                    bool isLinkToChm = ( title != null && GetLinkToChm(title) != null );
+
+                    if( isLinkToChm && zeroBasedLevel > 0 )
+                        throw new Exception("is invalid because links to other help files must only be at level one");
 
                     if( _indexParser ) // index
                     {
-                        if( topic == null )
+                        // an index entry must be either a topic or a link to a help file
+                        if( topic == null && !isLinkToChm )
                             throw new Exception("must specify a topic filename");
                     }
 
@@ -162,6 +167,19 @@ namespace Help_Generator
             }
         }
 
+        public static string GetLinkToChm(string title)
+        {
+            if( title.IndexOf("|") == 0 )
+            {
+                string filename = title.Substring(1).Trim();
+
+                if( Path.GetExtension(filename).Equals(Constants.ChmFileExtension,StringComparison.InvariantCultureIgnoreCase) )
+                    return filename;
+            }
+
+            return null;
+        }
+
 
         private class FormatterLine : IComparable<FormatterLine>
         {
@@ -206,8 +224,13 @@ namespace Help_Generator
 
                 sb.Append('\t',level);
 
+                bool isLinkToChm = false;
+
                 if( node.Topic == null )
+                {
                     sb.Append("|" + node.Title);
+                    isLinkToChm = ( GetLinkToChm(node.Title) != null );
+                }
 
                 else
                 {
@@ -226,15 +249,22 @@ namespace Help_Generator
                 if( spacingTabs > 0 )
                     sb.Append('\t',spacingTabs);
 
+                string title =  isLinkToChm ? String.Format("<Link to help file {0}>",GetLinkToChm(node.Title)) :
+                                node.TitleSpecified ? node.Title :
+                                node.Topic.Title;
+
                 sbSortable.Append('#');
                 sbSortable.Append('\t',level + 1);
-                sbSortable.Append(node.TitleSpecified ? node.Title : node.Topic.Title);
+                sbSortable.Append(title);
 
                 sb.Append(sbSortable);
 
                 FormatterLine formatterLine = new FormatterLine();
                 formatterLine.Line = sb.ToString();
                 formatterLine.SortableKey = sortableKeyPrefix + sbSortable.ToString();
+
+                if( isLinkToChm ) // insert a high character so that linked help files show at the end of a sorted index
+                    formatterLine.SortableKey = '\u26ff' + formatterLine.SortableKey;                    
 
                 formatterLines.Add(formatterLine);
 

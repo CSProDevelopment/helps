@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -7,10 +8,12 @@ namespace Help_Generator
     class TableOfContents : TextEditableInterface
     {
         private string _tableOfContentsFilename;
-
         private TopicListParser.TopicListNode _tableOfContentsRootNode;
-
         private TopicListParser _tableOfContentsParser;
+
+        private bool _processedFirstTopicChapter;
+        private bool _processedLastTopicChapter;
+
 
         public TableOfContents(string projectPath)
         {
@@ -52,9 +55,12 @@ namespace Help_Generator
             {
                 tw.WriteLine("<html>");
                 tw.WriteLine("<object type=\"text/site properties\">");
-                tw.WriteLine("<param name=\"SiteType\" value=\"toc\" />");
-                tw.WriteLine("<param name=\"Image Width\" value=\"16\" />");
+                tw.WriteLine("<param name=\"SiteType\" value=\"toc\"/>");
+                tw.WriteLine("<param name=\"Image Width\" value=\"16\"/>");
                 tw.WriteLine("</object>");
+
+                _processedFirstTopicChapter = false;
+                _processedLastTopicChapter = false;
 
                 SaveForChmNode(tw,outputTopicFilenames,_tableOfContentsRootNode);
 
@@ -64,27 +70,69 @@ namespace Help_Generator
 
         private void SaveForChmNode(TextWriter tw,Dictionary<Preprocessor.TopicPreprocessor,string> outputTopicFilenames,TopicListParser.TopicListNode node)
         {
-            tw.WriteLine("<ul>");
-            
+            bool ulStartWritten = false;
+
             while( node != null )
             {
-                tw.WriteLine("<li><object type=\"text/sitemap\">");
-                tw.WriteLine("<param name=\"Name\" value=\"{0}\" />",node.Title);
+                string linkedChmFilename = TopicListParser.GetLinkToChm(node.Title);
+                string textAfterRecursion = null;
 
-                if( node.Topic != null )
-                    tw.WriteLine("<param name=\"Local\" value=\"{0}\" />",outputTopicFilenames[node.Topic]);
+                if( linkedChmFilename != null ) // a link to another help file
+                {
+                    if( _processedFirstTopicChapter ) 
+                        _processedLastTopicChapter = true;
 
-                tw.WriteLine("</object>");
+                    if( ulStartWritten )
+                    {
+                        tw.WriteLine("</ul>");
+                        ulStartWritten = false;
+                    }
+
+                    linkedChmFilename = Path.GetFileNameWithoutExtension(linkedChmFilename);
+
+                    tw.WriteLine("<object type=\"text/sitemap\">");
+                    tw.WriteLine("<param name=\"Name\" value=\"{0}.chm::/{0}.hhc\"/>",linkedChmFilename);
+                    tw.WriteLine("<param name=\"Merge\" value=\"{0}.chm::/{0}.hhc\"/>",linkedChmFilename);
+                    tw.WriteLine("</object>");
+                }
+
+                else // a chapter or topic
+                {
+                    _processedFirstTopicChapter = true;
+
+                    if( !ulStartWritten )
+                    {
+                        tw.WriteLine("<ul>");
+                        ulStartWritten = true;
+                    }
+
+                    tw.WriteLine("<li><object type=\"text/sitemap\">");
+
+                    if( _processedLastTopicChapter )
+                        throw new Exception("Linked help files must come before or after all chapters and topics.");
+
+                    tw.WriteLine("<param name=\"Name\" value=\"{0}\"/>",node.Title);
+
+                    if( node.Topic != null )
+                        tw.WriteLine("<param name=\"Local\" value=\"{0}\"/>",outputTopicFilenames[node.Topic]);
+
+                    tw.WriteLine("</object>");
+
+                    textAfterRecursion = "</li>";
+                }
+
 
                 if( node.ChildNode != null )
                     SaveForChmNode(tw,outputTopicFilenames,node.ChildNode);
 
-                tw.WriteLine("</li>");
+                if( textAfterRecursion != null )
+                    tw.WriteLine(textAfterRecursion);
 
                 node = node.SiblingNode;
             }
 
-            tw.WriteLine("</ul>");
+            if( ulStartWritten )
+                tw.WriteLine("</ul>");
         }
     }
 }

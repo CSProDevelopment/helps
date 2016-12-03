@@ -111,7 +111,8 @@ namespace Help_Generator
 
         public void SaveForChm(string filename,string outputChmFilename,string tableOfContentsFilename,string indexFilename,
             Dictionary<Preprocessor.TopicPreprocessor,string> outputTopicFilenames,HashSet<string> usedImageFilenames,
-            Dictionary<Preprocessor.TopicPreprocessor,List<string>> contextSensitiveHelps)
+            Dictionary<Preprocessor.TopicPreprocessor,List<string>> contextSensitiveHelps,
+            List<string> mergeFiles)
         {
             using( TextWriter tw = new StreamWriter(filename,false,Encoding.ASCII) )
             {
@@ -177,6 +178,15 @@ namespace Help_Generator
 
                     foreach( string resourceFile in _resourceFiles )
                         tw.WriteLine("#include {0}",resourceFile);
+                }
+
+
+                if( mergeFiles.Count > 0 )
+                {
+                    tw.WriteLine("[MERGE FILES]");
+
+                    foreach( string mergeFile in mergeFiles )
+                        tw.WriteLine(mergeFile);
                 }
             }
         }

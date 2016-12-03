@@ -30,7 +30,7 @@ namespace Help_Generator
             _generateAndClose = generateAndClose;
 
             _projectName = new DirectoryInfo(_helpComponents.projectPath).Name;
-            _outputChmFilename = Path.Combine(_helpComponents.projectPath,_projectName + ".chm");
+            _outputChmFilename = Path.Combine(_helpComponents.projectPath,_projectName + Constants.ChmFileExtension);
             _temporaryFilesPath = Path.Combine(_helpComponents.projectPath,Constants.TemporaryFileDirectoryName);
 
             _outputTopicFilenames = new Dictionary<Preprocessor.TopicPreprocessor,string>();
@@ -257,16 +257,17 @@ namespace Help_Generator
 
             File.WriteAllText(Path.Combine(_temporaryFilesPath,Constants.TopicStylesheetFilename),Properties.Resources.TopicStylesheet,Encoding.ASCII);
 
+            _helpComponents.tableOfContents.SaveForChm(tableOfContentsFilename,_outputTopicFilenames);
+
+            _helpComponents.index.SaveForChm(indexFilename,_outputTopicFilenames);
+
             _helpComponents.settings.SaveForChm(settingsFilename,_outputChmFilename,
                 Path.GetFileName(tableOfContentsFilename),
                 Path.GetFileName(indexFilename),
                 _outputTopicFilenames,
                 _topicCompilerSettings.UsedImageFilenames,
-                _topicCompilerSettings.ContextSensitiveHelps);
-
-            _helpComponents.tableOfContents.SaveForChm(tableOfContentsFilename,_outputTopicFilenames);
-
-            _helpComponents.index.SaveForChm(indexFilename,_outputTopicFilenames);
+                _topicCompilerSettings.ContextSensitiveHelps,
+                _helpComponents.index.MergeFiles);
 
             // compile the file
             ProcessStartInfo processStartInfo = new ProcessStartInfo();

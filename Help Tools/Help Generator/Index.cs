@@ -7,10 +7,10 @@ namespace Help_Generator
     class Index : TextEditableInterface
     {
         private string _indexFilename;
-
         private TopicListParser.TopicListNode _indexRootNode;
-
         private TopicListParser _indexParser;
+
+        private List<string> _mergeFiles;
 
         public Index(string projectPath)
         {
@@ -46,13 +46,17 @@ namespace Help_Generator
             return TopicListParser.Format(_indexRootNode,true);
         }
 
+        public List<string> MergeFiles { get { return _mergeFiles; } }
+
         public void SaveForChm(string filename,Dictionary<Preprocessor.TopicPreprocessor,string> outputTopicFilenames)
         {
+            _mergeFiles = new List<string>();
+
             using( TextWriter tw = new StreamWriter(filename,false,Encoding.ASCII) )
             {
                 tw.WriteLine("<html>");
                 tw.WriteLine("<object type=\"text/site properties\">");
-                tw.WriteLine("<param name=\"SiteType\" value=\"index\" />");
+                tw.WriteLine("<param name=\"SiteType\" value=\"index\"/>");
                 tw.WriteLine("</object>");
 
                 SaveForChmNode(tw,outputTopicFilenames,_indexRootNode);
@@ -67,11 +71,17 @@ namespace Help_Generator
             
             while( node != null )
             {
-                tw.WriteLine("<li><object type=\"text/sitemap\">");
-                tw.WriteLine("<param name=\"Name\" value=\"{0}\" />",node.Title);
-                tw.WriteLine("<param name=\"Name\" value=\"{0}\" />",node.Topic.Title);
-                tw.WriteLine("<param name=\"Local\" value=\"{0}\" />",outputTopicFilenames[node.Topic]);
-                tw.WriteLine("</object></li>");
+                if( node.Topic == null )
+                    _mergeFiles.Add(TopicListParser.GetLinkToChm(node.Title));
+
+                else
+                {
+                    tw.WriteLine("<li><object type=\"text/sitemap\">");
+                    tw.WriteLine("<param name=\"Name\" value=\"{0}\"/>",node.Title);
+                    tw.WriteLine("<param name=\"Name\" value=\"{0}\"/>",node.Topic.Title);
+                    tw.WriteLine("<param name=\"Local\" value=\"{0}\"/>",outputTopicFilenames[node.Topic]);
+                    tw.WriteLine("</object></li>");
+                }
 
                 if( node.ChildNode != null )
                     SaveForChmNode(tw,outputTopicFilenames,node.ChildNode);

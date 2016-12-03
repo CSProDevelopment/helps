@@ -62,12 +62,12 @@
             // 
             this.textBoxResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxResults.Location = new System.Drawing.Point(12, 437);
+            this.textBoxResults.Location = new System.Drawing.Point(12, 477);
             this.textBoxResults.Multiline = true;
             this.textBoxResults.Name = "textBoxResults";
             this.textBoxResults.ReadOnly = true;
             this.textBoxResults.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxResults.Size = new System.Drawing.Size(919, 96);
+            this.textBoxResults.Size = new System.Drawing.Size(919, 123);
             this.textBoxResults.TabIndex = 3;
             // 
             // editControl
@@ -78,7 +78,7 @@
             this.editControl.Lexer = ScintillaNET.Lexer.Null;
             this.editControl.Location = new System.Drawing.Point(12, 30);
             this.editControl.Name = "editControl";
-            this.editControl.Size = new System.Drawing.Size(919, 388);
+            this.editControl.Size = new System.Drawing.Size(919, 432);
             this.editControl.TabIndex = 0;
             this.editControl.UseTabs = true;
             // 
@@ -86,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 545);
+            this.ClientSize = new System.Drawing.Size(943, 612);
             this.Controls.Add(this.textBoxResults);
             this.Controls.Add(this.linkLabelFilename);
             this.Controls.Add(this.labelTitle);
