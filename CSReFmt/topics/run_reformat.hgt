@@ -1,0 +1,25 @@
+﻿<title>Run Reformat</title> <titleheader />
+<context HIDD_LISTING />
+
+<list ordered>
+	<li>Press the <b>Run</b> button on file dialog box.</li>
+	<li>CSReFmt will analyze the data dictionaries and display a report summarizing changes to be made to the data files.</li>
+	<li>Review the report to make sure these are the data changes you want.</li>
+	<li>Click on the <b>Continue</b> button. CSReFmt will create a new reformatted data file.</li>
+	<li>CSReFmt will display the summary report with additional information about the newly created file such as the number of records input and output by record type and a listing of invalid record types.</li>
+	<li>If you want a printed copy of the CSReFmt summary report, you can print the report by press the print button on the toolbar.</li>
+	<li>Click the <b>Cancel</b> button to exit CSReFmt.</li>
+</list>
+
+<subheader>Tips</subheader>
+
+<list>
+	<li>Ticking the "Compare Dictionaries Only" check box will produce a listing comparing the input and output dictionaries but will not produce an output data file. This is a listing of which fields and/or records are being dropped, which fields are being resized, and what new fields and/or records are being created.</li>
+	<li>The must be at least one corresponding field for CSReFmt to create a new file.</li>
+	<li>Newly defined fields in the output data file are blank filled.</li>
+	<li>ID fields cannot be dropped.</li>
+	<li>ID fields cannot be resized to a smaller size.</li>
+	<li>"File Compare" is always run before the program is run against data. Review the "File Compare" report for a summary of how CSReFmt will change the file.</li>
+	<li>"File Compare" will indicate any errors that have occurred, for example, if there are no corresponding fields between the input and output dictionaries.</li>
+	<li>Ticking the "Display Dictionary Names" check box will display in the "File Compare" summary the item names, not labels.</li>
+</list>
