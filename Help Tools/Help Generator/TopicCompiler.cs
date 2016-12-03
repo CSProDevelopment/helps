@@ -36,12 +36,27 @@ namespace Help_Generator
             }
         }
 
+        private class TableSettings
+        {
+            public int Columns;
+            public bool HasHeader;
+            public int CellCount;
+
+            public TableSettings(int columns,bool hasHeader)
+            {
+                Columns = columns;
+                HasHeader = hasHeader;
+                CellCount = 0;
+            }
+        }
+
         private Dictionary<string,TagSettings> _tagSettings;
         private Dictionary<string,string> _blockTags;
 
         private Stack<string> _tagStack;
         private bool _inBlockTag;
         private Stack<string> _filledEndTagStack;
+        private Stack<TableSettings> _tableStack;
 
         private HelpComponents _helpComponents;
         private Preprocessor.TopicPreprocessor _preprocessedTopic;
@@ -73,6 +88,8 @@ namespace Help_Generator
             _tagSettings.Add(ImageTag,new TagSettings(false,(StartTagHandlerDelegate)StartImageHandler,null,1,2));
             _tagSettings.Add(TopicTag,new TagSettings(false,(StartTagHandlerDelegate)StartTopicHandler,null,1,1));
             _tagSettings.Add(LinkTag,new TagSettings(true,(StartTagHandlerDelegate)StartLinkHandler,"</a>",1,1));
+            _tagSettings.Add(TableTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableHandler,(EndTagHandlerDelegate)EndTableHandler,1,2));
+            _tagSettings.Add(TableCellTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableCellHandler,(EndTagHandlerDelegate)EndTableCellHandler,0,1));
             _tagSettings.Add(LogicTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicHandler,0,0));
             _tagSettings.Add(LogicColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicColorHandler,0,0));
             _tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
@@ -108,7 +125,7 @@ namespace Help_Generator
                 string html = ProcessParagraph(paragraph);
 
                 if( html.Length > 0 )
-                    _sb.AppendFormat("<div>{0}</div>\n",html);
+                    _sb.AppendFormat("<div class=\"paragraph\">{0}</div>\n",html);
             }
 
             if( _title == null )
@@ -186,6 +203,7 @@ namespace Help_Generator
             _tagStack = new Stack<string>();
             _inBlockTag = false;
             _filledEndTagStack = new Stack<string>();
+            _tableStack = new Stack<TableSettings>();
 
             string preprocessedParagraph = ProcessDefinitions(paragraph);
             string text = "";
@@ -572,6 +590,87 @@ namespace Help_Generator
             return String.Format("<a href=\"{0}\">",url);
         }
 
+        private string StartTableHandler(string[] startTagComponents)
+        {
+            int columns = 0;
+            bool hasHeader = false;
+
+            foreach( string startTagComponent in startTagComponents )
+            {
+                if( hasHeader == false && startTagComponent.Equals(HeaderTag) )
+                    hasHeader = true;
+
+                else if( columns == 0 && Int32.TryParse(startTagComponent,out columns) )
+                {
+                    if( columns < 1 )
+                        throw new Exception("The number of columns in a table must be a positive integer"); 
+                }
+
+                else
+                    throw new Exception("The table tag has an invalid attribute: " + startTagComponent);
+            }
+
+            if( columns == 0 )
+                throw new Exception("The number of columns in a table must be specified");
+
+            _tableStack.Push(new TableSettings(columns,hasHeader));
+
+            return "<table>";
+        }
+
+        private TableSettings GetCurrentTable()
+        {
+            if( _tableStack.Count == 0 )
+                throw new Exception("You cannot have a table cell without being in a table.");
+
+            return _tableStack.Peek();
+        }
+
+        private string EndTableHandler(string endTagInnerText)
+        {
+            TableSettings tableSettings = GetCurrentTable();
+
+            int cellIndex = tableSettings.CellCount % tableSettings.Columns;
+
+            if( cellIndex != 0 )
+                throw new Exception(String.Format("You cannot end the table without specifying an additional {0} cells",tableSettings.Columns - cellIndex));
+
+            _tableStack.Pop();
+
+            return endTagInnerText + "</table>";
+        }
+
+        private string StartTableCellHandler(string[] startTagComponents)
+        {
+            TableSettings tableSettings = GetCurrentTable();
+            int cellIndex = tableSettings.CellCount % tableSettings.Columns;
+            int columns = 1;
+
+            if( startTagComponents.Length == 1 && ( !Int32.TryParse(startTagComponents[0],out columns) || columns < 1 ) )
+                throw new Exception("The number of columns in a table must be a positive integer");
+
+            if( ( cellIndex + columns ) > tableSettings.Columns )
+                throw new Exception("The number of columns including a span cannot exceed the number of columns");
+
+            bool isFirstCellInRow = ( cellIndex == 0 );
+            bool isHeaderRow = tableSettings.HasHeader && ( tableSettings.CellCount < tableSettings.Columns );
+
+            tableSettings.CellCount += columns;
+
+            return String.Format("{0}<t{1}{2}>",isFirstCellInRow ? "<tr>" : "",isHeaderRow ? 'h' : 'd',
+                ( columns > 1 ) ? String.Format(" colspan=\"{0}\"",columns) : "");
+        }
+
+        private string EndTableCellHandler(string endTagInnerText)
+        {
+            TableSettings tableSettings = GetCurrentTable();
+
+            bool isHeaderRow = tableSettings.HasHeader && ( tableSettings.CellCount <= tableSettings.Columns );
+            bool isLastCellInRow = ( ( tableSettings.CellCount % tableSettings.Columns ) == 0 );
+
+            return endTagInnerText + ( isHeaderRow ? "</th>" : "</td>" ) + ( isLastCellInRow ? "</tr>\n" : "" );
+        }
+
         private string TrimOnlyOneNewlineBothEnds(string text)
         {
             int startTrimChars = ( text.Length >= 2 && text[0] == '\r' && text[1] == '\n' ) ? 2 : 0;
@@ -631,6 +730,8 @@ namespace Help_Generator
         public const string ImageNoChmAttribute = "nochm";
         public const string TopicTag = "topic";
         public const string LinkTag = "link";
+        public const string TableTag = "table";
+        public const string TableCellTag = "cell";
         public const string LogicTag = "logic";
         public const string LogicColorTag = "logiccolor";
         public const string PffTag = "pff";
