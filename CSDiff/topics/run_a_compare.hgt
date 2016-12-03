@@ -1,0 +1,34 @@
+﻿<title>Run a Compare</title> <titleheader />
+<context HIDD_FILEBROW />
+
+<list ordered>
+	<li>Click <image run_button.png /> on the toolbar; press <b>Ctrl+R</b>; or from the <b>File</b> menu, select <b>Run</b>.</li>
+	<li>Enter or select the name of the input file.</li>
+	<li>Enter or select the name of the reference file against which comparisons are made.</li>
+	<li>Enter or change the name of the listing file where results are written.</li>
+	<li>Select the comparison method.</li>
+	<li>Select the comparison order.</li>
+</list>
+
+<subheader>Tips</subheader>
+
+<list>
+	<li>Use the Browse Buttons to find files.</li>
+	<li>The output listing shows either dictionary names or labels, depending on which are shown on the selection tree. To toggle between names and labels, press <b>Ctrl+T</b> before you run compare.</li>
+</list>
+
+
+<subheader>Comparison Method</subheader>
+
+<list>
+	<li><b>Compare Input to Reference (only)</b>: The input file is inspected case by case in the selected comparison order. The reference file is inspected for a corresponding case. Any cases, levels, or records which are present in the input file but missing from the reference file are listed. Any item values which are different between the two files are listed. If there are any extra cases, levels, or records in the reference file they are NOT listed.</li>
+	<li><b>Compare Input to Reference and Reference to Input</b>: Same as Compare Input to Reference (only) above, but if there are any extra cases, levels, or records in the reference file they ARE listed.</li>
+</list>
+
+
+<subheader>Comparison Order</subheader>
+
+<list>
+	<li><b>Compare in Indexed Order</b>: Cases in the input file are compared in sorted order by case ids, regardless where the cases are located in the data files.</li>
+	<li><b>Compare in Sequential Order</b>: Cases in the input file are compared in the physical order they occur in the file.</li>
+</list>
