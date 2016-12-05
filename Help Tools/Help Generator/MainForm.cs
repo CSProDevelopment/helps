@@ -47,7 +47,7 @@ namespace Help_Generator
                     {
                         // loading the settings file
                         if( Path.GetExtension(fileArgument).Equals(Constants.SettingsFileExtension,StringComparison.InvariantCultureIgnoreCase) )
-                            _helpComponents.projectPath = Path.GetDirectoryName(fileArgument);
+                            _helpComponents.projectPath = Path.GetFullPath(Path.GetDirectoryName(fileArgument));
 
                         // loading a topic
                         else if( Path.GetExtension(fileArgument).Equals(Constants.TopicExtension,StringComparison.InvariantCultureIgnoreCase) )
