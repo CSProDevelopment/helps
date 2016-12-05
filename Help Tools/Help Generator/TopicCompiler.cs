@@ -583,8 +583,8 @@ namespace Help_Generator
             {
                 url = startTagComponents[0];
 
-                if( ( url.IndexOf("http") < 0 ) && ( url.IndexOf("mailto") < 0 ) )
-                    throw new Exception(String.Format("The URL {0} is invalid and must begin with http or mailto",url));
+                if( Path.GetExtension(url).Equals(Constants.ChmFileExtension,StringComparison.InvariantCultureIgnoreCase) )
+                    throw new Exception(String.Format("The topic {0} is invalid",url));
             }
 
             return String.Format("<a href=\"{0}\">",url);

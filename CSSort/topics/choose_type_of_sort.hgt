@@ -1,0 +1,75 @@
+﻿<title>Choose Type of Sort</title> <titleheader />
+<context HIDD_SORTTYPE />
+
+To select the type of sort you wish to perform, press either <b>Ctrl+T</b>, click on the toolbar button <image sort_type_button.png />, or go to the <b>Options</b> menu selection and choose <b>Sort Type</b>. The four sort choices available to you are described below.
+
+<subheader>1) Case Sort (IDs only)</subheader>
+
+Use this sort type for data files that are structured by questionnaire—that is, when the records for each questionnaire are grouped together in the data file. For example, you would choose this sort type if your data file looks like this:
+
+<indent><font monospace>
+questionnaire 1, housing record
+questionnaire 1, person record 1
+questionnaire 1, person record 2
+questionnaire 1, person record 3
+questionnaire 3, person record 1
+questionnaire 3, person record 2
+questionnaire 3, housing record
+questionnaire 3, person record 3
+questionnaire 2, housing record
+questionnaire 2, person record 1
+questionnaire 2, person record 2
+questionnaire 2, person record 3
+</font></indent>
+
+Only <link cspro.chm::html/identification_items.htm>ID items</link> are available as sort keys when this type of sort is used. Note that data files created by CSPro are organized this way.
+
+
+<subheader>2) Case Sort (IDs plus single record items)</subheader>
+
+This option is similar to the sort above, and is also used for data files that are grouped by questionnaire. However, this sort type also lets you select sort keys from among data items that appear in single record types.
+
+In the above example, if the housing record was a single record type, then its items would be presented as sort keys along with the dictionary's ID items.
+
+One use for this type of sort would be where a single record type contains additional information—geographical classification codes, for example—about the questionnaire, but information that isn't part of the questionnaire's identification. You could then sort the data file by these characteristics.
+
+
+<subheader>3) Record Sort (IDs and record type only)</subheader>
+
+A record sort is used for data files that are grouped by record type, not by questionnaire. This can be useful when importing data from another source (such as a database system) that keeps the parts of each questionnaire separate. An example of a data file grouped by record might be like this:
+
+<indent><font monospace>
+questionnaire 1, housing record
+questionnaire 3, housing record
+questionnaire 2, housing record
+questionnaire 2, person record 1
+questionnaire 2, person record 2
+questionnaire 2, person record 3
+questionnaire 1, person record 2
+questionnaire 1, person record 1
+questionnaire 3, person record 3
+questionnaire 1, person record 3
+questionnaire 3, person record 1
+questionnaire 3, person record 2
+</font></indent>
+
+This sort option will make an additional key, <i>&lt;record type&gt;</i>, available for sorting.
+
+If you want to use your sorted file with CSPro, it must be grouped by questionnaire. You can do this by choosing this sort type and using the &lt;record type&gt; as the last sort key, after the other keys that uniquely identify each questionnaire. Using the Popstan dictionary, the sort specifications would look like this:
+
+<center><image record_sort_example.png /></center>
+
+
+<subheader>4) Record Sort (using items from record...)</subheader>
+
+This sort type expands on the <b>case sort (IDs plus single record items)</b> described above. In addition to singly-occurring records, you can choose to sort on one or more items from multiply-occurring records. However, please note if you have more than one multiply-occurring record in your dictionary, you will only be able to choose items from <b>one</b> of the records—you cannot select items from two or more multiply-occurring records.
+
+This type of sort can be useful for reordering records within cases. For example, if you were using a dictionary like our Census Dictionary.dcf, and your population records got out of order, you could resort them based on the variable "Line Number."
+
+
+<subheader>Notes</subheader>
+
+<list>
+	<li>Sort Data will test to make sure that single record types (if defined) are present for each questionnaire.</li>
+	<li>For case sorts, Sort Data will also check for duplicate case ID values. If duplicate are encountered, no sort is done but a list of duplicate case IDs is displayed.</li>
+</list>
