@@ -1,0 +1,23 @@
+﻿<title>Define a Universe</title> <titleheader />
+<context HIDD_UNIVERSE_SIMPLE />
+
+When you define a universe, Tabulate Frequencies will only tabulate data records in the questionnaires that meet the conditions you specify. A universe works like a filter, as the tables produced use only a subset of the data file's records. Therefore, values in the table may be less than they would be with no universe specified, since the universe restricts the data available for tabulation. Note that ALL frequency tables will have the same universe definition.
+
+To define a universe you can simply type the expression into the box shown. Alternatively, you can click on the <b>Edit</b> button and use the interactive interface to build the universe expression. The universe expression can be any condition that is syntactically valid in the CSPro language.
+
+<subheader>Examples</subheader>
+
+To restrict your table to females of reproductive age, your expression might be:
+
+<logic>SEX = 2 and AGE in 12:49</logic>
+
+To restrict your table to heads of households who are economically active, your expression might be:
+
+<logic>RELATIONSHIP = 1 and ECON_ACTIVE = 1</logic>
+
+<subheader>Tips</subheader>
+
+<list>
+	<li>You may enter several conditions using <logiccolor>and</logiccolor> / <logiccolor>or</logiccolor>.</li>
+	<li>You can add parentheses to modify the order of evaluation of the conditions.</li>
+</list>
