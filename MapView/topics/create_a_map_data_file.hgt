@@ -1,0 +1,64 @@
+﻿<title>Create a Map Data File</title> <titleheader />
+
+The .MDF file is a tab-delimited text file. This makes it very easy to use a spreadsheet (preferred method), text editor, or word processor to create your .MDF file.
+
+Once you've selected the application you will use to create the file, type in your data adhering to the .MDF's file format, described below. When ready to save the file, make sure the file is saved as a tab-delimited, text file, and has the extension .MDF.
+
+<subheader>.MDF file format</subheader>
+
+The .MDF file is a text file with two sections. There is always one of each section and they appear in the following order:
+
+<subheader>[MapDataFile] Section</subheader>
+
+<indent><font monospace>
+[MapDataFile]
+Version=CSPro <definition version />
+MapFile=popstan
+AreaLevels=2
+Variables=2
+Thousands=Comma
+Decimal=Dot
+NoValue=NA
+MapLabel=Popstan
+</font></indent>
+
+The first section of an .MDF file identifies the file to CSPro. The first line is always <b>[MapDataFile]</b>.
+
+<b>Version</b> shows the CSPro version number.
+
+<b>MapFile</b> gives the name of the associated map file. Do not include any file extension. Map Viewer looks for files with both .MAP and .MPC extensions. If it finds both files it uses the one that was most recently modified. If this is the .MAP file, Map Viewer will automatically save a new .MPC file. Both files contain exactly the same information. Map Viewer runs faster using a .MPC file, and this is the one it almost always uses.
+
+<b>AreaLevels</b> indicates the number of area levels that can be shown. This cannot be greater than the number of area levels defined in the associated map file. It can be less, however, for example when your map file has polygons for province and district but you only want to include province data in this .MDF file.
+
+<b>Variables</b> indicates the number of variables included in this map data file. There must be one value for each variable for each geographic unit in the map data file.
+
+The next two lines, <b>Thousands</b> and <b>Decimal</b> tell Map Viewer which convention you use to write numbers For example, "1,234.56" uses a comma for thousands and a dot for decimals, whereas "1.234,56" uses a dot for thousands and a comma for decimals. If the data values (in the next section) don't use any thousands separator, it doesn't matter what you put for "Thousands." You may use "Comma," "Dot," or "Space" for the Thousands parameter, and "Comma" or "Dot" for the Decimal parameter. When Map Viewer reads an .MDF file, it always uses the convention defined in these two lines. However, when Map Viewer saves a file it uses the convention defined by your Windows regional settings, and writes these two lines accordingly. To see or change your regional settings, click "Start/Settings/Control Panel/Regional Settings/Number."
+
+If you have any missing values for a particular geographic unit, you must indicate this on the <b>NoValue</b> line. This tells Map Viewer what text you are going to use for missing values in the next section.
+
+Finally, <b>MapLabel</b> is used to name the map. In our example the map is called "Popstan." This name will appear as the root of the hierarchy tree (topmost name) on the left side of Map Viewer's screen.
+
+
+<subheader>[Data] Section</subheader>
+
+<indent><font monospace>
+[Data]
+Province&nbsp;&nbsp;District&nbsp;&nbsp;Area&nbsp;name&nbsp;&nbsp;1990&nbsp;Pop&nbsp;&nbsp;&nbsp;1980&nbsp;Pop
+X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Popstan&nbsp;&nbsp;&nbsp;&nbsp;3,356,782&nbsp;&nbsp;2,985,529
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Artesia&nbsp;&nbsp;&nbsp;&nbsp;837,961&nbsp;&nbsp;&nbsp;&nbsp;784,937
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dongo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50,450&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32,467
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Idfu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;112,679&nbsp;&nbsp;&nbsp;&nbsp;102,360
+.&nbsp;.&nbsp;.
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;659,201&nbsp;&nbsp;&nbsp;&nbsp;NA
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Baja&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;38,765&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NA
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bassac&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;40,876&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30,740
+.&nbsp;.&nbsp;.
+</font></indent>
+
+The first line following <b>[Data]</b> consists of several text strings, separated by tabs. They would appear as adjacent cells in the same row of a spreadsheet. The line (row) begins with the names of the area levels, as they will appear to the user in Map Viewer. The number of names (columns) must match the number of area levels defined earlier in the file. After these names always comes "Area name." This text never appears in Map Viewer, but is included in the .MDF file to make it easy for you to read. This text is a place-holder, however, so it must be there. Following "Area name" are the variable names as they will appear to the user in Map Viewer.
+
+Each line thereafter in the <b>[Data]</b> section corresponds to one geographical unit in the map file. The first numbers are the area codes, then the name of the unit, then variable values for this geographic unit. For higher geographic units, e.g., provinces, a non-blank character serves a place-holder in the lower geographic unit, e.g., district. The fields in each line are separated by tabs.
+
+Note in the example that the value for "Population 1980" for "Baja" is missing. We use "NA" because that's what is defined in the <b>NoValue</b> parameter of the <b>[MapDataFile]</b> section.
+
+Map Viewer matches the area codes for each line (row) with those found in the map file. Any geographic units in the map file with no corresponding line (row) in the <b>[Data]</b> section will always show the "no data" color (white, by default) in Map Viewer.
