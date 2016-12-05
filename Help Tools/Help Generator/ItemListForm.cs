@@ -111,6 +111,9 @@ namespace Help_Generator
             else if( e.KeyCode == Keys.Delete )
                 buttonDelete_Click(sender,e);
 
+            else if( e.KeyCode == Keys.C && e.Control )
+                buttonCopyFilename_Click(sender,e);
+
             else if( e.KeyCode == Keys.Space )
                 buttonCopyForTopicSource_Click(sender,e);
 
@@ -174,6 +177,9 @@ namespace Help_Generator
 
         private void buttonCopyFilename_Click(object sender,EventArgs e)
         {
+            if( listViewItems.SelectedItems.Count == 0 )
+                return;
+
             object selectedTag = listViewItems.SelectedItems[0].Tag;
             string filename = radioButtonTopics.Checked ? ((Preprocessor.TopicPreprocessor)selectedTag).Filename : ((Preprocessor.ImagePreprocessor)selectedTag).Filename;
 

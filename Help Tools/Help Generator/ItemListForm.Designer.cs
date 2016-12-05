@@ -100,7 +100,7 @@
             this.buttonCopyFilename.Name = "buttonCopyFilename";
             this.buttonCopyFilename.Size = new System.Drawing.Size(165, 23);
             this.buttonCopyFilename.TabIndex = 3;
-            this.buttonCopyFilename.Text = "Copy Filename";
+            this.buttonCopyFilename.Text = "Copy Filename (Ctrl+C)";
             this.buttonCopyFilename.UseVisualStyleBackColor = true;
             this.buttonCopyFilename.Click += new System.EventHandler(this.buttonCopyFilename_Click);
             // 

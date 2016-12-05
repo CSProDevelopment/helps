@@ -74,7 +74,7 @@ namespace Help_Generator
 
             _tagSettings = new Dictionary<string,TagSettings>();
             _tagSettings.Add(TagTitle,new TagSettings(true,null,(EndTagHandlerDelegate)EndTitleHandler,0,0));
-            _tagSettings.Add(ContextTag,new TagSettings(false,(StartTagHandlerDelegate)StartContextHandler,null,1,1));
+            _tagSettings.Add(ContextTag,new TagSettings(false,(StartTagHandlerDelegate)StartContextHandler,null,1,Int32.MaxValue));
             _tagSettings.Add(IndentTag,new TagSettings(true,(StartTagHandlerDelegate)StartIndentHandler,(EndTagHandlerDelegate)EndTagHandlerUsingFilledEndTagStack,0,1));
             _tagSettings.Add(CenterTag,new TagSettings("<div align=\"center\">","</div>"));
             _tagSettings.Add(BoldTag,new TagSettings("<b>","</b>"));
@@ -432,7 +432,9 @@ namespace Help_Generator
 
         private string StartContextHandler(string[] startTagComponents)
         {
-            _topicCompilerSettings.AddContextSensitiveHelp(_preprocessedTopic,startTagComponents[0]);
+            foreach( string startTagComponent in startTagComponents )
+                _topicCompilerSettings.AddContextSensitiveHelp(_preprocessedTopic,startTagComponent);
+
             return "";
         }
 
@@ -583,7 +585,7 @@ namespace Help_Generator
             {
                 url = startTagComponents[0];
 
-                if( Path.GetExtension(url).Equals(Constants.ChmFileExtension,StringComparison.InvariantCultureIgnoreCase) )
+                if( Path.GetExtension(url).Equals(Constants.TopicExtension,StringComparison.InvariantCultureIgnoreCase) )
                     throw new Exception(String.Format("The topic {0} is invalid",url));
             }
 
