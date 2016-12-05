@@ -263,6 +263,9 @@ namespace Help_Generator
                 formatterLine.Line = sb.ToString();
                 formatterLine.SortableKey = sortableKeyPrefix + sbSortable.ToString();
 
+                // make sure that spaces are treated as high characters
+                formatterLine.SortableKey = formatterLine.SortableKey.Replace(' ','\u26ff');
+
                 if( isLinkToChm ) // insert a high character so that linked help files show at the end of a sorted index
                     formatterLine.SortableKey = '\u26ff' + formatterLine.SortableKey;                    
 
