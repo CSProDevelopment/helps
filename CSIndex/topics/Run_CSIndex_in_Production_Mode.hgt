@@ -40,9 +40,9 @@ The <pffcolor>[Files]</pffcolor> block is required and names the file(s) to be i
 The <pffcolor>[Parameters]</pffcolor> block is optional:
 
 <list>
-	<li><pffcolor>ViewListing</pffcolor> determines whether the listing file is viewed. "<pffcolor>ViewListing</pffcolor>=Always" means that you will always see the generated listing file, while "<pffcolor>ViewListing</pffcolor>=Never" means that you will never see the generated listing file.</li>
-	<li><pffcolor>Silent</pffcolor> indicates whether you want CSIndex to show its progress during the production run ("<pffcolor>Silent</pffcolor>=No"), or if you want it to run silently in the background ("<pffcolor>Silent</pffcolor>=Yes").</li>
-	<li><pffcolor>DeletePrompt</pffcolor> tells CSIndex whether or not you want duplicate cases removed automatically ("<pffcolor>DeletePrompt</pffcolor>=No") or if you want the user to be prompted about what duplicates to remove ("<pffcolor>DeletePrompt</pffcolor>=Yes"). Note that modes "<pffcolor>DeletePrompt</pffcolor>=Yes" and "<pffcolor>Silent</pffcolor>=Yes" are incompatible with each other and in that case CSIndex will default to "<pffcolor>Silent</pffcolor>=No."</li>
+	<li><pffcolor>ViewListing</pffcolor> determines whether the listing file is viewed. <pffcolor>ViewListing</pffcolor>=Always means that you will always see the generated listing file, while <pffcolor>ViewListing</pffcolor>=Never means that you will never see the generated listing file.</li>
+	<li><pffcolor>Silent</pffcolor> indicates whether you want CSIndex to show its progress during the production run (<pffcolor>Silent</pffcolor>=No), or if you want it to run silently in the background (<pffcolor>Silent</pffcolor>=Yes).</li>
+	<li><pffcolor>DeletePrompt</pffcolor> tells CSIndex whether or not you want duplicate cases removed automatically (<pffcolor>DeletePrompt</pffcolor>=No) or if you want the user to be prompted about what duplicates to remove (<pffcolor>DeletePrompt</pffcolor>=Yes). Note that modes <pffcolor>DeletePrompt</pffcolor>=Yes and <pffcolor>Silent</pffcolor>=Yes are incompatible with each other and in that case CSIndex will default to <pffcolor>Silent</pffcolor>=No.</li>
 </list>
 
-The default values are "<pffcolor>ViewListing</pffcolor>=Always," "<pffcolor>Silent</pffcolor>=No," and "<pffcolor>DeletePrompt</pffcolor>=Yes."
+The default values are <pffcolor>ViewListing</pffcolor>=Always, <pffcolor>Silent</pffcolor>=No, and <pffcolor>DeletePrompt</pffcolor>=Yes.

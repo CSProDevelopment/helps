@@ -1,0 +1,11 @@
+﻿<title>Load Exported Data into SAS</title> <titleheader />
+
+When you choose SAS as the export format, CSPro creates two files: a data file (.DAT) and a SAS file (.SAS). To load the exported data into SAS, you must first load the SAS file and then run the program in order to load the data. To load the file, launch SAS and choose Open Program from the file menu. SAS will prompt you for the name of the SAS file. Choose the .SAS file that CSPro generated and click Open.
+
+<center><image sas_import_open_program.png /></center>
+
+To run the file, click the submit button below the menu in the main SAS window. If the file is run without error, then SAS will display the number of observations and variables in the SAS data file, and the data file will be in the Library's user folder in the SAS explorer window. SAS automatically saves the data as a native SAS data file (.sas7bdat) in your local folder.
+
+<center><image sas_import_submit.png /></center>
+
+If SAS reports errors when reading your .SAS file, it is most likely because files or folders changed after exporting them from CSPro. You will have to update the file and folder names in the libname and infile statements in the .SAS file. You can update these statements in the SAS Editor after opening the SAS program but before clicking the submit button.

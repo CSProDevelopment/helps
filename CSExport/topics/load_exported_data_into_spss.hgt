@@ -1,0 +1,13 @@
+﻿<title>Load Exported Data Into SPSS</title> <titleheader />
+
+When you choose SPSS as the export format, CSPro creates two files: a data file (.DAT) and an SPSS syntax file (.SPS). To load the exported data into SPSS, you must first load the syntax file into SPSS and then run the syntax in order to load the data. To load the syntax file, launch SPSS and choose Open Syntax from the file menu. SPSS will prompt you for the name of the syntax file. Choose the .SPS file that CSPro generated and click OK.
+
+<center><image spss_import_open_syntax.jpg /></center>
+
+To run the syntax file, choose "All" from the "Run" menu in the SPSS syntax window. If the syntax file is run without error, then you will see the imported data in the main SPSS window. You can then use Save As from the file menu in order to save the data as a native SPSS file (.SAV).
+
+<center><image spss_import_run.jpg /></center>
+
+Note that some versions of SPSS do not support opening syntax files. This is true of certain student versions of SPSS. If your version of SPSS does not have the Open Syntax command, you will need to find a version that does and use that version to load your data and save it as a native SPSS file (which can then be read by any version of SPSS).
+
+If SPSS reports syntax errors when reading your syntax file, it is most likely because you have variable names which are longer than 8 characters in your CSPro data dictionary. SPSS does not support variable names greater than 8 characters. If you have any variable names that are too long, you must edit your dictionary using CSPro to shorten the names and then run the export again.

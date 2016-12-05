@@ -1,0 +1,120 @@
+﻿<title>Examples of Export Methods</title> <titleheader />
+
+<subheader>Example 1</subheader>
+
+The data file to be exported has two cases, with three records in each case; one Housing record (record type=1) and two Person records (record type=2). The ID consists of two items (IDA and IDB), the Housing record (max records=1) has two items (HM and HN), and Person records (max records=5) have two items (PX and PY).
+
+<indent 2>
+&lt;ID1, Housing 1&gt; or &lt;IDA1, IDB1, HM1, HN1&gt;
+&lt;ID1, Person 11&gt; or &lt;IDA1, IDB1, PX11, PY11&gt;
+&lt;ID1, Person 12&gt; or &lt;IDA1, IDB1, PX12, PY12&gt;
+&nbsp;
+&lt;ID2, Housing 2&gt; or &lt;IDA2, IDB2, HM2, HN2&gt;
+&lt;ID2, Person 21&gt; or &lt;IDA2, IDB2, PX21, PY21&gt;
+&lt;ID2, Person 22&gt; or &lt;IDA2, IDB2, PX22, PY22&gt;
+</indent>
+
+If exported to 'one file' and 'all in one record,' two records are written to that file, one for each case.
+
+<indent 2>
+&lt;IDA1, IDB1&gt; &lt; HM1, HN1&gt;&lt;PX11, PX12, ..., PX15, PY11, PY12,..., PY15&gt;
+&lt;IDA2, IDB2&gt; &lt; HM2, HN2&gt;&lt;PX21, PX22, ..., PX25, PY21, PY22,..., PY25&gt;
+</indent>
+
+For the items on the person record, five occurrences are listed (max records = 5) even though PXn3 through PXn5 and PYn3 through PYn5 are blank.
+
+If exported to 'multiple files' and 'all in one record,' two files are created. The Housing file will have two records:
+
+<indent 2>
+&lt;IDA1, IDB1&gt; &lt;HM1, HN1&gt;
+&lt;IDA2, IDB2&gt; &lt;HM2, HN2&gt;
+</indent>
+
+The Person file will have two records:
+
+<indent 2>
+&lt;IDA1, IDB1&gt; &lt;PX11, PX12, ..., PX15, PY11, PY12,..., PY15&gt;
+&lt;IDA2, IDB2&gt; &lt;PX21, PX22, ..., PX25, PY21, PY22,..., PY25&gt;
+</indent>
+
+Five occurrences are listed (max records = 5) even though PXn3 through PXn5 and PYn3 through PYn5 are blank.
+
+If exported to 'multiple files' and 'as separate records' but Housing not joined to Person, two files are created. The Housing file will have two records:
+
+
+<indent 2>
+&lt;IDA1, IDB1&gt; &lt;HM1, HN1&gt;
+&lt;IDA2, IDB2&gt; &lt;HM2, HN2&gt;
+</indent>
+
+The Person file will have four records:
+
+<indent 2>
+&lt;IDA1, IDB1&gt; &lt;PX11, PY11&gt;
+&lt;IDA1, IDB1&gt; &lt;PX12, PY12&gt;
+&lt;IDA2, IDB2&gt; &lt;PX21, PY21&gt;
+&lt;IDA2, IDB2&gt; &lt;PX22, PY22&gt;
+</indent>
+
+If exported 'as separate records' and 'join single with multiple,' ONLY one file is created regardless of whether 'one file' or 'multiple files' is selected.
+
+<indent 2>
+&lt;IDA1, IDB1&gt; &lt;HM1, HN1&gt; &lt;PX11, PY11&gt;
+&lt;IDA1, IDB1&gt; &lt;HM1, HN1&gt; &lt;PX12, PY12&gt;
+&lt;IDA2, IDB2&gt; &lt;HM2, HN2&gt; &lt;PX21, PY21&gt;
+&lt;IDA2, IDB2&gt; &lt;HM2, HN2&gt; &lt;PX22, PY22&gt;
+</indent>
+
+<subheader>Example 2</subheader>
+
+The dictionary corresponding to the data files has two levels. Level 1 contains data on a mother. Level 2 contains data on the mother's children. Each level may have several record types.
+
+If you export to one file, each level's data will be written to a separate record. The output file would contain the following records:
+
+<indent 2>
+&lt;Level 1, all records concatenated&gt; (Mother A)
+&lt;Level 2, all records concatenated&gt; (Child 1 of Mother A)
+&lt;Level 2, all records concatenated&gt; (Child 2 of Mother A)
+&lt;Level 2, all records concatenated&gt; (Child 3 of Mother A)
+&lt;Level 1, all records concatenated&gt; (Mother B)
+&lt;Level 2, all records concatenated&gt; (Child 1 of Mother B)
+&lt;Level 2, all records concatenated&gt; (Child 2 of Mother B)
+&lt;Level 2, all records concatenated&gt; (Child 3 of Mother B)
+...
+</indent>
+
+The order of items would follow the pattern shown in Example 1.
+
+
+<subheader>Example 3</subheader>
+
+The data file to be exported has two cases with three record types, the following records in each case.
+
+<indent 2>
+&lt;Housing 1&gt;
+&nbsp;
+&lt;Person (man) 11&gt;
+&lt;Person (woman) 12&gt;
+&lt;Person (child) 13&gt;
+&lt;Fertility 11&gt;
+&nbsp;
+&lt;Housing 2&gt;
+&nbsp;
+&lt;Person (women) 21&gt;
+&lt;Person (child) 22&gt;
+&lt;Person (women) 23&gt;
+&lt;Person (child) 24&gt;
+&lt;Person (child) 25&gt;
+&lt;Fertility 21&gt;
+&lt;Fertility 22&gt;
+</indent>
+
+Each Person record representing a women has a corresponding Fertility record associated with it through a relation defined in the dictionary.
+
+If you export Person and Fertility records to one file and as separate records, you will get one file with the following three records:
+
+<indent 2>
+&lt;Person (women) 12&gt;&lt; Fertility 11&gt;
+&lt;Person (women) 21&gt;&lt; Fertility 21&gt;
+&lt;Person (women) 23&gt;&lt; Fertility 22&gt;
+</indent>

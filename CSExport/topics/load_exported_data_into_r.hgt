@@ -1,0 +1,71 @@
+﻿<title>Load Exported Data Into R</title> <titleheader />
+
+When you choose R as the export format, CSPro creates two files: a data file (.DAT) and a R script file (.R). To load the data into R, select File -> Open script.
+
+<center><image r_import_open_script.png /></center>
+
+Select the .R file and then the R Editor will display the contents of the script file. To run the script file, select Edit -> Run all.
+
+<center><image r_import_run_all.png /></center>
+
+The script file will add a data frame containing the variables exported from the CSPro file. The name of the data frame will be the same as the name of the data file. If you exported variables from multiple records, you may have more than one data frame, one for each record. The items from the record will be added to the data frame as vectors.
+
+Your R script file will look similar to the following:
+
+<indent 2><font monospace>
+cspro.factor.type&nbsp;=&nbsp;1
+cspro.factor.create.new.variable&nbsp;=&nbsp;FALSE
+&nbsp;
+#&nbsp;CSPro&nbsp;Export&nbsp;Factor&nbsp;Options:
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;cspro.factor.type&nbsp;(0):&nbsp;do&nbsp;not&nbsp;use&nbsp;factors
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;cspro.factor.type&nbsp;(1):&nbsp;factor&nbsp;only&nbsp;discrete&nbsp;numeric&nbsp;variables
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;cspro.factor.type&nbsp;(2):&nbsp;factor&nbsp;both&nbsp;discrete&nbsp;numeric&nbsp;and&nbsp;alpha&nbsp;variables
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;cspro.factor.create.new.variable:&nbsp;TRUE&nbsp;to&nbsp;add&nbsp;the&nbsp;factored&nbsp;variables&nbsp;as&nbsp;separate&nbsp;variables
+&nbsp;
+exported&nbsp;&lt;-&nbsp;read.fortran("C:/MySurvey/Exported.dat",c("I1","I1"))
+&nbsp;
+names(exported)&nbsp;&lt;-&nbsp;c("relationship","sex")
+&nbsp;
+if(&nbsp;cspro.factor.type&nbsp;!=&nbsp;0&nbsp;)
+{
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;if(&nbsp;cspro.factor.create.new.variable&nbsp;)&nbsp;exported$relationship.f&nbsp;&lt;-&nbsp;factor(exported$relationship,levels&nbsp;=&nbsp;c(1,2,3,4,5),labels&nbsp;=&nbsp;c("Head","Spouse","Child","Other&nbsp;Relative","Non-Relative"))
+&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;exported$relationship&nbsp;&lt;-&nbsp;factor(exported$relationship,levels&nbsp;=&nbsp;c(1,2,3,4,5),labels&nbsp;=&nbsp;c("Head","Spouse","Child","Other&nbsp;Relative","Non-Relative"))
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;if(&nbsp;cspro.factor.create.new.variable&nbsp;)&nbsp;exported$sex.f&nbsp;&lt;-&nbsp;factor(exported$sex,levels&nbsp;=&nbsp;c(1,2),labels&nbsp;=&nbsp;c("Male","Female"))
+&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;exported$sex&nbsp;&lt;-&nbsp;factor(exported$sex,levels&nbsp;=&nbsp;c(1,2),labels&nbsp;=&nbsp;c("Male","Female"))
+&nbsp;
+}
+&nbsp;
+rm(cspro.factor.type)
+rm(cspro.factor.create.new.variable)
+</font></indent>
+
+The two variables at the top give you options to control whether or not you want to use factors with your vectors. The comments give information about each of the options. If creating new vectors for the factors, the name of the new vector will be the original name followed by <b>.f</b>. The default option is to modify the original vector to add factors for discrete numeric variables. Make any changes to these two options before running the script file.
+
+Adding factors facilitates the use of value set labels in R output. For example, without factors, a table in R might look like this:
+
+<indent 2><font monospace>
+>&nbsp;table(exported$relationship,exported$sex)
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2
+&nbsp;&nbsp;1&nbsp;30833&nbsp;&nbsp;4351
+&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;108&nbsp;30371
+&nbsp;&nbsp;3&nbsp;30933&nbsp;21894
+&nbsp;&nbsp;4&nbsp;&nbsp;5610&nbsp;11860
+&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;241&nbsp;&nbsp;&nbsp;476
+</font></indent>
+
+Using factors results in a more readable table:
+
+<indent 2><font monospace>
+>&nbsp;table(exported$relationship.f,exported$sex.f)
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Male&nbsp;Female
+&nbsp;&nbsp;Head&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30833&nbsp;&nbsp;&nbsp;4351
+&nbsp;&nbsp;Spouse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;108&nbsp;&nbsp;30371
+&nbsp;&nbsp;Child&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30933&nbsp;&nbsp;21894
+&nbsp;&nbsp;Other&nbsp;Relative&nbsp;&nbsp;5610&nbsp;&nbsp;11860
+&nbsp;&nbsp;Non-Relative&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;241&nbsp;&nbsp;&nbsp;&nbsp;476
+</font></indent>
