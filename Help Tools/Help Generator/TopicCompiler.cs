@@ -90,6 +90,7 @@ namespace Help_Generator
             _tagSettings.Add(LinkTag,new TagSettings(true,(StartTagHandlerDelegate)StartLinkHandler,"</a>",1,1));
             _tagSettings.Add(TableTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableHandler,(EndTagHandlerDelegate)EndTableHandler,1,2));
             _tagSettings.Add(TableCellTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableCellHandler,(EndTagHandlerDelegate)EndTableCellHandler,0,1));
+            _tagSettings.Add(SeeAlsoTag,new TagSettings(false,(StartTagHandlerDelegate)StartSeeAlsoHandler,null,1,Int32.MaxValue));
             _tagSettings.Add(LogicTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicHandler,0,0));
             _tagSettings.Add(LogicColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicColorHandler,0,0));
             _tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
@@ -523,7 +524,7 @@ namespace Help_Generator
 
             if( ( startTagComponents.Length == 1 ) )
             {
-                if( startTagComponents[0].Equals(ListOrderedAttribute) )
+                if( startTagComponents[0].Equals(OrderedAttribute) )
                     unorderedList = false;
 
                 else
@@ -663,6 +664,43 @@ namespace Help_Generator
                 ( columns > 1 ) ? String.Format(" colspan=\"{0}\"",columns) : "");
         }
 
+        private string StartSeeAlsoHandler(string[] startTagComponents)
+        {
+            bool orderedList = false;
+            List<Preprocessor.TopicPreprocessor> topics = new List<Preprocessor.TopicPreprocessor>();
+
+            foreach( string startTagComponent in startTagComponents )
+            {
+                if( startTagComponent.Equals(OrderedAttribute) )
+                {
+                    if( orderedList || topics.Count > 0 )
+                        throw new Exception("The starttag's ordered attribute can only appear once and must appear first");
+
+                    orderedList = true;
+                }
+
+                else
+                    topics.Add(_helpComponents.preprocessor.GetTopic(startTagComponent));
+            }
+
+            if( topics.Count == 0 )
+                throw new Exception("You must provide at least one topic");
+
+            if( orderedList )
+                topics.Sort((x,y) => x.Title.CompareTo(y.Title));
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach( Preprocessor.TopicPreprocessor topic in topics )
+            {
+                sb.AppendFormat("{0} <a href=\"{1}\">{2}</a>",
+                    sb.Length == 0 ? "<b>See also</b>:" : ",",
+                    _topicCompilerSettings.GetHtmlFilename(topic),topic.Title);
+            }
+
+            return sb.ToString();
+        }        
+
         private string EndTableCellHandler(string endTagInnerText)
         {
             TableSettings tableSettings = GetCurrentTable();
@@ -721,25 +759,27 @@ namespace Help_Generator
         public const string BoldTag = "b";
         public const string ItalicsTag = "i";
         public const string FontTag = "font";
-        public const string FontMonospaceAttribute = "monospace";
         public const string ListTag = "list";
-        public const string ListOrderedAttribute= "ordered";
         public const string ListItemTag = "li";
         public const string HeaderTag = "header";
         public const string TitleHeaderTag = "titleheader";
         public const string SubheaderTag = "subheader";
         public const string ImageTag = "image";
-        public const string ImageNoChmAttribute = "nochm";
         public const string TopicTag = "topic";
         public const string LinkTag = "link";
         public const string TableTag = "table";
         public const string TableCellTag = "cell";
+        public const string SeeAlsoTag = "seealso";
         public const string LogicTag = "logic";
         public const string LogicColorTag = "logiccolor";
         public const string PffTag = "pff";
         public const string PffColorTag = "pffcolor";
         public const string HtmlTag = "html";
         public const string DefinitionTag = "definition";
+
+        public const string FontMonospaceAttribute = "monospace";
+        public const string ImageNoChmAttribute = "nochm";
+        public const string OrderedAttribute = "ordered";
 
         private const string NewLineMarker = "~!~";
     }
