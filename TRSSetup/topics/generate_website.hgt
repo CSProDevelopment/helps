@@ -1,0 +1,23 @@
+﻿<title>Generate Website</title> <titleheader />
+<context HID_FILE_GENERATEWEBSITE />
+
+Creating a web-based version of TRS requires two general steps:
+
+<subheader>Convert TRS files to formats that can be put on a web site</subheader>
+
+The files within the TRS system must be converted to formats that work independently of CSPro. This requires turning the TRS .mdb file (Microsoft Access database) into an Internet-friendly SQL database.
+
+The files from the .zip file (all the tables and other documents that were added to the TRS) must be taken out of the .zip file so that they can be linked to directly on the web site. Table Retrieval Setup will convert CSPro .tbw files to other formats for the convenience of Internet users.
+
+<list>
+	<li>HTML files for direct viewing on the web site.</li>
+	<li>Tab-delimited text files (.txt) for importation to Microsoft Excel and other packages.</li>
+	<li>Rich text format files (.rtf) that can be opened easily in word processors such as Microsoft Word.</li>
+	<li>Excel spreadsheet files (.xls), if Microsoft Excel is installed on the machine that produces the web-based TRS.</li>
+</list>
+
+To generate the files that will be used in the database, select Generate Website from the File menu and then select a folder where the files for your website will be placed. Table Retrieval Setup will create a file, CreateTRSDatabase.sql, that you use to populate your database, as well as all the table and other files that have been added to the TRS. This process may take a while.
+
+<subheader>Generate web pages as the user interface</subheader>
+
+You must create web pages that interact with the SQL database. These web pages are analogous to the Table Retrieval tool included with CSPro. They provide the web-based user interface as people query the web-based TRS system. There are many ways to do this. To obtain a PHP implementation of such a database, please contact the Census Bureau at <link mailto:<definition mailing_list />><definition mailing_list /></link>.

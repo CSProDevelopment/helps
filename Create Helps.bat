@@ -16,4 +16,5 @@ del /s *.chw
 %help_generator% /generate ".\MapView\MapView.hghelp"
 %help_generator% /generate ".\ShpToMap\ShpToMap.hghelp"
 %help_generator% /generate ".\TextView\TextView.hghelp"
+%help_generator% /generate ".\TRSWin\TRSSetup.hghelp"
 %help_generator% /generate ".\TRSWin\TRSWin.hghelp"

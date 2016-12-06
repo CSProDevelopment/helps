@@ -1,0 +1,20 @@
+﻿<title>Add CSPro or IMPS Tables File</title> <titleheader />
+<context HIDD_ADDCONDITIONS HIDD_TBF_REPORT_DLG HID_FILE_ADDCONDITIONS />
+
+To add a CSPro tables file (.tbw), from the <b>Documents</b> menu, select <b>Add CSPro Tables</b>. Choose the CSPro tables file you want to add and click OK. The system will add all tables from the file as well as all geographic areas and titles defined in the file.
+
+To add an IMPS tables file (.tbf), from the <b>Documents</b> menu, select <b>Add IMPS Tables</b>. Choose the IMPS tables file you want to add and click OK. The system will add all tables from the file as well as all geographic areas and titles defined in the file.
+
+If the tables file contains geographic areas with the same codes as areas already in the table retrieval file, but with different names, you will be prompted to choose which names to use. Each geographic area may have only one name.
+
+<subheader>Add Tables Conditionally Based on Geography</subheader>
+
+It is possible to restrict the geographies from which you would like to add tables to TRS. This is useful if you are creating a series of tables that include different value sets based on geography. Tables can be prepared using multiple batch runs and then added to TRS conditionally based on geography. This will import some tables and exclude other tables from the import.
+
+To add tables conditionally, select <b>Set Add Conditions</b> from the <b>File</b> menu and then enable add conditions. Table Retrieval Setup will display the levels of geography that are currently in your TRS. Select (by placing a checkmark in the box next to the name) the geography levels from which you want to add tables.
+
+If you right-click on a node in the geography tree, you have the option to select or unselect multiple levels of geography at once. This allows you to easily select several provinces or states (and all the levels of geography underneath that level) by right-clicking on the province or state and choosing Select Entire Node.
+
+After entering your geography choices, when you add CSPro Tables, only the tables that match your geography choices will be added to TRS. After adding the tables, the results message will show how many tables were skipped due to your geography choices.
+
+The conditional geography settings are not saved when you quit Table Retrieval Setup, so you will need to reselect your geography choices every time you run the program. The program default is to add tables from all levels of geographies.
