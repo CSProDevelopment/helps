@@ -13,6 +13,7 @@ namespace Help_Generator
         private Preprocessor.TopicPreprocessor _defaultTopic;
         private Dictionary<string,string> _definitions;
         private List<string> _resourceFiles;
+        private HashSet<string> _resourceFileIds;
 
         private AttributesParser _settingAttributesParser;
         private AttributesParser _definitionAttributesParser;
@@ -80,13 +81,17 @@ namespace Help_Generator
             }
 
             _resourceFiles = new List<string>();
+            _resourceFileIds = new HashSet<string>();
 
             foreach( string resourceFilename in _settingAttributesParser.GetValues(AttributesResourceFile) )
             {
                 string evaluatedResourceFilename = EvaluateResourceFilename(resourceFilename);
 
                 if( File.Exists(evaluatedResourceFilename) )
+                {
                     _resourceFiles.Add(evaluatedResourceFilename);
+                    ProcessResourceFile(evaluatedResourceFilename);
+                }
 
                 else
                     throw new Exception(String.Format("The resource file could not be located: {0}{1}",evaluatedResourceFilename,
@@ -161,15 +166,23 @@ namespace Help_Generator
                 tw.WriteLine(Constants.TopicStylesheetFilename);
 
 
-                if( contextSensitiveHelps.Count > 0 )
+                if( _resourceFileIds.Count > 0 )
                 {
                     tw.WriteLine("[ALIAS]");
+
+                    HashSet<string> _resourceFileIdsCopy = new HashSet<string>(_resourceFileIds);
 
                     foreach( var kp in contextSensitiveHelps )
                     {
                         foreach( var alias in kp.Value )
+                        {
                             tw.WriteLine("{0}={1}",alias,outputTopicFilenames[kp.Key]);
+                            _resourceFileIdsCopy.Remove(alias);
+                        }
                     }
+
+                    foreach( string alias in _resourceFileIdsCopy )
+                        tw.WriteLine("{0}={1}",alias,outputTopicFilenames[_defaultTopic]);
                 }
 
                 if( _resourceFiles.Count > 0 )
@@ -219,6 +232,31 @@ namespace Help_Generator
             }
         }
 
+        private void ProcessResourceFile(string filename) // a simple header file reader that searches for definitions
+        {
+            const string DefineText = "#define";
+            char[] WhitespaceChars = new char[] { ' ', '\t' };
+
+            foreach( string line in File.ReadAllLines(filename) )
+            {
+
+                int commentPos = line.IndexOf("//");
+                int definePos = line.IndexOf(DefineText);
+                
+                if( commentPos < 0 )
+                    commentPos = line.Length;
+
+                if( definePos >= 0 && commentPos > definePos )
+                {
+                    string text = line.Substring(definePos + DefineText.Length,commentPos - definePos - DefineText.Length).TrimStart();
+                    int endIdPos = text.IndexOfAny(WhitespaceChars);
+
+                    if( endIdPos >= 0 )
+                        _resourceFileIds.Add(text.Substring(0,endIdPos));
+                }
+            }
+        }
+
         public string GetDefinition(string attribute,Preprocessor preprocessor)
         {
             attribute = attribute.ToUpper();
@@ -232,6 +270,15 @@ namespace Help_Generator
                 throw new Exception(String.Format("The definition with attribute {0} has not been defined.",attribute));
 
             return _definitions[attribute];
+        }
+
+        public void CheckContextExists(string context,Preprocessor preprocessor)
+        {
+            if( _resourceFileIds == null || !_resourceFileIds.Contains(context) )
+                Compile(preprocessor);
+
+            if( !_resourceFileIds.Contains(context) )
+                throw new Exception(String.Format("The context {0} is not defined in any of the resource files.",context));
         }
     }
 }

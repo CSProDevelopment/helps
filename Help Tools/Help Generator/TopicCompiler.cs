@@ -434,7 +434,10 @@ namespace Help_Generator
         private string StartContextHandler(string[] startTagComponents)
         {
             foreach( string startTagComponent in startTagComponents )
+            {
+                _helpComponents.settings.CheckContextExists(startTagComponent,_helpComponents.preprocessor);
                 _topicCompilerSettings.AddContextSensitiveHelp(_preprocessedTopic,startTagComponent);
+            }
 
             return "";
         }
