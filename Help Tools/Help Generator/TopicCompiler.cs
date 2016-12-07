@@ -593,7 +593,10 @@ namespace Help_Generator
                     throw new Exception(String.Format("The topic {0} is invalid",url));
             }
 
-            return String.Format("<a href=\"{0}\">",url);
+            // open external links in a separate window
+            string target = ( url.IndexOf("http") == 0 ) ? " target=\"_blank=\"" : "";
+
+            return String.Format("<a href=\"{0}\"{1}>",url,target);
         }
 
         private string StartTableHandler(string[] startTagComponents)
