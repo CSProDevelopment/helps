@@ -578,6 +578,7 @@ namespace Help_Generator
         private string StartLinkHandler(string[] startTagComponents)
         {
             string url;
+            string target = "";
 
             try
             {
@@ -591,10 +592,11 @@ namespace Help_Generator
 
                 if( Path.GetExtension(url).Equals(Constants.TopicExtension,StringComparison.InvariantCultureIgnoreCase) )
                     throw new Exception(String.Format("The topic {0} is invalid",url));
-            }
 
-            // open external links in a separate window
-            string target = ( url.IndexOf("http") == 0 ) ? " target=\"_blank=\"" : "";
+                // open external links in a separate window
+                else if( url.IndexOf("http") == 0 )
+                    target = " target=\"_blank=\"";
+            }
 
             return String.Format("<a href=\"{0}\"{1}>",url,target);
         }
