@@ -79,7 +79,7 @@ namespace Help_Generator
             _tagSettings.Add(CenterTag,new TagSettings("<div align=\"center\">","</div>"));
             _tagSettings.Add(BoldTag,new TagSettings("<b>","</b>"));
             _tagSettings.Add(ItalicsTag,new TagSettings("<i>","</i>"));
-            _tagSettings.Add(FontTag,new TagSettings(true,(StartTagHandlerDelegate)StartFontHandler,"</div>",1,3));
+            _tagSettings.Add(FontTag,new TagSettings(true,(StartTagHandlerDelegate)StartFontHandler,"</span>",1,3));
             _tagSettings.Add(ListTag,new TagSettings(true,(StartTagHandlerDelegate)StartListHandler,(EndTagHandlerDelegate)EndTagHandlerUsingFilledEndTagStack,0,1));
             _tagSettings.Add(ListItemTag,new TagSettings("<li>","</li>"));
             _tagSettings.Add(HeaderTag,new TagSettings("<div class=\"header_size header\">","</div>"));
@@ -518,7 +518,7 @@ namespace Help_Generator
             classes = ( classes.Length > 0 ) ? String.Format(" class=\"{0}\"",classes) : "";
             styles = ( styles.Length > 0 ) ? String.Format(" style=\"{0}\"",styles) : "";
 
-            return String.Format("<div{0}{1}>",classes,styles);
+            return String.Format("<span{0}{1}>",classes,styles);
         }
 
         private string StartListHandler(string[] startTagComponents)
@@ -544,7 +544,7 @@ namespace Help_Generator
             if( _title == null )
                 throw new Exception("You cannot use a title header until a title has been defined.");
 
-            return String.Format("<div class=\"header_size header\">{0}</div>",_title);
+            return String.Format("<span class=\"header_size header\">{0}</span>",_title);
         }
 
         private string StartImageHandler(string[] startTagComponents)

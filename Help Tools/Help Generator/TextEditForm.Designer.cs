@@ -81,6 +81,7 @@
             this.editControl.Size = new System.Drawing.Size(919, 432);
             this.editControl.TabIndex = 0;
             this.editControl.UseTabs = true;
+            this.editControl.WrapMode = ScintillaNET.WrapMode.Word;
             // 
             // TextEditForm
             // 

@@ -207,6 +207,20 @@ namespace Help_Generator
             ShowOrCreateForm(new ItemListForm(_helpComponents.preprocessor,false));
         }
 
+        private void editMenuItem_DropDownOpening(object sender,EventArgs e)
+        {
+            bool isTextEditForm = ( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm );
+            
+            foreach( ToolStripMenuItem menuItem in editMenuItem.DropDownItems )
+                menuItem.Enabled = isTextEditForm;
+        }
+
+        private void editCommandMenuItem_Click(object sender,EventArgs e)
+        {
+            if( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm )
+                ((TextEditForm)this.ActiveMdiChild).ProcessEditCommand((string)((ToolStripMenuItem)sender).Tag);
+        }
+
         private void generateMenuItem_DropDownOpening(object sender,EventArgs e)
         {
             bool isTextEditForm = ( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm );

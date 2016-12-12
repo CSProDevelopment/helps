@@ -46,6 +46,16 @@
             this.viewIndexMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTopicsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewImagesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editBoldMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editItalicsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editFontMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editCenterMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editLinkMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editListMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editTableMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editLogicColorMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editPffColorMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateCompileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateFormatMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,13 +63,13 @@
             this.generateRefreshMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.generateHelpsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsViewTopicsInHelpsFormatMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsRegisterFileAssociationsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpSyntaxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsViewTopicsInHelpsFormatMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +78,7 @@
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenuItem,
             this.viewMenuItem,
+            this.editMenuItem,
             this.generateMenuItem,
             this.settingsMenuItem,
             this.toolsMenuItem,
@@ -212,6 +223,100 @@
             this.viewImagesMenuItem.Text = "I&mages";
             this.viewImagesMenuItem.Click += new System.EventHandler(this.viewImagesMenuItem_Click);
             // 
+            // editMenuItem
+            // 
+            this.editMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editBoldMenuItem,
+            this.editItalicsMenuItem,
+            this.editFontMenuItem,
+            this.editCenterMenuItem,
+            this.editLinkMenuItem,
+            this.editListMenuItem,
+            this.editTableMenuItem,
+            this.editLogicColorMenuItem,
+            this.editPffColorMenuItem});
+            this.editMenuItem.Name = "editMenuItem";
+            this.editMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editMenuItem.Text = "&Edit";
+            this.editMenuItem.DropDownOpening += new System.EventHandler(this.editMenuItem_DropDownOpening);
+            // 
+            // editBoldMenuItem
+            // 
+            this.editBoldMenuItem.Name = "editBoldMenuItem";
+            this.editBoldMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.editBoldMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editBoldMenuItem.Tag = "bold";
+            this.editBoldMenuItem.Text = "&Bold";
+            this.editBoldMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
+            // editItalicsMenuItem
+            // 
+            this.editItalicsMenuItem.Name = "editItalicsMenuItem";
+            this.editItalicsMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editItalicsMenuItem.Tag = "italics";
+            this.editItalicsMenuItem.Text = "&Italics";
+            this.editItalicsMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
+            // editFontMenuItem
+            // 
+            this.editFontMenuItem.Name = "editFontMenuItem";
+            this.editFontMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editFontMenuItem.Tag = "font";
+            this.editFontMenuItem.Text = "&Font";
+            this.editFontMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
+            // editCenterMenuItem
+            // 
+            this.editCenterMenuItem.Name = "editCenterMenuItem";
+            this.editCenterMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editCenterMenuItem.Tag = "center";
+            this.editCenterMenuItem.Text = "&Center";
+            this.editCenterMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
+            // editLinkMenuItem
+            // 
+            this.editLinkMenuItem.Name = "editLinkMenuItem";
+            this.editLinkMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editLinkMenuItem.Tag = "link";
+            this.editLinkMenuItem.Text = "Lin&k";
+            this.editLinkMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
+            // editListMenuItem
+            // 
+            this.editListMenuItem.Name = "editListMenuItem";
+            this.editListMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editListMenuItem.Tag = "list";
+            this.editListMenuItem.Text = "&List";
+            this.editListMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
+            // editTableMenuItem
+            // 
+            this.editTableMenuItem.Name = "editTableMenuItem";
+            this.editTableMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editTableMenuItem.Tag = "table";
+            this.editTableMenuItem.Text = "&Table";
+            this.editTableMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
+            // editLogicColorMenuItem
+            // 
+            this.editLogicColorMenuItem.Name = "editLogicColorMenuItem";
+            this.editLogicColorMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.L)));
+            this.editLogicColorMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editLogicColorMenuItem.Tag = "logiccolor";
+            this.editLogicColorMenuItem.Text = "Logic Color";
+            this.editLogicColorMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
+            // editPffColorMenuItem
+            // 
+            this.editPffColorMenuItem.Name = "editPffColorMenuItem";
+            this.editPffColorMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.P)));
+            this.editPffColorMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editPffColorMenuItem.Tag = "pffcolor";
+            this.editPffColorMenuItem.Text = "PFF Color";
+            this.editPffColorMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
             // generateMenuItem
             // 
             this.generateMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -268,6 +373,23 @@
             this.generateHelpsMenuItem.Text = "&Helps";
             this.generateHelpsMenuItem.Click += new System.EventHandler(this.generateHelpsMenuItem_Click);
             // 
+            // settingsMenuItem
+            // 
+            this.settingsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsViewTopicsInHelpsFormatMenuItem});
+            this.settingsMenuItem.Name = "settingsMenuItem";
+            this.settingsMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsMenuItem.Text = "&Settings";
+            // 
+            // settingsViewTopicsInHelpsFormatMenuItem
+            // 
+            this.settingsViewTopicsInHelpsFormatMenuItem.Checked = true;
+            this.settingsViewTopicsInHelpsFormatMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.settingsViewTopicsInHelpsFormatMenuItem.Name = "settingsViewTopicsInHelpsFormatMenuItem";
+            this.settingsViewTopicsInHelpsFormatMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.settingsViewTopicsInHelpsFormatMenuItem.Text = "&View Topics in Helps Format";
+            this.settingsViewTopicsInHelpsFormatMenuItem.Click += new System.EventHandler(this.settingsViewTopicsInHelpsFormatMenuItem_Click);
+            // 
             // toolsMenuItem
             // 
             this.toolsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -306,23 +428,6 @@
             this.helpSyntaxMenuItem.Size = new System.Drawing.Size(140, 22);
             this.helpSyntaxMenuItem.Text = "Topic &Syntax";
             this.helpSyntaxMenuItem.Click += new System.EventHandler(this.helpSyntaxMenuItem_Click);
-            // 
-            // settingsMenuItem
-            // 
-            this.settingsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsViewTopicsInHelpsFormatMenuItem});
-            this.settingsMenuItem.Name = "settingsMenuItem";
-            this.settingsMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsMenuItem.Text = "&Settings";
-            // 
-            // settingsViewTopicsInHelpsFormatMenuItem
-            // 
-            this.settingsViewTopicsInHelpsFormatMenuItem.Checked = true;
-            this.settingsViewTopicsInHelpsFormatMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.settingsViewTopicsInHelpsFormatMenuItem.Name = "settingsViewTopicsInHelpsFormatMenuItem";
-            this.settingsViewTopicsInHelpsFormatMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.settingsViewTopicsInHelpsFormatMenuItem.Text = "&View Topics in Helps Format";
-            this.settingsViewTopicsInHelpsFormatMenuItem.Click += new System.EventHandler(this.settingsViewTopicsInHelpsFormatMenuItem_Click);
             // 
             // MainForm
             // 
@@ -379,6 +484,16 @@
         private System.Windows.Forms.ToolStripMenuItem toolsRegisterFileAssociationsMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsViewTopicsInHelpsFormatMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editBoldMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editItalicsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editFontMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editCenterMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editLinkMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editTableMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editLogicColorMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editPffColorMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editListMenuItem;
     }
 }
 

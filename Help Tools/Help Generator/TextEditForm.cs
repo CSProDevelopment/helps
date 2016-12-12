@@ -234,5 +234,52 @@ namespace Help_Generator
                 }
             }
         }
+
+        public void ProcessEditCommand(string command)
+        {
+            if( command == "bold" )
+                InsertTags("<b>","</b>");
+
+            else if( command == "italics" )
+                InsertTags("<i>","</i>");
+
+            else if( command == "font" )
+                InsertTags("<font ...>","</font>");
+
+            else if( command == "center" )
+                InsertTags("<center>","</center>");
+
+            else if( command == "link" )
+                InsertTags("<link>","</link>");
+
+            else if( command == "list" )
+                InsertTags("<list>\n\t<li>","</li>\n</list>");
+
+            else if( command == "table" )
+                InsertTags("<table 2>\n\t<cell>","</cell><cell> </cell>\n</table>");
+
+            else if( command == "logiccolor" )
+                InsertTags("<logiccolor>","</logiccolor>");
+
+            else if( command == "pffcolor" )
+                InsertTags("<pffcolor>","</pffcolor>");
+
+            else
+                throw new NotImplementedException();
+        }
+
+        private void InsertTags(string startTag,string endTag)
+        {
+            int selectionStart = editControl.SelectionStart;
+            int selectionEnd = editControl.SelectionEnd;
+
+            editControl.BeginUndoAction();
+            editControl.InsertText(selectionEnd,endTag);
+            editControl.InsertText(selectionStart,startTag);
+            editControl.EndUndoAction();
+
+            editControl.SelectionStart = selectionStart + startTag.Length;
+            editControl.SelectionEnd = selectionEnd + startTag.Length;
+        }
     }
 }
