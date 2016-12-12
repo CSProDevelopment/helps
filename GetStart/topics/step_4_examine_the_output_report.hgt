@@ -1,0 +1,96 @@
+﻿<title>Step 4: Examine the Output Report</title> <titleheader />
+
+<font white>HELPTODO</font>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+
+<style type="text/css">
+<!--
+body { background-color:#ffffff; }
+-->
+</style>
+
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { text-align:left;
+margin-top:0.00pt;
+margin-bottom:0.00pt; }
+font.hcp2 { font-family:Arial;
+font-size:10pt; }
+p.hcp3 { margin-top:0.00pt;
+margin-bottom:0.00pt;
+margin-left:48px;
+text-indent:-48px; }
+p.hcp4 { margin-top:0.00pt;
+margin-bottom:0.00pt;
+margin-left:48px;
+text-indent:-48px;
+font-weight:bold; }
+font.hcp5 { font-family:Arial;
+font-size:10pt;
+font-weight:bold; }
+-->
+</style>
+</head>
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial" size="5">Step 4: Examine the Output Report</font></b></h3>
+<p class="hcp1"><i><font style="font-family: Arial; font-size: 8pt; font-style: italic;" face="Arial" size="2">[Exercise 8, Run a Batch Application]</font></i></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font face="Arial" size="2" class="hcp2">The output report will appear in the CSPro Text Viewer. It will look something like:</font></p>
+<p class="hcp1">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img src="tutbch4.jpg" alt="Batch Error Report in Text Viewer Screen" title="Batch Error Report in Text Viewer Screen" width="639" height="602" border="0"></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">The first several lines show file names and the date and time of the run.</font></p>
+<p class="hcp3">&#160;</p>
+<p class="hcp4">CSPro Process Summary box</p>
+<ul>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">The second line tells us there were no problems with the structure of the data file.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">The third line tells us that one ‘user’ message was triggered by our logic. The system did not issue any warning or error messages.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3">The first line tells us that the data file had seven records.</p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">The last line tells us that our data file has two cases in it.</font></p>
+</li>
+</ul>
+<p class="hcp4">Process Messages</p>
+<ul>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">This section shows messages by case by case.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">In our example we only triggered one message, so only one case is shown.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">‘Case [ 2]’ shows us the case ID; in this example the second case has the error.</font></p>
+</li>
+</ul>
+<p class="hcp4">User unnumbered messages</p>
+<ul>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">This section shows a summary by message</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Since we have only ‘errmsg’ command in our logic, there is only one line.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">The number 8 under ‘Line’ tells us the line number of the errmsg command in our logic</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">The number 1 under ‘Freq’ tells us that this messages was only triggered once for the data file.</font></p>
+</li>
+</ul>
+<p class="hcp1"><font face="Arial" size="2" class="hcp2">When you have finished examining the report, close the Text Viewer by pressing Esc or selecting</font> <b><font face="Arial" size="2" class="hcp5">File/Exit</font></b> <font face="Arial" size="2" class="hcp2">from the main menu.</font></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font face="Arial" size="2" class="hcp2">CONGRATULATIONS! You have completed the CSPro tutorial. We hope you are now ready to try creating and running your own applications. Please refer to our User’s Guides for more details. You can access them from CSPro simply by selecting</font> <b><font face="Arial" size="2" class="hcp5">Help/Help Topics</font></b> <font face="Arial" size="2" class="hcp2">from the main menu of any CSPro module.</font></p>
+</body>
+</html>

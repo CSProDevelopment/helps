@@ -14,6 +14,7 @@ del /s *.chw
 %help_generator% /generate ".\CSReFmt\CSReFmt.hghelp"
 %help_generator% /generate ".\CSSort\CSSort.hghelp"
 %help_generator% /generate ".\CSTab\CSTab.hghelp"
+%help_generator% /generate ".\GetStart\GetStart.hghelp"
 %help_generator% /generate ".\MapView\MapView.hghelp"
 %help_generator% /generate ".\ShpToMap\ShpToMap.hghelp"
 %help_generator% /generate ".\TblView\TblView.hghelp"

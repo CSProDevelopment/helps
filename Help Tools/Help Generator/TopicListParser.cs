@@ -236,7 +236,7 @@ namespace Help_Generator
                 {
                     sb.Append(Path.GetFileName(node.Topic.Filename));
 
-                    if( node.TitleSpecified )
+                    if( node.TitleSpecified && !node.Topic.Title.Equals(node.Title) )
                         sb.Append(" | " + node.Title);
                 }
 

@@ -1,0 +1,69 @@
+﻿<title>Step 1: Code the Edit</title> <titleheader />
+
+<font white>HELPTODO</font>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+
+<style type="text/css">
+<!--
+body { background-color:#ffffff; }
+-->
+</style>
+
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { text-align:left;
+margin-top:0.00pt;
+margin-bottom:0.00pt; }
+font.hcp2 { font-family:Arial;
+font-size:10pt; }
+p.hcp3 { margin-top:0.00pt;
+margin-bottom:0.00pt;
+margin-left:48px;
+text-indent:-48px; }
+font.hcp4 { font-weight:bold; }
+font.hcp5 { font-family:Arial;
+font-size:10pt;
+font-weight:bold; }
+-->
+</style>
+</head>
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial" size="5">Step 1: Write Logic for the Edit</font></b></h3>
+<p class="hcp1"><i><font style="font-family: Arial; font-size: 8pt; font-style: italic;" face="Arial" size="2">[Exercise 7, Add Edits to the Data Entry Application]</font></i></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font face="Arial" size="2" class="hcp2">We will now return to the data entry application. We will introduce a check to make sure that married people are at least 12 years old. In our data entry application, we will perform this check immediately after the keyer enters the marital status.</font></p>
+<ul>
+<li class="p">
+<p class="hcp3">If you still have your cross tabulation application open from previous exercises, close it now. Select <b><font class="hcp4">File/Close</font></b> from the main menu. CSPro may prompt you to save changes. Select <b><font class="hcp4">Yes</font></b>.</p>
+</li>
+<li class="p">
+<p class="hcp3">Open the data entry application we created earlier. Click on <img src="open.jpg" alt="Open Button" title="Open Button" width="23" height="23" border="0"> on the toolbar, or select <b><font class="hcp4">File/Open</font></b> from the main menu. Click on the application name, MYENTRY.ENT, and click on open.</p>
+</li>
+<li class="p">
+<p class="hcp3">Get ready to write logic by clicking <img src="logic.jpg" alt="Logic Button" title="Logic Button" width="23" height="22" border="0"> on the toolbar, or pressing Ctrl-L or selecting <b><font class="hcp4">View/View Logic</font></b> from the main menu.</p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press</font> <b><font face="Arial" size="2" class="hcp5">Ctrl+T</font></b> <font face="Arial" size="2" class="hcp2">to show names instead of labels in the forms tree.</font></p>
+</li>
+<li class="p">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Click on the</font> <b><font face="Arial" size="2" class="hcp5">‘+’</font></b> <font face="Arial" size="2" class="hcp2">next to ‘PERSON_RECORD_FORM’ then click on the</font> <b><font face="Arial" size="2" class="hcp5">‘+’</font></b> <font face="Arial" size="2" class="hcp2">next to ‘PERSON_RECORD000 then click on ‘MARITAL_STATUS’. The frame on the right hand side of the screen should show ‘PROC MARITAL_STATUS’ at the top.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Note that ‘PROC’ is short for</font> <a href="cspro.chm::/procedures.html"><font face="Arial" size="2" class="hcp2">procedure</font></a><font face="Arial" size="2" class="hcp2">. We put our logic in the procedure for ‘MARITAL_STATUS’ because we want it to execute immediately after the operator keys this field.</font></p>
+</li>
+<li class="p">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Type in logic exactly as you see in the picture below.</font></p>
+</li>
+</ul>
+<p class="hcp1">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img src="tutlog1.jpg" alt="Data Entry Logic Screen" title="Data Entry Logic Screen" width="641" height="451" border="0"></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font face="Arial" size="2" class="hcp2">Continue to</font> <a href="step_2_compile_the_logic.html"><font face="Arial" size="2" class="hcp2">next</font></a> <font face="Arial" size="2" class="hcp2">step.</font></p>
+</body>
+</html>

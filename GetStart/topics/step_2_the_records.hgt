@@ -1,0 +1,94 @@
+﻿<title>Step 2: The Records</title> <titleheader />
+
+<font white>HELPTODO</font>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+
+<style type="text/css">
+<!--
+body { background-color:#ffffff; }
+-->
+</style>
+
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { text-align:left;
+margin-top:0.00pt;
+margin-bottom:0.00pt; }
+font.hcp2 { font-family:Arial;
+font-size:10pt; }
+p.hcp3 { margin-top:0.00pt;
+margin-bottom:0.00pt;
+margin-left:48px;
+text-indent:-48px; }
+font.hcp4 { font-family:Arial;
+font-size:10pt;
+font-weight:bold; }
+-->
+</style>
+</head>
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial" size="5">Step 2: The Records</font></b></h3>
+<p class="hcp1"><i><font style="font-family: Arial; font-size: 8pt; font-style: italic;" face="Arial" size="2">[Exercise 2, Create the Data Dictionary]</font></i></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font face="Arial" size="2" class="hcp2">A</font> <a href="cspro.chm::/records.html"><font face="Arial" size="2" class="hcp2">record</font></a> <font face="Arial" size="2" class="hcp2">usually corresponds to a section of a questionnaire, and consists of a group of related questions.</font></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font face="Arial" size="2" class="hcp2">By default, CSPro creates one record. Our tutorial application will have two records, a ‘Person Record’ and a ‘Housing Record’. We will change the one record that CSPro generated to ‘Person Record’, then add the ‘Housing Record’.</font></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font face="Arial" size="2" class="hcp2">First, we will change the one record that CSPro generated to ‘Person Record’:</font></p>
+<ul>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Right-click on ‘MyDict record’ on the tree on the left, then select</font> <b><font face="Arial" size="2" class="hcp4">Modify Record</font></b><font face="Arial" size="2" class="hcp2">.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Type "Person record" as the Record Label, then press Enter</font><b><font face="Arial" size="2" class="hcp4">.</font></b></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Type "PERSON_RECORD" as the Record Name, then press Enter</font><b><font face="Arial" size="2" class="hcp4">.</font></b></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Enter to leave the Type value as is.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press ‘N’ to change</font> <b><font face="Arial" size="2" class="hcp4">Required</font></b> <font face="Arial" size="2" class="hcp2">from Yes to No, then press Enter. Our application can have households with no people, so Person records are not required for us.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Our application can have up to 10 people in a household, so type "10", then Enter, to change</font> <b><font face="Arial" size="2" class="hcp4">Max</font></b> <font face="Arial" size="2" class="hcp2">and complete the changes to this record.</font></p>
+</li>
+</ul>
+<p class="hcp1"><font face="Arial" size="2" class="hcp2">Next we will add the ‘Housing Record’:</font></p>
+<ul>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Right-click on Person Record on the tree on the left, then select</font> <b><font face="Arial" size="2" class="hcp4">Add Record</font></b><font face="Arial" size="2" class="hcp2">.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Type "Housing Record" as the Record Label, the press Enter.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Enter to accept ‘HOUSING_RECORD’ as the</font> <b><font face="Arial" size="2" class="hcp4">Record Name</font></b><font face="Arial" size="2" class="hcp2">.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Enter</font> <font face="Arial" size="2" class="hcp2">to leave the</font> <b><font face="Arial" size="2" class="hcp4">Type value</font></b> <font face="Arial" size="2" class="hcp2">as is.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Enter to leave</font> <b><font face="Arial" size="2" class="hcp4">Required</font></b> <font face="Arial" size="2" class="hcp2">Yes.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Enter to leave</font> <b><font face="Arial" size="2" class="hcp4">Max</font></b> <font face="Arial" size="2" class="hcp2">1 and start a new record.</font></p>
+</li>
+<li class="p" style="font-size: 10pt;">
+<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Esc on the blank record to finish making these changes.</font></p>
+</li>
+</ul>
+<p class="hcp1"><font face="Arial" size="2" class="hcp2">When you have completed this step the screen should look something like:</font></p>
+<p class="hcp1">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img src="tutrecs.jpg" alt="Data Dictionary Records Screen" title="Data Dictionary Records Screen" width="642" height="451" border="0"></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font face="Arial" size="2" class="hcp2">Continue to the</font> <a href="step_3_creating_the_items.html"><font face="Arial" size="2" class="hcp2">next</font></a> <font face="Arial" size="2" class="hcp2">step.</font></p>
+</body>
+</html>
