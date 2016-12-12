@@ -1,0 +1,28 @@
+﻿<title>Converting Data Files to Other Formats</title> <titleheader />
+
+<subheader>Conversion Overview</subheader>
+
+The Data Viewer tool can be used to convert from one CSPro data file format to another. For example you can:
+
+<list>
+	<li>Convert from a CSPro DB file to a text file.</li>
+	<li>Convert from a text file to a CSPro DB file.</li>
+</list>
+
+When you convert between these formats, in addition to the case contents, the following case-related data will also be converted:
+
+<list>
+	<li>Case and field notes</li>
+	<li>Partial save statuses</li>
+	<li>Verified information</li>
+</list>
+
+Text files do not support case labels, so if converting from CSPro DB to text format, case labels will be dropped from the converted file.
+
+<subheader>To convert a data file ...</subheader>
+
+<list ordered>
+	<li><link open_data_files.hgt>Open the data file</link>.</li>
+	<li>Click the <b>Tools</b> menu and select <b>Convert</b>.</li>
+	<li>Enter a file name for the converted data file. If the file has the extension <b>.csdb</b>, the file will be saved in CSPro DB format; otherwise the file will be saved in text format.</li>
+</list>

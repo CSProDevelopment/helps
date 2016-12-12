@@ -1,5 +1,7 @@
 SET help_generator=".\Help Tools\Help Generator\bin\Release\Help Generator.exe"
 
+cd %~dp0
+
 del /s *.chm
 del /s *.chw
 
@@ -14,6 +16,7 @@ del /s *.chw
 %help_generator% /generate ".\CSReFmt\CSReFmt.hghelp"
 %help_generator% /generate ".\CSSort\CSSort.hghelp"
 %help_generator% /generate ".\CSTab\CSTab.hghelp"
+%help_generator% /generate ".\DataViewer\DataViewer.hghelp"
 %help_generator% /generate ".\GetStart\GetStart.hghelp"
 %help_generator% /generate ".\MapView\MapView.hghelp"
 %help_generator% /generate ".\ShpToMap\ShpToMap.hghelp"
