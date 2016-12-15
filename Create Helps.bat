@@ -18,6 +18,7 @@ del /s *.chw
 %help_generator% /generate ".\CSTab\CSTab.hghelp"
 %help_generator% /generate ".\CSWeb\CSWeb.hghelp"
 %help_generator% /generate ".\DataViewer\DataViewer.hghelp"
+%help_generator% /generate ".\Excel2CSPro\Excel2CSPro.hghelp"
 %help_generator% /generate ".\GetStart\GetStart.hghelp"
 %help_generator% /generate ".\MapView\MapView.hghelp"
 %help_generator% /generate ".\ShpToMap\ShpToMap.hghelp"

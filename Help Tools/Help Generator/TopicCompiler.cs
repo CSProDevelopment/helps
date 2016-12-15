@@ -40,12 +40,14 @@ namespace Help_Generator
         {
             public int Columns;
             public bool HasHeader;
+            public bool HasNoWrap;
             public int CellCount;
 
-            public TableSettings(int columns,bool hasHeader)
+            public TableSettings(int columns,bool hasHeader,bool hasNoWrap)
             {
                 Columns = columns;
                 HasHeader = hasHeader;
+                HasNoWrap = hasNoWrap;
                 CellCount = 0;
             }
         }
@@ -88,7 +90,7 @@ namespace Help_Generator
             _tagSettings.Add(ImageTag,new TagSettings(false,(StartTagHandlerDelegate)StartImageHandler,null,1,2));
             _tagSettings.Add(TopicTag,new TagSettings(false,(StartTagHandlerDelegate)StartTopicHandler,null,1,1));
             _tagSettings.Add(LinkTag,new TagSettings(true,(StartTagHandlerDelegate)StartLinkHandler,"</a>",1,1));
-            _tagSettings.Add(TableTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableHandler,(EndTagHandlerDelegate)EndTableHandler,1,2));
+            _tagSettings.Add(TableTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableHandler,(EndTagHandlerDelegate)EndTableHandler,1,3));
             _tagSettings.Add(TableCellTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableCellHandler,(EndTagHandlerDelegate)EndTableCellHandler,0,1));
             _tagSettings.Add(SeeAlsoTag,new TagSettings(false,(StartTagHandlerDelegate)StartSeeAlsoHandler,null,1,Int32.MaxValue));
             _tagSettings.Add(LogicTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicHandler,0,0));
@@ -605,11 +607,15 @@ namespace Help_Generator
         {
             int columns = 0;
             bool hasHeader = false;
+            bool hasNoWrap = false;
 
             foreach( string startTagComponent in startTagComponents )
             {
                 if( hasHeader == false && startTagComponent.Equals(HeaderTag) )
                     hasHeader = true;
+
+                else if( hasNoWrap == false && startTagComponent.Equals(NoWrapAttribute) )
+                    hasNoWrap = true;                
 
                 else if( columns == 0 && Int32.TryParse(startTagComponent,out columns) )
                 {
@@ -624,7 +630,7 @@ namespace Help_Generator
             if( columns == 0 )
                 throw new Exception("The number of columns in a table must be specified");
 
-            _tableStack.Push(new TableSettings(columns,hasHeader));
+            _tableStack.Push(new TableSettings(columns,hasHeader,hasNoWrap));
 
             return "<table>";
         }
@@ -668,8 +674,12 @@ namespace Help_Generator
 
             tableSettings.CellCount += columns;
 
-            return String.Format("{0}<t{1}{2}>",isFirstCellInRow ? "<tr>" : "",isHeaderRow ? 'h' : 'd',
-                ( columns > 1 ) ? String.Format(" colspan=\"{0}\"",columns) : "");
+            string rowPrefix = isFirstCellInRow ? "<tr>" : "";
+            string cellType = "t" + ( isHeaderRow ? 'h' : 'd' );
+            string noWrapStyle = ( isFirstCellInRow && tableSettings.HasNoWrap ) ? " style=\"white-space: nowrap\"" : "";
+            string span = ( columns > 1 ) ? String.Format(" colspan=\"{0}\"",columns) : "";
+
+            return String.Format("{0}<{1}{2}{3}>",rowPrefix,cellType,noWrapStyle,span);
         }
 
         private string StartSeeAlsoHandler(string[] startTagComponents)
@@ -788,6 +798,7 @@ namespace Help_Generator
         public const string FontMonospaceAttribute = "monospace";
         public const string ImageNoChmAttribute = "nochm";
         public const string OrderedAttribute = "ordered";
+        public const string NoWrapAttribute = "nowrap";
 
         private const string NewLineMarker = "~!~";
     }
