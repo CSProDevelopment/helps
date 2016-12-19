@@ -49,6 +49,11 @@ namespace Help_Generator
             return TopicListParser.Format(_tableOfContentsRootNode,false);
         }
 
+        public void RemoveUsedTopics(HashSet<Preprocessor.TopicPreprocessor> topics)
+        {
+            _tableOfContentsParser.RemoveUsedTopics(_tableOfContentsRootNode,topics);
+        }
+
         public void SaveForChm(string filename,Dictionary<Preprocessor.TopicPreprocessor,string> outputTopicFilenames)
         {
             using( TextWriter tw = new StreamWriter(filename,false,Encoding.ASCII) )

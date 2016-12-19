@@ -9,6 +9,7 @@ namespace Help_Generator
         public const string ChmButtonText2 = "Forum";
         public const string ChmButtonLink2 = "http://www.csprousers.org/forum/";
 
+        public const string SharedDirectoryName = "Shared";
         public const string TopicsDirectoryName = "topics";
         public const string ImagesDirectoryName = "images";
         public const string TemporaryFileDirectoryName = "zhg_temp";

@@ -136,9 +136,9 @@ namespace Help_Generator
                 throw new Exception(String.Format("The {0} does not have any entries",fileDescription));
 
             // make sure that every topic is included
-            HashSet<Preprocessor.TopicPreprocessor> allTopics = preprocessor.GetAllTopics();
+            HashSet<Preprocessor.TopicPreprocessor> allTopics = preprocessor.GetAllTopics(false);
 
-            RemoveTopicFilename(rootNode,allTopics);
+            RemoveUsedTopics(rootNode,allTopics);
 
             if( allTopics.Count > 0 )
             {
@@ -153,15 +153,15 @@ namespace Help_Generator
             return rootNode;
         }
 
-        private void RemoveTopicFilename(TopicListNode node,HashSet<Preprocessor.TopicPreprocessor> allTopics)
+        public void RemoveUsedTopics(TopicListNode node,HashSet<Preprocessor.TopicPreprocessor> topics)
         {
             while( node != null )
             {
                 if( node.Topic != null )
-                    allTopics.Remove(node.Topic);
+                    topics.Remove(node.Topic);
 
                 if( node.ChildNode != null )
-                    RemoveTopicFilename(node.ChildNode,allTopics);
+                    RemoveUsedTopics(node.ChildNode,topics);
 
                 node = node.SiblingNode;
             }

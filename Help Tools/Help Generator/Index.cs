@@ -48,6 +48,11 @@ namespace Help_Generator
 
         public List<string> MergeFiles { get { return _mergeFiles; } }
 
+        public void RemoveUsedTopics(HashSet<Preprocessor.TopicPreprocessor> topics)
+        {
+            _indexParser.RemoveUsedTopics(_indexRootNode,topics);
+        }
+
         public void SaveForChm(string filename,Dictionary<Preprocessor.TopicPreprocessor,string> outputTopicFilenames)
         {
             _mergeFiles = new List<string>();

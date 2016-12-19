@@ -17,12 +17,14 @@ namespace Help_Generator
 
             public string Filename { get; set; }
             public DateTime ModifiedDate { get; set; }
+            public bool Shared { get; set; }
 
-            public TopicPreprocessor(FileInfo fi)
+            public TopicPreprocessor(FileInfo fi,bool shared)
             {
                 Filename = fi.FullName;
                 ModifiedDate = fi.LastWriteTimeUtc;
                 Title = Topic.CompileForTitle(fi.FullName);
+                Shared = shared;
             }
         }
 
@@ -38,6 +40,8 @@ namespace Help_Generator
         }
 
         private string _projectPath;
+        private string _helpsRootPath;
+        private string _sharedProjectPath;
         private string _preprocessorFilename;
         private Dictionary<string,TopicPreprocessor> _topics;
         private Dictionary<string,ImagePreprocessor> _images;
@@ -73,6 +77,8 @@ namespace Help_Generator
             }
 
             preprocessor._projectPath = projectPath;
+            preprocessor._helpsRootPath = Path.GetFullPath(Path.Combine(projectPath,".."));
+            preprocessor._sharedProjectPath = Path.Combine(preprocessor._helpsRootPath,Constants.SharedDirectoryName);
             preprocessor._preprocessorFilename = preprocessorFilename;
 
             return preprocessor;
@@ -97,40 +103,6 @@ namespace Help_Generator
             foreach( string name in deletedTopics )
                 _topics.Remove(name);
 
-            // process the topics folder
-            string topicsPath = Path.Combine(_projectPath,Constants.TopicsDirectoryName);
-
-            if( Directory.Exists(topicsPath) )
-            {
-                DirectoryInfo diTopics = new DirectoryInfo(topicsPath);
-                HashSet<string> topicNames = new HashSet<string>();
-
-                foreach( FileInfo fi in diTopics.GetFiles("*" + Constants.TopicExtension,SearchOption.AllDirectories) )
-                {
-                    string topicKey = fi.Name.ToUpper();
-
-                    if( topicNames.Contains(topicKey) ) // duplicate topic
-                        throw new Exception("You cannot have more than one topic named " + fi.Name);
-
-                    bool addTopic = !_topics.ContainsKey(topicKey); // a new topic
-
-                    if( !addTopic && _topics[topicKey].ModifiedDate != fi.LastWriteTimeUtc ) // a modified topic
-                    {
-                        _topics.Remove(topicKey);
-                        addTopic = true;
-                    }
-
-                    if( addTopic )
-                    {
-                        _topics.Add(topicKey,new TopicPreprocessor(fi));
-                        savePreprocessor = true;
-                    }
-
-                    topicNames.Add(topicKey);
-                }
-            }
-
-
             // remove any deleted images
             List<string> deletedImages = new List<string>();
 
@@ -146,28 +118,70 @@ namespace Help_Generator
             foreach( string name in deletedImages )
                 _images.Remove(name);
 
-            // process the images folder
-            string imagesPath = Path.Combine(_projectPath,Constants.ImagesDirectoryName);
 
-            if( Directory.Exists(imagesPath) )
+            HashSet<string> topicNames = new HashSet<string>();
+            HashSet<string> imageNames = new HashSet<string>();
+
+            for( int dir = 0; dir < 2; dir++ )
             {
-                DirectoryInfo diImages = new DirectoryInfo(imagesPath);
-                HashSet<string> imageNames = new HashSet<string>();
+                bool sharedFolder = ( dir == 0 );
+                string basePath = sharedFolder ? _sharedProjectPath : _projectPath;
 
-                foreach( FileInfo fi in diImages.GetFiles("*",SearchOption.AllDirectories) )
+                // process the topics folder
+                string topicsPath = Path.Combine(basePath,Constants.TopicsDirectoryName);
+
+                if( Directory.Exists(topicsPath) )
                 {
-                    string imageKey = fi.Name.ToUpper();
+                    DirectoryInfo diTopics = new DirectoryInfo(topicsPath);
 
-                    if( imageNames.Contains(imageKey) ) // duplicate image
-                        throw new Exception("You cannot have more than one image named " + fi.Name);
-
-                    if( !_images.ContainsKey(imageKey) ) // a new image
+                    foreach( FileInfo fi in diTopics.GetFiles("*" + Constants.TopicExtension,SearchOption.AllDirectories) )
                     {
-                        _images.Add(imageKey,new ImagePreprocessor(fi));
-                        savePreprocessor = true;
-                    }
+                        string topicKey = fi.Name.ToUpper();
 
-                    imageNames.Add(imageKey);
+                        if( topicNames.Contains(topicKey) ) // duplicate topic
+                            throw new Exception("You cannot have more than one topic named " + fi.Name);
+
+                        bool addTopic = !_topics.ContainsKey(topicKey); // a new topic
+
+                        if( !addTopic && _topics[topicKey].ModifiedDate != fi.LastWriteTimeUtc ) // a modified topic
+                        {
+                            _topics.Remove(topicKey);
+                            addTopic = true;
+                        }
+
+                        if( addTopic )
+                        {
+                            _topics.Add(topicKey,new TopicPreprocessor(fi,sharedFolder));
+                            savePreprocessor = true;
+                        }
+
+                        topicNames.Add(topicKey);
+                    }
+                }
+
+
+                // process the images folder
+                string imagesPath = Path.Combine(basePath,Constants.ImagesDirectoryName);
+
+                if( Directory.Exists(imagesPath) )
+                {
+                    DirectoryInfo diImages = new DirectoryInfo(imagesPath);
+
+                    foreach( FileInfo fi in diImages.GetFiles("*",SearchOption.AllDirectories) )
+                    {
+                        string imageKey = fi.Name.ToUpper();
+
+                        if( imageNames.Contains(imageKey) ) // duplicate image
+                            throw new Exception("You cannot have more than one image named " + fi.Name);
+
+                        if( !_images.ContainsKey(imageKey) ) // a new image
+                        {
+                            _images.Add(imageKey,new ImagePreprocessor(fi));
+                            savePreprocessor = true;
+                        }
+
+                        imageNames.Add(imageKey);
+                    }
                 }
             }
 
@@ -191,12 +205,15 @@ namespace Help_Generator
             return _topics[topicKey];
         }
 
-        public HashSet<TopicPreprocessor> GetAllTopics()
+        public HashSet<TopicPreprocessor> GetAllTopics(bool includeSharedTopics = true)
         {
             HashSet<TopicPreprocessor> topicsHashSet = new HashSet<TopicPreprocessor>();
 
             foreach( var kp in _topics )
-                topicsHashSet.Add(kp.Value);
+            {
+                if( !kp.Value.Shared || includeSharedTopics )
+                    topicsHashSet.Add(kp.Value);
+            }
 
             return topicsHashSet;
         }

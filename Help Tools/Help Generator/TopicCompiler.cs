@@ -437,8 +437,13 @@ namespace Help_Generator
         {
             foreach( string startTagComponent in startTagComponents )
             {
-                _helpComponents.settings.CheckContextExists(startTagComponent,_helpComponents.preprocessor);
-                _topicCompilerSettings.AddContextSensitiveHelp(_preprocessedTopic,startTagComponent);
+                bool useIfExists = ( startTagComponent.Length > 0 && startTagComponent[0] == '!' );
+                string context = useIfExists ? startTagComponent.Substring(1) : startTagComponent;
+
+                if( !useIfExists )
+                    _helpComponents.settings.CheckContextExists(context,_helpComponents.preprocessor);
+
+                _topicCompilerSettings.AddContextSensitiveHelp(_preprocessedTopic,context);
             }
 
             return "";

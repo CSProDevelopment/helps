@@ -226,19 +226,30 @@ namespace Help_Generator
             HashSet<Preprocessor.TopicPreprocessor> allTopics = _helpComponents.preprocessor.GetAllTopics();
             _backgroundThread.ReportProgress(allTopics.Count,ThreadUpdateMessage.TopicsProgress);
 
+            // remove any shared topics that aren't in the table of contents or index
+            HashSet<Preprocessor.TopicPreprocessor> unusedSharedTopics = new HashSet<Preprocessor.TopicPreprocessor>(allTopics);
+            _helpComponents.tableOfContents.RemoveUsedTopics(unusedSharedTopics);
+            _helpComponents.index.RemoveUsedTopics(unusedSharedTopics);
+
             foreach( Preprocessor.TopicPreprocessor preprocessedTopic in allTopics )
             {
-                string htmlFilename = _topicCompilerSettings.GetHtmlFilename(preprocessedTopic);
+                if( unusedSharedTopics.Contains(preprocessedTopic) )
+                    _backgroundThread.ReportProgress(0,String.Format("Skipping unused shared topic \"{0}\"...",preprocessedTopic.Title));
 
-                _backgroundThread.ReportProgress(0,String.Format("Processing topic \"{0}\" to {1}...",preprocessedTopic.Title,htmlFilename));
+                else
+                {
+                    string htmlFilename = _topicCompilerSettings.GetHtmlFilename(preprocessedTopic);
 
-                _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
-                htmlFilename = Path.Combine(_temporaryFilesPath,htmlFilename);
+                    _backgroundThread.ReportProgress(0,String.Format("Processing topic \"{0}\" to {1}...",preprocessedTopic.Title,htmlFilename));
 
-                Topic topic = new Topic(preprocessedTopic);
-                string html = topic.CompileForHtml(File.ReadAllLines(preprocessedTopic.Filename),_helpComponents,_topicCompilerSettings);
+                    _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
+                    htmlFilename = Path.Combine(_temporaryFilesPath,htmlFilename);
 
-                File.WriteAllText(htmlFilename,html,Encoding.UTF8);
+                    Topic topic = new Topic(preprocessedTopic);
+                    string html = topic.CompileForHtml(File.ReadAllLines(preprocessedTopic.Filename),_helpComponents,_topicCompilerSettings);
+
+                    File.WriteAllText(htmlFilename,html,Encoding.UTF8);
+                }
 
                 _backgroundThread.ReportProgress(0,ThreadUpdateMessage.TopicsProgress);
 
