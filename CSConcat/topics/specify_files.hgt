@@ -4,6 +4,12 @@
 
 The output file is the file that receives the results of the concatenation. Type the full path name of the output file into the box provided or press the <b>Browse</b> button to bring up a file dialog box to search for the path and name the output file. The output file must be placed on a writable device which has enough room to store the resulting concatenated file. The output file cannot exceed 2GB in size.
 
+When using concatenate cases mode, the output file may be set to either text or to CSPro DB format using the <b>Output File Type</b> dropdown. In concatenate contents mode, only text output format is allowed.
+
+<subheader>Dictionary</subheader>
+
+When concatenating in case mode, a data dictionary that describes the content of the data files to be concatenated is required. Type the full path name of the data dictionary file into the box provided or press the <b>Browse</b> button to bring up a file dialog box to search for the path and name the dictionary file.
+
 <subheader>Files to Concatenate</subheader>
 
 The files to concatenate is an ordered list of all the files that will be joined together. The number of files to be concatenated is limited only by the maximum size of the output file.

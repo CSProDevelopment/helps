@@ -16,15 +16,17 @@ Version=CSPro <definition version />
 AppType=Concatenate
 
 [Files]
-InputData=.\File01.dat
-InputData=.\File02.dat
-InputData=.\File03.dat
-InputData=.\File04.dat
-OutputData=.\BigFile.dat
+InputData=.\File01.csdb
+InputData=.\File02.csdb
+InputData=.\File03.csdb
+InputData=.\File04.csdb
+OutputData=.\BigFile.csdb
+InputDict=.\MyDict.dcf
 
 [Parameters]
 ViewListing=OnError
 ViewResults=No
+ConcatMethod=Case
 </pff>
 
 <subheader>[Run Information]</subheader>
@@ -48,3 +50,12 @@ The <pffcolor>[Parameters]</pffcolor> block is optional. <pffcolor>ViewListing</
 If the <pffcolor>ViewListing</pffcolor> entry is missing, the default action will be Always.
 
 <pffcolor>ViewResults</pffcolor> determines whether or not the concatenated file(s) are displayed with TextViewer at the end of the run. The available choices are Yes or No. If the <pffcolor>ViewResults</pffcolor> entry is missing, the resultant data file will be displayed.
+
+<pffcolor>ConcatMethod</pffcolor> sets the concatenation method to use. There are two options:
+
+<list>
+	<li><pffcolor>ConcatMethod</pffcolor>=Case means use case concatenation mode, skipping invalid and duplicate cases.</li>
+	<li><pffcolor>ConcatMethod</pffcolor>=Text means use content concatenation mode, appending files regardless of contents.</li>
+</list>
+
+When using <pffcolor>ConcatMethod</pffcolor>=Case, a data dictionary must be specified via an <pffcolor>InputDict</pffcolor> entry in the <pffcolor>[Files]</pffcolor> section. If <pffcolor>ConcatMethod</pffcolor> is not specified in the PFF file, the default action will be Text.
