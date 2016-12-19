@@ -1,4 +1,4 @@
-﻿<title>Load Exported Data into Stata</title> <titleheader />
+﻿<title>Load Exported Data into Stata</title>
 
 When you choose Stata as the export format, CSPro creates three files: a data file (.DAT), a Stata dictionary (.DCT), and a Stata Do file (.DO). To load the exported data into Stata, you must open the Do file into Stata. The Do file will open the Stata dictionary, add labels exported from the first valueset for each variable, and load the data file. To open the Do file, launch Stata and choose Do from the File menu. Stata will prompt you for the name of the Do file. Choose the Do file that CSPro generated and click Open. If the Do file is run without error, you will see the imported variables in the Stata Variables window. You can then use Save As from the File menu in order to save the data as a native Stata file (.DTA).
 

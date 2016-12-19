@@ -66,6 +66,7 @@ namespace Help_Generator
 
         private StringBuilder _sb;
         private string _title;
+        private bool _titleIsHeader;
 
         public TopicCompiler(HelpComponents helpComponents,Preprocessor.TopicPreprocessor preprocessedTopic,TopicCompilerSettingsInterface topicCompilerSettings)
         {
@@ -75,7 +76,7 @@ namespace Help_Generator
             _sb = new StringBuilder();
 
             _tagSettings = new Dictionary<string,TagSettings>();
-            _tagSettings.Add(TagTitle,new TagSettings(true,null,(EndTagHandlerDelegate)EndTitleHandler,0,0));
+            _tagSettings.Add(TagTitle,new TagSettings(true,(StartTagHandlerDelegate)StartTitleHandler,(EndTagHandlerDelegate)EndTitleHandler,0,1));
             _tagSettings.Add(ContextTag,new TagSettings(false,(StartTagHandlerDelegate)StartContextHandler,null,1,Int32.MaxValue));
             _tagSettings.Add(IndentTag,new TagSettings(true,(StartTagHandlerDelegate)StartIndentHandler,(EndTagHandlerDelegate)EndTagHandlerUsingFilledEndTagStack,0,1));
             _tagSettings.Add(CenterTag,new TagSettings("<div align=\"center\">","</div>"));
@@ -85,7 +86,6 @@ namespace Help_Generator
             _tagSettings.Add(ListTag,new TagSettings(true,(StartTagHandlerDelegate)StartListHandler,(EndTagHandlerDelegate)EndTagHandlerUsingFilledEndTagStack,0,1));
             _tagSettings.Add(ListItemTag,new TagSettings("<li>","</li>"));
             _tagSettings.Add(HeaderTag,new TagSettings("<div class=\"header_size header\">","</div>"));
-            _tagSettings.Add(TitleHeaderTag,new TagSettings(false,(StartTagHandlerDelegate)StartTitleHeaderHandler,null,0,0));
             _tagSettings.Add(SubheaderTag,new TagSettings("<div class=\"subheader_size subheader\">","</div>"));
             _tagSettings.Add(ImageTag,new TagSettings(false,(StartTagHandlerDelegate)StartImageHandler,null,1,2));
             _tagSettings.Add(TopicTag,new TagSettings(false,(StartTagHandlerDelegate)StartTopicHandler,null,1,1));
@@ -423,14 +423,30 @@ namespace Help_Generator
             return endTagInnerText + _filledEndTagStack.Pop();
         }
 
-        private string EndTitleHandler(string endTagInnerText)
+
+        private string StartTitleHandler(string[] startTagComponents)
         {
             if( _title != null )
                 throw new Exception("Only one title can be defined.");
 
-            _title = endTagInnerText;
+            _titleIsHeader = true;
+
+            if( startTagComponents.Length == 1 )
+            {
+                if( startTagComponents[0].Equals(NoHeaderAttribute) )
+                    _titleIsHeader = false;
+
+                else
+                    throw new Exception("Unknown title tag " + startTagComponents[0]);
+            }
 
             return "";
+        }
+
+        private string EndTitleHandler(string endTagInnerText)
+        {
+            _title = endTagInnerText;
+            return _titleIsHeader ? String.Format("<span class=\"header_size header\">{0}</span>",_title) : "";
         }
 
         private string StartContextHandler(string[] startTagComponents)
@@ -544,14 +560,6 @@ namespace Help_Generator
             _filledEndTagStack.Push(unorderedList ? "</ul>" : "</ol>");
 
             return unorderedList ? "<ul>" : "<ol>";
-        }
-
-        private string StartTitleHeaderHandler(string[] startTagComponents)
-        {
-            if( _title == null )
-                throw new Exception("You cannot use a title header until a title has been defined.");
-
-            return String.Format("<span class=\"header_size header\">{0}</span>",_title);
         }
 
         private string StartImageHandler(string[] startTagComponents)
@@ -785,7 +793,6 @@ namespace Help_Generator
         public const string ListTag = "list";
         public const string ListItemTag = "li";
         public const string HeaderTag = "header";
-        public const string TitleHeaderTag = "titleheader";
         public const string SubheaderTag = "subheader";
         public const string ImageTag = "image";
         public const string TopicTag = "topic";
@@ -800,6 +807,7 @@ namespace Help_Generator
         public const string HtmlTag = "html";
         public const string DefinitionTag = "definition";
 
+        public const string NoHeaderAttribute = "noheader";
         public const string FontMonospaceAttribute = "monospace";
         public const string ImageNoChmAttribute = "nochm";
         public const string OrderedAttribute = "ordered";

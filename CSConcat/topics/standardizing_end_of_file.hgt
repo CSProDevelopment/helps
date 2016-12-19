@@ -1,4 +1,4 @@
-﻿<title>Standardizing End-Of-File</title> <titleheader />
+﻿<title>Standardizing End-Of-File</title>
 
 CSPro data files in text format can end with non-printable characters other than a single carriage return/linefeed pair. When a file does, this becomes a problem when the file is joined to other files. If there is no carriage return/linefeed pair at the end of the file, then the last line of the file is joined to the first line of the next file to create one data or text line. If there is more than on carriage return/linefeed pair at the end of the file, then one or more blank lines will be created in the concatenated file.
 
