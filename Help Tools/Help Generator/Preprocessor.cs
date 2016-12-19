@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
@@ -53,7 +54,12 @@ namespace Help_Generator
         public static Preprocessor Create(string projectPath)
         {
             Preprocessor preprocessor = null;
-            string preprocessorFilename = Path.Combine(projectPath,Constants.PreprocessorFilename);
+
+            string applicationName = Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().Location);
+            string settingsDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),applicationName);
+            Directory.CreateDirectory(settingsDirectory);
+
+            string preprocessorFilename = Path.Combine(settingsDirectory,Path.GetFileName(projectPath) + Constants.PreprocessorExtension);
 
             if( File.Exists(preprocessorFilename) )
             {

@@ -22,7 +22,7 @@ namespace Help_Generator
         public const string TopicExtension = ".hgt";
         public const string TopicOutputExtension = ".html";
         public const string TopicStylesheetFilename = "topics.css";
-        public const string PreprocessorFilename = "zhg_preprocessor.bin";
+        public const string PreprocessorExtension = ".hgp";
 
         public const string RegistrySettingsDocumentName = "HelpGenerator.Document";
         public const string RegistryTopicDocumentName = "HelpGeneratorTopic.Document";
