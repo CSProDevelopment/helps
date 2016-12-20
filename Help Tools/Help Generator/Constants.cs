@@ -24,6 +24,9 @@ namespace Help_Generator
         public const string TopicStylesheetFilename = "topics.css";
         public const string PreprocessorExtension = ".hgp";
 
+        public const string OutputsDirectoryName = "Outputs";
+        public const string OutputsChmDirectoryName = "CHM";
+
         public const string RegistrySettingsDocumentName = "HelpGenerator.Document";
         public const string RegistryTopicDocumentName = "HelpGeneratorTopic.Document";
 

@@ -30,7 +30,14 @@ namespace Help_Generator
             _generateAndClose = generateAndClose;
 
             _projectName = new DirectoryInfo(_helpComponents.projectPath).Name;
-            _outputChmFilename = Path.Combine(_helpComponents.projectPath,_projectName + Constants.ChmFileExtension);
+
+            string outputPath = Path.GetFullPath(Path.Combine(_helpComponents.projectPath,"..",Constants.OutputsDirectoryName));
+
+            string outputChmPath = Path.Combine(outputPath,Constants.OutputsChmDirectoryName);
+            Directory.CreateDirectory(outputChmPath);
+
+            _outputChmFilename = Path.Combine(outputChmPath,_projectName + Constants.ChmFileExtension);
+
             _temporaryFilesPath = Path.Combine(_helpComponents.projectPath,Constants.TemporaryFileDirectoryName);
 
             _outputTopicFilenames = new Dictionary<Preprocessor.TopicPreprocessor,string>();
