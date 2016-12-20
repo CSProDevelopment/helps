@@ -243,5 +243,13 @@ namespace Help_Generator
 
             return imageHashSet;
         }
+
+        public void CheckExternalTopic(string document,string topic)
+        {
+            string filename = Path.Combine(_helpsRootPath,document,Constants.TopicsDirectoryName,topic);
+
+            if( !File.Exists(filename) )
+                throw new Exception("The external topic could not be located: " + filename);
+        }
     }
 }

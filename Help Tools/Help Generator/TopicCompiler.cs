@@ -592,28 +592,41 @@ namespace Help_Generator
 
         private string StartLinkHandler(string[] startTagComponents)
         {
-            string url;
-            string target = "";
+            string url = startTagComponents[0];
+            string extras = "";
 
             try
             {
-                Preprocessor.TopicPreprocessor topic = _helpComponents.preprocessor.GetTopic(startTagComponents[0]);
-                url = _topicCompilerSettings.GetHtmlFilename(topic);
-            }
-
-            catch( Exception ) // the topic wasn't found so it should be a URL
-            {
-                url = startTagComponents[0];
-
                 if( Path.GetExtension(url).Equals(Constants.TopicExtension,StringComparison.InvariantCultureIgnoreCase) )
-                    throw new Exception(String.Format("The topic {0} is invalid",url));
+                {
+                    int colonPos = url.IndexOf("::");
 
-                // open external links in a separate window
-                else if( url.IndexOf("http") == 0 )
-                    target = " target=\"_blank=\"";
+                    if( colonPos >= 0 ) // a link to another help document
+                    {
+                        string document = url.Substring(0,colonPos);
+                        string topic = url.Substring(colonPos + 2);
+
+                        _helpComponents.preprocessor.CheckExternalTopic(document,topic);
+                        url = _topicCompilerSettings.ConstructLink(LinkType.ExternalTopic,new string[] { document, topic },ref extras);
+                    }
+
+                    else
+                    {
+                        Preprocessor.TopicPreprocessor topic = _helpComponents.preprocessor.GetTopic(startTagComponents[0]);
+                        url = _topicCompilerSettings.ConstructLink(LinkType.Topic,topic,ref extras);
+                    }
+                }
+
+                else
+                    url = _topicCompilerSettings.ConstructLink(LinkType.Other,url,ref extras);
             }
 
-            return String.Format("<a href=\"{0}\"{1}>",url,target);
+            catch( Exception exception ) // the topic wasn't found
+            {
+                throw new Exception(String.Format("The topic {0} is invalid ({1})",url,exception.Message));
+            }
+
+            return String.Format("<a href=\"{0}\" {1}>",url,extras);
         }
 
         private string StartTableHandler(string[] startTagComponents)
