@@ -14,7 +14,11 @@ namespace Colorizer
             // first see if the file is located in the same directory as the executable
             string fullFilename = Path.Combine(exeDirectory,filename);
 
-            // if not, see if it is exists one folder up from the root of the solution (if the executable is run from the Debug/Release directory)
+            // if not, see if it exists in the root of the solution (if the executable is run from the Debug/Release directory)
+            if( !File.Exists(fullFilename) )
+                fullFilename = Path.GetFullPath(Path.Combine(exeDirectory,@"..\..\..\",filename));
+
+            // if not, see if it exists one folder up from the root of the solution
             if( !File.Exists(fullFilename) )
                 fullFilename = Path.GetFullPath(Path.Combine(exeDirectory,@"..\..\..\..\",filename));
 
