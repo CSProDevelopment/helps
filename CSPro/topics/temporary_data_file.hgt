@@ -1,0 +1,131 @@
+﻿<title>Temporary Data File</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h1 style="font-family: Arial, sans-serif; font-size: 18pt; font-weight: bold;">Temporary
+ Data File</h1>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">Most CSPro
+ applications sensibly require data files to operate but there may be times
+ when the contents of a data file are unimportant. Examples of this include
+ a menu program that launches another program based on a user's selection.
+ Such a program generally has no output and thus the contents of the file
+ are meaningless. For batch programs it may be the case that you want to
+ use CSPro functions to perform some task, such as creating content using
+ the write statement. CSPro can create a temporary data file in the Windows
+ temporary folder that will eventually be removed by the operating system.
+ This file will satisfy CSPro's file requirements but will not persist
+ in any working folders.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">In
+ the Define File Associations box write &quot;&lt;none&gt;&quot; for the
+ Input Data File. If your data entry application application does not use
+ an external file or a write file you will not be presented with a Define
+ File Associations box and must edit the PFF file manually. To do this,
+ remove the &quot;InputData=...&quot; line from the files section of the
+ PFF.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">Data
+ entry applications run as they would with a file specified. Batch applications,
+ however, do not run any logic associated with elements of the dictionary.
+ Instead only the application file preprec and postproc are executed.</p>
+<p style="text-align: center; font-family: Arial, sans-serif; font-size: 10pt;"><img
+	 src="defineFiles.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-weight: bold; font-family: Arial, sans-serif; font-size: 10pt;">Batch
+ Edit Example</p>
+<p style="font-size: 10pt; font-weight: normal; font-family: 'Courier New', monospace;"><font
+	 color="#000000">PROC </font><font color="#0000FF">GLOBAL</font><font
+	 color="#000000"><br />
+<br />
+</font><font color="#008000">//&#160;This program concatenates all the
+ *.dat files in a directory by order of date.<br />
+//&#160;The program can be run with any dictionary, it is only necessary
+ that the name<br />
+//&#160;of the application file procedure is valid.<br />
+</font><font color="#000000"><br />
+</font><font color="#0000FF">alpha</font><font color="#000000"> (</font><font
+	 color="#FF0000">300</font><font color="#000000">) str;<br />
+</font><font color="#0000FF">alpha</font><font color="#000000"> (</font><font
+	 color="#FF0000">50</font><font color="#000000">) listingName = </font><font
+	 color="#FF00FF">&quot;files.txt&quot;</font><font color="#000000">;<br />
+</font><font color="#0000FF">alpha</font><font color="#000000"> (</font><font
+	 color="#FF0000">50</font><font color="#000000">) pffName = </font><font
+	 color="#FF00FF">&quot;CSConcat.pff&quot;</font><font color="#000000">;<br />
+</font><font color="#0000FF">alpha</font><font color="#000000"> (</font><font
+	 color="#FF0000">50</font><font color="#000000">) outputName = </font><font
+	 color="#FF00FF">&quot;concatenated.dat&quot;</font><font color="#000000">;<br />
+<br />
+</font><font color="#0000FF">file</font><font color="#000000"> inputFile;<br />
+</font><font color="#0000FF">file</font><font color="#000000"> pffFile;<br />
+<br />
+<br />
+</font><font color="#0000FF">PROC</font><font color="#000000"> CONCATENATE_FF<br />
+<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">setfile</font><font
+	 color="#000000">(pffFile,</font><font color="#0000FF">strip</font><font
+	 color="#000000">(pffName));<br />
+<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">filewrite</font><font
+	 color="#000000">(pffFile,</font><font color="#FF00FF">&quot;[Run Information]&quot;</font><font
+	 color="#000000">);<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">filewrite</font><font
+	 color="#000000">(pffFile,</font><font color="#FF00FF">&quot;Version=CSPro 7.0&quot;</font><font color="#000000">);<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">filewrite</font><font
+	 color="#000000">(pffFile,</font><font color="#FF00FF">&quot;AppType=Concatenate&quot;</font><font
+	 color="#000000">);<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">filewrite</font><font
+	 color="#000000">(pffFile,</font><font color="#FF00FF">&quot;[Files]&quot;</font><font
+	 color="#000000">);<br />
+<br />
+&#160;&#160;&#160;&#160;str = </font><font color="#0000FF">maketext</font><font
+	 color="#000000">(</font><font color="#FF00FF">'cmd /c &quot;dir /b
+ /od *.dat &gt; %s&quot;'</font><font color="#000000">,</font><font color="#0000FF">strip</font><font
+	 color="#000000">(listingName));<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">execsystem</font><font
+	 color="#000000">(str,wait);<br />
+<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">setfile</font><font
+	 color="#000000">(inputFile,</font><font color="#0000FF">strip</font><font
+	 color="#000000">(listingName));<br />
+<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">while</font><font
+	 color="#000000"> </font><font color="#0000FF">fileread</font><font
+	 color="#000000">(inputFile,str) </font><font color="#0000FF">do</font><font
+	 color="#000000"><br />
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font color="#0000FF">filewrite</font><font
+	 color="#000000">(pffFile,</font><font color="#FF00FF">&quot;InputData=.\%s&quot;</font><font
+	 color="#000000">,</font><font color="#0000FF">strip</font><font color="#000000">(str));<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">enddo</font><font
+	 color="#000000">;<br />
+<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">close</font><font
+	 color="#000000">(inputFile);<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">filedelete</font><font
+	 color="#000000">(</font><font color="#0000FF">strip</font><font color="#000000">(listingName));<br />
+<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">filewrite</font><font
+	 color="#000000">(pffFile,</font><font color="#FF00FF">&quot;OutputData=%s&quot;</font><font
+	 color="#000000">,outputName);<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">filewrite</font><font
+	 color="#000000">(pffFile,</font><font color="#FF00FF">&quot;Listing=.\CSConcat.lst&quot;</font><font
+	 color="#000000">);<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">filewrite</font><font
+	 color="#000000">(pffFile,</font><font color="#FF00FF">&quot;[Parameters]&quot;</font><font
+	 color="#000000">);<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">filewrite</font><font
+	 color="#000000">(pffFile,</font><font color="#FF00FF">&quot;ViewListing=No&quot;</font><font
+	 color="#000000">);<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">filewrite</font><font
+	 color="#000000">(pffFile,</font><font color="#FF00FF">&quot;ViewResults=No&quot;</font><font
+	 color="#000000">);<br />
+<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">close</font><font
+	 color="#000000">(pffFile);<br />
+<br />
+&#160;&#160;&#160;&#160;</font><font color="#0000FF">execpff</font><font
+	 color="#000000">(</font><font color="#0000FF">strip</font><font color="#000000">(pffName));</font></p>
+</body>
+</html>

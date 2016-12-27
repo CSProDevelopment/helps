@@ -1,0 +1,140 @@
+﻿<title>Initialize Hot Decks Using Saved Arrays</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Initialize Hot Decks Using Saved Arrays</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ this technique, the</font> <a href="dynamic_imputation_hot_deck_.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">hot
+ deck</font></a> <font style="font-family: Arial; font-size: 10pt;" face="Arial"
+						 size="2">is initialized by running the program
+ twice and using the results of the first run to initialize the hot deck
+ for the second run. The array is declared using the save keyword. No initialization
+ of the array is done in the program logic. The program is run twice. During
+ the first run of the program, the array has not been initialized so it
+ is likely that some imputations from the hot deck will use these uninitialized
+ values. The results (the output file) from the first run of the program
+ are therefore discarded. However, during the first run of the program,
+ the hot deck is filled with valid values. Since the array has been declared
+ as a saved array, these values are written to the saved array file. When
+ the program is run a second time, these values are read from the saved
+ array file and used as initial values from the array. The advantage of
+ this approach over initializing the array in the program logic is that
+ all values used in the hot deck are taken from the data file.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ following example uses a saved array to initialize a hot deck.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#0000FF" face="Courier New"
+									 size="2">PROC GLOBAL</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#0000FF" face="Courier New"
+									 size="2">array</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" face="Courier New" size="2">AgeSRDeck (2,6)</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">save</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 face="Courier New"
+														 size="2">;&#160;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+	 face="Courier New" size="2">{declare array, initialize from file}</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#0000FF" face="Courier New"
+									 size="2">PROC AGE</font></p>
+<table style="margin-left: 13.50pt; border-collapse: separate; border-collapse: separate;"
+		 cellspacing="0" width="696" border="1">
+	<tr style="vertical-align: top;">
+		<td style="width: 56.90%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">AGE =</font>
+		 <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+				 face="Courier New" size="2">notappl</font> <font style="font-family: 'Courier New';
+		 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">then</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">&#160;&#160;impute</font><font style="font-family: 'Courier New';
+		 font-size: 10pt;" face="Courier New" size="2">(AGE, AgeSRDeck(SEX,
+		 RELATIONSHIP));</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">else</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">&#160;&#160;AgeSRDeck(SEX, RELATIONSHIP)= AGE</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 face="Courier New"
+														 size="2">;</font></p></td>
+		<td style="width: 43.10%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{if the value for age is not valid}</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{assign the value from the hot deck
+		 based on sex and relationship}</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{update the value of the hot deck}</font></p></td>
+	</tr>
+</table>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
+ a complete example using use hot decks, refer to the examples</font> <font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">directory.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <u><font style="font-family: Arial;
+											 font-size: 10pt; text-decoration: underline; "
+											 color="#008000" face="Arial"
+											 size="2">Dynamic Imputation
+ (Hot Deck)</font></u><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">,</font> <u><font style="font-family: Arial;
+	 font-size: 10pt; text-decoration: underline; " color="#008000" face="Arial"
+	 size="2">Use Hot Decks</font></u><font style="font-family: Arial;
+											 font-size: 10pt;" face="Arial"
+											 size="2">,</font> <a href="initialize_hot_decks_in_program_logic.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Initialize
+ Hot Decks In Program Logic</font></a><font style="font-family: Arial;
+											 font-size: 10pt;" face="Arial"
+											 size="2">,</font> <a href="array_statement.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Array
+ Statement</font></a></p>
+</body>
+</html>

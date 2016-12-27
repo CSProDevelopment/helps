@@ -1,0 +1,64 @@
+﻿<title>Getrecord Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Getrecord</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Function</font></b></h3>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">s =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
+									 font-weight: bold;" color="#0000FF"
+									 face="Courier New" size="2">getrecord</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">(<span style="font-style: italic;">alpha-expression</span>);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">getrecord</font></b> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">function returns the name
+ of the record that contains the item identified by the <span style="font-style: italic;">alpha
+ expression</span><span>.</span></font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Return
+ value:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ function returns a string up to 32 characters long. If the item does not
+ exist, the function returns a blank string.</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Example:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2"><font color="#000000"><font color="#0000FF">errmsg</font>(<font
+	 color="#FF00FF">&quot;SEX belongs to %s&quot;</font>,<font color="#0000FF">getrecord</font>(<font
+	 color="#FF00FF">&quot;SEX&quot;</font>)); <font color="#008000">//&#160;SEX
+ belongs to POPULATION<br />
+</font><font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;WATERSOURCE
+ belongs to %s&quot;</font>,<font color="#0000FF">getrecord</font>(<font
+	 color="#FF00FF">&quot;WATERSOURCE&quot;</font>)); <font color="#008000">//&#160;WATERSOURCE
+ belongs to HOUSING</font></font></font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;
+	 font-size: 10pt;"><b><font style="font-weight: bold;">See also:</font></b>
+ <a href="getsymbol_function.htm" style="font-family: Arial, sans-serif;
+	 font-size: 10pt;">Getsymbol Function</a></p>
+</body>
+</html>

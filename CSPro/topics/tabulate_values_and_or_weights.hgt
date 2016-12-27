@@ -1,0 +1,81 @@
+﻿<title>Tabulate Values and/or Weights</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Tabulate Values and/or Weights</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">Tabulation
+ allows the use of a data item or a constant value as a weighting fa<span
+	 style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">ctor
+ during tabulation. This is particularly useful in the case of a survey,
+ where the weight assigned to each case or observation in the sample must
+ be taken into account in order to produce numbers representative of the
+ whole. If no weight value is specified, weight is assumed to be &quot;1&quot;.</font></span></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ the same fashion, values (rather than counts) may be tabulated; like weights,
+ values are numeric data items or constants with or without decimal positions.
+ When a value is speci fied for tabulation, the effect is that of cumulative
+ addition of the specified value into the cell at the intersection of the
+ row and column coordinates.</font> <font style="font-family: Arial; font-size: 10pt;"
+											 face="Arial" size="2">If you
+ leave the value item blank, a value of 1 will be added into the appropriate
+ cell during tabulation. Tabulating values can be used, for example, when
+ a variable such as &quot;number of children born&quot; has been collected
+ for each woman in the population and you wish to tally the total number
+ of children born rather than tallying the number of women with a particular
+ number of children. In this case you would use the &quot;number of children&quot;
+ variable as the value to tally so that for each woman, the number of children
+ born to that woman would be added to the appropriate cell.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ both value and weight are specified for a given table, the specified value
+ is first multiplied by the specified weight and the</font> <b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">product</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">of
+ this multiplication is then added to the cell in question. This feature
+ is useful in the case where the unit of observation has a weight, and
+ one of the data items to be tabulated is a quantitative value. An example
+ might be a fertility survey, where each female of child-bearing age carries
+ a sampling weight, and where some of the data items might be &quot;Number
+ of children ever born,&quot; &quot;Number of children surviving,&quot;
+ etc. Tabulation applications easily permits the accumulation of weighted
+ values to provide the total number of children ever born for all females
+ in the sample.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ the weight or value includes decimals, the decimal</font> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">may be explicit or implicit,
+ but the dictionary definition should reflect the correct situation. The
+ weight may be assigned to just the current subtable, the entire table
+ or all the tables currently defined in the application.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <a href="add_weights_to_a_table.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Add
+ Weights to a Table</font></a><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">,</font> <a
+	 href="tabulate_values_instead_of_frequencies.html"><font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">Tabulate
+ Values Instead of Frequencies</font></a></p>
+</body>
+</html>

@@ -1,0 +1,126 @@
+﻿<title>Area Processing</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Area Processing</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Area Processing is the generation of tables by a defined
+ hierarchical structure of area codes. If the geographic hierarchy of a
+ hypothetical country is region, province, locality (major-to-minor order),
+ it may be necessary to produce tables for each of these sub-divisions.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">To use area processing you must have done the following:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-weight: bold;">â€¢</font></b>&#160;<span style="font-family: Arial, sans-serif;"><a
+	 href="create_an_area_names_file.html"><font style="font-family: Arial, sans-serif;"
+												 face="Arial">Created an
+ area names file</font></a> <font style="font-family: Arial, sans-serif;"
+									 face="Arial">(.anm)</font></span></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;</font></b><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 color="#000000" face="Arial"
+													 size="2">Selected
+ one or more Area IDs from the</font> <a href="area_dialog_box.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">area
+ IDs dialog box</font></a></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">For example, suppose we wish to perform geographic area processing
+ for our top-most units of geography, which are Province and District (choose
+ them in the Area IDs dialog box). Each tabulation will be repeated for
+ each Province and District in the data file. In addition, a summary entry
+ [Total] will be shown for the entire data file. The tabulation will be
+ displayed in the following order:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Total</font></p>
+<p style="text-align: left; margin-left: 24.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Province 1</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">District 1 (of Province 1)</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">District 2 (of Province 1)</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">District 3 (of Province 1)</font></p>
+<p style="text-align: left; margin-left: 24.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Province 2</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">District 1 (of Province 2)</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">District 2 (of Province 2)</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">District 3 (of Province 2)</font></p>
+<p style="text-align: left; margin-left: 24.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">:</font></b></p>
+<p style="text-align: left; margin-left: 24.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">:</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Area Processing will apply to</font> <b><font style="font-family: Arial;
+															 font-size: 10pt;
+															 font-weight: bold;"
+															 color="#000000"
+															 face="Arial"
+															 size="2">all</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">tables in your application.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">After
+ producing the tables using area processing you can select a cell to display
+ in a <a href="create_a_thematic_map_of_results.html">thematic map</a> and
+ view it spatially.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><span
+	 style="font-weight: bold;">No File Processing:</span> It is also possible
+ to produce tables without creating an area names file. Select the levels
+ of geography desired but after clicking on the Traffic Light button in
+ CSPro to run your tables, leave the &lt;Area Names&gt; field blank. CSPro
+ will use codes from the data file instead of names for each level of geography.
+ For example, if province Gluten's code is 20, the tables will show code
+ 20 instead of the name Gluten. This can be useful for generating a list
+ of every geographic code found in a data file.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">See also:</font></b> <a href="area_names_file_(_anm).html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Area
+ Names File</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">,</font> <a href="using_table_data_in_the_map_viewer.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Using
+ Table Data in the Map Viewer</font></a></p>
+</body>
+</html>

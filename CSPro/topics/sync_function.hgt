@@ -1,0 +1,150 @@
+﻿<title>Sync Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><span
+	 style="font-size: 12pt;"><b><font style="font-family: Arial; font-size: 18pt;
+										 font-weight: bold;" color="#0000FF"
+										 face="Arial" size="5">Sync</font></b>
+ <b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;"
+			 face="Arial" size="5">Function</font></b></span></h3>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-size: 10pt;"><font style="font-family: 'Courier New';" face="Courier New"><span
+	 style="font-family: 'Courier New';">b</span> =</font> <b><font style="font-family: 'Courier New';
+	 font-weight: bold;" color="#0000FF" face="Courier New">sync</font></b><font
+	 style="font-family: 'Courier New';" face="Courier New">(</font><span
+	 style="font-style: italic;"><i><font style="font-family: 'Courier New';
+											 font-style: italic;" face="Courier New">alpha-exp</font></i><font
+	 style="font-family: 'Courier New';" color="#FF00FF" face="Courier New">[</font><font
+	 style="font-family: 'Courier New'; font-style: normal;" face="Courier New">,queue</font><font
+	 style="font-family: 'Courier New'; font-style: normal;" color="#FF00FF"
+	 face="Courier New">]</font></span><font style="font-family: 'Courier New';"
+											 face="Courier New">);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <span style="font-family: Arial; font-size: 10pt; font-weight: bold;">sync</span><span
+	 style="font-family: Arial; font-size: 10pt;"> </span><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">function launches a <a href="../Data_Synchronization.html">data
+ synchronization script</a> on Android devices. These scripts can transfer
+ data with FTP servers, Dropbox accounts, or other Android devices via
+ Bluetooth. By executing a synchronization script in logic, you can create
+ a dynamic operational control system for your survey operation. (Syncs
+ can also be executed manually.)</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: Arial; font-size: 10pt;">The <span style="font-style: italic;">alpha-exp</span>
+ points to a filename containing the <a href="../Data_Synchronization.html">.pnc
+ file</a> scripts. The file can exist anywhere on the Android device. If
+ it is not found at the path provided, CSEntry will check if a file with
+ the given name exists in the CSEntry sandbox. Using this sandbox functionality,
+ you can execute synchronization files that have been downloaded via the
+ &quot;New Synchronization&quot; menus in CSEntry.</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: Arial; font-size: 10pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: Arial; font-size: 10pt;">An optional argument, <span
+	 style="font-style: italic;">queue</span>, indicates that this synchronization
+ script should not be executed immediately, but instead should be executed
+ when the data entry application has closed. This can be useful if you
+ want to synchronize files that may be open in your data entry application.
+ (It is not possible to sync files that are currently open because they
+ are locked and inaccessible to the synchronization system.)</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><font><font color="#000000"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Return value:</font></b></font></font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: Arial; font-size: 10pt;">The function returns a logical
+ value of 1 (true) if the synchronization (or the queueing of the file)
+ was successful and 0 (false) if not.</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt; font-weight: bold;"><span style="font-family: Arial;
+												 font-size: 10pt;"><b><font
+	 style="font-weight: bold;"><b><font style="font-weight: bold;">E</font></b>xample
+ 1:</font></b></span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New', monospace; font-size: 10pt;"><span style="color: #0000ff;">PROC</span>
+ SURVEY_FF<br />
+<br />
+<font color="#0000FF">preproc</font><br />
+<br />
+&#160;&#160;&#160;&#160;<font color="#008000">//&#160;at the beginning
+ of the program, queue up the synchronization script for<br />
+</font>&#160;&#160;&#160;&#160;<font color="#008000">//&#160;execution
+ when the program ends<br />
+</font>&#160;&#160;&#160;&#160;<font color="#0000FF">sync</font>(<font
+	 color="#FF00FF">&quot;Send Data to FTP Server.pnc&quot;</font>,queue);</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt; font-weight: bold;"><span style="font-family: Arial;
+												 font-size: 10pt;"><b><font
+	 style="font-weight: bold;">Example 2:</font></b></span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New', monospace; font-size: 10pt;"><span style="color: #0000ff;">PROC</span>
+ <font color="#0000FF">GLOBAL</font><br />
+<br />
+<font color="#0000FF">file</font> pncFile;<br />
+<br />
+<font color="#0000FF">PROC</font> EXAMPLE<br />
+<br />
+&#160;&#160;&#160;&#160;<font color="#008000">//&#160;close the external
+ dictionary file so that it can be read by the synchronization script<br />
+</font>&#160;&#160;&#160;&#160;<font color="#0000FF">close</font>(EXTERNAL_DICT);<br />
+<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">setfile</font>(pncFile,<font
+	 color="#FF00FF">&quot;External Dictionary Sync.pnc&quot;</font>,create);<br />
+&#160;&#160;&#160;&#160;<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(pncFile,<font
+	 color="#FF00FF">&quot;[SyncFile]&quot;</font>);<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(pncFile,<font
+	 color="#FF00FF">&quot;Version=CSPro 7.0&quot;</font>);<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(pncFile,<font
+	 color="#FF00FF">&quot;RootFolder=/&quot;</font>);<br />
+<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(pncFile,<font
+	 color="#FF00FF">&quot;[Connection]&quot;</font>);<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(pncFile,<font
+	 color="#FF00FF">&quot;Type=FTP&quot;</font>);<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(pncFile,<font
+	 color="#FF00FF">&quot;Host=ftp://www.csprousers.org&quot;</font>);<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(pncFile,<font
+	 color="#FF00FF">&quot;Username=bituminous&quot;</font>);<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(pncFile,<font
+	 color="#FF00FF">&quot;Password=coal&quot;</font>);<br />
+&#160;&#160;&#160;&#160;<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(pncFile,<font
+	 color="#FF00FF">&quot;[Sync]&quot;</font>);<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(pncFile,<font
+	 color="#FF00FF">&quot;ServerPath=/Data&quot;</font>);<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(pncFile,<font
+	 color="#FF00FF">&quot;Put=%s&quot;</font>,<font color="#0000FF">filename</font>(EXTERNAL_DICT));<br />
+&#160;&#160;&#160;&#160;<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">close</font>(pncFile);<br />
+&#160;&#160;&#160;&#160;<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">if</font> <font color="#0000FF">sync</font>(<font
+	 color="#0000FF">filename</font>(pncFile)) <font color="#0000FF">then</font><br />
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">errmsg</font>(<font
+	 color="#FF00FF">&quot;The sync was successful!&quot;</font>);<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">endif</font>;<br />
+&#160;&#160;&#160;&#160;<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">open</font>(EXTERNAL_DICT);
+ <span style="color: #007f00;">//&#160;reopen the external dictionary file</span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
+	 style="font-weight: bold;">See also:</font></b> <a href="../Data_Synchronization.html">Synchronization
+ File (.PNC)</a></p>
+</body>
+</html>

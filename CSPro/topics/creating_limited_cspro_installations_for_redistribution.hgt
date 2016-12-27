@@ -1,0 +1,47 @@
+﻿<title>Creating Limited CSPro Installations for Redistribution</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h3 style="font-family: Arial, sans-serif; font-size: 18pt;">Creating Limited
+ CSPro Installations for Redistribution</h3>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">At times you
+ may wish to redistribute CSPro to others but limit them to only installing
+ the data entry application. You can modify the standard CSPro installer
+ so that it installs just the data entry components rather than asking
+ the user to select the desired components to install. You can do this
+ by calling the CSPro installation with a command line argument:</p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 48px;">cspro70.exe
+ /component=Data Entry</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">This command
+ line argument will generally be passed to the program in a setup script.
+ Network administrators may want to push CSPro to a group of machines without
+ requiring a user to interact with the setup screens. To automate an installation
+ like this, a silent command argument can be passed to the installer:</p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 48px;"><span
+	 style="font-size: 10pt; font-family: 'Courier New', monospace;">cspro70.exe
+ /silent</span></p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 48px;"><span
+	 style="font-size: 10pt; font-family: 'Courier New', monospace;">cspro70.exe
+ /silent /component=Data Entry</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">The first example
+ will install the complete CSPro package. In both cases, because there
+ is no prompt for the path of installation, CSPro will be installed to
+ the &quot;C:\Program Files (x86)\CSPro 7.0&quot; folder (or &quot;C:\Program
+ Files\CSPro 7.0&quot; on 32-bit machines).</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">To automate
+ the removal of CSPro, use the following command:</p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 48px;">cspro70.exe
+ /silent /remove</p>
+<p style="font-size: 10pt; font-family: Arial; font-weight: bold;"><b><font
+	 style="font-weight: bold;">See Also:</font></b> <span><a href="installing_cspro.htm"
+	 style="font-weight: normal;">Installing CSPro</a></span><span style="font-weight: normal;">,
+ <a href="installing_data_entry_applications.htm" style="font-weight: normal;">Installing
+ Data Entry Applications</a></span></p>
+</body>
+</html>

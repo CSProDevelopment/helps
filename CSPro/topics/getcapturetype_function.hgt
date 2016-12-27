@@ -1,0 +1,117 @@
+﻿<title>Getcapturetype Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h1 style="font-size: 18pt; font-family: Arial, sans-serif;"><span style="color: #0000ff;">Getcapturetype</span>
+ Function</h1>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2"><span style="font-family: 'Courier New'; font-size: 10pt;">i</span>
+ =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
+					 font-weight: bold;" color="#0000FF" face="Courier New"
+					 size="2">getcapturetype</font></b><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">(<span
+	 style="font-style: italic;">dictionary-item</span>);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">getcapturetype</font></b> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">function returns the capture
+ type currently associated with a field on a form. The dictionary item
+ must be located on one of the application's forms.</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Return
+ value:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: Arial; font-size: 10pt;">The function returns the capture
+ type, which is one of the following values:</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: Arial; font-size: 10pt;">&#160;</p>
+<table style="left: 282px; top: 204px; border-collapse: separate; border-collapse: separate;"
+		 cellspacing="0" width="159" align="center" border="1">
+	<col style="width: 18.611%;" />
+	<col style="width: 81.389%;" />
+	<tr>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">0</span></p></td>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">Textbox</span></p></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">1</span></p></td>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">Radio
+		 Button</span></p></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">2</span></p></td>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">Checkbox</span></p></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">3</span></p></td>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">Drop
+		 Down Box</span></p></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">4</span></p></td>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">Combo
+		 Box</span></p></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">5</span></p></td>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">Date
+		 Picker</span></p></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">6</span></p></td>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-family: Arial, sans-serif;">Number
+		 Pad</span></p></td>
+	</tr>
+</table>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: Arial; font-size: 10pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Example:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2"><font color="#000000"><font color="#008000">//&#160;change
+ SEX from a radio button to a drop down box<br />
+</font><font color="#0000FF">if</font> <font color="#0000FF">getcapturetype</font>(SEX)
+ = <font color="#FF0000">1</font> <font color="#0000FF">then</font><br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">setcapturetype</font>(SEX,<font
+	 color="#FF0000">3</font>);<br />
+<font color="#0000FF">endif</font>;</font></font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
+	 style="font-weight: bold;">See also:</font></b> <a href="Extended_Controls.htm"
+														 style="font-family: Arial, sans-serif;">Extended
+ Controls</a>, <a href="Setcapturetype_Function.htm" style="font-family: Arial, sans-serif;">Setcapturetype
+ Function</a></p>
+</body>
+</html>

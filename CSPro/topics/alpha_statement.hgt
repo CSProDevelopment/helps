@@ -1,0 +1,215 @@
+﻿<title>Alpha Statement</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;
+	 text-align: left;"><b><font style="font-size: 18pt; font-weight: bold;"
+								 color="#0000FF" size="5">Alpha</font></b>
+ <b><font style="font-size: 18pt; font-weight: bold;" size="5">Statement</font></b></h3>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;
+	 font-weight: bold; font-style: italic;"><b><font style="font-weight: bold;">Feature
+ Upgrade:<span style="font-weight: normal;"> Since CSPro 6.0, you can now
+ use <a href="String_Statement.html">variable-length strings</a>. You are
+ encouraged to use strings instead of fixed-width alpha variables whenever
+ possible.</span></font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;
+	 font-weight: bold;"><b><font style="font-weight: bold;">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;</font><b><font style="font-family: 'Courier New';
+									 font-size: 10pt; font-weight: bold;"
+									 color="#0000FF" face="Courier New"
+									 size="2">alpha</font></b> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">(</font><i><font style="font-family: 'Courier New'; font-size: 10pt;
+								 font-style: italic;" face="Courier New"
+								 size="2">len</font></i><font style="font-family: 'Courier New';
+	 font-size: 10pt;" face="Courier New" size="2">)</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">]</font>
+ <i><font style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
+			 face="Courier New" size="2">var-1</font></i><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,</font> <i><font style="font-family: 'Courier New'; font-size: 10pt;
+								 font-style: italic;" face="Courier New"
+								 size="2">var-2</font></i><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">...,</font> <i><font style="font-family: 'Courier New';
+														 font-size: 10pt;
+														 font-style: italic;"
+														 color="#000000"
+														 face="Courier New"
+														 size="2">var-n</font></i><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">]]</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Description:</font></b></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">The</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">alpha</font></b> <font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">statement is
+ used to define alphanumeric variables used in the application. The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">len</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">is
+ the number of characters in the variable. The</font> <b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">len</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">applies
+ to all variables which follow in the same statement. If no</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">len</font></b> <font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">is given, 16
+ is assumed. The maximum string length that can be declared is 8,192. If
+ you attempt to assign to an alpha variable a string that is longer than
+ the variable's size, the string will be truncated from the right. Conversely,
+ it you assign a string that </font><span style="text-align: left;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">is
+ shorter than the variable's size, the trailing character positions will
+ be blank-filled.</font></span></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">The following two
+ examples, using the declaration of x below, should clarify this point:</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Example 1:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">PROC GLOBAL</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><font color="#0000FF">&#160;&#160;alpha</font>(<font
+	 color="#FF0000">10</font>) x,y;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><span style="color: #0000ff;">PROC</span>
+ A1</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 text-indent: 10.80pt; font-family: 'Courier New';">x = <font color="#FF00FF">&quot;hi
+ mom&quot;</font>;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
+	 margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New';
+	 margin-left: 48px;">x will now equal <font color="#FF00FF">&quot;hi
+ mom &#160;&#160;&#160;&quot;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 7.20pt;
+	 margin-left: 12px;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1234567890</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
+	 margin-left: 12px;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 face="Courier New" size="2">x =</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+		 face="Courier New" size="2">&quot;good night, mom&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
+	 margin-left: 48px;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 face="Courier New" size="2">x will now
+ equal</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+					 color="#FF00FF" face="Courier New" size="2">&quot;good
+ night&quot;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1234567890</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Example 2:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
+	 text-align: left;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#0000FF" face="Courier New" size="2">PROC
+ GLOBAL</font></p>
+<p style="margin-left: 3.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 18.00pt; text-align: left;"><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">alpha</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF0000" face="Courier New" size="2">3</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">) reply;</font></p>
+<p style="margin-left: 3.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 18.00pt; text-align: left; font-family: 'Courier New';"><font
+	 color="#0000FF">alpha</font> flag;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 18.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">Q5</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">q5 =</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#0000FF"
+												 face="Courier New" size="2">then</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;reply</font> <b><font style="font-family: 'Courier New';
+												 font-size: 10pt; font-weight: bold;"
+												 color="#000000" face="Courier New"
+												 size="2">=</font></b>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+		 face="Courier New" size="2">&quot;Yes&quot;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#000000" face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;flag =</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">&quot;Y&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#000000" face="Courier New"
+													 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 18.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">If</font> <font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">the
+ user attempts to assign the string &quot;Not reported&quot; to the variable
+ &quot;reply,&quot; CSPro would place the letters &quot;Not&quot; in the
+ variable and drop the remaining characters of the string.</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 18.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-weight: bold;">See also:</font></b> <a href="String_Statement.html">String
+ Statement</a>, <a href="array_statement.html">Array Statement</a>, <a href="numeric_statement.html">Numeric
+ Statement</a>, </p>
+</body>
+</html>

@@ -1,0 +1,312 @@
+﻿<title>Static Imputation</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Static Imputation</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Static</font> <a href="imputation.html"><font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">imputation</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">means
+ providing a value from a pre-determined set of values. Suppose a personâ€™s
+ sex is missing or invalid (out of range). If we decide to change the response
+ using static imputation, there are two basic methods to use: hard-coded
+ or from a &quot;cold-deck.&quot;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;Hard-coded</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Using our example above, we would programmatically set SEX
+ to the value we think it should be. For example,</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><font color="#0000FF">PROC</font> <font
+	 color="#0000FF">GLOBAL</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><span
+	 style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 52px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#000000"
+															 face="Courier New"
+															 size="2">toggle_sex
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+				 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#000000"
+															 face="Courier New"
+															 size="2">;</font></span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#000000" face="Courier New"
+													 size="2">SEX</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">$
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+				 face="Courier New" size="2">notappl</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#000000" face="Courier New" size="2">or</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">not</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#000000"
+														 face="Courier New"
+														 size="2">($</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">in</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#FF0000" face="Courier New"
+													 size="2">1</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">:</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#FF0000"
+												 face="Courier New" size="2">2</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">)</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#0000FF"
+												 face="Courier New" size="2">then</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;$ = toggle_sex;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;toggle_sex =</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">-
+ toggle_sex;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#000000" face="Courier New"
+													 size="2">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">What weâ€™ve done above is a very primitive form of imputation.
+ Essentially, when we encounter a bad value for sex, 50 percent of the
+ time the variable SEX will be assigned the value &quot;male&quot;, and
+ 50 percent of the time the value &quot;female&quot;. Note that no accommodation
+ was made for other responses; for example, if fertility data were present,
+ you might not wish to make this person &quot;male.&quot; Or if this were
+ an enumeration of a prison where the entire population is male, you would
+ probably not want to be adding females to this group! So while this method
+ can be used, you need to take into account other responses. We attempt
+ to do this in our next method of static imputation, where we use a &quot;cold-deck.&quot;</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;Cold deck</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">With
+ the &quot;cold deck&quot; approach, known information about individuals
+ with similar characteristics (sex, age, relationship to household head,
+ economic status, etc) is used to determine the &quot;most appropriate&quot;
+ response to be used when some piece (or pieces) of related information
+ is invalid.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
+ example, suppose a personâ€™s age is missing or invalid. We might have a
+ table as follows, where the row indices represent the personâ€™s sex (1=male,
+ 2=female), and the column indices refers to the personâ€™s relationship
+ codes (1-5) (this table assumes that the relationship and sex codes have
+ already been corrected):</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;&#160;&#160;</font></p>
+<table style="margin-left: 36.00pt; border-collapse: separate; border-collapse: separate;"
+		 cellspacing="0" width="432" border="1">
+	<tr style="vertical-align: top;">
+		<td style="width: 19.07%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="width: 5.06%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="width: 13.36%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">(head)</font></p></td>
+		<td style="width: 15.35%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">(spouse)</font></p></td>
+		<td style="width: 12.42%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">(child)</font></p></td>
+		<td style="width: 18.06%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">(other
+		 rel)</font></p></td>
+		<td style="width: 16.67%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">(non-rel)</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 19.07%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="width: 5.06%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="width: 13.36%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">1</font></p></td>
+		<td style="width: 15.35%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">2</font></p></td>
+		<td style="width: 12.42%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">3</font></p></td>
+		<td style="width: 18.06%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">4</font></p></td>
+		<td style="width: 16.67%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">5</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 19.07%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">(M)</font></p></td>
+		<td style="width: 5.06%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">1</font></p></td>
+		<td style="width: 13.36%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">35</font></p></td>
+		<td style="width: 15.35%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">50</font></p></td>
+		<td style="width: 12.42%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">10</font></p></td>
+		<td style="width: 18.06%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">41</font></p></td>
+		<td style="width: 16.67%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">65</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 19.07%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">(F)</font></p></td>
+		<td style="width: 5.06%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">2</font></p></td>
+		<td style="width: 13.36%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">32</font></p></td>
+		<td style="width: 15.35%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">48</font></p></td>
+		<td style="width: 12.42%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">10</font></p></td>
+		<td style="width: 18.06%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">37</font></p></td>
+		<td style="width: 16.67%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">68</font></p></td>
+	</tr>
+</table>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ the event a female child was found to have a missing age, she would be
+ given the age of 10. If a female head of the household had a missing age,
+ then her age would be given as 32. This method is acceptable if you do
+ not need to use it often; that is, if very little of your data are missing
+ or invalid. Also, if your population is fairly homogeneous (for example
+ if you were correcting for religion and 90% of the population is Muslim),
+ then this will not result in an unrealistic portrayal of your country.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">However,
+ if you find yourself referring to this table often, or you have a very
+ diverse population where a few static values do not give an accurate portrayal,
+ then your data will end up skewed. For these reasons (and others),</font>
+ <a href="dynamic_imputation_hot_deck_.html"><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">dynamic
+ imputation</font></a> <font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">is the preferred method.</font></p>
+</body>
+</html>

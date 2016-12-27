@@ -1,0 +1,108 @@
+﻿<title>Notes File (.CSNOT)</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Notes File (.NOT)</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ notes file is a text file that contains all notes processed by the data
+ entry application. The file contains the case ids, name of the data item
+ to which each note belongs, and the note text.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The notes file stores all the notes entered by data entry
+ operators for its corresponding data file. Each note is identified by
+ its case ids and field name. Each record in the NOT file contains note
+ text for one of the fields. There may be multiple note records for a particular
+ field. All the note text for a particular field follow one another in
+ order in the NOT file.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The format of each record is as follows:</font></p>
+<ul>
+	<li class="P" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The first n characters are the id fields of the case.</font></p></li>
+	<li class="P" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The next 32 characters are the field name as given in the
+	 dictionary (left justified).</font></p></li>
+	<li class="P" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;">The
+	 next 6 characters are blank (reserved for future use).</p></li>
+	<li class="P" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;">If
+	 the field has both record and item occurrences, then the next 5 characters
+	 are the record occurrence number (right justified, blank filled),
+	 followed by a period (.) character. Otherwise the next 6 characters
+	 are blank.</p></li>
+	<li class="P" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">If the field has only record occurrences, then the next 5
+	 characters are the record occurrence number (right justified, blank
+	 filled). If the field has both record and item occurrences, then the
+	 next 5 characters are the item occurrence number.</font></p></li>
+	<li class="P" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The remaining characters are note text.</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Note text can span multiple NOT file records. Each record
+ will have the same initial fields (as described above) followed by the
+ continued note text. Note text is always broken at word (space boundaries.
+ There is an implied blank character between the note text in each note
+ record for a field.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Note text can contain &quot;\n&quot; characters indicating
+ a new line (Enter key). If the note text is automatically wrapped in the
+ note text box, there will be no new line characters.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The NOT file could be processed by another CSPro application
+ by creating data dictionary for it.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Notes
+ can be created, editing, and deleted using the</font> <a href="getnote_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">getnote</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
+ <a href="putnote_function.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">putnote</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,
+ and</font> <a href="editnote_function.html"><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">editnote</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">functions
+ of CSPro.</font></p>
+</body>
+</html>

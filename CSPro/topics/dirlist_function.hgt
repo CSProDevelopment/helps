@@ -1,0 +1,106 @@
+﻿<title>Dirlist Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Dirlist</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Function</font></b></h3>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
+	 size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">b =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
+									 font-weight: bold;" color="#0000FF"
+									 face="Courier New" size="2">dirlist</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">(<span style="font-style: italic;">list-variable</span>,<span
+	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;">directory</span></font><i><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
+	 face="Courier New" size="2">-name</font><font style="font-family: 'Courier New';
+													 font-style: normal;"
+													 color="#FF00FF" face="Courier New">[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
+	 face="Courier New" size="2"><span style="font-style: normal;">,</span><span
+	 style="font-style: italic;">wildcard-filter</span></font></i><i><font
+	 style="font-family: 'Courier New'; font-style: normal;" color="#FF00FF"
+	 face="Courier New">[</font></i><font style="font-family: 'Courier New';
+											 font-size: 10pt;" face="Courier New"
+											 size="2"><i><span style="font-style: normal;">,recursive</span></i></font><span
+	 style="font-family: 'Courier New';"><font color="#FF00FF">]</font></span><span
+	 style="font-family: 'Courier New';"><font color="#FF00FF">]</font></span><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt; font-weight: bold;"><b><font style="font-weight: bold;">Description:</font></b></p>
+<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial, sans-serif; font-size: 10pt;">The <b><font style="font-weight: bold;">dirlist</font></b>
+ function fills a list with the paths of files and directories located
+ in a specified directory. (A list is a read-only variable-length <a href="../array_statement.html">array</a>.
+ The number of files and directories returned can be accessed via the <a
+	 href="../length_function.html">length</a> function.) A wildcard filter
+ can be passed as an optional third parameter. An optional fourth parameter,
+ recursive, instructs the function to create a listing of the specified
+ directory as well as any subdirectories. All file and directory names
+ will be fully-qualified; i.e., they will be absolute, not relative, path
+ names.</p>
+<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
+	 size="2">Return value:</font></b></p>
+<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The function returns a logical value of 1 (true) if successful
+ and 0 (false) if the directory does not exist or cannot be accessed.</font></p>
+<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
+	 background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
+	<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+		 font-family: Arial; font-weight: bold;"><b><font style="font-weight: bold;">Example:</font></b></p>
+	<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 color="#000000">PROC </font><font color="#0000FF">GLOBAL</font><font
+	 color="#000000"><br />
+	<br />
+	</font><font color="#0000FF">list</font><font color="#000000"> </font><font
+	 color="#0000FF">string</font><font color="#000000"> fileListing;<br />
+	<br />
+	</font><font color="#0000FF">PROC</font><font color="#000000"> EXAMPLE<br />
+	<br />
+	&#160;&#160;&#160;&#160;</font><font color="#0000FF">write</font><font
+	 color="#000000">(</font><font color="#FF00FF">&quot;Shape files in
+	 folder and subfolders:&quot;</font><font color="#000000">);<br />
+	&#160;&#160;&#160;&#160;<br />
+	&#160;&#160;&#160;&#160;</font><font color="#0000FF">dirlist</font><font
+	 color="#000000">(fileListing,</font><font color="#FF00FF">&quot;C:\Survey\Maps&quot;</font><font
+	 color="#000000">,</font><font color="#FF00FF">&quot;*.shp&quot;</font><font
+	 color="#000000">,recursive);<br />
+	&#160;&#160;&#160;&#160;<br />
+	&#160;&#160;&#160;&#160;</font><font color="#0000FF">do</font><font
+	 color="#000000"> ctr = </font><font color="#FF0000">1</font><font
+	 color="#000000"> </font><font color="#0000FF">while</font><font color="#000000">
+	 ctr &lt;= </font><font color="#0000FF">length</font><font color="#000000">(fileListing)<br />
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font color="#0000FF">write</font><font
+	 color="#000000">(</font><font color="#FF00FF">&quot;Shape filename:
+	 %s&quot;</font><font color="#000000">,fileListing(ctr));<br />
+	&#160;&#160;&#160;&#160;</font><font color="#0000FF">enddo</font><font
+	 color="#000000">;</font> </p>
+</div>
+<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt;"><b><font
+	 style="font-family: Arial; font-weight: bold;" face="Arial">See also:</font></b><span
+	 style="font-family: Arial, sans-serif;"> <a href="Dircreate_Function.html">Dircreate
+ Function</a>, <a href="Direxist_Function.htm" style="font-family: Arial, sans-serif;
+					 font-size: 10pt;">Direxist Function</a></span></p>
+</body>
+</html>

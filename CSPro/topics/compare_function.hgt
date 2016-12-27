@@ -1,0 +1,153 @@
+﻿<title>Compare Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Compare</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Function</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">i =</font> <b><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-weight: bold;"
+													 color="#0000FF" face="Courier New"
+													 size="2">compare</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(</font><i><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-style: italic;"
+													 color="#000000" face="Courier New"
+													 size="2">string-1</font></i><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">,</font><i><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-style: italic;"
+													 color="#000000" face="Courier New"
+													 size="2">string-2</font></i><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Description:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The compare function compares the two strings character by
+ character to determine the alphabetical (collating sequence) order of
+ the strings. If &quot;string-1&quot; and &quot;string-2&quot; are of different
+ lengths, the compare function will pad the shorter string with blanks
+ to carry out the comparison.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Return value:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The function returns an integer value of</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;</font><b><font style="font-family: Arial; font-size: 10pt;
+									 font-weight: bold;" color="#000000"
+									 face="Arial" size="2">-1</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">&#160;if &quot;string-1&quot; would be listed alphabetically
+ before &quot;string-2&quot;</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;</font><b><font style="font-family: Arial; font-size: 10pt;
+									 font-weight: bold;" color="#000000"
+									 face="Arial" size="2">&#160;0</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">&#160;if the strings are identical</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;</font><b><font style="font-family: Arial; font-size: 10pt;
+									 font-weight: bold;" color="#000000"
+									 face="Arial" size="2">&#160;1</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">&#160;if &quot;string-1&quot; would be listed alphabetically
+ after &quot;string-2&quot;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example 1:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">ORDER =</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#0000FF"
+														 face="Courier New"
+														 size="2">compare</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(RESPONSE, ANSWER);</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">where
+ ORDER is an integer variable and RESPONSE and ANSWER are string variables.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example 2:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">Y =</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">compare</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#FF00FF"
+												 face="Courier New" size="2">&quot;survey&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">,</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#FF00FF"
+												 face="Courier New" size="2">&quot;census&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">);</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">where Y is an integer variable and the arguments are string
+ constants.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">Direct
+ string comparisons can also be made. For example, the following code is
+ permissible (and in fact preferable to usage of the compare function:</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example 3:</font></b></p>
+<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">string1 &lt;
+ string2</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+						 color="#0000FF" face="Courier New" size="2">then</font></p>
+<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&lt;statements&gt;;</font></p>
+<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">;</font></p>
+</body>
+</html>

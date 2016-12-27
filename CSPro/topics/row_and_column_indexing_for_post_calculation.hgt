@@ -1,0 +1,197 @@
+﻿<title>Row and Column Indexing for Post Calculation</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Row and Column Indexing for Post Calculation</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
+ determining the indices to use for particular rows and columns, always
+ remember that the first row or column is at index zero and that caption
+ rows (rows with no data) should be skipped. Also note that hidden data
+ rows and columns should be counted even if they are not visible in the
+ table. Always make sure that view hidden parts is turned on when determining
+ row and column indices.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabpost10.jpg" alt="Row Referencing in a Table" title="Row Referencing in a Table"
+	 width="367" height="506" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">For
+ example, in the table above, in order to calculate the percentage of people
+ in each sex category (Male, Female, Total), we set the values in rows
+ 3, 7 and 9. The caption rows, &quot;Sex&quot;, &quot;Total&quot;, &quot;Literacy&quot;,
+ &quot;Male&quot;, and &quot;Female&quot; are not counted, but the hidden
+ rows, the three &quot;Illiterate&quot; rows, are counted. The postcalc
+ logic follows:</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE2[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">3</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">,*]
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+				 face="Courier New" size="2">100</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" face="Courier New" size="2">* TABLE2[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,*]/TABLE2[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">0</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,*];</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+	 face="Courier New" size="2">{% literate Total }</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE2[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">7</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">,*]
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+				 face="Courier New" size="2">100</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" face="Courier New" size="2">* TABLE2[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">5</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,*]/TABLE2[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">4</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,*];</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+	 face="Courier New" size="2">{% literate Male }</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE2[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">11</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">,*]
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+				 face="Courier New" size="2">100</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" face="Courier New" size="2">* TABLE2[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">9</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,*]/TABLE2[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">8</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,*];</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+	 face="Courier New" size="2">{% literate Female}</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
+ a table includes percents, the row and column indices are a bit more complicated.
+ Although the percent rows/columns are interleaved with the rows/columns
+ for the counts, the percent rows/columns are numbered after the counts.
+ In other words the index for the first percent row or column in a subtable
+ always starts after the last count row or column. For example, in the
+ table below, the rows for the values of marital status under the male
+ caption are counted one after another as indices 0 through 4 and are then
+ followed by the percent rows for marital status as indices 5 through 9.
+ The first percent row is at index 5 which follows the last count row (Never
+ Married) at index 4.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabpost11.jpg" alt="Row Referencing in a Table with Percents"
+	 title="Row Referencing in a Table with Percents" width="533" height="589"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ this example, to calculate the ratio of unmarried men per 100 unmarried
+ women, we need to divide the number of unmarried men (divorced men + separated
+ men + widowed men + never married men) by the number of unmarried women
+ (divorced women + separated women + widowed women + never married women)
+ and multiply the result by 100. The postcalc logic is therefore:</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE3[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">20</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">,*]
+ =</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">100</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">*</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">(TABLE3[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">1</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">,*]
+ + TABLE3[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+						 color="#FF0000" face="Courier New" size="2">2</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,*] + TABLE3[</font><font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#FF0000"
+										 face="Courier New" size="2">3</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,*] + TABLE3[</font><font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#FF0000"
+										 face="Courier New" size="2">4</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,*])/</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">(TABLE3[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">11</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">,*]
+ + TABLE3[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+						 color="#FF0000" face="Courier New" size="2">12</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,*] + TABLE3[</font><font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#FF0000"
+										 face="Courier New" size="2">13</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,*] + TABLE3[</font><font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#FF0000"
+										 face="Courier New" size="2">14</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,*]);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <a href="post_calculation_for_individual_cells.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Post
+ Calculation For Individual Cells</font></a><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">,</font>
+ <a href="post_calculation_for_rows_columns_and_ranges.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">Post Calculation For Rows,
+ Columns and Ranges</font></a></p>
+</body>
+</html>

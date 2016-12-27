@@ -1,0 +1,61 @@
+﻿<title>Seek Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h1 style="font-family: Arial, sans-serif; font-size: 18pt;"><span style="color: #0000ff;">Seek</span>
+ Function</h1>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
+	 text-indent: -12px;"><span style="font-weight: bold;">Format:</span><br />
+<span style="font-family: 'Courier New', monospace;">i =</span> <span style="color: #0000ff;
+	 font-weight: bold; font-family: 'Courier New', monospace;">seek</span><span
+	 style="font-family: 'Courier New', monospace;">(multiple-item condition[,</span><span
+	 style="font-style: italic; font-family: 'Courier New', monospace;">numeric-expr</span><span
+	 style="font-family: 'Courier New', monospace;">]);</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
+	 text-indent: -12px;"><span style="font-weight: bold;">Description:</span><br />
+The <span style="font-weight: bold;">seek</span> function returns the occurrence
+ number of the first item in a multiply occurring item that satisfies a
+ certain condition. If <span style="font-style: italic;">numeric-expr</span>
+ is included, the function starts searching the multiply occurring record
+ for a true condition starting at occurrence <span style="font-style: italic;">numeric-expr</span>.
+ If a @ symbol precedes the <span style="font-style: italic;">numeric-expr</span>,
+ the function searches for the n<span style="vertical-align: Super;">th</span>
+ occurrence of the condition.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
+	 text-indent: -12px;"><span style="font-weight: bold;">Return value:</span><br />
+The function returns the occurrence number of an item that meets the condition
+ or 0 if no such item is found.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Example
+ 1:</p>
+<p style="font-size: 10pt; margin-left: 12px; font-family: 'Courier New', monospace;
+	 font-weight: normal;"><font color="#000000"><font color="#0000FF">numeric</font>
+ femaleIndex = <font color="#0000FF">seek</font>(SEX = <font color="#FF0000">2</font>);<br />
+<br />
+<font color="#0000FF">while</font> femaleIndex <font color="#0000FF">do</font><br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">write</font>(<font color="#FF00FF">&quot;Person
+ #%d is a female with name '%s'&quot;</font>,femaleIndex,NAME(femaleIndex));<br />
+&#160;&#160;&#160;&#160;femaleIndex = <font color="#0000FF">seek</font>(SEX
+ = <font color="#FF0000">2</font>,femaleIndex + <font color="#FF0000">1</font>);<br />
+<font color="#0000FF">enddo</font>;</font></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><span
+	 style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Example
+ 2:</span></p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 12px;"><font
+	 color="#000000"><font color="#0000FF">numeric</font> secondSpouse
+ = <font color="#0000FF">seek</font>(RELATIONSHIP = <font color="#FF0000">2</font>,@<font
+	 color="#FF0000">2</font>);</font></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">See
+ also: <span><a href="count_function.htm" style="font-weight: normal;">Count
+ Function</a></span><span style="font-weight: normal;">, <a href="Has_Operator.htm"
+															 style="font-weight: normal;">Has
+ Operator</a>,</span> <a href="Seekmax_Function.htm" style="font-weight: normal;">Seekmax
+ <span style="font-weight: normal;">Function</span></a><span style="font-weight: normal;">,
+ <a href="Seekmin_Function.htm" style="font-weight: normal;">Seekmin Function</a></span></p>
+</body>
+</html>

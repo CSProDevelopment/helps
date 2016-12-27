@@ -1,0 +1,200 @@
+﻿<title>Hiding Rows and Columns in Subgroupings</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Format/Hide Rows and Columns in Subgroupings</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
+ you have a table that uses subgroupings (one variable that was dropped
+ onto another), there are often problems when trying to hide rows or columns
+ in those subgroupings. When you hide or format a row or column in a subgrouping,
+ the corresponding rows/columns in the other sub-groupings are also hidden.
+ This makes it difficult to hide or format a row or column in one subgrouping
+ but not the others. In addition, it is not possible to hide an entire
+ subgrouping by hiding the associated caption or spanner. Fortunately,
+ using value sets and multiple subtables, there are workarounds for these
+ restrictions.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><u><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold; text-decoration: underline; "
+	 face="Arial" size="2">Hiding Subgroupings</font></u></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">There
+ are two ways to hide an entire subgrouping. One way is to modify the value
+ set used and the other is to use multiple subtables rather than subgroupings.
+ Take the example of a table with Sex and Literacy as subgroupings on the
+ row where you want to only show the sub-groupings for Total and Female.
+ In other words, you would like to hide the subgrouping for Male.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="hideinastarb1.jpg" alt="A Single Subgroup in a Table"
+	 title="A Single Subgroup in a Table" width="318" height="412" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ you try to hide the rows for the Male subgrouping using hide in the Format
+ (Stub) dialog, it will not work. Hiding the Literate and Illiterate rows
+ under Male will also hide those rows under Total and Female. Hide is not
+ available in the Format (Caption) dialog if you right-click on the Male
+ caption.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="hideinastarb2.jpg" alt="Defining Total and Female in a Value Set"
+	 title="Defining Total and Female in a Value Set" width="498" height="80"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">One
+ way to work around this is to modify the value set for Sex to remove the
+ Male category. Note that removing the Male category will also affect the
+ Total (since males will no longer be counted). To fix this, add your own
+ category to the Sex value set called Total, which includes the values
+ for Male and Female. Finally hide the system generated total in the table
+ (see</font> <a href="hide_or_change_the_position_of_the_total.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Hide
+ or Change the Position of the Total</font></a><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">).
+ The result is the following table:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="hideinastarb3.jpg" alt="Table with Total and Female Only"
+	 title="Table with Total and Female Only" width="312" height="306"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">A
+ second approach is to use multiple subtables rather subgrouping. In our
+ example you would drop the Literacy variable twice onto the rows to make
+ two separate subtables. This would create the following table:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="hideinastarb4.jpg" alt="Defining Subtables for Each Subgroup"
+	 title="Defining Subtables for Each Subgroup" width="310" height="249"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Next,
+ modify the first subtable so that it becomes the subgrouping for Total
+ and modify the second subtable so that it becomes the subgrouping for
+ Male. To do this, first edit the captions for the two subtables to be
+ &quot;Total&quot; and &quot;Female&quot; (see</font> <a href="customize_table_text.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Customize
+ Table Text</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">). Next modify the universe
+ of the second subtable to include only females (see</font> <a href="restrict_a_universe.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Restrict
+ a Universe</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">). The first subtable
+ will give the counts for all persons while the second subtable will give
+ the counts for only females. This will give the same results as using
+ the subgroupings:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="hideinastarb5.jpg" alt="Resulting Table with Subtables for Each Subgroup"
+	 title="Resulting Table with Subtables for Each Subgroup" width="314"
+	 height="250" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><u><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold; text-decoration: underline; "
+	 face="Arial" size="2">Formatting and Hiding Rows/Columns in a Subgrouping</font></u></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
+ hide or format a row or column in one subgrouping without effecting the
+ other subgroupings you must use multiple subtables rather than subgroupings.
+ This is because changing a row or column in one subgrouping will automatically
+ cause the same change to the corresponding row in the other subgroupings.
+ This is true for all format changes (font, color, alignment,â€¦) as well
+ as hiding rows/columns and modifying stub/column head text.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Take
+ the earlier example of the Sex and Literacy table and try to make the
+ text in the literacy row under the Total subgrouping bold without making
+ the other literacy rows bold. If you simply set the format for this row
+ to bold, the literacy rows in the Male and Female subgroupings will also
+ become bold.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="hideinastarb6.jpg" alt="Changing One Row in a Subgroup"
+	 title="Changing One Row in a Subgroup" width="312" height="412" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Instead
+ of using subgroupings, drag the variable Literacy onto the rows three
+ times to create separate subtables for the Total, Male and Female subgroupings.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="hideinastarb7.jpg" alt="Defining Subtables for Each Subgroup"
+	 title="Defining Subtables for Each Subgroup" width="396" height="389"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Then
+ edit the universe for the second subtable to only include males (see</font>
+ <a href="restrict_a_universe.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">Restrict
+ a Universe</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">). In this case set
+ the universe to SEX=1. Next edit the universe for the third subtable to
+ include only females (SEX=2). Note that you do not need to edit the universe
+ for the first subtable since you want to include both males and females
+ (the entire population) which is the default universe. Next, edit the
+ captions of the subtables to be &quot;Total&quot;, &quot;Male&quot; and
+ &quot;Female&quot; (see</font> <a href="customize_table_text.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Customize
+ Table Text</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">)</font><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">. Finally right-click on the
+ Literacy stub in the first (Total) subtable and set the font to bold.
+ This results in the following table:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="hideinastarb8.jpg" alt="Changing the Format of One Value in One Subgroup"
+	 title="Changing the Format of One Value in One Subgroup" width="316"
+	 height="331" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ same procedure works for hiding or modifying the stub text of an item
+ in a subgrouping, only the last step changes. Rather than setting the
+ font to bold, you would hide the row or modify the stub/column head text.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <a href="hide_or_show_a_row_or_column.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Hide
+ or Show a Row or Column</font></a><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">,</font>
+ <a href="hide_or_change_the_position_of_the_total.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">Hide or Change the Position
+ of the Total</font></a><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">,</font> <a href="formats_for_a_part_of_a_table.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Formats
+ for a Part of a Table</font></a><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">,</font>
+ <a href="implications_of_data_dictionary_value_sets.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">Implications of Data Dictionary
+ Value Sets</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">,</font> <a href="using_subtables.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Using
+ Subtables</font></a></p>
+</body>
+</html>

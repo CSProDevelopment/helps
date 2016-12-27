@@ -1,0 +1,572 @@
+﻿<title>Array Statement</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;
+	 text-align: left;"><b><font style="font-family: Arial; font-size: 18pt;
+								 font-weight: bold;" color="#0000FF" face="Arial"
+								 size="5">Array</font></b> <b><font style="font-family: Arial;
+	 font-size: 18pt; font-weight: bold;" face="Arial" size="5">Statement</font></b></h3>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">array</font></b> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">[</font><b><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-weight: bold;"
+													 face="Courier New"
+													 size="2">alpha</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">[</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">(</font><i><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
+	 face="Courier New" size="2">len</font></i><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">)</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">]]</font> <i><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-style: italic;"
+													 color="#000000" face="Courier New"
+													 size="2">array-name</font></i><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(</font><i><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-style: italic;"
+													 face="Courier New"
+													 size="2">dim-1</font></i><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">[</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><i><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
+	 face="Courier New" size="2">dim-2</font></i><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#FF00FF"
+														 face="Courier New"
+														 size="2">[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,</font><i><font style="font-family: 'Courier New'; font-size: 10pt;
+								 font-style: italic;" face="Courier New"
+								 size="2">dim-3</font></i><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">]]</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">)</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#FF00FF" face="Courier New" size="2">[</font><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">save</font></b><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">]</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;&#160;&#160;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Description:</font></b></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 color="#000000" face="Arial" size="2">CSPro
+ supports numeric and alphanumeric arrays of up to three dimensions. You
+ must declare arrays in the global procedure of the application, using
+ the array statement.</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">Only one array at
+ a time can be declared with the array statement. The array name must be
+ unique and contain only letters, numbers, or the underscore</font> <font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">(â€˜_â€™) character. It must begin with a letter.</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 color="#000000" face="Arial" size="2">The
+ keyword alpha indicates that the array is alphanumeric. If the keyword
+ alpha is not used, the array is numeric. The len is optional. If it is
+ coded it give the number of characters in each occurrence of the alphanumeric
+ array variable. If it is not coded, the length of each occurrence is 16.</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 color="#000000" face="Arial" size="2">The
+ values dim-1, dim-2, and dim-3 are numbers giving the size of each dimension.</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 color="#000000" face="Arial" size="2">The
+ initial values of a numeric array are zeroes and of alphanumeric arrays
+ are blanks.</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 color="#000000" face="Arial" size="2">The
+ optional keyword</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
+									 font-weight: bold;" color="#000000"
+									 face="Courier New" size="2">save</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">indicates that the array values should be saved to a
+ file and loaded from that file when the program is run again. This allows
+ you to maintain the values of the arrays across multiple runs of the same
+ program. This is particularly useful for setting the initial values of
+ hot decks. The program is run twice, the first run fills the hotdeck and
+ saves the hotdeck array to the file. The second run loads the values saved
+ from the first run and uses them as the initial values for the hotdeck
+ for imputation. See</font> <a href="initialize_hot_decks_using_saved_arrays.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Initialize
+ Hot Decks Using Saved Arrays</font></a> <font style="font-family: Arial;
+												 font-size: 10pt;" color="#000000"
+												 face="Arial" size="2">for
+ more information.</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 color="#000000" face="Arial" size="2">When
+ one or more arrays in the program are marked with save, the first time
+ the application is run, a saved array file is created and the values of
+ the arrays at the end of program execution are written to the file. On
+ consecutive runs of the program, the initial values of the arrays are
+ read in from the file. If the file is not present (such as for the first
+ run of the program) or does not contain values for a particular array
+ (such as when the name of an array changes or a new array is added), the
+ initial values of a numeric array are set to the special value default
+ and the initial values of an alphanumeric array are set to blank.</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 color="#000000" face="Arial" size="2">All
+ arrays marked with save in the application are written to the same file.
+ This file has the same name as the application but with a .sva file extension
+ appended to it (for example, myapplication.bch.sva).</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 color="#000000" face="Arial" size="2">Saved
+ arrays are not supported in data entry applications.</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example 1: (numeric array)</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">PROC GLOBAL</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;array</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" face="Courier New" size="2">age_hd (</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">8</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">);</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+	 face="Courier New" size="2">{ sex by relationship }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New';
+	 margin-left: 12px;"><font color="#0000FF">&#160;&#160;array</font>
+ MyArray (<font color="#FF0000">5</font>,<font color="#FF0000">10</font>);</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New';
+	 margin-left: 12px;"><font color="#0000FF">&#160;&#160;numeric</font>
+ X, Y, male, female;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New';
+	 margin-left: 12px;"><font color="#0000FF">PROC</font> MY_PROGRAM</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">preproc</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;male =</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#FF0000"
+												 face="Courier New" size="2">1</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;female =</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#FF0000"
+												 face="Courier New" size="2">2</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;age_hd (male,</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#FF0000" face="Courier New"
+													 size="2">1</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">) =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF0000" face="Courier New" size="2">20</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#008000" face="Courier New" size="2">{
+ male head }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;age_hd (male,</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#FF0000" face="Courier New"
+													 size="2">2</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">) =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF0000" face="Courier New" size="2">24</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#008000" face="Courier New" size="2">{
+ male spouse }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;age_hd (male,</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#FF0000" face="Courier New"
+													 size="2">3</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">) =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF0000" face="Courier New" size="2">8</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#008000" face="Courier New" size="2">{
+ male child }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;{</font> <font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#008000"
+										 face="Courier New" size="2">continue
+ with male initializations }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;age_hd (female,</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#FF0000"
+														 face="Courier New"
+														 size="2">1)</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">=</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF0000" face="Courier New" size="2">26</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#008000" face="Courier New" size="2">{
+ female head }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;age_hd (female,</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#FF0000"
+														 face="Courier New"
+														 size="2">2)</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">=</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF0000" face="Courier New" size="2">32</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#008000" face="Courier New" size="2">{
+ female spouse }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;age_hd (female,</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#FF0000"
+														 face="Courier New"
+														 size="2">3)</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">=</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF0000" face="Courier New" size="2">5</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#008000" face="Courier New" size="2">{
+ female child }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;{</font> <font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#008000"
+										 face="Courier New" size="2">continue
+ with female initializations }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;MyArray</font> <b><font style="font-family: 'Courier New';
+	 font-size: 10pt; font-weight: bold;" color="#000000" face="Courier New"
+	 size="2">(</font></b><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF0000" face="Courier New" size="2">1</font><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#000000" face="Courier New" size="2">,</font></b><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF0000" face="Courier New" size="2">3</font><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#000000" face="Courier New" size="2">)</font></b> <b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#000000" face="Courier New" size="2">=</font></b> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF0000" face="Courier New" size="2">0</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;X =</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF0000" face="Courier New" size="2">2</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;Y =</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF0000" face="Courier New" size="2">1</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;MyArray</font> <b><font style="font-family: 'Courier New';
+	 font-size: 10pt; font-weight: bold;" color="#000000" face="Courier New"
+	 size="2">(</font></b><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#000000" face="Courier New" size="2">X,Y</font><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#000000" face="Courier New" size="2">)</font></b> <b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#000000" face="Courier New" size="2">=</font></b> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF0000" face="Courier New" size="2">0</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;Z</font> <b><font style="font-family: 'Courier New';
+	 font-size: 10pt; font-weight: bold;" color="#000000" face="Courier New"
+	 size="2">=</font></b> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#000000" face="Courier New" size="2">MyArray</font>
+ <b><font style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+			 color="#000000" face="Courier New" size="2">(</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">X</font><b><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-weight: bold;"
+													 color="#000000" face="Courier New"
+													 size="2">,</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">Y</font><b><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-weight: bold;"
+													 color="#000000" face="Courier New"
+													 size="2">)</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example 2: (alphanumeric array)</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">PROC GLOBAL</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><font color="#008000">&#160;&#160;</font><font
+	 color="#0000FF">array</font> <font color="#0000FF">alpha</font>(<font
+	 color="#FF0000">10</font>) crop (<font color="#FF0000">20</font>)<font
+	 color="#008000">; {20 crop names, each up to 10 chars long}</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">MY_PROGRAM</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">preproc</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;crop(</font><font style="font-family: 'Courier New';
+											 font-size: 10pt;" color="#FF0000"
+											 face="Courier New" size="2">1</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">)=</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">&quot;maize&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;crop(</font><font style="font-family: 'Courier New';
+											 font-size: 10pt;" color="#FF0000"
+											 face="Courier New" size="2">2</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">)=</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">&quot;wheat&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;crop(</font><font style="font-family: 'Courier New';
+											 font-size: 10pt;" color="#FF0000"
+											 face="Courier New" size="2">3</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">)=</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">&quot;rice&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;crop(</font><font style="font-family: 'Courier New';
+											 font-size: 10pt;" color="#FF0000"
+											 face="Courier New" size="2">4</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">)=</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">&quot;potatoes&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">If you attempt to
+ assign to an element of an alpha array a string that is longer than the
+ elementâ€™s size, the additional portion will be truncated. For example,
+ if the following were written:</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;crop(</font><font
+	 style="font-family: Arial; font-size: 10pt;" color="#FF0000" face="Arial"
+	 size="2">1</font><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">)=</font> <font style="font-family: Arial;
+	 font-size: 10pt;" color="#FF00FF" face="Arial" size="2">&quot;sweet
+ potatoes&quot;</font><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">the variable would
+ be assigned the string &quot;sweet pota&quot;. There is no &quot;spillover&quot;
+ effect (such as exists in some programming languages) that would corrupt
+ subsequent array cells.</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">If the string length
+ of (</font><font style="font-family: Arial; font-size: 10pt;" color="#FF0000"
+					 face="Arial" size="2">10</font><font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">)
+ had not been given above, the string would have defaulted to a length
+ of 16.</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example 3: (saved array)</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">array</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">age_hd(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">8</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">)</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">save</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">;</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{sex by relationship, init from file
+ }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
+	 text-align: left;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#0000FF" face="Courier New" size="2">PROC
+ AGE</font></p>
+<table style="margin-left: 13.50pt; border-collapse: separate; border-collapse: separate;"
+		 cellspacing="0" width="696" border="1">
+	<tr style="vertical-align: top;">
+		<td style="width: 56.03%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">AGE =</font>
+		 <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+				 face="Courier New" size="2">notappl</font> <font style="font-family: 'Courier New';
+		 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">then</font></p>
+		<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">impute</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 face="Courier New"
+														 size="2">(AGE,
+		 age_hd(SEX, RELATIONSHIP));</font></p>
+		<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+		<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">else</font></p>
+		<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">age_hd(SEX, RELATIONSHIP)= AGE;</font></p>
+		<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 face="Courier New"
+														 size="2">;</font></p></td>
+		<td style="width: 43.97%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{if the value for age is not valid}</font></p>
+		<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{assign the value from the hot deck
+		 based on sex and relationship}</font></p>
+		<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+		<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{update the value of the hot deck}</font></p></td>
+	</tr>
+</table>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The array age_hd is not initialized in the program logic.
+ Instead, the program is run twice. During the first run, the values of
+ the array will be filled in by the assignment in the else clause above
+ and the results will be stored in the saved array file. When the program
+ is run a second time, these values are loaded in automatically as the
+ initial values for the array.</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-weight: bold;">See also:</font></b> <a href="arrays.html">Arrays</a>,
+ <a href="numeric_statement.html">Numeric Statement</a>, <a href="alpha_statement.html">Alpha
+ Statement</a>, <a href="String_Statement.html">String Statement</a></p>
+</body>
+</html>

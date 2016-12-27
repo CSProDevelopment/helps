@@ -1,0 +1,131 @@
+﻿<title>Delcase Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Delcase</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Function</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">b =</font> <b><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-weight: bold;"
+													 color="#0000FF" face="Courier New"
+													 size="2">delcase</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(</font><i><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-style: italic;"
+													 color="#000000" face="Courier New"
+													 size="2">ext-dict-name</font></i><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">[</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">,</font><i><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
+	 color="#000000" face="Courier New" size="2">var-list</font></i><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">]</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Description:</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">delcase</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">function
+ marks a case for deletion in the external file described by</font> <i><font
+	 style="font-family: Arial; font-size: 10pt; font-style: italic;" face="Arial"
+	 size="2">ext-dict-name</font></i><font style="font-family: Arial;
+											 font-size: 10pt;" face="Arial"
+											 size="2">. The case whose
+ identifiers match</font> <b><font style="font-family: Arial; font-size: 10pt;
+									 font-weight: bold;" face="Arial" size="2">var-list</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">is
+ the case that is marked as deleted (but not deleted!). A deleted case
+ is marked by a tilde â€˜~â€™ in the first character of each record in the
+ case.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The</font> <i><font style="font-family: Arial; font-size: 10pt;
+									 font-style: italic;" color="#000000"
+									 face="Arial" size="2">ext-dict-name</font></i>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">must be supplied. It is the dictionary name defined in
+ the data dictionary for the external file.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The optional</font> <i><font style="font-family: Arial; font-size: 10pt;
+											 font-style: italic;" color="#000000"
+											 face="Arial" size="2">var-list</font></i>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">defines the case identifiers in the external file. The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 color="#000000" face="Arial" size="2">delcase</font></b> <font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">function concatenates the variables specified in</font> <i><font
+	 style="font-family: Arial; font-size: 10pt; font-style: italic;" color="#000000"
+	 face="Arial" size="2">var-list</font></i> <font style="font-family: Arial;
+													 font-size: 10pt;"
+													 color="#000000" face="Arial"
+													 size="2">to form a
+ string whose length must be the same as the length of the case identifier
+ in the external dictionary. All variables in the</font> <i><font style="font-family: Arial;
+	 font-size: 10pt; font-style: italic;" color="#000000" face="Arial"
+	 size="2">var-list</font></i> <font style="font-family: Arial; font-size: 10pt;"
+										 color="#000000" face="Arial" size="2">must
+ exist in a dictionary or working storage.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">If no</font> <i><font style="font-family: Arial; font-size: 10pt;
+									 font-style: italic;" color="#000000"
+									 face="Arial" size="2">var-list</font></i>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">is provided, the current values of the ID Items for the
+ external file are used.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Return value:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The function returns a logical values of 1 (true) if a case
+ is marked for deletion and 0 (false) otherwise.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">OK =</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">delcase</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(GNMR31,MCLUST,MHHNUM,MLINE);</font></p>
+</body>
+</html>

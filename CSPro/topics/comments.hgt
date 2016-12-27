@@ -1,0 +1,105 @@
+﻿<title>Comments</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Comments</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">Comments
+ make applications easier to understand. They are used to explain the purpose
+ of specific statements or to temporarily disable statements to help find
+ errors. Any text enclosed by braces <font color="#008000">{ }</font> is
+ a comment. The text within the brackets will be green. Comments can be
+ placed anywhere in an application and are not checked for syntax errors.
+ Comments can be nested, that is, comments within comments are allowed.
+ &#160;Any text following double slashes&#160;<font color="#008000">//
+ <span style="color: #000000;">until the end of the line is also a comment.</span></font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The second line in the example below is a comment;</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">a comment is also appended to the code in line four.
+ It is highly recommended that the user document CSPro applications through
+ the liberal use of comments</font><font style="font-family: Arial; font-size: 10pt;"
+										 color="#000000" face="Arial" size="2">.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 16px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">HHDAY</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 16px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+	 face="Courier New" size="2">{Do not allow June to have more than 30
+ days}</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 16px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#000000"
+															 face="Courier New"
+															 size="2">HHMONTH
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+				 face="Courier New" size="2">6</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#0000FF"
+															 face="Courier New"
+															 size="2">and</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+		 face="Courier New" size="2">$ &gt;</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#FF0000"
+														 face="Courier New"
+														 size="2">30</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#000000"
+														 face="Courier New"
+														 size="2">&#160;&#160;&#160;&#160;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 16px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;X =</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">errmsg</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#000000" face="Courier New"
+													 size="2">(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">,</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+		 face="Courier New" size="2">&quot;June&quot;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#000000" face="Courier New" size="2">,</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+		 face="Courier New" size="2">30</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#000000" face="Courier New"
+													 size="2">, $);&#160;&#160;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+	 face="Courier New" size="2">// if error, then display message</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 16px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;reenter</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 16px;"><font
+	 style="font-family: 'Courier New';" color="#0000FF" face="Courier New">&#160;&#160;endif</font><font
+	 style="font-family: 'Courier New';" face="Courier New">;</font></p>
+</body>
+</html>

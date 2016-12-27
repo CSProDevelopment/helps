@@ -1,0 +1,67 @@
+﻿<title>Set Errmsg Statement</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h1 style="font-family: Arial, sans-serif; font-size: 18pt;"><span style="color: #0000ff;">Set
+ Errmsg</span> Statement</h1>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
+	 text-indent: -12px;"><span style="font-weight: bold;">Format 1:</span><br />
+<span style="font-weight: bold;">set errmsg</span>(<span style="font-weight: bold;">default</span>
+ | <span style="font-weight: bold;">system</span>);</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
+	 text-indent: -12px;"><span style="font-weight: bold;">Format 2:</span><br />
+<span style="color: #0000ff; font-weight: bold;">set errmsg</span>(<span
+	 style="font-weight: bold;">operator</span>[,<span style="font-style: italic;">alpha_expr</span>,<span
+	 style="font-style: italic;">numeric-expr</span>]);</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
+	 text-indent: -12px;"><span style="font-weight: bold;">Description:</span><br />
+CSPro data entry applications have two operating modes: <a href="operator_vs_system_controlled.html">operator
+ controlled and system controlled</a> modes. Each mode has a different
+ style error message box. System controlled mode uses a standard Windows
+ dialog box whereas operator controlled mode uses a customized yellow box.
+ The <span style="font-weight: bold;">set errmsg</span> statement allows
+ the user to choose which kind of box to use.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;">For
+ operator controlled message boxes, the statement can modify the text that
+ appears beneath the error message, which by default is &quot;Press F8
+ to clear.&quot; Another optional parameter modifies the keystroke required
+ to close the box.</p>
+<p style="font-size: 10pt; margin-left: 12px; font-family: Arial;">Calls
+ to this function are ignored when executed on Android devices.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Examples:</p>
+<p style="font-size: 10pt; margin-left: 12px; font-family: 'Courier New', monospace;"><font
+	 color="#000000"><font color="#0000FF">set</font> <font color="#0000FF">errmsg</font>(system);
+ &#160;&#160;&#160;<font color="#008000">//&#160;use system controlled
+ style<br />
+</font><font color="#0000FF">set</font> <font color="#0000FF">errmsg</font>(operator);&#160;&#160;<font
+	 color="#008000">//&#160;use operator controlled style<br />
+</font><font color="#0000FF">set</font> <font color="#0000FF">errmsg</font>(<font
+	 color="#0000FF">default</font>);&#160;&#160;&#160;<font color="#008000">//&#160;use
+ the default style for the operating mode<br />
+</font><br />
+<font color="#008000">//&#160;defines the error message and defaults to
+ F8 to close the box<br />
+</font><font color="#0000FF">set</font> <font color="#0000FF">errmsg</font>(operator,<font
+	 color="#FF00FF">&quot;Appuyez sur F8 pour fermer&quot;</font>);<br />
+<br />
+<font color="#008000">//&#160;67 (C) is the key that will close the box<br />
+</font><font color="#0000FF">set</font> <font color="#0000FF">errmsg</font>(operator,<font
+	 color="#FF00FF">&quot;Appuyez sur C pour fermer&quot;</font>,<font
+	 color="#FF0000">67</font>);<br />
+<br />
+<font color="#008000">//&#160;67 (C) is the key that will close the box,
+ the default error message text is used<br />
+</font><font color="#0000FF">set</font> <font color="#0000FF">errmsg</font>(operator,<font
+	 color="#FF0000">67</font>);</font></p>
+<p style="font-size: 10pt; margin-left: 0px; font-family: Arial, sans-serif;"><span
+	 style="font-weight: bold;">See also:</span> <a href="Setfont_Function.htm"
+													 style="font-family: Arial, sans-serif;">Setfont
+ Function</a></p>
+</body>
+</html>

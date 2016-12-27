@@ -1,0 +1,215 @@
+﻿<title>Set Statement</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;
+	 text-align: left;"><b><font style="font-family: Arial; font-size: 18pt;
+								 font-weight: bold;" color="#0000FF" face="Arial"
+								 size="5">Set</font></b> <b><font style="font-family: Arial;
+	 font-size: 18pt; font-weight: bold;" face="Arial" size="5">Statement</font></b></h3>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">set</font></b> <b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 face="Courier New" size="2">explicit</font></b> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#FF00FF"
+															 face="Courier New"
+															 size="2">|</font>
+ <b><font style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+			 face="Courier New" size="2">implicit</font></b><font style="font-family: 'Courier New';
+	 font-size: 10pt;" face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Description:</font></b></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt; text-align: left;"><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">set</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">statement
+ overrides the compilerâ€™s default setting of how numeric variable are declared.</font>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ used, it must be code as the first line coded in the</font> <b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">PROC GLOBAL</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">section.</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">By default, CSPro
+ sets the</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+							 face="Arial" size="2">set explicit</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">option
+ to ON -- meaning that all user-declared variables must be declared in
+ the PROC GLOBAL section via the</font> <a href="numeric_statement.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">numeric</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">or</font>
+ <a href="alpha_statement.html"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">alpha</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">statement.
+ If they are not, a compiler error message is generated when an undeclared
+ variable is used. It is good programming practice to use</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">set explicit</font></b> <font style="font-family: Arial;
+											 font-size: 10pt;" face="Arial"
+											 size="2">either as the computer
+ default or to code it in Proc Global. If variables are explicitly defined,
+ the compiler can detect misspellings of variable names, which can otherwise
+ hard to find.</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -8.50pt; text-align: left;"><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">&#160;</font><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ you do not wish to declare your variables, you can change the behavior
+ to implicit by going to the</font> <b><font style="font-family: Arial;
+											 font-size: 10pt; font-weight: bold;"
+											 face="Arial" size="2">Options</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">menu,
+ and unchecking</font> <b><font style="font-family: Arial; font-size: 10pt;
+								 font-weight: bold;" face="Arial" size="2">Set
+ Explicit</font></b><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">. This will allow you
+ to create variables whenever they are first used or referenced. However,
+ this is not recommended by the CSPro team. It is much better programming
+ practice to use the set explicit option and harness the compiler's error
+ detection capabilities to prevent execution failures due to misspelled
+ variable names.</font></p>
+<p style="margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -8.50pt; text-align: left;">&#160;</p>
+<p style="margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">The following explains the impact of programmatically
+ setting this switch, as opposed to using the system setting:</p>
+<p style="margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<table style="left: 0px; top: 120px; margin-left: 48px; border-collapse: separate;
+		 border-collapse: separate;" cellspacing="0" width="620" border="1">
+	<col style="width: 28.509%;" />
+	<col style="width: 71.491%;" />
+	<tr>
+		<td><b><u><font style="font-weight: bold; text-decoration: underline; ">System
+		 Setting</font></u></b></td>
+		<td><b><u><font style="font-weight: bold; text-decoration: underline; ">Program
+		 Setting</font></u></b><b><font style="font-weight: bold;">&#160;</font></b><b><u><font
+		 style="font-weight: bold; text-decoration: underline; ">Result</font></u></b></td>
+	</tr>
+	<tr>
+		<td><font style="font-family: Wingdings;" face="Wingdings">Ã¼</font>
+		 <u><font style="text-decoration: underline; ">S</font></u>et Explicit&#160;<font
+		 color="#0000FF">set explicit</font>;</td>
+		<td><p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">No
+		 effect, as program matches system setting</font></p></td>
+	</tr>
+	<tr>
+		<td><font style="font-family: Wingdings;" face="Wingdings">Ã¼</font>
+		 <u><font style="text-decoration: underline; ">S</font></u>et Explicit&#160;<font
+		 color="#0000FF">set implicit</font>;</td>
+		<td><p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Program
+		 overrides system setting, variables do</font> <span style="text-align: left;"><b><font
+		 style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+		 face="Arial" size="2">not</font></b> <font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">need
+		 to be declared</font></span></p></td>
+	</tr>
+	<tr>
+		<td><u><font style="text-decoration: underline; ">S</font></u>et
+		 Explicit&#160;<font color="#0000FF">set explicit</font>;</td>
+		<td><p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Program
+		 overrides system setting of implicitâ€”</font><span style="text-align: left;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">variables
+		 must be declared</font></span></p></td>
+	</tr>
+	<tr>
+		<td><u><font style="text-decoration: underline; ">S</font></u>et
+		 Explicit&#160;<font color="#0000FF">set implicit</font>;</td>
+		<td><p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">No
+		 effect, as program matches system setting</font></p></td>
+	</tr>
+</table>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">CSPro defaults to</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">explicit</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">mode,
+ but CSBatch defaults to</font> <b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" face="Arial"
+										 size="2">implicit</font></b> <font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">mode.
+ Therefore, if you developed your program in CSPro leaving the set explicit
+ option checked, and there were no errors, you can rest assured that your
+ application will run correctly under CSBatch, even though the mode will
+ be implicit.</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Example 1:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;PROC GLOBAL</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;set explicit</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+											 font-size: 10pt;" color="#0000FF"
+											 face="Courier New" size="2">numeric</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">x,y,z;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Example 2:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">PROC GLOBAL</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+											 font-size: 10pt;" color="#0000FF"
+											 face="Courier New" size="2">set
+ implicit</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+						 face="Courier New" size="2">;</font></p>
+<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <a href="numeric_statement.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Numeric</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
+ <a href="alpha_statement.html"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">Alpha</font></a></p>
+</body>
+</html>

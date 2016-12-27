@@ -188,7 +188,7 @@ namespace Help_Generator
 
             public int CompareTo(FormatterLine compareFormatterLine)
             {
-                return SortableKey.CompareTo(compareFormatterLine.SortableKey);
+                return String.Compare(SortableKey,compareFormatterLine.SortableKey,StringComparison.OrdinalIgnoreCase);
             }
         }
 
@@ -211,7 +211,7 @@ namespace Help_Generator
 
         private static void FormatNode(TopicListNode node,int level,List<FormatterLine> formatterLines,string sortableKeyPrefix)
         {
-            const int CommentColumn = 80;
+            const int CommentColumn = 100;
             const int SpacesInTab = 4;
 
             StringBuilder sb = new StringBuilder();
@@ -252,6 +252,8 @@ namespace Help_Generator
                 string title =  isLinkToChm ? String.Format("<Link to help file {0}>",GetLinkToChm(node.Title)) :
                                 node.TitleSpecified ? node.Title :
                                 node.Topic.Title;
+                
+                title = title.Replace("&lt;","<").Replace("&gt;",">").Replace("&amp;","&");
 
                 sbSortable.Append('#');
                 sbSortable.Append('\t',level + 1);
@@ -264,10 +266,11 @@ namespace Help_Generator
                 formatterLine.SortableKey = sortableKeyPrefix + sbSortable.ToString();
 
                 // make sure that spaces are treated as high characters
-                formatterLine.SortableKey = formatterLine.SortableKey.Replace(' ','\u26ff');
+                char highCharacter = '\u26ff';
+                formatterLine.SortableKey = formatterLine.SortableKey.Replace(' ',highCharacter).Replace('\t',highCharacter);
 
                 if( isLinkToChm ) // insert a high character so that linked help files show at the end of a sorted index
-                    formatterLine.SortableKey = '\u26ff' + formatterLine.SortableKey;                    
+                    formatterLine.SortableKey = highCharacter + formatterLine.SortableKey;                    
 
                 formatterLines.Add(formatterLine);
 

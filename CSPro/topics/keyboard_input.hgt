@@ -1,0 +1,81 @@
+﻿<title>Keyboard Input</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h1 style="font-family: Arial, sans-serif; font-size: 18pt;">Keyboard Input</h1>
+<p style="font-size: 10pt; font-family: Arial, sans-serif;"><span style="font-size: 10pt;
+	 font-family: Arial, sans-serif;">To manually change the keyboard input
+ for a field, view the <a href="change_field_properties.html">field's properties</a>
+ and select Keyboard Input -&gt; Change.</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-style: normal;"><img
+	 src="keyboardInput.PNG" alt="" style="border: none;" border="0" /></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-style: normal;">You
+ can specify a specific keyboard input method for a field if you would
+ like to avoid making keyers change input methods manually. The list is
+ populated by currently activate input methods. If an input method is not
+ listed, activate it first, typically by modifying the Regional and Language
+ Options in the Control Panel.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-style: normal;">The
+ keyboard input method will only apply to the selected field. After the
+ keyer moves away from the field, the input method will return to the default
+ keyboard setting. For example, suppose that there are four fields:</p>
+<?rh-align_start align="left" ?>
+<table style="left: 0px; top: 371px; height: 121px; border-collapse: separate;
+		 border-collapse: separate;" cellspacing="0" width="266" border="1">
+	<col style="width: 46.98%;" />
+	<col style="width: 53.02%;" />
+	<tr>
+		<td><span style="font-weight: bold; font-family: Arial, sans-serif;
+					 font-size: 10pt;">Field Name</span></td>
+		<td><span style="font-weight: bold; font-family: Arial, sans-serif;
+					 font-size: 10pt;">Keyboard ID</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Arial, sans-serif; font-size: 10pt;">Field1</span></td>
+		<td><span style="font-family: Arial, sans-serif; font-size: 10pt;">0</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Arial, sans-serif; font-size: 10pt;">Field2</span></td>
+		<td><span style="font-family: Arial, sans-serif; font-size: 10pt;">0</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Arial, sans-serif; font-size: 10pt;">Field3</span></td>
+		<td><span style="font-family: Arial, sans-serif; font-size: 10pt;">1067</span></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Arial, sans-serif; font-size: 10pt;">Field4</span></td>
+		<td><span style="font-family: Arial, sans-serif; font-size: 10pt;">0</span></td>
+	</tr>
+</table>
+<?rh-align_end ?>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-style: normal;">In
+ the above scenario, the keyboard input method will only be modified for
+ Field3, which will be entered in Armenian. However, suppose that the keyer
+ manually changes the keyboard from the default keyboard to Arabic while
+ on the Field2. In that case, Field3 will be entered in Armenian, and then
+ the input method will be changed back to Arabic for Field4. In other words,
+ the Default Keyboard input method resets the keyboard back to whatever
+ input method was last active on another field with a keyboard ID of 0.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-style: normal;">When
+ CSEntry loads the data entry program, it also loads any keyboard input
+ methods that are not currently active on the machine. The input methods
+ will be unloaded when CSEntry terminates. However, some input methods
+ require additional files that do not come in a standard Windows installation.
+ CSEntry can only use input methods that contain all the required files.
+ If the files do not exist, the Default Keyboard will be used for those
+ fields. Before deploying your application you will want to ensure that
+ the required input methods are installed on each keyer's machine.</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;
+	 font-weight: bold; font-family: Arial, sans-serif; font-size: 10pt;">See
+ also: <span style="font-weight: normal;"><a href="Changekeyboard_Function.htm"
+											 style="font-weight: normal;">Changekeyboard
+ Function</a>, <a href="Field_Properties_(for_Multiple_Fields).htm" style="font-weight: normal;">Field
+ Properties (for Multiple Fields)</a></span></p>
+</body>
+</html>

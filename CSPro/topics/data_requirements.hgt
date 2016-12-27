@@ -1,0 +1,91 @@
+﻿<title>Data Requirements</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h2 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Data Requirements</font></b></h2>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">Data
+ files appear in many different formats and structures, but all data files
+ used by CSPro must be text files (i.e., you must be able to view them
+ in a text editorâ€”they can not be encrypted in any way). If you are using
+ data files created by another software package, you must save the data
+ in a separate text file before you can use it with CSPro. Data files are
+ limited to 2 gigabytes in overall size; the maximum length of any record
+ in the file is 32,000 characters. CSPro encodes data files using UTF-8.
+ Read more about Unicode text files at the <a href="Unicode_Primer.html">Unicode
+ Primer</a>.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">CSPro
+ processes one</font> <a href="dictionary_hierarchy.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">case</font></a> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">at a time. Each</font> <a
+	 href="record_description.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">record</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">must
+ contain a unique questionnaire</font> <a href="questionnaire_and_dictionary_organization.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">identification
+ code</font></a> <font style="font-family: Arial; font-size: 10pt;" face="Arial"
+						 size="2">in the same position in each record.
+ This number must be the same for all records of the same case. If the
+ file is a â€˜flatâ€™ file, meaning that each questionnaire contains only one
+ record, the questionnaire identification becomes irrelevant. In this case,
+ any data item can be used as the questionnaire identification, but it
+ should be unique for each record. CSPro uses the case identification values
+ to determine where one case ends, and the next one begins. Records belonging
+ to the same case must be contiguous within the data file, but there is
+ no requirement that the data file be sorted by case identifier.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">CSPro
+ can handle a data file with</font> <a href="data_file_type_structure.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">multiple
+ record types</font></a> <font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">-- for example,
+ housing and population -- but a</font> <a href="record_type.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">record
+ type</font></a> <font style="font-family: Arial; font-size: 10pt;" face="Arial"
+						 size="2">code must identify the type of record.
+ This code must be in the same position in each record. Within the same
+ record type, each data field must be in the same position.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">CSPro
+ can process one input data file at a time, but it can access one or more</font>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2"><a
+	 href="external_files.html">external files</a>. These files must also
+ be described in a data dictionary and must be in text format.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">In some survey data, especially
+ where the total number of data items is great but only a few responses
+ are expected, the user may choose a format in which each data field is
+ preceded by a â€˜source codeâ€™ relating it back to the original document.
+ By using this scheme, non-response fields (empty responses) need not be
+ entered. With this type of format, each data field is not in a pre-defined
+ location on the record. Before a file like this can be processed by CSPro,
+ it must be <a href="csrefmt.chm::introduction_to_reformat_data.html">reformatted</a>
+ so that the data fields are in fixed positions. Items in data files must
+ be fixed format, that is, items must have the same starting position and
+ length in every record where they occur.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <a href="data_file_type_structure.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Data
+ File Type Structure</font></a></p>
+</body>
+</html>

@@ -1,0 +1,148 @@
+﻿<title>Value Sets Description</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Value Sets Description</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Value sets let you specify one or more group of values for
+ a data</font> <a href="sub_items.html"><font style="font-family: Arial;
+											 font-size: 10pt;" face="Arial"
+											 size="2">item or subitem</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">. When using</font> <a href="introduction_to_tabulation.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">tabulation
+ applications</font></a> <font style="font-family: Arial; font-size: 10pt;"
+								 color="#000000" face="Arial" size="2">or
+ MapViewer, you will want to choose value set labels to tabulate/map, as
+ it will give you more descriptive results. The resulting tables (or maps)
+ will contain row and column labels (or region labels) that correspond
+ to the value labels (or numeric distributions, if no value label is present).
+ In a Batch Edit or Data Entry application, the use of value sets can help
+ you when using the</font> <b><font style="font-family: Arial; font-size: 10pt;
+									 font-weight: bold;" color="#000000"
+									 face="Arial" size="2">vset</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">option to the</font> <a href="impute_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">impute
+ function</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">For
+ example, suppose you have a survey that needs to classify people'<span
+	 style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">s ages three different ways: by discrete value, by 5-year
+ cohorts, or by category, such as &quot;Child,&quot; &quot;Adult,&quot;
+ etc. This is easily done by adding value sets for the AGE data item:</font></span></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace; font-weight: bold;"><b><font
+	 style="font-weight: bold;">Value Set Label &#160;Value Set Name &#160;Value
+ Label &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;From&#160;&#160;To</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">Age &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;AGE</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;0&#160;&#160;&#160;&#160;&#160;98</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Not
+ Reported&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;99</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">Age by 5 years&#160;&#160;&#160;AGE_5YRS</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;0
+ to 4 years&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;0 &#160;&#160;&#160;&#160;4</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;5
+ to 9 years&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;5 &#160;&#160;&#160;&#160;9</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;10
+ to 14 years&#160;&#160;&#160;&#160;&#160;&#160;10&#160;&#160;&#160;&#160;14</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;15
+ to 19 years &#160;&#160;&#160;&#160;&#160;15&#160;&#160;&#160;&#160;19</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;20
+ to 24 years&#160;&#160;&#160;&#160;&#160;&#160;20&#160;&#160;&#160;&#160;24</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;25
+ to 29 years&#160;&#160;&#160;&#160;&#160;&#160;25&#160;&#160;&#160;&#160;29</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;30
+ to 34 years&#160;&#160;&#160;&#160;&#160;&#160;30&#160;&#160;&#160;&#160;34</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;35
+ to 39 years&#160;&#160;&#160;&#160;&#160;&#160;35&#160;&#160;&#160;&#160;39</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;40
+ to 44 years&#160;&#160;&#160;&#160;&#160;&#160;40&#160;&#160;&#160;&#160;44</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;45
+ to 49 years&#160;&#160;&#160;&#160;&#160;&#160;45&#160;&#160;&#160;&#160;49</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;50
+ to 55 years&#160;&#160;&#160;&#160;&#160;&#160;50&#160;&#160;&#160;&#160;54</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;55
+ to 59 years&#160;&#160;&#160;&#160;&#160;&#160;55&#160;&#160;&#160;&#160;59</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;60
+ years and over&#160;&#160;&#160;60 &#160;&#160;&#160;98</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">Age by Category&#160;&#160;AGE_CATEGORY</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Infant&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;0&#160;&#160;&#160;&#160;&#160;0</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Child&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;&#160;&#160;&#160;&#160;12</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Teenager&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;13&#160;&#160;&#160;&#160;19</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Adult
+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;20
+ &#160;&#160;&#160;59</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Senior&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;60
+ &#160;&#160;&#160;98</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The AGE item now has three defined value sets: AGE, AGE_5YRS,
+ and AGE_CATEGORY. The first value set defines the acceptable range for
+ data entry, while the second and third value sets give a breakdown as
+ you might want to see the data tabulated.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The value set will always be added to the end of the item's
+ value set listings. If you add to the wrong place, press the</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">&lt;</font></b><b><font style="font-family: Arial;
+													 font-size: 10pt; font-weight: bold;"
+													 color="#000000" face="Arial"
+													 size="2">Esc&gt;</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">key to stop the add. Use</font> <a href="undo_and_redo_changes.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">undo</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">if you added at the wrong place.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-weight: bold;">See also:</font></b> <a href="value_set_properties.html">Value
+ Set Properties</a>, <a href="Value_Set_Images.html">Value Set Images</a></p>
+</body>
+</html>

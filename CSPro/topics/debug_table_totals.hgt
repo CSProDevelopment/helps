@@ -1,0 +1,126 @@
+﻿<title>Debug Table Totals</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Debug Table Totals</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">At
+ times, the totals in a table may differ from totals calculated using other
+ methods. There are some easy ways to figure out the cause of such discrepancies.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Some values that exist in your data file may not be in the
+ value set and thus these values will not be counted in the totals. For
+ example, a value set might include the numbers 1 through 6. The data file
+ might have a value of 7 or 8 for the variable or in some cases might contain
+ blank (notappl) values for the variable. To see if this is the case, try</font>
+ <a href="include_exclude_special_values_in_a_variable.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">including custom special values</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">in your table. Make sure to check the boxes for the special
+ values</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+						 color="#000000" face="Arial" size="2">notappl</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">,</font> <b><font style="font-family: Arial; font-size: 10pt;
+								 font-weight: bold;" color="#000000" face="Arial"
+								 size="2">undefined</font></b><font style="font-family: Arial;
+	 font-size: 10pt;" color="#000000" face="Arial" size="2">, and</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 color="#000000" face="Arial" size="2">default</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">. Run the table again and check to see if any of the rows/columns
+ for special values have counts in them.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="custspecvalsfortotal.jpg" alt="Table Including Custom Special Values"
+	 title="Table Including Custom Special Values" width="626" height="342"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">If you have counts for the special
+ value <b><font style="font-weight: bold;">undefined</font></b> then there
+ are values in your data file that are not in the value set that you are
+ tabulating. You may either edit the data file to eliminate such values
+ or change your value set to include them. To find the actual values that
+ are not in the value set, use the <a href="csfreq.chm::introduction_to_tabulate_frequencies.html">Tabulate
+ Frequencies</a> tool with the <a href="csfreq.chm::type_of_frequency.html">Each
+ value found</a> option.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">If you have counts for the special value</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">notappl</font></b> <font style="font-family: Arial;
+													 font-size: 10pt;"
+													 color="#000000" face="Arial"
+													 size="2">then there
+ are blanks in your data file for the variable in question. You will either
+ need to impute the blanks or add an entry for notappl to your value set.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">If
+ you have counts for the special value <b><font style="font-weight: bold;">default</font></b>
+ then there are values in your data file that cannot be read by CSPro.
+ This can be because the properties of the variable in the dictionary do
+ not match the data in the file. For example if the data type in the dictionary
+ is numeric but the value in the data file contains non-numeric characters
+ or if there is a decimal character in the data file but none specified
+ for the item in the dictionary. It can also be because when the data file
+ was written the value of the variable overflowed the length specified
+ for the variable in the dictionary.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">You
+ should examine the data file and the dictionary file for discrepancies
+ and also check any programs that have written to the data file to see
+ if they could be writing <b><font style="font-weight: bold;">default</font></b>
+ values.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">There may be some values in your value set that are repeated
+ and are being counted in more than one row or column of the table. For
+ example, in the following value set, age 5 is in both the 0-5 and the
+ 5-10 ranges and therefore each person with and age of 5 will be counted
+ twice: once in the 0-5 category and once in the 5-10 category. The total
+ will be the correct count of the number of persons, however, the sum of
+ the age categories will not match the total.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="overlapvaluesset.jpg" alt="Overlapping Values in a Dictionary"
+	 title="Overlapping Values in a Dictionary" width="590" height="99"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Check your value set to make sure that no single value is
+ repeated and that no ranges overlap. Of course, in some cases, you may
+ want to have overlapping ranges in your value set, for example if you
+ want to show</font> <a href="add_subtotals_to_a_table.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">subtotals</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">See Also:</font> <a href="implications_of_data_dictionary_value_sets.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Implications
+ of Data Dictionary Value Sets</font></a><font style="font-family: Arial;
+												 font-size: 10pt;" face="Arial"
+												 size="2">,</font> <a href="special_values.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Special
+ Values</font></a></p>
+</body>
+</html>

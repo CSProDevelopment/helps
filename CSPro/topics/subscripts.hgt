@@ -1,0 +1,362 @@
+﻿<title>Subscripts</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Subscripts</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Items with multiple occurrences or in multiple records have
+ one name (the item name), but can occur multiple times. In order to indicate
+ the specific occurrence of the item, you may need to use an index or subscript.
+ The subscripts are integers and are numbered from 1.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Imagine that the SEX is an item in the multiple record CHILD.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The expressions</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Courier; font-size: 10pt;" color="#000000" face="Courier"
+	 size="2">&#160;</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#000000" face="Courier New" size="2">SEX(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">)
+ &#160;&#160;</font><font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">refers
+ to the sex of the first child.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Courier; font-size: 10pt;" color="#000000" face="Courier"
+	 size="2">&#160;</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#000000" face="Courier New" size="2">SEX(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">)&#160;&#160;</font><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">refers to the sex of the third child.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Courier; font-size: 10pt;" color="#000000" face="Courier"
+	 size="2">&#160;</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#000000" face="Courier New" size="2">SEX(i)
+ &#160;&#160;</font><font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">refers
+ to the sex of the</font> <b><font style="font-family: Arial; font-size: 10pt;
+									 font-weight: bold;" color="#000000"
+									 face="Arial" size="2">i</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">th child.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Subscripts can be numeric expressions as well as numeric
+ constants. For example, the expression</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Courier; font-size: 10pt;" color="#000000" face="Courier"
+	 size="2">&#160;</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#000000" face="Courier New" size="2">SEX(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">curocc</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#000000" face="Courier New"
+													 size="2">(CHILD));</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">refers to the current occurrence of CHILD. (</font><a href="curocc_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">curocc</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">is a function that returns the current occurrence of
+ a multiple record). When referring to multiply-occurring items within
+ the scope of their repetition, you do not need to use subscripts, as the
+ current occurrence will be assumed. For example, suppose you have a population
+ record that has multiply occurrences, and belonging to that record are
+ the three variables SEX, AGE, and FERTILITY. If your code is contained
+ within any of these variablesâ€™ procedures, you do not need to use subscripts.
+ To illustrate:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example 1:</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+	 face="Courier New" size="2">{this will check the sex and fertility
+ values for each person in the household}</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;PROC</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#000000"
+														 face="Courier New"
+														 size="2">SEX</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;if</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#000000" face="Courier New" size="2">$ =</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+		 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">then</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;if</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">fertility &lt;&gt;</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">notappl</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;errmsg</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">&quot;male
+ found with fertility&quot;</font><font style="font-family: 'Courier New';
+										 font-size: 10pt;" face="Courier New"
+										 size="2">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;endif</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;elseif</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">$ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF0000" face="Courier New" size="2">2</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;if</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">age &lt;</font> <font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#FF0000"
+										 face="Courier New" size="2">10</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">and</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 face="Courier New"
+														 size="2">fertility
+ &lt;&gt;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+						 color="#0000FF" face="Courier New" size="2">notappl</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;errmsg</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">&quot;underage
+ female found with fertility data&quot;</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;endif</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;else</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;errmsg</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">&quot;invalid
+ sex code (sex=%d)&quot;</font><font style="font-family: 'Courier New';
+									 font-size: 10pt;" face="Courier New"
+									 size="2">, $);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;endif</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" face="Courier New" size="2">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">However,
+ if you were to place the exact same logic elsewhere in your program, you
+ would have to programmatically mimic the looping mechanism, and use subscripts.
+ For example, if the above code were placed in the QUEST procedure, it
+ would need to be adjusted as follows:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Example 2:</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;PROC</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#000000"
+														 face="Courier New"
+														 size="2">QUEST</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;&#160;NumPeople=</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">count</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#000000" face="Courier New"
+													 size="2">(POP_RECS);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;do varying</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">i=</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#FF0000"
+												 face="Courier New" size="2">1</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">while</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#000000"
+														 face="Courier New"
+														 size="2">i &lt;=
+ NumPeople</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">sex(i)
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+				 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#0000FF"
+															 face="Courier New"
+															 size="2">then</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">fertility(i)
+ &lt;&gt;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+						 color="#0000FF" face="Courier New" size="2">notappl</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">errmsg</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">&quot;male found with fertility&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">endif</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#0000FF"
+														 face="Courier New"
+														 size="2">elseif</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">sex(i) =</font> <font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#FF0000"
+										 face="Courier New" size="2">2</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">if</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">age(i) &lt;</font> <font style="font-family: 'Courier New';
+											 font-size: 10pt;" color="#FF0000"
+											 face="Courier New" size="2">10</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">and</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 face="Courier New"
+														 size="2">fertility(i)
+ &lt;&gt;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+						 color="#0000FF" face="Courier New" size="2">notappl</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">errmsg</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">&quot;underage female found with fertility
+ data&quot;</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+						 face="Courier New" size="2">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">endif</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#0000FF"
+														 face="Courier New"
+														 size="2">else</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">errmsg</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">&quot;invalid
+ sex code (sex=%d)&quot;</font><font style="font-family: 'Courier New';
+									 font-size: 10pt;" face="Courier New"
+									 size="2">, sex(i));</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#0000FF"
+														 face="Courier New"
+														 size="2">endif</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;enddo</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" face="Courier New" size="2">;</font></p>
+</body>
+</html>

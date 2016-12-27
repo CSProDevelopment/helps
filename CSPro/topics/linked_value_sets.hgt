@@ -1,0 +1,50 @@
+﻿<title>Linked Value Sets</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h1 style="font-family: Arial, sans-serif; font-size: 18pt;">Linked Value
+ Sets</h1>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">There are times
+ when several items in a dictionary share the same list of possible values.
+ For example in a survey that asks for the country where someone lives
+ as well as the country where that person was born, the value set for both
+ items would be a listing of all countries. A user can enter the possible
+ values for one item and then copy and paste them onto the second item,
+ but the concept of linked value sets is a better approach to the problem.
+ With linked value sets a user pastes a &quot;value set link&quot; which
+ indicates to CSPro that the two items share the same possible values.
+ Then if the user adds or modifies entries for one item, the values for
+ the linked items are also modified. Users do not have to update multiple
+ value sets to make changes.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Create
+ a Value Set Link</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">Create
+ the value set for one of the items and then copy the value set to the
+ clipboard. Go to the value set window for the item to which you want to
+ link the value set. Right-click on the window and select &quot;Paste Value
+ Set Link.&quot;</p>
+<p style="text-align: center; font-family: Arial, sans-serif; font-size: 10pt;"><img
+	 src="pastevs.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">After pasting
+ the link the value set will turn pink as a way of indicating that the
+ value set is shared across two or more items. Modify or add values to
+ the value set as you would for a regular value set.</p>
+<p style="text-align: center; font-family: Arial, sans-serif; font-size: 10pt;"><img
+	 src="linkedvs.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Remove
+ a Value Set Link</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">Right-click
+ on the value set name and select &quot;Remove Value Set Link.&quot; If
+ the value set is linked to more than two items, you can chose to remove
+ the link for only the item that you right-clicked on, or you can remove
+ all the linkages. When a link is removed the value set is no longer colored
+ pink. The values remain but now modifying the value set does not affect
+ the value sets in the items to which it had previously been linked.</p>
+</body>
+</html>

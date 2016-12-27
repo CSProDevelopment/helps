@@ -1,0 +1,91 @@
+﻿<title>Importing Data to CSPro Format</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h1 style="font-size: 18pt; font-family: Arial, sans-serif;">Importing
+ Data to CSPro Format</h1>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">There are occasions,
+ such as when using <a href="lookup_files.html">lookup files</a>, when you
+ will want to convert data created in another application to a format that
+ CSPro can read. This is a two-step process:</p>
+<ol style="list-style: decimal;">
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p style="font-family: Arial, sans-serif;
+		 font-size: 10pt;">Convert the data to a flat file with one record
+	 per line and all records for a case organized together. (Read more
+	 about <a href="data_requirements.html">Data Requirements</a> or the
+	 <a href="data_file_type_structure.html">File Structure</a>.)</p></li>
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p style="font-family: Arial, sans-serif;
+		 font-size: 10pt;">Create a CSPro dictionary that describes this
+	 data file.</p></li>
+</ol>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">There are many
+ formats from which data can be converted, but converting data to CSPro
+ format from Microsoft Excel will be highlighted due to the popularity
+ of that software package. To convert data to CSPro format:</p>
+<ol style="list-style: decimal;">
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p>Open
+	 a file in Excel. We will demonstrate this conversion using the following
+	 file:<br />
+	<br />
+	<img src="importExcel1.PNG" alt="" style="border: none;" border="0" /></p></li>
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p style="font-family: Arial, sans-serif;
+		 font-size: 10pt;">Remove any header information in the file. CSPro
+	 data files should contain only data and thus any metadata (e.g., column
+	 headings) should be removed:<br />
+	<br />
+	<img src="importExcel2.PNG" alt="" style="border: none;" border="0" /></p></li>
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p style="font-family: Arial, sans-serif;
+		 font-size: 10pt;">All fields must be right-justified:<br />
+	<br />
+	<img src="importExcel3.PNG" alt="" style="border: none;" border="0" /></p></li>
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p style="font-family: Arial, sans-serif;
+		 font-size: 10pt;">Remove any specialized formatting attached to
+	 cells (unless that formatting is desired in the final output):<br />
+	<br />
+	<img src="importExcel4.PNG" alt="" style="border: none;" border="0" /></p></li>
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p style="font-family: Arial, sans-serif;
+		 font-size: 10pt;">Set the column widths to appropriate values.
+	 When this information is finally saved, the width of each column determines
+	 the length of each item in your CSPro dictionary.<br />
+	<br />
+	<img src="importExcel5.PNG" alt="" style="border: none;" border="0" /></p></li>
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p style="font-family: Arial, sans-serif;
+		 font-size: 10pt;">Save As, choosing &quot;Formatted Text (Space
+	 delimited) (*.prn)&quot; as the output format:<br />
+	<br />
+	<img src="importExcel6.PNG" alt="" style="border: none;" border="0" /><br />
+	<br />
+	Using the above example, the resulting file looks like this:<br />
+	<br />
+	<span style="font-family: 'Courier New', monospace;">11/10/2009 &#160;&#160;&#160;&#160;&#160;&#160;Hotel
+	 Intercontinental &#160;1500.00 &#160;0.013387 20.08<br />
+	11/12/2009China Anhui Huaren Restaurant &#160;1000.00 &#160;0.013387
+	 13.39<br />
+	11/13/2009 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Alliance
+	 FranÃ§aise &#160;&#160;100.00 &#160;0.013387 &#160;1.34<br />
+	11/15/2009 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Kenya Forest
+	 Service &#160;&#160;150.00 &#160;0.013387 &#160;2.01<br />
+	11/19/2009 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Waamo
+	 Pizza &amp; Fries &#160;&#160;750.00 &#160;0.013388 10.04</span></p></li>
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p style="font-family: Arial, sans-serif;
+		 font-size: 10pt;">Create a CSPro dictionary that describes this
+	 data. The length of each item is determined by the column width specified
+	 in Excel. Other options, such as whether a decimal character should
+	 exist, or whether numeric values should be zero-filled, can also be
+	 specified in Excel.</p></li>
+</ol>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">It is a good
+ idea to run frequencies on each item to make sure that the dictionary
+ you created properly describes the .prn file.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;"><span style="font-family: Arial, sans-serif;
+	 font-size: 10pt;">The above example is a rather simple one, but more
+ complex imports, including importing cases with multiple records (and
+ thus a record type), are also possible.</span></p>
+</body>
+</html>

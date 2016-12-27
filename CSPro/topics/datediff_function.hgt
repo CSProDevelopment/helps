@@ -1,0 +1,176 @@
+﻿<title>Datediff Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Datediff</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Function</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';">i = <b><font style="font-weight: bold;"
+												 color="#0000FF">datediff</font></b>(numeric-start-date,numeric-end-date<font
+	 color="#FF00FF">[</font>,string-expression<font color="#FF00FF">]</font>);
+ &#160;<span style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#FF00FF" face="Arial"
+	 size="2">&#160;[ ]</font> <font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">indicates
+ that this part is optional.</font></span></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Description:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
+ <span style="font-weight: bold;">datediff</span> function returns the
+ difference between two dates as a number. The dates must be passed in
+ YYYYMMDD format. If no year is present then the current or next year is
+ assumed in order to satisfy the condition that the start date is earlier
+ than the end date. If years are present, it is possible for the start
+ date to be later than the end date, in which case the function returns
+ a negative difference. An optional third parameter indicates the difference
+ requested. This function acts similarly to Microsoft Excel's &quot;datedif&quot;
+ function.</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">Based
+ on the optional third parameter (the default option is &quot;d&quot;),
+ the function returns:</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<table style="left: 0px; top: 233px;" cellspacing="0" width="599">
+	<col style="width: 9.683%;" />
+	<col style="width: 90.317%;" />
+	<tr style="vertical-align: top;">
+		<td style="width: 9.683%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-weight: bold; font-size: 10pt;">&quot;d&quot;</p></td>
+		<td style="width: 90.317%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-size: 10pt;">days between the start and end dates</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 9.683%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-weight: bold; font-size: 10pt;">&quot;m&quot;</p></td>
+		<td style="width: 90.317%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-size: 10pt;">months between the start and end
+		 dates</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 9.683%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-weight: bold; font-size: 10pt;">&quot;y&quot;</p></td>
+		<td style="width: 90.317%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-size: 10pt;">years between the start and end dates</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 9.683%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-weight: bold; font-size: 10pt;">&quot;md&quot;</p></td>
+		<td style="width: 90.317%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-size: 10pt;">days between the start and end dates
+		 ignoring both the years and months of the dates</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 9.683%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-weight: bold; font-size: 10pt;">&quot;ym&quot;</p></td>
+		<td style="width: 90.317%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-size: 10pt;">months between the start and end
+		 dates ignoring the years of the dates</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 9.683%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-weight: bold; font-size: 10pt;">&quot;yd&quot;</p></td>
+		<td style="width: 90.317%; padding-right: 10px; padding-left: 10px;"><p
+			 style="font-size: 10pt;">days between the start and end dates
+		 ignoring the years of the dates</p></td>
+	</tr>
+</table>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Return Value:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">The
+ function returns the requested difference in dates, defaulting to the
+ number of days between the dates if the third parameter is not specified.
+ If the dates cannot be processed, the function returns DEFAULT. The function
+ returns values equal to Excel's function for most parameters, but due
+ to processing differences involving leap years, sometimes CSPro's function
+ will return a different value than Excel's.</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-weight: bold;"><b><font style="font-weight: bold;">Example 1:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><span style="color: #0000ff;">datediff</span>(<span
+	 style="color: #ff0000;">19790404</span>,<span style="color: #ff0000;">19820605</span>);
+ &#160;<span style="font-style: italic;">returns 1158</span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><span style="color: #0000ff;">datediff</span>(<span
+	 style="color: #ff0000;">19790404</span>,<span style="color: #ff0000;">19820605</span>,<span
+	 style="color: #ff00ff;">&quot;d&quot;</span>); &#160;<span style="font-style: italic;">returns
+ 1158</span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><span style="color: #0000ff;">datediff</span>(<span
+	 style="color: #ff0000;">19790404</span>,<span style="color: #ff0000;">19820605</span>,<span
+	 style="color: #ff00ff;">&quot;m&quot;</span>); &#160;<span style="font-style: italic;">returns
+ 38</span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><span style="color: #0000ff;">datediff</span>(<span
+	 style="color: #ff0000;">19790404</span>,<span style="color: #ff0000;">19820605</span>,<span
+	 style="color: #ff00ff;">&quot;y&quot;</span>); &#160;<span style="font-style: italic;">returns
+ 3</span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><span style="color: #0000ff;">datediff</span>(<span
+	 style="color: #ff0000;">19790404</span>,<span style="color: #ff0000;">19820605</span>,<span
+	 style="color: #ff00ff;">&quot;md&quot;</span>); &#160;<span style="font-style: italic;">returns
+ 1</span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><span style="color: #0000ff;">datediff</span>(<span
+	 style="color: #ff0000;">19790404</span>,<span style="color: #ff0000;">19820605</span>,<span
+	 style="color: #ff00ff;">&quot;ym&quot;</span>); &#160;<span style="font-style: italic;">returns
+ 2</span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><span style="color: #0000ff;">datediff</span>(<span
+	 style="color: #ff0000;">19790404</span>,<span style="color: #ff0000;">19820605</span>,<span
+	 style="color: #ff00ff;">&quot;yd&quot;</span>); &#160;<span style="font-style: italic;">returns
+ 62</span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-weight: bold;"><span><b><font style="font-weight: bold;">Example
+ 2:</font></b></span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';">date1 = <span style="color: #ff0000;">20090120</span>;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';">date2 = <span style="color: #ff0000;">20121106</span>;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';">outputText = <span style="color: #ff00ff;">&quot;The
+ difference between January 20, 2009 and November 6, 2012 is %d years,
+ %d months, and %d days&quot;</span>;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><span style="color: #0000ff;">errmsg</span>(outputText,<span
+	 style="color: #0000ff;">datediff</span>(date1,date2,<span style="color: #ff00ff;">&quot;y&quot;</span>),<span
+	 style="color: #0000ff;">datediff</span>(date1,date2,<span style="color: #ff00ff;">&quot;ym&quot;</span>),<span
+	 style="color: #0000ff;">datediff</span>(date1,date2,<span style="color: #ff00ff;">&quot;md&quot;</span>));</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><br />
+<span style="color: #008000;">{ returns ... 3 years, 9 months, and 17 days
+ }</span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-weight: bold;"><b><span style="font-weight: bold;">See also:</span></b>
+ <span style="font-weight: normal;"><a href="Dateadd_Function.htm" style="font-weight: normal;">Dateadd
+ Function</a>, <a href="Datevalid_Function.html">Datevalid Function</a>,
+ <a href="sysdate_function.htm" style="font-weight: normal;">Sysdate Function</a></span></p>
+</body>
+</html>

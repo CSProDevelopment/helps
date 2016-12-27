@@ -1,0 +1,353 @@
+﻿<title>Post Calculation For Rows, Columns and Ranges</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Post Calculation For Rows, Columns and Ranges</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ addition to performing operations on individual cells, you can perform
+ operations on cell ranges, rows and columns. As an example, take the following
+ table, in which an additional column is added to calculate the male to
+ female ratio for each group.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabpost9.jpg" alt="Column Referencing in a Table" title="Column Referencing in a Table"
+	 width="516" height="517" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
+ information on how to add the additional column, see the previous section</font>
+ <a href="adding_rows_and_columns_for_post_calculation.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">Adding Rows and Columns For
+ Post Calculation</font></a><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ postcalc logic for assigning rows and columns is similar to that of individual
+ cells, however there is a simplified syntax for working with cell ranges,
+ rows and columns. You could set each cell individually with multiple statements
+ as follows:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE1(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">0</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">) = TABLE1(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">0</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">) / TABLE1(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">0</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">);</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE1(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">1</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">) = TABLE1(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">) / TABLE1(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">);</font></p>
+<p style="text-align: left; margin-left: 108.00pt; margin-top: 0.00pt;
+	 margin-bottom: 0.00pt; text-indent: 36.00pt;"><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 face="Courier New"
+														 size="2">â€¦</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE1(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">2</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">) = TABLE1(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">) / TABLE1(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">);</font></p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE1(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">20</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">) = TABLE1(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">20</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">) / TABLE1(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">20</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">However,
+ that would take a lot of code. Instead, you can specify this one statement
+ using a range or a wild card. To use a range, give the lower and upper
+ limits separated by a colon:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE1[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">0</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">:</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">20</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">] = TABLE1[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">0</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">:</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">20</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">] / TABLE1[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">0</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">:</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">20</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">];</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
+ means divide the cell in column 1 by the cell in column 2 and put the
+ result in the cell in column 3 for each row from 0 to 20. You can also
+ use a wildcard (an asterisk) to specify an entire row or column:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE1[*,</font><font style="font-family: 'Courier New';
+									 font-size: 10pt;" color="#FF0000"
+									 face="Courier New" size="2">3</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">] = TABLE1[*,</font><font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#FF0000"
+										 face="Courier New" size="2">1</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">] / TABLE1[*,</font><font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#FF0000"
+										 face="Courier New" size="2">2</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">];</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Using
+ an asterisk in place of the row index means that the operation applies
+ to all rows in the table. In this case it is the same as specifying the
+ range 0:20 since the table has 21 rows. An asterisk can also be used in
+ place of the column index to specify every column in a table:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE1[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">1</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">,*]
+ = TABLE1[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+						 color="#FF0000" face="Courier New" size="2">2</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,*];</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#008000" face="Courier New" size="2">{
+ copy row 2 into row 1 }</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Note
+ that when working with rows, columns and ranges, you must use square brackets
+ &quot;[]&quot; rather than parentheses &quot;( )&quot;. Parentheses may
+ only be used when specifying individual cells.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
+ can only assign ranges or wildcards to each other if the dimensions of
+ the ranges match. For example:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE1[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">0</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">:</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">0</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">:</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">] = TABLE1[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">:</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">5</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">0</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">:</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">];</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">copies
+ one 3 by 4 region of the table to another 3 by 4 region. However, the
+ following code will fail since it attempts to copy a 3 by 4 region to
+ a 3 by 3 region:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">TABLE1[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#FF0000" face="Courier New"
+									 size="2">0</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">:</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">0</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">:</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">]= TABLE1[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">:</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">5</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">,</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">0</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">:</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">3</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">];</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+	 face="Courier New" size="2">{ This does not work ! }</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-weight: bold;">See also:</font></b> <a href="post_calculation_for_individual_cells.html">Post
+ Calculation For Individual Cells</a>, <a href="row_and_column_indexing_for_post_calculation.html">Row
+ and Column Indexing for Post Calculation</a></p>
+</body>
+</html>

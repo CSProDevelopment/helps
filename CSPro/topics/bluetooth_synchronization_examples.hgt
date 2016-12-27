@@ -1,0 +1,82 @@
+﻿<title>Bluetooth Synchronization Examples</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h4 style="margin-top: 6.00pt; margin-bottom: 2.00pt; font-family: Arial, sans-serif;
+	 font-size: 18pt;"><b><font style="font-weight: bold;"><span style="font-weight: bold;">Bluetooth
+ </span><span>Synchronization Examples</span></font></b></h4>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><span
+	 style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Example
+ 1</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">The following
+ synchronization script has the client retrieving a file named BHIC.dat
+ from a folder named Fillmore that exists on the server. The server names
+ its device, Nelson, and the client also specifies the name of the device
+ to which it wants to connect. The first script is for the server:</p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: Arial, sans-serif;
+	 font-weight: bold;">Bluetooth Server.pnc</p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">[SyncFile]<br />
+Version=CSPro 7.0<br />
+DeviceName=Nelson</p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">[Connection]<br />
+Type=BluetoothServer</p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: Arial, sans-serif;
+	 font-weight: bold;"><span style="font-size: 10pt; font-family: Arial, sans-serif;
+								 font-weight: bold;">Bluetooth Client.pnc</span></p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">[SyncFile]<br />
+Version=CSPro 7.0</p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">[Connection]<br />
+Type=Bluetooth<br />
+ServerDeviceName=Nelson</p>
+<p style="margin-left: 24px; font-family: 'Courier New', monospace; font-size: 10pt;">[Sync]<br />
+CreateClientPath=/Files From Nelson<br />
+ClientPath=/Files From Nelson<br />
+<br />
+ServerPath=/Fillmore<br />
+Get=BHIC.dat</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><span
+	 style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Example
+ 2</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">The following
+ synchronization script modifies the above one by removing the DeviceName
+ and ServerDeviceName attributes. In this case, the client will be presented
+ with a list of Bluetooth devices to which it can connect, and the client
+ must manually choose the device to which it wants to connect. This requires
+ the client to know the Bluetooth name of the server. In addition to this
+ change, in this script, the client also sends a file named R7.dat located
+ in a folder named P6P.</p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: Arial, sans-serif;
+	 font-weight: bold;"><span style="font-size: 10pt; font-family: Arial, sans-serif;
+								 font-weight: bold;">Bluetooth Server.pnc</span></p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">[SyncFile]<br />
+Version=CSPro 7.0<br />
+<br />
+[Connection]<br />
+Type=BluetoothServer</p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: Arial, sans-serif;
+	 font-weight: bold;"><span><span style="font-size: 10pt; font-family: Arial, sans-serif;
+									 font-weight: bold;">Bluetooth Client.pnc</span></span></p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">[SyncFile]<br />
+Version=CSPro 7.0</p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">[Connection]<br />
+Type=Bluetooth<br />
+<br />
+[Sync]<br />
+CreateClientPath=/Files From Nelson<br />
+ClientPath=/Files From Nelson<br />
+<br />
+ServerPath=/Fillmore<br />
+Get=BHIC.dat</p>
+<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">CreateServerPath=/Files
+ For Nelson<br />
+ServerPath=/Files For Nelson</p>
+<p style="margin-left: 24px; font-family: 'Courier New', monospace; font-size: 10pt;">ClientPath=/P6P<br />
+Put=R7.dat</p>
+</body>
+</html>

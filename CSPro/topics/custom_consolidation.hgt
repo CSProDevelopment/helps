@@ -1,0 +1,235 @@
+﻿<title>Custom Consolidation</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Custom Consolidation</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Custom
+ Consolidation allows the aggregation of lowest level tables to create
+ almost any reasonable higher level. Users define the consolidation scheme
+ starting from the</font> <b><font style="font-family: Arial; font-size: 10pt;
+									 font-weight: bold;" face="Arial" size="2">Standard</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">consolidation,
+ shown below.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtab_206.jpg" alt="Specification of Standard Consolidation"
+	 title="Specification of Standard Consolidation" width="554" height="201"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Standard
+ Consolidation would:</font></p>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Retain
+	 each Urban and Rural (UR) table for each district in each province.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Add
+	 each group of UR tables to create a table for each district in each
+	 province.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Add
+	 each group of district tables to create a table for each province.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Add
+	 all province tables to create a single â€˜countryâ€™ table.</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ result of the consolidation is:</font></p>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">One
+	 Country table</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">A
+	 Province table for each province</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">A
+	 District table for each district in each province</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">One
+	 urban table and one rural table for each district in each province.</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Each
+ higher level is the aggregation of the levels below with the corresponding
+ area code.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Using
+ custom consolidation, you can produce tables at only the levels you wish.
+ For example, if you did not want to produce tables at the district level
+ but wanted to continue producing them for province, urban/rural and entire
+ country; you would simply remove the district row:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabnodist.jpg" alt="Specification of Urban/Rural Consolidation"
+	 title="Specification of Urban/Rural Consolidation" width="495" height="91"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Using
+ Custom Consolidation you can also create user-defined schemes for combining
+ the lowest level tables by adding new rows to the consolidation scheme:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtab_207.jpg" alt="Specification of Urban/Rural Consolidation at each Geographic Level"
+	 title="Specification of Urban/Rural Consolidation at each Geographic Level"
+	 width="512" height="182" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Each
+ row of the scheme must have a CSPro â€˜nameâ€™ for the set of tables to be
+ created, listed under</font> <b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" face="Arial"
+										 size="2">Area Level Name</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">above.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ the example above, the following tables would be created:</font></p>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">One
+	 Country table</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><b><i><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold; font-style: italic;"
+	 face="Arial" size="2">One urban table and one rural table for the
+	 entire country</font></i></b></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">A
+	 Province table for each province</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><b><i><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold; font-style: italic;"
+	 face="Arial" size="2">One urban table and one rural table for each
+	 province</font></i></b></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">A
+	 District table for each district in each province</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">One
+	 urban table and one rural table for each district in each province.</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ addition, you may place conditions in the cells of the consolidation scheme
+ grid. These conditions are used to modify how the tables replaced for
+ a given level (the column) are consolidated for a particular consolidation
+ scheme (row).</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ options are:</font></p>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Blank
+	 â€“ Any code in this position is included.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Each
+	 â€“ Each different code in this position creates a separate table.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Single
+	 value â€“ One table created for this value of the area level</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Replacement
+	 formula â€“ One â€˜summaryâ€™ is table created for all areas that the meet
+	 the condition and the replacement code is substituted for the area
+	 code for the summary table. [start:end = replacement]</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ last two options are illustrated by the following example:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtab_208.jpg" alt="Specification of New Area Grouping during Consolidation"
+	 title="Specification of New Area Grouping during Consolidation" width="498"
+	 height="92" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ TOT_URB table will include all tallies that had a value of â€˜1â€™ for the
+ UR area level. The area codes on this table will be Province=X, District=X,
+ UR= 1.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ PROV_1_4 table will include all tallies that had Province codes of 1 through
+ 4. The area codes for this table will be Province=99, District=X, UR=
+ X. Since other province codes are 1 to 15, the table associated with â€˜99â€™
+ would be displayed after any for those coded. (In the example above NO
+ province tables were created hence they are not displayed)</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ order to use these codes â€“ a corresponding name should be in the area
+ name file.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtab_209.jpg" alt="Result of New Area Grouping in Table"
+	 title="Result of New Area Grouping in Table" width="342" height="175"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 31.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -31.50pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" face="Arial"
+										 size="2">Note:</font></b> <font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
+ custom consolidation is used it is the userâ€™s responsibility to make sure
+ the consolidation scheme is reasonable and that it works in the desired
+ manner. As usual, every aspect of a data processing system should be tested
+ for correctness.</font></p>
+</body>
+</html>

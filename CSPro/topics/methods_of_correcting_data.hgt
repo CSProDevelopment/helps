@@ -1,0 +1,95 @@
+﻿<title>Methods of Correcting Data</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Methods of Correcting Data</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Before
+ you can correct your errors, you need to know what kind of errors you
+ have. You have two methods of finding these errors: manually or automatically.
+ Manually checking large quantities of data is an extremely time-consuming
+ and error-prone task and not recommended. By contrast, automated searches
+ for your errors is quick and, if done properly, a reliable method to use.
+ If you wish to use CSPro to automate the search for errors, you must create
+ a Batch Edit application.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Using
+ a Batch Edit application to identify errors is a relatively easy task,
+ though care must be taken to do so correctly. Improperly identifying errors
+ can waste precious personnel resources, so a precise set of rules should
+ be developed with input from subject-matter specialists.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Just
+ as you have two methods available to you when searching for errors</font><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,
+ you have two methods available to you for correcting errors: manually
+ or automatically.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;Manual Correction</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Ma</font><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">n</font><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">ual correction of a census
+ could take years, and the possibility of human error is great. When large
+ volumes of data are collected in censuses and surveys, it is not always
+ practical to refer to the original document in order to correct an error.
+ Often the data recorded on the original questionnaires are wrong or inconsistent</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;Automatic Correction</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">With
+ computer editing, both time and the possibility of human error is reduced
+ significantly (just how much depends on how well your logic is written!).
+ The high degree of accuracy and uniformity in computer editing cannot
+ be obtained in manual editing. In computer editing, range checks and within-record
+ consistency checks can easily be made, between-record edits can be done,
+ and unknown information can be allocated (imputed) automatically. If an
+ allocation method is used, you should strive to retain as much of the
+ original information as possible. With a computer editing and imputation
+ system like CSBatch, erroneous data can be corrected immediately and reports
+ can be generated of all errors found and all changes made.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ programmer should plan and design computer edits to inspect the data and
+ have the computer correct them according to specifications supplied by
+ a subject-matter specialist. It would most likely be an extension of the
+ original program written to find the errorsâ€”when you reach the point where
+ there is an error, instead of (or in addition to) printing out an error
+ message, you should now correct it with an appropriate value.&#160;&#160;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Actual
+ methods of making corrections vary depending upon the item. In most instances,
+ data items can be assigned valid codes with reasonable assurance that
+ they are correct by using responses for other data items within the record,
+ or in other records in the questionnaire. When recorded responses are
+ missing, impossible, inconsistent, or unreasonable and cannot be determined
+ from other responses in the same questionnaire, the</font> <a href="dynamic_imputation_hot_deck_.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">hot
+ deck technique</font></a> <font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">can be used to assign
+ entries.</font></p>
+</body>
+</html>

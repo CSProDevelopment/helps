@@ -1,0 +1,170 @@
+﻿<title>DeckArray Leftover Rows</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h1><span style="font-size: 18pt; font-family: Arial, sans-serif;">DeckArray
+ Leftover Rows</span></h1>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">When using
+ unedited variables as parameters of your DeckArray, it may be useful to
+ include a &quot;leftover&quot; (spillover) row for cases in which the
+ variable is not valid. This functionality allows the user to simulate
+ the use of many hotdecks using a single array. An example will best explain
+ this functionality.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">This following
+ is a hotdeck for housing type, based on the source of drinking water (H8),
+ the type of toilet (H9), and whether or not the household has electricity
+ (H10).</p>
+<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
+	 background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
+	<font color="#000000">&#160;&#160;&#160;&#160;<font color="#0000FF">array</font>
+	 housingTypeHD(H8_VS1(+),H9_VS1(+),H10_VS1(+)) <font color="#0000FF">save</font>;</font>
+</div>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">At the point
+ that housing type, H6, is edited, none of the dependent variables in the
+ hotdeck have been edited, so the values can be blank or invalid. That
+ is why, in the array definition, a (+) has been added after the value
+ set names. The (+) gives an extra row for any value that is not in the
+ value set.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">When updating
+ the hotdeck in cases where the housing type value is valid, adding a (+)
+ after the DeckArray name will update the &quot;leftover&quot; rows.</p>
+<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
+	 background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
+	<font color="#000000">&#160;&#160;&#160;&#160;<font color="#0000FF">putdeck</font>(housingTypeHD(+),H6);</font>
+</div>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">This means
+ that when the hotdeck is called upon for an edit or imputation, having
+ valid values for H8, H9, or H10 is not necessary to return a valid H6
+ value. This fundamentally makes the housing type DeckArray eight hotdecks
+ combined into one. The table below explains what happens when executing
+ a getdeck function call:</p>
+<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
+	 background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
+	&#160;&#160;&#160;&#160;<font color="#0000FF">impute</font>(H6,<font
+	 color="#0000FF">getdeck</font>(housingTypeHD));
+	<?rh-implicit_p ?>&#160;
+</div>
+<?rh-align_start align="left" ?>
+<table style="left: 0px; top: 304px; height: 182px; border-collapse: separate;
+		 border-collapse: separate;" cellspacing="0" width="723" border="1">
+	<col style="width: 8.503%;" />
+	<col style="width: 11.518%;" />
+	<col style="width: 11.809%;" />
+	<col style="width: 116.686%;" />
+	<tr>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-weight: bold; font-family: Arial, sans-serif;">H8</span></p></td>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-weight: bold; font-family: Arial, sans-serif;">H9</span></p></td>
+		<td><p style="text-align: center;"><span style="font-size: 10pt;
+												 font-weight: bold; font-family: Arial, sans-serif;">H10</span></p></td>
+		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;
+					 font-weight: bold;">Take the H6 value from the nearest
+		 neighbor with the same values for...</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Valid</span></p></td>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Valid</span></p></td>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Valid</span></p></td>
+		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">H8,
+		 H9, and H10</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Valid</span></p></td>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Valid</span></p></td>
+		<td><p style="font-family: Arial, sans-serif; font-size: 10pt;
+				 text-align: center;">Invalid</p></td>
+		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">H8
+		 and H9</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Valid</span></p></td>
+		<td><p style="font-family: Arial, sans-serif; font-size: 10pt;
+				 text-align: center;">Invalid</p></td>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Valid</span></p></td>
+		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">H8
+		 and H10</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Valid</span></p></td>
+		<td><p style="font-family: Arial, sans-serif; font-size: 10pt;
+				 text-align: center;">Invalid</p></td>
+		<td><p style="font-family: Arial, sans-serif; font-size: 10pt;
+				 text-align: center;">Invalid</p></td>
+		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">H8
+		 only</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Invalid</span></p></td>
+		<td><p style="font-family: Arial, sans-serif; font-size: 10pt;
+				 text-align: center;">Valid</p></td>
+		<td><p style="font-family: Arial, sans-serif; font-size: 10pt;
+				 text-align: center;">Valid</p></td>
+		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">H9
+		 and H10</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Invalid</span></p></td>
+		<td><p style="font-family: Arial, sans-serif; font-size: 10pt;
+				 text-align: center;">Valid</p></td>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Invalid</span></p></td>
+		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">H9
+		 only</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Invalid</span></p></td>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Invalid</span></p></td>
+		<td><p style="font-family: Arial, sans-serif; font-size: 10pt;
+				 text-align: center;">Valid</p></td>
+		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">H10
+		 only</span></td>
+	</tr>
+	<tr>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Invalid</span></p></td>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Invalid</span></p></td>
+		<td><p style="text-align: center;"><span style="font-family: Arial, sans-serif;
+												 font-size: 10pt;">Invalid</span></p></td>
+		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">The
+		 previous valid household's value</span></td>
+	</tr>
+</table>
+<?rh-align_end ?>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">Or in words:</p>
+<ul style="list-style: disc;">
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt;">If
+	 electricity is blank, use a hotdeck based on water and toilet.</p></li>
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt;">If
+	 electricity and water are blank, use a hotdeck based on toilet.</p></li>
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt;">If
+	 water is blank, use a hotdeck based on electricity and toilet.</p></li>
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt;">If
+	 all three are blank, use a hotdeck based on the previous valid household.</p></li>
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt;">Etc.</p></li>
+</ul>
+<p style="font-weight: bold; font-family: Arial, sans-serif; font-size: 10pt;">See
+ also: <span style="font-weight: normal;"><a href="DeckArrays.htm" style="font-weight: normal;">DeckArrays</a>,
+ <a href="Getdeck_Function.htm" style="font-weight: normal;">Getdeck Function</a>,
+ <a href="Putdeck_Function.htm" style="font-weight: normal;">Putdeck Function</a></span></p>
+</body>
+</html>

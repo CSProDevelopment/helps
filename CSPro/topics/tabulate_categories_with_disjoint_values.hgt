@@ -1,0 +1,74 @@
+﻿<title>Tabulate categories with disjoint values</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Tabulate Categories With Disjoint Values</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">At
+ times it is useful to create categories in a tabulation that contain disjoint
+ values. For example, if you have the following value set for marital status
+ where divorced is code 2 and you wish to create a table with only two
+ categories: &quot;divorced&quot; and &quot;not divorced&quot;.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="vsetdisjoint1.jpg" alt="Marital Status Value Set" title="Marital Status Value Set"
+	 width="593" height="160" border="0" /></p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="vsetdisjoint3.jpg" alt="Marital Status Table with Disjoint Values"
+	 title="Marital Status Table with Disjoint Values" width="328" height="156"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
+ create such a table, we need a value set that contains only the two categories
+ divorced and not divorced. Creating the category for &quot;divorced&quot;
+ is simple, it includes only the value 2. The &quot;not divorced&quot;
+ category, however, needs to contain the value 1 (Married) plus the values
+ 3, 4 and 5 (Separated, Widowed, Never Married). These values do not make
+ up a single range. In order to create the category you must create two
+ entries in the value set, one that contains the value 1 and the second
+ that contains the values 3 through 5. The first entry must contain the
+ label for the category and the label for the second entry must be a single
+ space character. CSPro recognizes the single space as a continuation of
+ the previous category rather than a separate category. In this case it
+ will merge the value range in the second entry with that of the first
+ entry, creating a single category that includes the value 1 and the values
+ 3 through 5.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="vsetdisjoint2.jpg" alt="Marital Status Value Set with Disjoint Values"
+	 title="Marital Status Value Set with Disjoint Values" width="591"
+	 height="186" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">It
+ is important that you use a space rather than no text at all since CSPro
+ will treat an empty label all as a new category in the value set. You
+ can tell when CSPro has combined the entries by the absence of the notes
+ box in the second entry.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
+ can combine any number of entries in the value set into a single category.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <a href="implications_of_data_dictionary_value_sets.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Implications
+ of Data Dictionary Value Sets</font></a></p>
+</body>
+</html>

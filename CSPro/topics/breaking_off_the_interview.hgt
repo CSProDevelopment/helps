@@ -1,0 +1,61 @@
+﻿<title>Breaking Off the Interview</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Breaking Off the Interview</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Sometimes
+ an interview cannot be completed in one session. CSPro gives the developer
+ control over how an interview can be terminated. You might want to include
+ a form that asks when the respondent would prefer to do the follow-up
+ visit.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">CSPro
+ fully supports partial save, which causes a case to be saved to disk even
+ if it is not yet complete. The case can be continued at a later time.
+ Partial save is a very useful feature in CAPI applications, and should
+ be used if any of the interviews might not be completed in a single sitting.
+ Very small applications, like listing operations or a short-form census,
+ probably would not require partial save ability. To enable partial save,
+ select the box in the data entry options dialog.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
+ user function <a href="onstop_global_function.html">OnStop</a> can be used
+ to trap the stop button ( <img src="stop.jpg" alt="Stop Button"
+								 title="Stop Button" width="23" height="22"
+								 border="0" /> ) or attempts to exit the
+ interview (for example, by pressing Alt+F4). The developer might want
+ to include a form that manages the exit process and saves the partial
+ case to disk.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
+ could also use OnStop() to intervene and prevent an interview from stopping,
+ or to jump to a callback form before exiting. Your application also could
+ store the field being entered, so that it could jump to that section when
+ the interview is later continued.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ it is necessary to return later to finish a CAPI interview, you might
+ want to include a form that asks when the respondent would prefer to do
+ the follow-up visit. In a production CAPI system, a separate case management
+ system could take advantage of this information and assist the interviewer
+ in tracking and scheduling appointments.</font></p>
+</body>
+</html>

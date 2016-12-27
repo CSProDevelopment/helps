@@ -1,0 +1,305 @@
+﻿<title>Checking errors</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Checking errors</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">You can check for errors at
+ the time you enter the data or perform <a href="csentry.chm::edit_interactively.html">interactive
+ editing</a> after the data have already been entered.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
+ can use the same programmed logic that was in effect during data entry
+ to find problems that were left unresolved by the original keyer, or you
+ can use different logic to check for other conditions.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Improperly
+ identifying errors can waste precious personnel resources, so a precise
+ set of rules should be developed with input from subject-matter specialists.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">During
+ data entry the system automatically displays a message if value for item
+ is out-of-range. However, you might want to write your own message for
+ missing or out-of-range values. For example, if enumerators had been instructed
+ to record all persons older than 110 years of age as â€˜110,â€™ the first-pass
+ check for errors might include the following code:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">AGE</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">AGE</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">in</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#FF0000"
+												 face="Courier New" size="2">0</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">:</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#FF0000" face="Courier New" size="2">110</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;exit</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" face="Courier New" size="2">;</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#008000" face="Courier New" size="2">{ the
+ age range is OK, nothing else to do }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">else</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
+	 margin-left: 12px;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#0000FF" face="Courier New" size="2">errmsg</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">&quot;Person
+ %d, has incorrect age: %d&quot;</font><font style="font-family: 'Courier New';
+											 font-size: 10pt;" face="Courier New"
+											 size="2">, $);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">So
+ what does this code do? If a personâ€™s age is in the range from 0 to 110
+ (â€˜0' is for infants born less than 12 months before the Census reference
+ date), then the value is accepted as valid and program flow exits the
+ procedure. If not, then the value is either outside this range or missing,
+ in which case the subsequent</font> <a href="errmsg_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">errmsg
+ statement</font></a> <font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">will be executed, showing
+ the reported age for Person N.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">More
+ involved edits may be needed for other variables. For example, fertility
+ information is only asked of a female of a certain age. So if fertility
+ information is present, you may wish to confirm the values of other variables.
+ A possible test could be as follows:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">FERTILITY</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">FERTILITY</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">in</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#FF0000" face="Courier New"
+													 size="2">0</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">:</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#FF0000" face="Courier New" size="2">20</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#008000"
+														 face="Courier New"
+														 size="2">{ there
+ are 0-20 children }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">sex
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+				 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#0000FF"
+															 face="Courier New"
+															 size="2">then</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{if sex = male}</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">errmsg</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">&quot;male
+ has fertility info present&quot;</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">);</font> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+	 face="Courier New" size="2">{message displayed}</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">reenter</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#008000" face="Courier New" size="2">{operator
+ must enter valid value}</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;else</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#008000" face="Courier New" size="2">{sex
+ is not male}</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">if</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">sex =</font> <font style="font-family: 'Courier New';
+									 font-size: 10pt;" color="#FF0000"
+									 face="Courier New" size="2">2</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#008000"
+														 face="Courier New"
+														 size="2">{if sex
+ = female, check womanâ€™s age }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">if</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">age &lt;</font> <font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#FF0000"
+										 face="Courier New" size="2">15</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#008000"
+														 face="Courier New"
+														 size="2">{ 15
+ = minimum age for fertility }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">errmsg</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#FF00FF" face="Courier New"
+													 size="2">(&quot;woman
+ is too young (%d) to have children&quot;</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 face="Courier New"
+														 size="2">, age);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">endif</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';">&#160;&#160;&#160;&#160;<font color="#0000FF">endif</font>;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';">&#160;&#160;<span style="color: #0000ff;">endif;</span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">else</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#008000" face="Courier New"
+													 size="2">{ Fertility
+ is blank }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 face="Courier New"
+															 size="2">sex
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+				 face="Courier New" size="2">2</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#0000FF"
+															 face="Courier New"
+															 size="2">then</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{ a problem if the woman is &quot;of
+ age&quot; }</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">if</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">age &gt;=</font> <font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#FF0000"
+										 face="Courier New" size="2">15</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">errmsg</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">&quot;woman
+ aged %d should have fertility info&quot;</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 face="Courier New"
+														 size="2">, age);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;&#160;&#160;</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">endif</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">&#160;&#160;</font><font style="font-family: 'Courier New';
+										 font-size: 10pt;" color="#0000FF"
+										 face="Courier New" size="2">endif</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">As
+ you see, the complexity of the logic used to find (and soon, correct!)
+ errors will depend on the specifications provided. In the case where specifications
+ are minimal, it is important that the programmer consider all situations/paths
+ in developing the logic.</font></p>
+</body>
+</html>

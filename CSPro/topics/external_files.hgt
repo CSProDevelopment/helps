@@ -1,0 +1,154 @@
+﻿<title>External Files</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">External Files</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">An external file is a text file other than the primary data
+ file that you can use in a data entry or batch application. You can read
+ and/or write to external files, using CSPro logic. You must create a data
+ dictionary that describes the format of any external file you want to
+ use. An external file dictionary can contain only one level.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">You can share external files across a network. If an external
+ file is accessed only by read functions</font> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">(</font><a
+	 href="loadcase_function.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">loadcase</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
+ <a href="locate_function.html"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">locate</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
+ <a href="find_function.html"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">find</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
+ <a href="key_function.html"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">key</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
+ <a href="retrieve_function.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">retrieve</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">)</font><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">, no special programming actions need to be taken to share
+ the file. Multiple users can read the file at any time.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">However, if an external file is accessed by any write functions</font>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">(</font><a
+	 href="writecase_function.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">writecase</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">or</font>
+ <a href="delcase_function.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">delcase</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">)</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">only one user at a time may use the file. For write functions,
+ the external file is like a file in a filing cabinet. When one person
+ has taken out the file for use, no one else can use the file until the
+ person has returned it.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
+ can control when the file is in use by coding</font> <a href="open_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">open</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">and</font>
+ <a href="close_function.html"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">close</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">functions.
+ The file is in use between the execution of the</font> <b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">open</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">and
+ the</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+					 face="Arial" size="2">close</font></b> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">function. This gives you complete
+ control over when the file is in use. You should try to minimize the time
+ the file is in use in order to allow other users to access the file.</font></p>
+<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">open</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">and</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">close</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">functions
+ are</font> <u><font style="font-family: Arial; font-size: 10pt; text-decoration: underline; "
+					 face="Arial" size="2">not</font></u> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">coded for an external file
+ used for writing, the following &quot;open&quot; and &quot;close&quot;
+ rules apply:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">â€¢&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ batch processing, the file is opened at the beginning of the run and closed
+ at the end.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.50pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">â€¢&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ data entry processing, the file is opened just before any external file
+ function is executed and is closed immediately following the function,
+ unless one of the following functions is used on the file:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;-&#160;</font><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">loadcase</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">without
+ a</font> <i><font style="font-family: Arial; font-size: 10pt; font-style: italic;"
+					 face="Arial" size="2">var-list</font></i></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;-&#160;</font><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">retrieve</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;-&#160;</font><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">key</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
+ any of the above functions is used, the file is opened just before the
+ first file function is executed, but is left open after the function is
+ completed. These functions depend on remembering the current position
+ of the file. If the file is closed, the current position is lost.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">See also:</font></b> <a href="add_files_to_an_application.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Insert
+ or Drop a File from an Application</font></a><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 color="#000000" face="Arial"
+													 size="2">,</font>
+ <a href="lookup_files.html"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">Lookup Files</font></a></p>
+</body>
+</html>

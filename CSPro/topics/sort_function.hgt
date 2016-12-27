@@ -1,0 +1,94 @@
+﻿<title>Sort Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Sort</font></b> <b><font style="font-family: Arial;
+													 font-size: 18pt; font-weight: bold;"
+													 face="Arial" size="5">Function</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New';" face="Courier New">b =</font>
+ <b><font style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
+			 face="Courier New">sort</font></b><font style="font-family: 'Courier New';"
+													 face="Courier New">(group</font>
+ <b><font style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
+			 face="Courier New">using</font></b> <span><font style="font-family: 'Courier New';"
+															 color="#FF00FF"
+															 face="Courier New">[</font></span><span
+	 style="font-family: 'Courier New', monospace;">-</span><font style="font-family: 'Courier New';"
+	 color="#FF00FF" face="Courier New">]</font><font style="font-family: 'Courier New';"
+														 face="Courier New">item</font>
+ <font style="font-family: 'Courier New';" color="#FF00FF" face="Courier New">[</font><b><font
+	 style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
+	 face="Courier New">where</font></b> <font style="font-family: 'Courier New';"
+												 face="Courier New">condition</font><font
+	 style="font-family: 'Courier New';" color="#FF00FF" face="Courier New">]</font><font
+	 style="font-family: 'Courier New';" face="Courier New">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Description:</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
+ <b><font style="font-weight: bold;">sort</font></b> function will sort
+ occurrences of records or items based on the value of an item. It will
+ order the multiple records or items in the specified group in ascending
+ sequence <b><font style="font-weight: bold;">using</font></b> the specified
+ data item as the sort key. The sort key item must be contained within
+ the record or item sorted. If a dash (<span style="font-weight: bold;">negative
+ sign</span>) is included before the item name, the sort will be in descending
+ order. If a <b><font style="font-weight: bold;">where</font></b> condition
+ is included, the function sorts only the occurrences for which the condition
+ is true.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Sort</font></b> <font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">is primarily
+ intended for use in batch applications. It should be used with extreme
+ caution in data entry applications because of possible conflicts between
+ the operatorâ€™s actions and the program logic.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Return value:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The function returns a logical value 1 (true) if successful
+ and 0 (false) otherwise.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Example 1:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><font color="#0000FF">sort</font>(PERSON
+ <font color="#0000FF">using</font> LINE_NUM);</p>
+<p style="font-family: Arial, sans-serif; font-weight: bold; margin-left: 12px;
+	 text-indent: -12px;"><b><font style="font-weight: bold;">E</font></b>xample
+ 2:<br />
+<span style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New';
+		 font-weight: normal;"><font color="#000000"><font color="#008000">//&#160;sort
+ the children by age from oldest to youngest<br />
+</font><font color="#0000FF">sort</font>(PERSON <font color="#0000FF">using</font>
+ -AGE <font color="#0000FF">where</font> RELATIONSHIP = <font color="#FF0000">3</font>);</font></span></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-weight: bold;">See also:</font></b> <a href="Swap_Function.html">Swap
+ Function</a></p>
+</body>
+</html>

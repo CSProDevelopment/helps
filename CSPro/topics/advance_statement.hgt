@@ -1,0 +1,189 @@
+﻿<title>Advance Statement</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Advance</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Statement</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Format 1:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">advance</font></b> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">[</font><b><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-weight: bold;"
+													 color="#0000FF" face="Courier New"
+													 size="2">to</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">]</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">field-name;
+ &#160;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Format 2:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">advance</font></b> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">[</font><b><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-weight: bold;"
+													 color="#0000FF" face="Courier New"
+													 size="2">to</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">]</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" face="Courier New"
+												 size="2">alpha-variable;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#FF00FF" face="Arial"
+	 size="2">[ ]</font> <font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">indicates that this
+ part is optional.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Description:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">advance</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">statement
+ moves forward field-by-field to the specified field, executing</font>
+ <a href="preproc_statement.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">preprocs</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">and</font>
+ <a href="postproc_statement.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">postprocs</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">as
+ it goes. It acts as though the</font> <b><font style="font-family: Arial;
+												 font-size: 10pt; font-weight: bold;"
+												 face="Arial" size="2">Enter</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">key
+ were pressed repeatedly until either the specified field appears or one
+ of the procedures executed during the advance goes to a different field.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ field name can be given directly by naming the field or indirectly by
+ using the contents of an alpha variable.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Field
+ name can be located in any record at the same level as the current field,
+ but it cannot be located at a different level. Field name must be the
+ name of a field that has not yet been entered. If field name has already
+ been entered, an error message will be displayed during data entry and
+ data entry will be aborted. If you don't know whether the field has already
+ been entered, use the</font> <a href="move_statement.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">move</font></a> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">statement.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Note
+ that the</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+							 face="Arial" size="2">advance</font></b> <font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">statement
+ behaves differently from the</font> <a href="skip_statement.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">skip</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">statement.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">FIRST_WOMAN =</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#FF0000"
+															 face="Courier New"
+															 size="2">0</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">do</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">i
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+				 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#0000FF"
+															 face="Courier New"
+															 size="2">while</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+		 face="Courier New" size="2">i &lt;=</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#0000FF"
+															 face="Courier New"
+															 size="2">totocc</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(PERSON)</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#000000"
+															 face="Courier New"
+															 size="2">SEX(I)
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+				 face="Courier New" size="2">2</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#0000FF"
+															 face="Courier New"
+															 size="2">then</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;FIRST_WOMAN =
+ i;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;advance to</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+		 face="Courier New" size="2">CHILD;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;endif</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#000000" face="Courier New" size="2">;</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">enddo</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#000000" face="Courier New"
+													 size="2">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">See also:</font></b> <a href="move_statement.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Move
+ Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">,</font>
+ <a href="reenter_statement.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">Reenter
+ Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">,</font>
+ <a href="skip_statement.html"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">Skip Statement</font></a></p>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<title>Multiple Language Dictionaries</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h4 style="margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font style="font-family: Arial;
+	 font-size: 18pt; font-weight: bold;" face="Arial" size="5">Multiple
+ Language Dictionaries</font></b></h4>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">It is possible to specify your dictionary's labels
+ in more than one language. To do this, while editing your dictionary,
+ select Edit -&gt; Languages. You can add a language the same way that
+ you <a href="define_languages.html">define CAPI languages</a>. Once your
+ application has more than one language, a toolbar will appear showing
+ the names of the languages:</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt; text-align: center;"><img src="dictLanguages.png"
+												 alt="" style="border: none;"
+												 border="0" /></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt; text-align: center;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">Each language has its own set of labels for all
+ of the dictionary elements (record labels, item labels, value labels,
+ occurrence labels, etc.). If a label is not defined for a given language,
+ the label will default to the label for the first language. To simplify
+ the editing of labels, you can press the keyboard shortcut Control + Alt
+ + L to change between the languages.</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">When adding items to your data entry forms, you
+ can specify that the field labels should be <a href="change_field_properties.html">directly
+ linked to the dictionary label</a>. This default setting ensures that
+ the field labels change when the user changes the language during data
+ entry.</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">For your application to fully take advantage of
+ multiple language dictionaries, you must define the languages that you
+ would like to use in the CAPI language section. When running your data
+ entry program, CSEntry will only list languages defined in the CAPI section.
+ In this way, changing a language will change both the CAPI language text
+ as well as the dictionary labels used.</p>
+</body>
+</html>

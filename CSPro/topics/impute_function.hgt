@@ -1,0 +1,520 @@
+﻿<title>Impute Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Impute</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Function</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Format</font></b><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">impute</font></b> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(item-name, expression)</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;[</font><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">stat</font></b> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(item-name1, item-name2,....,item-nameN)</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">]</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;[</font><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">title</font></b> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(alpha-expression)</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">]</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;[</font><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">vset</font></b> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(vset-number)</font><font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#FF00FF"
+															 face="Courier New"
+															 size="2">]</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">&#160;&#160;&#160;&#160;[</font><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">specific</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">]</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#FF00FF" face="Arial"
+	 size="2">&#160;[ ]</font> <font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">indicates
+ that this part is optional.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Description</font></b><font style="font-family: Arial; font-size: 10pt;"
+											 face="Arial" size="2">:</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">impute</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">statement
+ assigns a value to a data item and logs the frequency of assignments.</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">The parameters are:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">&#160;â€¢&#160;</font></b><b><font style="font-family: Arial;
+															 font-size: 10pt;
+															 font-weight: bold;"
+															 color="#000000"
+															 face="Arial"
+															 size="2">item_name</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">:</font></p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The dictionary data item to impute. The item must be numeric,
+ with or without decimals, and can be single or multiple. If the item is
+ multiple and is being used</font> <u><font style="font-family: Arial;
+											 font-size: 10pt; text-decoration: underline; "
+											 color="#000000" face="Arial"
+											 size="2">inside</font></u>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">its PROC, the current occurrence is assumed. If the item
+ is multiple and is being referenced</font> <u><font style="font-family: Arial;
+													 font-size: 10pt; text-decoration: underline; "
+													 color="#000000" face="Arial"
+													 size="2">outside</font></u>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">its PROC, an occurrence must be specified. Occurrence
+ numbers are 1-based.</font></p>
+<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">&#160;â€¢&#160;</font></b><b><font style="font-family: Arial;
+															 font-size: 10pt;
+															 font-weight: bold;"
+															 color="#000000"
+															 face="Arial"
+															 size="2">expression</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">:</font></p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -8.10pt;"><b><font style="font-family: Arial; font-size: 10pt;
+									 font-weight: bold;" color="#000000"
+									 face="Arial" size="2">&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">I</font><font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">s a
+ variable name, a number, or an arithmetic expression; for example, 'TEMPAGE',
+ â€˜5â€™, or â€˜2+3â€™.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">The
+ options are:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">&#160;â€¢&#160;</font></b><b><font style="font-family: Arial;
+															 font-size: 10pt;
+															 font-weight: bold;"
+															 color="#000000"
+															 face="Arial"
+															 size="2">STAT</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">(item_name1[, item_name2]):</font></p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">T</font><font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">ells
+ the system to generate the secondary .dcf and .dat files. These files
+ contain references to the data items that were changed; i.e., identifying
+ ID values, the data item being imputed, and each subsequent data item
+ named in the</font> <b><font style="font-family: Arial; font-size: 10pt;
+								 font-weight: bold;" color="#000000" face="Arial"
+								 size="2">stat</font></b> <font style="font-family: Arial;
+	 font-size: 10pt;" color="#000000" face="Arial" size="2">parameter
+ list.</font></p>
+<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">&#160;â€¢&#160;</font></b><b><font style="font-family: Arial;
+															 font-size: 10pt;
+															 font-weight: bold;"
+															 color="#000000"
+															 face="Arial"
+															 size="2">TITLE</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">(alpha_expr):</font></p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Under the &quot;IMPUTE STATISTICS&quot; heading at the top
+ of each page, this line will replace the default line that is generated
+ (&quot;IMPUTED Item (&lt;unique name of data item&gt;): &lt;label name
+ of data item&gt;&quot;).</font></p>
+<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">&#160;â€¢&#160;</font></b><b><font style="font-family: Arial;
+															 font-size: 10pt;
+															 font-weight: bold;"
+															 color="#000000"
+															 face="Arial"
+															 size="2">VSET</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">(vset_number):</font></p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">I</font><font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">s the
+ 1-based value set number of the item being imputed (i.e., impute_item_name),
+ and corresponds to the order of listing in the data dictionary (i.e.,
+ the first value set of an item will be number 1, the second value set
+ will be number 2, etc). This may yield a different number of frequencies
+ than what occurred when not using this option. For example, if you are
+ imputing &quot;age&quot;, and do</font> <u><font style="font-family: Arial;
+													 font-size: 10pt; text-decoration: underline; "
+													 color="#000000" face="Arial"
+													 size="2">not</font></u>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">use the VSET option, your report will show the total
+ number of imputations that occurred. However, if you use the VSET option,
+ and the value set you choose does not list all possible values, then the
+ total number of imputations listed in the frequency report will most likely
+ be less than that given if you did not use this option.</font></p>
+<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">&#160;â€¢&#160;</font></b><b><font style="font-family: Arial;
+															 font-size: 10pt;
+															 font-weight: bold;"
+															 color="#000000"
+															 face="Arial"
+															 size="2">SPECIFIC</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">:</font></p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">I</font><font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">ndicates
+ if the frequency will be generated alone or not. You can have multiple</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 color="#000000" face="Arial" size="2">impute</font></b> <font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">statements for a single data item. If you do this, you may
+ want to have frequency reports separated for each</font> <b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
+	 size="2">impute</font></b><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">.
+ If</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+					 color="#000000" face="Arial" size="2">specific</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">is not used, all imputations for a given data item will
+ be lumped together in the frequency report.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 color="#000000" face="Arial" size="2">impute</font></b> <font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">command can generate up to three files:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;&#160;&lt;xxx&gt;.frq</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">&#160;&lt;xxx&gt;.dat
+ (only generated if the STAT option is used)</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">&#160;&lt;xxx&gt;.dcf
+ (only generated if the STAT option is used)</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">where XXX corresponds to the name of the data file used in
+ the run. These files will be placed in the directory where the .bch application
+ is located.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">The
+ format of the report contained in the .frq file is divided up into five
+ columns as follows:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<table style="margin-left: 27.00pt; border-collapse: separate; border-collapse: separate;"
+		 cellspacing="0" width="417" border="1">
+	<tr style="vertical-align: top;">
+		<td style="width: 30.84%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+		 style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+		 color="#000000" face="Arial" size="2">Category</font></b></p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+		 style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+		 color="#000000" face="Arial" size="2">Freq</font></b></p></td>
+		<td style="width: 17.46%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+		 style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+		 color="#000000" face="Arial" size="2">CumFreq</font></b></p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+		 style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+		 color="#000000" face="Arial" size="2">Percent</font></b></p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+		 style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+		 color="#000000" face="Arial" size="2">CumPct</font></b></p>
+		<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 30.84%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">1</font></p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: right; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">3432</font></p></td>
+		<td style="width: 17.46%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: right; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">3432.0</font></p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: right; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">14.8</font></p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: right; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">14.8</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 30.84%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">2</font></p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: right; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">193</font></p></td>
+		<td style="width: 17.46%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: right; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">3625.0</font></p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: right; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">0.8</font></p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: right; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">15.7</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 30.84%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">:</font></p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="width: 17.46%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="width: 17.23%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+	</tr>
+</table>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<table style="margin-left: 9.00pt; border-collapse: separate; border-collapse: separate;"
+		 cellspacing="0" width="583" border="1">
+	<tr style="vertical-align: top;">
+		<td style="width: 20.58%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Column
+		 one:</font></p></td>
+		<td style="width: 79.42%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">lists
+		 the values that were assigned during the imputations (1, 2, etc)</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 20.58%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Column
+		 two:</font></p></td>
+		<td style="width: 79.42%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">shows
+		 the frequency (that is, the total number of times) each value
+		 was assigned (i.e., number â€˜2â€™ was assigned 193 times)</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 20.58%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Column
+		 three:</font></p></td>
+		<td style="width: 79.42%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">displays
+		 cumulative totals of the &quot;Freq&quot; column</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 20.58%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Column
+		 four:</font></p></td>
+		<td style="width: 79.42%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">indicates
+		 what percentage each imputation represents from the total number
+		 of imputations made (i.e., number â€˜2â€™ was imputed 193 times, representing
+		 barely one percent (0.8) of the total number of imputations made)</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 20.58%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Column
+		 five:</font></p></td>
+		<td style="width: 79.42%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">lists
+		 the cumulative totals of the &quot;Percent&quot; column</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p></td>
+	</tr>
+</table>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+									 font-weight: bold;" face="Arial" size="2">Example</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">:</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#0000FF" face="Courier New"
+									 size="2">impute</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#000000" face="Courier New" size="2">(P04_AGE,
+ TEMPAGE)</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+						 color="#0000FF" face="Courier New" size="2">title</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#FF00FF" face="Courier New" size="2">&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">Age updated via TempAge</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">)</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#0000FF"
+												 face="Courier New" size="2">vset</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(2);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+									 font-weight: bold;" color="#000000"
+									 face="Arial" size="2">Code Example:</font></b></p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">A code example of this statement can be found in the</font>
+ <i><font style="font-family: Arial; font-size: 10pt; font-style: italic;"
+			 color="#000000" face="Arial" size="2">Examples/Impute</font></i>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">folder in the CSPro software folder.</font></p>
+</body>
+</html>

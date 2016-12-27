@@ -1,0 +1,85 @@
+﻿<title>Android Development</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h4 style="margin-top: 6.00pt; margin-bottom: 2.00pt; font-family: Arial, sans-serif;
+	 font-weight: bold; font-size: 18pt;"><b><font style="font-weight: bold;">Android
+ Dev</font></b><b><font style="font-weight: bold;">elopment</font></b></h4>
+<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;
+	 font-weight: bold;">Overview</p>
+<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">CSEntry,
+ CSPro's data collection tool, is available as an Android application from
+ the <a href="https://play.google.com/store/apps/details?id=gov.census.cspro.csentry"
+		 style="font-family: Arial, sans-serif; font-size: 10pt;">Google
+ Play store</a>. This application can be used to run data entry applications
+ on devices such as phones or tablets running Android version 4.0 (Ice
+ Cream Sandwich) or higher. CSPro data entry applications can be designed
+ on Windows machines and then run on either Windows or Android devices.
+ This is a &quot;build once, deploy many&quot; system, whereby the running
+ behavior across the two operating systems is very similar, so you have
+ the freedom to decide what device you want to use to conduct <a href="introduction_to_capi.html">CAPI
+ surveys</a> using CSEntry.</p>
+<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">In
+ the Android environment you will only be able to run binary data entry
+ applications (<a href="Binary_Data_Entry_Application_File_ENC.htm" style="font-family: Arial, sans-serif;
+					 font-size: 10pt;">.pen</a> files). You will not be
+ able to execute .ent files or any other kind of CSPro application (concatenation,
+ batch processing, etc.). This .pen file, along with the .pff runtime script,
+ constitute the two files needed to run a data entry application on an
+ Android device.</p>
+<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">All
+ applications on the Android device must be stored in the &lt;external
+ storage&gt;/csentry/ folder on your device. Connect your Android device
+ to your computer and, via USB transfer, copy your .pen and .pff files
+ to the Android device. Generally the device's external storage is its
+ SD card. If you have already run the CSEntry application, the csentry
+ folder will have been automatically created for you. Otherwise, you must
+ create it manually before copying over any .pen and .pff files. The application
+ searches subdirectories located in the csentry folder, so it is possible
+ to add multiple applications while maintaining a clean directory structure.</p>
+<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">You
+ can also transfer applications to your device by using the <a href="Data_Synchronization.html">data
+ synchronization</a> features for Android.</p>
+<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;
+	 font-weight: bold;">Data Security</p>
+<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">As
+ in the Windows environment, the Android application does not encrypt data
+ files, but simply stores all data in plain UTF-8 encoded text files. Fortunately,
+ it is easy to encrypt an Android device so that all files stored on it
+ are encrypted. If you do not want your data to be stored in plaintext,
+ on your Android device:</p>
+<ol style="list-style: decimal; font-family: Arial, sans-serif; font-size: 10pt;">
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p class="MsoNormal"
+		 style="text-indent: -.25in; mso-list: l0 level1 lfo1; margin-left: 0.25in;
+		 margin-top: 0pt; margin-bottom: 0pt;">Go to Settings.</p></li>
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p class="MsoNormal"
+		 style="text-indent: -.25in; mso-list: l0 level1 lfo1; margin-left: 0.25in;
+		 margin-top: 0pt; margin-bottom: 0pt;"><span style="text-indent: -.25in;
+													 mso-list: l0 level1 lfo1;">Under
+	 the Personal group of options, select Security.</span></p></li>
+	<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p class="MsoNormal"
+		 style="text-indent: -.25in; mso-bidi-font-family: Calibri; mso-bidi-theme-font: minor-latin;
+		 mso-list: Ignore; margin-left: 0.25in; margin-top: 0pt; margin-bottom: 0pt;">Select
+	 the Encrypt Phone option and follow the subsequent instructions.</p></li>
+</ol>
+<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">Encrypting
+ the phone will require that you supply a PIN or password to protect the
+ data on the phone.</p>
+<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;
+	 font-weight: bold;">Differences Between Windows and Android</p>
+<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">The
+ Android application only displays one question per screen. A future release
+ may allow the displaying of rosters and multiple fields on a single screen.
+ In addition, though most functions operate identically on the Windows
+ and Android platforms, there are a few functions that behave differently,
+ such as <a href="Execsystem_Function_(Android).html">execsystem</a>. Notes
+ about differing functionality are noted in the help documents about each
+ function.</p>
+</body>
+</html>

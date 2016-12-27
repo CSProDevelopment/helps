@@ -1,0 +1,102 @@
+﻿<title>Locate Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Locate</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Function</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New', monospace;">&#160;b = <b><font style="font-weight: bold;"
+	 color="#0000FF">locate</font></b>(<i><font style="font-style: italic;">ext-dict-name</font></i>,
+ <i><font style="font-style: italic;">rel-op</font></i>, <i><font style="font-style: italic;">alpha-exp</font></i>);</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Description:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">locate</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">function
+ finds, but does not load, a case in an external file that matches a specified
+ condition. This function searches the index of an external file and finds
+ the first case that matches the specified condition. The file pointer
+ is positioned to the case's location, but the case is not loaded into
+ memory.</font> <font style="font-family: Arial; font-size: 10pt;" color="#000000"
+						 face="Arial" size="2">To load the case into memory,
+ use the</font> <a href="retrieve_function.html"><font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">retrieve</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">function after the locate function.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <i><font style="font-family: Arial; font-size: 10pt; font-style: italic;"
+			 face="Arial" size="2">ext-dict-name</font></i> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">must be supplied. It is the
+ internal name of the dictionary defined in the application for the external
+ file.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <i><font style="font-family: Arial; font-size: 10pt; font-style: italic;"
+			 face="Arial" size="2">rel-op</font></i> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">is
+ one of the following relational operators: =, &lt;, &lt;=, &gt;, or &gt;=.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <i><font style="font-family: Arial; font-size: 10pt; font-style: italic;"
+			 face="Arial" size="2">alpha-exp</font></i> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">is an alphanumeric expression
+ that specifies a set of case identifiers or a key. If the relational operators
+ are &lt; or &lt;=, then the file is positioned at the case with the largest
+ key which satisfies the condition. If the relational operators are &gt;
+ or &gt;=, then the file is positioned at the case with the smallest key
+ which satisfies the condition.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Return value:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The function returns a logical value of 1 (true) if a case
+ is found and 0 (false) otherwise.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New', monospace;">OK = <font color="#0000FF">locate</font>(CODE,&gt;=,<span
+	 style="color: #ff00ff;">&quot;10100201&quot;</span>);</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">See also:</font></b> <a href="find_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Find
+ Function</font></a></p>
+</body>
+</html>

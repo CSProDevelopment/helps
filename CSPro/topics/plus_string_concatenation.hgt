@@ -1,0 +1,68 @@
+﻿<title>Plus String Concatenation</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h4 style="margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font style="font-family: Arial;
+	 font-size: 18pt; font-weight: bold;" face="Arial" size="5">String
+ Concatenation Operator</font></b></h4>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">In addition to serving as the addition operator
+ for numeric values, the + operator can be used to concatenate strings,
+ similar to the <a href="concat_function.html">concat</a> function. For
+ example, both lines of code below will give the same result:</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New';
+	 font-size: 10pt;"><font color="#0000FF">PROC</font> <font color="#0000FF">GLOBAL</font><br />
+<br />
+<font color="#0000FF">string</font>&#160;&#160;text1 = <font color="#FF00FF">&quot;Hello&quot;</font>,<br />
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;text2 = <font color="#FF00FF">&quot;World!&quot;</font>;<br />
+<br />
+<font color="#0000FF">PROC</font> EXAMPLE<br />
+<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">string</font> messagePlus
+ = text1 + <font color="#FF00FF">&quot;, &quot;</font> + text2;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New';
+	 font-size: 10pt;"><br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">string</font> messageConcat
+ = <font color="#0000FF">concat</font>(text1,<font color="#FF00FF">&quot;,
+ &quot;</font>,text2);</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">The + operator is a convenient way to build strings
+ and can be used along with other functions that return alphanumeric values.</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt; font-weight: bold;">Example:</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-weight: normal;
+	 font-family: 'Courier New';">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-weight: normal;
+	 font-family: 'Courier New';"><font color="#000000"><font color="#0000FF">PROC</font>
+ <font color="#0000FF">GLOBAL</font><br />
+<br />
+<font color="#0000FF">string</font> message;<br />
+<font color="#0000FF">numeric</font> counter;<br />
+<br />
+<font color="#0000FF">PROC</font> EXAMPLE<br />
+<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">do</font> counter = <font
+	 color="#FF0000">1</font> <font color="#0000FF">while</font> counter
+ &lt;= <font color="#FF0000">13</font> <font color="#0000FF">by</font>
+ <font color="#FF0000">2</font><br />
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;message = message + <font
+	 color="#0000FF">edit</font>(<font color="#FF00FF">&quot;99 &quot;</font>,counter);<br />
+&#160;&#160;&#160;&#160;<font color="#0000FF">enddo</font>;<br />
+&#160;&#160;&#160;&#160;<br />
+&#160;&#160;&#160;&#160;<font color="#008000">//&#160;message is now: &quot;01
+ 03 05 07 09 11 13&quot;</font></font></p>
+</body>
+</html>

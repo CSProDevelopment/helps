@@ -1,0 +1,111 @@
+﻿<title>Use Hot Decks</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Use Hot Decks</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Hot
+ decks in CSPro are implemented using arrays. First, you must declare the
+ array under the</font> <a href="the_cspro_program_structure.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">PROC
+ GLOBAL</font></a> <font style="font-family: Arial; font-size: 10pt;" face="Arial"
+						 size="2">section. Then you need to set the initial
+ values for the hot deck array. There are two ways to initialize and maintain
+ arrays in CSPro:</font> <font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2"><a href="initialize_hot_decks_in_program_logic.html">inline
+ (in program logic)</a>, or using</font> <font style="font-family: Arial;
+												 font-size: 10pt;" face="Arial"
+												 size="2"><a href="initialize_hot_decks_using_saved_arrays.html">saved
+ arrays</a>.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Once
+ the array has been declared and initialized, you need to add logic to
+ check each occurrence of the variable you wish to impute using the hot
+ deck. If the value of the variable is valid, update the hot deck by assigning
+ this value to the appropriate cell in the array. If the value is invalid,
+ set the value of the variable based on the corresponding cell in the hot
+ deck. For example:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#0000FF" face="Courier New"
+									 size="2">PROC AGE</font></p>
+<table style="margin-left: 13.50pt; border-collapse: separate; border-collapse: separate;"
+		 cellspacing="0" width="696" border="1">
+	<tr style="vertical-align: top;">
+		<td style="width: 56.90%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">AGE =</font>
+		 <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+				 face="Courier New" size="2">notappl</font> <font style="font-family: 'Courier New';
+		 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">then</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">&#160;&#160;impute</font><font style="font-family: 'Courier New';
+		 font-size: 10pt;" face="Courier New" size="2">(AGE, AgeSRDeck(SEX,
+		 RELATIONSHIP));</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">else</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">&#160;&#160;AgeSRDeck(SEX, RELATIONSHIP)= AGE</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 face="Courier New"
+														 size="2">;</font></p></td>
+		<td style="width: 43.10%; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000;
+			 border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000;
+			 padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px;"><p
+			 style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{if the value for age is not valid}</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{assign the value from the hot deck
+		 based on sex and relationship}</font></p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+		<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+		 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
+		 face="Courier New" size="2">{update the value of the hot deck}</font></p></td>
+	</tr>
+</table>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
+ an age is missing during the data fileâ€™s processing, we will use a value
+ from the array AgeSRDeck; if the age is present, we will &quot;refresh&quot;
+ the age for the person using the current sex and relationship codes as
+ indices into the array.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">If
+ you wish to use <a href="dynamic_imputation_hot_deck_.html">hot decks</a>
+ in your application, refer to examples directory. For a more detailed
+ explanation of what hot decks are, refer to the United Nations <a href="http://unstats.un.org/unsd/publication/SeriesF/seriesf_82rev1e.pdf">Handbook
+ on Population and Housing Census Edits</a><i><font style="font-style: italic;">.</font></i></p>
+</body>
+</html>

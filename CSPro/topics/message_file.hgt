@@ -1,0 +1,259 @@
+﻿<title>Message File</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Message File</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The message file for a data entry application stores the
+ error message text that is displayed during data entry. The message file
+ for a batch application stores the error message text that will be included
+ in the execution report. The message file has the filename &lt;application-name&gt;</font><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">.msg</font><font style="font-family: Arial; font-size: 10pt;"
+								 color="#000000" face="Arial" size="2">.
+ During data entry design, the message text is modified at the bottom of
+ the logic screen.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;Basic Messages</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Each line in the message file contains one message. A message
+ consists of a message number followed by text. The message text can be
+ up to 240 characters long. It is displayed on the entry screen when an</font>
+ <a href="errmsg_function.html"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">errmsg function</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">with the message number is executed in a data entry application.
+ It is written to the execution report when an errmsg function with the
+ message number is executed in a batch application.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">For
+ example, suppose a message file contains the following lines:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Courier; font-size: 10pt;" color="#000000" face="Courier"
+	 size="2">&#160;</font><font style="font-family: Courier; font-size: 10pt;"
+								 color="#FF0000" face="Courier" size="2">1</font>
+ <font style="font-family: Courier; font-size: 10pt;" color="#000000" face="Courier"
+		 size="2">This is the first message</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Courier; font-size: 10pt;" color="#000000" face="Courier"
+	 size="2">&#160;</font><font style="font-family: Courier; font-size: 10pt;"
+								 color="#FF0000" face="Courier" size="2">2</font>
+ <font style="font-family: Courier; font-size: 10pt;" color="#000000" face="Courier"
+		 size="2">This is the second message</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">When an errmsg(1) function is executed in a data entry application,
+ the message &quot;This is the first message&quot; is displayed on screen.
+ When an errmsg(2) function is executed, the message &quot;This is the
+ second message&quot; will be displayed on screen.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;Messages with Parameters</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">Parameters can be specified in the</font> <a href="errmsg_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">errmsg
+ function</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">. These
+ parameters can be numeric expressions or string expressions. String parameters
+ in the error message text are indicated by</font> <b><font style="font-family: Arial;
+															 font-size: 10pt;
+															 font-weight: bold;"
+															 color="#000000"
+															 face="Arial"
+															 size="2">%s</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">. Integer numeric parameters are indicated with</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">%d</font></b><font style="font-family: Arial;
+												 font-size: 10pt;" color="#000000"
+												 face="Arial" size="2">.
+ Decimal numeric parameters are indicated with</font> <b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
+	 size="2">%f</font></b><font style="font-family: Arial; font-size: 10pt;"
+								 color="#000000" face="Arial" size="2">.
+ Any number of different messages can be</font> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">included
+ in the message file. The</font> <b><font style="font-family: Arial; font-size: 10pt;
+											 font-weight: bold;" face="Arial"
+											 size="2">errmsg</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">function
+ can be used in any dictionary, form, group, or field procedure, or in
+ a user-defined function. The maximum number of parameters in an</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">errmsg</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">function
+ is 20.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">For
+ example, an error message file might contain the following:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">&#160;1</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#000000"
+														 face="Courier New"
+														 size="2">The month
+ of %s has only %d days. You entered %d!</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">The
+ application could use this as follows:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Courier; font-size: 10pt;" color="#000000" face="Courier"
+	 size="2">&#160;</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#000000" face="Courier New" size="2">x
+ =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+				 face="Courier New" size="2">errmsg</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#000000" face="Courier New" size="2">(</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">&quot;June&quot;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#000000" face="Courier New" size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">30</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">,</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
+	 face="Courier New" size="2">31</font><font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#000000"
+												 face="Courier New" size="2">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">When the errmsg function is executed, it knows to use error
+ message &quot;1&quot;, and substitute the word</font> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 color="#FF00FF"
+															 face="Arial"
+															 size="2">&quot;June&quot;</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">for</font> <b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">%s</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">in the message text, the number</font> <font style="font-family: Arial;
+	 font-size: 10pt;" color="#FF0000" face="Arial" size="2">30</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">for the first</font> <b><font style="font-family: Arial;
+												 font-size: 10pt; font-weight: bold;"
+												 color="#000000" face="Arial"
+												 size="2">%d</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">, and</font> <font style="font-family: Arial; font-size: 10pt;"
+								 color="#FF0000" face="Arial" size="2">31</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">for the second</font> <b><font style="font-family: Arial;
+												 font-size: 10pt; font-weight: bold;"
+												 color="#000000" face="Arial"
+												 size="2">%d</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">. The message &quot;The month of June has only 30 days. You
+ entered 31!&quot; will be displayed on the screen.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example:</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The more general the parameters of the message, the more
+ flexible the message. In the example below, the value of the variable
+ HHDAY is used as a parameter. The error message will use the value of
+ HHDAY if the errmsg function is executed.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#0000FF" face="Courier New"
+									 size="2">PROC</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#000000" face="Courier New" size="2">HHDAY</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">if</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+		 face="Courier New" size="2">HHMONTH =</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#FF0000"
+															 face="Courier New"
+															 size="2">6</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">and</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#000000"
+														 face="Courier New"
+														 size="2">HHDAY
+ &gt;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+					 color="#FF0000" face="Courier New" size="2">30</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+		 face="Courier New" size="2">then</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;x =</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">errmsg</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+		 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#FF0000" face="Courier New"
+													 size="2">1</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">,</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#FF00FF"
+												 face="Courier New" size="2">&quot;June&quot;</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">,</font> <font style="font-family: 'Courier New';
+												 font-size: 10pt;" color="#FF0000"
+												 face="Courier New" size="2">30</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">, HHDAY);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#000000" face="Courier New"
+									 size="2">&#160;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">reenter</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">;</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#000000" face="Courier New"
+									 size="2">&#160;</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">endif</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">;</font></p>
+</body>
+</html>

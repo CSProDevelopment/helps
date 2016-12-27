@@ -1,0 +1,113 @@
+﻿<title>Maxocc Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Maxocc</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Function</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">i =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
+									 font-weight: bold;" color="#0000FF"
+									 face="Courier New" size="2">maxocc</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+							 color="#FF00FF" face="Courier New" size="2">[</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">group</font><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#FF00FF" face="Courier New" size="2">]</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;&#160;&#160;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Description:</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">maxocc</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">function
+ returns the maximum number of multiply occurring records or the maximum
+ number of multiply-occurring items defined for a group in the dictionary.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
+ value remains the same throughout the application run.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Return value:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The function returns an integer value of the maximum number
+ of occurrences.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Example 1:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><font color="#0000FF">PROC <span style="color: #000000;">HOUSING</span></font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: 'Courier New';"><font color="#0000FF">&#160;&#160;errmsg</font>(<font
+	 color="#FF00FF">&quot;Maximum number of persons is %d&quot;</font>,
+ <font color="#0000FF">maxocc</font>(PERSON));</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Example 2:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 face="Courier New"
+													 size="2">PERSON</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;errmsg</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">&quot;Maximum
+ number of persons is %d&quot;</font><font style="font-family: 'Courier New';
+											 font-size: 10pt;" face="Courier New"
+											 size="2">,</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">maxocc</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">());</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <a href="curocc_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Curocc
+ Function</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">,</font> <a href="totocc_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Totocc
+ Function</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">,</font> <a href="soccurs_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Soccurs
+ Function</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">,</font> <a href="noccurs_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Noccurs
+ Function</font></a></p>
+</body>
+</html>

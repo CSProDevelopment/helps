@@ -1,0 +1,111 @@
+﻿<title>Getvalue Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><span
+	 style="font-size: 12pt;"><b><font style="font-family: Arial; font-size: 18pt;
+										 font-weight: bold;" color="#0000FF"
+										 face="Arial" size="5">Getvalue</font></b>
+ <b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;"
+			 face="Arial" size="5">Function</font></b></span></h3>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Formats:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">d =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
+									 font-weight: bold;" color="#0000FF"
+									 face="Courier New" size="2">getvalue</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">(<span style="font-style: italic;">alpha-expression</span></font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">[</font><span style="font-style: italic;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,numeric-expressions</font><font style="font-family: 'Courier New';
+												 font-size: 10pt; font-style: normal;"
+												 color="#FF00FF" face="Courier New"
+												 size="2">]</font></span><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">d =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
+									 font-weight: bold;" color="#0000FF"
+									 face="Courier New" size="2">getvaluenumeric</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">(<span style="font-style: italic;">alpha-expression</span></font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">[</font><span style="font-style: italic;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,numeric-expressions</font><font style="font-family: 'Courier New';
+												 font-size: 10pt; font-style: normal;"
+												 color="#FF00FF" face="Courier New"
+												 size="2">]</font></span><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">s =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
+									 font-weight: bold;" color="#0000FF"
+									 face="Courier New" size="2">getvaluealpha</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">(<span style="font-style: italic;">alpha-expression</span></font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
+	 face="Courier New" size="2">[</font><span style="font-style: italic;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">,numeric-expressions</font><font style="font-family: 'Courier New';
+												 font-size: 10pt; font-style: normal;"
+												 color="#FF00FF" face="Courier New"
+												 size="2">]</font></span><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <span style="font-family: Arial; font-size: 10pt; font-weight: bold;">g</span><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">etvalue</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">function
+ returns the value of a variable when the variable name is not known at
+ compilation time (when writing the application). The function searches
+ for the first parameter <span style="font-style: italic;">alpha-expression</span>
+ and then returns the value of a variable with that name, if found. <span
+	 style="font-weight: bold;">Getvalue</span><span> and </span><span
+	 style="font-weight: bold;">getvaluenumeric</span><span> return the
+ value of numeric variables. </span><span style="font-weight: bold;">Getvaluealpha</span><span>&#160;returns
+ the value of an alpha variable. </span>Optional parameters allow you to
+ pass occurrence numbers to the function.</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><font><font color="#000000"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Return value:</font></b></font></font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
+	 font-family: Arial; font-size: 10pt;">The function returns the variable's
+ value if the variable name was found. If a numeric variable was not found,
+ the functions <span style="font-weight: bold;">getvalue</span> and <span
+	 style="font-weight: bold;">getvaluenumeric</span> return DEFAULT.
+ If an alpha variable was not found, <span style="font-weight: bold;">getvaluealpha</span>
+ returns a blank string.</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt;"><font style="font-weight: bold;"><b>Examples:</b></font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2"><font color="#000000"><font color="#0000FF">errmsg</font>(<font
+	 color="#FF00FF">&quot;The current field's value is %d&quot;</font>,<font
+	 color="#0000FF">getvalue</font>(<font color="#0000FF">getsymbol</font>()));</font></font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
+	 style="font-weight: bold;">See also:</font></b> <a href="Setvalue_Function.html">Setvalue
+ Function</a></p>
+</body>
+</html>

@@ -1,0 +1,88 @@
+﻿<title>Sysparm Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Sysparm</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Function</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New';" face="Courier New">s =</font>
+ <b><font style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
+			 face="Courier New">sysparm</font></b><font style="font-family: 'Courier New';"
+														 face="Courier New">(</font><span
+	 style="font-family: 'Courier New';"><font color="#FF00FF">[</font><i><font
+	 style="font-family: 'Courier New'; font-style: italic;" face="Courier New">alpha-exp</font></i><font
+	 color="#FF00FF">]</font></span><font style="font-family: 'Courier New';"
+											 face="Courier New">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Description:</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
+ <b><font style="font-weight: bold;">sysparm</font></b> function returns
+ the value of a parameter provided in a <a href="run_production_data_entry.html">data
+ entry</a> or <a href="run_production_batch_edits.html">batch edit</a> .pff
+ file. The sysparm function returns the passed-in parameter as a left-justified
+ string. If no parameter was given in the .pff file, then <b><font style="font-weight: bold;">sysparm</font></b>
+ returns a blank string.</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">If
+ an alphanumeric expression is provided, <span style="font-weight: bold;">sysparm</span>
+ looks to see if there is a parameter with the given name specified in
+ the [Parameters] section of the .pff file. If such a parameter exists,
+ it is returned as a string. Using this functionality, you can pass several
+ parameters to your programs.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Return value:</font></b></p>
+<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The function returns an alphanumeric string containing the
+ parameter.</font></p>
+<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-weight: bold;"><b><font style="font-weight: bold;">Example (in
+ the .pff file and in logic):</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-weight: bold;
+	 margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New', monospace;
+	 margin-left: 12px; font-weight: bold;"><b><font style="font-weight: bold;">[</font></b>Parameters]</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New', monospace;
+	 margin-left: 12px;">Parameter=Otter</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New', monospace;
+	 margin-left: 12px;">State=20</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New', monospace;
+	 margin-left: 12px;">County=5</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New', monospace;
+	 margin-left: 12px;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New', monospace;
+	 margin-left: 12px;"><span style="color: #0000ff;">errmsg</span>(<font
+	 color="#FF00FF">&quot;%s&quot;</font>,<font color="#0000FF">sysparm</font>());
+ <font color="#008000">//&#160;displays Otter<br />
+</font>STATE = <font color="#0000FF">tonumber</font>(<font color="#0000FF">sysparm</font>(<font
+	 color="#FF00FF">&quot;State&quot;</font>)); <font color="#008000">//&#160;sets
+ STATE to 20</font><br />
+COUNTY = <font color="#0000FF">tonumber</font>(<font color="#0000FF">sysparm</font>(<font
+	 color="#FF00FF">&quot;County&quot;</font>)); <font color="#008000">//&#160;sets
+ COUNTY to 5</font></p>
+</body>
+</html>

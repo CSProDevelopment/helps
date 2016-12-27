@@ -1,0 +1,131 @@
+﻿<title>Average Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Average</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Function</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">d =</font> <b><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-weight: bold;"
+													 color="#0000FF" face="Courier New"
+													 size="2">average</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(multiple-item</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#FF00FF"
+															 face="Courier New"
+															 size="2">[</font><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">where</font></b> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">condition</font><font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#FF00FF"
+														 face="Courier New"
+														 size="2">]</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Description:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The average function returns the average of an item that
+ occurs multiple times. During data entry, the result of the</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">average</font></b> <font style="font-family: Arial;
+													 font-size: 10pt;"
+													 color="#000000" face="Arial"
+													 size="2">calculation
+ depends on where the statement is located. If the average function is
+ executed prior to the form or roster containing the item, it returns DEFAULT.
+ If it is executed within the form or roster containing the item, it returns
+ the average up to the current occurrence number. If it is executed after
+ the form or roster containing the item, it returns the average for all
+ occurrences of the item.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Helv; font-size: 10pt;" color="#000000" size="2">During
+ batch edit,</font> <b><font style="font-family: Helv; font-size: 10pt;
+							 font-weight: bold;" color="#000000" size="2">average</font></b>
+ <font style="font-family: Helv; font-size: 10pt;" color="#000000" size="2">returns
+ the average value for all occurrences of the item, regardless of the statement's
+ placement in the program</font><font style="font-family: Arial; font-size: 10pt;"
+										 color="#000000" face="Arial" size="2">.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">If a</font> <b><font style="font-family: Arial; font-size: 10pt;
+									 font-weight: bold;" color="#000000"
+									 face="Arial" size="2">where</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">condition is included, the function returns the average
+ of the occurrences for which the condition is true.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">If the value of an occurrence of the item is a special value
+ (DEFAULT, MISSING, or NOTAPPL), the occurrence will not be included in
+ the calculation. If none of the occurrences have values other than special
+ values, DEFAULT is returned.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Return value:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The function returns the decimal value of the average.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Examples:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">AVG_INCOME =</font> <font style="font-family: 'Courier New';
+															 font-size: 10pt;"
+															 color="#0000FF"
+															 face="Courier New"
+															 size="2">average</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(INCOME);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">AVG_FEMALE_INCOME =</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">average</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(INCOME</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#0000FF"
+														 face="Courier New"
+														 size="2">where</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+		 face="Courier New" size="2">SEX =</font> <font style="font-family: 'Courier New';
+														 font-size: 10pt;"
+														 color="#FF0000"
+														 face="Courier New"
+														 size="2">2</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">);</font></p>
+</body>
+</html>

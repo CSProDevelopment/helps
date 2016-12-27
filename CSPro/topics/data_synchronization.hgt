@@ -1,0 +1,341 @@
+﻿<title>Synchronization File (.PNC)</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h4 style="margin-top: 6.00pt; margin-bottom: 2.00pt; font-family: Arial, sans-serif;
+	 font-size: 18pt;"><b><font style="font-weight: bold;">&#160;Synchronization
+ File (.PNC)</font></b></h4>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><span
+	 style="font-weight: bold;">Overview</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">CSPro
+ synchronization scripts, with the file extension .pnc, allow for the transfer
+ of data and programs back and forth between Android devices and remote
+ machines. You can transfer data by using an FTP server, via a Dropbox
+ account, or to another Android device by using Bluetooth. Multiple synchronization
+ scripts can exist on a device, and you will have to determine the paradigm
+ under which you would like to have your interviewers synchronize data
+ and programs. For example, one synchronization script could update all
+ survey instruments on the Android device and another script could send
+ collected data to the server. Alternatively, one script could be used
+ for both tasks.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">Synchronization
+ scripts can be executed in two ways:</p>
+<ul style="list-style: disc;">
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">A
+	 script can be run by calling the <a href="Functions/Sync_Function.html">sync</a>
+	 function in logic. This allows advanced programmers to setup dynamic
+	 synchronization scripts and to control when they are executed.</p></li>
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">Synchronization
+	 scripts can be retrieved and executed manually. Once retrieved from
+	 a server, synchronization files are stored in the CSEntry &quot;sandbox,&quot;
+	 meaning that they are safe from other applications and are unable
+	 to be viewed by your interviewers (with the rare exception of interviewers
+	 using rooted devices). If you make changes to the synchronization
+	 script, you must have your interviewers retrieve the synchronization
+	 file again. Although synchronization makes updating applications and
+	 data easy, it is important to ensure that your synchronization script
+	 is comprehensive and complete before distributing it.</p></li>
+</ul>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">There
+ is no tool that comes with CSPro that you can use to edit your scripts,
+ but you can create and edit them in a text editor such as Notepad.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">File
+ Format</p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 24px;"><span
+	 style="color: #000080; font-weight: bold;">[SyncFile]</span><br />
+<span style="color: #000080;">Version</span>=CSPro 7.0<br />
+<span style="color: #000080;">AppName</span>=<span style="font-style: italic;">optional
+ application name</span><br />
+<span style="color: #000080;">Description</span>=<span style="font-style: italic;">optional
+ description of the synchronization script</span><br />
+<span style="color: #000080;">RootFolder</span>=<span style="font-style: italic;">optional
+ path on the Android device from which CSEntry bases the sync</span><br />
+<span style="color: #000080;">DeviceName</span>=<span style="font-style: italic;">optional
+ name for the device in a Bluetooth server sync</span></p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 24px;"><span
+	 style="color: #000080; font-weight: bold;">[Connection]</span><br />
+<span style="font-style: italic;">&lt;parameters described below&gt;</span></p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 24px;"><span
+	 style="font-weight: bold; color: #000080;">[Sync]</span><br />
+<span style="color: #000080;">CreateClientPath</span>=<span style="font-style: italic;">directory
+ to be created on the Android device</span><br />
+<span style="color: #000080;">ClientPath</span>=<span style="font-style: italic;">directory
+ on the Android device to move to</span></p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 24px;"><span
+	 style="color: #000080;">Put</span>=<span style="font-style: italic;">file
+ to upload from the Android device to the server</span></p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 24px;"><span
+	 style="color: #000080;">CreateServerPath</span>=<span style="font-style: italic;">directory
+ to be created on the server</span><br />
+<span style="color: #000080;">ServerPath</span>=<span style="font-style: italic;">directory
+ on the server to move to</span></p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 24px;"><span
+	 style="color: #000080;">Get</span>=<span style="font-style: italic;">file
+ to download from the server to the Android device</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">When
+ processing a synchronization file, CSEntry first attempts to create a
+ successful connection. If successful, the steps of the synchronization
+ script are executed sequentially, in a similar fashion to a batch file
+ or shell script.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">The
+ <span style="font-weight: bold;">CreateClientPath</span> and <span style="font-weight: bold;">CreateServerPath</span>
+ statements are similar to a mkdir (make directory) command. If the folder
+ already exists, then no folder will be created.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">The
+ <span style="font-weight: bold;">ClientPath</span> and <span style="font-weight: bold;">ServerPath</span>
+ statements are similar to a cd (change directory) statement. Synchronization
+ will fail if a folder does not exist, so if you are not sure that a folder
+ exists, be sure to create it before moving to that directory.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">In
+ the <span style="font-weight: bold;">Get</span> and <span style="font-weight: bold;">Put</span>
+ statements, you can use the ? and * wildcards. The Get and Put statements
+ will always download or upload files, regardless of whether the files
+ have been updated on the server or on the device.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><span
+	 style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Replacement
+ Parameters</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">In
+ any statement, you can use a few replacement parameters:</p>
+<ul style="list-style: disc;">
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><span
+	 style="font-weight: bold;">%AppName%</span>: the application name
+	 optionally defined in the synchronization header</p></li>
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><span
+	 style="font-weight: bold;">%Date%</span>: the date, in &quot;year-month-day&quot;
+	 (without hyphens) format, that the synchronization script occurred,
+	 using the Android device's clock</p></li>
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><span
+	 style="font-weight: bold;">%DateTime%</span>: the date and time, in
+	 &quot;year-month-day-hour-minute-second&quot; (without hyphens) format,
+	 that the synchronization script occurred, using the Android device's
+	 clock</p></li>
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">%DeviceID%<span
+	 style="font-weight: normal;">: the device ID, which corresponds to
+	 the value that is returned by the <a href="Functions/Getdeviceid_Function.htm"
+											 style="font-weight: normal;">getdeviceid
+	 function</a></span></p></li>
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><span
+	 style="font-weight: bold;">%UID%</span>: the user ID, which corresponds
+	 to the value that is returned by the <a href="Getusername_Function.html">getusername
+	 function</a></p></li>
+</ul>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><span
+	 style="font-weight: bold;">Changing the Root Folder</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">By
+ default, the synchronization script starts processing from the &lt;external
+ storage&gt;/csentry/ folder on your device. Executing a statement such
+ as &quot;ClientPath=/Data&quot; will attempt to move to the &lt;external
+ storage&gt;/csentry/Data folder, as all paths are based off of the csentry
+ folder. If you would like to override this behavior, you can specify a
+ different root folder using the <span style="font-weight: bold;">RootFolder</span>
+ attribute. The following four examples execute in the same manner:</p>
+<table style="margin-left: 20px;" cellspacing="0">
+	<col />
+	<col style="width: 50%;" />
+	<tr>
+		<td style="vertical-align: top;"><span style="font-weight: bold;
+												 color: #000080; font-family: 'Courier New', monospace;
+												 font-size: 10pt;">[SyncFile]</span><span
+		 style="font-family: 'Courier New', monospace; font-size: 10pt;"><br />
+		...</span>
+		<?rh-implicit_p ?><span style="font-family: 'Courier New', monospace;
+								 font-size: 10pt;"><br />
+		</span><span style="color: #000080; font-weight: bold; font-family: 'Courier New', monospace;
+					 font-size: 10pt;">[Sync]</span><span style="font-family: 'Courier New', monospace;
+															 font-size: 10pt;"><br />
+		</span><span style="color: #000080; font-family: 'Courier New', monospace;
+					 font-size: 10pt;">Put</span><span style="font-family: 'Courier New', monospace;
+														 font-size: 10pt;">=/Data/BHIC.dat</span></td>
+		<td style="vertical-align: top;"><span style="font-weight: bold;
+												 color: #000080; font-family: 'Courier New', monospace;
+												 font-size: 10pt;">[SyncFile]</span><span
+		 style="font-family: 'Courier New', monospace; font-size: 10pt;"><br />
+		...</span>
+		<?rh-implicit_p ?><span style="font-family: 'Courier New', monospace;
+								 font-size: 10pt;"><br />
+		</span><span style="color: #000080; font-weight: bold; font-family: 'Courier New', monospace;
+					 font-size: 10pt;">[Sync]</span><span style="font-family: 'Courier New', monospace;
+															 font-size: 10pt;"><br />
+		</span><span style="color: #000080; font-family: 'Courier New', monospace;
+					 font-size: 10pt;">ClientPath</span><span style="font-family: 'Courier New', monospace;
+		 font-size: 10pt;">=/Data<br />
+		</span><span style="color: #000080; font-family: 'Courier New', monospace;
+					 font-size: 10pt;">Put</span><span style="font-family: 'Courier New', monospace;
+														 font-size: 10pt;">=BHIC.dat</span>
+
+		<?rh-implicit_p ?>&#160;
+		<?rh-implicit_p ?>&#160;</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;"><span style="font-weight: bold;
+												 color: #000080; font-family: 'Courier New', monospace;
+												 font-size: 10pt;">[SyncFile]</span><span
+		 style="font-family: 'Courier New', monospace; font-size: 10pt;"><br />
+		...<br />
+		</span><span style="color: #000080; font-family: 'Courier New', monospace;
+					 font-size: 10pt;">RootFolder</span><span style="font-family: 'Courier New', monospace;
+		 font-size: 10pt;">=/</span>
+		<?rh-implicit_p ?><span style="font-family: 'Courier New', monospace;
+								 font-size: 10pt;"><br />
+		</span><span style="color: #000080; font-weight: bold; font-family: 'Courier New', monospace;
+					 font-size: 10pt;">[Sync]</span><span style="font-family: 'Courier New', monospace;
+															 font-size: 10pt;"><br />
+		</span><span style="color: #000080; font-family: 'Courier New', monospace;
+					 font-size: 10pt;">Put</span><span style="font-family: 'Courier New', monospace;
+														 font-size: 10pt;">=/storage/emulated/0/csentry/Data/BHIC.dat
+		 &#160;&#160;&#160;&#160;&#160;&#160;</span></td>
+		<td style="vertical-align: top;"><span style="font-weight: bold;
+												 color: #000080; font-family: 'Courier New', monospace;
+												 font-size: 10pt;">[SyncFile]</span><span
+		 style="font-family: 'Courier New', monospace; font-size: 10pt;"><br />
+		...<br />
+		</span><span style="color: #000080; font-family: 'Courier New', monospace;
+					 font-size: 10pt;">RootFolder</span><span style="font-family: 'Courier New', monospace;
+		 font-size: 10pt;">=/storage/emulated/0/csentry/Data</span>
+		<?rh-implicit_p ?><span style="font-family: 'Courier New', monospace;
+								 font-size: 10pt;"><br />
+		</span><span style="color: #000080; font-weight: bold; font-family: 'Courier New', monospace;
+					 font-size: 10pt;">[Sync]</span><span style="font-family: 'Courier New', monospace;
+															 font-size: 10pt;"><br />
+		</span><span style="color: #000080; font-family: 'Courier New', monospace;
+					 font-size: 10pt;">Put</span><span style="font-family: 'Courier New', monospace;
+														 font-size: 10pt;">=BHIC.dat</span></td>
+	</tr>
+</table>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">FTP
+ Synchronization</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">When
+ connecting with an FTP server, the Connection section must contain the
+ following attributes:</p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 24px;"><span
+	 style="color: #000080; font-weight: bold;">[Connection]</span><br />
+<span style="color: #000080;">Type</span>=FTP<br />
+<span style="color: #000080;">Host</span>=ftp://...<br />
+<span style="color: #000080;">Username</span>=<span style="font-style: italic;">FTP
+ user name</span><br />
+<span style="color: #000080;">Password</span>=<span style="font-style: italic;">FTP
+ password</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">If
+ the FTP server that you are connecting to has Transport Layer Security
+ or Secure Sockets Layer protections, then you can specify the protocol
+ with one of the following statements:</p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 24px;"><span
+	 style="color: #000080;">SSLTLS</span>=Implicit <span style="font-style: italic;">(for
+ FTPS)</span><br />
+<span style="color: #000080;">SSLTLS</span>=Explicit <span style="font-style: italic;">(for
+ FTPES)</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><a
+	 href="Sync/FTP_Synchronization_Examples.html">View FTP Synchronization
+ Examples</a></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Dropbox
+ Synchronization</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">When
+ connecting with Dropbox, the Connection section must contain the following
+ attributes:</p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 24px;"><span
+	 style="font-weight: bold; color: #000080;">[Connection]</span><br />
+<span style="color: #000080;">Type</span>=Dropbox</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">When
+ CSEntry attempts to connect to Dropbox, you will get a prompt where you
+ can enter your Dropbox username and password.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><a
+	 href="Sync/Dropbox_Synchronization_Examples.html">View Dropbox Synchronization
+ Examples</a></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><span>Bluetooth
+ Synchronization</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">A
+ Bluetooth synchronization occurs between two Android devices. One device
+ acts as a &quot;server&quot; and the other acts as a &quot;client.&quot;
+ The server has no intelligence, and it is the client's responsibility
+ to get and put the appropriate files. A device could be a server during
+ one synchronization and the client during the next. <span>The Connection
+ section for the Bluetooth server must contain the following attributes:</span></p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 24px;"><span
+	 style="color: #000080; font-weight: bold;">[Connection]</span><span
+	 style="color: #000080;"><br />
+Type</span>=BluetoothServer</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">As
+ mentioned in the File Format section above, it is also possible to set
+ a Bluetooth name that the server will use while broadcasting as it waits
+ for connections. If no name is specified, then the synchronization will
+ broadcast using the Android device's Bluetooth name.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">The
+ Connection section for the Bluetooth client must contain the following
+ attributes:</p>
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 24px;"><span
+	 style="font-weight: bold; color: #000080;">[Connection]</span><br />
+<span style="color: #000080;">Type</span>=Bluetooth<br />
+<span style="color: #000080;">DeviceName</span>=<span style="font-style: italic;">optional
+ name of the Bluetooth server that the client is connecting to</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">If
+ the <span style="font-weight: bold;">DeviceName</span> is left off of
+ a Bluetooth client sync, then CSEntry will display a list of nearby Bluetooth
+ devices that are broadcasting and allow the interviewer to select the
+ device to which they want to connect.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">When
+ a Bluetooth synchronization begins, the user of the device acting as a
+ server will have to respond to a warning indicating that their Bluetooth
+ credentials will be broadcast. After accepting this, the Bluetooth client
+ will be able to connect to the server.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><a
+	 href="Sync/Bluetooth_Synchronization_Examples.html">View Bluetooth
+ Synchronization Examples</a></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><span
+	 style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Synchronization
+ Files on Android Devices</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><img
+	 src="android/sync.png" alt="" style="border: none;" align="right"
+	 border="0" /></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">To
+ download a synchronization file to an Android device, select the Synchronize
+ option on the menu while in the <a href="Android_Navigation.html">Entry
+ Applications screen</a>. If any synchronization scripts have already been
+ downloaded, they will be displayed here. Clicking on a script will launch
+ the synchronization process. Alternatively, you can select &quot;Add new&quot;
+ to add a new script. In this case, you will be presented with a list of
+ three places where scripts can be found: on Dropbox, on an FTP server,
+ or on the Android device storage.</p>
+<ul style="list-style: disc;">
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">If
+	 selecting Dropbox, you will be asked to validate your Dropbox credentials
+	 and authorize CSEntry to access your files.</p></li>
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">When
+	 entering FTP credentials, you must enter a host, username, and password.</p></li>
+</ul>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">Once
+ a connection has been made, CSEntry will display a list of files and folders
+ on the Dropbox account, FTP server, or device storage. You can navigate
+ into subfolders by clicking on a folder icon. You can visit a parent folder
+ by selecting the up arrow icon that appears to the right of path that
+ is currently displayed. In addition to folders, two kinds of files will
+ be displayed:</p>
+<ul style="list-style: disc;">
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><a
+	 href="program_information_file.html">.pff file</a>: If you click on
+	 a .pff file, CSEntry will automatically create a synchronization script
+	 based on the parameters described in the .pff file. This only works
+	 for basic data entry applications. If you use features such as lookup
+	 files, then this approach will generally not work as expected.</p></li>
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">.pnc
+	 file: If you click on a .pnc file, CSEntry will download the custom
+	 synchronization script.</p></li>
+</ul>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">Selecting
+ either a .pff or a .pnc file will create or retrieve the synchronization
+ script and place it in the CSEntry sandbox. It does not execute the script
+ described in the file. After the download, you will have the option to
+ select the script if you want to execute the synchronization.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">To
+ delete a synchronization script, hard-press on the name after clicking
+ on Synchronize. You will have the option to delete the script. Alternatively,
+ if you select &quot;Add new&quot; and download a file with the same name
+ as a previously downloaded file, it will overwrite the previous synchronization
+ script.</p>
+</body>
+</html>

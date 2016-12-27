@@ -1,0 +1,169 @@
+﻿<title>Relative and Absolute Mode</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Relative and Absolute Mode</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The mode refers primarily to the start positions of your
+ data items. You can create a dictionary either in</font> <b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
+	 size="2">relative</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 color="#000000" face="Arial" size="2">or</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 color="#000000" face="Arial" size="2">absolute</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">mode.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;Relative mode</font></b></p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">-&#160;Use
+ relative mode when designing a</font> <a href="creating_a_dictionary_for_a_new_file.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">new
+ data file</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">; you
+ do not normally want &quot;holes&quot; (unused space between items) in
+ your data files, as this will increase the size of the file.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">-&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The</font> <a href="record_type.html"><font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">record
+ type</font></a><font style="font-family: Arial; font-size: 10pt;" color="#000000"
+						 face="Arial" size="2">, if present, is always
+ the first item in every</font> <a href="record_description.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">record</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-left: 21.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.70pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">-</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;</font><a href="identification_items.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">ID items</font></a><font style="font-family: Arial;
+	 font-size: 10pt;" color="#000000" face="Arial" size="2">, if any,
+ are always located after the record type (and other ID Items defined at
+ a higher</font> <a href="level_description.html"><font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">level</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">).</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-left: 21.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.70pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">-</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;Each data item will be placed after</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">all</font></b> <font style="font-family: Arial;
+												 font-size: 10pt;" color="#000000"
+												 face="Arial" size="2">defined
+ ID items (even those defined at a higher level than the record) in the
+ record.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">-</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;There are no gaps or &quot;holes&quot; between</font>
+ <a href="item_description.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">items</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">-</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;As items are added, inserted, modified, or deleted,
+ other items are automatically moved as needed to maintain the above arrangement.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">-</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;Changing the starting position of an item will move
+ it and any following items to give the implied relative arrangement.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;Absolute mode</font></b></p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">-&#160;Use
+ absolute mode to create a dictionary from an</font> <a href="creating_a_dictionary_for_an_existing_file.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">existing
+ data file.</font></a></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">-</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;The record type, ID items and data items can be positioned
+ at any location in a record.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;">&#160;</p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">-</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;All items will remain in their assigned locations,
+ unless specifically moved by the user.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">-</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;When inserting or adding an item, there must be room
+ (i.e., a &quot;gap&quot;) for the item at the specified location.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">-&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">When items are deleted, gaps may be created.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">-&#160;When an item's starting position or length is changed,
+ room for the item must exist.</font></p>
+</body>
+</html>

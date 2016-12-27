@@ -1,0 +1,112 @@
+﻿<title>Execsystem Function (Android)</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Execsystem</font></b> <b><font style="font-family: Arial;
+															 font-size: 18pt;
+															 font-weight: bold;"
+															 face="Arial"
+															 size="5">Function
+ (Android)</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">d =</font> <b><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-weight: bold;"
+													 color="#0000FF" face="Courier New"
+													 size="2">execsystem</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(</font><i><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-style: italic;"
+													 color="#000000" face="Courier New"
+													 size="2">alpha-exp</font></i><span
+	 style="font-family: 'Courier New';"><font color="#FF00FF">[</font></span><b><font
+	 style="font-weight: bold;"><span style="font-family: 'Courier New';
+										 font-weight: bold;">,</span><span
+	 style="font-family: 'Courier New';">stop</span></font></b><font color="#FF00FF"><span
+	 style="font-family: 'Courier New';">]</span></font><span style="font-family: 'Courier New';">);</span></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Description:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
+ <b><font style="font-weight: bold;">execsystem</font></b> function starts
+ another Android application or function. There is a related version for
+ applications running on <a href="execsystem_function.html">Windows</a>
+ machines.</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">If
+ <span style="font-weight: bold;">stop</span> is coded, the application
+ will immediately close after launching the application, in the same way
+ that would occur if using the <a href="stop_function.html">stop function</a>
+ with a passed parameter of 1.</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
+ <span style="font-style: italic;">alpha-expression</span> command argument
+ is one of the following attributes: <span style="font-weight: bold;">app</span>,
+ <span style="font-weight: bold;">browse</span>, <span style="font-weight: bold;">call</span>,
+ <span style="font-weight: bold;">camera</span>, <span style="font-weight: bold;">gps</span>,
+ or <span style="font-weight: bold;">view</span>.</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Return value:</font></b></p>
+<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">The function returns a logical value of 1 (true)
+ if the new application is started successfully and NOTAPPL otherwise.</p>
+<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><span
+	 style="font-weight: bold;">Examples:</span></p>
+<p style="font-family: 'Courier New', monospace; margin-left: 12px;"><font
+	 color="#008000">//&#160;<span style="font-weight: bold;">app</span>
+ - opens another application on the device<br />
+</font><font color="#0000FF">execsystem</font>(<font color="#FF00FF">&quot;app:com.google.android.gm&quot;</font>);
+ <font color="#008000">//&#160;open Gmail<br />
+</font><br />
+<font color="#008000">//&#160;<span style="font-weight: bold;">browse</span>
+ - views a website in the Internet browser<br />
+</font><font color="#0000FF">execsystem</font>(<font color="#FF00FF">&quot;browse:https://www.census.gov&quot;</font>);<br />
+<br />
+<font color="#008000">//&#160;<span style="font-weight: bold;">call</span>
+ - makes a phone call<br />
+</font><font color="#0000FF">execsystem</font>(<font color="#FF00FF">&quot;call:+13017631451&quot;</font>);
+ <font color="#008000">//&#160;call the CSPro support number<br />
+</font><br />
+<font color="#008000">//&#160;<span style="font-weight: bold;">camera</span>
+ - takes a photo in .jpg or .png formats<br />
+</font><font color="#0000FF">execsystem</font>(<font color="#FF00FF">&quot;camera:/storage/emulated/0/csentry/photo.jpg&quot;</font>);<br />
+<font color="#0000FF">execsystem</font>(<font color="#FF00FF">&quot;camera:/storage/emulated/0/csentry/photo.png&quot;</font>);<br />
+<br />
+<font color="#008000">//&#160;<span style="font-weight: bold;">gps</span>
+ - views a latitude/longitude point using an installed mapping engine (e.g.,
+ Google Maps)<br />
+</font><font color="#0000FF">execsystem</font>(<font color="#FF00FF">&quot;gps:38.84839,-76.931098&quot;</font>);<br />
+<font color="#0000FF">execsystem</font>(<font color="#FF00FF">&quot;gps:38.84839,-76.931098,CSPro
+ Team at the U.S. Census Bureau&quot;</font>);<br />
+<br />
+<font color="#008000">//&#160;<span style="font-weight: bold;">view</span>
+ - displays an image, plays a sound clip, or views a movie<br />
+</font><font color="#0000FF">execsystem</font>(<font color="#FF00FF">&quot;view:/storage/emulated/0/csentry/picture.jpg&quot;</font>);<br />
+<font color="#0000FF">execsystem</font>(<font color="#FF00FF">&quot;view:/storage/emulated/0/csentry/audio.mp3&quot;</font>);<br />
+<font color="#0000FF">execsystem</font>(<font color="#FF00FF">&quot;view:/storage/emulated/0/csentry/movie.3gp&quot;</font>);</p>
+<p><b><font style="font-weight: bold;">See also:</font></b> <a href="ExecPFF_Function.html">ExecPFF
+ Function</a>, <a href="execsystem_function.html">Execsystem Function (Windows)</a></p>
+</body>
+</html>

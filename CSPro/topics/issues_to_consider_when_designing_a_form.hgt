@@ -1,0 +1,195 @@
+﻿<title>Issues to Consider When Designing a Form</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Issues to Consider When Designing a Form</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ you plan to key data from paper questionnaires you generally try to make
+ the forms [screens] match the pages in the questionnaire. CSPro provides
+ flexibility in the way you define forms, the number of forms to use, and
+ the choice of fields to go on each form. There are, of course, limitations
+ imposed by the structure of the data dictionary, some of which have to
+ do with whether</font> <a href="record_description.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">records</font></a> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">and</font> <a href="item_description.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">items</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">are
+ &quot;multiple&quot;:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;</font></b><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">A
+ record is considered multiple if it is defined as &quot;</font><a href="maximum_number.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Max</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&gt;
+ 1&quot; in the data dictionary.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;</font></b><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">An
+ item is considered multiple if it is defined as &quot;</font><a href="occurrences.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Occ</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&gt;
+ 1&quot; in the data dictionary.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">â€¢&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">A</font>
+ <a href="sub_items.html"><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">sub-item</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">is
+ considered multiple if it has been defined as &quot;Occ &gt; 1&quot; in
+ the data dictionary or if the item it belongs to is defined as &quot;Occ
+ &gt; 1&quot;.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Keep
+ in mind the following rules when you design your data entry forms:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;</font></b><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">You</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">can</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">mix
+ items from different single records on the same form.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;</font></b><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">You</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">can</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">mix</font>
+ <a href="identification_items.html"><font style="font-family: Arial; font-size: 10pt;"
+											 face="Arial" size="2">ID items</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">with
+ items from single records on the same form.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;</font></b><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">You</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">can</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">split
+ items from the same record onto different forms.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">â€¢&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">can</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">make
+ more than one</font> <a href="data_entry_elements.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">roster</font></a> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">from a multiple record. The
+ rosters can be on the same form or on different forms.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">â€¢&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">can</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">mix
+ items from a single and a multiple record on the same form, but the latter
+ must be in a roster.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;</font></b><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">You</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">cannot</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">mix
+ items from different multiple records on the same form.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">â€¢&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">cannot</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">mix
+ items from different levels on the same form (applies to complex data
+ dictionaries only)</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ you have any multiple records, items, or sub-items in the data dictionary,
+ you must decide whether you want to make them into a roster or use a form
+ that repeats. You must take this into account when deciding which items
+ to place on each form.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Cases and Levels</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">A</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">case</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">is
+ the primary unit of data in the data file. A</font> <a href="dictionary_hierarchy.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">case</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">usually
+ corresponds to a questionnaire, although some complex applications may
+ have a hierarchical set of questionnaires that comprise a single case.
+ For example, the main questionnaire may consist of a household roster
+ and other household information, and there may also be a separate questionnaire
+ for each woman in the household.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ data entry application may then contain two</font> <a href="dictionary_hierarchy.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">levels</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">â€”one
+ for the household and one for each woman in the household. The set of
+ forms corresponding to the household make up level one. The set of forms
+ corresponding to each woman make up level two. Each case would consist
+ of a level one and a variable number of level</font> <b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">occurrences</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">for
+ level two. Most applications consist of a single level.</font></p>
+</body>
+</html>

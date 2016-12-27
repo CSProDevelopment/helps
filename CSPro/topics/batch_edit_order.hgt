@@ -1,0 +1,145 @@
+﻿<title>Batch Edit Order</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Batch Edit Order</font></b></h3>
+<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Eventually
+ youâ€™ll reach the point where you have written edits for many variables
+ and you will begin to wonder, just how do you control the order of execution?
+ Itâ€™s in the</font> <a href="batch_edit_tree.html"><font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">batch
+ edit tree</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">. The order of the items
+ listed in the BatchEdits tree tab shows you the order of logic execution.
+ (If there is no associated logic for an edit item, then the order is of
+ course not important.)</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">What
+ if you donâ€™t like the order thatâ€™s given? Change it. As mentioned above
+ in &quot;The Batch Edit Tree&quot; you can</font> <a href="change_edit_order.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">re-order</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">items
+ and records (but not levels) on the batch edit tree. When developing edit
+ specifications, the edit of one variable might depend on another edit
+ having already been completed (say, relationship before sex). If the dictionary
+ wasnâ€™t designed in the order you need, then when a batch edit application
+ is generated, the order will be incorrect.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Having
+ said all this, there are a few nuances to the editing process that you
+ may wish to note, specifically with regard to the execution of</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">preproc</font></b><font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">s
+ and</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+					 face="Arial" size="2">postproc</font></b><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">s execution:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">â€¢&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
+ BatchEdit items, there is no benefit to writing and maintaining</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">preproc</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">and</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">postproc</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">code
+ blocks. Because a BatchEdit item is at the lowest level in the order tree,
+ no other code would be executed in the interval between a</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">preproc</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">and</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">postproc</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">code
+ block. Therefore it is suggested that only one code block exist for each
+ item. If you do not preface the instructions with either &quot;</font><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">preproc</font></b><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">&quot; or
+ &quot;</font><b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+						 face="Arial" size="2">postproc</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&quot;,
+ the code by default will be in the</font> <b><font style="font-family: Arial;
+													 font-size: 10pt; font-weight: bold;"
+													 face="Arial" size="2">postproc</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">block.
+ This is the recommended approach; that is, accept the default.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">â€¢&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ a BatchEdit item is within a record that repeats, the logic will be repeated
+ for each occurrence of the record. For example, if you have a population
+ record that allows 30 occurrences, the logic for each of its member items
+ can repeat up to 30 times, depending on the actual number of persons in
+ the household. Suppose you have a household with three members: the head,
+ the spouse, and a child. The logic for each data item (such as &quot;relationship,&quot;
+ &quot;sex,&quot; and &quot;age&quot;) will be executed three times.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">â€¢&#160;</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ a record repeats, the associated logic for that record will NOT repeat;
+ instead, it will be executed once and only once for questionnaire. For
+ example, take that population record again that allows 30 occurrences.
+ Whether there are 1 or 5 or 30 people in the household, the associated
+ logic for the BatchEdit record will execute only once. Therefore, if you
+ have logic that must occur for each person in the household, we suggest
+ you place that code under the first BatchEdit item in the record.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.50pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">â€¢</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">&#160;</font><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">Logic written for
+ Level 1 will only execute once for a questionnaire/case. Logic written
+ for Levels 2 or 3 will execute for each node, i.e., for each set of records
+ contained in that level.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" color="#000000"
+										 face="Arial" size="2">â€¢</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;Finally,
+ logic written at the BatchEdit File node will execute only once for a
+ data file. Therefore, if you have global variables that you need to initialize,
+ etc., this is the place where that should take place.</font></p>
+</body>
+</html>

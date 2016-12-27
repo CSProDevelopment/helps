@@ -1,0 +1,110 @@
+﻿<title>Skip Issues</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Skip Issues</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;</font></b><b><font style="font-family: Arial;
+														 font-size: 10pt;
+														 font-weight: bold;"
+														 face="Arial" size="2">To
+ skip or not to skip.</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&quot;Skipping&quot;â€”causing
+ the cursor to jump over one or more fields during the data entry operationâ€”is
+ an issue that provokes discussion both pro and con. The decision of the
+ application designer to use (or not use) skips will depend entirely on
+ the type of application and the data entry staff.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
+ the data capture operation is expected to be &quot;</font><a href="data_entry_philosophies.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">heads-down</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,&quot;
+ as it would be for a census or similar high-volume application, it will
+ cause less confusion to the keyer if all skips are controlled by the operator
+ rather than the application. There will then be no &quot;surprises&quot;
+ for the keyer when the application logic forces the cursor to one field
+ when the keyer, looking not at the screen but at the form, expects the
+ cursor to be in a different field altogether. Thus, instead of speeding
+ up the entry operation by anticipating probable cursor movement, this
+ tactic eventually slows down the operation when there are inconsis tencies
+ in the data or, simply, keying errors.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
+ the data capture operation is of smaller volume, or with a more complex
+ questionnaire or forms, it may make sense to use application-controlled</font>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">skipping.
+ The operator will be more likely to be aware of the cursor movement and
+ less likely to be surprised by unexpected interruptions in the normal
+ sequence. Of course, a combination of operator-controlled and application-controlled
+ skipping may be used in any given application; the designer will have
+ to weigh the keying environment and the forms to be entered to make the
+ appropriate decision.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">â€¢&#160;Manual Skips</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">During
+ data entry, there may be times when you want the operator to be able to
+ skip over certain fields that do not apply to the current case. For example,
+ in a Population record, the fertility fields do not apply to males or
+ to underage females, nor do questions on economic activity apply to children
+ under a certain age. In CSEntry, the â€˜+â€™ key on the numeric keypad is
+ always active as a â€˜skipâ€™ key. Every field has a skip field value associated
+ with it. The default value is â€˜nextâ€™, meaning that when the cursor is
+ on that field and the skip key (â€˜+â€™) is pressed the cursor will move to
+ the next field in sequence. CSEntry allows you to change this value to
+ any later field in the sequence, or to the end of the screen or form.
+ This approach corresponds to the &quot;</font><a href="operator_vs_system_controlled.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">operator-controlled</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&quot;
+ option in CSPro.</font></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;</font></b><b><font style="font-family: Arial;
+														 font-size: 10pt;
+														 font-weight: bold;"
+														 face="Arial" size="2">Automatic
+ skips</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Automatic,
+ or application-controlled, skips depend on information already keyed to
+ direct the cursor movement. For example, in a household survey, if a female
+ respondent states that she has at least one child living with her, the
+ cursor can skip automatically to the form for capturing information about
+ that child (and any others). Conversely, if the female indicates that
+ no children are present, the cursor can be directed to skip over the information
+ about children. It is clear that such skips depend entirely on the accuracy
+ of the data keyed prior to the skip; if a &quot;Yes&quot; response is
+ mistakenly entered as a &quot;No&quot;, the cursor will be misdirected
+ and the operator will find that the screen(s) presented for keying do
+ not correspond to the information in the paper forms. This will cause
+ loss of time as the operator seeks to uncover the error. Automatic skips,
+ when used, must be well-documented so that the keyer is aware of the possibilities
+ of non-sequential cursor movement. This approach corresponds to the &quot;</font><a
+	 href="operator_vs_system_controlled.html"><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">system-controlled</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&quot;
+ option in CSPro.</font></p>
+</body>
+</html>

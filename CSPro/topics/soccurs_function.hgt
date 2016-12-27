@@ -1,0 +1,125 @@
+﻿<title>Soccurs Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Soccurs</font></b> <b><font style="font-family: Arial;
+														 font-size: 18pt;
+														 font-weight: bold;"
+														 face="Arial" size="5">Function</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">i =</font> <b><font style="font-family: 'Courier New';
+													 font-size: 10pt; font-weight: bold;"
+													 color="#0000FF" face="Courier New"
+													 size="2">soccurs</font></b><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(record-name);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Description:</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">The</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">soccurs</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">function
+ returns the total number of occurrences of a record.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">During
+ data entry, you may determine the current occurrence of a record. The
+ occurrence value is updated after the first entry into the first field.
+ If the</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+						 face="Arial" size="2">soccurs</font></b> <font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">function
+ is executed prior to the roster or form it specifies then it returns 0.
+ If it is executed from a field within the roster or form, it returns the
+ current occurrence number after the first field is on the path. For example,
+ its value in the PREPROC of the first occurrence of the first item entered
+ in a form or roster is zero (0), i.e., before entry. After entry its value
+ will always be one (1). This is true for each occurrence keyed, the</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">soccurs</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">function
+ is not incremented until the cursor is in or has passed through the first
+ field on the record. If it is executed after the form or roster, it returns
+ the total number of occurrences in the form or roster. If the form does
+ not repeat,</font> <a href="noccurs_function.html"><font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">noccurs</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">will
+ return 1 (a roster must always repeat). When used in Data entry</font>
+ <a href="noccurs_function.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">noccurs</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">and</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">soccurs</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">functions
+ are the same.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">During batch editing,</font> <b><font style="font-family: Arial;
+													 font-size: 10pt; font-weight: bold;"
+													 color="#000000" face="Arial"
+													 size="2">soccurs</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">always returns the total number of record occurrences
+ found.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Return value:</font></b></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">The function returns the number of occurrences as an integer
+ value.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">Example:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">NUM_HH_MEMBERS =</font> <font style="font-family: 'Courier New';
+	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">soccurs</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">(PERSON_REC);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <a href="totocc_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Totocc
+ Function</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">,</font> <a href="curocc_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Curocc
+ Function</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">,</font> <a href="noccurs_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Noccurs
+ Function</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">,</font> <a href="count_function.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Count
+ Function</font></a></p>
+</body>
+</html>

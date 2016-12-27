@@ -1,0 +1,741 @@
+﻿||GetStart.chm																					#	<Link to help file GetStart.chm>
+|CSPro User's Guide																				#	CSPro User's Guide
+	|The CSPro System																			#		The CSPro System
+		what_is_cspro.hgt																		#			What is CSPro
+		cspro_capabilities.hgt																	#			CSPro Capabilities
+		|CSPro Applications																		#			CSPro Applications
+			data_entry_applications.hgt															#				Data Entry Applications
+			batch_edit_applications.hgt															#				Batch Edit Applications
+			tabulation_applications.hgt															#				Tabulation Applications
+			data_dictionary.hgt																	#				Data Dictionary
+			forms_design.hgt																	#				Forms Design
+			tool_list.hgt																		#				Tool List
+		|CSPro General Concepts																	#			CSPro General Concepts
+			cspro_initial_screen_layout.hgt														#				CSPro Initial Screen Layout
+			trees.hgt																			#				Trees
+			windows.hgt																			#				Windows
+			unicode_primer.hgt																	#				Unicode Primer
+		|How To ...																				#			How To ...
+			create_a_cspro_application.hgt														#				Create a CSPro Application
+			open_an_application.hgt																#				Open an Existing Application
+			change_the_view.hgt																	#				Change the View
+			font_preferences.hgt																#				Font Preferences
+			change_windows.hgt																	#				Change Windows
+			add_files_to_an_application.hgt														#				Add Files to an Application
+			drop_files_from_an_application.hgt													#				Drop Files from an Application
+			change_the_print_page_setup.hgt														#				Change the Print Page Setup
+			print_all_or_part_of_a_document.hgt													#				Print all or part of a Document
+			get_help.hgt																		#				Get Help
+			save_an_application.hgt																#				Save an Application
+			close_an_application.hgt															#				Close an Application
+			save_an_application_with_a_new_name.hgt												#				Save an Application with a New Name
+			specify_application_file_names.hgt													#				Specify Application File Names
+			pack_an_application.hgt																#				Pack an Application
+	|Data Dictionary Module																		#		Data Dictionary Module
+		introduction_to_data_dictionary.hgt														#			Introduction to Data Dictionary
+		|Organization																			#			Organization
+			questionnaire_and_dictionary_organization.hgt										#				Questionnaire and Dictionary Organization
+			data_file_type_structure.hgt														#				Data File Type Structure
+			dictionary_hierarchy.hgt															#				Dictionary Hierarchy
+		|Dictionary Concepts																	#			Dictionary Concepts
+			|General																			#				General
+				labels.hgt																		#					Labels
+				names.hgt																		#					Names
+				notes.hgt																		#					Notes
+			|Levels																				#				Levels
+				level_description.hgt															#					Level Description
+				level_properties.hgt															#					Level Properties
+			|Records																			#				Records
+				record_description.hgt															#					Record Description
+				record_properties.hgt															#					Record Properties
+				record_type.hgt																	#					Record Type
+				required_record.hgt																#					Required Record
+				maximum_number.hgt																#					Maximum Number
+			|Items																				#				Items
+				item_description.hgt															#					Item Description
+				identification_items.hgt														#					Identification Items
+				sub_items.hgt																	#					Sub-Items
+				item_properties.hgt																#					Item Properties
+				starting_position.hgt															#					Starting Position
+				item_length.hgt																	#					Length
+				data_type.hgt																	#					Data Type
+				occurrences.hgt																	#					Occurrences
+				decimal_places.hgt																#					Decimal Places
+				decimal_character.hgt															#					Decimal Character
+				zero_fill.hgt																	#					Zero Fill
+			|Value Sets																			#				Value Sets
+				value_sets_description.hgt														#					Value Sets Description
+				value_set_properties.hgt														#					Value Set Properties
+				value_set_images.hgt															#					Value Set Images
+			|Values																				#				Values
+				value_description.hgt															#					Value Description
+				value_properties.hgt															#					Value Properties
+			|Relations																			#				Relations
+				relation_description.hgt														#					Relation Description
+				relation_properties.hgt															#					Relation Properties
+		|Data Dictionary Application															#			Data Dictionary Application
+			creating_a_dictionary_for_a_new_file.hgt											#				Creating a Dictionary for a New File
+			creating_a_dictionary_for_an_existing_file.hgt										#				Creating a Dictionary for an Existing File
+			data_dictionary_screen_layout.hgt													#				Data Dictionary Screen layout
+			data_dictionary_tree.hgt															#				Data Dictionary Tree
+			relative_and_absolute_mode.hgt														#				Relative and Absolute Mode
+			dictionary_types.hgt																#				Dictionary Types
+			reconciling_dictionary_changes.hgt													#				Reconciling Dictionary Changes
+		|How to ...																				#			How to ...
+			open_an_existing_dictionary_application.hgt											#				Open an Existing Dictionary Application
+			move_around_a_dictionary.hgt														#				Move Around a Dictionary
+			view_the_dictionary_layout.hgt														#				View the Dictionary Layout
+			add_dictionary_elements.hgt															#				Add Dictionary Elements
+			modify_dictionary_elements.hgt														#				Modify Dictionary Elements
+			add_or_modify_levels.hgt															#				Add or Modify Levels
+			add_or_modify_records.hgt															#				Add or Modify Records
+			add_or_modify_items.hgt																#				Add or Modify Items
+			add_or_modify_value_sets.hgt														#				Add or Modify Value Sets
+			linked_value_sets.hgt																#				Linked Value Sets
+			generate_numeric_value_set.hgt														#				Generate Numeric Value Set
+			add_or_modify_values.hgt															#				Add or Modify Values
+			undo_and_redo_changes.hgt															#				Undo and Redo Changes
+			select_several_dictionary_elements.hgt												#				Select Several Dictionary Elements
+			insert_dictionary_elements.hgt														#				Insert Dictionary Elements
+			delete_dictionary_elements.hgt														#				Delete Dictionary Elements
+			move_dictionary_elements.hgt														#				Move Dictionary Elements
+			find_dictionary_elements.hgt														#				Find Dictionary Elements
+			document_dictionary_elements.hgt													#				Document Dictionary Elements
+			convert_items_to_subitems.hgt														#				Convert Items to Subitems
+			select_relative_or_absolute_positioning.hgt											#				Select Relative or Absolute Positioning
+			create_dictionary_with_no_record_types.hgt											#				Create Dictionary with No Record Types
+			occurrence_labels.hgt																#				Occurrence Labels
+			add_or_modify_relations.hgt															#				Add or Modify Relations
+			print_the_dictionary_file.hgt														#				Print the Dictionary File
+			save_dictionary_as_new_file.hgt														#				Save Dictionary As New File
+			multiple_language_dictionaries.hgt													#				Multiple Language Dictionaries
+	|The CSPro Language																			#		The CSPro Language
+		introduction_to_cspro_language.hgt														#			Introduction to CSPro Language
+		data_requirements.hgt																	#			Data Requirements
+		the_cspro_program_structure.hgt															#			The CSPro Program Structure
+		debugging_cspro_applications.hgt														#			Debugging CSPro Applications
+		|Declaration Section																	#			Declaration Section
+			compiler_mode.hgt																	#				Compiler Mode
+			variables.hgt																		#				Variables
+			arrays.hgt																			#				Arrays
+			files.hgt																			#				Files
+			user_defined_functions.hgt															#				User-Defined Functions
+			alias_statement.hgt																	#				Alias Statement
+		|Procedural Sections																	#			Procedural Sections
+			statements.hgt																		#				Statements
+			proc_statement.hgt																	#				Proc Statement
+			preproc_statement.hgt																#				Preproc Statement
+			postproc_statement.hgt																#				Postproc Statement
+		|Logic																					#			Logic
+			view_logic.hgt																		#				View Logic
+			create_and_edit_logic.hgt															#				Create and Edit Logic
+			find_and_replace_logic.hgt															#				Find and Replace Logic
+			set_compiler_defaults.hgt															#				Set Compiler Defaults
+			compile_logic.hgt																	#				Compile Logic
+		|Language Elements																		#			Language Elements
+			delimiters.hgt																		#				Delimiters
+			comments.hgt																		#				Comments
+			|Variables and Constants															#				Variables and Constants
+				data_items.hgt																	#					Data Items
+				this_item.hgt																	#					This Item ($)
+				subscripts.hgt																	#					Subscripts
+				numbers.hgt																		#					Numbers
+				text_strings.hgt																#					Text Strings
+			|Expressions																		#				Expressions
+				expressions.hgt																	#					Expressions
+				substring_expressions.hgt														#					Substring Expressions
+				special_values.hgt																#					Special Values
+			|Operators																			#				Operators
+				operators.hgt																	#					operators
+				in_operator.hgt																	#					In Operator
+				has_operator.hgt																#					Has Operator
+				if_and_only_if_operator.hgt														#					if and only if operator
+				operator_precedence.hgt															#					Operator Precedence
+				and_or_truth_table.hgt															#					And/Or Truth Table
+			|Files																				#				Files
+				external_files.hgt																#					External Files
+				lookup_files.hgt																#					Lookup Files
+				working_storage_file.hgt														#					Working Storage File
+				message_file.hgt																#					Message File
+				program_information_file.hgt													#					Program Information File
+	|Data Entry Module																			#		Data Entry Module
+		introduction_to_data_entry.hgt															#			Introduction to Data Entry
+		|Data Entry Application																	#			Data Entry Application
+			|General Data Entry Concepts														#				General Data Entry Concepts
+				data_entry_philosophies.hgt														#					Data Entry Philosophies
+				skip_issues.hgt																	#					Skip Issues
+				errors_at_data_entry.hgt														#					Errors at Data Entry
+				adding_logic.hgt																#					Adding Logic
+			|CSPro Data Entry Concepts															#				CSPro Data Entry Concepts
+				operator_vs_system_controlled.hgt												#					Operator vs. System Controlled
+				data_entry_path.hgt																#					Data Entry Path
+				data_entry_elements.hgt															#					Data Entry Elements
+				issues_to_consider_when_designing_a_form.hgt									#					Issues to Consider When Designing a Form
+			|Create a Data Entry Application													#				Create a Data Entry Application
+				create_a_new_data_entry_application.hgt											#					Create a New Data Entry Application
+				generate_default_data_entry_forms.hgt											#					Generate Default Data Entry Forms
+				the_drag_option_menu.hgt														#					The Drag Option Menu
+				data_entry_forms_screen_layout.hgt												#					Data Entry Forms Screen Layout
+				data_entry_tree.hgt																#					Data Entry Tree
+				run_a_data_entry_application.hgt												#					Run a Data Entry Application
+				run_production_data_entry.hgt													#					Run Production Data Entry
+				generate_binary_data_entry_application.hgt										#					Generate Binary Data Entry Application
+			|Change Data Entry Characteristics													#				Change Data Entry Characteristics
+				change_the_order_of_entry.hgt													#					Change the Order of Entry
+				change_data_entry_options.hgt													#					Change Data Entry Options
+				change_default_text_font.hgt													#					Change Default Text Font
+				change_field_colors.hgt															#					Change Field Colors
+				change_field_font.hgt															#					Change Field Font
+				change_error_sound.hgt															#					Change Error Sound
+			|Forms Designer																		#				Forms Designer
+				introduction_to_forms_design.hgt												#					Introduction to Forms Design
+				|Add Things to a Form															#					Add Things to a Form
+					add_a_form.hgt																#						Add a Form
+					add_fields_to_a_form.hgt													#						Add Fields to a Form
+					add_a_roster_to_a_form.hgt													#						Add a Roster to a Form
+					add_things_to_a_roster.hgt													#						Add Things to a Roster
+					add_text_to_a_form.hgt														#						Add Text to a Form
+					add_lines_or_boxes_to_a_form.hgt											#						Add Lines or Boxes to a Form
+				|Modify Things in a Form														#					Modify Things in a Form
+					selecting_items.hgt															#						Selecting Items
+					field_properties.hgt														#						Field Properties
+					move_things.hgt																#						Move Things
+					align_things.hgt															#						Align Things
+					undo_redo_changes.hgt														#						Undo and Redo Changes
+					cut_copy_or_paste_things.hgt												#						Cut, Copy, or Paste Things
+					resize_and_reposition_things_in_a_roster.hgt								#						Resize and Reposition Things in a Roster
+					join_and_split_roster_columns.hgt											#						Join and Split Roster Columns
+					delete_form_elements.hgt													#						Delete Form Elements
+					matching_the_application_to_the_data_dictionary.hgt							#						Matching the Application to the Data Dictionary
+				|Change Form Properties															#					Change Form Properties
+					change_forms_file_properties.hgt											#						Change Forms File Properties
+					change_level_properties.hgt													#						Change Level Properties
+					change_form_properties.hgt													#						Change Form Properties
+					change_field_properties.hgt													#						Change Field Properties
+					field_properties_for_multiple_fields.hgt									#						Field Properties (for Multiple Fields)
+					keyboard_input.hgt															#						Keyboard Input
+					change_roster_properties.hgt												#						Change Roster Properties
+					change_column_heading_properties.hgt										#						Change Column Heading Properties
+					change_row_heading_properties.hgt											#						Change Row Heading Properties
+					change_text_properties.hgt													#						Change Text Properties
+		|Data Entry Editing																		#			Data Entry Editing
+			introduction_to_data_entry_editing.hgt												#				Introduction to Data Entry Editing
+			|Editing Concepts																	#				Editing Concepts
+				type_of_edits_in_data_entry.hgt													#					Type of Edits in Data Entry
+				structure_edits.hgt																#					Structure Edits
+				consistency_edits.hgt															#					Consistency Edits
+				checking_errors.hgt																#					Checking errors
+			|Writing Logic																		#				Writing Logic
+				data_entry_logic_screen_layout.hgt												#					Data Entry Logic Screen Layout
+				moving_around_a_logic_application.hgt											#					Moving Around a Logic Application
+				order_of_executing_data_entry_events.hgt										#					Order of Executing Data Entry Events
+				sequence_dictated_by_designer.hgt												#					Sequence dictated by designer
+				compile_an_application.hgt														#					Compile an Application
+				run_as_batch.hgt																#					Run as Batch
+		|CAPI Data Entry																		#			CAPI Data Entry
+			introduction_to_capi.hgt															#				Introduction to CAPI
+			capi_features.hgt																	#				CAPI Features
+			extended_controls.hgt																#				Extended Controls
+			|CAPI Strategies																	#				CAPI Strategies
+				forms.hgt																		#					Forms
+				fields.hgt																		#					Fields
+				questions.hgt																	#					Questions
+				values.hgt																		#					Values
+				organization_of_the_instrument.hgt												#					Organization of the Instrument
+				using_multiple_languages.hgt													#					Using Multiple Languages
+				breaking_off_the_interview.hgt													#					Breaking Off the Interview
+				coming_back_later.hgt															#					Coming Back Later
+			|How to ...																			#				How to ...
+				create_a_new_capi_application.hgt												#					Create a New CAPI Application
+				define_languages.hgt															#					Define Languages
+				organize_forms.hgt																#					Organize Forms
+				enter_question_text.hgt															#					Enter Question Text
+				create_fills_in_questions.hgt													#					Create Fills In Questions
+				create_standard_forms.hgt														#					Create Standard Forms
+				change_formatting.hgt															#					Change Formatting
+				add_pictures.hgt																#					Add Pictures
+				resource_folders.hgt															#					Resource Folders
+				use_multiple_language.hgt														#					Use Multiple Language
+				create_conditional_questions.hgt												#					Create Conditional Questions
+				display_questions_without_scrolling.hgt											#					Display Questions Without Scrolling
+				structure_movement.hgt															#					Structure Movement
+				create_helps_for_fields.hgt														#					Create Helps for Fields
+				show_values_for_selection.hgt													#					Show Values for Selection
+				handle_multiple_answers.hgt														#					Handle Multiple Answers
+				choose_topic_sections.hgt														#					Choose Topic Sections
+				create_general_helps.hgt														#					Create General Helps
+				test_application.hgt															#					Test Application
+		|Android Data Entry																		#			Android Data Entry
+			android_development.hgt																#				Android Development
+			android_navigation.hgt																#				Android Navigation
+			ftp_synchronization_examples.hgt													#				FTP Synchronization Examples
+			dropbox_synchronization_examples.hgt												#				Dropbox Synchronization Examples
+			bluetooth_synchronization_examples.hgt												#				Bluetooth Synchronization Examples
+	|Batch Editing Applications																	#		Batch Editing Applications
+		introduction_to_batch_editing.hgt														#			Introduction to Batch Editing
+		|Create a Batch Edit Application														#			Create a Batch Edit Application
+			create_a_new_batch_edit_application.hgt												#				Create a New Batch Edit Application
+			batch_application_screen_layout.hgt													#				Batch Application Screen Layout
+			batch_edit_tree.hgt																	#				Batch Edit Tree
+			run_a_batch_edit_application.hgt													#				Run a Batch Edit Application
+		|Order of Editing																		#			Order of Editing
+			order_of_executing_batch_edit_events.hgt											#				Order of Executing Batch Edit Events
+			batch_edit_order.hgt																#				Batch Edit Order
+			change_edit_order.hgt																#				Change Edit Order
+		|Correcting Errors																		#			Correcting Errors
+			methods_of_correcting_data.hgt														#				Methods of Correcting Data
+			guidelines_for_correcting_data.hgt													#				Guidelines for Correcting Data
+			imputation.hgt																		#				Imputation
+			static_imputation.hgt																#				Static Imputation
+			dynamic_imputation_hot_deck.hgt														#				Dynamic Imputation (Hot Deck)
+			deckarrays.hgt																		#				DeckArrays
+			deckarray_leftover_rows.hgt															#				DeckArray Leftover Rows
+			types_of_edits_in_batch_editing.hgt													#				Types of Edits in Batch Editing
+		|How to ...																				#			How to ...
+			manipulate_automatic_reports.hgt													#				Manipulate Automatic Reports
+			create_a_specialized_report.hgt														#				Create a Specialized Report
+			use_hot_decks.hgt																	#				Use Hot Decks
+			initialize_hot_decks_in_program_logic.hgt											#				Initialize Hot Decks In Program Logic
+			initialize_hot_decks_using_saved_arrays.hgt											#				Initialize Hot Decks Using Saved Arrays
+			interpret_reports.hgt																#				Interpret Reports
+			run_production_batch_edits.hgt														#				Run Production Batch Edits
+		|Steps in Developing a Batch Editing Program											#			Steps in Developing a Batch Editing Program
+			general_issues.hgt																	#				General Issues
+			review_edit_specifications.hgt														#				Review Edit Specifications
+			define_coding_standards.hgt															#				Define Coding Standards
+			code_edits_of_individual_data_items.hgt												#				Code Edits of Individual Data Items
+			develop_comprehensive_test_file.hgt													#				Develop Comprehensive Test File
+			test_cspro_program.hgt																#				Test CSPro Program
+			re_test_with_live_data.hgt															#				Re-Test with Live Data
+			begin_production_editing.hgt														#				Begin Production Editing
+	|Tabulation Applications																	#		Tabulation Applications
+		introduction_to_tabulation.hgt															#			Introduction to Tabulation
+		parts_of_a_table.hgt																	#			Parts of a Table
+		common_uses_of_tabulation.hgt															#			Common Uses of Tabulation
+		|Capabilities of Tabulation																#			Capabilities of Tabulation
+			cross_tabulations.hgt																#				Cross Tabulations
+			tabulate_counts_or_percents.hgt														#				Tabulate Counts or Percents
+			tabulate_values_and_or_weights.hgt													#				Tabulate Values and/or Weights
+			produce_summary_statistics.hgt														#				Produce Summary Statistics
+			restrict_a_universe.hgt																#				Restrict a Universe
+			format_tables_for_printing.hgt														#				Format Tables for Printing
+			load_and_save_formatting_preferences.hgt											#				Load and Save Formatting Preferences
+			produce_tables_by_area.hgt															#				Produce Tables by Area
+			save_tabulations_in_different_formats.hgt											#				Save Tabulations in Different Formats
+			copy_table_to_other_formats.hgt														#				Copy Table to Other Formats
+			copy_and_paste_table_specification.hgt												#				Copy_and_paste_table_specification
+			map_results_by_geographic_area.hgt													#				Map Results by Geographic Area
+			create_multiple_subtables.hgt														#				Create Multiple Subtables
+			change_unit_of_tabulation.hgt														#				Change Unit of Tabulation
+			tally_items_from_related_records.hgt												#				Tally Items from Related Records
+		|Creating Tables																		#			Creating Tables
+			create_a_new_tabulation_application.hgt												#				Create a New Tabulation Application
+			create_a_table.hgt																	#				Create a Table
+			create_tables_with_multiple_variables.hgt											#				Create Tables with Multiple Variables
+			implications_of_data_dictionary_value_sets.hgt										#				Implications of Data Dictionary Value Sets
+			tabulate_items_with_multiple_occurrences.hgt										#				Tabulate Items with Multiple Occurrences
+			tally_attributes_for_a_variable.hgt													#				Tally Attributes for a Variable
+			tally_attributes_for_a_table.hgt													#				Tally Attributes for a Table
+			add_insert_and_delete_tables.hgt													#				Add, Insert, and Delete Tables
+			move_between_tables.hgt																#				Move Between Tables
+			run_a_tabulation_application.hgt													#				Run a Tabulation Application
+			renaming_tables_and_table_applications.hgt											#				Renaming Tables and Table Applications
+			|How To ...																			#				How To ...
+				add_a_variable_to_a_tabulation.hgt												#					Add a Variable to a Tabulation
+				remove_a_variable_from_a_tabulation.hgt											#					Remove a Variable from a Tabulation
+				define_a_universe_for_a_table.hgt												#					Define a Universe for a Table
+				add_weights_to_a_table.hgt														#					Add Weights to a Table
+				tabulate_values_instead_of_frequencies.hgt										#					Tabulate Values Instead of Frequencies
+				include_exclude_special_values_in_a_variable.hgt								#					Include/Exclude Special Values in a Variable
+				hide_or_change_the_position_of_the_total.hgt									#					Hide or Change the Position of the Total
+				add_percents_to_a_table.hgt														#					Add Percents to a Table
+				add_summary_statistics_to_a_table.hgt											#					Add Summary Statistics to a Table
+				include_exclude_tables_from_run.hgt												#					Include/Exclude Tables from Run
+				debug_table_totals.hgt															#					Debug Table Totals
+		|Formatting Tables																		#			Formatting Tables
+			formats_for_a_part_of_a_table.hgt													#				Formats for a Part of a Table
+			formatting_row_column_or_cell_data.hgt												#				Formatting Row, Column, or Cell Data
+			formats_for_a_table.hgt																#				Formats for a Table
+			formats_for_an_application.hgt														#				Formats for an Application
+			formats_for_printing.hgt															#				Formats for Printing
+			views_of_tables.hgt																	#				Views of Tables
+			|How To ...																			#				How To ...
+				customize_table_text.hgt														#					Customize Table Text
+				hide_or_show_a_row_or_column.hgt												#					Hide or Show a Row or Column
+				hide_rows_containing_all_zeros.hgt												#					Hide Rows Containing All Zeros
+				change_the_number_of_decimal_places_displayed.hgt								#					Change the Number of Decimal Places Displayed
+				add_a_pagenote_or_footnote.hgt													#					Add a Pagenote or Footnote
+				add_header_footer_text_to_a_table.hgt											#					Add Header/Footer Text to a Table
+				add_a_subtitle.hgt																#					Add a Subtitle
+				add_stub_leadering.hgt															#					Add Stub Leadering
+				add_borders.hgt																	#					Add Borders
+				add_reader_breaks.hgt															#					Add Reader Breaks
+				change_the_way_numbers_are_displayed.hgt										#					Change the Way Numbers are Displayed
+				change_the_automatically_generated_text.hgt										#					Change the Automatically Generated Text
+				change_fonts_or_colors.hgt														#					Change Fonts or Colors
+				change_indentation_or_alignment.hgt												#					Change Indentation or Alignment
+				add_borders_to_cells.hgt														#					Add Borders to Cells
+				make_captions_span_data_cells.hgt												#					Make Captions Span Data Cells
+				reset_format_of_table_item_to_default.hgt										#					Reset Format of Table Item to Default
+				change_the_repeating_of_boxheads.hgt											#					Change the Repeating of Boxheads
+				change_stub_column_position.hgt													#					Change Stub Column Position
+		|Creating Tables by Geographic Area														#			Creating Tables by Geographic Area
+			area_processing.hgt																	#				Area Processing
+			create_an_area_names_file.hgt														#				Create an Area Names File
+			area_dialog_box.hgt																	#				Area Dialog Box
+			area_captions.hgt																	#				Area Captions
+			custom_consolidation.hgt															#				Custom Consolidation
+			create_a_thematic_map_of_results.hgt												#				Create a Thematic Map of Results
+			|How To ...																			#				How To ...
+				display_results_for_one_geographic_area.hgt										#					Display Results for One Geographic Area
+				tabulate_only_certain_levels_of_geography.hgt									#					Tabulate only Certain Levels of Geography
+		|Printing Tables																		#			Printing Tables
+			using_print_preview.hgt																#				Using Print Preview
+			navigating_between_pages_tables_and_areas.hgt										#				Navigating Between Pages, Tables, and Areas
+			viewing_multiple_and_facing_pages.hgt												#				Viewing Multiple and Facing Pages
+			modifying_row_and_column_spacing_for_printing.hgt									#				Modifying Row and Column Spacing for Printing
+			print_preview_options.hgt															#				Print Preview Options
+			print_setup.hgt																		#				Print Setup
+			sending_tables_to_the_printer.hgt													#				Sending Tables to the Printer
+			|How To ...																			#				How To ...
+				undo_or_reset_changes_in_print_preview.hgt										#					Undo or Reset Changes in Print Preview
+				print_only_selected_tables_or_pages.hgt											#					Print Only Selected Tables or Pages
+		|Tabulation Preferences																	#			Tabulation Preferences
+			preferences_and_default_formats.hgt													#				Preferences and Default Formats
+			modifying_preferences.hgt															#				Modifying Preferences
+			loading_and_saving_preferences.hgt													#				Loading and Saving Preferences
+			|How To ...																			#				How To ...
+				share_the_same_format_on_multiple_computers.hgt									#					Share the Same Format on Multiple Computers
+		|Saving and Copying Table Data															#			Saving and Copying Table Data
+			save_tables_for_the_table_viewer.hgt												#				Save Tables for the Table Viewer
+			saving_tables_as_text_html_or_rich_text.hgt											#				Saving Tables as Text, HTML or Rich Text
+			select_and_copy_table_data_to_other_applications.hgt								#				Select and Copy Table Data to Other Applications
+			using_table_data_in_the_map_viewer.hgt												#				Using Table Data in the Map Viewer
+			|How To ...																			#				How To ...
+				distribute_finished_tables_to_other_users.hgt									#					Distribute Finished Tables to Other Users
+				copy_table_data_to_a_spreadsheet_or_word_processor.hgt							#					Copy Table Data to a Spreadsheet or Word Processor
+				prepare_tables_for_posting_to_the_web.hgt										#					Prepare Tables for Posting to the Web
+		|Table Post Calculation																	#			Table Post Calculation
+			introduction_to_table_post_calculation.hgt											#				Introduction to Table Post Calculation
+			adding_rows_and_columns_for_post_calculation.hgt									#				Adding Rows and Columns For Post Calculation
+			post_calculation_for_individual_cells.hgt											#				Post Calculation For Individual Cells
+			post_calculation_for_rows_columns_and_ranges.hgt									#				Post Calculation For Rows, Columns and Ranges
+			row_and_column_indexing_for_post_calculation.hgt									#				Row and Column Indexing for Post Calculation
+		|Run Production Tabulations																#			Run Production Tabulations
+			introduction_to_production_tabulations.hgt											#				Introduction to Production Tabulations
+			run_all_in_batch.hgt																#				Run All in Batch
+			|Run in Parts																		#				Run in Parts
+				introduction_to_run_in_parts.hgt												#					Introduction to Run in Parts
+				run_tabulate_interactively.hgt													#					Run Tabulate Interactively
+				run_tabulate_in_batch.hgt														#					Run Tabulate in Batch
+				run_consolidate_interactively.hgt												#					Run Consolidate Interactively
+				run_consolidate_in_batch.hgt													#					Run Consolidate in Batch
+				run_format_interactively.hgt													#					Run Format Interactively
+				run_format_in_batch.hgt															#					Run Format in Batch
+		|Advanced Table Topics																	#			Advanced Table Topics
+			using_subtables.hgt																	#				Using Subtables
+			changing_the_unit_of_tabulation.hgt													#				Changing the Unit of Tabulation
+			table_logic_tablogic.hgt															#				Table Logic (tablogic)
+			tabulations_using_relations.hgt														#				Tabulations Using Relations
+			|How To ...																			#				How To ...
+				tabulate_items_in_relations.hgt													#					Tabulate Items in Relations
+		|Table Tips and Tricks																	#			Table Tips and Tricks
+			add_subtotals_to_a_table.hgt														#				Add Subtotals to a Table
+			tabulate_categories_with_disjoint_values.hgt										#				Tabulate categories with disjoint values
+			hiding_rows_and_columns_in_subgroupings.hgt											#				Hiding Rows and Columns in Subgroupings
+			recodes_in_tables_using_value_sets_and_subtables.hgt								#				Recodes in Tables Using Value Sets and Subtables
+			use_expressions_in_universe_and_value_tallied.hgt									#				Use Expressions in Universe and Value Tallied
+	|CSPro Statements and Functions																#		CSPro Statements and Functions
+		alphabetical_list.hgt																	#			Alphabetical List of Statements and Functions
+		statement_format_symbols.hgt															#			Statement Format Symbols
+		list_of_reserved_words.hgt																#			List of reserved words
+		deprecated_features.hgt																	#			Deprecated Features
+		|Declaration Statements																	#			Declaration Statements
+			set_statement.hgt																	#				Set Statement
+			file_statement.hgt																	#				File Statement
+			numeric_statement.hgt																#				Numeric Statement
+			alpha_statement.hgt																	#				Alpha Statement
+			string_statement.hgt																#				String Statement
+			array_statement.hgt																	#				Array Statement
+			relation_statement.hgt																#				Relation Statement
+			function_statement.hgt																#				Function Statement
+			additional_function_examples.hgt													#				Additional Function Examples
+		|Program Control Statements																#			Program Control Statements
+			break_statement.hgt																	#				Break Statement
+			do_statement.hgt																	#				Do Statement
+			exit_statement.hgt																	#				Exit Statement
+			for_statement.hgt																	#				For Statement
+			if_statement.hgt																	#				If Statement
+			next_statement.hgt																	#				Next Statement
+			universe_statement.hgt																#				Universe Statement
+			while_statement.hgt																	#				While Statement
+		|Assignment Statements																	#			Assignment Statements
+			assignment_statement.hgt															#				Assignment Statement
+			recode_statement.hgt																#				Recode Statement
+			impute_function.hgt																	#				Impute Function
+			setvalue_function.hgt																#				Setvalue Function
+			getvalue_function.hgt																#				Getvalue Function
+		|Data Entry Statements and Functions													#			Data Entry Statements and Functions
+			accept_function.hgt																	#				Accept Function
+			advance_statement.hgt																#				Advance Statement
+			changekeyboard_function.hgt															#				Changekeyboard Function
+			connection_function.hgt																#				Connection Function
+			demode_function.hgt																	#				Demode Function
+			screen_orientation.hgt																#				Display Orientation
+			editnote_function.hgt																#				Editnote Function
+			endlevel_statement.hgt																#				Endlevel Statement
+			endgroup_statement.hgt																#				Endgroup Statement
+			enter_statement.hgt																	#				Enter Statement
+			getcapturetype_function.hgt															#				Getcapturetype Function
+			getcaselabel_function.hgt															#				GetCaseLabel Function
+			getdeviceid_function.hgt															#				Getdeviceid Function
+			getlanguage_function.hgt															#				Getlanguage Function
+			getnote_function.hgt																#				Getnote Function
+			getoperatorid_function.hgt															#				GetOperatorId Function
+			getos_function.hgt																	#				Getos Function
+			getrecord_function.hgt																#				Getrecord Function
+			getusername_function.hgt															#				Getusername Function
+			gps_function.hgt																	#				GPS Function
+			highlighted_function.hgt															#				Highlighted Function
+			ispartial_function.hgt																#				Ispartial Function
+			killfocus_statement.hgt																#				Killfocus Statement
+			move_statement.hgt																	#				Move Statement
+			noinput_statement.hgt																#				Noinput Statement
+			onchangelanguage_global_function.hgt												#				Onchangelanguage Global Function
+			onchar_global_function.hgt															#				Onchar Global Function
+			onfocus_statement.hgt																#				Onfocus Statement
+			onkey_global_function.hgt															#				Onkey Global Function
+			onkey_character_map.hgt																#				OnKey Character Map
+			onstop_global_function.hgt															#				Onstop Global Function
+			prompt_function.hgt																	#				Prompt Function
+			putnote_function.hgt																#				Putnote Function
+			randomizevs_function.hgt															#				Randomizevs Function
+			reenter_statement.hgt																#				Reenter Statement
+			savepartial_function.hgt															#				Savepartial Function
+			selcase_function.hgt																#				Selcase Function
+			set_attributes_statement.hgt														#				Set Attributes Statement
+			set_behavior_canenter_statement.hgt													#				Set Behavior Canenter Statement
+			setcapturepos_function.hgt															#				Setcapturepos Function
+			setcapturetype_function.hgt															#				Setcapturetype Function
+			setcaselabel_function.hgt															#				SetCaseLabel Function
+			seterrmsg_function.hgt																#				Set Errmsg Statement
+			setfont_function.hgt																#				Setfont Function
+			setlanguage_function.hgt															#				Setlanguage Function
+			setoperatorid_function.hgt															#				SetOperatorId Function
+			setvalueset_function.hgt															#				Setvalueset Function
+			setvaluesets_function.hgt															#				Setvaluesets Function
+			show_function.hgt																	#				Show Function
+			showarray_function.hgt																#				Showarray Function
+			skip_statement.hgt																	#				Skip Statement
+			sync_function.hgt																	#				Sync Function
+			userbar_function.hgt																#				Userbar Function
+			visualvalue_function.hgt															#				Visualvalue Function
+		|Batch Edit Statements																	#			Batch Edit Statements
+			endcase_statement.hgt																#				Endcase Statement
+			export_statement.hgt																#				Export Statement
+			getdeck_function.hgt																#				Getdeck Function
+			putdeck_function.hgt																#				Putdeck Function
+			set_behavior_export_statement.hgt													#				Set Behavior Export Statement
+			setoutput_function.hgt																#				Setoutput Function
+			skip_case_statement.hgt																#				Skip Case Statement
+		|Numeric Functions																		#			Numeric Functions
+			abs_function.hgt																	#				ABS Function
+			cmcode_function.hgt																	#				Cmcode Function
+			countvalid_function.hgt																#				Countnonspecial Function
+			exp_function.hgt																	#				Exp Function
+			high_function.hgt																	#				High Function
+			inc_function.hgt																	#				Inc Function
+			int_function.hgt																	#				Int Function
+			log_function.hgt																	#				Log Function
+			low_function.hgt																	#				Low Function
+			random_function.hgt																	#				Random Function
+			randomin_function.hgt																#				Randomin Function
+			round_function.hgt																	#				Round Function
+			seed_function.hgt																	#				Seed Function
+			sqrt_function.hgt																	#				Sqrt Function
+			set_behavior_specialvalues_statement.hgt											#				Set Behavior SpecialValues Statement
+		|String Functions																		#			String Functions
+			compare_function.hgt																#				Compare Function
+			concat_function.hgt																	#				Concat Function
+			plus_string_concatenation.hgt														#				Plus String Concatenation
+			edit_function.hgt																	#				Edit Function
+			getbuffer_function.hgt																#				Getbuffer Function
+			length_function.hgt																	#				Length Function
+			maketext_function.hgt																#				Maketext Function
+			pos_function.hgt																	#				Pos Function
+			poschar_function.hgt																#				Poschar Function
+			strip_function.hgt																	#				Strip Function
+			tolower_function.hgt																#				Tolower Function
+			tonumber_function.hgt																#				Tonumber Function
+			toupper_function.hgt																#				Toupper Function
+		|Multiple Occurrence Functions															#			Multiple Occurrence Functions
+			average_function.hgt																#				Average Function
+			count_function.hgt																	#				Count Function
+			curocc_function.hgt																	#				Curocc Function
+			delete_function.hgt																	#				Delete Function
+			getocclabel_function.hgt															#				Getocclabel Function
+			insert_function.hgt																	#				Insert Function
+			max_function.hgt																	#				Max Function
+			maxocc_function.hgt																	#				Maxocc Function
+			min_function.hgt																	#				Min Function
+			noccurs_function.hgt																#				Noccurs Function
+			seek_function.hgt																	#				Seek Function
+			seekmax_function.hgt																#				Seekmax Function
+			seekmin_function.hgt																#				Seekmin Function
+			setocclabel_function.hgt															#				Setocclabel Function
+			soccurs_function.hgt																#				Soccurs Function
+			sort_function.hgt																	#				Sort Function
+			sum_function.hgt																	#				Sum Function
+			swap_function.hgt																	#				Swap Function
+			totocc_function.hgt																	#				Totocc Function
+		|General Functions																		#			General Functions
+			errmsg_function.hgt																	#				Errmsg Function
+			execsystem_function_android.hgt														#				Execsystem Function (Android)
+			execsystem_function_windows.hgt														#				Execsystem Function (Windows)
+			execpff_function.hgt																#				ExecPFF Function
+			getimage_function.hgt																#				Getimage Function
+			getlabel_function.hgt																#				Getlabel Function
+			getsymbol_function.hgt																#				Getsymbol Function
+			invalueset_function.hgt																#				Invalueset Function
+			loadsetting_function.hgt															#				Loadsetting Function
+			pathname_function.hgt																#				Pathname Function
+			savesetting_function.hgt															#				Savesetting Function
+			special_function.hgt																#				Special Function
+			stop_function.hgt																	#				Stop Function
+			sysparm_function.hgt																#				Sysparm Function
+			trace_function.hgt																	#				Trace Function
+			uuid_function.hgt																	#				Uuid Function
+		|Date and Time Functions																#			Date and Time Functions
+			dateadd_function.hgt																#				Dateadd Function
+			datediff_function.hgt																#				Datediff Function
+			datevalid_function.hgt																#				Datevalid Function
+			publishdate_function.hgt															#				Publishdate Function
+			sysdate_function.hgt																#				Sysdate Function
+			systime_function.hgt																#				Systime Function
+		|External File Functions																#			External File Functions
+			clear_function.hgt																	#				Clear Function
+			close_function.hgt																	#				Close Function
+			delcase_function.hgt																#				Delcase Function
+			dircreate_function.hgt																#				Dircreate Function
+			direxist_function.hgt																#				Direxist Function
+			dirlist_function.hgt																#				Dirlist Function
+			fileconcat_function.hgt																#				Fileconcat Function
+			filecopy_function.hgt																#				Filecopy Function
+			filecreate_function.hgt																#				Filecreate Function
+			fileempty_function.hgt																#				Fileempty Function
+			fileexist_function.hgt																#				Fileexist Function
+			filedelete_function.hgt																#				Filedelete Function
+			filename_function.hgt																#				Filename Function
+			fileread_function.hgt																#				Fileread Function
+			filerename_function.hgt																#				Filerename Function
+			filesize_function.hgt																#				Filesize Function
+			filewrite_function.hgt																#				Filewrite Function
+			find_function.hgt																	#				Find Function
+			key_function.hgt																	#				Key Function
+			loadcase_function.hgt																#				Loadcase Function
+			locate_function.hgt																	#				Locate Function
+			open_function.hgt																	#				Open Function
+			retrieve_function.hgt																#				Retrieve Function
+			setfile_function.hgt																#				Setfile Function
+			write_function.hgt																	#				Write Function
+			writecase_function.hgt																#				Writecase Function
+		|Synchronization Functions																#			Synchronization Functions
+			syncconnect_function.hgt															#				SyncConnect Function
+			syncdata_function.hgt																#				SyncData Function
+			syncdisconnect_function.hgt															#				SyncDisconnect Function
+			syncfile_function.hgt																#				SyncFile Function
+			syncserver_function.hgt																#				SyncServer Function
+	|Appendix																					#		Appendix
+		|Appendix A - Installation																#			Appendix A - Installation
+			hardware_and_software_requirements.hgt												#				Hardware and Software Requirements
+			installing_cspro.hgt																#				Installing CSPro
+			uninstalling_cspro.hgt																#				Uninstalling CSPro
+			installing_a_newer_version.hgt														#				Installing a Newer Version
+			installing_data_entry_applications.hgt												#				Installing Data Entry Applications
+			creating_limited_cspro_installations_for_redistribution.hgt							#				Creating Limited CSPro Installations for Redistribution
+		|Appendix B - Keys Summary																#			Appendix B - Keys Summary
+			data_dictionary_keys.hgt															#				Data Dictionary Keys
+			data_entry_keys.hgt																	#				Data Entry Keys
+			batch_edit_keys.hgt																	#				Batch Edit Keys
+			tabulation_keys.hgt																	#				Tabulation Keys
+		|Appendix C - Menu Summary																#			Appendix C - Menu Summary
+			cspro_menu.hgt																		#				CSPro Menu
+			data_dictionary_menu.hgt															#				Data dictionary menu
+			data_entry_menu.hgt																	#				Data Entry Menu
+			batch_editing_menu.hgt																#				Batch Editing Menu
+			tabulation_menu.hgt																	#				Tabulation Menu
+		|Appendix D - Toolbar Summary															#			Appendix D - Toolbar Summary
+			cspro_toolbar.hgt																	#				CSPro Toolbar
+			data_dictionary_toolbar.hgt															#				Data Dictionary Toolbar
+			data_entry_toolbar.hgt																#				Data Entry Toolbar
+			batch_editing_toolbar.hgt															#				Batch editing toolbar
+			tabulation_toolbar.hgt																#				Tabulation Toolbar
+		|Appendix E - Converting Within IMPS or ISSA											#			Appendix E - Converting Within IMPS or ISSA
+			converting_a_data_dictionary.hgt													#				Converting a data dictionary
+			converting_within_imps.hgt															#				Converting within IMPS
+			converting_within_issa.hgt															#				Converting within ISSA
+			converting_an_imps_data_entry_application.hgt										#				Converting an IMPS Data Entry Application
+			converting_an_issa_data_entry_application.hgt										#				Converting an ISSA Data Entry Application
+		|Appendix F - Errors in Censuses and Surveys											#			Appendix F - Errors in Censuses and Surveys
+			the_nature_of_census_and_survey_data.hgt											#				The Nature of Census and Survey Data
+			errors_in_censuses_and_surveys.hgt													#				Errors in Censuses and Surveys
+		|Appendix G - File Types																#			Appendix G - File Types
+			file_types.hgt																		#				File Types
+			importing_data_to_cspro_format.hgt													#				Importing Data to CSPro Format
+			locking_application_files.hgt														#				Locking Application Files
+			temporary_data_file.hgt																#				Temporary Data File
+			|Files Description																	#				Files Description
+				data_dictionary_file_dcf.hgt													#					Data Dictionary File (.DCF)
+				binary_data_entry_application_file_enc.hgt										#					Binary Data Entry Application File (.PEN)
+				data_entry_application_file_ent.hgt												#					Data Entry Application File (.ENT)
+				form_file_fmf.hgt																#					Form File (.FMF)
+				logic_file_apc.hgt																#					Logic File (.APC)
+				messages_file_mgf.hgt															#					Messages File (.MGF)
+				helps_file_qsf.hgt																#					Question File (.QSF)
+				data_file.hgt																	#					Data File
+				data_file_index_csidx.hgt														#					Data File Index (.CSIDX)
+				notes_file_csnot.hgt															#					Notes File (.CSNOT)
+				data_file_status_sts.hgt														#					Data File Status (.STS)
+				listing_file_lst.hgt															#					Listing File (.LST)
+				tabulation_application_file_xtb.hgt												#					Tabulation Application File (.XTB)
+				table_specifications_file_xts.hgt												#					Table Specifications File (.XTS)
+				tables_file_tbw.hgt																#					Tables File (.TBW)
+				area_names_file_anm.hgt															#					Area Names File (.ANM)
+				table_matrices_file_tab.hgt														#					Table Matrices File (.TAB)
+				table_matrices_index_file_tai.hgt												#					Table Matrices Index File (.TAI)
+				batch_edit_application_file_bch.hgt												#					Batch Edit Application File (.BCH)
+				data_synchronization.hgt														#					Synchronization File (.PNC)
+				edit_order_file_ord.hgt															#					Edit Order File (.ORD)
+				frequency_file_frq.hgt															#					Frequency File (.FRQ)
+				map_data_file_mdf.hgt															#					Map Data File (.MDF)
+				map_file_mpc.hgt																#					Map File (.MPC)
+				program_information_file_pff.hgt												#					Program Information File (.PFF)
+				frequency_specification_file_fqf.hgt											#					Frequency Specification file (.FQF)
+				operator_statistics_file.hgt													#					Operator Statistics File (.LOG)
+				saved_arrays_file_sva.hgt														#					Saved Arrays File (.SVA)
+			|HELPTODO																			#				HELPTODO
+				helptodo_images.hgt																#					zzzzz_HELPTODO: Images
+				data_repositories.hgt															#					Data Repositories
+				data_repository_options.hgt														#					Data Repository Options
+				helptodo_images.hgt																#					zzzzz_HELPTODO: Images
+				synchronization_options.hgt														#					Synchronization Options
+||CSEntry.chm																					#	<Link to help file CSEntry.chm>
+||CSBatch.chm																					#	<Link to help file CSBatch.chm>
+||CSTab.chm																						#	<Link to help file CSTab.chm>
+||DataViewer.chm																				#	<Link to help file DataViewer.chm>
+||TextView.chm																					#	<Link to help file TextView.chm>
+||TblView.chm																					#	<Link to help file TblView.chm>
+||MapView.chm																					#	<Link to help file MapView.chm>
+||TRSWin.chm																					#	<Link to help file TRSWin.chm>
+||TRSSetup.chm																					#	<Link to help file TRSSetup.chm>
+||CSFreq.chm																					#	<Link to help file CSFreq.chm>
+||CSExport.chm																					#	<Link to help file CSExport.chm>
+||CSSort.chm																					#	<Link to help file CSSort.chm>
+||CSReFmt.chm																					#	<Link to help file CSReFmt.chm>
+||CSDiff.chm																					#	<Link to help file CSDiff.chm>
+||CSConcat.chm																					#	<Link to help file CSConcat.chm>
+||ShpToMap.chm																					#	<Link to help file ShpToMap.chm>
+||CSPack.chm																					#	<Link to help file CSPack.chm>
+||CSIndex.chm																					#	<Link to help file CSIndex.chm>
+||Excel2CSPro.chm																				#	<Link to help file Excel2CSPro.chm>
+||CSWeb.chm																						#	<Link to help file CSWeb.chm>

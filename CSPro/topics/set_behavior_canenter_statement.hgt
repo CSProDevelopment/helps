@@ -1,0 +1,152 @@
+﻿<title>Set Behavior Canenter Statement</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
+	 face="Arial" size="5">Set</font></b> <b><font style="font-family: Arial;
+													 font-size: 18pt; font-weight: bold;"
+													 face="Arial" size="5">Behavior
+ Canenter Statement</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Format 1:</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
+	 face="Courier New">set</font></b> <b><font style="font-family: 'Courier New';
+												 font-weight: bold;" face="Courier New">behavior</font></b><font
+	 style="font-family: 'Courier New';" face="Courier New">(</font><span
+	 style="font-family: 'Courier New';"><font color="#FF00FF">[</font><font
+	 style="font-family: 'Courier New';" face="Courier New">field-1, ...,
+ field-N</font><font color="#FF00FF">]</font></span><font style="font-family: 'Courier New';"
+															 face="Courier New">)</font>
+ <b><font style="font-family: 'Courier New'; font-weight: bold;" face="Courier New">canenter</font></b><font
+	 style="font-family: 'Courier New';" face="Courier New">(</font><b><font
+	 style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
+	 face="Courier New">notappl</font></b><font style="font-family: 'Courier New';"
+												 color="#FF00FF" face="Courier New">|</font><b><font
+	 style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
+	 face="Courier New">outofrange</font></b><font style="font-family: 'Courier New';"
+													 face="Courier New">)</font>
+ <b><font style="font-family: 'Courier New'; font-weight: bold;" face="Courier New">on</font></b>
+ <font style="font-family: 'Courier New';" face="Courier New">(</font><b><font
+	 style="font-family: 'Courier New'; font-weight: bold;" face="Courier New">confirm</font></b><font
+	 style="font-family: 'Courier New';" color="#FF00FF" face="Courier New">|</font><b><font
+	 style="font-family: 'Courier New'; font-weight: bold;" face="Courier New">noconfirm</font></b><font
+	 style="font-family: 'Courier New';" face="Courier New">);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Format 2:</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
+	 face="Courier New">set</font></b> <b><font style="font-family: 'Courier New';
+												 font-weight: bold;" face="Courier New">behavior</font></b><font
+	 style="font-family: 'Courier New';" face="Courier New">(</font><span
+	 style="font-family: 'Courier New';"><font color="#FF00FF">[</font><font
+	 style="font-family: 'Courier New';" face="Courier New">field-2, ...,
+ field-N</font><font color="#FF00FF">]</font></span><font style="font-family: 'Courier New';"
+															 face="Courier New">)</font>
+ <b><font style="font-family: 'Courier New'; font-weight: bold;" face="Courier New">canenter</font></b><font
+	 style="font-family: 'Courier New';" face="Courier New">(</font><b><font
+	 style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
+	 face="Courier New">notappl</font></b><font style="font-family: 'Courier New';"
+												 color="#FF00FF" face="Courier New">|</font><b><font
+	 style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
+	 face="Courier New">outofrange</font></b><font style="font-family: 'Courier New';"
+													 face="Courier New">)</font>
+ <b><font style="font-family: 'Courier New'; font-weight: bold;" face="Courier New">off</font></b><font
+	 style="font-family: 'Courier New';" face="Courier New">;</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Description:</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
+ <b><font style="font-weight: bold;">set behavior canenter</font></b> statement
+ allows the entry of blanks (notappl) for numeric data items during data
+ entry or to bypass the system â€˜Out of Rangeâ€™ message during data entry.
+ You may wish to enter blanks when answers are missing from the form. You
+ may wish to bypass the system â€˜Out of Rangeâ€™ message in order to code
+ your own message.</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">If
+ no parameters are specified, then the set behavior statement affects all
+ data items from the point where it is executed onward. To limit its scope,
+ it must be turned on and off at appropriate times. It is possible, however,
+ to specify the name of a field, group, record, form, or dictionary to
+ narrow the scope of the behavior to only fields that fall within the specified
+ object.</p>
+<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ operator-controlled applications, notappl defined as a value in the value
+ set for the item usually allows blank to be accepted. In system-controlled
+ applications the set behavior function must be used to allow blanks even
+ if notappl is in the value set.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ keywords</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+							 face="Arial" size="2">confirm</font></b> <font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">or</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">noconfirm</font></b> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">must be coded when</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">on</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">is
+ used. Confirm means that a message box is displayed asking if it OK to
+ enter this value. Noconfirm means that no message box is displayed.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2"><b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+						 face="Arial" size="2">E</font></b>xample 1:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;
+	 text-indent: 12px;"><font style="font-family: 'Courier New'; font-size: 10pt;"
+								 color="#0000FF" face="Courier New" size="2">set</font>
+ <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+		 size="2">behavior() canenter(</font><font style="font-family: 'Courier New';
+													 font-size: 10pt;"
+													 color="#0000FF" face="Courier New"
+													 size="2">notappl</font><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">) on (noconfirm);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-weight: bold;">E</font></b><font style="font-family: Arial;
+													 font-size: 10pt; font-weight: bold;"
+													 face="Arial" size="2"><b>xample
+ 2:</b></font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;
+	 text-indent: 12px;"><font style="font-family: 'Courier New';" color="#0000FF"
+								 face="Courier New">set</font> <font style="font-family: 'Courier New';"
+	 face="Courier New">behavior(AGE,AGE_FIRST_MARRIAGE) canenter(</font><font
+	 style="font-family: 'Courier New';" color="#0000FF" face="Courier New">outofrange</font><font
+	 style="font-family: 'Courier New';" face="Courier New">) on (noconfirm);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;
+	 text-indent: 12px;"><font style="font-family: 'Courier New';" color="#0000FF"
+								 face="Courier New">set</font> <font style="font-family: 'Courier New';"
+	 face="Courier New">behavior(RELIGION) canenter(</font><font style="font-family: 'Courier New';"
+	 color="#0000FF" face="Courier New">notappl</font><font style="font-family: 'Courier New';"
+															 face="Courier New">)
+ on (noconfirm);</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -18.00pt;"><b><font style="font-weight: bold;">See also:</font></b>
+ <a href="special_values.html">Special Values</a>, <a href="invalueset_function.html">Invalueset</a></p>
+</body>
+</html>

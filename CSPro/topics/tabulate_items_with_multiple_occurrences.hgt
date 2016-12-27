@@ -1,0 +1,152 @@
+﻿<title>Tabulate Items with Multiple Occurrences</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Tabulate Items with Multiple Occurrences</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">If an item used as a row or column variable is defined as
+ having two or more occurrences, the following conditions apply:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;"><b><font style="font-weight: bold;">â€¢</font></b>&#160;If
+ the parent item [i.e., the one described as occurring <font style="font-family: Courier;"
+															 face="Courier">n</font>
+ times] is dragged to the table as a row or column variable, the variable
+ name will be shown <span style="font-weight: bold;">without parentheses</span>.</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;"><b><font style="font-weight: bold;">â€¢</font></b>&#160;If
+ one of the occurrences of an item is dragged to the table as a row or
+ column variable, the variable name will be shown with a number <span style="font-weight: bold;">in
+ parentheses</span>.</p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">For example,</font> <font style="font-family: Courier; font-size: 10pt;"
+										 color="#000000" face="Courier"
+										 size="2">MyItem</font> <font style="font-family: Arial;
+	 font-size: 10pt;" color="#000000" face="Arial" size="2">contains two
+ occurrences,</font> <font style="font-family: Courier; font-size: 10pt;"
+							 color="#000000" face="Courier" size="2">MyItem(1)</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">and</font> <font style="font-family: Courier; font-size: 10pt;"
+									 color="#000000" face="Courier" size="2">MyItem(2)</font><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">. If</font> <font style="font-family: Courier; font-size: 10pt;"
+								 color="#000000" face="Courier" size="2">MyItem</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">(the parent item) is dragged from the dictionary tree
+ to the table as a row or column variable, no parentheses will appear with
+ the name</font> <font style="font-family: Courier; font-size: 10pt;" color="#000000"
+						 face="Courier" size="2">MyItem</font> <font style="font-family: Arial;
+	 font-size: 10pt;" color="#000000" face="Arial" size="2">in the table
+ heading because no specific occurrence of</font> <font style="font-family: Courier;
+														 font-size: 10pt;"
+														 color="#000000"
+														 face="Courier"
+														 size="2">MyItem</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">was requested. However, if</font> <font style="font-family: Courier;
+															 font-size: 10pt;"
+															 color="#000000"
+															 face="Courier"
+															 size="2">MyItem(1)</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">is dragged from the dictionary tree to the table, then
+ the item name</font> <font style="font-family: Courier; font-size: 10pt;"
+							 color="#000000" face="Courier" size="2">MyItem</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">will be shown with the identifying number in parenthesesâ€”</font><font
+	 style="font-family: Courier; font-size: 10pt;" color="#000000" face="Courier"
+	 size="2">MyItem(1)</font><font style="font-family: Arial; font-size: 10pt;"
+									 color="#000000" face="Arial" size="2">â€”because
+ the user selected a specific instance [occurrence] of the variable.</font></p>
+<p style="text-align: left; margin-left: 0.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 0.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">If you choose an item with occurrences as a row or column
+ variable,</font> <b><font style="font-family: Arial; font-size: 10pt;
+							 font-weight: bold;" color="#000000" face="Arial"
+							 size="2">all</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 color="#000000"
+															 face="Arial"
+															 size="2">occurrences
+ of that item will be tabulated across</font> <b><font style="font-family: Arial;
+														 font-size: 10pt;
+														 font-weight: bold;"
+														 color="#000000"
+														 face="Arial" size="2">all</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">corresponding records in the data file. For example,
+ if you choose</font> <font style="font-family: Courier; font-size: 10pt;"
+							 color="#000000" face="Courier" size="2">MyItem</font><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">, both</font> <font style="font-family: Courier; font-size: 10pt;"
+									 color="#000000" face="Courier" size="2">MyItem(1)</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">and</font> <font style="font-family: Courier; font-size: 10pt;"
+									 color="#000000" face="Courier" size="2">MyItem(2)</font>
+ <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+		 size="2">would be tabulated across all records.</font></p>
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ you choose a specific occurrence of an item as a row or column variable
+ (e.g.,</font> <font style="font-family: Courier; font-size: 10pt;" face="Courier"
+					 size="2">MyItem(2)</font><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">),
+ only that occurrence will be tabulated across all corresponding records.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
+ may also use items with occurrences as the</font> <a href="tabulate_values_instead_of_frequencies.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">value</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">or</font>
+ <a href="add_weights_to_a_table.html"><font style="font-family: Arial;
+											 font-size: 10pt;" face="Arial"
+											 size="2">weight</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">item.
+ Note that when the</font> <a href="change_unit_of_tabulation.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">unit
+ of tabulation</font></a> <font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">is</font> <u><font
+	 style="font-family: Arial; font-size: 10pt; text-decoration: underline; "
+	 face="Arial" size="2">not</font></u> <font style="font-family: Arial;
+												 font-size: 10pt;" face="Arial"
+												 size="2">the repeating
+ item, you will get errors when running your table unless you specify the
+ occurrence number to use (e.g.,</font> <font style="font-family: Courier;
+												 font-size: 10pt;" color="#000000"
+												 face="Courier" size="2">MyItem(2)</font><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">)
+ or change the unit (e.g., to</font> <font style="font-family: Courier;
+											 font-size: 10pt;" face="Courier"
+											 size="2">MyItem</font><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">).</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See Also:</font></b> <a href="create_a_table.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">Create a Table</font></a></p>
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿<title>Tabulate Items in Relations</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Tabulate Items in Relations</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">A
+ &quot;relation&quot; is created in the data dictionary. It links two record
+ types through values on each record or occurrence number. If the two items
+ have the same value then the records are linked, i.e., the items on the
+ two record types are merged so all items &quot;appear&quot; to be on one
+ big record.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">A
+ table or subtable using items from two record types linked through a relation
+ is created in the same manner as any other table, i.e., drag and drop
+ the items from each record. CSPro will automatically set the unit of tabulation
+ to the relation between the two items. When the table is run, the tallies
+ will be made from the linked records only.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Example:</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ a Labor Force Survey, the record with labor force information is related
+ to the record with person information through sequence numbers.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Here
+ is the definition of the Link.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 9pt;" face="Arial" size="2">--------------------------------------------------------------------------------------------------------------</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 9pt;" face="Arial" size="2">Relation
+ Name Primary Linked by Secondary Linked by</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 9pt;" face="Arial" size="2">--------------------------------------------------------------------------------------------------------------</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 9pt;" face="Arial" size="2">LFS_LINK
+ LFS LFS_NUMBER PERSON SERIAL_NUMBER</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">And
+ how it is displayed in the data dictionary:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtab_604.jpg" alt="Data Dictionary Tree with a Relation"
+	 title="Data Dictionary Tree with a Relation" width="335" height="134"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ &quot;Age&quot; value set is dropped for the Person record and the &quot;Work
+ last week?&quot; value set is dropped from the LFS record then the following
+ table is created.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtab_605.jpg" alt="Units Tallied in Tally Attributes (Table) Dialog Box"
+	 title="Units Tallied in Tally Attributes (Table) Dialog Box" width="546"
+	 height="220" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Since
+ the LFS record is the primary link, the tallies will be done for each
+ occurrence of the LFS record. (This assumes that every LFS record in the
+ case can be linked to a Person record in the case and that no &quot;universe&quot;
+ has been specified.)</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Note:</font></b> <font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">The &quot;Unit
+ Tallied&quot; must be the relation defined in the data dictionary. CSPro
+ will automatically set the default to the relation if such a relation
+ exists.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See Also:</font></b> <a href="relation_description.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Relation
+ Description</font></a></p>
+</body>
+</html>

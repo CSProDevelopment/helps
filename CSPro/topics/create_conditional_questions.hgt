@@ -1,0 +1,182 @@
+﻿<title>Create Conditional Questions</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Create Conditional Questions</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ bottom window of the question editor is used to add conditions.</font></p>
+<ol>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Select
+	 an item for which you want to add a condition (from the left-hand
+	 tree).</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+	 the itemâ€™s record type is</font> <a href="occurrences.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">multiply occurring</font></a><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,
+	 then columns for &quot;Min Occ&quot; and &quot;Max Occ&quot; (minimum
+	 occurrences and maximum occurrences) will be shown in the condition
+	 editor window. A &quot;condition&quot; column is also shown.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Right-click
+	 on the blue highlight bar in the condition window</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Choose
+	 Add Condition</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Enter
+	 a condition.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><a
+	 href="enter_question_text.html"><font style="font-family: Arial; font-size: 10pt;"
+											 face="Arial" size="2">Enter
+	 text</font></a> <font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">for this question in
+	 the window above.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Add
+	 more conditions, and then question text for each.</font></p></li>
+</ol>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
+ the entry application comes to this question, it will evaluate the first
+ condition. If it is true, then the question text for that condition will
+ be shown to the user. If not, the next condition will be checked, and
+ so on. If no conditions are satisfied (i.e., they are all false), then
+ no question text will be displayed. It is not necessary to add an actual
+ condition; a blank condition will always evaluate true.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ &quot;Min Occ&quot; and &quot;Max Occ&quot; let you easily base conditions
+ on the number of occurrences of the record type. For example, you might
+ have an item AGE in a person record, with conditions:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<table cellspacing="0" width="695">
+	<col style="width: 10.359%;" />
+	<col style="width: 12.08%;" />
+	<col style="width: 12.08%;" />
+	<col style="width: 65.481%;" />
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt; font-weight: bold;">Min
+		 Occ</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt; font-weight: bold;">Max
+		 Occ</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt; font-weight: bold;
+										 text-decoration: none; ">Condition</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt; font-weight: bold;
+										 text-decoration: none; "><u><font
+		 style="text-decoration: none; ">Effect</font></u></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">1</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">1</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">this
+		 question text will be shown if there is 1 person record in the
+		 case</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">2</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">5</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">this
+		 question text will be shown if there are 2-5 person records</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">6</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">15</font></p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">this
+		 question text will be shown if there are 6-15 person records</font></p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;">&#160;</p></td>
+		<td style="padding-left: 1px; padding-top: 1px; padding-right: 1px;
+			 padding-bottom: 1px;"><p style="text-align: left; margin-top: 0.00pt;
+										 margin-bottom: 0.00pt;"><font
+		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">this
+		 question text will be shown if the three previous conditions are
+		 all false (that is, if there are 16+ person records)</font></p></td>
+	</tr>
+</table>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><span
+	 style="font-weight: bold;">Note:</span> Conditions can include dictionary
+ items or variables, and can even call functions. In fact, they can be
+ any expression that could be evaluated in a logical &quot;ifâ€¦then&quot;
+ statement in the applicationâ€™s program logic.</p>
+</body>
+</html>

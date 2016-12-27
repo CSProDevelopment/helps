@@ -1,0 +1,102 @@
+﻿<title>Compiler Mode</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Compiler Mode</font></b></h3>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ CSPro compiler operates in one of two modes:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;</font></b><b><font style="font-family: Arial;
+														 font-size: 10pt;
+														 font-weight: bold;"
+														 face="Arial" size="2">Explicit
+ mode</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
+ must declare all</font> <a href="variables.html"><font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">variables</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">not
+ defined in your dictionary; otherwise, the variables will be flagged as
+ errors by the compiler. The advantage of this mode is that you do not
+ have to worry about misspelled names. The default compiler mode is explicit,
+ which means that any variable used in a program must be declared in a
+ numeric or alpha statement.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
+	 face="Arial" size="2">â€¢&#160;</font></b><b><font style="font-family: Arial;
+														 font-size: 10pt;
+														 font-weight: bold;"
+														 face="Arial" size="2">Implicit
+ mode</font></b></p>
+<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
+ allows you to declare a variable &quot;on the fly&quot;, i.e., anywhere
+ in your program. For example, simply coding &quot;myvar = 3;&quot; in
+ any procedure or function automatically declares a numeric variable &quot;myvar&quot;.
+ All such declarations are global in scope, meaning you can assign or get
+ the value from any other procedure.</font> <a href="user_defined_functions.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">User-Defined
+ Functions</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">,</font> <a href="variables.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">string
+ variables</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">, and</font> <a href="arrays.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">arrays</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">must
+ still be declared in</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
+									 color="#0000FF" face="Courier New"
+									 size="2">PROC GLOBAL</font><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">. The advantage of this mode
+ is that you can write your code more quickly. The danger in using this
+ mode is that you may misspell the name of a variable or dictionary item.
+ If you do this, the compiler will create a separate variable for the misspelled
+ name. For example, you may code &quot;if mivar = 3 thenâ€¦&quot; and the
+ compiler will create a new variable &quot;mivar&quot;, with initial value
+ 0, and therefore evaluate the condition as false.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
+ can change the default mode on your computer by checking or unchecking
+ the &quot;Option/Set Explicit&quot;</font> <font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">setting.
+ This setting will then remain in effect for all applications. Note that
+ this setting is in effect only on your computer; if you move your application
+ to another computer with a different setting, you may get a different
+ result when you compile.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
+ can override the computerâ€™s default setting mode by using the</font> <a
+	 href="set_statement.html"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">set statement</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">in
+ PROC GLOBAL. In this case your application will always give the same result
+ on any machine.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <a href="set_compiler_defaults.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Set
+ Compiler Defaults</font></a></p>
+</body>
+</html>

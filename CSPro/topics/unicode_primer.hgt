@@ -1,0 +1,172 @@
+﻿<title>Unicode Primer</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h1 style="font-size: 18pt; font-family: Arial, sans-serif;">Unicode Primer</h1>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><span
+	 style="font-weight: normal;">Beginning with version 5.0, CSPro is
+ Unicode compliant.</span></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">What
+ is Unicode?</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">Unicode is
+ a widely adopted system for representing characters for all languages
+ currently in use. Early computer programs generally used only one byte
+ to represent a character, which led to a limit in the number of characters
+ that could be displayed on screen and used in computations. This limit
+ of 256 characters was used effectively by people who only required English
+ characters, or characters from most European languages, but it could not
+ represent the languages used by more than a billion people, including
+ most notably, many Asian languages.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">The Unicode
+ standard now defines more than 100,000 characters, but many of these characters
+ represent extinct languages. For that reason, Windows only provides native
+ support for a subset of Unicode characters. In a Unicode program, a character
+ is represented by two bytes, which allows for up to 65,536 characters.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">Whereas in
+ English it is very clear what makes up one characterâ€”one keystrokeâ€”in
+ other languages it is not as straightforward. For example, in Chinese,
+ typing two characters, &quot;å¤©æ´¥,&quot; requires seven keystrokes (â€œTianjinâ€).
+ In Bangla, the character à¦ªà¦¿ requires two keystrokes (à¦ª + à¦¿), which combine
+ to create one character. Both the Chinese and Bangla examples require
+ four bytes in memory and return a string length of 2.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">What
+ is UTF-8?</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">With
+ each character stored as two bytes in memory, there are several ways to
+ write characters to a disk. One way is to write two bytes for every character,
+ but this is costly for most users, the bulk of whom only use characters
+ that can be expressed properly with either the ASCII or ANSI encoding
+ systems. The computer world has settled on using UTF-8, a variable-length
+ encoding scheme that uses between one and four bytes to represent a character.
+ ASCII characters are represented using one byte, other ANSI characters
+ are represented using two bytes, and most Asian characters are represented
+ using three bytes. To identify a file as encoded in UTF-8, a three-byte
+ BOM (byte order mark) is placed at the beginning of a text file. For example,
+ here is the UTF-8 representation of: &quot;I am FranÃ§ois from æ³•å›½.&quot;</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;"><img
+	 src="unicodeFrancois.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">With
+ a UTF-8 encoding, a file's size is not equal to the number of characters
+ in the file. An empty file is three bytes because of the BOM. (The <a
+	 href="Fileempty_Function.html">fileempty</a> can be used to determine
+ whether a file is actually empty.) An ASCII file converted to UTF-8 will
+ generally be the size of the original file plus three bytes. An ANSI file
+ that uses non-English characters will be even larger. The name FranÃ§ois
+ takes eight bytes to represent in ANSI but uses nine bytes in UTF-8.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">How
+ Will CSPro Work with Unicode Files?</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">Versions
+ of CSPro up to 4.1 used ANSI characters for data files and all specification
+ files. Starting with version 5, CSPro uses the UTF-8 encoding scheme for
+ representing Unicode characters. CSPro will always be able to read both
+ ANSI and UTF-8 files, so any old files will work in the new version, but
+ when files are modified and saved the files will be rewritten in UTF-8.
+ All new data files and listing reports will be created in UTF-8. Because
+ earlier versions of CSPro only supported ANSI files, any file created
+ in CSPro 5.0 or later, including data files, is no longer automatically
+ backwards compatible with older versions of CSPro.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">How
+ Will UTF-8 Affect My File Sizes?</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">If
+ you only use ASCII characters in your specification and data files, your
+ new files will be only three bytes larger than the CSPro 4.1 equivalents.
+ These three bytes reflect the size of the UTF-8 BOM. If you use many accented
+ characters that are valid in ANSI (like Ã  and Ã»), then your files will
+ increase in size, though only slightly, because the vast majority of characters
+ in any CSPro file are still digits and Latin characters. In general your
+ files will increase in size by an inconsequential amount.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">What
+ if I Want to Use a Data File With an Older Version of CSPro?</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">The
+ CSPro installation includes a tool, the Unicode Text Converter, that allows
+ you to change the encoding of text files. This utility allows you to convert
+ ANSI files to UTF-8, though this is not necessary because CSPro 5.0 or
+ later does this automatically. You will more likely use the tool to convert
+ UTF-8 files to ANSI. If you use non-ANSI characters in your specification
+ or data files, these characters will be converted to question marks during
+ the conversion to ANSI. For instance, &quot;I am FranÃ§ois from æ³•å›½.&quot;
+ will become â€œI am FranÃ§ois from ??.â€ Converting files from UTF-8 to ANSI
+ is not necessary a lossless conversion, so it should be done only if absolutely
+ necessary of if you are confident that you did not use any Unicode-only
+ characters.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">Some
+ text editors, including Notepad, allow a user to change the encoding of
+ a text file. These editors can be used to convert text files from UTF-8
+ to ANSI. If using Notepad, open the file and then select Save As. At the
+ bottom of the dialog box is an option to change the encoding.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">What
+ about CSPro's Binary Files?</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">The
+ important binary files created by CSPro are compiled data entry applications
+ (.pen), file indices (.idx), and intermediary tabulation files (.tab and
+ .tai). These formats have changed and CSPro can no longer read binary
+ files written by CSPro 4.1 or previous versions. CSPro can determine if
+ a compiled data entry application is of the correct format and will present
+ an error message to an operator who tries to open an old version in CSEntry.
+ CSPro can also determine if an old index is being used and will automatically
+ generate a new index. If you use intermediary tabulation binary files
+ (e.g., if you run tables in parts), you should delete and regenerate them
+ when upgrading to a Unicode version of CSPro. The Unicode Text Converter
+ will not work correctly on binary files.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Can
+ I Still Write and Save to ANSI Format?</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">Outside
+ of the Export Data tool, CSPro no longer supports writing to ANSI format,
+ though it can still read files encoded in ANSI. CSPro automatically converts
+ files from ANSI to UTF-8 formats as needed. CSPro will convert only files
+ that may be modified by a program. For example, if you use an external
+ file in your application but only call fileread and never filewrite, CSPro
+ will keep the input file in its original format. However, if there is
+ a filewrite statement and the file is encoded in ANSI, CSPro will convert
+ the file to UTF-8 before opening it. The old ANSI file will be sent to
+ the Recycle Bin in case you want to recover it.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Distributing
+ CSPro Data Files</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">Most
+ applications support Unicode so you may not have a problem using external
+ applications with your data or specification files. However, if you must
+ use an application that is not Unicode compliant, run the Unicode Text
+ Converter on the necessary files.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">If
+ you are distributing files to a broad audience and if your data file does
+ not contain any non-ANSI characters, you might consider converting it
+ to ANSI for maximum compatibility. To illustrate an example of what might
+ happen with a non-Unicode program reading a UTF-8 file, imagine a CSPro
+ data file that has two record types, P (population) and H (housing). The
+ ANSI file might look like this:</p>
+<p style="font-size: 10pt; margin-left: 48px; font-family: 'Courier New', monospace;">P&lt;case
+ id&gt;&lt;data&gt;<br />
+P&lt;case id&gt;&lt;data&gt;<br />
+P&lt;case id&gt;&lt;data&gt;<br />
+H&lt;case id&gt;&lt;data&gt;</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">The
+ UTF-8 file might look like this:</p>
+<p style="font-size: 10pt; margin-left: 48px; font-family: 'Courier New', monospace;">&lt;BOM&gt;P&lt;case
+ id&gt;&lt;data&gt;<br />
+P&lt;case id&gt;&lt;data&gt;<br />
+P&lt;case id&gt;&lt;data&gt;<br />
+H&lt;case id&gt;&lt;data&gt;</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 0px;">An
+ older version of CSPro would regard the first row of data as an invalid
+ record because the BOM was in the place of the record type. It would thus
+ register the household as having two members instead of three. If any
+ non-ASCII characters existed in the data file, it would further shift
+ the data and then items would not be read correctly.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 0px;">If
+ you release a UTF-8-encoded data file widely, you may want to include
+ a documentation file with text similar to the following:</p>
+<p style="margin-left: 48px; font-family: Arial, sans-serif; font-size: 10pt;
+	 font-weight: bold;">Warning: This CSPro data file is encoded in UTF-8.
+ UTF-8 is a text encoding format widely used to represent characters from
+ any language. If you use this data file with a software package that does
+ not support Unicode and UTF-8, you must first convert the data file to
+ an ANSI encoding. Without this conversion there is a risk that the software
+ package will misread parts of the data file.</p>
+</body>
+</html>

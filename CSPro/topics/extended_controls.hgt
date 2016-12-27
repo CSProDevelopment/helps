@@ -1,0 +1,177 @@
+﻿<title>Extended Controls</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h1 style="font-size: 18pt; font-family: Arial, sans-serif;">Extended Controls</h1>
+<p style="font-size: 10pt; font-family: Arial, sans-serif;"><span style="font-size: 10pt;
+	 font-family: Arial, sans-serif;">Occasionally it may be useful to
+ display to an enumerator or keyer the possible values for a given field
+ in a data entry application. For example, if a survey is being conducting
+ on a tablet computer, it may be easier for an enumerator to use a finger
+ or stylus to select a value rather than to key the value using the screen's
+ touch keyboard. CSPro's extended controls allow for such flexibility by
+ allowing the program to specify the capture type associated with a field.</span></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Selecting
+ Extended Controls</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif;">You can indicate
+ that you want to automatically use extended controls by selecting the
+ Use Extended Controls option in <a href="the_drag_option_menu.html">Drag
+ Options</a>. If this option is selected, CSPro will automatically choose
+ a capture type for the field based on the field's first value set.</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif;">You can manually
+ change the capture type for a field by editing the <a href="change_field_properties.html">field's
+ properties</a>. CSPro allows you to select a capture type that is suitable
+ for the item's first value set. A warning will appear if the value set
+ is not suitable. In this case, if the value set is compatible at the time
+ of data entry (because the value set was changed dynamically using the
+ <a href="setvalueset_function.html">setvalueset</a> function), it will
+ be used; if not compatible, the field will appear as a Text Box. For more
+ programmatic control, see the <a href="Setcapturetype_Function.html">setcapturetype</a>
+ function.</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-style: italic;
+	 text-align: center;"><img src="extendedControlsIncompatible.png"
+								 alt="" style="border: none;" border="0" /></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif;">The CSPro Designer
+ shows the fields that use extended controls by coloring the border of
+ the field in blue. The blue border does not exist when the data entry
+ application is run in CSEntry. The field border will be a lighter blue
+ color when the Number Pad capture type is selected.</p>
+<p style="text-align: center; font-size: 10pt; font-family: Arial, sans-serif;"><img
+	 src="extcont2.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Text
+ Box</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;">The
+ Text Box attribute is the default option for a field and indicates that
+ no extended control will be displayed. On Windows, tickmarks divide each
+ character.</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; text-align: center;"><img
+	 src="unicodeTextbox1.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;"><span
+	 style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Text
+ Box (No Tickmarks)</span></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;">The
+ Text Box (No Tickmarks) option is only available for alphanumeric fields.
+ On Windows, CSEntry will not display any tickmarks and characters will
+ be displayed with any <span style="font-size: 10pt; font-family: Arial, sans-serif;
+							 font-weight: normal;">connecting features.
+ This is useful for some scripts, like Arabic, which have elements that
+ connect, or for other languages that require multiple characters to create
+ a composite character. In the CSPro Designer you can click on the field
+ and resize it horizontally to set an appropriate size.</span></p>
+<p style="text-align: center;"><img src="unicodeTextbox2.png"
+									 alt="" style="border: none;" border="0" /></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;"><span
+	 style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Text
+ Box (Multiline)</span></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif;"><span style="font-size: 10pt;
+	 font-family: Arial, sans-serif;">The Text Box (Multiline) control
+ provides a convenient way to collect multiple lines of information in
+ one alphanumeric field. This may be useful for information like an address
+ or a memo field. In the CSPro Designer you can click on the field and
+ resize it horizontally and vertically to set an appropriate size. In CSEntry
+ on Windows, the data entry operator can move up and down in the field
+ using the arrow keys, but as with other fields, pressing Enter will move
+ to the next field. To add a line break, the operator must hold down the
+ Control key before pressing Enter.</span></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; text-align: center;"><img
+	 src="unicodeTextbox3.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif;"><span style="font-size: 10pt;
+	 font-family: Arial, sans-serif;">Due to the lack of tickmarks, a data
+ entry operator will not immediately know many characters they have entered
+ into the field and how many characters are remaining. CSEntry shows, on
+ the status bar at the bottom of the screen, the number of characters entered,
+ and the total size of the field.</span></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; text-align: center;"><img
+	 src="unicodeTextbox4.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif;">For multiline
+ controls, the characters <span style="font-weight: bold;">\n</span> will
+ be placed in the field text for every line break. CSEntry will automatically
+ interpret <span style="font-weight: bold;">\n</span> characters as line
+ breaks, but if you use your data with another software package, you may
+ need to adjust for this behavior. In the above screenshot, the text would
+ appear in the data file as:</p>
+<p style="font-size: 10pt; margin-left: 36px; font-family: 'Courier New', monospace;">100
+ Main Street, Suite 1234\nAnytown, NY 00000-0000</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif;">Both of these
+ Text Box options can also be specified for alpha fields in rosters. To
+ resize the field within a roster you may need to first adjust the roster's
+ row heights or column widths.</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Radio
+ Button</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;"><span
+	 style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;">The
+ Radio Button capture type can be selected if an item is either numeric
+ or alphanumeric and if the value set has only discrete values, meaning
+ that there are no &quot;to values&quot; defined.</span></p>
+<p style="text-align: center; font-size: 10pt; font-family: Arial, sans-serif;"><img
+	 src="extcont3.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Check
+ Box</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;">Check
+ Boxes are used to capture multiple response variables. Items using check
+ boxes must be alphanumeric. Each value in the value set corresponds to
+ one of the responses and will be displayed as a separate check box. When
+ the boxes are checked, the corresponding values will be put into the alphanumeric
+ field, from left to right. The length of the field must be a multiple
+ of the maximum length of a response. For example, if each response code
+ is one character and you have five responses, then a field of length five
+ would allow for the selection of all responses. A field of length two
+ would allow for only two responses (e.g., &quot;pick the top two...&quot;).</p>
+<p style="text-align: center; font-size: 10pt; font-family: Arial, sans-serif;"><img
+	 src="extcont5.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Drop
+ Down / Combo Box</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;">These
+ capture types display all values in the value set of numeric and alphanumeric
+ items. The Drop Down capture type is identical to the Radio Button capture
+ type, except that it displays differently on Windows. In contrast, the
+ Combo Box capture type allows for the displaying of ranges of values (that
+ is, value sets with &quot;to values&quot;). If the enumerator clicks on
+ a value with a range, the first value in the range is placed in the field.</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;">While
+ the Drop Down and Combo Box capture types are visually identical on CSEntry
+ for Windows, in the Android environment there is a difference between
+ the two options. Drop Down fields, which contain only discrete values,
+ will be displayed as radio buttons. Combo Box fields, which can include
+ ranges, will appear as text boxes with a corresponding button that displays
+ the entire value set, allowing users to see the valid ranges as well as
+ to select from discrete values (such as a Missing code).</p>
+<p style="text-align: center; font-size: 10pt; font-family: Arial, sans-serif;"><img
+	 src="extcont4.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Date</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;">The
+ Date capture type is valid for numeric and alphanumeric items of length
+ 4, 6, or 8. The item does not need to have a value set. The choice of
+ date format affects how the date is stored in the field.</p>
+<p style="text-align: center; font-size: 10pt; font-family: Arial, sans-serif;"><img
+	 src="extcont6.png" alt="" style="border: none;" border="0" /></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;"><span
+	 style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Number
+ Pad</span></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;">Some
+ users find it cumbersome to use the on-screen keyboard while entering
+ data on a tablet using Windows. This control displays a number pad for
+ entering numeric values with a finger or mouse.</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; text-align: center;"><img
+	 src="numberPad.PNG" alt="" style="border: none;" border="0" /></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Hiding
+ the Title of an Extended Control Window</p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;">By
+ default CSEntry displays the label of the value set in the window of the
+ extended control, but this title can be turned off using programmatic
+ logic:</p>
+<p style="font-size: 10pt; font-weight: normal; font-family: 'Courier New', monospace;"><font
+	 color="#000000"><font color="#0000FF">set</font> attributes(<i>dictionary-symbol</i>)
+ assisted off(variable(<font color="#0000FF">title</font>));</font></p>
+<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;"><span
+	 style="font-weight: bold;">See also:</span> <a href="Getcapturetype_Function.html">Getcapturetype
+ Function</a>, <a href="Setcapturetype_Function.html">Setcapturetype Function</a>,
+ <a href="Setcapturepos_Function.html">Setcapturepos Function</a></p>
+</body>
+</html>

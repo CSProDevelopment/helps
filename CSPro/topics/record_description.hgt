@@ -1,0 +1,112 @@
+﻿<title>Record Description</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Record Description</font></b></h4>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">A record is a group of related data items. In the process
+ of creating a record to define (a portion of) the questionnaire, you will
+ also be defining the physical layout of the data file. For example, suppose
+ your (very simple) population record looks like the following (only item
+ name, starting position, and length properties are shown; starting positions
+ show that ID items occupy the first 9 positions in the record):</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;<b><font style="font-weight: bold;">Item
+ Name&#160;&#160;&#160;&#160;&#160;Start Pos&#160;&#160;Length</font></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;Relationship&#160;&#160;10&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;Sex &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;11&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: 'Courier New', monospace;">&#160;Age&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;12&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">If an operator had keyed a questionnaire for a 35-year-old
+ female (Sex = 2) head of household (Relationship = 1), you would see a
+ line in the data file, corresponding to the population record defined
+ above:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;&#160;1 2</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;12345678901234567890 &lt;-- position</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
+	 face="Courier New" size="2">&#160;--------------------</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
+	 face="Courier New" size="2">&#160;&#160;1235 &lt;-- line in data file</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">In deciding on a file structure, there is often the choice
+ of defining a record type which occurs once within a questionnaire but
+ contains repeating sets of data, or to define a record type which occurs
+ multiple times within a questionnaire, each with a single occurrence of
+ the data. The application designer should take into consideration the
+ amount of information that recurs and the probable number of occurrences.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">A common example in a Housing and Population Census is information
+ about deaths in the household during the 12 months prior to the census.
+ If this information (usually sex and age at death of the deceased) is
+ collected during enumeration, the expectation is that 95% of households
+ will have no more than one, or at most two, deaths during the previous
+ 12 months. With this volume of information, it would be practical to have
+ one record type that occurs once within the questionnaire and allows for
+ repeating occurrences of the data, since it is unlikely that even the
+ maximum number of occurrences, multiplied by the number of positions occupied
+ by each occurrence, will exceed the length of the already-existing household
+ and population records.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">However, in the case of an agricultural survey, a section
+ on crops may include questions about acreage planted, yields, etc., whose
+ cumulative length for each crop mentioned may be quite large in relation
+ to other records in the file. In such a case, it would be more practical
+ to define a record type that occurs multiple times within the questionnaire.
+ Within each occurrence of the record would be found the information relating
+ to one specific crop.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <a href="dictionary_hierarchy.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Dictionary
+ Hierarchy</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">,</font> <a href="record_properties.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Record
+ Properties,</font></a> <a href="record_type.html"><font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">Record
+ Type,</font></a> <a href="required_record.html"><font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">Required
+ Record,</font></a> <font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2"><span style="text-align: left;"><a
+	 href="maximum_number.html">Maximum Number</a></span><span style="text-align: left;">,</span></font>
+ <span style="text-align: left;"><a href="add_or_modify_records.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Add
+ or Modify Records</font></a></span></p>
+</body>
+</html>

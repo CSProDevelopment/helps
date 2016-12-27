@@ -1,0 +1,137 @@
+﻿<title>Onchar Global Function</title>
+
+<font white>HELPTODO</font>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
+	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
+	 size="5">Onchar Global Function</font></b></h3>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
+	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
+	 color="#0000FF" face="Courier New" size="2">function</font></b> <font
+	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
+	 size="2">OnChar(key-value);</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ <span style="font-weight: bold;">onchar</span> global function allows
+ you to trap characters in order to perform special actions or to change
+ the action of the character. It can also be used to disable or remap characters.
+ This function must be placed in the</font> <a href="the_cspro_program_structure.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Global</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Procedure.</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ an onchar global function is coded, every character the operator types
+ is sent to the onchar function for processing. If the onchar function
+ returns a value, then the return value is processed by the field as the
+ character. If a statement in the onchar function causes movement to another
+ field within the case, then the movement is executed. If no onchar function
+ is coded, then characters are unmodified.</font></p>
+<p style="margin-left: 18.70pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">key value</font></b> <font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">is a number code identifying
+ what character was typed using the keyboard. Its value can be used within
+ the function.</font></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">You can use the <a href="OnKey_Character_Map.html">OnKey
+ Character Map</a> to determine the value of characters.</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">Calls to this function are ignored
+ when executed on Android devices.</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt; font-weight: bold;"><b><font style="font-weight: bold;"><span
+	 style="font-weight: bold;">Differences between onkey and onchar</span>:</font></b></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;"><span style="font-family: Arial;
+												 font-size: 10pt;">The
+ onchar function differs from the <a href="onkey_global_function.html">onkey</a>
+ function. A keystroke contains information about the key pressed on the
+ keyboard, regardless of what this keystroke eventually maps to. A character
+ refers to the final representation of one or more keystrokes. This is
+ important when using non-Latin languages that require multiple keystrokes
+ to create one character. For example, creating the Chinese character 'é©¬'
+ using a Pinyin input system requires two keystrokes: 'm' and 'a.' The
+ code for this character is 39532. If typing such a keystroke, onkey will
+ be called several times before onchar is called. If both onkey and onchar
+ functions exist, onkey will always be called before onchar is called.</span></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">The onchar function also returns
+ values different from the onkey function for some Latin keystrokes. For
+ example, with Caps Lock off, if a keyer holds down Shift and types 'M,'
+ onkey will return 1077 (1000 for the shift, 77 for 'm'). Onchar, on the
+ other hand, will return 77, the character code for 'M.' For a lowercase
+ 'm,' onkey returns 77 and onchar returns 109, the character code for 'm.'</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">&#160;</p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 font-family: Arial; font-size: 10pt;">The onchar function does not
+ return any information about whether any of the Shift, Ctrl, or Alt keys
+ were held down when the character was typed.</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Returned
+ value:</font></b></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Like
+ any global function, the onchar global function returns an integer value.
+ The value should be either the value of the character pressed (the same
+ as the value passed to the function), a substituted character value (remapping
+ the character), or zero (0) to indicate that the character is to be ignored.</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
+	 font-size: 10pt; font-weight: bold;"><b><font style="font-weight: bold;">Example:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
+	 background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
+	<font color="#000000"><font color="#0000FF">function</font> OnChar(keystroke)<br />
+	<br />
+	&#160;&#160;&#160;&#160;<font color="#0000FF">if</font> keystroke =
+	 <font color="#FF0000">24110</font> <font color="#0000FF">then</font>
+	 <font color="#008000">//&#160;å¸® (bang)<br />
+	</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">move</font>
+	 <font color="#0000FF">to</font> HELP_FORM;<br />
+	&#160;&#160;&#160;&#160;<br />
+	&#160;&#160;&#160;&#160;<font color="#0000FF">else</font><br />
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;OnChar = keystroke;<br />
+	&#160;&#160;&#160;&#160;<br />
+	&#160;&#160;&#160;&#160;<font color="#0000FF">endif</font>;<br />
+	&#160;&#160;&#160;&#160;<br />
+	<font color="#0000FF">end</font>;</font>
+</div>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -18.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
+	 style="font-weight: bold;">See also:</font></b> <a href="the_cspro_program_structure.htm"
+														 style="font-size: 10pt;
+														 font-family: Arial, sans-serif;">Global
+ Procedure</a>, <a href="user_defined_functions.htm" style="font-size: 10pt;
+					 font-family: Arial, sans-serif;">User Defined Functions</a>,
+ <a href="OnKey_Character_Map.htm" style="font-size: 10pt; font-family: Arial, sans-serif;">OnKey
+ Character Map</a>, <a href="onkey_global_function.htm" style="font-size: 10pt;
+						 font-family: Arial, sans-serif;">Onkey Global
+ Function</a></p>
+</body>
+</html>
