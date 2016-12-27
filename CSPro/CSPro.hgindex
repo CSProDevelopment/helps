@@ -479,9 +479,9 @@ cspro_capabilities.hgt | CSPro																	#	CSPro
 	what_is_cspro.hgt | What is																	#		What is
 create_a_cspro_application.hgt | CSPro Application												#	CSPro Application
 	create_a_cspro_application.hgt | Create														#		Create
-the_cspro_program_structure.hgt | CSPro Program Structure										#	CSPro Program Structure
-	the_cspro_program_structure.hgt | Declaration Section										#		Declaration Section
-	the_cspro_program_structure.hgt | Procedural Section										#		Procedural Section
+cspro_program_structure.hgt																		#	CSPro Program Structure
+	cspro_program_structure.hgt | Declaration Section											#		Declaration Section
+	cspro_program_structure.hgt | Procedural Section											#		Procedural Section
 curocc_function.hgt																				#	Curocc Function
 custom_consolidation.hgt																		#	Custom Consolidation
 include_exclude_special_values_in_a_variable.hgt | Custom Special Values						#	Custom Special Values
@@ -571,7 +571,7 @@ deckarrays.hgt																					#	DeckArrays
 	getdeck_function.hgt																		#		Getdeck Function
 	deckarray_leftover_rows.hgt | Leftover Rows													#		Leftover Rows
 	putdeck_function.hgt																		#		Putdeck Function
-the_cspro_program_structure.hgt | Declaration Section											#	Declaration Section
+cspro_program_structure.hgt | Declaration Section												#	Declaration Section
 preferences_and_default_formats.hgt | Default													#	Default
 	preferences_and_default_formats.hgt															#		Preferences and Default Formats
 	reset_format_of_table_item_to_default.hgt													#		Reset Format of Table Item to Default
@@ -643,11 +643,11 @@ display_results_for_one_geographic_area.hgt														#	Display Results for O
 distribute_finished_tables_to_other_users.hgt													#	Distribute Finished Tables to Other Users
 document_dictionary_elements.hgt																#	Document Dictionary Elements
 do_statement.hgt																				#	Do Statement
-the_drag_option_menu.hgt | Drag Option Menu														#	Drag Option Menu
-	the_drag_option_menu.hgt | Require Enter Key												#		Require Enter Key
-	the_drag_option_menu.hgt | Roster Options													#		Roster Options
-	the_drag_option_menu.hgt | Text Options														#		Text Options
-	the_drag_option_menu.hgt | Use Sub-Items													#		Use Sub-Items
+drag_option_menu.hgt																			#	Drag Option Menu
+	drag_option_menu.hgt | Require Enter Key													#		Require Enter Key
+	drag_option_menu.hgt | Roster Options														#		Roster Options
+	drag_option_menu.hgt | Text Options															#		Text Options
+	drag_option_menu.hgt | Use Sub-Items														#		Use Sub-Items
 add_lines_or_boxes_to_a_form.hgt | Draw Boxes on a Form											#	Draw Boxes on a Form
 data_synchronization.hgt | Dropbox Synchronization												#	Dropbox Synchronization
 	dropbox_synchronization_examples.hgt | Examples												#		Examples
@@ -703,7 +703,7 @@ errors_in_censuses_and_surveys.hgt | Errors														#	Errors
 	errors_at_data_entry.hgt | In Data Entry													#		In Data Entry
 change_error_sound.hgt | Error Sound															#	Error Sound
 	change_error_sound.hgt | Change																#		Change
-the_cspro_program_structure.hgt | Events														#	Events
+cspro_program_structure.hgt | Events															#	Events
 	order_of_executing_batch_edit_events.hgt | Order of Executing Batch Edit					#		Order of Executing Batch Edit
 	order_of_executing_batch_edit_events.hgt | Order of Executing Data Entry					#		Order of Executing Data Entry
 	order_of_executing_data_entry_events.hgt													#		Order of Executing Data Entry Events
@@ -897,7 +897,7 @@ arrays.hgt | Global																				#	Global
 	arrays.hgt																					#		Arrays
 	compiler_mode.hgt																			#		Compiler Mode
 	numeric_statement.hgt																		#		Numeric Statement
-	the_cspro_program_structure.hgt | Procedure													#		Procedure
+	cspro_program_structure.hgt | Procedure														#		Procedure
 	set_statement.hgt | Set Statment															#		Set Statment
 	user_defined_functions.hgt | User Defined Functions											#		User Defined Functions
 	variables.hgt																				#		Variables
@@ -941,7 +941,7 @@ questionnaire_and_dictionary_organization.hgt | Identification									#	Identif
 area_dialog_box.hgt | IDs Dialog Box															#	IDs Dialog Box
 if_and_only_if_operator.hgt | If and Only If													#	If and Only If
 	if_and_only_if_operator.hgt | Operator														#		Operator
-	operators.hgt | Operators																	#		Operators
+	operators.hgt																				#		Operators
 	operator_precedence.hgt | Operator precedence												#		Operator precedence
 if_statement.hgt																				#	If Statement
 value_set_images.hgt | Images																	#	Images
@@ -1121,7 +1121,7 @@ logic_file_apc.hgt | Logic																		#	Logic
 	view_logic.hgt																				#		View Logic
 expressions.hgt | Logical																		#	Logical
 	expressions.hgt																				#		Expressions
-	operators.hgt																				#		operators
+	operators.hgt																				#		Operators
 lookup_files.hgt																				#	Lookup Files
 	importing_data_to_cspro_format.hgt															#		Importing Data to CSPro Format
 	lookup_files.hgt | Using																	#		Using
@@ -1230,6 +1230,7 @@ names.hgt																						#	Names
 	change_the_view.hgt | In Tree																#		In Tree
 filename_function.hgt | Name of File															#	Name of File
 	filename_function.hgt | Filename function													#		Filename function
+nature_of_census_and_survey_data.hgt															#	Nature of Census and Survey Data
 move_around_a_dictionary.hgt | Navigating a Dictionary											#	Navigating a Dictionary
 navigating_between_pages_tables_and_areas.hgt | Navigating Between Pages  Tables  and Areas		#	Navigating Between Pages  Tables  and Areas
 skip_statement.hgt | Next																		#	Next
@@ -1277,8 +1278,7 @@ change_data_entry_options.hgt | Operator														#	Operator
 	change_data_entry_options.hgt | Ask for Operator ID											#		Ask for Operator ID
 	operator_statistics_file.hgt | Statistics File .LOG											#		Statistics File .LOG
 	operator_vs_system_controlled.hgt | Vs System Controlled									#		Vs System Controlled
-operators.hgt																					#	operators
-operators.hgt | Operators																		#	Operators
+operators.hgt																					#	Operators
 	and_or_truth_table.hgt																		#		And/Or Truth Table
 	operators.hgt | Arithmetic																	#		Arithmetic
 	has_operator.hgt																			#		Has Operator
@@ -1401,7 +1401,7 @@ change_the_print_page_setup.hgt | Printer														#	Printer
 print_only_selected_tables_or_pages.hgt															#	Print Only Selected Tables or Pages
 print_preview_options.hgt																		#	Print Preview Options
 print_setup.hgt																					#	Print Setup
-the_cspro_program_structure.hgt | Procedure Section												#	Procedure Section
+cspro_program_structure.hgt | Procedure Section													#	Procedure Section
 cspro_capabilities.hgt | Process Census or Survey Data											#	Process Census or Survey Data
 proc_statement.hgt																				#	Proc Statement
 produce_summary_statistics.hgt																	#	Produce Summary Statistics
@@ -1705,8 +1705,8 @@ expressions.hgt | String																		#	String
 	variables.hgt																				#		Variables
 string_statement.hgt																			#	String Statement
 strip_function.hgt | Strip function																#	Strip function
-structure_edits.hgt																				#	Structure Edits
 batch_edit_applications.hgt | Structure Edits													#	Structure Edits
+structure_edits.hgt																				#	Structure Edits
 structure_movement.hgt																			#	Structure Movement
 change_stub_column_position.hgt | Stub															#	Stub
 	change_stub_column_position.hgt																#		Change Stub Column Position
@@ -1850,7 +1850,6 @@ create_a_thematic_map_of_results.hgt | Thematic Map												#	Thematic Map
 	create_a_thematic_map_of_results.hgt | Create												#		Create
 if_statement.hgt | Then																			#	Then
 	if_statement.hgt																			#		If Statement
-the_nature_of_census_and_survey_data.hgt														#	The Nature of Census and Survey Data
 this_item.hgt																					#	This Item ($)
 change_windows.hgt | Tile																		#	Tile
 	change_windows.hgt | Side by Side															#		Side by Side
@@ -2020,7 +2019,7 @@ prepare_tables_for_posting_to_the_web.hgt | Web													#	Web
 add_weights_to_a_table.hgt | Weights															#	Weights
 	add_weights_to_a_table.hgt | Add Weights to Table											#		Add Weights to Table
 	tabulate_values_and_or_weights.hgt															#		Tabulate Values and/or Weights
-what_is_cspro.hgt																				#	What is CSPro
+what_is_cspro.hgt																				#	What is CSPro?
 average_function.hgt | Where																	#	Where
 	average_function.hgt																		#		Average Function
 	count_function.hgt																			#		Count Function
