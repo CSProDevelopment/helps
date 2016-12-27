@@ -1,9 +1,9 @@
-﻿<title>IIS CSWeb Setup</title>
+﻿<title>IIS CSWeb Setup</title> <titleheader />
 
 Below are the prerequisites for running CSWeb on an IIS server.
 
 <subheader> Add Project Files </subheader>
-Copy the <b>root directory</b> of your project to <b>&lt;Drive&gt;:\inetpub\wwwroot</b>. The result may look like <b>C:\inetpub\wwwroot\cspro-rest-api</b>.
+Copy the <b>root directory</b> of your project to <b>&lt;Drive&gt;:\inetpub\wwwroot</b>. For me, the result was <b>C:\inetpub\wwwroot\cspro-rest-api</b>.
 
 <subheader> Update Directory Permissions </subheader>
 You will find the below directories in your document root. Their permissions will need to be updated as shown.
@@ -21,7 +21,7 @@ Let us use the <b>files</b> directory as an example. Right-click on <b>files</b>
 Do not forget to start the server. If you installed MySQL Server as a service you can start it by doing the following:
 <list ordered>
 	<li> Win + R </li>
-	<li> Run service.msc </li>
+	<li> Run services.msc </li>
 	<li> Right-click on MySQLXX </li>
 	<li> Start </li>
 </list>
