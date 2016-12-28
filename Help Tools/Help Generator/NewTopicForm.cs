@@ -30,7 +30,7 @@ namespace Help_Generator
                         throw new Exception("Enter a topic filename.");
 
                     string topicsPath = Path.Combine(_helpComponents.projectPath,Constants.TopicsDirectoryName);
-                    string topicFilenameWithoutSpaces = textBoxTopicFilename.Text.Trim().Replace(' ','_');
+                    string topicFilenameWithoutSpaces = textBoxTopicFilename.Text.Trim().Replace(' ','_').ToLower();
                     string topicFilename = Path.Combine(topicsPath,topicFilenameWithoutSpaces + Constants.TopicExtension);
 
                     if( File.Exists(topicFilename) )
@@ -38,7 +38,7 @@ namespace Help_Generator
 
                     // create a blank topic file
                     using( TextWriter tw = new StreamWriter(topicFilename,false,Encoding.UTF8) )
-                        tw.WriteLine("<title>{0}</title> <titleheader />",textBoxTopicFilename.Text);
+                        tw.WriteLine("<title>{0}</title>",textBoxTopicFilename.Text);
 
                     _helpComponents.preprocessor.Refresh();
                     _preprocessedTopic = _helpComponents.preprocessor.GetTopic(Path.GetFileName(topicFilename));                    
