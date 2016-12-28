@@ -1,52 +1,9 @@
 ﻿<title>Resource Folders</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+There may be times, when deploying an application, especially to an Android device, that you will want to include some auxiliary files that the application uses. Such files might include <link lookup_files.hgt>lookup files</link> or <link value_set_images.hgt>value set images</link>. To simplify the deployment of such an application, these files can be packaged in with the data entry <link binary_data_entry_application_file_pen.hgt>.pen file</link>. The files will be compressed in the .pen file and then decompressed when the user opens the application. CSEntry will recreate the folder structure and files contained in the resource folders. Files that already exist on the device will be overwritten only if the timestamp of the .pen file is newer than the timestamp of the file on the device.
 
-<body>
-<h4 style="margin-top: 6.00pt; margin-bottom: 2.00pt; font-size: 18pt;
-	 font-weight: bold; font-family: Arial, sans-serif;"><b><font style="font-weight: bold;">Resource
- Folders</font></b></h4>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;
-	 font-size: 10pt;">There may be times, when deploying an application,
- especially to an Android device, that you will want to include some auxiliary
- files that the application uses. Such files might include <a href="lookup_files.html">lookup
- files</a> or <a href="Value_Set_Images.html">value set images.</a> To simplify
- the deployment of such an application, these files can be packaged in
- with the data entry <a href="Binary_Data_Entry_Application_File_ENC.html">,pen
- file</a>. The files will be compressed in the .pen file and then decompressed
- when the user opens the application. CSEntry will recreate the folder
- structure and files contained in the resource folders. Files that already
- exist on the device will be overwritten only if the timestamp of the .pen
- file is newer than the timestamp of the file on the device.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;
-	 font-size: 10pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;
-	 font-size: 10pt;">To specify a resource folder, select File -&gt;
- Add Files and then select a resource folder. Your application may have
- more than one resource folder. All files in the resource folder, and its
- subfolders, will be included in the .pen file, so it is important to think
- about how to structure your data entry application so that only relevant
- files are bundled together in the .pen file. You might, for example, have
- an Images folder where you put all the value set images that your application
- uses. When decompressing data on Android devices, files will only be saved
- in the csentry folder or in any of its subfolders.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;
-	 font-size: 10pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;
-	 font-size: 10pt;">If you no longer want to mark a folder as a resource
- folder, select File -&gt; Drop Files and select the folder that you no
- longer want to use.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;
-	 font-size: 10pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="lookup_files.html">Lookup
- Files</a>, <a href="Value_Set_Images.htm" style="font-family: Arial, sans-serif;">Value
- Set Images</a></p>
-</body>
-</html>
+To specify a resource folder, select <link add_files_to_an_application.hgt>File -> Add Files</link> and then select a resource folder. Your application may have more than one resource folder. All files in the resource folder, and its subfolders, will be included in the .pen file, so it is important to think about how to structure your data entry application so that only relevant files are bundled together in the .pen file. You might, for example, have an Images folder where you put all the value set images that your application uses. When decompressing data on Android devices, files will only be saved in the csentry folder or in any of its subfolders.
+
+If you no longer want to mark a folder as a resource folder, select <link drop_files_from_an_application.hgt>File -> Drop Files</link> and select the folder that you no longer want to use.
+
+<seealso lookup_files.hgt value_set_images.hgt />

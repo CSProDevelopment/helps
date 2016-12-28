@@ -1,111 +1,20 @@
 ﻿<title>Record Type</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+The Record Type is an alphanumeric item that uniquely identifies a dictionary record, and therefore helps describe your <link data_file_type_structure.hgt>data file's organization</link>.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Record Type</font></b></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The Record Type is an alphanumeric item that uniquely identifies
- a dictionary record, and therefore helps describe your</font> <a href="data_file_type_structure.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">data
- file's organization</font></a><font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- your dictionary contains more than one record, CSPro needs to be able
- to differentiate one record from another in the data file. &quot;Record
- Type&quot; provides the means for doing this.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
- example, a typical Housing and Population census data file would most
- likely have a housing record (describing details of the living unit) and
- a person record (to</font> <font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">describe
- details on each individual in the household).</font> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">You
- could assign a Record Type of '1' to the Housing record and '2' to the
- Person record to dist</font><font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">inguish
- between them.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">If your dictionary contains only one record, you do not need
- to use a Record Type. Therefore, you can 'reclaim' the location that was
- set aside for the Record Type as follows:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.25pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -9.75pt;"><b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" color="#000000"
-									 face="Arial" size="2">â€¢&#160;</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Select
- the (ID Items) set or the one-and-only record your dictionary contains
- from the dictionary tree.</font></p>
-<p style="text-align: left; margin-left: 15.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -14.50pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.25pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -9.75pt;"><b><font style="font-weight: bold;">â€¢&#160;</font></b>In
- the view on the right, you'll notice the first line is (record type).
- Only three values are used, <b><font style="font-weight: bold;">Starting_Position</font></b>,
- <span style="font-weight: bold;"><b><font>Len</font></b>gth</span>, and
- <b><font style="font-weight: bold;">Data Type</font></b>. Of these three
- values, you can only modify the start position and length. Change the
- length to 0. This will effectively &quot;remove&quot; the record type.
- (You can always reinstate it later by resetting the start position and
- length to non-zero values).</p>
-<p style="text-align: left; margin-left: 15.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -14.50pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Similarly, if you would like to modify the length of the
- Record Type, proceed as above.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 0.50pt;"><font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">The record type
- value is always alphanumeric.</font> <font style="font-family: Arial;
-											 font-size: 10pt;" color="#000000"
-											 face="Arial" size="2">Upper-
- and lowercase letters are distinct Record Type values (i.e., 'A' is not
- the same as 'a'). Blank is a valid Record Type value.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also:</font></b> <a href="record_description.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Record
- Description</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="record_properties.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Record
- Properties</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="required_record.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Required
- Record</font></a><font style="font-family: Arial; font-size: 10pt;" face="Arial"
-						 size="2">,</font> <a href="maximum_number.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Maximum
- Number</font></a><font style="font-family: Arial; font-size: 10pt;" color="#000000"
-						 face="Arial" size="2">,</font> <a href="labels.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Labels</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">,</font> <a href="names.html"><font style="font-family: Arial;
-												 font-size: 10pt;" face="Arial"
-												 size="2">Names</font></a></p>
-</body>
-</html>
+If your dictionary contains more than one record, CSPro needs to be able to differentiate one record from another in the data file. The Record Type provides the means for doing this.
+
+For example, a typical Housing and Population census data file would most likely have a housing record (describing details of the living unit) and a person record (to describe details on each individual in the household). You could assign a Record Type of '1' to the Housing record and '2' to the Person record to distinguish between them.
+
+If your dictionary contains only one record, you do not need to use a Record Type. Therefore, you can 'reclaim' the location that was set aside for the Record Type as follows:
+
+<list ordered>
+	<li>Select the (ID Items) set or the one-and-only record your dictionary contains from the dictionary tree.</li>
+	<li>In the view on the right, you'll notice the first line is (record type). Only three values are used, Starting Position, Length, and Data Type. Of these three values, you can only modify the start position and length. Change the length to 0. This will effectively "remove" the record type. (You can always reinstate it later by resetting the start position and length to non-zero values).</li>
+</list>
+
+Similarly, if you would like to modify the length of the Record Type, proceed as above.
+
+The record type value is always alphanumeric. Upper- and lowercase letters are distinct Record Type values (i.e., 'A' is not the same as 'a'). Blank is also a valid Record Type value.
+
+<seealso record_description.hgt record_properties.hgt />

@@ -1,89 +1,19 @@
 ﻿<title>Relation Description</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+Relations provide a way of linking one multiple record or item to one or more multiple records or items. For example, suppose a questionnaire contains two record types, child records and mother records. Each child record contains a data item that gives the sequence number of the mother record of the child's mother. A relation can be defined which links child records to mother records so that when data items from a child record are processes, the corresponding mother record data items are available for processing. Relations work much like database joins.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Relation Description</font></b></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Relations
- provide a way of linking one multiple record or item to one or more multiple
- records or items. For example, suppose a questionnaire contains two record
- types, child records and mother records. Each child record contains a
- data item that gives the sequence number of the mother record of the child's
- mother. A relation can be defined which links child records to mother
- records so that when data items from a child record are processes, the
- corresponding mother record data items are available for processing. Relations
- work much like database joins.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Relations
- have one primary multiple record or item. Each instance of the primary
- element in a case is processed one at a time. A relation has one or more
- secondary records or items. The corresponding secondary elements are linked
- to the primary element during processing.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">There
- are four types of linking that can defined by relations.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" face="Arial"
-										 size="2">Occurrence to Occurrence</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">â€“
- Corresponding occurrences of the primary record or item and secondary
- record or item are linked, that is first occurrences are linked, second
- occurrences are linked and so on.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" face="Arial"
-										 size="2">Item to Occurrence</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">â€“
- The value of an item on the primary record is a pointer to the occurrence
- of the secondary record.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" face="Arial"
-										 size="2">Occurrence to Item</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">â€“
- The value of an item on the secondary record is a pointer to the occurrence
- of the primary record.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" face="Arial"
-										 size="2">Item to Item</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">â€“
- The value of an item on the primary record is compared to the value of
- an item on the secondary record. If the values are equal, the records
- are linked.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Relations
- can be used in</font> <b><font style="font-family: Arial; font-size: 10pt;
-								 font-weight: bold;" face="Arial" size="2">for</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">statements
- in batch programs and in the Export Data tool.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also:</font></b> <a href="relation_properties.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Relation
- Properties</font></a></p>
-</body>
-</html>
+Relations have one primary multiple record or item. Each instance of the primary element in a case is processed one at a time. A relation has one or more secondary records or items. The corresponding secondary elements are linked to the primary element during processing.
+
+There are four types of linking that can defined by relations.
+
+<table 2 header nowrap>
+	<cell>Type</cell><cell>Description</cell>
+	<cell><b>Occurrence to Occurrence</b></cell><cell>Corresponding occurrences of the primary record or item and secondary record or item are linked, that is first occurrences are linked, second occurrences are linked and so on.</cell>
+	<cell><b>Item to Occurrence</b></cell><cell>The value of an item on the primary record is a pointer to the occurrence of the secondary record.</cell>
+	<cell><b>Occurrence to Item</b></cell><cell>The value of an item on the secondary record is a pointer to the occurrence of the primary record.</cell>
+	<cell><b>Item to Item</b></cell><cell>The value of an item on the primary record is compared to the value of an item on the secondary record. If the values are equal, the records are linked.</cell>
+</table>
+
+Relations can be used in <link for_statement.hgt>for statements</link> in batch programs and in the Export Data tool.
+
+<seealso relation_properties.hgt relation_statement.hgt />

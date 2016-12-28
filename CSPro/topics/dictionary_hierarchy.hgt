@@ -1,90 +1,19 @@
 ﻿<title>Dictionary Hierarchy</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+A data dictionary is structured in a hierarchical order. The top hierarchy is the case, followed by the level, then record.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Dictionary Hierarchy</font></b></h3>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">A
- data dictionary is structured in a hierarchical order. The top hierarchy
- is the case, followed by the level, then record.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Case</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">A
- case is the primary unit of data in the data file. A case usually corresponds
- to a questionnaire. However, some complex applications might have a hierarchical
- set of questionnaires, or many</font> <b><font style="font-family: Arial;
-												 font-size: 10pt; font-weight: bold;"
-												 face="Arial" size="2">levels</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">.
- For example, the main questionnaire may consist of a household roster
- and other household information, and there may be a separate questionnaire
- for each woman in the household. The data entry application may then contain
- two levels â€” one for the household and one for each woman in the household.
- The set of forms corresponding to the household make up level one. The
- set of forms corresponding to each woman make up level two. Each case
- would consist of two type of questionnaires: a single level one and a
- variable number of occurrences for level two.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Most
- applications consist of a single level.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Level</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">A level is a type of questionnaire. By default, all new dictionaries
- have one level. This is normally sufficient to describe, for example,
- a population or agriculture census. However, if you have a hierarchically-structured
- set of questionnaires, you will probably need to use additional levels.
- A level can have many</font> <b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">records</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">corresponding to different</font> <a href="record_type.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">record
- types</font></a><font style="font-family: Arial; font-size: 10pt;" color="#000000"
-						 face="Arial" size="2">.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Record</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">A record usually corresponds to a section of a questionnaire,
- and consists of a group of related data items. For example, data items
- related to housing would form a housing record; data items related to
- individuals would form the population records; data items related to production
- of a particular crop would form the crop record, and so on. If a dictionary
- contains more than one record, then you must use the record type</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">item to identify one record from another in the data
- file.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">See also:</font></b> <a href="level_description.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Level
- Description</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">,</font>
- <a href="record_description.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Record Description</font></a></p>
-</body>
-</html>
+<subheader>Case</subheader>
+
+A case is the primary unit of data in the data file. A case usually corresponds to a questionnaire. However, some complex applications might have a hierarchical set of questionnaires, or many <b>levels</b>. For example, the main questionnaire may consist of a household roster and other household information, and there may be a separate questionnaire for each woman in the household. The data entry application may then contain two levels — one for the household and one for each woman in the household. The set of forms corresponding to the household make up level one. The set of forms corresponding to each woman make up level two. Each case would consist of two type of questionnaires: a single level one and a variable number of occurrences for level two.
+
+Most applications consist of a single level.
+
+<subheader>Level</subheader>
+
+A level is a type of questionnaire. By default, all new dictionaries have one level. This is normally sufficient to describe, for example, a population or agriculture census. However, if you have a hierarchically-structured set of questionnaires, you will probably need to use additional levels. A level can have many <b>records</b> corresponding to different <link record_type.hgt>record types</link>.
+
+<subheader>Record</subheader>
+
+A record usually corresponds to a section of a questionnaire, and consists of a group of related data <b>items</b>. For example, data items related to housing would form a housing record; data items related to individuals would form the population records; data items related to production of a particular crop would form the crop record, and so on. If a dictionary contains more than one record, then you must use the record type item to identify one record from another in the data file.
+
+<seealso level_description.hgt record_description.hgt />
