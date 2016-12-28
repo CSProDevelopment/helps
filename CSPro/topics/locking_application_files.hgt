@@ -1,55 +1,21 @@
 ﻿<title>Locking Application Files</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+If distributing a CSPro application to users, one simple, though not rigorous, way of preventing the users from modifying the applications is to add the command [NoEdit] at the top of either of these files:
 
-<body>
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><span><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Locking Application Files</font></b></span></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif; font-size: 10pt;">If distributing
- a CSPro application to users, one simple, though not rigorous, way of
- preventing the users from modifying the applications is to add the command
- [NoEdit] at the top of either of these files:</p>
-<ul style="list-style: disc;">
-	<li><p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-			 font-family: Arial, sans-serif; font-size: 10pt;">.ent</p></li>
-	<li><p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-			 font-family: Arial, sans-serif; font-size: 10pt;">.bch</p></li>
-	<li><p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-			 font-family: Arial, sans-serif; font-size: 10pt;">.xtb</p></li>
-	<li><p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-			 font-family: Arial, sans-serif; font-size: 10pt;">.dcf</p></li>
-	<li><p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-			 font-family: Arial, sans-serif; font-size: 10pt;">.fmf</p></li>
-</ul>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif; font-size: 10pt;">For instance:</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: 'Courier New', monospace;
-	 margin-left: 40px;">[NoEdit]</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: 'Courier New', monospace;
-	 margin-left: 40px;">[CSPro Application]</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: 'Courier New', monospace;
-	 margin-left: 40px;">Version=CSPro 7.0</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif; font-size: 10pt;">When the user tries
- to open any such data file, the CSPro Designer will give an error message.
- However, the user can open the files in the context of running an application,
- whether that is running a batch program or exporting data. This setting
- only affects the CSPro Designer. It is not particularly robust protection,
- as a knowledgeable user can remove [NoEdit] from the file, but it will
- protect against most users modifying application files. With data entry
- applications, <a href="Binary_Data_Entry_Application_File_ENC.html">.pen
- files</a> can be distributed for more protection against editing.</p>
-</body>
-</html>
+<list>
+	<li><link data_entry_application_file_ent.hgt>.ent</link></li>
+	<li><link batch_edit_application_file_bch.hgt>.bch</link></li>
+	<li><link tabulation_application_file_xtb.hgt>.xtb</link></li>
+	<li><link data_dictionary_file_dcf.hgt>.dcf</link></li>
+	<li><link form_file_fmf.hgt>.fmf</link></li>
+</list>
+
+For instance:
+
+<indent 2><font monospace>
+[NoEdit]
+[CSPro Application]
+Version=CSPro <definition version />
+</font></indent>
+
+When the user tries to open any such data file, the CSPro Designer will give an error message. However, the user can open the files in the context of running an application, whether that is running a batch program or exporting data. This setting only affects the CSPro Designer. It is not particularly robust protection, as a knowledgeable user can remove [NoEdit] from the file, but it will protect against most users modifying application files. With data entry applications, <link binary_data_entry_application_file_pen.hgt>.pen files</link> can be distributed for more protection against editing.
