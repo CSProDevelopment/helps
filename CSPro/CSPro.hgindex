@@ -393,6 +393,7 @@ tool_list.hgt | Compare																			#	Compare
 set_compiler_defaults.hgt | Compiler															#	Compiler
 	set_compiler_defaults.hgt | Set Defaults													#		Set Defaults
 compile_logic.hgt																				#	Compile Logic
+compress_function.hgt																			#	Compress Function
 tool_list.hgt | Concatenate																		#	Concatenate
 	tool_list.hgt | Data																		#		Data
 concat_function.hgt																				#	Concat Function
@@ -423,7 +424,7 @@ converting_a_data_dictionary.hgt | Converting													#	Converting
 	converting_within_issa.hgt | Within ISSA													#		Within ISSA
 save_an_application_with_a_new_name.hgt | Copy													#	Copy
 	save_an_application_with_a_new_name.hgt | Application										#		Application
-	copy_and_paste_table_specification.hgt | Copy and Paste Table Specification					#		Copy and Paste Table Specification
+	copy_and_paste_table_specification.hgt														#		Copy and Paste Table Specification
 	copy_table_data_to_a_spreadsheet_or_word_processor.hgt										#		Copy Table Data to a Spreadsheet or Word Processor
 	cut_copy_or_paste_things.hgt | Cut or Paste Things											#		Cut or Paste Things
 	save_dictionary_as_new_file.hgt | Dictionary												#		Dictionary
@@ -572,6 +573,7 @@ deckarrays.hgt																					#	DeckArrays
 	deckarray_leftover_rows.hgt | Leftover Rows													#		Leftover Rows
 	putdeck_function.hgt																		#		Putdeck Function
 cspro_program_structure.hgt | Declaration Section												#	Declaration Section
+decompress_function.hgt																			#	Decompress Function
 preferences_and_default_formats.hgt | Default													#	Default
 	preferences_and_default_formats.hgt															#		Preferences and Default Formats
 	reset_format_of_table_item_to_default.hgt													#		Reset Format of Table Item to Default
@@ -605,6 +607,7 @@ data_entry_elements.hgt | Description															#	Description
 issues_to_consider_when_designing_a_form.hgt | Design a Form									#	Design a Form
 	issues_to_consider_when_designing_a_form.hgt | Issues										#		Issues
 develop_comprehensive_test_file.hgt																#	Develop Comprehensive Test File
+diagnostics_function.hgt																		#	Diagnostics Function
 dictionary_types.hgt | Dictionary																#	Dictionary
 	data_dictionary.hgt | About																	#		About
 	add_dictionary_elements.hgt | Adding Elements												#		Adding Elements
@@ -826,6 +829,7 @@ change_field_font.hgt | Font																	#	Font
 change_the_print_page_setup.hgt | Footer														#	Footer
 	change_the_print_page_setup.hgt | Change Print Page Setup									#		Change Print Page Setup
 add_a_pagenote_or_footnote.hgt | Footnote														#	Footnote
+forcase_statement.hgt																			#	ForCase Statement
 change_data_entry_options.hgt | Force out-of-range												#	Force out-of-range
 forms_design.hgt | Form																			#	Form
 	add_a_form.hgt | Adding																		#		Adding
@@ -882,7 +886,7 @@ getdeviceid_function.hgt																		#	Getdeviceid Function
 getimage_function.hgt																			#	Getimage Function
 getlabel_function.hgt																			#	Getlabel Function
 getlanguage_function.hgt																		#	Getlanguage Function
-getnote_function.hgt | GetNote Function															#	GetNote Function
+getnote_function.hgt																			#	GetNote Function
 getocclabel_function.hgt																		#	Getocclabel Function
 getoperatorid_function.hgt																		#	GetOperatorId Function
 screen_orientation.hgt | Getorientation Function												#	Getorientation Function
@@ -1017,6 +1021,7 @@ converting_within_issa.hgt | ISSA																#	ISSA
 	converting_within_issa.hgt | Converting a Data Dictionary									#		Converting a Data Dictionary
 	converting_an_issa_data_entry_application.hgt | Converting a Data Entry Application			#		Converting a Data Entry Application
 issues_to_consider_when_designing_a_form.hgt													#	Issues to Consider When Designing a Form
+isverified_function.hgt																			#	IsVerified Function
 add_dictionary_elements.hgt | Item																#	Item
 	add_dictionary_elements.hgt | Adding														#		Adding
 	convert_items_to_subitems.hgt | Convert to Subitem											#		Convert to Subitem
@@ -1033,8 +1038,8 @@ add_dictionary_elements.hgt | Item																#	Item
 	item_properties.hgt																			#		Item Properties
 	item_properties.hgt | Label																	#		Label
 	labels.hgt																					#		Labels
-	item_length.hgt																				#		Length
 	item_properties.hgt | Length																#		Length
+	item_length.hgt																				#		Length
 	modify_dictionary_elements.hgt | Modify														#		Modify
 	item_properties.hgt | Name																	#		Name
 	names.hgt																					#		Names
@@ -1044,12 +1049,12 @@ add_dictionary_elements.hgt | Item																#	Item
 	item_properties.hgt | Properties															#		Properties
 	find_dictionary_elements.hgt | Search														#		Search
 	selecting_items.hgt | Select																#		Select
-	item_properties.hgt | Starting Position														#		Starting Position
 	starting_position.hgt																		#		Starting Position
+	item_properties.hgt | Starting Position														#		Starting Position
 	sub_items.hgt																				#		Sub-Items
 	item_properties.hgt | Type																	#		Type
-	zero_fill.hgt																				#		Zero Fill
 	item_properties.hgt | Zero Fill																#		Zero Fill
+	zero_fill.hgt																				#		Zero Fill
 tabulate_items_with_multiple_occurrences.hgt | Item with Multiple Occurrences					#	Item with Multiple Occurrences
 	tabulate_items_with_multiple_occurrences.hgt | Tabulate										#		Tabulate
 join_and_split_roster_columns.hgt																#	Join and Split Roster Columns
@@ -1063,6 +1068,7 @@ data_entry_philosophies.hgt | Keying															#	Keying
 	data_entry_philosophies.hgt | Heads-Down													#		Heads-Down
 	data_entry_philosophies.hgt | Heads-Up														#		Heads-Up
 	skip_issues.hgt | Skips Issues																#		Skips Issues
+keylist_function.hgt																			#	KeyList Function
 key_function.hgt																				#	Key Function
 onkey_character_map.hgt | Key Override Character Map											#	Key Override Character Map
 killfocus_statement.hgt																			#	Killfocus Statement
@@ -1651,8 +1657,8 @@ data_file_type_structure.hgt | Single Record Types												#	Single Record Ty
 change_field_font.hgt | Size																	#	Size
 	change_field_font.hgt | Change Field Box													#		Change Field Box
 data_file_type_structure.hgt | Size of Data Files												#	Size of Data Files
-skip_issues.hgt | skip																			#	skip
 skip_statement.hgt | Skip																		#	Skip
+skip_issues.hgt | skip																			#	skip
 	skip_issues.hgt | Automatic																	#		Automatic
 	skip_issues.hgt | Issues																	#		Issues
 	skip_issues.hgt | Manual																	#		Manual
@@ -1858,6 +1864,7 @@ change_windows.hgt | Tile																		#	Tile
 	change_windows.hgt | Windows																#		Windows
 systime_function.hgt | Time																		#	Time
 	systime_function.hgt																		#		Systime Function
+timestamp_function.hgt																			#	Timestamp Function
 formats_for_a_part_of_a_table.hgt | Title														#	Title
 advance_statement.hgt | To																		#	To
 	advance_statement.hgt																		#		Advance Statement
