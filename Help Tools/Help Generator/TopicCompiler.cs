@@ -780,7 +780,7 @@ namespace Help_Generator
         private string EndLogicColorHandler(string endTagInnerText)
         {
             CreateLogicPffColorizers();
-            return _helpComponents._logicColorizer.ColorizeWord(endTagInnerText.Trim());
+            return _helpComponents._logicColorizer.Colorize(endTagInnerText.Trim(),true);
         }        
 
         private string EndPffHandler(string endTagInnerText)

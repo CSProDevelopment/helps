@@ -4,7 +4,7 @@ namespace Colorizer
 {
     class LogicColorizerHtml : LogicColorizerInterface
     {
-        public virtual void StartBlock(StringBuilder sb)
+        public virtual void StartBlock(StringBuilder sb,bool inlineColorization)
         {
             sb.Append(
                 "<!doctype html>\n" +
@@ -14,7 +14,7 @@ namespace Colorizer
                 "<div style='word-wrap:break-word;margin:0px;padding:0px;border:0px;background-color:#ffffff;color:#000000;font-family:Courier New;font-size:10pt;'>\n");
         }
 
-        public virtual void EndBlock(StringBuilder sb)
+        public virtual void EndBlock(StringBuilder sb,bool inlineColorization)
         {
             sb.Append("</div>\n</body>\n</html>\n");
         }
@@ -52,14 +52,15 @@ namespace Colorizer
 
     class LogicColorizerHtmlHelp : LogicColorizerHtml
     {
-        public override void StartBlock(StringBuilder sb)
+        public override void StartBlock(StringBuilder sb,bool inlineColorization)
         {
-            sb.Append("<div class=\"code_colorization\">");
+            sb.Append(inlineColorization ? "<font class=\"code_colorization\">" :
+                "<div class=\"code_colorization indent\">");
         }
 
-        public override void EndBlock(StringBuilder sb)
+        public override void EndBlock(StringBuilder sb,bool inlineColorization)
         {
-            sb.Append("</div>");
+            sb.Append(inlineColorization ? "</font>" : "</div>");
         }
     }
 }

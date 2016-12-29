@@ -4,8 +4,8 @@ namespace Colorizer
 {
     interface LogicColorizerInterface
     {
-        void StartBlock(StringBuilder sb);
-        void EndBlock(StringBuilder sb);
+        void StartBlock(StringBuilder sb,bool inlineColorization);
+        void EndBlock(StringBuilder sb,bool inlineColorization);
 
         void AddComment(StringBuilder sb,string comment);
         void AddQuotedString(StringBuilder sb,string quotedString);

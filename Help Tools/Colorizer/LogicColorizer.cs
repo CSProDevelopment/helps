@@ -20,20 +20,20 @@ namespace Colorizer
             _defaultLogicColorizer = defaultLogicColorizer;
         }
 
-        public string Colorize(string sourceText)
+        public string Colorize(string sourceText,bool inlineColorization = false)
         {
-            return Colorize(_defaultLogicColorizer,sourceText);
+            return Colorize(_defaultLogicColorizer,sourceText,inlineColorization);
         }
 
         private enum ProcessType { LineComment, BracketComment, QuotedString, Number, Keyword, Newline, None };
 
-        public string Colorize(LogicColorizerInterface logicColorizer,string sourceText)
+        public string Colorize(LogicColorizerInterface logicColorizer,string sourceText,bool inlineColorization = false)
         {
-            sourceText = HelperFunctions.TabsToSpaces(sourceText);
-
             StringBuilder sb = new StringBuilder();
 
-            logicColorizer.StartBlock(sb);
+            logicColorizer.StartBlock(sb,inlineColorization);
+
+            sourceText = HelperFunctions.TabsToSpaces(sourceText);
 
             int lastTextStartBlock = 0;
             int lastWordStartBlock = 0;
@@ -164,7 +164,7 @@ namespace Colorizer
 
 
                 // process the block if there is no more code to read
-                bool atEndOfBuffer = ( i + 1 ) == sourceText.Length;
+                bool atEndOfBuffer = ( !reprocessCharacter && ( ( i + 1 ) == sourceText.Length ) );
 
                 if( atEndOfBuffer )
                 {
@@ -228,21 +228,7 @@ namespace Colorizer
                     i--;
             }
 
-            logicColorizer.EndBlock(sb);
-
-            return sb.ToString();
-        }
-
-        public string ColorizeWord(string word)
-        {
-            StringBuilder sb = new StringBuilder();
-            string upperCaseWord = word.ToUpper();
-
-            if( _reservedWords.Contains(upperCaseWord) )
-                _defaultLogicColorizer.AddKeyword(sb,word);
-
-            else
-                throw new Exception("Logic files do not have the word " + word);
+            logicColorizer.EndBlock(sb,inlineColorization);
 
             return sb.ToString();
         }
