@@ -246,6 +246,9 @@ namespace Help_Generator
             else if( command == "font" )
                 InsertTags("<font ...>","</font>");
 
+            else if( command == "subheader" )
+                InsertTags("<subheader>","</subheader>");
+
             else if( command == "center" )
                 InsertTags("<center>","</center>");
 

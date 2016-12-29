@@ -70,6 +70,7 @@
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpSyntaxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSubheaderMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -229,6 +230,7 @@
             this.editBoldMenuItem,
             this.editItalicsMenuItem,
             this.editFontMenuItem,
+            this.editSubheaderMenuItem,
             this.editCenterMenuItem,
             this.editLinkMenuItem,
             this.editListMenuItem,
@@ -429,6 +431,14 @@
             this.helpSyntaxMenuItem.Text = "Topic &Syntax";
             this.helpSyntaxMenuItem.Click += new System.EventHandler(this.helpSyntaxMenuItem_Click);
             // 
+            // editSubheaderMenuItem
+            // 
+            this.editSubheaderMenuItem.Name = "editSubheaderMenuItem";
+            this.editSubheaderMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editSubheaderMenuItem.Tag = "subheader";
+            this.editSubheaderMenuItem.Text = "Sub&header";
+            this.editSubheaderMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,6 +504,7 @@
         private System.Windows.Forms.ToolStripMenuItem editLogicColorMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editPffColorMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editListMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editSubheaderMenuItem;
     }
 }
 
