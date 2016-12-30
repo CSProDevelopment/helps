@@ -210,8 +210,8 @@ namespace Help_Generator
         private void editMenuItem_DropDownOpening(object sender,EventArgs e)
         {
             bool isTextEditForm = ( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm );
-            
-            foreach( ToolStripMenuItem menuItem in editMenuItem.DropDownItems )
+
+            foreach( ToolStripItem menuItem in editMenuItem.DropDownItems )
                 menuItem.Enabled = isTextEditForm;
         }
 

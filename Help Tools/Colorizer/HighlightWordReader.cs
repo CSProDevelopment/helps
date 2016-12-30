@@ -5,11 +5,11 @@ namespace Colorizer
 {
     class HighlightWordReader
     {
-        public static string LogicFilename = "Logic Words.txt";
-        public static string PffFilename = "PFF Words.txt";
+        public const string LogicFilename = "Logic Words.txt";
+        public const string PffFilename = "PFF Words.txt";
 
-        string[] _fileLines;
-        int _lineItr;
+        private string[] _fileLines;
+        private int _lineItr;
 
         public HighlightWordReader(string wordFilename)
         {
@@ -17,7 +17,7 @@ namespace Colorizer
             _lineItr = 0;
         }
 
-        public SortedSet<string> ReadWordBlock(bool breakOnNewline)
+        public SortedSet<string> ReadWordBlock(bool breakOnNewline,Dictionary<string,string> helpTopics = null)
         {
             SortedSet<string> words = new SortedSet<string>();
 
@@ -40,7 +40,20 @@ namespace Colorizer
                 if( trimmedWord[0] == '#' ) // a comment
                     continue;
 
-                words.Add(trimmedWord.ToUpper());
+                string word = trimmedWord.ToUpper();
+
+                int tabPos = trimmedWord.IndexOf('\t');
+
+                if( tabPos > 0 )
+                {
+                    word = trimmedWord.Substring(0,tabPos).Trim().ToUpper();
+                    string helpTopic = trimmedWord.Substring(tabPos + 1).Trim();
+
+                    if( helpTopics != null )
+                        helpTopics.Add(word,helpTopic);
+                }
+
+                words.Add(word);
             }
 
             return words;

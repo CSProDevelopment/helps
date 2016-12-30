@@ -8,7 +8,7 @@ using Colorizer;
 
 namespace Help_Generator
 {
-    class TopicCompiler
+    class TopicCompiler : LogicColorizerHtmlHelp.GetHtmlFilenameForKeywordInterface
     {
         private delegate string StartTagHandlerDelegate(string[] startTagComponents);
         private delegate string EndTagHandlerDelegate(string endTagInnerText);
@@ -94,13 +94,16 @@ namespace Help_Generator
             _tagSettings.Add(TableCellTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableCellHandler,(EndTagHandlerDelegate)EndTableCellHandler,0,1));
             _tagSettings.Add(SeeAlsoTag,new TagSettings(false,(StartTagHandlerDelegate)StartSeeAlsoHandler,null,1,Int32.MaxValue));
             _tagSettings.Add(LogicTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicHandler,0,0));
+            _tagSettings.Add(LogicSyntaxTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicSyntaxHandler,0,0));            
             _tagSettings.Add(LogicColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicColorHandler,0,0));
+            _tagSettings.Add(LogicArgumentTag,new TagSettings("<span class=\"code_colorization_argument\">","</span>"));            
             _tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
             _tagSettings.Add(PffColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffColorHandler,0,0));
             _tagSettings.Add(HtmlTag,new TagSettings("",""));
 
             _blockTags = new Dictionary<string,string>();
             _blockTags.Add(MakeTag(LogicTag,true),MakeTag(LogicTag,false));
+            _blockTags.Add(MakeTag(LogicSyntaxTag,true),MakeTag(LogicSyntaxTag,false));            
             _blockTags.Add(MakeTag(PffTag,true),MakeTag(PffTag,false));
             _blockTags.Add(MakeTag(HtmlTag,true),MakeTag(HtmlTag,false));
         }
@@ -296,11 +299,12 @@ namespace Help_Generator
             string[] fullTagComponents = Regex.Split(fullTagContents,@"\s+");
 
             string tag = fullTagComponents[0];
+            bool tagIsBlank = String.IsNullOrWhiteSpace(tag);
 
-            if( String.IsNullOrWhiteSpace(tag) )
+            if( tagIsBlank && !_inBlockTag )
                 throw new Exception("Empty tag around: " + text.Substring(startTagPos));
 
-            bool isEndTag = ( tag[0] == '/' );
+            bool isEndTag = ( !tagIsBlank && tag[0] == '/' );
 
             // processing end tags
             if( isEndTag )
@@ -313,8 +317,11 @@ namespace Help_Generator
                 // if in a block, ignore ending tags unless they are ending the block tag
                 if( _inBlockTag && !_tagStack.Peek().Equals(tag) )
                 {
+                    string blockHtml = beforeTagText + fullTag + ProcessText(ref afterTagText);
+
                     text = afterTagText;
-                    return beforeTagText + fullTag;
+
+                    return blockHtml;
                 }
 
                 string lastStartTag = _tagStack.Pop();
@@ -765,16 +772,47 @@ namespace Help_Generator
         private void CreateLogicPffColorizers()
         {
             if( _helpComponents._logicColorizer == null )
-                _helpComponents._logicColorizer = new LogicColorizer(new LogicColorizerHtmlHelp());
+                _helpComponents._logicColorizer = new LogicColorizer(new LogicColorizerHtmlHelp(this));
 
             if( _helpComponents._pffColorizer == null )
                 _helpComponents._pffColorizer = new Colorizer.PffColorizer(new PffColorizerHtmlHelp());
+        }
+
+        public string GetHtmlFilenameForKeyword(string helpTopic)
+        {
+            try
+            {
+                Preprocessor.TopicPreprocessor topic = _helpComponents.preprocessor.GetTopic(helpTopic);
+                return _topicCompilerSettings.GetHtmlFilename(topic);
+            }
+
+            catch( Exception )
+            {
+                return null;
+            }
         }
 
         private string EndLogicHandler(string endTagInnerText)
         {
             CreateLogicPffColorizers();
             return _helpComponents._logicColorizer.Colorize(TrimOnlyOneNewlineBothEnds(endTagInnerText));
+        }
+
+        private string EndLogicSyntaxHandler(string endTagInnerText)
+        {
+            StringBuilder logic = new StringBuilder(EndLogicHandler(endTagInnerText));
+
+            // this assumes that the syntax is set up with proper start/end brackets and tags
+
+            // colorize the text between the optional arguments
+            logic.Replace("『","<span class=\"code_colorization_optional_text\"><font class=\"code_colorization_bracket\">『</font>");
+            logic.Replace("』","<font class=\"code_colorization_bracket\">』</font></span>");
+
+            // colorize the optional arguments
+            logic.Replace("&lt;arg&gt;","<span class=\"code_colorization_argument\">");
+            logic.Replace("&lt;/arg&gt;","</span>");
+
+            return logic.ToString();
         }
 
         private string EndLogicColorHandler(string endTagInnerText)
@@ -814,7 +852,9 @@ namespace Help_Generator
         public const string TableCellTag = "cell";
         public const string SeeAlsoTag = "seealso";
         public const string LogicTag = "logic";
+        public const string LogicSyntaxTag = "logicsyntax";
         public const string LogicColorTag = "logiccolor";
+        public const string LogicArgumentTag = "arg";
         public const string PffTag = "pff";
         public const string PffColorTag = "pffcolor";
         public const string HtmlTag = "html";
@@ -826,6 +866,6 @@ namespace Help_Generator
         public const string OrderedAttribute = "ordered";
         public const string NoWrapAttribute = "nowrap";
 
-        private const string NewLineMarker = "~!~";
+        public const string NewLineMarker = "~!~";
     }
 }

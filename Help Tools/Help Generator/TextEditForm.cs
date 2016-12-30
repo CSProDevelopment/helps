@@ -264,6 +264,9 @@ namespace Help_Generator
             else if( command == "logiccolor" )
                 InsertTags("<logiccolor>","</logiccolor>");
 
+            else if( command == "syntaxargument" )
+                InsertTags("<arg>","</arg>");
+
             else if( command == "pffcolor" )
                 InsertTags("<pffcolor>","</pffcolor>");
 

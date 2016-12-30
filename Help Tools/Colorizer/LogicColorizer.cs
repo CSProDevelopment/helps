@@ -7,12 +7,15 @@ namespace Colorizer
     class LogicColorizer
     {
         private SortedSet<string> _reservedWords;
+        private Dictionary<string,string> _helpTopics;
         private LogicColorizerInterface _defaultLogicColorizer;
 
         public LogicColorizer()
         {
             HighlightWordReader hwr = new HighlightWordReader(HighlightWordReader.LogicFilename);
-            _reservedWords = hwr.ReadWordBlock(false);
+
+            _helpTopics = new Dictionary<string,string>();
+            _reservedWords = hwr.ReadWordBlock(false,_helpTopics);
         }
 
         public LogicColorizer(LogicColorizerInterface defaultLogicColorizer) : this()
@@ -170,6 +173,13 @@ namespace Colorizer
                 {
                     processPreviousBlock = true;
                     processPreviousBlockIncludeThisCharacter = ( processType != ProcessType.Newline );
+
+                    // this fixes a problem when the last character in the buffer is a number
+                    if( processType == ProcessType.Number && savedProcessType != ProcessType.Number )
+                    {
+                        processPreviousBlockIncludeThisCharacter = false;
+                        reprocessCharacter = true;
+                    }
                 }
 
 
@@ -193,11 +203,14 @@ namespace Colorizer
                         bool includeLastCharacter = ( processPreviousBlockIncludeThisCharacter && processType == ProcessType.Keyword );
                         bool outputLastCharacterAsText = ( atEndOfBuffer && !includeLastCharacter && processPreviousBlockIncludeThisCharacter && processType != ProcessType.Keyword );
                         string keyword = sourceText.Substring(lastWordStartBlock,savedI - lastWordStartBlock + ( includeLastCharacter ? 1 : 0 ));
+                        string upperCaseKeyword = keyword.ToUpper();
 
-                        if( _reservedWords.Contains(keyword.ToUpper()) )
+                        if( _reservedWords.Contains(upperCaseKeyword) )
                         {
+                            string helpTopic = _helpTopics.ContainsKey(upperCaseKeyword) ? _helpTopics[upperCaseKeyword] : null;
+
                             logicColorizer.AddText(sb,text.Substring(0,text.Length - keyword.Length - ( outputLastCharacterAsText ? 1 : 0 )));
-                            logicColorizer.AddKeyword(sb,keyword);
+                            logicColorizer.AddKeyword(sb,keyword,helpTopic);
 
                             if( outputLastCharacterAsText )
                                 logicColorizer.AddText(sb,text.Substring(keyword.Length));

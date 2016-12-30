@@ -29,7 +29,7 @@ namespace Colorizer
             sb.AppendFormat("[color=red]{0}[/color]",PrepareText(number));
         }
 
-        public void AddKeyword(StringBuilder sb,string keyword)
+        public void AddKeyword(StringBuilder sb,string keyword,string helpTopic)
         {
             sb.AppendFormat("[color=blue]{0}[/color]",PrepareText(keyword));
         }

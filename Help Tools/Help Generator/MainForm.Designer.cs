@@ -50,11 +50,15 @@
             this.editBoldMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editItalicsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editFontMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSubheaderMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editCenterMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editLinkMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editListMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editTableMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.editLogicColorMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSyntaxArgumentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.editPffColorMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateCompileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +74,6 @@
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpSyntaxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editSubheaderMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -235,7 +238,10 @@
             this.editLinkMenuItem,
             this.editListMenuItem,
             this.editTableMenuItem,
+            this.toolStripSeparator6,
             this.editLogicColorMenuItem,
+            this.editSyntaxArgumentMenuItem,
+            this.toolStripSeparator7,
             this.editPffColorMenuItem});
             this.editMenuItem.Name = "editMenuItem";
             this.editMenuItem.Size = new System.Drawing.Size(39, 20);
@@ -246,7 +252,7 @@
             // 
             this.editBoldMenuItem.Name = "editBoldMenuItem";
             this.editBoldMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.editBoldMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editBoldMenuItem.Size = new System.Drawing.Size(239, 22);
             this.editBoldMenuItem.Tag = "bold";
             this.editBoldMenuItem.Text = "&Bold";
             this.editBoldMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
@@ -254,7 +260,7 @@
             // editItalicsMenuItem
             // 
             this.editItalicsMenuItem.Name = "editItalicsMenuItem";
-            this.editItalicsMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editItalicsMenuItem.Size = new System.Drawing.Size(239, 22);
             this.editItalicsMenuItem.Tag = "italics";
             this.editItalicsMenuItem.Text = "&Italics";
             this.editItalicsMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
@@ -262,15 +268,23 @@
             // editFontMenuItem
             // 
             this.editFontMenuItem.Name = "editFontMenuItem";
-            this.editFontMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editFontMenuItem.Size = new System.Drawing.Size(239, 22);
             this.editFontMenuItem.Tag = "font";
             this.editFontMenuItem.Text = "&Font";
             this.editFontMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
             // 
+            // editSubheaderMenuItem
+            // 
+            this.editSubheaderMenuItem.Name = "editSubheaderMenuItem";
+            this.editSubheaderMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.editSubheaderMenuItem.Tag = "subheader";
+            this.editSubheaderMenuItem.Text = "Sub&header";
+            this.editSubheaderMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
             // editCenterMenuItem
             // 
             this.editCenterMenuItem.Name = "editCenterMenuItem";
-            this.editCenterMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editCenterMenuItem.Size = new System.Drawing.Size(239, 22);
             this.editCenterMenuItem.Tag = "center";
             this.editCenterMenuItem.Text = "&Center";
             this.editCenterMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
@@ -278,7 +292,7 @@
             // editLinkMenuItem
             // 
             this.editLinkMenuItem.Name = "editLinkMenuItem";
-            this.editLinkMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editLinkMenuItem.Size = new System.Drawing.Size(239, 22);
             this.editLinkMenuItem.Tag = "link";
             this.editLinkMenuItem.Text = "Lin&k";
             this.editLinkMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
@@ -286,7 +300,7 @@
             // editListMenuItem
             // 
             this.editListMenuItem.Name = "editListMenuItem";
-            this.editListMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editListMenuItem.Size = new System.Drawing.Size(239, 22);
             this.editListMenuItem.Tag = "list";
             this.editListMenuItem.Text = "&List";
             this.editListMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
@@ -294,27 +308,47 @@
             // editTableMenuItem
             // 
             this.editTableMenuItem.Name = "editTableMenuItem";
-            this.editTableMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editTableMenuItem.Size = new System.Drawing.Size(239, 22);
             this.editTableMenuItem.Tag = "table";
             this.editTableMenuItem.Text = "&Table";
             this.editTableMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(236, 6);
             // 
             // editLogicColorMenuItem
             // 
             this.editLogicColorMenuItem.Name = "editLogicColorMenuItem";
             this.editLogicColorMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.L)));
-            this.editLogicColorMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editLogicColorMenuItem.Size = new System.Drawing.Size(239, 22);
             this.editLogicColorMenuItem.Tag = "logiccolor";
             this.editLogicColorMenuItem.Text = "Logic Color";
             this.editLogicColorMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
+            // editSyntaxArgumentMenuItem
+            // 
+            this.editSyntaxArgumentMenuItem.Name = "editSyntaxArgumentMenuItem";
+            this.editSyntaxArgumentMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.A)));
+            this.editSyntaxArgumentMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.editSyntaxArgumentMenuItem.Tag = "syntaxargument";
+            this.editSyntaxArgumentMenuItem.Text = "Syntax Argument";
+            this.editSyntaxArgumentMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(236, 6);
             // 
             // editPffColorMenuItem
             // 
             this.editPffColorMenuItem.Name = "editPffColorMenuItem";
             this.editPffColorMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.P)));
-            this.editPffColorMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editPffColorMenuItem.Size = new System.Drawing.Size(239, 22);
             this.editPffColorMenuItem.Tag = "pffcolor";
             this.editPffColorMenuItem.Text = "PFF Color";
             this.editPffColorMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
@@ -431,14 +465,6 @@
             this.helpSyntaxMenuItem.Text = "Topic &Syntax";
             this.helpSyntaxMenuItem.Click += new System.EventHandler(this.helpSyntaxMenuItem_Click);
             // 
-            // editSubheaderMenuItem
-            // 
-            this.editSubheaderMenuItem.Name = "editSubheaderMenuItem";
-            this.editSubheaderMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.editSubheaderMenuItem.Tag = "subheader";
-            this.editSubheaderMenuItem.Text = "Sub&header";
-            this.editSubheaderMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,6 +531,9 @@
         private System.Windows.Forms.ToolStripMenuItem editPffColorMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editListMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editSubheaderMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem editSyntaxArgumentMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }
 
