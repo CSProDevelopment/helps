@@ -416,5 +416,32 @@ namespace Help_Generator
                     ((ItemListForm)form).UpdateList(true);
             }
         }
+
+        // allow help topics from the project to be dragged and opened
+        private void MainForm_DragEnter(object sender,DragEventArgs e)
+        {
+            e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ? DragDropEffects.Copy : DragDropEffects.None;
+        }
+
+        private void MainForm_DragDrop(object sender,DragEventArgs e)
+        {
+            bool someFilesIgnored = false;
+
+            foreach( string filename in (string[])e.Data.GetData(DataFormats.FileDrop) )
+            {
+                try
+                {
+                    ShowOrCreateForm(_helpComponents.preprocessor.GetTopic(Path.GetFileName(filename)));
+                }
+
+                catch( Exception )
+                {
+                    someFilesIgnored = true;
+                }
+            }
+
+            if( someFilesIgnored )
+                MessageBox.Show("Not all topics could be loaded. They might not be part of this project.");
+        }
     }
 }
