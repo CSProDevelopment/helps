@@ -1,54 +1,14 @@
 ﻿<title>Save a Case</title>
 
-<font white>HELPTODO</font>
+Saving a case will write the contents of the current case to the data file, including any changes you have made. This includes all records, of all types, into which data have been entered. If a record type has been declared <b>Required</b> (in the data dictionary), and no data was entered for this record type, a blank record of the required type will be written as part of the questionnaire, and a message informing you of this action will be issued. There is no way to suppress this message. Records are written to the output file in the order in which the record types were defined in the data dictionary.
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
- <meta name="generator" content="Adobe RoboHelp 11">
+If the application is defined as <b>operator-controlled</b>, you may use the <b>F12</b> or <b><b>Ctrl+F12</b></b> keys to save a case. If the application is one level (most common), use either key. If the application is more than one level, use the <b>Ctrl+F12</b> key.
 
-<style type="text/css">
-<!--
-body { background-color:#ffffff; }
--->
-</style>
+If the application is defined as <b>system-controlled</b> type, you may use the <b>F10</b> key (Advance to End) to save a case. This key will execute all the procedures from the current field through the end of the case. The application may contain underlying logic which stops you at a certain point and displays a message. The system will only save the case if there are no such messages.
 
+The following is true for both operator and system-controlled mode:
 
-<style title="hcp" type="text/css">
-<!--
-p.hcp1 { text-align:left;
-margin-top:0.00pt;
-margin-bottom:0.00pt; }
-font.hcp2 { font-family:Arial;
-font-size:10pt; }
-font.hcp3 { font-family:Arial;
-font-size:10pt;
-font-weight:bold; }
-p.hcp4 { margin-top:0.00pt;
-margin-bottom:0.00pt;
-margin-left:48px;
-text-indent:-48px; }
--->
-</style>
-</head>
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial" size="5">Save a Case</font></b></h3>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font color="#000000" face="Arial" size="2" class="hcp2">Saving a case will write the contents of the current case to the data file, including any changes you have made. This includes all records, of all types, into which data have been entered. If a record type has been declared</font> <b><font color="#000000" face="Arial" size="2" class="hcp3">Required</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">[in the data dictionary], and no data were entered for this record type, a blank record of the required type will be written as part of the questionnaire, and a message informing you of this action will be issued. There is no way to suppress this message. Records are written to the output file in the order in which the record types were defined in the data dictionary.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font color="#000000" face="Arial" size="2" class="hcp2">If the application is defined as</font> <b><font color="#000000" face="Arial" size="2" class="hcp3">operator-controlled</font></b><font color="#000000" face="Arial" size="2" class="hcp2">, you may use the</font> <b><font color="#000000" face="Arial" size="2" class="hcp3">F12</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">or</font> <b><font color="#000000" face="Arial" size="2" class="hcp3">Ctrl-F12</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">keys to save a case. If the application is one level (most common), use either key. If the application is more than one level, use the</font> <b><font color="#000000" face="Arial" size="2" class="hcp3">Ctrl-F12</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">key.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font color="#000000" face="Arial" size="2" class="hcp2">If the application is defined as</font> <b><font color="#000000" face="Arial" size="2" class="hcp3">system-controlled</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">type, you may use the</font> <b><font color="#000000" face="Arial" size="2" class="hcp3">F10</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">key (Advance to End) to save a case. This key will execute all the procedures from the current field through the end of the case. The application may contain underlying logic which stops you at a certain point and displays a message. The system will only save the case if there are no such messages.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">The following is true for both operator and system-controlled mode:</font></p>
-<ul>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp4"><font face="Arial" size="2" class="hcp2">if you are in</font> <b><font face="Arial" size="2" class="hcp3">add</font></b> <font face="Arial" size="2" class="hcp2">mode, saving the case will keep you in add mode, allowing the operator to continue adding cases</font></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp4"><font face="Arial" size="2" class="hcp2">if you are in</font> <b><font face="Arial" size="2" class="hcp3">modify</font></b> <font face="Arial" size="2" class="hcp2">mode, saving the case will terminate modify mode—the operator would have to select a new case and drop back into modify mode to continue</font></p>
-</li>
-</ul>
-</body>
-</html>
+<list>
+	<li>If you are in <b>add</b> mode, saving the case will keep you in add mode, allowing the operator to continue adding cases.</li>
+	<li>If you are in <b>modify</b> mode, saving the case will terminate modify mode. The operator has to select a new case and to get back into modify mode.</li>
+</list>

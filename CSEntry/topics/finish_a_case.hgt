@@ -1,40 +1,7 @@
 ﻿<title>Finish a Case</title>
 
-<font white>HELPTODO</font>
+Normally you finish a case when you have completed entering all the forms in the case. CSEntry asks you whether you want to accept the case or not. If you accept the case, CSEntry immediately writes the case to the data file.
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
- <meta name="generator" content="Adobe RoboHelp 11">
+In <b>system-controlled</b> applications the operator must enter data field-by-field until reaching the end of the case. Exactly when the end of the case is reached is determined by logic. There are no special keys to finish a case prematurely. In applications with more than one level, the application developer must write logic to tell CSEntry when to finish entering level occurrences.
 
-<style type="text/css">
-<!--
-body { background-color:#ffffff; }
--->
-</style>
-
-
-<style title="hcp" type="text/css">
-<!--
-p.hcp1 { text-align:left;
-margin-top:0.00pt;
-margin-bottom:0.00pt; }
-font.hcp2 { font-family:Arial;
-font-size:10pt; }
-font.hcp3 { font-family:Arial;
-font-size:10pt;
-font-weight:bold; }
--->
-</style>
-</head>
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial" size="5">Finish a Case</font></b></h3>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">Normally you finish a case when you have completed entering all the forms in the case. CSEntry asks you whether you want to accept the case or not. If you accept the case, CSEntry immediately writes the case to the data file.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">In</font> <b><font face="Arial" size="2" class="hcp3">system-controlled</font></b> <font face="Arial" size="2" class="hcp2">applications the operator must enter data field-by-field until reaching the end of the case. Exactly when the end of the case is reached is determined by logic. There are no special keys to finish a case prematurely. In applications with more than one level, the application developer MUST WRITE LOGIC to tell CSEntry when to finish entering level occurrences.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">In</font> <b><font face="Arial" size="2" class="hcp3">operator-controlled</font></b> <font face="Arial" size="2" class="hcp2">applications, the operator may press F12 or Ctrl-F12 to end a case at any time.</font></p>
-</body>
-</html>
+In <b>operator-controlled</b> applications, the operator may press <b>F12</b> or <b>Ctrl-F12</b> to end a case at any time.
