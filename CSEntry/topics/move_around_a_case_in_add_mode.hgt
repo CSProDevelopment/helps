@@ -1,97 +1,62 @@
 ﻿<title>Move Around a Case in Add Mode</title>
 <context HID_GOTO HID_NEXT_GROUP HID_NEXT_GROUP_OCC HID_NEXT_LEVEL HID_NEXT_LEVEL_OCC HID_NEXT_SCREEN HID_PREV_SCREEN HID_ADVTOEND HID_PREVIOUS_PERSISTENT />
 
-<font white>HELPTODO</font>
+CSEntry provides special keys to move among fields and forms within a case. You can work only on one case at a time.
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
- <meta name="generator" content="Adobe RoboHelp 11">
+<subheader>Previous Field (Up arrow, Shift+Tab)</subheader>
 
-<style type="text/css">
-<!--
-body { background-color:#ffffff; }
--->
-</style>
+These keys move to the previous field in the current case. If your application has been designed as <b>system-controlled</b> type, and you arrived at the current field by way of a programmed skip, the system will move you to the field from which you skipped. Otherwise, the system will move you to the previous field on the form.
 
+<subheader>Next Field (Down arrow, Enter)</subheader>
 
-<style title="hcp" type="text/css">
-<!--
-p.hcp1 { text-align:left;
-margin-top:0.00pt;
-margin-bottom:0.00pt; }
-font.hcp2 { font-family:Arial;
-font-size:10pt; }
-font.hcp3 { font-family:Arial;
-font-size:10pt;
-font-weight:bold; }
-p.hcp4 { text-align:left;
-margin-left:10.80pt;
-margin-top:0.00pt;
-margin-bottom:0.00pt; }
--->
-</style>
-</head>
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+These keys move to the next field in the current case. The system obeys any skips programmed in the logic.
 
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial" size="5">Move Around a Case in Add Mode</font></b></h3>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font color="#000000" face="Arial" size="2" class="hcp2">CSEntry provides special keys to move among fields and forms within a case. You can work only on one case at a time.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp3">Previous Field</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">(Up arrow, Shift+Tab)</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">These keys move to the previous field in the current case. If your application has been designed as</font> <b><font color="#000000" face="Arial" size="2" class="hcp3">system-controlled</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">type, and you arrived at the current field by way of a programmed skip, the system will move you to the field from which you skipped. Otherwise, the system will move you to the previous field on the form.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp3">Next Field</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">(Down arrow, Enter)</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">These keys move to the next field in the current case. The system obeys any skips programmed in the logic.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp3">Previous Screen</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">(PgUp) [</font><b><font color="#000000" face="Arial" size="2" class="hcp3">operator-controlled</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">applications only]</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">This key moves to the previous screen in the current case. If the current group is multiple, but not rostered, this key moves to the beginning of the previous group occurrence. If the current group is single, this key moves to the beginning of the previous group.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp3">Next Screen</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">(PgDn) [</font><b><font color="#000000" face="Arial" size="2" class="hcp3">operator-controlled</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">applications only]</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">If you have backup up to a previous screen, this key moves forward to the next screen in the current case (but not beyond the furthest point reached in the case). If the current group is multiple, but not rostered, this key moves to the beginning of the next group occurrence. If the current group is single, this key moves to the beginning of the next group.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp3">End Group Occurrence</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">(/ on numeric keypad) [</font><b><font color="#000000" face="Arial" size="2" class="hcp3">operator-controlled</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">applications only]</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">If the current group is multiple, this key moves to the beginning of the next group occurrence. If the current group is single, this key moves to the beginning of the next group.</font></p>
-<p class="hcp4">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">For example, if the operator has finished entering data for a person (a multiple group), he can use this key to start entering data for the next person.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp3">End Group</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">(Ctrl + /) [</font><b><font color="#000000" face="Arial" size="2" class="hcp3">operator-controlled</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">applications only]</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">This key always moves to the beginning of the next group. This key is particularly useful in multiple groups.</font></p>
-<p class="hcp4">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">For example, if the operator has finished entering data for all persons, he can use this key to move to the next group, even if there is room for more persons. This is an easy way get out of a roster.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp3">End Level Occurrence</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">(F12)</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">In</font> <b><font color="#000000" face="Arial" size="2" class="hcp3">operator-controlled</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">applications: If the application has only one level, this key ends the case. If the application has more than one level, use this key to end the current level occurrence, and begin a new level occurrence. For example, if the first level is a mother questionnaire and the second level is a child questionnaire, pressing this key during a child questionnaire means you have finished this child and wish to start the next child</font></p>
-<p class="hcp4">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">In</font> <b><font color="#000000" face="Arial" size="2" class="hcp3">system-controlled</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">applications: If you have moved backward, this key will advance you to the end of the current level occurrence, or to the "furthest point" forward you have reached, if this is in the current level occurrence. This key is very similar to the F10 key in this circumstance.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp3">End Level</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">(Ctrl + F12) [</font><b><font color="#000000" face="Arial" size="2" class="hcp3">operator-controlled</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">applications only]</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">If the application has only one level, this key has no effect. If the application has more than one level, this key is used at lower levels to signal that the keyer has finished all level occurrences at this level.</font></p>
-<p class="hcp4">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">For example, if the first level is a mother questionnaire and the second level is a child questionnaire, pressing this key during a child questionnaire means you have finished all children and wish to start a new mother.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp3">Go To</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">(F6)</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">This key allows you may to move to any field (either forward or backward). It is useful if you want to a field that is "far away"; not on the current form. You must know the name of the field to which you want to move. If the field is multiply occurring (on a roster, for example), you may also specify a specific occurrence number. If you leave the occurrence number blank the system assumes the current occurrence number. You can see the field names and occurrence numbers on the status bar at the bottom of the screen as you key data.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp3">Previous Persistent</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">(F7)</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><font color="#000000" face="Arial" size="2" class="hcp2">This key only has meaning if the application includes persistent fields. When you press this key the system will move to the first persistent field it finds, previous to the current field, and place the cursor there. If there is more than one persistent field, you may press F7 again to move again to the previous persistent field.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp3">Advance to End</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">(F10) [</font><b><font color="#000000" face="Arial" size="2" class="hcp3">system-controlled</font></b> <font color="#000000" face="Arial" size="2" class="hcp2">applications only]</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><font face="Arial" size="2" class="hcp2">If you have moved backward, this key will advance you to the "furthest point" forward you have reached in the case.</font></p>
-<p class="hcp4">&#160;</p>
-<p class="hcp1"><b><font face="Arial" size="2" class="hcp3">Skip to</font></b> <font face="Arial" size="2" class="hcp2">(+ on numeric keypad) [</font><b><font face="Arial" size="2" class="hcp3">operator-controlled</font></b> <font face="Arial" size="2" class="hcp2">applications only]</font></p>
-<p class="hcp4">&#160;</p>
-<p class="hcp4"><font face="Arial" size="2" class="hcp2">This key skips to the next field defined by the application. It is used to skip groups of fields that may all be blank because they are not required to be answered by certain respondents.</font></p>
-</body>
-</html>
+<subheader>Previous Screen (PgUp)</subheader>
+
+For <b>operator-controlled applications</b> this key moves to the previous screen in the current case. If the current group is multiple, but not rostered, this key moves to the beginning of the previous group occurrence. If the current group is single, this key moves to the beginning of the previous group.
+
+<subheader>Next Screen (PgDn)</subheader>
+
+For <b>operator-controlled applications</b>, if you have backup up to a previous screen, this key moves forward to the next screen in the current case (but not beyond the furthest point reached in the case). If the current group is multiple, but not rostered, this key moves to the beginning of the next group occurrence. If the current group is single, this key moves to the beginning of the next group.
+
+<subheader>End Group Occurrence (/ on numeric keypad)</subheader>
+
+For <b>operator-controlled applications</b>, if the current group is multiple, this key moves to the beginning of the next group occurrence. If the current group is single, this key moves to the beginning of the next group.
+
+For example, if the operator has finished entering data for a person (a multiple group), he can use this key to start entering data for the next person.
+
+<subheader>End Group (Ctrl+/)</subheader>
+
+For <b>operator-controlled applications</b> this key always moves to the beginning of the next group. This key is particularly useful in multiple groups.
+
+For example, if the operator has finished entering data for all persons, he can use this key to move to the next group, even if there is room for more persons. This is an easy way get out of a roster.
+
+<subheader>End Level Occurrence (F12)</subheader>
+
+In <b>operator-controlled applications</b>: If the application has only one level, this key ends the case. If the application has more than one level, use this key to end the current level occurrence, and begin a new level occurrence. For example, if the first level is a mother questionnaire and the second level is a child questionnaire, pressing this key during a child questionnaire means you have finished this child and wish to start the next child
+
+In <b>system-controlled applications</b>: If you have moved backward, this key will advance you to the end of the current level occurrence, or to the "furthest point" forward you have reached, if this is in the current level occurrence. This key is very similar to the F10 key in this circumstance.
+
+<subheader>End Level (Ctrl+F12)</subheader>
+
+For <b>operator-controlled applications</b>, if the application has only one level, this key has no effect. If the application has more than one level, this key is used at lower levels to signal that the keyer has finished all level occurrences at this level.
+
+For example, if the first level is a mother questionnaire and the second level is a child questionnaire, pressing this key during a child questionnaire means you have finished all children and wish to start a new mother.
+
+<subheader>Go To (F6)</subheader>
+
+This key allows you may to move to any field (either forward or backward). It is useful if you want to a field that is "far away" or not on the current form. You must know the name of the field to which you want to move. If the field is multiply occurring (on a roster, for example), you may also specify a specific occurrence number. If you leave the occurrence number blank the system assumes the current occurrence number. You can see the field names and occurrence numbers on the status bar at the bottom of the screen as you key data.
+
+<subheader>Previous Persistent (F7)</subheader>
+
+This key only has meaning if the application includes persistent fields. When you press this key the system will move to the first persistent field it finds, previous to the current field, and place the cursor there. If there is more than one persistent field, you may press F7 again to move again to the previous persistent field.
+
+<subheader>Advance to End (F10)</subheader>
+
+For <b>system-controlled applications</b>, if you have moved backward, this key will advance you to the "furthest point" forward you have reached in the case.
+
+<subheader>Skip to (+ on numeric keypad)</subheader>
+
+For <b>operator-controlled applications</b>, this key skips to the next field defined by the application. It is used to skip groups of fields that may all be blank because they are not required to be answered by certain respondents.
+
+<seealso move_around_a_case_in_modify_mode.hgt />

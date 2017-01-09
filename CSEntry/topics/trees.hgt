@@ -1,60 +1,25 @@
 ﻿<title>Trees</title>
 
-<font white>HELPTODO</font>
+There are two trees on the left side of the screen: the file tree and the case tree.
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
- <meta name="generator" content="Adobe RoboHelp 11">
+<subheader>File Tree</subheader>
 
-<style type="text/css">
-<!--
-body { background-color:#ffffff; }
--->
-</style>
+The file tree shows all cases in the data file. In a single level application, the tree shows the complete IDs for each case. The icons in front of the IDs indicate whether the case is complete or partial. For example the tree might look like:
 
+<center><image file_tree_single_level.png /></center>
 
-<style title="hcp" type="text/css">
-<!--
-p.hcp1 { text-align:left;
-margin-top:0.00pt;
-margin-bottom:0.00pt; }
-font.hcp2 { font-family:Arial;
-font-size:10pt;
-font-weight:bold; }
-font.hcp3 { font-family:Arial;
-font-size:10pt; }
-p.hcp4 { text-align:left;
-margin-left:18.00pt;
-margin-top:0.00pt;
-margin-bottom:0.00pt; }
--->
-</style>
-</head>
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+In the tree above, the first case has been partially verified, the third case has been partially modified, and the last case has been partially added.
 
-<h2 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial" size="5">Trees</font></b></h2>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp2">File Tree</font></b></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font color="#000000" face="Arial" size="2" class="hcp3">There are two trees on the left side of the screen. The file tree shows all cases in the data file. In a single level application, the tree shows the complete IDs for each case. The icons in front of the IDs indicate whether the case is complete or partial. For example the tree might look like:</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><img src="etree1.jpg" alt="File Tree with Partial Saves" title="File Tree with Partial Saves" width="173" height="130" border="0"></p>
-<p class="hcp4">&#160;</p>
-<p class="hcp1"><font color="#000000" face="Arial" size="2" class="hcp3">In the tree above, the first case has been partially verified, the third case has been partially modified, and the last case has been partially added.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font color="#000000" face="Arial" size="2" class="hcp3">In a multi-level application, the tree shows the level occurrences, for each case. In the following example there are three levels.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><img src="etree2.jpg" alt="File Tree with Multiple Levels" title="File Tree with Multiple Levels" width="195" height="280" border="0"></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font color="#000000" face="Arial" size="2" class="hcp3">Cases in a data entry data file are indexed by their level one ID fields. You cannot have two cases with the same level one IDs in the same data file. Within cases, level occurrence IDs must also be unique, but within the file they may repeat.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><b><font color="#000000" face="Arial" size="2" class="hcp2">Case Tree</font></b></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp3">When adding, modifying, or verifying individual cases, a second tree, called a case tree, may be active if this feature was selected during development of the data entry application.</font> <font color="#000000" face="Arial" size="2" class="hcp3">The case tree shows the internal structure of the active case. The case does not occur when data entry is stopped. The following is an example of a case tree:</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp4"><img src="casetree.jpg" alt="Case Tree" title="Case Tree" width="288" height="459" border="0"></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font color="#000000" face="Arial" size="2" class="hcp3">In the tree above, the current value is displayed to the right of each data field. Some tree elements, such as BOOK and PERSON000 have no values beside them because they represent</font> <a href="forms.html"><font face="Arial" size="2" class="hcp3">forms</font></a> <font color="#000000" face="Arial" size="2" class="hcp3">and</font> <a href="repeating_groups_of_fields.html"><font face="Arial" size="2" class="hcp3">rosters</font></a><font color="#000000" face="Arial" size="2" class="hcp3">, respectively.</font></p>
-</body>
-</html>
+In a multi-level application, the tree shows the level occurrences for each case. In the following example there are two levels.
+
+<center><image file_tree_multiple_levels.png /></center>
+
+Cases in a data entry data file are indexed by their level one ID fields. You cannot have two cases with the same level one IDs in the same data file. Within cases, level occurrence IDs must also be unique, but within the file they may repeat.
+
+<subheader>Case Tree</subheader>
+
+When adding, modifying, or verifying individual cases, a second tree, called a case tree, may be active if this feature was selected during development of the data entry application. The case tree shows the internal structure of the active case. The case does not occur when data entry is stopped. The following is an example of a case tree:
+
+<center><image case_tree.png /></center>
+
+In the tree above, the current value is displayed to the right of each data field. Some tree elements, such as BOOK and PERSON000 have no values beside them because they represent <link forms.hgt>forms</link> and <link repeating_groups_of_fields.hgt>rosters</link>, respectively.

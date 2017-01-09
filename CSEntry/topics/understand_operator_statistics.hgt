@@ -1,73 +1,54 @@
 ﻿<title>Understand Operator Statistics</title>
 <context HIDD_STATDLG />
 
-<font white>HELPTODO</font>
+<subheader>Mode</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
- <meta name="generator" content="Adobe RoboHelp 11">
+Indicates the mode (Add, Modify, or Verify) in which the operator was working during the session. Every time an operator works on the current file, in any mode, an entry is created for that session.
 
-<style type="text/css">
-<!--
-body { background-color:#ffffff; }
--->
-</style>
+<subheader>Operator ID</subheader>
 
+Displays the personal ID assigned to the operator of the relevant session. To ensure reliable statistics, this ID must be unique for each data entry operator.
 
-<style title="hcp" type="text/css">
-<!--
-p.hcp1 { margin-top:0.00pt;
-margin-bottom:0.00pt;
-margin-left:48px;
-text-indent:-48px; }
-span.hcp2 { font-weight:bold; }
--->
-</style>
-</head>
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<subheader>Start Date</subheader>
 
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial" size="5">Understand Operator Statistics</font></b></h3>
-<ul style="list-style: disc;">
-<li class="p">
-<p class="hcp1"><span class="hcp2">Mode</span> - &#160;Indicates the mode (Add, Modify, or Verify) in which the operator was working during the session. Every time an operator works on the current file, in any mode, an entry is created for that session.</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Operator ID</span> - Displays the personal ID assigned to the operator of the relevant session. To ensure reliable statistics, this ID must be unique for each data entry operator.</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Start Date</span> - Indicates the date on which the session began. Note: The date format is DD/MM/YYYY (i.e., Day/Month/Year).</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Start Time</span> - Indicates the time at which the session began. Note: The system uses a 24-hr clock, so 2:30 pm will appear as 14:30.</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Total Elapsed Time</span> - Indicates the total time elapsed during the session in question. &#160;The format shown is HH:MM (i.e., hours:minutes).</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Pause Time</span> - Indicates the total amount of time during the session in which the clock was suspended. The format shown is HH:MM (i.e., hours:minutes).</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Total Cases</span> - Indicates the total number of cases that the operator added (if in Add mode), modified (if in Modify mode), or verified (if in Verify mode) during the session.</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Total Records</span> - Indicates the total number of records, of all types, that the operator added (if in Add Mode), modified (if in Modify mode), or verified (if in Verify mode) during the session.</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Total Keystrokes/Hr</span> - Indicates the operator's keying rate during the relevant session. The total number of keystrokes is divided by the duration of the session, excluding the pause time, and displayed as an integer value.</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Errors/1000 Keystrokes</span> - Is the result of a two-step calculation: the total number of keying errors (an internal counter maintained by the system but not displayed) is multiplied by 1000; the result of this operation is divided by the total number of keystrokes for the session; the result of the division operation is rounded, if necessary, and displayed as an integer value.</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Percentage of Fields With Verify Errors Attributed to Keyer</span> - Verify errors are attributed to the keyer if the final value of a field, after verification, is different from the value entered by the keyer. &#160;The number of verify errors attributed to the keyer is divided by the total number of fields verified and displayed as a percentage with one decimal place.</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Percentage of Fields With Verify Errors Attributed to Verifier</span> - Verify errors are attributed to the verifier if the final value in the field, after verification, is the same as that entered by the keyer, but was changed by the verifier before returning to the originally-keyed value. The number of verify errors attributed to the verifier is divided by the total number of fields verified and displayed as a percentage with one decimal place.</p>
-</li>
-<li class="p">
-<p class="hcp1"><span class="hcp2">Percentage of Fields With Any Verify Errors</span> - The number of verify errors attributed to the keyer and the number attributed to the verifier are added together and divided by the total number of fields verified and displayed as a percentage with one decimal place.</p>
-</li>
-</ul>
-</body>
-</html>
+Indicates the date on which the session began. The date format is DD/MM/YYYY (i.e., Day/Month/Year).
+
+<subheader>Start Time</subheader>
+
+Indicates the time at which the session began. The system uses a 24-hr clock, so 2:30 pm will appear as 14:30.
+
+<subheader>Total Elapsed Time</subheader>
+
+Indicates the total time elapsed during the session in question.  The format shown is HH:MM (i.e., hours:minutes).
+
+<subheader>Pause Time</subheader>
+
+Indicates the total amount of time during the session in which the clock was suspended. The format shown is HH:MM (i.e., hours:minutes).
+
+<subheader>Total Cases</subheader>
+
+Indicates the total number of cases that the operator added (if in Add mode), modified (if in Modify mode), or verified (if in Verify mode) during the session.
+
+<subheader>Total Records</subheader>
+
+Indicates the total number of records, of all types, that the operator added (if in Add Mode), modified (if in Modify mode), or verified (if in Verify mode) during the session.
+
+<subheader>Total Keystrokes/Hr</subheader>
+
+Indicates the operator's keying rate during the relevant session. The total number of keystrokes is divided by the duration of the session, excluding the pause time, and displayed as an integer value.
+
+<subheader>Errors/1000 Keystrokes</subheader>
+
+Is the result of a two-step calculation: the total number of keying errors (an internal counter maintained by the system but not displayed) is multiplied by 1000; the result of this operation is divided by the total number of keystrokes for the session; the result of the division operation is rounded, if necessary, and displayed as an integer value.
+
+<subheader>Percentage of Fields With Verify Errors Attributed to Keyer</subheader>
+
+Verify errors are attributed to the keyer if the final value of a field, after verification, is different from the value entered by the keyer.  The number of verify errors attributed to the keyer is divided by the total number of fields verified and displayed as a percentage with one decimal place.
+
+<subheader>Percentage of Fields With Verify Errors Attributed to Verifier</subheader>
+
+Verify errors are attributed to the verifier if the final value in the field, after verification, is the same as that entered by the keyer, but was changed by the verifier before returning to the originally-keyed value. The number of verify errors attributed to the verifier is divided by the total number of fields verified and displayed as a percentage with one decimal place.
+
+<subheader>Percentage of Fields With Any Verify Errors</subheader>
+
+The number of verify errors attributed to the keyer and the number attributed to the verifier are added together and divided by the total number of fields verified and displayed as a percentage with one decimal place.
