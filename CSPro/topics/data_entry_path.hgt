@@ -1,63 +1,11 @@
 ﻿<title>Data Entry Path</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+CSPro supports a powerful feature called data entry path. The path can either be "turned on" or "turned off," depending on the data entry <link operator_vs_system_controlled.hgt>application type</link> selected on the <link change_data_entry_options.hgt>Data Entry Options</link> dialog box. Operator controlled applications always have path turned off, while system controlled applications always have path turned on.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Data Entry Path</font></b></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">CSPro
- supports a powerful feature called data entry path</font><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">. The path can either be &quot;turned
- on&quot; or &quot;turned off&quot;, depending on the data entry</font>
- <a href="operator_vs_system_controlled.html"><font style="font-family: Arial;
-													 font-size: 10pt;"
-													 face="Arial" size="2">application
- type</font></a> <font style="font-family: Arial; font-size: 10pt;" face="Arial"
-						 size="2">selected on the</font> <a href="change_data_entry_options.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Data
- Entry Options</font></a> <font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">dialog box. Operator
- controlled applications always have path turned off, while system controlled
- applications always have path turned on.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">â€¢&#160;Path on</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">CSEntry
- will keep track of the order in which the data entry operator entered
- all</font> <a href="data_entry_elements.html"><font style="font-family: Arial;
-													 font-size: 10pt;"
-													 face="Arial" size="2">fields</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">.
- If the operator goes backward, the cursor will go to the fields in the
- reverse order in which they were entered. For example, if the logic causes
- the cursor to skip over a set of fields, the cursor will also skip over
- these fields when the operator goes backwards. Fields that were skipped
- can never be entered, unless the operator goes backwards and chooses different
- values to avoid the skip. This helps ensure the integrity of the data
- file.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">â€¢&#160;Path off</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">CSEntry
- will not keep track of the order in which the data entry operator entered
- the fields. If the operator goes backward, the cursor will go to the preceding
- field even if it had originally been skipped.</font></p>
-</body>
-</html>
+<subheader>Path On</subheader>
+
+CSEntry will keep track of the order in which the data entry operator entered all <link data_entry_elements.hgt>fields</link>. If the operator goes backward, the cursor will go to the fields in the reverse order in which they were entered. For example, if the logic causes the cursor to skip over a set of fields, the cursor will also skip over these fields when the operator goes backwards. Fields that were skipped can never be entered, unless the operator goes backwards and chooses different values to avoid the skip. This helps ensure the integrity of the data file.
+
+<subheader>Path Off</subheader>
+
+CSEntry will not keep track of the order in which the data entry operator entered the fields. If the operator goes backward, the cursor will go to the preceding field even if it had originally been skipped.

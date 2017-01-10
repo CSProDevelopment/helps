@@ -1,90 +1,15 @@
 ﻿<title>Data Items</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+Data items are defined in a data dictionary. You can assign a value to a data item, or get the value of a data item in any procedure. The following is an example of the use of data items:
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Data Items</font></b></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Data items are defined in a data dictionary. You can assign
- a value to a data item, or get the value of a data item in any procedure.
- The following is an example of the use of data items:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;PROC</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">SEX</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;if</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">AGE</font>
- <b><font style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-			 color="#000000" face="Courier New" size="2">&gt;</font></b>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-		 face="Courier New" size="2">15</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">and</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">NumOfKids</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 face="Courier New"
-															 size="2">&lt;</font><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#000000" face="Courier New" size="2">&gt;</font></b> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">notappl</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#0000FF"
-														 face="Courier New"
-														 size="2">then</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#000000" face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;$</font></b>
- <b><font style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-			 color="#000000" face="Courier New" size="2">=</font></b> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-	 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;endif</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">However, in developing a data entry or batch edit application,
- it will frequently be necessary to define variables that do not exist
- in the data file(s) attached to the application. These variables may be
- used throughout the application, but only exist during the execution of
- the application.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">See also:</font></b> <a href="introduction_to_data_dictionary.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Dictionary</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">,</font> <a href="add_or_modify_items.html"><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">Add or Modify Items</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="this_item.html"><font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">This Item ($)</font></a></p>
-</body>
-</html>
+<logic>
+PROC SEX
+
+if AGE > 15 and NumberOfKids <> notappl then
+	$ = 2;
+endif;
+</logic>
+
+However, in developing a data entry or batch edit application, it will frequently be necessary to define variables that do not exist in the data file(s) attached to the application. These variables may be used throughout the application, but only exist during the execution of the application.
+
+<seealso introduction_to_data_dictionary.hgt add_or_modify_items.hgt this_item.hgt />

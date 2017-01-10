@@ -1,56 +1,21 @@
 ﻿<title>Create Fills In Questions</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+Fills are used to customize question text based on respondents' specific characteristics. This is done by embedding variables or dictionary items into the text and surrounding them with percent characters ("%").
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Create Fills In Questions</font></b></h4>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">Fills
- are used to customize question text based on respondentsâ€™ specific characteristics.
- This is done by embedding variables or dictionary items into the text
- and surrounding them with percent characters (&quot;%&quot;).</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">Enter
- some question text that needs to be customized. For words or phrases that
- need to be filled, enter a dictionary item or variable with % characters
- before and after. For example:</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 36.00pt;">Can I speak with %FNAME% now?</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;where
- FNAME is a dictionary item that contains a personâ€™s first name.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">When
- the entry system comes to this text, it will insert the personâ€™s FNAME
- value into the question text:</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 36.00pt;
-	 margin-left: 0px;"><font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">Can I speak with
- Marjorie now?</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 36.00pt;
-	 margin-left: 0px;">Can I speak with Allyson now?</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">You
- can also customize the question text by inserting an item or group's <a
-	 href="Occurrence_Labels.html">occurrence labels</a> into the text.
- For example:</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 36.00pt;
-	 margin-left: 0px;">How much did you spend on %getocclabel% in the
- last month?</p>
-</body>
-</html>
+<subheader>Fills with Dictionary Items or Variables</subheader>
+
+Enter some question text that needs to be customized. For words or phrases that need to be filled, enter a dictionary item or variable with % characters before and after. For example:
+
+<indent>Can I speak with %FIRST_NAME% now?</indent>
+
+ When the entry system comes to this text, it will insert the person's FIRST_NAME value into the question text:
+
+<indent>Can I speak with Marjorie now?
+Can I speak with Allyson now?
+</indent>
+
+<subheader>Fills with Occurrence Labels</subheader>
+
+You can also customize the question text by inserting an item or group's <link occurrence_labels.hgt>occurrence labels</link> into the text. For example:
+
+<indent>How much did you spend on %getocclabel% in the last month?</indent>
