@@ -8,6 +8,9 @@ namespace Colorizer
         public const string LogicFilename = "Logic Words.txt";
         public const string PffFilename = "PFF Words.txt";
 
+        public const char CommentChar = '#';
+        public const char OtherWordDelimiter = '|';
+
         private string[] _fileLines;
         private int _lineItr;
 
@@ -17,7 +20,7 @@ namespace Colorizer
             _lineItr = 0;
         }
 
-        public SortedSet<string> ReadWordBlock(bool breakOnNewline,Dictionary<string,string> helpTopics = null)
+        public SortedSet<string> ReadWordBlock(bool breakOnNewline,SortedSet<string> extraWords = null,Dictionary<string,string> helpTopics = null)
         {
             SortedSet<string> words = new SortedSet<string>();
 
@@ -37,8 +40,13 @@ namespace Colorizer
                         continue; // skip blank lines
                 }
 
-                if( trimmedWord[0] == '#' ) // a comment
+                if( trimmedWord[0] == CommentChar )
                     continue;
+
+                bool isExtraWord = ( trimmedWord[0] == OtherWordDelimiter );
+
+                if( isExtraWord )
+                    trimmedWord = trimmedWord.Substring(1);
 
                 string word = trimmedWord.ToUpper();
 
@@ -53,7 +61,11 @@ namespace Colorizer
                         helpTopics.Add(word,helpTopic);
                 }
 
-                words.Add(word);
+                if( isExtraWord && extraWords != null )
+                    extraWords.Add(word);
+
+                else
+                    words.Add(word);
             }
 
             return words;

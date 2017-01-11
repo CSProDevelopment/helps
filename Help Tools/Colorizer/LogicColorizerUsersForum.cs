@@ -34,6 +34,11 @@ namespace Colorizer
             sb.AppendFormat("[color=blue]{0}[/color]",PrepareText(keyword));
         }
 
+        public virtual void AddTextWithHelp(StringBuilder sb,string text,string helpTopic)
+        {
+            AddText(sb,text);
+        }
+
         public void AddNewLine(StringBuilder sb)
         {
             sb.Append("\r\n");

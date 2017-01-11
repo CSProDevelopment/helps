@@ -7,6 +7,7 @@ namespace Colorizer
     class LogicColorizer
     {
         private SortedSet<string> _reservedWords;
+        private SortedSet<string> _otherWordsWithHelps;
         private Dictionary<string,string> _helpTopics;
         private LogicColorizerInterface _defaultLogicColorizer;
 
@@ -15,7 +16,8 @@ namespace Colorizer
             HighlightWordReader hwr = new HighlightWordReader(HighlightWordReader.LogicFilename);
 
             _helpTopics = new Dictionary<string,string>();
-            _reservedWords = hwr.ReadWordBlock(false,_helpTopics);
+            _otherWordsWithHelps = new SortedSet<string>();
+            _reservedWords = hwr.ReadWordBlock(false,_otherWordsWithHelps,_helpTopics);
         }
 
         public LogicColorizer(LogicColorizerInterface defaultLogicColorizer) : this()
@@ -205,12 +207,19 @@ namespace Colorizer
                         string keyword = sourceText.Substring(lastWordStartBlock,savedI - lastWordStartBlock + ( includeLastCharacter ? 1 : 0 ));
                         string upperCaseKeyword = keyword.ToUpper();
 
-                        if( _reservedWords.Contains(upperCaseKeyword) )
+                        bool isReservedWord = _reservedWords.Contains(upperCaseKeyword);
+
+                        if( isReservedWord || _otherWordsWithHelps.Contains(upperCaseKeyword) )
                         {
                             string helpTopic = _helpTopics.ContainsKey(upperCaseKeyword) ? _helpTopics[upperCaseKeyword] : null;
 
                             logicColorizer.AddText(sb,text.Substring(0,text.Length - keyword.Length - ( outputLastCharacterAsText ? 1 : 0 )));
-                            logicColorizer.AddKeyword(sb,keyword,helpTopic);
+
+                            if( isReservedWord )
+                                logicColorizer.AddKeyword(sb,keyword,helpTopic);
+
+                            else
+                                logicColorizer.AddTextWithHelp(sb,keyword,helpTopic);
 
                             if( outputLastCharacterAsText )
                                 logicColorizer.AddText(sb,text.Substring(keyword.Length));

@@ -44,6 +44,11 @@ namespace Colorizer
             sb.AppendFormat("<font color=\"blue\">{0}</font>",Htmlize(keyword));
         }
 
+        public virtual void AddTextWithHelp(StringBuilder sb,string text,string helpTopic)
+        {
+            AddText(sb,text);
+        }
+
         public void AddNewLine(StringBuilder sb)
         {
             sb.Append("<br />\n");
@@ -79,15 +84,25 @@ namespace Colorizer
             sb.Append("</div>");
         }
 
-        public override void AddKeyword(StringBuilder sb,string keyword,string helpTopic)
+        private void AddKeywordOrTextWithHelp(StringBuilder sb,string text,string helpTopic,string color)
         {
             string linkText = ( helpTopic == null ) ? null : _getHtmlFilenameForKeywordInterface.GetHtmlFilenameForKeyword(helpTopic);
 
             if( linkText == null )
-                sb.AppendFormat("<font color=\"blue\">{0}</font>",Htmlize(keyword));
+                sb.AppendFormat("<font color=\"{0}\">{1}</font>",color,Htmlize(text));
 
             else
-                sb.AppendFormat("<a href=\"{0}\" class=\"code_colorization_keyword_link\"><span style=\"color: blue;\">{1}</span></a>",linkText,Htmlize(keyword));
+                sb.AppendFormat("<a href=\"{0}\" class=\"code_colorization_keyword_link\"><span style=\"color: {1};\">{2}</span></a>",linkText,color,Htmlize(text));
+        }
+
+        public override void AddKeyword(StringBuilder sb,string keyword,string helpTopic)
+        {
+            AddKeywordOrTextWithHelp(sb,keyword,helpTopic,"blue");
+        }
+
+        public override void AddTextWithHelp(StringBuilder sb,string text,string helpTopic)
+        {
+            AddKeywordOrTextWithHelp(sb,text,helpTopic,"black");
         }
     }
 
