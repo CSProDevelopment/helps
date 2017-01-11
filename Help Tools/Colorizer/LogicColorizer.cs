@@ -23,18 +23,18 @@ namespace Colorizer
             _defaultLogicColorizer = defaultLogicColorizer;
         }
 
-        public string Colorize(string sourceText,bool inlineColorization = false)
+        public string Colorize(string sourceText)
         {
-            return Colorize(_defaultLogicColorizer,sourceText,inlineColorization);
+            return Colorize(_defaultLogicColorizer,sourceText);
         }
 
         private enum ProcessType { LineComment, BracketComment, QuotedString, Number, Keyword, Newline, None };
 
-        public string Colorize(LogicColorizerInterface logicColorizer,string sourceText,bool inlineColorization = false)
+        public string Colorize(LogicColorizerInterface logicColorizer,string sourceText)
         {
             StringBuilder sb = new StringBuilder();
 
-            logicColorizer.StartBlock(sb,inlineColorization);
+            logicColorizer.StartBlock(sb);
 
             sourceText = HelperFunctions.TabsToSpaces(sourceText);
 
@@ -241,7 +241,7 @@ namespace Colorizer
                     i--;
             }
 
-            logicColorizer.EndBlock(sb,inlineColorization);
+            logicColorizer.EndBlock(sb);
 
             return sb.ToString();
         }

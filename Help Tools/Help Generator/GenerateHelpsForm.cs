@@ -175,6 +175,8 @@ namespace Help_Generator
                         _backgroundThread.ReportProgress(0,ThreadUpdateMessage.ChmComplete);
                     }
 
+                    ListUnusedImages();
+
                     _backgroundThread.ReportProgress(0,"Successfully processed " + stepStrings[processingStep]);
                 }
 
@@ -327,6 +329,25 @@ namespace Help_Generator
                     File.Delete(_outputChmFilename);
 
                 throw new Exception("The HTML Help Compiler reported errors.");
+            }
+        }
+        
+        private void ListUnusedImages()
+        {
+            bool displayedHeader = false;
+
+            foreach( Preprocessor.ImagePreprocessor image in _helpComponents.preprocessor.GetAllImages() )
+            {
+                if( !image.Shared && !_topicCompilerSettings.UsedImageFilenames.Contains(image.Filename) )
+                {
+                    if( !displayedHeader )
+                    {
+                        _backgroundThread.ReportProgress(0,"There are unused images:");
+                        displayedHeader = true;
+                    }
+
+                    _backgroundThread.ReportProgress(0,image.Filename);
+                }
             }
         }
     }

@@ -13,6 +13,7 @@ namespace Help_Generator
         public Preprocessor preprocessor;
 
         public LogicColorizer _logicColorizer;
+        public LogicColorizer _inlineLogicColorizer;
         public PffColorizer _pffColorizer;
     }
 }

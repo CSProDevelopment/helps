@@ -4,7 +4,12 @@ namespace Colorizer
 {
     class LogicColorizerHtml : LogicColorizerInterface
     {
-        public virtual void StartBlock(StringBuilder sb,bool inlineColorization)
+        protected virtual string Htmlize(string text)
+        {
+            return HelperFunctions.Htmlize(text);
+        }
+
+        public virtual void StartBlock(StringBuilder sb)
         {
             sb.Append(
                 "<!doctype html>\n" +
@@ -14,29 +19,29 @@ namespace Colorizer
                 "<div style='word-wrap:break-word;margin:0px;padding:0px;border:0px;background-color:#ffffff;color:#000000;font-family:Courier New;font-size:10pt;'>\n");
         }
 
-        public virtual void EndBlock(StringBuilder sb,bool inlineColorization)
+        public virtual void EndBlock(StringBuilder sb)
         {
             sb.Append("</div>\n</body>\n</html>\n");
         }
 
         public void AddComment(StringBuilder sb,string comment)
         {
-            sb.AppendFormat("<font color=\"green\">{0}</font>",HelperFunctions.Htmlize(comment));
+            sb.AppendFormat("<font color=\"green\">{0}</font>",Htmlize(comment));
         }
 
         public void AddQuotedString(StringBuilder sb,string quotedString)
         {
-            sb.AppendFormat("<font color=\"fuchsia\">{0}</font>",HelperFunctions.Htmlize(quotedString));
+            sb.AppendFormat("<font color=\"fuchsia\">{0}</font>",Htmlize(quotedString));
         }
 
         public void AddNumber(StringBuilder sb,string number)
         {
-            sb.AppendFormat("<font color=\"red\">{0}</font>",HelperFunctions.Htmlize(number));
+            sb.AppendFormat("<font color=\"red\">{0}</font>",Htmlize(number));
         }
 
         public virtual void AddKeyword(StringBuilder sb,string keyword,string helpTopic)
         {
-            sb.AppendFormat("<font color=\"blue\">{0}</font>",HelperFunctions.Htmlize(keyword));
+            sb.AppendFormat("<font color=\"blue\">{0}</font>",Htmlize(keyword));
         }
 
         public void AddNewLine(StringBuilder sb)
@@ -46,7 +51,7 @@ namespace Colorizer
 
         public void AddText(StringBuilder sb,string text)
         {
-            sb.Append(HelperFunctions.Htmlize(text));
+            sb.Append(Htmlize(text));
         }
     }
 
@@ -64,14 +69,14 @@ namespace Colorizer
             _getHtmlFilenameForKeywordInterface = getHtmlFilenameForKeywordInterface;
         }
 
-        public override void StartBlock(StringBuilder sb,bool inlineColorization)
+        public override void StartBlock(StringBuilder sb)
         {
-            sb.Append(inlineColorization ? "<font class=\"code_colorization\">" : "<div class=\"code_colorization indent\">");
+            sb.Append("<div class=\"code_colorization indent\">");
         }
 
-        public override void EndBlock(StringBuilder sb,bool inlineColorization)
+        public override void EndBlock(StringBuilder sb)
         {
-            sb.Append(inlineColorization ? "</font>" : "</div>");
+            sb.Append("</div>");
         }
 
         public override void AddKeyword(StringBuilder sb,string keyword,string helpTopic)
@@ -79,10 +84,33 @@ namespace Colorizer
             string linkText = ( helpTopic == null ) ? null : _getHtmlFilenameForKeywordInterface.GetHtmlFilenameForKeyword(helpTopic);
 
             if( linkText == null )
-                sb.AppendFormat("<font color=\"blue\">{0}</font>",HelperFunctions.Htmlize(keyword));
+                sb.AppendFormat("<font color=\"blue\">{0}</font>",Htmlize(keyword));
 
             else
-                sb.AppendFormat("<a href=\"{0}\" class=\"code_colorization_keyword_link\"><span style=\"color: blue;\">{1}</span></a>",linkText,HelperFunctions.Htmlize(keyword));
+                sb.AppendFormat("<a href=\"{0}\" class=\"code_colorization_keyword_link\"><span style=\"color: blue;\">{1}</span></a>",linkText,Htmlize(keyword));
+        }
+    }
+
+    class LogicColorizerHtmlHelpInline : LogicColorizerHtmlHelp
+    {
+        public LogicColorizerHtmlHelpInline(GetHtmlFilenameForKeywordInterface getHtmlFilenameForKeywordInterface)
+            : base(getHtmlFilenameForKeywordInterface)
+        {
+        }
+
+        protected override string Htmlize(string text)
+        {
+            return HelperFunctions.HtmlizeWhitespace(text);
+        }
+
+        public override void StartBlock(StringBuilder sb)
+        {
+            sb.Append("<font class=\"code_colorization\">");
+        }
+
+        public override void EndBlock(StringBuilder sb)
+        {
+            sb.Append("</font>");
         }
     }
 }

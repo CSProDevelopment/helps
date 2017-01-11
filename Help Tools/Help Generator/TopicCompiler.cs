@@ -774,6 +774,9 @@ namespace Help_Generator
             if( _helpComponents._logicColorizer == null )
                 _helpComponents._logicColorizer = new LogicColorizer(new LogicColorizerHtmlHelp(this));
 
+            if( _helpComponents._inlineLogicColorizer == null )
+                _helpComponents._inlineLogicColorizer = new LogicColorizer(new LogicColorizerHtmlHelpInline(this));
+
             if( _helpComponents._pffColorizer == null )
                 _helpComponents._pffColorizer = new Colorizer.PffColorizer(new PffColorizerHtmlHelp());
         }
@@ -818,7 +821,7 @@ namespace Help_Generator
         private string EndLogicColorHandler(string endTagInnerText)
         {
             CreateLogicPffColorizers();
-            return _helpComponents._logicColorizer.Colorize(endTagInnerText.Trim(),true);
+            return _helpComponents._inlineLogicColorizer.Colorize(endTagInnerText.Trim());
         }        
 
         private string EndPffHandler(string endTagInnerText)

@@ -33,10 +33,12 @@ namespace Help_Generator
         public class ImagePreprocessor
         {
             public string Filename { get; set; }
+            public bool Shared { get; set; }
 
-            public ImagePreprocessor(FileInfo fi)
+            public ImagePreprocessor(FileInfo fi,bool shared)
             {
                 Filename = fi.FullName;
+                Shared = shared;
             }
         }
 
@@ -182,7 +184,7 @@ namespace Help_Generator
 
                         if( !_images.ContainsKey(imageKey) ) // a new image
                         {
-                            _images.Add(imageKey,new ImagePreprocessor(fi));
+                            _images.Add(imageKey,new ImagePreprocessor(fi,sharedFolder));
                             savePreprocessor = true;
                         }
 

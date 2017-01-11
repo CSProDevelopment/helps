@@ -4,12 +4,12 @@ namespace Colorizer
 {
     class LogicColorizerUsersForum: LogicColorizerInterface
     {
-        public void StartBlock(StringBuilder sb,bool inlineColorization)
+        public void StartBlock(StringBuilder sb)
         {
             sb.Append("[cspro]");
         }
 
-        public void EndBlock(StringBuilder sb,bool inlineColorization)
+        public void EndBlock(StringBuilder sb)
         {
             sb.Append("[/cspro]");
         }
