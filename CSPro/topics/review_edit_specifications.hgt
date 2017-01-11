@@ -1,73 +1,13 @@
 ﻿<title>Review Edit Specifications</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+In order to determine the total editing task, the user should understand what edits are to be performed. Are the edits fairly simple or mostly complex? Are the edits merely to find and report errors in the data file, or will the program correct the errors as well? Is a non-response value being allowed for any or all data items? Is a look-up file going to be needed? Are there any auxiliary files to be produced? What types of reports will be needed and how will they be organized?
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Review Edit Specifications</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
- order to determine the total editing task, the user should understand
- what edits are to be performed. Are the edits fairly simple or mostly
- complex? Are the edits merely to find and report errors in the data file,
- or will the program correct the errors as well? Is a non-response value
- being allowed for any or all data items? Is a look-up file going to be
- needed? Are there any auxiliary files to be produced? What types of reports
- will be needed and how will they be organized?</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- three types of edit statistics reports are:&#160;&#160;&#160;</font></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.50pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Case</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.50pt;"><font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">Output
- listing shows case by case</font></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.50pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Summary</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Output
- listing shows (1) a summary of the number of times each error message
- was generated, and (2) the number or errors as a percentage of total cases
- in which the edit test was invoked.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.50pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">â€¢&#160;Frequency</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">This report is g</font><font style="font-family: Arial; font-size: 10pt;"
-											 face="Arial" size="2">enerated
- when at least one</font> <b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" face="Arial" size="2">impute</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">statement
- is coded in the program. It assigns a value to a data item and logs the
- frequency of assignments.&#160;&#160;&#160;&#160;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 0.30pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Typically,
- during the testing phase, the report by case is very useful, because it
- permits detailed examination of the effects of the logic coded. After
- testing, it is usually not used because of the volume of reports generated.</font></p>
-</body>
-</html>
+The three types of edit statistics reports are:   
+
+<list>
+	<li><b>Case</b>: Output listing shows case by case.</li>
+	<li><b>Summary</b>: Output listing shows (1) a summary of the number of times each error message was generated, and (2) the number or errors as a percentage of total cases in which the edit test was invoked.</li>
+	<li><b>Frequency</b>: This report is generated when at least one <logiccolor>impute</logiccolor> statement is coded in the program. It assigns a value to a data item and logs the frequency of assignments.</li>
+</list>
+
+Typically, during the testing phase, the report by case is very useful, because it permits detailed examination of the effects of the logic coded. After testing, it is usually not used because of the volume of reports generated.

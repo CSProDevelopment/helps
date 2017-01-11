@@ -1,140 +1,48 @@
 ﻿<title>Change Field Properties</title>
 <context HIDD_FIELDPROP />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+Right click on the field in the tree or on the form and select <b>Properties</b>. You can also press <b>Alt+Enter</b> to bring up the properties window.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h5 style="text-align: left; margin-top: 6.00pt; margin-bottom: 2.00pt;
-	 font-size: 18pt; font-weight: bold;"><b><font style="font-weight: bold;">Change
- Field Properties</font></b></h5>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Right
- click on the field in the tree or on the form and select &quot;Properties.&quot;
- You can also press Alt+Enter to bring up the properties window.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;&#160;<img
-	 src="fieldProperties.PNG" alt="" style="border: none;" border="0" /></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><u><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold; text-decoration: underline; "
-	 face="Arial" size="2">Field-Specific Information</font></u></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">â€¢&#160;Field Name</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- is the name of the dictionary item associated with this field. It is the
- name you use to refer to this field when writing logic. Mirror fields
- will show the dictionary name with three digits appended to it. You cannot
- change this property.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">â€¢&#160;Screen Text</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- is the text that is associated with the data entry box on the form. It
- is also the text that is displayed on the Android case tree for the field.
- If &quot;Linked to dictionary item&quot; is checked, then the screen text
- is synced to the label of the associated dictionary item. That is, if
- the dictionary item's label changes, then the screen text will change
- automatically.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">â€¢&#160;Skip to</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- is the name of the field that will be skipped to if the operator presses
- the plus (+) key on the numeric keypad. If the &quot;skip to&quot; field
- it is blank and the plus key is pressed, CSPro skips to the next field
- in sequence. &quot;Skip to&quot; is available only in operator controlled
- data entry mode.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">â€¢&#160;Capture Type</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">This
- attribute allows you to specify an <a href="Extended_Controls.html">extended
- control</a> (a popup window that shows entries in the value set) for the
- field, or to <a href="Extended_Controls.html">change the appearance</a>
- of an alpha field.</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: normal;"><b>â€¢&#160;Keyboard Input</b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: normal;">This attribute allows you to choose a <a href="Keyboard_Input.htm"
-	 style="font-weight: normal;">keyboard ID</a> that specifies what keyboard
- input to use for the field, which may be useful in multiple language environments.</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: normal;"><b>â€¢&#160;Field Type</b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: normal;">Click on the check box to set the <a href="field_properties.htm"
-	 style="font-weight: normal;">field properties</a>, either &quot;Persistent,&quot;
- &quot;Sequential,&quot; &quot;Protected,&quot; &quot;Mirror,&quot; or
- &quot;Upper Case.&quot;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: bold;"><b><font style="font-weight: bold;">â€¢&#160;Use
- Enter Key</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Check
- this box if you want to force the data entry operator to</font> <a href="change_data_entry_options.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">press
- the Enter</font></a> <font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">key to advance to the
- next field. If left unchecked, the cursor automatically advances to the
- next field (after the maximum number of characters have been entered).</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">â€¢&#160;Force Out-of-range</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Check
- this box if you want to allow the operator to</font> <a href="change_data_entry_options.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">enter
- an out-of-range</font></a> <font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">value, that
- is, a value which is not defined in the dictionary for this field. If
- left unchecked, the operator can only enter values defined in the dictionary.
- If checked, the operator can force the acceptance of a non-valid value
- during data capture.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">â€¢&#160;Verify</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">Check
- this box if you want to <a href="change_data_entry_options.html">verify
- the field</a> when the operator is in verification mode. If left unchecked,
- verification is skipped. If checked, verification will occur as follows:
- after each field is keyed, the value entered is compared with the value
- currently in the data file. If there is a difference, an error message
- is displayed, and the field must be reentered.</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">â€¢&#160;Hide in Case Tree</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">Check
- this box if you do not want the field to appear in the Android case tree.
- You might, for example, have some control fields that the interviewer
- does not need to see when conducting the interview.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;"><span
-	 style="font-weight: bold;">See also:</span> <a href="field_properties.html">Field
- Properties</a>, <a href="Field_Properties_(for_Multiple_Fields).html">Field
- Properties (for Multiple Fields)</a></p>
-</body>
-</html>
+<center><image field_properties.png /></center>  
+
+<subheader>Field Name</subheader>
+
+This is the name of the dictionary item associated with this field. It is the name you use to refer to this field when writing logic. Mirror fields will show the dictionary name with three digits appended to it. You cannot change this property.
+
+<subheader>Screen Text</subheader>
+
+This is the text that is associated with the data entry box on the form. It is also the text that is displayed on the Android case tree for the field. If <b>Linked to dictionary item</b> is checked, then the screen text is synced to the label of the associated dictionary item. That is, if the dictionary item's label changes, then the screen text will change automatically.
+
+<subheader>Skip to</subheader>
+
+This is the name of the field that will be skipped to if the operator presses the plus (+) key on the numeric keypad. If the "skip to" field it is blank and the plus key is pressed, CSPro skips to the next field in sequence. "Skip to" is available only in operator-controlled data entry mode.
+
+<subheader>Capture Type</subheader>
+
+This attribute allows you to specify an <link extended_controls.hgt>extended control</link> (a popup window that shows entries in the value set) for the field, or to change the appearance of an alpha field.
+
+<subheader>Keyboard Input</subheader>
+
+This attribute allows you to choose a <link keyboard_input.hgt>keyboard ID</link> that specifies what keyboard input to use for the field, which may be useful in multiple language environments.
+
+<subheader>Field Type</subheader>
+
+Click on the check box to set the <link field_properties.hgt>field properties</link>, either <b>Persistent</b>, <b>Sequential</b>, <b>Protected</b>, <b>Mirror</b>, or <b>Upper Case</b>.
+
+<subheader>Use Enter Key</subheader>
+
+Check this box if you want to force the data entry operator to <link change_data_entry_options.hgt>press the Enter</link> key to advance to the next field. If left unchecked, the cursor automatically advances to the next field (after the maximum number of characters have been entered).
+
+<subheader>Force Out-of-Range</subheader>
+
+Check this box if you want to allow the operator to <link change_data_entry_options.hgt>enter an out-of-range</link> value, that is, a value which is not defined in the dictionary for this field. If left unchecked, the operator can only enter values defined in the dictionary. If checked, the operator can force the acceptance of a non-valid value during data capture.
+
+<subheader>Verify</subheader>
+
+Check this box if you want to <link change_data_entry_options.hgt>verify the field</link> when the operator is in verification mode. If left unchecked, verification is skipped. If checked, verification will occur as follows: after each field is keyed, the value entered is compared with the value currently in the data file. If there is a difference, an error message is displayed, and the field must be reentered.
+
+<subheader>Hide in Case Tree</subheader>
+
+Check this box if you do not want the field to appear in the Android case tree. You might, for example, have some control fields that the interviewer does not need to see when conducting the interview.
+
+<seealso field_properties.hgt field_properties_for_multiple_fields.hgt />

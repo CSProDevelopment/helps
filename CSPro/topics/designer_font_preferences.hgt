@@ -1,0 +1,20 @@
+﻿<title>Designer Font Preferences</title>
+<context HIDD_FONTPREFDLG HID_PREFERENCES_FONTS />
+
+Versions of CSPro prior to 5.0 supported some languages that used non-Latin alphabets such as Armenian and Russian. With the switch to Unicode support in CSPro 5.0, this feature has been removed. Old applications that used these language specific ANSI fonts will no longer look correct in the CSPro Designer. For example, this is a value set in an Armenian dictionary:
+
+<center><image designer_font_preferences_bad_text.png /></center>
+
+To view these old applications correctly, you can manually change the font used to render the text in the dictionary grid, the dictionary and form tree, and, if the font is monospaced, the application's logic.
+
+With no application open, select <b>Tools</b> -> <b>Preferences</b> -> <b>Fonts</b>.
+
+<center><image designer_font_preferences_dialog.png /></center>
+
+In this example, an Arial Armenian font has been selected, at an increased zoom rate. After this selection, the dictionary editor displays the contents better:
+
+<center><image designer_font_preferences_good_text.png /></center>
+
+Ultimately you will want to convert your application to Unicode, as these font preferences are disregarded by CSEntry. Many tools exist to convert ANSI language scripts to their Unicode equivalents.
+
+Some users may find that the CSPro Designer renders the Unicode characters for their language at a very small size. It is possible to change the zoom factor while leaving the font name blank, thus making the characters easier to read.

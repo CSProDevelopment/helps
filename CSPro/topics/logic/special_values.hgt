@@ -1,134 +1,16 @@
 ﻿<title>Special Values</title>
 <context logic_help_special />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+There are three special values in the CSPro language: <logiccolor>missing</logiccolor>, <logiccolor>notappl</logiccolor>, and <logiccolor>default</logiccolor>. A particular value of a data item can be mapped to one of these special values in the data dictionary, or programmatically via logic. They have the following meaning and uses:
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Special Values</font></b></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">There are three special values in the CSPro language:</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#0000FF" face="Arial"
-		 size="2">missing</font><font style="font-family: Arial; font-size: 10pt;"
-										 color="#000000" face="Arial" size="2">,</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#0000FF" face="Arial"
-		 size="2">notappl</font><font style="font-family: Arial; font-size: 10pt;"
-										 color="#000000" face="Arial" size="2">,
- and</font> <font style="font-family: Arial; font-size: 10pt;" color="#0000FF"
-					 face="Arial" size="2">default</font><font style="font-family: Arial;
-	 font-size: 10pt;" color="#000000" face="Arial" size="2">. They have
- the following meaning and uses:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Missing</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The value</font> <font style="font-family: Arial; font-size: 10pt;"
-									 color="#0000FF" face="Arial" size="2">missing</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">indicates that a data item was supposed to have a response
- and no response was given. Other terms for this are &quot;not stated&quot;
- and &quot;non-response&quot;. To properly utilize this special value,
- you must create a</font> <a href="add_or_modify_value_sets.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">value
- set</font></a> <font style="font-family: Arial; font-size: 10pt;" color="#000000"
-						 face="Arial" size="2">for this item in the dictionary,
- setting one of the value set entries to the special value &quot;missing.&quot;
- For example, you could set 8 (or 88, 888, etc.) or 9 (or 99, 999, etc.)
- to missing. Finally, although you must associate a number with the special
- value missing, you can only use the = or &lt;&gt; comparison</font> <a
-	 href="operators.html"><font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">operators</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">against the special value</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#0000FF"
-														 face="Courier New"
-														 size="2">missing</font><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">â€”you can</font> <b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">not</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">refer to the numeric value you assigned it to in your
- dictionary value set.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Notappl</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The value</font> <font style="font-family: Arial; font-size: 10pt;"
-									 color="#0000FF" face="Arial" size="2">notappl</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">indicates that a data item is blank. The item did not
- have a response because the question did not apply to this respondent.
- Fields that are skipped during data entry are assigned the value</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#0000FF" face="Arial"
-		 size="2">notappl</font><font style="font-family: Arial; font-size: 10pt;"
-										 color="#000000" face="Arial" size="2">.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Default</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The value</font> <font style="font-family: Arial; font-size: 10pt;"
-									 color="#0000FF" face="Arial" size="2">default</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">indicates that a data item or variable has an undefined
- value. This can result from various circumstances. For example, a calculation
- that contains a special value as one of its operands returns the result</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#0000FF" face="Arial"
-		 size="2">default</font><font style="font-family: Arial; font-size: 10pt;"
-										 color="#000000" face="Arial" size="2">.
- Reading the value of a variable from a data file when the data type specified
- in the dictionary for the variable is numeric and the value in the data
- file contains non-numeric characters will cause the variable to become</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#0000FF" face="Arial"
-		 size="2">default</font><font style="font-family: Arial; font-size: 10pt;"
-										 color="#000000" face="Arial" size="2">.
- The same result occurs if the dictionary does not specify a decimal character
- for the variable being read but the value in the data file contains one.
- Additionally, if a numeric variable has numeric subitems, some of which
- are notappl (blank) then the value of the variable will sometimes be</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#0000FF" face="Arial"
-		 size="2">default</font><font style="font-family: Arial; font-size: 10pt;"
-										 color="#000000" face="Arial" size="2">.
- For example if the numeric variable DATE has 3 subitems DAY=1, MONTH=</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#0000FF" face="Arial"
-		 size="2">notappl</font> <font style="font-family: Arial; font-size: 10pt;"
-										 color="#000000" face="Arial" size="2">and
- YEAR=2000, then the value of DATE will be</font> <font style="font-family: Arial;
-														 font-size: 10pt;"
-														 color="#0000FF"
-														 face="Arial" size="2">default</font><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">. The value</font> <font style="font-family: Arial; font-size: 10pt;"
-										 color="#0000FF" face="Arial" size="2">default</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">can also be written to the data file when value of the
- variable being written overflows the length specified for that variable
- in the dictionary (for example if the value of the variable is 999 but
- the dictionary specifies a length of 2 for the variable).</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">A particular value of a data item can be assigned one of
- these special values in the data dictionary.</font></p>
-</body>
-</html>
+<subheader>Missing</subheader>
+
+The value <logiccolor>missing</logiccolor> indicates that a data item was supposed to have a response and no response was given. Other terms for this are "not stated" and "non-response." To properly utilize this special value, you must create a <link add_or_modify_value_sets.hgt>value set</link> for this item in the dictionary, setting one of the value set entries to the special value "Missing." For example, you could set 8 (or 88, 888, etc.) or 9 (or 99, 999, etc.) to <logiccolor>missing</logiccolor>. Finally, although you must associate a number with the special value missing, you can only use the = or &lt;&gt; <link operators.hgt>comparison operators</link> against the special value <logiccolor>missing</logiccolor>; i.e., you cannot refer to the numeric value you assigned it to in your dictionary value set.
+
+<subheader>Notappl</subheader>
+
+The value <logiccolor>notappl</logiccolor> indicates that a data item is blank. The item did not have a response because the question did not apply to this respondent. Fields that are skipped during data entry are assigned the value <logiccolor>notappl</logiccolor>.
+
+<subheader>Default</subheader>
+
+The value <logiccolor>default</logiccolor> indicates that a data item or variable has an undefined value. This can result from various circumstances. For example, a calculation that contains a special value as one of its operands returns the result <logiccolor>default</logiccolor>. Reading the value of a variable from a data file when the data type specified in the dictionary for the variable is numeric and the value in the data file contains non-numeric characters will cause the variable to become <logiccolor>default</logiccolor>. The same result occurs if the dictionary does not specify a decimal character for the variable being read but the value in the data file contains one. Additionally, if a numeric variable has numeric subitems, some of which are <logiccolor>notappl</logiccolor> (blank) then the value of the variable will sometimes be <logiccolor>default</logiccolor>. For example if the numeric variable <logiccolor>DATE</logiccolor> has 3 subitems <logiccolor>DAY=1</logiccolor>, <logiccolor>MONTH=notappl</logiccolor>, and <logiccolor>YEAR=2020</logiccolor>, then the value of <logiccolor>DATE</logiccolor> will be <logiccolor>default</logiccolor>. The value <logiccolor>default</logiccolor> can also be written to the data file when value of the variable being written overflows the length specified for that variable in the dictionary (for example if the value of the variable is 999 but the dictionary specifies a length of 2 for the variable).

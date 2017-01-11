@@ -1,76 +1,21 @@
 ﻿<title>Text Strings</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+A text string is any set of characters in the computer's character set enclosed between a pair of quotation marks (") or apostrophes ('). Any spaces enclosed within the quotation marks or apostrophes are considered part of the text string. Upper- and lower-case letters may be used. However, a text string 'a' is different from a text string 'A.' If you wish to have apostrophes (') embedded within your string, you must use the quotation marks (") to enclose it, and vice-versa. For example:
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Text Strings</font></b></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">A
- text string is any set of characters in the computerâ€™s character set enclosed
- between a pair of quotation marks (&quot;) or apostrophes (â€˜). Any spaces
- enclosed within the quotation marks or apostrophes are considered part
- of the text string. Upper- and lower-case letters may be used. However,
- a text string â€˜aâ€™ is different from a text string â€˜Aâ€™. The maximum length
- of a text string is 250 characters. If you wish to have apostrophes (â€˜)
- embedded within your string, you</font> <b><font style="font-family: Arial;
-													 font-size: 10pt; font-weight: bold;"
-													 face="Arial" size="2">must</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">use
- the quotation marks (&quot;) to enclose it, and vice-versa. For example,</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 117.00pt; margin-top: 0.00pt;
-	 margin-bottom: 0.00pt; text-indent: -106.20pt;"><span style="font-family: Courier, monospace;">MyString=â€˜Thatâ€™s
- great!â€™;</span>&#160;</p>
-<p style="text-align: left; margin-left: 117.00pt; margin-top: 0.00pt;
-	 margin-bottom: 0.00pt; text-indent: -117.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">would
- set MyString to &quot;that&quot;, and the trailing &quot;s great!&quot;
- would be considered outside the string,and would therefore provoke a compiler
- error. Thus, if you wanted to accomplish the above, you must write:</font></p>
-<p style="text-align: left; margin-left: 117.00pt; margin-top: 0.00pt;
-	 margin-bottom: 0.00pt; text-indent: -117.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 117.00pt; margin-top: 0.00pt;
-	 margin-bottom: 0.00pt; text-indent: -106.20pt;"><font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 face="Courier New"
-															 size="2">MyString=</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">&quot;Thatâ€™s great!&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Similarly,
- if you wanted to embed quotation marks within your string, you must write
- the string as follows:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 117.00pt; margin-top: 0.00pt;
-	 margin-bottom: 0.00pt; text-indent: -106.20pt; font-family: 'Courier New', monospace;">MyString=â€™The
- chair is 23&quot; highâ€™;</p>
-<p style="text-align: left; margin-left: 117.00pt; margin-top: 0.00pt;
-	 margin-bottom: 0.00pt; text-indent: -117.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Strings
- that are surrounded by quotation marks will appear in</font> <font style="font-family: Arial;
-	 font-size: 10pt;" color="#FF00FF" face="Arial" size="2">pink</font><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">.
- Strings that are surrounded by apostrophes will appear in black. We recommend
- using quotation marks [&quot;], if the text of the string does not turn
- pink when you think you have completed entering it, it will be quickly
- apparent that you have not terminated your string properly.</font></p>
-</body>
-</html>
+<logic>
+MyString = 'That's great!'; 
+</logic>
+
+This would set MyString to "that" and the trailing "s great!" would be considered outside the string, and would therefore provoke a compiler error. Thus, if you wanted to accomplish the above, you must write:
+
+<logic>
+MyString = "That's great!";
+</logic>
+
+Similarly, if you wanted to embed quotation marks within your string, you must write the string as follows:
+
+<logic>
+MyString = 'The chair is 23" high';
+</logic>
+
+Strings that are surrounded by quotation marks will appear in <font pink><b>pink</b></font>. Strings that are surrounded by apostrophes will appear in <b>black</b>. We recommend using quotation marks ("), and if the text of the string does not turn pink when you think you have completed entering it, it will be quickly apparent that you have not terminated your string properly.

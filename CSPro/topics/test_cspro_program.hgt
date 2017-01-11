@@ -1,60 +1,7 @@
 ﻿<title>Test CSPro Program</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+The CSPro program should be thoroughly tested using the file with "invented" data. Earlier in this guide is a discussion of the <logiccolor>errmsg</logiccolor> statement and a technique for listing records before and after imputation. This technique (or a similar one) should be used to verify that imputations are being done properly and under the right circumstances. Each record that contains imputed items should be examined closely. Records containing no imputed items also should be checked to ensure that no imputations were needed.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Test CSPro Program</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- CSPro program should be thoroughly tested using the file with &quot;invented&quot;
- data. Earlier in this guide is a discussion of the</font> <b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">errmsg</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">statement
- and a technique for listing records before and after imputation. This
- technique (or a similar one) should be used to verify that imputations
- are being done properly and under the right circumstances. Each record
- that contains imputed items should be examined closely. Records containing
- no imputed items also should be checked to ensure that no imputations
- were needed.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
- hot-deck imputations are used to correct invalid or inconsistent items,
- it is particularly important to ensure that the hot deck arrays are being
- updated under the appropriate circumstances and with valid values. This
- is the most common error in program construction, and one way to avoid
- it is by requiring that the edit specifications explicitly indicate where,
- in the sequence of actions, hot decks should be updated.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- output file produced by the</font> <b><font style="font-family: Arial;
-											 font-size: 10pt; font-weight: bold;"
-											 face="Arial" size="2">Run</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">program
- step should be &quot;clean&quot;, assuming imputations were performed
- to correct all invalid and inconsistent data. To verify that the CSPro
- program does not contain contradictory logic, that it corrects errors
- properly, and that it does not introduce any new errors, the</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Run</font></b> <font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">program step
- should be rerun with the &quot;clean&quot; [output] data file as input.
- In this rerun, no errors should be found and the edit statistics should
- reflect this. If errors are found, then the logic of the CSPro program
- must be corrected.</font></p>
-</body>
-</html>
+When hotdeck imputations are used to correct invalid or inconsistent items, it is particularly important to ensure that the hotdeck arrays are being updated under the appropriate circumstances and with valid values. This is the most common error in program construction, and one way to avoid it is by requiring that the edit specifications explicitly indicate where, in the sequence of actions, hot decks should be updated.
+
+The output file produced by the <b>Run</b> program step should be "clean," assuming imputations were performed to correct all invalid and inconsistent data. To verify that the CSPro program does not contain contradictory logic, that it corrects errors properly, and that it does not introduce any new errors, the <b>Run</b> program step should be rerun with the "clean" (output) data file as input. In this rerun, no errors should be found and the edit statistics should reflect this. If errors are found, then the logic of the CSPro program must be corrected.

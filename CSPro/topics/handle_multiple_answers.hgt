@@ -1,54 +1,11 @@
 ﻿<title>Handle Multiple Answers</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+Some questions allow for multiple responses. For example a question such as "Which of the following items do you have in your household?" allows for multiple responses.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Handle Multiple Answers</font></b></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Some
- questions allow for multiple responses. For example a such as &quot;Which
- of the following items do you have in your household?&quot;, allows for
- multiple responses.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">There
- are three methods that could be used to collect this data in a CAPI application.
- Two involve defining in the Data Dictionary a data item with multiple
- occurrences. For example if there are 10 possible responses, then the
- item, usually a single character, would occur 10 items. On the data entry
- form, the item would be displayed as a roster with 10 occurrences. Response
- labels can be given on the form by changing the occurrence labels from
- numbers from 1 to 10 to the text of the responses, so the enumerator will
- know, and can read the possible responses.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">One
- way to collect the responses is to create a roster with free movement,
- or spreadsheet like behavior, so that enumerator can move the cursor between
- occurrences to mark the ones to which the respondent gives positive answers.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">Another
- way to collect the data is to protect the roster and have a separate data
- item to collect the number of the response. When the number is entered,
- the corresponding occurrence of the item is marked. If the number is entered
- again the corresponding occurrence is unmarked.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">A
- final way to collect the data is to set the item as an alpha item and
- use a <a href="Extended_Controls.html">check box</a> to collect data for
- the item.</p>
-</body>
-</html>
+There are three methods that could be used to collect this data in a CAPI application. Two involve defining in the dictionary a data item with multiple occurrences. For example if there are 10 possible responses, then the item, usually a single character, would occur 10 items. On the data entry form, the item would be displayed as a roster with 10 occurrences. Response labels can be given on the form by changing the occurrence labels from numbers from 1 to 10 to the text of the responses, so the enumerator will know, and can read the possible responses.
+
+One way to collect the responses is to create a roster with free movement, or spreadsheet like behavior, so that enumerator can move the cursor between occurrences to mark the ones to which the respondent gives positive answers.
+
+Another way to collect the data is to protect the roster and have a separate data item to collect the number of the response. When the number is entered, the corresponding occurrence of the item is marked. If the number is entered again the corresponding occurrence is unmarked.
+
+A final way to collect the data is to set the item as an alpha item and use a <link extended_controls.hgt>checkbox</link> to collect data for the item.

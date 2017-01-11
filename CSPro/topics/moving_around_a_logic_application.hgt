@@ -1,107 +1,19 @@
 ﻿<title>Moving Around a Logic Application</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+To move around your edit application, select individual items from the <b>Forms</b> (in a data entry application) or <b>Edits</b> (in a batch application) tree tab. The logic view will update to display the programming logic (if any) for that item. If you select the root of the tree, all logic written for the entire edit application is displayed.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Moving Around a Logic Application</font></b></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
- move around your edit application, select individual items from the</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">Forms</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">(in
- a Data Entry application) or</font> <b><font style="font-family: Arial;
-												 font-size: 10pt; font-weight: bold;"
-												 face="Arial" size="2">Edit</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">(in
- a Batch application) tree tab. The Logic View will update to display the
- programming logic (if any) for that item. If you select the root of the
- tree, all logic written for the entire edit application is displayed.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
- example, suppose you select &quot;Age&quot; from the tree and there is
- no associated programming logic; you will see:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 color="#0000FF" face="Courier New"
-									 size="2">PROC</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">AGE</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">in
- the Logic View. Since there is no logic, &quot;</font><font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#0000FF"
-															 face="Courier New"
-															 size="2">PROC</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-		 size="2">Age</font><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">&quot; is generated
- &quot;on-the-fly&quot; and will not be saved in the .apc file. If there
- was associated logic, you might see something like this:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;PROC</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 face="Courier New"
-														 size="2">AGE</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;POSTPROC</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;if not</font> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(AGE</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">in</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-		 face="Courier New" size="2">0</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">:</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-	 face="Courier New" size="2">99</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" face="Courier New"
-												 size="2">)</font> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">then</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;errmsg</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-		 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#FF00FF" face="Courier New" size="2">&quot;Invalid
- age found&quot;</font><font style="font-family: 'Courier New'; font-size: 10pt;"
-							 face="Courier New" size="2">);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;endif</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Note
- the code above, by default, would have been placed in the</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">postproc</font></b> <font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">section,
- so it is not necessary to explicitly state &quot;postproc.&quot;</font></p>
-</body>
-</html>
+For example, suppose you select AGE from the tree and there is no associated programming logic, you will see in the logic view:
+
+<logic>
+PROC AGE
+</logic>
+
+Since there is no logic, <logiccolor>PROC AGE</logiccolor> is generated "on-the-fly" and will not be saved in the logic file. If there was associated logic, you might see something like this:
+
+<logic>
+PROC AGE
+
+	if not ( AGE in 0:99 ) then
+		errmsg("Invalid age found");
+	endif;
+</logic>
