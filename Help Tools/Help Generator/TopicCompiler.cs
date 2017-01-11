@@ -41,13 +41,15 @@ namespace Help_Generator
             public int Columns;
             public bool HasHeader;
             public bool HasNoWrap;
+            public bool HasCenter;
             public int CellCount;
 
-            public TableSettings(int columns,bool hasHeader,bool hasNoWrap)
+            public TableSettings(int columns,bool hasHeader,bool hasNoWrap,bool hasCenter)
             {
                 Columns = columns;
                 HasHeader = hasHeader;
                 HasNoWrap = hasNoWrap;
+                HasCenter = hasCenter;
                 CellCount = 0;
             }
         }
@@ -90,7 +92,7 @@ namespace Help_Generator
             _tagSettings.Add(ImageTag,new TagSettings(false,(StartTagHandlerDelegate)StartImageHandler,null,1,2));
             _tagSettings.Add(TopicTag,new TagSettings(false,(StartTagHandlerDelegate)StartTopicHandler,null,1,1));
             _tagSettings.Add(LinkTag,new TagSettings(true,(StartTagHandlerDelegate)StartLinkHandler,"</a>",1,1));
-            _tagSettings.Add(TableTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableHandler,(EndTagHandlerDelegate)EndTableHandler,1,3));
+            _tagSettings.Add(TableTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableHandler,(EndTagHandlerDelegate)EndTableHandler,1,4));
             _tagSettings.Add(TableCellTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableCellHandler,(EndTagHandlerDelegate)EndTableCellHandler,0,1));
             _tagSettings.Add(SeeAlsoTag,new TagSettings(false,(StartTagHandlerDelegate)StartSeeAlsoHandler,null,1,Int32.MaxValue));
             _tagSettings.Add(LogicTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicHandler,0,0));
@@ -641,14 +643,18 @@ namespace Help_Generator
             int columns = 0;
             bool hasHeader = false;
             bool hasNoWrap = false;
+            bool hasCenter = false;
 
             foreach( string startTagComponent in startTagComponents )
             {
-                if( hasHeader == false && startTagComponent.Equals(HeaderTag) )
+                if( !hasHeader && startTagComponent.Equals(HeaderTag) )
                     hasHeader = true;
 
-                else if( hasNoWrap == false && startTagComponent.Equals(NoWrapAttribute) )
-                    hasNoWrap = true;                
+                else if( !hasNoWrap && startTagComponent.Equals(NoWrapAttribute) )
+                    hasNoWrap = true;
+
+                else if( !hasCenter && startTagComponent.Equals(CenterTag) )
+                    hasCenter = true;
 
                 else if( columns == 0 && Int32.TryParse(startTagComponent,out columns) )
                 {
@@ -663,7 +669,7 @@ namespace Help_Generator
             if( columns == 0 )
                 throw new Exception("The number of columns in a table must be specified");
 
-            _tableStack.Push(new TableSettings(columns,hasHeader,hasNoWrap));
+            _tableStack.Push(new TableSettings(columns,hasHeader,hasNoWrap,hasCenter));
 
             return "<table>";
         }
@@ -709,10 +715,16 @@ namespace Help_Generator
 
             string rowPrefix = isFirstCellInRow ? "<tr>" : "";
             string cellType = "t" + ( isHeaderRow ? 'h' : 'd' );
-            string noWrapStyle = ( isFirstCellInRow && tableSettings.HasNoWrap ) ? " style=\"white-space: nowrap\"" : "";
             string span = ( columns > 1 ) ? String.Format(" colspan=\"{0}\"",columns) : "";
 
-            return String.Format("{0}<{1}{2}{3}>",rowPrefix,cellType,noWrapStyle,span);
+            string style = "";
+            style += ( isFirstCellInRow && tableSettings.HasNoWrap ) ? "white-space: nowrap; " : "";
+            style += ( tableSettings.HasCenter ) ? "text-align: center;" : "";
+
+            if( style.Length != 0 )
+                style = " style=\"" + style.Trim() + "\"";
+
+            return String.Format("{0}<{1}{2}{3}>",rowPrefix,cellType,style,span);
         }
 
         private string StartSeeAlsoHandler(string[] startTagComponents)
