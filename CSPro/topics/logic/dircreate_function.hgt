@@ -1,70 +1,25 @@
-﻿<title>Dircreate Function</title>
+﻿<title>DirCreate Function</title>
 <context logic_help_dircreate />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Dircreate</font></b> <b><font style="font-family: Arial;
-														 font-size: 18pt;
-														 font-weight: bold;"
-														 face="Arial" size="5">Function</font></b></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">b =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">dircreate</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(<span style="font-family: 'Courier New'; font-size: 10pt;
-					 font-style: italic;">directory</span></font><i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 face="Courier New" size="2">-name</font></i><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 face="Courier New"
-														 size="2">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
-	 font-size: 10pt; font-weight: bold;"><b><font style="font-weight: bold;">Description:</font></b></p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif; font-size: 10pt;">The <b><font style="font-weight: bold;">dircreate</font></b>
- function creates a new directory with the given name.</p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Return value:</font></b></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The function returns a logical value of 1 (true) if successful
- and 0 (false) otherwise. If the directory already exists, the function
- returns 1.</font></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
-	 background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
-	<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-		 font-family: Arial; font-weight: bold;"><b><font style="font-weight: bold;">Example:</font></b></p>
-	<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 color="#000000"><font color="#0000FF">string</font> backupDirectoryName
-	 = <font color="#0000FF">pathname</font>(inputfile) + <font color="#FF00FF">&quot;Backups&quot;</font>;<br />
-	<font color="#0000FF">dircreate</font>(backupDirectoryName);</font></p>
-</div>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt;"><b><font
-	 style="font-family: Arial; font-weight: bold;" face="Arial">See also:</font></b><span
-	 style="font-family: Arial, sans-serif;"> <a href="Direxist_Function.htm"
-												 style="font-family: Arial, sans-serif;
-												 font-size: 10pt;">Direxist
- Function</a>, </span><span><a href="../filecreate_function.htm" style="font-size: 10pt;
-								 font-family: Arial, sans-serif;">Filecreate
- Function</a></span></p>
-</body>
-</html>
+<logicsyntax>
+b = dircreate(<arg>directory_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>dircreate</logiccolor> function creates a new directory whose name comes from the string expression <arg>directory_name</arg>. If necessary, parent directories will be added to support the creation of the directory.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if successful and 0 (false) otherwise. If the directory already exists, the function returns 1.
+
+<subheader>Example</subheader>
+
+<logic>
+string backupDirectoryName = pathname(InputFile) + "Backups";
+dircreate(backupDirectoryName);
+</logic>
+
+<seealso direxist_function.hgt filecreate_function.hgt />

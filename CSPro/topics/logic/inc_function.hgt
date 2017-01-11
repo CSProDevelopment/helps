@@ -1,83 +1,34 @@
 ﻿<title>Inc Function</title>
 <context logic_help_inc />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Inc</font></b> <b><font style="font-family: Arial;
-													 font-size: 18pt; font-weight: bold;"
-													 face="Arial" size="5">Function</font></b></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New'; font-size: 10pt;">i = <b><font style="font-weight: bold;"
-	 color="#0000FF">inc</font></b>(<span style="font-style: italic;">numeric
- item-name</span> [,<i><font style="font-style: italic;">numeric increment
- expression]</font></i>);</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-size: 10pt;"><font style="font-family: Arial;" face="Arial">The
- <span style="font-weight: bold;">inc</span> function increments a numeric
- item that is either a dictionary item or a numeric variable. If an increment
- expression is present, then the value of the expression is added to first
- parameter. If no expression is present, 1 is added to the first parameter.
- The increment expression can be negative or nonnegative.</font> <span
-	 style="font-family: 'Courier New', monospace;"><b><font style="font-weight: normal;"
-															 color="#0000FF">inc</font></b></span><font
-	 style="font-family: Arial;" face="Arial"><span style="font-family: 'Courier New', monospace;">(X)</span>
- is essentially shorthand for <span style="font-family: 'Courier New', monospace;">X
- = X + 1;</span></font></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Return value:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The function returns the value of the increment expression
- added to the numeric item</font><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New'; font-size: 10pt;">X = <span style="color: #ff0000;">5</span>;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New'; font-size: 10pt; font-weight: normal;"><b><font
-	 color="#0000FF"><span style="font-family: 'Courier New', monospace;
-							 font-weight: normal;">inc</span></font></b>(X);
- &#160;<span style="font-style: italic;">yields X = 6, is the same as X
- = X + 1;</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New'; font-size: 10pt; font-weight: normal;"><b><font
-	 color="#0000FF"><span style="font-family: 'Courier New', monospace;
-							 font-weight: normal;">inc</span></font></b>(X,<span
-	 style="color: #ff0000;">4</span>); &#160;<span style="font-style: italic;">yields
- X = 10, is the same as X = X + 4;</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New'; font-size: 10pt; font-weight: normal;"><b><font
-	 color="#0000FF"><span style="font-family: 'Courier New', monospace;
-							 font-weight: normal;">inc</span></font></b>(X,-<span
-	 style="color: #ff0000;">5</span>); &#160;<span style="font-style: italic;">yields
- X = 5, is the same as X = X + (-5);</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New'; font-size: 10pt;">X = <span style="color: #ff0000;">5</span>
- + <span style="font-family: 'Courier New', monospace;"><b><font style="font-weight: normal;"
-	 color="#0000FF">inc</font></b></span>(X,<span style="font-family: 'Courier New', monospace;"><b><font
-	 style="font-weight: normal;" color="#0000FF">inc</font></b></span>(X));
- &#160;<span style="font-style: italic;">yields X = 17, is the same as
- X = X + 1; X = X + X; X = 5 + X;</span></p>
-</body>
-</html>
+<logicsyntax>
+i = inc(<arg>numeric_item</arg>『,<arg>increment_value</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>inc</logiccolor> function increments <arg>numeric_item</arg>, which is either a dictionary item or a numeric variable. If the optional numeric expression <arg>increment_value</arg> is present, then the value of that expression is added to <arg>numeric_item</arg>. If no expression is present, 1 is added to <arg>numeric_item</arg>. The increment value can be negative or nonnegative. <logiccolor>inc(X)</logiccolor> is essentially shorthand for <logiccolor>X = X + 1;</logiccolor>
+
+<subheader>Return Value</subheader>
+
+The function returns the sum of the numeric item and the increment value.
+
+<subheader>Example</subheader>
+
+<logic>
+X = 5;
+
+inc(X);
+// X is 6 after X = X + 1;
+
+inc(X,4);
+// X is 10 after X = X + 4;
+
+inc(X,-5);
+// X is 5 after X = X + (-5);
+
+X = 5 + inc(X,inc(X));
+// X is 17 after X = X + 1; X = X + X; X = 5 + X;
+</logic>

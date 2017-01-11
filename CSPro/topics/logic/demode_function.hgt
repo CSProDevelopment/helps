@@ -1,118 +1,31 @@
-﻿<title>Demode Function</title>
+﻿<title>DeMode Function</title>
 <context logic_help_demode />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Demode</font></b> <b><font style="font-family: Arial;
-														 font-size: 18pt;
-														 font-weight: bold;"
-														 face="Arial" size="5">Function</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;i =</font> <b><font style="font-family: 'Courier New';
-															 font-size: 10pt;
-															 font-weight: bold;"
-															 color="#0000FF"
-															 face="Courier New"
-															 size="2">demode</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">();</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">demode</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">function
- is often used to limit the execution of certain statements to a specific
- mode. For example, a variable may need initialization when the operator
- invokes</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-						 face="Arial" size="2">add</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">or</font> <b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">verify</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">mode,
- but can be left unaltered for</font> <b><font style="font-family: Arial;
-												 font-size: 10pt; font-weight: bold;"
-												 face="Arial" size="2">modify</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">mode.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Return value:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">There are three data entry operator modes:</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;add</font></b><font style="font-family: Arial;
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Arial" size="2">,
- to input new cases; the demode function returns a '1'</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;modify</font></b><font style="font-family: Arial;
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Arial" size="2">,
- to change cases that have already been entered; the demode function returns
- a '2'.</font></p>
-<p style="text-align: left; margin-left: 12.25pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 20.15pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -9.35pt;"><b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" color="#000000"
-									 face="Arial" size="2">â€¢&#160;verify</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">, to reenter the cases as a check for differences between
- the first and second entry; the demode function returns a '3'.</font></p>
-<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -36.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">if demode</font><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">() =</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">add then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;V103 =</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF0000" face="Courier New" size="2">3</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#000000" face="Courier New"
-													 size="2">;</font></p>
-</body>
-</html>
+<logicsyntax>
+i = demode();
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>demode</logiccolor> function returns the data entry mode and is often used to limit the execution of certain statements to a specific mode. For example, a variable may need initialization when the operator invokes <b>add</b> or <b>verify</b> mode, but can be left unaltered for <b>modify</b> mode.
+
+<subheader>Return Value</subheader>
+
+The function returns an integer but there are also aliased values for the modes. There are three data entry operator modes:
+
+<table 2 header nowrap>
+	<cell>Return Value</cell><cell>Mode</cell>
+	<cell>1</cell><cell><b>add</b> (entering new cases)</cell>
+	<cell>2</cell><cell><b>modify</b> (modifying cases that have already been entered)</cell>
+	<cell>3</cell><cell><b>verify</b> (reentering cases as a check for differences between the first and second entry)</cell>
+</table>
+
+<subheader>Example</subheader>
+
+<logic>
+if demode() = add then
+	INTERVIEW_START_DATE = sysdate("YYYYMMDD");
+endif;
+</logic>

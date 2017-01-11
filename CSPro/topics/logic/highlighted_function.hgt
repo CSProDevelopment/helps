@@ -1,101 +1,28 @@
 ﻿<title>Highlighted Function</title>
 <context logic_help_highlighted />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Highlighted</font></b> <b><font style="font-family: Arial;
-															 font-size: 18pt;
-															 font-weight: bold;"
-															 face="Arial"
-															 size="5">Function</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">b =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">highlighted</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(field-name);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">highlighted</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">function is used to determine
- whether a field is on the path (green) in system controlled mode, or has
- been passed through (green or yellow) either directly or by skips in operator
- controlled mode. This can be used to determine whether an item has been
- entered or skipped because of logic in system controlled mode, or whether
- is before or after the high water mark in operator controlled mode.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Return value:</font></b></p>
-<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- function returns true (1) if the field has been passed (green or yellow)
- and false (0) if the field is yet to be entered (white).</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">if highlighted</font><font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 face="Courier New"
-															 size="2">(HOURS_WORKED)</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;errmsg</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">&quot;Hours
- Worked = %d&quot;</font><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 face="Courier New" size="2">,HOURS_WORKED);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">else</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;</font><font style="font-family: 'Courier New';
-										 font-size: 10pt;" color="#0000FF"
-										 face="Courier New" size="2">errmsg</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
-							 color="#FF00FF" face="Courier New" size="2">&quot;Skipped
- or Not entered yet!&quot;</font><font style="font-family: 'Courier New';
-										 font-size: 10pt;" face="Courier New"
-										 size="2">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">endif;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial; font-size: 10pt;"><b><font style="font-weight: bold;">See
- also:</font></b> <a href="operator_vs_system_controlled.html">Operator
- vs. System Controlled</a>, <a href="csentry.chm::field_colors.html">Color
- of Fields in Data Entry User's Guide</a>, <a href="highlighted_function.html">Highlighted
- Function</a></p>
-</body>
-</html>
+<logicsyntax>
+b = highlighted(<arg>field_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>highlighted</logiccolor> function is used to determine whether a field, <arg>field_name</arg>, is on the path (green) in system-controlled mode, or has been passed through (green or yellow) either directly or by skips in operator-controlled mode. This can be used to determine whether an item has been entered or skipped because of logic in system controlled mode, or whether is before or after the high water mark in operator controlled mode.
+
+<subheader>Return Value</subheader>
+
+The function returns 1 (true) if the field has been passed (green or yellow) and 0 (false) if the field is yet to be entered (white).
+
+<subheader>Example</subheader>
+
+<logic>
+if highlighted(HOURS_WORKED) then
+	errmsg("Hours Worked = %d",HOURS_WORKED);
+else
+	errmsg("Skipped or not entered yet!");
+endif;
+</logic>
+
+<b>See also</b>: <topic operator_vs_system_controlled.hgt /> <link CSEntry::field_colors.hgt>Color of Fields in Data Entry User's Guide</link>

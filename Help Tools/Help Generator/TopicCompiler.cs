@@ -827,6 +827,9 @@ namespace Help_Generator
             logic.Replace("&lt;arg&gt;","<span class=\"code_colorization_argument\">");
             logic.Replace("&lt;/arg&gt;","</span>");
 
+            // colorize the multiple arguments separator
+            logic.Replace("‖","<font class=\"code_colorization_bracket\">‖</font>");
+
             return logic.ToString();
         }
 

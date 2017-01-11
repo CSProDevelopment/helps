@@ -1,62 +1,30 @@
-﻿<title>Changekeyboard Function</title>
+﻿<title>ChangeKeyboard Function</title>
 <context logic_help_changekeyboard />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h1 style="font-size: 18pt; font-family: Arial, sans-serif;"><span style="color: #0000ff;">Changekeyboard</span>
- Function</h1>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New';" face="Courier New"><span style="font-family: 'Courier New';">i</span>
- =</font> <b><font style="font-family: 'Courier New'; font-weight: bold;"
-					 color="#0000FF" face="Courier New">changekeyboard</font></b><font
-	 style="font-family: 'Courier New';" face="Courier New">(<span style="font-style: italic;">dictionary-symbol</span>[,<span
-	 style="font-style: italic;">keyboard-id-as-numeric-expression</span>]);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">The
- <b><font style="font-weight: bold;">changekeyboard</font></b> function
- modifies the keyboard input associated with a field on a form. The dictionary
- symbol may be an item, group, form, or an entire dictionary. The <span
-	 style="font-style: italic;">numeric-expression</span> refers to a
- keyboard ID (which can be determined using the <a href="Keyboard_Input.html">Keyboard
- Input</a> dialog box). A keyboard ID of 0 will reset the field to the
- default keyboard for the application. Calls to this function are ignored
- when executed on Android devices.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Return
- value:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">The
- function returns the number of items whose capture positions were successfully
- changed. If a keyboard ID is not specified, the function will instead
- return the current keyboard ID associated with a given field.</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><span
-	 style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Example:</span></p>
-<p style="font-size: 10pt; margin-left: 12px; font-family: 'Courier New', monospace;"><font
-	 color="#000000"><font color="#0000FF">PROC</font> NAME<br />
-<br />
-<font color="#0000FF">preproc</font><br />
-<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">changekeyboard</font>(NAME,<font
-	 color="#FF0000">66569</font>); <font color="#008000">//&#160;use the
- Dvorak keyboard to key in the name</font></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="Keyboard_Input.html">Keyboard
- Input</a></p>
-</body>
-</html>
+<logicsyntax>
+i = changekeyboard(<arg>dictionary_symbol</arg>『,<arg>keyboard_id</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>changekeyboard</logiccolor> function modifies the keyboard input associated with a field on a form. The value <arg>dictionary_symbol</arg> may be an item, group, form, or an entire dictionary. The numeric expression <arg>keyboard_id</arg> refers to a keyboard ID (which can be determined using the <topic keyboard_input.hgt /> dialog box). A keyboard ID of 0 will reset the field to the default keyboard for the application.
+
+Calls to this function are ignored when executed on Android devices.
+
+<subheader>Return Value</subheader>
+
+The function returns the number of items whose capture positions were successfully changed. If a keyboard ID is not specified, the function will instead return the current keyboard ID associated with a given field.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC NAME
+
+onfocus
+
+	changekeyboard(NAME,66569); // use the Dvorak keyboard to key in the name
+</logic>
+
+<seealso keyboard_input.hgt />
