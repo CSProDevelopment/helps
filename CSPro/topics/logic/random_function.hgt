@@ -1,85 +1,24 @@
 ﻿<title>Random Function</title>
 <context logic_help_random />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Random</font></b> <b><font style="font-family: Arial;
-														 font-size: 18pt;
-														 font-weight: bold;"
-														 face="Arial" size="5">Function</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">i =</font> <b><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-weight: bold;"
-													 color="#0000FF" face="Courier New"
-													 size="2">random</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><i><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-style: italic;"
-													 color="#000000" face="Courier New"
-													 size="2">min-value</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,</font><i><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-style: italic;"
-													 color="#000000" face="Courier New"
-													 size="2">max-value</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
- random function returns a uniformly distributed random number between
- &quot;min-value&quot; and &quot;max-value.&quot; You can use the <a href="seed_function.html">seed</a>
- function to initialize the random function.</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Return value:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The function returns an integer random value. The function
- will return a value DEFAULT if &quot;min-value&quot; is greater than &quot;max-value&quot;
- or if either limit is equal to one of the</font> <a href="special_values.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">special
- values</font></a> (<font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">DEFAULT,
- MISSING, and NOTAPPL).</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New';" face="Courier New">NUM =</font>
- <font style="font-family: 'Courier New';" color="#0000FF" face="Courier New">random</font><font
-	 style="font-family: 'Courier New';" face="Courier New">(</font><font
-	 style="font-family: 'Courier New';" color="#FF0000" face="Courier New">1</font><font
-	 style="font-family: 'Courier New';" face="Courier New">,</font><font
-	 style="font-family: 'Courier New';" color="#FF0000" face="Courier New">100</font><font
-	 style="font-family: 'Courier New';" face="Courier New">);</font></p>
-<p style="font-weight: bold;">See also: <a href="Randomin_Function.htm"
-											 style="font-weight: normal;">Randomin
- Function</a><span style="font-weight: normal;">, <a href="Randomizevs_Function.htm"
-													 style="font-weight: normal;">Randomizevs
- Function</a>, <a href="Functions/Uuid_Function.htm" style="font-weight: normal;">Uuid
- Function</a></span></p>
-</body>
-</html>
+<logicsyntax>
+i = random(<arg>min_value</arg>,<arg>max_value</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>random</logiccolor> function returns a uniformly distributed random number between the number expressions <arg>min_value</arg> and <arg>max_value</arg>. You can use the <logiccolor>seed</logiccolor> function to initialize the random number generation.
+
+<subheader>Return Value</subheader>
+
+The function returns an integer random value. The function will return a value <logiccolor>default</logiccolor> if <arg>min_value</arg> is greater than <arg>max_value</arg> or if either value is equal to one of the <link special_values.hgt>special values</link>.
+
+<subheader>Example</subheader>
+
+<logic>
+NUMBER = random(1,100);
+</logic>
+
+<seealso randomin_function.hgt randomizevs_function.hgt seed_function.hgt uuid_function.hgt />

@@ -1,82 +1,29 @@
-﻿<title>Publishdate Function</title>
+﻿<title>PublishDate Function</title>
 <context logic_help_publishdate />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Publishdate</font></b> <b><font style="font-family: Arial;
-															 font-size: 18pt;
-															 font-weight: bold;"
-															 face="Arial"
-															 size="5">Function</font></b></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">i =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">publishdate</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">();</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">publishdate</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">function returns the date
- and time that the code was compiled. Generally, this is not particularly
- meaningful because the code is compiled right before it is executed. The
- exception to this is when you create <a href="../Binary_Data_Entry_Application_File_ENC.html">compiled
- binary data entry applications</a>. These files, with the extension .pen,
- are used to run applications on Android devices. In the case of a .pen
- file, the value returned by <span style="font-weight: bold;">publishdate</span>
- will be the date and time that the .pen file was created.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Return
- value:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- function returns a number in the form YYYYMMddHHmmss , where YYYY is the
- year, MM is the month, dd is the day, HH is the hour, mm is the minute,
- and ss are the seconds.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Example:</font></b></p>
-<br />
+<logicsyntax>
+i = publishdate();
+</logicsyntax>
 
-<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
-	 background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
-	<font color="#000000"><font color="#0000FF">numeric</font> publishDay
-	 = <font color="#0000FF">int</font>(<font color="#0000FF">publishdate</font>()
-	 / <font color="#FF0000">1000000</font>); <font color="#008000">//&#160;ignore
-	 the time<br />
-	</font><br />
-	<font color="#0000FF">if</font> <font color="#0000FF">datediff</font>(publishDay,<font
-	 color="#0000FF">sysdate</font>(<font color="#FF00FF">&quot;YYYYMMDD&quot;</font>))
-	 &gt; <font color="#FF0000">20</font> <font color="#0000FF">then</font><br />
-	&#160;&#160;&#160;&#160;<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;This
-	 program expires after 20 days. Sync to get a new program.&quot;</font>);<br />
-	&#160;&#160;&#160;&#160;<font color="#0000FF">stop</font>(<font color="#FF0000">1</font>);<br />
-	<font color="#0000FF">endif</font>;</font>
-</div>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;
-	 font-size: 10pt;"><b><font style="font-weight: bold;">See also: </font></b><a
-	 href="../Dateadd_Function.htm" style="font-family: Arial, sans-serif;
-	 font-size: 10pt;">Dateadd Function</a>, <a href="../Datediff_Function.htm"
-												 style="font-family: Arial, sans-serif;
-												 font-size: 10pt;">Datediff
- Function</a>, <a href="../sysdate_function.html">Sysdate Function</a></p>
-</body>
-</html>
+<subheader>Description</subheader>
+
+The <logiccolor>publishdate</logiccolor> function returns the date and time that the code was compiled. Generally, this is not particularly meaningful because the code is compiled right before it is executed. The exception to this is when you create <link binary_data_entry_application_file_pen.hgt>compiled binary data entry applications</link>. These files, with the extension .pen, are used to run applications on Android devices. In the case of a .pen file, the value returned by the function will be the date and time that the .pen file was created.
+
+<subheader>Return Value</subheader>
+
+The function returns a number in the form YYYYMMddHHmmss , where YYYY is the year, MM is the month, dd is the day, HH is the hour, mm is the minute, and ss are the seconds.
+
+<subheader>Example</subheader>
+
+<logic>
+numeric publishDay = int(publishdate() / 1000000); // ignore the time
+
+if datediff(publishDay,sysdate("YYYYMMDD")) > 20 then
+	errmsg("This program expires after 20 days. Sync to get a new program.");
+	stop(1);
+endif; 
+</logic>
+
+<seealso dateadd_function.hgt datediff_function.hgt sysdate_function.hgt systime_function.hgt />

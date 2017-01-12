@@ -1,67 +1,25 @@
 ﻿<title>Low Function</title>
 <context logic_help_low />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font><span
-	 style="color: #0000ff; font-family: Arial; font-size: 18pt; font-weight: bold;">Low</span></font></b>
- <b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;"
-			 face="Arial" size="5">Function</font></b></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2"><span style="font-family: 'Courier New'; font-size: 10pt;">d</span>
- =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-					 font-weight: bold;" color="#0000FF" face="Courier New"
-					 size="2">low</font></b><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">(<span style="font-style: italic;">numeric-expression</span>,[...]);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">low</font></b> <font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">function
- returns the minimum (lowest) value in a group of numbers. The function
- ignores <a href="special_values.html">special values</a>.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Return
- value:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- function returns the lowest value, or DEFAULT in the case that no valid
- values were passed.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2"><font><font><font color="#000000"><font color="#0000FF">errmsg</font>(<font
-	 color="#FF00FF">&quot;Lowest value is %f&quot;</font>,<font color="#0000FF">low</font>(<font
-	 color="#FF0000">50</font>,-<font color="#FF0000">123.45</font>,<font
-	 color="#FF0000">1982.0605</font>,<font color="#FF0000">20</font>));
- <font color="#008000">//&#160;displays -123.45<br />
-</font><font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;Highest
- value is %f&quot;</font>,<font color="#0000FF">high</font>(<font color="#FF0000">50</font>,-<font
-	 color="#FF0000">123.45</font>,<font color="#FF0000">1982.0605</font>,<font
-	 color="#FF0000">20</font>)); <font color="#008000">//&#160;displays
- 1982.0605</font></font></font></font></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;
-	 font-size: 10pt;"><b><font style="font-weight: bold;">See also:</font></b>
- <a href="High_Function.html">High Function</a></p>
-</body>
-</html>
+<logicsyntax>
+d = low(<arg>number1</arg>『,<arg>number2</arg>...<arg>numberN</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>low</logiccolor> function returns the minimum (lowest) value in a group of numbers represented by numeric expressions <arg>number1</arg> ... <arg>numberN</arg>. The function ignores <link special_values.hgt>special values</link>.
+
+<subheader>Return Value</subheader>
+
+The function returns the lowest value, or <logiccolor>default</logiccolor> in the case that no valid values were passed.
+
+<subheader>Example</subheader>
+
+<logic>
+errmsg("Lowest value is %f",low(50,-123.45,1982.0605,20)); // displays -123.45
+errmsg("Highest value is %f",high(50,-123.45,1982.0605,20)); // displays 1982.0605
+</logic>
+
+<seealso high_function.hgt />

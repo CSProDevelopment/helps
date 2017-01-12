@@ -1,82 +1,27 @@
-﻿<title>Fileempty Function</title>
+﻿<title>FileEmpty Function</title>
 <context logic_help_fileempty />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;
-	 font-family: Arial, sans-serif;"><b><font><span style="color: #0000ff;
-													 font-size: 18pt; font-weight: bold;">Fileempty</span></font></b>
- <b><font style="font-size: 18pt; font-weight: bold;" size="5">Function</font></b></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: bold;"><b><font style="font-weight: bold;">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New', monospace;"><font style="font-size: 10pt;"
-													 size="2">b =</font>
- <b><font style="font-size: 10pt; font-weight: bold;" color="#0000FF" size="2">fileempty</font></b><font
-	 style="font-size: 10pt;" size="2">(</font><i><font style="font-size: 10pt;
-														 font-style: italic;"
-														 size="2">file-name</font></i><font
-	 style="font-size: 10pt;" size="2">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: bold;"><b><font style="font-weight: bold;">Description:</font></b></p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;"><font style="font-size: 10pt;" size="2">The</font>
- <b><font style="font-size: 10pt; font-weight: bold;" size="2">fileempty</font></b>
- <font style="font-size: 10pt;" size="2">function</font> <font style="font-size: 10pt;"
-	 size="2">determines whether or not a file is empty and has no content.
- This function is useful for checking the status of files without needing
- to know the text encoding. An empty ANSI file is 0 bytes but an empty
- UTF-8 file is 3 bytes.</font></p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;"><font style="font-size: 10pt;" size="2">The</font>
- <i><font style="font-size: 10pt; font-style: italic;" size="2">file-name</font></i>
- <font style="font-size: 10pt;" size="2">is an alphanumeric expression
- giving a file name or a name declared in a</font> <b><font style="font-size: 10pt;
-															 font-weight: bold;"
-															 size="2">file</font></b>
- <font style="font-size: 10pt;" size="2">statement in PROC GLOBAL.</font></p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: bold;"><b><font style="font-weight: bold;">Return value:</font></b></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-size: 10pt; font-family: Arial, sans-serif;">The function returns
- a logical value of 1 (true) if the file exists and is empty and 0 (false)
- if the file is not empty. <font style="font-family: Arial;" face="Arial">If
- the file does not exist or there is a file name error, it returns â€“1.</font></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: bold;"><b><font style="font-weight: bold;">Example:</font></b></p>
-<br />
+<logicsyntax>
+b = fileempty(<arg>file_name</arg>);
+</logicsyntax>
 
-<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
-	 background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
-	<font color="#000000"><font color="#0000FF">if</font> <font color="#0000FF">fileempty</font>(customReportFile)
-	 <font color="#0000FF">then</font><br />
-	&#160;&#160;&#160;&#160;<font color="#0000FF">filewrite</font>(customReportFile,<font
-	 color="#FF00FF">&quot;SECONDS,KEYSTROKES&quot;</font>); <font color="#008000">//&#160;print
-	 the header<br />
-	</font> <font color="#0000FF">endif</font>;</font>
-</div>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;
-	 font-size: 10pt;"><b><font style="font-weight: bold;">See also:</font></b>
- <a href="file_statement.htm" style="font-family: Arial, sans-serif; font-size: 10pt;">File
- Statement</a>, <a href="fileexist_function.html">Fileexist Function</a>,
- <a href="filesize_function.html">Filesize Function</a></p>
-</body>
-</html>
+<subheader>Description</subheader>
+
+The <logiccolor>fileempty</logiccolor> function determines whether or not a file is empty and has no content. This function is useful for checking the status of files without needing to know the text encoding. An empty ANSI file is 0 bytes but an empty UTF-8 file is 3 bytes. <arg>file_name</arg> is either a string expression giving a file name or a name declared in a <logiccolor>file</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the file exists and is empty and 0 (false) if the file is not empty. If the file does not exist or there is a file name error, it returns -1.
+
+<subheader>Example</subheader>
+
+<logic>
+if fileempty(customReportFile) then
+	// print the header
+	filewrite(customReportFile,"SECONDS,KEYSTROKES");
+endif; 
+</logic>
+
+<seealso file_statement.hgt fileexist_function.hgt filesize_function.hgt />

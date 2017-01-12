@@ -1,92 +1,39 @@
-﻿<title>Getos Function</title>
+﻿<title>GetOS Function</title>
 <context logic_help_getos />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Getos </font></b><b><font style="font-family: Arial;
-													 font-size: 18pt; font-weight: bold;"
-													 face="Arial" size="5">Function</font></b></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">i =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">getos</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">([</font><i><font style="font-family: 'Courier New'; font-size: 10pt;
-								 font-style: italic;" face="Courier New"
-								 size="2"><span style="font-style: italic;">alpha-variable</span><span
-	 style="font-style: normal;">]</span></font></i><font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 face="Courier New"
-															 size="2">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">getos</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">function
- returns a code that indicates what operating system is running the program.
- The codes are:</font></p>
-<ul style="list-style: disc;">
-	<li><p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
-			 font-size: 10pt; margin-left: 12px;">10 - 19: Windows</p></li>
-	<li><p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-			 font-family: Arial; font-size: 10pt;">20 - 29: Android</p></li>
-</ul>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: Arial; font-size: 10pt;">At the moment, only the codes
- 10 and 20 are returned, but in the future other codes in the range may
- be used that will differentiate between different versions of the operating
- system. An optional alphanumeric variable can be passed to the function
- that will give detailed information on the operating system, including
- the operating system name and the version number. Note, however, that
- Windows version numbers do not necessary match the official release numbers.
- For example, Windows 8.1 has a version number of 6.3.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Return
- value:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- function returns the operating system code or, optionally, a text description
- of the operating system.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New'; font-size: 10pt;"><font color="#0000FF">string</font>
- operatingSystemName;<br />
-<font color="#0000FF">getos</font>(operatingSystemName);<br />
-<br />
-<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;Code =
- %d, Text = %s&quot;</font>,<font color="#0000FF">getos</font>(),operatingSystemName);<br />
-<br />
-<font color="#008000">//&#160;the above code might display, for example:<br />
-</font><br />
-<font color="#008000">//&#160;Code = 10, Text = Windows;6.1<br />
-</font><br />
-<font color="#008000">//&#160;Code = 20, Text = Android;4.2.2</font></p>
-<p style="margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
-	 font-size: 10pt; font-weight: bold;"><b><font style="font-weight: bold;">See
- also: <a href="getoperatorid_function.htm" style="font-weight: normal;">GetOperatorId
- Function</a><span style="font-weight: normal;">, <a href="Getusername_Function.htm"
-													 style="font-weight: normal;">Getusername
- Function</a></span></font></b></p>
-</body>
-</html>
+<logicsyntax>
+i = getos(『<arg>detailed_information</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>getos</logiccolor> function returns a code that indicates what operating system is running the program. The codes are:
+
+<table 2 header nowrap>
+	<cell>Code</cell><cell>Operating System</cell>
+	<cell>10 - 19</cell><cell>Windows</cell>
+	<cell>20 - 29</cell><cell>Android</cell>
+</table>
+
+At the moment, only the codes 10 and 20 are returned, but in the future other codes in the range may be used that will differentiate between different versions of the operating system. An optional alphanumeric variable <arg>detailed_information</arg> can be passed to the function that will give detailed information on the operating system, including the operating system name and the version number. Note, however, that Windows version numbers do not necessary match the official release numbers. For example, Windows 8.1 has a version number of 6.3.
+
+<subheader>Return Value</subheader>
+
+The function returns the operating system code or, optionally, a text description of the operating system.
+
+<subheader>Example</subheader>
+
+<logic>
+string operatingSystemName;
+getos(operatingSystemName);
+
+errmsg("Code = %d, Text = %s",getos(),operatingSystemName);
+
+// the above code might display, for example:
+// Code = 10, Text = Windows;6.1
+// Code = 20, Text = Android;4.2.2
+</logic>
+
+<seealso getoperatorid_function.hgt getusername_function.hgt />
