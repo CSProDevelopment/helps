@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Colorizer
@@ -10,6 +11,8 @@ namespace Colorizer
         private SortedSet<string> _otherWordsWithHelps;
         private Dictionary<string,string> _helpTopics;
         private LogicColorizerInterface _defaultLogicColorizer;
+
+        public List<string> ReservedWordsList { get { return _reservedWords.ToList(); } }
 
         public LogicColorizer()
         {

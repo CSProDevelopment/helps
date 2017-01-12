@@ -96,16 +96,17 @@ namespace Help_Generator
             _tagSettings.Add(TableCellTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableCellHandler,(EndTagHandlerDelegate)EndTableCellHandler,0,1));
             _tagSettings.Add(SeeAlsoTag,new TagSettings(false,(StartTagHandlerDelegate)StartSeeAlsoHandler,null,1,Int32.MaxValue));
             _tagSettings.Add(LogicTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicHandler,0,0));
-            _tagSettings.Add(LogicSyntaxTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicSyntaxHandler,0,0));            
+            _tagSettings.Add(LogicSyntaxTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicSyntaxHandler,0,0));
             _tagSettings.Add(LogicColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicColorHandler,0,0));
-            _tagSettings.Add(LogicArgumentTag,new TagSettings("<span class=\"code_colorization_argument\">","</span>"));            
+            _tagSettings.Add(LogicArgumentTag,new TagSettings("<span class=\"code_colorization_argument\">","</span>"));
+            _tagSettings.Add(LogicTableTag,new TagSettings(false,(StartTagHandlerDelegate)StartLogicTableHandler,null,1,1));
             _tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
             _tagSettings.Add(PffColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffColorHandler,0,0));
             _tagSettings.Add(HtmlTag,new TagSettings("",""));
 
             _blockTags = new Dictionary<string,string>();
             _blockTags.Add(MakeTag(LogicTag,true),MakeTag(LogicTag,false));
-            _blockTags.Add(MakeTag(LogicSyntaxTag,true),MakeTag(LogicSyntaxTag,false));            
+            _blockTags.Add(MakeTag(LogicSyntaxTag,true),MakeTag(LogicSyntaxTag,false));
             _blockTags.Add(MakeTag(PffTag,true),MakeTag(PffTag,false));
             _blockTags.Add(MakeTag(HtmlTag,true),MakeTag(HtmlTag,false));
         }
@@ -246,7 +247,7 @@ namespace Help_Generator
                     text = text.Remove(newlinePos,NewLineMarker.Length);
                 }
             }
-            
+
             return text.Replace(NewLineMarker,"<br />\n");
         }
 
@@ -659,7 +660,7 @@ namespace Help_Generator
                 else if( columns == 0 && Int32.TryParse(startTagComponent,out columns) )
                 {
                     if( columns < 1 )
-                        throw new Exception("The number of columns in a table must be a positive integer"); 
+                        throw new Exception("The number of columns in a table must be a positive integer");
                 }
 
                 else
@@ -762,7 +763,7 @@ namespace Help_Generator
             }
 
             return sb.ToString();
-        }        
+        }
 
         private string EndTableCellHandler(string endTagInnerText)
         {
@@ -837,7 +838,47 @@ namespace Help_Generator
         {
             CreateLogicPffColorizers();
             return _helpComponents._inlineLogicColorizer.Colorize(endTagInnerText.Trim());
-        }        
+        }
+
+        private string StartLogicTableHandler(string[] startTagComponents)
+        {
+            int columns = 0;
+
+            if( !Int32.TryParse(startTagComponents[0],out columns) || columns < 1 )
+                throw new Exception("The number of columns in a table must be a positive integer");
+
+            CreateLogicPffColorizers();
+
+            List<string> reservedWords = _helpComponents._inlineLogicColorizer.ReservedWordsList;
+
+            int rows = (int)Math.Ceiling((double)reservedWords.Count / columns);
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append("<div align=\"center\"><table class=\"bordered_table\">");
+
+            for( int r = 0; r < rows; r++ )
+            {
+                sb.Append("<tr>");
+
+                for( int c = 0; c < columns; c++ )
+                {
+                    sb.Append("<td class=\"bordered_table_cell\">");
+
+                    int index = ( c * rows ) + r;
+
+                    if( index < reservedWords.Count )
+                        sb.Append(_helpComponents._inlineLogicColorizer.Colorize(reservedWords[index].ToLower()));
+
+                    sb.Append("</td>");
+                }
+
+                sb.Append("</tr>");
+            }
+
+            sb.Append("</table></div>");
+
+            return sb.ToString();
+        }
 
         private string EndPffHandler(string endTagInnerText)
         {
@@ -873,6 +914,7 @@ namespace Help_Generator
         public const string LogicSyntaxTag = "logicsyntax";
         public const string LogicColorTag = "logiccolor";
         public const string LogicArgumentTag = "arg";
+        public const string LogicTableTag = "logictable";
         public const string PffTag = "pff";
         public const string PffColorTag = "pffcolor";
         public const string HtmlTag = "html";

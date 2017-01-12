@@ -20,6 +20,9 @@ table { margin: 0; }
 th, td { text-align: left; vertical-align:top; padding-right: 20px; }
 th { font-weight: bold; color: #002050; text-decoration: underline; }
 
+.bordered_table { border-collapse: collapse; }
+.bordered_table_cell { border: solid 1px whitesmoke; white-space: nowrap; padding-left: 10px; }
+
 .header_size { font-size: 2.2em; }
 .header { font-weight: bold; color: #006080; }
 
@@ -40,8 +43,8 @@ th { font-weight: bold; color: #002050; text-decoration: underline; }
 
 .code_colorization_keyword_link { color: powderblue; text-decoration: underline; }
 
-.code_colorization_argument { color:darkred; font-weight: bold; font-style: oblique; }
+.code_colorization_argument { color: darkred; font-weight: bold; font-style: oblique; }
 
-.code_colorization_bracket { color:darkgreen; font-weight: bold; }
+.code_colorization_bracket { color: darkgreen; font-weight: bold; }
 
-.code_colorization_optional_text { background-color:whitesmoke; }
+.code_colorization_optional_text { background-color: whitesmoke; }
