@@ -444,9 +444,9 @@
 			recodes_in_tables_using_value_sets_and_subtables.hgt								#				Recodes in Tables Using Value Sets and Subtables
 			use_expressions_in_universe_and_value_tallied.hgt									#				Use Expressions in Universe and Value Tallied
 	|CSPro Statements and Functions																#		CSPro Statements and Functions
-		alphabetical_list.hgt																	#			Alphabetical List of Statements and Functions
+		logic_alphabetical_list.hgt																#			Alphabetical List of Statements and Functions
 		statement_format_symbols.hgt															#			Statement Format Symbols
-		list_of_reserved_words.hgt																#			List of reserved words
+		list_of_reserved_words.hgt																#			List of Reserved Words
 		deprecated_features.hgt																	#			Deprecated Features
 		|Declaration Statements																	#			Declaration Statements
 			set_statement.hgt																	#				Set Statement
@@ -476,26 +476,27 @@
 		|Data Entry Statements and Functions													#			Data Entry Statements and Functions
 			accept_function.hgt																	#				Accept Function
 			advance_statement.hgt																#				Advance Statement
-			changekeyboard_function.hgt															#				Changekeyboard Function
+			changekeyboard_function.hgt															#				ChangeKeyboard Function
 			connection_function.hgt																#				Connection Function
-			demode_function.hgt																	#				Demode Function
+			demode_function.hgt																	#				DeMode Function
 			screen_orientation.hgt																#				Display Orientation
 			editnote_function.hgt																#				Editnote Function
-			endlevel_statement.hgt																#				Endlevel Statement
-			endgroup_statement.hgt																#				Endgroup Statement
+			endlevel_statement.hgt																#				EndLevel Statement
+			endgroup_statement.hgt																#				EndGroup Statement
 			enter_statement.hgt																	#				Enter Statement
 			getcapturetype_function.hgt															#				Getcapturetype Function
 			getcaselabel_function.hgt															#				GetCaseLabel Function
-			getdeviceid_function.hgt															#				Getdeviceid Function
-			getlanguage_function.hgt															#				Getlanguage Function
+			getdeviceid_function.hgt															#				GetDeviceID Function
+			getlanguage_function.hgt															#				GetLanguage Function
 			getnote_function.hgt																#				GetNote Function
 			getoperatorid_function.hgt															#				GetOperatorId Function
-			getos_function.hgt																	#				Getos Function
+			getos_function.hgt																	#				GetOS Function
 			getrecord_function.hgt																#				Getrecord Function
-			getusername_function.hgt															#				Getusername Function
+			getusername_function.hgt															#				GetUserName Function
 			gps_function.hgt																	#				GPS Function
 			highlighted_function.hgt															#				Highlighted Function
-			ispartial_function.hgt																#				Ispartial Function
+			ispartial_function.hgt																#				IsPartial Function
+			isverified_function.hgt																#				IsVerified Function
 			killfocus_statement.hgt																#				Killfocus Statement
 			move_statement.hgt																	#				Move Statement
 			noinput_statement.hgt																#				Noinput Statement
@@ -517,8 +518,8 @@
 			setcapturetype_function.hgt															#				Setcapturetype Function
 			setcaselabel_function.hgt															#				SetCaseLabel Function
 			seterrmsg_function.hgt																#				Set Errmsg Statement
-			setfont_function.hgt																#				Setfont Function
-			setlanguage_function.hgt															#				Setlanguage Function
+			setfont_function.hgt																#				SetFont Function
+			setlanguage_function.hgt															#				SetLanguage Function
 			setoperatorid_function.hgt															#				SetOperatorId Function
 			setvalueset_function.hgt															#				Setvalueset Function
 			setvaluesets_function.hgt															#				Setvaluesets Function
@@ -529,7 +530,7 @@
 			userbar_function.hgt																#				Userbar Function
 			visualvalue_function.hgt															#				Visualvalue Function
 		|Batch Edit Statements																	#			Batch Edit Statements
-			endcase_statement.hgt																#				Endcase Statement
+			endcase_statement.hgt																#				EndCase Statement
 			export_statement.hgt																#				Export Statement
 			getdeck_function.hgt																#				Getdeck Function
 			putdeck_function.hgt																#				Putdeck Function
@@ -538,8 +539,8 @@
 			skip_case_statement.hgt																#				Skip Case Statement
 		|Numeric Functions																		#			Numeric Functions
 			abs_function.hgt																	#				ABS Function
-			cmcode_function.hgt																	#				Cmcode Function
-			countvalid_function.hgt																#				Countnonspecial Function
+			cmcode_function.hgt																	#				CmCode Function
+			countnonspecial_function.hgt														#				Countnonspecial Function
 			exp_function.hgt																	#				Exp Function
 			high_function.hgt																	#				High Function
 			inc_function.hgt																	#				Inc Function
@@ -555,7 +556,7 @@
 		|String Functions																		#			String Functions
 			compare_function.hgt																#				Compare Function
 			concat_function.hgt																	#				Concat Function
-			plus_string_concatenation.hgt														#				Plus String Concatenation
+			plus_string_concatenation.hgt														#				String Concatenation Operator
 			edit_function.hgt																	#				Edit Function
 			getbuffer_function.hgt																#				Getbuffer Function
 			length_function.hgt																	#				Length Function
@@ -563,9 +564,9 @@
 			pos_function.hgt																	#				Pos Function
 			poschar_function.hgt																#				Poschar Function
 			strip_function.hgt																	#				Strip Function
-			tolower_function.hgt																#				Tolower Function
+			tolower_function.hgt																#				ToLower Function
 			tonumber_function.hgt																#				Tonumber Function
-			toupper_function.hgt																#				Toupper Function
+			toupper_function.hgt																#				ToUpper Function
 		|Multiple Occurrence Functions															#			Multiple Occurrence Functions
 			average_function.hgt																#				Average Function
 			count_function.hgt																	#				Count Function
@@ -595,34 +596,34 @@
 			getlabel_function.hgt																#				Getlabel Function
 			getsymbol_function.hgt																#				Getsymbol Function
 			invalueset_function.hgt																#				Invalueset Function
-			loadsetting_function.hgt															#				Loadsetting Function
+			loadsetting_function.hgt															#				LoadSetting Function
 			pathname_function.hgt																#				Pathname Function
-			savesetting_function.hgt															#				Savesetting Function
+			savesetting_function.hgt															#				SaveSetting Function
 			special_function.hgt																#				Special Function
 			stop_function.hgt																	#				Stop Function
-			sysparm_function.hgt																#				Sysparm Function
+			sysparm_function.hgt																#				SysParm Function
 			trace_function.hgt																	#				Trace Function
-			uuid_function.hgt																	#				Uuid Function
+			uuid_function.hgt																	#				UUID Function
 		|Date and Time Functions																#			Date and Time Functions
 			dateadd_function.hgt																#				Dateadd Function
 			datediff_function.hgt																#				Datediff Function
-			datevalid_function.hgt																#				Datevalid Function
-			publishdate_function.hgt															#				Publishdate Function
+			datevalid_function.hgt																#				DateValid Function
+			publishdate_function.hgt															#				PublishDate Function
 			sysdate_function.hgt																#				Sysdate Function
 			systime_function.hgt																#				Systime Function
 		|External File Functions																#			External File Functions
 			clear_function.hgt																	#				Clear Function
 			close_function.hgt																	#				Close Function
 			delcase_function.hgt																#				Delcase Function
-			dircreate_function.hgt																#				Dircreate Function
-			direxist_function.hgt																#				Direxist Function
-			dirlist_function.hgt																#				Dirlist Function
+			dircreate_function.hgt																#				DirCreate Function
+			direxist_function.hgt																#				DirExist Function
+			dirlist_function.hgt																#				DirList Function
 			fileconcat_function.hgt																#				Fileconcat Function
 			filecopy_function.hgt																#				Filecopy Function
-			filecreate_function.hgt																#				Filecreate Function
-			fileempty_function.hgt																#				Fileempty Function
-			fileexist_function.hgt																#				Fileexist Function
-			filedelete_function.hgt																#				Filedelete Function
+			filecreate_function.hgt																#				FileCreate Function
+			fileempty_function.hgt																#				FileEmpty Function
+			fileexist_function.hgt																#				FileExist Function
+			filedelete_function.hgt																#				FileDelete Function
 			filename_function.hgt																#				Filename Function
 			fileread_function.hgt																#				Fileread Function
 			filerename_function.hgt																#				Filerename Function
@@ -720,7 +721,6 @@
 				dictionary_macros.hgt															#					Dictionary Macros
 				timestamp_function.hgt															#					Timestamp Function
 				keylist_function.hgt															#					KeyList Function
-				isverified_function.hgt															#					IsVerified Function
 				forcase_statement.hgt															#					ForCase Statement
 				diagnostics_function.hgt														#					Diagnostics Function
 				decompress_function.hgt															#					Decompress Function

@@ -1,0 +1,210 @@
+﻿<title>Alphabetical List of Statements and Functions</title>
+
+<table 2 header nowrap>
+	<cell>Function/Statement</cell><cell>Description</cell>
+	<cell><logiccolor>abs</logiccolor></cell><cell>Returns the absolute value of a numeric expression.</cell>
+	<cell><logiccolor>accept</logiccolor></cell><cell>Returns the number of a choice from a list made by the data entry operator.</cell>
+	<cell><logiccolor>advance</logiccolor></cell><cell>Moves forward field by field to a specified field during data entry.</cell>
+	<cell><logiccolor>alias</logiccolor></cell><cell>Creates an aliased name for a dictionary item, typically to shorten or standardize names.</cell>
+	<cell><logiccolor>alpha</logiccolor></cell><cell>Declares alphanumeric variables used in the application.</cell>
+	<cell><logiccolor>array</logiccolor></cell><cell>Declares a 1- to 3-dimension array of values. </cell>
+	<cell><logiccolor>average</logiccolor></cell><cell>Returns the average of an item that occurs multiple times.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>box</logiccolor></cell><cell>Old name for <logiccolor>recode</logiccolor> statement.</cell>
+	<cell><logiccolor>break</logiccolor></cell><cell>Exits a <logiccolor>do</logiccolor>, <logiccolor>while</logiccolor>, or <logiccolor>for</logiccolor> loop early and continues execution with the first statement after the <logiccolor>enddo</logiccolor>.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>changekeyboard</logiccolor></cell><cell>Modifies the keyboard input associated with certain fields.</cell>
+	<cell><logiccolor>clear</logiccolor></cell><cell>Initializes the memory values of data items defined in external files to zero or blank.</cell>
+	<cell><logiccolor>close</logiccolor></cell><cell>Closes a previously opened file.</cell>
+	<cell><logiccolor>cmcode</logiccolor></cell><cell>Returns the number of months since the year 1900 given a month and year.</cell>
+	<cell><logiccolor>compare</logiccolor></cell><cell>Returns the 	alphabetical order (i.e., collating sequence) of the two strings.</cell>
+	<cell><logiccolor>concat</logiccolor></cell><cell>Joins two or more strings into one string.</cell>
+	<cell><logiccolor>connection</logiccolor></cell><cell>Determines whether the device has access to the Internet.</cell>
+	<cell><logiccolor>count</logiccolor></cell><cell>Returns the number of occurrences for a repeating form or roster.</cell>
+	<cell><logiccolor>countnonspecial</logiccolor></cell><cell>Returns the number of non-special values in a group of data items.</cell>
+	<cell><logiccolor>curocc</logiccolor></cell><cell>Returns the current occurrence number for a repeating form, roster, or record.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>dateadd</logiccolor></cell><cell>Calculates a new date from a starting date and a period of elapsed time.</cell>
+	<cell><logiccolor>datediff</logiccolor></cell><cell>Calculates the difference between two dates.</cell>
+	<cell><logiccolor>datevalid</logiccolor></cell><cell>Determines whether a date in the format YYYYMMDD is valid.</cell>
+	<cell><logiccolor>delcase</logiccolor></cell><cell>Marks a case for deletion in an external file based on a key.</cell>
+	<cell><logiccolor>delete</logiccolor></cell><cell>Removes a record or item occurrence from the current case.</cell>
+	<cell><logiccolor>demode</logiccolor></cell><cell>Returns the current data entry mode.</cell>
+	<cell><logiccolor>dircreate</logiccolor></cell><cell>Creates a new directory with the given directory name.</cell>
+	<cell><logiccolor>direxist</logiccolor></cell><cell>Determines whether a directory exists.</cell>
+	<cell><logiccolor>dirlist</logiccolor></cell><cell>Returns a list containing the file and directory listing of the specified directory.</cell>
+	<cell><logiccolor>display</logiccolor></cell><cell>Displays a message (this function has been superceded by <logiccolor>errmsg</logiccolor>).</cell>
+	<cell><logiccolor>do</logiccolor></cell><cell>Executes one or more statements repeatedly while a logical condition remains true or until a logical condition is no longer true.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>edit</logiccolor></cell><cell>Converts a number to a string.</cell>
+	<cell><logiccolor>editnote</logiccolor></cell><cell>Displays the data entry note box for adding or changing.</cell>
+	<cell><logiccolor>endcase</logiccolor></cell><cell>Ends batch editing for the current case (but outputs the case to file).</cell>
+	<cell><logiccolor>endgroup</logiccolor></cell><cell>Ends data entry for the current record or group/roster.</cell>
+	<cell><logiccolor>endlevel</logiccolor></cell><cell>Ends data entry for the current level.</cell>
+	<cell><logiccolor>enter</logiccolor></cell><cell>Enters data from a secondary form file.</cell>
+	<cell><logiccolor>errmsg</logiccolor></cell><cell>Displays or writes a message.</cell>
+	<cell><logiccolor>execpff</logiccolor></cell><cell>Starts another CSPro application.</cell>
+	<cell><logiccolor>execsystem</logiccolor></cell><cell>Starts another application or process.</cell>
+	<cell><logiccolor>exit</logiccolor></cell><cell>Ends a procedure before normal processing is expected to end.</cell>
+	<cell><logiccolor>exp</logiccolor></cell><cell>Returns the value of e raised to a given power.</cell>
+	<cell><logiccolor>export</logiccolor></cell><cell>Writes a record to an export file.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>file</logiccolor></cell><cell>Declares one or more files used in the application.</cell>
+	<cell><logiccolor>fileconcat</logiccolor></cell><cell>Concatenates a list of files or a set of files described by a wildcard specification.</cell>
+	<cell><logiccolor>filecopy</logiccolor></cell><cell>Copies a file to another file.</cell>
+	<cell><logiccolor>filecreate</logiccolor></cell><cell>Creates a new file with the given file name.</cell>
+	<cell><logiccolor>filedelete</logiccolor></cell><cell>Deletes an already existing file.</cell>
+	<cell><logiccolor>fileempty</logiccolor></cell><cell>Determines whether a file exists but is empty.</cell>
+	<cell><logiccolor>fileexist</logiccolor></cell><cell>Determines whether a file exists.</cell>
+	<cell><logiccolor>filename</logiccolor></cell><cell>Returns the file name currently associated with a dictionary or a <logiccolor>file</logiccolor>.</cell>
+	<cell><logiccolor>fileread</logiccolor></cell><cell>Reads a text line from a file into an item or variable.</cell>
+	<cell><logiccolor>filerename</logiccolor></cell><cell>Changes the name of a file.</cell>
+	<cell><logiccolor>filesize</logiccolor></cell><cell>Returns the size of a file in bytes.</cell>
+	<cell><logiccolor>filewrite</logiccolor></cell><cell>Writes a line of text to a file.</cell>
+	<cell><logiccolor>find</logiccolor></cell><cell>Determines the existence of a case in an external file that matches a condition.</cell>
+	<cell><logiccolor>for</logiccolor></cell><cell>Loops through multiple records or items.</cell>
+	<cell><logiccolor>function</logiccolor></cell><cell>Declares a user-defined function.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>getbuffer</logiccolor></cell><cell>Returns a string containing the contents of a data item.</cell>
+	<cell><logiccolor>getcapturetype</logiccolor></cell><cell>Returns the capture type associated with a field.</cell>
+	<cell><logiccolor>getcaselabel</logiccolor></cell><cell>Returns a string containing a case's label (the text that appears in a case listing).</cell>
+	<cell><logiccolor>getdeck</logiccolor></cell><cell>Retrieves a value from a DeckArray used for editing data.</cell>
+	<cell><logiccolor>getdeviceid</logiccolor></cell><cell>Returns a string that contains a unique value that identifies the device.</cell>
+	<cell><logiccolor>getimage</logiccolor></cell><cell>Returns the filename of a value set image.</cell>
+	<cell><logiccolor>getlabel</logiccolor></cell><cell>Returns the label of a dictionary symbol or text associated to symbol's value.</cell>
+	<cell><logiccolor>getlanguage</logiccolor></cell><cell>Returns the current language being used while in data entry mode.</cell>
+	<cell><logiccolor>getnote</logiccolor></cell><cell>Returns a field or case note.</cell>
+	<cell><logiccolor>getocclabel</logiccolor></cell><cell>Returns an occurrence label associated with a repeating dictionary item or a roster.</cell>
+	<cell><logiccolor>getoperatorid</logiccolor></cell><cell>Returns the text entered in the operator ID.</cell>
+	<cell><logiccolor>getorientation</logiccolor></cell><cell>Returns the display orientation.</cell>
+	<cell><logiccolor>getos</logiccolor></cell><cell>Returns information about the operating system, including whether it is running Android or Windows.</cell>
+	<cell><logiccolor>getrecord</logiccolor></cell><cell>Returns the name of the record containing a particular item.</cell>
+	<cell><logiccolor>getsymbol</logiccolor></cell><cell>Returns the name of the current procedure being executed.</cell>
+	<cell><logiccolor>getusername</logiccolor></cell><cell>Returns the name of the user logged into Windows or the Android device account.</cell>
+	<cell><logiccolor>getvalue</logiccolor></cell><cell>Returns the value of a numeric variable whose identity is only known at runtime.</cell>
+	<cell><logiccolor>getvaluealpha</logiccolor></cell><cell>Returns the value of a alpha variable whose identity is only known at runtime.</cell>
+	<cell><logiccolor>getvaluenumeric</logiccolor></cell><cell>Returns the value of a numeric variable whose identity is only known at runtime.</cell>
+	<cell><logiccolor>gps</logiccolor></cell><cell>Controls and returns values from a GPS receiver.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>has</logiccolor></cell><cell>Determines whether any of a group of repeating items is within a range of values.</cell>
+	<cell><logiccolor>high</logiccolor></cell><cell>Returns the maximum value in a group of numeric expressions.</cell>
+	<cell><logiccolor>highlighted</logiccolor></cell><cell>Returns whether s field is on path or reached during data entry.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>if</logiccolor></cell><cell>Executes statements conditionally.</cell>
+	<cell><logiccolor>impute</logiccolor></cell><cell>Assigns a value to a data item and logs the frequency of assignments.</cell>
+	<cell><logiccolor>in</logiccolor></cell><cell>Determines whether a variable is within a range of values.</cell>
+	<cell><logiccolor>inc</logiccolor></cell><cell>Increments a numeric item.</cell>
+	<cell><logiccolor>insert</logiccolor></cell><cell>Creates a record or item occurrence in the current case.</cell>
+	<cell><logiccolor>int</logiccolor></cell><cell>Returns the integer portion of a numeric expression.</cell>
+	<cell><logiccolor>invalueset</logiccolor></cell><cell>Determines whether a data item's value is within the item's value set.</cell>
+	<cell><logiccolor>ispartial</logiccolor></cell><cell>Determines whether a case was opened from a partial case or not.</cell>
+		<cell><logiccolor>isverified</logiccolor></cell><cell>Determines whether a case was verified by double-keying.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>key</logiccolor></cell><cell>Returns the key (ID string) of the currently loaded case.</cell>
+	<cell><logiccolor>killfocus</logiccolor></cell><cell>Declares that the following statements are executed after the object stops being active.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>length</logiccolor></cell><cell>Returns the length of a dictionary item or a string.</cell>
+	<cell><logiccolor>loadcase</logiccolor></cell><cell>Reads a case from an external file into memory (usually based on a key).</cell>
+	<cell><logiccolor>loadsetting</logiccolor></cell><cell>Returns a string containing a setting saved using the <logiccolor>savesetting</logiccolor> function.</cell>
+	<cell><logiccolor>locate</logiccolor></cell><cell>Finds but does not load a case in an external file that matches a condition.</cell>
+	<cell><logiccolor>log</logiccolor></cell><cell>Returns the base-10 logarithm of a numeric expression.</cell>
+	<cell><logiccolor>low</logiccolor></cell><cell>Returns the minimum value in a group of numeric expressions.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>maketext</logiccolor></cell><cell>Returns a formatted string with inserted values.</cell>
+	<cell><logiccolor>max</logiccolor></cell><cell>Returns the maximum value of an item that occurs multiple times.</cell>
+	<cell><logiccolor>maxocc</logiccolor></cell><cell>Returns the maximum number of occurrences of a multiply occurring object.</cell>
+	<cell><logiccolor>min</logiccolor></cell><cell>Returns the minimum value of an item that occurs multiple times.</cell>
+	<cell><logiccolor>move</logiccolor></cell><cell>Moves backwards or forwards to a specified field during data entry.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>next</logiccolor></cell><cell>Ends a <logiccolor>do</logiccolor>, <logiccolor>while</logiccolor>, or <logiccolor>for</logiccolor> loop early and continues execution with the next iteration of the loop.</cell>
+	<cell><logiccolor>noccurs</logiccolor></cell><cell>Returns the number of occurrences for a repeating form or roster.</cell>
+	<cell><logiccolor>noinput</logiccolor></cell><cell>Prevents input for the current field during data entry.</cell>
+	<cell><logiccolor>numeric</logiccolor></cell><cell>Declares numeric variables used in the application.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>onchangelanguage</logiccolor></cell><cell>Provides control over actions to occur after a user has changed the language.</cell>
+	<cell><logiccolor>onchar</logiccolor></cell><cell>Allows users to trap characters in order to perform special actions or to change the action of the character.</cell>
+	<cell><logiccolor>onfocus</logiccolor></cell><cell>Declares that the following statements are executed just before an object becomes active.</cell>
+	<cell><logiccolor>onkey</logiccolor></cell><cell>Allows users to trap keystrokes in order to perform special actions or to change the action of the key.</cell>
+	<cell><logiccolor>onstop</logiccolor></cell><cell>Provides control over stopping or exiting data entry.</cell>
+	<cell><logiccolor>open</logiccolor></cell><cell>Opens a dictionary or external file.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>pathname</logiccolor></cell><cell>Returns the path of various special directories.</cell>
+	<cell><logiccolor>pos</logiccolor></cell><cell>Returns the position of a string within another string.</cell>
+	<cell><logiccolor>poschar</logiccolor></cell><cell>Returns the position of any of a series of characters within another string.</cell>
+	<cell><logiccolor>preproc</logiccolor></cell><cell>Declares that the following statements are executed at the beginning of a block.</cell>
+	<cell><logiccolor>proc</logiccolor></cell><cell>Declares the beginning of a new procedure.</cell>
+	<cell><logiccolor>prompt</logiccolor></cell><cell>Prompts the operator to enter an alphanumeric string, also supporting a password masking option.</cell>
+	<cell><logiccolor>postproc</logiccolor></cell><cell>Declares that the following statements are executed at the end of a block.</cell>
+	<cell><logiccolor>publishdate</logiccolor></cell><cell>Returns the date and time that the code was compiled (which can be used to determine when a <link binary_data_entry_application_file_pen.hgt>.pen file</link> was created).</cell>
+	<cell><logiccolor>putdeck</logiccolor></cell><cell>Puts a value in a DeckArray used for editing data.</cell>
+	<cell><logiccolor>putnote</logiccolor></cell><cell>Puts the contents of string to a field or case note.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>random</logiccolor></cell><cell>Returns a pseudo-random integer in a given range.</cell>
+	<cell><logiccolor>randomin</logiccolor></cell><cell>Returns a pseudo-random integer in a non-continuous range, or using a value set.</cell>
+	<cell><logiccolor>randomizevs</logiccolor></cell><cell>Randomizes the order of a value set.</cell>
+	<cell><logiccolor>recode</logiccolor></cell><cell>Assigns a value to a variable based on the value of one or more other variables.</cell>
+	<cell><logiccolor>reenter</logiccolor></cell><cell>Forces the data entry operator to reenter a previous entered field.</cell>
+	<cell><logiccolor>relation</logiccolor></cell><cell>Defines a relation between multiple records or items.</cell>
+	<cell><logiccolor>retrieve</logiccolor></cell><cell>Loads a case from the current position of an external file.</cell>
+	<cell><logiccolor>round</logiccolor></cell><cell>Returns a value rounded to the nearest integer.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>savepartial</logiccolor></cell><cell>Saves the current case as a partially added, modified, or verified case.</cell>
+	<cell><logiccolor>savesetting</logiccolor></cell><cell>Saves, using an attribute-value pair, a setting retrievable with the <logiccolor>loadsetting</logiccolor> function.</cell>
+	<cell><logiccolor>seed</logiccolor></cell><cell>Initializes the random number generator to a particular starting place.</cell>
+	<cell><logiccolor>seek</logiccolor></cell><cell>Searches a multiply occurring item for an item that meets a condition.</cell>
+	<cell><logiccolor>seekmax</logiccolor></cell><cell>Searches a multiply occurring item for an item with the highest value that meets a condition.</cell>
+	<cell><logiccolor>seekmin</logiccolor></cell><cell>Searches a multiply occurring item for an item with the lowest value that meets a condition.</cell>
+	<cell><logiccolor>selcase</logiccolor></cell><cell>Allows a data entry operator to select and load a case from an external file.</cell>
+	<cell><logiccolor>setcapturepos</logiccolor></cell><cell>Allows the manual declaration of the window coordinates of extended controls.</cell>
+	<cell><logiccolor>setcapturetype</logiccolor></cell><cell>Sets the capture type associated with a field.</cell>
+	<cell><logiccolor>set</logiccolor></cell><cell>Switches the values of various system parameters.</cell>
+	<cell><logiccolor>setcaselabel</logiccolor></cell><cell>Sets a case's label (the text that appears in a case listing).</cell>
+	<cell><logiccolor>setfile</logiccolor></cell><cell>Assigns a new physical file to a dictionary or declared file.</cell>
+	<cell><logiccolor>setfont</logiccolor></cell><cell>Changes the default display font in data entry applications.</cell>
+	<cell><logiccolor>setlanguage</logiccolor></cell><cell>Modifies the current language being used while in data entry mode.</cell>
+	<cell><logiccolor>setocclabel</logiccolor></cell><cell>Sets the occurrence label associated with a repeating dictionary item or a roster.</cell>
+	<cell><logiccolor>setoperatorid</logiccolor></cell><cell>Changes the operator ID associated with the data entry session.</cell>
+	<cell><logiccolor>setorientation</logiccolor></cell><cell>Modifies the display orientation, allowing dynamic rotation of the display.</cell>
+	<cell><logiccolor>setoutput</logiccolor></cell><cell>Changes the output file where cases are saved in a batch application.</cell>
+	<cell><logiccolor>setvalue</logiccolor></cell><cell>Assigns a value to a variable whose identity is only known at runtime.</cell>
+	<cell><logiccolor>setvalueset</logiccolor></cell><cell>Dynamically modifies the value set of an item.</cell>
+	<cell><logiccolor>setvaluesets</logiccolor></cell><cell>Dynamically modifies the value sets for all items in the dictionary.</cell>
+	<cell><logiccolor>show</logiccolor></cell><cell>Displays the occurrences of one or more items from a record or multiply occurring item.</cell>
+	<cell><logiccolor>showarray</logiccolor></cell><cell>Displays the values of one or more elements from an array.</cell>
+	<cell><logiccolor>skip</logiccolor></cell><cell>Jumps forward to a specified field during data entry.</cell>
+	<cell><logiccolor>skip case</logiccolor></cell><cell>Ends processing of the current case in a batch edit run.</cell>
+	<cell><logiccolor>soccurs</logiccolor></cell><cell>Returns the number of occurrences of a record.</cell>
+	<cell><logiccolor>sort</logiccolor></cell><cell>Sorts occurrences of records or items based on the value of an item.</cell>
+	<cell><logiccolor>special</logiccolor></cell><cell>Determines whether a variable's value is <logiccolor>missing</logiccolor>, <logiccolor>notappl</logiccolor>, or <logiccolor>default</logiccolor>.</cell>
+	<cell><logiccolor>sqrt</logiccolor></cell><cell>Returns the square root of a numeric expression.</cell>
+	<cell><logiccolor>stop</logiccolor></cell><cell>Ends a data entry session or batch edit run.</cell>
+	<cell><logiccolor>string</logiccolor></cell><cell>Declares variable-length alphanumeric variables used in the application.</cell>
+	<cell><logiccolor>strip</logiccolor></cell><cell>Removes trailing blanks from a string.</cell>
+	<cell><logiccolor>sum</logiccolor></cell><cell>Returns the sum of an item that occurs multiple times.</cell>
+	<cell><logiccolor>swap</logiccolor></cell><cell>Switches the order of two occurrences within a group.</cell>
+	<cell><logiccolor>sync</logiccolor></cell><cell>Executes a <link data_synchronization.hgt>data synchronization script</link> on Android to transfer data by FTP, Dropbox, or Bluetooth.</cell>
+	<cell><logiccolor>syncconnect</logiccolor></cell><cell>Connects to a web server or to another device using Bluetooth to begin a synchronization session.</cell>
+	<cell><logiccolor>syncdata</logiccolor></cell><cell>Sends or receives cases between the current device and a web server or another device.</cell>
+	<cell><logiccolor>syncdisconnect</logiccolor></cell><cell>Ends the current synchronization session.</cell>
+	<cell><logiccolor>syncfile</logiccolor></cell><cell>Sends or receives files between the current device and a web server or another device.</cell>
+	<cell><logiccolor>syncserver</logiccolor></cell><cell>Starts running a server on the current device, to which other devices can connect using Bluetooth.</cell>
+	<cell><logiccolor>sysdate</logiccolor></cell><cell>Returns the current system date as an integer.</cell>
+	<cell><logiccolor>sysparm</logiccolor></cell><cell>Returns a parameter a PFF file.</cell>
+	<cell><logiccolor>systime</logiccolor></cell><cell>Returns the current system time as an integer.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>tolower</logiccolor></cell><cell>Changes all uppercase letters in a string to lowercase.</cell>
+	<cell><logiccolor>tonumber</logiccolor></cell><cell>Converts a string to a number.</cell>
+	<cell><logiccolor>totocc</logiccolor></cell><cell>Returns the total occurrences for a repeating form, roster, or record.</cell>
+	<cell><logiccolor>toupper</logiccolor></cell><cell>Changes all lowercase letters in a string to uppercase.</cell>
+	<cell><logiccolor>trace</logiccolor></cell><cell>Controls a window or file that can contain debugging information.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>universe</logiccolor></cell><cell>Specifies a condition that must be true for execution of a procedure or function to continue.</cell>
+	<cell><logiccolor>userbar</logiccolor></cell><cell>Controls the optional display bar in a data entry application.</cell>
+	<cell><logiccolor>uuid</logiccolor></cell><cell>Returns a human-readable string containing a universally unique identifier.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>visualvalue</logiccolor></cell><cell>Returns the value of a data item prior to its input.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>while</logiccolor></cell><cell>Executes one or more statements repeatedly while a logical condition remains true.</cell>
+	<cell><logiccolor>write</logiccolor></cell><cell>Write to a text file.</cell>
+	<cell><logiccolor>writecase</logiccolor></cell><cell>Writes a case from memory to an external file.</cell>
+</table>
