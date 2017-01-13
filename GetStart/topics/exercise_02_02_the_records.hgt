@@ -1,94 +1,36 @@
 ﻿<title>Step 2: The Records</title>
 
-<font white>HELPTODO</font>
+<subheader>(Exercise 2, Create the Data Dictionary)</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
- <meta name="generator" content="Adobe RoboHelp 11">
+A <link CSPro::records.html>record</link> usually corresponds to a section of a questionnaire and consists of a group of related questions.
 
-<style type="text/css">
-<!--
-body { background-color:#ffffff; }
--->
-</style>
+By default, CSPro creates one record. Our tutorial application will have two records, a <b>Person Record</b> and a <b>Housing Record</b>. We will change the one record that CSPro generated to <b>Person Record</b>, and then add the <b>Housing Record</b>.
 
+First, we will change the one record that CSPro generated to <b>Person Record</b>:
 
-<style title="hcp" type="text/css">
-<!--
-p.hcp1 { text-align:left;
-margin-top:0.00pt;
-margin-bottom:0.00pt; }
-font.hcp2 { font-family:Arial;
-font-size:10pt; }
-p.hcp3 { margin-top:0.00pt;
-margin-bottom:0.00pt;
-margin-left:48px;
-text-indent:-48px; }
-font.hcp4 { font-family:Arial;
-font-size:10pt;
-font-weight:bold; }
--->
-</style>
-</head>
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<list ordered>
+	<li>Right-click on <b>MyDict record</b> on the tree on the left, then select <b>Modify Record</b>.</li>
+	<li>Type <b>Person record</b> as the <b>Record Label</b>, then press <b>Enter</b>.</li>
+	<li>Type <b>PERSON_RECORD</b> as the <b>Record Name</b>, then press <b>Enter</b>.</li>
+	<li>Press <b>Enter</b> to leave the <b>Type Value</b> as is.</li>
+	<li>Press <b>N</b> to change <b>Required</b> from <b>Yes</b> to <b>No</b>, then press <b>Enter</b>. Our application can have households with no people, so person records are not required for us.</li>
+	<li>Our application can have up to 10 people in a household, so type <b>10</b>, then <b>Enter</b>, to change <b>Max</b> and complete the changes to this record.</li>
+</list>
 
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial" size="5">Step 2: The Records</font></b></h3>
-<p class="hcp1"><i><font style="font-family: Arial; font-size: 8pt; font-style: italic;" face="Arial" size="2">[Exercise 2, Create the Data Dictionary]</font></i></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">A</font> <a href="cspro.chm::/records.html"><font face="Arial" size="2" class="hcp2">record</font></a> <font face="Arial" size="2" class="hcp2">usually corresponds to a section of a questionnaire, and consists of a group of related questions.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">By default, CSPro creates one record. Our tutorial application will have two records, a ‘Person Record’ and a ‘Housing Record’. We will change the one record that CSPro generated to ‘Person Record’, then add the ‘Housing Record’.</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">First, we will change the one record that CSPro generated to ‘Person Record’:</font></p>
-<ul>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Right-click on ‘MyDict record’ on the tree on the left, then select</font> <b><font face="Arial" size="2" class="hcp4">Modify Record</font></b><font face="Arial" size="2" class="hcp2">.</font></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Type "Person record" as the Record Label, then press Enter</font><b><font face="Arial" size="2" class="hcp4">.</font></b></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Type "PERSON_RECORD" as the Record Name, then press Enter</font><b><font face="Arial" size="2" class="hcp4">.</font></b></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Enter to leave the Type value as is.</font></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press ‘N’ to change</font> <b><font face="Arial" size="2" class="hcp4">Required</font></b> <font face="Arial" size="2" class="hcp2">from Yes to No, then press Enter. Our application can have households with no people, so Person records are not required for us.</font></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Our application can have up to 10 people in a household, so type "10", then Enter, to change</font> <b><font face="Arial" size="2" class="hcp4">Max</font></b> <font face="Arial" size="2" class="hcp2">and complete the changes to this record.</font></p>
-</li>
-</ul>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">Next we will add the ‘Housing Record’:</font></p>
-<ul>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Right-click on Person Record on the tree on the left, then select</font> <b><font face="Arial" size="2" class="hcp4">Add Record</font></b><font face="Arial" size="2" class="hcp2">.</font></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Type "Housing Record" as the Record Label, the press Enter.</font></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Enter to accept ‘HOUSING_RECORD’ as the</font> <b><font face="Arial" size="2" class="hcp4">Record Name</font></b><font face="Arial" size="2" class="hcp2">.</font></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Enter</font> <font face="Arial" size="2" class="hcp2">to leave the</font> <b><font face="Arial" size="2" class="hcp4">Type value</font></b> <font face="Arial" size="2" class="hcp2">as is.</font></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Enter to leave</font> <b><font face="Arial" size="2" class="hcp4">Required</font></b> <font face="Arial" size="2" class="hcp2">Yes.</font></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Enter to leave</font> <b><font face="Arial" size="2" class="hcp4">Max</font></b> <font face="Arial" size="2" class="hcp2">1 and start a new record.</font></p>
-</li>
-<li class="p" style="font-size: 10pt;">
-<p class="hcp3"><font face="Arial" size="2" class="hcp2">Press Esc on the blank record to finish making these changes.</font></p>
-</li>
-</ul>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">When you have completed this step the screen should look something like:</font></p>
-<p class="hcp1">&#160;</p>
-<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img src="tutrecs.jpg" alt="Data Dictionary Records Screen" title="Data Dictionary Records Screen" width="642" height="451" border="0"></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">Continue to the</font> <a href="step_3_creating_the_items.html"><font face="Arial" size="2" class="hcp2">next</font></a> <font face="Arial" size="2" class="hcp2">step.</font></p>
-</body>
-</html>
+Next we will add the <b>Housing Record</b>:
+
+<list ordered>
+	<li>Right-click on <b>Person record</b> on the tree on the left, then select <b>Add Record</b>.</li>
+	<li>Type <b>Housing record</b> as the <b>Record Label</b>, the press <b>Enter</b>.</li>
+	<li>Press <b>Enter</b> to accept <b>HOUSING_RECORD</b> as the <b>Record Name</b>.</li>
+	<li>Press <b>Enter</b> to leave the <b>Type Value</b> as is.</li>
+	<li>Press <b>Enter</b> to leave <b>Required</b> as <b>Yes</b>.</li>
+	<li>Press <b>Enter</b> to leave <b>Max</b> as 1 and start a new record.</li>
+	<li>Press <b>Esc</b> on the blank record to finish making these changes.</li>
+</list>
+
+When you have completed this step the screen should look something like:
+
+<center><image exercise_02_02_adding_records.png /></center>
+
+Continue to the next step: <topic exercise_02_03_creating_the_items.hgt />.

@@ -1,104 +1,30 @@
 ﻿<title>Step 3: Naming Application Files</title>
 
-<font white>HELPTODO</font>
+<subheader>(Exercise 1, Create a Data Entry Application)</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
- <meta name="generator" content="Adobe RoboHelp 11">
-<style type="text/css">
-<!--
-body { background-color:#ffffff; }
--->
-</style>
+We will create a <link CSPro::data_entry_applications.hgt>data entry application</link>. This contains:
 
-<style title="hcp" type="text/css">
-<!--
-p.hcp1 { text-align:left;
-margin-top:0.00pt;
-margin-bottom:0.00pt; }
-font.hcp2 { font-family:Arial;
-font-size:10pt; }
-ul.hcp3 { list-style:disc; }
-p.hcp4 { margin-top:0.00pt;
-margin-bottom:0.00pt;
-margin-left:48px;
-text-indent:-48px; }
-font.hcp5 { font-family:Arial;
-font-size:10pt;
-font-weight:bold; }
--->
-</style>
-</head>
+<list>
+	<li><link CSPro::introduction_to_data_dictionary.hgt>Data dictionary</link>: The data dictionary describes the organization of the data file. It holds information about all the questions and responses on the questionnaire.</li>
+	<li><link CSPro::forms.hgt>Forms</link>: The forms will appear on the screen when you run the data entry application. They contain data entry fields, text, and rosters.</li>
+	<li><link CSPro::introduction_to_cspro_language.hgt>Logic</link> (optional): You can use the CSPro language to control the flow of your program, to write logic to check for errors during data entry, to access lookup files, and many other things. We will not use logic until Exercise 6.</li>
+</list>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+We will use the Wizard to create the files that the data entry application requires. Click on the radio button that says <b>Create a new application</b>. You should see the following dialog box:
 
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Step 3: Use Wizard for New Application</font></b></h3>
-<p class="hcp1"><i><font
-	 style="font-family: Arial; font-size: 8pt; font-style: italic;" face="Arial"
-	 size="2">[Exercise 1, Create a Data Entry Application]</font></i></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">We
- will create a</font> <a href="cspro.chm::/data_entry_applications.html"><font face="Arial" size="2" class="hcp2">data
- entry application</font></a><font face="Arial" size="2" class="hcp2">. This contains:</font></p>
-<ul class="hcp3">
-	<li class="p"><p class="hcp4"><a href="cspro.chm::/introduction_to_data_dictionary.html"><font face="Arial" size="2" class="hcp2">Data
-	 dictionary</font></a> <font face="Arial" size="2" class="hcp2">The data dictionary
-	 describes the organization of the data file. It holds information
-	 about all the questions and responses on the questionnaire.</font></p></li>
-	<li class="p"><p class="hcp4"><font face="Arial" size="2" class="hcp2"><a href="cspro.chm::/forms.html">Forms</a>
-	 The forms will appear on the screen when you run the data entry application.
-	 They contain data entry fields, text, and lines.</font></p></li>
-	<li class="p"><p class="hcp4"><a href="cspro.chm::/introduction_to_cspro_language.html"><font face="Arial" size="2" class="hcp2">Logic</font></a>
-	 <font face="Arial" size="2" class="hcp2">(optional)
-	 You can use the CSPro language to control the flow of your program,
-	 to write logic to check for errors during data entry, to access lookup
-	 files, and many other things. We will not use logic until Exercise&#160;6.</font></p></li>
-</ul>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">We
- will use the Wizard to create the files that the data entry application
- requires.</font></p>
-<ul class="hcp3">
-	<li class="p"><p class="hcp4"><font face="Arial" size="2" class="hcp2">Click on the radio button
-	 that says</font> <b><font face="Arial" size="2" class="hcp5">Create
-	 a new application</font></b><font face="Arial" size="2" class="hcp2">. You should
-	 see the following dialog box.</font></p></li>
-</ul>
-<p class="hcp1">&#160;</p>
-<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img alt="" src="tutnewde.png" style="border: none;" border="0"></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<ul>
-	<li class="p" style="font-size: 10pt;"><p class="hcp4"><font face="Arial" size="2" class="hcp2">Select</font>
-	 <b><font face="Arial" size="2" class="hcp5">Data Entry Application</font></b><font face="Arial" size="2" class="hcp2">.</font></p></li>
-	<li class="p" style="font-size: 10pt;"><p class="hcp4"><font face="Arial" size="2" class="hcp2">Press</font>
-	 <b><font face="Arial" size="2" class="hcp5">OK</font></b><font face="Arial" size="2" class="hcp2">.</font></p></li>
-</ul>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">In
- the file open dialog box:</font></p>
-<ul>
-	<li class="p" style="font-size: 10pt;"><p class="hcp4"><font face="Arial" size="2" class="hcp2">Enter
-	 &quot;MyEntry&quot; as the file name for the application.</font></p></li>
-	<li class="p" style="font-size: 10pt;"><p class="hcp4"><font face="Arial" size="2" class="hcp2">Make
-	 sure you are located in the folder you created for these exercises
-	 (‘c:\CSProTutorial’).</font></p></li>
-	<li class="p"><p class="hcp4"><font face="Arial" size="2" class="hcp2">Press</font> <b><font face="Arial" size="2" class="hcp5">Create</font></b><font face="Arial" size="2" class="hcp2">.</font></p></li>
-</ul>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">The
- next screen will ask you select the Input Dictionary.</font></p>
-<ul>
-	<li class="p" style="font-size: 10pt;"><p class="hcp4"><font face="Arial" size="2" class="hcp2">Change
-	 the name to &quot;c:\CSProTutorial\MyDict.dcf&quot;.</font></p></li>
-	<li class="p" style="font-size: 10pt;"><p class="hcp4"><font face="Arial" size="2" class="hcp2">Press</font>
-	 <b><font face="Arial" size="2" class="hcp5">OK</font></b><font face="Arial" size="2" class="hcp2">.</font></p></li>
-</ul>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">You
- have created a new data entry application</font></p>
-<p class="hcp1">&#160;</p>
-<p class="hcp1"><font face="Arial" size="2" class="hcp2">This
- completes this exercise. Continue to the</font> <a href="step_1_the_id_item.html"><font face="Arial" size="2" class="hcp2">next</font></a>
- <font face="Arial" size="2" class="hcp2">exercise.</font></p>
-</body>
-</html>
+<center><image new_application_data_entry.png /></center>
+
+<list ordered>
+	<li>Select <b>Data Entry Application</b> and press <b>OK</b>.</li>
+	<li>In the file open dialog box, enter <b>MyEntry</b> as the file name for the application.</li>
+	<li>Make sure you are located in the folder you created for these exercises (<b>C:\CSProTutorial</b>).</li>
+	<li>Press <b>Save</b>.</li>
+	<li>The next screen will ask you to select the Input Dictionary.</li>
+	<li>Change the name to <b>C:\CSProTutorial\MyDict.dcf</b>.</li>
+	<li>Press <b>OK</b>.</li>
+	<li>CSPro will ask if you want to create a new dictionary. Press <b>Yes</b>.</li>
+</list>
+
+You have created a new data entry application
+
+This completes this exercise. Continue to the next exercise: <topic exercise_02_01_the_id_item.hgt />.

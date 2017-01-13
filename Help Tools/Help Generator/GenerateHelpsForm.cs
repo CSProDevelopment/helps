@@ -167,6 +167,8 @@ namespace Help_Generator
 
                         if( !_backgroundThread.CancellationPending )
                             _backgroundThread.ReportProgress(0,ThreadUpdateMessage.TopicsComplete);
+
+                        ListUnusedImages();
                     }
 
                     else if( processingStep == 4 )
@@ -174,8 +176,6 @@ namespace Help_Generator
                         GenerateChm();
                         _backgroundThread.ReportProgress(0,ThreadUpdateMessage.ChmComplete);
                     }
-
-                    ListUnusedImages();
 
                     _backgroundThread.ReportProgress(0,"Successfully processed " + stepStrings[processingStep]);
                 }
