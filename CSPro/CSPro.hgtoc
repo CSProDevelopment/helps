@@ -463,6 +463,7 @@
 			do_statement.hgt																	#				Do Statement
 			exit_statement.hgt																	#				Exit Statement
 			for_statement.hgt																	#				For Statement
+			forcase_statement.hgt																#				ForCase Statement
 			if_statement.hgt																	#				If Statement
 			next_statement.hgt																	#				Next Statement
 			universe_statement.hgt																#				Universe Statement
@@ -494,6 +495,7 @@
 			getrecord_function.hgt																#				Getrecord Function
 			getusername_function.hgt															#				GetUserName Function
 			gps_function.hgt																	#				GPS Function
+			hideocc_function.hgt																#				HideOcc Function
 			highlighted_function.hgt															#				Highlighted Function
 			ispartial_function.hgt																#				IsPartial Function
 			isverified_function.hgt																#				IsVerified Function
@@ -525,6 +527,7 @@
 			setvaluesets_function.hgt															#				Setvaluesets Function
 			show_function.hgt																	#				Show Function
 			showarray_function.hgt																#				Showarray Function
+			showocc_function.hgt																#				ShowOcc Function
 			skip_statement.hgt																	#				Skip Statement
 			sync_function.hgt																	#				Sync Function
 			userbar_function.hgt																#				Userbar Function
@@ -539,7 +542,7 @@
 			skip_case_statement.hgt																#				Skip Case Statement
 		|Numeric Functions																		#			Numeric Functions
 			abs_function.hgt																	#				ABS Function
-			cmcode_function.hgt																	#				CmCode Function
+			cmcode_function.hgt																	#				CMCode Function
 			countnonspecial_function.hgt														#				Countnonspecial Function
 			exp_function.hgt																	#				Exp Function
 			high_function.hgt																	#				High Function
@@ -588,6 +591,9 @@
 			swap_function.hgt																	#				Swap Function
 			totocc_function.hgt																	#				Totocc Function
 		|General Functions																		#			General Functions
+			compress_function.hgt																#				Compress Function
+			decompress_function.hgt																#				Decompress Function
+			diagnostics_function.hgt															#				Diagnostics Function
 			errmsg_function.hgt																	#				Errmsg Function
 			execsystem_function_android.hgt														#				Execsystem Function (Android)
 			execsystem_function_windows.hgt														#				Execsystem Function (Windows)
@@ -597,6 +603,8 @@
 			getsymbol_function.hgt																#				Getsymbol Function
 			invalueset_function.hgt																#				Invalueset Function
 			loadsetting_function.hgt															#				LoadSetting Function
+			maxvalue_function.hgt																#				MaxValue Function
+			minvalue_function.hgt																#				MinValue Function
 			pathname_function.hgt																#				Pathname Function
 			savesetting_function.hgt															#				SaveSetting Function
 			special_function.hgt																#				Special Function
@@ -605,12 +613,19 @@
 			trace_function.hgt																	#				Trace Function
 			uuid_function.hgt																	#				UUID Function
 		|Date and Time Functions																#			Date and Time Functions
+			adjlba_function.hgt																	#				AdjLBA Function
+			adjlbi_function.hgt																	#				AdjLBI Function
+			adjuba_function.hgt																	#				AdjUBA Function
+			adjubi_function.hgt																	#				AdjUBI Function
 			dateadd_function.hgt																#				Dateadd Function
 			datediff_function.hgt																#				Datediff Function
 			datevalid_function.hgt																#				DateValid Function
 			publishdate_function.hgt															#				PublishDate Function
+			setlb_function.hgt																	#				SetLB Function
+			setub_function.hgt																	#				SetUB Function
 			sysdate_function.hgt																#				Sysdate Function
 			systime_function.hgt																#				Systime Function
+			timestamp_function.hgt																#				Timestamp Function
 		|External File Functions																#			External File Functions
 			clear_function.hgt																	#				Clear Function
 			close_function.hgt																	#				Close Function
@@ -631,6 +646,7 @@
 			filewrite_function.hgt																#				Filewrite Function
 			find_function.hgt																	#				Find Function
 			key_function.hgt																	#				Key Function
+			keylist_function.hgt																#				KeyList Function
 			loadcase_function.hgt																#				Loadcase Function
 			locate_function.hgt																	#				Locate Function
 			open_function.hgt																	#				Open Function
@@ -718,12 +734,6 @@
 				synchronization_options.hgt														#					Synchronization Options
 				user_configuration_settings.hgt													#					User and Configuration Settings
 				dictionary_macros.hgt															#					Dictionary Macros
-				timestamp_function.hgt															#					Timestamp Function
-				keylist_function.hgt															#					KeyList Function
-				forcase_statement.hgt															#					ForCase Statement
-				diagnostics_function.hgt														#					Diagnostics Function
-				decompress_function.hgt															#					Decompress Function
-				compress_function.hgt															#					Compress Function
 ||CSEntry.chm																					#	<Link to help file CSEntry.chm>
 ||CSBatch.chm																					#	<Link to help file CSBatch.chm>
 ||CSTab.chm																						#	<Link to help file CSTab.chm>
