@@ -1,172 +1,34 @@
-﻿<title>Getlabel Function</title>
+﻿<title>GetLabel Function</title>
 <context logic_help_getlabel />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Getlabel</font></b> <b><font style="font-family: Arial;
-														 font-size: 18pt;
-														 font-weight: bold;"
-														 face="Arial" size="5">Function</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">s =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">getlabel</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(</font><i><font style="font-family: 'Courier New'; font-size: 10pt;
-								 font-style: italic;" face="Courier New"
-								 size="2">dictionary-symbol</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">[</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" face="Courier New"
-												 size="2">,</font><i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 face="Courier New" size="2">value</font></i><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#FF00FF"
-														 face="Courier New"
-														 size="2">]</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">getlabel</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">function
- returns the label of a dictionary symbol or the text associated with a
- particular value of the symbol as defined in a value set.</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- the value parameter is not used, then the dictionary symbol's label is
- returned. The symbol can be the name of the dictionary, level, record,
- item, or value set.</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- value parameter can only be used if the dictionary symbol is an item or
- a value set. If the value parameter is used, the label associated with
- the specified value is returned. If the symbol is an item name, then the
- value labels from the first value set are returned. If the symbol is a
- value set, then the value labels from that value set are returned. If
- no label is associated with the value, then an empty string is returned.</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- dollar sign ($) can be used to refer to the current item for both the
- dictionary symbol and the value. See Example 3 below.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Return value:</font></b></p>
-<p style="text-align: left; margin-left: 18.70pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- function returns a string up to 255 characters long.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">write</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">(</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">&quot;%s = %s&quot;</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">,</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">getlabel</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(SEX),</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-									 color="#0000FF" face="Courier New"
-									 size="2">getlabel</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">(SEX,</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF0000" face="Courier New" size="2">1</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">));</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example 2:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">write</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">(</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">&quot;Crop Type = %s&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">,</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-							 color="#0000FF" face="Courier New" size="2">getlabel</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(CROP_VS2,</font><font style="font-family: 'Courier New';
-									 font-size: 10pt;" color="#FF0000"
-									 face="Courier New" size="2">23</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">));</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example 3:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">P02_REL</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;write</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">&quot;%s
- = %s&quot;</font><font style="font-family: 'Courier New'; font-size: 10pt;"
-						 face="Courier New" size="2">,</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">getlabel</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">($),</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">getlabel</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">($,$));</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">gives</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">Relationship = Head</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">Relationship = Spouse</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">Relationship = Child</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="getsymbol_function.html">Getsymbol
- Function</a>, <a href="Functions/Getimage_Function.html">Getimage Function</a></p>
-</body>
-</html>
+<logicsyntax>
+s = getlabel(<arg>dictionary_symbol</arg>『,value』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>getlabel</logiccolor> function returns the label of a <arg>dictionary_symbol</arg> or the text associated with a particular value of the symbol as defined in a value set. If the <arg>value</arg> argument is not specified, then the dictionary symbol's label is returned. The symbol can be the name of a dictionary, level, record, item, or value set.
+
+The <arg>value</arg> argument can only be used if the dictionary symbol is an item or a value set. The <arg>value</arg> is either a numeric or string expression, based on the type of the item. If the argument is used, the label associated with the specified value is returned. If the symbol is an item name, then the value labels from the current value set are returned. If the symbol is a value set, then the value labels from that value set are returned. If no label is associated with the value, then an empty string is returned.
+
+<subheader>Return Value</subheader>
+
+The function returns a string containing the label.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC EXAMPLE
+
+	write("%s",getlabel(SEX));						// Sex
+	write("Crop Type = %s",getlabel(CROP_VS2,23));	// Crop Type = Maize
+
+PROC RELATIONSHIP
+
+	write("%s = %s",getlabel($),getlabel($,$));		// Relationship = Head,
+													// Relationship = Child, etc.
+</logic>
+
+<seealso getsymbol_function.hgt getimage_function.hgt />

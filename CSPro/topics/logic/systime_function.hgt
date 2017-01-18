@@ -1,114 +1,33 @@
-﻿<title>Systime Function</title>
+﻿<title>SysTime Function</title>
 <context logic_help_systime />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Systime</font></b> <b><font style="font-family: Arial;
-														 font-size: 18pt;
-														 font-weight: bold;"
-														 face="Arial" size="5">Function</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New';" face="Courier New">i =</font>
- <b><font style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
-			 face="Courier New">systime</font></b><font style="font-family: 'Courier New';"
-														 face="Courier New">(</font><font
-	 style="font-family: 'Courier New';" color="#FF00FF" face="Courier New">[</font><font
-	 style="font-family: 'Courier New'; font-style: italic;" face="Courier New">time-format</font><font
-	 style="font-family: 'Courier New';" color="#FF00FF" face="Courier New">]</font><font
-	 style="font-family: 'Courier New';" face="Courier New">); </font><font
-	 color="#FF00FF">[ ]</font> indicates that this part is optional.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
- systime function returns the current system time as a six-digit integer
- in the form HHMMSS, where HH is the hour, MM are the minutes, and SS are
- the seconds.</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">Optionally,
- a <span style="font-style: italic;">time-format</span><span> alphanumeric
- expression can be supplied, using a combination of HH, MM, and SS, to
- extract only part of the current system time.</span></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The current time can be returned as a string using the</font>
- <a href="edit_function.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">edit</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">function as follows:</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;edit</font><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">(</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">&quot;99:99:99&quot;</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">,</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">systime</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#000000" face="Courier New"
-													 size="2">());</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Return value:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The function returns the system time as an integer.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: bold;"><b><font style="font-weight: bold;">Example 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New', monospace;"><font color="#0000FF">string</font>
- formattedTime = <font color="#0000FF">edit</font>(<font color="#FF00FF">&quot;99:99&quot;</font>,<font
-	 color="#0000FF">systime</font>(<font color="#FF00FF">&quot;HHMM&quot;</font>));</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New', monospace;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: bold;"><span><b><font style="font-weight: bold;">Example
- 2:</font></b></span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New', monospace;"><font color="#000000"><font
-	 color="#008000">//&#160;for time calculations, it can be helpful to
- convert times into the number of minutes or seconds since midnight</font><br />
-<font color="#0000FF">numeric</font> startMinutesSinceMidnight = <font
-	 color="#0000FF">systime</font>(<font color="#FF00FF">&quot;HH&quot;</font>)
- * <font color="#FF0000">60</font> + <font color="#0000FF">systime</font>(<font
-	 color="#FF00FF">&quot;MM&quot;</font>);<br />
-<br />
-<font color="#008000">//&#160;...</font><br />
-<font color="#0000FF">numeric</font> endMinutesSinceMidnight = <font color="#0000FF">systime</font>(<font
-	 color="#FF00FF">&quot;HH&quot;</font>) * <font color="#FF0000">60</font>
- + <font color="#0000FF">systime</font>(<font color="#FF00FF">&quot;MM&quot;</font>);<br />
-<br />
-<font color="#0000FF">numeric</font> elapsedMinutes = endMinutesSinceMidnight
- - startMinutesSinceMidnight;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;"><b>See also:</b> <a href="sysdate_function.html">Sysdate
- Function</a></p>
-</body>
-</html>
+<logicsyntax>
+i = systime(『<arg>time_format</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>systime</logiccolor> function returns the current system time as a six-digit integer in the form HHMMSS, where HH is the hour, MM are the minutes, and SS are the seconds.
+
+Optionally, a string expression <arg>time_format</arg> can be supplied, using a combination of HH, MM, and SS, to extract only part of the current system time.
+
+The current time can be returned as a string using the edit function as follows:
+
+<logic>
+edit("99:99:99",systime());
+</logic>
+
+<subheader>Return Value</subheader>
+
+The function returns the system time as an integer.
+
+<subheader>Example</subheader>
+
+<logic>
+SURVEY_START_HOUR = systime("HH");
+SURVEY_START_MINUTE = systime("MM");
+</logic>
+
+<seealso sysdate_function.hgt timestamp_function.hgt edit_function.hgt />

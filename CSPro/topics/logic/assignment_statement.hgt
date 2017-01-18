@@ -1,81 +1,26 @@
 ﻿<title>Assignment Statement</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;
-	 text-align: left;"><b><font style="font-family: Arial; font-size: 18pt;
-								 font-weight: bold;" face="Arial" size="5">Assignment
- Statement</font></b></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 text-align: left;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#000000" face="Courier New" size="2">numeric-variable
- = numeric-expression;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 text-align: left;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#000000" face="Courier New" size="2">string-variable
- = string-expression;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
-								 color="#000000" face="Arial" size="2">The</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">assignment</font> <font style="font-family: Arial; font-size: 10pt;"
-											 color="#000000" face="Arial"
-											 size="2">statement sets a
- variable equal to the value of an</font> <a href="expressions.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">expression</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">. If the expression is a string-expression, then the variable
- must be alphanumeric. If the expression is numeric or conditional, then
- the variable must be numeric.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Examples:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">AGE =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#FF0000" face="Courier New"
-													 size="2">10</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">Q102 = PREV_AGE;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">Y =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">sqrt</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(X);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New';" face="Courier New">NAME =</font>
- <font style="font-family: 'Courier New';" color="#FF00FF" face="Courier New">&quot;John
- Doe&quot;</font><font style="font-family: 'Courier New';" face="Courier New">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="Setvalue_Function.html">Setvalue
- Function</a></p>
-</body>
-</html>
+<logicsyntax>
+<arg>numeric_variable</arg> = <arg>numeric_expression</arg>;
+
+<arg>string_variable</arg> = <arg>string_expression</arg>;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The assignment statement sets a variable equal to the value of an <link expressions.hgt>expression</link>. If the expression is numeric or conditional, then the variable must be numeric. If the expression is a string expression, then the variable must be alphanumeric.
+
+<subheader>Examples</subheader>
+
+<logic>
+AGE = 10;
+Q102 = PREV_AGE;
+Y = sqrt(X);
+
+NAME = "John Doe";
+NAME = "John " + toupper("Doe");
+</logic>
+
+<seealso setvalue_function.hgt />

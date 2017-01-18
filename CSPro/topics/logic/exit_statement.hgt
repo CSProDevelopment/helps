@@ -1,133 +1,33 @@
 ﻿<title>Exit Statement</title>
 <context logic_help_exit />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;
-	 text-align: left;"><b><font style="font-family: Arial; font-size: 18pt;
-								 font-weight: bold;" color="#0000FF" face="Arial"
-								 size="5">Exit</font></b> <b><font style="font-family: Arial;
-	 font-size: 18pt; font-weight: bold;" face="Arial" size="5">Statement</font></b></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">exit</font></b><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
-								 color="#000000" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 color="#000000" face="Arial" size="2">exit</font></b> <font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">statement terminates a procedure or function before normal
- processing is expected to end. When the</font> <b><font style="font-family: Arial;
-														 font-size: 10pt;
-														 font-weight: bold;"
-														 color="#000000"
-														 face="Arial" size="2">exit</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">statement is executed, processing stops for the current
- procedure or user-defined function, and control is passed to the next
- procedure or user-defined function.</font></p>
-<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">function</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">FIRST_WOMAN();</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;FIRST_WOMAN =</font> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-	 face="Courier New" size="2">0</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;do</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 face="Courier New"
-															 size="2">i</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">=</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#FF0000" face="Courier New"
-													 size="2">1</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">while</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">i &lt;=
- HH_MEMBERS</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;if</font> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">SEX(i) =</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#FF0000"
-														 face="Courier New"
-														 size="2">2</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;&#160;FIRST_WOMAN
- = i;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;&#160;exit</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#008000"
-												 face="Courier New" size="2">{exit
- the function, we've found our first woman!}</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;endif</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;enddo</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">end</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">;</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
-		 face="Courier New" size="2">{end the function}</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="Universe_Statement.html">Universe
- Statement</a>, <a href="skip_case_statement.html">Skip Case Statement</a>,
- <a href="stop_function.html">Stop Function</a>, <a href="Endcase_Statement.html">Endcase
- Statement</a></p>
-</body>
-</html>
+<logicsyntax>
+exit;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>exit</logiccolor> statement terminates a procedure or function before normal processing is expected to end. When the statement is executed, processing stops for the current procedure or user-defined function, and control is passed to the next procedure or user-defined function.
+
+<subheader>Example</subheader>
+
+<logic>
+function FirstWoman()
+
+	do numeric ctr = 1 while ctr <= HH_MEMBERS
+
+		if SEX(ctr) = 2 then
+			FirstWoman = ctr;
+			exit; // exit the function, we've found our first woman!
+		endif;
+
+	enddo;
+
+	FirstWoman = 0; // no woman was found
+
+end;
+</logic>
+
+<seealso universe_statement.hgt skip_case_statement.hgt stop_function.hgt endcase_statement.hgt />

@@ -1,121 +1,66 @@
-﻿<title>Countnonspecial Function</title>
+﻿<title>CountNonSpecial Function</title>
 <context logic_help_countnonspecial />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h1 style="font-family: Arial, sans-serif; font-size: 18pt;"><span style="color: #0000ff;">Countnonspecial</span>
- Function</h1>
-<p style="margin-left: 12px; text-indent: -12px; font-family: Arial, sans-serif;
-	 font-size: 10pt;"><span style="font-weight: bold;">Format:</span><br />
-i = <span style="color: #0000ff; font-weight: bold;">countnonspecial</span>(<span
-	 style="font-style: italic;">item</span> <span>|</span> <span style="font-style: italic;">record</span>
- | <span style="font-style: italic;">array</span> | <span style="font-style: italic;">numeric-expression</span>);</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;
-	 margin-left: 12px; text-indent: -12px;">Description:<span style="font-weight: normal;"><br />
-The function</span> countnonspecial <span style="font-weight: normal;">counts
- the number of non-special values within the passed parameters. Special
- parameters include</span> missing<span style="font-weight: normal;">,</span>
- notappl<span style="font-weight: normal;">, and</span> default<span style="font-weight: normal;">.
- The function can receive multiple numeric parameters, including items,
- records, arrays, and numeric expressions. This function can greatly simplify
- some programming tasks; for example, the following two lines of code are
- the same:<br />
-<br />
-</span><span style="font-weight: normal; font-family: 'Courier New', monospace;"><font
-	 style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">if</font>
- <font style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">countnonspecial</font>(RELATIONSHIP,SEX,AGE)
- = <font style="font-family: 'Courier New', monospace;" color="#FF0000"
-		 face="Courier New">3</font> <font style="font-family: 'Courier New', monospace;"
-											 color="#0000FF" face="Courier New">then</font><br />
-<font style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">if</font>
- <font style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">not</font>
- <font style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">special</font>(RELATIONSHIP)
- <font style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">and</font>
- <font style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">not</font>
- <font style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">special</font>(SEX)
- <font style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">and</font>
- <font style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">not</font>
- <font style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">special</font>(AGE)
- <font style="font-family: 'Courier New', monospace;" color="#0000FF" face="Courier New">then</font><br />
-</span><span style="font-weight: normal;"><br />
-If an array is passed, the function will count the non-special values among
- all the values in the array. For a multiply occurring item or record,
- to count the non-special values for all the items or records instead of
- just the current occurrence, include</span> (*) <span style="font-weight: normal;">after
- the item or record name.</span> Countvalid <span style="font-weight: normal;">is
- a synonym for</span> <span>countnonspecial.</span></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-weight: bold;">Example 1:</p>
-<p style="font-size: 10pt; margin-left: 12px; font-weight: normal; font-family: 'Courier New', monospace;"><font
-	 color="#000000"><font color="#0000FF">numeric</font> tempVal = <font
-	 color="#0000FF">notappl</font>;<br />
-<font color="#0000FF">array</font> tempArray(<font color="#FF0000">2</font>,<font
-	 color="#FF0000">3</font>) = <font color="#FF0000">1</font> <font color="#FF0000">2</font>
- <font color="#FF0000">3</font> <font color="#0000FF">notappl</font> <font
-	 color="#0000FF">missing</font> <font color="#0000FF">default</font>;<br />
-<br />
-<font color="#0000FF">countnonspecial</font>(<font color="#FF0000">5</font>,tempVal,<font
-	 color="#0000FF">default</font>,<font color="#FF0000">28</font> + <font
-	 color="#FF0000">31</font>,<font color="#FF0000">3</font> / <font color="#FF0000">0</font>);
- <font color="#008000">//&#160;returns 2<br />
-</font><br />
-tempVal = <font color="#FF0000">0.123456789</font>;<br />
-<font color="#0000FF">countnonspecial</font>(<font color="#FF0000">5</font>,tempVal,<font
-	 color="#0000FF">default</font>,<font color="#FF0000">28</font> + <font
-	 color="#FF0000">31</font>,<font color="#FF0000">3</font> / <font color="#FF0000">0</font>);
- <font color="#008000">//&#160;returns 3<br />
-</font><br />
-<font color="#0000FF">countnonspecial</font>(<font color="#FF0000">5</font>,tempVal,<font
-	 color="#0000FF">default</font>,<font color="#FF0000">28</font> + <font
-	 color="#FF0000">31</font>,<font color="#FF0000">3</font> / <font color="#FF0000">0</font>,tempArray);
- <font color="#008000">//&#160;returns 6<br />
-</font><br />
-tempArray(<font color="#FF0000">2</font>,<font color="#FF0000">1</font>)
- = <font color="#FF0000">0</font>;<br />
-<font color="#0000FF">countnonspecial</font>(<font color="#FF0000">5</font>,tempVal,<font
-	 color="#0000FF">default</font>,<font color="#FF0000">28</font> + <font
-	 color="#FF0000">31</font>,<font color="#FF0000">3</font> / <font color="#FF0000">0</font>,tempArray);
- <font color="#008000">//&#160;returns 7</font></font></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-weight: bold;"><span style="font-family: Arial, sans-serif;
-													 font-size: 10pt; font-weight: bold;">Example
- 2:</span></p>
-<p style="font-size: 10pt; margin-left: 12px; font-weight: normal; font-family: 'Courier New', monospace;"><font
-	 color="#000000"><font color="#0000FF">PROC</font> SEX <font color="#008000">//&#160;in
- this example SEX is not on the FERTILITY record<br />
-</font><br />
-<font color="#0000FF">if</font> SEX &lt;&gt; <font color="#FF0000">2</font>
- <font color="#0000FF">and</font> <font color="#0000FF">countnonspecial</font>(FERTILITY(<font
-	 color="#0000FF">curocc</font>())) &gt; <font color="#FF0000">3</font>
- <font color="#0000FF">then</font><br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;Sex
- (%d) is not female but 4+ fertility entries defined so sex changed to
- female&quot;</font>,SEX);<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">impute</font>(SEX,<font color="#FF0000">2</font>);<br />
-<font color="#0000FF">endif</font>;</font></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-weight: bold;"><span style="font-family: Arial, sans-serif;
-													 font-size: 10pt; font-weight: bold;">Example
- 3:</span></p>
-<p style="font-size: 10pt; margin-left: 12px; font-weight: normal; font-family: 'Courier New', monospace;"><font
-	 color="#0000FF">numeric</font> numDefinedValues = <font color="#0000FF">countnonspecial</font>(SEX(*),AGE(*));<br />
-<font color="#0000FF">numeric</font> numPossibleValues = <font color="#FF0000">2</font>
- * <font color="#0000FF">totocc</font>(POPULATION);<br />
-<br />
-<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;%d% of
- sex and age values are missing&quot;</font>,<font color="#FF0000">100</font>
- * ( <font color="#FF0000">1</font> - ( numDefinedValues / numPossibleValues
- ) ));<span style="font-size: 10pt; margin-left: 12px; font-weight: normal;
-			 font-family: 'Courier New', monospace;"><font color="#000000"><br />
-&#160;</font></span></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-weight: bold;">See also: <a href="special_function.html">Special
- Function</a>, <a href="special_values.html">Special Values</a></p>
-</body>
-</html>
+<logicsyntax>
+i = countnonspecial(<arg>item_name</arg> ‖ <arg>record_name</arg> ‖ <arg>array_name</arg> ‖ <arg>numeric_expression</arg>『,...』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The function <logiccolor>countnonspecial</logiccolor> counts the number of non-special values within the passed arguments. Special arguments include <logiccolor>missing</logiccolor>, <logiccolor>notappl</logiccolor>, and <logiccolor>default</logiccolor>. The function can receive multiple numeric arguments, including items, records, arrays, and numeric expressions. This function can greatly simplify some programming tasks; for example, the following two lines of code are the same:
+
+<logic>
+if countnonspecial(RELATIONSHIP,SEX,AGE) = 3 then
+
+if not special(RELATIONSHIP) and not special(SEX) and not special(AGE) then
+</logic>
+
+If an array is passed, the function will count the non-special values among all the values in the array. For a multiply occurring item or record, to count the non-special values for all the items or records instead of just the current occurrence, include (*) after the item or record name.
+
+<logiccolor>CountValid</logiccolor> is a synonym for this function.
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC GLOBAL
+
+	numeric tempVal = notappl;
+	array tempArray(2,3) = 1 2 3 notappl missing default;
+
+PROC EXAMPLE
+
+	countnonspecial(5,tempVal,default,28 + 31,3 / 0); // returns 2
+
+	tempVal = 0.123456789;
+	countnonspecial(5,tempVal,default,28 + 31,3 / 0); // returns 3
+
+	countnonspecial(5,tempVal,default,28 + 31,3 / 0,tempArray); // returns 6
+
+	tempArray(2,1) = 0;
+	countnonspecial(5,tempVal,default,28 + 31,3 / 0,tempArray); // returns 7
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+// in this example SEX is not on the FERTILITY record
+PROC SEX
+
+if SEX <> 2 and countnonspecial(FERTILITY(curocc())) > 3 then
+	errmsg("Sex (%d) is not female but 4+ fertility entries defined so sex changed to female",SEX);
+	impute(SEX,2);
+endif;
+</logic>
+
+<subheader>Example 3</subheader>
+
+<logic>
+numeric numDefinedValues = countnonspecial(SEX(*),AGE(*));
+numeric numPossibleValues = 2 * totocc(POPULATION);
+
+errmsg("%d% of sex and age values are missing",100 * ( 1 - ( numDefinedValues / numPossibleValues ) ));
+</logic>
+
+<seealso special_function.hgt special_values.hgt />

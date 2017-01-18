@@ -1,79 +1,31 @@
-﻿<title>Getocclabel Function</title>
+﻿<title>GetOccLabel Function</title>
 <context logic_help_getocclabel />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><span
-	 style="font-size: 12pt;"><b><font style="font-family: Arial; font-size: 18pt;
-										 font-weight: bold;" color="#0000FF"
-										 face="Arial" size="5">Getocclabel</font></b>
- <b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;"
-			 face="Arial" size="5">Function</font></b></span></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">s =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">getocclabel</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(</font><span style="font-style: italic;"><font style="font-family: 'Courier New';
-	 font-size: 10pt; font-style: normal;" color="#FF00FF" face="Courier New"
-	 size="2">[</font><font style="font-family: 'Courier New'; font-size: 10pt;"
-							 face="Courier New" size="2">item-name | group</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: normal;"
-	 color="#FF00FF" face="Courier New" size="2">]</font></span><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">getocclabel</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">function returns the occurrence
- label for a repeating item or group (i.e., the row label of a roster).
- If no <span style="font-style: italic;">item name</span> or <span style="font-style: italic;">group</span>
- is given, the function returns the occurrence label of the current field,
- as calculated as follows:</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2"><font color="#000000"><font color="#0000FF">getocclabel</font>($(<font
-	 color="#0000FF">curocc</font>($)))</font></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><font><font color="#000000"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Return value:</font></b></font></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The function returns a string containing the occurrence label.
- If an occurrence label for the item or group item does not exist, the
- function returns a blank string.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><font><font color="#000000"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example:</font></b></font></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New'; font-size: 10pt;"><span style="color: #0000ff;">if</span>
- EXPENSES &gt; SALES <font color="#0000FF">then</font><br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;You
- could not have made a profit on %s if expenses were greater than sales.&quot;</font>,<font
-	 color="#0000FF">getocclabel</font>());<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">reenter</font>;<br />
-<font color="#0000FF">endif</font>;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="Occurrence_Labels.html">Occurrence
- Labels</a>, <a href="create_fills_in_questions.htm" style="font-family: Arial, sans-serif;">Create
- Fills In Questions</a>, <a href="Functions/Setocclabel_Function.html">Setocclabel
- Function</a></p>
-</body>
-</html>
+<logicsyntax>
+s = getocclabel(『<arg>item_name</arg> ‖ <arg>group_name</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>getocclabel</logiccolor> function returns the occurrence label for a repeating item or group (i.e., the row label of a roster). If no <arg>item_name</arg> or <arg>group_name</arg> is given, the function returns the occurrence label of the current field, as calculated as follows:
+
+<logic>
+s = getocclabel($(curocc($)));
+</logic>
+
+<subheader>Return Value</subheader>
+
+The function returns a string containing the occurrence label. If an occurrence label for the item or group does not exist, the function returns a blank string.
+
+<subheader>Example</subheader>
+
+<logic>
+if EXPENSES > SALES then
+	errmsg("You could not have made a profit on %s if expenses were greater than sales.",getocclabel());
+	reenter;
+endif;
+</logic>
+
+<seealso setocclabel_function.hgt occurrence_labels.hgt create_fills_in_questions.hgt />

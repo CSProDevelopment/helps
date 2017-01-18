@@ -1,75 +1,28 @@
-﻿<title>Getimage Function</title>
+﻿<title>GetImage Function</title>
 <context logic_help_getimage />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><span
-	 style="font-size: 12pt;"><b><font style="font-family: Arial; font-size: 18pt;
-										 font-weight: bold;" color="#0000FF"
-										 face="Arial" size="5">Getimage</font></b>
- <b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;"
-			 face="Arial" size="5">Function</font></b></span></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">s =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">getimage</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2"><span style="font-size: 10pt;">(</span><span style="font-size: 10pt;
-															 font-style: italic;">item</span><span
-	 style="font-size: 10pt;"> | </span><span style="font-size: 10pt; font-style: italic;">value-set</span><span
-	 style="font-size: 10pt;">,</span><span style="font-size: 10pt; font-style: italic;">value</span><span
-	 style="font-size: 10pt;">);</span></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <span style="font-family: Arial; font-size: 10pt; font-weight: bold;">getimage</span>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">function
- returns the filename of a value set image. Based on the provided item
- or value set, the image filename associated with the provided value will
- be returned. If an item name is used instead of a value set name, then
- the function will search for the relevant image in the item's current
- value set.</font></p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Return value:</font></b></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The function returns a string containing the image filename,
- or a blank string if there is no value set image for the provided value
- or if the provided value does not exist in the value set.</font></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New', monospace; font-size: 10pt;"><span style="color: #0000ff;">PROC</span>
- IMAGE_SELECTOR<br />
-<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">string</font> imageFilename
- = <font color="#0000FF">getimage</font>(IMAGE_SELECTOR_VS1,IMAGE_SELECTOR);<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">execsystem</font>(<font color="#FF00FF">&quot;view:&quot;</font>
- + imageFilename);</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif; font-size: 10pt;"><b><font style="font-weight: bold;">See
- also:</font></b> <a href="../getlabel_function.html">Getlabel Function</a>,
- <a href="../setvalueset_function.html">Setvalueset Function</a>, <a href="../Execsystem_Function_(Android).html">Execsystem
- Function (Android)</a></p>
-</body>
-</html>
+<logicsyntax>
+s = getimage(<arg>item_name</arg> ‖ <arg>value_set_name</arg>,<arg>value</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>getimage</logiccolor> function returns the filename of a value set image. Based on the provided item or value set, the image filename associated with the <arg>value</arg> will be returned. The <arg>value</arg> is either a numeric or string expression, based on the type of the item. If an <arg>item_name</arg> is used instead of a <arg>value_set_name</arg>, then the function will search for the relevant image in the item's current value set.
+
+<subheader>Return Value</subheader>
+
+The function returns a string containing the image filename, or a blank string if there is no value set image for the provided value or if the provided value does not exist in the value set.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC IMAGE_SELECTOR
+
+    string imageFilename = getimage(IMAGE_SELECTOR_VS1,IMAGE_SELECTOR);
+
+	execsystem("view:" + imageFilename);
+</logic>
+
+<seealso getlabel_function.hgt setvalueset_function.hgt />

@@ -1,234 +1,41 @@
-﻿<title>Sysdate Function</title>
+﻿<title>SysDate Function</title>
 <context logic_help_sysdate />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Sysdate</font></b> <b><font style="font-family: Arial;
-														 font-size: 18pt;
-														 font-weight: bold;"
-														 face="Arial" size="5">Function</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">i =</font> <b><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-weight: bold;"
-													 color="#0000FF" face="Courier New"
-													 size="2">sysdate</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">[</font><i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 color="#000000" face="Courier New" size="2">date-format</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">]</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">);</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#FF00FF" face="Arial"
-		 size="2">[ ]</font> <font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">indicates
- that this part is optional.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">sysdate</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">function
- returns the current system date as an integer.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <i><font style="font-family: Arial; font-size: 10pt; font-style: italic;"
-			 face="Arial" size="2">date-format</font></i> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">is an alphanumeric expression
- composed of a combination of DD (days), MM (months), and/or YY or YYYY
- (years). YY returns the current year in two digits, while YYYY returns
- it in four digits. The strings DD, MM and YY or YYYY can be put together
- in any order to make up a customized format. If no date-format is specified,
- the</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-					 face="Arial" size="2">sysdate</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">function will return the date
- in the format &quot;YYMMDD&quot;.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The current date can be returned as a string using the</font>
- <a href="edit_function.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">edit</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">function as follows:</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 21.60pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 color="#0000FF" face="Courier New"
-									 size="2">edit</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">(</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">&quot;99/99/99&quot;</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">,</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">sysdate</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#000000" face="Courier New"
-													 size="2">(</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">&quot;DDMMYY&quot;</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">));</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Return value:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The function returns the system date as an integer. If the</font>
- <i><font style="font-family: Arial; font-size: 10pt; font-style: italic;"
-			 color="#000000" face="Arial" size="2">date-format</font></i>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">is invalid, the function returns 0.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 1:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">If the current date is December 17, 1999, the following calls
- would return:</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">x =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">sysdate</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;DDMMYYYY&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">); returns 17121999</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">x =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">sysdate</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;MMYYYY&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">); returns 121999</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">x =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">sysdate</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;DD&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">); returns 17</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">x =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">sysdate</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(); returns 991217</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 2:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">If the current date is March 8, 2000, the following calls
- would return:</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">x =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">sysdate</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;DDMMYYYY&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">); returns 8032000</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">x =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">sysdate</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;MMYYYY&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">); returns 32000</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">x =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">sysdate</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;MMYY&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">); returns 300</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">x =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">sysdate</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;DD&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">); returns 8</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New';" face="Courier New">x =</font>
- <font style="font-family: 'Courier New';" color="#0000FF" face="Courier New">sysdate</font><font
-	 style="font-family: 'Courier New';" face="Courier New">(); returns
- 308</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;"><b><span style="font-weight: bold;">See
- also:</span></b> <a href="Dateadd_Function.htm" style="font-family: Arial, sans-serif;
-					 font-size: 10pt;">Dateadd Function</a>, <a href="Datediff_Function.htm"
-	 style="font-family: Arial, sans-serif; font-size: 10pt;">Datediff
- Function</a>, <a href="Datevalid_Function.html">Datevalid Function</a>,
- <a href="Functions/Publishdate_Function.html">Publishdate Function</a>,
- <a href="systime_function.html">Systime Function</a></p>
-</body>
-</html>
+<logicsyntax>
+i = sysdate(『<arg>date_format</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>sysdate</logiccolor> function returns the current system date as an integer. The optional string expression <arg>date_format</arg> is composed of a combination of DD (days), MM (months), and/or YY or YYYY (years). YY returns the current year in two digits, while YYYY returns it in four digits. The strings DD, MM and YY or YYYY can be put together in any order to make up a customized format. If no date format is specified, the function returns the date in the format YYMMDD.
+
+The current date can be returned as a string using the <logiccolor>edit</logiccolor> function as follows:
+
+<logic>
+edit("9999-99-99",sysdate("YYYYDDMM"));
+</logic>
+
+<subheader>Return Value</subheader>
+
+The function returns the system date as an integer. If the date format is invalid, the function returns 0.
+
+<subheader>Example</subheader>
+
+<logic>
+// if the current date is December 17, 1999...
+x = sysdate("DDMMYYYY");	// returns 17121999
+x = sysdate("MMYYYY");		// returns 121999
+x = sysdate("DD");			// returns 17
+x = sysdate();				// returns 991217
+
+// if the current date is March 8, 2000...
+x = sysdate("DDMMYYYY");	// returns 8032000
+x = sysdate("MMYYYY");		// returns 32000
+x = sysdate("MMYY");		// returns 300
+x = sysdate("DD");			// returns 8
+x = sysdate();				// returns 308
+</logic>
+
+<seealso dateadd_function.hgt datediff_function.hgt datevalid_function.hgt publishdate_function.hgt systime_function.hgt timestamp_function.hgt />

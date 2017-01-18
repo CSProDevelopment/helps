@@ -1,91 +1,39 @@
-﻿<title>Setocclabel Function</title>
+﻿<title>SetOccLabel Function</title>
 <context logic_help_setocclabel />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><span
-	 style="font-size: 12pt;"><b><font style="font-family: Arial; font-size: 18pt;
-										 font-weight: bold;" color="#0000FF"
-										 face="Arial" size="5">Setocclabel</font></b>
- <b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;"
-			 face="Arial" size="5">Function</font></b></span></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-size: 10pt;"><font style="font-family: 'Courier New';" face="Courier New"><span
-	 style="font-family: 'Courier New';">b</span> =</font> <b><font style="font-family: 'Courier New';
-	 font-weight: bold;" color="#0000FF" face="Courier New">setocclabel</font></b><font
-	 style="font-family: 'Courier New';" face="Courier New">(</font><span
-	 style="font-style: italic;"><font style="font-family: 'Courier New';
-										 font-style: normal;" color="#FF00FF"
-										 face="Courier New">[</font><font
-	 style="font-family: 'Courier New';" face="Courier New">item-name |
- group</font><font style="font-family: 'Courier New'; font-style: normal;"
-					 color="#FF00FF" face="Courier New">]</font></span><i><font
-	 style="font-family: 'Courier New'; font-style: italic;" face="Courier New"><span
-	 style="font-style: normal;">,</span>alpha-exp</font></i><font style="font-family: 'Courier New';"
-	 face="Courier New">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">setocclabel</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">function sets the occurrence
- label for a repeating item or group (i.e., the row label of a roster).
- This is especially useful when designing applications for Android devices,
- as it allows you to specify the label that is displayed in the navigational
- case tree.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><font><font color="#000000"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Return value:</font></b></font></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: Arial; font-size: 10pt;">The function returns a logical
- value of 1 (true) if the label was set successfully and 0 (false) if the
- <span style="font-family: Arial; font-size: 10pt;">occurrence for the
- item or group item does not exist.</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
-	 font-size: 10pt; font-weight: bold;"><b><font style="font-weight: bold;">Example
- 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New', monospace; font-size: 10pt;"><font color="#0000FF">PROC
- </font>PERSON_NAME<br />
-<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">setocclabel</font>(PERSON_ROSTER,<font
-	 color="#0000FF">strip</font>(PERSON_NAME));</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
-	 font-size: 10pt; font-weight: bold;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
-	 font-size: 10pt; font-weight: bold;"><b><font style="font-weight: bold;">Example
- 2:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New', monospace; font-size: 10pt;"><font color="#0000FF">PROC
- </font>MYSURVEY_QUEST<br />
-<br />
-<font color="#0000FF">preproc</font><br />
-<br />
-&#160;&#160;&#160;&#160;<font color="#008000">//&#160;fill in occurrence
- labels for the household roster<br />
-</font>&#160;&#160;&#160;&#160;<font color="#0000FF">numeric</font> ctr;<br />
-<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">do</font> ctr = <font color="#FF0000">1</font>
- <font color="#0000FF">while</font> ctr &lt;= <font color="#0000FF">totocc</font>(PERSON_ROSTER)<br />
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">setocclabel</font>(PERSON_ROSTER(ctr),
- <font color="#0000FF">strip</font>(NAME(ctr)));<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">enddo</font>;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="../Occurrence_Labels.html">Occurrence
- Labels</a>, <a href="../Getocclabel_Function.html">Getocclabel Function</a></p>
-</body>
-</html>
+<logicsyntax>
+b = setocclabel(『<arg>item_name</arg> ‖ <arg>group_name</arg>,』<arg>occurrence_label</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>setocclabel</logiccolor> function sets the occurrence label for a repeating item or group (i.e., the row label of a roster). This is especially useful when designing applications for Android devices, as it allows you to specify the label that is displayed in the navigational case tree. If no <arg>item_name</arg> or <arg>group_name</arg> is given, the function sets the occurrence label of the current field. The occurrence label is set to the string expression <arg>occurrence_label</arg>.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the label was set successfully and 0 (false) if the occurrence for the item or group item does not exist.
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC PERSON_NAME
+
+	setocclabel(PERSON_ROSTER,strip(PERSON_NAME));
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC MYSURVEY_QUEST
+
+preproc
+
+	// fill in occurrence labels for the household roster
+	do numeric ctr = 1 while ctr <= totocc(PERSON_ROSTER)
+		setocclabel(PERSON_ROSTER(ctr),strip(NAME(ctr)));
+	enddo;
+</logic>
+
+<seealso getocclabel_function.hgt occurrence_labels.hgt />
