@@ -1,193 +1,45 @@
 ﻿<title>Type of Edits in Data Entry</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Validate Individual Data Items</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Type of Edits in Data Entry</font></b></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Validate individual data items:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">These checks are designed to determine whether a response
- has a value that is inside or outside the valid limits for that response
- as defined in the Data Dictionary. The data entry application can be designed
- to allow</font> <a href="change_data_entry_options.html"><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">forcing out-of-range</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">values, to force the operator to</font> <a href="reenter_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">reenter</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">a valid value, or</font> <a href="noinput_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">not
- to allow</font></a> <font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">any
- input on the item.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Perform structure or consistency edits</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial; font-size: 10pt;">You can write code to check
- the <a href="structure_edits.html">structure</a> of the case or test the
- <a href="consistency_edits.html">consistency</a> within related items.
- These instructions can be written for any object such as a case, level,
- form, record, roster, or field. The instructions can be executed before
- the cursor moves into the object (<a href="onfocus_statement.html">Onfocus
- Statement</a>); at the beginning of an object (<a href="preproc_statement.html">Preproc
- Statement</a>); after cursor moves off the object (<a href="killfocus_statement.html">Killfocus
- Statement</a>); or at the end of the object (<a href="postproc_statement.html">Postproc
- Statement</a>). You can also perform <a href="csentry.chm::edit_interactively.html">Interactive
- Editing</a> after you finish entering a case.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Display error messages</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The system displays automatic error messages if the item
- is out-of-range, but you can also use the</font> <a href="errmsg_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Errmsg
- Function</font></a> <font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">to write
- customized messages to be displayed in the screen during data entry.</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 color="#000000" face="Arial" size="2">&#160;</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Control the data entry flow</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
- can use</font> <a href="skip_statement.html"><font style="font-family: Arial;
-													 font-size: 10pt;"
-													 face="Arial" size="2">skip</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">or</font>
- <a href="advance_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">advance</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">statements
- to control the data entry flow in a case or end data entry at any time
- if a particular condition occurs. See</font> <a href="endlevel_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Endlevel</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="endgroup_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Endgroup</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">statements</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Control stopping data entry</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The</font> <a href="onstop_global_function.html"><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">onstop</font></a> <font style="font-family: Arial;
-	 font-size: 10pt;" color="#000000" face="Arial" size="2">function can
- be used to keep the operator from stopping data entry or to allow stopping
- only under certain conditions. You can also</font> <a href="stop_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">stop</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">the application for the current case or terminate the
- operation. You can stop the application at any time and the system will</font>
- <a href="savepartial_function.html"><font style="font-family: Arial; font-size: 10pt;"
-											 face="Arial" size="2">save
- the partial</font></a> <font style="font-family: Arial; font-size: 10pt;"
-								 color="#000000" face="Arial" size="2">case.
- See also</font> <a href="ispartial_function.html"><font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">Ispartial
- Function</font></a></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Write notes</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Write
- notes on a field and saved on a separate file with extension .NOT. The
- notes can be viewed by the operator and/or edited. Can be used to display
- instructions to the keyer or elaborate on a particular value. See</font>
- <a href="putnote_function.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Putnote</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="getnote_function.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Getnote</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,
- and</font> <a href="editnote_function.html"><font style="font-family: Arial;
-													 font-size: 10pt;"
-													 face="Arial" size="2">Editnote</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Functions.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Generate reports</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">You can</font> <a href="write_function.html"><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">write</font></a> <font style="font-family: Arial;
-	 font-size: 10pt;" color="#000000" face="Arial" size="2">customize
- reports to a file. Ex: Create a report to summarize the demographic characteristics
- in the household; or to produce a reorganized version of some items on
- the data file.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Use secondary forms</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">You can use a secondary form to</font> <a href="enter_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">enter</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">data under certain conditions.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Display option menus</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The system displays a window with the valid values and the
- operator may select the correct one. See</font> <a href="accept_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Accept
- Function.</font></a></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Use external files</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The most common functions are</font> <a href="loadcase_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Loadcase
- Function</font></a> <font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">and</font>
- <a href="retrieve_function.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Retrieve
- Function</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">. The</font>
- <a href="selcase_function.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Selcase
- Function</font></a> <font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">can
- only be used in data entry applications. See &quot;External File Functions&quot;
- for a complete list.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Examine content of item</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">You can examine the content of a numeric item (Visualvalue
- Function) or alphanumeric item (Highlighted Function) before the item
- has been keyed.</font></p>
-</body>
-</html>
+These checks are designed to determine whether a response has a value that is inside or outside the valid limits for that response as defined in the dictionary. The data entry application can be designed to allow <link change_data_entry_options.hgt>forcing out-of-range</link> values, to force the operator to <link reenter_statement.hgt>reenter</link> a valid value, or <link noinput_statement.hgt>not to allow</link> any input on the item.
+
+<subheader>Perform Structure or Consistency Edits</subheader>
+
+You can write code to check the <link structure_edits.hgt>structure</link> of the case or test the <link consistency_edits.hgt>consistency</link> within related items. These instructions can be written for any object such as a case, level, form, record, roster, or field. The instructions can be executed before the cursor moves into the object (<logiccolor>onfocus</logiccolor>); at the beginning of an object (<logiccolor>preproc</logiccolor>); after cursor moves off the object (<logiccolor>killfocus</logiccolor>); or at the end of the object (<logiccolor>postproc</logiccolor>). You can also perform <link CSEntry::edit_interactively.hgt>Interactive Editing</link> after you finish entering a case.
+
+<subheader>Display Error Messages</subheader>
+
+The system displays automatic error messages if the item is out-of-range, but you can also use the <logiccolor>errmsg</logiccolor> function to write customized messages to be displayed in the screen during data entry.  
+
+<subheader>Control the Data Entry Flow</subheader>
+
+You can use <logiccolor>skip</logiccolor> or <logiccolor>advance</logiccolor> statements to control the data entry flow in a case or end data entry at any time if a particular condition occurs. Also see the <logiccolor>endgroup</logiccolor> and <logiccolor>endlevel</logiccolor> statements.
+
+<subheader>Control Stopping Data Entry</subheader>
+
+The <logiccolor>OnStop</logiccolor> function can be used to keep the operator from stopping data entry or to allow stopping only under certain conditions. You can also <logiccolor>stop</logiccolor> the application for the current case or terminate the operation. You can stop the application at any time and the system will <link savepartial_function.hgt>save the partial case</link>. Also see the <logiccolor>ispartial</logiccolor> function.
+
+<subheader>Write Notes</subheader>
+
+You can add notes to a field, which can be viewed by the operator and/or edited. These notes can be used to display instructions to the keyer or to elaborate on a particular value. See the <logiccolor>putnote</logiccolor>, <logiccolor>getnote</logiccolor>, and <logiccolor>editnote</logiccolor> functions.
+
+<subheader>Generate Reports</subheader>
+
+You can <logiccolor>write</logiccolor> customized reports to a file. For example, you could create a report to summarize the demographic characteristics in the household.
+
+<subheader>Use Secondary Forms</subheader>
+
+You can use a secondary form to <logiccolor>enter</logiccolor> data under certain conditions.
+
+<subheader>Display Option Menus</subheader>
+
+The system displays a window with the valid values and the operator may select the correct one. See the <logiccolor>accept</logiccolor> or <logiccolor>showarray</logiccolor> functions.
+
+<subheader>Use External Files</subheader>
+
+The most common functions are <logiccolor>loadcase</logiccolor> and <logiccolor>retrieve</logiccolor>. The <logiccolor>selcase</logiccolor> Function can only be used in data entry applications.
+
+<subheader>Examine Content of Item</subheader>
+
+You can examine the content of a numeric item with the <logiccolor>visualvalue</logiccolor> function or alphanumeric item with the <logiccolor>highlighted</logiccolor> function before the item has been keyed.

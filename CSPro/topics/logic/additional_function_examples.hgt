@@ -1,0 +1,57 @@
+﻿<title>Additional Examples of User-Defined Functions</title>
+
+These are examples of more advanced ways to work with user-defined functions in CSPro.
+
+<subheader>Recursive Functions </subheader>
+
+<logic>
+function NumberDescendantsInHH(ptrPerson)
+
+	numeric cntDescendants;
+
+	do numeric hhCtr = 1 while hhCtr <= totocc(PERSON_REC)
+
+		if LN_FATHER(hhCtr) = ptrPerson or LN_MOTHER(hhCtr) = ptrPerson then
+			inc(cntDescendants,NumberDescendantsInHH(hhCtr));
+		endif;
+
+	enddo;
+
+	NumberDescendantsInHH = cntDescendants;
+
+end;
+</logic>
+
+<subheader>Function Pointers</subheader>
+
+<logic>
+function FilteredCountInHH(function filter(numeric))
+
+	numeric cnt;
+
+	do numeric hhCtr = 1 while hhCtr <= totocc(PERSON_REC)
+
+		if filter(hhCtr) then
+			inc(cnt);
+		endif;
+
+	enddo;
+
+	FilteredCountInHH = cnt;
+
+end;
+
+function IsTeenager(ptrPerson)
+	IsTeenager = ( AGE(ptrPerson) in 13:19 );
+end;
+
+function IsFertileWoman(ptrPerson)
+	IsFertileWoman = ( SEX(ptrPerson) = 2 and AGE(ptrPerson) in 15:49 );
+end;
+
+
+PROC ANALYSIS
+
+	numeric cntTeenagers = FilteredCountInHH(IsTeenager);
+	numeric cntFertileWomen = FilteredCountInHH(IsFertileWoman);
+</logic>

@@ -1,209 +1,61 @@
 ﻿<title>Types of Edits in Batch Editing</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Overview</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Types of Edits in Batch Editing</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Errors
- in data can be (roughly) categorized as problems in either</font> <a href="structure_edits.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">structure</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">or</font>
- <a href="consistency_edits.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">consistency</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">.
- Problems with structure may require a different approach to correction
- than will problems with validity or consistency. For this reason, many
- users choose to implement a two-stage edit, where the data are first rendered
- structurally correct, and then passed through a second edit to ensure
- that all items are valid and consistent. However, it is expected that
- while the subject-matter specialists will have established rules for validity
- and consistency, the computer specialist may have equally important input
- into the definition of structural validity.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">After
- keying or scanning your data, there will be errors in the data file. This
- is unavoidable, and will be a combination of human and computer error.
- It will therefore be necessary to correct the data by writing a series
- of edit routines (procedures) to systematically and consistently clean
- your data files.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- Batch Edit Designer module allows you to create and modify batch edit
- applications. A batch editing application contains logic which you can
- apply against one set of files to produce another set of files and reports.
- Batch editing applications can be used to gather information about a data
- file.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
- create these edit routines, you will use CSPro to develop the batch editing
- application based on the dictionary (.dcf) that describes your data file(s).
- If you received this datafile from someone else and do not have a dictionary
- that describes it, you will need to</font> <a href="creating_a_dictionary_for_a_new_file.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">create
- a dictionary</font></a> <font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">before you are ready
- to develop programming logic for it. You use CSBatch to run the application.
- For small surveys and for testing applications, you can</font> <a href="run_a_batch_edit_application.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">run
- CSBatch</font></a> <font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">directly from CSPro,
- on the same computer. For large surveys and censuses, which require a
- production environment, you can transfer the application files to other
- computers and</font> <a href="run_production_batch_edits.html"><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">run CSBatch</font></a> <font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">on
- them.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
- can have the following run-time features in your batch editing application:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.50pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">â€¢&#160;Check</font></b>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">case/questionnaire structure:&#160;&#160;</font></b></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">These
- checks ascertain that all records that should be present for a particular
- questionnaire [case] are supplied, and that no extra records are included.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Validate individual data items:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">These checks are designed to determine whether a response
- has a value that is inside or outside the valid limits for that response.
- Although these checks are normally performed during data entry, you can
- also perform them with CSBatch.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 0.15pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Test consistency between items:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">In these checks, two or more responses in a questionnaire
- are compared for consistency. For example</font> <font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">a
- male person reporting having any children is an inconsistency between
- the response to &quot;sex&quot; and the response to &quot;children born&quot;.
- (Only&#160;females report &quot;children born&quot;.) The responses being
- compared may be in the same record or in different records within a questionnaire.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 0.30pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Automatic modification:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">When a census or other large survey is being processed, it
- would be unduly cumbersome to make</font> <font style="font-family: Arial;
-												 font-size: 10pt;" face="Arial"
-												 size="2">most data corrections
- by visually examining the errors. CSPro provides the facility for not
- only finding incorrect or inconsistent data, but also making modification
- to the data. Needless to say, modifications are not always corrections.
- Moreover, any modifications to data that have been collected must be carefully
- thought out and monitored through CSPro's edit statistics reports.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 0.45pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Generate edit reports automatically:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">CSPro</font> <font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">generates comprehensive
- statistics about the edit tests carried out and the number of changes
- made to the data. The user may also create a customized report including
- or excluding any of the information generated by CSPro during the editing
- process.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Generate reports</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">You can write
- customize reports to a file.</font></p>
-<p style="text-align: left; margin-left: 21.45pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Match files:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">CSPro allow for matching two files and gathering information
- from both. The feature is useful, for example, when a file must be created
- which has a combination of data from two other files.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Modify data values:</font></b></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">During the editing process, values that are invalid, inconsistent,
- or otherwise unacceptable will need to be replaced with correct values.</font></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Use arrays for imputations</font></b></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Whether you choose to correct data using &quot;hot-&quot;
- or &quot;cold-deck&quot; methodology, the arrays are easily defined, accessed,
- and updated.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Generate imputation statistics</font></b></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">CSBatch will automatically keep track of changes, but users
- my choose to format reports to their specifications. By specifying a denominator
- variable, users may obtain rates of imputation, including rates for individual
- values [e.g., &quot;male&quot; or &quot;female&quot; when imputing the
- variable &quot;Sex&quot;].</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Create additional variables</font></b></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Recoded or composite variables may be created during the
- editing process. The only requirement is that space be allocated [via
- the data dictionary for the file] in the output record. The updated output
- file is automatically created when a file name is specified at the time
- of execution.</font></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">â€¢&#160;Reference multiple lookup files</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">An
- essentially unlimited number of secondary or auxiliary files may be attached
- to an application and used as reference or look-up files. The application
- may read from and write to any of these files.</font></p>
-</body>
-</html>
+Errors in data can be (roughly) categorized as problems in either <link structure_edits.hgt>structure</link> or <link consistency_edits.hgt>consistency</link>. Problems with structure may require a different approach to correction than will problems with validity or consistency. For this reason, many users choose to implement a two-stage edit, where the data are first rendered structurally correct, and then passed through a second edit to ensure that all items are valid and consistent. However, it is expected that while the subject-matter specialists will have established rules for validity and consistency, the computer specialist may have equally important input into the definition of structural validity.
+
+After keying or scanning your data, there will be errors in the data file. This is unavoidable, and will be a combination of human and computer error. It will therefore be necessary to correct the data by writing a series of edit routines (procedures) to systematically and consistently clean your data files.
+
+The <b>Batch Edit Designer</b> module allows you to create and modify batch edit applications. A batch editing application contains logic which you can apply against one set of files to produce another set of files and reports. Batch editing applications can be used to gather information about a data file.
+
+To create these edit routines, you will use CSPro to develop the batch editing application based on the dictionary that describes your data files. If you received this data file from someone else and do not have a dictionary that describes it, you will need to <link creating_a_dictionary_for_a_new_file.hgt>create a dictionary</link> before you are ready to develop programming logic for it. You use CSBatch to run the application. For small surveys and for testing applications, you can <link run_a_batch_edit_application.hgt>run CSBatch</link> directly from CSPro, on the same computer. For large surveys and censuses, which require a production environment, you can transfer the application files to other computers and <link run_production_batch_edits.hgt>run CSBatch</link> on them.
+
+You can have the following runtime features in your batch editing application:
+
+<subheader>Check Case/Questionnaire Structure</subheader>
+
+These checks ascertain that all records that should be present for a particular questionnaire (case) are supplied and that no extra records are included.
+
+<subheader>Validate Individual Data Items</subheader>
+
+These checks are designed to determine whether a response has a value that is inside or outside the valid limits for that response. Although these checks are normally performed during data entry, you can also perform them with CSBatch.
+
+<subheader>Test Consistency Between Items</subheader>
+
+In these checks, two or more responses in a questionnaire are compared for consistency. For example a male person reporting having any children is an inconsistency between the response to <b>sex</b> and the response to <b>children born</b>. (Only females report <b>children born</b>.) The responses being compared may be in the same record or in different records within a questionnaire.
+
+<subheader>Automatic Modification</subheader>
+
+When a census or other large survey is being processed, it would be unduly cumbersome to make most data corrections by visually examining the errors. CSPro provides the facility for not only finding incorrect or inconsistent data, but also making modification to the data. Needless to say, modifications are not always corrections. Moreover, any modifications to data that have been collected must be carefully thought out and monitored through CSPro's edit statistics reports.
+
+<subheader>Generate Edit Reports Automatically</subheader>
+
+CSPro generates comprehensive statistics about the edit tests carried out and the number of changes made to the data. The user may also create a customized report including or excluding any of the information generated by CSPro during the editing process.
+
+<subheader>Generate Reports</subheader>
+
+You can write customize reports to a file.
+
+<subheader>Match Files</subheader>
+
+CSPro allow for matching two files and gathering information from both. The feature is useful, for example, when a file must be created which has a combination of data from two other files.
+
+<subheader>Modify Data Value</subheader>
+
+During the editing process, values that are invalid, inconsistent, or otherwise unacceptable will need to be replaced with correct values.
+
+<subheader>Use Arrays for Imputations</subheader>
+
+Whether you choose to correct data using hotdeck or cold-deck methodology, the arrays are easily defined, accessed, and updated.
+
+<subheader>Generate Imputation Statistics</subheader>
+
+CSBatch will automatically keep track of changes, but users my choose to format reports to their specifications. By specifying a denominator variable, users may obtain rates of imputation, including rates for individual values (e.g., <b>male</b> or <b>female</b> when imputing the variable <b>Sex</b>).
+
+<subheader>Create Additional Variables</subheader>
+
+Recoded or composite variables may be created during the editing process. The only requirement is that space be allocated (via the dictionary for the file) in the output record. The updated output file is automatically created when a file name is specified at the time of execution.
+
+<subheader>Reference Multiple Lookup Files</subheader>
+
+An essentially unlimited number of secondary or auxiliary files may be attached to an application and used as reference or lookup files. The application may read from and write to any of these files.

@@ -1,84 +1,11 @@
 ﻿<title>Set Compiler Defaults</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+From within an application, an option is available that determines if variables must be declared. By default, CSPro sets the mode of operation to <link compiler_mode.hgt>explicit</link>, but the user can change the behavior to <link compiler_mode.hgt>implicit</link> by going to the <b>Options</b> menu and removing the check next to the <b>Set Explicit</b> option. Alternatively, you may include a <logiccolor>set explicit/implicit</logiccolor> command in your program to override the system setting. The following explains the impact of programmatically setting this switch, as opposed to using the system setting:
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Set Compiler Defaults</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">From
- within an application, an option is available that determines if variables
- must be declared. By default, CSPro sets the mode of operation to <a href="compiler_mode.html">explicit</a>,
- but the user can change the behavior to <a href="compiler_mode.html">implicit</a>
- by going to the <b><font style="font-weight: bold;">Options</font></b>
- menu, and removing the check next to the <b><font style="font-weight: bold;">Set
- Explicit</font></b> option. Alternatively, you may include a <b><font
-	 style="font-weight: bold;">set explicit/implicit</font></b> command
- in your program to override the system setting. The following explains
- the impact of programmatically setting this switch, as opposed to using
- the system setting:</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<table style="left: 0px; top: 120px; border-collapse: separate; border-collapse: separate;"
-		 cellspacing="0" width="620" border="1">
-	<col style="width: 28.509%;" />
-	<col style="width: 71.491%;" />
-	<tr>
-		<td><b><u><font style="font-weight: bold; text-decoration: underline; ">System
-		 Setting</font></u></b></td>
-		<td><b><u><font style="font-weight: bold; text-decoration: underline; ">Program
-		 Setting</font></u></b><b><font style="font-weight: bold;">&#160;</font></b><b><u><font
-		 style="font-weight: bold; text-decoration: underline; ">Result</font></u></b></td>
-	</tr>
-	<tr>
-		<td><font style="font-family: Wingdings;" face="Wingdings">Ã¼</font>
-		 <u><font style="text-decoration: underline; ">S</font></u>et Explicit&#160;<font
-		 color="#0000FF">set explicit</font>;</td>
-		<td><p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;"><font
-		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">No
-		 effect, as program matches system setting</font></p></td>
-	</tr>
-	<tr>
-		<td><font style="font-family: Wingdings;" face="Wingdings">Ã¼</font>
-		 <u><font style="text-decoration: underline; ">S</font></u>et Explicit&#160;<font
-		 color="#0000FF">set implicit</font>;</td>
-		<td><p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;"><font
-		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Program
-		 overrides system setting, variables do</font> <span style="text-align: left;"><b><font
-		 style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-		 face="Arial" size="2">not</font></b> <font style="font-family: Arial;
-													 font-size: 10pt;"
-													 face="Arial" size="2">need
-		 to be declared</font></span></p></td>
-	</tr>
-	<tr>
-		<td><u><font style="text-decoration: underline; ">S</font></u>et
-		 Explicit&#160;<font color="#0000FF">set explicit</font>;</td>
-		<td><p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;"><font
-		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Program
-		 overrides system setting of implicitâ€”</font><span style="text-align: left;"><font
-		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">variables
-		 must be declared</font></span></p></td>
-	</tr>
-	<tr>
-		<td><u><font style="text-decoration: underline; ">S</font></u>et
-		 Explicit&#160;<font color="#0000FF">set implicit</font>;</td>
-		<td><p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 0px;"><font
-		 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">No
-		 effect, as program matches system setting</font></p></td>
-	</tr>
+<table 3 header>
+	<cell>System Setting</cell><cell>Program Setting</cell><cell>Result</cell>
+	<cell>✓ Set Explicit</cell><cell><logiccolor>set explicit;</logiccolor></cell><cell>No effect, as program matches system setting.</cell>
+	<cell>✓ Set Explicit</cell><cell><logiccolor>set implicit;</logiccolor></cell><cell>Program overrides system setting; variables do not need to be declared.</cell>
+	<cell>Set Explicit</cell><cell><logiccolor>set explicit;</logiccolor></cell><cell>Program overrides system setting of implicit; variables must be declared.</cell>
+	<cell>Set Explicit</cell><cell><logiccolor>set implicit;</logiccolor></cell><cell>No effect, as program matches system setting.</cell>
 </table>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: normal; text-decoration: none; ">&#160;</p>
-</body>
-</html>

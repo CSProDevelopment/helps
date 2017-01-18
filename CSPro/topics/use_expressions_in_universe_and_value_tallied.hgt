@@ -1,193 +1,51 @@
 ﻿<title>Use Expressions in Universe and Value Tallied</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+You can enter any valid CSPro expression as a universe, weight or value tallied. This includes not only variables, constants, logical operators (<logiccolor>and</logiccolor>, <logiccolor>or</logiccolor>, <logiccolor>not</logiccolor>), and mathematical operators (+, -, *, /, …) but also CSPro functions (<logiccolor>count</logiccolor>, <logiccolor>sum</logiccolor>, <logiccolor>max</logiccolor>, <logiccolor>special</logiccolor>, …). Making full use of these expressions allows you to create complex tables very easily. Here are some examples:
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Use Expressions in Universe and Value Tallied</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
- can enter any valid CSPro expression as a universe, weight or value tallied.
- This includes not only variables, constants, logical operators (and, or,
- not), and mathematical operators (+,-,*,/,â€¦) but also CSPro functions
- (</font><a href="count_function.html"><font style="font-family: Arial;
-											 font-size: 10pt;" face="Arial"
-											 size="2">count</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="sum_function.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">sum</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="max_function.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">max</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="special_function.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">special</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,
- ...). Making full use of these expressions allows you to create complex
- tables very easily. Here are some examples:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<h6 style="text-align: left; font-size: 12pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><u><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold; text-decoration: underline; "
-	 face="Arial" size="2">Universe</font></u></b></h6>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Tabulate
- only households where at least one child was born last year with the following
- universe:</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">COUNT</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">(CHILDREN_BORN_LAST_YEAR)
- &gt;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-					 color="#FF0000" face="Courier New" size="2">0</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- is assuming that CHILDREN_BORN_LAST_YEAR is a variable on the person record.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Count
- only households with &quot;married couple families&quot;, i.e. a household
- with both a head of household and a spouse present, with the following
- universe:</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Courier; font-size: 10pt;" color="#0000FF" face="Courier"
-	 size="2">COUNT</font><font style="font-family: Courier; font-size: 10pt;"
-								 face="Courier" size="2">(PERSON</font>
- <font style="font-family: Courier; font-size: 10pt;" color="#0000FF" face="Courier"
-		 size="2">where</font> <font style="font-family: Courier; font-size: 10pt;"
-									 face="Courier" size="2">RELATIONSHIP
- =</font> <font style="font-family: Courier; font-size: 10pt;" color="#FF0000"
-				 face="Courier" size="2">1</font><font style="font-family: Courier;
-														 font-size: 10pt;"
-														 face="Courier"
-														 size="2">) &gt;</font>
- <font style="font-family: Courier; font-size: 10pt;" color="#FF0000" face="Courier"
-		 size="2">0</font> <font style="font-family: Courier; font-size: 10pt;"
-								 color="#0000FF" face="Courier" size="2">and</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Courier; font-size: 10pt;" color="#0000FF" face="Courier"
-	 size="2">COUNT</font><font style="font-family: Courier; font-size: 10pt;"
-								 face="Courier" size="2">(PERSON</font>
- <font style="font-family: Courier; font-size: 10pt;" color="#0000FF" face="Courier"
-		 size="2">where</font> <font style="font-family: Courier; font-size: 10pt;"
-									 face="Courier" size="2">RELATIONSHIP
- =</font> <font style="font-family: Courier; font-size: 10pt;" color="#FF0000"
-				 face="Courier" size="2">2</font><font style="font-family: Courier;
-														 font-size: 10pt;"
-														 face="Courier"
-														 size="2">) &gt;</font>
- <font style="font-family: Courier; font-size: 10pt;" color="#FF0000" face="Courier"
-		 size="2">0</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Restrict
- a table to only households with total household income of greater than
- $20,000 by using the following universe:</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">SUM</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" face="Courier New"
-												 size="2">(PERSONAL_INCOME)
- &gt;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-					 color="#FF0000" face="Courier New" size="2">20000</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- assumes that PERSONAL_INCOME is a variable on the person record. The sum
- of the incomes of each person in the household is the total income for
- the entire household.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Restrict
- a table to only households where the head of household is female with
- the following universe:</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">SEX(</font><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#FF0000" face="Courier New" size="2">1</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">) =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#FF0000" face="Courier New" size="2">2</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- assumes that the head of the household is always the first person record
- (index 1). This will only be true if your data entry program and/or edit
- program ensure this. If this is not true, then you would need a more complicated
- expression such as:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;</font><font style="font-family: Courier; font-size: 10pt;"
-								 color="#0000FF" face="Courier" size="2">COUNT</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(PERSON</font> <font style="font-family: Courier; font-size: 10pt;"
-									 color="#0000FF" face="Courier" size="2">where</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-		 size="2">RELATIONSHIP =</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF0000"
-												 face="Courier New" size="2">1</font>
- <font style="font-family: Courier; font-size: 10pt;" color="#0000FF" face="Courier"
-		 size="2">and</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">SEX =</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-		 face="Courier New" size="2">2</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">) =</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-		 face="Courier New" size="2">1</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- will be true only if there is a person in the household who is the head
- of household and is female. This assumes that there is only one head of
- household in the household, which should be the case for properly edited
- data.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<h6 style="text-align: left; font-size: 12pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><u><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold; text-decoration: underline; "
-	 face="Arial" size="2">Value Tallied</font></u></b></h6>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Often
- fertility information is captured separately for male and female children
- and you wish to tabulate it for both sexes. For example, you have variables
- for MALE_CHILDREN_BORN and FEMALE_CHILDREN_BORN but no variable for total
- children born and you want to count the total number of children born.
- You can use the sum of the two variables in the value tallied:</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">MALE_CHILDREN_BORN + FEMALE_CHILDREN_BORN</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Note
- that if one or more of the variables is a</font> <a href="special_values.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">special
- value</font></a><font style="font-family: Arial; font-size: 10pt;" face="Arial"
-						 size="2">, the counts will not be correct. This
- is because the sum of a special value and a number is a special value.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also:</font></b> <a href="restrict_a_universe.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Restrict
- a Universe</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="tabulate_values_instead_of_frequencies.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Tabulate
- Values Instead of Frequencies</font></a><font style="font-family: Arial;
-												 font-size: 10pt;" face="Arial"
-												 size="2">,</font> <a href="tally_attributes_for_a_table.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Tally
- Attributes for a Table</font></a></p>
-</body>
-</html>
+<subheader>Universe</subheader>
+
+Tabulate only households where at least one child was born last year with the following universe (assuming that CHILDREN_BORN_LAST_YEAR is a variable on the person record):
+
+<logic>
+count(CHILDREN_BORN_LAST_YEAR) > 0
+</logic>
+
+Count only households with "married couple families," i.e. a household with both a head of household and a spouse present, with the following universe:
+
+<logic>
+count(PERSON where RELATIONSHIP = 1) > 0 and count(PERSON where RELATIONSHIP = 2) > 0
+</logic>
+
+Restrict a table to only households with total household income of greater than $20,000 by using the following universe:
+
+<logic>
+sum(PERSONAL_INCOME) > 20000
+</logic>
+
+This assumes that PERSONAL_INCOME is a variable on the person record. The sum of the incomes of each person in the household is the total income for the entire household.
+
+Restrict a table to only households where the head of household is female with the following universe:
+
+<logic>
+SEX(1) = 2
+</logic>
+
+This assumes that the head of the household is always the first person record (occurrence 1). This will only be true if your data entry program and/or edit program ensure this. If this is not true, then you would need a more complicated expression such as:
+
+<logic>
+count(PERSON where RELATIONSHIP = 1 and SEX = 2) = 1
+</logic>
+
+This will be true only if there is a person in the household who is the head of household and is female. This assumes that there is only one head of household in the household, which should be the case for properly edited data.
+
+<subheader>Value Tallied</subheader>
+
+Often fertility information is captured separately for male and female children and you wish to tabulate it for both sexes. For example, you have variables for <logiccolor>MALE_CHILDREN_BORN</logiccolor> and <logiccolor>FEMALE_CHILDREN_BORN</logiccolor> but no variable for total children born and you want to count the total number of children born. You can use the sum of the two variables in the value tallied:
+
+<logic>
+MALE_CHILDREN_BORN + FEMALE_CHILDREN_BORN
+</logic>
+
+Note that if one or more of the variables is a <link special_values.hgt>special value</link>, the counts will not be correct. This is because the sum of a special value and a number is a special value.
+
+<seealso restrict_a_universe.hgt tabulate_values_instead_of_frequencies.hgt tally_attributes_for_a_table.hgt />
