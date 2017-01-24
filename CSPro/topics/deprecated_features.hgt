@@ -1,150 +1,24 @@
 ﻿<title>Deprecated Features</title>
 <context HID_DEPRECATION_WARNINGS_NONE HID_DEPRECATION_WARNINGS_MOST HID_DEPRECATION_WARNINGS_ALL />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+As part of a process to simplify and make the CSPro programming language more efficient, some features are going to be deprecated. In future versions, these features may no longer be supported and in fact may be removed from CSPro altogether. When compiling code, you will see deprecation warnings if you are using these features. To turn off these warnings, use the <b>Deprecation Warnings</b> choices on the <b>Options</b> menu.
 
-<body>
-<h1 style="font-family: Arial, sans-serif; font-size: 18pt;">Deprecated
- Features</h1>
-<p style="font-family: Arial, sans-serif; font-size: 10pt;">As part of
- a process to simplify and make the CSPro programming language more efficient,
- some features are going to be deprecated. In future versions, these features
- may no longer be supported and in fact may be removed from CSPro altogether.
- When compiling code, you will see deprecation warnings if you are using
- these features. To turn off these warnings, use the Deprecation Warnings
- choices on the Options menu.</p>
-<table cellspacing="0" width="100%" border="1">
-	<col style="width: 11.339%;" />
-	<col style="width: 6.515%;" />
-	<col style="width: 82.146%;" />
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;
-					 font-weight: bold;">Feature</span></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;
-					 font-weight: bold;">Version removed</span></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;
-					 font-weight: bold;">Resolution</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">alpha</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">Use
-		 <a href="String_Statement.html">string</a> variables.</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">box</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">Use
-		 <a href="recode_statement.html">recode</a>.</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">demenu</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">*</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">display</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">Use
-		 <a href="errmsg_function.html">errmsg</a> with the case keyword.</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">endsect</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">Use
-		 <a href="endgroup_statement.html">endgroup</a>.</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">exec</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">Use
-		 the file... series of functions, or the <a href="Functions/Loadsetting_Function.html">loadsetting</a>
-		 and <a href="Functions/Savesetting_Function.html">savesetting</a>
-		 functions.</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">ioerror</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">Check
-		 the return value of the <a href="setfile_function.html">setfile</a>
-		 function.</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">set
-		 attributes assisted</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">Set
-		 the field's capture type using the <a href="change_field_properties.html">Field
-		 Properties</a> dialog or with the <a href="Setcapturetype_Function.html">setcapturetype</a>
-		 function.</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">set
-		 file</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">Use
-		 the <a href="setfile_function.html">setfile</a> function.</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">set
-		 format</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">*</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">set
-		 implicit</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">Explicitly
-		 declare variables. Implicit declaration of variables can easily
-		 lead to mistakes as a typo becomes a new variable.</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">set
-		 language</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">Use
-		 the <a href="Setlanguage_Function.html">setlanguage</a> function.</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">set
-		 path</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-family: Arial, sans-serif; font-size: 10pt;">Use
-		 the <a href="change_data_entry_options.htm" style="font-family: Arial, sans-serif;
-				 font-size: 10pt;">Data Entry Options</a></span><span style="font-family: Arial, sans-serif;
-		 font-size: 10pt;"> dialog to choose operator or system controlled
-		 mode.</span></td>
-	</tr>
-	<tr>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">writeform</span></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">-</span></p></td>
-		<td><span style="font-size: 10pt; font-family: Arial, sans-serif;">Consider
-		 writing out the contents of the form to a HTML file.</span></td>
-	</tr>
+<table 3 header border>
+	<cell>Feature</cell><cell>Version Removed</cell><cell>Resolution</cell>
+	<cell>alpha</cell><cell></cell><cell>Use <logiccolor>string</logiccolor> variables.</cell>
+	<cell>box</cell><cell></cell><cell>Use <logiccolor>recode</logiccolor>. </cell>
+	<cell>demenu</cell><cell></cell><cell>*</cell>
+	<cell>display</cell><cell></cell><cell>Use <logiccolor>errmsg</logiccolor> with the <logiccolor>case</logiccolor> keyword. </cell>
+	<cell>endsect</cell><cell></cell><cell>Use <logiccolor>endgroup</logiccolor>.</cell>
+	<cell>exec</cell><cell>CSPro 7.0</cell><cell>Use the file... series of functions, or the <logiccolor>loadsetting</logiccolor> and <logiccolor>savesetting</logiccolor> functions.</cell>
+	<cell>ioerror</cell><cell>CSPro 7.0</cell><cell>Check the return value of the <logiccolor>setfile</logiccolor> function.</cell>
+	<cell>set attributes assisted</cell><cell></cell><cell>Set the field's capture type using the <link change_field_properties.hgt>Field Properties</link> dialog or with the <logiccolor>setcapturetype</logiccolor> function.</cell>
+	<cell>set file</cell><cell></cell><cell>Use the <logiccolor>setfile</logiccolor> function.</cell>
+	<cell>set format</cell><cell></cell><cell>*</cell>
+	<cell>set implicit</cell><cell></cell><cell>Explicitly declare variables. Implicit declaration of variables can easily lead to mistakes as a typo becomes a new variable.</cell>
+	<cell>set language</cell><cell></cell><cell>Use the <logiccolor>setlanguage</logiccolor> function.</cell>
+	<cell>set path</cell><cell></cell><cell>Use the <link change_data_entry_options.hgt>Data Entry Options</link> dialog to choose operator or system controlled mode.</cell>
+	<cell>writeform</cell><cell></cell><cell>Consider writing out the contents of the form to a HTML file.</cell>
 </table>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-style: italic;">*
- These features do not have workarounds. If you think that you need this
- functionality, email <a href="mailto:cspro@lists.census.gov" style="font-style: italic;">cspro@lists.census.gov</a>
- and describe why this feature should not be deprecated.</p>
-</body>
-</html>
+
+<i>* These features do not have workarounds. If you think that you need this functionality, email <link mailto:<definition mailing_list />><definition mailing_list /></link> and describe why this feature should not be deprecated.</i>

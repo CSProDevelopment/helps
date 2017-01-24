@@ -1,4 +1,36 @@
 ﻿<title>Timestamp Function</title>
 <context logic_help_timestamp />
 
-HELPTODO
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = timestamp();
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>timestamp</logiccolor> function returns the UNIX time, which is, in Coordinated Universal Time (UTC), the number of seconds that have elapsed since January 1, 1970. This value is used by many computer programs and is thus useful for storing times as well as calculating timespans. Because the time is in UTC, it eliminates the need to worry about time zones when working with times.
+
+<subheader>Return Value</subheader>
+
+The function returns the UNIX time as an integer.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+numeric surveyStartTime;
+
+PROC CROPS_QUEST
+
+preproc
+
+	surveyStartTime = timestamp();
+
+postproc
+
+	SURVEY_DURATION = timestamp() - surveyStartTime;
+</logic>
+
+<seealso systime_function.hgt sysdate_function.hgt />

@@ -42,14 +42,16 @@ namespace Help_Generator
             public bool HasHeader;
             public bool HasNoWrap;
             public bool HasCenter;
+            public bool HasBorder;
             public int CellCount;
 
-            public TableSettings(int columns,bool hasHeader,bool hasNoWrap,bool hasCenter)
+            public TableSettings(int columns,bool hasHeader,bool hasNoWrap,bool hasCenter,bool hasBorder)
             {
                 Columns = columns;
                 HasHeader = hasHeader;
                 HasNoWrap = hasNoWrap;
                 HasCenter = hasCenter;
+                HasBorder = hasBorder;
                 CellCount = 0;
             }
         }
@@ -645,6 +647,7 @@ namespace Help_Generator
             bool hasHeader = false;
             bool hasNoWrap = false;
             bool hasCenter = false;
+            bool hasBorder = false;
 
             foreach( string startTagComponent in startTagComponents )
             {
@@ -657,6 +660,9 @@ namespace Help_Generator
                 else if( !hasCenter && startTagComponent.Equals(CenterTag) )
                     hasCenter = true;
 
+                else if( !hasBorder && startTagComponent.Equals(BorderAttribute) )
+                    hasBorder = true;
+ 
                 else if( columns == 0 && Int32.TryParse(startTagComponent,out columns) )
                 {
                     if( columns < 1 )
@@ -670,9 +676,9 @@ namespace Help_Generator
             if( columns == 0 )
                 throw new Exception("The number of columns in a table must be specified");
 
-            _tableStack.Push(new TableSettings(columns,hasHeader,hasNoWrap,hasCenter));
+            _tableStack.Push(new TableSettings(columns,hasHeader,hasNoWrap,hasCenter,hasBorder));
 
-            return "<table>";
+            return hasBorder ? "<table class=\"bordered_table\">" : "<table>";
         }
 
         private TableSettings GetCurrentTable()
@@ -721,11 +727,13 @@ namespace Help_Generator
             string style = "";
             style += ( isFirstCellInRow && tableSettings.HasNoWrap ) ? "white-space: nowrap; " : "";
             style += ( tableSettings.HasCenter ) ? "text-align: center;" : "";
+            
+            string classStr = tableSettings.HasBorder ? " class=\"bordered_table_cell\"" : "";
 
             if( style.Length != 0 )
                 style = " style=\"" + style.Trim() + "\"";
 
-            return String.Format("{0}<{1}{2}{3}>",rowPrefix,cellType,style,span);
+            return String.Format("{0}<{1}{2}{3}{4}>",rowPrefix,cellType,style,span,classStr);
         }
 
         private string StartSeeAlsoHandler(string[] startTagComponents)
@@ -925,6 +933,7 @@ namespace Help_Generator
         public const string ImageNoChmAttribute = "nochm";
         public const string OrderedAttribute = "ordered";
         public const string NoWrapAttribute = "nowrap";
+        public const string BorderAttribute = "border";
 
         public const string NewLineMarker = "~!~";
     }
