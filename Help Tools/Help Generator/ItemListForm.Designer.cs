@@ -38,6 +38,7 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.listViewItems = new System.Windows.Forms.ListView();
             this.buttonCopyForTopicSource = new System.Windows.Forms.Button();
+            this.checkBoxShowSharedItems = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -159,11 +160,25 @@
             this.buttonCopyForTopicSource.UseVisualStyleBackColor = true;
             this.buttonCopyForTopicSource.Click += new System.EventHandler(this.buttonCopyForTopicSource_Click);
             // 
+            // checkBoxShowSharedItems
+            // 
+            this.checkBoxShowSharedItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxShowSharedItems.AutoSize = true;
+            this.checkBoxShowSharedItems.Location = new System.Drawing.Point(260, 12);
+            this.checkBoxShowSharedItems.Name = "checkBoxShowSharedItems";
+            this.checkBoxShowSharedItems.Size = new System.Drawing.Size(118, 17);
+            this.checkBoxShowSharedItems.TabIndex = 8;
+            this.checkBoxShowSharedItems.Text = "Show Shared Items";
+            this.checkBoxShowSharedItems.UseVisualStyleBackColor = true;
+            this.checkBoxShowSharedItems.CheckedChanged += new System.EventHandler(this.checkBoxShowSharedItems_CheckedChanged);
+            // 
             // ItemListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 577);
+            this.Controls.Add(this.checkBoxShowSharedItems);
             this.Controls.Add(this.buttonCopyForTopicSource);
             this.Controls.Add(this.listViewItems);
             this.Controls.Add(this.buttonDelete);
@@ -196,5 +211,6 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.ListView listViewItems;
         private System.Windows.Forms.Button buttonCopyForTopicSource;
+        private System.Windows.Forms.CheckBox checkBoxShowSharedItems;
     }
 }

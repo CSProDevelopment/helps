@@ -38,6 +38,12 @@ namespace Help_Generator
             }
         }
 
+        private void checkBoxShowSharedItems_CheckedChanged(object sender,EventArgs e)
+        {
+            EnableButtons(false);
+            UpdateList(true);
+        }
+
         private void textBoxFilter_TextChanged(object sender,EventArgs e)
         {
             EnableButtons(false);
@@ -66,8 +72,11 @@ namespace Help_Generator
                 {
                     foreach( Preprocessor.TopicPreprocessor topic in _preprocessor.GetAllTopics() )
                     {
-                        _listTitles.Add(topic.Title);
-                        _listObjects.Add(topic);
+                        if( !topic.Shared || checkBoxShowSharedItems.Checked )
+                        {
+                            _listTitles.Add(topic.Title);
+                            _listObjects.Add(topic);
+                        }
                     }
                 }
 
@@ -75,8 +84,11 @@ namespace Help_Generator
                 {
                     foreach( Preprocessor.ImagePreprocessor image in _preprocessor.GetAllImages() )
                     {
-                        _listTitles.Add(Path.GetFileName(image.Filename));
-                        _listObjects.Add(image);
+                        if( !image.Shared || checkBoxShowSharedItems.Checked )
+                        {
+                            _listTitles.Add(Path.GetFileName(image.Filename));
+                            _listObjects.Add(image);
+                        }
                     }
                 }
             }
