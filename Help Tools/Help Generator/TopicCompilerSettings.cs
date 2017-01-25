@@ -8,6 +8,7 @@ namespace Help_Generator
 
     interface TopicCompilerSettingsInterface
     {
+        string GetTitle(string title);
         string GetHtmlFilename(object preprocessorObject);
         string ConstructLink(LinkType linkType,object linkObject,ref string extras);
         string GetTopicStylesheet();
@@ -22,6 +23,11 @@ namespace Help_Generator
         public TextEditFormTopicCompilerSettings()
         {
             ChmCreationMode = true;
+        }
+
+        public string GetTitle(string title)
+        {
+            return title;
         }
 
         public string GetHtmlFilename(object preprocessorObject)
@@ -71,16 +77,16 @@ namespace Help_Generator
     }
 
 
-    class GenerateHelpsFormTopicCompilerSettings : TopicCompilerSettingsInterface
+    abstract class GenerateHelpsTopicCompilerSettings : TopicCompilerSettingsInterface
     {
         public HashSet<string> UsedImageFilenames { get; set; }
-        public Dictionary<Preprocessor.TopicPreprocessor,List<string>> ContextSensitiveHelps;
 
-        public GenerateHelpsFormTopicCompilerSettings()
+        public GenerateHelpsTopicCompilerSettings()
         {
             UsedImageFilenames = new HashSet<string>();
-            ContextSensitiveHelps = new Dictionary<Preprocessor.TopicPreprocessor,List<string>>();
         }
+
+        public abstract string GetTitle(string title);
 
         public string GetHtmlFilename(object preprocessorObject)
         {
@@ -98,7 +104,31 @@ namespace Help_Generator
             }
         }
 
-        public string ConstructLink(LinkType linkType,object linkObject,ref string extras)
+        public abstract string ConstructLink(LinkType linkType,object linkObject,ref string extras);
+        public abstract string GetTopicStylesheet();
+
+        public string Title { get; set; }
+
+        public abstract void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId);
+        public abstract bool ChmCreationMode { get; }
+    }
+
+
+    class GenerateChmTopicCompilerSettings : GenerateHelpsTopicCompilerSettings
+    {
+        public Dictionary<Preprocessor.TopicPreprocessor,List<string>> ContextSensitiveHelps;
+
+        public GenerateChmTopicCompilerSettings()
+        {
+            ContextSensitiveHelps = new Dictionary<Preprocessor.TopicPreprocessor,List<string>>();
+        }
+
+        public override string GetTitle(string title)
+        {
+            return title;
+        }
+
+        public override string ConstructLink(LinkType linkType,object linkObject,ref string extras)
         {
             if( linkType == LinkType.Topic )
                 return GetHtmlFilename(linkObject);
@@ -121,14 +151,12 @@ namespace Help_Generator
             }
         }
 
-        public string GetTopicStylesheet()
+        public override string GetTopicStylesheet()
         {
             return String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\" />",Constants.TopicStylesheetFilename);
         }
 
-        public string Title { get; set; }
-
-        public void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId)
+        public override void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId)
         {
             if( !ContextSensitiveHelps.ContainsKey(preprocessedTopic) )
                 ContextSensitiveHelps.Add(preprocessedTopic,new List<string>());
@@ -136,6 +164,49 @@ namespace Help_Generator
             ContextSensitiveHelps[preprocessedTopic].Add(defineId); 
         }
 
-        public bool ChmCreationMode { get { return true; } }
+        public override bool ChmCreationMode { get { return true; } }
+    }
+
+
+    class GenerateWebsiteTopicCompilerSettings : GenerateHelpsTopicCompilerSettings
+    {
+        private Settings _settings;
+
+        public GenerateWebsiteTopicCompilerSettings(Settings settings)
+        {
+            _settings = settings;
+        }
+
+        public override string GetTitle(string title)
+        {
+            return title + " - " + _settings.HelpsTitle;
+        }
+
+        public override string ConstructLink(LinkType linkType,object linkObject,ref string extras)
+        {
+            if( linkType == LinkType.Topic )
+                return GetHtmlFilename(linkObject);
+
+            else if( linkType == LinkType.ExternalTopic )
+            {
+                string[] parameters = (string[])linkObject;
+                string filename = Path.GetFileNameWithoutExtension(parameters[1]) + Constants.TopicOutputExtension;
+                return String.Format("../{0}/{1}",parameters[0],filename);
+            }
+            
+            else // LinkType.Other
+                return (string)linkObject;
+        }
+
+        public override string GetTopicStylesheet()
+        {
+            return String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\" />",Constants.TopicStylesheetFilename);
+        }
+
+        public override void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId)
+        {
+        }
+
+        public override bool ChmCreationMode { get { return false; } }
     }
 }

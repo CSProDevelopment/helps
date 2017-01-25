@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GenerateHelpsForm));
             this.pictureBoxCheckmarkIndex = new System.Windows.Forms.PictureBox();
-            this.buttonOpenHelps = new System.Windows.Forms.Button();
+            this.buttonOpenCHM = new System.Windows.Forms.Button();
             this.buttonCancelClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,11 +44,15 @@
             this.pictureBoxCheckmarkChm = new System.Windows.Forms.PictureBox();
             this.textBoxLog = new System.Windows.Forms.TextBox();
             this.checkBoxDeleteTemporaryFiles = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBoxCheckmarkWebsite = new System.Windows.Forms.PictureBox();
+            this.buttonOpenWebsite = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckmarkIndex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckmarkSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckmarkTableOfContents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckmarkTopics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckmarkChm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckmarkWebsite)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxCheckmarkIndex
@@ -61,26 +65,26 @@
             this.pictureBoxCheckmarkIndex.TabStop = false;
             this.pictureBoxCheckmarkIndex.Visible = false;
             // 
-            // buttonOpenHelps
+            // buttonOpenCHM
             // 
-            this.buttonOpenHelps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOpenHelps.Enabled = false;
-            this.buttonOpenHelps.Location = new System.Drawing.Point(870, 9);
-            this.buttonOpenHelps.Name = "buttonOpenHelps";
-            this.buttonOpenHelps.Size = new System.Drawing.Size(102, 23);
-            this.buttonOpenHelps.TabIndex = 0;
-            this.buttonOpenHelps.Text = "Open Helps";
-            this.buttonOpenHelps.UseVisualStyleBackColor = true;
-            this.buttonOpenHelps.Click += new System.EventHandler(this.buttonOpenHelps_Click);
+            this.buttonOpenCHM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOpenCHM.Enabled = false;
+            this.buttonOpenCHM.Location = new System.Drawing.Point(870, 177);
+            this.buttonOpenCHM.Name = "buttonOpenCHM";
+            this.buttonOpenCHM.Size = new System.Drawing.Size(102, 23);
+            this.buttonOpenCHM.TabIndex = 1;
+            this.buttonOpenCHM.Text = "Open CHM";
+            this.buttonOpenCHM.UseVisualStyleBackColor = true;
+            this.buttonOpenCHM.Click += new System.EventHandler(this.buttonOpenCHM_Click);
             // 
             // buttonCancelClose
             // 
             this.buttonCancelClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancelClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancelClose.Location = new System.Drawing.Point(870, 50);
+            this.buttonCancelClose.Location = new System.Drawing.Point(870, 9);
             this.buttonCancelClose.Name = "buttonCancelClose";
             this.buttonCancelClose.Size = new System.Drawing.Size(102, 23);
-            this.buttonCancelClose.TabIndex = 1;
+            this.buttonCancelClose.TabIndex = 0;
             this.buttonCancelClose.Text = "Cancel";
             this.buttonCancelClose.UseVisualStyleBackColor = true;
             // 
@@ -190,12 +194,12 @@
             this.textBoxLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLog.Location = new System.Drawing.Point(17, 214);
+            this.textBoxLog.Location = new System.Drawing.Point(17, 257);
             this.textBoxLog.Multiline = true;
             this.textBoxLog.Name = "textBoxLog";
             this.textBoxLog.ReadOnly = true;
             this.textBoxLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxLog.Size = new System.Drawing.Size(955, 235);
+            this.textBoxLog.Size = new System.Drawing.Size(955, 342);
             this.textBoxLog.TabIndex = 3;
             // 
             // checkBoxDeleteTemporaryFiles
@@ -204,19 +208,54 @@
             this.checkBoxDeleteTemporaryFiles.AutoSize = true;
             this.checkBoxDeleteTemporaryFiles.Checked = true;
             this.checkBoxDeleteTemporaryFiles.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxDeleteTemporaryFiles.Location = new System.Drawing.Point(772, 181);
+            this.checkBoxDeleteTemporaryFiles.Location = new System.Drawing.Point(648, 13);
             this.checkBoxDeleteTemporaryFiles.Name = "checkBoxDeleteTemporaryFiles";
             this.checkBoxDeleteTemporaryFiles.Size = new System.Drawing.Size(200, 17);
             this.checkBoxDeleteTemporaryFiles.TabIndex = 2;
             this.checkBoxDeleteTemporaryFiles.Text = "Delete Temporary Files Upon Closing";
             this.checkBoxDeleteTemporaryFiles.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.label6.Location = new System.Drawing.Point(12, 214);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 25);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Website";
+            // 
+            // pictureBoxCheckmarkWebsite
+            // 
+            this.pictureBoxCheckmarkWebsite.Image = global::Help_Generator.Properties.Resources.Checkmark;
+            this.pictureBoxCheckmarkWebsite.Location = new System.Drawing.Point(199, 207);
+            this.pictureBoxCheckmarkWebsite.Name = "pictureBoxCheckmarkWebsite";
+            this.pictureBoxCheckmarkWebsite.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxCheckmarkWebsite.TabIndex = 14;
+            this.pictureBoxCheckmarkWebsite.TabStop = false;
+            this.pictureBoxCheckmarkWebsite.Visible = false;
+            // 
+            // buttonOpenWebsite
+            // 
+            this.buttonOpenWebsite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOpenWebsite.Enabled = false;
+            this.buttonOpenWebsite.Location = new System.Drawing.Point(870, 218);
+            this.buttonOpenWebsite.Name = "buttonOpenWebsite";
+            this.buttonOpenWebsite.Size = new System.Drawing.Size(102, 23);
+            this.buttonOpenWebsite.TabIndex = 2;
+            this.buttonOpenWebsite.Text = "Open Website";
+            this.buttonOpenWebsite.UseVisualStyleBackColor = true;
+            this.buttonOpenWebsite.Click += new System.EventHandler(this.buttonOpenWebsite_Click);
+            // 
             // GenerateHelpsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancelClose;
-            this.ClientSize = new System.Drawing.Size(984, 461);
+            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.Controls.Add(this.buttonOpenWebsite);
+            this.Controls.Add(this.pictureBoxCheckmarkWebsite);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.checkBoxDeleteTemporaryFiles);
             this.Controls.Add(this.textBoxLog);
             this.Controls.Add(this.pictureBoxCheckmarkChm);
@@ -230,7 +269,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelClose);
-            this.Controls.Add(this.buttonOpenHelps);
+            this.Controls.Add(this.buttonOpenCHM);
             this.Controls.Add(this.pictureBoxCheckmarkIndex);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GenerateHelpsForm";
@@ -243,6 +282,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckmarkTableOfContents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckmarkTopics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckmarkChm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckmarkWebsite)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,7 +291,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxCheckmarkIndex;
-        private System.Windows.Forms.Button buttonOpenHelps;
+        private System.Windows.Forms.Button buttonOpenCHM;
         private System.Windows.Forms.Button buttonCancelClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -265,5 +305,8 @@
         private System.Windows.Forms.PictureBox pictureBoxCheckmarkChm;
         private System.Windows.Forms.TextBox textBoxLog;
         private System.Windows.Forms.CheckBox checkBoxDeleteTemporaryFiles;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBoxCheckmarkWebsite;
+        private System.Windows.Forms.Button buttonOpenWebsite;
     }
 }

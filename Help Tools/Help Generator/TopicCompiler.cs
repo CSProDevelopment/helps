@@ -142,7 +142,7 @@ namespace Help_Generator
             if( _title == null )
                 throw new Exception("A title must be specified for the topic.");
 
-            _sb.Insert(titlePos,_title);
+            _sb.Insert(titlePos,_topicCompilerSettings.GetTitle(_title));
 
             _topicCompilerSettings.Title = _title;
 

@@ -18,7 +18,10 @@ namespace Help_Generator
         private string _temporaryFilesPath;
 
         private Dictionary<Preprocessor.TopicPreprocessor,string> _outputTopicFilenames;
-        private GenerateHelpsFormTopicCompilerSettings _topicCompilerSettings;
+        private GenerateChmTopicCompilerSettings _chmTopicCompilerSettings;
+
+        private string _outputWebsitePath;
+        private GenerateWebsiteTopicCompilerSettings _websiteTopicCompilerSettings;
 
         private BackgroundWorker _backgroundThread;
 
@@ -33,20 +36,29 @@ namespace Help_Generator
 
             string outputPath = Path.GetFullPath(Path.Combine(_helpComponents.projectPath,"..",Constants.OutputsDirectoryName));
 
+            // for the CHM
             string outputChmPath = Path.Combine(outputPath,Constants.OutputsChmDirectoryName);
             Directory.CreateDirectory(outputChmPath);
 
             _outputChmFilename = Path.Combine(outputChmPath,_projectName + Constants.ChmFileExtension);
-
             _temporaryFilesPath = Path.Combine(_helpComponents.projectPath,Constants.TemporaryFileDirectoryName);
-
             _outputTopicFilenames = new Dictionary<Preprocessor.TopicPreprocessor,string>();
-            _topicCompilerSettings = new GenerateHelpsFormTopicCompilerSettings();
+            _chmTopicCompilerSettings = new GenerateChmTopicCompilerSettings();
+
+            // for the website
+            _outputWebsitePath = Path.Combine(outputPath,Constants.OutputsWebsiteDirectoryName,_projectName);
+
+            if( Directory.Exists(_outputWebsitePath) )
+                Directory.Delete(_outputWebsitePath,true);
+
+            Directory.CreateDirectory(_outputWebsitePath);
+
+            _websiteTopicCompilerSettings = new GenerateWebsiteTopicCompilerSettings(_helpComponents.settings);
 
             _backgroundThread = new BackgroundWorker();
         }
 
-        private enum ThreadUpdateMessage { Cancel, Complete, SettingsComplete, TableOfContentsComplete, IndexComplete, TopicsProgress, TopicsComplete, ChmComplete, HideProgressBar };
+        private enum ThreadUpdateMessage { Cancel, Complete, SettingsComplete, TableOfContentsComplete, IndexComplete, TopicsProgress, TopicsComplete, ChmComplete, WebsiteComplete, HideProgressBar };
 
         private void GenerateHelpsForm_Load(object sender,EventArgs e)
         {
@@ -102,6 +114,12 @@ namespace Help_Generator
 
                             case ThreadUpdateMessage.ChmComplete:
                                 pictureBoxCheckmarkChm.Visible = true;
+                                buttonOpenCHM.Enabled = true;
+                                break;
+
+                            case ThreadUpdateMessage.WebsiteComplete:
+                                pictureBoxCheckmarkWebsite.Visible = true;
+                                buttonOpenWebsite.Enabled = true;
                                 break;
 
                             case ThreadUpdateMessage.HideProgressBar:
@@ -109,7 +127,6 @@ namespace Help_Generator
                                 break;
 
                             case ThreadUpdateMessage.Complete:
-                                buttonOpenHelps.Enabled = true;
                                 buttonCancelClose.Text = "Close";
                                 _backgroundThread = null;
 
@@ -133,7 +150,7 @@ namespace Help_Generator
         private void GenerateHelps()
         {
             int processingStep = 0;
-            string[] stepStrings = new string[] { "Settings", "Table of Contents", "Index", "Topics", "Microsoft HTML Help" };
+            string[] stepStrings = new string[] { "Settings", "Table of Contents", "Index", "Topics", "Microsoft HTML Help", "Website" };
 
             try
             {
@@ -177,6 +194,12 @@ namespace Help_Generator
                         _backgroundThread.ReportProgress(0,ThreadUpdateMessage.ChmComplete);
                     }
 
+                    else if( processingStep == 5 )
+                    {
+                        GenerateWebsite();
+                        _backgroundThread.ReportProgress(0,ThreadUpdateMessage.WebsiteComplete);
+                    }
+
                     _backgroundThread.ReportProgress(0,"Successfully processed " + stepStrings[processingStep]);
                 }
 
@@ -196,9 +219,15 @@ namespace Help_Generator
             _backgroundThread = null;
         }
 
-        private void buttonOpenHelps_Click(object sender,EventArgs e)
+        private void buttonOpenCHM_Click(object sender,EventArgs e)
         {
             Help.ShowHelp(null,_outputChmFilename);
+        }
+
+        private void buttonOpenWebsite_Click(object sender,EventArgs e)
+        {
+            string defaultTopicFilename = _websiteTopicCompilerSettings.GetHtmlFilename(_helpComponents.settings.DefaultTopic);
+            Process.Start(Path.Combine(_outputWebsitePath,defaultTopicFilename));
         }
 
         private void GenerateHelpsForm_FormClosing(object sender,FormClosingEventArgs e)
@@ -247,17 +276,21 @@ namespace Help_Generator
 
                 else
                 {
-                    string htmlFilename = _topicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-
-                    _backgroundThread.ReportProgress(0,String.Format("Processing topic \"{0}\" to {1}...",preprocessedTopic.Title,htmlFilename));
-
-                    _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
-                    htmlFilename = Path.Combine(_temporaryFilesPath,htmlFilename);
+                    _backgroundThread.ReportProgress(0,String.Format("Processing topic \"{0}\"...",preprocessedTopic.Title));
 
                     Topic topic = new Topic(preprocessedTopic);
-                    string html = topic.CompileForHtml(File.ReadAllLines(preprocessedTopic.Filename),_helpComponents,_topicCompilerSettings);
+                    string[] topicLines = File.ReadAllLines(preprocessedTopic.Filename);
 
-                    File.WriteAllText(htmlFilename,html,Encoding.UTF8);
+                    // generate the topic for the CHM
+                    string htmlFilename = _chmTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
+                    string html = topic.CompileForHtml(topicLines,_helpComponents,_chmTopicCompilerSettings);
+                    File.WriteAllText(Path.Combine(_temporaryFilesPath,htmlFilename),html,Encoding.UTF8);
+                    _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
+                    
+                    // generate the topic for the website
+                    htmlFilename = _websiteTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
+                    html = topic.CompileForHtml(topicLines,_helpComponents,_websiteTopicCompilerSettings);
+                    File.WriteAllText(Path.Combine(_outputWebsitePath,htmlFilename),html,Encoding.UTF8);
                 }
 
                 _backgroundThread.ReportProgress(0,ThreadUpdateMessage.TopicsProgress);
@@ -285,8 +318,8 @@ namespace Help_Generator
                 Path.GetFileName(tableOfContentsFilename),
                 Path.GetFileName(indexFilename),
                 _outputTopicFilenames,
-                _topicCompilerSettings.UsedImageFilenames,
-                _topicCompilerSettings.ContextSensitiveHelps,
+                _chmTopicCompilerSettings.UsedImageFilenames,
+                _chmTopicCompilerSettings.ContextSensitiveHelps,
                 _helpComponents.index.MergeFiles);
 
             // compile the file
@@ -331,6 +364,18 @@ namespace Help_Generator
                 throw new Exception("The HTML Help Compiler reported errors.");
             }
         }
+
+        private void GenerateWebsite()
+        {
+            // write out the .htaccess file listing the default topic
+            string htAccessFilename = Path.Combine(_outputWebsitePath,".htaccess");
+            string defaultTopicFilename = _websiteTopicCompilerSettings.GetHtmlFilename(_helpComponents.settings.DefaultTopic);
+            File.WriteAllText(htAccessFilename,String.Format("DirectoryIndex {0}\n",defaultTopicFilename));
+
+            // copy over any used images
+            foreach( string imageFilename in _websiteTopicCompilerSettings.UsedImageFilenames )
+                File.Copy(imageFilename,Path.Combine(_outputWebsitePath,Path.GetFileName(imageFilename)));
+        }
         
         private void ListUnusedImages()
         {
@@ -338,7 +383,7 @@ namespace Help_Generator
 
             foreach( Preprocessor.ImagePreprocessor image in _helpComponents.preprocessor.GetAllImages() )
             {
-                if( !image.Shared && !_topicCompilerSettings.UsedImageFilenames.Contains(image.Filename) )
+                if( !image.Shared && !_websiteTopicCompilerSettings.UsedImageFilenames.Contains(image.Filename) )
                 {
                     if( !displayedHeader )
                     {

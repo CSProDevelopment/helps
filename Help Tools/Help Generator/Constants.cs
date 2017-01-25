@@ -26,6 +26,7 @@ namespace Help_Generator
 
         public const string OutputsDirectoryName = "Outputs";
         public const string OutputsChmDirectoryName = "CHM";
+        public const string OutputsWebsiteDirectoryName = "Website";
 
         public const string RegistrySettingsDocumentName = "HelpGenerator.Document";
         public const string RegistryTopicDocumentName = "HelpGeneratorTopic.Document";

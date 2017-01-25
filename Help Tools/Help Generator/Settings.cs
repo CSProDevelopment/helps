@@ -19,6 +19,9 @@ namespace Help_Generator
         private AttributesParser _definitionAttributesParser;
         private string _resourceFileRootDirectory;
 
+        public string HelpsTitle { get { return _helpsTitle; } }
+        public Preprocessor.TopicPreprocessor DefaultTopic { get { return _defaultTopic; } }
+
         public Settings(string projectPath)
         {
             string projectName = new DirectoryInfo(projectPath).Name;
