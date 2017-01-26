@@ -53,7 +53,7 @@ namespace Help_Generator
 
             Directory.CreateDirectory(_outputWebsitePath);
 
-            _websiteTopicCompilerSettings = new GenerateWebsiteTopicCompilerSettings(_helpComponents.settings);
+            _websiteTopicCompilerSettings = new GenerateWebsiteTopicCompilerSettings(_helpComponents);
 
             _backgroundThread = new BackgroundWorker();
         }
@@ -375,6 +375,14 @@ namespace Help_Generator
             // copy over any used images
             foreach( string imageFilename in _websiteTopicCompilerSettings.UsedImageFilenames )
                 File.Copy(imageFilename,Path.Combine(_outputWebsitePath,Path.GetFileName(imageFilename)));
+
+            // copy over the stylesheets and chapter/topic images
+            File.WriteAllText(Path.Combine(_outputWebsitePath,Constants.TopicStylesheetFilename),Properties.Resources.TopicStylesheet,Encoding.ASCII);
+            File.WriteAllText(Path.Combine(_outputWebsitePath,Constants.WebsiteStylesheetFilename),Properties.Resources.WebsiteStylesheet,Encoding.ASCII);                        
+            Properties.Resources.WebsiteChapterClosed.Save(Path.Combine(_outputWebsitePath,"hgweb_chapter_closed.png"));
+            Properties.Resources.WebsiteChapterOpen.Save(Path.Combine(_outputWebsitePath,"hgweb_web_chapter_open.png"));
+            Properties.Resources.WebsiteTopic.Save(Path.Combine(_outputWebsitePath,"hgweb_web_topic.png"));
+            Properties.Resources.WebsiteTopicCurrent.Save(Path.Combine(_outputWebsitePath,"hgweb_web_topic_current.png"));            
         }
         
         private void ListUnusedImages()

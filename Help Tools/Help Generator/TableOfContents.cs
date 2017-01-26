@@ -139,5 +139,84 @@ namespace Help_Generator
             if( ulStartWritten )
                 tw.WriteLine("</ul>");
         }
+
+        public void GenerateForWebsite(StringBuilder sb,Preprocessor.TopicPreprocessor preprocessedTopic)
+        {
+            sb.AppendLine("<ul class=\"toc_ul\">");
+            GenerateForWebsiteNode(sb,preprocessedTopic,_tableOfContentsRootNode);
+            sb.AppendLine("</ul>");
+        }
+
+        private void GenerateForWebsiteNode(StringBuilder sb,Preprocessor.TopicPreprocessor preprocessedTopic,TopicListParser.TopicListNode node)
+        {
+            while( node != null )
+            {
+                string linkedChmFilename = TopicListParser.GetLinkToChm(node.Title);
+
+                if( linkedChmFilename != null ) // a link to another help file
+                {
+                    linkedChmFilename = Path.GetFileNameWithoutExtension(linkedChmFilename);
+                    sb.AppendLine(String.Format("<li class=\"toc_li_chapter\"><a href=\"../{0}/\">&lt;Helps for {0}&gt;</a></li>",linkedChmFilename));
+                }
+
+                else if( node.Topic == null ) // a chapter
+                {
+                    bool continueDownTree = NodeContainsTopic(preprocessedTopic,node.ChildNode);
+
+                    sb.AppendLine(String.Format("<li class=\"{0}\"><a href=\"{1}\">{2}</a>",
+                        continueDownTree ? "toc_li_chapter_current" : "toc_li_chapter",
+                        GenerateForWebsiteLink(node),node.Title));
+
+                    if( continueDownTree )
+                    {
+                        sb.AppendLine("<ul class=\"toc_ul\">");
+                        GenerateForWebsiteNode(sb,preprocessedTopic,node.ChildNode);
+                        sb.AppendLine("</ul>");
+                    }
+
+                    sb.AppendLine("</li>");
+                }
+
+                else // a topic
+                {
+                    sb.AppendLine(String.Format("<li class=\"{0}\"><a href=\"{1}\">{2}</a></li>",
+                        ( node.Topic == preprocessedTopic ) ? "toc_li_topic_current" : "toc_li_topic",GenerateForWebsiteLink(node),node.Title));
+                }
+
+                node = node.SiblingNode;
+            }
+        }
+
+        private bool NodeContainsTopic(Preprocessor.TopicPreprocessor preprocessedTopic,TopicListParser.TopicListNode node)
+        {
+            while( node != null )
+            {
+                if( node.Topic == preprocessedTopic )
+                    return true;
+
+                if( NodeContainsTopic(preprocessedTopic,node.ChildNode) )
+                    return true;
+
+                node = node.SiblingNode;
+            }
+
+            return false;
+        }
+
+        private string GenerateForWebsiteLink(TopicListParser.TopicListNode node)
+        {
+            if( node.Topic != null ) // a topic
+                return Path.GetFileNameWithoutExtension(node.Topic.Filename) + Constants.TopicOutputExtension;
+
+            // for chapters, see if there is a topic in that chapter
+            for( TopicListParser.TopicListNode childNode = node.ChildNode; childNode != null; childNode = childNode.SiblingNode )
+            {
+                if( childNode.Topic != null )
+                    return GenerateForWebsiteLink(childNode);
+            }
+
+            // if there was no topic in that chapter level, get the topic in the first subchapter
+            return GenerateForWebsiteLink(node.ChildNode);
+        }
     }
 }

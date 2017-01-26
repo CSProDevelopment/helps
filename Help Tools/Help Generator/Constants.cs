@@ -22,6 +22,7 @@ namespace Help_Generator
         public const string TopicExtension = ".hgt";
         public const string TopicOutputExtension = ".html";
         public const string TopicStylesheetFilename = "topics.css";
+        public const string WebsiteStylesheetFilename = "hgweb.css";
         public const string PreprocessorExtension = ".hgp";
 
         public const string OutputsDirectoryName = "Outputs";

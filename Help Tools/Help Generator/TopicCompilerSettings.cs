@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace Help_Generator
 {
@@ -8,6 +9,8 @@ namespace Help_Generator
 
     interface TopicCompilerSettingsInterface
     {
+        string GetStartingHtml(Preprocessor.TopicPreprocessor preprocessedTopic);
+        string EndingHtml { get; }
         string GetTitle(string title);
         string GetHtmlFilename(object preprocessorObject);
         string ConstructLink(LinkType linkType,object linkObject,ref string extras);
@@ -25,10 +28,11 @@ namespace Help_Generator
             ChmCreationMode = true;
         }
 
-        public string GetTitle(string title)
-        {
-            return title;
-        }
+        public string GetStartingHtml(Preprocessor.TopicPreprocessor preprocessedTopic) { return ""; }
+
+        public string EndingHtml { get { return ""; } }
+
+        public string GetTitle(string title) { return title; }
 
         public string GetHtmlFilename(object preprocessorObject)
         {
@@ -86,6 +90,9 @@ namespace Help_Generator
             UsedImageFilenames = new HashSet<string>();
         }
 
+        public abstract string GetStartingHtml(Preprocessor.TopicPreprocessor preprocessedTopic);
+        public abstract string EndingHtml { get; }
+
         public abstract string GetTitle(string title);
 
         public string GetHtmlFilename(object preprocessorObject)
@@ -105,7 +112,11 @@ namespace Help_Generator
         }
 
         public abstract string ConstructLink(LinkType linkType,object linkObject,ref string extras);
-        public abstract string GetTopicStylesheet();
+
+        public virtual string GetTopicStylesheet()
+        {
+            return String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />",Constants.TopicStylesheetFilename);
+        }
 
         public string Title { get; set; }
 
@@ -123,10 +134,11 @@ namespace Help_Generator
             ContextSensitiveHelps = new Dictionary<Preprocessor.TopicPreprocessor,List<string>>();
         }
 
-        public override string GetTitle(string title)
-        {
-            return title;
-        }
+        public override string GetStartingHtml(Preprocessor.TopicPreprocessor preprocessedTopic) { return ""; }
+
+        public override string EndingHtml { get { return ""; } }
+
+        public override string GetTitle(string title) { return title; }
 
         public override string ConstructLink(LinkType linkType,object linkObject,ref string extras)
         {
@@ -151,11 +163,6 @@ namespace Help_Generator
             }
         }
 
-        public override string GetTopicStylesheet()
-        {
-            return String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\" />",Constants.TopicStylesheetFilename);
-        }
-
         public override void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId)
         {
             if( !ContextSensitiveHelps.ContainsKey(preprocessedTopic) )
@@ -170,16 +177,36 @@ namespace Help_Generator
 
     class GenerateWebsiteTopicCompilerSettings : GenerateHelpsTopicCompilerSettings
     {
-        private Settings _settings;
+        private HelpComponents _helpComponents;
 
-        public GenerateWebsiteTopicCompilerSettings(Settings settings)
+        public GenerateWebsiteTopicCompilerSettings(HelpComponents helpComponents)
         {
-            _settings = settings;
+            _helpComponents = helpComponents;
         }
+
+        public override string GetStartingHtml(Preprocessor.TopicPreprocessor preprocessedTopic)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("<div id=\"container\">");
+
+            sb.AppendLine("<div id=\"left\">");
+            _helpComponents.tableOfContents.GenerateForWebsite(sb,preprocessedTopic);
+            sb.AppendLine("</div>");
+
+            sb.AppendLine("<div id=\"middle_spacing1\"></div>");
+            sb.AppendLine("<div id=\"middle\"></div>");
+            sb.AppendLine("<div id=\"middle_spacing2\"></div>");
+
+            sb.AppendLine("<div id=\"right\">");
+
+            return sb.ToString();
+        }
+
+        public override string EndingHtml { get { return "</div></div>"; } }
 
         public override string GetTitle(string title)
         {
-            return title + " - " + _settings.HelpsTitle;
+            return title + " - " + _helpComponents.settings.HelpsTitle;
         }
 
         public override string ConstructLink(LinkType linkType,object linkObject,ref string extras)
@@ -200,7 +227,7 @@ namespace Help_Generator
 
         public override string GetTopicStylesheet()
         {
-            return String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\" />",Constants.TopicStylesheetFilename);
+            return base.GetTopicStylesheet() + String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />",Constants.WebsiteStylesheetFilename);
         }
 
         public override void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId)

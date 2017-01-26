@@ -118,7 +118,7 @@ namespace Help_Generator
             _sb.Append(
                 "<html>" +
                 "<head>" +
-                "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />" +
+                "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">" +
                 "<title>");
 
             int titlePos = _sb.Length;
@@ -127,7 +127,8 @@ namespace Help_Generator
             _sb.Append(_topicCompilerSettings.GetTopicStylesheet());
             _sb.Append(
                 "</head>" +
-                "<body>");
+                "<body>" +
+                _topicCompilerSettings.GetStartingHtml(_preprocessedTopic));
 
             List<string> paragraphs = LinesToParagraphs(lines);
 
@@ -147,6 +148,7 @@ namespace Help_Generator
             _topicCompilerSettings.Title = _title;
 
             _sb.Append(
+                _topicCompilerSettings.EndingHtml +
                 "</body>" +
                 "</html>");
 

@@ -85,6 +85,7 @@ namespace Help_Generator.Properties {
         ///&lt;topic filename&gt; | &lt;title to override the topic title&gt;
         ///	&lt;subtopic filename&gt;
         ///	&lt;subtopic filename&gt; | &lt;title to override the subtopic title&gt;
+        ///|| HelpFile.chm # help file&apos;s index to merge
         ///# comment.
         /// </summary>
         internal static string IndexHelp {
@@ -114,11 +115,9 @@ namespace Help_Generator.Properties {
         ///&lt;body&gt;
         ///&lt;div style=&apos;word-wrap:break-word;margin:0px;padding:0px;border:0px;background-color:#ffffff;color:#000000;font-family:Courier New;font-size:10pt;&apos;&gt;
         ///
-        ///&lt;p&gt;&lt;strong&gt;Page Title:&lt;/strong&gt; &amp;lt;title&amp;gt;page title&amp;lt;/title&amp;gt;&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Page Title:&lt;/strong&gt; &amp;lt;title&amp;gt;page title&amp;lt;/title&amp;gt; &amp;lt;title noheader&amp;gt;page title (not displayed)&amp;lt;/title&amp;gt;&lt;/p&gt;
         ///
-        ///&lt;p&gt;&lt;strong&gt;Context Sensitive Help:&lt;/strong&gt; &amp;lt;context HIDD_FIELD_COLORS_DLG /&amp;gt;&lt;/p&gt;
-        ///
-        ///&lt;p&gt;&lt;strong&gt;New Paragraph:&lt;/strong&gt; [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;&lt;strong&gt;Context Sensitive Help:&lt;/strong&gt; &amp;lt;context HIDD_F [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SyntaxHelp {
             get {
@@ -132,6 +131,7 @@ namespace Help_Generator.Properties {
         ///	&lt;topic filename&gt; | &lt;title to override the topic title&gt;
         ///	| &lt;subchapter name&gt;
         ///		&lt;topic filename&gt;
+        ///|| HelpFile.chm # help file to list as a chapter
         ///# comment.
         /// </summary>
         internal static string TableOfContentsHelp {
@@ -143,54 +143,102 @@ namespace Help_Generator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to body
         ///{
-        ///	margin: 0;
-        ///	padding: 0;
-        ///	background: #000000;
-        ///	font-family: Arial, Helvetica, sans-serif;
+        ///	margin: 10px;
+        ///	padding: 0px;
+        ///}
+        ///
+        ///body, td
+        ///{
+        ///	background-color: white;
+        ///	font-family: Calibri, Candara, Segoe, &quot;Segoe UI&quot;, Optima, Arial, Helvetica, sans-serif;
         ///	font-size: 14px;
-        ///	color: #ffffff;
+        ///	color: black;
         ///}
         ///
-        ///h1, h2, h3
-        ///{
-        ///	margin: 0;
-        ///	padding: 0;
-        ///	font-weight: normal;
-        ///	color: #0088a5;
-        ///}
+        ///a { color: #5080ff; }
         ///
-        ///h1
-        ///{
-        ///	font-size: 2em;
-        ///}
+        ///li { margin: 0 0 10px 0; }
         ///
-        ///h2
-        ///{
-        ///	padding: 0px 0px 20px 0px;
-        ///	letter-spacing: -2px;
-        ///	font-size: 2.8em;
-        ///}
+        ///table { margin: 0; }
+        ///th, td { text-align: left; vertical-align:top; padding-right: 20px; }
+        ///th { font-weight: bold; color: #002050; text-decoration: underline; }
         ///
-        ///h3
-        ///{
-        ///	font-size: 1.6em;
-        ///}
-        ///
-        ///p, ul, ol
-        ///{
-        ///	margin-top: 0;
-        ///	line-height: 150%;
-        ///}
-        ///
-        ///a
-        ///{
-        ///	color: #51cdec;
-        ///}
-        ///.
+        ///.bordered_table { border-collapse: collapse; }
+        ///.bordered_table_cell { bord [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string TopicStylesheet {
             get {
                 return ResourceManager.GetString("TopicStylesheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WebsiteChapterClosed {
+            get {
+                object obj = ResourceManager.GetObject("WebsiteChapterClosed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WebsiteChapterOpen {
+            get {
+                object obj = ResourceManager.GetObject("WebsiteChapterOpen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .toc_ul { padding: 0 20px 0; }
+        ///.toc_li_topic { margin: 5px 0 5px 0; list-style-image: url(&apos;hgweb_web_topic.png&apos;); }
+        ///.toc_li_chapter { margin: 5px 0 5px 0; list-style-image: url(&apos;hgweb_chapter_closed.png&apos;); }
+        ///.toc_li_chapter_current { margin: 5px 0 5px 0; list-style-image: url(&apos;hgweb_web_chapter_open.png&apos;); }
+        ///
+        ///#container, html, body
+        ///{
+        ///    height: 99%;
+        ///}
+        ///
+        ///#left
+        ///{
+        ///	float: left;
+        ///    width: 200px;
+        ///    height: 100%;
+        ///    overflow: auto;
+        ///    white-space: nowrap;
+        ///}
+        ///
+        ///#middle_spacing
+        ///{
+        ///	float: lef [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string WebsiteStylesheet {
+            get {
+                return ResourceManager.GetString("WebsiteStylesheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WebsiteTopic {
+            get {
+                object obj = ResourceManager.GetObject("WebsiteTopic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WebsiteTopicCurrent {
+            get {
+                object obj = ResourceManager.GetObject("WebsiteTopicCurrent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
