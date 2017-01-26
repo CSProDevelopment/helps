@@ -460,7 +460,7 @@ namespace Help_Generator
         private string EndTitleHandler(string endTagInnerText)
         {
             _title = endTagInnerText;
-            return _titleIsHeader ? String.Format("<span class=\"header_size header\">{0}</span>",_title) : "";
+            return _titleIsHeader ? String.Format("<h2><span class=\"header_size header\">{0}</span></h2>",_title) : "";
         }
 
         private string StartContextHandler(string[] startTagComponents)

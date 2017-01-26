@@ -26,6 +26,11 @@ namespace Help_Generator
                 if( !File.Exists(_helpComponents.htmlHelpCompilerExecutable) )
                     throw new Exception("Could not find the HTML Help Compiler here:\n\n" + _helpComponents.htmlHelpCompilerExecutable);
 
+                _helpComponents.wkhtmltopdfExecutable = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),@"wkhtmltopdf\bin\wkhtmltopdf.exe");
+
+                if( !File.Exists(_helpComponents.wkhtmltopdfExecutable) )
+                    throw new Exception("Could not find wkhtmltopdf here:\n\n" + _helpComponents.wkhtmltopdfExecutable);
+
                 Array commandArgs = Environment.GetCommandLineArgs();
                 bool generateAndClose = false;
                 string initialTopicFilename = null;

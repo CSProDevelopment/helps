@@ -10,6 +10,7 @@ namespace Help_Generator
         private string _settingsFilename;
 
         private string _helpsTitle;
+        private string _pdfTitle;
         private Preprocessor.TopicPreprocessor _defaultTopic;
         private Dictionary<string,string> _definitions;
         private List<string> _resourceFiles;
@@ -20,6 +21,7 @@ namespace Help_Generator
         private string _resourceFileRootDirectory;
 
         public string HelpsTitle { get { return _helpsTitle; } }
+        public string PdfTitle { get { return _pdfTitle; } }
         public Preprocessor.TopicPreprocessor DefaultTopic { get { return _defaultTopic; } }
 
         public Settings(string projectPath)
@@ -33,6 +35,7 @@ namespace Help_Generator
             _settingAttributesParser = new AttributesParser(new AttributesParser.AttributeType[]
                 {
                     new AttributesParser.AttributeType(AttributesTitle,true,false),
+                    new AttributesParser.AttributeType(AttributesPdfTitle,false,false),
                     new AttributesParser.AttributeType(AttributesDefaultTopic,true,false),
                     new AttributesParser.AttributeType(AttributesDefinitionsFile,false,false),
                     new AttributesParser.AttributeType(AttributesResourceFile,false,true)
@@ -51,6 +54,7 @@ namespace Help_Generator
                 string fillInOrDeleteText = "=<fill in or delete>";
 
                 tw.WriteLine(AttributesTitle + fillInText);
+                tw.WriteLine(AttributesPdfTitle + fillInOrDeleteText);
                 tw.WriteLine(AttributesDefaultTopic + fillInText);
                 tw.WriteLine(AttributesDefinitionsFile + fillInOrDeleteText);
                 tw.WriteLine(AttributesResourceFile + fillInOrDeleteText);
@@ -70,6 +74,7 @@ namespace Help_Generator
             _settingAttributesParser.Parse(lines);
 
             _helpsTitle = _settingAttributesParser.GetSingleValue(AttributesTitle);
+            _pdfTitle =  _settingAttributesParser.GetSingleValue(AttributesPdfTitle);
             _defaultTopic = preprocessor.GetTopic(_settingAttributesParser.GetSingleValue(AttributesDefaultTopic));
 
             _definitions = new Dictionary<string,string>();
@@ -113,6 +118,7 @@ namespace Help_Generator
         }
 
         private const string AttributesTitle = "Title";
+        private const string AttributesPdfTitle = "PdfTitle";
         private const string AttributesDefaultTopic = "DefaultTopic";
         private const string AttributesDefinitionsFile = "DefinitionsFile";
         private const string AttributesResourceFile = "ResourceFile";
@@ -262,6 +268,9 @@ namespace Help_Generator
 
         public string GetDefinition(string attribute,Preprocessor preprocessor)
         {
+            if( attribute == "_pdftitle" && _pdfTitle != null ) // a special attribute coming from the settings file
+                return _pdfTitle;
+
             attribute = attribute.ToUpper();
 
             // compile the file if it hasn't been compiled yet or if the definition is missing (because

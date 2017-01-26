@@ -5,6 +5,7 @@ namespace Help_Generator
     class HelpComponents
     {
         public string htmlHelpCompilerExecutable;
+        public string wkhtmltopdfExecutable;
         public string projectPath;
 
         public Settings settings;
