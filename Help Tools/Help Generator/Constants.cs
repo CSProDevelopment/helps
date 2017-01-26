@@ -23,11 +23,13 @@ namespace Help_Generator
         public const string TopicOutputExtension = ".html";
         public const string TopicStylesheetFilename = "topics.css";
         public const string WebsiteStylesheetFilename = "hgweb.css";
+        public const string PdfCoverFilename = "_pdftitle" + TopicExtension;
         public const string PreprocessorExtension = ".hgp";
 
         public const string OutputsDirectoryName = "Outputs";
         public const string OutputsChmDirectoryName = "CHM";
         public const string OutputsWebsiteDirectoryName = "Website";
+        public const string OutputsPdfDirectoryName = "PDF";
 
         public const string RegistrySettingsDocumentName = "HelpGenerator.Document";
         public const string RegistryTopicDocumentName = "HelpGeneratorTopic.Document";

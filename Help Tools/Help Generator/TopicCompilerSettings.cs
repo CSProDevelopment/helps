@@ -18,6 +18,7 @@ namespace Help_Generator
         string Title { set; }
         void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId);
         bool ChmCreationMode { get; }
+        bool AddHtmlHeaderFooter { get; }
     }
 
 
@@ -78,6 +79,8 @@ namespace Help_Generator
         }
 
         public bool ChmCreationMode { get; set; }
+
+        public bool AddHtmlHeaderFooter { get { return true; } }
     }
 
 
@@ -122,6 +125,8 @@ namespace Help_Generator
 
         public abstract void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId);
         public abstract bool ChmCreationMode { get; }
+
+        public bool AddHtmlHeaderFooter { get { return true; } }
     }
 
 
@@ -235,5 +240,58 @@ namespace Help_Generator
         }
 
         public override bool ChmCreationMode { get { return false; } }
+    }
+
+    class GeneratePdfTopicCompilerSettings : TopicCompilerSettingsInterface
+    {
+        private string GetHtmlAnchor(Preprocessor.TopicPreprocessor preprocessedTopic)
+        {
+            return Path.GetFileNameWithoutExtension(preprocessedTopic.Filename);
+        }
+
+        public string GetStartingHtml(Preprocessor.TopicPreprocessor preprocessedTopic)
+        {
+            return String.Format("<div id=\"{0}\">",GetHtmlAnchor(preprocessedTopic));
+        }
+
+        public string EndingHtml { get { return "</div>"; } }
+
+        public string GetTitle(string title) { return title; }
+
+        public string GetHtmlFilename(object preprocessorObject)
+        {
+            if( preprocessorObject is Preprocessor.TopicPreprocessor )
+                return "#" + GetHtmlAnchor((Preprocessor.TopicPreprocessor)preprocessorObject);
+
+            else
+                return new Uri(((Preprocessor.ImagePreprocessor)preprocessorObject).Filename).AbsoluteUri;
+        }
+
+        public string ConstructLink(LinkType linkType,object linkObject,ref string extras)
+        {
+            if( linkType == LinkType.Topic )
+                return GetHtmlFilename(linkObject);
+
+            else if( linkType == LinkType.ExternalTopic )
+                return "";
+            
+            else // LinkType.Other
+                return (string)linkObject;
+        }
+        
+        public string GetTopicStylesheet()
+        {
+            return "<style>" + Properties.Resources.TopicStylesheet + "</style>";
+        }
+
+        public string Title { get; set; }
+
+        public void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId)
+        {
+        }
+
+        public bool ChmCreationMode { get { return false; } }
+
+        public bool AddHtmlHeaderFooter { get { return false; } }
     }
 }

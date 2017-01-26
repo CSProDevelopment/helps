@@ -115,20 +115,26 @@ namespace Help_Generator
 
         public string CompileForHtml(string[] lines)
         {
-            _sb.Append(
-                "<html>" +
-                "<head>" +
-                "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">" +
-                "<title>");
+            int? titlePos = null;
 
-            int titlePos = _sb.Length;
+            if( _topicCompilerSettings.AddHtmlHeaderFooter )
+            {
+                _sb.Append(
+                    "<html>" +
+                    "<head>" +
+                    "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">" +
+                    "<title>");
 
-            _sb.Append("</title>");
-            _sb.Append(_topicCompilerSettings.GetTopicStylesheet());
-            _sb.Append(
-                "</head>" +
-                "<body>" +
-                _topicCompilerSettings.GetStartingHtml(_preprocessedTopic));
+                titlePos = _sb.Length;
+
+                _sb.Append("</title>");
+                _sb.Append(_topicCompilerSettings.GetTopicStylesheet());
+                _sb.Append(
+                    "</head>" +
+                    "<body>");
+            }
+
+            _sb.Append(_topicCompilerSettings.GetStartingHtml(_preprocessedTopic));
 
             List<string> paragraphs = LinesToParagraphs(lines);
 
@@ -143,14 +149,19 @@ namespace Help_Generator
             if( _title == null )
                 throw new Exception("A title must be specified for the topic.");
 
-            _sb.Insert(titlePos,_topicCompilerSettings.GetTitle(_title));
+            if( titlePos != null )
+                _sb.Insert((int)titlePos,_topicCompilerSettings.GetTitle(_title));
 
             _topicCompilerSettings.Title = _title;
 
-            _sb.Append(
-                _topicCompilerSettings.EndingHtml +
-                "</body>" +
-                "</html>");
+            _sb.Append(_topicCompilerSettings.EndingHtml);
+
+            if( _topicCompilerSettings.AddHtmlHeaderFooter )
+            {
+                _sb.Append(
+                    "</body>" +
+                    "</html>");
+            }
 
             return _sb.ToString();
         }

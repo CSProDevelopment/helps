@@ -21,7 +21,7 @@ namespace Help_Generator
         private string _resourceFileRootDirectory;
 
         public string HelpsTitle { get { return _helpsTitle; } }
-        public string PdfTitle { get { return _pdfTitle; } }
+        public bool CreatePdf { get { return ( _pdfTitle != null ); } }
         public Preprocessor.TopicPreprocessor DefaultTopic { get { return _defaultTopic; } }
 
         public Settings(string projectPath)

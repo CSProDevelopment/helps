@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -23,6 +24,10 @@ namespace Help_Generator
         private string _outputWebsitePath;
         private GenerateWebsiteTopicCompilerSettings _websiteTopicCompilerSettings;
 
+        private string _outputPdfFilename;
+        private string _outputPdfTopicsFilename;
+        private GeneratePdfTopicCompilerSettings _pdfTopicCompilerSettings;
+
         private BackgroundWorker _backgroundThread;
 
         public GenerateHelpsForm(HelpComponents helpComponents,bool generateAndClose)
@@ -36,12 +41,18 @@ namespace Help_Generator
 
             string outputPath = Path.GetFullPath(Path.Combine(_helpComponents.projectPath,"..",Constants.OutputsDirectoryName));
 
+            _temporaryFilesPath = Path.Combine(_helpComponents.projectPath,Constants.TemporaryFileDirectoryName);
+            Directory.CreateDirectory(_temporaryFilesPath);
+
+            _backgroundThread = new BackgroundWorker();
+
             // for the CHM
             string outputChmPath = Path.Combine(outputPath,Constants.OutputsChmDirectoryName);
             Directory.CreateDirectory(outputChmPath);
 
             _outputChmFilename = Path.Combine(outputChmPath,_projectName + Constants.ChmFileExtension);
-            _temporaryFilesPath = Path.Combine(_helpComponents.projectPath,Constants.TemporaryFileDirectoryName);
+            File.Delete(_outputChmFilename);
+
             _outputTopicFilenames = new Dictionary<Preprocessor.TopicPreprocessor,string>();
             _chmTopicCompilerSettings = new GenerateChmTopicCompilerSettings();
 
@@ -55,10 +66,19 @@ namespace Help_Generator
 
             _websiteTopicCompilerSettings = new GenerateWebsiteTopicCompilerSettings(_helpComponents);
 
-            _backgroundThread = new BackgroundWorker();
+            // for the PDF
+            string outputPdfPath = Path.Combine(outputPath,Constants.OutputsPdfDirectoryName);
+            Directory.CreateDirectory(outputPdfPath);
+
+            _outputPdfFilename = Path.Combine(outputPdfPath,_projectName + ".pdf");
+            File.Delete(_outputPdfFilename);
+
+            _outputPdfTopicsFilename = Path.Combine(_temporaryFilesPath,"_output_pdf_topics.html");
+
+            _pdfTopicCompilerSettings = new GeneratePdfTopicCompilerSettings();
         }
 
-        private enum ThreadUpdateMessage { Cancel, Complete, SettingsComplete, TableOfContentsComplete, IndexComplete, TopicsProgress, TopicsComplete, ChmComplete, WebsiteComplete, HideProgressBar };
+        private enum ThreadUpdateMessage { Cancel, Complete, SettingsComplete, TableOfContentsComplete, IndexComplete, TopicsProgress, TopicsComplete, WebsiteComplete, PdfComplete, ChmComplete, HideProgressBar };
 
         private void GenerateHelpsForm_Load(object sender,EventArgs e)
         {
@@ -112,14 +132,19 @@ namespace Help_Generator
                                 pictureBoxCheckmarkTopics.Visible = true;
                                 break;
 
-                            case ThreadUpdateMessage.ChmComplete:
-                                pictureBoxCheckmarkChm.Visible = true;
-                                buttonOpenCHM.Enabled = true;
-                                break;
-
                             case ThreadUpdateMessage.WebsiteComplete:
                                 pictureBoxCheckmarkWebsite.Visible = true;
                                 buttonOpenWebsite.Enabled = true;
+                                break;
+
+                            case ThreadUpdateMessage.PdfComplete:
+                                pictureBoxCheckmarkPdf.Visible = true;
+                                buttonOpenPdf.Enabled = _helpComponents.settings.CreatePdf;
+                                break;
+
+                            case ThreadUpdateMessage.ChmComplete:
+                                pictureBoxCheckmarkChm.Visible = true;
+                                buttonOpenChm.Enabled = true;
                                 break;
 
                             case ThreadUpdateMessage.HideProgressBar:
@@ -150,12 +175,10 @@ namespace Help_Generator
         private void GenerateHelps()
         {
             int processingStep = 0;
-            string[] stepStrings = new string[] { "Settings", "Table of Contents", "Index", "Topics", "Microsoft HTML Help", "Website" };
+            string[] stepStrings = new string[] { "Settings", "Table of Contents", "Index", "Topics", "Website", "PDF", "Microsoft HTML Help" };
 
             try
             {
-                Directory.CreateDirectory(_temporaryFilesPath);
-
                 for( ; processingStep < stepStrings.Length && !_backgroundThread.CancellationPending; processingStep++ )
                 {
                     _backgroundThread.ReportProgress(0,String.Format("Processing {0}...",stepStrings[processingStep]));
@@ -190,14 +213,20 @@ namespace Help_Generator
 
                     else if( processingStep == 4 )
                     {
-                        GenerateChm();
-                        _backgroundThread.ReportProgress(0,ThreadUpdateMessage.ChmComplete);
+                        GenerateWebsite();
+                        _backgroundThread.ReportProgress(0,ThreadUpdateMessage.WebsiteComplete);
                     }
 
                     else if( processingStep == 5 )
                     {
-                        GenerateWebsite();
-                        _backgroundThread.ReportProgress(0,ThreadUpdateMessage.WebsiteComplete);
+                        GeneratePdf();
+                        _backgroundThread.ReportProgress(0,ThreadUpdateMessage.PdfComplete);
+                    }
+
+                    else if( processingStep == 6 )
+                    {
+                        GenerateChm();
+                        _backgroundThread.ReportProgress(0,ThreadUpdateMessage.ChmComplete);
                     }
 
                     _backgroundThread.ReportProgress(0,"Successfully processed " + stepStrings[processingStep]);
@@ -219,15 +248,20 @@ namespace Help_Generator
             _backgroundThread = null;
         }
 
-        private void buttonOpenCHM_Click(object sender,EventArgs e)
-        {
-            Help.ShowHelp(null,_outputChmFilename);
-        }
-
         private void buttonOpenWebsite_Click(object sender,EventArgs e)
         {
             string defaultTopicFilename = _websiteTopicCompilerSettings.GetHtmlFilename(_helpComponents.settings.DefaultTopic);
             Process.Start(Path.Combine(_outputWebsitePath,defaultTopicFilename));
+        }
+
+        private void buttonOpenPdf_Click(object sender,EventArgs e)
+        {
+            Process.Start(_outputPdfFilename);
+        }
+
+        private void buttonOpenChm_Click(object sender,EventArgs e)
+        {
+            Help.ShowHelp(null,_outputChmFilename);
         }
 
         private void GenerateHelpsForm_FormClosing(object sender,FormClosingEventArgs e)
@@ -261,42 +295,95 @@ namespace Help_Generator
 
         private void ProcessTopics()
         {
-            HashSet<Preprocessor.TopicPreprocessor> allTopics = _helpComponents.preprocessor.GetAllTopics();
-            _backgroundThread.ReportProgress(allTopics.Count,ThreadUpdateMessage.TopicsProgress);
-
-            // remove any shared topics that aren't in the table of contents or index
-            HashSet<Preprocessor.TopicPreprocessor> unusedSharedTopics = new HashSet<Preprocessor.TopicPreprocessor>(allTopics);
-            _helpComponents.tableOfContents.RemoveUsedTopics(unusedSharedTopics);
-            _helpComponents.index.RemoveUsedTopics(unusedSharedTopics);
-
-            foreach( Preprocessor.TopicPreprocessor preprocessedTopic in allTopics )
+            using( TextWriter twPdf = ( _helpComponents.settings.CreatePdf ? new StreamWriter(_outputPdfTopicsFilename,false,Encoding.UTF8) : null ) )
             {
-                if( unusedSharedTopics.Contains(preprocessedTopic) )
-                    _backgroundThread.ReportProgress(0,String.Format("Skipping unused shared topic \"{0}\"...",preprocessedTopic.Title));
+                if( twPdf != null )
+                    twPdf.WriteLine(PdfHtmlHeader);
 
-                else
+                HashSet<Preprocessor.TopicPreprocessor> allTopics = _helpComponents.preprocessor.GetAllTopics();
+                _backgroundThread.ReportProgress(allTopics.Count,ThreadUpdateMessage.TopicsProgress);
+
+                // remove any shared topics that aren't in the table of contents or index
+                HashSet<Preprocessor.TopicPreprocessor> unusedSharedTopics = new HashSet<Preprocessor.TopicPreprocessor>(allTopics);
+                _helpComponents.tableOfContents.RemoveUsedTopics(unusedSharedTopics);
+                _helpComponents.index.RemoveUsedTopics(unusedSharedTopics);
+
+                // process the topics in table of contents order (which is necessary if generating a PDF)
+                List<TopicListParser.TopicListNode> tocTopics = _helpComponents.tableOfContents.GetOrderedTopicsForPdf();
+                int tocTopicsIndex = 0;
+
+                while( allTopics.Count > 0 || tocTopicsIndex < tocTopics.Count )
                 {
-                    _backgroundThread.ReportProgress(0,String.Format("Processing topic \"{0}\"...",preprocessedTopic.Title));
+                    // get to the next topic
+                    bool processedChapter = false;
 
-                    Topic topic = new Topic(preprocessedTopic);
-                    string[] topicLines = File.ReadAllLines(preprocessedTopic.Filename);
+                    while( tocTopicsIndex < tocTopics.Count && tocTopics[tocTopicsIndex].Topic == null )
+                    {
+                        // write the chapter heading for the PDF
+                        if( twPdf != null )
+                        {
+                            twPdf.WriteLine(String.Format("<h1{0}>{1}</h1>",processedChapter ?
+                                " style=\"page-break-before: avoid;\"" : "",tocTopics[tocTopicsIndex].Title));
+                            processedChapter = true;
+                        }
 
-                    // generate the topic for the CHM
-                    string htmlFilename = _chmTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-                    string html = topic.CompileForHtml(topicLines,_helpComponents,_chmTopicCompilerSettings);
-                    File.WriteAllText(Path.Combine(_temporaryFilesPath,htmlFilename),html,Encoding.UTF8);
-                    _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
+                        tocTopicsIndex++;
+                    }
+
+                    Preprocessor.TopicPreprocessor preprocessedTopic;
+
+                    if( tocTopicsIndex < tocTopics.Count )
+                    {
+                        preprocessedTopic = tocTopics[tocTopicsIndex].Topic;
+                        tocTopicsIndex++;
+                    }
+
+                    else if( allTopics.Count > 0 )
+                        preprocessedTopic = allTopics.First();
+
+                    else
+                        continue;
+
+                    allTopics.Remove(preprocessedTopic);
+
+
+                    if( unusedSharedTopics.Contains(preprocessedTopic) )
+                        _backgroundThread.ReportProgress(0,String.Format("Skipping unused shared topic \"{0}\"...",preprocessedTopic.Title));
+
+                    else
+                    {
+                        _backgroundThread.ReportProgress(0,String.Format("Processing topic \"{0}\"...",preprocessedTopic.Title));
+
+                        Topic topic = new Topic(preprocessedTopic);
+                        string[] topicLines = File.ReadAllLines(preprocessedTopic.Filename);
+
+                        // generate the topic for the CHM
+                        string htmlFilename = _chmTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
+                        string html = topic.CompileForHtml(topicLines,_helpComponents,_chmTopicCompilerSettings);
+                        File.WriteAllText(Path.Combine(_temporaryFilesPath,htmlFilename),html,Encoding.UTF8);
+                        _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
                     
-                    // generate the topic for the website
-                    htmlFilename = _websiteTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-                    html = topic.CompileForHtml(topicLines,_helpComponents,_websiteTopicCompilerSettings);
-                    File.WriteAllText(Path.Combine(_outputWebsitePath,htmlFilename),html,Encoding.UTF8);
+                        // generate the topic for the website
+                        htmlFilename = _websiteTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
+                        html = topic.CompileForHtml(topicLines,_helpComponents,_websiteTopicCompilerSettings);
+                        File.WriteAllText(Path.Combine(_outputWebsitePath,htmlFilename),html,Encoding.UTF8);
+
+                        // generate the topic for the PDF
+                        if( twPdf != null )
+                        {
+                            html = topic.CompileForHtml(topicLines,_helpComponents,_pdfTopicCompilerSettings);
+                            twPdf.WriteLine(html);
+                        }
+                    }
+
+                    _backgroundThread.ReportProgress(0,ThreadUpdateMessage.TopicsProgress);
+
+                    if( _backgroundThread.CancellationPending )
+                        return;
                 }
 
-                _backgroundThread.ReportProgress(0,ThreadUpdateMessage.TopicsProgress);
-
-                if( _backgroundThread.CancellationPending )
-                    return;
+                if( twPdf != null )
+                    twPdf.WriteLine(PdfHtmlFooter);
             }
         }
 
@@ -339,7 +426,7 @@ namespace Help_Generator
             (
                 delegate(object sender,DataReceivedEventArgs e)
                 {
-                    string hhcOutput = (string)e.Data;
+                    string hhcOutput = e.Data;
 
                     if( !String.IsNullOrWhiteSpace(hhcOutput) )
                     {
@@ -384,6 +471,69 @@ namespace Help_Generator
             Properties.Resources.WebsiteTopic.Save(Path.Combine(_outputWebsitePath,"hgweb_web_topic.png"));
             Properties.Resources.WebsiteTopicCurrent.Save(Path.Combine(_outputWebsitePath,"hgweb_web_topic_current.png"));            
         }
+
+        private void GeneratePdf()
+        {
+            if( !_helpComponents.settings.CreatePdf )
+            {
+                _backgroundThread.ReportProgress(0,"PDF generation skipped...");
+                return;
+            }
+
+            _backgroundThread.ReportProgress(0,"Processing PDF cover page...");
+            string outputPdfCoverFilename = Path.Combine(_temporaryFilesPath,"_output_pdf_cover.html");
+
+            Preprocessor.TopicPreprocessor preprocessedTopic = _helpComponents.preprocessor.GetTopic(Constants.PdfCoverFilename);
+            string[] topicLines = File.ReadAllLines(preprocessedTopic.Filename);
+
+            Topic topic = new Topic(preprocessedTopic);
+            string html = topic.CompileForHtml(topicLines,_helpComponents,_pdfTopicCompilerSettings);
+            File.WriteAllText(outputPdfCoverFilename,PdfHtmlHeader + html + PdfHtmlFooter,Encoding.UTF8);
+
+            // generate the PDF
+            _backgroundThread.ReportProgress(0,"Generating the PDF...");
+
+            ProcessStartInfo processStartInfo = new ProcessStartInfo();
+            processStartInfo.CreateNoWindow = true;
+            processStartInfo.RedirectStandardOutput = true;
+            processStartInfo.UseShellExecute = false;
+            processStartInfo.FileName = _helpComponents.wkhtmltopdfExecutable;
+            processStartInfo.Arguments = String.Format("cover \"{0}\" toc \"{1}\" \"{2}\"",
+                outputPdfCoverFilename,_outputPdfTopicsFilename,_outputPdfFilename);
+
+            Process process = new Process();
+            process.StartInfo = processStartInfo;
+            process.EnableRaisingEvents = true;
+            process.OutputDataReceived += new DataReceivedEventHandler
+            (
+                delegate(object sender,DataReceivedEventArgs e)
+                {
+                    if( !String.IsNullOrWhiteSpace(e.Data) )
+                        _backgroundThread.ReportProgress(0,e);
+                }
+            );
+
+            process.Start();
+            process.BeginOutputReadLine();
+            process.WaitForExit();
+            process.CancelOutputRead();
+        }
+
+        private string PdfHtmlHeader
+        {
+            get
+            {
+                return
+                    "<html>" +
+                    "<head>" +
+                    "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">" +
+                    _pdfTopicCompilerSettings.GetTopicStylesheet() +
+                    "</head>" +
+                    "<body>";
+            }
+        }
+
+        private string PdfHtmlFooter { get { return "</body></html>"; } }
         
         private void ListUnusedImages()
         {

@@ -19,7 +19,7 @@ namespace Help_Generator
         {
             string projectName = new DirectoryInfo(projectPath).Name;
             _tableOfContentsFilename = Path.Combine(projectPath,projectName + Constants.TableOfContentsFileExtension);
-            
+
             if( !File.Exists(_tableOfContentsFilename) )
                 File.WriteAllText(_tableOfContentsFilename,"",Encoding.UTF8);
 
@@ -84,7 +84,7 @@ namespace Help_Generator
 
                 if( linkedChmFilename != null ) // a link to another help file
                 {
-                    if( _processedFirstTopicChapter ) 
+                    if( _processedFirstTopicChapter )
                         _processedLastTopicChapter = true;
 
                     if( ulStartWritten )
@@ -217,6 +217,29 @@ namespace Help_Generator
 
             // if there was no topic in that chapter level, get the topic in the first subchapter
             return GenerateForWebsiteLink(node.ChildNode);
+        }
+
+        public List<TopicListParser.TopicListNode> GetOrderedTopicsForPdf()
+        {
+            List<TopicListParser.TopicListNode> topics = new List<TopicListParser.TopicListNode>();
+            GetOrderedTopicsForPdfNode(topics,_tableOfContentsRootNode);
+            return topics;
+        }
+
+        private void GetOrderedTopicsForPdfNode(List<TopicListParser.TopicListNode> topics,TopicListParser.TopicListNode node)
+        {
+            while( node != null )
+            {
+                if( TopicListParser.GetLinkToChm(node.Title) == null ) // ignore links to other help files
+                {
+                    topics.Add(node);
+
+                    if( node.Topic == null ) // a chapter
+                        GetOrderedTopicsForPdfNode(topics,node.ChildNode);
+                }
+
+                node = node.SiblingNode;
+            }
         }
     }
 }
