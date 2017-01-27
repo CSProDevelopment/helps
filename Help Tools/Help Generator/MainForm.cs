@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using Microsoft.Win32;
@@ -283,14 +282,14 @@ namespace Help_Generator
             }                
         }
 
-        private void settingsViewTopicsInHelpsFormatMenuItem_Click(object sender,EventArgs e)
+        private void generateViewTopicsInChmFormatMenuItem_Click(object sender,EventArgs e)
         {
-            settingsViewTopicsInHelpsFormatMenuItem.Checked = !settingsViewTopicsInHelpsFormatMenuItem.Checked;
+            generateViewTopicsInChmFormatMenuItem.Checked = !generateViewTopicsInChmFormatMenuItem.Checked;
         }
 
-        public bool ChmCreationMode { get { return settingsViewTopicsInHelpsFormatMenuItem.Checked; } }
+        public bool ChmCreationMode { get { return generateViewTopicsInChmFormatMenuItem.Checked; } }
 
-        private void toolsRegisterFileAssociationsMenuItem_Click(object sender,EventArgs e)
+        private void helpRegisterFileAssociationsMenuItem_Click(object sender,EventArgs e)
         {
             try
             {

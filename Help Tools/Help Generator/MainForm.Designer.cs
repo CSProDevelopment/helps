@@ -62,18 +62,19 @@
             this.editPffColorMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateCompileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateCompilationModeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateViewTopicsInChmFormatMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.generateFormatMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.generateRefreshMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.generateHelpsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsViewTopicsInHelpsFormatMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsRegisterFileAssociationsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpSyntaxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.helpRegisterFileAssociationsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,8 +85,6 @@
             this.viewMenuItem,
             this.editMenuItem,
             this.generateMenuItem,
-            this.settingsMenuItem,
-            this.toolsMenuItem,
             this.helpMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
@@ -357,6 +356,8 @@
             // 
             this.generateMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generateCompileMenuItem,
+            this.generateCompilationModeMenuItem,
+            this.toolStripSeparator8,
             this.generateFormatMenuItem,
             this.toolStripSeparator1,
             this.generateRefreshMenuItem,
@@ -374,6 +375,28 @@
             this.generateCompileMenuItem.Size = new System.Drawing.Size(181, 22);
             this.generateCompileMenuItem.Text = "&Compile File";
             this.generateCompileMenuItem.Click += new System.EventHandler(this.generateCompileMenuItem_Click);
+            // 
+            // generateCompilationModeMenuItem
+            // 
+            this.generateCompilationModeMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generateViewTopicsInChmFormatMenuItem});
+            this.generateCompilationModeMenuItem.Name = "generateCompilationModeMenuItem";
+            this.generateCompilationModeMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.generateCompilationModeMenuItem.Text = "Compilation Mode";
+            // 
+            // generateViewTopicsInChmFormatMenuItem
+            // 
+            this.generateViewTopicsInChmFormatMenuItem.Checked = true;
+            this.generateViewTopicsInChmFormatMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.generateViewTopicsInChmFormatMenuItem.Name = "generateViewTopicsInChmFormatMenuItem";
+            this.generateViewTopicsInChmFormatMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.generateViewTopicsInChmFormatMenuItem.Text = "&View Compiled Topics in CHM Format";
+            this.generateViewTopicsInChmFormatMenuItem.Click += new System.EventHandler(this.generateViewTopicsInChmFormatMenuItem_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(178, 6);
             // 
             // generateFormatMenuItem
             // 
@@ -409,43 +432,13 @@
             this.generateHelpsMenuItem.Text = "&Helps";
             this.generateHelpsMenuItem.Click += new System.EventHandler(this.generateHelpsMenuItem_Click);
             // 
-            // settingsMenuItem
-            // 
-            this.settingsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsViewTopicsInHelpsFormatMenuItem});
-            this.settingsMenuItem.Name = "settingsMenuItem";
-            this.settingsMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsMenuItem.Text = "&Settings";
-            // 
-            // settingsViewTopicsInHelpsFormatMenuItem
-            // 
-            this.settingsViewTopicsInHelpsFormatMenuItem.Checked = true;
-            this.settingsViewTopicsInHelpsFormatMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.settingsViewTopicsInHelpsFormatMenuItem.Name = "settingsViewTopicsInHelpsFormatMenuItem";
-            this.settingsViewTopicsInHelpsFormatMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.settingsViewTopicsInHelpsFormatMenuItem.Text = "&View Topics in Helps Format";
-            this.settingsViewTopicsInHelpsFormatMenuItem.Click += new System.EventHandler(this.settingsViewTopicsInHelpsFormatMenuItem_Click);
-            // 
-            // toolsMenuItem
-            // 
-            this.toolsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolsRegisterFileAssociationsMenuItem});
-            this.toolsMenuItem.Name = "toolsMenuItem";
-            this.toolsMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.toolsMenuItem.Text = "&Tools";
-            // 
-            // toolsRegisterFileAssociationsMenuItem
-            // 
-            this.toolsRegisterFileAssociationsMenuItem.Name = "toolsRegisterFileAssociationsMenuItem";
-            this.toolsRegisterFileAssociationsMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.toolsRegisterFileAssociationsMenuItem.Text = "&Register File Associations";
-            this.toolsRegisterFileAssociationsMenuItem.Click += new System.EventHandler(this.toolsRegisterFileAssociationsMenuItem_Click);
-            // 
             // helpMenuItem
             // 
             this.helpMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.helpContextMenuItem,
-            this.helpSyntaxMenuItem});
+            this.helpSyntaxMenuItem,
+            this.toolStripSeparator9,
+            this.helpRegisterFileAssociationsMenuItem});
             this.helpMenuItem.Name = "helpMenuItem";
             this.helpMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpMenuItem.Text = "&Help";
@@ -454,16 +447,28 @@
             // 
             this.helpContextMenuItem.Name = "helpContextMenuItem";
             this.helpContextMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.helpContextMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.helpContextMenuItem.Size = new System.Drawing.Size(206, 22);
             this.helpContextMenuItem.Text = "&Help";
             this.helpContextMenuItem.Click += new System.EventHandler(this.helpContextMenuItem_Click);
             // 
             // helpSyntaxMenuItem
             // 
             this.helpSyntaxMenuItem.Name = "helpSyntaxMenuItem";
-            this.helpSyntaxMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.helpSyntaxMenuItem.Size = new System.Drawing.Size(206, 22);
             this.helpSyntaxMenuItem.Text = "Topic &Syntax";
             this.helpSyntaxMenuItem.Click += new System.EventHandler(this.helpSyntaxMenuItem_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(203, 6);
+            // 
+            // helpRegisterFileAssociationsMenuItem
+            // 
+            this.helpRegisterFileAssociationsMenuItem.Name = "helpRegisterFileAssociationsMenuItem";
+            this.helpRegisterFileAssociationsMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.helpRegisterFileAssociationsMenuItem.Text = "&Register File Associations";
+            this.helpRegisterFileAssociationsMenuItem.Click += new System.EventHandler(this.helpRegisterFileAssociationsMenuItem_Click);
             // 
             // MainForm
             // 
@@ -519,10 +524,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileCloseAllMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateFormatMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewImagesMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolsMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolsRegisterFileAssociationsMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem settingsMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem settingsViewTopicsInHelpsFormatMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editBoldMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editItalicsMenuItem;
@@ -537,6 +538,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem editSyntaxArgumentMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem generateCompilationModeMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateViewTopicsInChmFormatMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripMenuItem helpRegisterFileAssociationsMenuItem;
     }
 }
 
