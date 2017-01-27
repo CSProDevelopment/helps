@@ -481,8 +481,20 @@ namespace Help_Generator
                 bool useIfExists = ( startTagComponent.Length > 0 && startTagComponent[0] == '!' );
                 string context = useIfExists ? startTagComponent.Substring(1) : startTagComponent;
 
-                if( !useIfExists )
-                    _helpComponents.settings.CheckContextExists(context,_helpComponents.preprocessor);
+                try
+                {
+                    if( !useIfExists )
+                        _helpComponents.settings.CheckContextExists(context,_helpComponents.preprocessor);
+                }
+
+                catch( Exception exception )
+                {
+                    if( _topicCompilerSettings.MainFormForIssuingCollaboratorModeWarning == null )
+                        throw exception;
+
+                    else
+                        _topicCompilerSettings.MainFormForIssuingCollaboratorModeWarning.AddCollaboratorModeWarningMissingContext();
+                }
 
                 _topicCompilerSettings.AddContextSensitiveHelp(_preprocessedTopic,context);
             }
@@ -806,13 +818,16 @@ namespace Help_Generator
         private void CreateLogicPffColorizers()
         {
             if( _helpComponents._logicColorizer == null )
-                _helpComponents._logicColorizer = new LogicColorizer(new LogicColorizerHtmlHelp(this));
+                _helpComponents._logicColorizer = new LogicColorizer(new LogicColorizerHtmlHelp());
 
             if( _helpComponents._inlineLogicColorizer == null )
-                _helpComponents._inlineLogicColorizer = new LogicColorizer(new LogicColorizerHtmlHelpInline(this));
+                _helpComponents._inlineLogicColorizer = new LogicColorizer(new LogicColorizerHtmlHelpInline());
+
+            ((LogicColorizerHtmlHelp)_helpComponents._logicColorizer.DefaultLogicColorizer).GetHtmlFilenameForKeywordClass = this;
+            ((LogicColorizerHtmlHelpInline)_helpComponents._inlineLogicColorizer.DefaultLogicColorizer).GetHtmlFilenameForKeywordClass = this;
 
             if( _helpComponents._pffColorizer == null )
-                _helpComponents._pffColorizer = new Colorizer.PffColorizer(new PffColorizerHtmlHelp());
+                _helpComponents._pffColorizer = new PffColorizer(new PffColorizerHtmlHelp());
         }
 
         public string GetHtmlFilenameForKeyword(string helpTopic)

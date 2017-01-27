@@ -72,7 +72,7 @@ namespace Help_Generator
             {
                 if( _textEditableInterface is Topic )
                 {
-                    _topicCompilerSettings.ChmCreationMode = ((MainForm)this.ParentForm).ChmCreationMode;
+                    _topicCompilerSettings.HelpGeneratorMainForm = ((MainForm)this.ParentForm);
 
                     string html = ((Topic)_textEditableInterface).CompileForHtml(GetLinesArray(),_helpComponents,_topicCompilerSettings);
                     UpdateWindowTitle();

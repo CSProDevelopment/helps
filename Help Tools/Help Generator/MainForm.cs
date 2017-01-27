@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Microsoft.Win32;
@@ -8,6 +9,9 @@ namespace Help_Generator
     partial class MainForm : Form
     {
         private HelpComponents _helpComponents;
+
+        private CollaboratorModeWarningForm _collaboratorModeWarningForm;
+        private bool _issuedCollaboratorModeWarningMissingContext;
 
         public MainForm()
         {
@@ -23,12 +27,12 @@ namespace Help_Generator
                 _helpComponents.htmlHelpCompilerExecutable = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),@"HTML Help Workshop\hhc.exe");
 
                 if( !File.Exists(_helpComponents.htmlHelpCompilerExecutable) )
-                    throw new Exception("Could not find the HTML Help Compiler here:\n\n" + _helpComponents.htmlHelpCompilerExecutable);
+                    AddCollaboratorModeWarning("Could not find the HTML Help Compiler here:\r\n" + _helpComponents.htmlHelpCompilerExecutable);
 
                 _helpComponents.wkhtmltopdfExecutable = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),@"wkhtmltopdf\bin\wkhtmltopdf.exe");
 
                 if( !File.Exists(_helpComponents.wkhtmltopdfExecutable) )
-                    throw new Exception("Could not find wkhtmltopdf here:\n\n" + _helpComponents.wkhtmltopdfExecutable);
+                    AddCollaboratorModeWarning("Could not find wkhtmltopdf here:\r\n" + _helpComponents.wkhtmltopdfExecutable);
 
                 Array commandArgs = Environment.GetCommandLineArgs();
                 bool generateAndClose = false;
@@ -87,7 +91,7 @@ namespace Help_Generator
 
                 LoadProject();
 
-                if( generateAndClose )
+                if( generateAndClose && _collaboratorModeWarningForm == null )
                 {
                     GenerateHelps(true);
                     Close();
@@ -446,6 +450,36 @@ namespace Help_Generator
 
             if( someFilesIgnored )
                 MessageBox.Show("Not all topics could be loaded. They might not be part of this project.");
+        }
+
+        private void AddCollaboratorModeWarning(string warningMessage)
+        {
+            if( _collaboratorModeWarningForm == null )
+            {
+                _collaboratorModeWarningForm = new CollaboratorModeWarningForm();
+                _collaboratorModeWarningForm.MdiParent = this;
+
+                // locate the form at the top-right
+                const int MarginX = 30;
+                const int MarginY = 5;
+                _collaboratorModeWarningForm.Location = new Point(this.Width - _collaboratorModeWarningForm.Width - MarginX,MarginY);
+
+                _collaboratorModeWarningForm.Show();
+
+                // disable the creation of helps
+                generateHelpsMenuItem.Enabled = false;
+            }
+
+            _collaboratorModeWarningForm.AddWarning(warningMessage);
+        }
+
+        public void AddCollaboratorModeWarningMissingContext()
+        {
+            if( !_issuedCollaboratorModeWarningMissingContext )
+            {
+                AddCollaboratorModeWarning("Could not locate the context sensitive help resource files.");
+                _issuedCollaboratorModeWarningMissingContext = true;
+            }
         }
     }
 }

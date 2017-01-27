@@ -67,12 +67,7 @@ namespace Colorizer
             string GetHtmlFilenameForKeyword(string helpTopic);
         }
 
-        private GetHtmlFilenameForKeywordInterface _getHtmlFilenameForKeywordInterface;
-
-        public LogicColorizerHtmlHelp(GetHtmlFilenameForKeywordInterface getHtmlFilenameForKeywordInterface)
-        {
-            _getHtmlFilenameForKeywordInterface = getHtmlFilenameForKeywordInterface;
-        }
+        public GetHtmlFilenameForKeywordInterface GetHtmlFilenameForKeywordClass { get; set; }
 
         public override void StartBlock(StringBuilder sb)
         {
@@ -86,7 +81,7 @@ namespace Colorizer
 
         private void AddKeywordOrTextWithHelp(StringBuilder sb,string text,string helpTopic,string color)
         {
-            string linkText = ( helpTopic == null ) ? null : _getHtmlFilenameForKeywordInterface.GetHtmlFilenameForKeyword(helpTopic);
+            string linkText = ( helpTopic == null ) ? null : GetHtmlFilenameForKeywordClass.GetHtmlFilenameForKeyword(helpTopic);
 
             if( linkText == null )
                 sb.AppendFormat("<font color=\"{0}\">{1}</font>",color,Htmlize(text));
@@ -108,11 +103,6 @@ namespace Colorizer
 
     class LogicColorizerHtmlHelpInline : LogicColorizerHtmlHelp
     {
-        public LogicColorizerHtmlHelpInline(GetHtmlFilenameForKeywordInterface getHtmlFilenameForKeywordInterface)
-            : base(getHtmlFilenameForKeywordInterface)
-        {
-        }
-
         protected override string Htmlize(string text)
         {
             return HelperFunctions.HtmlizeWhitespace(text);

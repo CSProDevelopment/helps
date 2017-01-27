@@ -19,15 +19,13 @@ namespace Help_Generator
         void AddContextSensitiveHelp(Preprocessor.TopicPreprocessor preprocessedTopic,string defineId);
         bool ChmCreationMode { get; }
         bool AddHtmlHeaderFooter { get; }
+        MainForm MainFormForIssuingCollaboratorModeWarning { get; }
     }
 
 
     class TextEditFormTopicCompilerSettings : TopicCompilerSettingsInterface
     {
-        public TextEditFormTopicCompilerSettings()
-        {
-            ChmCreationMode = true;
-        }
+        public MainForm HelpGeneratorMainForm { get; set; }
 
         public string GetStartingHtml(Preprocessor.TopicPreprocessor preprocessedTopic) { return ""; }
 
@@ -78,9 +76,11 @@ namespace Help_Generator
         {
         }
 
-        public bool ChmCreationMode { get; set; }
+        public bool ChmCreationMode { get { return HelpGeneratorMainForm.ChmCreationMode; } }
 
         public bool AddHtmlHeaderFooter { get { return true; } }
+
+        public MainForm MainFormForIssuingCollaboratorModeWarning { get { return HelpGeneratorMainForm; } }
     }
 
 
@@ -127,6 +127,8 @@ namespace Help_Generator
         public abstract bool ChmCreationMode { get; }
 
         public bool AddHtmlHeaderFooter { get { return true; } }
+
+        public MainForm MainFormForIssuingCollaboratorModeWarning { get { return null; } }
     }
 
 
@@ -293,5 +295,7 @@ namespace Help_Generator
         public bool ChmCreationMode { get { return false; } }
 
         public bool AddHtmlHeaderFooter { get { return false; } }
+
+        public MainForm MainFormForIssuingCollaboratorModeWarning { get { return null; } }
     }
 }

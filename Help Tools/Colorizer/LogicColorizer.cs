@@ -13,6 +13,7 @@ namespace Colorizer
         private LogicColorizerInterface _defaultLogicColorizer;
 
         public List<string> ReservedWordsList { get { return _reservedWords.ToList(); } }
+        public LogicColorizerInterface DefaultLogicColorizer { get { return _defaultLogicColorizer; } }
 
         public LogicColorizer()
         {
