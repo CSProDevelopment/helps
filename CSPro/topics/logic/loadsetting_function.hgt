@@ -9,7 +9,7 @@ s = loadsetting(<arg>attribute</arg>『,default_setting』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>loadsetting</logiccolor> function, using the string expression <arg>atttribute</arg>, retrieves a setting from an attribute-value pair, a setting that has been previously saved using the <logiccolor>savesetting</logiccolor> function. An optional string expression <arg>default_setting</arg> can be provided and will be returned if no value has been saved for the given attribute.
+The <logiccolor>loadsetting</logiccolor> function, using the string expression <arg>attribute</arg>, retrieves a setting from an attribute-value pair, a setting that has been previously saved using the <logiccolor>savesetting</logiccolor> function. An optional string expression <arg>default_setting</arg> can be provided and will be returned if no value has been saved for the given attribute.
 
 The location from where settings are retrieved can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file.
 

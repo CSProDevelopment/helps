@@ -9,7 +9,7 @@ b = showocc(<arg>roster_name</arg> ‖ <arg>form_name</arg>『(<arg>occurrence_n
 
 <subheader>Description</subheader>
 
-The <logiccolor>showocc</logiccolor> function shows an occurrence of a roster or form in the Android and Windows Universal case tree. It will also show the row on a roster on Windows CSEntry. If no numeric <arg>occurrence_number</arg> is supplied, then the current occurrence for the roster or form will be shown.
+The <logiccolor>showocc</logiccolor> function shows an occurrence of a roster or form in the Android and Universal Windows case tree. It will also show the row on a roster on Windows CSEntry. If no numeric <arg>occurrence_number</arg> is supplied, then the current occurrence for the roster or form will be shown.
 
 By default, all occurrences of a roster and form are shown by CSEntry, but occurrences may be hidden with the <logiccolor>hideocc</logiccolor> function. Alternatively, an optional numeric argument <arg>show_condition</arg>, allows the <logiccolor>showocc</logiccolor> function to conditionally hide occurrences, based on whether the condition is true. The occurrence will be hidden if <arg>show_condition</arg> is 0; the occurrence will be shown for any other value.
 

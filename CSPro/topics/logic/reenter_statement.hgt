@@ -1,138 +1,38 @@
 ﻿<title>Reenter Statement</title>
 <context logic_help_reenter />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Reenter</font></b> <b><font style="font-family: Arial;
-														 font-size: 18pt;
-														 font-weight: bold;"
-														 face="Arial" size="5">Statement</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">reenter</font></b> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">[</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">field-name</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">]</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">;&#160;&#160;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format 2:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New';"><span style="color: #0000ff; font-weight: bold;">reenter</span>
- alpha-variable;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#FF00FF" face="Arial"
-	 size="2">[ ]</font> <font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">indicates that this
- part is optional.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The reenter statement is used to force the entry operator
- to reenter the contents for the current variable, or for a field that
- was entered earlier. &quot;Field-name&quot; specifies the field to be
- reentered. If no &quot;field-name&quot; is specified, the current field
- is reentered. &quot;Field-name&quot; must be earlier on the data path
- than the current variable. If it is not, an error message will be displayed
- during data entry and data entry will be aborted. If you donâ€™t know whether
- the field is earlier in the data path, use the</font> <a href="move_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">move</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">statement.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- field name can be given directly by naming the field or indirectly by
- using the contents of an alpha variable.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">When a reenter statement is executed, the</font> <a href="preproc_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">preproc</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">for &quot;field-name&quot; will not be executed. If &quot;field-name&quot;
- is on a different form than the current field, that form will be displayed
- automatically. The</font> <a href="postproc_statement.html"><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">postproc</font></a> <font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">of &quot;field-name&quot; will be executed normally after
- &quot;field-name&quot; has been reentered.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">KIDS
- =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-				 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#000000"
-															 face="Courier New"
-															 size="2">&amp;
- BOYS =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-					 color="#FF0000" face="Courier New" size="2">0</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">&amp; GIRLS =</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF0000" face="Courier New" size="2">0</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;</font><font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#0000FF"
-															 face="Courier New"
-															 size="2">reenter</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">KIDS;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#000000" face="Courier New"
-													 size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" face="Arial"
-										 size="2">See also:</font></b>
- <a href="move_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">Move Statement</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="skip_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">Skip Statement</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="advance_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Advance
- Statement</font></a></p>
-</body>
-</html>
+<logicsyntax>
+reenter 『<arg>field_name</arg>』;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>reenter</logiccolor> statement is used to force the entry operator to reenter the contents of the current field or of a field that was entered earlier. The optional <arg>field_name</arg> is either the name of a field or is a string variable specifying the name of the field. If the <arg>field_name</arg> is not specified, the current field is reentered. The field to be reentered must be earlier on the data path than the current variable. If it is not, an error message will be displayed during data entry. If you do not know whether the field is earlier in the data path, use the <logiccolor>move</logiccolor> statement.
+
+When a <logiccolor>reenter</logiccolor> statement is executed, the <logiccolor>preproc</logiccolor> of the reentered field will not be executed. The <logiccolor>postproc</logiccolor> of the field will be executed normally after the field has been reentered. If the field is on a different form than the current field, that form will be displayed automatically.
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC RELATIONSHIP
+
+	if curocc() = 1 and RELATIONSHIP <> 1 then
+		errmsg("The head of household must be entered on the first row.");
+		reenter;
+	endif;
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC DOB_YEAR
+
+	if DOB_YEAR = CensusYear and DOB_MONTH > CensusMonth then
+		errmsg("The date of birth cannot be after the census date. Reenter the month and year.");
+		reenter DOB_MONTH;
+	endif;
+</logic>
+
+<seealso advance_statement.hgt ask_statement.hgt move_statement.hgt skip_statement.hgt />

@@ -1,0 +1,32 @@
+﻿<title>Ask Statement</title>
+<context logic_help_ask />
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+ask if <arg>condition</arg>;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>ask</logiccolor> statement determines whether a field, roster, or form is eligible for data entry. The statement must be coded in a <logiccolor>preproc</logiccolor>. The <arg>condition</arg> is evaluated, and if true, any additional logic is executed until the appropriate field is reached and entered. If the <arg>condition</arg> is false, then control moves to the next field, roster, or form.
+
+The <logiccolor>ask</logiccolor> statement is an inversion of the <logiccolor>skip</logiccolor> statement and can be written as:
+
+<logicsyntax>
+if not <arg>condition</arg> then
+	skip to <arg>next_field</arg>;
+endif;
+</logicsyntax>
+
+<subheader>Example</subheader>
+
+<logic>
+PROC MARRIAGE_AGE
+
+preproc
+
+	ask if MARITAL_STATUS in 2:5;
+</logic>
+
+<seealso advance_statement.hgt move_statement.hgt reenter_statement.hgt skip_statement.hgt />

@@ -11,6 +11,8 @@ b = close(<arg>dictionary_name</arg> ‖ <arg>file_name</arg>);
 
 The <logiccolor>close</logiccolor> function closes a file, whether opened as a dictionary or via a <logiccolor>file</logiccolor> statement. The function closes either a dictionary named <arg>dictionary_name</arg> or a file named <arg>file_name</arg>.
 
+If closing a dictionary, the dictionary will be set to a <link data_sources.hgt>none data source</link> and will remain set to that source until the previous file is reopened using the <logiccolor>open</logiccolor> function or if a new file is associated with the dictionary using the <logiccolor>setfile</logiccolor> function.
+
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.

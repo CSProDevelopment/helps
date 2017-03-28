@@ -13,11 +13,12 @@ The <logiccolor>getos</logiccolor> function returns a code that indicates what o
 
 <table 2 header nowrap>
 	<cell>Code</cell><cell>Operating System</cell>
-	<cell>10 - 19</cell><cell>Windows</cell>
-	<cell>20 - 29</cell><cell>Android</cell>
+	<cell>10</cell><cell>Windows</cell>
+	<cell>20</cell><cell>Android</cell>
+	<cell>30</cell><cell>Universal Windows Platform</cell>
 </table>
 
-At the moment, only the codes 10 and 20 are returned, but in the future other codes in the range may be used that will differentiate between different versions of the operating system. An optional alphanumeric variable <arg>detailed_information</arg> can be passed to the function that will give detailed information on the operating system, including the operating system name and the version number. Note, however, that Windows version numbers do not necessary match the official release numbers. For example, Windows 8.1 has a version number of 6.3.
+An optional alphanumeric variable <arg>detailed_information</arg> can be passed to the function that will give detailed information on the operating system, including the operating system name and the version number. Note, however, that Windows version numbers do not necessarily match the official release numbers. For example, Windows 8.1 has a version number of 6.3.
 
 <subheader>Return Value</subheader>
 

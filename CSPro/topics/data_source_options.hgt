@@ -1,0 +1,24 @@
+﻿<title>Data Source Options</title>
+<context HIDD_DATA_SOURCE_OPTIONS_DLG HID_OPTIONS_DATA_SOURCES />
+
+With a data entry application, you can select <b>Data Sources</b> from the <b>Options</b> menu to change any of the following:
+
+<subheader>Additional Metadata Files</subheader>
+
+<list>
+	<li><b>Listing file</b>: If checked, a <link listing_file_lst.hgt>listing file</link>, with the extension .lst, will be created for the main input file.</li>
+	<li><b>Operator statistics log file</b>: If checked, an <link operator_statistics_file.hgt>operator statistics file</link>, with the extension .log, will be created for the main input file. This file is only created by Windows CSEntry and not by Android or Universal Windows.</li>
+</list>
+
+It may be useful to uncheck both options if creating a menu or CAPI program, as these files are mostly useful in key-from-paper operations.
+
+<seealso data_source_options.hgt />
+
+<subheader>Multiple Operator Notes</subheader>
+
+<list>
+	<li><b>Delete other operators' notes</b>: If checked, any operator can delete the field notes left by other operators. If unchecked, an operator can only delete notes that they personally have left.</li>
+	<li><b>Edit other operators' notes</b>: If checked, any operator can edit the field notes left by other operators. If unchecked, an operator can only edit notes that they have personally left.</li>
+</list>
+
+<seealso getnote_function.hgt putnote_function.hgt getoperatorid_function.hgt />
