@@ -1,154 +1,104 @@
 ﻿<title>Trace Function</title>
 <context logic_help_trace />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+Programmers use tracing to obtain low-level information about how an application runs, with the information often used for debugging purposes to understand why a program does not execute as expected. CSPro offers limited tracing functionality for two objectives: logging user-generated information and tracking executed statements. Tracing messages can be displayed in a window or saved to a file.
 
-<body>
-<h1 style="font-family: Arial, sans-serif; font-size: 18pt;"><span style="color: #0000ff;">Trace</span>
- Function</h1>
-<p style="font-family: Arial, sans-serif; font-size: 10pt;"><span style="font-family: Arial, sans-serif;
-	 font-size: 10pt;">Programmers use tracing to obtain low-level information
- about how an application runs, with the information often used for debugging
- purposes to understand why a program does not execute as expected. CSPro
- offers limited tracing functionality for two objectives: logging user-generated
- information and tracking executed statements. Tracing messages can be
- displayed in a window or saved to a file.</span></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Activating
- and Disabling Tracing</p>
-<p style="font-size: 10pt; margin-left: 12px; font-family: 'Courier New', monospace;"><font
-	 color="#0000FF">trace</font>(on); <font color="#008000">//&#160;turns
- on tracing and outputs messages to a window<br />
-</font><br />
-<font color="#0000FF">trace</font>(on,<font color="#FF00FF">&quot;filename&quot;</font>);
- <font color="#008000">//&#160;turns on tracing and appends messages to
- &quot;filename&quot;<br />
-</font><br />
-<font color="#0000FF">trace</font>(on,<font color="#FF00FF">&quot;filename&quot;</font>,<font
-	 color="#0000FF">clear</font>); <font color="#008000">//&#160;turns
- on tracing, clears any contents in the file, and writes messages to &quot;filename&quot;<br />
-</font><br />
-<font color="#0000FF">trace</font>(off); <font color="#008000">//&#160;turns
- off tracing, closing all open trace windows or files</font></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt;">It is possible,
- by calling the <span style="font-weight: bold;">trace</span> function
- twice, to send messages to both a window and a file. If the filename does
- not contain a path the file will be placed in the application folder.
- On Android it is only possible to trace to a file and any trace statements
- output to a window will be ignored.</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Logging
- User-Generated Information</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt;">To send a message
- to the trace log, simply pass a string to the <span style="font-weight: bold;">trace</span>
- function.</p>
-<p style="font-size: 10pt; margin-left: 12px; font-family: 'Courier New', monospace;"><font
-	 color="#0000FF">trace</font>(<font color="#FF00FF">&quot;This is a
- trace message&quot;</font>);<br />
-<br />
-<font color="#0000FF">if</font> distance &gt; <font color="#FF0000">100</font>
- <font color="#0000FF">then</font><br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">trace</font>(<font color="#0000FF">maketext</font>(<font
-	 color="#FF00FF">&quot;distance (%d) &gt; 100!&quot;</font>,distance));<br />
-<font color="#0000FF">endif</font>;</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Tracking
- Executed Statements</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt;">Occasionally
- a programmer wants to observe how logic statements are executed, particularly
- when the logic behaves in a manner inconsistent with the programmer's
- expectations. The trace window or file can display each line of logic
- as it is executed. Because in some applications this may be a very large
- number of statements, the programmer must specify what elements of the
- logic should be outputted:</p>
-<p style="font-size: 10pt; margin-left: 12px; font-family: 'Courier New', monospace;"><font
-	 color="#000000"><font color="#0000FF">set</font> <font color="#0000FF">trace</font>;
- <font color="#008000">//&#160;logic statements after this point will be
- outputted<br />
-</font><br />
-<font color="#0000FF">set</font> <font color="#0000FF">trace</font>(on);
- <font color="#008000">//&#160;same as above<br />
-</font><br />
-<font color="#0000FF">set</font> <font color="#0000FF">trace</font>(off);
- <font color="#008000">//&#160;logic statements after this point will not
- be outputted</font></font></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt;">The <span style="font-weight: bold;">set
- trace</span> statement indicates to CSPro that logic statements should
- or should not be outputted but the statements will only be outputted if
- tracing is activated, thus the <span style="font-weight: bold;">trace</span>
- function and <span style="font-weight: bold;">set trace</span> statements
- must be used together.</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Example</p>
-<p style="font-size: 10pt; margin-left: 12px; font-family: 'Courier New', monospace;"><font
-	 color="#000000"><font color="#0000FF">trace</font>(<font color="#FF00FF">&quot;There
- is no trace window open so this message is discarded&quot;</font>);<br />
-<br />
-<font color="#0000FF">trace</font>(on,<font color="#FF00FF">&quot;trace.txt&quot;</font>,<font
-	 color="#0000FF">clear</font>); <font color="#008000">//&#160;opens
- the trace file and clears previous contents<br />
-</font><br />
-<font color="#0000FF">trace</font>(<font color="#FF00FF">&quot;This message
- appears in the file&quot;</font>);<br />
-<br />
-<font color="#0000FF">trace</font>(<font color="#0000FF">maketext</font>(<font
-	 color="#FF00FF">&quot;Complex strings can be outputted using maketext;
- e.g., e = %0.3f&quot;</font>,<font color="#0000FF">exp</font>(<font color="#FF0000">1</font>)));<br />
-<br />
-<font color="#0000FF">trace</font>(off); <font color="#008000">//&#160;closes
- the trace file<br />
-</font><br />
-<font color="#0000FF">trace</font>(on,<font color="#FF00FF">&quot;trace.txt&quot;</font>);
- <font color="#008000">//&#160;opens the trace file and now messages will
- be appended to the end of the file<br />
-</font><br />
-<font color="#0000FF">set</font> <font color="#0000FF">trace</font>;<br />
-<br />
-<font color="#0000FF">numeric</font> value = <font color="#FF0000">10</font>;<br />
-<br />
-<font color="#0000FF">if</font> value &gt; <font color="#FF0000">10</font>
- <font color="#0000FF">then</font><br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;A&quot;</font>);<br />
-<font color="#0000FF">elseif</font> value &lt; <font color="#FF0000">10</font>
- <font color="#0000FF">then</font><br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;B&quot;</font>);<br />
-<font color="#0000FF">else</font><br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;C&quot;</font>);<br />
-<font color="#0000FF">endif</font>;<br />
-<br />
-<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;This statement
- will appear on the trace window&quot;</font>);<br />
-<br />
-<font color="#0000FF">set</font> <font color="#0000FF">trace</font>(off);<br />
-<br />
-<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;This statement
- will not appear on the trace window&quot;</font>);</font></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;
-	 font-style: italic;">Trace Output</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">As
- the following trace results show, the output for conditional statements
- (e.g., <span style="font-weight: bold;">if</span><span>)</span> and loops
- (e.g., <span style="font-weight: bold;">do</span><span>) is limited. Trace
- results show the line numbers to the left of the executed statements.</span></p>
-<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 12px;"><span
-	 style="font-size: 10pt; font-family: 'Courier New', monospace;">Trace
- started at 02/03/11 20:28:35</span></p>
-<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 12px;">TRACE
- &#160;&#160;This message appears in the file<br />
-TRACE &#160;&#160;Complex strings can be outputted using maketext; e.g.,
- e = 2.718</p>
-<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 12px;">Trace
- stopped at 02/03/11 20:28:35<br />
-Trace started at 02/03/11 20:28:35</p>
-<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 12px;">31
- &#160;&#160;: &#160;numeric value = 10;<br />
-33 &#160;&#160;: &#160;if value &gt; 10 then<br />
-38 &#160;&#160;: &#160;errmsg(&quot;C&quot;);<br />
-41 &#160;&#160;: &#160;errmsg(&quot;This statement will appear on the trace
- window&quot;);<br />
-43 &#160;&#160;: &#160;set trace(off);</p>
-<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 12px;">Trace
- stopped at 02/03/11 20:28:35</p>
-</body>
-</html>
+<subheader>Activating and Disabling Tracing</subheader>
+
+<logic>
+// turns on tracing and outputs messages to a window
+trace(on);
+
+// turns on tracing and appends messages to "filename"
+trace(on,"filename");
+
+// turns on tracing, clears any contents in the file, and writes messages to "filename"
+trace(on,"filename",clear); 
+
+// turns off tracing, closing all open trace windows or files
+trace(off);
+</logic>
+
+It is possible, by calling the <logiccolor>trace</logiccolor> function twice, to send messages to both a window and a file. If the filename does not contain a dictionary, the file will be placed in the application folder. On Android and Windows Universal, it is only possible to trace to a file and any trace statements output to a window will be ignored.
+
+<subheader>Logging User-Generated Information</subheader>
+
+To send a message to the trace log, simply pass a string to the <logiccolor>trace</logiccolor> function using the formatting parameters used by the <logiccolor>errmsg</logiccolor> function.
+
+<logic>
+if distance > 100 then
+	trace("distance (%d) > 100!",distance);
+endif;
+</logic>
+
+<subheader>Tracking Executed Statements</subheader>
+
+Occasionally a programmer wants to observe how logic statements are executed, particularly when the logic behaves in a manner inconsistent with the programmer's expectations. The trace window or file can display each line of logic as it is executed. Because in some applications this may be a very large number of statements, the programmer must specify what elements of the logic should be outputted:
+
+<logic>
+// logic statements after this point will be outputted
+set trace;
+
+// same as above
+set trace(on);
+
+// logic statements after this point will not be outputted
+set trace(off);
+</logic>
+
+The <logiccolor>set trace</logiccolor> statement indicates to CSPro that logic statements should or should not be outputted but the statements will only be outputted if tracing is activated, thus the <logiccolor>trace</logiccolor> function and <logiccolor>set trace</logiccolor> statements must be used together.
+
+<subheader>Example</subheader>
+
+<logic>
+trace("There is no trace window open so this message is discarded");
+
+// opens the trace file and clears previous contents
+trace(on,"trace.txt",clear);
+
+trace("This message appears in the file");
+
+trace("Complex strings can be outputted using errmsg-style formatting; e.g., e = %0.3f",exp(1));
+
+// closes the trace file
+trace(off);
+
+// opens the trace file and now messages will be appended to the end of the file
+trace(on,"trace.txt");
+
+set trace;
+
+numeric value = 10;
+
+if value > 10 then
+	errmsg("A");
+elseif value < 10 then
+	errmsg("B");
+else
+	errmsg("C");
+endif;
+
+errmsg("This statement will appear on the trace window");
+
+set trace(off);
+
+errmsg("This statement will not appear on the trace window");
+</logic>
+
+<subheader>Trace Output</subheader>
+
+As the following trace results show, the output for conditional statements (e.g., if) and loops (e.g., do) is limited. Trace results show the line numbers to the left of the executed statements.
+
+<indent><font monospace>
+Trace&nbsp;started&nbsp;at&nbsp;02/03/11&nbsp;20:28:35~!~
+TRACE&nbsp;&nbsp;&nbsp;This&nbsp;message&nbsp;appears&nbsp;in&nbsp;the&nbsp;file
+TRACE&nbsp;&nbsp;&nbsp;Complex&nbsp;strings&nbsp;can&nbsp;be&nbsp;outputted&nbsp;using&nbsp;errmsg-style&nbsp;formatting;&nbsp;e.g.,&nbsp;e&nbsp;=&nbsp;2.718~!~
+Trace&nbsp;stopped&nbsp;at&nbsp;02/03/11&nbsp;20:28:35
+Trace&nbsp;started&nbsp;at&nbsp;02/03/11&nbsp;20:28:35~!~
+31&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;numeric&nbsp;value&nbsp;=&nbsp;10;
+33&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;if&nbsp;value&nbsp;>&nbsp;10&nbsp;then
+38&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;errmsg("C");
+41&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;errmsg("This&nbsp;statement&nbsp;will&nbsp;appear&nbsp;on&nbsp;the&nbsp;trace&nbsp;window");
+43&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;set&nbsp;trace(off);~!~
+Trace&nbsp;stopped&nbsp;at&nbsp;02/03/11&nbsp;20:28:35
+</font></indent>

@@ -1,4 +1,28 @@
 ﻿<title>HideOcc Function</title>
 <context logic_help_hideocc />
 
-helptodo
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = hideocc(<arg>roster_name</arg> ‖ <arg>form_name</arg>『(<arg>occurrence_number</arg>)』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>hideocc</logiccolor> function hides an occurrence of a roster or form from showing in the Android and Windows Universal case tree. It will also hide the row from appearing on a roster on Windows CSEntry. If no numeric <arg>occurrence_number</arg> is supplied, then the current occurrence for the roster or form will be hidden.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value 1 (true) if successful and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC KEEP_PERSON
+
+	if KEEP_PERSON = 0 then
+		hideocc(PERSON000);
+	endif;
+</logic>
+
+<seealso showocc_function.hgt setocclabel_function.hgt occurrence_labels.hgt />

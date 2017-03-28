@@ -1,4 +1,29 @@
 ﻿<title>MinValue Function</title>
 <context logic_help_minvalue />
 
-helptodo
+<subheader>Format</subheader>
+
+<logicsyntax>
+d = minvalue(<arg>item_name</arg> ‖ <arg>value_set_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>minvalue</logiccolor> function returns the the minimum valid value for an item or value set. If a numeric <arg>item_name</arg> is provided, the function looks at the current value set for the item, or if no value set exists, looks at the item itself (returning a minimum value based on the item's number of digits). If a numeric <arg>value_set_name</arg> is provided, the function returns the minimum range or discrete value in the value set.
+
+<subheader>Return Value</subheader>
+
+The function returns the minimum valid value for an item or value set.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC AGE
+
+	if RELATIONSHIP = 1 and AGE < minvalue(AGE_HEAD_VS) then
+		errmsg("The head of household must be at least %d-years-old.",minvalue(AGE_HEAD_VS));
+		reenter;
+	endif;
+</logic>
+
+<seealso maxvalue_function.hgt low_function.hgt getlabel_function.hgt />
