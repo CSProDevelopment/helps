@@ -1,102 +1,26 @@
 ﻿<title>File Statement</title>
 <context logic_help_file />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">File</font></b> <b><font style="font-family: Arial;
-													 font-size: 18pt; font-weight: bold;"
-													 face="Arial" size="5">Statement</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">file</font></b> <i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 face="Courier New" size="2">file-1</font></i><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#FF00FF"
-														 face="Courier New"
-														 size="2">[</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">,</font> <i><font style="font-family: 'Courier New'; font-size: 10pt;
-								 font-style: italic;" face="Courier New"
-								 size="2">file-2</font></i><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">[</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">...,</font> <i><font style="font-family: 'Courier New';
-														 font-size: 10pt;
-														 font-style: italic;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">file-N</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">]]</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">file</font></b> <font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">statement
- defines files, not associated with dictionaries, that are used by the
- application and whose physical names are not given until run time. It
- must be coded in the</font> <b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" face="Arial"
-										 size="2">PROC GLOBAL</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">section
- of the application.</font></p>
-<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <i><font style="font-family: Arial; font-size: 10pt; font-style: italic;"
-			 face="Arial" size="2">file-N</font></i> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">is
- a CSPro name that is used in functions and statements that control the
- file.</font></p>
-<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- physical folder and file name of each file is requested when the application
- is run. The associated folder and file name can be changed during the
- run by using the</font> <b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" face="Arial" size="2">setfile</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">function</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">PROC GLOBAL</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;File</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">FILE_PERSON, FILE_HOUSEHOLD;</font></p>
-<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also:</font></b> <a href="setfile_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Setfile
- Function</font></a></p>
-</body>
-</html>
+<logicsyntax>
+file <arg>file_handler1</arg>『,...,<arg>file_handlerN</arg>』;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>file</logiccolor> statement defines text files that are used by the application and whose physical names are not given until run time. The files are not associated with external dictionaries. The statement must be coded in the <logiccolor>PROC GLOBAL</logiccolor> section of the application.
+
+<arg>file_handler1</arg> to <arg>file_handlerN</arg> are CSPro names that can be used in functions and statements that control files.
+
+The physical folder and file name of each file is provided when the application is run. The associated folder and file name can be changed during the program by using the <logiccolor>setfile</logiccolor> function.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+file vacantHouseholdsReportFile;
+</logic>
+
+<seealso setfile_function.hgt fileread_function.hgt filewrite_function.hgt />

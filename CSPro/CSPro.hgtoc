@@ -109,6 +109,7 @@
 			print_the_dictionary_file.hgt														#				Print the Dictionary File
 			save_dictionary_as_new_file.hgt														#				Save Dictionary As New File
 			multiple_language_dictionaries.hgt													#				Multiple Language Dictionaries
+			dictionary_macros.hgt																#				Dictionary Macros
 	|The CSPro Language																			#		The CSPro Language
 		introduction_to_cspro_language.hgt														#			Introduction to CSPro Language
 		data_requirements.hgt																	#			Data Requirements
@@ -182,6 +183,8 @@
 			|Change Data Entry Characteristics													#				Change Data Entry Characteristics
 				change_the_order_of_entry.hgt													#					Change the Order of Entry
 				change_data_entry_options.hgt													#					Change Data Entry Options
+				data_source_options.hgt															#					Data Source Options
+				synchronization_options.hgt														#					Synchronization Options
 				change_default_text_font.hgt													#					Change Default Text Font
 				change_field_colors.hgt															#					Change Field Colors
 				change_field_font.hgt															#					Change Field Font
@@ -229,6 +232,8 @@
 				order_of_executing_data_entry_events.hgt										#					Order of Executing Data Entry Events
 				sequence_dictated_by_designer.hgt												#					Sequence Dictated by Designer
 				compile_an_application.hgt														#					Compile an Application
+				onkey_character_map.hgt															#					OnKey Character Map
+				user_configuration_settings.hgt													#					User and Configuration Settings
 				run_as_batch.hgt																#					Run as Batch
 		|CAPI Data Entry																		#			CAPI Data Entry
 			introduction_to_capi.hgt															#				Introduction to CAPI
@@ -444,17 +449,18 @@
 			recodes_in_tables_using_value_sets_and_subtables.hgt								#				Recodes in Tables Using Value Sets and Subtables
 			use_expressions_in_universe_and_value_tallied.hgt									#				Use Expressions in Universe and Value Tallied
 	|CSPro Statements and Functions																#		CSPro Statements and Functions
-		logic_alphabetical_list.hgt																#			Alphabetical List of Statements and Functions
 		statement_format_symbols.hgt															#			Statement Format Symbols
+		logic_alphabetical_list.hgt																#			Alphabetical List of Statements and Functions
 		list_of_reserved_words.hgt																#			List of Reserved Words
 		deprecated_features.hgt																	#			Deprecated Features
 		|Declaration Statements																	#			Declaration Statements
+			numeric_statement.hgt																#				Numeric Statement
+			string_statement.hgt																#				String Statement
+			config_statement.hgt																#				Config Statement
+			alpha_statement.hgt																	#				Alpha Statement
+			array_statement.hgt																	#				Array Statement
 			set_statement.hgt																	#				Set Statement
 			file_statement.hgt																	#				File Statement
-			numeric_statement.hgt																#				Numeric Statement
-			alpha_statement.hgt																	#				Alpha Statement
-			string_statement.hgt																#				String Statement
-			array_statement.hgt																	#				Array Statement
 			relation_statement.hgt																#				Relation Statement
 			function_statement.hgt																#				Function Statement
 			additional_function_examples.hgt													#				Additional Examples of User-Defined Functions
@@ -507,7 +513,6 @@
 			onchar_global_function.hgt															#				Onchar Global Function
 			onfocus_statement.hgt																#				Onfocus Statement
 			onkey_global_function.hgt															#				Onkey Global Function
-			onkey_character_map.hgt																#				OnKey Character Map
 			onstop_global_function.hgt															#				Onstop Global Function
 			prompt_function.hgt																	#				Prompt Function
 			putnote_function.hgt																#				Putnote Function
@@ -565,6 +570,7 @@
 			getbuffer_function.hgt																#				Getbuffer Function
 			length_function.hgt																	#				Length Function
 			maketext_function.hgt																#				Maketext Function
+			message_formatting_options.hgt														#				Message Formatting Options
 			pos_function.hgt																	#				Pos Function
 			poschar_function.hgt																#				Poschar Function
 			strip_function.hgt																	#				Strip Function
@@ -606,7 +612,7 @@
 			loadsetting_function.hgt															#				LoadSetting Function
 			maxvalue_function.hgt																#				MaxValue Function
 			minvalue_function.hgt																#				MinValue Function
-			pathname_function.hgt																#				Pathname Function
+			pathname_function.hgt																#				PathName Function
 			savesetting_function.hgt															#				SaveSetting Function
 			special_function.hgt																#				Special Function
 			stop_function.hgt																	#				Stop Function
@@ -634,17 +640,17 @@
 			dircreate_function.hgt																#				DirCreate Function
 			direxist_function.hgt																#				DirExist Function
 			dirlist_function.hgt																#				DirList Function
-			fileconcat_function.hgt																#				Fileconcat Function
-			filecopy_function.hgt																#				Filecopy Function
+			fileconcat_function.hgt																#				FileConcat Function
+			filecopy_function.hgt																#				FileCopy Function
 			filecreate_function.hgt																#				FileCreate Function
 			fileempty_function.hgt																#				FileEmpty Function
 			fileexist_function.hgt																#				FileExist Function
 			filedelete_function.hgt																#				FileDelete Function
-			filename_function.hgt																#				Filename Function
-			fileread_function.hgt																#				Fileread Function
-			filerename_function.hgt																#				Filerename Function
-			filesize_function.hgt																#				Filesize Function
-			filewrite_function.hgt																#				Filewrite Function
+			filename_function.hgt																#				FileName Function
+			fileread_function.hgt																#				FileRead Function
+			filerename_function.hgt																#				FileRename Function
+			filesize_function.hgt																#				FileSize Function
+			filewrite_function.hgt																#				FileWrite Function
 			find_function.hgt																	#				Find Function
 			key_function.hgt																	#				Key Function
 			keylist_function.hgt																#				KeyList Function
@@ -730,10 +736,6 @@
 				saved_arrays_file_sva.hgt														#					Saved Arrays File (.SVA)
 			|HELPTODO																			#				HELPTODO
 				helptodo_images.hgt																#					zzzzz_HELPTODO: Images
-				data_source_options.hgt															#					Data Source Options
-				synchronization_options.hgt														#					Synchronization Options
-				user_configuration_settings.hgt													#					User and Configuration Settings
-				dictionary_macros.hgt															#					Dictionary Macros
 ||CSEntry.chm																					#	<Link to help file CSEntry.chm>
 ||CSBatch.chm																					#	<Link to help file CSBatch.chm>
 ||CSTab.chm																						#	<Link to help file CSTab.chm>

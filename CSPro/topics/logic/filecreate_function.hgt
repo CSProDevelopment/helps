@@ -9,7 +9,7 @@ b = filecreate(<arg>file_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>filecreate</logiccolor> function creates a new file named after the string expression (or <logiccolor>file</logiccolor> variable) <arg>file_name</arg>. If the file already exists, it is truncated to length three (the bytes in the file will consist only of the <link unicode_primer.hgt>UTF-8 byte order mark</link>). If the file is associated with the application as an external dictionary, a new index will be created for the file.
+The <logiccolor>filecreate</logiccolor> function creates a new file named after the string expression (or <logiccolor>file</logiccolor> handler) <arg>file_name</arg>. If the file already exists, it is truncated to length three (the bytes in the file will consist only of the <link unicode_primer.hgt>UTF-8 byte order mark</link>).
 
 <subheader>Return Value</subheader>
 
@@ -22,4 +22,4 @@ string reportFilename = pathname(Application) + "EA Completion Rate.html";
 filecreate(reportFilename);
 </logic>
 
-<seealso file_statement.hgt open_function.hgt setfile_function.hgt dircreate_function.hgt />
+<seealso dircreate_function.hgt open_function.hgt setfile_function.hgt />

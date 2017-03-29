@@ -9,11 +9,11 @@ b = fileempty(<arg>file_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>fileempty</logiccolor> function determines whether or not a file is empty and has no content. This function is useful for checking the status of files without needing to know the text encoding. An empty ANSI file is 0 bytes but an empty UTF-8 file is 3 bytes. <arg>file_name</arg> is either a string expression giving a file name or a name declared in a <logiccolor>file</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>.
+The <logiccolor>fileempty</logiccolor> function determines whether or not a file is empty and has no content. This function is useful for checking the status of files without needing to know the text encoding. An empty ANSI file is 0 bytes but an empty UTF-8 file is 3 bytes. The argument <arg>file_name</arg> is either a string expression giving a file name or is a file handler declared in a <logiccolor>file</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>.
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true) if the file exists and is empty and 0 (false) if the file is not empty. If the file does not exist or there is a file name error, it returns -1.
+The function returns a logical value of 1 (true) if the file exists and is empty and 0 (false) if the file is not empty. If the file does not exist, the function returns <logiccolor>default</logiccolor>.
 
 <subheader>Example</subheader>
 
@@ -24,4 +24,4 @@ if fileempty(customReportFile) then
 endif; 
 </logic>
 
-<seealso file_statement.hgt fileexist_function.hgt filesize_function.hgt />
+<seealso fileexist_function.hgt filesize_function.hgt />

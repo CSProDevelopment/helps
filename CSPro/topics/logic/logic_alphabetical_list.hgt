@@ -12,6 +12,7 @@
 	<cell><logiccolor>alias</logiccolor></cell><cell>Creates an aliased name for a dictionary item, typically to shorten or standardize names.</cell>
 	<cell><logiccolor>alpha</logiccolor></cell><cell>Declares alphanumeric variables used in the application.</cell>
 	<cell><logiccolor>array</logiccolor></cell><cell>Declares a 1- to 3-dimension array of values. </cell>
+	<cell><logiccolor>ask</logiccolor></cell><cell>Conditionally jumps forward to the next field during data entry.</cell>
 	<cell><logiccolor>average</logiccolor></cell><cell>Returns the average of an item that occurs multiple times.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>box</logiccolor></cell><cell>Old name for <logiccolor>recode</logiccolor> statement.</cell>
@@ -22,7 +23,9 @@
 	<cell><logiccolor>close</logiccolor></cell><cell>Closes a previously opened file.</cell>
 	<cell><logiccolor>cmcode</logiccolor></cell><cell>Returns the number of months since the year 1900 given a month and year.</cell>
 	<cell><logiccolor>compare</logiccolor></cell><cell>Returns the 	alphabetical order (i.e., collating sequence) of the two strings.</cell>
+	<cell><logiccolor>compress</logiccolor></cell><cell>Compresses some number of files into a single .zip file.</cell>
 	<cell><logiccolor>concat</logiccolor></cell><cell>Joins two or more strings into one string.</cell>
+	<cell><logiccolor>config</logiccolor></cell><cell>Declares <logiccolor>string</logiccolor> variables prefilled with values defined in the <link user_configuration_settings.hgt>configuration settings</link>.</cell>
 	<cell><logiccolor>connection</logiccolor></cell><cell>Determines whether the device has access to the Internet.</cell>
 	<cell><logiccolor>count</logiccolor></cell><cell>Returns the number of occurrences for a repeating form or roster.</cell>
 	<cell><logiccolor>countnonspecial</logiccolor></cell><cell>Returns the number of non-special values in a group of data items.</cell>
@@ -31,9 +34,11 @@
 	<cell><logiccolor>dateadd</logiccolor></cell><cell>Calculates a new date from a starting date and a period of elapsed time.</cell>
 	<cell><logiccolor>datediff</logiccolor></cell><cell>Calculates the difference between two dates.</cell>
 	<cell><logiccolor>datevalid</logiccolor></cell><cell>Determines whether a date in the format YYYYMMDD is valid.</cell>
+	<cell><logiccolor>decompress</logiccolor></cell><cell>Decompresses a .zip file, extracting some number of files.</cell>
 	<cell><logiccolor>delcase</logiccolor></cell><cell>Marks a case for deletion in an external file based on a key.</cell>
 	<cell><logiccolor>delete</logiccolor></cell><cell>Removes a record or item occurrence from the current case.</cell>
 	<cell><logiccolor>demode</logiccolor></cell><cell>Returns the current data entry mode.</cell>
+	<cell><logiccolor>diagnostics</logiccolor></cell><cell>Returns troubleshooting information about CSPro.</cell>
 	<cell><logiccolor>dircreate</logiccolor></cell><cell>Creates a new directory with the given directory name.</cell>
 	<cell><logiccolor>direxist</logiccolor></cell><cell>Determines whether a directory exists.</cell>
 	<cell><logiccolor>dirlist</logiccolor></cell><cell>Returns a list containing the file and directory listing of the specified directory.</cell>
@@ -104,9 +109,10 @@
 	<cell><logiccolor>int</logiccolor></cell><cell>Returns the integer portion of a numeric expression.</cell>
 	<cell><logiccolor>invalueset</logiccolor></cell><cell>Determines whether a data item's value is within the item's value set.</cell>
 	<cell><logiccolor>ispartial</logiccolor></cell><cell>Determines whether a case was opened from a partial case or not.</cell>
-		<cell><logiccolor>isverified</logiccolor></cell><cell>Determines whether a case was verified by double-keying.</cell>
+	<cell><logiccolor>isverified</logiccolor></cell><cell>Determines whether a case was verified by double-keying.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>key</logiccolor></cell><cell>Returns the key (ID string) of the currently loaded case.</cell>
+	<cell><logiccolor>keylist</logiccolor></cell><cell>Returns a list containing the keys (ID strings) of cases in a file.</cell>
 	<cell><logiccolor>killfocus</logiccolor></cell><cell>Declares that the following statements are executed after the object stops being active.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>length</logiccolor></cell><cell>Returns the length of a dictionary item or a string.</cell>
@@ -194,15 +200,16 @@
 	<cell><logiccolor>sum</logiccolor></cell><cell>Returns the sum of an item that occurs multiple times.</cell>
 	<cell><logiccolor>swap</logiccolor></cell><cell>Switches the order of two occurrences within a group.</cell>
 	<cell><logiccolor>sync</logiccolor></cell><cell>Executes a <link data_synchronization.hgt>data synchronization script</link> on Android to transfer data by FTP, Dropbox, or Bluetooth.</cell>
-	<cell><logiccolor>syncconnect</logiccolor></cell><cell>Connects to a web server or to another device using Bluetooth to begin a synchronization session.</cell>
-	<cell><logiccolor>syncdata</logiccolor></cell><cell>Sends or receives cases between the current device and a web server or another device.</cell>
+	<cell><logiccolor>syncconnect</logiccolor></cell><cell>Connects to a CSWeb, Dropbox, or FTP server, or to another device using Bluetooth, to begin a synchronization session.</cell>
+	<cell><logiccolor>syncdata</logiccolor></cell><cell>Sends or receives cases between the current device and a CSWeb server or another device.</cell>
 	<cell><logiccolor>syncdisconnect</logiccolor></cell><cell>Ends the current synchronization session.</cell>
-	<cell><logiccolor>syncfile</logiccolor></cell><cell>Sends or receives files between the current device and a web server or another device.</cell>
+	<cell><logiccolor>syncfile</logiccolor></cell><cell>Sends or receives files between the current device and a server or another device.</cell>
 	<cell><logiccolor>syncserver</logiccolor></cell><cell>Starts running a server on the current device, to which other devices can connect using Bluetooth.</cell>
-	<cell><logiccolor>sysdate</logiccolor></cell><cell>Returns the current system date as an integer.</cell>
+	<cell><logiccolor>sysdate</logiccolor></cell><cell>Returns the current system date.</cell>
 	<cell><logiccolor>sysparm</logiccolor></cell><cell>Returns a parameter a PFF file.</cell>
-	<cell><logiccolor>systime</logiccolor></cell><cell>Returns the current system time as an integer.</cell>
+	<cell><logiccolor>systime</logiccolor></cell><cell>Returns the current system time.</cell>
 	<cell 2>&nbsp;</cell>
+	<cell><logiccolor>timestamp</logiccolor></cell><cell>Returns the current UNIX time.</cell>
 	<cell><logiccolor>tolower</logiccolor></cell><cell>Changes all uppercase letters in a string to lowercase.</cell>
 	<cell><logiccolor>tonumber</logiccolor></cell><cell>Converts a string to a number.</cell>
 	<cell><logiccolor>totocc</logiccolor></cell><cell>Returns the total occurrences for a repeating form, roster, or record.</cell>
@@ -219,3 +226,5 @@
 	<cell><logiccolor>write</logiccolor></cell><cell>Write to a text file.</cell>
 	<cell><logiccolor>writecase</logiccolor></cell><cell>Writes a case from memory to an external file.</cell>
 </table>
+
+<seealso list_of_reserved_words.hgt />
