@@ -9,13 +9,13 @@ i = cmcode(<arg>month</arg>,<arg>year</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>cmcode</logiccolor> function returns the "century month code" (CMC) of the given date by the <arg>month</arg> and <arg>year</arg> numeric parameters. The CMC is the number of months since January 1900. (The CMC for January 1900 is 1.) It is calculated by multiplying the number of years between the parameter <arg>year</arg> and 1900 by twelve, then adding the value of parameter <arg>month</arg>.
+The <logiccolor>cmcode</logiccolor> function returns the <i>century month code</i> (CMC) of the given date using the <arg>month</arg> and <arg>year</arg> numeric expressions. The CMC is the number of months since January 1900. (The CMC for January 1900 is 1.) It is calculated by multiplying the number of years between the parameter <arg>year</arg> and 1900 by twelve, then adding the value of parameter <arg>month</arg>.
 
 The function returns the value 9999 if the month is less than one or greater than 12, or if either the month or year are equal to a <link special_values.hgt>special value</link>. The function accepts either 2- or 4-digit years. If a 2-digit year is used, the function assumes that the year is in the 20th century (i.e., 19xx). Four-digit years can be used for years in the 20th or 21st century.
 
 <subheader>Return Value</subheader>
 
-The function returns the number of months as an integer.
+The function returns the CMC of the date.
 
 <subheader>Example 1</subheader>
 

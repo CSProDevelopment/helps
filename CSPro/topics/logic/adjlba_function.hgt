@@ -1,4 +1,26 @@
 ﻿<title>AdjLBA Function</title>
 <context logic_help_adjlba />
 
-helptodo
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = adjlba(<arg>lower_cmc1</arg>,<arg>upper_cmc1</arg>,<arg>lower_cmc2</arg>,<arg>upper_cmc2</arg>,<arg>age</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>adjlba</logiccolor> function adjusts the lower bound of the <i><link cmcode_function.hgt>century month code</link></i> (CMC) of an event based on an age. It is generally used to calculate the minimum date of birth based on the date of an interview.
+
+The <arg>lower_cmc1</arg> and <arg>upper_cmc1</arg> arguments are numeric expressions generally representing the date of birth CMC range. The <arg>lower_cmc2</arg> argument is a numeric expression of the CMC of an event, generally the date of an interview. The <arg>upper_cmc2</arg> argument is not used (but is used by <logiccolor>adjuba</logiccolor>). The <arg>age</arg> argument is a numeric expression expressing the age of the person in complete years.
+
+<subheader>Return Value</subheader>
+
+The function returns the adjusted lower bound of the CMC of an event based on the age. If the adjusted lower bound is greater than <arg>upper_cmc1</arg>, the function returns the error code of -1.
+
+<subheader>Example</subheader>
+
+<logic>
+t = adjlba(ldob,udob,di,di,HL6);
+</logic>
+
+<seealso adjuba_function.hgt adjlbi_function.hgt adjubi_function.hgt cmcode_function.hgt setlb_function.hgt setub_function.hgt />

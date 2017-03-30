@@ -1,4 +1,26 @@
 ﻿<title>AdjLBI Function</title>
 <context logic_help_adjlbi />
 
-helptodo
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = adjlbi(<arg>lower_cmc1</arg>,<arg>upper_cmc1</arg>,<arg>lower_cmc2</arg>,<arg>upper_cmc2</arg>,<arg>interval</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>adjlbi</logiccolor> function adjusts the lower bound of the <i><link cmcode_function.hgt>century month code</link></i> (CMC) of an event based on an interval. It is generally used to calculate the minimum <i>next</i> date of birth based on a date of birth and a minimum number of months allowed between births.
+
+The <arg>lower_cmc1</arg> argument is a numeric expression generally representing the date of birth CMC of a child. The <arg>upper_cmc1</arg> argument is not used (but is used by <arg>adjubi</arg>). The <arg>lower_cmc2</arg> and <arg>upper_cmc2</arg> arguments are numeric expressions generally representing the date of birth CMC range of the child that was born after the child represented in <arg>lower_cmc1</arg>. The <arg>interval</arg> argument is a numeric expression expressing the minimum number of months between events, which is generally the minimum number of months allowed to pass between a woman's successive childbirths.
+
+<subheader>Return Value</subheader>
+
+The function returns the adjusted lower bound of the CMC of an event based on the number of months represented by the interval. If the adjusted lower bound is greater than <arg>upper_cmc2</arg>, the function returns the error code of -1. It the adjusted lower bound is otherwise valid, the function returns either the adjusted lower bound or <arg>lower_cmc2</arg>, whichever is greater.
+
+<subheader>Example</subheader>
+
+<logic>
+t = adjlbi(ldc(i),udc(i),ldc(j),udc(j),7);
+</logic>
+
+<seealso adjubi_function.hgt adjlba_function.hgt adjuba_function.hgt cmcode_function.hgt setlb_function.hgt setub_function.hgt />
