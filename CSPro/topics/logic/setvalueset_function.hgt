@@ -1,295 +1,92 @@
-﻿<title>Setvalueset Function</title>
+﻿<title>SetValueSet Function</title>
 <context logic_help_setvalueset />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Setvalueset</font></b> <b><font style="font-family: Arial;
-															 font-size: 18pt;
-															 font-weight: bold;"
-															 face="Arial"
-															 size="5">Function</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">setvalueset</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><i><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-style: italic;"
-													 face="Courier New"
-													 size="2">item-name
- | @alpha_expr</font></i><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 face="Courier New" size="2">,</font> <i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 face="Courier New" size="2">valueset-name</font></i><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format 2:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
-	 style="font-family: 'Courier New'; font-weight: bold;" color="#0000FF"
-	 face="Courier New">setvalueset</font></b><font style="font-family: 'Courier New';"
-													 face="Courier New">(</font><i><font
-	 style="font-family: 'Courier New'; font-style: italic;" face="Courier New">item-name
- | @alpha_expr</font></i><font style="font-family: 'Courier New';" face="Courier New">,</font>
- <i><font style="font-family: 'Courier New'; font-style: italic;" face="Courier New">numeric-array
- | alpha-array, alpha-array </font></i><span><font style="font-family: 'Courier New';
-													 font-style: normal;"
-													 color="#FF00FF" face="Courier New">[</font></span><font
-	 style="font-family: 'Courier New';" face="Courier New">,</font><span><i><font
-	 style="font-family: 'Courier New'; font-style: italic;" face="Courier New">alpha-array</font></i></span><span><font
-	 style="font-family: 'Courier New'; font-style: normal;" color="#FF00FF"
-	 face="Courier New">]</font></span><font style="font-family: 'Courier New';"
-											 face="Courier New">);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
- <b><font style="font-weight: bold;">setvalueset</font></b> function allows
- you to dynamically change the first value of an item. The first value
- set of an item is used to determine whether or not inputted values are
- out of range. The first value set is also used to provide the value choices
- displayed in the pop-up menu when using <a href="Extended_Controls.html">extended
- controls</a>. The <b><font style="font-weight: bold;">setvalueset</font></b>
- function therefore allows you to programmatically change the value set
- used in these cases. The change to the value set is not permanent; it
- remains in effect only during the current execution of the program.</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The</font> <i><font style="font-family: Arial; font-size: 10pt;
-									 font-style: italic;" color="#000000"
-									 face="Arial" size="2">item-name</font></i>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">is the name of the item in the data dictionary whose
- value set is to be changed. This may also be an alpha expression that
- evaluates to the name of an item preceded by the @ symbol, for example:</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">setvalueset</font><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">(@</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">getsymbol</font><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">(), MY_VALUESET_VS1)</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">In the first format,</font> <i><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-style: italic;"
-													 color="#000000" face="Courier New"
-													 size="2">valueset-name</font></i>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">is the name of an existing value set in the dictionary
- for</font> <font style="font-family: Arial; font-size: 10pt;" color="#000000"
-					 face="Arial" size="2">the specified item</font><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">. The</font> <b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" color="#000000"
-									 face="Arial" size="2">setvalueset</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">function will replace the values of the first value set
- for the item with the values from the value set specified by</font> <i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 color="#000000" face="Courier New" size="2">valueset-name</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">In
- the second format, the second parameter is an array of values to use in
- the new value set and the third parameter is an array of labels that correspond
- to the values in the first array (the nth element of the labels array
- is the label for the nth element in the values array). The last element
- in the array of values must be the special value <b><font style="font-weight: bold;">notappl<span
-	 style="font-weight: normal;"> for numeric value sets and a blank string
- for alpha value sets</span></font></b>. This indicates when to stop loading
- values from the array. The optional third parameter is an array of filename
- strings pointing to graphics to be used as <a href="Value_Set_Images.html">value
- set images</a>.</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">For
- a detailed example, see the <b><font style="font-weight: bold;">setvalueset</font></b>
- example in the CSPro examples directory.</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">In
- versions of CSPro earlier than 6.0, the value set labels and codes array
- needed to start at index position 0. Zero-based arrays are still permitted,
- but if a one-based array is passed to the function (and the zeroth element
- has never been assigned to), then CSPro will start processing the dynamic
- value set at array position 1.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 1:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New';"><span style="color: #0000ff;">PROC</span>
- DISTRICT</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">preproc</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 face="Courier New"
-															 size="2">STATE
- =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-				 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#0000FF"
-															 face="Courier New"
-															 size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;setvalueset</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(DISTRICT, DISTRICT_VS1);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;elseif</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">STATE =</font> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-	 face="Courier New" size="2">2</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#0000FF"
-												 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;setvalueset</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(DISTRICT, DISTRICT_VS2);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;elseif</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">STATE =</font> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-	 face="Courier New" size="2">3</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#0000FF"
-												 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;setvalueset</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(DISTRICT, DISTRICT_VS3);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;endif</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 2:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New'; color: #0000ff;">PROC GLOBAL</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;array </font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">codes(</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF0000" face="Courier New" size="2">4</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;array</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">string
- </font><font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-				 size="2">labels(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF0000"
-												 face="Courier New" size="2">4</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New';"><span style="color: #0000ff;">PROC</span>
- DISTRICT</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">preproc</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New';" face="Courier New">&#160;&#160;codes(<span
-	 style="color: #ff0000; font-family: 'Courier New';">1</span>) =</font>
- <font style="font-family: 'Courier New';" color="#FF0000" face="Courier New">1</font><font
-	 style="font-family: 'Courier New';" face="Courier New">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;codes(</font><font style="font-family: 'Courier New';
-											 font-size: 10pt;" color="#FF0000"
-											 face="Courier New" size="2">2</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">) =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#FF0000" face="Courier New" size="2">2</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;codes(</font><font style="font-family: 'Courier New';
-											 font-size: 10pt;" color="#FF0000"
-											 face="Courier New" size="2">3</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">) =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#FF0000" face="Courier New" size="2">3</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;codes(</font><font style="font-family: 'Courier New';
-											 font-size: 10pt;" color="#FF0000"
-											 face="Courier New" size="2">4</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">) =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">notappl</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-							 color="#008000" face="Courier New" size="2">//
- mark end of array</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;labels(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF0000"
-												 face="Courier New" size="2">1</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">) = &quot;District 1&quot;;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;labels(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF0000"
-												 face="Courier New" size="2">2</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">) = &quot;District 2&quot;;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;labels(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF0000"
-												 face="Courier New" size="2">3</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">) = &quot;District 3&quot;;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="Setvaluesets_Function.html">Setvaluesets
- Function</a>, <a href="invalueset_function.html">Invalueset Function</a></p>
-</body>
-</html>
+<logicsyntax>
+b = setvalueset(<arg>item_name</arg>,<arg>value_set_name</arg>);
+</logicsyntax>
+
+<subheader>Format (Dynamic Value Set)</subheader>
+
+<logicsyntax>
+i = setvalueset(<arg>item_name</arg>,<arg>codes_array</arg>,<arg>labels_array</arg>『,images_array』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>setvalueset</logiccolor> function allows you to dynamically change an item's current value set. An item's current value set is used to determine whether or not inputted values are out of range. The current value set is also used to provide the value choices displayed in <link extended_controls.hgt>extended controls</link>. The change of value set is not permanent; it remains in effect only during the current execution of the program or until the next call to <logiccolor>setvalueset</logiccolor>.
+
+The <arg>item_name</arg> is the name of the item in the data dictionary whose value set is to be changed. The argument is usually an item name but, preceded by the <logiccolor>@</logiccolor> symbol, it can also be a string expression that evaluates to the name of an item; for example:
+
+<logic>
+setvalueset(@getsymbol(),MY_VALUESET_VS1);
+</logic>
+
+In the standard form, the argument <arg>value_set_name</arg> is the name of an existing value set in the dictionary for the specified item. The function will replace the values of the current value set for the item with the values from the value set specified by <arg>value_set_name</arg>, which is either the name of a value set or a string expression that evaluates to a value set name.
+
+With dynamic value sets, the second argument, <arg>codes_array</arg>, is an array of codes to use in the new value set and the third argument, <arg>labels_array</arg>, is an array of labels that correspond to the values in the codes array (the nth element of the labels array is the label for the nth element in the codes array). If the item is numeric, <arg>codes_array</arg> must be a numeric array. If the item is alphanumeric, <arg>codes_array</arg> must be a string array. The <arg>labels_array</arg> must always be a string array. The optional fourth argument, <arg>images_array</arg>, is a string array pointing to image filenames to be used as value set images.
+
+When working with the <arg>codes_array</arg>, to indicate the end of a numeric array, assign the special value <logiccolor>notappl</logiccolor> to the position after the last valid code. To indicate the end of a string array, assign a blank value. This indicates when to stop loading values from the array. 
+
+In versions of CSPro earlier than 6.0, the value set labels and codes array needed to start at index position 0. Zero-based arrays are still permitted, but if a one-based array is passed to the function (and the zeroth element has never been assigned to), then CSPro will start processing the dynamic value set at array position 1.
+
+<subheader>Return Value</subheader>
+
+In the standard form, the function returns a logical value of 1 (true) if the value set was changed successfully and 0 (false) otherwise (for example, if the value set name is invalid).
+
+With dynamic value sets, the function returns the number of codes in the newly created value set.
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC D05_CAUSE_DEATH
+
+onfocus
+
+	if D02_SEX = 1 then
+		setvalueset(SEX,D05_CAUSE_DEATH_MALE_VS);
+	
+	else
+		setvalueset(SEX,D05_CAUSE_DEATH_FEMALE_VS);
+	
+	endif;
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC DISTRICT
+
+preproc
+
+	setvalueset(DISTRICT,maketext("DISTRICT_VS%02d",PROVINCE));
+</logic>
+
+<subheader>Example (Dynamic Value Set)</subheader>
+
+<logic>
+PROC GLOBAL
+
+array vsCodes(100);
+array string vsLabels(100);
+
+PROC DISTRICT
+
+preproc
+
+	vsCodes(1) = 1;
+	vsLabels(1) = "District 1";
+
+	vsCodes(2) = 2;
+	vsLabels(2) = "District 2";
+
+	vsCodes(3) = 3;
+	vsLabels(3) = "District 3";
+	
+	vsCodes(4) = notappl; // mark the end of the array
+
+	setvalueset(DISTRICT,vsCodes,vsLabels);
+</logic>
+
+<seealso setvaluesets_function.hgt invalueset_function.hgt />

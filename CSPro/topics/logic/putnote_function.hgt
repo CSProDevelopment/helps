@@ -1,100 +1,27 @@
-﻿<title>Putnote Function</title>
+﻿<title>PutNote Function</title>
 <context logic_help_putnote />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Putnote</font></b> <b><font style="font-family: Arial;
-														 font-size: 18pt;
-														 font-weight: bold;"
-														 face="Arial" size="5">Function</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">b =</font> <b><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-weight: bold;"
-													 color="#0000FF" face="Courier New"
-													 size="2">putnote</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(string);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- putnote function places a string in the note for the current field. If
- the string is empty, there will be no note for the field. Notes are stored
- in a file called &lt;data file name&gt;.NOT.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-weight: bold;
-	 text-align: left;"><b><font style="font-weight: bold;">Return value:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><span
-	 style="text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">The
- function returns the length of the note placed in the notes file, or -1
- if called in error.</font></span></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">COOKING</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">$
- &lt;&gt;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-						 color="#FF0000" face="Courier New" size="2">9</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;</font><font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#0000FF"
-															 face="Courier New"
-															 size="2">putnote</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(&quot;&quot;);</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#008000" face="Courier New" size="2">{this
- will delete the note}</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#000000" face="Courier New"
-													 size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also</font></b><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">:</font>
- <a href="getnote_function.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Getnote
- Function</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="editnote_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Editnote
- Function</font></a></p>
-</body>
-</html>
+<logicsyntax>
+b = putnote(<arg>note_text</arg>『,<arg>dictionary_symbol_name</arg>』『,<arg>operator_id</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>putnote</logiccolor> function sets the note for a field or other dictionary symbol, replacing the note with the text found in the string expression <arg>note_text</arg>. If the note text is an empty string, the note will be removed. The optional argument <arg>dictionary_symbol_name</arg> allows you to set the note for a dictionary item, record, or level. If using the dictionary name, the case note is set. Another optional string argument, <arg>operator_id</arg>, allows you to set the note for a particular <link getoperatorid_function.hgt>operator</link>. If no operator ID is supplied, then the note for the current operator will be set.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC STATUS
+
+	// set the case note to a description of the interview status
+	putnote("Interview Status: " + getlabel(STATUS,STATUS),CENSUS_DICT);
+</logic>
+
+<seealso getnote_function.hgt editnote_function.hgt />

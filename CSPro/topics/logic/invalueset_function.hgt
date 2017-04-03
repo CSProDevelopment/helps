@@ -1,148 +1,35 @@
-﻿<title>Invalueset Function</title>
+﻿<title>InValueSet Function</title>
 <context logic_help_invalueset />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Invalueset</font></b> <b><font style="font-family: Arial;
-															 font-size: 18pt;
-															 font-weight: bold;"
-															 face="Arial"
-															 size="5">Function</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">b =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">invalueset</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(</font><i><font style="font-family: 'Courier New'; font-size: 10pt;
-								 font-style: italic;" face="Courier New"
-								 size="2">item-name</font></i><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">[</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">,</font> <i><font style="font-family: 'Courier New'; font-size: 10pt;
-								 font-style: italic;" face="Courier New"
-								 size="2">valueset-name</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">]</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" face="Courier New"
-												 size="2">);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The</font> <b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" color="#000000"
-									 face="Arial" size="2">invalueset</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">function determines whether a data item's value is within
- the item's value set.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The</font> <i><font style="font-family: Arial; font-size: 10pt;
-									 font-style: italic;" color="#000000"
-									 face="Arial" size="2">item-name</font></i>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">is the name of the item with the dictionary.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The</font> <i><font style="font-family: Arial; font-size: 10pt;
-									 font-style: italic;" color="#000000"
-									 face="Arial" size="2">valueset-name</font></i>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">is the name of a value set with the specified item. If
- the value set name is omitted, the first value set for the item is used.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Return value:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The function returns a logical value of 1 (true) if the data
- item is within the value set and 0 (false) otherwise. If the item has
- no value set and only the item name is given, the function return 1 (true).</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">if not invalueset</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">(P03_SEX)</font> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;errmsg</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">&quot;Sex
- is out of range. Value is %d&quot;</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" face="Courier New"
-												 size="2">, P03_SEX);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example 2:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">if invalueset</font><font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 face="Courier New"
-															 size="2">(P04_AGE(1),
- P04_AGE_VS2)</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-							 color="#0000FF" face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;errmsg</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">&quot;Heads
- age is in group '%s'&quot;</font><font style="font-family: 'Courier New';
-										 font-size: 10pt;" face="Courier New"
-										 size="2">,</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;getlabel</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">(P04_AGE_VS2, P04_AGE(1)));</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also:</font></b> <a href="special_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Special
- Function</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="set_behavior_canenter_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Set
- Behavior Canenter</font></a></p>
-</body>
-</html>
+<logicsyntax>
+b = invalueset(<arg>item_name</arg>『,<arg>value_set_name</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>invalueset</logiccolor> function determines whether an item's current value is within the permissible ranges of a value set. In addition to specifying the <arg>item_name</arg>, an optional argument, <arg>value_set_name</arg>, allows you to specify in which value set to check if the item's value is within the permissible ranges. If no value set is specified, the item's current value set is used.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the item's value is within the value set's ranges and 0 (false) otherwise. If the item has no value set, the function return 1 (true).
+
+<subheader>Example 1</subheader>
+
+<logic>
+if not invalueset(P08_MARITAL_STATUS) then
+	errmsg("Marital status is out of range. Value is %d",P08_MARITAL_STATUS);
+endif;
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+if D02_SEX = 1 and not invalueset(D05_CAUSE_DEATH,D05_CAUSE_DEATH_MALE_VS) then
+	errmsg("A man cannot die of %s",getlabel(D05_CAUSE_DEATH,D05_CAUSE_DEATH));
+	reenter;
+endif;
+</logic>
+
+<seealso in_operator.hgt setvalueset_function.hgt />

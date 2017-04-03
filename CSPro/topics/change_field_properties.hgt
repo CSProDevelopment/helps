@@ -23,11 +23,31 @@ This attribute allows you to specify an <link extended_controls.hgt>extended con
 
 <subheader>Keyboard Input</subheader>
 
-This attribute allows you to choose a <link keyboard_input.hgt>keyboard ID</link> that specifies what keyboard input to use for the field, which may be useful in multiple language environments.
+This attribute allows you to choose a <link change_keyboard_input.hgt>keyboard ID</link> that specifies what keyboard input to use for the field, which may be useful in multiple language environments.
 
-<subheader>Field Type</subheader>
+<subheader>Persistent</subheader>
 
-Click on the check box to set the <link field_properties.hgt>field properties</link>, either <b>Persistent</b>, <b>Sequential</b>, <b>Protected</b>, <b>Mirror</b>, or <b>Upper Case</b>.
+Check this box to make a field persistent. Persistent fields are ID fields that take the value from the previous case in the data file as their default. Persistent fields are typically used for geographic IDs that change very rarely from one case to another. These fields are shown as light gray boxes on the form. In CSEntry, the operator must press a special key (<b>F7</b>) to change the value of a persistent field. You can make any ID field (except for mirror fields) persistent.
+
+<subheader>Auto Increment</subheader>
+
+Check this box to make a field auto increment. Auto increment fields are ID fields that receive an automatic value based on a calculation using the other cases in a data file. For the first case in the data file, the ID field is set to 1. For subsequent cases, the field takes the value of the highest value in the data file plus 1. Auto increment fields are similar to sequential fields except that they work on ID fields across multiple cases, whereas sequential fields work across a repeating group in a single case.
+
+<subheader>Sequential</subheader>
+
+Check this box to make a field sequential. Sequential fields automatically increment at data entry time. They are commonly used as occurrence-number fields in multiple groups. A sequential field takes the value 1 on the first occurrence. For subsequent occurrences, CSEntry will use the value of the previous occurrence and add 1. If the field is not also marked as protected, the operator may change the sequence at any time by simply keying a new value, and from that point, CSEntry will use this new value to continue the sequential incrementation. You can make any field (except for mirror fields) sequential. You can define your own kinds of sequential behavior for fields by writing pre-processing logic. In this case, do not use the sequential field attribute.
+
+<subheader>Protected</subheader>
+
+Check this box to make a field protected. Protected fields are not keyed during data entry. Protected fields are commonly used to display a value that is calculated elsewhere (for example, the sum of other keyed fields). You must write logic to set the value of a protected field. You can make any field protected.
+
+<subheader>Mirror</subheader>
+
+Mirror fields show the value of a previously entered field on the screen. The cursor never goes to a mirror field during data entry. Mirror fields are useful to display values from one screen on another screen. Any singly occurring item can be a mirror field. A common use of mirror fields is to show the geographic IDs on all screens. The first form might contain the geographic ID fields which the operator keys in, and subsequent forms might contain the geographic ID mirror fields, which will show the operator the ID values even when the ID form is not on screen. The first time you drag a dictionary item onto a form you create the normal entry field. On each subsequent occasion that you drag the same dictionary item onto a form, you create a mirror field.
+
+<subheader>Upper Case</subheader>
+
+Check this box to make a field upper case. Alphanumeric fields can be upper case. This means that every alphabetic character that is keyed will be forced to upper case.
 
 <subheader>Use Enter Key</subheader>
 
@@ -45,4 +65,4 @@ Check this box if you want to <link change_data_entry_options.hgt>verify the fie
 
 Check this box if you do not want the field to appear in the Android case tree. You might, for example, have some control fields that the interviewer does not need to see when conducting the interview.
 
-<seealso field_properties.hgt field_properties_for_multiple_fields.hgt />
+<seealso change_field_properties_for_multiple_fields.hgt />
