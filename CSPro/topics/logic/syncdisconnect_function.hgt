@@ -1,14 +1,30 @@
 ﻿<title>SyncDisconnect Function</title>
 <context logic_help_syncdisconnect />
 
-<font white>HELPTODO</font>
-<html>
-<head>
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- <meta name="generator" content="Adobe RoboHelp 11" />
-</head>
-<body>
- <h1>SyncDisconnect Function</h1>
- <p>Type topic text here.</p>
-</body>
-</html>
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = syncdisconnect();
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>syncdisconnect</logiccolor> function ends a synchronization session previously started by calling <logiccolor>syncconnect</logiccolor>.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+if syncconnect(Dropbox) then
+
+	// perform synchronization actions
+
+	syncdisconnect();
+
+endif;
+</logic>
+
+<seealso synchronization.hgt syncconnect_function.hgt syncdata_function.hgt syncfile_function.hgt syncserver_function.hgt />

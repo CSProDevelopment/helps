@@ -1,0 +1,41 @@
+﻿<title>SyncConnect Function (Dropbox)</title>
+
+<i>This page describes the <logiccolor>syncconnect</logiccolor> function when connecting to Dropbox. For generalized information on the function, see the documentation for the <logiccolor>syncconnect</logiccolor> function.</i>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = syncconnect(<arg>Dropbox</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>syncconnect</logiccolor> function opens a connection to Dropbox to synchronize files over the Internet. The first and only argument must be the keyword <arg>Dropbox</arg>. This requires an account with the online file sharing service <link https://www.dropbox.com/>Dropbox</link>. The first time the connection is made, the user will see a prompt to enter the Dropbox username and password and these settings will be saved in secure storage for future synchronizations.
+
+Dropbox synchronization only supports the <logiccolor>syncfile</logiccolor> function. The <logiccolor>syncdata</logiccolor> function does not work with Dropbox.
+
+<subheader>Example</subheader>
+
+<logic>
+// connect to Dropbox
+if syncconnect(Dropbox) then
+
+	// get the latest versions of the application files from Dropbox
+	syncfile(GET,"/MyApp/MyApp.pff");
+	syncfile(GET,"/MyApp/MyApp.pen");
+
+	// send the latest data file to Dropbox
+	string dataFileNameOnDevice = filename(CENSUS_DICT);
+	
+	// add the operator ID to the filename in Dropbox so that we do not
+	// overwrite data files from other interviewers
+	string dataFileNameOnDropbox = maketext("/Data/data_%s.csdb",getoperatorid());
+	
+	syncfile(PUT,dataFileNameOnDevice,dataFileNameOnDropbox);
+
+	syncdisconnect();
+
+endif;
+</logic>
+
+<seealso syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_bluetooth.hgt syncconnect_function_ftp.hgt />

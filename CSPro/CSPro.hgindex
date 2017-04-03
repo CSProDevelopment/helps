@@ -252,7 +252,7 @@ batch_edit_applications.hgt | Batch Edit														#	Batch Edit
 	batch_edit_keys.hgt | Keyboard Summary														#		Keyboard Summary
 	batch_editing_menu.hgt | Menu Summary														#		Menu Summary
 	batch_edit_order.hgt | Order																#		Order
-	order_of_executing_batch_edit_events.hgt | Order or Executing Events						#		Order or Executing Events
+	order_of_executing_batch_edit_events.hgt													#		Order of Executing Batch Edit Events
 	run_production_batch_edits.hgt																#		Run Production Batch Edits
 	batch_editing_toolbar.hgt | Toolbar Summary													#		Toolbar Summary
 	batch_edit_tree.hgt | Tree																	#		Tree
@@ -265,8 +265,7 @@ generate_binary_data_entry_application.hgt | Binary data entry application						
 binary_data_entry_application_file_pen.hgt														#	Binary Data Entry Application File (.pen)
 strip_function.hgt | Blanks																		#	Blanks
 	strip_function.hgt																			#		Strip Function
-data_synchronization.hgt | Bluetooth Synchronization											#	Bluetooth Synchronization
-	bluetooth_synchronization_examples.hgt | Examples											#		Examples
+syncconnect_function_bluetooth.hgt | Bluetooth Synchronization									#	Bluetooth Synchronization
 add_borders.hgt | Border																		#	Border
 	add_borders.hgt | Add Borders to a Table													#		Add Borders to a Table
 	add_borders_to_cells.hgt																	#		Add Borders to Cells
@@ -490,6 +489,7 @@ data_sources.hgt | CSPro DB Data Source															#	CSPro DB Data Source
 cspro_program_structure.hgt																		#	CSPro Program Structure
 	cspro_program_structure.hgt | Declaration Section											#		Declaration Section
 	cspro_program_structure.hgt | Procedural Section											#		Procedural Section
+syncconnect_function_csweb.hgt | CSWeb Synchronization											#	CSWeb Synchronization
 curocc_function.hgt																				#	Curocc Function
 custom_consolidation.hgt																		#	Custom Consolidation
 include_exclude_special_values_in_a_variable.hgt | Custom Special Values						#	Custom Special Values
@@ -531,7 +531,7 @@ adding_logic.hgt | Data Entry																	#	Data Entry
 	installing_data_entry_applications.hgt | Installation										#		Installation
 	data_entry_logic_screen_layout.hgt | Logic Screen Layout									#		Logic Screen Layout
 	data_entry_menu.hgt | Menu Summary															#		Menu Summary
-	order_of_executing_data_entry_events.hgt | Order of Executing Events						#		Order of Executing Events
+	order_of_executing_data_entry_events.hgt													#		Order of Executing Data Entry Events
 	data_entry_path.hgt | Path																	#		Path
 	run_production_data_entry.hgt | Run Production												#		Run Production
 	data_entry_toolbar.hgt | Toolbar Summary													#		Toolbar Summary
@@ -657,8 +657,7 @@ drag_option_menu.hgt																			#	Drag Option Menu
 	drag_option_menu.hgt | Text Options															#		Text Options
 	drag_option_menu.hgt | Use Sub-Items														#		Use Sub-Items
 add_lines_or_boxes_to_a_form.hgt | Draw Boxes on a Form											#	Draw Boxes on a Form
-data_synchronization.hgt | Dropbox Synchronization												#	Dropbox Synchronization
-	dropbox_synchronization_examples.hgt | Examples												#		Examples
+syncconnect_function_dropbox.hgt | Dropbox Synchronization										#	Dropbox Synchronization
 extended_controls.hgt | Drop down																#	Drop down
 drop_files_from_an_application.hgt																#	Drop Files from an Application
 include_exclude_special_values_in_a_variable.hgt | Dump											#	Dump
@@ -711,9 +710,13 @@ errors_in_censuses_and_surveys.hgt | Errors														#	Errors
 change_error_sound.hgt | Error Sound															#	Error Sound
 	change_error_sound.hgt | Change																#		Change
 cspro_program_structure.hgt | Events															#	Events
-	order_of_executing_batch_edit_events.hgt | Order of Executing Batch Edit					#		Order of Executing Batch Edit
-	order_of_executing_batch_edit_events.hgt | Order of Executing Data Entry					#		Order of Executing Data Entry
+	killfocus_statement.hgt																		#		KillFocus Statement
+	onfocus_statement.hgt																		#		OnFocus Statement
+	onoccchange_statement.hgt																	#		OnOccChange Statement
+	order_of_executing_batch_edit_events.hgt													#		Order of Executing Batch Edit Events
 	order_of_executing_data_entry_events.hgt													#		Order of Executing Data Entry Events
+	postproc_statement.hgt																		#		PostProc Statement
+	preproc_statement.hgt																		#		PreProc Statement
 cspro_capabilities.hgt | Examine																#	Examine
 	cspro_capabilities.hgt | Data Files															#		Data Files
 	cspro_capabilities.hgt | Editing Results													#		Editing Results
@@ -859,8 +862,7 @@ forms.hgt																						#	Forms
 issues_to_consider_when_designing_a_form.hgt | Form Design Issues								#	Form Design Issues
 for_statement.hgt																				#	For Statement
 tool_list.hgt | Frequencies																		#	Frequencies
-data_synchronization.hgt | FTP Synchronization													#	FTP Synchronization
-	ftp_synchronization_examples.hgt | Examples													#		Examples
+syncconnect_function_ftp.hgt | FTP Synchronization												#	FTP Synchronization
 run_production_data_entry.hgt | FullScreen														#	FullScreen
 change_the_view.hgt | Full Screen																#	Full Screen
 user_defined_functions.hgt | Functions															#	Functions
@@ -1074,7 +1076,7 @@ data_entry_philosophies.hgt | Keying															#	Keying
 keylist_function.hgt																			#	KeyList Function
 key_function.hgt																				#	Key Function
 onkey_character_map.hgt | Key Override Character Map											#	Key Override Character Map
-killfocus_statement.hgt																			#	Killfocus Statement
+killfocus_statement.hgt																			#	KillFocus Statement
 labels.hgt																						#	Labels
 	labels.hgt | Data Dictionary																#		Data Dictionary
 define_languages.hgt | Languages																#	Languages
@@ -1280,9 +1282,9 @@ issues_to_consider_when_designing_a_form.hgt | Occurrences										#	Occurrence
 	tabulate_items_with_multiple_occurrences.hgt | Tabulate Items with Occurrences				#		Tabulate Items with Occurrences
 onchangelanguage_global_function.hgt															#	Onchangelanguage Global Function
 onchar_global_function.hgt																		#	Onchar Global Function
-onfocus_statement.hgt | Onfocus Event															#	Onfocus Event
-onfocus_statement.hgt																			#	Onfocus Statement
+onfocus_statement.hgt																			#	OnFocus Statement
 onkey_global_function.hgt																		#	Onkey Global Function
+onoccchange_statement.hgt																		#	OnOccChange Statement
 onstop_global_function.hgt																		#	Onstop Global Function
 open_an_application.hgt | Open																	#	Open
 	open_an_application.hgt | An Existing Application											#		An Existing Application
@@ -1315,10 +1317,9 @@ operators.hgt | Or																				#	Or
 	and_or_truth_table.hgt | Truth Table														#		Truth Table
 batch_edit_order.hgt | Order																	#	Order
 	batch_edit_order.hgt | Batch Edit															#		Batch Edit
-	order_of_executing_batch_edit_events.hgt | Executing Batch Edit Events						#		Executing Batch Edit Events
-	order_of_executing_data_entry_events.hgt | Executing Data Entry Events						#		Executing Data Entry Events
 	change_the_order_of_entry.hgt | Fields and Forms											#		Fields and Forms
 	edit_order_file_ord.hgt | File .ORD															#		File .ORD
+	order_of_executing_batch_edit_events.hgt													#		Order of Executing Batch Edit Events
 data_dictionary.hgt | Organization																#	Organization
 	data_dictionary.hgt																			#		Data Dictionary
 	data_file_type_structure.hgt | Data File													#		Data File
@@ -1381,7 +1382,7 @@ select_relative_or_absolute_positioning.hgt | Positioning										#	Positioning
 	select_relative_or_absolute_positioning.hgt | Relative or Absolute							#		Relative or Absolute
 introduction_to_table_post_calculation.hgt | Postcalc											#	Postcalc
 	introduction_to_table_post_calculation.hgt | Table Post Calculation							#		Table Post Calculation
-postproc_statement.hgt																			#	Postproc Statement
+postproc_statement.hgt																			#	PostProc Statement
 adding_rows_and_columns_for_post_calculation.hgt | Post Calculation								#	Post Calculation
 	adding_rows_and_columns_for_post_calculation.hgt | Adding Rows and Columns For				#		Adding Rows and Columns For
 	post_calculation_for_individual_cells.hgt | For Individual Cells							#		For Individual Cells
@@ -1396,7 +1397,7 @@ preferences_and_default_formats.hgt | Preferences												#	Preferences
 	modifying_preferences.hgt | Modifying														#		Modifying
 	share_the_same_format_on_multiple_computers.hgt | Sharing									#		Sharing
 prepare_tables_for_posting_to_the_web.hgt														#	Prepare Tables for Posting to the Web
-preproc_statement.hgt																			#	Preproc Statement
+preproc_statement.hgt																			#	PreProc Statement
 print_all_or_part_of_a_document.hgt | Preview													#	Preview
 	print_all_or_part_of_a_document.hgt | Printing												#		Printing
 	sending_tables_to_the_printer.hgt | Table													#		Table
@@ -1779,13 +1780,21 @@ get_help.hgt | Support																			#	Support
 swap_function.hgt																				#	Swap Function
 data_entry_forms_screen_layout.hgt | Switching Between Data Entry Forms and Dictionary			#	Switching Between Data Entry Forms and Dictionary
 syncconnect_function.hgt																		#	SyncConnect Function
+	syncconnect_function_bluetooth.hgt | Bluetooth												#		Bluetooth
+	syncconnect_function_csweb.hgt | CSWeb														#		CSWeb
+	syncconnect_function_dropbox.hgt | Dropbox													#		Dropbox
+	syncconnect_function_ftp.hgt | FTP															#		FTP
 syncdata_function.hgt																			#	SyncData Function
 syncdisconnect_function.hgt																		#	SyncDisconnect Function
 syncfile_function.hgt																			#	SyncFile Function
 data_synchronization.hgt | Synchronization														#	Synchronization
+	bluetooth_synchronization_examples.hgt														#		Bluetooth Synchronization Examples
 	sync_function.hgt | CSPro 6.x Synchronization												#		CSPro 6.x Synchronization
+	dropbox_synchronization_examples.hgt														#		Dropbox Synchronization Examples
+	ftp_synchronization_examples.hgt															#		FTP Synchronization Examples
 	data_synchronization.hgt																	#		Synchronization File (.PNC)
 synchronization_options.hgt																		#	Synchronization Options
+synchronization.hgt																				#	Synchronization Overview
 syncserver_function.hgt																			#	SyncServer Function
 sync_function.hgt																				#	Sync Function
 sysdate_function.hgt																			#	SysDate Function

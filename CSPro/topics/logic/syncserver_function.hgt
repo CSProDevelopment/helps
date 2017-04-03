@@ -1,14 +1,40 @@
 ﻿<title>SyncServer Function</title>
 <context logic_help_syncserver />
 
-<font white>HELPTODO</font>
-<html>
-<head>
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- <meta name="generator" content="Adobe RoboHelp 11" />
-</head>
-<body>
- <h1>SyncServer Function</h1>
- <p>Type topic text here.</p>
-</body>
-</html>
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = syncserver(<arg>Bluetooth</arg>『,<arg>file_root_path</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>syncserver</logiccolor> function runs a local server that allows peer-to-peer synchronization between two devices via Bluetooth, without needing an Internet connection. The function waits for a connection from another device (a client) made when the client calls <logiccolor>syncconnect</logiccolor> to start a Bluetooth synchronization. Once the two devices are connected, the client device calls <logiccolor>syncdata</logiccolor> and <logiccolor>syncfile</logiccolor> to copy data and/or files to and from the server. Finally, the client device calls <logiccolor>syncdisconnect</logiccolor> to end the session.
+
+The server in a peer-to-peer synchronization is passive. It does not call <logiccolor>syncdata</logiccolor> or <logiccolor>syncfile</logiccolor>. It simply responds to requests initiated from the client. The Bluetooth server runs until either the client successfully connects and disconnects or the operator cancels the synchronization.
+
+The <logiccolor>syncserver</logiccolor> function displays a dialog to the operator indicating that it is waiting for a client device to connect. During this time, no other logic on the server is executed. Once a connection is made, the dialog displays the progress of the synchronization. When the client disconnects by calling <logiccolor>syncdisconnect</logiccolor>, the dialog is removed and <logiccolor>syncserver</logiccolor> returns. If no connection is made, the operator can use the cancel button on the dialog to cause <logiccolor>syncserver</logiccolor> to return and continue executing any logic that follows. The server only allows connections while the <logiccolor>syncserver</logiccolor> function is running, so the server must call <logiccolor>syncserver</logiccolor> before the client device calls <logiccolor>syncconnect</logiccolor>.
+ 
+The first argument must be the keyword <arg>Bluetooth</arg>. The second argument, <arg>file_root_path</arg>, is an optional string expression of the path to use as the base directory from which to transfer files when the client calls <logiccolor>syncfile</logiccolor>. The remote path specified in the call to <logiccolor>syncfile</logiccolor> is appended to this base directory to determine the full path of files on the server. In other words, <logiccolor>"/"</logiccolor> in a <logiccolor>syncfile</logiccolor> call from the client refers to the <arg>file_root_path</arg> directory on the server. For example, if <arg>file_root_path</arg> is <logiccolor>"C:\MyApp\MyFiles"</logiccolor> and the client calls <logiccolor>syncfile(GET,"/Images/image.jpg")</logiccolor>, then the file <b>image.jpg</b> will be read from the directory <b>C:\MyApp\MyFiles\Images\</b> on the server. If no <arg>file_root_path</arg> is specified, the application directory is used. Files on the server that are outside the base directory may not be synced.
+
+When connecting over Bluetooth, no Internet connection is required, but the two devices must be in close physical proximity.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the synchronization was successful and 0 (false) otherwise.
+
+<subheader>Example 1</subheader>
+
+<logic>
+// start a peer-to-peer Bluetooth server with the application directory as the file root path
+syncserver(Bluetooth);
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+// start a peer-to-peer Bluetooth server with the application parent directory as the file root path
+syncserver(Bluetooth,"..");
+</logic>
+
+<seealso synchronization.hgt syncconnect_function.hgt syncdata_function.hgt syncdisconnect_function.hgt syncfile_function.hgt />

@@ -1,14 +1,70 @@
 ﻿<title>SyncData Function</title>
 <context logic_help_syncdata />
 
-<font white>HELPTODO</font>
-<html>
-<head>
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- <meta name="generator" content="Adobe RoboHelp 11" />
-</head>
-<body>
- <h1>SyncData Function</h1>
- <p>Type topic text here.</p>
-</body>
-</html>
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = syncdata(<arg>direction</arg>,<arg>dictionary_name</arg>『,<arg>sync_universe</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>syncdata</logiccolor> function transfers cases in a CSPro data file between a device and a synchronization server. Before calling <logiccolor>syncdata</logiccolor>, you must first connect to the server by calling <logiccolor>syncconnect</logiccolor>.
+
+The function can upload cases from the local device (client) to the server as well as download cases from the server. The <arg>direction</arg> argument determines which of these operations is performed. It must be one of the following values:
+
+<list>
+	<li><b>GET</b>: Download any cases that were modified on the server since the last sync and update or add them to the local data file.</li>
+	<li><b>PUT</b>: Upload to the server any cases that were modified in the local data file since the last sync.</li>
+	<li><b>BOTH</b>: Sync cases in the local data file with the server in both directions (i.e., perform bot a GET and a PUT).</li>
+</list>
+
+The <arg>dictionary_name</arg> argument must be the name of a data dictionary corresponding to the data file to synchronize. This can be either the dictionary for the main data file or an external dictionary. CSPro uses the data file that is currently associated with this dictionary, either because it was specified when the application was started or via a call to <logiccolor>setfile</logiccolor> from application logic.
+
+For synchronization with a CSWeb server, the dictionary must first be uploaded to the server. (See the <link CSWeb::introduction_to_csweb.hgt>CSWeb help documentation</link> for more information.)
+
+For peer-to-peer synchronization, the data is written to the file associated with the dictionary of the same name on the device running the server. This means that both devices must have this dictionary added to the currently running CSPro application, either as the main dictionary or as an external dictionary.
+
+The <logiccolor>syncdata</logiccolor> function is only supported for CSWeb and Bluetooth connections. It cannot be used with Dropbox or FTP connections.
+
+By providing an optional string expression for the <arg>sync_universe</arg> argument, you can limit the cases that are transferred. The universe is matched against the ID items of each of the cases. Only cases whose ID items concatenated together match the universe will be transferred. For example, if the universe is <logiccolor>"123"</logiccolor> then cases with IDs <logiccolor>"1234"</logiccolor> and <logiccolor>"1235"</logiccolor> would be synced but a case with IDs <logiccolor>"2345"</logiccolor> would not.
+
+The <logiccolor>syncdata</logiccolor> function keeps track of which cases are transferred each time the client and server are synchronized and uses this information to only transfer cases that have been modified since the last synchronization. This significantly reduces the amount of data transferred and therefore reduces bandwidth and the cost of air time. It also reduces the chance that two interviewers overwrite each other's work by both syncing to the same data file on the server. As long as the two interviewers do not modify the same case at the same time, they may both synchronize to the same server without overwriting each other's data.
+
+The <logiccolor>syncdata</logiccolor> function is only supported on data files in the <link data_sources.hgt>CSPro DB</link> format. Data files in the legacy text format may not be synchronized using <logiccolor>syncdata</logiccolor> but instead can be transferred using the <logiccolor>syncfile</logiccolor> function. That function always transfers the entire file, however, increasing the amount of data transferred and allowing for one interviewer to overwrite the changes of another.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the transfer was successful and 0 (false) otherwise.
+
+<subheader>Example 1</subheader>
+
+<logic>
+if syncconnect(CSWeb,"https://www.myserver.org/api") then
+
+     // send the latest survey data to the server
+	syncdata(PUT,SURVEY_DICT);
+
+     // get the latest assignments lookup file from the server
+	syncdata(GET,ASSIGNMENTS_DICT);
+
+	syncdisconnect();
+
+endif;
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+if syncconnect(Bluetooth) then
+
+    // sync data for only the province and district assigned to the interviewer
+	string assignmentUniverse = maketext("%02d%02d",ASSIGNED_PROVINCE,ASSIGNED_DISTRICT);
+	syncdata(BOTH,CENSUS_DICT,assignmentUniverse);
+
+	syncdisconnect();
+
+endif;
+</logic>
+
+<seealso synchronization.hgt syncconnect_function.hgt syncfile_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />

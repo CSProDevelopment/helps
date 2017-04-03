@@ -14,7 +14,10 @@
 			cspro_initial_screen_layout.hgt														#				CSPro Initial Screen Layout
 			trees.hgt																			#				Trees
 			windows.hgt																			#				Windows
+		|CSPro General Functionality															#			CSPro General Functionality
+			data_sources.hgt																	#				Data Sources
 			unicode_primer.hgt																	#				Unicode Primer
+			synchronization.hgt																	#				Synchronization Overview
 		|How To ...																				#			How To ...
 			create_a_cspro_application.hgt														#				Create a CSPro Application
 			open_an_application.hgt																#				Open an Existing Application
@@ -125,8 +128,11 @@
 		|Procedural Sections																	#			Procedural Sections
 			statements.hgt																		#				Statements
 			proc_statement.hgt																	#				Proc Statement
-			preproc_statement.hgt																#				Preproc Statement
-			postproc_statement.hgt																#				Postproc Statement
+			preproc_statement.hgt																#				PreProc Statement
+			onfocus_statement.hgt																#				OnFocus Statement
+			onoccchange_statement.hgt															#				OnOccChange Statement
+			killfocus_statement.hgt																#				KillFocus Statement
+			postproc_statement.hgt																#				PostProc Statement
 		|Logic																					#			Logic
 			view_logic.hgt																		#				View Logic
 			create_and_edit_logic.hgt															#				Create and Edit Logic
@@ -506,12 +512,10 @@
 			highlighted_function.hgt															#				Highlighted Function
 			ispartial_function.hgt																#				IsPartial Function
 			isverified_function.hgt																#				IsVerified Function
-			killfocus_statement.hgt																#				Killfocus Statement
 			move_statement.hgt																	#				Move Statement
 			noinput_statement.hgt																#				NoInput Statement
 			onchangelanguage_global_function.hgt												#				Onchangelanguage Global Function
 			onchar_global_function.hgt															#				Onchar Global Function
-			onfocus_statement.hgt																#				Onfocus Statement
 			onkey_global_function.hgt															#				Onkey Global Function
 			onstop_global_function.hgt															#				Onstop Global Function
 			prompt_function.hgt																	#				Prompt Function
@@ -663,6 +667,10 @@
 			writecase_function.hgt																#				Writecase Function
 		|Synchronization Functions																#			Synchronization Functions
 			syncconnect_function.hgt															#				SyncConnect Function
+			syncconnect_function_csweb.hgt														#				SyncConnect Function (CSWeb)
+			syncconnect_function_bluetooth.hgt													#				SyncConnect Function (Bluetooth)
+			syncconnect_function_dropbox.hgt													#				SyncConnect Function (Dropbox)
+			syncconnect_function_ftp.hgt														#				SyncConnect Function (FTP)
 			syncdata_function.hgt																#				SyncData Function
 			syncdisconnect_function.hgt															#				SyncDisconnect Function
 			syncfile_function.hgt																#				SyncFile Function
@@ -713,7 +721,6 @@
 				logic_file_apc.hgt																#					Logic File (.APC)
 				messages_file_mgf.hgt															#					Messages File (.mgf)
 				helps_file_qsf.hgt																#					Question File (.qsf)
-				data_sources.hgt																#					Data Sources
 				data_file_index_csidx.hgt														#					Data File Index (.csidx)
 				notes_file_csnot.hgt															#					Notes File (.CSNOT)
 				data_file_status_sts.hgt														#					Data File Status (.STS)
