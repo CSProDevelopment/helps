@@ -1,0 +1,41 @@
+﻿<title>Minimum Server Requirements</title>
+
+Below are the minimum requirements to run CSWeb on an Apache or IIS server.
+
+<subheader>Manually verify:</subheader>
+
+<list>
+	<li><b>Apache 2.0</b> or above or <b>IIS</b> 7.0 or above</li>
+	<li>URL Rewrite Module enabled</li>
+</list>
+
+<subheader>Requirements that will be verified by setup script:</subheader>
+
+<list>
+	<li>MySQL 5.5.3 or greater</li>
+	<li>PHP 5.5 or above</li>
+	<li><b>Settings in php.ini</b></li>
+	<list>
+		<li>enable_post_data_reading on</li>
+		<li>post_max_size=8M</li>
+		<li><b>Extensions in php.ini</b></li>
+			<list>
+				<li>extension=php_curl.dll</li>
+				<li>or allow_url_fopen=On</li>
+				<li>extension=php_fileinfo.dll</li>
+				<li>extension=php_openssl.dll</li>
+				<li>extension=php_pdo_mysql.dll</li>
+				<li>extension=php_pdo.dll</li>
+			</list>
+	</list>
+	<li><b>Guzzle</b> (PHP HTTP client) one of the following must be true</li>
+		<list>
+			<li>PHP 5.6 or above</li>
+			<li>or extension=php_curl.dll</li>
+			<li>or The CA bundle is installed</li>
+		</list>
+	<li><b>Files directory</b></li>
+		<list>
+			<li>Must exist and be writeable</li>
+		</list>
+</list>

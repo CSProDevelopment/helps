@@ -2,22 +2,22 @@
 
 Below are the prerequisites for setting up an IIS server.
 
-<subheader> Install Internet Information Services (IIS) </subheader>
+<subheader>Install Internet Information Services (IIS)</subheader>
 On the lefthand column of <b>Programs and Features</b> select <b>Turn Windows features on or off</b>. Here you are able to select the check box to turn on <b>Internet Information Services</b>.
 
-<subheader> Handle Additional Verbs  </subheader>
+<subheader>Handle Additional Verbs </subheader>
 In the <b>IIS Manager</b> select the <b>Features View</b> and then double click <b>Handler Mappings</b>. Right-click on <b>PHP_via_FastCGI</b> and select <b>edit</b>. Click <b>Request Restrictions...</b>, select the <b>Verbs</b> tab, select <b>One of the following verbs</b> and enter <b>GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS</b>. You may then be prompted to double quote the path under <b>Executable</b>.
 
-<subheader> Install Microsoft Web Platform Installer 5.0 </subheader>
+<subheader>Install Microsoft Web Platform Installer 5.0</subheader>
 You will find a shortcut to run the ISS Manager under <b>Administrative Tools</b>. On the righthand column of the <b>IIS Manager</b> click <b>Get New Web Platform components</b>. This will open a browser where you will be able to download the installer for Microsoft's web installer.
 
-<subheader> Install PHP 5.5+ </subheader>
+<subheader>Install PHP 5.5+</subheader>
 Once installed, you can launch Microsoft's web installer from within the <b>IIS Manager</b> by clicking <b>Get New Web Platform components</b>. Install PHP 5.5 or above. Note that in Windows 10 the PHP Manager for IIS may fail to install. You can ignore this message. Microsoft's web installer will also install the <b>URL Rewrite</b> feature. However, if you use another installation method you may need to install it manually. You can verify whether it is installed or not jin IIS Manager's <b>Features View</b>.
 
-<subheader> Edit php.ini </subheader>
+<subheader>Edit php.ini</subheader>
 Locate the php.ini file for the new installation of PHP. You may have multiple copies on your computer. The default install path will be under <b>Program Files (x86)</b> or <b>Program Files</b> depending one whether you installed the 32 or 64 bit version. The root of the install directory will be <b>PHP</b>. You will find the php.ini file in the subdirectory that was named for the <b>version</b> you installed. Open <b>php.ini</b> with Notepad and search for <b>[ExtensionList]</b>. Copy and paste <b>extension=php_fileinfo.dll</b> on the next line. Save and close the file.
 
-<subheader> Install MySQL Server 5.5.3+ </subheader>
+<subheader>Install MySQL Server 5.5.3+</subheader>
 Download the MySQL Server <link http://dev.mysql.com/downloads/mysql/>here</link>. For help with installation see the <link http://dev.mysql.com/doc/refman/5.6/en/windows-installation.html>documentation</link>. Do not forget to start the server. If you installed MySQL Server as a service you can start it by doing the following:
 <list ordered>
 	<li> Win + R </li>

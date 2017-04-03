@@ -1,0 +1,17 @@
+﻿<title>Troubleshooting</title>
+
+<subheader>Troubleshooting Problems</subheader>
+
+CSWeb logs errors to a <b>logs/api.log</b> file located in the CSWeb sources folder in your web server's root directory. This log file has more detailed information to help you troubleshoot problems.
+
+If you need assistance setting up CSWeb or troubleshooting problems, please email <link mailto:<definition mailing_list />><definition mailing_list /></link>. Attach to the email any server logs to help the CSPro development team diagnose the problem.
+
+<subheader>Reconfigure CSWeb</subheader>
+
+To reconfigure or reset your CSWeb installation:
+
+<list ordered>
+	<li>Locate the CSWeb sources folder in your web server's root directory.</li>
+	<li>Delete the files <b>src/api/app/config.php</b> and <b>src/ui/src/config.php</b>.</li>
+	<li>To reconfigure CSWeb, open your web browser and launch the CSWeb setup page.</li>
+</list>

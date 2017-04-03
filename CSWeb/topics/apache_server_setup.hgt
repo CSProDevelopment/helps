@@ -2,11 +2,11 @@
 
 The setup of an Apache server is beyond the scope of this document. Fortunately, there already exists an extensive amount of documentation on the topic. Below we have provided links for getting started. 
 
-<subheader> Web Development Environment </subheader>
+<subheader>Web Development Environment</subheader>
 There are a number of different web development environments that will simplify the setup and allow you to run and test CSWeb locally. If you are developing using Windows you may find <link http://www.wampserver.com/en/>WampServer</link> helpful. It will install and configure Apache, MySQL, and PHP.
 
-<subheader> Apache Server </subheader>
+<subheader>Apache Server</subheader>
 If you are looking to setup a server to host CSWeb you will need to install and configure <link https://httpd.apache.org/>Apache</link>, <link https://www.mysql.com/>MySQL</link>, and <link http://php.net/>PHP</link>.
 
-<subheader> URL Rewrite Module </subheader>
+<subheader>URL Rewrite Module</subheader>
 Regardless of your setup the Apache <b>rewrite_module</b> must be enabled. To do this you will need to edit the <b>httpd.conf</b> file. There may be multiple copies of this file on your computer. Once, you have located the file make a back up and then uncomment the following line <b>LoadModule rewrite_module modules/mod_rewrite.so</b>. Then restart Apache.

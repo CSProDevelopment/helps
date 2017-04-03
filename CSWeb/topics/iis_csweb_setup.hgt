@@ -2,10 +2,10 @@
 
 Below are the prerequisites for running CSWeb on an IIS server.
 
-<subheader> Add Project Files </subheader>
+<subheader>Add Project Files</subheader>
 Copy the <b>root directory</b> of your project to <b>&lt;Drive&gt;:\inetpub\wwwroot</b>. The result may look like <b>C:\inetpub\wwwroot\cspro-rest-api</b>.
 
-<subheader> Update Directory Permissions </subheader>
+<subheader>Update Directory Permissions</subheader>
 You will find the below directories in your document root. Their permissions will need to be updated as shown.
 <list>
 	<li> <b>files</b>: Read and Write </li>
@@ -17,7 +17,7 @@ You will find the below directories in your document root. Their permissions wil
 
 Let us use the <b>files</b> directory as an example. Right-click on <b>files</b> and select <b>Properties</b>. Then click the <b>Security</b> tab. Press the <b>Add...</b> button and type <b>IUSR</b> under <b>Enter the names to select</b>. Press the <b>Check Names</b> button and confirm your changes. Select the user name you just added, <b>IUSR</b>, then update the permissions under <b>Permissions for IUSR</b> so that <b>Read</b> and <b>Write</b> are allowed. Now repeat this process for <b>logs</b>, <b>var</b>, <b>src\api\app</b>, and <b>src\ui\src</b> setting the correct permissions.
 
-<subheader> Add Database </subheader>
+<subheader>Add Database</subheader>
 Do not forget to start the server. If you installed MySQL Server as a service you can start it by doing the following:
 <list ordered>
 	<li> Win + R </li>
@@ -48,10 +48,10 @@ To verify our work, we can list the databases.
 
 If you would prefer not to use the command line we recommend <link https://dev.mysql.com/downloads/workbench/>MySQL Workbench</link>.
 
-<subheader> Start IIS </subheader>
+<subheader>Start IIS</subheader>
 If IIS is installed you will find the <b>Internet Information Services (IIS) Manager</b> shortcut under <b>Administrative Tools</b> in the <b>Control Panel</b>. Double click the shortcut to launch the IIS Manager. In the <b>Connections</b> tree on the left-hand side expand <b>Sites</b> and select <b>Default Web Site</b>. You will see your document root below this. On the right-hand side there is an <b>Actions</b> panel. Under <b>Manage Website</b> click <b>Start</b>.
 
-<subheader> Run Setup Script </subheader>
+<subheader>Run Setup Script</subheader>
 Open a browser and navigate to <b>localhost/cspro-rest-api/setup</b>. The setup script will first check to make sure your server meets all the prerequisites. If your server does not pass, refer to the minimum requirements. Update your server and run the script again. If your server passed press the <b>Next</b> button. The script is now going to ask for the last few configuration details.
 <list ordered>
 	<li><b>Database name</b>: the name of the database you created earlier.</li>

@@ -2,17 +2,17 @@
 
 Below we have provided a general overview of the steps required to run CSWeb on an Apache server.
 
-<subheader> Add Project Files </subheader>
+<subheader>Add Project Files</subheader>
 Copy the <b>root directory</b> of your project to <b>&lt;Drive&gt;:\wamp64\www</b>. The result may look like <b>C:\wamp64\www\cspro-rest-api</b>.
 
-<subheader> Start Apache and MySQL </subheader>
+<subheader>Start Apache and MySQL</subheader>
 Make sure Apache and MySQL are running.
 
-<subheader> Add Database </subheader>
+<subheader>Add Database</subheader>
 Add the MySQL database. For security reasons the database username should have a corresponding password.
 
-<subheader> Run Setup Script </subheader>
-Open a browser and in our case navigate to <b>localhost/cspro-rest-api/setup</b>. The setup script will first check to make sure your server meets the prerequisites. If your server does not pass, refer to the <topic minimum-requirements.hgt />. Update your server and run the script again. If your server passed press the <b>Next</b> button. The script is now going to ask for the last few configuration details.
+<subheader>Run Setup Script</subheader>
+Open a browser and in our case navigate to <b>localhost/cspro-rest-api/setup</b>. The setup script will first check to make sure your server meets the prerequisites. If your server does not pass, refer to the <topic minimum_requirements.hgt />. Update your server and run the script again. If your server passed press the <b>Next</b> button. The script is now going to ask for the last few configuration details.
 <list ordered>
 	<li> <b>Database name</b>: the name of the database you created earlier. </li>
 	<li> <b>Hostname</b>: this will typically be <b>localhost</b>. </li>

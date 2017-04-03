@@ -1,0 +1,31 @@
+﻿<title>Introduction to CSWeb</title>
+
+<b>CSWeb</b> is a web application that allows users to securely transfer cases (questionnaires) or files between client devices running CSEntry and a web server. CSWeb requires a web server running PHP and MySQL.
+
+<center><image synchronization_flow.png />~!~
+<i>Direct synchronization between interviewers and central server over the Internet</i></center>
+
+CSWeb eliminates the need to transfer data files by allowing users to instead transfer cases between client devices and a web server. CSEntry data entry applications that are configured to use CSWeb synchronization take advantage of <i>Smart Synchronization</i>, a feature that transfers only cases that are added or modified since the last successful synchronization. Smart Synchronization reduces data transfer costs and Internet bandwidth usage.
+
+CSWeb uses a MySQL database on the server to store the cases for the census or survey data entry instrument. Unlike Dropbox and FTP synchronizations that are file based and require application designers to manage the concatenation of data files, CSWeb allows users to download a single file containing all the cases for the data entry instrument (once the cases are transferred from the client devices to the server).
+
+The code to run CSWeb can be downloaded from the <link https://<definition census_website />>CSPro website</link>. More information about how to use CSPro's synchronization features can be found in the CSPro User's Guide <link CSPro::synchronization.hgt>Synchronization Overview</link>.
+
+This guide contains the following information:
+
+<subheader>Server Setup</subheader>
+
+<list>
+	<li><topic minimum_requirements.hgt /></li>
+	<li><topic apache_server_setup.hgt /></li>
+	<li><topic apache_csweb_setup.hgt /></li>
+	<li><topic iis_server_setup.hgt /></li>
+	<li><topic iis_csweb_setup.hgt /></li>
+</list>
+
+<subheader>How to ...</subheader>
+
+<list>
+	<li><topic troubleshooting.hgt /></li>
+	<li><topic get_help.hgt /></li>
+</list>
