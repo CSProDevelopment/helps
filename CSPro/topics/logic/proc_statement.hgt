@@ -1,131 +1,40 @@
 ﻿<title>Proc Statement</title>
 <context logic_help_proc />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Proc</font></b> <b><font style="font-family: Arial;
-													 font-size: 18pt; font-weight: bold;"
-													 face="Arial" size="5">Statement</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">procedure-name</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">proc</font></b> <font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">statement
- declares the beginning of the procedures for a data entry or batch processing
- element.</font> <font style="font-family: Arial; font-size: 10pt;" color="#000000"
-						 face="Arial" size="2">The procedure name must
- always be the name of an object in the forms or edit tree. If you are
- in the logic view and select a processing element from the forms or edit
- tree, the logic view will automatically generate the &quot;PROC &lt;item-name&gt;&quot;
- heading for you.</font></p>
-<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 color="#0000FF" face="Courier New"
-									 size="2">PROC</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">AGE</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">If you plan to write logic for more than one procedure, the
- order of procedures must be as follows:</font></p>
-<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">&lt;item-name&gt;</font></p>
-<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 5.40pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">preproc</font></p>
-<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&lt;statements&gt;</font></p>
-<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 5.40pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">onfocus</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
-		 face="Courier New" size="2">{ data entry only }</font></p>
-<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&lt;statements&gt;</font></p>
-<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 5.40pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">killfocus</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
-		 face="Courier New" size="2">{ data entry only }</font></p>
-<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&lt;statements&gt;</font></p>
-<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 5.40pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">postproc</font></p>
-<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&lt;statements&gt;</font></p>
-<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">See also:</font></b> <a href="preproc_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Preproc
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">,</font>
- <a href="postproc_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Postproc
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">,</font>
- <a href="onfocus_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Onfocus
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">,</font>
- <a href="killfocus_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Killfocus
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">,</font>
- <a href="order_of_executing_data_entry_events.html"><font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">Order
- of Executing Data Entry Events</font></a><font style="font-family: Arial;
-												 font-size: 10pt;" color="#000000"
-												 face="Arial" size="2">,</font>
- <a href="order_of_executing_batch_edit_events.html"><font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">Order
- of Executing Batch Edit Events</font></a></p>
-</body>
-</html>
+<logicsyntax>
+PROC <arg>PROCEDURE_NAME</arg>
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>PROC</logiccolor> statement declares the beginning of the procedures for a data entry or batch processing element. The <arg>PROCEDURE_NAME</arg> must always be the name of an object in the forms or edit tree. If you are in the logic view and select a processing element from the tree, the logic view will automatically generate the "<logiccolor>PROC PROCEDURE_NAME</logiccolor>" heading.
+
+If you plan to write logic for more than one procedure, the order of procedures must be as follows:
+
+<logic>
+PROC ITEM_NAME
+
+preproc
+
+	// statements
+
+onfocus
+
+	// statements
+
+onoccchange
+
+	// statements (only valid for rosters and multiply-occurring forms)
+
+killfocus
+
+	// statements
+
+postproc
+
+	// statements
+</logic>
+
+<seealso preproc_statement.hgt onfocus_statement.hgt onoccchange_statement.hgt killfocus_statement.hgt postproc_statement.hgt  order_of_executing_data_entry_events.hgt order_of_executing_batch_edit_events.hgt />
