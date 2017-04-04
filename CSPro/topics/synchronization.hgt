@@ -1,0 +1,111 @@
+﻿<title>Synchronization Overview</title>
+
+<subheader>Synchronization Strategies</subheader>
+
+When using mobile devices for a survey or census it is important to be able to transfer data collected in the field back to the head office. This allows for faster processing and analysis as well as better monitoring of the progress of the field operation.
+
+In CSPro, transferring data between devices in the field and the head office is referred to as synchronization. CSPro supports data synchronization over the Internet between interviewers' devices in the field and a central server. Interviewers use CSEntry to collect data on tablets, phones, or laptops and then use the Internet to synchronize the data on their devices with a server at the head office or in the cloud. In CSPro, the data collection itself may be done entirely offline, with no Internet connection. When an interviewer is able to connect to the Internet they may synchronize with the server and transfer any data collected since the last synchronization. Synchronization may be done using Wi-Fi or a mobile data connection (2G/3G/4G).
+
+<center><image synchronization_internet_flow.png />~!~
+<i>Direct synchronization between interviewers and central server over the Internet</i></center>
+
+In situations where an interviewer rarely or never has access to the Internet, CSPro supports peer-to-peer synchronization between devices using Bluetooth. Bluetooth synchronization does not require an Internet connection. It is a direct connection between two devices that are in close proximity. Using Bluetooth, an interviewer may synchronize their device with a supervisor's device, transferring their data to the supervisor. Later, the supervisor travels to a location where they are able to connect their device to the Internet in order to synchronize with the central server. In this scenario, a supervisor might visit multiple interviewers in order to synchronize with them and later upload their data to the server at the head office.
+
+<center><image synchronization_bluetooth_flow.png />~!~
+<i>Synchronization with supervisor over Bluetooth when interviewers do not have Internet access</i></center>
+
+CSPro supports both one-way and two-way data synchronization. This means that is possible to send data from the interviewer's device to the server as well as to download data from the server to the interviewer's device. You can configure your synchronization to only send data to the server, to only receive data from the server, or to both send and receive data.
+
+It is possible to synchronize both CSPro data files and other non-data files such as application files, images, and text files. It is common to use synchronization to update data entry applications in the field by downloading the latest <link binary_data_entry_application_file_pen.hgt>.pen</link> and <link program_information_file_pff.hgt>.pff</link> files from the server. This way, modifications to the application at the head office can easily be distributed to interviewers in the field.
+
+<subheader>Synchronization Server</subheader>
+
+For synchronization over the Internet, a central server is required. CSPro supports three types of servers: CSWeb, Dropbox and FTP.
+
+<list>
+	<li><b>CSWeb</b>: CSWeb is a web server running the CSPro synchronization server software. CSWeb fully supports all of the CSPro data synchronization features. The server software is written in PHP and can be run on any web server that has PHP and the MySQL database software installed. The server can be set up on a computer at the head office that is connected to the Internet or it may be set up on a hosted website or virtual server in the cloud. For more information about CSWeb servers, see the <link CSWeb::introduction_to_csweb.hgt>CSWeb help documentation</link>.~!~
+When synchronizing CSPro data files using CSWeb, synchronization is done at the case (questionnaire) level. CSPro keeps track of which cases have been added or updated and only sends cases that are new or have been modified since the last synchronization. This significantly reduces the amount of data transferred and therefore reduces bandwidth and the cost of air time. It also reduces the chance that two interviewers overwrite each other's work by both syncing to the same data file on the server. As long as two interviewers do not modify the same case at the same time, they may both synchronize to the same server without overwriting each other's data.
+</li>
+	<li><b>Dropbox</b>: <link https://www.dropbox.com>Dropbox</link> is a free cloud based synchronization service. For those doing smaller survey operations who are not able to configure a server to use CSWeb, Dropbox can be used for file synchronization.</li>
+	<li><b>FTP</b>: CSPro can synchronization with a FTP (file transfer protocol) server. For those doing smaller survey operations who are not able to configure a server to use CSWeb, FTP can be used for file synchronization.</li>
+</list>
+
+When using either Dropbox or FTP for synchronization, case-based synchronization is not supported. This means that all cases on the interviewers' device are sent to the server each time the data is synchronized. This is slower and uses more bandwidth. It also means that care must be taken in naming data files to avoid having one interviewer's data file overwriting another's.
+
+<subheader>Simple Synchronizations</subheader>
+
+Basic synchronizations can be set up by specifying a few options <link synchronization_simple.hgt>documented here</link>.
+
+<subheader>Advanced Synchronizations</subheader>
+
+For more advanced synchronization scenarios, CSPro has logic functions that can be used to implement data and file synchronizations. Using logic, it is possible to synchronize data files, including those associated with external dictionaries, and non-data files over either the Internet or Bluetooth.
+
+<subheader>Web Synchronization from Logic</subheader>
+
+There are four logic functions used for synchronization with a web server:
+
+<list>
+	<li><logiccolor>syncconnect</logiccolor> is used to connect to the server and initiate the synchronization session.</li>
+	<li><logiccolor>syncdisconnect</logiccolor> is used after synchronizing to end the session.</li>
+	<li><logiccolor>syncdata</logiccolor> is used to synchronize cases in CSPro data files with the server.</li>
+	<li><logiccolor>syncfile</logiccolor> is used to upload/download non-data files to/from the server.</li>
+</list>
+
+While it is possible to use <logiccolor>syncfile</logiccolor> to synchronize CSPro data files, if you are using a CSWeb server, it is more efficient to use <logiccolor>syncdata</logiccolor> since it will only send/receive cases that have been modified whereas <logiccolor>syncfile</logiccolor> always sends the entire file.
+
+You will generally call <logiccolor>syncconnect</logiccolor> once to start the session followed by multiple calls to <logiccolor>syncdata</logiccolor> and <logiccolor>syncfile</logiccolor>, followed by a call to <logiccolor>syncdisconnect</logiccolor>. In the example below, we connect to the server, download the latest application files (.pen and .pff) and upload cases from the data file associated with the data dictionary <logiccolor>SURVEY_DICT</logiccolor>.
+
+<logic>
+string cswebServerUrl = "https://www.myserver.org/api";
+
+// connect to the CSWeb server
+if syncconnect(CSWeb,cswebServerUrl) then
+
+	// get the latest versions of the application files from the CSWeb server
+	syncfile(GET,"/MyApp/MyApp.pff");
+	syncfile(GET,"/MyApp/MyApp.pen");
+
+	// send the latest cases to the CSWeb server
+	syncdata(PUT,SURVEY_DICT);
+
+	syncdisconnect();
+
+endif;
+</logic>
+
+<subheader>Bluetooth Synchronization from Logic</subheader>
+
+Bluetooth synchronization is done between two devices. One device, called the client, has logic similar to what is used for web synchronization. The second device plays the role of server. With Bluetooth synchronization, the server is passive. The device acting as the server runs only a single logic function, <logiccolor>syncserver</logiccolor>, which waits and processes commands from the client device. Only the client device runs <logiccolor>syncconnect</logiccolor>, <logiccolor>syncdisconnect</logiccolor>, <logiccolor>syncdata</logiccolor>, and <logiccolor>syncfile</logiccolor>.
+
+The client and server devices must be in close physical proximity in order to connect to each other. The server device must first execute the <logiccolor>syncserver</logiccolor> function which causes it to wait for connections from nearby devices. Then the client device executes <logiccolor>syncconnect</logiccolor> which initiates the connection between the two devices. The client then executes one or more calls to <logiccolor>syncdata</logiccolor> and/or <logiccolor>syncfile</logiccolor>, followed by a call to <logiccolor>syncdisconnect</logiccolor>, which ends the session. This requires that the two operators using the devices coordinate to start the synchronization routines on the two devices at roughly the same time.
+
+<center><image synchronization_bluetooth_server_flow.png /></center>
+
+The following example shows the logic that would be written for the client and for the server:
+
+<b>Client Logic</b>:
+
+<logic>
+// connect to supervisor via Bluetooth
+if syncconnect(Bluetooth) then
+
+	// get the latest versions of the application files from the the supervisor
+	syncfile(GET,"/MyApp/MyApp.pff");
+	syncfile(GET,"/MyApp/MyApp.pen");
+
+	// send the latest cases to the supervisor
+	syncdata(PUT,SURVEY_DICT);
+
+	syncdisconnect();
+
+endif;
+</logic>
+
+<b>Server Logic</b>:
+
+<logic>
+// start peer-to-peer Bluetooth server
+syncserver(Bluetooth);
+</logic>
+
+<seealso synchronization_simple.hgt syncconnect_function.hgt  syncdata_function.hgt syncfile_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />

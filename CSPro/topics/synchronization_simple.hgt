@@ -1,0 +1,45 @@
+﻿<title>Simple Synchronizations</title>
+<context HIDD_SYNC_PARAMS_DIALOG HID_OPTIONS_SYNCHRONIZATION />
+
+<subheader>Setting the Synchronization Options</subheader>
+
+For basic <link synchronization.hgt>synchronization</link> scenarios, you can configure your data entry application for synchronization by selecting <b>Synchronization</b> from the <b>Options</b> menu:
+
+<center><image synchronization_options.png /></center>
+
+The following <b>Server</b> options can be specified:
+
+<list>
+	<li><b>URL</b>: Specify the URL of the CSWeb web server.</li>
+	<li><b>Username</b>: Specify the username to use when connecting to CSWeb. This can be left blank, in which case the operator will have to enter the username when connecting.</li>
+	<li><b>Password</b>: Specify the password to use when connecting to CSWeb. This can be left blank, in which case the operator will have to enter the password when connecting.</li>
+	<li><b>Test connection</b>: Click this button to attempt to connect to the server to verify that the URL and settings are correct.</li>
+	<li><b>Username/Password settings</b>: Choose whether or not you want to save the username or the username and password to the <link data_entry_application_file_ent.hgt>.ent file</link>. For optimal security, you should select the <b>Ask for username and password</b> option.</li>
+</list>
+
+The following <b>Sync</b> options can be specified:
+
+<list>
+	<li><b>Synchronize main data file</b>: This setting determines how the main data file is synchronized. There are three options:~!~~!~
+	<list>
+		<li><b>Upload changes to server</b>: Only data that is modified on the device will be sent to the server. No data will be downloaded from the server. This is the most common option for interviewers when all interviewers will work on unique assignments.</li>
+		<li><b>Download changes from server</b>: Only receive modified data from the server. Do not upload local changes. This might be used for a supervisor who wants to see what changes interviewers have made but does not want to make changes themselves.</li>
+		<li><b>Sync local and remote changes</b>: Send local changes to the server and download changes from the server. This option can be used when multiple interviewers need to work on the same assignments. Note that if both interviewers modify a case at the same time, one will overwrite the changes made by the other.</li>
+	</list></li>
+	<li><b>Download application files</b>: Check this box if you want to download the <link binary_data_entry_application_file_pen.hgt>.pen</link> and <link program_information_file_pff.hgt>.pff</link> files from the server to the local device in order to support application updates in the field.</li>
+	<li><b>Path to application on server</b>: Specify the path on CSWeb where the latest versions of the .pen and .pff files are stored. This is used only if the above option is checked.</li>
+</list>
+
+The options in the dialog box only support direct synchronization over the Internet using CSWeb (not Bluetooth, Dropbox, or FTP). Simple synchronizations also do not support synchronization of external dictionaries or files other than the .pen and .pff files. To implement these advanced synchronization scenarios, you can create your own synchronization routines using <link synchronization.hgt>logic functions</link>.
+
+<subheader>Running Synchronizations</subheader>
+
+If the synchronization options have been configured, then the operator can launch the synchronization when running the data entry application. Synchronization may not be run while entering case data.
+
+On Android devices, the synchronization may be launched from the case listing view by tapping the following icon:
+
+<center><image synchronization_run_android.png /></center>
+
+On Windows devices, select the <b>Synchronize</b> option off of the <b>File</b> menu.
+
+<seealso synchronization.hgt />
