@@ -4,16 +4,14 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-forcase <arg>counter</arg> in <arg>dictionary_name</arg> 『where <arg>condition</arg>』
+forcase <arg>dictionary_name</arg> 『where <arg>condition</arg>』
 	// statements;
 endfor;
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>forcase</logiccolor> statement executes one or more statements repeatedly within a loop for each case in a file opened as external dictionary <arg>dictionary_name</arg>.  The numeric variable <arg>counter</arg> contains the number of the current case being examined. It cannot be changed inside the loop, but it can be referenced. Its starting value is 1 and its ending value is determined by the number of eligible cases in the file.
-
-An optional <arg>condition</arg>, referencing items in the external dictionary, can be supplied to restrict the cases processed by the loop.
+The <logiccolor>forcase</logiccolor> statement executes one or more statements repeatedly within a loop for each case in a file opened as external dictionary <arg>dictionary_name</arg>. An optional <arg>condition</arg>, referencing items in the external dictionary, can be supplied to restrict the cases processed by the loop.
 
 <subheader>Example</subheader>
 
