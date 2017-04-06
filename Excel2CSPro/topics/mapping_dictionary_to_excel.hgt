@@ -1,3 +1,66 @@
 ﻿<title>Mapping Dictionaries to Excel Files</title>
 
-TODO
+<subheader>Excel to CSPro Conversion Overview</subheader>
+
+Before you convert data from Excel to CSPro format, you must specify two sets of mappings:
+
+<list>
+	<li>Excel worksheets to CSPro records</li>
+	<li>Excel worksheet columns to CSPro items</li>
+</list>
+
+There are a few rules concerning valid mappings:
+
+<list>
+	<li>There must be a one-to-one correspondence of mappings from worksheets to records, meaning that record items must be mapped to columns on the same worksheet, and that only one record can be mapped to each worksheet in the Excel workbook.</li>
+	<li>You do not have to map all of the records or items in your dictionary. However, if you map multiple records, then you need to map the same set of ID items for each mapped record.</li>
+</list>
+
+You can save a specification file (with the extension .xs2cs) with the file and mapping selections. You can then load this file at a future time to avoid having to respecify all of the mappings.
+
+
+<subheader>Selecting Files and Configuring Options</subheader>
+
+To begin the conversion operation you must specify the input and output files and processing parameters:
+
+<list ordered>
+	<li>Select the <b>Excel to CSPro</b> tab.</li>
+	<li>Click on <b>Select Excel File</b> and select the Excel spreadsheet that contains the input data.</li>
+	<li>Click on <b>Select CSPro Dictionary</b> and select the dictionary that describes the desired output data.</li>
+	<li>Click on <b>Select Output Data File</b> and provide a name for the output data file. If the file already exists, it will be overwritten during the conversion operation.</li>
+	<li>Review the <b>Starting row</b> parameter. By default this is 2, which assumes that your data has headers. If it does not, change it to 1 or to the appropriate value. If working with multiple worksheets, the starting row for all worksheets must be the same.</li>
+	<li>If desired, check the <b>Close After Processing</b> checkbox. If this is checked, the Excel to CSPro tool will close after the data conversion.</li>
+</list>
+
+
+<subheader>Mapping Excel Worksheets to CSPro Records</subheader>
+
+For every worksheet containing data that you want to convert, you must specify to which CSPro record it should map. The tool displays all of the records in your dictionary and then, in a drop down list, displays the name of each of the Excel worksheets. Select which worksheet corresponds to the record, or if you do not want to map the record, select the <b>&lt;unassigned&gt;</b> option.
+
+Once you have mapped a worksheet, there are two buttons that you can use to automate column mappings:
+
+<list>
+	<li><b>Reset Mappings</b>: For all of the record's items, remove any column mappings, setting each to <b>&lt;unassigned&gt;</b>.</li>
+	<li><b>Assign Default Mappings</b>: If each column in the worksheet corresponds to an item, with the first column mapping to the first ID item, and the last column mapping to the last item in the record, you can select this option, which will automatically map each item to its corresponding column.</li>
+</list>
+
+You cannot map the same worksheet to multiple records.
+
+
+<subheader>Mapping Excel Worksheet Columns to CSPro Items</subheader>
+
+After mapping a worksheet to a record, you will see a list of the record's items. In addition to seeing the item's label, name, and occurrence, there is a drop down list that shows the columns in the worksheet mapped to the item's parent record. Select which column corresponds to the item, or if you do not want a mapping for the item, select the <b>&lt;unassigned&gt;</b> option.
+
+You can map the same column to multiple items.
+
+
+<subheader>Running the Conversion</subheader>
+
+When you have specified all the mappings, click on <b>Create CSPro Data File</b> to convert the Excel data to a file that can be opened using your CSPro dictionary.
+
+There are some things to keep in mind when evaluating your converted data:
+
+<list>
+	<li>The tool converts data in a way that ensures a valid CSPro file. That means, for example, that if a column is mapped to a numeric value and the cell does not contain a valid number, that the value output to the CSPro file will be <logiccolor>default</logiccolor>. Additionally, if an item's length cannot fully handle the cell's number or string, the value will be truncated.</li>
+	<li>If you are working with data in multiple worksheets, you will want to sort your data by the specified IDs, or at least ensure that the IDs in each worksheet exist in the same order. The tool will report if the data was not in the correct order and in that case will not fully convert your data.</li>
+</list>

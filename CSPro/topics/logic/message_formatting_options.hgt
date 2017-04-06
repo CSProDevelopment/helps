@@ -1,3 +1,71 @@
 ﻿<title>Message Formatting Options</title>
 
-HELPTODO
+<subheader>Format</subheader>
+
+<logicsyntax>
+<arg>function_name</arg>(『...,』<arg>message</arg>『,<arg>parameter1</arg>,...,<arg>parameterN</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+Several functions take an argument that consists of a message and then an optional number of parameters that are dynamically inserted into the text to create a final message. The <arg>message</arg> is either a string expression or a numeric <link message_file.hgt>message number</link> that contains the message text.
+
+The message can contain optional parameters, <arg>parameter1</arg> to <arg>parameterN</arg>, that will be inserted into the message. Each parameter, denoted in the message text with a percent sign, is sequentially inserted into the message. Parameters can be numeric or string expressions, but the type of parameter must match the type of the receiving field in the message text. There are four formatters:
+
+<table 2 nowrap header>
+	<cell>Formatter</cell><cell>Result</cell>
+	<cell><logiccolor>"%d"</logiccolor></cell><cell>Inserts a number that is displayed as an integer.</cell>
+	<cell><logiccolor>"%f"</logiccolor></cell><cell>Inserts a number that is displayed as a decimal value (with six decimal places shown by default).</cell>
+	<cell><logiccolor>"%s"</logiccolor></cell><cell>Inserts a text string.</cell>
+	<cell><logiccolor>"%p"</logiccolor></cell><cell>Inserts the name of the current procedure, which can be useful for debugging. No parameter should be supplied if using this option.</cell>
+</table>
+
+<subheader>Additional Formatting Options</subheader>
+
+Numeric and string parameters have a couple additional parameters that can be specified after the percent sign: <logiccolor>"%[n]d"</logiccolor>, <logiccolor>"%[n.d]f"</logiccolor>, and <logiccolor>"%[n.d]s"</logiccolor>. In these cases, <logiccolor>"n"</logiccolor> controls the length of the replacement text and <logiccolor>"d"</logiccolor> controls either the number of decimal places shown or the length of the string. There are some rules:
+
+<list>
+	<li>If the number is positive, as in <logiccolor>"%+5d"</logiccolor>, the text is right justified to the size of the field (e.g., <logiccolor>"    9"</logiccolor>).</li>
+	<li>If the number is negative, as in <logiccolor>"%-5d"</logiccolor>, the text is left justified to the size of the field (e.g., <logiccolor>"9    "</logiccolor>).</li>
+	<li>For numbers, if a leading zero proceeds the number, as in <logiccolor>"%05d"</logiccolor>, the text is right justified to the size of the field but instead of being padded with spaces, it is padded with zeros  (e.g., <logiccolor>"00009"</logiccolor>).</li>
+	<li>For numbers, if the number is preceded by a plus sign, as in <logiccolor>"%+d"</logiccolor>, the sign of the number is always displayed (e.g., <logiccolor>"+9"</logiccolor>).</li>
+	<li>Numbers are never truncated. Text strings are not truncated unless used as in <logiccolor>"%0.5s"</logiccolor>, where the second part, <logiccolor>".5"</logiccolor>, indicates the maximum number of characters.</li>
+</list>
+
+<subheader>Example</subheader>
+
+<logic>
+numeric integerValue = 23456;
+
+errmsg(	"%d"		,integerValue);		//		23456
+errmsg(	"%10d"		,integerValue);		//		     23456
+errmsg(	"%-10d"		,integerValue);		//		23456
+errmsg(	"%010d"		,integerValue);		//		0000023456
+errmsg(	"%+10d"		,integerValue);		//		    +23456
+errmsg(	"%+010d"	,integerValue);		//		+000023456
+errmsg(	"%f"		,integerValue);		//		23456.000000
+
+
+numeric decimalValue = 12.567
+
+errmsg(	"%f"		,decimalValue);		//		12.567000
+errmsg(	"%10.3f"	,decimalValue);		//		    12.567
+errmsg(	"%-10.3f"	,decimalValue);		//		12.567
+errmsg(	"%10.2f"	,decimalValue);		//		     12.57
+errmsg(	"%10.5f"	,decimalValue);		//		  12.56700
+errmsg(	"%010.3f"	,decimalValue);		//		000012.567
+errmsg(	"%+10.3f"	,decimalValue);		//		   +12.567
+errmsg(	"%+010.3f"	,decimalValue);		//		+00012.567
+errmsg(	"%d"		,decimalValue);		//		12
+
+
+string stringValue = "abcdef"
+
+errmsg(	"%s"		,stringValue);		//		abcdef
+errmsg(	"%10s"		,stringValue);		//		    abcdef
+errmsg(	"%-10s"		,stringValue);		//		abcdef
+errmsg(	"%10.3s"	,stringValue);		//		       abc
+errmsg(	"%-10.3s"	,stringValue);		//		abc
+</logic>
+
+<seealso errmsg_function.hgt filewrite_function.hgt maketext_function.hgt trace_function.hgt write_function.hgt />
