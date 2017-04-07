@@ -94,7 +94,7 @@ namespace Code_Colorizer
                 };
 
                 // write out the file
-                using( TextWriter tw = new StreamWriter(outFilename,false,Encoding.UTF8) )
+                using( TextWriter tw = new StreamWriter(outFilename,false,Encoding.ASCII) )
                 {
                     foreach( string fileLine in fileLines )
                     {
