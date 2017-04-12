@@ -54,8 +54,9 @@ namespace Colorizer
             {
                 bool additionalCharacterExists = ( ( i + 1 ) < sourceText.Length );
                 bool processPreviousBlock = true;
-                bool processPreviousBlockIncludeThisCharacter = false;
+                int processPreviousBlockCharactersToInclude = 0;
                 bool reprocessCharacter = false;
+                bool justProcessedLineComment = false;
                 ProcessType savedProcessType = processType;
                 int savedI = i;
 
@@ -74,6 +75,7 @@ namespace Colorizer
                 {
                     i++;
                     processType = ProcessType.LineComment;
+                    justProcessedLineComment = true;
                 }
 
                 else if( savedProcessType == ProcessType.LineComment )
@@ -98,7 +100,7 @@ namespace Colorizer
 
                         if( numBracketComments == 0 )
                         {
-                            processPreviousBlockIncludeThisCharacter = true;
+                            processPreviousBlockCharactersToInclude = 1;
                             processType = ProcessType.None;
                         }
                     }
@@ -133,7 +135,7 @@ namespace Colorizer
                         // make sure that it's not an escaped quotation character
                         if( sourceText[i] == quoteChar && sourceText[i - 1] != '\\' )
                         {
-                            processPreviousBlockIncludeThisCharacter = true;
+                            processPreviousBlockCharactersToInclude = 1;
                             processType = ProcessType.None;
                         }
 
@@ -178,13 +180,27 @@ namespace Colorizer
                 if( atEndOfBuffer )
                 {
                     processPreviousBlock = true;
-                    processPreviousBlockIncludeThisCharacter = ( processType != ProcessType.Newline );
+                    processPreviousBlockCharactersToInclude = ( processType == ProcessType.Newline ) ? 0 : 1;
 
                     // this fixes a problem when the last character in the buffer is a number
                     if( processType == ProcessType.Number && savedProcessType != ProcessType.Number )
                     {
-                        processPreviousBlockIncludeThisCharacter = false;
+                        processPreviousBlockCharactersToInclude = 0;
                         reprocessCharacter = true;
+                    }
+
+                    // or if the last characters are a line comment
+                    if( justProcessedLineComment )
+                    {
+                        if( savedProcessType == ProcessType.LineComment )
+                            processPreviousBlockCharactersToInclude = 2;
+
+                        else
+                        {
+                            processPreviousBlockCharactersToInclude = 0;
+                            reprocessCharacter = true;
+                            i--; // because it was incremented above
+                        }
                     }
                 }
 
@@ -192,7 +208,7 @@ namespace Colorizer
                 // process the previous block (if applicable)
                 if( processPreviousBlock )
                 {
-                    string text = sourceText.Substring(lastTextStartBlock,savedI - lastTextStartBlock + ( processPreviousBlockIncludeThisCharacter ? 1 : 0 ));
+                    string text = sourceText.Substring(lastTextStartBlock,savedI - lastTextStartBlock + processPreviousBlockCharactersToInclude);
                     bool resetLastTextStartBlock = true;
 
                     if( savedProcessType == ProcessType.LineComment || savedProcessType == ProcessType.BracketComment )
@@ -203,11 +219,11 @@ namespace Colorizer
 
                     else if( savedProcessType == ProcessType.QuotedString )
                         logicColorizer.AddQuotedString(sb,text);
-                    
+
                     else if( savedProcessType == ProcessType.Keyword )
                     {
-                        bool includeLastCharacter = ( processPreviousBlockIncludeThisCharacter && processType == ProcessType.Keyword );
-                        bool outputLastCharacterAsText = ( atEndOfBuffer && !includeLastCharacter && processPreviousBlockIncludeThisCharacter && processType != ProcessType.Keyword );
+                        bool includeLastCharacter = ( ( processPreviousBlockCharactersToInclude > 0 ) && processType == ProcessType.Keyword );
+                        bool outputLastCharacterAsText = ( atEndOfBuffer && !includeLastCharacter && ( processPreviousBlockCharactersToInclude > 0 ) && processType != ProcessType.Keyword );
                         string keyword = sourceText.Substring(lastWordStartBlock,savedI - lastWordStartBlock + ( includeLastCharacter ? 1 : 0 ));
                         string upperCaseKeyword = keyword.ToUpper();
 
@@ -229,7 +245,7 @@ namespace Colorizer
                                 logicColorizer.AddText(sb,text.Substring(keyword.Length));
                         }
 
-                        else if( processType == ProcessType.Newline || atEndOfBuffer )
+                        else if( processType == ProcessType.Newline || processType == ProcessType.LineComment || atEndOfBuffer )
                             logicColorizer.AddText(sb,text);
 
                         else
@@ -247,7 +263,7 @@ namespace Colorizer
                     }
 
                     else if( resetLastTextStartBlock )
-                        lastTextStartBlock = savedI + ( processPreviousBlockIncludeThisCharacter ? 1 : 0 );
+                        lastTextStartBlock = savedI + processPreviousBlockCharactersToInclude;
                 }
 
                 if( reprocessCharacter )

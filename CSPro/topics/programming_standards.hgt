@@ -1,0 +1,38 @@
+﻿<title>Programming Standards</title>
+
+It is a good idea to create a set of programming standards when writing CSPro code. If you work in an organization, you will want to discuss these standards with the other programmers in your organization. Code is more readable when multiple people use the same coding guidelines.
+
+This is an example of a set of programming standards adopted by an organization. Your standards may differ, but the point is to at least have a set of standards.
+
+<list ordered>
+	<li>Backup your code, and all components of the application, frequently. Create a system of version control (such as by using <link https://git-scm.com>Git</link>).</li>
+	<li>Compile code frequently while working on it, and compile code with <link compiler_mode.hgt>set explicit</link> enabled. This will help you identify syntax errors early.</li>
+	<li>Use the help system (by pressing F1) and the reference window while writing logic.</li>
+	<li>Use <logiccolor>//</logiccolor> for line comments and <logiccolor>{ }</logiccolor> for multiline comments. Comment the code while writing it, not afterwards, as it will probably never get done in that case. Remember that it is likely that you will not be the only person who looks at your code.</li>
+	<li>Maintain indentations for code within conditional statements (<logiccolor>if</logiccolor>), loops (<logiccolor>do</logiccolor>/<logiccolor>for</logiccolor>), and functions.</li>
+	<li>Write CSPro statements in lowercase.</li>
+	<li>Write variable names from the dictionary in UPPERCASE.</li>
+	<li>Write globally declared variable names in mixed case, starting with a lowercase word (this is called camelCase). Make all global variables at least three characters long.</li>
+	<li>Declare all constants in <logiccolor>PROC GLOBAL</logiccolor>, not in the application-level <logiccolor>preproc</logiccolor>.</li>
+	<li>Use locally declared variables for loop counters and when only one procedure or function uses the value of the variable. Remember that the value of the local variable will be reset (to 0) each time the procedure is executed.</li>
+	<li>Use functions when an operation is generalizable or if the same operation will be called repeatedly from different procedures.</li>
+	<li>Use standard prefixes for variable names. For example:
+		~!~
+		<list>
+			<li><logiccolor>cnt</logiccolor>: counts of an item (such as <logiccolor>cntPersons</logiccolor> and <logiccolor>cntHouseholds</logiccolor>)</li>
+			<li><logiccolor>ptr</logiccolor>: pointer to a record (for instance <logiccolor>ptrEldest</logiccolor> is the occurrence number of the eldest resident)</li>
+		</list>
+	</li>
+	<li>For batch applications, maintain an error message numbering scheme so that both subject matter specialists and programmers can understand where error messages occur. For example:
+		~!~
+		<list>
+			<li>(1 digit)  record type number</li>
+			<li>(2 digits) question number of the primary variable</li>
+			<li>(2 digits) error number for this variable</li>
+		</list>
+	</li>
+	<li>Do not use <link deprecated_features.hgt>deprecated features</link> as they may not be supported in a future version of CSPro.</li>
+	<li>Take advantage of free support from the U.S. Census Bureau at: <link mailto:<definition mailing_list />><definition mailing_list /></link></li>
+</list>
+
+<seealso define_coding_standards.hgt />

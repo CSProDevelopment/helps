@@ -16,7 +16,7 @@ With each character stored as two bytes in memory, there are several ways to wri
 
 <center><image unicodeFrancois.png /></center>
 
-With a UTF-8 encoding, a file's size is not equal to the number of characters in the file. An empty file is three bytes because of the BOM. (The <link fileempty_function.hgt>fileempty function</link> can be used to determine whether a file is actually empty.) An ASCII file converted to UTF-8 will generally be the size of the original file plus three bytes. An ANSI file that uses non-English characters will be even larger. The name François takes eight bytes to represent in ANSI but uses nine bytes in UTF-8.
+With a UTF-8 encoding, a file's size is not equal to the number of characters in the file. An empty file is three bytes because of the BOM. (The <logiccolor>fileempty</logiccolor> function can be used to determine whether a file is actually empty.) An ASCII file converted to UTF-8 will generally be the size of the original file plus three bytes. An ANSI file that uses non-English characters will be even larger. The name François takes eight bytes to represent in ANSI but uses nine bytes in UTF-8.
 
 <subheader>How Will CSPro Work with Unicode Files?</subheader>
 
