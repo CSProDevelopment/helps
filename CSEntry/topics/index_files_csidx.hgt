@@ -1,9 +1,0 @@
-﻿<title>Index Files (.csidx)</title>
-
-The .csidx file stores the case IDs and their physical location in the data file. This helps CSEntry to manipulate the data file more quickly. The file is a binary file and should not be modified file outside the CSEntry environment.
-
-CSEntry automatically generates an index file when it creates a new data file. CSEntry then coordinates both files as cases are added, deleted or modified.
-
-When CSEntry opens a data file, it looks for the corresponding index file. If it does not find one, CSEntry automatically generates a new one. If you suspect, for any reason, that the index file has been corrupted, or does not match the data file, simply delete the index file and let CSEntry generate a new one.
-
-CSPro DB files do not use an index.

@@ -1,0 +1,26 @@
+﻿<title>Notes File (.csnot)</title>
+
+The notes file is a text file that contains all notes processed by a data entry application. The file contains the case IDs, the name of the data item to which each note belongs, the name of the operator, the time the note was left, and the note text. There may be multiple note records for a particular field.
+
+The format of each note record is as follows:
+
+<list>
+	<li>The first N characters are the case IDs.</li>
+	<li>The next 32 characters are the field name as given in the dictionary (left justified).</li>
+	<li>The next 32 characters are the name of the operator ID (left justified).</li>
+	<li>The next 8 characters are the date the note was last modified (YYYYMMDD).</li>
+	<li>The next 6 characters are the time the note was last modified (HHMMSS).</li>
+	<li>The next 5 characters are the record occurrence number if applicable (right justified).</li>
+	<li>The next 5 characters are the item occurrence number if applicable (right justified).</li>
+	<li>The next 5 characters are the subitem occurrence number if applicable (right justified).</li>
+	<li>The remaining characters are the note text.</li>
+</list>
+
+
+Note text can contain "\n" characters, which indicate a newline (Enter key) character. If the note text is automatically wrapped in the note text box, there will be no newline characters.
+
+The .csnot file can be processed by another CSPro application by creating a data dictionary for it. You can use the <link CSPro::dictionary_macros.hgt>Dictionary Macros</link> function to automatically create this dictionary.
+
+Notes can be created, edited, and deleted using the <logiccolor>getnote</logiccolor>, <logiccolor>putnote</logiccolor>, and <logiccolor>editnote</logiccolor> functions.
+
+Notes for <link CSPro::data_sources.hgt>CSPro DB</link> files are stored within the file itself and not in a .csnot file. Prior to CSPro 7.0, the notes file had the extension .not.
