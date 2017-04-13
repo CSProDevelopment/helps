@@ -84,10 +84,8 @@ saved_arrays_file_sva.hgt | .SVA																#	.SVA
 	saved_arrays_file_sva.hgt | Saved Arrays File												#		Saved Arrays File
 table_matrices_file_tab.hgt | .TAB																#	.TAB
 	table_matrices_file_tab.hgt | Table Matrices File											#		Table Matrices File
-table_matrices_index_file_tai.hgt | .TAI														#	.TAI
-	table_matrices_index_file_tai.hgt | Table Matrices Index File								#		Table Matrices Index File
-tables_file_tbw.hgt | .TBW																		#	.TBW
-	tables_file_tbw.hgt | Tables File															#		Tables File
+table_matrices_index_file_tabidx.hgt | .tabidx													#	.tabidx
+tables_file_tbw.hgt | .tbw																		#	.tbw
 create_a_specialized_report.hgt | .WRT															#	.WRT
 	create_a_specialized_report.hgt																#		Create a Specialized Report
 create_a_new_tabulation_application.hgt | .XTB													#	.XTB
@@ -793,27 +791,27 @@ filerename_function.hgt																			#	FileRename Function
 files.hgt																						#	Files
 	area_names_file_anm.hgt | Area Names File .ANM												#		Area Names File .ANM
 	batch_edit_application_file_bch.hgt | Batch Edit Application File .BCH						#		Batch Edit Application File .BCH
-	binary_data_entry_application_file_pen.hgt | Binary Data Entry Application File				#		Binary Data Entry Application File
+	binary_data_entry_application_file_pen.hgt													#		Binary Data Entry Application File (.pen)
 	data_dictionary_file_dcf.hgt | Data Dictionary File .DCF									#		Data Dictionary File .DCF
 	data_entry_application_file_ent.hgt | Data Entry Application File .ENT						#		Data Entry Application File .ENT
 	data_file_status_sts.hgt | Data File Status													#		Data File Status
 	edit_order_file_ord.hgt | Edit Order File .ORD												#		Edit Order File .ORD
 	form_file_fmf.hgt | Form File .FMF															#		Form File .FMF
-	frequency_file_frq.hgt																		#		Frequency File (.FRQ)
-	frequency_specification_file_fqf.hgt | Frequency Specification File .FQF					#		Frequency Specification File .FQF
+	frequency_file_frq.hgt																		#		Frequency File (.frq)
+	frequency_specification_file_fqf.hgt														#		Frequency Specification File (.fqf)
 	listing_file_lst.hgt | Listing File .LST													#		Listing File .LST
 	logic_file_apc.hgt | Logic File																#		Logic File
 	logic_file_apc.hgt | Logic File .APC														#		Logic File .APC
 	map_data_file_mdf.hgt | Map Data File .MDF													#		Map Data File .MDF
 	map_file_mpc.hgt | Map File .MAP															#		Map File .MAP
 	messages_file_mgf.hgt | Message File .MGF													#		Message File .MGF
-	notes_file_csnot.hgt | Notes [.NOT]															#		Notes [.NOT]
+	notes_file_csnot.hgt																		#		Notes File (.CSNOT)
 	operator_statistics_file.hgt | Operator Statistics File .LOG								#		Operator Statistics File .LOG
 	program_information_file_pff.hgt | Program Information File .PFF							#		Program Information File .PFF
 	helps_file_qsf.hgt | Question File .QSF														#		Question File .QSF
 	saved_arrays_file_sva.hgt | Saved Arrays File .SVA											#		Saved Arrays File .SVA
 	data_synchronization.hgt																	#		Synchronization File (.PNC)
-	tables_file_tbw.hgt | Tables File .TBW														#		Tables File .TBW
+	tables_file_tbw.hgt																			#		Tables File (.tbw)
 	table_specifications_file_xts.hgt | Table Specifications File .XTS							#		Table Specifications File .XTS
 	tabulation_application_file_xtb.hgt | Tabulation Application File .XTB						#		Tabulation Application File .XTB
 filesize_function.hgt																			#	FileSize Function
@@ -863,6 +861,7 @@ forms.hgt																						#	Forms
 	trees.hgt																					#		Trees
 	windows.hgt | Window																		#		Window
 issues_to_consider_when_designing_a_form.hgt | Form Design Issues								#	Form Design Issues
+for_dict_statement.hgt																			#	For (Dictionary) Statement
 for_statement.hgt																				#	For Statement
 tool_list.hgt | Frequencies																		#	Frequencies
 syncconnect_function_ftp.hgt | FTP Synchronization												#	FTP Synchronization
@@ -1254,6 +1253,7 @@ navigating_between_pages_tables_and_areas.hgt | Navigating Between Pages  Tables
 skip_statement.hgt | Next																		#	Next
 	skip_statement.hgt																			#		Skip Statement
 	next_statement.hgt | Statement																#		Statement
+nmembers_function.hgt																			#	NMembers Function
 noccurs_function.hgt																			#	Noccurs Function
 run_production_data_entry.hgt | NoFileOpen														#	NoFileOpen
 noinput_statement.hgt																			#	NoInput Statement
@@ -1652,10 +1652,13 @@ installing_data_entry_applications.hgt | Setup													#	Setup
 setvaluesets_function.hgt																		#	SetValueSets Function
 setvalueset_function.hgt																		#	SetValueSet Function
 setvalue_function.hgt																			#	Setvalue Function
+set_access_statement.hgt																		#	Set Access Statement
 set_behavior_canenter_statement.hgt																#	Set Behavior Canenter Statement
 set_behavior_export_statement.hgt																#	Set Behavior Export Statement
 set_behavior_specialvalues_statement.hgt														#	Set Behavior SpecialValues Statement
 seterrmsg_function.hgt																			#	Set ErrMsg Statement
+set_first_statement.hgt																			#	Set First Statement
+set_last_statement.hgt																			#	Set Last Statement
 share_the_same_format_on_multiple_computers.hgt													#	Share the Same Format on Multiple Computers
 external_files.hgt | Sharing External Files														#	Sharing External Files
 showarray_function.hgt																			#	Showarray Function
@@ -1820,9 +1823,10 @@ add_insert_and_delete_tables.hgt | Table														#	Table
 	trees.hgt | Tree																			#		Tree
 	tool_list.hgt | Viewer																		#		Viewer
 	windows.hgt | Window																		#		Window
+tables_file_tbw.hgt																				#	Tables File (.tbw)
 table_logic_tablogic.hgt | Table Logic															#	Table Logic
-table_matrices_file_tab.hgt | Table Matrices File .TAB											#	Table Matrices File .TAB
-table_matrices_index_file_tai.hgt | Table Matrices Index File .TAI								#	Table Matrices Index File .TAI
+table_matrices_file_tab.hgt																		#	Table Matrices File (.tab)
+table_matrices_index_file_tabidx.hgt															#	Table Matrices Index File (.tabidx)
 table_logic_tablogic.hgt | tablogic																#	tablogic
 	table_logic_tablogic.hgt | Table Logic														#		Table Logic
 area_dialog_box.hgt | Tabulate																	#	Tabulate

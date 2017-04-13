@@ -112,7 +112,7 @@
 			occurrence_labels.hgt																#				Occurrence Labels
 			add_or_modify_relations.hgt															#				Add or Modify Relations
 			print_the_dictionary_file.hgt														#				Print the Dictionary File
-			save_dictionary_as_new_file.hgt														#				Save Dictionary As New File
+			save_dictionary_as_new_file.hgt														#				Save Dictionary as New File
 			multiple_language_dictionaries.hgt													#				Multiple Language Dictionaries
 			dictionary_macros.hgt																#				Dictionary Macros
 	|The CSPro Language																			#		The CSPro Language
@@ -478,6 +478,7 @@
 			exit_statement.hgt																	#				Exit Statement
 			for_statement.hgt																	#				For Statement
 			forcase_statement.hgt																#				ForCase Statement
+			for_dict_statement.hgt																#				For (Dictionary) Statement
 			if_statement.hgt																	#				If Statement
 			next_statement.hgt																	#				Next Statement
 			universe_statement.hgt																#				Universe Statement
@@ -662,9 +663,13 @@
 			keylist_function.hgt																#				KeyList Function
 			loadcase_function.hgt																#				Loadcase Function
 			locate_function.hgt																	#				Locate Function
+			nmembers_function.hgt																#				NMembers Function
 			open_function.hgt																	#				Open Function
 			retrieve_function.hgt																#				Retrieve Function
+			set_access_statement.hgt															#				Set Access Statement
 			setfile_function.hgt																#				Setfile Function
+			set_first_statement.hgt																#				Set First Statement
+			set_last_statement.hgt																#				Set Last Statement
 			write_function.hgt																	#				Write Function
 			writecase_function.hgt																#				Writecase Function
 		|Synchronization Functions																#			Synchronization Functions
@@ -729,18 +734,18 @@
 				listing_file_lst.hgt															#					Listing File (.lst)
 				tabulation_application_file_xtb.hgt												#					Tabulation Application File (.XTB)
 				table_specifications_file_xts.hgt												#					Table Specifications File (.XTS)
-				tables_file_tbw.hgt																#					Tables File (.TBW)
+				tables_file_tbw.hgt																#					Tables File (.tbw)
 				area_names_file_anm.hgt															#					Area Names File (.ANM)
-				table_matrices_file_tab.hgt														#					Table Matrices File (.TAB)
-				table_matrices_index_file_tai.hgt												#					Table Matrices Index File (.TAI)
+				table_matrices_file_tab.hgt														#					Table Matrices File (.tab)
+				table_matrices_index_file_tabidx.hgt											#					Table Matrices Index File (.tabidx)
 				batch_edit_application_file_bch.hgt												#					Batch Edit Application File (.BCH)
 				data_synchronization.hgt														#					Synchronization File (.PNC)
 				edit_order_file_ord.hgt															#					Edit Order File (.ord)
-				frequency_file_frq.hgt															#					Frequency File (.FRQ)
+				frequency_file_frq.hgt															#					Frequency File (.frq)
 				map_data_file_mdf.hgt															#					Map Data File (.mdf)
 				map_file_mpc.hgt																#					Map File (.mpc)
 				program_information_file_pff.hgt												#					Program Information File (.PFF)
-				frequency_specification_file_fqf.hgt											#					Frequency Specification file (.FQF)
+				frequency_specification_file_fqf.hgt											#					Frequency Specification File (.fqf)
 				operator_statistics_file.hgt													#					Operator Statistics File (.LOG)
 				saved_arrays_file_sva.hgt														#					Saved Arrays File (.SVA)
 			|HELPTODO																			#				HELPTODO
