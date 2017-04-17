@@ -1,251 +1,86 @@
 ﻿<title>Create an Area Names File</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+The Area Names file (.anm) is a text file that you can create using any text editor. Be sure you save this file with the extension .anm. This file defines the levels of geography and assigns text names to the numeric codes for each geographic unit.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Create an Area Names File</font></b></h3>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -11.50pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- Area Names File (.anm) is a text file that you can create using any text
- editor. Be sure you save this file with the extension .anm. This file
- defines the levels of geography and assigns text names to the numeric
- codes for each geographic unit.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Note:
- It is similar in format to the area names file (.ARA) used in IMPS. You
- can also convert an IMPS area file (.ara) to a CSPro area file (.anm)
- using earlier versions of CSPro, e.g. 2.n.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- following is an excerpt from the area names file for Popstan (popstan.anm).
- The first section identifier, i.e., [Area Names], indicates the type of
- file, followed by the CSPro version number.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Next,
- the [Levels] section provides the names of the geographic hierarchy (levels)
- in major-to-minor order.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Finally
- the [Areas] section gives the correspondence of the geographic codes (major-to-minor
- order) found in the data with a name for the geographic area. More detail
- follows the listing of the area name file.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Note:</font></b> <span style="text-align: left;"><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">Area code values can be positive,
- negative or zero.</font></span></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- the data file contains area codes that do not have corresponding names
- in the area names file then the unmatched area codes will be displayed
- as a text string in place of the missing name.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">[Area Names]</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New';">Version=CSPro 7.0</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">[Levels]</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">Name=Province</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">Name=District</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">[Areas]</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">X X = Popstan</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">1 X = Artesia</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">1 1 = Dongo</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">1 2 = Idfu</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">2 X = Copal</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">2 1 = Baja</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">2 2 = Bassac</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">3 X = Dari</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">3 1 = Argentina</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">3 2 = Benlata</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">3 3 = Bristol</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- very first line following the [Areas] section are the codes and name of
- the â€˜totalâ€™ area; â€˜countryâ€™ in our case. It is considered the â€˜Grand Totalâ€™
- level and denoted by â€˜Xâ€™ values for each level of the area hierarchy.
- In the example, the first â€˜Xâ€™ represents the Province code and the second
- â€˜Xâ€™ represents the District code. Basically, an â€˜Xâ€™ value is similar to
- a â€˜wildcardâ€™ match, so any value in this field is acceptable (and thus
- part of the area).</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Following
- the county area name is the set of codes and names for the lowest valued
- major level; â€˜Provinceâ€™ in our example. The lowest code for a province
- is â€˜1â€™ associated with Artesia. Again, an â€˜Xâ€™ value is given for the District
- code since any code here is acceptable. Next, we must give codes and name
- for all districts in Artesia starting with the lowest code value.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Note
- that each line for this province begins with â€˜1â€™since the province code
- must be combined with the district code to uniquely distinguish this district.
- Dongo is district â€˜1â€™ of Artesia (province â€˜1â€™). Data for a questionnaire
- with Province code = 1 and District code = 1 will be tallied for Dongo
- District.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
- districts for Artesia are all listed (codes and names), start with the
- next lowest province code followed by its districts. The process is repeated
- for each province.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Note:</font></b> <font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">Area codes must
- be listed in ascending sort order from major to minor.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- the area name file has only one level, e.g., province, then only one code
- would be given. If three levels were needed, e.g., province, district,
- village, then three codes would be required. As always, â€˜Xâ€™ represents
- the wildcard match.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Indentation
- associated with names above is for illustrative purposes only, i.e., area
- names shown in tables will not be indented. It can make the area name
- file easier to â€˜readâ€™.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Also,
- codes within the [Areas] section can be separated by commas, spaces, or
- a combination of both. Any of the following are acceptable to define an
- item at the district level:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">â€¢&#160;3 15 = Sharif</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">â€¢&#160;3, 15 = Sharif</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">â€¢&#160;3,15 = Sharif</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><span
-	 style="font-weight: bold;">Hiding Tables</span>: To hide tables for
- certain level of geographies, preface the area name label with a tilde
- (~). For areas with this label, a table will still be created (and stored
- in the .tbw table file), but it will not be displayed and will thus be
- hidden. For example, if a table shows states (provinces) and counties
- (districts) but some states only contain one county, it may be desirable
- to suppress the repetition of the data at both the state and county level.
- For example:</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New';">X X = United States</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New';">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">1 X = Maryland</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">1 1 = Montgomery Country</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">1 2 = Prince George's County</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New';">2 X = District of Columbia</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New';">2 1 = ~ District of Columbia</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New';">3 X = Virginia</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">3 1 = Arlington County</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">3 2 = Fairfax County</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">Without
- the tilde, a table would be displayed for District of Columbia as both
- a state and a county. Adding the tilde leads to the desirable behavior
- of only displaying one table for that level of geography.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">Tables
- created by Area Processing can be used to create thematic maps. The only
- real condition, besides having a CSPro map, is that the number of levels
- defined in the area name file, i.e., in [Levels] section, must not be
- greater than the number of geographical levels available for the map.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Tables
- created by Area Processing are easily incorporated into a Table Retrieval
- System for distribution.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial; font-size: 10pt;"><b><font style="font-weight: bold;">See
- Also:</font></b> <a href="create_a_thematic_map_of_results.html">Create
- a Thematic Map of Results</a>, <a href="trssetup.chm::add_a_cspro_or_imps_tables_file.html">Add
- a CSPro or IMPS Tables File to a Table Retreival System</a></p>
-</body>
-</html>
+<subheader>File Format</subheader>
+
+The following is an excerpt from the area names file for Popstan, which you can find in the Examples folder. The first section identifier, <font monospace>[Area Names]</font>, indicates the type of file, followed by the CSPro version number.
+
+Next, the <font monospace>[Levels]</font> section provides the names of the geographic hierarchy (levels) in major-to-minor order.
+
+Finally, the <font monospace>[Areas]</font> section gives the correspondence of the geographic codes (major-to-minor order) found in the data with a name for the geographic area. More detail follows the listing of the area name file.
+
+Area code values can be positive, negative or zero.
+
+If the data file contains area codes that do not have corresponding names in the area names file then the unmatched area codes will be displayed as a text string in place of the missing name.
+
+<indent><font monospace>
+[Area Names]
+Version=CSPro <definition version />~!~
+[Levels]
+Name=Province
+Name=District~!~
+[Areas]
+X X = Popstan~!~
+1 X = Artesia
+1 1 = Dongo
+1 2 = Idfu
+⋮~!~
+2 X = Copal
+2 1 = Baja
+2 2 = Bassac
+⋮~!~
+3 X = Dari
+3 1 = Argentina
+3 2 = Benlata
+3 3 = Bristol
+⋮
+</font></indent>
+
+The line following the <font monospace>[Areas]</font> section contains the codes and name of the "total" area ("country" in our case). It is considered the "Grand Total" level and denoted by 'X' values for each level of the area hierarchy. In the example, the first 'X' represents the Province code and the second 'X' represents the District code. Basically, an 'X' value is similar to a "wildcard" match, so any value in this field is acceptable (and thus part of the area).
+
+Following the total area name is the set of codes and names for the lowest valued major level, "province" in our example. The lowest code for a province is the '1' associated with Artesia. Again, an 'X' value is given for the District code since any code here is acceptable. Next, we must give codes and name for all districts in Artesia starting with the lowest code value.
+
+Note that each line for this province begins with '1' since the province code must be combined with the district code to uniquely distinguish this district. Dongo is district '1' of Artesia (province '1'). Data for a questionnaire with Province code = 1 and District code = 1 will be tallied for Dongo District.
+
+When districts for Artesia are all listed (codes and names), start with the next lowest province code followed by its districts. The process is repeated for each province.
+
+Area codes must be listed in ascending sort order from major to minor.
+
+If the area name file has only one level, e.g., province, then only one code would be given. If three levels were needed, e.g., province, district, village, then three codes would be required. As always, 'X' represents the wildcard match.
+
+The indentation associated with the names above is for illustrative purposes only. Area names shown in tables will not be indented, but indenting the file can make it easier to read.
+
+Also, codes within the <font monospace>[Areas]</font> section can be separated by commas, spaces, or a combination of both. Any of the following are acceptable to define an item at the district level:
+
+<indent><font monospace>
+3 15 = Sharif
+3, 15 = Sharif
+3,15 = Sharif
+</font></indent>
+
+<subheader>Hiding Tables</subheader>
+
+To hide tables for certain level of geographies, preface the area name label with a tilde (~). For areas with this label, a table will still be created (and stored in the .tbw table file), but it will not be displayed and will thus be hidden. For example, if a table shows states (provinces) and counties (districts) but some states only contain one county, it may be desirable to suppress the repetition of the data at both the state and county level. For example:
+
+<indent><font monospace>
+X X = United States~!~
+1 X = Maryland
+1 1 = Montgomery Country
+1 2 = Prince George's County~!~
+2 X = District of Columbia
+2 1 = ~ District of Columbia~!~
+3 X = Virginia
+3 1 = Arlington County
+3 2 = Fairfax County
+</font></indent>
+
+Without the tilde, a table would be displayed for District of Columbia as both a state and a county. Adding the tilde leads to the desirable behavior of only displaying one table for that level of geography.
+
+<subheader>Mapping</subheader>
+
+Tables created by <link area_processing.hgt>Area Processing</link> can be used to create thematic maps. The only real condition, besides having a CSPro map, is that the number of levels defined in the area name file must not be greater than the number of geographical levels available for the map.
+
+Tables created by Area Processing are easily incorporated into a Table Retrieval System for distribution.
+
+<seealso create_a_thematic_map_of_results.hgt />
