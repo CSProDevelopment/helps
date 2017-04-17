@@ -1,54 +1,7 @@
 ﻿<title>Questions</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+CSPro shows customized question text in the top part of the entry window. To help the interviewer distinguish between text for the interviewer and the respondent, consider using different color fonts. For example, things the interviewer should say to the respondent (for example, "How many children do you have?") might be shown in black. Instructions to the interviewer (for example, "Ask of each household member") might be shown in blue. CSPro includes two user defined fonts, CAPI Font #1 and CAPI Font #2, which can facilitate this.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Questions</font></b></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">CSPro
- shows customized question text in the top part of the entry window. To
- help the interviewer distinguish between text for the interviewer and
- the respondent, consider using different color fonts. For example, things
- the interviewer should say to the respondent (for example &quot;How many
- children do you have?&quot;) might be shown in black. Instructions to
- interviewer (for example &quot;Ask of each household member&quot;) might
- be shown in blue. CSPro includes two user defined font, CAPI font #1 and
- CAPI font #2, which can facilitate this.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Question
- text can be customized using fills, or text substitutions. These fills
- reference the contents of variables or dictionary items that can be embedded
- into the question text. They are identified by name of the variable or
- item surrounding by percent characters (%). During the interview, the
- value of the variable or data item is substituted into the question text.
- For example, &quot;How old was %FIRST_NAME% on January 1?&quot; might
- be transformed into &quot;How old was Edward on January 1?&quot; Fills
- help customize the question text and frame it for specific respondents.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Your
- CAPI application can also present different sets of question text based
- on</font> <a href="create_conditional_questions.html"><font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">conditions</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">.
- For example, the text for certain questions might differ based on the
- number of persons in the household. Conditions can also let your application
- support multiple kinds of questions, depending on criteria you decide.</font></p>
-</body>
-</html>
+Question text can be customized using fills, or text substitutions. These fills reference the contents of variables or dictionary items that can be embedded into the question text. They are identified by the name of the variable or item surrounded by percent characters (%). During the interview, the value of the variable or data item is substituted into the question text. For example, "How old was %FIRST_NAME% on January 1?" might be transformed into "How old was Edward on January 1?" Fills help customize the question text and frame it for specific respondents.
+
+Your CAPI application can also present different sets of question text based on <link create_conditional_questions.hgt>conditions</link>. For example, the text for certain questions might differ based on the number of persons in the household. Conditions can also let your application support multiple kinds of questions, depending on criteria you decide.

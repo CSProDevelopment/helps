@@ -1,36 +1,5 @@
 ﻿<title>Files</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+Files whose structure is defined by a data dictionary are automatically declared by their dictionary names. Files that do not have associated data dictionaries and need to be named at run time are defined by the <logiccolor>file</logiccolor> statement. Such files can be used in the file manipulation functions such as <logiccolor>fileread</logiccolor>, <logiccolor>filewrite</logiccolor>. They can also be used in <logiccolor>export</logiccolor> statements.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Files</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial; font-size: 10pt;">Files whose structure is defined
- by a data dictionary are automatically declared by their dictionary names.
- Files that do not have associated data dictionaries and need to be named
- at run time are defined by the file statement. Such files can be used
- in the file manipulation functions such as <a href="filecopy_function.html">filecopy</a>,
- <a href="filedelete_function.html">filedelete</a>, <a href="fileread_function.html">fileread</a>,
- <a href="filewrite_function.html">filewrite</a>, etc. They can also be
- used in export statements.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- file statement gives a name to a file that is local to that application.
- The physical name of the file is requested in the files dialog box when
- the application is run.</font></p>
-</body>
-</html>
+The <logiccolor>file</logiccolor> statement gives a name to a file that is local to that application. The physical name of the file is requested in the Define File Associations dialog when the application is run, or by using the <logiccolor>setfile</logiccolor> function.

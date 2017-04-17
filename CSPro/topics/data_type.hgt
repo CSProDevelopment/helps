@@ -1,86 +1,14 @@
 ﻿<title>Data Type</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+This item property specifies the type of data (numeric or alphanumeric) that will be found in the item. The default item type is numeric.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h4 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" face="Arial"
-	 size="5">Data Type</font></b></h4>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">This item property specifies what type of data (numeric or
- alphanumeric) that will be found in the item. The default item type is
- &quot;Numeric&quot;.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">â€¢</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">&#160;</font><b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" color="#000000"
-									 face="Arial" size="2">Numeric</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">items can contain numbers or blanks, and they may be
- negative or positive in value. Numeric values will be right-justified
- and, if requested,</font> <a href="zero_fill.html"><font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">zero-filled</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -11.50pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">â€¢&#160;Alpha</font></b><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">numeric</font></b> <font style="font-family: Arial;
-													 font-size: 10pt;"
-													 color="#000000" face="Arial"
-													 size="2">items can
- contain any character, letter, numeric digit(s), blanks, or special characters.
- These values will be left-justified and are blank-filled, whether or not
- &quot;zero-fill&quot; has been selected. Declaring 'M' or 'F' for gender
- is an example of an alphanumeric value.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -11.50pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Some responses are quantitative, such as size of farm, and
- some are qualitative, such as relationship to head of household. Most
- descriptive responses, such as 'head of household', are equated to numeric
- codes which are placed on the questionnaire. However, some descriptive
- responses remain as alphabetic text.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Numeric responses can be discrete values or continuous values.
- An example of a discrete value is gender, 1 (male) or 2 (female). An example
- of a continuous value is yearly income, which can range from zero to a
- value limited only by the number of digits permitted for the response.
- A discrete value may be used to represent a grouping of continuous values.
- For example, when asking income, one may be asked to select from a choice
- of ranges of incomes rather than specify the exact income. Thus, the possible
- responses to the income question could, for example, be a code between
- 1 and 10.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -11.50pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">See also:</font></b>
- <a href="item_properties.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">Item Properties</font></a></p>
-</body>
-</html>
+<list>
+	<li><b>Numeric</b> items can contain numbers or blanks, and they may be negative or positive in value. Numeric values will be right-justified and, if requested, <link zero_fill.hgt>zero-filled</link>.</li>
+	<li><b>Alphanumeric</b> items can contain any combination of characters, letters, numeric digits, blanks, or special characters. These values will be left-justified and are blank-filled, whether or not zero-fill has been selected. Declaring M or F for <logiccolor>SEX</logiccolor> is an example of an alphanumeric value.</li>
+</list>
+
+Some responses are quantitative, such as size of farm, and some are qualitative, such as relationship to head of household. Most descriptive responses, such as "head of household," are given numeric codes that are placed on the questionnaire. However, some descriptive responses remain as alphabetic text.
+
+Numeric responses can be discrete values or continuous values. An example of a discrete value is sex, 1 (male) or 2 (female). An example of a continuous value is yearly income, which can range from zero to a value limited only by the number of digits permitted for the response. A discrete value may be used to represent a grouping of continuous values. For example, when asking income, one may be asked to select from a choice of ranges of incomes rather than specify the exact income. Thus, the possible responses to the income question could, for example, be a code between 1 and 10.
+
+<seealso item_properties.hgt />
