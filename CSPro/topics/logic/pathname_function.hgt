@@ -30,7 +30,7 @@ There are some options specific to Windows:
 	<cell><b>Windows</b></cell><cell>The folder contains the Windows operating system.</cell>
 </table>
 
-There are some options specific to Android and Universal Windows:
+There are some options specific to mobile devices:
 
 <table 2>
 	<cell><arg>path_type</arg></cell><cell><b>Description</b></cell>
@@ -38,7 +38,7 @@ There are some options specific to Android and Universal Windows:
 	<cell><b>CSEntryExternal</b></cell><cell>On devices with removable storage (e.g., an SD card), the folder on removable storage to which CSPro applications can write.</cell>
 </table>
 
-If supplying a <arg>dictionary_name</arg>, the function returns the folder name of the dictionary file (.dcf) itself, not of the data file associated with the dictionary. On Android and Universal Windows devices, the function returns the folder name of the .pen file because dictionary files (.dcf) are not used directly when running .pen applications.
+If supplying a <arg>dictionary_name</arg>, the function returns the folder name of the dictionary file (.dcf) itself, not of the data file associated with the dictionary. On mobile devices, the function returns the folder name of the .pen file because dictionary files (.dcf) are not used directly when running .pen applications.
 
 If providing a <arg>file_handler</arg> (declared in a <logiccolor>file</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>), the function returns the folder name containing the text file associated with the file handler.
 

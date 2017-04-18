@@ -11,7 +11,7 @@ i = changekeyboard(<arg>dictionary_symbol</arg>『,<arg>keyboard_id</arg>』);
 
 The <logiccolor>changekeyboard</logiccolor> function modifies the keyboard input associated with a field on a form. The value <arg>dictionary_symbol</arg> may be an item, group, form, or an entire dictionary. The numeric expression <arg>keyboard_id</arg> refers to a keyboard ID (which can be determined using the <topic change_keyboard_input.hgt /> dialog box). A keyboard ID of 0 will reset the field to the default keyboard for the application.
 
-Calls to this function are ignored when executed on Android devices.
+Calls to this function are ignored when executed on mobile devices.
 
 <subheader>Return Value</subheader>
 
