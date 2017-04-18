@@ -22,32 +22,32 @@ file pffFile;
 
 PROC CONCATENATE_FF
 
-    setfile(pffFile,strip(pffName));
+	setfile(pffFile,strip(pffName));
 
-    filewrite(pffFile,"[Run Information]");
+	filewrite(pffFile,"[Run Information]");
 	filewrite(pffFile,"Version=CSPro <defintion version />");
 	filewrite(pffFile,"AppType=Concatenate");
 	filewrite(pffFile,"[Files]");
 
-    string str = maketext('cmd /c "dir /b /od *.dat > %s"',listingName);
+	string str = maketext('cmd /c "dir /b /od *.dat > %s"',listingName);
 	execsystem(str,wait);
 
-    setfile(inputFile,listingName);
+	setfile(inputFile,listingName);
 
-    while fileread(inputFile,str) do
+	while fileread(inputFile,str) do
 		filewrite(pffFile,"InputData=.\%s",str);
 	enddo;
 
-    close(inputFile);
+	close(inputFile);
 	filedelete(listingName);
 
-    filewrite(pffFile,"OutputData=%s",outputName);
+	filewrite(pffFile,"OutputData=%s",outputName);
 	filewrite(pffFile,"Listing=.\CSConcat.lst");
 	filewrite(pffFile,"[Parameters]");
 	filewrite(pffFile,"ViewListing=No");
 	filewrite(pffFile,"ViewResults=No");
 
-    close(pffFile);
+	close(pffFile);
 
-    execpff(pffName);
+	execpff(pffName);
 </logic>

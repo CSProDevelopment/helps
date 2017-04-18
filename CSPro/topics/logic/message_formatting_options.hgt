@@ -27,7 +27,7 @@ Numeric and string parameters have a couple additional parameters that can be sp
 <list>
 	<li>If the number is positive, as in <logiccolor>"%+5d"</logiccolor>, the text is right justified to the size of the field (e.g., <logiccolor>"    9"</logiccolor>).</li>
 	<li>If the number is negative, as in <logiccolor>"%-5d"</logiccolor>, the text is left justified to the size of the field (e.g., <logiccolor>"9    "</logiccolor>).</li>
-	<li>For numbers, if a leading zero proceeds the number, as in <logiccolor>"%05d"</logiccolor>, the text is right justified to the size of the field but instead of being padded with spaces, it is padded with zeros  (e.g., <logiccolor>"00009"</logiccolor>).</li>
+	<li>For numbers, if a leading zero proceeds the number, as in <logiccolor>"%05d"</logiccolor>, the text is right justified to the size of the field but instead of being padded with spaces, it is padded with zeros (e.g., <logiccolor>"00009"</logiccolor>).</li>
 	<li>For numbers, if the number is preceded by a plus sign, as in <logiccolor>"%+d"</logiccolor>, the sign of the number is always displayed (e.g., <logiccolor>"+9"</logiccolor>).</li>
 	<li>Numbers are never truncated. Text strings are not truncated unless used as in <logiccolor>"%0.5s"</logiccolor>, where the second part, <logiccolor>".5"</logiccolor>, indicates the maximum number of characters.</li>
 </list>

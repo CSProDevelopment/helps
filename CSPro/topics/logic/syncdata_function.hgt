@@ -42,10 +42,10 @@ The function returns a logical value of 1 (true) if the transfer was successful 
 <logic>
 if syncconnect(CSWeb,"https://www.myserver.org/api") then
 
-     // send the latest survey data to the server
+	 // send the latest survey data to the server
 	syncdata(PUT,SURVEY_DICT);
 
-     // get the latest assignments lookup file from the server
+	 // get the latest assignments lookup file from the server
 	syncdata(GET,ASSIGNMENTS_DICT);
 
 	syncdisconnect();
@@ -58,7 +58,7 @@ endif;
 <logic>
 if syncconnect(Bluetooth) then
 
-    // sync data for only the province and district assigned to the interviewer
+	// sync data for only the province and district assigned to the interviewer
 	string assignmentUniverse = maketext("%02d%02d",ASSIGNED_PROVINCE,ASSIGNED_DISTRICT);
 	syncdata(BOTH,CENSUS_DICT,assignmentUniverse);
 

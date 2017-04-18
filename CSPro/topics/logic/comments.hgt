@@ -1,16 +1,17 @@
 ﻿<title>Comments</title>
 
-Comments make applications easier to understand. They are used to explain the purpose of specific statements or to temporarily disable statements to help find errors. Any text enclosed by braces <logiccolor>{ }</logiccolor> is a comment. The text within the brackets will be green. Comments can be placed anywhere in an application and are not checked for syntax errors. Comments can be nested, that is, comments within comments are allowed.  Any text following double slashes <logiccolor>//</logiccolor> until the end of the line is also a comment.
+Comments make applications easier to understand. They are used to explain the purpose of specific statements or to temporarily disable statements to help find errors. Any text enclosed by braces <logiccolor>{ }</logiccolor> is a comment. The text within the brackets will be green. Comments can be placed anywhere in an application and are not checked for syntax errors. Comments can be nested, that is, comments within comments are allowed. Any text following double slashes <logiccolor>//</logiccolor> until the end of the line is also a comment.
 
-The second line in the example below is a comment; a comment is also appended to the code in line four. It is highly recommended that the user document CSPro applications through the liberal use of comments.
+The third line in the example below is a comment; a comment is also appended to the code in line five. It is highly recommended that the user document CSPro applications through the liberal use of comments.
 
 <subheader>Example</subheader> 
 
 <logic>
 PROC HHDAY
-	{Do not allow June to have more than 30 days}
-	if HHMONTH = 6 and $ > 30 then
-		errmsg(1,"June",30,$); // if error, then display message
+
+	{ Do not allow June to have more than 30 days }
+	if HHMONTH = 6 and HHDAY > 30 then
+		errmsg(1,"June",30,HHDAY); // if error, then display message
 		reenter;
 	endif;
 </logic>

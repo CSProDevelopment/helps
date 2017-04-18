@@ -20,7 +20,7 @@ The function returns a string containing the image filename, or a blank string i
 <logic>
 PROC IMAGE_SELECTOR
 
-    string imageFilename = getimage(IMAGE_SELECTOR_VS1,IMAGE_SELECTOR);
+	string imageFilename = getimage(IMAGE_SELECTOR_VS1,IMAGE_SELECTOR);
 
 	execsystem("view:" + imageFilename);
 </logic>

@@ -15,14 +15,14 @@ A substring expression lets you extract a part (substring) of a string. The <arg
 Suppose the variable <logiccolor>STR</logiccolor> has the value <logiccolor>"ABCDEF"</logiccolor>:
 
 <logic>
-STR[1]     "ABCDEF"
-STR[3:1]   "C"
-STR[3]     "CDEF"
-STR[2:3]   "BCD"
-STR[5]     "EF"
-STR[4:7]   "DEF"
-STR[-2]    "EF"
-STR[-4:2]  "CD"
+STR[1]		"ABCDEF"
+STR[3:1]	"C"
+STR[3]		"CDEF"
+STR[2:3]	"BCD"
+STR[5]		"EF"
+STR[4:7]	"DEF"
+STR[-2]		"EF"
+STR[-4:2]	"CD"
 </logic>
 
 Both <arg>start_index</arg> and <arg>string_length</arg> can be numeric expressions as well as constants. For example, to obtain the last 3 characters of <logiccolor>STR</logiccolor> you could use the expression:
@@ -60,10 +60,10 @@ preproc
 The following substring expressions would yield the results as shown:
 
 <logic>
-crop(1)[2]    "aize"
-crop(1)[3:1]  "i"
-crop(2)[3]    "eat"
-crop(3)[2]    "ice"
-crop(4)[5]    "toes"
-crop(5)[1:3]  "leg"
+crop(1)[2]		"aize"
+crop(1)[3:1]	"i"
+crop(2)[3]		"eat"
+crop(3)[2]		"ice"
+crop(4)[5]		"toes"
+crop(5)[1:3]	"leg"
 </logic>
