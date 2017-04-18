@@ -93,7 +93,7 @@ namespace Help_Generator
 
                 if( generateAndClose && _collaboratorModeWarningForm == null )
                 {
-                    GenerateHelps(true);
+                    GenerateHelps(GenerateHelpsForm.GenerationType.GenerateAndClose);
                     Close();
                 }
 
@@ -262,7 +262,7 @@ namespace Help_Generator
             }                
         }
 
-        private void generateHelpsMenuItem_Click(object sender,EventArgs e)
+        private void GenerateHelps(GenerateHelpsForm.GenerationType generationType)
         {
             // make sure that all of the files are saved
             foreach( Form form in MdiChildren )
@@ -277,13 +277,25 @@ namespace Help_Generator
             try
             {
                 _helpComponents.preprocessor.Refresh();
-                GenerateHelps(false);
+
+                GenerateHelpsForm dlg = new GenerateHelpsForm(_helpComponents,generationType);
+                dlg.ShowDialog();
             }
 
             catch( Exception exception )
             {
                 MessageBox.Show(exception.Message);
-            }                
+            }
+        }
+
+        private void generateCompileAllFilesMenuItem_Click(object sender,EventArgs e)
+        {
+            GenerateHelps(GenerateHelpsForm.GenerationType.CompileOnly);
+        }
+
+        private void generateHelpsMenuItem_Click(object sender,EventArgs e)
+        {
+            GenerateHelps(GenerateHelpsForm.GenerationType.Generate);
         }
 
         private void generateViewTopicsInChmFormatMenuItem_Click(object sender,EventArgs e)
@@ -408,12 +420,6 @@ namespace Help_Generator
                 newForm.MdiParent = this;
                 newForm.Show();
             }
-        }
-
-        private void GenerateHelps(bool generateAndClose)
-        {
-            GenerateHelpsForm dlg = new GenerateHelpsForm(_helpComponents,generateAndClose);
-            dlg.ShowDialog();
         }
 
         public void UpdateItemLists()

@@ -11,8 +11,10 @@ namespace Help_Generator
 {
     partial class GenerateHelpsForm : Form
     {
+        public enum GenerationType { Generate, GenerateAndClose, CompileOnly };
+
         private HelpComponents _helpComponents;
-        private bool _generateAndClose;
+        private GenerationType _generationType;
 
         private string _projectName;
         private string _outputChmFilename;
@@ -30,12 +32,12 @@ namespace Help_Generator
 
         private BackgroundWorker _backgroundThread;
 
-        public GenerateHelpsForm(HelpComponents helpComponents,bool generateAndClose)
+        public GenerateHelpsForm(HelpComponents helpComponents,GenerationType generationType)
         {
             InitializeComponent();
 
             _helpComponents = helpComponents;
-            _generateAndClose = generateAndClose;
+            _generationType = generationType;
 
             _projectName = new DirectoryInfo(_helpComponents.projectPath).Name;
 
@@ -155,7 +157,7 @@ namespace Help_Generator
                                 buttonCancelClose.Text = "Close";
                                 _backgroundThread = null;
 
-                                if( _generateAndClose )
+                                if( _generationType == GenerationType.GenerateAndClose )
                                     Close();
 
                                 break;
@@ -181,6 +183,9 @@ namespace Help_Generator
             {
                 for( ; processingStep < stepStrings.Length && !_backgroundThread.CancellationPending; processingStep++ )
                 {
+                    if( _generationType == GenerationType.CompileOnly && processingStep >= 4 )
+                        continue;
+
                     _backgroundThread.ReportProgress(0,String.Format("Processing {0}...",stepStrings[processingStep]));
 
                     if( processingStep == 0 )

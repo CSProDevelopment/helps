@@ -75,6 +75,7 @@
             this.helpSyntaxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.helpRegisterFileAssociationsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateCompileAllFilesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -356,6 +357,7 @@
             // 
             this.generateMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generateCompileMenuItem,
+            this.generateCompileAllFilesMenuItem,
             this.generateCompilationModeMenuItem,
             this.toolStripSeparator8,
             this.generateFormatMenuItem,
@@ -372,7 +374,7 @@
             // 
             this.generateCompileMenuItem.Name = "generateCompileMenuItem";
             this.generateCompileMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.K)));
-            this.generateCompileMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.generateCompileMenuItem.Size = new System.Drawing.Size(235, 22);
             this.generateCompileMenuItem.Text = "&Compile File";
             this.generateCompileMenuItem.Click += new System.EventHandler(this.generateCompileMenuItem_Click);
             // 
@@ -381,7 +383,7 @@
             this.generateCompilationModeMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generateViewTopicsInChmFormatMenuItem});
             this.generateCompilationModeMenuItem.Name = "generateCompilationModeMenuItem";
-            this.generateCompilationModeMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.generateCompilationModeMenuItem.Size = new System.Drawing.Size(235, 22);
             this.generateCompilationModeMenuItem.Text = "Compilation Mode";
             // 
             // generateViewTopicsInChmFormatMenuItem
@@ -396,39 +398,39 @@
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(178, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(232, 6);
             // 
             // generateFormatMenuItem
             // 
             this.generateFormatMenuItem.Name = "generateFormatMenuItem";
             this.generateFormatMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.generateFormatMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.generateFormatMenuItem.Size = new System.Drawing.Size(235, 22);
             this.generateFormatMenuItem.Text = "&Format File";
             this.generateFormatMenuItem.Click += new System.EventHandler(this.generateFormatMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(178, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(232, 6);
             // 
             // generateRefreshMenuItem
             // 
             this.generateRefreshMenuItem.Name = "generateRefreshMenuItem";
             this.generateRefreshMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.generateRefreshMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.generateRefreshMenuItem.Size = new System.Drawing.Size(235, 22);
             this.generateRefreshMenuItem.Text = "&Refresh Sources";
             this.generateRefreshMenuItem.Click += new System.EventHandler(this.generateRefreshMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(178, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(232, 6);
             // 
             // generateHelpsMenuItem
             // 
             this.generateHelpsMenuItem.Name = "generateHelpsMenuItem";
             this.generateHelpsMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
-            this.generateHelpsMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.generateHelpsMenuItem.Size = new System.Drawing.Size(235, 22);
             this.generateHelpsMenuItem.Text = "&Helps";
             this.generateHelpsMenuItem.Click += new System.EventHandler(this.generateHelpsMenuItem_Click);
             // 
@@ -469,6 +471,15 @@
             this.helpRegisterFileAssociationsMenuItem.Size = new System.Drawing.Size(206, 22);
             this.helpRegisterFileAssociationsMenuItem.Text = "&Register File Associations";
             this.helpRegisterFileAssociationsMenuItem.Click += new System.EventHandler(this.helpRegisterFileAssociationsMenuItem_Click);
+            // 
+            // generateCompileAllFilesMenuItem
+            // 
+            this.generateCompileAllFilesMenuItem.Name = "generateCompileAllFilesMenuItem";
+            this.generateCompileAllFilesMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.K)));
+            this.generateCompileAllFilesMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.generateCompileAllFilesMenuItem.Text = "Compile All Files";
+            this.generateCompileAllFilesMenuItem.Click += new System.EventHandler(this.generateCompileAllFilesMenuItem_Click);
             // 
             // MainForm
             // 
@@ -543,6 +554,7 @@
         private System.Windows.Forms.ToolStripMenuItem generateViewTopicsInChmFormatMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem helpRegisterFileAssociationsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateCompileAllFilesMenuItem;
     }
 }
 

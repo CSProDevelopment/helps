@@ -253,7 +253,27 @@ namespace Help_Generator
                 InsertTags("<center>","</center>");
 
             else if( command == "link" )
-                InsertTags("<link>","</link>");
+            {
+                string link = "";
+
+                // if a topic's name is on the clipboard, automatically add it
+                if( Clipboard.ContainsText() )
+                {
+                    string clipboardText = Clipboard.GetText().Trim().ToLower();
+
+                    try
+                    {
+                        _helpComponents.preprocessor.GetTopic(clipboardText);
+                        link = " " + clipboardText;
+                    }
+
+                    catch( Exception )
+                    {
+                    }
+                }               
+                
+                InsertTags("<link" + link + ">","</link>");
+            }
 
             else if( command == "list" )
                 InsertTags("<list>\n\t<li>","</li>\n</list>");
