@@ -12,7 +12,10 @@ In the <b>IIS Manager</b> select the <b>Features View</b> and then double click 
 You will find a shortcut to run the ISS Manager under <b>Administrative Tools</b>. On the righthand column of the <b>IIS Manager</b> click <b>Get New Web Platform components</b>. This will open a browser where you will be able to download the installer for Microsoft's web installer.
 
 <subheader>Install PHP 5.5+</subheader>
-Once installed, you can launch Microsoft's web installer from within the <b>IIS Manager</b> by clicking <b>Get New Web Platform components</b>. Install PHP 5.5 or above. Note that in Windows 10 the PHP Manager for IIS may fail to install. You can ignore this message. Microsoft's web installer will also install the <b>URL Rewrite</b> feature. However, if you use another installation method you may need to install it manually. You can verify whether it is installed or not jin IIS Manager's <b>Features View</b>.
+Once installed, you can launch Microsoft's web installer from within the <b>IIS Manager</b> by clicking <b>Get New Web Platform components</b>. Install PHP 5.5 or above. Note that in Windows 10 the PHP Manager for IIS may fail to install. You can ignore this message.
+
+<subheader>Install URL Rewrite Module</subheader>
+Microsoft's web installer will also install the <b>URL Rewrite</b> module. However, if you use another installation method you may need to install it manually. You can verify whether it is installed or not in IIS Manager's <b>Features View</b>. For more information and to download the URL Rewrite module click <link https://www.iis.net/downloads/microsoft/url-rewrite/>here</link>.
 
 <subheader>Edit php.ini</subheader>
 Locate the php.ini file for the new installation of PHP. You may have multiple copies on your computer. The default install path will be under <b>Program Files (x86)</b> or <b>Program Files</b> depending one whether you installed the 32 or 64 bit version. The root of the install directory will be <b>PHP</b>. You will find the php.ini file in the subdirectory that was named for the <b>version</b> you installed. Open <b>php.ini</b> with Notepad and search for <b>[ExtensionList]</b>. Copy and paste <b>extension=php_fileinfo.dll</b> on the next line. Save and close the file.
