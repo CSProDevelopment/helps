@@ -248,10 +248,11 @@ namespace Help_Generator
 
         public void CheckExternalTopic(string document,string topic)
         {
-            string filename = Path.Combine(_helpsRootPath,document,Constants.TopicsDirectoryName,topic);
+			string topicsDirectory = Path.Combine(_helpsRootPath,document,Constants.TopicsDirectoryName);
+			var di = new DirectoryInfo(topicsDirectory);
 
-            if( !File.Exists(filename) )
-                throw new Exception("The external topic could not be located: " + filename);
+			if( di.GetFiles(topic,SearchOption.AllDirectories).Length == 0 )
+                throw new Exception("The external topic could not be located: " + Path.Combine(topicsDirectory,topic));
         }
     }
 }
