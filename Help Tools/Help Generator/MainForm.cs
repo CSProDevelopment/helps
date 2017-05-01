@@ -35,7 +35,7 @@ namespace Help_Generator
                     AddCollaboratorModeWarning("Could not find wkhtmltopdf here:\r\n" + _helpComponents.wkhtmltopdfExecutable);
 
                 Array commandArgs = Environment.GetCommandLineArgs();
-                bool generateAndClose = false;
+				GenerateHelpsForm.GenerationType? generateAndCloseType = null;
                 string initialTopicFilename = null;
 
                 if( commandArgs.Length == 1 )
@@ -46,10 +46,16 @@ namespace Help_Generator
 
                 else
                 {
-                    if( commandArgs.Length > 2 && ((string)commandArgs.GetValue(1)).Equals("/generate",StringComparison.InvariantCultureIgnoreCase) )
-                        generateAndClose = true;
+                    if( commandArgs.Length > 2 )
+					{
+						if( ((string)commandArgs.GetValue(1)).Equals("/generate",StringComparison.InvariantCultureIgnoreCase) )
+							generateAndCloseType = GenerateHelpsForm.GenerationType.GenerateAndClose;
 
-                    string fileArgument = (string)commandArgs.GetValue(generateAndClose ? 2 : 1);
+						else if( ((string)commandArgs.GetValue(1)).Equals("/generatechm",StringComparison.InvariantCultureIgnoreCase) )
+							generateAndCloseType = GenerateHelpsForm.GenerationType.GenerateChmAndClose;
+					}
+
+                    string fileArgument = (string)commandArgs.GetValue(( generateAndCloseType == null ) ? 1 : 2);
 
                     if( File.Exists(fileArgument) )
                     {
@@ -91,9 +97,9 @@ namespace Help_Generator
 
                 LoadProject();
 
-                if( generateAndClose && _collaboratorModeWarningForm == null )
+                if( ( generateAndCloseType != null ) && ( _collaboratorModeWarningForm == null ) )
                 {
-                    GenerateHelps(GenerateHelpsForm.GenerationType.GenerateAndClose);
+                    GenerateHelps((GenerateHelpsForm.GenerationType)generateAndCloseType);
                     Close();
                 }
 

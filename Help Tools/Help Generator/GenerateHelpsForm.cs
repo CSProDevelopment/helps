@@ -11,7 +11,7 @@ namespace Help_Generator
 {
     partial class GenerateHelpsForm : Form
     {
-        public enum GenerationType { Generate, GenerateAndClose, CompileOnly };
+        public enum GenerationType { Generate, GenerateAndClose, GenerateChmAndClose, CompileOnly };
 
         private HelpComponents _helpComponents;
         private GenerationType _generationType;
@@ -31,6 +31,10 @@ namespace Help_Generator
         private GeneratePdfTopicCompilerSettings _pdfTopicCompilerSettings;
 
         private BackgroundWorker _backgroundThread;
+
+		private bool DoGenerateChm { get { return ( _generationType != GenerationType.CompileOnly ); } }
+		private bool DoGenerateWebsite { get { return ( _generationType != GenerationType.CompileOnly ) && ( _generationType != GenerationType.GenerateChmAndClose ); } }
+		private bool DoGeneratePdf { get { return ( _generationType != GenerationType.CompileOnly ) && ( _generationType != GenerationType.GenerateChmAndClose ); } }
 
         public GenerateHelpsForm(HelpComponents helpComponents,GenerationType generationType)
         {
@@ -157,7 +161,7 @@ namespace Help_Generator
                                 buttonCancelClose.Text = "Close";
                                 _backgroundThread = null;
 
-                                if( _generationType == GenerationType.GenerateAndClose )
+                                if( ( _generationType == GenerationType.GenerateAndClose ) || ( _generationType == GenerationType.GenerateChmAndClose ) )
                                     Close();
 
                                 break;
@@ -183,7 +187,9 @@ namespace Help_Generator
             {
                 for( ; processingStep < stepStrings.Length && !_backgroundThread.CancellationPending; processingStep++ )
                 {
-                    if( _generationType == GenerationType.CompileOnly && processingStep >= 4 )
+                    if( ( ( processingStep == 4 ) && !DoGenerateWebsite ) ||
+						( ( processingStep == 5 ) && !DoGeneratePdf ) ||
+						( ( processingStep == 6 ) && !DoGenerateChm ) )
                         continue;
 
                     _backgroundThread.ReportProgress(0,String.Format("Processing {0}...",stepStrings[processingStep]));
@@ -365,16 +371,22 @@ namespace Help_Generator
                         // generate the topic for the CHM
                         string htmlFilename = _chmTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
                         string html = topic.CompileForHtml(topicLines,_helpComponents,_chmTopicCompilerSettings);
-                        File.WriteAllText(Path.Combine(_temporaryFilesPath,htmlFilename),html,Encoding.UTF8);
+						
+						if( DoGenerateChm )
+							File.WriteAllText(Path.Combine(_temporaryFilesPath,htmlFilename),html,Encoding.UTF8);
+
                         _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
                     
                         // generate the topic for the website
-                        htmlFilename = _websiteTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-                        html = topic.CompileForHtml(topicLines,_helpComponents,_websiteTopicCompilerSettings);
-                        File.WriteAllText(Path.Combine(_outputWebsitePath,htmlFilename),html,Encoding.UTF8);
+						if( DoGenerateWebsite )
+						{
+							htmlFilename = _websiteTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
+							html = topic.CompileForHtml(topicLines,_helpComponents,_websiteTopicCompilerSettings);
+							File.WriteAllText(Path.Combine(_outputWebsitePath,htmlFilename),html,Encoding.UTF8);
+						}
 
                         // generate the topic for the PDF
-                        if( twPdf != null )
+                        if( DoGeneratePdf && ( twPdf != null ) )
                         {
                             html = topic.CompileForHtml(topicLines,_helpComponents,_pdfTopicCompilerSettings);
                             twPdf.WriteLine(html);
