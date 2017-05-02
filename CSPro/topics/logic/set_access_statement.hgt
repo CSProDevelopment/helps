@@ -1,4 +1,26 @@
 ﻿<title>Set Access Statement</title>
 <context logic_help_set_access />
 
-helptodo
+<subheader>Format</subheader>
+
+<logicsyntax>
+set access(<arg>dictionary_name</arg>) <arg>iteration_type</arg>;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>set access</logiccolor> statement is used to control the way that CSPro iterates through a data file. By default, CSPro processes cases in a file in ascending key order (e.g., A -> B -> C). With this statement, you can change the default behavior to process cases in descending key order (e.g., C -> B -> A).
+
+The <arg>dictionary_name</arg> refers to either an external dictionary or the main input file of a batch application. If referencing the main input file of a batch application, you must run your program in <link run_production_batch_edits.hgt>indexed order</link>. The argument <arg>iteration_type</arg> is either <arg>ascending</arg> or <arg>descending</arg>.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC SURVEY_FF
+
+preproc
+
+	set access(SURVEY_DICT) descending;
+</logic>
+
+<seealso set_first_statement.hgt set_last_statement.hgt locate_function.hgt />

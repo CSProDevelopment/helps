@@ -1,94 +1,36 @@
 ﻿<title>Alias Statement</title>
 <context logic_help_alias />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;
-	 font-family: Arial, sans-serif;"><b><span style="color: #0000ff; font-size: 18pt;
-												 font-weight: bold;">Alias</span></b>
- <b><font style="font-size: 18pt; font-weight: bold;" size="5">Statement</font></b></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: bold;"><b><font style="font-weight: bold;">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New', monospace;"><b><font style="font-size: 10pt;
-														 font-weight: bold;"
-														 color="#0000FF"
-														 size="2">alias</font></b>
- <i><font style="font-size: 10pt; font-style: italic;" size="2">aliased-name
- <span style="font-style: normal;">:</span> <span style="font-style: italic;">dictionary-name</span></font></i><font
-	 style="font-size: 10pt;" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: bold;"><b><font style="font-weight: bold;">Description:</font></b></p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;"><b><font style="font-size: 10pt;
-												 font-weight: bold;" size="2"><span
-	 style="font-size: 10pt; font-weight: normal;">The</span> <span style="font-size: 10pt;
-	 font-weight: bold;">alias</span><span style="font-size: 10pt; font-weight: normal;">&#160;statement
- allows for the creation of new names to alias, or to provide an alternative
- reference to, names in a program. This can be used to shorten, or lengthen,
- variable names, or to match names in a dictionary with preexisting code
- using a certain naming convention.</span></font></b></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: bold;"><b><span style="font-weight: bold;">Example 1:
- S</span></b>hortening dictionary names to quicken the typing of variables</p>
-&#160;
-<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
-	 background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
-	<font color="#000000">&#160;&#160;&#160;&#160;<font color="#0000FF">alias</font>&#160;&#160;&#160;P14&#160;:
-	 P14_AGE,<br />
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;P15&#160;:
-	 P15_RELATIONSHIP,<br />
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;P16&#160;:
-	 P16_SEX;</font>
-</div>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: bold;"><b><font style="font-weight: bold;">E</font></b><b>xample
- 2: Using aliases to standardize variable names so that logic can be reused
- across programs</b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: normal;">&#160;</p>
-<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
-	 background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
-	<font color="#000000">&#160;&#160;&#160;&#160;<font color="#0000FF">alias</font>&#160;&#160;&#160;AGE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:
-	 P14_AGE,<br />
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;RELATIONSHIP&#160;&#160;&#160;&#160;:
-	 P15_RELATIONSHIP,<br />
-	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SEX&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:
-	 P16_SEX;</font>
-</div>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: normal;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: normal;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: normal;">In both examples, P14_AGE, P15_RELATIONSHIP,
- and P16_SEX are the names of items declared in a dictionary. Once the
- alias statement has been specified (in PROC GLOBAL), the names P14 and
- P14_AGE can be used interchangeably. For example, these two statements
- are identical:</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: normal;">&#160;</p>
-<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
-	 background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
-	<font color="#000000">&#160;&#160;&#160;&#160;<font color="#0000FF">if</font>
-	 AGE &lt; <font color="#FF0000">18</font> <font color="#0000FF">and</font>
-	 SEX = <font color="#FF0000">2</font> <font color="#0000FF">then</font><br />
-	&#160;&#160;&#160;&#160;<br />
-	&#160;&#160;&#160;&#160;<font color="#0000FF">if</font> P14_AGE &lt;
-	 <font color="#FF0000">18</font> <font color="#0000FF">and</font> P16_SEX
-	 = <font color="#FF0000">2</font> <font color="#0000FF">then</font></font>
-</div>
-</body>
-</html>
+<logicsyntax>
+alias <arg>aliased_name</arg> : <arg>original_name</arg>;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>alias</logiccolor> statement allows for the creation of new names to alias, or to provide an alternative reference to, names in a program. This can be used to shorten, or lengthen, variable names, or to match names in a dictionary with preexisting code using a certain naming convention.
+
+<subheader>Example 1: Shortening Dictionary Names to Quicken the Typing of Variables</subheader>
+
+<logic>
+alias	P14 : P14_AGE,
+		P15 : P15_RELATIONSHIP,
+		P16 : P16_SEX;
+</logic>
+
+<subheader>Example 2: Using Aliases to Standardize Variable Names so that Logic Can be Reused Across Programs</subheader>
+
+<logic>
+alias	AGE				: P14_AGE,
+		RELATIONSHIP	: P15_RELATIONSHIP,
+		SEX				: P16_SEX; 
+</logic>
+ 
+In both examples, <logiccolor>P14_AGE</logiccolor>, <logiccolor>P15_RELATIONSHIP</logiccolor>, and <logiccolor>P16_SEX</logiccolor> are the names of items declared in a dictionary. Once the <logiccolor>alias</logiccolor> statement has been specified (in <logiccolor>PROC GLOBAL</logiccolor>), the names <logiccolor>P14</logiccolor> and <logiccolor>P14_AGE</logiccolor> can be used interchangeably. For example, these two statements are identical:
+
+<logic>
+if P14_AGE < 18 and P16_SEX = 2 then
+
+if AGE < 18 and SEX = 2 then
+</logic>

@@ -1,126 +1,37 @@
-﻿<title>Setcapturetype Function</title>
+﻿<title>SetCaptureType Function</title>
 <context logic_help_setcapturetype />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h1 style="font-size: 18pt; font-family: Arial, sans-serif;"><span style="color: #0000ff;">Setcapturetype</span>
- Function</h1>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2"><span style="font-family: 'Courier New'; font-size: 10pt;">i</span>
- =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-					 font-weight: bold;" color="#0000FF" face="Courier New"
-					 size="2">setcapturetype</font></b><font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 face="Courier New"
-															 size="2">(<span
-	 style="font-style: italic;">dictionary-symbol</span>,<span style="font-style: italic;">numeric-expression</span>[,<span
-	 style="font-style: italic;">alpha-expression</span>]);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">setcapturetype</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">function modifies the capture
- type currently associated with a field on a form. The dictionary symbol
- may be an item, group, form, or an entire dictionary. The <span style="font-style: italic;">numeric-expression</span>
- <span>refers to a capture type code, listed in the table below. If specifying
- a date, the optional</span> <span style="font-style: italic;">alpha-expression</span>
- <span>specifies the date format.</span></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<table style="left: 282px; top: 204px; border-collapse: separate; border-collapse: separate;"
-		 cellspacing="0" width="159" align="center" border="1">
-	<col style="width: 18.611%;" />
-	<col style="width: 81.389%;" />
-	<tr>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">0</span></p></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">Textbox</span></p></td>
-	</tr>
-	<tr>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">1</span></p></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">Radio
-		 Button</span></p></td>
-	</tr>
-	<tr>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">2</span></p></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">Checkbox</span></p></td>
-	</tr>
-	<tr>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">3</span></p></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">Drop
-		 Down Box</span></p></td>
-	</tr>
-	<tr>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">4</span></p></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">Combo
-		 Box</span></p></td>
-	</tr>
-	<tr>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">5</span></p></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">Date
-		 Picker</span></p></td>
-	</tr>
-	<tr>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">6</span></p></td>
-		<td><p style="text-align: center;"><span style="font-size: 10pt;
-												 font-family: Arial, sans-serif;">Number
-		 Pad</span></p></td>
-	</tr>
-</table>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Return
- value:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: Arial; font-size: 10pt;">The function returns the number
- of items that were successfully changed to the specified capture type.
- An item's capture type can be successfully changed if the current value
- set associated with the item supports the requested capture type. For
- instance, if an item's value set contains ranges, the capture type cannot
- be changed to a radio button. The success of changing a field to a date
- picker does not depend on the date format, so if the date format is not
- valid for the field the capture type will be changed to the default date
- format for the item.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2"><font color="#000000"><font color="#0000FF">setcapturetype</font>(YOB,<font
-	 color="#FF0000">5</font>,<font color="#FF00FF">&quot;YYYYMMDD&quot;</font>);<br />
-<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;%d fields
- changed on the housing form&quot;</font>,<font color="#0000FF">setcapturetype</font>(HOUSING_FORM,<font
-	 color="#FF0000">1</font>));</font></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
-	 style="font-family: 'Courier New'; font-weight: bold;" face="Courier New">See
- also:</font></b> <font><span style="font-family: Arial, sans-serif;"><a
-	 href="Extended_Controls.htm" style="font-family: Arial, sans-serif;">Extended
- Controls</a>, <a href="Getcapturetype_Function.htm" style="font-family: Arial, sans-serif;">Getcapturetype
- Function</a>,</span></font> <a href="Setcapturepos_Function.html">Setcapturepos
- Function</a></p>
-</body>
-</html>
+<logicsyntax>
+i = setcapturetype(<arg>symbol_name</arg>,<arg>capture_type</arg>『,<arg>date_format</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>setcapturetype</logiccolor> function modifies the <link extended_controls.hgt>capture type</link> currently associated with a field on a form. The <arg>symbol_name</arg> may refer to a field, group, form, or an entire dictionary. The numeric expression <arg>capture_type</arg> refers to a capture type code, listed in the table below. If specifying a date, the format can be specified with the optional string expression <arg>date_format</arg>.
+
+<indent><table 2 header>
+	<cell>Code</cell><cell>Capture Type</cell>
+	<cell>0</cell><cell>Textbox</cell>
+	<cell>1</cell><cell>Radio Button</cell>
+	<cell>2</cell><cell>Checkbox</cell>
+	<cell>3</cell><cell>Drop Down Box</cell>
+	<cell>4</cell><cell>Combo Box</cell>
+	<cell>5</cell><cell>Date Picker</cell>
+	<cell>6</cell><cell>Number Pad (desktop CSEntry only)</cell>
+</table></indent>
+ 
+<subheader>Return Value</subheader>
+
+The function returns the number of items that were successfully changed to the specified capture type. An item's capture type can be successfully changed if the current value set associated with the item supports the requested capture type. For instance, if an item's value set contains ranges, the capture type cannot be changed to a radio button. The success of changing a field to a date picker does not depend on the date format, so if the date format is not valid for the field the capture type will be changed to the default date format for the item.
+
+<subheader>Example</subheader>
+
+<logic>
+setcapturetype(DATE_OF_BIRTH,5,"YYYYMMDD");
+
+errmsg("%d fields changed to radio buttons on the housing form",setcapturetype(HOUSING_FORM,1));
+</logic>
+
+<seealso getcapturetype_function.hgt setcapturepos_function.hgt />

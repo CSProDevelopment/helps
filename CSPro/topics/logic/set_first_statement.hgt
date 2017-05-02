@@ -1,4 +1,28 @@
 ﻿<title>Set First Statement</title>
 <context logic_help_set_first />
 
-helptodo
+<subheader>Format</subheader>
+
+<logicsyntax>
+set first(<arg>dictionary_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>set first</logiccolor> statement is used, like the <logiccolor>locate</logiccolor> function, to find a specific case in a data file. The case pointer is positioned to the first case. Cases are processed in ascending key order, so the "first case" is not necessarily the first case in the file. To load the case into memory, use the the <logiccolor>retrieve</logiccolor> function or the <logiccolor>loadcase</logiccolor> function without parameters.
+
+The <arg>dictionary_name</arg> refers to either an external dictionary or the main input file of a batch application. If referencing the main input file of a batch application, you must run your program in <link run_production_batch_edits.hgt>indexed order</link>. Using this statement with the main input file of a batch application allows you to pass through the same data file more than once in a single run of a batch application.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC MENU
+
+	set first(SURVEY_DICT);
+
+	do while loadcase(SURVEY_DICT)
+		// process the cases in ascending key order
+	enddo;
+</logic>
+
+<seealso set_last_statement.hgt locate_function.hgt set_access_statement.hgt />
