@@ -12,8 +12,6 @@ b = syncconnect(<arg>Dropbox</arg>);
 
 The <logiccolor>syncconnect</logiccolor> function opens a connection to Dropbox to synchronize files over the Internet. The first and only argument must be the keyword <arg>Dropbox</arg>. This requires an account with the online file sharing service <link https://www.dropbox.com/>Dropbox</link>. The first time the connection is made, the user will see a prompt to enter the Dropbox username and password and these settings will be saved in secure storage for future synchronizations.
 
-Dropbox synchronization only supports the <logiccolor>syncfile</logiccolor> function. The <logiccolor>syncdata</logiccolor> function does not work with Dropbox.
-
 <subheader>Example</subheader>
 
 <logic>

@@ -30,8 +30,6 @@ When synchronizing CSPro data files using CSWeb, synchronization is done at the 
 	<li><b>FTP</b>: CSPro can synchronization with a FTP (file transfer protocol) server. For those doing smaller survey operations who are not able to configure a server to use CSWeb, FTP can be used for file synchronization.</li>
 </list>
 
-When using either Dropbox or FTP for synchronization, case-based synchronization is not supported. This means that all cases on the interviewers' device are sent to the server each time the data is synchronized. This is slower and uses more bandwidth. It also means that care must be taken in naming data files to avoid having one interviewer's data file overwriting another's.
-
 <subheader>Simple Synchronizations</subheader>
 
 Basic synchronizations can be set up by specifying a few options <link synchronization_simple.hgt>documented here</link>.
@@ -51,7 +49,7 @@ There are four logic functions used for synchronization with a web server:
 	<li><logiccolor>syncfile</logiccolor> is used to upload/download non-data files to/from the server.</li>
 </list>
 
-While it is possible to use <logiccolor>syncfile</logiccolor> to synchronize CSPro data files, if you are using a CSWeb server, it is more efficient to use <logiccolor>syncdata</logiccolor> since it will only send/receive cases that have been modified whereas <logiccolor>syncfile</logiccolor> always sends the entire file.
+While it is possible to use <logiccolor>syncfile</logiccolor> to synchronize CSPro data files, it is more efficient to use <logiccolor>syncdata</logiccolor> since it will only send/receive cases that have been modified whereas <logiccolor>syncfile</logiccolor> always sends the entire file.
 
 You will generally call <logiccolor>syncconnect</logiccolor> once to start the session followed by multiple calls to <logiccolor>syncdata</logiccolor> and <logiccolor>syncfile</logiccolor>, followed by a call to <logiccolor>syncdisconnect</logiccolor>. In the example below, we connect to the server, download the latest application files (.pen and .pff) and upload cases from the data file associated with the data dictionary <logiccolor>SURVEY_DICT</logiccolor>.
 
