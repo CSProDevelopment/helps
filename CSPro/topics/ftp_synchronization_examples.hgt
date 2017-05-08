@@ -1,131 +1,89 @@
 ﻿<title>FTP Synchronization Examples</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.0, you should no longer use synchronization scripts, as they will soon be removed from CSPro. To replicate the behavior of the scripts, you must use the <logiccolor>syncconnect</logiccolor>, <logiccolor>syncfile</logiccolor>, and <logiccolor>syncdisconnect</logiccolor> functions.</i>
 
-<body>
-<h4 style="margin-top: 6.00pt; margin-bottom: 2.00pt; font-family: Arial, sans-serif;
-	 font-size: 18pt;"><b><font style="font-weight: bold;"><span style="font-weight: bold;">FTP
- </span><span>Synchronization Examples</span></font></b></h4>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><span
-	 style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Example
- 1</span></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt;">The following
- synchronization script downloads a CSEntry application from a preexisting
- folder on the FTP server called &quot;Granite Geological Survey.&quot;
- It also uploads any collected data, assuming that collected data had the
- filename &quot;Kaymoor.dat.&quot;</p>
-<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">[SyncFile]<br />
-Version=CSPro 7.0<br />
-<br />
-[Connection]<br />
-Type=FTP<br />
-Host=ftp://ftp.example.org/<br />
-Username=bituminous<br />
-Password=coal<br />
-<br />
-[Sync]<br />
-ServerPath=/Granite Geological Survey</p>
-<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">CreateClientPath=/Granite
- Geological Survey<br />
-ClientPath=/Granite Geological Survey</p>
-<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">Get=Granite
- Geological Survey.pen<br />
-Get=Granite Geological Survey.pff</p>
-<p style="margin-left: 24px; font-family: 'Courier New', monospace; font-size: 10pt;">Put=Kaymoor.dat</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><span
-	 style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Example
- 2</span></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt;">Using replacement
- parameters, it is possible to simplify the synchronization script and
- make it easily modifiable for other applications. The following synchronization
- script, building off Example 1, downloads the application but then uploads
- all data, as well as the <a href="notes_file_csnot.html">notes files</a>
- associated with the data files. The assumption here is that the data is
- stored in a subfolder underneath the data entry application called &quot;Data,&quot;
- and that data files have the extension &quot;.dat.&quot;</p>
-<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">[SyncFile]<br />
-Version=CSPro 7.0<br />
-AppName=Granite Geological Survey<br />
-<br />
-[Connection]<br />
-Type=FTP<br />
-Host=ftp://ftp.example.org/<br />
-Username=bituminous<br />
-Password=coal<br />
-<br />
-[Sync]<br />
-ServerPath=/%AppName%</p>
-<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">CreateClientPath=/%AppName%<br />
-ClientPath=/%AppName%</p>
-<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">Get=*.*</p>
-<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">CreateServerPath=Data<br />
-ServerPath=Data<br />
-<br />
-CreateClientPath=Data<br />
-ClientPath=Data</p>
-<p style="margin-left: 24px; font-family: 'Courier New', monospace; font-size: 10pt;">Put=*.dat<br />
-Put=*.dat.not</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><span
-	 style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Example
- 3</span></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt;">If you plan
- to frequently update your data entry application, you may want to always
- get the latest version as part of the synchronization script. Often, however,
- your interest in synchronization may only be to upload data. In this example,
- there are two synchronization files. The first, &quot;Granite Geological
- Survey (Update Application).pnc,&quot; is used to update the data entry
- application. The second, &quot;Granite Geological Survey (Upload Data).pnc,&quot;
- is used to upload data to the server. The uploaded data goes into a data
- folder, as above, but this time based on the Android device's user ID
- as well as the date. This allows you to track the data entry process by
- interviewer over time.</p>
-<p style="margin-left: 24px; font-size: 10pt; font-weight: bold; font-family: Arial, sans-serif;"><span
-	 style="font-size: 10pt; font-weight: bold; font-family: Arial, sans-serif;">Update
- Programs.pnc</span></p>
-<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">[SyncFile]<br />
-Version=CSPro 7.0<br />
-AppName=Granite Geological Survey<br />
-<br />
-[Connection]<br />
-Type=FTP<br />
-Host=ftp://ftp.example.org/<br />
-Username=bituminous<br />
-Password=coal<br />
-<br />
-[Sync]<br />
-ServerPath=/%AppName%</p>
-<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">CreateClientPath=/%AppName%<br />
-CreateClientPath=/%AppName%/Data<br />
-ClientPath=/%AppName%<br />
-<br />
-Get=*.*</p>
-<p style="margin-left: 24px; font-size: 10pt; font-weight: bold; font-family: Arial, sans-serif;"><span
-	 style="font-size: 10pt; font-weight: bold; font-family: Arial, sans-serif;"><span>Upload
- Data.pnc</span></span></p>
-<p style="margin-left: 24px; font-size: 10pt; font-family: 'Courier New', monospace;">[SyncFile]<br />
-Version=CSPro 7.0<br />
-AppName=Granite Geological Survey<br />
-<br />
-[Connection]<br />
-Type=FTP<br />
-Host=ftp://ftp.example.org/<br />
-Username=bituminous<br />
-Password=coal<br />
-<br />
-[Sync]<br />
-CreateServerPath=/%AppName%/Data<br />
-CreateServerPath=/%AppName%/Data/%UID%<br />
-CreateServerPath=/%AppName%/Data/%UID%/%Date%<br />
-ServerPath=/%AppName%/Data/%UID%/%Date%<br />
-<br />
-ClientPath=/%AppName%/Data<br />
-<br />
-Put=*.dat<br />
-Put=*.dat.not</p>
-</body>
-</html>
+<subheader>Example 1</subheader>
+
+The following synchronization script downloads a CSEntry application from a preexisting folder on the FTP server called "Granite Geological Survey." It also uploads any collected data, assuming that collected data had the filename "Kaymoor.dat."
+
+<indent><font monospace>
+[SyncFile]
+Version=CSPro <definition version />~!~
+[Connection]
+Type=FTP
+Host=ftp://ftp.example.org/
+Username=bituminous
+Password=coal~!~
+[Sync]
+ServerPath=/Granite Geological Survey~!~
+CreateClientPath=/Granite Geological Survey
+ClientPath=/Granite Geological Survey~!~
+Get=Granite Geological Survey.pen
+Get=Granite Geological Survey.pff~!~
+Put=Kaymoor.dat
+</font></indent>
+
+<subheader>Example 2</subheader>
+
+Using replacement parameters, it is possible to simplify the synchronization script and make it easily modifiable for other applications. The following synchronization script, building off Example 1, downloads the application but then uploads all data, as well as the <link notes_file_csnot.hgt>notes files</link> associated with the data files. The assumption here is that the data is stored in a subfolder underneath the data entry application called "Data," and that data files have the extension ".dat."
+
+<indent><font monospace>
+[SyncFile]
+Version=CSPro <definition version />
+AppName=Granite Geological Survey~!~
+[Connection]
+Type=FTP
+Host=ftp://ftp.example.org/
+Username=bituminous
+Password=coal~!~
+[Sync]
+ServerPath=/%AppName%~!~
+CreateClientPath=/%AppName%
+ClientPath=/%AppName%~!~
+Get=*.*~!~
+CreateServerPath=Data
+ServerPath=Data~!~
+CreateClientPath=Data
+ClientPath=Data~!~
+Put=*.dat
+Put=*.dat.csnot
+</font></indent>
+
+<subheader>Example 3</subheader>
+
+If you plan to frequently update your data entry application, you may want to always get the latest version as part of the synchronization script. Often, however, your interest in synchronization may only be to upload data. In this example, there are two synchronization files. The first, "Granite Geological Survey (Update Application).pnc," is used to update the data entry application. The second, "Granite Geological Survey (Upload Data).pnc," is used to upload data to the server. The uploaded data goes into a data folder, as above, but this time based on the Android device's user ID as well as the date. This allows you to track the data entry process by interviewer over time.
+
+<indent><font monospace>
+<b>Update Programs.pnc</b>~!~~!~
+[SyncFile]
+Version=CSPro <definition version />
+AppName=Granite Geological Survey~!~
+[Connection]
+Type=FTP
+Host=ftp://ftp.example.org/
+Username=bituminous
+Password=coal~!~
+[Sync]
+ServerPath=/%AppName%~!~
+CreateClientPath=/%AppName%
+CreateClientPath=/%AppName%/Data
+ClientPath=/%AppName%~!~
+Get=*.*~!~~!~
+<b>Upload Data.pnc</b>~!~~!~ 
+[SyncFile]
+Version=CSPro <definition version />
+AppName=Granite Geological Survey~!~
+[Connection]
+Type=FTP
+Host=ftp://ftp.example.org/
+Username=bituminous
+Password=coal~!~
+[Sync]
+CreateServerPath=/%AppName%/Data
+CreateServerPath=/%AppName%/Data/%UID%
+CreateServerPath=/%AppName%/Data/%UID%/%Date%
+ServerPath=/%AppName%/Data/%UID%/%Date%~!~
+ClientPath=/%AppName%/Data~!~
+Put=*.dat
+Put=*.dat.csnot
+</font></indent>

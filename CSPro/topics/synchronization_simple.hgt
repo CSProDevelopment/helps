@@ -10,7 +10,11 @@ For basic <link synchronization.hgt>synchronization</link> scenarios, you can co
 The following <b>Server</b> options can be specified:
 
 <list>
-	<li><b>URL</b>: Specify the URL of the CSWeb web server. You can use the <b>Test connection</b> button to ensure that the URL is correct, and to test your username and password login credentials.</li>
+	<li><b>CSWeb</b>: Synchronize with a CSWeb server. This requires a properly configured CSWeb server. The data dictionary for the application must be uploaded to the CSWeb server. For more information about CSWeb servers, see the <link CSWeb::introduction_to_csweb.hgt>CSWeb help documentation</link>.</li>
+	<li><b>Dropbox</b>: Synchronize using the online file sharing service <link https://www.dropbox.com/>Dropbox</link>. This requires an account with Dropbox.</li>
+	<li><b>FTP</b>: Synchronize using an FTP server. This option requires that you have an account configured on an FTP server.</li>
+	<li><b>URL</b>: Specify the URL of the CSWeb server or the URL of the FTP server. For CSWeb servers the URL should start with http:// or https://. For FTP servers the URL should start with ftp://, ftps:// or ftpes://. The URL is not used for Dropbox.</li>
+	<li><b>Test connection</b>: Click this button to attempt to connect to the server to verify that the URL and settings are correct.</li>
 </list>
 
 The following <b>Sync</b> options can be specified:
@@ -23,10 +27,10 @@ The following <b>Sync</b> options can be specified:
 		<li><b>Sync local and remote changes</b>: Send local changes to the server and download changes from the server. This option can be used when multiple interviewers need to work on the same assignments. Note that if both interviewers modify a case at the same time, one will overwrite the changes made by the other.</li>
 	</list></li>
 	<li><b>Download application files</b>: Check this box if you want to download the <link binary_data_entry_application_file_pen.hgt>.pen</link> and <link program_information_file_pff.hgt>.pff</link> files from the server to the local device in order to support application updates in the field.</li>
-	<li><b>Path to application on server</b>: Specify the path on CSWeb where the latest versions of the .pen and .pff files are stored. This is used only if the above option is checked.</li>
+	<li><b>Path to application on server</b>: Specify the path on the server where the latest versions of the .pen and .pff files are stored. This is used only if the above option is checked.</li>
 </list>
 
-The options in the dialog box only support direct synchronization over the Internet using CSWeb (not Bluetooth, Dropbox, or FTP). Simple synchronizations also do not support synchronization of external dictionaries or files other than the .pen and .pff files. To implement these advanced synchronization scenarios, you can create your own synchronization routines using <link synchronization.hgt>logic functions</link>.
+Simple synchronizations do not support synchronization of external dictionaries or files other than the .pen and .pff files. To implement these advanced synchronization scenarios, you can create your own synchronization routines using <link synchronization.hgt>logic functions</link>.
 
 <subheader>Running Synchronizations</subheader>
 

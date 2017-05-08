@@ -18,25 +18,31 @@ CSPro supports both one-way and two-way data synchronization. This means that is
 
 It is possible to synchronize both CSPro data files and other non-data files such as application files, images, and text files. It is common to use synchronization to update data entry applications in the field by downloading the latest <link binary_data_entry_application_file_pen.hgt>.pen</link> and <link program_information_file_pff.hgt>.pff</link> files from the server. This way, modifications to the application at the head office can easily be distributed to interviewers in the field.
 
+
 <subheader>Synchronization Server</subheader>
 
 For synchronization over the Internet, a central server is required. CSPro supports three types of servers: CSWeb, Dropbox and FTP.
 
 <list>
-	<li><b>CSWeb</b>: CSWeb is a web server running the CSPro synchronization server software. CSWeb fully supports all of the CSPro data synchronization features. The server software is written in PHP and can be run on any web server that has PHP and the MySQL database software installed. The server can be set up on a computer at the head office that is connected to the Internet or it may be set up on a hosted website or virtual server in the cloud. For more information about CSWeb servers, see the <link CSWeb::introduction_to_csweb.hgt>CSWeb help documentation</link>.~!~
-When synchronizing CSPro data files using CSWeb, synchronization is done at the case (questionnaire) level. CSPro keeps track of which cases have been added or updated and only sends cases that are new or have been modified since the last synchronization. This significantly reduces the amount of data transferred and therefore reduces bandwidth and the cost of air time. It also reduces the chance that two interviewers overwrite each other's work by both syncing to the same data file on the server. As long as two interviewers do not modify the same case at the same time, they may both synchronize to the same server without overwriting each other's data.
-</li>
-	<li><b>Dropbox</b>: <link https://www.dropbox.com>Dropbox</link> is a free cloud based synchronization service. For those doing smaller survey operations who are not able to configure a server to use CSWeb, Dropbox can be used for file synchronization.</li>
-	<li><b>FTP</b>: CSPro can synchronization with a FTP (file transfer protocol) server. For those doing smaller survey operations who are not able to configure a server to use CSWeb, FTP can be used for file synchronization.</li>
+	<li><b>CSWeb</b>: CSWeb is a web server running the CSPro synchronization server software. The server software is written in PHP and can be run on any web server that has PHP and the MySQL database software installed. The server can be set up on a computer at the head office that is connected to the Internet or it may be set up on a hosted website or virtual server in the cloud. For more information about CSWeb servers, see the <link CSWeb::introduction_to_csweb.hgt>CSWeb help documentation</link>.</li>
+	<li><b>Dropbox</b>: <link https://www.dropbox.com>Dropbox</link> is a free cloud based synchronization service. For those doing smaller survey operations who are not able to configure a server to use CSWeb, Dropbox can be used for synchronization.</li>
+	<li><b>FTP</b>: CSPro can synchronization with a FTP (file transfer protocol) server. For those doing smaller survey operations who are not able to configure a server to use CSWeb, FTP can be used for synchronization.</li>
 </list>
+
+When synchronizing CSPro data files, synchronization is done at the case (questionnaire) level. CSPro keeps track of which cases have been added or updated and only sends cases that are new or have been modified since the last synchronization. This significantly reduces the amount of data transferred and therefore reduces bandwidth and the cost of air time. It also reduces the chance that two interviewers overwrite each other's work by both syncing to the same data file on the server. As long as two interviewers do not modify the same case at the same time, they may both synchronize to the same server without overwriting each other's data.
+
+Once interviewers in the field have used data synchronization to upload data to the server, you can use the Data Viewer tool to download the data. When using CSWeb for data file synchronization, data is stored in a MySQL database on the server. When using either Dropbox or FTP, data will be stored on the server in a set of files in the directory <i>CSPro/DataSync</i>. In both cases, the data on the server cannot be opened directly by CSPro. In order to retrieve the data that has been uploaded to the server, use the Data Viewer's <link DataViewer::downloading_and_synchronizing_data.hgt>download function</link>. This will download all the data on the server into a single CSPro data file that can be used by other CSPro applications and tools.
+
 
 <subheader>Simple Synchronizations</subheader>
 
 Basic synchronizations can be set up by specifying a few options <link synchronization_simple.hgt>documented here</link>.
 
+
 <subheader>Advanced Synchronizations</subheader>
 
 For more advanced synchronization scenarios, CSPro has logic functions that can be used to implement data and file synchronizations. Using logic, it is possible to synchronize data files, including those associated with external dictionaries, and non-data files over either the Internet or Bluetooth.
+
 
 <subheader>Web Synchronization from Logic</subheader>
 
@@ -70,6 +76,7 @@ if syncconnect(CSWeb,cswebServerUrl) then
 
 endif;
 </logic>
+
 
 <subheader>Bluetooth Synchronization from Logic</subheader>
 

@@ -1,0 +1,26 @@
+﻿<title>Downloading and Synchronizing Data</title>
+
+You can use the Data Viewer tool to download data from a server used for <link CSPro::synchronization.hgt>data synchronization</link>. These options only work when working with CSPro DB files.
+
+<subheader>To download a new data file ...</subheader>
+
+<list ordered>
+	<li>Click the <b>File</b> menu and select <b>Download</b>.</li>
+	<li>Enter the details of the synchronization server (the server type and, if necessary, the URL).</li>
+	<li>Click on the <b>Connect</b> button. If the connection details are correct, the tool will display a list of data stored on the server.</li>
+	<li>Select which data set you are interested in downloading.</li>
+	<li>Click on the <b>...</b> button and enter a file name for the downloaded data file.</li>
+</list>
+
+The tool will download all of the cases from the data set into a newly created CSPro DB file.
+
+<subheader>To synchronize the cases in an existing data file ...</subheader>
+
+<list ordered>
+	<li>Open an existing data file.</li>
+	<li>Click the <b>File</b> menu and select <b>Synchronize</b>.</li>
+	<li>Enter the details of the synchronization server (the server type and, if necessary, the URL).</li>
+	<li>Select the syncrhonization direction. There are a <link CSPro::synchronization_simple.hgt>few options</link>, though generally you will choose the default option, <b>GET</b>.</li>
+</list>
+
+The tool will download, upload, or download and upload, all of the cases in the data file, making sure that the cases in the file match the cases stored on the synchronization server. This process can be automated by running a <link run_production_synchronizations.hgt>production synchronization</link>.
