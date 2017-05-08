@@ -1,87 +1,32 @@
-﻿<title>Savepartial Function</title>
+﻿<title>SavePartial Function</title>
 <context logic_help_savepartial />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Savepartial</font></b> <b><font style="font-family: Arial;
-															 font-size: 18pt;
-															 font-weight: bold;"
-															 face="Arial"
-															 size="5">Function</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">b =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">savepartial</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">();</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- savepartial function saves the current case as a partially added, modified
- or verified case. It is useful in a large data entry application to perform
- intermediate backups. It can also be used to automatically perform a partial
- save when the keyer stops the case before completing it.</font></p>
-<p style="text-align: left; margin-left: 18.70pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
- savepartial function can be coded only in the preproc or postproc of the
- field. The function cannot be used before all id values for the case have
- been entered.</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">An
- optional parameter, <span style="font-style: italic;">clear</span>, results
- in the removal of <a href="visualvalue_function.html">visual values</a>
- before saving the data. This behavior is the same as would happen if the
- case was completed in a system-controlled application. Generally you will
- want to maintain skipped-over fields in case an interviewer decides to
- make changes to the case at a later point, so you will generally not want
- to use the <span style="font-style: italic;">clear</span><span> parameter.</span></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Return value:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- function returns a logical value of 1 (true) if the case was successfully
- saved as partial case and 0 (false) otherwise.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">OK =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">savepartial</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">();</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also:</font></b> <a href="ispartial_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Ispartial
- Function</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="stop_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Stop
- Function</font></a></p>
-</body>
-</html>
+<logicsyntax>
+b = savepartial(『clear』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>savepartial</logiccolor> function saves the current case as a partially added, modified or verified case. It is useful in a large data entry application to perform intermediate backups. It can also be used to automatically perform a partial save when the keyer stops the case before completing it.
+
+The function can be coded only in the <logiccolor>preproc</logiccolor> or <logiccolor>postproc</logiccolor> of a field. The function cannot be used before all ID values for the case have been entered.
+
+An optional parameter, <logiccolor>clear</logiccolor>, results in the removal of <link visualvalue_function.hgt>visual values</link> before the data is saved. This behavior is the same as would happen if the case was completed in a system controlled application. Generally you will want to maintain skipped-over fields in case an interviewer decides to make changes to the case at a later point, so it is rare that you would use this parameter.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the case was successfully saved as a partial case and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC LINE_NUMBER
+
+preproc
+
+	savepartial();
+</logic>
+
+<seealso ispartial_function.hgt stop_function.hgt />

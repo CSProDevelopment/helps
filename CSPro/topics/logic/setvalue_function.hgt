@@ -1,107 +1,37 @@
-﻿<title>Setvalue Function</title>
+﻿<title>SetValue Function</title>
 <context logic_help_setvalue />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><span
-	 style="font-size: 12pt;"><b><font style="font-family: Arial; font-size: 18pt;
-										 font-weight: bold;" color="#0000FF"
-										 face="Arial" size="5">Setvalue</font></b>
- <b><font style="font-family: Arial; font-size: 18pt; font-weight: bold;"
-			 face="Arial" size="5">Function</font></b></span></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">b =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">setvalue</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(<span style="font-style: italic;">alpha-expression</span>,<span
-	 style="font-style: italic;">numeric-expression | alpha-expression</span></font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">[</font><span style="font-style: italic;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">,numeric-expressions</font><font style="font-family: 'Courier New';
-												 font-size: 10pt; font-style: normal;"
-												 color="#FF00FF" face="Courier New"
-												 size="2">]</font></span><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">setvalue</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">function
- executes an assignment when the name of the variable to be assigned to
- is not known at compilation time (when writing the application). The function
- searches for the first parameter <span style="font-style: italic;">alpha-expression</span>
- and then attempts to assign the second parameter expression, numeric or
- alpha, to the variable. Optional parameters allow you to pass occurrence
- numbers to the function. This function is especially useful when combined
- <span style="font-family: Arial, sans-serif;">with </span><span style="font-family: Arial, sans-serif;
-	 font-size: 10pt;">a </span></font><span><a href="Userbar_Function.htm"
-												 style="font-family: Arial, sans-serif;
-												 font-size: 10pt;">userbar
- button</a></span><span style="font-family: Arial, sans-serif; font-size: 10pt;">
- or an <a href="onkey_global_function.htm" style="font-family: Arial, sans-serif;
-			 font-size: 10pt;">onkey character sequence</a></span><span
-	 style="font-family: Arial, sans-serif; font-size: 10pt;">.</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><font><font color="#000000"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Return value:</font></b></font></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: Arial; font-size: 10pt;">The function returns 1 if the
- variable name was found and the value could was successfully changed.
- The function returns 0 if the variable was not found, or if an alpha value
- was assigned to a numeric variable or a numeric value was assigned to
- an alpha variable.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
-	 font-size: 10pt;"><font style="font-weight: bold;"><b>Examples:</b></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2"><font color="#000000"><font color="#008000">//&#160;the following
- statements are equivalent but you would not use setvalue because the left-hand
- side of the assignment is already known<br />
-</font><br />
-<font color="#0000FF">setvalue</font>(<font color="#FF00FF">&quot;NAME&quot;</font>,<font
-	 color="#FF00FF">&quot;Amelia&quot;</font>);<br />
-NAME = <font color="#FF00FF">&quot;Amelia&quot;</font>;<br />
-&#160;&#160;&#160;&#160;<br />
-<font color="#0000FF">setvalue</font>(<font color="#FF00FF">&quot;AGE&quot;</font>,<font
-	 color="#FF0000">20</font>);<br />
-AGE = <font color="#FF0000">20</font>;<br />
-<br />
-<br />
-<font color="#008000">//&#160;below, the left-hand side of the assignment
- is not known<br />
-</font><br />
-<font color="#0000FF">setvalue</font>(<font color="#0000FF">getsymbol</font>(),<font
-	 color="#0000FF">missing</font>); <font color="#008000">//&#160;set
- the current field to missing<br />
-</font><br />
-<font color="#0000FF">setvalue</font>(<font color="#0000FF">getsymbol</font>(),<font
-	 color="#FF00FF">&quot;DK&quot;</font>,<font color="#FF0000">3</font>);
- <font color="#008000">//&#160;set the third occurrence of the current
- field to &quot;DK&quot;</font></font></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="assignment_statement.html">Assignment
- Statement</a>, <a href="Getvalue_Function.html">Getvalue Function</a></p>
-</body>
-</html>
+<logicsyntax>
+b = setvalue(<arg>variable_name</arg>,<arg>value</arg>『,<arg>occurrence1</arg>,...,<arg>occurrence3</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>setvalue</logiccolor> function executes an assignment when the name of the variable to be assigned to is not known at compilation time (when writing the application). The function searches for a variable with a name stored in the string expression <arg>variable_name</arg>, and if such a variable is found, the function assigns to it the value stored in <arg>value</arg>. If the variable is numeric, then <arg>value</arg> should be a numeric expression, and if the variable is alphanumeric, then it should be a string expression. Optional parameters, <arg>occurrence1</arg> to <arg>occurrence3</arg>, allow you to pass occurrence numbers to the function. This function is especially useful when combined with a <logiccolor>userbar</logiccolor> button or an <logiccolor>OnKey</logiccolor> character sequence.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the variable name was found and the value was successfully changed. The function returns 0 (false) if the variable was not found, if a string expression was assigned to a numeric variable, or if a numeric expression was assigned to an alphanumeric variable.
+
+<subheader>Examples</subheader>
+
+<logic>
+// the following statements are equivalent but you would not use setvalue
+// because the left-hand side of the assignment is already known
+
+setvalue("NAME","Amelia");
+NAME = "Amelia";
+
+setvalue("AGE",20);
+AGE = 20;
+
+// below, the left-hand side of the assignment is not known at compilation time
+
+setvalue(getsymbol(),missing); // set the current field to missing
+
+setvalue(getsymbol(),"DK",3); // set the third occurrence of the current field to "DK"
+</logic>
+
+<seealso getvalue_function.hgt assignment_statement.hgt />

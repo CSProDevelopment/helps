@@ -1,147 +1,39 @@
 ﻿<title>Stop Function</title>
 <context logic_help_stop />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-<h3 style="text-align: left; font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Stop</font></b> <b><font style="font-family: Arial;
-													 font-size: 18pt; font-weight: bold;"
-													 face="Arial" size="5">Function</font></b></h3>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">stop</font></b><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">[</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-	 face="Courier New" size="2">0</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">|</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-		 face="Courier New" size="2">1</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#FF00FF" face="Courier New"
-													 size="2">]</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">stop</font></b> <font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">function
- ends a data entry session or batch edit run.</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- the</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-					 face="Arial" size="2">stop</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">function is used in a data
- entry application, the parameter determines whether data entry is stopped
- just for the current case or whether the data entry application is closed.
- If the parameter is empty or 0, entry of the current case is stopped (the
- same a pressing the stop button on the tool bar), but the data entry application
- remains active. If the parameter is non-zero, for example 1, entry of
- the current case is stopped and the data entry application is terminated.</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
- a data entry application, if the stop function is executed in the Postproc
- of the first (highest) level then the data for the case is saved. Otherwise,
- any data entered for the current case is lost. If you want to avoid losing
- data, you should include a savepartial function just before the stop function
- (see example below).</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- the stop function is used in a batch edit application, the parameter (0
- | 1) has no effect, the run is always terminated. If an output file was
- specified in the batch run, neither the current case nor subsequent cases
- will be placed in the output file.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example 1 (data entry):</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" face="Courier New"
-												 size="2">$ = 99</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;savepartial</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">();</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;stop</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">(1);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example 2 (batch edit):</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" face="Courier New"
-												 size="2">TOTAL_ERRORS
- &gt;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-					 color="#FF0000" face="Courier New" size="2">100</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;stop</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">();</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also:</font></b> <a href="savepartial_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Savepartial
- Function</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="exit_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Exit
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="break_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Break
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="next_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Next
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="skip_case_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Skip
- Case Statement</font></a></p>
-</body>
-</html>
+<logicsyntax>
+b = stop(『<arg>stop_code</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>stop</logiccolor> function prematurely ends a CSPro application. If the function is used in a data entry application, the optional numeric expression <arg>stop_code</arg> determines whether data entry is stopped just for the current case or whether the entire data entry application is closed. If <arg>stop_code</arg> is not specified or is 0, entry of the current case is stopped (the same a pressing the stop button), but CSEntry remains active. If <arg>stop_code</arg> is 1, entry of the current case is stopped and CSEntry terminates.
+
+In a data entry application, if the function is executed in the <logiccolor>postproc</logiccolor> of the first (highest) level then the data for the case is saved. Otherwise, any data entered for the current case is lost. If you want to avoid losing data, you can call <logiccolor>savepartial</logiccolor> just before the <logiccolor>stop</logiccolor> function.
+
+If the function is used in a batch edit application, the <arg>stop_code</arg> has no effect. The run is always terminated. If an output file was specified in the batch run, neither the current case nor subsequent cases will be saved to the output file.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 0 (false) if the program cannot be stopped (for example, if the function is called from an external form).
+
+<subheader>Data Entry Example</subheader>
+
+<logic>
+if VALUE = 99 then
+	savepartial();
+	stop(1);
+endif;
+</logic>
+
+<subheader>Batch Edit Example</subheader>
+
+<logic>
+if cntTotalErrors > 100 then
+	stop();
+endif;
+</logic>
+
+<seealso endcase_statement.hgt skip_case_statement.hgt />
