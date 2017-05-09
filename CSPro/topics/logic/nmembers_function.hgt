@@ -1,4 +1,48 @@
 ﻿<title>NMembers Function</title>
 <context logic_help_nmembers />
 
-helptodo
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = nmembers(<arg>dictionary_name</arg> 『<arg>mark_type</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>nmembers</logiccolor> function returns the number of cases selected by an operator during a <logiccolor>selcase</logiccolor> function call.
+
+The <arg>dictionary_name</arg> must be supplied and refers to an external dictionary associated with your application. An optional argument, <arg>mark_type</arg>, indicates what kinds of cases to process, and can be one of the following values:
+
+<indent><table 2>
+	<cell><arg>mark_type</arg></cell><cell><b>Description</b></cell>
+	<cell><b>marked</b></cell><cell>Process only the cases selected by the operator during the <logiccolor>selcase</logiccolor> function call.</cell>
+	<cell><b>unmarked</b></cell><cell>Process the cases <b>not</b> selected by the operator.</cell>
+	<cell><b>all</b></cell><cell>Process all of the cases that could have been selected by the operator.</cell>
+</table></indent>
+
+If not specified, the <arg>mark_type</arg> defaults to <b>marked</b>.
+
+<subheader>Return Value</subheader>
+
+The function returns the number of cases that are described by the <arg>mark_type</arg> query.
+
+<subheader>Example</subheader>
+
+<logic>
+while 1 do
+
+	selcase(OCCUPATION_DICT,"Plantation") multiple;
+
+	if nmembers(OCCUPATION_DICT) < 3 then
+		errmsg("You must select at least three options.");
+
+	else
+		break;
+	
+	endif;
+
+enddo;
+
+</logic>
+
+<seealso selcase_function.hgt for_dict_statement.hgt />

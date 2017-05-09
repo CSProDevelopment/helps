@@ -1,235 +1,69 @@
 ﻿<title>Android Navigation</title>
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Overview</subheader>
 
-<body>
-<h4 style="margin-top: 6.00pt; margin-bottom: 2.00pt; font-family: Arial, sans-serif;
-	 font-size: 18pt;"><b><font style="font-weight: bold;">Android Navigation</font></b></h4>
-<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;
-	 font-weight: bold;">Overview</p>
-<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">The
- CSEntry for Android application is designed to be straightforward to use,
- with features and options that interviewers can easily control.</p>
-<table cellspacing="5">
-	<col width="400" />
-	<col width="230" />
-	<tr>
-		<td style="vertical-align: Top;"><p class="MsoNormal" style="font-family: Arial, sans-serif;
-											 font-size: 10pt; font-weight: bold;">Entry
-		 Applications Screen</p>
-		<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">Upon
-		 opening CSEntry, all data entry applications on the device are
-		 displayed. Click on an application to open it. If only one application
-		 is on the device, it will open automatically.</p></td>
-		<td style="vertical-align: Top;"><img src="android/entryApplications.png"
-												 alt="" style="border: none;"
-												 border="0" /></td>
-	</tr>
+The CSEntry for Android application is designed to be straightforward to use, with features and options that interviewers can easily control.
+
+<table 2>
+	<cell>
+	<subheader>Entry Applications Screen</subheader>~!~
+	Upon opening CSEntry, all data entry applications on the device are displayed. Click on an application to open it. If only one application is on the device, it will open automatically.
+	</cell>
+	<cell><image android_navigation_entry_applications.png />~!~&nbsp;~!~&nbsp;</cell>
+	<cell>
+	<subheader>Case Listing Screen</subheader>~!~
+	The case listing displays all cases that have already been added to the data file. Clicking on a case will open it for modification. Clicking on "Start New Case," or the icon of a cross in a circle, will add a new case. To delete a case, hard-press on the case until a deletion menu appears. The menu on this screen has options to sort the cases alphabetically, or to display only incomplete cases.
+	</cell>
+	<cell><image android_navigation_case_listing.png />~!~&nbsp;~!~&nbsp;</cell>
+	<cell>
+	<subheader>Screen Elements</subheader>~!~
+	This illustration showcases the features of the data entry screen.~!~
+	<list ordered>
+		<li>Clicking on the CS icon brings up the case tree.</li>
+		<li>This is the name of the survey.</li>
+		<li>Clicking on the pencil and paper icon brings up a screen to type a field-specific note.</li>
+		<li>Clicking on the search icon and typing in a query allows you to filter the response listing.</li>
+		<li>The field label is a short description of the field that you are currently entering.</li>
+		<li>This is the question text for the field that you are currently entering. This will be more descriptive than the field label.</li>
+		<li>These are the response labels. CSEntry can display text boxes, radio buttons, check boxes, combo boxes, or date selectors.</li>
+		<li>These are the left and right navigation buttons, which correspond to moving backwards or forwards in the data entry application. Clicking on the Android back button will close out of adding or modifying a case.</li>
+	</list>	
+	</cell>
+	<cell><image android_navigation_screen_elements.png />~!~&nbsp;~!~&nbsp;</cell>
+	<cell>
+	<subheader>User Inputs: Text Box</subheader>~!~
+	To enter data in a text box field, simply type the response using the keyboard. If a keyboard does not appear automatically, click on the field and a keyboard will appear. If your keyboard has a Next key, you can click on it to move to the next field.
+	</cell>
+	<cell><image android_navigation_textbox.png />~!~&nbsp;~!~&nbsp;</cell>
+	<cell>
+	<subheader>User Inputs: Radio Buttons</subheader>~!~
+	When presented with a list of radio buttons, you must select one, and only one, response. Click on the response label, or the corresponding radio button, to make your selection.
+	</cell>
+	<cell><image android_navigation_drop_down.png />~!~&nbsp;~!~&nbsp;</cell>
+	<cell>
+	<subheader>User Inputs: Check Boxes</subheader>~!~
+	When shown checkboxes, you can select none, one, or multiple responses. Click on the response label, or the corresponding checkbox, to make a selection. Once you are finished making all selections, you can proceed to the next field.
+	</cell>
+	<cell><image android_navigation_check_box.png />~!~&nbsp;~!~&nbsp;</cell>
+	<cell>
+	<subheader>User Inputs: Combo Box</subheader>~!~
+	With a combo box, you can either enter a value within the defined range (as in a text box field), or choose a discrete value (as with radio buttons). To bring up the discrete values, click on the button to the right of the text field.
+	</cell>
+	<cell><image android_navigation_combo_box.png />~!~&nbsp;~!~&nbsp;</cell>
+	<cell>
+	<subheader>Search Filter</subheader>~!~
+	After clicking on the search icon, a space will appear where you can type a search query. The list of responses will automatically filter based on your search query. The full text of each response is searched, not necessarily starting from the first letter of the response.
+	</cell>
+	<cell><image android_navigation_search.png />~!~&nbsp;~!~&nbsp;</cell>
+	<cell>
+	<subheader>Field Notes</subheader>~!~
+	After clicking on the pencil and paper icon, you will have the opportunity to type a field-specific note. If you do not want to add a new note, you can press the Android back button to cancel.
+	</cell>
+	<cell><image android_navigation_note.png />~!~&nbsp;~!~&nbsp;</cell>
+	<cell>
+	<subheader>Case Tree</subheader>~!~
+	Clicking on the CS icon brings up the case tree. The case tree displays all fields that have been entered in the data entry application, showing the field label as well as the field response. If you click on a field, you will be taken to that field. This allows you to quickly move from one part of the questionnaire to another.~!~
+	Once the case tree is shown, clicking on the CS icon again will take you up the hierarchy of the data entry application. For example, you might go from seeing details about a person to seeing details about the household. To insert or delete a repeating occurrence, hard-press on the occurrence label until you are presented with a menu that allows for insertions and deletions. You can dismiss the case tree by using the Android back button.
+	</cell>
+	<cell><image android_navigation_case_tree.png /></cell>
 </table>
-<table cellspacing="5">
-	<col width="400" />
-	<col width="230" />
-	<tr>
-		<td style="vertical-align: Top;"><p class="MsoNormal" style="font-family: Arial, sans-serif;
-											 font-size: 10pt; font-weight: bold;">Case
-		 Listing Screen</p>
-		<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">The
-		 case listing displays all cases that have already been added to
-		 the data file. Clicking on a case will open it for modification.
-		 Clicking on &quot;Start New Case,&quot; or the icon of a cross
-		 in a circle, will add a new case. To delete a case, hard-press
-		 on the case until a deletion menu appears. The menu on this screen
-		 has options to sort the cases alphabetically, or to display only
-		 incomplete cases.</p></td>
-		<td style="vertical-align: Top;"><img src="android/caseListing.png"
-												 alt="" style="border: none;"
-												 border="0" /></td>
-	</tr>
-</table>
-<table cellspacing="5">
-	<col width="400" />
-	<col width="230" />
-	<tr>
-		<td style="vertical-align: Top;"><p class="MsoNormal" style="font-family: Arial, sans-serif;
-											 font-size: 10pt; font-weight: bold;">Screen
-		 Elements</p>
-		<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">This
-		 illustration showcases the features of the data entry screen.</p>
-		<ol style="list-style: decimal;">
-			<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p
-				 class="MsoNormal" style="font-family: Arial, sans-serif;
-				 font-size: 10pt;">Clicking on the CS icon brings up the
-			 case tree.</p></li>
-			<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p
-				 class="MsoNormal" style="font-family: Arial, sans-serif;
-				 font-size: 10pt;">This is the name of the survey.</p></li>
-			<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p
-				 class="MsoNormal" style="font-family: Arial, sans-serif;
-				 font-size: 10pt;">Clicking on the pencil and paper icon
-			 brings up a screen to type a field-specific note.</p></li>
-			<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p
-				 class="MsoNormal" style="font-family: Arial, sans-serif;
-				 font-size: 10pt;">Clicking on the search icon and typing
-			 in a query allows you to filter the response listing.</p></li>
-			<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p
-				 class="MsoNormal" style="font-family: Arial, sans-serif;
-				 font-size: 10pt;">The field label is a short description
-			 of the field that you are currently entering.</p></li>
-			<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p
-				 class="MsoNormal" style="font-family: Arial, sans-serif;
-				 font-size: 10pt;">This is the question text for the field
-			 that you are currently entering. This will be more descriptive
-			 than the field label.</p></li>
-			<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p
-				 class="MsoNormal" style="font-family: Arial, sans-serif;
-				 font-size: 10pt;">These are the response labels. CSEntry
-			 can display text boxes, radio buttons, check boxes, combo
-			 boxes, or date selectors.</p></li>
-			<li style="font-family: Arial, sans-serif; font-size: 10pt;"><p
-				 class="MsoNormal" style="font-family: Arial, sans-serif;
-				 font-size: 10pt;"><span style="font-family: Arial, sans-serif;
-										 font-size: 10pt;">These are the
-			 left and right navigation buttons, which correspond to moving
-			 backwards or forwards in the data entry application. Clicking
-			 on the Android back button will close out of adding or modifying
-			 a case.</span></p></li>
-		</ol></td>
-		<td style="vertical-align: Top;"><img src="android/screenElements.png"
-												 alt="" style="border: none;"
-												 border="0" /></td>
-	</tr>
-</table>
-<table cellspacing="5">
-	<col width="400" />
-	<col width="230" />
-	<tr>
-		<td style="vertical-align: Top;"><p class="MsoNormal" style="font-family: Arial, sans-serif;
-											 font-size: 10pt; font-weight: bold;">User
-		 Inputs: Text Box</p>
-		<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">To
-		 enter data in a text box field, simply type the response using
-		 the keyboard. If a keyboard does not appear automatically, click
-		 on the field and a keyboard will appear. If your keyboard has
-		 a Next key, you can click on it to move to the next field.</p></td>
-		<td style="vertical-align: Top;"><img src="android/textBox.png"
-												 alt="" style="border: none;"
-												 border="0" /></td>
-	</tr>
-</table>
-<table cellspacing="5">
-	<col width="400" />
-	<col width="230" />
-	<tr>
-		<td style="vertical-align: Top;"><p class="MsoNormal" style="font-family: Arial, sans-serif;
-											 font-size: 10pt; font-weight: bold;">User
-		 Inputs: Radio Buttons</p>
-		<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">When
-		 presented with a list of radio buttons, you must select one, and
-		 only one, response. Click on the response label, or the corresponding
-		 radio button, to make your selection.</p></td>
-		<td style="vertical-align: Top;"><img src="android/downDown.png"
-												 alt="" style="border: none;"
-												 border="0" /></td>
-	</tr>
-</table>
-<table cellspacing="5">
-	<col width="400" />
-	<col width="230" />
-	<tr>
-		<td style="vertical-align: Top;"><p class="MsoNormal" style="font-family: Arial, sans-serif;
-											 font-size: 10pt; font-weight: bold;">User
-		 Inputs: Check Boxes</p>
-		<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">When
-		 shown checkboxes, you can select none, one, or multiple responses.
-		 Click on the response label, or the corresponding checkbox, to
-		 make a selection. Once you are finished making all selections,
-		 you can proceed to the next field.</p></td>
-		<td style="vertical-align: Top;"><img src="android/checkBox.png"
-												 alt="" style="border: none;"
-												 border="0" /></td>
-	</tr>
-</table>
-<table cellspacing="5">
-	<col width="400" />
-	<col width="230" />
-	<tr>
-		<td style="vertical-align: Top;"><p class="MsoNormal" style="font-family: Arial, sans-serif;
-											 font-size: 10pt; font-weight: bold;">User
-		 Inputs: Combo Box</p>
-		<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">With
-		 a combo box, you can either enter a value within the defined range
-		 (as in a text box field), or choose a discrete value (as with
-		 radio buttons). To bring up the discrete values, click on the
-		 button to the right of the text field.</p></td>
-		<td style="vertical-align: Top;"><img src="android/comboBox.png"
-												 alt="" style="border: none;"
-												 border="0" /></td>
-	</tr>
-</table>
-<table cellspacing="5">
-	<col width="400" />
-	<col width="230" />
-	<tr>
-		<td style="vertical-align: Top;"><p class="MsoNormal" style="font-family: Arial, sans-serif;
-											 font-size: 10pt; font-weight: bold;">Search
-		 Filter</p>
-		<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">After
-		 clicking on the search icon, a space will appear where you can
-		 type a search query. The list of responses will automatically
-		 filter based on your search query. The full text of each response
-		 is searched, not necessarily starting from the first letter of
-		 the response.</p></td>
-		<td style="vertical-align: Top;"><img src="android/search.png"
-												 alt="" style="border: none;"
-												 border="0" /></td>
-	</tr>
-</table>
-<table cellspacing="5">
-	<col width="400" />
-	<col width="230" />
-	<tr>
-		<td style="vertical-align: Top;"><p class="MsoNormal" style="font-family: Arial, sans-serif;
-											 font-size: 10pt; font-weight: bold;">Field
-		 Notes</p>
-		<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">After
-		 clicking on the pencil and paper icon, you will have the opportunity
-		 to type a field-specific note. If you do not want to add a new
-		 note, you can press the Android back button to cancel.</p></td>
-		<td style="vertical-align: Top;"><img src="android/note.png"
-												 alt="" style="border: none;"
-												 border="0" /></td>
-	</tr>
-</table>
-<table cellspacing="5">
-	<col width="400" />
-	<col width="230" />
-	<tr>
-		<td style="vertical-align: Top;"><p class="MsoNormal" style="font-family: Arial, sans-serif;
-											 font-size: 10pt; font-weight: bold;">Case
-		 Tree</p>
-		<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">Clicking
-		 on the CS icon brings up the case tree. The case tree displays
-		 all fields that have been entered in the data entry application,
-		 showing the field label as well as the field response. If you
-		 click on a field, you will be taken to that field. This allows
-		 you to quickly move from one part of the questionnaire to another.</p>
-		<p class="MsoNormal" style="font-family: Arial, sans-serif; font-size: 10pt;">Once
-		 the case tree is shown, clicking on the CS icon again will take
-		 you up the hierarchy of the data entry application. For example,
-		 you might go from seeing details about a person to seeing details
-		 about the household. To insert or delete a repeating occurrence,
-		 hard-press on the occurrence label until you are presented with
-		 a menu that allows for insertions and deletions. You can dismiss
-		 the case tree by using the Android back button.</p></td>
-		<td style="vertical-align: Top;"><img src="android/caseTree.png"
-												 alt="" style="border: none;"
-												 border="0" /></td>
-	</tr>
-</table>
-</body>
-</html>

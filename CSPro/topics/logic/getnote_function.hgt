@@ -4,12 +4,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = getnote(『<arg>dictionary_symbol_name</arg>』『,<arg>operator_id</arg>』);
+s = getnote(『<arg>dictionary_symbol</arg>』『,<arg>operator_id</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>getnote</logiccolor> function returns a string containing the note for a field or other dictionary symbol. If no arguments are supplied, the note for the current field is returned. The optional argument <arg>dictionary_symbol_name</arg> allows you to query the note for a dictionary item, record, or level. If using the dictionary name, the case note is returned. Another optional string argument, <arg>operator_id</arg>, allows you to query the note for a particular <link getoperatorid_function.hgt>operator</link>. If no operator ID is supplied, then the note for the current operator will be returned.
+The <logiccolor>getnote</logiccolor> function returns a string containing the note for a field or other dictionary symbol. If no arguments are supplied, the note for the current field is returned. The optional argument <arg>dictionary_symbol</arg> allows you to query the note for a dictionary item, record, or level. If using the dictionary name, the case note is returned. Another optional string argument, <arg>operator_id</arg>, allows you to query the note for a particular <link getoperatorid_function.hgt>operator</link>. If no operator ID is supplied, then the note for the current operator will be returned.
 
 <subheader>Return Value</subheader>
 

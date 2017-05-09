@@ -1,5 +1,38 @@
 ﻿<title>For (Dictionary) Statement</title>
 
-helptodo
+<subheader>Format</subheader>
 
-<seealso for_statement.hgt forcase_statement.hgt />
+<logicsyntax>
+for <arg>dictionary_name</arg>『(<arg>mark_type</arg>)』 do
+	// statements
+endfor;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>for</logiccolor> (dictionary) statement executes one or more statements repeatedly within a loop for each selection made during a <logiccolor>selcase</logiccolor> function call. This allows an operator to select some number of cases and then allows you to load each case and perform some analysis on the selected cases. Unlike the <logiccolor>forcase</logiccolor> loop, which operates on all cases in a data file, this loop only operates on selected cases.
+
+The <arg>dictionary_name</arg> must be supplied and refers to an external dictionary associated with your application. An optional argument, <arg>mark_type</arg>, indicates what kinds of cases to process, and can be one of the following values:
+
+<indent><table 2>
+	<cell><arg>mark_type</arg></cell><cell><b>Description</b></cell>
+	<cell><b>marked</b></cell><cell>Process only the cases selected by the operator during the <logiccolor>selcase</logiccolor> function call.</cell>
+	<cell><b>unmarked</b></cell><cell>Process the cases <b>not</b> selected by the operator.</cell>
+	<cell><b>all</b></cell><cell>Process all of the cases that could have been selected by the operator.</cell>
+</table></indent>
+
+If not specified, the <arg>mark_type</arg> defaults to <b>marked</b>.
+
+<subheader>Example</subheader>
+
+<logic>
+selcase(OCCUPATION_DICT,"Plantation") multiple;
+
+numeric maxEducation;
+
+for OCCUPATION_DICT do
+	maxEducation = high(maxEducation,MAXIMUM_EDUCATION);
+endfor;
+</logic>
+
+<seealso for_statement.hgt forcase_statement.hgt nmembers_function.hgt />

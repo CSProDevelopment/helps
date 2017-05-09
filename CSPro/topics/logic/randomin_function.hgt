@@ -1,94 +1,37 @@
-﻿<title>Randomin Function</title>
+﻿<title>RandomIn Function</title>
 <context logic_help_randomin />
 
-<font white>HELPTODO</font>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-<h3 style="font-size: 12pt; margin-top: 6.00pt; margin-bottom: 2.00pt;"><b><font
-	 style="font-family: Arial; font-size: 18pt; font-weight: bold;" color="#0000FF"
-	 face="Arial" size="5">Randomin</font></b> <b><font style="font-family: Arial;
-														 font-size: 18pt;
-														 font-weight: bold;"
-														 face="Arial" size="5">Function</font></b></h3>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">i =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">randomin</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(</font><span style="font-family: 'Courier New'; font-size: 10pt;
-							 font-style: italic;">in-list</span> <span
-	 style="font-family: 'Courier New'; font-size: 10pt;">|</span> <span
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;">value-set</span><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial; font-size: 10pt;">The <span style="font-weight: bold;">randomin</span>
- function returns a uniformly distributed random integer from one of two
- categories:</p>
-<ul style="list-style: disc;">
-	<li><p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-			 font-family: Arial; font-size: 10pt;">A grouping of non-continuous
-	 integers expressed as an <a href="in_operator.html">in list</a>.</p></li>
-	<li><p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-			 font-family: Arial; font-size: 10pt;">A <a href="value_sets_description.html">value
-	 set</a>.</p></li>
-</ul>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Use</font>
- <a href="seed_function.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">seed</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">to
- initialize the randomin function.</font></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Return value:</font></b></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The function returns an integer random value. The function
- will return a value DEFAULT if there were no applicable values to construct
- a table of non-continuous integers from which to pick a random number.
- If a value appears more than once in the in list or the value set, it
- will have a higher probability of being selected by the randomin function.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2"><font color="#000000"><font color="#0000FF">errmsg</font>(<font
-	 color="#FF00FF">&quot;Random tribe code: %d&quot;</font>,<font color="#0000FF">randomin</font>(TRIBE_VS1));<br />
-<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;Non-continuous
- random number: %d&quot;</font>,<font color="#0000FF">randomin</font>(-<font
-	 color="#FF0000">100</font>:-<font color="#FF0000">50</font>,<font
-	 color="#FF0000">50</font>:<font color="#FF0000">100</font>,<font color="#FF0000">999</font>));<br />
-<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;Over time
- 5 will be selected 75% of the time: %d&quot;</font>,<font color="#0000FF">randomin</font>(<font
-	 color="#FF0000">5</font>,<font color="#FF0000">5</font>,<font color="#FF0000">5</font>,<font
-	 color="#FF0000">8</font>));<br />
-<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;Random
- month: %d&quot;</font>,<font color="#0000FF">randomin</font>(<font color="#FF0000">1</font>:<font
-	 color="#FF0000">12</font>)); <font color="#008000">//&#160;same as
- random(1,12)</font></font></font></p>
-<p style="font-weight: bold; font-family: Arial, sans-serif; font-size: 10pt;">See
- also: <span style="font-weight: normal;"><a href="random_function.htm"
-											 style="font-family: Arial, sans-serif;
-											 font-size: 10pt;">Random Function</a>,</span>
- <a href="Randomizevs_Function.htm" style="font-weight: normal;">Randomizevs
- Function</a></p>
-</body>
-</html>
+<logicsyntax>
+i = randomin(<arg>in_list</arg> ‖ <arg>value_set_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>randomin</logiccolor> function returns a uniformly distributed random integer from one of two categories:
+
+<list>
+	<li>A grouping of non-continuous integers expressed as an <link in_operator.hgt>in list</link> (<arg>in_list</arg>).</li>
+	<li>A <link value_sets_description.hgt>value set</link> (<arg>value_set_name</arg>),</li>
+</list>
+
+You can use the <logiccolor>seed</logiccolor> function to initialize the random number generation.
+
+<subheader>Return Value</subheader>
+
+The function returns an integer random value. The function will return <logiccolor>default</logiccolor> if there were no applicable values to construct a table of non-continuous integers from which to pick a random number. If a value appears more than once in the in list or the value set, it will have a higher probability of being selected by the function.
+
+<subheader>Examples</subheader>
+
+<logic>
+errmsg("Random tribe code: %d",randomin(TRIBE_VS1));
+
+errmsg("Non-continuous random number: %d",randomin(-100:-50,50:100,999));
+
+errmsg("After many calls, 5 will be selected 75% of the time: %d",randomin(5,5,5,8));
+
+errmsg("Random month: %d",randomin(1:12)); // same as random(1,12)
+</logic>
+
+<seealso random_function.hgt randomizevs_function.hgt seed_function.hgt />
