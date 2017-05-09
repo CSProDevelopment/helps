@@ -199,7 +199,7 @@ namespace Help_Generator
                         _helpComponents.settings.Compile(_helpComponents.preprocessor);
                         _backgroundThread.ReportProgress(0,ThreadUpdateMessage.SettingsComplete);
                     }
-                    
+
                     else if( processingStep == 1 )
                     {
                         _helpComponents.tableOfContents.Compile(_helpComponents.preprocessor);
@@ -371,12 +371,12 @@ namespace Help_Generator
                         // generate the topic for the CHM
                         string htmlFilename = _chmTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
                         string html = topic.CompileForHtml(topicLines,_helpComponents,_chmTopicCompilerSettings);
-						
+
 						if( DoGenerateChm )
 							File.WriteAllText(Path.Combine(_temporaryFilesPath,htmlFilename),html,Encoding.UTF8);
 
                         _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
-                    
+
                         // generate the topic for the website
 						if( DoGenerateWebsite )
 						{
@@ -402,6 +402,15 @@ namespace Help_Generator
                 if( twPdf != null )
                     twPdf.WriteLine(PdfHtmlFooter);
             }
+
+			// ♻ once all topics have been converted, remove the following code ♻:
+			// ♻ ( starting here ) ♻
+			foreach( Preprocessor.ImagePreprocessor image in _helpComponents.preprocessor.GetAllImages() )
+			{
+				_chmTopicCompilerSettings.UsedImageFilenames.Add(image.Filename);
+				_websiteTopicCompilerSettings.UsedImageFilenames.Add(image.Filename);
+			}
+			// ♻ ( ending here ) ♻
         }
 
         private void GenerateChm()
@@ -482,11 +491,11 @@ namespace Help_Generator
 
             // copy over the stylesheets and chapter/topic images
             File.WriteAllText(Path.Combine(_outputWebsitePath,Constants.TopicStylesheetFilename),Properties.Resources.TopicStylesheet,Encoding.ASCII);
-            File.WriteAllText(Path.Combine(_outputWebsitePath,Constants.WebsiteStylesheetFilename),Properties.Resources.WebsiteStylesheet,Encoding.ASCII);                        
+            File.WriteAllText(Path.Combine(_outputWebsitePath,Constants.WebsiteStylesheetFilename),Properties.Resources.WebsiteStylesheet,Encoding.ASCII);
             Properties.Resources.WebsiteChapterClosed.Save(Path.Combine(_outputWebsitePath,"hgweb_chapter_closed.png"));
             Properties.Resources.WebsiteChapterOpen.Save(Path.Combine(_outputWebsitePath,"hgweb_web_chapter_open.png"));
             Properties.Resources.WebsiteTopic.Save(Path.Combine(_outputWebsitePath,"hgweb_web_topic.png"));
-            Properties.Resources.WebsiteTopicCurrent.Save(Path.Combine(_outputWebsitePath,"hgweb_web_topic_current.png"));            
+            Properties.Resources.WebsiteTopicCurrent.Save(Path.Combine(_outputWebsitePath,"hgweb_web_topic_current.png"));
         }
 
         private void GeneratePdf()
@@ -551,7 +560,7 @@ namespace Help_Generator
         }
 
         private string PdfHtmlFooter { get { return "</body></html>"; } }
-        
+
         private void ListUnusedImages()
         {
             bool displayedHeader = false;
