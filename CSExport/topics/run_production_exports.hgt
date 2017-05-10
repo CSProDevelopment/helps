@@ -1,16 +1,16 @@
 ﻿<title>Run Production Exports</title>
 
-To run a production export data, you need to customize its behavior by creating a PFF file. You then use the PFF as a command line parameter for CSExport.exe (the associated filename of this utility). For example, if you name your PFF file "MyExport.exf.pff," then you run the export program by invoking:
+To run a production export data, you need to customize its behavior by creating a PFF file. You then use the PFF as a command line parameter for CSExport.exe (the associated filename of this utility). For example, if you name your PFF file MyExport.exf.pff, then you run the export program by invoking:
 
-<indent><font monospace>C:\Program Files (x86)\CSPro <definition version />\CSExport.exe MyExport.exf.pff</font></indent>
+<indent><font monospace>"C:\Program Files (x86)\CSPro <definition version />\CSExport.exe" MyExport.exf.pff</font></indent>
 
-This assumes CSPro was installed in the default directory. Your PFF file must have a ".pff" extension.
+This assumes that CSPro was installed in the default directory. Your PFF file must have a .pff extension.
 
 You can create a PFF file in one of two ways: either [1] create one with a text editor (such as Notepad or Wordpad), or [2] have it generated automatically for you by launching CSExport, making desired field and export type selections to the chosen dictionary, <link save_an_export_specifications_file.hgt>saving your selections</link> to an export specification file, then running CSExport.
 
-Note that when CSExport generates a PFF file it automatically appends ".pff" to the export specifications file name, e.g., MyExport.exf.pff. If the export specification is not saved then the generated PFF file will be deleted after the run.
+Note that when CSExport generates a PFF file it automatically appends .pff to the export specifications file name, e.g., MyExport.exf.pff. If the export specification is not saved then the generated PFF file will be deleted after the run.
 
-The following examples show the options available to you in an export PFF file. Note that you may use any combination of upper and lower case text.
+The following examples show the options available to you in an export PFF file. A PFF file is not case sensitive, so you can use any combination of upper and lower case text.
 
 
 <subheader>Example 1 – One Exported File</subheader>

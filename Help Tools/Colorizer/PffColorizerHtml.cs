@@ -49,7 +49,7 @@ namespace Colorizer
     {
         public override void StartBlock(StringBuilder sb)
         {
-            sb.Append("<div class=\"code_colorization\">");
+            sb.Append("<div class=\"code_colorization indent\">");
         }
 
         public override void EndBlock(StringBuilder sb)
