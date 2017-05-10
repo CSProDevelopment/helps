@@ -1,87 +1,18 @@
 ﻿<title>Introduction to Run in Parts</title>
 <context HIDD_SELECTDLG HID_RUN_PCS />
 
+When CSPro runs a tabulation application, it automatically performs two or three processes. These processes are to:
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<list>
+	<li><b>Tabulate</b> the data file;</li>
+	<li><b>Consolidate</b> geographic areas (if the application uses area processing); and</li>
+	<li><b>Format</b> the tables with text.</li>
+</list>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+Run in parts allows you perform each of these processes separately. Run in parts is also used when you need to save the intermediate <link table_matrices_file_tab.hgt>.tab</link> files for later use.
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
- CSPro runs a tabulation application performs two or three processes. These
- processes are</font> <b><font style="font-family: Arial; font-size: 10pt;
-								 font-weight: bold;" face="Arial" size="2">Tabulate</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">the
- data file,</font> <b><font style="font-family: Arial; font-size: 10pt;
-							 font-weight: bold;" face="Arial" size="2">Consolidate</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">geographic
- areas (if the application uses area processing), and</font> <b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">the
- tables with text. Run in parts allows you perform each of these processes
- separately.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Run
- in parts is used when you need to save the intermediate *.TAB files for
- later use.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
- run in parts interactively, from the</font> <b><font style="font-family: Arial;
-														 font-size: 10pt;
-														 font-weight: bold;"
-														 face="Arial" size="2">File</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">menu,
- select</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-						 face="Arial" size="2">Run Parts</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">.
- Then select the process you want to run. The Consolidate process will
- be grayed out if you are not using area processing in your application.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
-	 src="rip01.jpg" alt="Run in Parts Select Process Dialog Box"
-	 title="Run in Parts Select Process Dialog Box" width="327" height="163"
-	 border="0" /></p>
-<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 46.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -46.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" face="Arial"
-										 size="2">See also:</font></b>
- <a href="run_tabulate_interactively.html"><font style="font-family: Arial;
-												 font-size: 10pt;" face="Arial"
-												 size="2">Run Tabulate
- Interactively</font></a><font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">,</font> <a href="run_consolidate_interactively.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Run
- Consolidate Interactively</font></a><font style="font-family: Arial; font-size: 10pt;"
-											 face="Arial" size="2">,</font>
- <a href="run_format_interactively.html"><font style="font-family: Arial;
-												 font-size: 10pt;" face="Arial"
-												 size="2">Run Format Interactively</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="run_tabulate_in_batch.html"><font style="font-family: Arial; font-size: 10pt;"
-											 face="Arial" size="2">Run
- Tabulate in Batch</font></a><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">,</font> <a
-	 href="run_format_in_batch.html"><font style="font-family: Arial; font-size: 10pt;"
-											 face="Arial" size="2">Run
- Format in Batch</font></a><font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">,</font> <a href="run_consolidate_in_batch.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Run
- Consolidate in Batch</font></a></p>
-</body>
-</html>
+To run in parts interactively, from the <b>File</b> menu, select <b>Run in Parts</b>. Then select the process you want to run. (The <b>Consolidate</b> process will be grayed out if you are not using area processing in your application.)
 
+<center><image run_in_parts.png /></center>
 
-<html><!---♻---></html>
+<seealso run_tabulate_interactively.hgt run_consolidate_interactively.hgt run_format_interactively.hgt run_tabulate_in_batch.hgt run_format_in_batch.hgt run_consolidate_in_batch.hgt />

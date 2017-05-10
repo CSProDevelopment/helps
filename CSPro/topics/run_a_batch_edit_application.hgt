@@ -1,126 +1,23 @@
 ﻿<title>Run a Batch Edit Application</title>
 <context HID_RUNBATCH />
 
+Press <image run_button.png />; or press <b>Ctrl+R</b>; or select <b>Run</b> from the <b>File</b> menu to run a batch application. If you've made changes since you last compiled, CSPro will first <link compile_an_application.hgt>compile</link> your application. If your program compiles successfully, you will see a screen that looks similar to this:
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<center><image file_associations_batch.png /></center>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+The following rows are required:
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">Press
- <img src="run.jpg" alt="Run Button" title="Run Button" width="23"
-		 height="22" border="0" /> on the toolbar; from the <b><font style="font-weight: bold;">Fil</font></b>e
- menu, select <b><font style="font-weight: bold;">Run</font></b>; press
- <b><font style="font-weight: bold;">Ctrl+R</font></b>. If you've made
- changes since you last compiled, CSPro will first <a href="compile_an_application.html">compile</a>
- your application. If your program compiles successfully, you will receive
- the following dialog box:</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><img src="befiles.jpg" alt="File Associations Dialog Box"
-								 title="File Associations Dialog Box" width="459"
-								 height="230" border="0" /></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">•&#160;Input Data File</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- line is required, and asks for the name of the data file against which
- you wish to run your batch application. This data file will not be modified
- in any way; it will only be opened, read, and closed.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">•&#160;</font></b><b><font style="font-family: Arial;
-														 font-size: 10pt;
-														 font-weight: bold;"
-														 face="Arial" size="2">Output
- File</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The output file is where the results of correcting your data
- will be written. If you are</font> <b><font style="font-family: Arial;
-											 font-size: 10pt; font-weight: bold;"
-											 color="#000000" face="Arial"
-											 size="2">not</font></b> <font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">making any corrections in your program, then the generated
- file will be an exact copy of the original data file. If you</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">are</font></b> <font style="font-family: Arial;
-												 font-size: 10pt;" color="#000000"
-												 face="Arial" size="2">making
- corrections to your data file, then this will be the corrected data file.
- The default file extension is .out, but you can use whatever you'd like.
- This field is optional; therefore, if you are making corrections to your
- data, but forget to specify an output file, no corrected file will be
- generated.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">•&#160;</font></b><b><font style="font-family: Arial;
-														 font-size: 10pt;
-														 font-weight: bold;"
-														 face="Arial" size="2">Write
- File</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">If
- you have any <a href="write_function.html">write</a> functions in your
- program, they will write information to this file. The default file extension
- is .wrt, but you can use whatever you like. This field is optional; if
- no write file is specified at run time, the write file lines are placed
- in the default data entry or batch error report.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">•&#160;</font></b><b><font style="font-family: Arial;
-														 font-size: 10pt;
-														 font-weight: bold;"
-														 face="Arial" size="2">Impute
- Freq File</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">If your program contains any</font> <a href="impute_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">impute</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">statements, the results of this command will be written
- to this file. The default file extension is .frq, but you can use whatever
- you'd like. This field is optional; therefore, if your program contains</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 color="#000000" face="Arial" size="2">impute</font></b> <font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">commands, but you forget to specify a frequency file, no
- file will be generated. Similarly, if you indicate a frequency file but
- your program does not contain any impute commands, no file will be generated.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">•&#160;</font></b><b><font style="font-family: Arial;
-														 font-size: 10pt;
-														 font-weight: bold;"
-														 face="Arial" size="2">Listing
- File</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">This line is required, and asks for the name of the file
- to which you want to write the results of the run. Results from</font>
- <a href="errmsg_function.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">errmsg</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">functions will be written here. This file will always
- be generated, regardless of whether or not your program includes errmsg
- commands.</font></p>
-</body>
-</html>
+<list>
+	<li><b>Input Data File</b>: This asks for the name of the data file against which you wish to run your batch application. This data file will not be modified in any way; it will only be opened, read, and closed.</li>
+	<li><b>Output File</b>: The output file is where the results of correcting your data will be written. If you are not making any corrections in your program, then the generated file will be an exact copy of the original data file. If you are making corrections to your data file, then this will be the corrected data file. If you do not need a corrected data file, and are simplying running the program to generate a report, you can select a <link data_sources.hgt>none data source</link> as the output.</li>
+	<li><b>Listing File</b>: This asks for the name of the file to which you want to write the results of the run. Results from <logiccolor>errmsg</logiccolor> functions will be written here. This file will always be generated, regardless of whether or not your program includes <logiccolor>errmsg</logiccolor> commands. Listing files generally have the extension <link listing_file_lst.hgt>.lst</link>.</li>
+</list>
 
+The following rows are optional, based on the logic in your application:
 
-<html><!---♻---></html>
+<list>
+	<li><b>Impute Freq File</b>: If your program contains any <logiccolor>impute</logiccolor> statements, the results of this command will be written to this file. The default file extension is .freq.lst, but you can use whatever you'd like. This field is optional; therefore, if your program contains impute commands, but you forget to specify a frequency file, no file will be generated. Similarly, if you indicate a frequency file but your program does not contain any impute commands, no file will be generated.</li>
+	<li><b>Write File</b>: If you have any <logiccolor>write</logiccolor> function calls in your program, the results will be saved to this file. This field is optional. If no write file is specified, the <logiccolor>write</logiccolor> function's output is saved to the listing file.</li>
+</list>
+
+In addition to these rows, there may be rows where you can specify the names of <link lookup_files.hgt>lookup files</link> and <link files.hgt>external files</link>.

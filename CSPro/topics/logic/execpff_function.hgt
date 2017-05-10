@@ -15,6 +15,8 @@ An optional set of <arg>flags</arg>, described in the <logiccolor>execsystem</lo
 
 On mobile devices, multiple data entry applications cannot be run simultaneously, so the function simply stores the file name of the PFF. When the mobile application returns to the Entry Applications screen, whether via user interaction or via the <logiccolor>stop</logiccolor> function, the passed PFF will be launched. Using <logiccolor>stop</logiccolor> as a flag will cause the PFF to be launched immediately.
 
+If the PFF file that launched the application that calls this function specified an <pffcolor>OnExit</pffcolor> parameter, the <arg>pff_filename</arg> specified by this function will override the <pffcolor>OnExit</pffcolor> parameter.
+
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the new application is started successfully and 0 (false) otherwise.

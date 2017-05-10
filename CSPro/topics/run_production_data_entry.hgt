@@ -1,316 +1,123 @@
 ﻿<title>Run Production Data Entry</title>
 
+You can customize CSEntry's behavior by creating a <link program_information_file_pff.hgt>PFF file</link>. You can then use the PFF file as a command line parameter for CSEntry.exe. For example, if you name your PFF file MySurvey.pff, then you run the data entry application by invoking:
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<indent><font monospace>"C:\Program Files (x86)\CSPro <definition version />\CSEntry.exe" MySurvey.pff</font></indent>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+This assumes that CSPro was installed in the default directory. Your PFF file must have a .pff extension.
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
- can customize CSEntry's behavior for any data entry computer by creating
- a</font> <a href="program_information_file_pff.html"><font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">PFF
- file</font></a><font style="font-family: Arial; font-size: 10pt;" face="Arial"
-						 size="2">. You can then use the PFF file as a
- command line parameter for CSEntry.exe (the associated filename of this
- executable). For example, if you name your PFF file &quot;MySurvey.pff&quot;,
- then you can launch CSEntry by invoking:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><b><font style="font-family: 'Courier New';
-									 font-size: 10pt; font-weight: bold;"
-									 face="Courier New" size="2">C:\Program
- Files\CSPro 7.0\CSEntry.exe MySurvey.pff</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- assumes that CSEntry was installed in the default directory. Your PFF
- file must have a &quot;.pff&quot; extension.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
- can create a PFF file in one of two ways:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">•&#160;</font></b><font style="font-family: Arial;
-													 font-size: 10pt;"
-													 face="Arial" size="2">Create
- it yourself using a text editor (such as Notepad or Wordpad),</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•&#160;</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Simply
- run CSEntry once, and a PFF file will be automatically created for you—it
- will be placed in the same folder as your data entry application, and
- it will have the same name as your application, but with a &quot;.pff&quot;
- extension instead of &quot;.ent&quot;. For example, if your data entry
- application was named &quot;MySurvey.ent&quot;, the system-generated PFF
- would be called &quot;MySurvey.pff&quot;.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- following section shows the options available to you for a CSEntry PFF
- file. Please note that a PFF file is not case sensitive, so you may use
- any combination of upper and lower case text.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 face="Courier New" size="2">[Run Information]</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">Version=CSPro 7.0</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">AppType=Entry</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 face="Courier New" size="2">[DataEntryInit]</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">OperatorID=John</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">StartMode=add</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2"><font style="font-family: 'Courier New'; font-size: 10pt;"
-					 face="Courier New" size="2">L</font>ock=Verify,Stats</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">FullScreen=Yes</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New';"><span style="font-family: 'Courier New';">NoFileOpen=Yes</span></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New';">Interactive=ask</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New';">Language=Lingala</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 face="Courier New" size="2">[Files]</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">Application=MyCensus.ent</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New';">InputData=.\Prov12\Dist05.dat</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt; font-family: 'Courier New';">CommonStore=.\MySettings.db</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 face="Courier New" size="2">[ExternalFiles]</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">LOOKUP_DCF=.\Prov12.lup</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 face="Courier New" size="2">[Parameters]</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">Parameter=your choice</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 face="Courier New" size="2">[DataEntryIDs]</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">Province=12</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">District=05</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
- <b><font style="font-weight: bold;">[Run Information]</font></b> block
- is required and must appear exactly as shown in the example above.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">[DataEntryInit]</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">block, as is all its possible
- entries, is optional. It gives you the opportunity to choose the following
- run-time characteristics:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;</font><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">OperatorID=John</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&quot;John&quot;
- will be used as the operator ID for the purposes of logging operator statistics.
- If this line is not present but your data entry application has been set
- to ask for this, then CSEntry will prompt the operator for one at run
- time.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">StartMode=add</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">CSEntry
- will drop immediately into add mode. If this line is not present, one
- of two things will occur: [1] if the data file does not exist, then the
- operator will be dropped into add mode; or [2] if the data file does exist,
- then CSEntry will wait for the operator to choose their desired mode.
- (Note that their choices may be constrained due to options indicated in
- &quot;Lock,&quot; the next feature). The other two permissible entries
- are &quot;modify&quot; or &quot;verify&quot;.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- start mode is modify, the word modify may be followed by a semicolon and
- the id of an existing case, for example:</font> <b><font style="font-family: Arial;
-															 font-size: 10pt;
-															 font-weight: bold;"
-															 face="Arial"
-															 size="2">StartMode=modify;0102003</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">.
- This will open CSEntry in modify mode and open the case indicated by the
- id. If start mode is add, the word add may be followed by a semicolon
- and the id of an existing case that has been partially added. This will
- open CSEntry in add mode and open the partially added case to continue
- adding.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Lock=Verify,Stats</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- option tells CSEntry which modes an operator will not have access to.
- Therefore, in this example the operator can not enter Verify mode, nor
- see data file statistics. This parameter can be any combination of &quot;Add&quot;,
- &quot;Modify&quot;, &quot;Verify&quot;, and &quot;Stats&quot;, separated
- by commas.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">FullScreen=Yes</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">CSEntry
- will open the application in full screen mode, with no case tree on the
- left. The parameter &quot;NoMenus&quot; will open CSEntry in a tablet-friendly
- mode whereby the case tree and the CSEntry menus and title bar are not
- shown.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">NoFileOpen=Yes</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">From
- within CSEntry, the system will not permit the operator to open another
- data file if this is set to &quot;Yes&quot;. However, if you fail to name
- the required files in the PFF file, the operator will, initially, have
- to supply them. But once they have been chosen, the operator can not open
- another file from within CSEntry.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Interactive=Both,Lock</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">CSEntry
- will display both out-of-range and errors generated from the</font> <a
-	 href="errmsg_function.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">errmsg command</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">in
- interactive mode. This setting is locked, so the operator cannot change
- it. The parameter &quot;Both&quot; can be replaced with &quot;Errmsg&quot;
- error message only, &quot;Range&quot; out of range only, &quot;Ask&quot;
- operator will be asked what type of messages to display, or &quot;Off&quot;
- interactive mode disabled. The parameter &quot;Lock&quot; is optional.
- If it is not present, the operator can change the setting using the Options/Interactive
- Edit Options menu item. &quot;Lock&quot; is ignored for &quot;Off&quot;
- (always locked). If the Interactive line is not present, &quot;Ask&quot;
- is assumed.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-weight: bold;"><span style="font-weight: bold;">Language</span>=Lingala</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">If
- running a <a href="capi_features.html">CAPI application</a>, this option
- specifies the starting language of the question text. The parameter must
- match the name of the language <a href="define_languages.html">specified</a>
- in the question text editor.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
- <b><font style="font-weight: bold;">[Files]</font></b> block is required,
- as is the &quot;Application&quot; entry within it.</p>
-<ul style="list-style: disc;">
-	<li><p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&quot;Application&quot;
-	 names the data entry application you have developed.</p></li>
-	<li><p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&quot;InputData&quot;
-	 is optional, and names the data file you will be creating, modifying,
-	 or verifying via this data entry application. If you do not name the
-	 data file to work on, CSEntry will prompt the operator to supply one.
-	 If the operator fails to provide one, CSEntry will not run.</p></li>
-	<li><p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&quot;CommonStore&quot;
-	 is optional, and if you use the <a href="Loadsetting_Function.html">loadsetting</a>
-	 or <a href="Savesetting_Function.html">savesetting</a> functions
-	 in your program, this file overrides the default location where these
-	 settings are saved.</p></li>
-</ul>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- the</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-					 face="Arial" size="2">[ExternalFiles]</font></b> <font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">block
- is present, it means that a second dictionary was linked to the data entry
- application. In the example above, &quot;LOOKUP_DCF&quot; is the internal
- (unique) dictionary name, and &quot;Prov12.lup&quot; is the name of the
- data file which contains the</font> <a href="lookup_files.html"><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">lookup codes.</font></a> <font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- there is a second dictionary linked to your application and you fail to
- name it in your PFF file, the operator will be prompted to provide it.
- If the operator fails to do so, CSEntry will not run.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">If
- you would like to pass in a command-line parameter to your data entry
- program, you would do so via the <span style="font-weight: bold;">[Parameters]</span>
- block, using the Parameter command. The parameter can be any length, although
- the alphanumeric variable that retrieves the value in your program (via
- the <a href="sysparm_function.html">sysparm function</a>) must be large
- enough to accommodate it. Once the parameter string is retrieved, it can
- be parsed for further usage.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- [</font><b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-					 face="Arial" size="2">DataEntryIDs</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">]
- block is for use with any persistent IDs you have defined. CSEntry will
- assign the specified values to the indicated persistent fields when a
- new data file is created. This feature allows automatic definition of
- persistent fields, such as batch ids. However, if you provide values and
- run this on an already-existing data file, and the PFF file values do
- not match the values in the data entry file, the PFF values will be ignored.
- The syntax is as follows:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">&lt;unique-dict-name&gt;=&lt;numeric-value&gt;</font></p>
-</body>
-</html>
+You can create a PFF file in one of two ways: either [1] create one with a text editor (such as Notepad or Wordpad), or [2] have it generated automatically for you by launching your data entry application from within the CSPro Designer. The file will have the same name as your application, but with a .pff extension instead of .ent. For example, if your data entry application was named MySurvey.ent, the generated PFF would be named MySurvey.pff.
+
+The following section shows the options available to you in a CSEntry PFF file. A PFF file is not case sensitive, so you can use any combination of upper and lower case text.
+
+<pff>
+[Run Information]
+Version=CSPro <definition version />
+AppType=Entry
+
+[DataEntryInit]
+OperatorID=John
+StartMode=Add
+AutoAdd=Yes
+FullScreen=No
+NoFileOpen=No
+Lock=Verify,Stats
+Interactive=Ask
+Language=LINGALA
+CaseListingFilter=12
+ShowInApplicationListing=Always
+
+[Files]
+Application=.\MySurvey.ent
+InputData=.\MyData.csdb
+CommonStore=.\MySettings.db
+
+[ExternalFiles]
+LOOKUP_DICT=.\LookupFile.dat
+
+[Parameters]
+Parameter=your choice
+OnExit=.\Menu.pff
+
+[DataEntryIDs]
+PROVINCE=12
+DISTRICT=05
+</pff>
 
 
-<html><!---♻---></html>
+<subheader>[Run Information]</subheader>
+
+The <pffcolor>[Run Information]</pffcolor> block is required and must appear exactly as shown in the example above.
+
+
+<subheader>[DataEntryInit]</subheader>
+
+The <pffcolor>[DataEntryInit]</pffcolor> block is optional. It gives you the opportunity to customize the following runtime characteristics:
+
+<list>
+	<li><pffcolor>OperatorID</pffcolor>=specifies the <link getoperatorid_function.hgt>operator ID</link> for the purposes of logging <link operator_statistics_file_log.hgt>operator statistics</link>. If this line is not present but your data entry application has been set to <link change_data_entry_options.hgt>ask for this</link>, CSEntry will prompt the operator for one at runtime.</li>
+	<li><pffcolor>StartMode</pffcolor>=determines the mode in which CSEntry starts. The possible options are: <b>Add</b>, <b>Modify</b>, and <b>Verify</b>. If this line is not present, one of two things will occur: if the data file does not exist, then the program will start in <b>Add</b> mode; if the data file does exist, then CSEntry will wait for the operator to choose their desired mode. The operator's choices may be constrained due to options indicated in the <pffcolor>Lock</pffcolor> feature.
+	~!~You can also specify the case upon which to act by adding a semicolon and the case IDs of an existing case (for example: <pffcolor>StartMode</pffcolor>=<b>Modify</b>;010502). This will open CSEntry in <b>Modify</b> mode and open the case indicated by the ID. If the <pffcolor>StartMode</pffcolor> conflicts with the <pffcolor>Lock</pffcolor> parameter settings, then the <pffcolor>StartMode</pffcolor> parameter will take precedence.</li>
+	<li><pffcolor>AutoAdd</pffcolor>=indicates whether, while in <b>Add</b> mode, CSEntry should continuously add cases, meaning that after a case is added, CSEntry will begin adding another case. The possible options are: <b>Yes</b> (default) and <b>No</b>.</li>
+	<li><pffcolor>FullScreen</pffcolor>=determines whether CSEntry will open the application in full screen mode, with no case tree on the left. The possible options are: <b>Yes</b>, <b>No</b> (default), and <b>NoMenus</b>. The parameter <b>NoMenus</b> will open CSEntry in a tablet-friendly mode whereby the case tree and the CSEntry menus and title bar are not shown.</li>
+	<li><pffcolor>NoFileOpen</pffcolor>=determines whether CSEntry will permit the operator to open another data file while running a data entry application. The possible options are: <b>Yes</b> (default) and <b>No</b>.</li>
+	<li><pffcolor>Lock</pffcolor>=indicates what CSEntry modes the operator cannot access. The possible options are:~!~~!~
+		<list>
+			<li><b>Add</b>: The operator cannot add new cases.</li>
+			<li><b>Modify</b>: The operator cannot modify existing cases.</li>
+			<li><b>Verify</b>: The operator cannot verify existing cases.</li>
+			<li><b>Stats</b>: The operator cannot view <link operator_statistics_file_log.hgt>operator statistics</link>.</li>
+			<li><b>Delete</b>: The operator cannot delete cases.</li>
+			<li><b>CaseListing</b>: On mobile CSEntry, the Case Listing screen will be bypassed.</li>
+		</list>
+	Multiple modes can be specified by listing each mode, separated by a comma.
+	</li>
+	<li><pffcolor>Interactive</pffcolor>=specifies the default way that CSEntry runs in <link CSEntry::edit_interactively.hgt>Interactive Edit</link> mode. The possible options are:~!~~!~
+		<list>
+			<li><b>Ask</b>: The default option, CSEntry will ask the operator how to run Interactive Edit.</li>
+			<li><b>Both</b>: CSEntry will display both out-of-range messages and errors generated from the <logiccolor>errmsg</logiccolor> function.</li>
+			<li><b>ErrMsg</b>: CSEntry will only display errors generated from the <logiccolor>errmsg</logiccolor> function.</li>
+			<li><b>Range</b>: CSEntry will only display out-of-range message.</li>
+			<li><b>Off</b>: Interative Edit mode will be disabled.</li>
+		</list>
+	If the mode is followed by a comma and <b>Lock</b>, then the mode cannot be changed by the operator. Otherwise, unless the option is <b>Off</b>, the operator can change the mode from within CSEntry.
+		</li>
+	<li><pffcolor>Language</pffcolor>=when running a <link capi_features.hgt>CAPI application</link>, this option specifies the initial language of the program. The parameter must match the name of the language specified in the question text editor.</li>
+	<li><pffcolor>CaseListingFilter</pffcolor>=filters the cases in the data file shown to the operator. The filter string can use regular expressions. If you have multiple operators entering data to the same data file, this can be a way to prevent operators from interacting with data entered by other operators. The filter is matched against the IDs of each case.</li>
+	<li><pffcolor>ShowInApplicationListing</pffcolor>=determines whether the application associated with this PFF is displayed on the mobile Entry Applications screen. The possible options are: <b>Always</b> (default), <b>Never</b>, and <b>Hidden</b>. Operators must manually elect to show hidden applications, whereas PFFs with the <b>Never</b> option will never be shown.</li>
+</list>
+
+
+<subheader>[Files]</subheader>
+
+The <pffcolor>[Files]</pffcolor> block is required. A description of the files, not all of which have to be specified, is as follows:
+
+<list>
+	<li><pffcolor>Application</pffcolor>=the name of the data entry application that you created.</li>
+	<li><pffcolor>InputData</pffcolor>=the data file that an operator will be creating, modifying, or verifying with this data entry application.</li>
+	<li><pffcolor>CommonStore</pffcolor>=if you use the <logiccolor>loadsetting</logiccolor> or <logiccolor>savesetting</logiccolor> functions in your program, this file overrides the default location where these settings are saved.</li>
+</list>
+
+
+<subheader>[ExternalFiles]</subheader>
+
+If the <pffcolor>[ExternalFiles]</pffcolor> block is present, it means that a second (or more) dictionary was linked to the data entry application. In the example above, LOOKUP_DICT is the dictionary name, and LookupFile.dat is the name of the data file that contains the <link lookup_files.hgt>lookup codes</link>.
+
+
+<subheader>[Parameters]</subheader>
+
+The <pffcolor>[Parameters]</pffcolor> block is optional. This section defines parameters for the data entry run.
+
+<list>
+ 	<li><pffcolor>Parameter</pffcolor>=allows you to pass in a string to your program. The parameter can be any length, although the string that retrieves the value in your program (via the <logiccolor>sysparm</logiccolor> function) must be large enough to accommodate it. Once the parameter is retrieved, it can be parsed by your program for further usage.</li>
+ 	<li><pffcolor>OnExit</pffcolor>=specifies a PFF file to run after the data entry program closes. This can be useful, for example, if you want to relaunch a menu program after collecting data.</li>
+</list>
+
+
+<subheader>[DataEntryIDs]</subheader>
+
+The <pffcolor>[DataEntryIDs]</pffcolor> block is for use with any <link change_field_properties.hgt>persistent IDs</link> that you have defined. CSEntry will assign the specified values to the indicated persistent fields when a new data file is created. This feature allows automatic definition of persistent fields, such as geographic IDs. If you provide values and run this on an existing data file, and the PFF file values do not match the values in the data file, then the PFF values will be ignored. The syntax is as follows:
+
+<logicsyntax>
+<arg>id_item_name</arg>=<arg>initial_value</arg>
+</logicsyntax>

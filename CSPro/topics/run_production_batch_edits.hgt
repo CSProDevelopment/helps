@@ -1,290 +1,78 @@
 ﻿<title>Run Production Batch Edits</title>
 
+You can customize CSBatch's behavior by creating a <link program_information_file_pff.hgt>PFF file</link>. You can then use the PFF file as a command line parameter for CSBatch.exe. For example, if you name your PFF file MyEdits.pff, then you run the batch edit application by invoking:
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<indent><font monospace>"C:\Program Files (x86)\CSPro <definition version />\CSBatch.exe" MyEdits.pff</font></indent>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+This assumes that CSPro was installed in the default directory. Your PFF file must have a .pff extension.
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
- can customize CSBatch's behavior by creating a</font> <a href="program_information_file_pff.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">PFF
- file</font></a><font style="font-family: Arial; font-size: 10pt;" face="Arial"
-						 size="2">. You can then use the PFF file as a
- command line parameter for CSBatch.exe. For example, if you name your
- PFF file &quot;MyEdits.pff&quot;, then you can launch CSBatch with this
- application by invoking:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">C:\Program Files (x86)\CSPro 7.0\CSBatch.exe MyEdits.pff</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- assumes that CSBatch was installed in the default directory. Your PFF
- file</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-						 face="Arial" size="2">must</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">have a &quot;.pff&quot; extension.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
- can create a PFF file in one of two ways:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -9.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" color="#000000"
-									 face="Arial" size="2">•</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">Create it yourself using a text editor (such as Notepad
- or Wordpad)</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -9.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" color="#000000"
-									 face="Arial" size="2">•&#160;</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Simply run CSBatch once, and a PFF file will be</font> <font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">automatically
- created for you—it will be placed in the same folder as your batch application,
- and it will have the same name as your application, but with a &quot;.pff&quot;
- extension instead of &quot;.bch&quot;. For example, if your batch application
- was named &quot;MyEdits.bch&quot;, the system-generated PFF would be called
- &quot;MyEdits.pff&quot;.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- following section shows the options available to you in a CSBatch PFF
- file. Please note that a PFF file is not case sensitive, so you may use
- any combination of upper and lower case text.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">[Run Information]</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">Version=CSPro 7.0</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">AppType=Batch</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">[Files]</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">Application=.\MyEdit.bch</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">InputData=.\p12d05.dat</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">OutputData=.\p12d05e.dat</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">Listing=.\MyEdit.lst</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">WriteData=.\ViewMe.dat</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt; font-family: 'Courier New';">ImputeFreqs=.\MyEdit.freq.lst</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">CommonStore=.\MySettings.db</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">[ExternalFiles]</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">LOOKUP_DCF=.\Prov12.lup</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">[Parameters]</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2">ViewListing=Always</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 face="Courier New" size="2"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">V</font>iewResults=Yes</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: 'Courier New';" face="Courier New"><span
-	 style="font-family: 'Courier New';">ListingWidth</span>=80</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt; font-family: 'Courier New';"><span style="font-family: 'Courier New';">MessageWrap=No</span></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt; font-family: 'Courier New';">ErrmsgOverride=No</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt; font-family: 'Courier New';">InputOrder=Sequential</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt; font-family: 'Courier New';">Parameter=your
- choice</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- [Run Information] block is required and must appear exactly as shown in
- the example above.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- [Files] block is required and defines all files used in the batch run.
- A description of the files is as follows:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;Application
- = the batch edit application you created</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;InputData
- = the data file against which the batch edit program will run; this file
- will not be modified during the run</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;OutputData
- = the revised/corrected input data file will be saved as this file</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;Listing
- = a report of the batch operation</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;WriteData
- = if there is one or more</font> <a href="write_function.html"><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">write function</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">in
- your batch program, the text of these statements will be written here</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2"><b><font style="font-weight: bold;">•</font></b></font>&#160;ImputeFreqs
- = if you have any <a href="impute_function.html">impute statements</a>
- in your batch program, the results of these statements will be written
- here</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-weight: bold;">•</font></b>&#160;CommonStore
- = if you use the <a href="Loadsetting_Function.html">loadsetting</a>
- or <a href="Savesetting_Function.html">savesetting</a> functions
- in your program, this file overrides the default location where these
- settings are saved</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- the [</font><b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-						 face="Arial" size="2">ExternalFiles</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">]
- block is present, it means that a second [or more] dictionary was linked
- to the data entry application. In the example above, &quot;LOOKUP_DCF&quot;
- is the internal (unique) dictionary name, and &quot;Prov12.lup&quot; is
- the name of the data file that contains the</font> <a href="lookup_files.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">lookup
- codes</font></a><font style="font-family: Arial; font-size: 10pt;" face="Arial"
-						 size="2">. If there is a second dictionary linked
- to your application and you fail to name it in your PFF file, the operator
- will be prompted to provide it.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- [</font><b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-					 face="Arial" size="2">Parameters</font></b><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">] block is optional. This
- section defines parameters for the batch run.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">ViewListing</font></b> <font style="font-family: Arial; font-size: 10pt;"
-											 face="Arial" size="2">determines
- whether you see the batch run report. If this entry is missing or set
- to &quot;ViewListing=Always&quot;, then you will see the generated report.
- Other available options are &quot;OnError&quot;, in which case you will
- see the report listing only if an error occurred during the run, or &quot;Never&quot;,
- in which case you will never be shown the generated report.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-weight: bold;">ViewResults</font></b> determines whether
- or not the write or impute file(s) are displayed with TextViewer at the
- end of the run. The available choices are &quot;Yes&quot; or &quot;No.&quot;
- If the &quot;ViewResults=&quot; entry is missing, the resultant data file(s)
- will be displayed by default. For more information on these files, see
- <a href="run_a_batch_edit_application.html">Run a Batch Edit Application</a>.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><span
-	 style="font-weight: bold;">ListingWidth</span> <span style="margin-top: 0.00pt;
-															 margin-bottom: 0.00pt;
-															 text-align: left;">allows
- you to control the number of characters outputted to the listing file
- before forcing the start of a new line. This is set to 80 characters by
- default. &#160;If your screen resolution and/or printer permits, it may
- be useful to increase the width of the listing file.</span></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><span
-	 style="font-weight: bold;">MessageWrap</span> <span>determines whether
- or not summary messages displayed at the end of a listing file will be
- outputted on several lines when they are too long to fit on one line.
- The default option is no, in which case the messages are truncated so
- that they fit on one line.</span></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><span
-	 style="font-weight: bold;">ErrmsgOverride</span></b> allows you to
- override the default behavior of the <a href="errmsg_function.html">errmsg
- function</a>. The override only affects errmsg functions used in the code
- without a case or summary specifier. &quot;No&quot; maintains the default
- behavior (displaying the messages for each case, as well as in the summary).
- &quot;Summary&quot; only displays the message in the summary. &quot;Case&quot;
- displays the message for each case but not in the summary.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: bold;">InputOrder<span style="font-weight: normal;">
- allows you to override the default order in which cases are processed
- in a data file. The default option, &quot;Sequential,&quot; means that
- cases will be processed from the first case to the last case, in file
- order. The option &quot;Indexed&quot; overrides this order and cases will
- be processed in alphabetical order of the case IDs. The data file can
- contain duplicates case IDs if processed in sequential order, but not
- in indexed order.</span></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-weight: bold;">Parameter</font></b> allows you to pass
- in an alpha-numeric string to your program. The parameter can be any length,
- although the alphanumeric string that retrieves the value in your program
- (via the <a href="sysparm_function.html">sysparm function</a>) must be
- large enough to accommodate it. Once the parameter string is retrieved,
- it can be parsed for further usage.</p>
-</body>
-</html>
+You can create a PFF file in one of two ways: either [1] create one with a text editor (such as Notepad or Wordpad), or [2] have it generated automatically for you by launching your batch application from within the CSPro Designer. The file will have the same name as your application, but with a .pff extension instead of .bch. For example, if your batch application was named MyEdits.bch, the generated PFF would be named MyEdits.pff.
+
+The following section shows the options available to you in a CSBatch PFF file. A PFF file is not case sensitive, so you can use any combination of upper and lower case text.
+
+<pff>
+[Run Information]
+Version=CSPro <definition version />
+AppType=Batch
+
+[Files]
+Application=.\MyEdits.bch
+InputData=.\MyInputData.dat
+OutputData=.\MyOutputData.dat
+Listing=.\MyEdits.lst
+ImputeFreqs=.\MyEdits.freq.lst
+WriteData=.\WriteMessages.txt
+CommonStore=.\MySettings.db
+
+[ExternalFiles]
+LOOKUP_DICT=.\LookupFile.dat
+
+[Parameters]
+ViewListing=Always
+ViewResults=Yes
+ListingWidth=80
+MessageWrap=No
+ErrmsgOverride=No
+InputOrder=Sequential
+Parameter=your choice
+</pff>
 
 
-<html><!---♻---></html>
+<subheader>[Run Information]</subheader>
+
+The <pffcolor>[Run Information]</pffcolor> block is required and must appear exactly as shown in the example above.
+
+
+<subheader>[Files]</subheader>
+
+The <pffcolor>[Files]</pffcolor> block is required. A description of the files, not all of which have to be specified, is as follows:
+
+<list>
+	<li><pffcolor>Application</pffcolor>=the name of the batch edit application that you created.</li>
+	<li><pffcolor>InputData</pffcolor>=the data file against which the batch edit program will run. This file will not be modified during the run.</li>
+	<li><pffcolor>OutputData</pffcolor>=the revised/corrected input data will be saved as this file.</li>
+	<li><pffcolor>Listing</pffcolor>=a report of the batch operation.</li>
+	<li><pffcolor>ImputeFreqs</pffcolor>=if you have any <logiccolor>impute</logiccolor> function calls in your program, the results of these statements will be written to this file.</li>
+	<li><pffcolor>WriteData</pffcolor>=if there are one or more <logiccolor>write</logiccolor> function calls in your program, the text of these statements will be written to this file.</li>
+	<li><pffcolor>CommonStore</pffcolor>=if you use the <logiccolor>loadsetting</logiccolor> or <logiccolor>savesetting</logiccolor> functions in your program, this file overrides the default location where these settings are saved.</li>
+</list>
+
+
+<subheader>[ExternalFiles]</subheader>
+
+If the <pffcolor>[ExternalFiles]</pffcolor> block is present, it means that a second (or more) dictionary was linked to the batch application. In the example above, LOOKUP_DICT is the dictionary name, and LookupFile.dat is the name of the data file that contains the <link lookup_files.hgt>lookup codes</link>.
+
+
+<subheader>[Parameters]</subheader>
+
+The <pffcolor>[Parameters]</pffcolor> block is optional. This section defines parameters for the batch run.
+
+<list>
+	<li><pffcolor>ViewListing</pffcolor>=determines whether you see the batch run report. If this entry is missing or set to <b>Always</b>, then you will see the generated report. Other available options are <b>OnError</b>, in which case you will see the listing report only if an error occurred during the run, or <b>Never</b>, in which case you will never be shown the generated report.</li>
+	<li><pffcolor>ViewResults</pffcolor>=determines whether or not the impute and/or write file are displayed in Text Viewer at the end of the run. The available choices are <b>Yes</b> or <b>No</b>. If the entry is missing, the resultant file(s) will be displayed by default. For more information on these files, see <topic run_a_batch_edit_application.hgt />.</li>
+	<li><pffcolor>ListingWidth</pffcolor>=allows you to control the number of characters outputted to the listing file before forcing the start of a new line. This is set to 80 characters by default. If your screen resolution and/or printer permits, it may be useful to increase the width of the listing file.</li>
+	<li><pffcolor>MessageWrap</pffcolor>=determines whether or not summary messages displayed at the end of a listing file will be outputted on several lines when they are too long to fit on one line. The default option is <b>No</b>, in which case the messages are truncated so that they fit on one line.</li>
+	<li><pffcolor>ErrmsgOverride</pffcolor>=allows you to override the default behavior of the <logiccolor>errmsg</logiccolor> function. The override only affects <logiccolor>errmsg</logiccolor> functions used in the code without a <logiccolor>case</logiccolor> or <logiccolor>summary</logiccolor> specifier. The option <b>No</b> maintains the default behavior (displaying the messages for each case, as well as in the summary). The option <b>Summary</b> only displays the message in the summary. The option <b>Case</b> displays the message for each case but not in the summary.</li>
+	<li><pffcolor>InputOrder</pffcolor>=allows you to override the default order in which cases are processed in a data file. The default option, <b>Sequential</b>, means that cases will be processed from the first case to the last case, in file order. The option <b>Indexed</b> overrides this order and cases will be processed in alphabetical order of the case IDs. The data file can contain duplicates case IDs if processed in sequential order, but not in indexed order.</li>
+	<li><pffcolor>Parameter</pffcolor>=allows you to pass in a string to your program. The parameter can be any length, although the string that retrieves the value in your program (via the <logiccolor>sysparm</logiccolor> function) must be large enough to accommodate it. Once the parameter is retrieved, it can be parsed by your program for further usage.</li>
+</list>
