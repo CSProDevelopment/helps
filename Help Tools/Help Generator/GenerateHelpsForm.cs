@@ -34,7 +34,7 @@ namespace Help_Generator
 
 		private bool DoGenerateChm { get { return ( _generationType != GenerationType.CompileOnly ); } }
 		private bool DoGenerateWebsite { get { return ( _generationType != GenerationType.CompileOnly ) && ( _generationType != GenerationType.GenerateChmAndClose ); } }
-		private bool DoGeneratePdf { get { return ( _generationType != GenerationType.CompileOnly ) && ( _generationType != GenerationType.GenerateChmAndClose ); } }
+		private bool DoGeneratePdf { get { return _helpComponents.settings.CreatePdf && ( _generationType != GenerationType.CompileOnly ) && ( _generationType != GenerationType.GenerateChmAndClose ); } }
 
         public GenerateHelpsForm(HelpComponents helpComponents,GenerationType generationType)
         {
@@ -306,7 +306,7 @@ namespace Help_Generator
 
         private void ProcessTopics()
         {
-            using( TextWriter twPdf = ( _helpComponents.settings.CreatePdf ? new StreamWriter(_outputPdfTopicsFilename,false,Encoding.UTF8) : null ) )
+            using( TextWriter twPdf = ( DoGeneratePdf ? new StreamWriter(_outputPdfTopicsFilename,false,Encoding.UTF8) : null ) )
             {
                 if( twPdf != null )
                     twPdf.WriteLine(PdfHtmlHeader);
@@ -409,6 +409,9 @@ namespace Help_Generator
 			{
 				_chmTopicCompilerSettings.UsedImageFilenames.Add(image.Filename);
 				_websiteTopicCompilerSettings.UsedImageFilenames.Add(image.Filename);
+
+				if( DoGeneratePdf )
+					File.Copy(image.Filename,Path.Combine(Path.GetDirectoryName(_outputPdfTopicsFilename),Path.GetFileName(image.Filename)));
 			}
 			// ♻ ( ending here ) ♻
         }
@@ -500,12 +503,6 @@ namespace Help_Generator
 
         private void GeneratePdf()
         {
-            if( !_helpComponents.settings.CreatePdf )
-            {
-                _backgroundThread.ReportProgress(0,"PDF generation skipped...");
-                return;
-            }
-
             _backgroundThread.ReportProgress(0,"Processing PDF cover page...");
             string outputPdfCoverFilename = Path.Combine(_temporaryFilesPath,"_output_pdf_cover.html");
 
