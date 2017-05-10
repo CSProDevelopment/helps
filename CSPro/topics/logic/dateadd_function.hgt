@@ -1,108 +1,39 @@
 ﻿<title>DateAdd Function</title>
 <context logic_help_dateadd />
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<logicsyntax>
+i = dateadd(<arg>start_date</arg>,<arg>period</arg>『,<arg>period_type</arg>』);
+</logicsyntax>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<subheader>Description</subheader>
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New';">i = <b><font style="font-weight: bold;"
-												 color="#0000FF">dateadd</font></b>(numeric-start-date,numeric-period<font
-	 color="#FF00FF">[</font>,string-expression<font color="#FF00FF">]</font>);
- &#160;<span style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#FF00FF" face="Arial"
-	 size="2">&#160;[ ]</font> <font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">indicates
- that this part is optional.</font></span></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
- <span style="font-weight: bold;">dateadd</span> function calculates a
- new date by adding a period to a starting date. The dates must be passed
- in YYYYMMDD format. If no year is present then the current or previous
- year is assumed in order satisfy the condition that the date is not in
- the future (based on the computer's system clock). An optional third parameter
- indicates the format of the period, which can be:</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<table style="left: 0px; top: 233px;" cellspacing="0" width="599">
-	<col style="width: 9.683%;" />
-	<col style="width: 90.317%;" />
-	<tr style="vertical-align: top;">
-		<td style="width: 9.683%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-weight: bold; font-size: 10pt;">&quot;d&quot;</p></td>
-		<td style="width: 90.317%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-size: 10pt;">days (default)</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 9.683%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-weight: bold; font-size: 10pt;">&quot;m&quot;</p></td>
-		<td style="width: 90.317%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-size: 10pt;">months</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 9.683%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-weight: bold; font-size: 10pt;">&quot;y&quot;</p></td>
-		<td style="width: 90.317%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-size: 10pt;">years</p></td>
-	</tr>
-</table>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Return Value:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">The
- function returns a date calculated by adding the period to the starting
- date. If the starting date cannot be processed, the function returns DEFAULT.</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: bold;"><b><font style="font-weight: bold;">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New';"><font color="#000000"><font color="#0000FF">dateadd</font>(<font
-	 color="#FF0000">20121225</font>,<font color="#FF0000">7</font>); <font
-	 color="#008000">//&#160;returns 20130101<br />
-</font><br />
-<font color="#0000FF">dateadd</font>(<font color="#FF0000">20120228</font>,<font
-	 color="#FF0000">1</font>); <font color="#008000">//&#160;returns 20120229<br />
-</font><font color="#0000FF">dateadd</font>(<font color="#FF0000">20130228</font>,<font
-	 color="#FF0000">1</font>); <font color="#008000">//&#160;returns 20130301<br />
-</font><br />
-<font color="#0000FF">dateadd</font>(<font color="#FF0000">20040820</font>,<font
-	 color="#FF0000">3</font>,<font color="#FF00FF">&quot;m&quot;</font>);
- <font color="#008000">//&#160;returns 20041120<br />
-</font><font color="#0000FF">dateadd</font>(<font color="#FF0000">20040820</font>,<font
-	 color="#FF0000">3</font>,<font color="#FF00FF">&quot;y&quot;</font>);
- <font color="#008000">//&#160;returns 20070820<br />
-</font><br />
-<font color="#0000FF">dateadd</font>(<font color="#FF0000">20001010</font>,-<font
-	 color="#FF0000">3</font>,<font color="#FF00FF">&quot;m&quot;</font>);
- <font color="#008000">//&#160;returns 20000710</font></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New'; color: #008000;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: bold;"><b><span style="font-weight: bold;">See also:</span></b>
- <span style="font-weight: normal;"><a href="Datediff_Function.html">Datediff
- Function</a>,</span> <span style="font-weight: normal;"><a href="Datevalid_Function.html"
-															 style="font-weight: normal;">Datevalid
- Function</a>,</span> <a href="sysdate_function.html" style="font-weight: normal;">Sysdate
- Function</a></p>
-</body>
-</html>
+The <logiccolor>dateadd</logiccolor> function calculates a new date by adding a period to a starting date. The numeric expression <arg>start_date</arg> must be in YYYYMMDD (year/month/day) format. If no year is present, then the current or previous year is assumed in order satisfy the condition that the date is not in the future (based on the computer's system clock). The numeric expression <arg>period</arg> is the amount of time that is added to the starting date, and defaults to days. Alternatively, an optional string expression, <arg>period_type</arg>, modifies the period, and can be one of the following values:
 
+<indent><table 2 nowrap>
+	<cell><arg>period_type</arg></cell><cell><b>Description</b></cell>
+	<cell><logiccolor>"d"</logiccolor></cell><cell>days (default)</cell>
+	<cell><logiccolor>"m"</logiccolor></cell><cell>months</cell>
+	<cell><logiccolor>"y"</logiccolor></cell><cell>years</cell>
+</table></indent>
 
-<html><!---♻---></html>
+<subheader>Return Value</subheader>
+
+The function returns a date calculated by adding the period to the starting date. If the starting date cannot be processed, the function returns <logiccolor>default</logiccolor>.
+
+<subheader>Examples</subheader>
+
+<logic>
+dateadd(20121225,7);		// returns 20130101
+
+dateadd(20120228,1);		// returns 20120229
+dateadd(20130228,1);		// returns 20130301
+
+dateadd(20040820,3,"m");	// returns 20041120
+dateadd(20040820,3,"y");	// returns 20070820
+
+dateadd(20001010,-3,"m");	// returns 20000710
+</logic>
+
+<seealso datediff_function.hgt datevalid_function.hgt sysdate_function.hgt />

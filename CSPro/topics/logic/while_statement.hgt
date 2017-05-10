@@ -1,162 +1,28 @@
 ﻿<title>While Statement</title>
 <context logic_help_while />
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<logicsyntax>
+while <arg>condition</arg> do
+	// statements
+enddo;
+</logicsyntax>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<subheader>Description</subheader>
 
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">while</font></b> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">condition</font> <b><font style="font-family: 'Courier New';
-															 font-size: 10pt;
-															 font-weight: bold;"
-															 color="#0000FF"
-															 face="Courier New"
-															 size="2">do</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 color="#000000" face="Courier New" size="2">&#160;&#160;statements</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">enddo</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
-								 color="#000000" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 color="#000000" face="Arial" size="2">while</font></b> <font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">statement executes one or more statements repeatedly, in
- a loop, while the logical condition is true. The</font> <b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">while</font></b> <font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">and</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 color="#000000" face="Arial" size="2">enddo</font></b> <font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">keywords are required. Unlike the do statement</font><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">, the index is not automatically incremented. The user must
- therefore remember to save (or decrement) the controlling variable(s)
- as needed to ensure termination of the loop. The condition is evaluated
- on each repetition of the loop before any of the statements are executed.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">i =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#FF0000" face="Courier New" size="2">1</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">NumPeople =</font> <font style="font-family: 'Courier New';
-										 font-size: 10pt;" color="#0000FF"
-										 face="Courier New" size="2">totocc</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-		 size="2">(Person);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">while</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#000000" face="Courier New"
-													 size="2">i &lt;=</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-		 size="2">NumPeople</font> <font style="font-family: 'Courier New';
-										 font-size: 10pt;" color="#0000FF"
-										 face="Courier New" size="2">do</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#000000"
-															 face="Courier New"
-															 size="2">rel(i)
- =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-				 face="Courier New" size="2">notappl</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">and</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">sex(i) =</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#0000FF"
-															 face="Courier New"
-															 size="2">notappl
- and</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-					 color="#000000" face="Courier New" size="2">age(i)
- =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-				 face="Courier New" size="2">notappl</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;delete</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-		 size="2">(PERSON(i));</font> <font style="font-family: 'Courier New';
-											 font-size: 10pt;" color="#008000"
-											 face="Courier New" size="2">{remove
- &quot;blank&quot; population records}</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;else</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;&#160;&#160;i = i +</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#FF0000"
-															 face="Courier New"
-															 size="2">1</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-							 color="#008000" face="Courier New" size="2">{only
- increment i if we DON'T delete someone}</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;endif</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">enddo</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">See also:</font></b> <a href="do_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Do
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">,</font>
- <a href="for_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">For Statement</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="if_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">If Statement</font></a></p>
-</body>
-</html>
+The <logiccolor>while</logiccolor> statement executes one or more statements repeatedly, in a loop, while the logical <arg>condition</arg> is true. Unlike a <logiccolor>do</logiccolor> loop, a counter is not automatically incremented, so you must ensure the termination of the loop. The condition is evaluated on each repetition of the loop before any of the statements are executed.
 
+<subheader>Example</subheader>
 
-<html><!---♻---></html>
+<logic>
+setfile(inputFile,"Countries.txt");
+
+string countriesLine;
+
+while fileread(inputFile,countriesLine) do
+	// ...
+enddo;
+</logic>
+
+<seealso do_statement.hgt for_statement.hgt />
