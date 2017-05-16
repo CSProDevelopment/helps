@@ -8,7 +8,7 @@ using Colorizer;
 
 namespace Help_Generator
 {
-    partial class TextEditForm : Form, TextModifiedHandlerInterface
+	partial class TextEditForm : Form, TextModifiedHandlerInterface
     {
         private TextEditableInterface _textEditableInterface;
         private HelpComponents _helpComponents;
@@ -253,27 +253,7 @@ namespace Help_Generator
                 InsertTags("<center>","</center>");
 
             else if( command == "link" )
-            {
-                string link = "";
-
-                // if a topic's name is on the clipboard, automatically add it
-                if( Clipboard.ContainsText() )
-                {
-                    string clipboardText = Clipboard.GetText().Trim().ToLower();
-
-                    try
-                    {
-                        _helpComponents.preprocessor.GetTopic(clipboardText);
-                        link = " " + clipboardText;
-                    }
-
-                    catch( Exception )
-                    {
-                    }
-                }               
-                
-                InsertTags("<link" + link + ">","</link>");
-            }
+				InsertLink();
 
             else if( command == "list" )
                 InsertTags("<list>\n\t<li>","</li>\n</list>");
@@ -289,6 +269,9 @@ namespace Help_Generator
 
             else if( command == "pffcolor" )
                 InsertTags("<pffcolor>","</pffcolor>");
+
+			else if( command == "listbuilder" )
+				ListBuilder();
 
             else
                 throw new NotImplementedException();
@@ -307,5 +290,55 @@ namespace Help_Generator
             editControl.SelectionStart = selectionStart + startTag.Length;
             editControl.SelectionEnd = selectionEnd + startTag.Length;
         }
+
+		private void InsertLink()
+        {
+            string link = "";
+
+            // if a topic's name is on the clipboard, automatically add it
+            if( Clipboard.ContainsText() )
+            {
+                string clipboardText = Clipboard.GetText().Trim().ToLower();
+
+                try
+                {
+                    _helpComponents.preprocessor.GetTopic(clipboardText);
+                    link = " " + clipboardText;
+                }
+
+                catch( Exception )
+                {
+                }
+            }               
+                
+            InsertTags("<link" + link + ">","</link>");
+        }
+
+		private void ListBuilder()
+		{
+			string text = editControl.SelectedText + '\r';
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("<list>");
+
+            int lastPos = 0;
+            int newlinePos = 0;
+
+            while( ( newlinePos = text.IndexOf('\r',lastPos) ) >= 0 )
+            {
+                string line = text.Substring(lastPos,newlinePos - lastPos).Trim();
+
+                if( !String.IsNullOrWhiteSpace(line) )
+                    sb.AppendLine("\t<li>" + line + "</li>");
+
+                lastPos = newlinePos + 1;
+            }
+
+            sb.AppendLine("</list>");
+
+            editControl.BeginUndoAction();
+            editControl.ReplaceSelection(sb.ToString());
+            editControl.EndUndoAction();
+		}
     }
 }
