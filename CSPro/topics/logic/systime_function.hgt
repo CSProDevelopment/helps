@@ -4,7 +4,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = systime(『<arg>time_format</arg>』);
+i = systime(『<arg>time_format</arg>『,<arg>timestamp_value</arg>』』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -12,6 +12,8 @@ i = systime(『<arg>time_format</arg>』);
 The <logiccolor>systime</logiccolor> function returns the current system time as a six-digit integer in the form HHMMSS, where HH is the hour, MM are the minutes, and SS are the seconds.
 
 Optionally, a string expression <arg>time_format</arg> can be supplied, using a combination of HH, MM, and SS, to extract only part of the current system time.
+
+Passing an optional numeric expression, <arg>timestamp_value</arg>, means that instead of using the system time, the function will use the time, in the local machine's time zone, of a date/time value that came from <logiccolor>timestamp</logiccolor> function.
 
 The current time can be returned as a string using the edit function as follows:
 
