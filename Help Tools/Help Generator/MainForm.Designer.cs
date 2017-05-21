@@ -60,6 +60,8 @@
 			this.editSyntaxArgumentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
 			this.editPffColorMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+			this.listBuilderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.generateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.generateCompileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.generateCompileAllFilesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,8 +78,7 @@
 			this.helpSyntaxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
 			this.helpRegisterFileAssociationsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-			this.listBuilderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.filteredTopicsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -184,7 +185,8 @@
             this.viewTableOfContentsMenuItem,
             this.viewIndexMenuItem,
             this.viewTopicsMenuItem,
-            this.viewImagesMenuItem});
+            this.viewImagesMenuItem,
+            this.filteredTopicsMenuItem});
 			this.viewMenuItem.Name = "viewMenuItem";
 			this.viewMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.viewMenuItem.Text = "&View";
@@ -357,6 +359,19 @@
 			this.editPffColorMenuItem.Text = "PFF Color";
 			this.editPffColorMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
 			// 
+			// toolStripSeparator10
+			// 
+			this.toolStripSeparator10.Name = "toolStripSeparator10";
+			this.toolStripSeparator10.Size = new System.Drawing.Size(236, 6);
+			// 
+			// listBuilderToolStripMenuItem
+			// 
+			this.listBuilderToolStripMenuItem.Name = "listBuilderToolStripMenuItem";
+			this.listBuilderToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+			this.listBuilderToolStripMenuItem.Tag = "listbuilder";
+			this.listBuilderToolStripMenuItem.Text = "List Builder";
+			this.listBuilderToolStripMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+			// 
 			// generateMenuItem
 			// 
 			this.generateMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -485,18 +500,13 @@
 			this.helpRegisterFileAssociationsMenuItem.Text = "&Register File Associations";
 			this.helpRegisterFileAssociationsMenuItem.Click += new System.EventHandler(this.helpRegisterFileAssociationsMenuItem_Click);
 			// 
-			// toolStripSeparator10
+			// filteredTopicsMenuItem
 			// 
-			this.toolStripSeparator10.Name = "toolStripSeparator10";
-			this.toolStripSeparator10.Size = new System.Drawing.Size(236, 6);
-			// 
-			// listBuilderToolStripMenuItem
-			// 
-			this.listBuilderToolStripMenuItem.Name = "listBuilderToolStripMenuItem";
-			this.listBuilderToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-			this.listBuilderToolStripMenuItem.Tag = "listbuilder";
-			this.listBuilderToolStripMenuItem.Text = "List Builder";
-			this.listBuilderToolStripMenuItem.Click += new System.EventHandler(this.editCommandMenuItem_Click);
+			this.filteredTopicsMenuItem.Name = "filteredTopicsMenuItem";
+			this.filteredTopicsMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
+			this.filteredTopicsMenuItem.Size = new System.Drawing.Size(207, 22);
+			this.filteredTopicsMenuItem.Text = "&Filtered Topics";
+			this.filteredTopicsMenuItem.Click += new System.EventHandler(this.filteredTopicsMenuItem_Click);
 			// 
 			// MainForm
 			// 
@@ -574,6 +584,7 @@
         private System.Windows.Forms.ToolStripMenuItem generateCompileAllFilesMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
 		private System.Windows.Forms.ToolStripMenuItem listBuilderToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem filteredTopicsMenuItem;
 	}
 }
 

@@ -7,13 +7,13 @@ using Colorizer;
 
 namespace Code_Colorizer
 {
-    public partial class MainForm : Form
+    partial class MainForm : Form
     {
-        LogicColorizer _logicColorizer;
-        PffColorizer _pffColorizer;
-        string _initialWindowTitle;
-        bool _formattingLogic = true;
-        string _loadedFilename = null;
+        private LogicColorizer _logicColorizer;
+        private PffColorizer _pffColorizer;
+        private string _initialWindowTitle;
+        private bool _formattingLogic = true;
+        private string _loadedFilename = null;
 
         public MainForm()
         {

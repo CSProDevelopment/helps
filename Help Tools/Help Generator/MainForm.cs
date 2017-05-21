@@ -221,6 +221,11 @@ namespace Help_Generator
             ShowOrCreateForm(new ItemListForm(_helpComponents.preprocessor,false));
         }
 
+		private void filteredTopicsMenuItem_Click(object sender,EventArgs e)
+		{
+			ShowOrCreateForm(new FilteredTopicsViewerForm(_helpComponents));
+		}
+
         private void editMenuItem_DropDownOpening(object sender,EventArgs e)
         {
             bool isTextEditForm = ( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm );
@@ -390,30 +395,33 @@ namespace Help_Generator
         public void ShowOrCreateForm(Object formObject)
         {
             bool isSyntaxHelp = ( formObject is Type && ((Type)formObject) == typeof(SyntaxHelp) );
-            bool isItemListForm = ( formObject is ItemListForm );
             bool isTextEditableInterface = ( formObject is TextEditableInterface );
             bool isTopic = ( formObject is Preprocessor.TopicPreprocessor );
+            bool canHaveMultipleFormInstances = ( formObject is ItemListForm || formObject is FilteredTopicsViewerForm );
 
-            // multiple item lists are allowed but otherwise multiple windows of a given type are not
-            foreach( Form form in MdiChildren )
-            {
-                if( ( isSyntaxHelp && form is SyntaxHelp ) ||
-                    ( isTextEditableInterface && form is TextEditForm && ((TextEditForm)form).IsOfType(((TextEditableInterface)formObject)) ) ||
-                    ( isTopic && form is TextEditForm && ((TextEditForm )form).PreprocessedTopic == (Preprocessor.TopicPreprocessor)formObject ) )
-                {
-                    form.Activate();
-                    return;
-                }
-            }
+            // multiple windows of some forms are not allowed
+			if( !canHaveMultipleFormInstances )
+			{
+				foreach( Form form in MdiChildren )
+				{
+					if( ( isSyntaxHelp && form is SyntaxHelp ) ||
+						( isTextEditableInterface && form is TextEditForm && ((TextEditForm)form).IsOfType(((TextEditableInterface)formObject)) ) ||
+						( isTopic && form is TextEditForm && ((TextEditForm )form).PreprocessedTopic == (Preprocessor.TopicPreprocessor)formObject ) )
+					{
+						form.Activate();
+						return;
+					}
+				}
+			}
 
             // open a new form
             Form newForm = null;
 
-            if( isSyntaxHelp )
-                newForm = new SyntaxHelp();
-
-            else if( isItemListForm )
+            if( canHaveMultipleFormInstances )
                 newForm = (Form)formObject;
+
+            else if( isSyntaxHelp )
+                newForm = new SyntaxHelp();
             
             else if( isTextEditableInterface )
                 newForm = new TextEditForm((TextEditableInterface)formObject,_helpComponents);
@@ -493,5 +501,5 @@ namespace Help_Generator
                 _issuedCollaboratorModeWarningMissingContext = true;
             }
         }
-    }
+	}
 }
