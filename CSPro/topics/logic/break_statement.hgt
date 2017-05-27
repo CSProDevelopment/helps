@@ -9,7 +9,7 @@ break;
 
 <subheader>Description</subheader>
 
-The <logiccolor>break</logiccolor> statement exits a <logiccolor>do</logiccolor>, <logiccolor>while</logiccolor>, or <logiccolor>for</logiccolor> loop early and continues execution with the first statement after the <logiccolor>enddo</logiccolor>.
+The <logiccolor>break</logiccolor> statement exits a <logiccolor>do</logiccolor>, <logiccolor>while</logiccolor>, <logiccolor>for</logiccolor>, or <logiccolor>forcase</logiccolor> loop early and continues execution with the first statement after the <logiccolor>enddo</logiccolor>.
 
 <subheader>Example</subheader>
 
@@ -27,4 +27,4 @@ for ctr in PERSON do
 enddo;
 </logic>
 
-<seealso do_statement.hgt for_statement.hgt while_statement.hgt next_statement.hgt exit_statement.hgt />
+<seealso next_statement.hgt exit_statement.hgt />

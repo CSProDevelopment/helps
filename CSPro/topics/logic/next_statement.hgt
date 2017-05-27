@@ -1,119 +1,32 @@
 ﻿<title>Next Statement</title>
 <context logic_help_next />
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<logicsyntax>
+next;
+</logicsyntax>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<subheader>Description</subheader>
 
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">next</font></b><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- next statement ends a do, while, or for loop early and continues execution
- with the next iteration of the loop. If the next iteration causes termination
- of the loop, then execution will begin with the first statement after
- the enddo.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
-	 face="Courier New" size="2">{ find all spouses }</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">NUMSP = 0;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">for</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">I</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">in</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">PERSON</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">do</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 face="Courier New"
-															 size="2">P02_REL
- &lt;&gt;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-						 color="#FF0000" face="Courier New" size="2">2</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;next;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;endif;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;NUMSP = NUMSP +</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#FF0000"
-														 face="Courier New"
-														 size="2">1</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;SP(NUMSP) = I;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">enddo</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt; text-align: left;"><b><font style="font-family: Arial;
-														 font-size: 10pt;
-														 font-weight: bold;"
-														 face="Arial" size="2">See
- also:</font></b> <a href="do_statement.html"><font style="font-family: Arial;
-													 font-size: 10pt;"
-													 face="Arial" size="2">Do
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="for_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="while_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">While
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="break_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Break
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="exit_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Exit
- Statement</font></a></p>
-</body>
-</html>
+The <logiccolor>next</logiccolor> statement ends a <logiccolor>do</logiccolor>, <logiccolor>while</logiccolor>, <logiccolor>for</logiccolor>, or <logiccolor>forcase</logiccolor> loop early and continues execution with the next iteration of the loop. If the next iteration results in the termination of the loop, then execution will begin with the first statement after the <logiccolor>enddo</logiccolor>.
 
+<subheader>Example</subheader>
 
-<html><!---♻---></html>
+<logic>
+// fill an array with the occurrence numbers of all spouses
+spouseNumber = 0;
+
+for ctr in PERSON do
+
+	if P02_REL <> 2 then
+		next;
+	endif;
+	
+	inc(spouseNumber);
+	spouseIndices(spouseNumber) = ctr;
+
+enddo;
+</logic>
+
+<seealso break_statement.hgt exit_statement.hgt />
