@@ -16,6 +16,7 @@ This choice is very important and will have a large effect at data entry time. S
 	<li><b>Ask for operator ID</b>: If this box is checked, CSEntry will prompt the operator to enter an operator ID.</li>
 	<li><b>Confirm end-of-case</b>: If this box is checked, CSEntry will prompt the operator to accept the case at the end of each case entered.</li>
 	<li><b>Allow partial save</b>: If this box is checked, CSEntry will allow the operator, when in add, modify, or verify mode, to save a case which has not been completed.</li>
+	<li><b>Validate alpha fields</b>: If this box is checked, CSEntry will ensure that the data entered by an operator into an alphanumeric field with a value sets is validated (as happens automatically for numeric fields).</li>
 	<li><b>Show case tree</b>: There are four options for the case tree selection. There are options to never show a case tree, to show it only on mobile devices (Android and Universal Windows), to show it only on desktop devices, and to show it on all devices. If shown, CSEntry will display a tree on the left showing each item in the case currently being added, modified, or verified and its value. The tree can also be used to navigate between parts of the questionnaire.</li>
 	<li><b>CAPI mode</b>: If this box is checked, CSEntry will display the Computer-Assisted Personal Interviewing (<link introduction_to_capi.hgt>CAPI</link>) window. The top part is for question text (to be read during the interview). The bottom is for the normal form content.</li>
 	<li><b>Center forms on screen</b>: If this box is checked, CSEntry will center forms horizontally in the display window.</li>
@@ -26,13 +27,14 @@ This choice is very important and will have a large effect at data entry time. S
 
 <subheader>Mobile Options</subheader>
 
-If you are running CSEntry on a mobile device, there are two options to consider:
+If you are running CSEntry on a mobile device, there are some options to consider:
 
 <list>
 	<li><b>Automatically advance on selection</b>: When clicking on a response (when displayed as a radio button), CSEntry will automatically advance to the next field, rather than requiring the interviewer to swipe or press the next button.</li>
 	<li><b>Show field labels above question text</b>: Each field's label will be displayed on the screen above the field's associated question text. If unchecked, field labels will not be shown at all.</li>
 	<li><b>Display error message numbers</b>: When displaying an error message (from a <logiccolor>errmsg</logiccolor> call), the message number (either a number from the <link message_file.hgt>message file</link> or the line number) will be displayed along with the message.</li>
 </list>
+<html><!--- ♻  document "display codes + labels" feature ---></html>
 
 
 <subheader>Require Enter Key</subheader>
