@@ -9,7 +9,7 @@ b = execpff(<arg>pff_filename</arg>『,<arg>flags</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>execpff</logiccolor> function starts another CSPro application. The function is very similar to <logiccolor>execsystem</logiccolor>, but instead of passing the name of an application or task, you supply a string expression, <arg>pff_filename</arg>, containing the name of a CSPro application's <link program_information_file_pff>Program Information File (.pff)</link>. This function is useful when conducting surveys that use different machines on which the path of the CSPro executables may differ, or when designing menu programs.
+The <logiccolor>execpff</logiccolor> function starts another CSPro application. The function is very similar to <logiccolor>execsystem</logiccolor>, but instead of passing the name of an application or task, you supply a string expression, <arg>pff_filename</arg>, containing the name of a CSPro application's <link program_information_file_pff.hgt>Program Information File (.pff)</link>. This function is useful when conducting surveys that use different machines on which the path of the CSPro executables may differ, or when designing menu programs.
 
 An optional set of <arg>flags</arg>, described in the <logiccolor>execsystem</logiccolor> helps, allow you to control how the CSPro application is opened.
 

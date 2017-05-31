@@ -654,8 +654,14 @@ namespace Help_Generator
                     }
                 }
 
-                else
+                else if( ( url.IndexOf("http",StringComparison.InvariantCultureIgnoreCase) == 0 ) ||
+						 ( url.IndexOf("mailto",StringComparison.InvariantCultureIgnoreCase) == 0 ) )
+				{
                     url = _topicCompilerSettings.ConstructLink(LinkType.Other,url,ref extras);
+				}
+
+				else
+					throw new Exception("Link could not be processsed");
             }
 
             catch( Exception exception ) // the topic wasn't found
