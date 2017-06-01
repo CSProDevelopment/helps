@@ -4,14 +4,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = sysdate(『<arg>date_format</arg>『,<arg>timestamp_value</arg>』』);
+i = sysdate(『<arg>date_format</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
 The <logiccolor>sysdate</logiccolor> function returns the current system date as an integer. The optional string expression <arg>date_format</arg> is composed of a combination of DD (days), MM (months), and/or YY or YYYY (years). YY returns the current year in two digits, while YYYY returns it in four digits. The strings DD, MM and YY or YYYY can be put together in any order to make up a customized format. If no date format is specified, the function returns the date in the format YYMMDD.
-
-Passing an optional numeric expression, <arg>timestamp_value</arg>, means that instead of using the system date, the function will use the date, in the local machine's time zone, of a date/time value that came from <logiccolor>timestamp</logiccolor> function.
 
 The current date can be returned as a string using the <logiccolor>edit</logiccolor> function as follows:
 
