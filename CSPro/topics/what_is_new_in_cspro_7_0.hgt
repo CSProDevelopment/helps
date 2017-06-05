@@ -1,3 +1,114 @@
 ﻿<title>What's New in CSPro 7.0?</title>
+<context HID_HELP_WHAT_IS_NEW />
 
-♻
+This is a detailed list of changes in CSPro 7.0. For a more general overview, see the <i>readme.txt</i> file located in the CSPro installation folder.
+
+<subheader>CSPro Designer</subheader>
+
+<list>
+	<li>You can resize a roster to its ideal size by right-clicking on it and selecting <b>AutoFit</b>.</li>
+</list>
+
+
+<subheader>Data Sources</subheader>
+
+<list>
+	<li>Introduction of the new <b>CSPro DB</b> and <b>none</b> <link data_sources.hgt>data sources</link>.</li>
+	<li>Using the <link synchronization.hgt>synchronization functions</link>, CSPro DB data files can be synchronized with Dropbox and FTP servers on a case by case, rather than data file, basis.</li>
+	<li>The creation of listing and operator statistics files <link data_source_options.hgt>can be disabled</link>.</li>
+</list>
+
+
+<subheader>Data Entry</subheader>
+
+<list>
+	<li>ID items can be set to <link change_field_properties.hgt>auto increment</link>.</li>
+	<li>Addition of several <link change_data_entry_options.hgt>data entry options</link> for mobile devices:
+		~!~
+		<list>
+			<li>Automatically advance on selection.</li>
+			<li>Show field labels above question text.</li>
+			<li>Display error message numbers.</li>
+		</list>
+	</li>
+	<li>Addition of several new <link run_production_data_entry.hgt>PFF attributes</link>:
+		~!~
+		<list>
+			<li><pffcolor>CaseListingFilter</pffcolor>: Filters the list of cases shown in the case listing.</li>
+			<li><pffcolor>ShowInApplicationListing</pffcolor>: Specifies whether an application is shown in the list of applications.</li>
+			<li><pffcolor>OnExit</pffcolor>: Automatically launches a CSPro application after executing the current one.</li>
+			<li><pffcolor>Lock</pffcolor>: New lock flags <b>CaseListing</b> (does not show the case listing screen) and <b>Delete</b> (prevents the user from deleting cases).</li>
+		</list>
+	</li>
+	<li>A <link getnote_function.hgt>case note</link> can be defined, which will display in the case listing.</li>
+	<li>Multiple operators can leave <link getnote_function.hgt>notes</link> on the same field.</li>
+	<li>On Windows, the dialog box for the <logiccolor>accept</logiccolor> (and <logiccolor>selcase</logiccolor>, <logiccolor>show</logiccolor>, and <logiccolor>showarray</logiccolor>) function has been redesigned to be more tablet friendly.</li>
+	<li>Cases can now be verified on a case by case basis, rather than having to verify cases in file order.</li>
+	<li>Portuguese language strings added to Android.</li>
+</list>
+
+
+<subheader>Batch</subheader>
+
+<list>
+	<li>A new <link run_production_batch_edits.hgt>PFF attribute</link>, <pffcolor>InputOrder</pffcolor>, allows you to override the default order in which cases are processed in a data file.</li>
+</list>
+
+
+<subheader>Logic</subheader>
+
+<list>
+	<li>Introduction of new functions and statements:
+		~!~
+		<list>
+			<li><logiccolor>ask</logiccolor>: A new way to skip fields by programming using enablement conditions.</li>
+			<li><logiccolor>compress</logiccolor> and <logiccolor>decompress</logiccolor>: A pair of functions to compress and decompress .zip files.</li>
+			<li><logiccolor>config</logiccolor>: A way to initialize string variables to values defined on a local machine.</li>
+			<li><logiccolor>diagnostics</logiccolor>: A troubleshooting function for getting information about the CSEntry build.</li>
+			<li><logiccolor>forcase</logiccolor>: A loop that simplifies the processing of each case in an external data file.</li>
+			<li><logiccolor>getcaselabel</logiccolor> and <logiccolor>setcaselabel</logiccolor>: Functions to set and retrieve a human readable label associated with a case.</li>
+			<li><logiccolor>isverified</logiccolor>: A way to determine whether a case has been verified.</li>
+			<li><logiccolor>keylist</logiccolor>: A function that returns a list of keys in a data file, including the input file in a data entry application.</li>
+			<li><logiccolor>setoperatorid</logiccolor>: A way to set the operator ID in logic.</li>
+			<li><logiccolor>syncconnect</logiccolor>, <logiccolor>syncconnect</logiccolor>, <logiccolor>syncdata</logiccolor>, <logiccolor>syncdisconnect</logiccolor>, <logiccolor>syncfile</logiccolor>, and <logiccolor>syncserver</logiccolor>: A set of functions to support the new <link synchronization.hgt>synchronization functionality</link>.</li>
+			<li><logiccolor>timestamp</logiccolor>: A way to easily calculate time spans by working with UNIX times.</li>
+		</list>
+	</li>
+	<li>The <logiccolor>skip</logiccolor> statement can be called without a parameter, which will skip to the next field in the application.</li>
+	<li>The <logiccolor>systime</logiccolor> function can take an optional argument to extract just the current time's hours, minutes, or seconds.</li>
+	<li>The <logiccolor>ispartial</logiccolor> function can return the partial save status of cases in external dictionaries.</li>
+	<li>Passing ID parameters to <logiccolor>writecase</logiccolor> is deprecated and the parameters are ignored.</li>
+	<li>The <logiccolor>key</logiccolor> function can be called on the main input dictionary of an application.</li>
+	<li>All settings can be removed by calling <logiccolor>savesetting</logiccolor> with the argument <logiccolor>clear</logiccolor>.</li>
+	<li>The <logiccolor>select</logiccolor> options of an <logiccolor>errmsg</logiccolor> can now be used to skip to a field instead of only reentering a field.</li>
+	<li>You can manipulate the location and order that external dictionary and batch input data sources are processed using: <logiccolor>set access</logiccolor>, <logiccolor>set first</logiccolor>, and <logiccolor>set last</logiccolor>.</li>
+	<li>The <logiccolor>setfile</logiccolor>, <logiccolor>open</logiccolor>, and <logiccolor>close</logiccolor> functions can be used on the input dictionary in a data entry and batch application, allowing you to dynamically modify the data source being processed.</li>
+	<li>The <logiccolor>execsystem</logiccolor> function on Android can send SMS text messages.</li>
+</list>
+
+
+<subheader>Tools</subheader>
+
+<list>
+	<li>A new tool, <link DataViewer::introduction_to_data_viewer.hgt>Data Viewer</link>, allows for the viewing of data files in dictionary format (in lieu of using Text Viewer). The tool is also used to <link DataViewer::downloading_and_synchronizing_data.hgt>download data from a synchronization server</link>.</li>
+	<li>The <b>Export Data</b> tool can now output Stata exports in Unicode format. To open these exports, you need Stata version 14 or later.</li>
+	<li>The <b>Excel to CSPro</b> tool is much improved, allowing you to create dictionaries from Excel data and to convert data from multiple worksheets.</li>
+	<li>The <b>Concatenate Data</b> tool and the <logiccolor>fileconcat</logiccolor> function now combine case notes, partial save statuses, etc., and the tool can identify duplicate cases in files.</li>
+</list>
+
+<subheader>CSWeb</subheader>
+
+<list>
+	<li><link CSWeb::introduction_to_csweb.hgt>CSWeb</link> introduced as a convenient way to synchronize CSPro data files on a central server.</li>
+</list>
+
+
+<subheader>Other</subheader>
+
+<list>
+	<li>Introduction of a lightweight CSPro installer, with the CSPro examples now installed to the Documents folder.</li>
+	<li>Introduction of a new custom <link collaborating_on_cspro_development.hgt>help documentation system</link>.</li>
+	<li>Fixes to allow CSPro to fully work on Windows 10 systems.</li>
+</list>
+
+<seealso what_is_new_in_cspro.hgt />
