@@ -61,8 +61,11 @@ namespace Colorizer
                         helpTopics.Add(word,helpTopic);
                 }
 
-                if( isExtraWord && extraWords != null )
-                    extraWords.Add(word);
+                if( isExtraWord )
+				{
+					if( extraWords != null )
+						extraWords.Add(word);
+				}
 
                 else
                     words.Add(word);
