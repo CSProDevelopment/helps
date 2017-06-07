@@ -1,21 +1,41 @@
 ﻿<title>Create Fills In Questions</title>
 
-Fills are used to customize question text based on respondents' specific characteristics. This is done by embedding variables or dictionary items into the text and surrounding them with percent characters ("%").
+Fills are used to customize <link questions.hgt>question text</link> based on respondents' specific characteristics. This is done by embedding dictionary items, variables, occurrence labels, or user-defined functions  into the text and surrounding them with percent characters (%).
+
 
 <subheader>Fills with Dictionary Items or Variables</subheader>
 
 Enter some question text that needs to be customized. For words or phrases that need to be filled, enter a dictionary item or variable with % characters before and after. For example:
 
-<indent>Can I speak with %FIRST_NAME% now?</indent>
+<indent>Can I speak with <b>%FIRST_NAME%</b> now?</indent>
 
- When the entry system comes to this text, it will insert the person's FIRST_NAME value into the question text:
+When the entry system comes to this text, it will insert the person's FIRST_NAME value into the question text:
 
-<indent>Can I speak with Marjorie now?
-Can I speak with Allyson now?
+<indent>Can I speak with <b>Marjorie</b> now?
+Can I speak with <b>Allyson</b> now?
 </indent>
+
 
 <subheader>Fills with Occurrence Labels</subheader>
 
-You can also customize the question text by inserting an item or group's <link occurrence_labels.hgt>occurrence labels</link> into the text. For example:
+You can customize the question text by inserting an item or group's <link occurrence_labels.hgt>occurrence labels</link> into the text. For example:
 
-<indent>How much did you spend on %getocclabel% in the last month?</indent>
+<indent>How much did you spend on <b>%getocclabel%</b> in the last month?</indent>
+
+<subheader>Fills with User-Defined Functions</subheader>
+
+You can insert the return value of a <link user_defined_functions.hgt>user-defined function</link> into the question text. The function can return either numeric or string values. For example:
+
+<indent>Thinking now about <b>%FIRST_NAME%</b>, what is <b>%SexPronoun%</b> age?</indent>
+
+In logic, a user-defined function with no parameters must be declared, as in:
+
+<logic>
+function string SexPronoun()
+	
+	if SEX = 1 then	SexPronoun = "his";
+	else			SexPronoun = "her";
+	endif;
+
+end;
+</logic>

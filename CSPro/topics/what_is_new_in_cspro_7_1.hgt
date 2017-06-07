@@ -1,4 +1,5 @@
 ﻿<title>What's New in CSPro 7.1?</title>
+<context HID_HELP_WHAT_IS_NEW />
 
 This is a detailed list of changes in CSPro 7.1. For a more general overview, see the <i>readme.txt</i> file located in the CSPro installation folder.
 
@@ -12,6 +13,7 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 <subheader>Data Entry</subheader>
 
 <list>
+	<li><link create_fills_in_questions.hgt>Question text fills</link> can show the return values of user-defined functions.</li>
 	<li>A <link change_data_entry_options.hgt>data entry option</link>, <b>Validate alpha fields</b>, instructs CSEntry to validate values entered into alphanumeric fields using an item's value set, as happens to numeric fields by default.</li>
 </list>
 
@@ -31,3 +33,5 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 	<li>Data Viewer now shows additional information about data files, including the synchronization history. The tool also has new <link DataViewer::filtering_cases_and_display_options.hgt>filtering options</link> and can show deleted or duplicate cases and can display the contents of a file in sorted key order.</li>
 	<li>The Excel to CSPro tool has a new <link Excel2CSPro::running_conversions_from_the_command_line.hgt>command line flag</link>, <b>/runifnewer</b>, that can streamline deployment conversions.</li>
 </list>
+
+<seealso what_is_new_in_cspro.hgt />
