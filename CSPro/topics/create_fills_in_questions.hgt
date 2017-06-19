@@ -40,12 +40,13 @@ function string SexPronoun()
 end;
 </logic>
 
-<subheader>Line breaks in fills</subheader>
 
-To insert a line break (newline) into a fill insert &lt;br&gt; into the value of the fill variable or function result. For example:
+<subheader>Fills with Line Breaks</subheader>
+
+You can insert a line break (newline) into a fill by inserting <b>&lt;br&gt;</b> into the value of the fill variable or function result. For example:
 
 <logic>
-	householdMembers = "Bouba<br>Frank<br>Chen";
+householdMembers = "Bouba<br>Frank<br>Chen";
 </logic>
 
 Which will result in:
@@ -59,8 +60,9 @@ Chen
 Or more realistically:
 
 <logic>
-	householdMembers = "";
-	do numeric i = 1 while i <= totocc(PERSON_REC000)
-		householdMembers = householdMembers + NAME(i) + "<br>";
-	enddo;
+householdMembers = "";
+
+do numeric ctr = 1 while ctr <= totocc(PERSON_REC)
+	householdMembers = householdMembers + strip(NAME(ctr)) + "<br>";
+enddo;
 </logic>

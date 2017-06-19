@@ -4,13 +4,13 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Colorizer;
+using Microsoft.Win32;
 
 namespace Code_Colorizer
 {
-    partial class MainForm : Form
+	partial class MainForm : Form
     {
-        private LogicColorizer _logicColorizer;
-        private PffColorizer _pffColorizer;
+		private Processor _processor;
         private string _initialWindowTitle;
         private bool _formattingLogic = true;
         private string _loadedFilename = null;
@@ -26,8 +26,7 @@ namespace Code_Colorizer
         {
             try
             {
-                _logicColorizer = new LogicColorizer();
-                _pffColorizer = new PffColorizer();
+				_processor = new Processor();
             }
 
             catch( Exception exception )
@@ -141,6 +140,20 @@ namespace Code_Colorizer
             }
         }
 
+		private void registerDesignerMenuItem_Click(object sender,EventArgs e)
+		{
+            try
+            {
+                const string registryPath = @"HKEY_CURRENT_USER\SOFTWARE\U.S. Census Bureau\CSPro Designer\Logic Editor\";
+				Registry.SetValue(registryPath,"ExtendedCopier",Application.ExecutablePath);
+                MessageBox.Show("Registry settings changed successfully.");
+            }
+
+            catch( Exception exception )
+            {
+                MessageBox.Show("There was an error modifying the registry: " + exception.Message);
+            }
+		}
 
         private void languageMenuItem_Click(object sender,EventArgs e)
         {
@@ -199,42 +212,12 @@ namespace Code_Colorizer
 
         private void buttonCopyHtml_Click(object sender,EventArgs e)
         {
-            string text = HelperFunctions.TrimTrailingSpace(editControl.Text);
-            string formattedText = _formattingLogic ?
-                _logicColorizer.Colorize(new LogicColorizerHtml(),text) : _pffColorizer.Colorize(new PffColorizerHtml(),text);
-
-            // html to clipboard code from: http://blogs.msdn.com/b/jmstall/archive/2007/01/21/sample-code-html-clipboard.aspx
-            string htmlCopyText = "Format:HTML Format Version:1.0\nStartHTML:<<<<<<<1\nEndHTML:<<<<<<<2\nStartFragment:<<<<<<<3\nEndFragment:<<<<<<<4\n";
-            int startHTML = htmlCopyText.Length;
-
-            int beginChunkPos = formattedText.IndexOf("<div");
-            int endChunkPos = formattedText.IndexOf("</div>") + 6; // 6 is length if </div>
-
-            htmlCopyText += formattedText.Substring(0,beginChunkPos) + "<!--StartFragment-->";
-            int startFragment = htmlCopyText.Length;
-				 
-            htmlCopyText += formattedText.Substring(beginChunkPos,endChunkPos - beginChunkPos);
-            int endFragment = htmlCopyText.Length;
-
-            htmlCopyText += "<!--EndFragment-->" + formattedText.Substring(endChunkPos);
-            int endHTML = htmlCopyText.Length;
-
-            htmlCopyText = htmlCopyText.Replace("<<<<<<<1",String.Format("{0,8}",startHTML));
-            htmlCopyText = htmlCopyText.Replace("<<<<<<<2",String.Format("{0,8}",endHTML));
-            htmlCopyText = htmlCopyText.Replace("<<<<<<<3",String.Format("{0,8}",startFragment));
-            htmlCopyText = htmlCopyText.Replace("<<<<<<<4",String.Format("{0,8}",endFragment));
-
-            Clipboard.Clear();
-            Clipboard.SetText(htmlCopyText,TextDataFormat.Html);
+			_processor.HtmlProcessor(editControl.Text,_formattingLogic);
         }
 
         private void buttonCopyUsersForum_Click(object sender,EventArgs e)
         {
-            string text = HelperFunctions.TrimTrailingSpace(editControl.Text);
-            string formattedText = _logicColorizer.Colorize(new LogicColorizerUsersForum(),text);
-
-            Clipboard.Clear();
-            Clipboard.SetText(formattedText,TextDataFormat.UnicodeText);
+			_processor.UsersForumProcessor(editControl.Text);
         }
-    }
+	}
 }

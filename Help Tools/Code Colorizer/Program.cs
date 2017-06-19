@@ -13,7 +13,14 @@ namespace Code_Colorizer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+			Array commandArgs = Environment.GetCommandLineArgs();
+
+			if( commandArgs.Length == 2 && ((string)commandArgs.GetValue(1)).Equals("/copy") )
+				Application.Run(new DesignerCopierForm());
+
+			else
+	            Application.Run(new MainForm());
         }
     }
 }
