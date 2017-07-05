@@ -488,6 +488,11 @@ namespace Help_Generator
             string defaultTopicFilename = _websiteTopicCompilerSettings.GetHtmlFilename(_helpComponents.settings.DefaultTopic);
             File.WriteAllText(htAccessFilename,String.Format("DirectoryIndex {0}\n",defaultTopicFilename));
 
+			// and write out the web.config file
+			string webConfigFilename = Path.Combine(_outputWebsitePath,"web.config");
+			File.WriteAllText(webConfigFilename,Properties.Resources.WebConfig.Replace("%template-topic%",defaultTopicFilename));
+
+
             // copy over any used images
             foreach( string imageFilename in _websiteTopicCompilerSettings.UsedImageFilenames )
                 File.Copy(imageFilename,Path.Combine(_outputWebsitePath,Path.GetFileName(imageFilename)));

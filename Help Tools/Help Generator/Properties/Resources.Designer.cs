@@ -96,6 +96,7 @@ namespace Help_Generator.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Title=&lt;helps title&gt;
+        ///PdfTitle=&lt;optional PDF title; also an indication that a PDF should be created&gt;
         ///DefaultTopic=&lt;topic filename of the default topic&gt;
         ///DefinitionsFile=&lt;optional path with definitions that can be retrieved using the definition tag&gt;
         ///ResourceFile=&lt;optional path pointing to the header files used to define context sensitive helps&gt;
@@ -147,7 +148,7 @@ namespace Help_Generator.Properties {
         ///	padding: 0px;
         ///}
         ///
-        ///body, td
+        ///body, td, h1, h2
         ///{
         ///	background-color: white;
         ///	font-family: Calibri, Candara, Segoe, &quot;Segoe UI&quot;, Optima, Arial, Helvetica, sans-serif;
@@ -155,20 +156,46 @@ namespace Help_Generator.Properties {
         ///	color: black;
         ///}
         ///
+        ///h1
+        ///{
+        ///    text-align: center;
+        ///    font-size: 4em;
+        ///    font-weight: bold;
+        ///    color: #003050;
+        ///    page-break-before: always;
+        ///}    
+        ///
         ///a { color: #5080ff; }
         ///
         ///li { margin: 0 0 10px 0; }
         ///
         ///table { margin: 0; }
         ///th, td { text-align: left; vertical-align:top; padding-right: 20px; }
-        ///th { font-weight: bold; color: #002050; text-decoration: underline; }
-        ///
-        ///.bordered_table { border-collapse: collapse; }
-        ///.bordered_table_cell { bord [rest of string was truncated]&quot;;.
+        ///t [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string TopicStylesheet {
             get {
                 return ResourceManager.GetString("TopicStylesheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;configuration&gt;
+        ///	&lt;system.webServer&gt;
+        ///		&lt;defaultDocument enabled=&quot;true&quot;&gt;
+        ///			&lt;files&gt;
+        ///				&lt;clear/&gt;
+        ///				&lt;add value=&quot;%template-topic%&quot;/&gt;
+        ///			&lt;/files&gt;      
+        ///		&lt;/defaultDocument&gt;
+        ///	&lt;/system.webServer&gt;
+        ///&lt;/configuration&gt;
+        ///.
+        /// </summary>
+        internal static string WebConfig {
+            get {
+                return ResourceManager.GetString("WebConfig", resourceCulture);
             }
         }
         
@@ -194,9 +221,10 @@ namespace Help_Generator.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to .toc_ul { padding: 0 20px 0; }
-        ///.toc_li_topic { margin: 5px 0 5px 0; list-style-image: url(&apos;hgweb_web_topic.png&apos;); }
         ///.toc_li_chapter { margin: 5px 0 5px 0; list-style-image: url(&apos;hgweb_chapter_closed.png&apos;); }
         ///.toc_li_chapter_current { margin: 5px 0 5px 0; list-style-image: url(&apos;hgweb_web_chapter_open.png&apos;); }
+        ///.toc_li_topic { margin: 5px 0 5px 0; list-style-image: url(&apos;hgweb_web_topic.png&apos;); }
+        ///.toc_li_topic_current { margin: 5px 0 5px 0; list-style-image: url(&apos;hgweb_web_topic_current.png&apos;); }
         ///
         ///#container, html, body
         ///{
@@ -207,14 +235,7 @@ namespace Help_Generator.Properties {
         ///{
         ///	float: left;
         ///    width: 200px;
-        ///    height: 100%;
-        ///    overflow: auto;
-        ///    white-space: nowrap;
-        ///}
-        ///
-        ///#middle_spacing
-        ///{
-        ///	float: lef [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string WebsiteStylesheet {
             get {
