@@ -1,0 +1,38 @@
+﻿<title>SetProperty Function</title>
+<context logic_help_setproperty />
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = setproperty(『<arg>symbol</arg>,』<arg>property_name</arg>,<arg>property_value</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>setproperty</logiccolor> function modifies the current property, specified by the string expression <arg>property_name</arg>, associated with an application or a field. If an optional dictionary <arg>symbol</arg> is specified, then the property must apply to a field. If the symbol is not a field but is intead a group, form, or dictionary, then the the function will try to apply the property to all fields belonging to that symbol. If no symbol is specified, then the property must be an application property. The property will be modified to the value given in the string expression <arg>property_value</arg>.
+
+<subheader>Return Value</subheader>
+
+The function returns the number of items whose property was successfully changed. If either the property name or value is invalid, then the function returns <logiccolor>default</logiccolor>.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC CENSUS_QUEST
+
+preproc
+
+	if STAFF_ROLE = 1 then // interviewer
+		setproperty("DisplayCodesAlongsideLabels","No");
+		setproperty(CENSUS_DICT,"CanEnterNotAppl","No");
+		setproperty(CENSUS_DICT,"CanEnterOutOfRange","No");
+
+	else // supervisor
+		setproperty("DisplayCodesAlongsideLabels","Yes");
+		setproperty(CENSUS_DICT,"CanEnterNotAppl","Yes");
+		setproperty(CENSUS_DICT,"CanEnterOutOfRange","Yes");
+
+	endif;
+</logic>
+
+<seealso getproperty_function.hgt />
