@@ -229,7 +229,7 @@ namespace Help_Generator
             _filledEndTagStack = new Stack<string>();
             _tableStack = new Stack<TableSettings>();
 
-            string preprocessedParagraph = ProcessDefinitions(paragraph);
+            string preprocessedParagraph = PreprocessText(paragraph);
             string text = "";
 
             try
@@ -266,7 +266,7 @@ namespace Help_Generator
             return text.Replace(NewLineMarker,"<br />\n");
         }
 
-        private string ProcessDefinitions(string text)
+        private string PreprocessText(string text)
         {
             int startTagPos = text.IndexOf('<');
 
@@ -283,11 +283,29 @@ namespace Help_Generator
 
                 string[] fullTagComponents = Regex.Split(fullTagContents,@"\s+");
 
-                if( fullTagComponents.Length == 3 && fullTagComponents[0].Equals(DefinitionTag) && fullTagComponents[2].Equals("/") )
-                    return beforeTagText + _helpComponents.settings.GetDefinition(fullTagComponents[1],_helpComponents.preprocessor) + ProcessDefinitions(text.Substring(endTagPos + 1));
+				string preprocessedText = null;
 
-                else
-                    return beforeTagText + "<" + ProcessDefinitions(text.Substring(startTagPos + 1));
+                if( fullTagComponents.Length == 3 && fullTagComponents[2].Equals("/") )
+				{
+					if( fullTagComponents[0].Equals(DefinitionTag) )
+						preprocessedText = _helpComponents.settings.GetDefinition(fullTagComponents[1],_helpComponents.preprocessor);
+
+					else if( fullTagComponents[0].Equals(IncludeTag) )
+					{
+						string includeFilename = Path.Combine(Path.GetDirectoryName(_preprocessedTopic.Filename),fullTagComponents[1]);
+
+						if( !File.Exists(includeFilename) )
+							throw new Exception("Include file could not be found: " + includeFilename);
+
+						preprocessedText = File.ReadAllText(includeFilename);
+					}					
+				}
+
+				if( preprocessedText == null )
+					return beforeTagText + "<" + PreprocessText(text.Substring(startTagPos + 1));
+
+				else
+                    return beforeTagText + preprocessedText + PreprocessText(text.Substring(endTagPos + 1));
             }
 
             return text;
@@ -961,6 +979,7 @@ namespace Help_Generator
         public const string PffColorTag = "pffcolor";
         public const string HtmlTag = "html";
         public const string DefinitionTag = "definition";
+		public const string IncludeTag = "include";
 
         public const string NoHeaderAttribute = "noheader";
         public const string FontMonospaceAttribute = "monospace";
