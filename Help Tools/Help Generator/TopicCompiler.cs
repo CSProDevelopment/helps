@@ -489,7 +489,18 @@ namespace Help_Generator
         private string EndTitleHandler(string endTagInnerText)
         {
             _title = endTagInnerText;
-            return _titleIsHeader ? String.Format("<h2><span class=\"header_size header\">{0}</span></h2>",_title) : "";
+			
+			string header = String.Format("<h2><span class=\"header_size header\">{0}</span></h2>",_title);
+
+			if( _topicCompilerSettings.ChmCreationMode ) // add a link to the help documentation on CSPro Users
+			{
+				string projectName = new DirectoryInfo(_helpComponents.projectPath).Name;
+				string topicFilename = Path.GetFileNameWithoutExtension(_preprocessedTopic.Filename) + Constants.TopicOutputExtension;
+				string onlineTopicUrl = Constants.OnlineHelpBaseUrl + projectName + '/' + topicFilename;
+				header = String.Format("<a style=\"text-decoration: none;\" target=\"_blank\" href=\"{0}\">{1}</a>",onlineTopicUrl,header);
+			}
+			
+            return _titleIsHeader ? header : "";
         }
 
         private string StartContextHandler(string[] startTagComponents)
