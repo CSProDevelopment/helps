@@ -21,6 +21,7 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 <subheader>Logic</subheader>
 
 <list>
+	<li>An <logiccolor>errmsg</logiccolor>-like function, <logiccolor>warning</logiccolor>, that can be used for "soft check" error messages. These messages will not be displayed to the operator when advancing in the case (such as when resuming from a partial save).</li>
 	<li>A new function, <logiccolor>countcases</logiccolor>, counts the number of cases in an external file  that meet a certain criterion.</li>
 	<li>New functions, <logiccolor>getproperty</logiccolor> and <logiccolor>setproperty</logiccolor>, for accessing and changing the properties of fields or the entire application.</li>
 	<li>A new function, <logiccolor>logtext</logiccolor>, for writing user-defined messages to the <link paradata.hgt>paradata</link> log file.</li>
