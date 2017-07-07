@@ -1,0 +1,30 @@
+﻿<title>LogText Function</title>
+<context logic_help_logtext />
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = logtext(<arg>message</arg>『,<arg>parameter1</arg>,...,<arg>parameterN</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>logtext</logiccolor> function writes a user-defined message to the <link paradata.hgt>paradata</link> log file.
+
+The <arg>message</arg> is either a string expression or a numeric <link message_file.hgt>message number</link> that contains the text that is written to the file. If the text contains any <link message_formatting_options.hgt>message formatters</link>, the optional parameters <arg>parameter1</arg> to <arg>parameterN</arg> will be inserted into the text.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if successful and 0 (false) otherwise. If no paradata log file is open, then the function returns 0.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC RELATIONSHIP
+
+	if RELATIONSHIP = 1 then
+		logtext("Head of household registered as %s",strip(NAME));
+	endif;
+</logic>
+ 
+<seealso paradata.hgt message_formatting_options.hgt write_function.hgt />
