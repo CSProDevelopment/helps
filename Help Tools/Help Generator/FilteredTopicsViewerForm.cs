@@ -25,6 +25,8 @@ namespace Help_Generator
 
 		private void FilteredTopicsViewerForm_Shown(object sender,EventArgs e)
 		{
+			_topicCompilerSettings.HelpGeneratorMainForm = ((MainForm)this.ParentForm);
+
 			try
 			{
 				_helpComponents.tableOfContents.Compile(_helpComponents.preprocessor);
@@ -110,7 +112,7 @@ namespace Help_Generator
 				{
 					ListViewItem lvi = listViewTopics.SelectedItems[0];
 					TopicListParser.TopicListNode node = (TopicListParser.TopicListNode)lvi.Tag;
-					DisplayTopic(node.Topic);
+					DisplayTopic(node.Topic,_loadedText[node]);
 					enableTopicButtons = true;
 				}
 
@@ -123,11 +125,14 @@ namespace Help_Generator
 			}
 		}
 
-		private void DisplayTopic(Preprocessor.TopicPreprocessor preprocessedTopic)
+		private void DisplayTopic(Preprocessor.TopicPreprocessor preprocessedTopic,string topicText = null)
 		{
 			TopicCompiler topicCompiler = new TopicCompiler(_helpComponents,preprocessedTopic,_topicCompilerSettings);
-			string[] topicLines = File.ReadAllLines(preprocessedTopic.Filename);
-			string html = topicCompiler.CompileForHtml(topicLines);
+
+			if( topicText == null )
+				topicText = File.ReadAllText(preprocessedTopic.Filename);
+
+			string html = topicCompiler.CompileForHtml(topicText);
 			webBrowser.DocumentText = html;
 
 			_lastDisplayedPreprocessedTopic = preprocessedTopic;

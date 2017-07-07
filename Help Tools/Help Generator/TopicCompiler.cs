@@ -113,8 +113,11 @@ namespace Help_Generator
             _blockTags.Add(MakeTag(HtmlTag,true),MakeTag(HtmlTag,false));
         }
 
-        public string CompileForHtml(string[] lines)
+        public string CompileForHtml(string text)
         {
+			string preprocessedText = PreprocessText(text);
+			string[] lines = preprocessedText.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+
             int? titlePos = null;
 
             if( _topicCompilerSettings.AddHtmlHeaderFooter )
@@ -229,13 +232,12 @@ namespace Help_Generator
             _filledEndTagStack = new Stack<string>();
             _tableStack = new Stack<TableSettings>();
 
-            string preprocessedParagraph = PreprocessText(paragraph);
             string text = "";
 
             try
             {
-                while( !String.IsNullOrWhiteSpace(preprocessedParagraph) )
-                    text = text + ProcessText(ref preprocessedParagraph);
+                while( !String.IsNullOrWhiteSpace(paragraph) )
+                    text = text + ProcessText(ref paragraph);
 
                 if( _tagStack.Count > 0 )
                     throw new Exception(String.Format("Missing end tag {0} at the end of the paragraph.",_tagStack.Pop()));

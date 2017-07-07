@@ -74,7 +74,7 @@ namespace Help_Generator
                 {
                     _topicCompilerSettings.HelpGeneratorMainForm = ((MainForm)this.ParentForm);
 
-                    string html = ((Topic)_textEditableInterface).CompileForHtml(GetLinesArray(),_helpComponents,_topicCompilerSettings);
+                    string html = ((Topic)_textEditableInterface).CompileForHtml(editControl.Text,_helpComponents,_topicCompilerSettings);
                     UpdateWindowTitle();
 
                     // update the HTML view

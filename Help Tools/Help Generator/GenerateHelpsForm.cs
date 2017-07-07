@@ -366,11 +366,11 @@ namespace Help_Generator
                         _backgroundThread.ReportProgress(0,String.Format("Processing topic \"{0}\"...",preprocessedTopic.Title));
 
                         Topic topic = new Topic(preprocessedTopic);
-                        string[] topicLines = File.ReadAllLines(preprocessedTopic.Filename);
+                        string topicText = File.ReadAllText(preprocessedTopic.Filename);
 
                         // generate the topic for the CHM
                         string htmlFilename = _chmTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-                        string html = topic.CompileForHtml(topicLines,_helpComponents,_chmTopicCompilerSettings);
+                        string html = topic.CompileForHtml(topicText,_helpComponents,_chmTopicCompilerSettings);
 
 						if( DoGenerateChm )
 							File.WriteAllText(Path.Combine(_temporaryFilesPath,htmlFilename),html,Encoding.UTF8);
@@ -381,14 +381,14 @@ namespace Help_Generator
 						if( DoGenerateWebsite )
 						{
 							htmlFilename = _websiteTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-							html = topic.CompileForHtml(topicLines,_helpComponents,_websiteTopicCompilerSettings);
+							html = topic.CompileForHtml(topicText,_helpComponents,_websiteTopicCompilerSettings);
 							File.WriteAllText(Path.Combine(_outputWebsitePath,htmlFilename),html,Encoding.UTF8);
 						}
 
                         // generate the topic for the PDF
                         if( DoGeneratePdf && ( twPdf != null ) )
                         {
-                            html = topic.CompileForHtml(topicLines,_helpComponents,_pdfTopicCompilerSettings);
+                            html = topic.CompileForHtml(topicText,_helpComponents,_pdfTopicCompilerSettings);
                             twPdf.WriteLine(html);
                         }
                     }
@@ -512,10 +512,10 @@ namespace Help_Generator
             string outputPdfCoverFilename = Path.Combine(_temporaryFilesPath,"_output_pdf_cover.html");
 
             Preprocessor.TopicPreprocessor preprocessedTopic = _helpComponents.preprocessor.GetTopic(Constants.PdfCoverFilename);
-            string[] topicLines = File.ReadAllLines(preprocessedTopic.Filename);
+            string topicText = File.ReadAllText(preprocessedTopic.Filename);
 
             Topic topic = new Topic(preprocessedTopic);
-            string html = topic.CompileForHtml(topicLines,_helpComponents,_pdfTopicCompilerSettings);
+            string html = topic.CompileForHtml(topicText,_helpComponents,_pdfTopicCompilerSettings);
             File.WriteAllText(outputPdfCoverFilename,PdfHtmlHeader + html + PdfHtmlFooter,Encoding.UTF8);
 
             // generate the PDF

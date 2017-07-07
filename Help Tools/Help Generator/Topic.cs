@@ -58,10 +58,10 @@ namespace Help_Generator
             return null;
         }
 
-        public string CompileForHtml(string[] lines,HelpComponents helpComponents,TopicCompilerSettingsInterface topicCompilerSettings)
+        public string CompileForHtml(string text,HelpComponents helpComponents,TopicCompilerSettingsInterface topicCompilerSettings)
         {
             TopicCompiler topicCompiler = new TopicCompiler(helpComponents,_preprocessedTopic,topicCompilerSettings);
-            return topicCompiler.CompileForHtml(lines);
+            return topicCompiler.CompileForHtml(text);
         }
     }
 }
