@@ -13,16 +13,7 @@ i = setcapturetype(<arg>symbol_name</arg>,<arg>capture_type</arg>『,<arg>date_f
 
 The <logiccolor>setcapturetype</logiccolor> function modifies the <link extended_controls.hgt>capture type</link> currently associated with a field on a form. The <arg>symbol_name</arg> may refer to a field, group, form, or an entire dictionary. The numeric expression <arg>capture_type</arg> refers to a capture type code, listed in the table below. If specifying a date, the format can be specified with the optional string expression <arg>date_format</arg>.
 
-<indent><table 2 header>
-	<cell>Code</cell><cell>Capture Type</cell>
-	<cell>0</cell><cell>Textbox</cell>
-	<cell>1</cell><cell>Radio Button</cell>
-	<cell>2</cell><cell>Checkbox</cell>
-	<cell>3</cell><cell>Drop Down Box</cell>
-	<cell>4</cell><cell>Combo Box</cell>
-	<cell>5</cell><cell>Date Picker</cell>
-	<cell>6</cell><cell>Number Pad (desktop CSEntry only)</cell>
-</table></indent>
+<include include_capture_types.hgi />
  
 <subheader>Return Value</subheader>
 

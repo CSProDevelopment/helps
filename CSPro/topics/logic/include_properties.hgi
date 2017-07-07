@@ -1,0 +1,62 @@
+﻿<subheader>Properties List</subheader>
+
+The following properties apply to the <b>application</b>:
+
+<table 3 header nowrap>
+	<cell>Name</cell><cell>Settable?</cell><cell>Values</cell>
+	<cell>AppType</cell><cell></cell><cell>DataEntry, Batch, Tabulation</cell>
+	<cell><link change_data_entry_options.hgt>AutoAdvanceOnSelection</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>CAPI</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>CaseTree</link></cell><cell></cell><cell>Always, Desktop, Mobile, Never</cell>
+	<cell><link change_data_entry_options.hgt>CenterForms</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>CreateListing</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>CreateLog</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>DecimalComma</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>DisplayCodesAlongsideLabels</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>NotesDeleteOtherOperators</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>NotesEditOtherOperators</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>OperatorID</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>PartialSave</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>Path</link></cell><cell></cell><cell>Yes (system controlled), No (operator controlled)</cell>
+	<cell><link change_data_entry_options.hgt>ShowEndCaseDialog</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>ShowErrorMessageNumbers</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>ShowFieldLabels</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell>SpecialValuesZero</cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>ValidateAlphaFields</link></cell><cell>✔</cell><cell>Yes, No</cell>
+</table>
+
+The following properties apply to <b>items</b>, none of which are settable:
+
+<table 2 header nowrap>
+	<cell>Name</cell><cell>Values</cell>
+	<cell><link item_properties.hgt>DataType</link></cell><cell>Alpha, Numeric</cell>
+	<cell><link item_properties.hgt>Decimal</link></cell><cell>(integer)</cell>
+	<cell><link item_properties.hgt>DecimalChar</link></cell><cell>Yes, No</cell>
+	<cell><link item_properties.hgt>Len</link></cell><cell>(integer)</cell>
+	<cell><link item_properties.hgt>ZeroFill</link></cell><cell>Yes, No</cell>
+</table>
+
+The following properties apply to <b>fields</b>:
+
+<table 3 header nowrap>
+	<cell>Name</cell><cell>Settable?</cell><cell>Values</cell>
+	<cell><link change_field_properties.hgt>AllowMultiLine</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_field_properties.hgt>AutoIncrement</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell>CanEnterNotAppl</cell><cell>✔</cell><cell>No, Confirm, NoConfirm</cell>
+	<cell>CanEnterOutOfRange</cell><cell>✔</cell><cell>No, Confirm, NoConfirm</cell>
+	<cell><link change_form_properties.hgt>CapturePosX</link></cell><cell>✔</cell><cell>(integer of the X position)</cell>
+	<cell><link change_form_properties.hgt>CapturePosY</link></cell><cell>✔</cell><cell>(integer of the Y position)</cell>
+	<cell><link change_field_properties.hgt>CaptureType</link></cell><cell>✔</cell><cell>TextBox, RadioButton, CheckBox, DropDown, ComboBox, Date, NumberPad</cell>
+	<cell><link change_field_properties.hgt>CaptureTypeDateFormat</link></cell><cell>✔</cell><cell>(string of the date format, e.g., YYYYMMDD)</cell>
+	<cell><link change_field_properties.hgt>ForceOutOfRange</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_field_properties.hgt>HideInCaseTree</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_field_properties.hgt>Keyboard</link></cell><cell>✔</cell><cell>(integer of the keyboard ID)</cell>
+	<cell><link change_field_properties.hgt>Persistent</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_field_properties.hgt>Protected</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_field_properties.hgt>Sequential</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_field_properties.hgt>SkipTo</link></cell><cell></cell><cell>(string of the field name)</cell>
+	<cell><link change_field_properties.hgt>UpperCase</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_field_properties.hgt>UseEnterKey</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_field_properties.hgt>UseUnicodeTextBox</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_field_properties.hgt>Verify</link></cell><cell></cell><cell>Yes, No</cell>
+</table>
