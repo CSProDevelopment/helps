@@ -19,6 +19,7 @@ AppType=Batch
 Application=.\MyEdits.bch
 InputData=.\MyInputData.dat
 OutputData=.\MyOutputData.dat
+Paradata=.\MyParadataLog.cslog
 Listing=.\MyEdits.lst
 ImputeFreqs=.\MyEdits.freq.lst
 WriteData=.\WriteMessages.txt
@@ -51,6 +52,7 @@ The <pffcolor>[Files]</pffcolor> block is required. A description of the files, 
 	<li><pffcolor>Application</pffcolor>=the name of the batch edit application that you created.</li>
 	<li><pffcolor>InputData</pffcolor>=the data file against which the batch edit program will run. This file will not be modified during the run.</li>
 	<li><pffcolor>OutputData</pffcolor>=the revised/corrected input data will be saved as this file.</li>
+	<li><pffcolor>Paradata</pffcolor>=the name of a file where <link paradata.hgt>events</link> logged during the application's run are saved.</li>
 	<li><pffcolor>Listing</pffcolor>=a report of the batch operation.</li>
 	<li><pffcolor>ImputeFreqs</pffcolor>=if you have any <logiccolor>impute</logiccolor> function calls in your program, the results of these statements will be written to this file.</li>
 	<li><pffcolor>WriteData</pffcolor>=if there are one or more <logiccolor>write</logiccolor> function calls in your program, the text of these statements will be written to this file.</li>
