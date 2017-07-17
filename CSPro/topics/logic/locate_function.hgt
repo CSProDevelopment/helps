@@ -27,7 +27,7 @@ The function returns a logical value of 1 (true) if a case is found and 0 (false
 if locate(SURVEY_DICT,>=,"55") then
 
 	do while loadcase(SURVEY_DICT) and PROVINCE = 55
-		// province all cases in province 55
+		// process all cases in province 55
 	enddo;
 
 endif;
