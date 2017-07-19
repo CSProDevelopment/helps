@@ -10,15 +10,20 @@
 
 Several functions take an argument that consists of a message and then an optional number of parameters that are dynamically inserted into the text to create a final message. The <arg>message</arg> is either a string expression or a numeric <link message_file.hgt>message number</link> that contains the message text.
 
-The message can contain optional parameters, <arg>parameter1</arg> to <arg>parameterN</arg>, that will be inserted into the message. Each parameter, denoted in the message text with a percent sign, is sequentially inserted into the message. Parameters can be numeric or string expressions, but the type of parameter must match the type of the receiving field in the message text. There are four formatters:
+The message can contain optional parameters, <arg>parameter1</arg> to <arg>parameterN</arg>, that will be inserted into the message. Each parameter, denoted in the message text with a percent sign, is sequentially inserted into the message. Parameters can be numeric or string expressions, but the type of parameter must match the type of the receiving field in the message text. There are five formatters:
 
 <table 2 nowrap header>
 	<cell>Formatter</cell><cell>Result</cell>
 	<cell><logiccolor>"%d"</logiccolor></cell><cell>Inserts a number that is displayed as an integer.</cell>
 	<cell><logiccolor>"%f"</logiccolor></cell><cell>Inserts a number that is displayed as a decimal value (with six decimal places shown by default).</cell>
 	<cell><logiccolor>"%s"</logiccolor></cell><cell>Inserts a text string.</cell>
+	<cell><logiccolor>"%v"</logiccolor></cell><cell>Inserts a variable formatted intelligently (see below).</cell>
 	<cell><logiccolor>"%p"</logiccolor></cell><cell>Inserts the name of the current procedure, which can be useful for debugging. No parameter should be supplied if using this option.</cell>
 </table>
+
+<subheader>Variable Intelligent Formatting</subheader>
+
+The <logiccolor>"%v"</logiccolor> formatter works with either numeric or string variables, whether a dictionary item or a temporary variable. If the formatter is used on an alphanumeric dictionary item or a string variable, then it displays it in the same way as would <logiccolor>"%s"</logiccolor>. However, if a numeric dictionary item is used, then it formats the number in the way that it would be saved, obeying the length, zero fill, and decimal attributes of the field. If a numeric temporary variable is used, then the number is displayed as an integer (<logiccolor>"%d"</logiccolor>) if applicable, or as a decimal value (<logiccolor>"%f"</logiccolor>) with up to six decimal places otherwise.
 
 <subheader>Additional Formatting Options</subheader>
 
