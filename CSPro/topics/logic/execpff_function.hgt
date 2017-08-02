@@ -17,7 +17,7 @@ On mobile devices, multiple data entry applications cannot be run simultaneously
 
 If the PFF file that launched the application that calls this function specified an <pffcolor>OnExit</pffcolor> parameter, the <arg>pff_filename</arg> specified by this function will override the <pffcolor>OnExit</pffcolor> parameter.
 
-When calling the <logiccolor>execpff</logiccolor> function from a desktop CSPro application on a PC where the CSEntry Universal Windows application is installed, it is possible to launch a pff file in the Universal Windows application by using <logiccolor>mobile</logiccolor> as a flag. The application being launched must have already been added as an application to the Universal Windows app. When using the <logiccolor>mobile</logiccolor> flag specify only the name of the pff file in <arg>pff_filename</arg> (e.g. "myapp.pff") and not the full path to the file. When the <logiccolor>mobile</logiccolor> flag, all flags other than <logiccolor>stop</logiccolor> are ignored.
+When calling the <logiccolor>execpff</logiccolor> function from a desktop CSPro application on a computer where the Universal Windows CSEntry mobile application has been installed, it is possible to launch a PFF in the Universal Windows application by using <logiccolor>mobile</logiccolor> as a flag. The application being launched must have already been added as an application to the Universal Windows application. When using the <logiccolor>mobile</logiccolor> flag, specify only the name of the PFF file in <arg>pff_filename</arg> (e.g. <logiccolor>"MyApp.pff"</logiccolor>) and not the full path to the file. When using the <logiccolor>mobile</logiccolor> flag, all flags other than <logiccolor>stop</logiccolor> are ignored.
 
 <subheader>Return Value</subheader>
 

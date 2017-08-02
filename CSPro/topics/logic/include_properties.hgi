@@ -2,27 +2,31 @@
 
 The following properties apply to the <b>application</b>:
 
-<table 3 header nowrap>
-	<cell>Name</cell><cell>Settable?</cell><cell>Values</cell>
-	<cell>AppType</cell><cell></cell><cell>DataEntry, Batch, Tabulation</cell>
-	<cell><link change_data_entry_options.hgt>AutoAdvanceOnSelection</link></cell><cell>✔</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>CAPI</link></cell><cell></cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>CaseTree</link></cell><cell></cell><cell>Always, Desktop, Mobile, Never</cell>
-	<cell><link change_data_entry_options.hgt>CenterForms</link></cell><cell></cell><cell>Yes, No</cell>
-	<cell><link data_source_options.hgt>CreateListing</link></cell><cell></cell><cell>Yes, No</cell>
-	<cell><link data_source_options.hgt>CreateLog</link></cell><cell></cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>DecimalComma</link></cell><cell></cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>DisplayCodesAlongsideLabels</link></cell><cell>✔</cell><cell>Yes, No</cell>
-	<cell><link data_source_options.hgt>NotesDeleteOtherOperators</link></cell><cell>✔</cell><cell>Yes, No</cell>
-	<cell><link data_source_options.hgt>NotesEditOtherOperators</link></cell><cell>✔</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>OperatorID</link></cell><cell></cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>PartialSave</link></cell><cell>✔</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>Path</link></cell><cell></cell><cell>Yes (system controlled), No (operator controlled)</cell>
-	<cell><link change_data_entry_options.hgt>ShowEndCaseDialog</link></cell><cell>✔</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>ShowErrorMessageNumbers</link></cell><cell>✔</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>ShowFieldLabels</link></cell><cell></cell><cell>Yes, No</cell>
-	<cell>SpecialValuesZero</cell><cell>✔</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>ValidateAlphaFields</link></cell><cell>✔</cell><cell>Yes, No</cell>
+<table 4 header nowrap>
+	<cell>Name</cell><cell>Settable?</cell><cell>Platform</cell><cell>Values</cell>
+	<cell>AppType</cell><cell></cell><cell>All</cell><cell>DataEntry, Batch, Tabulation</cell>
+	<cell><link change_data_entry_options.hgt>AutoAdvanceOnSelection</link></cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>CAPI</link></cell><cell></cell><cell>All</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>CaseTree</link></cell><cell></cell><cell>All</cell><cell>Always, Desktop, Mobile, Never</cell>
+	<cell><link change_data_entry_options.hgt>CenterForms</link></cell><cell></cell><cell>Desktop</cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>CreateListing</link></cell><cell></cell><cell>All</cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>CreateLog</link></cell><cell></cell><cell>All</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>DecimalComma</link></cell><cell></cell><cell>Desktop</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>DisplayCodesAlongsideLabels</link></cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>NotesDeleteOtherOperators</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>NotesEditOtherOperators</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>OperatorID</link></cell><cell></cell><cell>All</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>PartialSave</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>Path</link></cell><cell></cell><cell>All</cell><cell>Yes (system controlled), No (operator controlled)</cell>
+	<cell><link change_data_entry_options.hgt>ShowEndCaseDialog</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>ShowErrorMessageNumbers</link></cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>ShowFieldLabels</link></cell><cell></cell><cell>Mobile</cell><cell>Yes, No</cell>
+	<cell>ShowLabelsInCaseTree</cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
+	<cell>ShowNavigationControls</cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
+	<cell>ShowSkippedFields</cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
+	<cell>SpecialValuesZero</cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>ValidateAlphaFields</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
+	<cell>WindowTitle</cell><cell>✔</cell><cell>All</cell><cell>(string of the window title)</cell>
 </table>
 
 The following properties apply to <b>items</b>, none of which are settable:

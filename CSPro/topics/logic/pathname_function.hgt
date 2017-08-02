@@ -23,12 +23,12 @@ There are some options specific to Windows:
 
 <indent><table 2>
 	<cell><arg>path_type</arg></cell><cell><b>Description</b></cell>
+	<cell><b>CSEntry</b></cell><cell>If the Universal Windows CSEntry mobile application has been installed on the system, this will return the "Entry Apps" folder where data entry applications for the mobile application are stored. All program and data files used by the Universal Windows mobile application must be stored in this folder. Desktop applications can access files in this folder to share data between mobile and desktop applications.</cell>
 	<cell><b>Documents</b></cell><cell>The current user's Documents folder.</cell>
 	<cell><b>Desktop</b></cell><cell>The current user's Desktop folder.</cell>
 	<cell><b>ProgramFiles32</b></cell><cell>The folder containing installed 32-bit applications.</cell>
 	<cell><b>ProgramFiles64</b></cell><cell>The folder containing installed 64-bit applications. If the computer has only a 32-bit processor, this returns the same value as ProgramFiles32.</cell>
 	<cell><b>Windows</b></cell><cell>The folder contains the Windows operating system.</cell>
-	<cell><b>CSEntry</b></cell><cell>If the Universal Windows CSEntry mobile app has been installed on the system then this will return the "Entry Apps" folder where data entry applications for the mobile app are stored. All program and data files used by the Universal Windows mobile app must be stored in this folder. Desktop Windows applications can access files in this folder to share data between mobile and desktop applications.</cell>
 </table></indent>
 
 There are some options specific to mobile devices:
