@@ -102,13 +102,15 @@ namespace Help_Generator
             _tagSettings.Add(LogicColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicColorHandler,0,0));
             _tagSettings.Add(LogicArgumentTag,new TagSettings("<span class=\"code_colorization_argument\">","</span>"));
             _tagSettings.Add(LogicTableTag,new TagSettings(false,(StartTagHandlerDelegate)StartLogicTableHandler,null,1,1));
-            _tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
+            _tagSettings.Add(MessageTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndMessageHandler,0,0));
+			_tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
             _tagSettings.Add(PffColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffColorHandler,0,0));
             _tagSettings.Add(HtmlTag,new TagSettings("",""));
 
             _blockTags = new Dictionary<string,string>();
             _blockTags.Add(MakeTag(LogicTag,true),MakeTag(LogicTag,false));
             _blockTags.Add(MakeTag(LogicSyntaxTag,true),MakeTag(LogicSyntaxTag,false));
+            _blockTags.Add(MakeTag(MessageTag,true),MakeTag(MessageTag,false));
             _blockTags.Add(MakeTag(PffTag,true),MakeTag(PffTag,false));
             _blockTags.Add(MakeTag(HtmlTag,true),MakeTag(HtmlTag,false));
         }
@@ -863,6 +865,9 @@ namespace Help_Generator
             ((LogicColorizerHtmlHelp)_helpComponents._logicColorizer.DefaultLogicColorizer).GetHtmlFilenameForKeywordClass = this;
             ((LogicColorizerHtmlHelpInline)_helpComponents._inlineLogicColorizer.DefaultLogicColorizer).GetHtmlFilenameForKeywordClass = this;
 
+			if( _helpComponents._messageColorizer == null )
+				_helpComponents._messageColorizer = new LogicColorizer(new LogicColorizerHtmlHelp(),LogicColorizer.SourceType.Message);
+
             if( _helpComponents._pffColorizer == null )
                 _helpComponents._pffColorizer = new PffColorizer(new PffColorizerHtmlHelp());
         }
@@ -953,6 +958,12 @@ namespace Help_Generator
             return sb.ToString();
         }
 
+        private string EndMessageHandler(string endTagInnerText)
+        {
+            CreateLogicPffColorizers();
+            return _helpComponents._messageColorizer.Colorize(TrimOnlyOneNewlineBothEnds(endTagInnerText));
+        }
+
         private string EndPffHandler(string endTagInnerText)
         {
             CreateLogicPffColorizers();
@@ -988,6 +999,7 @@ namespace Help_Generator
         public const string LogicColorTag = "logiccolor";
         public const string LogicArgumentTag = "arg";
         public const string LogicTableTag = "logictable";
+		public const string MessageTag = "message";
         public const string PffTag = "pff";
         public const string PffColorTag = "pffcolor";
         public const string HtmlTag = "html";

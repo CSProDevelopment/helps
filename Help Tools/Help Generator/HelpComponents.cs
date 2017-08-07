@@ -15,6 +15,7 @@ namespace Help_Generator
 
         public LogicColorizer _logicColorizer;
         public LogicColorizer _inlineLogicColorizer;
+		public LogicColorizer _messageColorizer;
         public PffColorizer _pffColorizer;
     }
 }

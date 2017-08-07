@@ -8,10 +8,10 @@ Each line in the message file contains one message. A message consists of a mess
 
 For example, suppose a message file contains the following lines:
 
-<logic>
+<message>
 1 This is the first message
 2 This is the second message
-</logic>
+</message>
 
 When an <logiccolor>errmsg(1)</logiccolor> function is executed in a data entry application, the message "This is the first message" is displayed on screen. When an <logiccolor>errmsg(2)</logiccolor> function is executed, the message "This is the second message" is displayed.
 
@@ -20,9 +20,9 @@ When an <logiccolor>errmsg(1)</logiccolor> function is executed in a data entry 
 
 Parameters can be specified in the <logiccolor>errmsg</logiccolor> function. <link message_formatting_options.hgt>These parameters</link> can be numeric expressions or string expressions. String parameters in the error message text are indicated by <b>%s</b>. Integer numeric parameters are indicated with <b>%d</b>. Decimal numeric parameters are indicated with <b>%f</b>. For example, a message file might contain the following:
 
-<logic>
+<message>
 1 The month of %s has only %d days. You entered %d!
-</logic>
+</message>
 
 The application could use this as follows:
 
@@ -48,20 +48,20 @@ PROC HHDAY
 
 When designing an application that will be used in <link multiple_language_applications.hgt>multiple languages</link>, you can define multiple messages for a given message number. Use the <link define_languages.hgt>language name</link>, followed by the message number in parentheses, as shown in this example:
 
-<logic>
+<message>
 101		 Hello
 CHN(101) 你好
 FRA(101) Bonjour
-</logic>
+</message>
 
 CSPro will automatically display the correct message based on the current language. If no translated message exists for the current language, the default message is shown.
 
 You can also use the message file to translate string literals that are used along with the <logiccolor>tr</logiccolor> function. For example:
 
-<logic>
+<message>
 CHN("Hello") 你好
 FRA("Hello") Bonjour
-</logic>
+</message>
 
 Calling <logiccolor>tr("Hello")</logiccolor> in logic will display the correct string based on the current language.
 

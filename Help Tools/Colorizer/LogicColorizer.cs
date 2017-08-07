@@ -7,6 +7,8 @@ namespace Colorizer
 {
     class LogicColorizer
     {
+		public enum SourceType { Logic, Message };
+
         private SortedSet<string> _reservedWords;
         private SortedSet<string> _otherWordsWithHelps;
         private Dictionary<string,string> _helpTopics;
@@ -15,16 +17,22 @@ namespace Colorizer
         public List<string> ReservedWordsList { get { return _reservedWords.ToList(); } }
         public LogicColorizerInterface DefaultLogicColorizer { get { return _defaultLogicColorizer; } }
 
-        public LogicColorizer()
+        public LogicColorizer(SourceType sourceType = SourceType.Logic)
         {
             HighlightWordReader hwr = new HighlightWordReader(HighlightWordReader.LogicFilename);
 
             _helpTopics = new Dictionary<string,string>();
             _otherWordsWithHelps = new SortedSet<string>();
-            _reservedWords = hwr.ReadWordBlock(false,_otherWordsWithHelps,_helpTopics);
+
+			if( sourceType == SourceType.Logic )
+				_reservedWords = hwr.ReadWordBlock(false,_otherWordsWithHelps,_helpTopics);
+
+			else
+				_reservedWords = new SortedSet<string>();
         }
 
-        public LogicColorizer(LogicColorizerInterface defaultLogicColorizer) : this()
+        public LogicColorizer(LogicColorizerInterface defaultLogicColorizer,SourceType sourceType = SourceType.Logic)
+			: this(sourceType)
         {
             _defaultLogicColorizer = defaultLogicColorizer;
         }

@@ -17,16 +17,17 @@ The function returns a string with the translated message. If there is no availa
 
 <subheader>Example</subheader>
 
-<logic>
-// with the following message file:
+<message>
 FRA("Hello") Bonjour
+</message>
 
-// the error message displays:
-errmsg(tr("Hello")); // Hello
+<logic>
+// with the preceding message file, the error message displays:
+errmsg(tr("Hello"));  // Hello
 errmsg(tr("World!")); // World!
 
 setlanguage("FRA");
-errmsg(tr("Hello")); // Bonjour
+errmsg(tr("Hello"));  // Bonjour
 errmsg(tr("World!")); // World!
 </logic>
 
