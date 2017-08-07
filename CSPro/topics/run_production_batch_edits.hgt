@@ -36,6 +36,8 @@ MessageWrap=No
 ErrmsgOverride=No
 InputOrder=Sequential
 Parameter=your choice
+Language=LINGALA
+OnExit=.\Menu.pff
 </pff>
 
 
@@ -77,4 +79,6 @@ The <pffcolor>[Parameters]</pffcolor> block is optional. This section defines pa
 	<li><pffcolor>ErrmsgOverride</pffcolor>=allows you to override the default behavior of the <logiccolor>errmsg</logiccolor> function. The override only affects <logiccolor>errmsg</logiccolor> functions used in the code without a <logiccolor>case</logiccolor> or <logiccolor>summary</logiccolor> specifier. The option <b>No</b> maintains the default behavior (displaying the messages for each case, as well as in the summary). The option <b>Summary</b> only displays the message in the summary. The option <b>Case</b> displays the message for each case but not in the summary.</li>
 	<li><pffcolor>InputOrder</pffcolor>=allows you to override the default order in which cases are processed in a data file. The default option, <b>Sequential</b>, means that cases will be processed from the first case to the last case, in file order. The option <b>Indexed</b> overrides this order and cases will be processed in alphabetical order of the case IDs. The data file can contain duplicates case IDs if processed in sequential order, but not in indexed order.</li>
 	<li><pffcolor>Parameter</pffcolor>=allows you to pass in a string to your program. The parameter can be any length, although the string that retrieves the value in your program (via the <logiccolor>sysparm</logiccolor> function) must be large enough to accommodate it. Once the parameter is retrieved, it can be parsed by your program for further usage.</li>
+	<li><pffcolor>Language</pffcolor>=specifies the initial language of the program. The parameter must match the name of a language specified in the dictionary or message file.</li>
+ 	<li><pffcolor>OnExit</pffcolor>=specifies a PFF file to run after the application closes. This can be useful, for example, if you want to relaunch a menu program after processing data.</li>
 </list>

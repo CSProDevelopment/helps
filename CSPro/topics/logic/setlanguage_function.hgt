@@ -9,11 +9,11 @@ b = setlanguage(<arg>language_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>setlanguage</logiccolor> function changes the language being used by a data entry application. Pass a string expression, <arg>language_name</arg>, with the name, not the label, of the language to which you want to change.
+The <logiccolor>setlanguage</logiccolor> function changes the language being used by an application. Pass a string expression, <arg>language_name</arg>, with the name, not the label, of the language to which you want to change.
 
 <subheader>Return Value</subheader>
 
-The function returns 1 (true) if the language exists and the language mode was successfully changed. Otherwise it returns 0 (false).
+The function returns 1 (true) if the language exists and the language was successfully changed. Otherwise it returns 0 (false).
 
 <subheader>Example</subheader>
 
@@ -29,4 +29,4 @@ PROC INTERVIEW_LANGUAGE
 	endif;
 </logic>
 
-<seealso getlanguage_function.hgt define_languages.hgt multiple_language_dictionaries.hgt />
+<seealso getlanguage_function.hgt onchangelanguage_global_function.hgt multiple_language_applications.hgt />

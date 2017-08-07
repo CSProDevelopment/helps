@@ -1,0 +1,33 @@
+﻿<title>Tr Function</title>
+<context logic_help_tr />
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = tr(<arg>string_expression</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>tr</logiccolor> function translates a <arg>string_expression</arg>, generally a string literal, into a string in the appropriate language. String translations are defined in the application's <link message_file.hgt>message file</link>.
+
+<subheader>Return Value</subheader>
+
+The function returns a string with the translated message. If there is no available translation, then the original message is returned.
+
+<subheader>Example</subheader>
+
+<logic>
+// with the following message file:
+FRA("Hello") Bonjour
+
+// the error message displays:
+errmsg(tr("Hello")); // Hello
+errmsg(tr("World!")); // World!
+
+setlanguage("FRA");
+errmsg(tr("Hello")); // Bonjour
+errmsg(tr("World!")); // World!
+</logic>
+
+<seealso message_file.hgt multiple_language_applications.hgt setlanguage_function.hgt />

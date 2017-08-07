@@ -23,7 +23,6 @@ FullScreen=No
 NoFileOpen=No
 Lock=Verify,Stats
 Interactive=Ask
-Language=LINGALA
 CaseListingFilter=12
 ShowInApplicationListing=Always
 
@@ -38,6 +37,7 @@ LOOKUP_DICT=.\LookupFile.dat
 
 [Parameters]
 Parameter=your choice
+Language=LINGALA
 OnExit=.\Menu.pff
 
 [DataEntryIDs]
@@ -83,7 +83,6 @@ The <pffcolor>[DataEntryInit]</pffcolor> block is optional. It gives you the opp
 		</list>
 	If the mode is followed by a comma and <b>Lock</b>, then the mode cannot be changed by the operator. Otherwise, unless the option is <b>Off</b>, the operator can change the mode from within CSEntry.
 		</li>
-	<li><pffcolor>Language</pffcolor>=when running a <link capi_features.hgt>CAPI application</link>, this option specifies the initial language of the program. The parameter must match the name of the language specified in the question text editor.</li>
 	<li><pffcolor>CaseListingFilter</pffcolor>=filters the cases in the data file shown to the operator. The filter string can use regular expressions. If you have multiple operators entering data to the same data file, this can be a way to prevent operators from interacting with data entered by other operators. The filter is matched against the IDs of each case.</li>
 	<li><pffcolor>ShowInApplicationListing</pffcolor>=determines whether the application associated with this PFF is displayed on the mobile Entry Applications screen. The possible options are: <b>Always</b> (default), <b>Never</b>, and <b>Hidden</b>. Operators must manually elect to show hidden applications, whereas PFFs with the <b>Never</b> option will never be shown.</li>
 </list>
@@ -112,6 +111,7 @@ The <pffcolor>[Parameters]</pffcolor> block is optional. This section defines pa
 
 <list>
  	<li><pffcolor>Parameter</pffcolor>=allows you to pass in a string to your program. The parameter can be any length, although the string that retrieves the value in your program (via the <logiccolor>sysparm</logiccolor> function) must be large enough to accommodate it. Once the parameter is retrieved, it can be parsed by your program for further usage.</li>
+	<li><pffcolor>Language</pffcolor>=specifies the initial language of the program. The parameter must match the name of a language specified in the question text, dictionary, or message file.</li>
  	<li><pffcolor>OnExit</pffcolor>=specifies a PFF file to run after the data entry program closes. This can be useful, for example, if you want to relaunch a menu program after collecting data.</li>
 </list>
 
