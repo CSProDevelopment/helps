@@ -4,7 +4,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = timestamp();
+d = timestamp();
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -13,7 +13,7 @@ The <logiccolor>timestamp</logiccolor> function returns the UNIX time, which is,
 
 <subheader>Return Value</subheader>
 
-The function returns the UNIX time as an integer.
+The function returns the UNIX time as a decimal value. The integer part of this value is the number of elapsed seconds, while the decimal part contains the milliseconds.
 
 <subheader>Example</subheader>
 
