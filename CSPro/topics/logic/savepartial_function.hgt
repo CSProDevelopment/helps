@@ -9,7 +9,7 @@ b = savepartial(『clear』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>savepartial</logiccolor> function saves the current case as a partially added, modified or verified case. It is useful in a large data entry application to perform intermediate backups. It can also be used to automatically perform a partial save when the keyer stops the case before completing it.
+The <logiccolor>savepartial</logiccolor> function saves the current case as a partially added, modified or verified case. It is useful in a large data entry application to perform intermediate backups. It can also be used to automatically perform a partial save when the keyer stops the case before completing it. You can also have CSEntry <link data_source_options.hgt>automatically partially save</link> cases.
 
 The function can be coded only in the <logiccolor>preproc</logiccolor> or <logiccolor>postproc</logiccolor> of a field. The function cannot be used before all ID values for the case have been entered.
 
