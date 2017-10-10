@@ -4,12 +4,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = tr(<arg>string_expression</arg>);
+s = tr(<arg>string_expression</arg> ‖ <arg>message_number</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>tr</logiccolor> function translates a <arg>string_expression</arg>, generally a string literal, into a string in the appropriate language. String translations are defined in the application's <link message_file.hgt>message file</link>.
+The <logiccolor>tr</logiccolor> function translates text into the appropriate language based on the application current's language. The text can come from a <arg>string_expression</arg>, generally a string literal, or from a <arg>message_number</arg>. Text translations are defined in the application's <link message_file.hgt>message file</link>.
 
 <subheader>Return Value</subheader>
 
@@ -18,7 +18,7 @@ The function returns a string with the translated message. If there is no availa
 <subheader>Example</subheader>
 
 <message>
-FRA("Hello") Bonjour
+FR("Hello") Bonjour
 </message>
 
 <logic>
@@ -26,7 +26,7 @@ FRA("Hello") Bonjour
 errmsg(tr("Hello"));  // Hello
 errmsg(tr("World!")); // World!
 
-setlanguage("FRA");
+setlanguage("FR");
 errmsg(tr("Hello"));  // Bonjour
 errmsg(tr("World!")); // World!
 </logic>

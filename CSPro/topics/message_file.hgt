@@ -1,6 +1,6 @@
 ﻿<title>Message File</title>
 
-The message file for a data entry application stores the error message text that is displayed during data entry. The message file for a batch application stores the error message text that will be included in the execution report. The message file has the extension <b>.msg</b>. While creating your application, you can view the message text in a window at the bottom of the logic screen.
+The message file for a data entry application stores the error message text that is displayed during data entry. The message file for a batch application stores the error message text that will be included in the execution report. The message file has the extension <b>.mgf</b>. While creating your application, you can view the message text in a window at the bottom of the logic screen.
 
 <subheader>Basic Messages</subheader>
 
@@ -49,18 +49,31 @@ PROC HHDAY
 When designing an application that will be used in <link multiple_language_applications.hgt>multiple languages</link>, you can define multiple messages for a given message number. Use the <link define_languages.hgt>language name</link>, followed by the message number in parentheses, as shown in this example:
 
 <message>
-101		 Hello
-CHN(101) 你好
-FRA(101) Bonjour
+101		Hello
+ZH(101) 你好
+FR(101) Bonjour
 </message>
 
 CSPro will automatically display the correct message based on the current language. If no translated message exists for the current language, the default message is shown.
 
+Using the <font monospace>Language</font> directive declares that all subsequent error messages are in a given language. For example, the previous example could be rewritten as:
+
+<message>
+Language=EN
+101 Hello
+
+Language=ZH
+101 你好
+
+Language=FR
+101 Bonjour
+</message>
+
 You can also use the message file to translate string literals that are used along with the <logiccolor>tr</logiccolor> function. For example:
 
 <message>
-CHN("Hello") 你好
-FRA("Hello") Bonjour
+ZH("Hello") 你好
+FR("Hello") Bonjour
 </message>
 
 Calling <logiccolor>tr("Hello")</logiccolor> in logic will display the correct string based on the current language.

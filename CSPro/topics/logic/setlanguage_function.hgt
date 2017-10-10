@@ -21,11 +21,11 @@ The function returns 1 (true) if the language exists and the language was succes
 PROC INTERVIEW_LANGUAGE
 
 	if INTERVIEW_LANGUAGE = 1 then
-		setlanguage("FRA");
+		setlanguage("EN");
 	elseif INTERVIEW_LANGUAGE = 2 then
-		setlanguage("GER");
+		setlanguage("FR");
 	else
-		setlanguage("ENG");
+		setlanguage("ZH");
 	endif;
 </logic>
 
