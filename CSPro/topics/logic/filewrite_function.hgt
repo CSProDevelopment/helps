@@ -11,7 +11,7 @@ b = filewrite(<arg>file_handler</arg>,<arg>message</arg>『,<arg>parameter1</arg
 
 The <logiccolor>filewrite</logiccolor> function writes a line of text to the file associated with the <arg>file_handler</arg> (a name declared in a <logiccolor>file</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>).
 
-The <arg>message</arg> is either a string expression or a numeric <link message_file.hgt>message number</link> that contains the text that is written to the file. If the text contains any <link message_formatting_options.hgt>message formatters</link>, the optional parameters <arg>parameter1</arg> to <arg>parameterN</arg> will be inserted into the text. There are some additional options for file output:
+The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.hgt>message number</link> that contains the text that is written to the file. If the text contains any <link message_formatting_options.hgt>message formatters</link>, the optional parameters <arg>parameter1</arg> to <arg>parameterN</arg> will be inserted into the text. There are some additional options for file output:
 
 <list>
 	<li>If you want to break a line of text into two lines, place <b>\n</b> where you want the line divided.</li>

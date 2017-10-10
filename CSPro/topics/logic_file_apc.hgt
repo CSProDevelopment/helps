@@ -1,8 +1,10 @@
 ﻿<title>Logic File (.apc)</title>
 
-The logic file contains all the <link introduction_to_cspro_language.hgt>CSPro language</link> statements which control the application. There is one logic file associated with each application. CSPro does not allow you to explicitly open the logic file. It is opened only when you open its associated application.
+The logic file contains all the <link introduction_to_cspro_language.hgt>CSPro language</link> statements which control the application. There is a logic file associated with each application. CSPro does not allow you to explicitly open the logic file. It is opened only when you open its associated application.
 
-By default, the logic file has the same name as the application file, but with a different extension. This is not a requirement, however. Advanced users who change the name of this file must also remember to change the corresponding name in the application file.
+By default, the logic file has the same name as the application file, but with a different extension, <b>.apc</b>. This is not a requirement, however. Advanced users who change the name of this file must also remember to change the corresponding name in the application file.
+
+You can associate multiple logic files with an application, which can be useful if you have a library of functions that you would like to share across several applications. To do this, select <link add_files_to_an_application.hgt>File -> Add Files</link> and then choose the external logic file to add to the application. The names of any variables or functions defined in that logic file cannot clash with the names used in the application's primary logic file. If you no longer want to use the external logic file, you can remove it by selecting <link drop_files_from_an_application.hgt>File -> Drop Files</link>.
 
 The logic file is a text file which may be viewed with any text editor, such as Text Viewer or Notepad. While you may make changes to this file outside the CSPro environment, CSPro provides a powerful text editor which is integrated with the CSPro compiler.
 
