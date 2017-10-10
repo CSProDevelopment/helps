@@ -11,6 +11,8 @@ s = filename(<arg>dictionary_name</arg> ‖ <arg>file_handler</arg>);
 
 The <logiccolor>filename</logiccolor> function returns the fully qualified name of a file. If supplying a <arg>dictionary_name</arg>, the function returns the name of the file associated with a data dictionary. If providing a <arg>file_handler</arg> (declared in a <logiccolor>file</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>), the function returns the name of the text file associated with the file handler.
 
+The function can also take <logiccolor>paradata</logiccolor> as its argument, in which case it returns the file name of the currently open paradata log.
+
 <subheader>Return Value</subheader>
 
 The function returns a string containing the folder and file name.

@@ -3,7 +3,13 @@
 
 This is a detailed list of changes in CSPro 7.1. For a more general overview, see the <i>readme.txt</i> file located in the CSPro installation folder.
 
-<subheader>General</subheader>
+<subheader>Paradata</subheader>
+
+<list>
+	<li>A new logic function, <logiccolor>paradata</logiccolor>, that can be used to control or query the paradata log.</li>
+</list>
+
+<subheader>Messages</subheader>
 
 <list>
 	<li>Expanding <link multiple_language_applications.hgt>multiple language application</link> support, messages defined in the <link message_file_mgf.hgt>message file</link> can be specified in multiple languages. These messages, along with string literals wrapped in the <logiccolor>tr</logiccolor> function, will be displayed in the application's current language.</li>
@@ -18,7 +24,6 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 </list>
 
 <subheader>Data Entry</subheader>
-
 
 <list>
 	<li>A <link data_source_options.hgt>data source option</link> that allows you to specify the number of minutes after which a case will automatically be partially saved.</li>
