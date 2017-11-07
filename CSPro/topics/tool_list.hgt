@@ -1,11 +1,6 @@
 ﻿<title>Tool List</title>
 
-CSPRO71_TODO:
-	for two paradata tools:
-		add description
-		add context
-
-<context HID_TOOLS_COMPARE HID_TOOLS_CONCAT HID_TOOLS_CSINDEX HID_TOOLS_DATAVIEWER HID_TOOLS_DEPLOY HID_TOOLS_EXCEL2CSPRO HID_TOOLS_EXPORT HID_TOOLS_FREQ HID_TOOLS_MAPVIEW HID_TOOLS_OPERATORSTATSVIEWER HID_TOOLS_PACK HID_TOOLS_PFFEDITOR HID_TOOLS_PRODUCTIONRUNNER HID_TOOLS_REFORMAT HID_TOOLS_SAVEARRAYVIEWER HID_TOOLS_SHPTOMAP HID_TOOLS_SORT HID_TOOLS_TABLEVIEW HID_TOOLS_TEXTVIEW HID_TOOLS_TRS HID_TOOLS_TRS_SETUP />
+<context HID_TOOLS_COMPARE HID_TOOLS_CONCAT HID_TOOLS_CSINDEX HID_TOOLS_DATAVIEWER HID_TOOLS_DEPLOY HID_TOOLS_EXCEL2CSPRO HID_TOOLS_EXPORT HID_TOOLS_FREQ HID_TOOLS_MAPVIEW HID_TOOLS_OPERATORSTATSVIEWER HID_TOOLS_PACK HID_TOOLS_PARADATACONCAT HID_TOOLS_PARADATAVIEWER HID_TOOLS_PFFEDITOR HID_TOOLS_PRODUCTIONRUNNER HID_TOOLS_REFORMAT HID_TOOLS_SAVEARRAYVIEWER HID_TOOLS_SHPTOMAP HID_TOOLS_SORT HID_TOOLS_TABLEVIEW HID_TOOLS_TEXTVIEW HID_TOOLS_TRS HID_TOOLS_TRS_SETUP />
 
 To run a tool, open the <b>Tools</b> menu and select one of the tools listed below. There is a user's guide for most of the tools.
 
@@ -63,11 +58,20 @@ Compare the contents of two data files and identify the differences. The data fi
 
 <subheader><link CSConcat::introduction_to_concatenate_data.hgt>Concatenate Data</link></subheader>
 
-Concatenate (join end-to-end) two or more CSPro or text files. You do not need a dictionary for this tool when working with text-based files
+Concatenate (join end-to-end) two or more CSPro or text files. You do not need a dictionary for this tool when working with text-based files.
 
 <subheader><link TRSSetup::introduction_to_table_retrieval_setup.hgt>Table Retrieval Setup</link></subheader>
 
 Create and modify a set of tables and other documents organized by geographic area, subject and title for use by the Table Retrieval tool.
+
+
+<subheader><link ParadataViewer::introduction_to_paradata_viewer.hgt>Paradata Viewer</link></subheader>
+
+Display reports about the <link paradata.hgt>paradata</link> collected during an application's run.
+
+<subheader><link ParadataConcat::introduction_to_paradata_concatenator.hgt>Paradata Concatenator</link></subheader>
+
+Combine multiple <link paradata_log_file_cslog.hgt>paradata logs</link> into a single log.
 
 
 <subheader><link ShpToMap::introduction_to_convert_shape_to_map.hgt>Convert Shape to Map</link></subheader>
