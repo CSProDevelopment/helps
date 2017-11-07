@@ -28,12 +28,15 @@ area_names_file_anm.hgt | .anm																	#	.anm
 logic_file_apc.hgt | .apc																		#	.apc
 logic_file_apc.hgt | .app																		#	.app
 batch_edit_application_file_bch.hgt | .bch														#	.bch
+file_types.hgt | .cmp																			#	.cmp
 data_sources.hgt | .csdb																		#	.csdb
+file_types.hgt | .csds																			#	.csds
 index_file_csidx.hgt | .csidx																	#	.csidx
 notes_file_csnot.hgt | .csnot																	#	.csnot
 data_dictionary_file_dcf.hgt | .dcf																#	.dcf
 binary_data_entry_application_file_pen.hgt | .enc												#	.enc
 data_entry_application_file_ent.hgt | .ent														#	.ent
+file_types.hgt | .exf																			#	.exf
 forms_file_fmf.hgt | .fmf																		#	.fmf
 frequency_specification_file_fqf.hgt | .fqf														#	.fqf
 index_file_csidx.hgt | .idx																		#	.idx
@@ -48,14 +51,18 @@ binary_data_entry_application_file_pen.hgt | .pen												#	.pen
 program_information_file_pff.hgt | .pff															#	.pff
 	run_production_batch_edits.hgt																#		Run Production Batch Edits
 	run_production_data_entry.hgt																#		Run Production Data Entry
+file_types.hgt | .pffRunner																		#	.pffRunner
 data_synchronization.hgt | .pnc																	#	.pnc
 question_text_file_qsf.hgt | .qsf																#	.qsf
+file_types.hgt | .ssf																			#	.ssf
 status_file_sts.hgt | .sts																		#	.sts
 saved_arrays_file_sva.hgt | .sva																#	.sva
 table_matrices_file_tab.hgt | .tab																#	.tab
 table_matrices_index_file_tabidx.hgt | .tabidx													#	.tabidx
 table_matrices_index_file_tabidx.hgt | .tai														#	.tai
 tables_file_tbw.hgt | .tbw																		#	.tbw
+file_types.hgt | .trs																			#	.trs
+file_types.hgt | .xl2cs																			#	.xl2cs
 tabulation_application_file_xtb.hgt | .xtb														#	.xtb
 table_specifications_file_xts.hgt | .xts														#	.xts
 operators.hgt | /																				#	/
@@ -170,6 +177,7 @@ run_a_data_entry_application.hgt | Applications													#	Applications
 	run_a_data_entry_application.hgt | Run a Data Entry											#		Run a Data Entry
 	save_an_application.hgt | Save																#		Save
 	tabulation_applications.hgt | Tabulation													#		Tabulation
+tool_list.hgt | Application Deployment															#	Application Deployment
 print_preview_options.hgt | Apply Changes Across Panels											#	Apply Changes Across Panels
 create_an_area_names_file.hgt | Area															#	Area
 	create_an_area_names_file.hgt | Create a Names File											#		Create a Names File
@@ -568,6 +576,7 @@ delimiters.hgt																					#	Delimiters
 demode_function.hgt																				#	DeMode Function
 errmsg_function.hgt | Denom																		#	Denom
 	errmsg_function.hgt																			#		ErrMsg Function
+tool_list.hgt | Deployment																		#	Deployment
 deprecated_features.hgt																			#	Deprecated Features
 data_entry_elements.hgt | Description															#	Description
 	data_entry_elements.hgt | Fields															#		Fields

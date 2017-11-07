@@ -7,6 +7,7 @@ rmdir /q /s "Outputs"
 
 %help_generator% /generate "CSBatch\CSBatch.hghelp"
 %help_generator% /generate "CSConcat\CSConcat.hghelp"
+%help_generator% /generate "CSDeploy\CSDeploy.hghelp"
 %help_generator% /generate "CSDiff\CSDiff.hghelp"
 %help_generator% /generate "CSEntry\CSEntry.hghelp"
 %help_generator% /generate "CSExport\CSExport.hghelp"

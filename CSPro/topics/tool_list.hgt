@@ -1,13 +1,14 @@
 ﻿<title>Tool List</title>
 
 CSPRO71_TODO:
-	for CSDeploy + two paradata tools:
+	for two paradata tools:
 		add description
 		add context
 
-<context HID_TOOLS_COMPARE HID_TOOLS_CONCAT HID_TOOLS_CSINDEX HID_TOOLS_DATAVIEWER HID_TOOLS_EXCEL2CSPRO HID_TOOLS_EXPORT HID_TOOLS_FREQ HID_TOOLS_MAPVIEW HID_TOOLS_OPERATORSTATSVIEWER HID_TOOLS_PACK HID_TOOLS_PFFEDITOR HID_TOOLS_PRODUCTIONRUNNER HID_TOOLS_REFORMAT HID_TOOLS_SAVEARRAYVIEWER HID_TOOLS_SHPTOMAP HID_TOOLS_SORT HID_TOOLS_TABLEVIEW HID_TOOLS_TEXTVIEW HID_TOOLS_TRS HID_TOOLS_TRS_SETUP />
+<context HID_TOOLS_COMPARE HID_TOOLS_CONCAT HID_TOOLS_CSINDEX HID_TOOLS_DATAVIEWER HID_TOOLS_DEPLOY HID_TOOLS_EXCEL2CSPRO HID_TOOLS_EXPORT HID_TOOLS_FREQ HID_TOOLS_MAPVIEW HID_TOOLS_OPERATORSTATSVIEWER HID_TOOLS_PACK HID_TOOLS_PFFEDITOR HID_TOOLS_PRODUCTIONRUNNER HID_TOOLS_REFORMAT HID_TOOLS_SAVEARRAYVIEWER HID_TOOLS_SHPTOMAP HID_TOOLS_SORT HID_TOOLS_TABLEVIEW HID_TOOLS_TEXTVIEW HID_TOOLS_TRS HID_TOOLS_TRS_SETUP />
 
 To run a tool, open the <b>Tools</b> menu and select one of the tools listed below. There is a user's guide for most of the tools.
+
 
 <subheader><link DataViewer::introduction_to_data_viewer.hgt>Data Viewer</link></subheader>
 
@@ -28,6 +29,17 @@ View, create, and manipulate thematic maps of data. Thematic maps can be created
 <subheader><link TRSWin::introduction_to_table_retrieval.hgt>Table Retrieval</link></subheader>
 
 Retrieve and display tables, maps, and other previously prepared documents from a large database of documents based on geography, subject matter, and title. It is very useful as a data dissemination tool.
+
+
+<subheader><link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link></subheader>
+
+Deploy one or multiple applications to a server so that they can be downloaded onto interviewer devices.
+
+<subheader><link CSPack::introduction_to_pack_application.hgt>Pack Application</link></subheader>
+
+Pack all the files in a CSPro application into a ZIP file so the application can be moved to another computer or sent as an email attachment.
+
+
 
 <subheader><link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link></subheader>
 
@@ -57,17 +69,15 @@ Concatenate (join end-to-end) two or more CSPro or text files. You do not need a
 
 Create and modify a set of tables and other documents organized by geographic area, subject and title for use by the Table Retrieval tool.
 
+
 <subheader><link ShpToMap::introduction_to_convert_shape_to_map.hgt>Convert Shape to Map</link></subheader>
 
 Convert ESRI ArcView or ArcInfo polygon shape files to CSPro map files. Map files can be thinned to reduce the number of points in the polygons.
 
-<subheader><link CSPack::introduction_to_pack_application.hgt>Pack Application</link></subheader>
-
-Pack all the files in a CSPro application into a ZIP file so the application can be moved to another computer or sent as an email attachment.
-
 <subheader><link CSIndex::Introduction_to_CSIndex.hgt>Index Files</link></subheader>
 
 Generate indices for data files or identify duplicate cases in a data file.
+
 
 <subheader><link Excel2CSPro::introduction_to_excel_to_cspro.hgt>Excel to CSPro</link></subheader>
 
@@ -76,7 +86,6 @@ Convert data from Excel workbooks to CSPro data files. The tool can also create 
 <subheader>PFF Editor</subheader>
 
 Edit and view all options available when running a CSPro application file via a <link program_information_file_pff.hgt>PFF file</link>.
-
 
 <subheader>Production Runner</subheader>
 
@@ -90,6 +99,7 @@ View one or more <link operator_statistics_file_log.hgt>operator statistics file
 
 View and modify <link saved_arrays_file_sva.hgt>saved arrays</link>. If batch editing a census or survey, this tool can be used to view and modify the hotdecks used in the edits.
 
+
 <font header>Deprecated Tools</font>
 
 These tools are no longer distributed with CSPro but are instead available on <link http://<definition csprousers_website />><definition csprousers_website /></link>.
@@ -97,3 +107,7 @@ These tools are no longer distributed with CSPro but are instead available on <l
 <subheader>Convert Dictionary</subheader>
 
 Convert IMPS and ISSA data dictionaries to CSPro dictionaries, or convert CSPro dictionaries to IMPS or ISSA dictionaries. You can also convert ISSA dictionaries to CSPro dictionary and data entry forms.
+
+<subheader>Form Viewer</subheader>
+
+View snapshots of the data collected during a data entry application.
