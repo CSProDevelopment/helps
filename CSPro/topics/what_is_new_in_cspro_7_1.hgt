@@ -13,7 +13,7 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 
 <list>
 	<li>Expanding <link multiple_language_applications.hgt>multiple language application</link> support, messages defined in the <link message_file_mgf.hgt>message file</link> can be specified in multiple languages. These messages, along with string literals wrapped in the <logiccolor>tr</logiccolor> function, will be displayed in the application's current language.</li>
-	<li>Applications can be associated with multiple <link message_file_mgf.hgt>external message files</link>, which can include messages that override the default system messages.</li>
+	<li>Applications can link to multiple <link message_file_mgf.hgt>external message files</link>, which can include messages that override the default system messages.</li>
 </list>
 
 <subheader>CSPro Designer</subheader>
@@ -46,6 +46,7 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 	<li>The <logiccolor>uuid</logiccolor> function can return the UUID (internal key) associated with a case.</li>
 	<li>The <logiccolor>loadcase</logiccolor> and <logiccolor>delcase</logiccolor> functions will give compiler warnings if the zero fill settings of the arguments do not match the settings of the external dictionary's IDs.</li>
 	<li>The <logiccolor>writecase</logiccolor> and <logiccolor>delcase</logiccolor> functions now work in a <logiccolor>forcase</logiccolor> loop.</li>
+	<li>Multiple string literals are automatically concatenated into a single string when separated by whitespace (e.g., <logiccolor>"A" "B"</logiccolor> is evaluated as <logiccolor>"AB"</logiccolor>).</li>
 	<li>In a data entry application, when splitting items from a multiply occurring record into multiple groups, you no longer have to specify an occurrence number when referring to items on the split groups (assuming that you want the value of the current occurrence).</li>
 </list>
 

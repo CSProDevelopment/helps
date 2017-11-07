@@ -47,10 +47,11 @@ PROC EXAMPLE
 PROC EXAMPLE
 
 	numeric messageEventsForThisCase = paradata(query,maketext(
-		"SELECT COUNT(*) FROM message_event " +
-		"JOIN event ON message_event.id = event.id " +
-		"JOIN case_instance ON event.case_instance = case_instance.id " +
-		"JOIN case_info ON case_instance.case_info = case_info.id " +
+		"SELECT COUNT(*) "
+		"FROM message_event "
+		"JOIN event ON message_event.id = event.id "
+		"JOIN case_instance ON event.case_instance = case_instance.id "
+		"JOIN case_info ON case_instance.case_info = case_info.id "
 		"WHERE case_info.uuid = '%s';",
 		uuid(DICT_NAME)));
 </logic>
