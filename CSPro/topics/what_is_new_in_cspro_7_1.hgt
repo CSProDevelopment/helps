@@ -9,7 +9,7 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 	<li>The introduction of a new system for collecting <link paradata.hgt>paradata</link> during an application's run. The paradata events are saved to a log file with the extension <link paradata_log_file_cslog.hgt>.cslog</link>. You can control what kinds of events are stored by modifying an application's <link paradata_options.hgt>paradata options</link>.</li>
 	<li>A new logic function, <logiccolor>paradata</logiccolor>, that can be used to control or query the paradata log.</li>
 	<li>A new tool, <link ParadataViewer::introduction_to_paradata_viewer.hgt>Paradata Viewer</link>, that displays reports about the collected paradata.</li>
-	<li>Another new tool, <link ParadataConcat::introduction_to_paradata_concatenator.hgt>Paradata Concatenator</link>, that combines multiple paradata logs into a single log.</li>	
+	<li>Another new tool, <link ParadataConcat::introduction_to_paradata_concatenator.hgt>Paradata Concatenator</link>, that combines multiple paradata logs into a single log.</li>
 </list>
 
 <subheader>Deployment</subheader>
@@ -17,6 +17,13 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 <list>
 	<li>A new tool, <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link>, that deploys one or multiple applications to a server (or a local file) so that they can be downloaded onto interviewer devices.</li>
 	<li>Deployed applications can be downloaded using CSEntry on mobile devices.</li>
+</list>
+
+<subheader>Reports</subheader>
+
+<list>
+	<li>An interface for generating <link templated_reports.hgt>HTML-templated reports</link> from case data as well as from results from queries into paradata and other data sets.</li>
+	<li>New logic functions, <logiccolor>setreportdata</logiccolor> and <logiccolor>report</logiccolor>, for setting the inputs and creating the reports.</li>
 </list>
 
 <subheader>Messages</subheader>
@@ -65,7 +72,7 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 
 <list>
 	<li>From Data Viewer's <b>Tools</b> menu, you can launch the <b>Export Data</b> and <b>Tabulate Frequencies</b> tools to directly process the cases of the open file.</li>
-	<li>Data Viewer can display each value's label instead of only the code.</li>	
+	<li>Data Viewer can display each value's label instead of only the code.</li>
 	<li>Data Viewer now shows additional information about data files, including the synchronization history. The tool also has new <link DataViewer::filtering_cases_and_display_options.hgt>filtering options</link> and can show deleted or duplicate cases and can display the contents of a file in sorted key order.</li>
 	<li>The Excel to CSPro tool has a new <link Excel2CSPro::running_conversions_from_the_command_line.hgt>command line flag</link>, <b>/runifnewer</b>, that can streamline deployment conversions.</li>
 </list>

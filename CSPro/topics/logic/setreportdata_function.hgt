@@ -1,4 +1,51 @@
-<title>SetReportData Function</title>
+﻿<title>SetReportData Function</title>
 <context logic_help_setreportdata />
 
-CSPRO71_TODO
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = setreportdata(『<arg>attribute</arg>,』<arg>data_source</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>setreportdata</logiccolor> function stores in memory a piece of data that will later be used by the <logiccolor>report</logiccolor> function to generate a <link templated_reports.hgt>templated report</link>. The string expression <arg>attribute</arg> specifies the key, or tag, that uniquely identifies the piece of data. The attribute is case sensitive. In the report template, you will use this attribute to refer to this data.
+
+The <arg>data_source</arg> must be one of the following:
+
+<table 2>
+	<cell><arg>data_source</arg></cell><cell><b>Description</b></cell>
+	<cell><arg>value</arg></cell><cell>A string expression containing some text.</cell>	
+	<cell><arg>record_name</arg></cell><cell>The contents of a record, including multiply occurring records. In a data entry application, only information up to the number of entered occurrences will be stored.</cell>
+	<cell><arg>list_name</arg></cell><cell>The contents of a list.</cell>
+	<cell><arg>array_name</arg></cell><cell>The contents of a one-, two-, or three-dimensional array.</cell>
+	<cell><arg>sqlquery</arg></cell><cell>The result set of a query executed by the <logiccolor>sqlquery</logiccolor> function. Do not specify that function's optional <arg>result_set</arg> argument, as the result set is stored in memory when called by <logiccolor>setreportdata</logiccolor>.</cell>
+</table>
+
+It is not necessary to specify the <arg>attribute</arg> when working with a <arg>record_name</arg>, <arg>list_name</arg>, or <arg>array_name</arg>. If no <arg>attribute</arg> is specified, then it will default to the name of the record, list, or array.
+
+You can clear all stored data by executing: <logiccolor>setreportdata(clear)</logiccolor>.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the data was stored successfully, and 0 (false) otherwise (for example if the <logiccolor>sqlquery</logiccolor> function encountered a problem).
+
+<subheader>Example - Text and Record</subheader>
+
+<logic>
+setreportdata("title","Demographic Report");
+setreportdata(PERSON_REC);
+</logic>
+
+<subheader>Example - SqlQuery</subheader>
+
+<logic>
+string DeviceQuery =
+	"SELECT device_model, COUNT(*) AS device_count "
+	"FROM device_info "
+	"GROUP BY device_model;";
+
+setreportdata("device_info",sqlquery(paradata,DeviceQuery));
+</logic>
+
+<seealso report_function.hgt sqlquery_function.hgt templated_reports.hgt />
