@@ -312,6 +312,7 @@
             this.Controls.Add(this.pictureBoxCheckmarkIndex);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GenerateHelpsForm";
+			this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generating Helps";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GenerateHelpsForm_FormClosing);

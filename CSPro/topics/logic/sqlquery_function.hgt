@@ -1,5 +1,5 @@
 ﻿<title>SqlQuery Function</title>
-<context logic_help_sqlquery />
+<context logic_help_sqlquery logic_help_sql />
 
 <subheader>Format</subheader>
 
@@ -125,9 +125,9 @@ PROC EXAMPLE
 		"WHERE session_event_start.action = 1 AND session_event_end.action = 0 "
 		"ORDER BY event_start.time;";
 
-	sqlquery(paradata,WS_DICT.WS_ENTRY_SESSIONS_REC,SessionQuery);
+	sqlquery(paradata,WS_ENTRY_SESSIONS_REC,SessionQuery);
 
-	do numeric ctr = 1 while ctr <= count(WS_DICT.WS_ENTRY_SESSIONS_REC)
+	do numeric ctr = 1 while ctr <= count(WS_ENTRY_SESSIONS_REC)
 		errmsg("Operator '%s' worked on %s at %s for %0.2f minutes",
 			strip(OPERATOR_NAME(ctr)),
 			edit("9999-99-99",sysdate("YYYYMMDD",START_TIMESTAMP(ctr))),
