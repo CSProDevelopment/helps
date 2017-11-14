@@ -57,3 +57,9 @@ th { font-weight: bold; color: #002050; text-decoration: underline; }
 .code_colorization_bracket { color: darkgreen; font-weight: bold; }
 
 .code_colorization_optional_text { background-color: whitesmoke; }
+
+@media print {
+    .new-page {
+        page-break-before: always;
+    }
+}

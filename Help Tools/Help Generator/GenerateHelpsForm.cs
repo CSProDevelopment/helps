@@ -526,7 +526,7 @@ namespace Help_Generator
             processStartInfo.RedirectStandardOutput = true;
             processStartInfo.UseShellExecute = false;
             processStartInfo.FileName = _helpComponents.wkhtmltopdfExecutable;
-            processStartInfo.Arguments = String.Format("cover \"{0}\" toc \"{1}\" \"{2}\"",
+            processStartInfo.Arguments = String.Format("--print-media-type cover \"{0}\" toc \"{1}\" \"{2}\"",
                 outputPdfCoverFilename,_outputPdfTopicsFilename,_outputPdfFilename);
 
             Process process = new Process();

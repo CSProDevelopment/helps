@@ -106,6 +106,8 @@ namespace Help_Generator
 			_tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
             _tagSettings.Add(PffColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffColorHandler,0,0));
             _tagSettings.Add(HtmlTag,new TagSettings("",""));
+            _tagSettings.Add(CalloutTag, new TagSettings(true, "<div style=\"background-color: lightgrey;border:1px solid black;margin:10px;padding:10px\">", "</div>", 0, 0));
+            _tagSettings.Add(PageBreakTag, new TagSettings(false, "<div class=\"new-page\" />", "", 0, 0));
 
             _blockTags = new Dictionary<string,string>();
             _blockTags.Add(MakeTag(LogicTag,true),MakeTag(LogicTag,false));
@@ -1005,6 +1007,8 @@ namespace Help_Generator
         public const string HtmlTag = "html";
         public const string DefinitionTag = "definition";
 		public const string IncludeTag = "include";
+        public const string CalloutTag = "callout";
+        public const string PageBreakTag = "pagebreak";
 
         public const string NoHeaderAttribute = "noheader";
         public const string FontMonospaceAttribute = "monospace";

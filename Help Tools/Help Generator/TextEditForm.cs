@@ -5,6 +5,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Colorizer;
+using System.Text.RegularExpressions;
 
 namespace Help_Generator
 {
@@ -93,7 +94,7 @@ namespace Help_Generator
                         _topicViewerForm.Show();
                     }
 
-                    _topicViewerForm.UpdateContents(GetTitle(),html);
+                    _topicViewerForm.UpdateContents(GetTitle(), FixImgPaths(html));
                 }
 
                 else
@@ -106,6 +107,20 @@ namespace Help_Generator
             {
                 textBoxResults.Text = Constants.ComplationErrorMessage + exception.Message;
             }
+        }
+
+        // WebBrowser control requires absolute file:/// paths for images
+        // Relative paths do not work. For the special help generator <image> tag
+        // we generate absolute paths but for regular <img> tags inside <html> tags
+        // we need to fix this or the images don't show up in preview. The relative
+        // paths work fine in the generated html, chm and pdf.
+        private string FixImgPaths(string html)
+        {
+            var imgRegex = new Regex(@"<img\s+src\s*=\s*""(?!file:///)[^\"">]*""[^>]*>");
+            var srcRegex = new Regex(@"(src="")((?!file :///)[^\""]*"")");
+            string imagesPath = Path.Combine(_helpComponents.projectPath, Constants.ImagesDirectoryName);
+            var srcReplacement = @"$1file:///" + imagesPath + @"\$2";
+            return imgRegex.Replace(html, m => srcRegex.Replace(m.ToString(), srcReplacement));
         }
 
         public void Format()
