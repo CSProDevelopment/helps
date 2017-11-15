@@ -14,8 +14,6 @@ If you want to open the specification file, run the conversion, and close the to
 
 <indent><font monospace>"C:\Program Files (x86)\CSPro <definition version />\Excel2CSPro.exe" <b>/run</b> "My Specifications File.xs2cs"</font></indent>
 
-If you only want to overwrite the CSPro data file if the Excel file is newer than the CSPro data file, then you can substitute the <b>/run</b> argument with <b>/runifnewer</b>.
-
 <subheader>Overriding Parameters in the Specification File</subheader>
 
 It is possible to override the parameters in specification files. Parameters include the names of the files, the starting row for conversion, and the record and item mappings. As Excel to CSPro processes a specification file, it takes the first entry for a file or mapping. In the example below, the input spreadsheet will be Virginia.xlsx:
@@ -46,6 +44,8 @@ In the specification file and overrides, the following commands are available:
 	<cell><b>InputDict</b>=</cell><cell>Specifies the CSPro dictionary.</cell>
 	<cell><b>OutputData</b>=</cell><cell>Specifies the name of the output data file. The extension of the file indicates the output is a CSPro DB file or a text file.</cell>
 	<cell><b>StartingRow</b>=</cell><cell>Specifies the starting row where the data is located.</cell>
+	<cell><b>CaseManagement</b>=</cell><cell>Specifies the mode for how cases are added, modified, or deleted.</cell>
+	<cell><b>RunOnlyIfNewer</b>=</cell><cell>Specifies if the conversion can conditionally occur.</cell>
 	<cell><b>Mapping</b>=</cell><cell>Specifies a mapping between a dictionary record and an Excel worksheet or a dictionary item and an Excel column.</cell>
 </table>
 
@@ -62,3 +62,47 @@ Dictionary item to column mappings take the form:
 Item mappings list only the column number in the worksheet that corresponds to the item. Mapped ID items must be prefaced with the record name, as in:
 
 <indent><font monospace>Mapping=PERSON_REC.HOUSEHOLD_NUMBER;@1</font></indent>
+
+
+<subheader>Running Production Conversions</subheader>
+
+You can also run production conversions by using the PFF as a command line parameter for Excel2CSPro.exe. For example, if you name your PFF file Convert Data.pff, then you can run the deployment by invoking:
+
+<indent><font monospace>"C:\Program Files (x86)\CSPro <definition version />\Excel2CSPro.exe" "Convert Data.pff"</font></indent>
+
+This assumes that CSPro was installed in the default directory. Your PFF file must have a .pff extension.
+
+You can create a PFF file in one of two ways: either [1] create one with a text editor (such as Notepad or Wordpad), or [2] have it generated automatically for you when you save a conversion specification file.
+
+The following section shows the options available to you in a conversion PFF file. A PFF file is not case sensitive, so you can use any combination of upper and lower case text.
+
+<pff>
+[Run Information]
+Version=CSPro <definition version />
+AppType=Excel2CSPro
+
+[Files]
+Application=.\Convert Data.xl2cs
+InputData=.\Zomba.xlsx
+InputDict=.\Clinics.dcf
+OutputData=.\Zomba.csdb
+
+[Parameters]
+StartingRow=2
+CaseManagement=ModifyAddDeleteCases
+RunOnlyIfNewer=No
+Mapping=CLINIC_NAME;@2
+</pff>
+
+
+<subheader>[Run Information]</subheader>
+
+The <pffcolor>[Run Information]</pffcolor> block is required and must appear exactly as shown in the example above.
+
+<subheader>[Files]</subheader>
+
+The <pffcolor>[Files]</pffcolor> block is required and defines the specification file script that will be used during the conversion. The <pffcolor>InputData</pffcolor> command maps to the <b>Excel</b> command defined above, while <pffcolor>InputDict</pffcolor> and <pffcolor>OutputData</pffcolor> are the same as their command line counterparts. If these are not defined, then the conversion will use the values defined in the specification file.
+
+<subheader>[Parameters]</subheader>
+
+Just as you can override the <b>StartingRow</b>, <b>CaseManagement</b>, <b>RunOnlyIfNewer</b>, and <b>Mapping</b> commands from the command line, you can do the same by specifying them in the <pffcolor>[Parameters]</pffcolor> block.

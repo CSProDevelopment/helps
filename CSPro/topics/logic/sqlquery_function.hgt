@@ -10,7 +10,7 @@ d = sqlquery(<arg>sqlite_database</arg>『,<arg>result_set</arg>』,<arg>sql_que
 
 <subheader>Description</subheader>
 
-The <logiccolor>sqlquery</logiccolor> function executes a query on a <link https://sqlite.org>SQLite</link> database and returns a result set in a variety of formats. This function is intended for advanced users who are familiar with writing SQL expressions. While most files used by CSPro applications are text files, there are some files that are stored as SQLite databases, including <link paradata.hgt>paradata logs</link> and <link data_sources.hgt>CSPro DB</link> data sources. You can query these files with this function.
+The <logiccolor>sqlquery</logiccolor> function executes a query on a <link https://sqlite.org>SQLite</link> database and returns a result set in a variety of formats. This function is intended for advanced users who are familiar with writing SQL expressions. While most files used by CSPro applications are text files, there are some files that are stored as SQLite databases, including <link paradata.hgt>paradata logs</link>. You can query these files with this function.
 
 
 The first argument, <arg>sqlite_database</arg>, must be one of the following:
@@ -18,7 +18,7 @@ The first argument, <arg>sqlite_database</arg>, must be one of the following:
 <table 2>
 	<cell><arg>sqlite_database</arg></cell><cell><b>Description</b></cell>
 	<cell><logiccolor>paradata</logiccolor></cell><cell>The query will be executed on the currently open paradata log. This is the same as: <logiccolor>paradata(query,...)</logiccolor>.</cell>
-	<cell><arg>dictionary_name</arg></cell><cell>The data source pointed to by <arg>dictionary_name</arg> must be of type CSPro DB or text. The query will be executed on the file associated with this data source. You can query a variety of information from CSPro DB files. If working with text files, you can query the file's <link index_file_csidx.hgt>index</link>.</cell>
+	<cell><arg>dictionary_name</arg></cell><cell>The data source pointed to by <arg>dictionary_name</arg> must be of type CSPro DB or text. The query will be executed on the file associated with this data source. If working with text files, you can query the file's <link index_file_csidx.hgt>index</link>.</cell>
 	<cell><arg>file_name</arg></cell><cell>The string expression <arg>file_name</arg> gives the file name of a SQLite database. The database will be opened, the query executed, and then the database will be closed. This allows you to work with databases maintained outside of CSPro.</cell>
 </table>
 

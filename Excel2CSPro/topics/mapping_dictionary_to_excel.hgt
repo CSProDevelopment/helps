@@ -29,7 +29,13 @@ To begin the conversion operation you must specify the input and output files an
 	<li>Click on <b>Select CSPro Dictionary</b> and select the dictionary that describes the desired output data.</li>
 	<li>Click on <b>Select Output Data File</b> and provide a name for the output data file. If the file already exists, it will be overwritten during the conversion operation.</li>
 	<li>Review the <b>Starting row</b> parameter. By default this is 2, which assumes that your data has headers. If it does not, change it to 1 or to the appropriate value. If working with multiple worksheets, the starting row for all worksheets must be the same.</li>
-	<li>If desired, check the <b>Close After Processing</b> checkbox. If this is checked, the Excel to CSPro tool will close after the data conversion.</li>
+	<li>The <b>Case management</b> options allow you to control how to handle existing cases in a CSPro data file. The options are as follows:
+	<list>
+		<li><b>Create new file</b>: The conversion will create a new CSPro data file that will contain only the cases from the Excel file.</li>
+		<li><b>Modify, add cases</b>: The conversion will keep the existing CSPro data file and add cases from the Excel file that are not in the CSPro data file. For cases that are in both the Excel file and the CSPro data file, the case will be modified only if the Excel case is different from the CSPro case. Cases that are in the CSPro data file but not in the Excel file will be kept.</li>
+		<li><b>Modify, add, delete cases</b>: This option is similar to the one described above except that cases that are in the CSPro data file but not in the Excel file will be deleted.</li>
+	</list></li>
+	<li>If the <b>Skip processing if the CSPro output data file is newer than the Excel file</b> option is selected, then the conversion process will only occur if the Excel file has a newer file date than the CSPro data file. Selecting this is a way to speed up deployment conversions as the conversion will only occur when you change the Excel file.</li>
 </list>
 
 
