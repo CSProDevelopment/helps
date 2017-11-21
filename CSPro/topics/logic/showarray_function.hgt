@@ -1,136 +1,48 @@
 ﻿<title>ShowArray Function</title>
 <context logic_help_showarray />
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<logicsyntax>
+i = showarray(『<arg>heading</arg>,』<arg>array_name</arg>『,<arg>row_count</arg>』『,<arg>column_count</arg>』『,title(<arg>text_list</arg>)』);
+</logicsyntax>
 
-<body>
+<subheader>Description</subheader>
 
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
-	 font-weight: bold; font-size: 10pt;"><b><font style="font-weight: bold;">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-size: 10pt; font-family: 'Courier New';">i = <span style="color: #0000ff;
-															 font-weight: bold;">showarray</span>(<span
-	 style="font-style: italic;">array-name</span>, <font color="#FF00FF">[</font><span
-	 style="font-style: italic;">row-count</span><font color="#FF00FF">]</font>,
- <font color="#FF00FF">[</font><span style="font-style: italic;">column-count</span><font
-	 color="#FF00FF">],</font> <font color="#FF00FF">[<span style="color: #0000ff;
-															 font-weight: bold;">title</span></font>(<span
-	 style="font-style: italic;">text-list</span>)<font color="#FF00FF">]</font>);</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-size: 10pt; text-indent: -12px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-size: 10pt; text-indent: -12px;"><span style="font-family: Arial, sans-serif;
-												 font-weight: bold;">D</span><span
-	 style="font-weight: bold; font-family: Arial, sans-serif;">escription:</span><span
-	 style="font-family: 'Courier New';"> </span><span style="font-family: Arial, sans-serif;"><br />
-The </span><span style="font-weight: bold; font-family: Arial, sans-serif;">showarray
- </span><span style="font-family: Arial, sans-serif;">function, similar
- to the <a href="show_function.html">show</a> and <a href="accept_function.html">accept</a>
- functions, displays items from an array in a grid. This function is useful
- as a menu or simply as a way to show values that are relevant to data
- collection. If the row and column counts are not supplied, then the function
- will parse the array, determining the size of the menu based on where
- the first blank alphanumeric element is found.</span><span style="font-family: 'Courier New';"><br />
-</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-family: Arial, sans-serif;"><span style="font-weight: bold;">Return
- value:</span><br />
-The function returns the number of the item selected: 1 for the first item,
- 2 for the second item, etc. The value 0 is returned if the Esc key is
- pressed and none of the options is chosen.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-family: Arial, sans-serif; font-weight: bold;">Example
- 1:<br />
-<span style="font-family: 'Courier New', monospace; font-weight: normal;"><font
-	 style="font-weight: normal;" color="#0000FF">PROC</font><font style="font-weight: normal;">
- </font><font style="font-weight: normal;" color="#0000FF">GLOBAL</font><font
-	 style="font-weight: normal;"><br />
-<br />
-</font><font style="font-weight: normal;" color="#0000FF">array</font><font
-	 style="font-weight: normal;"> </font><font style="font-weight: normal;"
-												 color="#0000FF">string</font><font
-	 style="font-weight: normal;"> unitedNationsCountryCodes(</font><font
-	 style="font-weight: normal;" color="#FF0000">5</font><font style="font-weight: normal;">,</font><font
-	 style="font-weight: normal;" color="#FF0000">3</font><font style="font-weight: normal;">)
- = <br />
-&#160;&#160;&#160;&#160;</font><font style="font-weight: normal;" color="#FF00FF">&quot;004&quot;</font><font
-	 style="font-weight: normal;">&#160;&#160;&#160;</font><font style="font-weight: normal;"
-	 color="#FF00FF">&quot;Afghanistan&quot;</font><font style="font-weight: normal;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font
-	 style="font-weight: normal;" color="#FF00FF">&quot;AFG&quot;</font><font
-	 style="font-weight: normal;"><br />
-&#160;&#160;&#160;&#160;</font><font style="font-weight: normal;" color="#FF00FF">&quot;248&quot;</font><font
-	 style="font-weight: normal;">&#160;&#160;&#160;</font><font style="font-weight: normal;"
-	 color="#FF00FF">&quot;Ã…land Islands&quot;</font><font style="font-weight: normal;">&#160;&#160;&#160;&#160;&#160;</font><font
-	 style="font-weight: normal;" color="#FF00FF">&quot;ALA&quot;</font><font
-	 style="font-weight: normal;"><br />
-&#160;&#160;&#160;&#160;</font><font style="font-weight: normal;" color="#FF00FF">&quot;008&quot;</font><font
-	 style="font-weight: normal;">&#160;&#160;&#160;</font><font style="font-weight: normal;"
-	 color="#FF00FF">&quot;Albania&quot;</font><font style="font-weight: normal;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font
-	 style="font-weight: normal;" color="#FF00FF">&quot;ALB&quot;</font><font
-	 style="font-weight: normal;"><br />
-&#160;&#160;&#160;&#160;</font><font style="font-weight: normal;" color="#FF00FF">&quot;012&quot;</font><font
-	 style="font-weight: normal;">&#160;&#160;&#160;</font><font style="font-weight: normal;"
-	 color="#FF00FF">&quot;Algeria&quot;</font><font style="font-weight: normal;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font
-	 style="font-weight: normal;" color="#FF00FF">&quot;DZA&quot;</font><font
-	 style="font-weight: normal;"><br />
-&#160;&#160;&#160;&#160;</font><font style="font-weight: normal;" color="#FF00FF">&quot;016&quot;</font><font
-	 style="font-weight: normal;">&#160;&#160;&#160;</font><font style="font-weight: normal;"
-	 color="#FF00FF">&quot;American Samoa&quot;</font><font style="font-weight: normal;">&#160;&#160;&#160;&#160;</font><font
-	 style="font-weight: normal;" color="#FF00FF">&quot;ASM&quot;</font><font
-	 style="font-weight: normal;"><br />
-&#160;&#160;&#160;&#160;</font><font style="font-weight: normal;" color="#008000">//&#160;...<br />
-</font><font style="font-weight: normal;">&#160;&#160;&#160;&#160;;<br />
-<br />
-</font><font style="font-weight: normal;" color="#0000FF">PROC</font><font
-	 style="font-weight: normal;"> EXAMPLE<br />
-<br />
-&#160;&#160;&#160;&#160;</font><font style="font-weight: normal;" color="#0000FF">numeric</font><font
-	 style="font-weight: normal;"> countrySelection = </font><font style="font-weight: normal;"
-	 color="#0000FF">showarray</font><font style="font-weight: normal;">(unitedNationsCountryCodes,<br />
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font
-	 style="font-weight: normal;" color="#0000FF">title</font><font style="font-weight: normal;">(</font><font
-	 style="font-weight: normal;" color="#FF00FF">&quot;Numerical Code&quot;</font><font
-	 style="font-weight: normal;">,</font><font style="font-weight: normal;"
-												 color="#FF00FF">&quot;Country
- or Area Name&quot;</font><font style="font-weight: normal;">,</font><font
-	 style="font-weight: normal;" color="#FF00FF">&quot;ISO ALPHA-3 Code&quot;</font><font
-	 style="font-weight: normal;">));</font></span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-family: Arial, sans-serif; font-weight: bold;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-family: 'Courier New', monospace;"><img src="showArray.png"
-	 alt="" style="border: none;" border="0" /></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-family: Arial, sans-serif;"><span style="font-weight: bold;">Example
- 2:<br />
-</span><span style="font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;</span><span
-	 style="font-family: 'Courier New', monospace;"><font color="#0000FF">numeric</font>
- countrySelection = </span><span style="font-family: 'Courier New', monospace;"><font
-	 color="#0000FF">showarray</font>(unitedNationsCountryCodes,<font color="#FF0000">3</font>,<font
-	 color="#FF0000">2</font>);</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-family: Arial, sans-serif;"><img src="showArray2.png"
-	 alt="" style="border: none;" border="0" /></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px; font-family: Arial, sans-serif;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><span
-	 style="font-weight: bold;">See also:</span> <a href="accept_function.html">Accept
- Function</a>, <a href="show_function.html">Show Function</a></p>
-</body>
-</html>
+The <logiccolor>showarray</logiccolor> function, similar to the <logiccolor>show</logiccolor> and <logiccolor>accept</logiccolor> functions, displays items from an array in a grid. An optional string expression, <arg>heading</arg>, defines the title of the grid, which contains the items in <arg>array_name</arg>. The function is useful as a menu or simply as a way to show values that are relevant to data collection. If the optional numeric expressions <arg>row_count</arg> and <arg>column_count</arg> are not specified, then the function will parse the array, determining the size of the menu based on where the first blank alphanumeric element is found. If you want to override the column headings, you can specify them in with string expressions in <arg>text_title</arg>.
 
+<subheader>Return Value</subheader>
 
-<html><!---♻---></html>
+The function returns the number of the item selected: 1 for the first item, 2 for the second item, etc. The value 0 is returned if the escape key (or back button) is pressed and none of the options is chosen.
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC GLOBAL
+
+array string unitedNationsCountryCodes(5,3) =
+	"004",	"Afghanistan",		"AFG",
+	"248",	"Åland Islands",	"ALA",
+	"008",	"Albania",			"ALB",
+	"012",	"Algeria",			"DZA",
+	"016",	"American Samoa",	"ASM",
+	// ...
+	;
+
+PROC EXAMPLE
+
+numeric countrySelection = showarray("Select a Country",unitedNationsCountryCodes,
+	title("Numerical Code","Country or Area Name","ISO ALPHA-3 Code"));
+</logic>
+
+<center><image showarray1.png /></center>
+
+<subheader>Example 2</subheader>
+
+<logic>
+numeric countrySelection = showarray(unitedNationsCountryCodes,3,2);
+</logic>
+
+<center><image showarray2.png /></center>
+
+<seealso accept_function.hgt show_function.hgt />

@@ -1,149 +1,39 @@
 ﻿<title>Show Function</title>
 <context logic_help_show />
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<logicsyntax>
+i = show(『<arg>heading</arg>,』<arg>group_name</arg>,<arg>item_list</arg>『,where <arg>condition</arg>』『,title(<arg>text_list</arg>)』);
+</logicsyntax>
 
-<body>
+<subheader>Description</subheader>
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New';
-	 text-indent: 10.80pt; font-size: 10pt;">i = <?rh-ignored text="show(group-name" ?><span
-	 style="color: #0000ff; font-weight: bold;">show</span>(group-name,
- item-list, <font color="#FF00FF">[</font><b><font style="font-weight: bold;"
-													 color="#0000FF">where</font></b>
- condition<font color="#FF00FF">]</font>, <font color="#FF00FF">[<span
-	 style="color: #0000ff; font-weight: bold;">title</span></font>(text-list)<font
-	 color="#FF00FF">]</font>); <span style="font-family: Arial, sans-serif;
-										 font-weight: bold;"><br />
-<br />
-D</span><span style="font-weight: bold; font-family: Arial, sans-serif;">escription:</span>
- <span style="font-family: Arial, sans-serif;"><br />
-<br />
-The </span><span style="font-weight: bold; font-family: Arial, sans-serif;">show
- </span><span style="font-family: Arial, sans-serif;">function displays
- items from a roster in the form or a menu that looks like a roster. &#160;This
- function is similar to the <a href="accept_function.html">Accept</a> function.
- &#160;This function is useful as a menu or simply as a way to show roster
- values in another part of the questionnaire.</span><span style="margin-top: 0.00pt;
-															 margin-bottom: 0.00pt;
-															 text-indent: 10.80pt;
-															 font-size: 10pt;
-															 font-family: Arial, sans-serif;
-															 font-weight: bold;"><br />
-<br />
-Return value:</span><span style="margin-top: 0.00pt; margin-bottom: 0.00pt;
-							 text-indent: 10.80pt; font-size: 10pt; font-family: Arial, sans-serif;"><br />
-The function returns the number of the item selected: 1 for the first item,
- 2 for the second item, etc. This is the number of the item on the display,
- not in the roster. The value 0 is returned if the Esc key is pressed and
- none of the options is chosen. &#160;&#160;</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;"><br />
-Example 1</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: 'Courier New', monospace;
-	 font-weight: normal;"><span style="color: #0000ff;">&#160;&#160;if</span>
- RELATIONSHIP = <span style="color: #ff0000;">2</span> <span style="color: #0000ff;">then</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: 'Courier New', monospace;
-	 font-weight: normal;">&#160;&#160;&#160;&#160;<span style="color: #0000ff;">if</span>
- SEX = SEX(ptrHead) <span style="color: #0000ff;">then</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: 'Courier New', monospace;
-	 font-weight: normal;">&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #0000ff;">errmsg</span>(<span
-	 style="color: #ff00ff;">&quot;Sex of spouse is the same as the sex
- of head!&quot;</span>);</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: 'Courier New', monospace;
-	 font-weight: normal;">&#160;&#160;&#160;&#160;&#160;&#160;i = <span
-	 style="color: #0000ff;">SHOW</span>(PERSON_REC, NAME, RELATIONSHIP,
- SEX, AGE,</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: 'Courier New', monospace;
-	 font-weight: normal;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
-	 style="color: #0000ff;">TITLE</span>(<span style="color: #ff00ff;">&quot;Name&quot;</span>,
- <span style="color: #ff00ff;">&quot;Rel&quot;</span>, <span style="color: #ff00ff;">&quot;Sex&quot;</span>,
- <span style="color: #ff00ff;">&quot;Age&quot;</span>));</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: 'Courier New', monospace;
-	 font-weight: normal;">&#160;&#160;&#160;&#160;<span style="color: #0000ff;">endif</span>;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: 'Courier New', monospace;
-	 font-weight: normal;">&#160;&#160;<span style="color: #0000ff;">endif</span>;</p>
-&#160;
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: bold; text-indent: 10.80pt;"><img src="show.jpg"
-													 alt="" style="border: none;"
-													 width="307" height="158"
-													 border="0" /></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: bold;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 font-weight: bold;"><span style="text-indent: 10.80pt;">E</span>xample
- 2</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 font-family: 'Courier New'; font-size: 10pt;"><span style="color: #0000ff;">if</span>
- ctrHead &gt; <span style="color: #ff0000;">1</span> <span style="color: #0000ff;">then</span>
- <span style="color: #008000;">{More than 1 head in the household}</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 font-family: 'Courier New'; font-size: 10pt;">&#160;&#160;<span style="color: #0000ff;">errmsg</span>(<span
-	 style="color: #ff00ff;">&quot;More than 1 head of Household (Count
- of Heads=%d)&quot;</span>, ctrHead);</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 font-family: 'Courier New'; font-size: 10pt;">&#160;&#160;i = <span
-	 style="color: #0000ff;">SHOW</span>(PERSON_REC, SEQUENCE, RELATIONSHIP,
- SEX, AGE,</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 font-family: 'Courier New'; font-size: 10pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
-	 style="color: #0000ff;">TITLE</span>(<span style="color: #ff00ff;">&quot;Seq
- Number&quot;</span>, <span style="color: #ff00ff;">&quot;Rel&quot;</span>,
- <span style="color: #ff00ff;">&quot;Sex&quot;</span>, <span style="color: #ff00ff;">&quot;Age&quot;</span>));</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New';
-	 text-indent: 10.80pt; font-size: 10pt;">endif;<span style="margin-top: 0.00pt;
-														 margin-bottom: 0.00pt;
-														 text-indent: 10.80pt;
-														 font-size: 10pt;
-														 font-family: Arial, sans-serif;
-														 font-weight: bold;"><br />
-<br />
-Example 3</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 font-family: 'Courier New'; font-size: 10pt;"><span style="color: #0000ff;">if</span>
- ctrHead &gt; <span style="color: #ff0000;">1</span> <span style="color: #0000ff;">then</span>
- <span style="color: #008000;">{More than 1 head in the household}</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 font-family: 'Courier New'; font-size: 10pt;">&#160;&#160;<span style="color: #0000ff;">errmsg</span>(<span
-	 style="color: #ff00ff;">&quot;More than 1 head of Household (Count
- of Heads=%d)&quot;</span>, ctrHead);</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 font-family: 'Courier New'; font-size: 10pt;">&#160;&#160;i = <span
-	 style="color: #0000ff;">SHOW</span>(PERSON_REC, SEQUENCE, RELATIONSHIP,
- SEX, AGE,</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 font-family: 'Courier New'; font-size: 10pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span
-	 style="color: #0000ff;">WHERE</span> RELATIONSHIP = <span style="color: #ff0000;">1</span>
- <span style="color: #0000ff;">TITLE</span>(<span style="color: #ff00ff;">&quot;Seq
- Number&quot;</span>, <span style="color: #ff00ff;">&quot;Rel&quot;</span>,
- <span style="color: #ff00ff;">&quot;Sex&quot;</span>, <span style="color: #ff00ff;">&quot;Age&quot;</span>));</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;
-	 text-indent: 10.80pt; font-weight: normal;"><span style="font-family: 'Courier New', monospace;
-														 color: #0000ff;">endif</span><span
-	 style="font-family: 'Courier New', monospace;">;</span><br />
-<br />
-Note that in Example 3 the WHERE clause restricts the display to rosters
- for Heads of Household only. &#160;This means that there will NOT be a
- correspondence between the occurrence number (<a href="curocc_function.html">Curocc</a>)
- and the return value. &#160;The number returned is the number of the item
- selected from the display as shown in the display.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt; font-family: 'Courier New'; font-size: 10pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><span
-	 style="font-weight: bold;">See also:</span> <a href="accept_function.html">Accept
- Function</a>, <a href="Showarray_Function.html">Showarray Function</a></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt; font-family: 'Courier New'; font-size: 10pt;">&#160;</p>
-</body>
-</html>
+The <logiccolor>show</logiccolor> function displays items from a roster in the form of a menu that looks like a roster. The <arg>group_name</arg> specifies which group contains the items to be displayed, one or more of which are specified in the <arg>item_list</arg>. This function is similar to the <logiccolor>show</logiccolor> and <logiccolor>accept</logiccolor> functions, and is useful as a menu or simply as a way to show roster values in another part of the questionnaire. An optional string expression, <arg>heading</arg>, defines the title of the grid. An optional <logiccolor>where</logiccolor> clause, with a specified <arg>condition</arg>, allows you to only specify that only some occurrences of the roster should be displayed. If you want to override the column headings, you can specify them with string expressions in <arg>text_title</arg>.
 
+<subheader>Return Value</subheader>
 
-<html><!---♻---></html>
+The function returns the number of the item selected: 1 for the first item, 2 for the second item, etc. This is the number of the item on the display, not in the roster. The value 0 is returned if the escape key (or back button) is pressed and none of the options is chosen.
+
+<subheader>Example 1</subheader>
+
+<logic>
+if RELATIONSHIP = 2 and SEX = SEX(ptrHead) then
+	show("Sex of spouse is the same as the sex of head!",PERSON_REC,NAME,RELATIONSHIP,SEX,AGE,
+		title("Name","Rel","Sex","Age"));
+endif;
+</logic>
+
+<center><image show.png /></center>
+
+<subheader>Example 2</subheader>
+
+<logic>
+if ctrHead > 1 then // more than 1 head in the household
+	errmsg("More than 1 head of household (count=%d)",ctrHead);
+	numeric headToDelete = show(PERSON_REC,NAME,RELATIONSHIP,SEX,AGE,WHERE RELATIONSHIP = 1);
+	// ...
+endif;
+</logic>
+
+<seealso accept_function.hgt showarray_function.hgt />
