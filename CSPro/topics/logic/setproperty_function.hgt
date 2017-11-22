@@ -31,8 +31,8 @@ preproc
 
 	else // supervisor
 		setproperty("DisplayCodesAlongsideLabels","Yes");
-		setproperty(CENSUS_DICT,"CanEnterNotAppl","Yes");
-		setproperty(CENSUS_DICT,"CanEnterOutOfRange","Yes");
+		setproperty(CENSUS_DICT,"CanEnterNotAppl","NoConfirm");
+		setproperty(CENSUS_DICT,"CanEnterOutOfRange","NoConfirm");
 
 	endif;
 </logic>
