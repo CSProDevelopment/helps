@@ -89,13 +89,7 @@ namespace Help_Generator
                         if( topic == null && !isLinkToChm )
                             throw new Exception("must specify a topic filename");
                     }
-
-                    else // table of contents
-                    {
-                        if( rootNode == null && topic != null )
-                            throw new Exception("must be a chapter because it is the first node");
-                    }
-                    
+                   
                     TopicListNode newNode = new TopicListNode(topic,title);
 
                     if( rootNode == null ) // the root node
