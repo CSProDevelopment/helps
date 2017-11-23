@@ -526,7 +526,7 @@ namespace Help_Generator
             processStartInfo.RedirectStandardOutput = true;
             processStartInfo.UseShellExecute = false;
             processStartInfo.FileName = _helpComponents.wkhtmltopdfExecutable;
-            processStartInfo.Arguments = String.Format("--disable-smart-shrinking --footer-font-name \"Calibri\" --footer-font-size \"10\" --footer-left \"Page [page] of [toPage]\" --footer-right \"[subsection]\" --print-media-type cover \"{0}\" toc \"{1}\" \"{2}\"",
+            processStartInfo.Arguments = String.Format("--page-offset -1 --disable-smart-shrinking --footer-font-name \"Calibri\" --footer-font-size \"9\" --footer-left \"Page [page] of [toPage]\" --footer-right \"[section]\" --footer-spacing 3 --print-media-type cover \"{0}\" toc \"{1}\" \"{2}\"",
                 outputPdfCoverFilename,_outputPdfTopicsFilename,_outputPdfFilename);
 
             Process process = new Process();
