@@ -1,0 +1,36 @@
+﻿<title>TimeString Function</title>
+<context logic_help_timestring />
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = timestring(『<arg>timestamp_format</arg>』『,<arg>timestamp_value</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>timestring</logiccolor> function returns a formatted string representing the date and time represented by a UNIX time in the local machine's time zone.
+
+The optional string expression <arg>timestamp_format</arg> contains date and time formatters. You can view a list of these formatters on a webpage about the C function <link http://www.cplusplus.com/reference/ctime/strftime/>strftime</link>. If no formatter is supplied, the function returns an expression based on the machine's local settings (using the formatter <logiccolor>"%c"</logiccolor>).
+
+The optional numeric expression <arg>timestamp_value</arg> allows you to use a date/time value that came from <logiccolor>timestamp</logiccolor> function. If not supplied, the function uses the current date/time.
+
+If querying a SQL database via the <logiccolor>sqlquery</logiccolor> function, you can call this function with the name <b><i>cspro_timestring</i></b>.
+
+<subheader>Return Value</subheader>
+
+The function returns the custom formatted date and time string.
+
+<subheader>Example</subheader>
+
+<logic>
+numeric csproFirstReleaseTimestamp = 957528000;
+
+// displays a string similar to: Fri May  5 08:00:00 2000
+errmsg("%s",timestring(csproFirstReleaseTimestamp));
+
+// displays a string similar to: Friday, May  5, 2000
+errmsg("%s",timestring("%A, %B %e, %Y",csproFirstReleaseTimestamp));
+</logic>
+
+<seealso timestamp_function.hgt systime_function.hgt sysdate_function.hgt />

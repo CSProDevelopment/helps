@@ -60,6 +60,7 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 	<li>A new function, <logiccolor>sqlquery</logiccolor>, that executes a query on a SQLite database and returns a result set in a variety of formats. Paradata logs are SQLite databases.</li>
 	<li>A new <link message_formatting_options.hgt>message formatter</link>, <logiccolor>"%v"</logiccolor>, that displays items in the format specified in the dictionary.</li>
 	<li>The <logiccolor>timestamp</logiccolor> function returns the number of milliseconds in addition to the seconds.</li>
+	<li> A new function, <logiccolor>timestring</logiccolor>, returns a custom formatted date and time string based on a given timestamp.</li>
 	<li>The <logiccolor>sysdate</logiccolor> and <logiccolor>systime</logiccolor> functions can return a formatted local date or time from a UNIX time value returned by the <logiccolor>timestamp</logiccolor> function.</li>
 	<li>The <logiccolor>uuid</logiccolor> function can return the UUID (internal key) associated with a case.</li>
 	<li>The <logiccolor>loadcase</logiccolor> and <logiccolor>delcase</logiccolor> functions will give compiler warnings if the zero fill settings of the arguments do not match the settings of the external dictionary's IDs.</li>
