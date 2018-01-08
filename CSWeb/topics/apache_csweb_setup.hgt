@@ -3,13 +3,13 @@
 Below we have provided a general overview of the steps required to run CSWeb on an Apache server. In this example, it is assumed WampServer has been installed and configured.
 
 <subheader>Add Project Files</subheader>
-Copy the <b>root directory</b> of your project to <b>&lt;Drive&gt;:\wamp64\www</b>. The result may look like <b>C:\wamp64\www\csweb</b>.
+Copy the <b>root directory</b> of your project to <b>&lt;Drive&gt;:\wamp64\www</b>. The result may look like <b>C:\wamp64\www\csweb</b>. Note that with Apache, the case of the folder name matters. <b>CSWeb</b> and <b>csweb</b> will require different URLs to access the server. For simplicity, we recommend using all lowercase e.g. <b>csweb</b>.
 
 <subheader>Start Apache and MySQL</subheader>
 Make sure Apache and MySQL are running.
 
 <subheader>Add Database</subheader>
-Add the MySQL database. For security reasons the database username should have a corresponding password.
+Add a new database to use for CSWeb using the MySQL command line, MySQL workbench, or phpMyAdmin. Create a user with access to the new database. For security reasons the database user should have a corresponding password.
 
 <subheader>Run Setup Script</subheader>
 Open a browser and in our case navigate to <b>localhost/csweb/setup</b>. The setup script will first check to make sure your server meets the prerequisites. If your server does not pass, refer to the <topic minimum_requirements.hgt />. Update your server and run the script again. If your server passed the script will ask for the last few configuration details.
