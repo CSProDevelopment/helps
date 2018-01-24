@@ -1,17 +1,17 @@
 ﻿<title>Choose a Deployment Server</title>
 
-In order to make your application package available to download onto mobile devices you need a server accessible over a network. You can use any of the servers that are supported by CSPro data synchronization:
+In order to make your application package available to download onto mobile devices, you need a server that is accessible over a network. You can use any of the servers that are supported by CSPro data synchronization:
 
 <list>
 <li><b>CSWeb</b>: A free web application that can run in a local data center or hosted on a server in the cloud. Best for large surveys. Requires skills in setting up and administering a website and SQL database.</li>
-<li><b>Dropbox</b>: A free service for synchronization with servers in the cloud using an account created at www.dropbox.com. Data is stored on the servers managed by Dropbox in the United States. Best for small surveys when the skills and infrastructure for setting up CSWeb are not available.</li>
-<li><b>FTP</b>: CSPro can synchronize with any FTP (File Transfer Protocol) server accessible over the network. Best for small surveys when the skills and infrastructure for setting up CSWeb are not available and you don’t want your data on the Dropbox servers.</li>
+<li><b>Dropbox</b>: A free service for synchronization with servers in the cloud. Data is stored on the servers managed by Dropbox in the United States. Best for small surveys when the skills and infrastructure for setting up CSWeb are not available.</li>
+<li><b>FTP</b>: CSPro can synchronize with any FTP (File Transfer Protocol) server accessible over the network. Best for small surveys when the skills and infrastructure for setting up CSWeb are not available and you do not want your data on the Dropbox servers.</li>
 </list>
 
-If you choose to deploy your application to CSWeb you will first need to setup and configure a CSWeb server. See the CSWeb users guide for details <link CSWeb::introduction_to_csweb.hgt>CSWeb users guide</link>. Once you have a CSWeb server up and running, choose <b>CSWeb</b> under <b>Deploy To</b> and enter the URL for your server next to <b>Server URL</b>. Once you click <b>Deploy</b> you will be prompted for the username and password for the CSweb server.
+If you choose to deploy your application to CSWeb, you will first need to setup and configure a CSWeb server. See the <link CSWeb::introduction_to_csweb.hgt>CSWeb User's Guide</link> for details. Once you have a CSWeb server up and running, choose <b>CSWeb</b> under <b>Deploy To</b> and enter the URL for your server next to <b>Server URL</b>. After clicking <b>Deploy</b>, you will be prompted for the username and password for the CSWeb server.
 
-To deploy to Dropbox you will need a Dropbox account. You can create an account for free at <html><a href="https://www.dropbox.com" target="_blank">www.dropbox.com</a></html>. To upload your application to Dropbox, choose <b>Dropbox</b> under <b>Deploy To</b>. Once you click <b>Deploy</b> you will be prompted for the email and password for your Dropbox account.
+To deploy to Dropbox, you will need a Dropbox account. You can create an account for free at <link https://www.dropbox.com>Dropbox</link>. To upload your application to Dropbox, choose <b>Dropbox</b> under <b>Deploy To</b>. After clicking <b>Deploy</b>, you will be prompted for the email and password for your Dropbox account.
 
-To deploy to an FTP server choose <b>FTP</b> under <b>Deploy To</b>. Once you click <b>Deploy</b> you will be prompted for the username and password for your FTP server.
+To deploy to an FTP server, choose <b>FTP</b> under <b>Deploy To</b>. After clicking <b>Deploy</b>, you will be prompted for the username and password for your FTP server.
 
-After uploading the deployment package to the server you can now <topic install_deployment_mobile.hgt />
+After uploading the deployment package to the server, you can now <topic install_deployment_mobile.hgt />.
