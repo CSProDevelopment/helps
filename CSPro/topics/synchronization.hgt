@@ -16,7 +16,7 @@ In situations where an interviewer rarely or never has access to the Internet, C
 
 CSPro supports both one-way and two-way data synchronization. This means that is possible to send data from the interviewer's device to the server as well as to download data from the server to the interviewer's device. You can configure your synchronization to only send data to the server, to only receive data from the server, or to both send and receive data.
 
-It is possible to synchronize both CSPro data files and other non-data files such as application files, images, and text files. It is common to use synchronization to update data entry applications in the field by downloading the latest <link binary_data_entry_application_file_pen.hgt>.pen</link> and <link program_information_file_pff.hgt>.pff</link> files from the server. This way, modifications to the application at the head office can easily be distributed to interviewers in the field.
+It is possible to synchronize both CSPro data files and other non-data files such as application files, images, and text files. It is possible to update data entry applications in the field by downloading the latest <link binary_data_entry_application_file_pen.hgt>.pen</link> and <link program_information_file_pff.hgt>.pff</link> files from the server. This way, modifications to the application at the head office can easily be distributed to interviewers in the field. It is, however, simpler to deploy and update application files on mobile devices using the <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link> tool. This tool packages application files for deployment, uploads them to a server and allows interviewers in the field to install and update them on a tablet by choosing <link CSDeploy::install_deployment_mobile.hgt>Add Application</link> from the menu on their mobile device.
 
 
 <subheader>Synchronization Server</subheader>
@@ -44,9 +44,9 @@ Basic synchronizations can be set up by specifying a few options <link synchroni
 For more advanced synchronization scenarios, CSPro has logic functions that can be used to implement data and file synchronizations. Using logic, it is possible to synchronize data files, including those associated with external dictionaries, and non-data files over either the Internet or Bluetooth.
 
 
-<subheader>Web Synchronization from Logic</subheader>
+<subheader>Synchronization from Logic</subheader>
 
-There are four logic functions used for synchronization with a web server:
+There are four logic functions used for synchronization with a server:
 
 <list>
 	<li><logiccolor>syncconnect</logiccolor> is used to connect to the server and initiate the synchronization session.</li>
@@ -112,5 +112,9 @@ endif;
 // start peer-to-peer Bluetooth server
 syncserver(Bluetooth);
 </logic>
+
+<subheader>Application Deployment over the Internet</subheader>
+
+The synchronization functions all assume that your CSPro application is already installed on the interviewers device. This means that it is not possible to use the above methods to download a new application for initial installation. While it is possible to simply copy the application to the interviewers device by connecting it to a PC via USB, in some cases it is preferable for the interviewer to download applications over the internet. To download an application onto a device, use <link CSDeploy::install_deployment_mobile.hgt>Add Application</link> from the menu in the <i>Entry Applications</i> screen in CSEntry on the interviewers mobile device. To package and upload an application to a server where it can be downloaded from use the <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link> tool.
 
 <seealso synchronization_simple.hgt syncconnect_function.hgt syncdata_function.hgt syncfile_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />

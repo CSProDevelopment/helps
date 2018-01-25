@@ -32,14 +32,20 @@ The following <b>Sync</b> options can be specified:
 
 Simple synchronizations do not support synchronization of external dictionaries or files other than the .pen and .pff files. To implement these advanced synchronization scenarios, you can create your own synchronization routines using <link synchronization.hgt>logic functions</link>.
 
+While it is possible to use the synchronization options to update the application files of an existing application, it is not possible to use them to download the application to a mobile device for the first time. However, the <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link> tool can be used to package and upload an application to a server. Interviewers can then download the application to their mobile device using <link CSDeploy::install_deployment_mobile.hgt>Add Application</link> from the Entry Applications screen of CSEntry.
+
 <subheader>Running Synchronizations</subheader>
 
 If the synchronization options have been configured, then the operator can launch the synchronization when running the data entry application. Synchronization may not be run while entering case data.
 
-On mobile devices, the synchronization may be launched from the case listing view by tapping the following icon:
+On mobile devices, the synchronization may be launched from the case listing view by choosing <i>Synchronize</i> from the menu or tapping the following icon:
 
 <center><image synchronization_run_android.png /></center>
 
 On desktop devices, select the <b>Synchronize</b> option off of the <b>File</b> menu.
+
+<subheader>Downloading Data</subheader>
+
+In order to download the data that has been uploaded to the server, use the Data Viewer's <link DataViewer::downloading_and_synchronizing_data.hgt>download function</link>. This will download all the data on the server into a single CSPro data file that can be used by other CSPro applications and tools.
 
 <seealso synchronization.hgt />
