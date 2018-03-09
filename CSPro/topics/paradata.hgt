@@ -1,7 +1,38 @@
 ﻿<title>Paradata</title>
 
-<html><!--- ♻ CSPRO71_TODO ♻ ---></html>
+<subheader>Introduction to Paradata</subheader>
 
-<i>(To be documented in a future CSPro 7.1 beta release.)</i>
+CSPro can automatically collect paradata for your application. Paradata <link https://en.wikipedia.org/wiki/Paradata>is defined</link> as "data about the process by which the survey data [was] collected." In CSPro this includes information about fields and values entered, error messages encountered, and the state of the data collection device.
 
-<seealso paradata_options.hgt logtext_function.hgt />
+The paradata log, with the extension <link paradata_log_file_cslog.hgt>.cslog</link>, is not a typical data file but is instead a SQLite file. Advanced users with an understanding of SQL can query the file from tools outside of CSPro. Alternatively, there is a tool, the <link ParadataViewer::introduction_to_paradata_viewer.hgt>Paradata Viewer</link>, which allows you to look at the contents of paradata logs. If you have several paradata logs coming from multiple devices, you can combine these using another tool, the <link ParadataConcat::introduction_to_paradata_concatenator.hgt>Paradata Concatenator</link>. You can also query the paradata log from within CSPro using the <logiccolor>paradata</logiccolor> or <logiccolor>sqlquery</logiccolor> functions. Reports can be generated from paradata by creating a <link templated_reports.hgt>templated report</link>.
+
+CSPro collects information about many different kinds of events, which are described in more detail in the <topic paradata_options.hgt /> page. You may wish to collect information about only a subset of possible events.
+
+<subheader>Enabling Paradata Collection</subheader>
+
+To turn on paradata collection, you must:
+
+<list ordered>
+	<li>Open you application and then select <b>Options</b> -> <b>Paradata</b>. This will bring up the <topic paradata_options.hgt /> dialog.</li>
+	<li>Using that dialog, indicate that you want to collect paradata events and specify any additional options. By default, when creating a new system-controlled data entry application, paradata will be collected, though with a limited set of options.</li>
+	<li>The action in step #2 only indicates that CSPro <i>may</i> collect paradata. To actually turn on the collection, you must specify a filename for the paradata log when <link run_a_data_entry_application.hgt>running your application</link>. CSPro may suggest a default filename, which you can modify.</li>
+</list>
+
+Paradata can be collected for data entry or batch edit applications. The paradata log is flexible and can be used simultaneously by multiple applications or users.
+
+<subheader>Uses of Paradata</subheader>
+
+If you conduct a pilot census or survey, you may find it useful to collect paradata on all devices. By analyzing this data, you may be able to improve and streamline operations for the actual census or survey. You can use paradata to answer certain questions about your application, such as:
+
+<list>
+	<li>Which questions in my survey take the longest to collect? Should I to change the wording of the question to make it simpler?</li>
+	<li>What out-of-range values are interviewers entering? Should these be valid values?</li>
+	<li>What error messages are being triggered the most frequently?</li>
+	<li>Where were interviewers located at a given time?</li>
+	<li>How long did interviewers work?</li>
+	<li>Which tablets had the best battery life?</li>
+</list>
+
+This is just a sampling of questions that can be answered based on the events that are stored in the paradata log. In addition to storing previously unavailable data, the paradata log also contains all of the information that was traditionally saved to the <link listing_file_lst.hgt>listing file (.lst)</link>, the <link operator_statistics_file_log.hgt>operator statistics log (.log)</link>, and the <link impute_function.hgt>imputation frequencies listing file (.freq.lst)</link>.
+
+<seealso paradata_options.hgt paradata_function.hgt logtext_function.hgt />
