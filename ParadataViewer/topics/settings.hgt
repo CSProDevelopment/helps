@@ -1,0 +1,15 @@
+﻿<title>Modify the Settings</title>
+
+The Paradata Viewer has some options that can be modified, all of which are available on the <b>Options</b> menu. The following options, most of which affect the <link table_browser.hgt>Table Browser</link>, can be toggled:
+
+<list>
+	<li><b>View Value Labels</b>: When displaying tables, labels will be shown instead of values when appropriate. For example, <i>add</i> will appear instead of <i>1</i> in a table about the data entry mode.</li>
+	<li><b>Convert Timestamps to Local Time</b>: Paradata events are logged in <link CSPro::timestamp_function.hgt>Unix time</link>, but it may be more useful to view the times in local time.</li>
+	<li><b>Show Fully Linked Tables</b>: Event tables will appear in complete form, with any linked tables joined to display all related information about the paradata event.</li>
+	<li><b>Show Linking Values</b>: In cases where a table is linked, this option will display the linking value.</li>
+	<li><b>Show SQL Statements Pane</b>: This option displays a pane at the bottom of the screen that shows the SQL queries executed by the various Paradata Viewer features. Advanced users may find it useful to see and edit the queries.</li>
+</list>
+
+In addition to the above options, clicking on <b>Settings</b> brings up a dialog box with additional options. Most of the features relate to limits in how many rows of results various Paradata Viewer features use. Unless you are working on a very large data set (e.g., a census), the default options should be sufficient.
+
+You may, however, find it useful to modify the way that timestamps are converted to local time. By modifying the <b>Timestamp Conversions</b> filters, you can customize these time strings to an expression that you prefer, similarly to how you would do it with the <logiccolor>timestring</logiccolor> function.
