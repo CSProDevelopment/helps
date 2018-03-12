@@ -14,6 +14,7 @@ The following section shows the options available to you in a CSEntry PFF file. 
 [Run Information]
 Version=CSPro <definition version />
 AppType=Entry
+Description=My Survey
 
 [DataEntryInit]
 OperatorID=John
@@ -48,7 +49,7 @@ DISTRICT=05
 
 <subheader>[Run Information]</subheader>
 
-The <pffcolor>[Run Information]</pffcolor> block is required and must appear exactly as shown in the example above.
+The <pffcolor>[Run Information]</pffcolor> block is required. The <pffcolor>Version</pffcolor> and <pffcolor>AppType</pffcolor> and must appear exactly as shown in the example above. The <pffcolor>Description</pffcolor> is optional. If included, the description will be used instead of the name of the file in the list of applications (mobile only) and in the window title during data entry (all platforms).
 
 
 <subheader>[DataEntryInit]</subheader>
