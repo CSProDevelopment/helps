@@ -54,7 +54,6 @@ program_information_file_pff.hgt | .pff															#	.pff
 	run_production_batch_edits.hgt																#		Run Production Batch Edits
 	run_production_data_entry.hgt																#		Run Production Data Entry
 file_types.hgt | .pffRunner																		#	.pffRunner
-data_synchronization.hgt | .pnc																	#	.pnc
 question_text_file_qsf.hgt | .qsf																#	.qsf
 file_types.hgt | .ssf																			#	.ssf
 status_file_sts.hgt | .sts																		#	.sts
@@ -478,7 +477,6 @@ tool_list.hgt | Data																			#	Data
 	tool_list.hgt | Export																		#		Export
 	tool_list.hgt | Reformat																	#		Reformat
 	tool_list.hgt | Sort																		#		Sort
-	data_synchronization.hgt | Synchronization													#		Synchronization
 run_production_data_entry.hgt | DataEntryIDs													#	DataEntryIDs
 data_dictionary.hgt																				#	Data Dictionary
 	creating_a_dictionary_for_an_existing_file.hgt | Creating for an Existing File				#		Creating for an Existing File
@@ -795,7 +793,6 @@ file_types.hgt																					#	File Types
 	question_text_file_qsf.hgt																	#		Question File (.qsf)
 	saved_arrays_file_sva.hgt																	#		Saved Arrays File (.sva)
 	status_file_sts.hgt																			#		Status File (.sts)
-	data_synchronization.hgt																	#		Synchronization File (.pnc)
 	tables_file_tbw.hgt																			#		Tables File (.tbw)
 	table_matrices_file_tab.hgt																	#		Table Matrices File (.tab)
 	table_matrices_index_file_tabidx.hgt														#		Table Matrices Index File (.tabidx)
@@ -1803,6 +1800,9 @@ sum_function.hgt																				#	Sum Function
 get_help.hgt | Support																			#	Support
 swap_function.hgt																				#	Swap Function
 data_entry_forms_screen_layout.hgt | Switching Between Data Entry Forms and Dictionary			#	Switching Between Data Entry Forms and Dictionary
+synchronization.hgt | Sync																		#	Sync
+	synchronization.hgt | Sync Overview															#		Synchronization Overview
+	synchronization_simple.hgt | Synchronization (simple)										#		Simple Synchronization
 syncconnect_function.hgt																		#	SyncConnect Function
 	syncconnect_function_bluetooth.hgt | Bluetooth												#		Bluetooth
 	syncconnect_function_csweb.hgt | CSWeb														#		CSWeb
@@ -1811,16 +1811,8 @@ syncconnect_function.hgt																		#	SyncConnect Function
 syncdata_function.hgt																			#	SyncData Function
 syncdisconnect_function.hgt																		#	SyncDisconnect Function
 syncfile_function.hgt																			#	SyncFile Function
-synchronization.hgt | Synchronization															#	Synchronization
-	bluetooth_synchronization_examples.hgt														#		Bluetooth Synchronization Examples
-	sync_function.hgt | CSPro 6.x Synchronization												#		CSPro 6.x Synchronization
-	dropbox_synchronization_examples.hgt														#		Dropbox Synchronization Examples
-	ftp_synchronization_examples.hgt															#		FTP Synchronization Examples
-	data_synchronization.hgt																	#		Synchronization File (.pnc)
 synchronization_simple.hgt | Synchronization Options											#	Synchronization Options
-synchronization.hgt																				#	Synchronization Overview
 syncserver_function.hgt																			#	SyncServer Function
-sync_function.hgt																				#	Sync Function
 sysdate_function.hgt																			#	SysDate Function
 sysparm_function.hgt																			#	SysParm Function
 operator_vs_system_controlled.hgt | System														#	System
