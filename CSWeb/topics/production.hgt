@@ -1,0 +1,16 @@
+﻿<title>Running CSWeb in Production</title>
+
+Using CSWeb for a production data collection operation requires additional steps in order to make the server accessible to devices in the field and to ensure proper data security.
+
+<subheader>Domain name</subheader>
+
+In order to connect to the server from devices outside your local network, such as tablets in the field, you will need to register a domain name for your server. The instructions in this document describe using http://localhost to access your CSWeb server. This will only work when accessing CSWeb from the server itself. In order to access the server from a tablet or another computer you will need domain name such as http://census.gov. There are many companies online that can register domain names. If you already have a website then you may be able to use that domain, or a subdomain, for your CSWeb server. 
+
+<subheader>Network security</subheader>
+
+If your server is connected to the internet, it is important to ensure that you have network security systems in place to prevent unwanted intrusion and access to your data. Such systems will generally include a firewall. Your firewall must be configured to allow HTTP and/or HTTPS traffic in order for devices to connect to CSWeb over the internet. If you plan to store confidential survey data on your CSWeb server you should seek assistance from an expert in server security.
+
+<subheader>SSL certificate</subheader>
+
+TLS/SSL encrypts the communication between your server and devices in the field. TLS/SSL is also known as https. If you use CSWeb without https, passwords and data are transferred as plain text and may be intercepted during transmission. For confidential data it is important to use TLS/SSL to encrypt all data being transferred between devices in field and the server. This can be done easily by configuring the web server (Apache or IIS) to use https instead of http. This requires an SSL certificate for your domain. There are various companies and organizations that can provide SSL certificates.
+
