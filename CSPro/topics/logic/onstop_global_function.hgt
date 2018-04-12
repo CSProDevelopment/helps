@@ -1,191 +1,47 @@
 ﻿<title>OnStop Global Function</title>
 <context logic_help_onstop />
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<logicsyntax>
+function OnStop();
+</logicsyntax>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<subheader>Description</subheader>
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">function</font></b> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">OnStop();</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Onstop
- is a special global function. It has no return value and must be placed
- in the Global section just like any other</font> <a href="user_defined_functions.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">user-defined
- functions.</font></a></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">When
- defined, it provides control over what happens when the data entry operator
- tries to stop data entry using the ESC key, the <img src="stop.jpg"
-														 alt="Image of Stop Button"
-														 title="Image of Stop Button"
-														 width="23" height="22"
-														 border="0" />
- Stop button, pressing Ctrl+S, or attempting to exit data entry. When any
- of the above events occur, the onstop function is executed and no stop
- dialog (discard, save, cancel) occurs.</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">If
- an onstop function has been coded in a data entry application, then when
- resuming a partial case, no resume dialog (&quot;Do you want to go to
- last&quot;) occurs. If special actions are required when entering a partial
- case, check whether a partial case has been entered using the <a href="ispartial_function.html">ispartial
- function</a> and program the appropriate action. You can retrieve the
- name and occurrence number of the last field entered (on a one-level application)
- by calling <font style="font-family: 'Courier New';" color="#0000FF" face="Courier New">getsymbol</font><font
-	 style="font-family: 'Courier New';" face="Courier New">(</font><font
-	 style="font-family: 'Courier New';" color="#0000FF" face="Courier New">savepartial</font><font
-	 style="font-family: 'Courier New';" face="Courier New">)</font> from
- the preproc of the questionnaire.</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- onstop function is not executed when the</font> <a href="stop_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">stop
- function</font></a> <font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">is executed.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- onstop function can be used to keep the operator from stopping data entry
- (see Example 1 below) or to allow stopping only under certain conditions
- (see Example 2 below)</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">Proc Global</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New';"><font color="#0000FF">function</font>
- OnStop();</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-size: 10pt;" size="2">&#160;&#160;</font><font style="font-family: 'Courier New';"
-	 face="Courier New">last_field =</font> <font style="font-family: 'Courier New';"
-													 color="#0000FF" face="Courier New">getsymbol</font><font
-	 style="font-family: 'Courier New';" face="Courier New">();</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;reenter</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">last_field;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">end</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" face="Courier New"
-												 size="2">;</font></p>
-<p style="text-align: left; margin-left: 18.70pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example 2:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">Proc Global</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">function</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 face="Courier New"
-														 size="2">OnStop();</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;last_field =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">getsymbol</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">();</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 face="Courier New"
-															 size="2">last_field</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">in</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#FF00FF" face="Courier New"
-													 size="2">&quot;FIRST_NAME&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">,</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-							 color="#FF00FF" face="Courier New" size="2">&quot;LAST_NAME&quot;</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;reenter</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-		 size="2">last_field;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;else</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;savepartial</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">();</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;stop</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(1);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: 'Courier New';"><font color="#0000FF">&#160;&#160;endif</font>;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><span
-	 style="margin-left: 18.70pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">end</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">;</font></span></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" face="Arial"
-										 size="2">See also:</font></b>
- <a href="user_defined_functions.html"><font style="font-family: Arial;
-											 font-size: 10pt;" face="Arial"
-											 size="2">User-defined Functions</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="function_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Function
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="stop_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Stop
- Function</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><a
-	 href="savepartial_function.html"><font style="font-family: Arial; font-size: 10pt;"
-											 face="Arial" size="2">Savepartial
- Function</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="ispartial_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Ispartial
- Function,</font></a> <a href="endlevel_statement.html"><font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">Endlevel
- Statement</font></a></p>
-</body>
-</html>
+<logiccolor>Onstop</logiccolor> is a special global function. It has no return value and must be placed in the Global section just like any other <link user_defined_functions.hgt>user-defined functions</link>.
 
+When defined, it provides control over what happens when the data entry operator tries to stop data entry using the ESC key, the <image stop_button.png /> Stop button, pressing Ctrl+S, or attempting to exit data entry. When any of the above events occur, the <logiccolor>onstop</logiccolor> function is executed and no stop dialog (discard, save, cancel) occurs.
 
-<html><!---♻---></html>
+If an <logiccolor>onstop</logiccolor> function has been coded in a data entry application, then when resuming a partial case, no resume dialog ("Do you want to go to last") occurs. If special actions are required when entering a partial case, check whether a partial case has been entered using the <link ispartial_function.hgt>ispartial function</link> and program the appropriate action. You can retrieve the name and occurrence number of the last field entered (on a one-level application) by calling <logiccolor>getsymbol</logiccolor>(<logiccolor>savepartial</logiccolor>) from the <logiccolor>preproc</logiccolor> of the questionnaire.
+
+The <logiccolor>onstop</logiccolor> function is not executed when the <link stop_function.hgt>stop function</link> is executed.
+
+The <logiccolor>onstop</logiccolor> function can be used to keep the operator from stopping data entry (see Example 1 below) or to allow stopping only under certain conditions (see Example 2 below)
+
+<subheader>Example 1:</subheader>
+
+<logic>
+Proc Global
+function OnStop()
+  last_field = getsymbol();
+  reenter last_field;
+end;
+</logic>
+
+<subheader>Example 2:</subheader>
+
+<logic>
+Proc Global
+function OnStop()
+	last_field = getsymbol();
+	if last_field in "FIRST_NAME", "LAST_NAME" then
+		reenter last_field;
+	else
+		savepartial();
+		stop(1);
+	endif;
+end;
+</logic>
+
+<seealso user_defined_functions.hgt function_statement.hgt stop_function.hgt savepartial_function.hgt ispartial_function.hgt endlevel_statement.hgt />
