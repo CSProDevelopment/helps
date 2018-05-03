@@ -9,34 +9,34 @@ function OnStop();
 
 <subheader>Description</subheader>
 
-<logiccolor>Onstop</logiccolor> is a special global function. It has no return value and must be placed in the Global section just like any other <link user_defined_functions.hgt>user-defined functions</link>.
+<logiccolor>OnStop</logiccolor> is a special global function. It has no return value and must be placed in the <logiccolor>PROC GLOBAL</logiccolor> section just like any other <link user_defined_functions.hgt>user-defined functions</link>.
 
-When defined, it provides control over what happens when the data entry operator tries to stop data entry using the ESC key, the <image stop_button.png /> Stop button, pressing Ctrl+S, or attempting to exit data entry. When any of the above events occur, the <logiccolor>onstop</logiccolor> function is executed and no stop dialog (discard, save, cancel) occurs.
+When defined, it provides control over what happens when the data entry operator tries to stop data entry using the ESC key, the <image stop_button.png /> Stop button, pressing Ctrl+S, or attempting to exit data entry. When any of the above events occur, the <logiccolor>OnStop</logiccolor> function is executed and no stop dialog (discard, save, cancel) occurs.
 
-If an <logiccolor>onstop</logiccolor> function has been coded in a data entry application, then when resuming a partial case, no resume dialog ("Do you want to go to last") occurs. If special actions are required when entering a partial case, check whether a partial case has been entered using the <link ispartial_function.hgt>ispartial function</link> and program the appropriate action. You can retrieve the name and occurrence number of the last field entered (on a one-level application) by calling <logiccolor>getsymbol</logiccolor>(<logiccolor>savepartial</logiccolor>) from the <logiccolor>preproc</logiccolor> of the questionnaire.
+If an <logiccolor>OnStop</logiccolor> function has been coded in a data entry application, then when resuming a partial case, no resume dialog ("Do you want to go to last...") occurs. If special actions are required when entering a partial case, check whether a partial case has been entered using the <logiccolor>ispartial</logiccolor> function and program the appropriate action. You can retrieve the name and occurrence number of the last field entered (on a one-level application) by calling <logiccolor>getsymbol(savepartial)</logiccolor> from the <logiccolor>preproc</logiccolor> of the questionnaire.
 
-The <logiccolor>onstop</logiccolor> function is not executed when the <link stop_function.hgt>stop function</link> is executed.
+The <logiccolor>OnStop</logiccolor> function is not executed when the <logiccolor>stop</logiccolor> function is executed.
 
-The <logiccolor>onstop</logiccolor> function can be used to keep the operator from stopping data entry (see Example 1 below) or to allow stopping only under certain conditions (see Example 2 below)
+The <logiccolor>OnStop</logiccolor> function can be used to keep the operator from stopping data entry (see Example 1 below) or to allow stopping only under certain conditions (see Example 2 below).
 
-<subheader>Example 1:</subheader>
+<subheader>Example 1</subheader>
 
 <logic>
-Proc Global
+PROC GLOBAL
+
 function OnStop()
-  last_field = getsymbol();
-  reenter last_field;
+	reenter;
 end;
 </logic>
 
-<subheader>Example 2:</subheader>
+<subheader>Example 2</subheader>
 
 <logic>
-Proc Global
+PROC GLOBAL
+
 function OnStop()
-	last_field = getsymbol();
-	if last_field in "FIRST_NAME", "LAST_NAME" then
-		reenter last_field;
+	if getsymbol() in "FIRST_NAME", "LAST_NAME" then
+		reenter;
 	else
 		savepartial();
 		stop(1);
