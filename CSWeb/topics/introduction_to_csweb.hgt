@@ -11,6 +11,8 @@ CSWeb uses a MySQL database on the server to store the cases for the census or s
 
 The code to run CSWeb can be downloaded from the <link https://<definition census_download_webpage />>CSPro download webpage</link>. More information about how to use CSPro's synchronization features can be found in the CSPro User's Guide <link CSPro::synchronization.hgt>Synchronization Overview</link>.
 
+CSWeb is intended for large surveys and censuses. For small and medium surveys, Dropbox or FTP syncrhonization is sufficient and far simpler to setup than CSWeb. For Dropbox synchroniation, no server is required at all, making it very easy to get started. In addition, setting up CSWeb requires knowledge and experience with server administration and website technologies. If you do not have experience setting up and maintaining web servers, you will find setting up CSWeb to be very difficult.
+
 This guide contains the following information:
 
 <subheader>Server Setup</subheader>
@@ -21,6 +23,7 @@ This guide contains the following information:
 	<li><topic apache_csweb_setup.hgt /></li>
 	<li><topic iis_server_setup.hgt /></li>
 	<li><topic iis_csweb_setup.hgt /></li>
+	<li><topic production.hgt /></li>
 </list>
 
 <subheader>How to ...</subheader>

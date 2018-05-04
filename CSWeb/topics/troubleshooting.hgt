@@ -15,3 +15,31 @@ To reconfigure or reset your CSWeb installation:
 	<li>Delete the files <b>src/api/app/config.php</b> and <b>src/ui/src/config.php</b>.</li>
 	<li>To reconfigure CSWeb, open your web browser and launch the CSWeb setup page.</li>
 </list>
+
+<subheader>Common errors during CSWeb setup</subheader>
+
+<i>Failed to connect to database. SQLSTATE[HY000] [1045] Access denied for user</i>
+
+The database username and database password are not correct. They should be set to the username and password for a MySQL user that has permissions to access the MySQL database.
+
+<i>Failed to connect to database. SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No such host is known.</i>
+
+The hostname is incorrect. This should be the hostname for the MySQL database, not the server hostname. In most cases the hostname should be "localhost" unless your database and web server are running on different computers. The hostname should NOT include "http://". If MySQL is running on a different port than the default, you should add the port to the hostname. For example "localhost:3307".
+
+<i>Something went terribly wrong</i>
+
+This is a general error that could be caused by a number of different problems with the CSWeb configuration. For more information check the CSWeb log files and also check the Apache/IIS/PHP error log.
+
+<subheader>Common errors syncing to CSWeb from a tablet/phone</subheader>
+
+<i>Failed to connect to localhost</i>
+
+You are using a server URL that uses localhost. Localhost can only be used to access the server from a web browser running on the server itself. To access the server from another computer or device you must use either a domain name or the IP address of the server. If your server does not have a domain name or a static IP address you will need to obtain one. If you are unsure how to do this you may want to consider using Dropbox synchronization instead of CSWeb.
+
+<i>Unable to resolve host</i>
+
+Either the server URL is incorrect or your device is not connected to the network.
+
+<i>Resource not found on server</i>
+
+The server URL is not correct. The host portion of the URL is probably correct but the part that follows is not. This often happens when "ui" is used instead of "api" at the end of the URL. For example, <i>http://example.org/csweb/ui</i> instead of <i>http://example.org/csweb/api</i>. Always use "api" when syncing with CSWeb from CSPro and use "ui" only when accessing CSWeb from your web browser.
