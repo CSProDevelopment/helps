@@ -9,7 +9,7 @@ i = filedelete(<arg>file_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>filedelete</logiccolor> function deletes an existing file or group of files. The argument <arg>file_name</arg> is either a string expression giving a file name or is a file handler declared in a <logiccolor>file</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>.
+The <logiccolor>filedelete</logiccolor> function deletes a file or group of files. The argument <arg>file_name</arg> is either a string expression giving a file name or is a file handler declared in a <logiccolor>file</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>.
 
 You can use the wildcard characters "*" and "?" to specify a group of files to delete.
 
@@ -20,8 +20,11 @@ The function returns the number of files deleted. If there was an error deleting
 <subheader>Example</subheader>
 
 <logic>
+// delete file "Household.csdb" from the backups folder
+filedelete(pathname(Application) + "Backups/Household.csdb");
+
 // delete all data from the backups folder
 filedelete(pathname(Application) + "Backups/*.csdb");
 </logic>
 
-<seealso filecopy_function.hgt filerename_function.hgt />
+<seealso filecopy_function.hgt filerename_function.hgt dirdelete_function.hgt />
