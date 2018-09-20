@@ -234,6 +234,8 @@ generate_binary_data_entry_application.hgt | Binary Application									#	Binary
 binary_data_entry_application_file_pen.hgt														#	Binary Data Entry Application File (.pen)
 strip_function.hgt | Blanks																		#	Blanks
 	strip_function.hgt																			#		Strip Function
+blocks.hgt																						#	Blocks
+	change_block_properties.hgt																	#		Change Block Properties
 syncconnect_function_bluetooth.hgt | Bluetooth Synchronization									#	Bluetooth Synchronization
 add_borders.hgt | Border																		#	Border
 	add_borders.hgt | Add Borders to a Table													#		Add Borders to a Table
@@ -290,6 +292,7 @@ formats_for_a_part_of_a_table.hgt | Cells														#	Cells
 	select_and_copy_table_data_to_other_applications.hgt | Select in Table						#		Select in Table
 align_things.hgt | Center Text and Fields														#	Center Text and Fields
 change_data_entry_options.hgt | Change															#	Change
+	change_block_properties.hgt | Block Properties												#		Block Properties
 	change_data_entry_options.hgt | Data Entry Options											#		Data Entry Options
 	change_default_text_font.hgt | Default Text Font											#		Default Text Font
 	change_edit_order.hgt | Edit Order															#		Edit Order
@@ -348,14 +351,14 @@ adding_rows_and_columns_for_post_calculation.hgt | Column										#	Column
 	adding_rows_and_columns_for_post_calculation.hgt | Add for Post Calculation					#		Add for Post Calculation
 	add_percents_to_a_table.hgt | Percent														#		Percent
 formatting_row_column_or_cell_data.hgt | Columns												#	Columns
-	formatting_row_column_or_cell_data.hgt | Format Column data  in a Table						#		Format Column data  in a Table
+	formatting_row_column_or_cell_data.hgt | Format Column data in a Table						#		Format Column data in a Table
 	hide_or_show_a_row_or_column.hgt | Hide/Show Columns in a Table								#		Hide/Show Columns in a Table
 	join_and_split_roster_columns.hgt | Join and Split in a Roster								#		Join and Split in a Roster
 	modifying_row_and_column_spacing_for_printing.hgt | Spacing									#		Spacing
 	create_a_table.hgt | Variables																#		Variables
 formatting_row_column_or_cell_data.hgt | Column Head											#	Column Head
 	formats_for_a_part_of_a_table.hgt															#		Formats for a Part of a Table
-	formatting_row_column_or_cell_data.hgt | Format Column data  in a Table						#		Format Column data  in a Table
+	formatting_row_column_or_cell_data.hgt | Format Column data in a Table						#		Format Column data in a Table
 	hide_or_show_a_row_or_column.hgt | Hide/Show Columns in a Table								#		Hide/Show Columns in a Table
 	parts_of_a_table.hgt																		#		Parts of a Table
 extended_controls.hgt | Combo box																#	Combo box
@@ -1212,7 +1215,7 @@ add_dictionary_elements.hgt | Modify or Add Dictionary Elements									#	Modify
 operators.hgt | Modulo Operator																	#	Modulo Operator
 move_around_a_dictionary.hgt | Move																#	Move
 	move_around_a_dictionary.hgt | Around a Dictionary											#		Around a Dictionary
-	moving_around_a_logic_application.hgt | Around a Logic  Application							#		Around a Logic  Application
+	moving_around_a_logic_application.hgt | Around a Logic Application							#		Around a Logic Application
 	move_between_tables.hgt | Between Tables													#		Between Tables
 	move_dictionary_elements.hgt | Dictionary Elements											#		Dictionary Elements
 	move_things.hgt | Things in a Form															#		Things in a Form
@@ -1441,6 +1444,7 @@ endgroup_statement.hgt | Program Flow															#	Program Flow
 program_information_file_pff.hgt																#	Program Information File (.pff)
 prompt_function.hgt																				#	Prompt Function
 change_field_properties.hgt | Properties														#	Properties
+	change_block_properties.hgt | Change Block													#		Change Block
 	change_field_properties.hgt | Change Field													#		Change Field
 	change_field_properties_for_multiple_fields.hgt | Change Field (Multiple)					#		Change Field (Multiple)
 	change_form_properties.hgt | Change Form													#		Change Form
@@ -1611,7 +1615,7 @@ savesetting_function.hgt																		#	SaveSetting Function
 save_an_application_with_a_new_name.hgt | Save As												#	Save As
 	save_an_application_with_a_new_name.hgt | Application										#		Application
 	save_dictionary_as_new_file.hgt | Dictionary												#		Dictionary
-saving_tables_as_text_html_or_rich_text.hgt | Saving Tables as Text  HTML or Rich Text			#	Saving Tables as Text  HTML or Rich Text
+saving_tables_as_text_html_or_rich_text.hgt | Saving Tables as Text HTML or Rich Text			#	Saving Tables as Text HTML or Rich Text
 change_the_view.hgt | Screen																	#	Screen
 	change_the_view.hgt | Full																	#		Full
 forms_design.hgt | Screens																		#	Screens
