@@ -10,7 +10,7 @@ Functions are of the form:
 
 Functions may include a parameter list, which can vary depending on the function call's requirements. This list may be empty (that is, it contains no parameters between the opening and closing parentheses) or it may contain one or more parameters. Each parameter specifies a variable, array, list, or file handler that is used by the statements within the function.
 
-Numeric and alphanumeric variables are local to the function. That is, if a variable is passed as a parameter, its value in the rest of the application will not be changed by actions within the function. On the other hand, arrays passed as parameters refer to the source array and changing values of the array within the function also change the source array.
+Numeric, string, and alphanumeric variables are local to the function. That is, if a variable is passed as a parameter, its value in the rest of the application will not be changed by actions within the function (this is called "pass by value"). On the other hand, arrays, lists, and file handlers passed as parameters refer to the source variable and interactions on the variable affect the source variable (this is called "pass by reference").
 
 A user-defined function:
 

@@ -20,7 +20,7 @@ string personName;
 array validRelationships(5);
 
 // user-defined function
-function IsMotherValidByAge(motherAge,childAge)
+function numeric IsMotherValidByAge(numeric motherAge, numeric childAge)
 	IsMotherValidByAge = ( ( motherAge - childAge ) in MinAgeDifferenceParent:MaxAgeDifferenceMother );
 end;
 </logic>

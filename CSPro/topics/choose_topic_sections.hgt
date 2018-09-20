@@ -7,7 +7,7 @@ To make this happen, a global navigation key needs to be established and handled
 Below is code for the onkey function to support using F9 to move to another section in the application. The NAVIGATE data item provides the location of movement.
 
 <logic>
-function OnKey(keystroke)
+function numeric OnKey(numeric keystroke)
 
 	if keystroke = 120 then // F9 to navigate among sections
 

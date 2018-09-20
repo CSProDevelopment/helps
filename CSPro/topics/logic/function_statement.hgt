@@ -1,390 +1,107 @@
 ﻿<title>Function Statement</title>
 <context logic_help_function />
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<logicsyntax>
+function 『<arg>return_type</arg>』 <arg>function_name</arg>(『<arg>parameter1_type</arg>, <arg>parameter1_name</arg>, ...,  <arg>parameterN_type</arg>, <arg>parameterN_name</arg>』)
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+	// statements
+	
+	『<arg>function_name</arg> = <arg>return_value</arg>;』
 
-<p style="text-align: left; margin-left: 72.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -72.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><b><font style="font-family: 'Courier New';
-									 font-size: 10pt; font-weight: bold;"
-									 color="#0000FF" face="Courier New"
-									 size="2">function</font></b> <i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 color="#000000" face="Courier New" size="2">function-name</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">[</font><i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 color="#000000" face="Courier New" size="2">p-1</font></i><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">[</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,</font><i><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-style: italic;"
-													 color="#000000" face="Courier New"
-													 size="2">p-2</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">[</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">...,</font><i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 color="#000000" face="Courier New" size="2">p-n</font></i><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">]]]</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">)</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><i><font style="font-family: 'Courier New';
-									 font-size: 10pt; font-style: italic;"
-									 color="#000000" face="Courier New"
-									 size="2">statements</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><i><font style="font-family: 'Courier New';
-									 font-size: 10pt; font-style: italic;"
-									 color="#000000" face="Courier New"
-									 size="2">function-name</font></i>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">=</font> <i><font style="font-family: 'Courier New';
-														 font-size: 10pt;
-														 font-style: italic;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">numeric-exp</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><b><font style="font-family: 'Courier New';
-									 font-size: 10pt; font-weight: bold;"
-									 color="#0000FF" face="Courier New"
-									 size="2">end</font></b><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;">&#160;</p>
-<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -9.00pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-									 color="#000000" face="Courier New"
-									 size="2">&#160;return-value = function-name(</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">[</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">p-1</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">[</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">,p-2</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">[</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">...,p-n</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">]]]</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#FF00FF" face="Arial"
-	 size="2">[ ]</font> <font style="font-family: Arial; font-size: 10pt;"
-								 color="#000000" face="Arial" size="2">indicates
- that this part is optional.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">Numeric
- expressions, alpha expressions, arrays, file handlers, and function pointers
- can be passed to a user-defined function as parameters. Variables mentioned
- in the parameter list will by default be considered numeric. To specify
- an alphanumeric parameter, you must place the keyword <b><font style="font-weight: bold;">alpha</font></b>
- (or <span style="font-weight: bold;">string</span><span>) </span>before
- the parameter. By default, the length of an alphanumeric parameter is
- 16 characters. To specify a different length, place <b><font style="font-weight: bold;">alpha
- (</font></b><i><font style="font-style: italic;">length</font></i><b><font
-	 style="font-weight: bold;">)</font></b> before the parameter name.</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">Be
- aware that the names used in the parameter list of a function may not
- be the same as names that are defined in any dictionary associated with
- the application, nor may the parameter names be the same as variables
- defined in a <b><font style="font-weight: bold;">numeric</font></b> or
- <b><font style="font-weight: bold;">alpha</font></b> declaration statement.</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">To
- specify an array parameter, place the keyword <span style="font-weight: bold;">array</span>
- (or <span style="font-weight: bold;">array alpha</span>) before the parameter
- name. By default the array is considered one-dimensional. For a two-dimensional
- array, place (,) after the parameter name. For a three-dimensional array,
- place (,,) after the parameter name. Within the function, the functions
- <span style="font-weight: bold;">tblrow</span>, <span style="font-weight: bold;">tblcol</span>,
- and <span style="font-weight: bold;">tbllay</span> return the number of
- dimensions of the passed array. As opposed to numeric or alpha expressions,
- wherein modifying the value does not alter the source items, modifying
- the value of elements of an array also changes the values of the source
- array.</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">To
- specify a file handler, place the keyword <span style="font-weight: bold;">file</span><span>
- before the parameter name.</span></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">Functions
- always return a value, typically a numeric value. To specify the return
- value, assign a numeric value to the name of the function. If no return
- value is assigned to the function, a DEFAULT value is returned. To return
- an alphanumeric value, please the keyword <span style="font-weight: bold;">alpha</span>
- (or <span style="font-weight: bold;">string</span>) before the function
- name. To specify a length other than 16, place <b><font style="font-weight: bold;">alpha
- (</font></b><i><font style="font-style: italic;">length</font></i><b><font
-	 style="font-weight: bold;">) <span style="font-weight: normal;">before
- the function name.</span></font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">PROC GLOBAL</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">function</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">absvalue(VALUE)</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#000000"
-															 face="Courier New"
-															 size="2">VALUE
- &lt;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-					 color="#FF0000" face="Courier New" size="2">0</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;absvalue = (-VALUE);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;else</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;absvalue = VALUE;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;endif</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">end</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#000000" face="Courier New"
-													 size="2">AGE</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;AGE = absvalue(AGE);</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
-		 face="Courier New" size="2">// call user-defined function</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 2:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">PROC GLOBAL</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">function</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">isvalidname(</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">alpha</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#000000" face="Courier New"
-													 size="2">(</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-	 face="Courier New" size="2">32</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">)
- VALUE)</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;LOOKUP_NAME = VALUE;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;isvalidname =</font> <font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">loadcase</font><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">(LOOKUP,LOOKUP_NAME);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">end</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">PROC</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#000000" face="Courier New"
-													 size="2">AGE</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#000000"
-															 face="Courier New"
-															 size="2">isvalidname(&quot;JIM&quot;)</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">then</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#008000"
-														 face="Courier New"
-														 size="2">// call
- user-defined function</font></p>
-<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 3:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 14px;
-	 text-indent: -2px;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">PROC
- GLOBAL</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 14px;
-	 text-indent: -2px;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">function</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">calcval(VAL1, VAL2,</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">alpha</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(3) OPER);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 14px;
-	 text-indent: -2px;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#000000" face="Courier New" size="2">&#160;&#160;&#160;[instructions]</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 14px;
-	 text-indent: -2px; font-family: 'Courier New'; color: #0000ff;">&#160;&#160;&#160;.
- . .</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 14px;
-	 text-indent: -2px;"><span style="margin-left: 10.80pt; margin-top: 0.00pt;
-								 margin-bottom: 0.00pt; text-indent: 10.80pt;
-								 text-align: left;"><font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#0000FF"
-															 face="Courier New"
-															 size="2">end</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></span></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">Variables
- VAL1 and VAL2 are implicitly numeric. Variable OPER is alphanumeric with
- a length of three characters. None of the three is declared elsewhere
- in the program or in any of the dictionaries used.</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 4:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 14px;
-	 text-indent: -2px; font-family: 'Courier New', monospace;"><font color="#0000FF">PROC</font>
- <font color="#0000FF">GLOBAL</font><br />
-<br />
-<font color="#0000FF">array</font> exampleArray(<font color="#FF0000">2</font>,<font
-	 color="#FF0000">3</font>) = <font color="#FF0000">1</font> <font color="#FF0000">2</font>
- <font color="#FF0000">3</font> <font color="#FF0000">4</font> <font color="#FF0000">5</font>
- <font color="#FF0000">6</font>;<br />
-<br />
-<font color="#0000FF">function</font> sumArray(<font color="#0000FF">array</font>
- values(,))<br />
-<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">numeric</font> rowIdx,colIdx,sumValue;<br />
-<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">do</font> rowIdx = <font
-	 color="#FF0000">1</font> <font color="#0000FF">while</font> rowIdx
- &lt;= <font color="#0000FF">tblrow</font>(values)<br />
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">do</font>
- colIdx = <font color="#FF0000">1</font> <font color="#0000FF">while</font>
- colIdx &lt;= <font color="#0000FF">tblcol</font>(values)<br />
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font
-	 color="#0000FF">inc</font>(sumValue,values(rowIdx,colIdx));<br />
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">enddo</font>;<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">enddo</font>;<br />
-<br />
-&#160;&#160;&#160;&#160;sumArray = sumValue;<br />
-<br />
-<font color="#0000FF">end</font>;<br />
-<br />
-<font color="#0000FF">PROC</font> EXAMPLE<br />
-<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;Sum
- of array is %d&quot;</font>,sumArray(exampleArray));</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-weight: bold;"><b><font style="font-weight: bold;">Example 5:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-weight: normal; font-family: 'Courier New', monospace;"><font
-	 color="#0000FF">PROC</font><font color="#0000FF"> </font><font color="#0000FF">GLOBAL</font><font
-	 color="#0000FF"><br />
-<br />
-function</font> <font color="#0000FF">string</font> getAccount(<font color="#0000FF">string</font>
- accountName)</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-weight: normal; font-family: 'Courier New', monospace;"><font
-	 color="#000000"><br />
-&#160;&#160;&#160;&#160;<font color="#008000">//&#160;this function, when
- passed an email address, returns the<br />
-</font>&#160;&#160;&#160;&#160;<font color="#008000">//&#160;string with
- the domain part of the address removed</font><br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">numeric</font> atPos = <font
-	 color="#0000FF">pos</font>(<font color="#FF00FF">&quot;@&quot;</font>,accountName);<br />
-&#160;&#160;&#160;&#160;<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">if</font> atPos &gt; <font
-	 color="#FF0000">0</font> <font color="#0000FF">then</font>&#160;&#160;&#160;getAccount
- = accountName[<font color="#FF0000">1</font>:(atPos - <font color="#FF0000">1</font>)];<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">else</font>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;getAccount
- = accountName;<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">endif</font>;&#160;&#160;<br />
-<br />
-<font color="#0000FF">end</font>;<br />
-<br />
-<font color="#0000FF">PROC</font> EXAMPLE<br />
-<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">errmsg</font>(<font color="#FF00FF">&quot;User
- account is: %s&quot;</font>,getAccount(<font color="#0000FF">getusername</font>()));</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="user_defined_functions.html">User-Defined
- Functions</a>, <a href="Additional_Function_Examples.html">Additional Examples
- of Functions</a></p>
-</body>
-</html>
+end;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>function</logiccolor> statement defines a <link user_defined_functions.hgt>user-defined function</link> with the name <arg>function_name</arg>. Once defined, the function can be called in other user-defined functions or in procedures throughout your application.
+
+Numeric expressions, alphanumeric and string expressions, arrays, lists, file handlers, and function pointers can be passed to a user-defined function as parameters. These parameters are defined by specifying the variable type (e.g., <arg>parameter1_type</arg>) and the name of the variable (e.g., <arg>parameter1_name</arg>). If no type is specified, the variable will be considered numeric.
+
+The names used in the parameter list of a function are local to the function. They may not be the same as names that are defined in any dictionary or in <logiccolor>PROC GLOBAL</logiccolor>, but the names can be reused in other functions or procedures.
+
+Numeric, string, and alphanumeric variables are local to the function. That is, if a variable is passed as a parameter, its value in the rest of the application will not be changed by actions within the function (this is called "pass by value"). On the other hand, arrays, lists, and file handlers passed as parameters refer to the source variable and interactions on the variable affect the source variable (this is called "pass by reference").
+
+Other than arrays, parameters are defined the same way you would in other parts of logic. However, with arrays, you do not define the size of the array because the array will match the size of the array passed as an argument. By default, an array is one-dimensional. To specify more than one dimension, use parentheses with the number of dimensions specified using commas. For example, a three-dimensional array must include <logiccolor>(,,)</logiccolor> after the parameter name. Within the function, the functions <logiccolor>tblrow</logiccolor>, <logiccolor>tblcol</logiccolor>, and <logiccolor>tbllay</logiccolor> return the number of dimensions of the passed array.
+
+Functions always return a value, either a numeric, alphanumeric, or string value. If <arg>return_type</arg> is not specified, the function will by default return a numeric value. To assign the function's return value, assign a value to <arg>function_name</arg>. If no return value is specified, the value <logiccolor>default</logiccolor> or a blank string is returned, depending on the return type. The return value can also be specified using the <logiccolor>exit</logiccolor> statement.
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC GLOBAL
+
+function CompareValues(numeric value1, numeric value2)
+
+	if value1 <> value2 then
+		errmsg("The values entered, %d and %d, are not equal.", value1, value2);
+		reenter;
+	endif;
+
+end;
+
+PROC BIRTH_DATE
+
+	CompareValues(BIRTH_DATE, BIRTH_DATE_FROM_PREVIOUS_ROUND);
+</logic>
 
 
-<html><!---♻---></html>
+<subheader>Example 2</subheader>
+
+<logic>
+PROC GLOBAL
+
+function string GetNameOfFirstFemale()
+
+	numeric female_index = seek(SEX = 2);
+	
+	if female_index > 0 then
+		GetNameOfFirstFemale = NAME(female_index);
+	endif;
+
+end;
+</logic>
+
+
+<subheader>Example 3</subheader>
+
+<logic>
+PROC GLOBAL
+
+function numeric SumList(list numeric numeric_list)
+
+	numeric summed_value = 0;
+	
+	do numeric counter = 1 while counter <= length(numeric_list)
+		inc(summed_value, numeric_list(counter));
+	enddo;
+	
+	SumList = summed_value;
+
+end;
+</logic>
+
+
+<subheader>Example 4</subheader>
+
+<logic>
+PROC GLOBAL
+
+function string CapitalizeFirstLetters(string text)
+
+	do numeric counter = 1 while counter <= length(text)
+	
+		if counter = 1 or text[( counter - 1 ):1] = " " then
+			text[counter:1] = toupper(text[counter:1]);
+		endif;
+		
+	enddo;
+
+	CapitalizeFirstLetters = text;
+
+end;
+</logic>
+
+
+<seealso user_defined_functions.hgt additional_function_examples.hgt exit_statement.hgt />

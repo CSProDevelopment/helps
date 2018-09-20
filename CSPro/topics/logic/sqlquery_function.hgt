@@ -144,18 +144,18 @@ Adding the directive <logiccolor>sql</logiccolor> after the <logiccolor>function
 <logic>
 PROC GLOBAL
 
-function sql DisplayEntrySession(string operatorName,startTime,endTime)
+function sql DisplayEntrySession(string operatorName, numeric startTime, numeric endTime)
 	errmsg("Operator '%s' worked on %s at %s for %0.2f minutes",
 		operatorName,
-		edit("9999-99-99",sysdate("YYYYMMDD",startTime)),
-		edit("99:99",systime("HHMM",endTime)),
+		edit("9999-99-99", sysdate("YYYYMMDD",startTime)),
+		edit("99:99", systime("HHMM",endTime)),
 		( endTime - startTime ) / 60);
 end;
 
 PROC EXAMPLE
 
 	string SessionQuery =
-		"SELECT DisplayEntrySession(operatorid_info.operatorid,event_start.time,event_end.time) "
+		"SELECT DisplayEntrySession(operatorid_info.operatorid, event_start.time, event_end.time) "
 		"FROM session_event session_event_start "
 		"JOIN event event_start ON session_event_start.id = event_start.id "
 		"JOIN session_event session_event_end "
@@ -166,7 +166,7 @@ PROC EXAMPLE
 		"WHERE session_event_start.action = 1 AND session_event_end.action = 0 "
 		"ORDER BY event_start.time;";
 
-	sqlquery(paradata,SessionQuery);
+	sqlquery(paradata, SessionQuery);
 </logic>
 
 

@@ -5,7 +5,7 @@ These are examples of more advanced ways to work with user-defined functions in 
 <subheader>Recursive Functions </subheader>
 
 <logic>
-function NumberDescendantsInHH(ptrPerson)
+function numeric NumberDescendantsInHH(numeric ptrPerson)
 
 	numeric cntDescendants;
 
@@ -25,7 +25,7 @@ end;
 <subheader>Function Pointers</subheader>
 
 <logic>
-function FilteredCountInHH(function filter(numeric))
+function numeric FilteredCountInHH(function filter(numeric))
 
 	numeric cnt;
 
@@ -41,11 +41,11 @@ function FilteredCountInHH(function filter(numeric))
 
 end;
 
-function IsTeenager(ptrPerson)
+function numeric IsTeenager(numeric ptrPerson)
 	IsTeenager = ( AGE(ptrPerson) in 13:19 );
 end;
 
-function IsFertileWoman(ptrPerson)
+function numeric IsFertileWoman(numeric ptrPerson)
 	IsFertileWoman = ( SEX(ptrPerson) = 2 and AGE(ptrPerson) in 15:49 );
 end;
 
