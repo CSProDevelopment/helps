@@ -6,6 +6,4 @@ Another technique is to use error messages with the <logiccolor>errmsg</logiccol
 
 It may sound obvious, but it is good programming technique to <b>indent</b> your code. This will help you find problems caused by unterminated <logiccolor>if</logiccolor> or <logiccolor>do</logiccolor> statements, for example. If you consistently indent (or tab) the content within any control structure, finding a lost <logiccolor>endif</logiccolor> or <logiccolor>enddo</logiccolor> will be much easier.
 
-It is a good idea to keep the <link compiler_mode.hgt>set explicit</link> option turned on. This will force you to declare all of your variables in your application before using them. The option will prevent the use of misspelled variable names, a common cause of subtle errors that are difficult to detect. Note that this option can also be turned on in your code using:
-
 You can also use the <logiccolor>trace</logiccolor> function to determine problems in your application by outputting messages to a separate window or file rather than have them appear onscreen as they would with error messages.

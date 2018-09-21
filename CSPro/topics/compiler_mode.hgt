@@ -1,19 +1,5 @@
 ﻿<title>Compiler Mode</title>
 
-The CSPro compiler operates in one of two modes: 
+The CSPro compiler operates with the requirement that variables are declared explicitly. You must declare all <link variables.hgt>variables</link> not defined in your dictionary; otherwise, the variables will be flagged as errors by the compiler. The advantage of this is that you do not have to worry about misspelled names.
 
-<subheader>Explicit mode</subheader>
-
-You must declare all <link variables.hgt>variables</link> not defined in your dictionary; otherwise, the variables will be flagged as errors by the compiler. The advantage of this mode is that you do not have to worry about misspelled names. The default compiler mode is explicit, which means that any variable used in a program must be declared in a numeric or alpha statement.
-
-<subheader>Implicit mode</subheader>
-
-This allows you to declare a variable "on the fly," i.e., anywhere in your program. For example, simply coding "<logiccolor>myvar = 3;</logiccolor>" in any procedure or function automatically declares a numeric variable "myvar." All such declarations are global in scope, meaning you can assign or get the value from any other procedure. <link user_defined_functions.hgt>User-defined functions</link>, <link variables.hgt>string variables</link>, and <link arrays.hgt>arrays</link> must still be declared in <logiccolor>PROC GLOBAL</logiccolor>.
-
-The advantage of this mode is that you can write your code more quickly. The danger in using this mode is that you may misspell the name of a variable or dictionary item. If you do this, the compiler will create a separate variable for the misspelled name. For example, you may code "<logiccolor>if mivar = 3 then</logiccolor>" and the compiler will create a new variable "mivar", with initial value 0, and therefore evaluate the condition as false.
-
-You can change the default mode on your computer by checking or unchecking the "Option/Set Explicit" setting. This setting will then remain in effect for all applications. Note that this setting is in effect only on your computer; if you move your application to another computer with a different setting, you may get a different result when you compile.
-
-You can override the computer's default setting mode by using the <link set_statement.hgt>set statement</link> in <logiccolor>PROC GLOBAL</logiccolor>. In this case your application will always give the same result on any machine.
-
-<seealso set_compiler_defaults.hgt />
+Prior to CSPro 7.2, there was a compilation mode called implicit that allowed for on-the-fly variable declarations. This was removed because it could easily lead to mistakes based on programmers mistyping variable names. There were some purposes where implicit declaration mode could be useful, which can now be achieved by using the <logiccolor>ensure</logiccolor> statement.
