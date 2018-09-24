@@ -10,7 +10,7 @@ b = syncconnect(<arg>Bluetooth</arg>『,<arg>server_device_name</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>syncconnect</logiccolor> function opens a connection, via Bluetooth, to another device (a computer, laptop, tablet, or phone) running a local server. The first argument must be the keyword <arg>Bluetooth</arg>. The second argument, <arg>server_device_name</arg>, is an optional string expression of the name of the device to which you want to connect. For Android devices, the device name can be found in Bluetooth settings on the device running the server. For Windows devices, this is the PC name that can be found in Windows settings. If no server device name is specified, a list of nearby devices is displayed and the operator may choose which one to connect to.
+The <logiccolor>syncconnect</logiccolor> function opens a connection, via Bluetooth, to another device (a computer, laptop, tablet, or phone) running a local server. The first argument must be the keyword <arg>Bluetooth</arg>. The second argument, <arg>server_device_name</arg>, is an optional string expression of the name of the device to which you want to connect. For Android devices, the device name can be found in Bluetooth settings on the device running the server. For Windows devices, this is the PC name that can be found in Windows settings. The <logiccolor>getbluetoothname</logiccolor> function can be used on the other device to find the device name. If no server device name is specified, a list of nearby devices is displayed and the operator may choose which one to connect to.
 
 In order for the two devices to connect successfully, the device running the server must call the function <logiccolor>syncserver</logiccolor> at roughly the same time as the call to <logiccolor>syncconnect</logiccolor> is made by the client device.
 
@@ -36,4 +36,4 @@ if syncconnect(Bluetooth,serverName) then
 endif;
 </logic>
 
-<seealso syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_dropbox.hgt syncconnect_function_ftp.hgt />
+<seealso syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_dropbox.hgt syncconnect_function_ftp.hgt getbluetoothname_function.hgt />
