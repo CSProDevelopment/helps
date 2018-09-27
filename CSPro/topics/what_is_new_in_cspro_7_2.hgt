@@ -9,6 +9,14 @@ This is a detailed list of changes in CSPro 7.2. For a more general overview, se
 	<li>A new concept, <link blocks.hgt>blocks</link>, for grouping several fields into a related unit. Blocks can be used in various ways in logic and can have question text that appears when entering any of the fields in the block. On mobile devices, all fields on a block can be displayed on the same screen and the operator can enter values into these fields in any order.</li>
 </list>
 
+
+<subheader>Data Entry</subheader>
+
+<list>
+	<li>The Windows desktop version of CSEntry has options to view cases with duplicate case IDs and to view deleted cases. Cases can be undeleted.</li>
+</list>
+
+
 <subheader>Logic</subheader>
 
 <list>
@@ -24,11 +32,13 @@ This is a detailed list of changes in CSPro 7.2. For a more general overview, se
 	<li>The <logiccolor>ensure</logiccolor> statement allows for the conditional creation of temporary numeric variables.</li>
 </list>
 
+
 <subheader>Synchronization</subheader>
 
 <list>
 	<li>The synchronization functionality from CSPro 6.x (.pnc files and the sync function) has been removed. Syncing files and data must be done with the <link synchronization.hgt>approaches</link> introduced in CSPro 7.0.</li>
 </list>
+
 
 <subheader>Messages</subheader>
 
@@ -36,11 +46,13 @@ This is a detailed list of changes in CSPro 7.2. For a more general overview, se
 	<li>Translations of some runtime messages added for Chinese, French, Portuguese, and Spanish. You <link collaborating_on_cspro_development.hgt>can help</link> translate additional messages or add messages in another language.</li>
 </list>
 
+
 <subheader>Android</subheader>
 
 <list>
 	<li>CSEntry is distributed in both 32-bit and 64-bit versions.</li>
 	<li>When making calls to the <logiccolor>gps</logiccolor> function, if the device's GPS receiver is not enabled, the operator will be prompted to enable location services.</li>
 </list>
+
 
 <seealso what_is_new_in_cspro.hgt />

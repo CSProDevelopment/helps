@@ -11,7 +11,7 @@ namespace Help_Generator
 {
     partial class GenerateHelpsForm : Form
     {
-        public enum GenerationType { Generate, GenerateAndClose, GenerateChmAndClose, CompileOnly };
+        public enum GenerationType { Generate, GenerateAndClose, GenerateChmOnly, GenerateChmAndClose, CompileOnly };
 
         private HelpComponents _helpComponents;
         private GenerationType _generationType;
@@ -32,9 +32,31 @@ namespace Help_Generator
 
         private BackgroundWorker _backgroundThread;
 
-		private bool DoGenerateChm { get { return ( _generationType != GenerationType.CompileOnly ); } }
-		private bool DoGenerateWebsite { get { return ( _generationType != GenerationType.CompileOnly ) && ( _generationType != GenerationType.GenerateChmAndClose ); } }
-		private bool DoGeneratePdf { get { return _helpComponents.settings.CreatePdf && ( _generationType != GenerationType.CompileOnly ) && ( _generationType != GenerationType.GenerateChmAndClose ); } }
+		private bool DoGenerateChm
+        {
+            get
+            {
+                return ( _generationType != GenerationType.CompileOnly );
+            }
+        }
+
+		private bool DoGenerateWebsite
+	    {
+            get
+            {
+                return DoGenerateChm &&
+                    ( _generationType != GenerationType.GenerateChmOnly ) &&
+                    ( _generationType != GenerationType.GenerateChmAndClose );
+            }
+        }
+
+    	private bool DoGeneratePdf
+        {
+            get
+            {
+                return DoGenerateWebsite && _helpComponents.settings.CreatePdf;
+            }
+        }
 
         public GenerateHelpsForm(HelpComponents helpComponents,GenerationType generationType)
         {

@@ -309,6 +309,11 @@ namespace Help_Generator
             GenerateHelps(GenerateHelpsForm.GenerationType.Generate);
         }
 
+        private void generateChmHelpOnlyMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerateHelps(GenerateHelpsForm.GenerationType.GenerateChmOnly);
+        }
+
         private void generateViewTopicsInChmFormatMenuItem_Click(object sender,EventArgs e)
         {
             generateViewTopicsInChmFormatMenuItem.Checked = !generateViewTopicsInChmFormatMenuItem.Checked;
@@ -501,5 +506,5 @@ namespace Help_Generator
                 _issuedCollaboratorModeWarningMissingContext = true;
             }
         }
-	}
+    }
 }
