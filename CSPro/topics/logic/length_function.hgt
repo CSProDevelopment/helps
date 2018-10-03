@@ -18,15 +18,36 @@ The function returns the length of the string as an integer value. If using an <
 <subheader>Example</subheader>
 
 <logic>
-PROC GLOBAL
-
-alpha (30) NAME;
-
-PROC EXAMPLE
-
-	NAME = "John Henry";
-	LEN1 = length(NAME);		// LEN1 is 30
-	LEN2 = length(strip(NAME));	// LEN2 is 10
+alpha (30) NAME = "John Henry";
+length(NAME);					// returns 30
+length(strip(NAME));			// returns 10
 </logic>
 
-<seealso strip_function.hgt />
+
+<subheader>Uses on Lists and Arrays</subheader>
+
+The <logiccolor>length</logiccolor> function also operates on lists and arrays. When applied to a list, it returns the number of elements in the list. When applied on an array, it returns the size of an array dimension.
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = length(<arg>list_name</arg>);
+i = length(<arg>array_name</arg>『, <arg>dimension</arg>』);
+</logicsyntax>
+
+<subheader>Examples</subheader>
+
+<logic>
+array string usmca_countries(3) = "Canada, Mexico, United States";
+length(usmca_countries); // returns 3;
+
+// ... 
+
+array AgeSexDeckArray(AGE_VS, SEX_VS);
+
+do numeric age_counter = 1 while age_counter <= length(AgeSexDeckArray, 1)
+	do numeric sex_counter = 1 while sex_counter <= length(AgeSexDeckArray, 2)
+		// ...
+	enddo;
+enddo;
+</logic>

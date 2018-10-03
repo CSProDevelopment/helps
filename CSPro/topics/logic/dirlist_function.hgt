@@ -9,7 +9,7 @@ b = dirlist(<arg>directory_listing</arg>,<arg>directory_name</arg>『,<arg>wildc
 
 <subheader>Description</subheader>
 
-The <logiccolor>dirlist</logiccolor> function fills <arg>directory_listing</arg>, a string list, with the paths of files and directories located in a directory specified by the string expression <arg>directory_name</arg>. (A list is a read-only variable-length <link array_statement.hgt>array</link>. The number of files and directories returned can be accessed via the <link length_function.hgt>length</link> function.) A wildcard filter can be passed as an optional third string expression, <arg>wildcard_filter</arg>. An optional fourth argument, <arg>recursive</arg>, instructs the function to create a listing of the specified directory as well as any subdirectories. All file and directory names will be fully-qualified; i.e., they will be absolute, not relative, path names.
+The <logiccolor>dirlist</logiccolor> function fills <arg>directory_listing</arg>, a string list, with the paths of files and directories located in a directory specified by the string expression <arg>directory_name</arg>. (A list is a read-only variable-length <link array_statement.hgt>array</link>. The number of files and directories returned can be accessed via the <logiccolor>length</logiccolor> function.) A wildcard filter can be passed as an optional third string expression, <arg>wildcard_filter</arg>. An optional fourth argument, <arg>recursive</arg>, instructs the function to create a listing of the specified directory as well as any subdirectories. All file and directory names will be fully-qualified; i.e., they will be absolute, not relative, path names.
 
 <subheader>Return Value</subheader>
 
@@ -26,11 +26,11 @@ PROC EXAMPLE
 
 	write("Shape files in folder and subfolders:");
 
-	dirlist(fileListing,"C:\Survey\Maps","*.shp",recursive);
+	dirlist(fileListing, "C:\Survey\Maps", "*.shp", recursive);
 
-	do ctr = 1 while ctr <= length(fileListing)
-		write("Shape filename: %s",fileListing(ctr));
-	enddo; 
+	do numeric ctr = 1 while ctr <= length(fileListing)
+		write("Shape filename: %s", fileListing(ctr));
+	enddo;
 </logic>
 
 <seealso dircreate_function.hgt direxist_function.hgt />

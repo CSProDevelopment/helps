@@ -19,7 +19,7 @@ Arrays can be numeric, alphanumeric or string. By default an array is numeric, b
 
 If <arg>array_length</arg> is not specified, each element will be 16 characters.
 
-The size of each dimension is specified by supplying a constant positive numeric value, <arg>dimension1</arg> to <arg>dimensionN</arg>. An array must have at least one dimension. A previously defined numeric value can also be used to specify the dimension size.
+The size of each dimension is specified by supplying a constant positive numeric value, <arg>dimension1</arg> to <arg>dimensionN</arg>. An array must have at least one dimension. A previously defined numeric value can also be used to specify the dimension size. The <logiccolor>length</logiccolor> function can be used to query the size of a dimension.
 
 The initial values of the elements of an array can be set when declaring the array by listing each value, separated by a comma. If some values are defined and then followed by <logiccolor>...</logiccolor>, that set of values will be used over and over until the entire array has been initialized.
 
@@ -73,7 +73,7 @@ PROC SEX
 
 PROC DISPLAY_COUNTS
 
-	do numeric counter = 1 while counter < NumberProvinces
+	do numeric counter = 1 while counter <= length(SexCountsByProvince, 1)
 		errmsg("Province %d has %d males and %d females", counter,
 			SexCountsByProvince(counter, 1), SexCountsByProvince(counter, 2));
 	enddo;
