@@ -1,2 +1,42 @@
 ﻿<title>RegExMatch Function</title>
 <context logic_help_regexmatch />
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = regexmatch(<arg>target_string</arg>,<arg>regex_string</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>regexmatch</logiccolor> function tests whether the <arg>target_string</arg> matches the <arg>regex_string</arg>.
+
+<subheader>Return Value</subheader>
+
+The function returns an integer value of:
+
+<table 2 nowrap>
+	<cell>1</cell><cell>if <arg>target_string</arg> matches <arg>regex_string.</arg></cell>
+	<cell>0</cell><cell>if <arg>target_string</arg> does not match <arg>regex_string.</arg></cell>
+	<cell><logiccolor>default</logiccolor></cell><cell>if <arg>regex_string</arg> is not valid ECMAScript (JavaScript) syntax.</cell>
+</table>
+
+<subheader>Writing and Testing Regular Expressions</subheader>
+
+Regular expressions have their own syntax separate from CSPro logic. Therefore, it is recommended to write and test your regular expressions in an online editor. You can use any regular expression editor that supports ECMAScript (JavaScript) syntax. One such editor is <link https://regex101.com/>regex101</link>, just make sure you change the flavor to JavaScript.
+
+<subheader>Example</subheader>
+
+<logic>
+string regex = "^([0-9]{3}-){2}[0-9]{4}"; // Matches format xxx-xxx-xxxx
+if regexmatch(TELEPHONE_NUMBER, regex) then
+	// ...
+endif;
+</logic>
+
+<logic>
+string regex = "^[^@\s]+@[^@\s]+\.[^@\s]+$"; // Basic validation for email
+if regexmatch(EMAIL, regex) then
+	// ...
+endif;
+</logic>
