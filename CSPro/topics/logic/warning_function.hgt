@@ -30,7 +30,7 @@ If using the <logiccolor>select</logiccolor> option, then one of the field argum
 PROC RELATIONSHIP
 
 	if RELATIONSHIP = 1 then
-		warning("Please confirm that %s is the head of household.")
+		warning("Please confirm that %s is the head of household.",strip(NAME))
 		select("Correct",continue,"Incorrect: Change Relationship",RELATIONSHIP);
 	endif;
 </logic>
