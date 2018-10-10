@@ -8,8 +8,8 @@ On the lefthand column of <b>Programs and Features</b> select <b>Turn Windows fe
 <subheader>Install Microsoft Web Platform Installer 5.0</subheader>
 You will find a shortcut to run the ISS Manager under <b>Administrative Tools</b>. On the righthand column of the <b>IIS Manager</b> click <b>Get New Web Platform components</b>. This will open a browser where you will be able to download the installer for Microsoft's web installer.
 
-<subheader>Install PHP 5.5+</subheader>
-Once installed, you can launch Microsoft's web installer from within the <b>IIS Manager</b> by clicking <b>Get New Web Platform components</b>. Select the <b>Products</b> tab and install PHP 5.5 or above. Note that in Windows 10 the PHP Manager for IIS may fail to install. You can ignore this message.
+<subheader>Install PHP 5.5.9+</subheader>
+Once installed, you can launch Microsoft's web installer from within the <b>IIS Manager</b> by clicking <b>Get New Web Platform components</b>. Select the <b>Products</b> tab and install PHP 5.5.9 or above. Note that in Windows 10 the PHP Manager for IIS may fail to install. You can ignore this message.
 
 <subheader>Handle Additional Verbs </subheader>
 In the <b>IIS Manager</b> select the <b>Features View</b> and then double click <b>Handler Mappings</b>. Right-click on <b>PHP_via_FastCGI</b> and select <b>edit</b>. Click <b>Request Restrictions...</b>, select the <b>Verbs</b> tab, select <b>One of the following verbs</b> and enter <b>GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS</b>. You may then be prompted to double quote the path under <b>Executable</b>.
