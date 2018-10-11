@@ -1,0 +1,25 @@
+﻿<title>Adding Users</title>
+
+Each user is composed of a username, first name, last name, role, and password. The role can be either a standard user or an administator. The standard user can only synchronize from CSEntry. The administrator can synchronize from CSEntry and log into the CSWeb website.
+
+<subheader>Adding a User</subheader>
+
+<list ordered>
+	<li>Navigate to the <b>Users</b> tab of CSWeb.</li>
+	<li>On the right-hand side click the <b>Add User</b> button.</li>
+	<li>Enter the username, first name, last name, role, and password.</li>
+</list>
+
+<subheader>Adding Many Users</subheader>
+
+To add many users at once, a CSV file will need to be created. Each row specifies a single user and must adhere to the following format: username, first name, last name, user role, and password. The first and last name must only contain letters. The password must have least 8 characters. If an error is detected with any row, no users will be added. Duplicate users are ignored.
+
+Example:~!~
+<i>userid007, James, Bond, Standard User, PasSwOrD007</i>
+
+<list ordered>
+	<li>Navigate to the <b>Users</b> tab of CSWeb.</li>
+	<li>On the right-hand side click the <b>Import Users</b> button.</li>
+	<li>Browse to the CSV file.</li>
+</list>
+
