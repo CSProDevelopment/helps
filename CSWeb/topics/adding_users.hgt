@@ -12,7 +12,7 @@ Each user is composed of a username, first name, last name, role, and password. 
 
 <subheader>Adding Many Users</subheader>
 
-To add many users at once, a CSV file will need to be created. Each row specifies a single user and must adhere to the following format: username, first name, last name, user role, and password. The first and last name must only contain letters. The password must have least 8 characters. If an error is detected with any row, no users will be added. Duplicate users are ignored. Do no include a header; the first row will be treated as a user.
+To add many users at once, a CSV file will need to be created. Each row specifies a single user and must adhere to the following format: username, first name, last name, user role, and password. The first and last name must only contain letters. The role is either "Administator" or "Standard User." The password must have least 8 characters. If an error is detected with any row, no users will be added. Duplicate users are ignored. Do no include a header; the first row will be treated as a user.
 
 Example:~!~
 <i>userid007, James, Bond, Admin, PasSwOrD007</i>~!~
