@@ -42,7 +42,7 @@ Instead of putting logic in the field procedures, you will generally place all l
 
 You can refer to blocks in logic in the movement statements (<logiccolor>advance</logiccolor>, <logiccolor>ask</logiccolor>, <logiccolor>move</logiccolor>, <logiccolor>reenter</logiccolor>, <logiccolor>skip</logiccolor>) and you can use the blocks in occurrence-related functions (<logiccolor>count</logiccolor>, <logiccolor>curocc</logiccolor>, <logiccolor>maxocc</logiccolor>, <logiccolor>noccurs</logiccolor>, and <logiccolor>totocc</logiccolor>).
 
-Just as you will generally want to put logic in the block procedures, you will likely want to use the block name in movement statements rather than a field name. One advantage of this is that you can modify or reorder the fields in the block without having to modify movement logic.
+Just as you will generally want to put logic in the block procedures, you will likely want to use the block name in movement statements rather than a field name. One advantage of this is that you can modify or reorder the fields in the block without having to modify movement logic. When using <logiccolor>ask</logiccolor> on a block, if the condition fails, then all of the fields in the block will be skipped.
 
 
 <subheader>"No Field" Blocks</subheader>
@@ -60,6 +60,13 @@ Only after the enumerator has filled all applicable values will they move past t
 
 <logic>
 PROC DOB_BLOCK
+
+preproc
+
+	// only ask date of birth in conventional households
+	ask if HH_TYPE = 1;
+
+postproc
 
 	// if the month or day is missing, then assume 1 for these checks
 	numeric dob_mm = DOB_MONTH;
