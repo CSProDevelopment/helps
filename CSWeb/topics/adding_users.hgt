@@ -12,7 +12,7 @@ Each user is composed of a username, first name, last name, role, and password. 
 
 <subheader>Import Users</subheader>
 
-To add many users at once, a CSV file will need to be created. Each row specifies a single user which includes the username, first name, last name, user role, and password. The CSV file can include a header row or not. If your CSV file has a header row tick "My CSV file has a header row." If an error is detected with any row, no users will be added. Duplicate users are ignored.
+To import multiple users a CSV file is needed. Each row specifies a single user which has the following format: username, first name, last name, user role, password. The CSV file can include a header row. If your CSV file has a header row tick "CSV File has a header row." If an error is detected with any row, no users will be added. Duplicate users are ignored.
 
 <list ordered>
 	<li>Navigate to the <b>Users</b> tab of CSWeb.</li>
@@ -20,14 +20,14 @@ To add many users at once, a CSV file will need to be created. Each row specifie
 	<li>Browse to the CSV file.</li>
 </list>
 
-CSV Field Format:
+CSV Field Rules:
 <list>
 <li>First and last name must only contain letters.</li>
 <li>The role is either "Administator" or "Standard User."</li>
 <li>The password must have least 8 characters.</li>
 </list>
 
-Example Rows:~!~
+CSV Example Rows:~!~
 
 <i>userid007, James, Bond, Administator, PasSwOrD007</i>~!~
 <i>userid008, Bill, Timothy, Standard User, PasSwOrD008</i>
