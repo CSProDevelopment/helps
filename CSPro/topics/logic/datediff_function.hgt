@@ -4,7 +4,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = datediff(<arg>start_date</arg>,<arg>end_date</arg>『,<arg>diff_type</arg>』);
+i = datediff(<arg>start_date</arg>, <arg>end_date</arg> 『,<arg>diff_type</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -14,6 +14,7 @@ The <logiccolor>datediff</logiccolor> function returns the difference between tw
 <indent><table 2 nowrap>
 	<cell><arg>diff_type</arg></cell><cell><b>Description</b></cell>
 	<cell><logiccolor>"d"</logiccolor></cell><cell>days between the start and end dates (default)</cell>
+	<cell><logiccolor>"w"</logiccolor></cell><cell>weeks between the start and end dates</cell>
 	<cell><logiccolor>"m"</logiccolor></cell><cell>months between the start and end dates</cell>
 	<cell><logiccolor>"y"</logiccolor></cell><cell>years between the start and end dates</cell>
 	<cell><logiccolor>"md"</logiccolor></cell><cell>days between the start and end dates ignoring both the years and months of the dates</cell>
@@ -28,13 +29,14 @@ The function returns the requested difference in dates, defaulting to the number
 <subheader>Example 1</subheader>
 
 <logic>
-datediff(19790404,19820605);		// returns 1158
-datediff(19790404,19820605,"d");	// returns 1158
-datediff(19790404,19820605,"m");	// returns 38
-datediff(19790404,19820605,"y");	// returns 3
-datediff(19790404,19820605,"md");	// returns 1
-datediff(19790404,19820605,"ym");	// returns 2
-datediff(19790404,19820605,"yd");	// returns 62
+datediff(19790404, 19820605);		// returns 1158
+datediff(19790404, 19820605, "d");	// returns 1158
+datediff(19790404, 19820605, "w");	// returns 165
+datediff(19790404, 19820605, "m");	// returns 38
+datediff(19790404, 19820605, "y");	// returns 3
+datediff(19790404, 19820605, "md");	// returns 1
+datediff(19790404, 19820605, "ym");	// returns 2
+datediff(19790404, 19820605, "yd");	// returns 62
 </logic>
 
 <subheader>Example 2</subheader>
@@ -43,9 +45,9 @@ datediff(19790404,19820605,"yd");	// returns 62
 numeric date1 = 20090120;
 numeric date2 = 20121106;
 
-outputText = "The difference between January 20, 2009 and November 6, 2012 is %d years, %d months, and %d days";
+string outputText = "The difference between January 20, 2009 and November 6, 2012 is %d years, %d months, and %d days";
 
-errmsg(outputText,datediff(date1,date2,"y"),datediff(date1,date2,"ym"),datediff(date1,date2,"md"));
+errmsg(outputText, datediff(date1, date2, "y"), datediff(date1, date2, "ym"), datediff(date1, date2, "md"));
 
 // returns ... 3 years, 9 months, and 17 days
 </logic>

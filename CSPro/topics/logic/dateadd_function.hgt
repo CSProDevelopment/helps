@@ -4,7 +4,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = dateadd(<arg>start_date</arg>,<arg>period</arg>『,<arg>period_type</arg>』);
+i = dateadd(<arg>start_date</arg>, <arg>period</arg> 『,<arg>period_type</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -14,6 +14,7 @@ The <logiccolor>dateadd</logiccolor> function calculates a new date by adding a 
 <indent><table 2 nowrap>
 	<cell><arg>period_type</arg></cell><cell><b>Description</b></cell>
 	<cell><logiccolor>"d"</logiccolor></cell><cell>days (default)</cell>
+	<cell><logiccolor>"w"</logiccolor></cell><cell>weeks</cell>
 	<cell><logiccolor>"m"</logiccolor></cell><cell>months</cell>
 	<cell><logiccolor>"y"</logiccolor></cell><cell>years</cell>
 </table></indent>
@@ -25,15 +26,16 @@ The function returns a date calculated by adding the period to the starting date
 <subheader>Examples</subheader>
 
 <logic>
-dateadd(20121225,7);		// returns 20130101
+dateadd(20121225, 7);		// returns 20130101
 
-dateadd(20120228,1);		// returns 20120229
-dateadd(20130228,1);		// returns 20130301
+dateadd(20120228, 1);		// returns 20120229
+dateadd(20130228, 1);		// returns 20130301
 
-dateadd(20040820,3,"m");	// returns 20041120
-dateadd(20040820,3,"y");	// returns 20070820
+dateadd(20040820, 3, "w");	// returns 20040910
+dateadd(20040820, 3, "m");	// returns 20041120
+dateadd(20040820, 3, "y");	// returns 20070820
 
-dateadd(20001010,-3,"m");	// returns 20000710
+dateadd(20001010, -3, "m");	// returns 20000710
 </logic>
 
 <seealso datediff_function.hgt datevalid_function.hgt sysdate_function.hgt />
