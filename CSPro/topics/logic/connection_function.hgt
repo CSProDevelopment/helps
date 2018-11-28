@@ -20,6 +20,9 @@ The function returns a logical value of 1 (true) if a connection exists and 0 (f
 <logic>
 // only sync when connected on Wi-Fi
 if connection(WiFi) then
-	sync("UploadData.pnc");
+	if syncconnect(Dropbox) then
+		syncdata(PUT, HOUSEHOLDQUESTIONNAIRE_DICT);
+		syncdisconnect();
+	endif;
 endif;
 </logic>
