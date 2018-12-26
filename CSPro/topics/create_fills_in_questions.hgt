@@ -15,6 +15,10 @@ When the entry system comes to this text, it will insert the person's FIRST_NAME
 Can I speak with <b>Allyson</b> now?
 </indent>
 
+When used with numeric values, the fill uses the value code. For example, %SEX% might be 1 or 2. If you want to use the value label, you can use the <logiccolor>getvaluelabel</logiccolor> function:
+
+<indent>How old was <b>%FIRST_NAME%</b> when they completed <b>%getvaluelabel(HIGHEST_GRADE_COMPLETED)%</b>?</indent>
+
 
 <subheader>Fills with Occurrence Labels</subheader>
 

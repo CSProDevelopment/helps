@@ -1,0 +1,43 @@
+﻿<title>GetValueLabel Function</title>
+<context logic_help_getvaluelabel />
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = getvaluelabel(<arg>item_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>getvaluelabel</logiccolor> function returns the value label associated with the current value of <arg>item_name</arg>. The label is determined in the following order, with the first valid label returned:
+
+<list ordered>
+	<li>The label for the value in the item's current value set.</li>
+	<li>The label for the value in the item's primary value set.</li>
+	<li>The value itself, formatted for displaying.</li>
+</list>
+
+The function returns a value similar to calling:
+
+<logic>
+s = getlabel(ITEM_NAME, ITEM_NAME);
+</logic>
+
+In addition to uses in logic, the function can be used as a <link create_fills_in_questions.hgt>fill in question text</link>.
+
+<subheader>Return Value</subheader>
+
+The function returns a string containing the label.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GRADE_ATTENDING
+
+	if GRADE_ATTENDING > 3 and AGE < 15 then
+		errmsg("Someone aged under 15 cannot attend %s.", getvaluelabel(GRADE_ATTENDING));
+		reenter;
+	endif;
+</logic>
+
+<seealso getlabel_function.hgt />

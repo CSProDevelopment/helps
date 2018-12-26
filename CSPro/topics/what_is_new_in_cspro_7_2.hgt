@@ -31,6 +31,7 @@ This is a detailed list of changes in CSPro 7.2. For a more general overview, se
 <list>
 	<li>A function, <logiccolor>dirdelete</logiccolor>, deletes an empty directory or group of empty directories.</li>
 	<li>A function, <logiccolor>getbluetoothname</logiccolor>, returns the name of the device as broadcast to other Bluetooth devices.</li>
+	<li>A function, <logiccolor>getvaluelabel</logiccolor>, returns the label from the value set corresponding to an item's current value.</li>
 	<li>A function, <logiccolor>regexmatch</logiccolor>, returns whether a string matches the regular expression.</li>
 	<li>Additional variables (<logiccolor>array</logiccolor>, <logiccolor>list</logiccolor>, and <logiccolor>file</logiccolor>) can be declared locally. The value of each variable is reset upon entry to the <logiccolor>PROC</logiccolor> or <logiccolor>function</logiccolor> where it is declared.</li>
 	<li>The <logiccolor>exit</logiccolor> statement takes an optional argument that simplifies setting a <link user_defined_functions.hgt>user-defined function</link>'s return value.</li>
@@ -65,6 +66,8 @@ This is a detailed list of changes in CSPro 7.2. For a more general overview, se
 <list>
 	<li>CSEntry is distributed in both 32-bit and 64-bit versions.</li>
 	<li>When making calls to the <logiccolor>gps</logiccolor> function, if the device's GPS receiver is not enabled, the operator will be prompted to enable location services.</li>
+	<li>Automatically launching an application, when only one exists on the device, is no longer the default behavior.</li>
+	<li>The Start New Case option is now a floating green icon.</li>
 </list>
 
 
