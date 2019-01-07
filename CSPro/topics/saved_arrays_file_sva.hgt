@@ -5,3 +5,9 @@ The saved arrays file stores values from arrays in a batch edit application mark
 CSPro creates the saved arrays file automatically when one or more arrays in a batch edit application are marked as a saved array. The name of the saved arrays file is always the same as that of the application with the additional .sva file extension added (e.g., application_name.bch.sva).
 
 The saved arrays file is a text file that may be viewed with any text editor, such as Text Viewer or Notepad. It is not recommended to make changes to this file outside the CSPro environment. Advanced users might do so, however, to set initial values for arrays.
+
+If you want to prevent the file from being updated after a run, which may be desirable if you want to produce the same results from run to run, you can disable the update via logic:
+
+<logic>
+setproperty("UpdateSaveArrayFile", "No");
+</logic>
