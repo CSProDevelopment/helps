@@ -85,7 +85,7 @@ The <pffcolor>[DataEntryInit]</pffcolor> block is optional. It gives you the opp
 	If the mode is followed by a comma and <b>Lock</b>, then the mode cannot be changed by the operator. Otherwise, unless the option is <b>Off</b>, the operator can change the mode from within CSEntry.
 		</li>
 	<li><pffcolor>CaseListingFilter</pffcolor>=filters the cases in the data file shown to the operator. The filter string can use regular expressions. If you have multiple operators entering data to the same data file, this can be a way to prevent operators from interacting with data entered by other operators. The filter is matched against the IDs of each case.</li>
-	<li><pffcolor>ShowInApplicationListing</pffcolor>=determines whether the application associated with this PFF is displayed on the mobile Entry Applications screen. The possible options are: <b>Always</b> (default), <b>Never</b>, and <b>Hidden</b>. Operators must manually elect to show hidden applications, whereas PFFs with the <b>Never</b> option will never be shown.</li>
+	<li><pffcolor>ShowInApplicationListing</pffcolor>=determines whether the application associated with this PFF is displayed on the mobile Entry Applications screen. The possible options are: <b>Always</b> (default), <b>Never</b>, and <b>Hidden</b>. You can show hidden applications by modifying <link csentry_settings_modification.hgt>CSEntry's settings</link>, whereas PFFs with the <b>Never</b> option will never be shown.</li>
 </list>
 
 

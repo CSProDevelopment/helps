@@ -4,14 +4,14 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = loadsetting(<arg>attribute</arg>『,<arg>default_setting</arg>』);
+s = loadsetting(<arg>attribute</arg> 『,<arg>default_setting</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
 The <logiccolor>loadsetting</logiccolor> function, using the string expression <arg>attribute</arg>, retrieves a setting from an attribute-value pair, a setting that has been previously saved using the <logiccolor>savesetting</logiccolor> function. An optional string expression <arg>default_setting</arg> can be provided and will be returned if no value has been saved for the given attribute.
 
-The location from where settings are retrieved can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file.
+The file from which settings are retrieved can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file. If an attribute does not exist in the specified file but does exist in the global settings database (shared by all CSPro applications), then that global attribute-value pair is used.
 
 <subheader>Return Value</subheader>
 
@@ -25,7 +25,7 @@ PROC GLOBAL
 function OnChangeLanguage()
 	// save the selected language so that the change is persistent,
 	// being available the next time that the program is run
-	savesetting("Language",getlanguage());
+	savesetting("Language", getlanguage());
 end;
 
 
@@ -34,7 +34,7 @@ PROC MY_APPLICATION_FF
 preproc
 
 	// set the language at the start of the program, defaulting to English
-	setlanguage(loadsetting("Language","EN"));
+	setlanguage(loadsetting("Language", "EN"));
 </logic>
 
-<seealso savesetting_function.hgt user_configuration_settings.hgt />
+<seealso savesetting_function.hgt user_configuration_settings.hgt csentry_settings_modification.hgt />

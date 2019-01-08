@@ -10,7 +10,7 @@ User settings are accessed from logic with the <logiccolor>loadsetting</logiccol
 <logic>
 PROC INTERVIEWER_NAME
 
-	savesetting("InterviewerName",INTERVIEWER_NAME);
+	savesetting("InterviewerName", INTERVIEWER_NAME);
 </logic>
 
 And then another program might automatically fill in the interviewer name based on the saved setting:
@@ -35,13 +35,13 @@ Configuration settings are a convenient way to store some information outside of
 <logic>
 PROC GLOBAL
 
-config ftpServer;
+config ftp_server_url;
 
 PROC EXAMPLE
 
-	syncconnect(FTP,ftpServer);
+	syncconnect(FTP, ftp_server_url);
 </logic>
 
-For this to work, you need to use the dialog box to add an attribute <b>ftpServer</b> with its value being the FTP server URL.
+For this to work, you need to use the dialog box to add an attribute <b>ftp_server_url</b> with its value being the FTP server URL.
 
-<seealso config_statement.hgt loadsetting_function.hgt savesetting_function.hgt />
+<seealso config_statement.hgt loadsetting_function.hgt savesetting_function.hgt csentry_settings_modification.hgt />
