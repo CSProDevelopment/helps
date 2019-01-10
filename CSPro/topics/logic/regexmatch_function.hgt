@@ -23,12 +23,12 @@ The function returns an integer value of:
 
 <subheader>Writing and Testing Regular Expressions</subheader>
 
-Regular expressions have their own syntax separate from CSPro logic. Therefore, it is recommended to write and test your regular expressions in an online editor. You can use any regular expression editor that supports ECMAScript (JavaScript) syntax. One such editor is <link https://regex101.com/>regex101</link>, just make sure you change the flavor to JavaScript.
+Regular expressions have their own syntax separate from CSPro logic. Therefore, it is recommended to write and test your regular expressions in a regular expression editor. Use any regular expression editor that supports ECMAScript (JavaScript) engine (or flavor). One such editor is <link https://regex101.com/>regex101</link>, just make sure you change the flavor to ECMAScript.
 
 <subheader>Example</subheader>
 
 <logic>
-string regex = "^([0-9]{3}-){2}[0-9]{4}"; // Matches format xxx-xxx-xxxx
+string regex = "^([0-9]{3}-){2}[0-9]{4}$"; // Matches format xxx-xxx-xxxx
 if regexmatch(TELEPHONE_NUMBER, regex) then
 	// ...
 endif;
