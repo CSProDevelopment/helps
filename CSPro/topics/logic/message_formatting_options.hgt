@@ -19,6 +19,7 @@ The message can contain optional parameters, <arg>parameter1</arg> to <arg>param
 	<cell><logiccolor>"%s"</logiccolor></cell><cell>Inserts a text string.</cell>
 	<cell><logiccolor>"%v"</logiccolor></cell><cell>Inserts a variable formatted intelligently (see below).</cell>
 	<cell><logiccolor>"%p"</logiccolor></cell><cell>Inserts the name of the current procedure, which can be useful for debugging. No parameter should be supplied if using this option.</cell>
+	<cell><logiccolor>"%c"</logiccolor></cell><cell>Inserts the first character of a text string, or no characters if the string is blank.</cell>
 </table>
 
 <subheader>Variable Intelligent Formatting</subheader>
@@ -51,7 +52,7 @@ errmsg(	"%+010d"	,integerValue);		//		+000023456
 errmsg(	"%f"		,integerValue);		//		23456.000000
 
 
-numeric decimalValue = 12.567
+numeric decimalValue = 12.567;
 
 errmsg(	"%f"		,decimalValue);		//		12.567000
 errmsg(	"%10.3f"	,decimalValue);		//		    12.567
@@ -64,7 +65,7 @@ errmsg(	"%+010.3f"	,decimalValue);		//		+00012.567
 errmsg(	"%d"		,decimalValue);		//		12
 
 
-string stringValue = "abcdef"
+string stringValue = "abcdef";
 
 errmsg(	"%s"		,stringValue);		//		abcdef
 errmsg(	"%10s"		,stringValue);		//		    abcdef

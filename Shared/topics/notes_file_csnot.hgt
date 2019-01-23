@@ -6,7 +6,7 @@ The format of each note record is as follows:
 
 <list>
 	<li>The first N characters are the case IDs.</li>
-	<li>The next 32 characters are the field name as given in the dictionary (left justified).</li>
+	<li>The next 32 characters are the field name as given in the dictionary (left justified). If you use field names longer than 32 characters, the field name will be encoded in a way so that it fits in 32 characters. You can use the <logiccolor>NOTES_FIELD_VS</logiccolor> value set of the notes dictionary to figure out which note is which.</li>
 	<li>The next 32 characters are the name of the operator ID (left justified).</li>
 	<li>The next 8 characters are the date the note was last modified (YYYYMMDD).</li>
 	<li>The next 6 characters are the time the note was last modified (HHMMSS).</li>
