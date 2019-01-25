@@ -1,18 +1,18 @@
 ﻿<title>Adding Users</title>
 
-Each user is composed of a username, first name, last name, role, and password. The role can be either a standard user or an administator. The standard user can only synchronize from CSEntry. The administrator can synchronize from CSEntry and log into the CSWeb website.
+Each user is composed of a username, first name, last name, role, email (optional), phone number (optional), and password. The role can be either a standard user or an administator. The standard user can only synchronize from CSEntry. The administrator can synchronize from CSEntry and log into the CSWeb website.
 
 <subheader>Adding a User</subheader>
 
 <list ordered>
 	<li>Navigate to the <b>Users</b> tab of CSWeb.</li>
 	<li>On the right-hand side click the <b>Add User</b> button.</li>
-	<li>Enter the username, first name, last name, role, and password.</li>
+	<li>Enter the username, first name, last name, role, email (optional), phone number (optional), and password.</li>
 </list>
 
 <subheader>Import Users</subheader>
 
-To import multiple users a CSV file is needed. Each row specifies a single user which has the following format: username, first name, last name, user role, password. The CSV file can include a header row. If your CSV file has a header row tick "CSV File has a header row." If an error is detected with any row, no users will be added. Duplicate users are ignored.
+To import multiple users a CSV file is needed. Each row specifies a single user which has the following format: username, first name, last name, user role, password, email (optional), phone number (optional). The CSV file can include a header row. If your CSV file has a header row tick "CSV File has a header row." If an error is detected with any row, no users will be added. Duplicate users are ignored.
 
 <list ordered>
 	<li>Navigate to the <b>Users</b> tab of CSWeb.</li>
@@ -25,9 +25,10 @@ CSV Field Rules:
 <li>First and last name must only contain letters.</li>
 <li>The role is either "Administator" or "Standard User."</li>
 <li>The password must have least 8 characters.</li>
+<li>The email and password can be blank.</li>
 </list>
 
 CSV Example Rows:~!~
 
 <i>userid007, James, Bond, Administator, PasSwOrD007</i>~!~
-<i>userid008, Bill, Timothy, Standard User, PasSwOrD008</i>
+<i>userid008, Bill, Timothy, Standard User, PasSwOrD008, bond008@sis.gov.uk, 123-456-7890</i>
