@@ -18,7 +18,6 @@ The function returns an integer value of:
 <table 2 nowrap>
 	<cell>1</cell><cell>if <arg>target_string</arg> matches <arg>regex_string.</arg></cell>
 	<cell>0</cell><cell>if <arg>target_string</arg> does not match <arg>regex_string.</arg></cell>
-	<cell><logiccolor>default</logiccolor></cell><cell>if <arg>regex_string</arg> is not valid ECMAScript (JavaScript) syntax.</cell>
 </table>
 
 <subheader>Writing and Testing Regular Expressions</subheader>
@@ -28,15 +27,15 @@ Regular expressions have their own syntax separate from CSPro logic. Therefore, 
 <subheader>Example</subheader>
 
 <logic>
-string regex = "^([0-9]{3}-){2}[0-9]{4}$"; // Matches format xxx-xxx-xxxx
-if regexmatch(TELEPHONE_NUMBER, regex) then
+// Matches format xxx-xxx-xxxx
+if regexmatch(TELEPHONE_NUMBER, "^([0-9]{3}-){2}[0-9]{4}$") then
 	// ...
 endif;
 </logic>
 
 <logic>
-string regex = "^[^@\s]+@[^@\s]+\.[^@\s]+$"; // Basic validation for email
-if regexmatch(EMAIL, regex) then
+// Basic validation for email
+if regexmatch(EMAIL, "^[^@\s]+@[^@\s]+\.[^@\s]+$") then
 	// ...
 endif;
 </logic>
