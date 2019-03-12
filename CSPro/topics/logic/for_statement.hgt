@@ -4,18 +4,18 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-for <arg>counter</arg> in <arg>multiple_occurring_group</arg> do
+for 『<arg>counter</arg> in』 <arg>multiple_occurring_group</arg> 『where <arg>condition</arg>』 do
 	// statements
 endfor;
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>for</logiccolor> statement executes one or more statements repeatedly within a loop for each occurrence of a multiply occurring group. The <arg>multiple_occurring_group</arg> can be a form, roster, record, item, relation, or even a dictionary (following a <logiccolor>selcase</logiccolor> function call). The multiply occurring group controls how many times the <logiccolor>for</logiccolor> loop is executed.
+The <logiccolor>for</logiccolor> statement executes one or more statements repeatedly within a loop for each occurrence of a multiply occurring group. The <arg>multiple_occurring_group</arg> can be a form, roster, record, item, relation, or even a dictionary (following a <logiccolor>selcase</logiccolor> function call). The multiply occurring group controls how many times the <logiccolor>for</logiccolor> loop is executed. An optional logical <arg>condition</arg>, referencing items in the group, can be supplied to restrict the cases processed by the loop.
 
-The numeric variable <arg>counter</arg> contains the number of the current occurrence being examined. It cannot be changed inside the loop, but it can be referenced. Its starting value is 1 and its ending value is determined by the number of occurrences of the group.
+The numeric variable <arg>counter</arg> contains the number of the current occurrence being examined. It cannot be changed inside the loop, but it can be referenced. Its starting value is 1 and its ending value is determined by the number of occurrences of the group. It is possible to declare a variable local to the loop by adding <logiccolor>numeric</logiccolor> before the <arg>counter</arg> variable.
 
-If the group name is a record, item, or relation, then the appropriate keyword <logiccolor>record</logiccolor>, <logiccolor>item</logiccolor>, or <logiccolor>relation</logiccolor> must be used before the name.
+If the group name is a record, item, or relation, then the appropriate keyword <logiccolor>record</logiccolor>, <logiccolor>item</logiccolor>, or <logiccolor>relation</logiccolor> can be used before the name.
 
 The <logiccolor>for</logiccolor> statement should be coded outside of the group it references. In the example below, note that the code is executed in <logiccolor>PROC QUEST</logiccolor>. It should not be located in <logiccolor>PROC PERSON_REC_EDT</logiccolor> or in a procedure for any of the data items within the person record.
 
@@ -24,14 +24,19 @@ The <logiccolor>for</logiccolor> statement should be coded outside of the group 
 <logic>
 PROC QUEST
 
-	numeric ctr;
-	numeric ptrSpouse;
+	numeric pointer_spouse;
+	numeric pointer_oldest_child;
 
-	for ctr in PERSON_REC_EDT do
+	for numeric occurrence_number in PERSON_REC_EDT do
 	
 		if RELATIONSHIP = 2 then
-			ptrSpouse = ctr;
-			break;
+			pointer_spouse = occurrence_number;
+		
+		elseif RELATIONSHIP = 3 then
+			if pointer_oldest_child = 0 or AGE > AGE(pointer_oldest_child) then
+				pointer_oldest_child = occurrence_number;
+			endif;
+			
 		endif;
 		
 	endfor;
