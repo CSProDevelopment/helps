@@ -34,6 +34,7 @@ This is a detailed list of changes in CSPro 7.2. For a more general overview, se
 	<li>A function, <logiccolor>getvaluelabel</logiccolor>, returns the label from the value set corresponding to an item's current value.</li>
 	<li>A function, <logiccolor>regexmatch</logiccolor>, returns whether a string matches the regular expression.</li>
 	<li>Additional variables (<logiccolor>array</logiccolor>, <logiccolor>list</logiccolor>, and <logiccolor>file</logiccolor>) can be declared locally. The value of each variable is reset upon entry to the <logiccolor>PROC</logiccolor> or <logiccolor>function</logiccolor> where it is declared.</li>
+	<li>The <logiccolor>gps</logiccolor> function, when called with the <logiccolor>read</logiccolor> parameter, returns the most accurate reading, not the most recent reading, after timing out.</li>
 	<li>The <logiccolor>exit</logiccolor> statement takes an optional argument that simplifies setting a <link user_defined_functions.hgt>user-defined function</link>'s return value.</li>
 	<li>Implicitly declaring variables (using <link compiler_mode.hgt>set implicit</link>) is no longer allowed.</li>
 	<li>The <logiccolor>ensure</logiccolor> statement allows for the conditional creation of temporary numeric variables.</li>
