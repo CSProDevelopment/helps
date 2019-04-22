@@ -14,7 +14,7 @@ namespace Colorizer
         public EditControl()
         {
             this.StyleResetDefault();
-            this.Styles[ScintillaNET.Style.Default].Font = "Courier New";
+            this.Styles[ScintillaNET.Style.Default].Font = "Consolas";
             this.Styles[ScintillaNET.Style.Default].Size = 10;
             this.StyleClearAll();
 

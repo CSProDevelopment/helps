@@ -131,6 +131,11 @@ namespace Colorizer
             return text.Replace("&","&amp;").Replace("<","&lt;").Replace(">","&gt;");
         }
 
+        public static string UnHtmlizeEscapes(string text)
+        {
+            return text.Replace("&lt;","<").Replace("&gt;",">").Replace("&amp;","&");
+        }
+
         public static string HtmlizeWhitespace(string text)
         {
             return ReplaceWhitespace(text,"&nbsp;");

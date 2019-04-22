@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Colorizer;
 
 namespace Help_Generator
 {
@@ -247,7 +248,7 @@ namespace Help_Generator
                                 node.TitleSpecified ? node.Title :
                                 node.Topic.Title;
                 
-                title = title.Replace("&lt;","<").Replace("&gt;",">").Replace("&amp;","&");
+                title = HelperFunctions.UnHtmlizeEscapes(title);
 
                 sbSortable.Append('#');
                 sbSortable.Append('\t',level + 1);

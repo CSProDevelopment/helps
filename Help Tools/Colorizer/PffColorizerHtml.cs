@@ -11,7 +11,7 @@ namespace Colorizer
                 "<html>\n" +
                 "<head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8' /></head>\n" +
                 "<body>\n" +
-                "<div style='word-wrap:break-word;margin:0px;padding:0px;border:0px;background-color:#ffffff;color:#000000;font-family:Courier New;font-size:10pt;'>\n");
+                "<div style='word-wrap:break-word;margin:0px;padding:0px;border:0px;background-color:#ffffff;color:#000000;font-family:Consolas, monaco, monospace;font-size:10pt;'>\n");
         }
 
         public virtual void EndBlock(StringBuilder sb)

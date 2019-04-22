@@ -879,27 +879,32 @@ namespace Help_Generator
 
         private string EndLogicSyntaxHandler(string endTagInnerText)
         {
-            StringBuilder logic = new StringBuilder(EndLogicHandler(endTagInnerText));
-
             // this assumes that the syntax is set up with proper start/end brackets and tags
+            const string ArgBeginReplacementCharacter = "⛁";
+            const string ArgEndReplacementCharacter = "⛃";
+
+            string arg_replaced_text = endTagInnerText.Replace("<arg>", ArgBeginReplacementCharacter)
+                                                      .Replace("</arg>", ArgEndReplacementCharacter);
+
+            StringBuilder logic = new StringBuilder(EndLogicHandler(arg_replaced_text));
 
             // colorize the text between the optional arguments
-            logic.Replace("『","<span class=\"code_colorization_optional_text\"><font class=\"code_colorization_bracket\">『</font>");
-            logic.Replace("』","<font class=\"code_colorization_bracket\">』</font></span>");
+            logic.Replace("『", "<span class=\"code_colorization_optional_text\"><font class=\"code_colorization_bracket\">『</font>");
+            logic.Replace("』", "<font class=\"code_colorization_bracket\">』</font></span>");
 
             // colorize the optional arguments
-            logic.Replace("&lt;arg&gt;","<span class=\"code_colorization_argument\">");
-            logic.Replace("&lt;/arg&gt;","</span>");
+            logic.Replace(ArgBeginReplacementCharacter, "<span class=\"code_colorization_argument\">");
+            logic.Replace(ArgEndReplacementCharacter, "</span>");
 
             // colorize the multiple arguments separator
-            logic.Replace("‖","<font class=\"code_colorization_bracket\">‖</font>");
+            logic.Replace("‖", "<font class=\"code_colorization_bracket\">‖</font>");
 
             return logic.ToString();
         }
 
         private string EndLogicColorHandler(string endTagInnerText)
         {
-            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, endTagInnerText.Trim(), GetHtmlFilenameForKeyword);
+            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, HelperFunctions.UnHtmlizeEscapes(endTagInnerText.Trim()), GetHtmlFilenameForKeyword);
         }
 
         private string StartLogicTableHandler(string[] startTagComponents)
