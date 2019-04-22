@@ -13,9 +13,6 @@ namespace Help_Generator
         public Index index;
         public Preprocessor preprocessor;
 
-        public LogicColorizer _logicColorizer;
-        public LogicColorizer _inlineLogicColorizer;
-		public LogicColorizer _messageColorizer;
         public PffColorizer _pffColorizer;
     }
 }

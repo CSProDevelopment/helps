@@ -3,13 +3,13 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Colorizer;
-using System.Text.RegularExpressions;
 
 namespace Help_Generator
 {
-	partial class TextEditForm : Form, TextModifiedHandlerInterface
+    partial class TextEditForm : Form, TextModifiedHandlerInterface
     {
         private TextEditableInterface _textEditableInterface;
         private HelpComponents _helpComponents;
@@ -231,13 +231,13 @@ namespace Help_Generator
         private void linkLabelFilename_LinkClicked(object sender,LinkLabelLinkClickedEventArgs e)
         {
             // open the file in either Notepad++ or Notepad
-            string notepadPlusPlusPath = @"Notepad++\notepad++.exe";
+            const string notepadPlusPlusPath = @"Notepad++\notepad++.exe";
 
             string[] possibleEditorFilenames = new string[]
             {
-                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),notepadPlusPlusPath),
-                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),notepadPlusPlusPath),
-                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows),"notepad.exe")
+                Path.Combine(HelperFunctions.GetProgramFilesDirectory(HelperFunctions.ProgramFilesDirectory.x64), notepadPlusPlusPath),
+                Path.Combine(HelperFunctions.GetProgramFilesDirectory(HelperFunctions.ProgramFilesDirectory.x86), notepadPlusPlusPath),
+                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "notepad.exe")
             };
 
             foreach( string editorFilename in possibleEditorFilenames )

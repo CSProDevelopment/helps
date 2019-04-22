@@ -4,15 +4,14 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Colorizer;
-using Microsoft.Win32;
 
 namespace Code_Colorizer
 {
-	partial class MainForm : Form
+    partial class MainForm : Form
     {
 		private Processor _processor;
         private string _initialWindowTitle;
-        private bool _formattingLogic = true;
+        private Processor.BufferType _bufferType = Processor.BufferType.Logic;
         private string _loadedFilename = null;
 
         public MainForm()
@@ -79,10 +78,11 @@ namespace Code_Colorizer
                 // read in the words
                 List<SortedSet<string>> words = new List<SortedSet<string>>();
 
-                HighlightWordReader hwr = new HighlightWordReader(HighlightWordReader.LogicFilename);
-                words.Add(hwr.ReadWordBlock(false));
+                // logic
+                words.Add(CSPro.Logic.Colorizer.GetReservedWords());
 
-                hwr = new HighlightWordReader(HighlightWordReader.PffFilename);
+                // PFF
+                HighlightWordReader hwr = new HighlightWordReader(HighlightWordReader.PffFilename);
                 words.Add(hwr.ReadWordBlock(true));
                 words.Add(hwr.ReadWordBlock(true));
                 words.Add(hwr.ReadWordBlock(true));
@@ -140,41 +140,29 @@ namespace Code_Colorizer
             }
         }
 
-		private void registerDesignerMenuItem_Click(object sender,EventArgs e)
-		{
-            try
-            {
-                const string registryPath = @"HKEY_CURRENT_USER\SOFTWARE\U.S. Census Bureau\CSPro Designer\Logic Editor\";
-				Registry.SetValue(registryPath,"ExtendedCopier",Application.ExecutablePath);
-                MessageBox.Show("Registry settings changed successfully.");
-            }
-
-            catch( Exception exception )
-            {
-                MessageBox.Show("There was an error modifying the registry: " + exception.Message);
-            }
-		}
-
         private void languageMenuItem_Click(object sender,EventArgs e)
         {
-            _formattingLogic = !_formattingLogic;
+            _bufferType = (Processor.BufferType)((ToolStripMenuItem)sender).Tag;
             RefreshUiElements();
         }
 
         private void RefreshUiElements()
         {
-            logicMenuItem.Checked = _formattingLogic;
-            pffMenuItem.Checked = !_formattingLogic;
-            buttonCopyUsersForum.Enabled = _formattingLogic;
+            logicMenuItem.Checked = ( _bufferType == Processor.BufferType.Logic );
+            pffMenuItem.Checked = ( _bufferType == Processor.BufferType.Pff );
+            messageMenuItem.Checked = ( _bufferType == Processor.BufferType.Message );
+            buttonCopyUsersForum.Enabled = ( _bufferType == Processor.BufferType.Logic );
 
-            this.Text = String.Format("{0}{1} [{2}]",_loadedFilename == null ? "" : ( _loadedFilename + " - " ),_initialWindowTitle,
-                _formattingLogic ? "CSPro Logic File" : "PFF File");
+            this.Text = String.Format("{0}{1} [{2}]", _loadedFilename == null ? "" : ( _loadedFilename + " - " ), _initialWindowTitle,
+                ( _bufferType == Processor.BufferType.Logic ) ? "Logic File" :
+                ( _bufferType == Processor.BufferType.Pff )   ? "PFF File" :
+                                                                "Message File");
         }
 
         private void openMenuItem_Click(object sender,EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "CSPro Logic and PFF Files (*.apc;*.app;*.pff)|*.apc;*.app;*.pff|All files (*.*)|*.*";
+            ofd.Filter = "CSPro Logic, PFF, and Message Files (*.apc;*.app;*.pff;*.mgf)|*.apc;*.app;*.pff;*.mgf|All files (*.*)|*.*";
 				 
             if( ofd.ShowDialog() == DialogResult.OK )
                 LoadFile(ofd.FileName);
@@ -198,8 +186,9 @@ namespace Code_Colorizer
                 editControl.Text = File.ReadAllText(filename);
 
                 _loadedFilename = Path.GetFileName(filename);
-                _formattingLogic = !Path.GetExtension(filename).Equals(".pff",StringComparison.InvariantCultureIgnoreCase);
-
+                _bufferType = Path.GetExtension(filename).Equals(".pff", StringComparison.InvariantCultureIgnoreCase) ? Processor.BufferType.Pff :
+                              Path.GetExtension(filename).Equals(".mgf", StringComparison.InvariantCultureIgnoreCase) ? Processor.BufferType.Message :
+                                                                                                                        Processor.BufferType.Logic;
                 RefreshUiElements();
             }
 
@@ -212,12 +201,12 @@ namespace Code_Colorizer
 
         private void buttonCopyHtml_Click(object sender,EventArgs e)
         {
-			_processor.HtmlProcessor(editControl.Text,_formattingLogic);
+			_processor.HtmlProcessor(editControl.Text, _bufferType);
         }
 
         private void buttonCopyUsersForum_Click(object sender,EventArgs e)
         {
 			_processor.UsersForumProcessor(editControl.Text);
         }
-	}
+    }
 }

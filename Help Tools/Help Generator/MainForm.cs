@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Colorizer;
 using Microsoft.Win32;
 
 namespace Help_Generator
@@ -24,12 +25,12 @@ namespace Help_Generator
         {
             try
             {
-                _helpComponents.htmlHelpCompilerExecutable = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86),@"HTML Help Workshop\hhc.exe");
+                _helpComponents.htmlHelpCompilerExecutable = Path.Combine(HelperFunctions.GetProgramFilesDirectory(HelperFunctions.ProgramFilesDirectory.x86), @"HTML Help Workshop\hhc.exe");
 
                 if( !File.Exists(_helpComponents.htmlHelpCompilerExecutable) )
                     AddCollaboratorModeWarning("Could not find the HTML Help Compiler here:\r\n" + _helpComponents.htmlHelpCompilerExecutable);
 
-                _helpComponents.wkhtmltopdfExecutable = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),@"wkhtmltopdf\bin\wkhtmltopdf.exe");
+                _helpComponents.wkhtmltopdfExecutable = Path.Combine(HelperFunctions.GetProgramFilesDirectory(HelperFunctions.ProgramFilesDirectory.x64), @"wkhtmltopdf\bin\wkhtmltopdf.exe");
 
                 if( !File.Exists(_helpComponents.wkhtmltopdfExecutable) )
                     AddCollaboratorModeWarning("Could not find wkhtmltopdf here:\r\n" + _helpComponents.wkhtmltopdfExecutable);

@@ -6,20 +6,23 @@ namespace Code_Colorizer
 {
 	class Processor
 	{
-        private LogicColorizer _logicColorizer;
+        internal enum BufferType { Logic, Pff, Message };
+
         private PffColorizer _pffColorizer;
 
         public Processor()
 		{
-            _logicColorizer = new LogicColorizer();
             _pffColorizer = new PffColorizer();
 		}
 
-		public void HtmlProcessor(string text,bool formattingLogic = true)
+		public void HtmlProcessor(string text, BufferType buffer_type)
 		{
 			text = HelperFunctions.TrimTrailingSpace(text);
-            string formattedText = formattingLogic ?
-                _logicColorizer.Colorize(new LogicColorizerHtml(),text) : _pffColorizer.Colorize(new PffColorizerHtml(),text);
+
+            string formattedText =
+                ( buffer_type == BufferType.Logic )   ? CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtml, text) :
+                ( buffer_type == BufferType.Message ) ? CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.MessageToHtml, text) :
+                                                      _pffColorizer.Colorize(new PffColorizerHtml(), text);
 
             // html to clipboard code from: http://blogs.msdn.com/b/jmstall/archive/2007/01/21/sample-code-html-clipboard.aspx
             string htmlCopyText = "Format:HTML Format Version:1.0\nStartHTML:<<<<<<<1\nEndHTML:<<<<<<<2\nStartFragment:<<<<<<<3\nEndFragment:<<<<<<<4\n";
@@ -49,7 +52,7 @@ namespace Code_Colorizer
         public void UsersForumProcessor(string text)
         {
             text = HelperFunctions.TrimTrailingSpace(text);
-            string formattedText = _logicColorizer.Colorize(new LogicColorizerUsersForum(),text);
+            string formattedText = CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToCSProUsersForum, text);
 
             Clipboard.Clear();
             Clipboard.SetText(formattedText,TextDataFormat.UnicodeText);

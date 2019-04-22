@@ -11,16 +11,11 @@ namespace Code_Colorizer
         [STAThread]
         static void Main()
         {
+            AppDomain.CurrentDomain.AssemblyResolve += Colorizer.HelperFunctions.AssemblyResolver;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-			Array commandArgs = Environment.GetCommandLineArgs();
-
-			if( commandArgs.Length == 2 && ((string)commandArgs.GetValue(1)).Equals("/copy") )
-				Application.Run(new DesignerCopierForm());
-
-			else
-	            Application.Run(new MainForm());
+            Application.Run(new MainForm());
         }
     }
 }

@@ -15,7 +15,6 @@ namespace Help_Generator
         public const string TopicsDirectoryName = "topics";
         public const string ImagesDirectoryName = "images";
         public const string TemporaryFileDirectoryName = "zhg_temp";
-        public const string ResourceFileRootDirectoryFilename = "ResourceFileRootDirectory.txt";
 
         public const string ChmFileExtension = ".chm";
         public const string SettingsFileExtension = ".hghelp";

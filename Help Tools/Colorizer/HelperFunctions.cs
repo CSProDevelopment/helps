@@ -1,31 +1,93 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Text;
+using Microsoft.Win32;
 
 namespace Colorizer
 {
     class HelperFunctions
     {
-        public static string ReferenceFileLocate(string filename)
+        public static string ReferenceFileLocate(string filename, string directory = null)
         {
-            string exeDirectory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            // search in the executable directory and keep moving up to a parent folder in case the file isn't found
+            if( directory == null )
+                directory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
 
-            // first see if the file is located in the same directory as the executable
-            string fullFilename = Path.Combine(exeDirectory,filename);
+            string possible_filename = Path.Combine(directory, filename);
 
-            // if not, see if it exists in the root of the solution (if the executable is run from the Debug/Release directory)
-            if( !File.Exists(fullFilename) )
-                fullFilename = Path.GetFullPath(Path.Combine(exeDirectory,@"..\..\..\",filename));
+            if( File.Exists(possible_filename) )
+                return possible_filename;
 
-            // if not, see if it exists one folder up from the root of the solution
-            if( !File.Exists(fullFilename) )
-                fullFilename = Path.GetFullPath(Path.Combine(exeDirectory,@"..\..\..\..\",filename));
+            else
+            {
+                string parent_directory = Path.GetFullPath(Path.Combine(directory, ".."));
 
-            if( !File.Exists(fullFilename) )
-                throw new FileNotFoundException("Missing reference file: " + fullFilename);
+                if( parent_directory.Equals(directory) )
+                    throw new FileNotFoundException("Missing reference file: " + filename);
 
-            return fullFilename;
+                return ReferenceFileLocate(filename, parent_directory);
+            }
+        }
+
+        public static string CalculateResourceFileRoot()
+        {
+            try
+            {
+                return File.ReadAllLines(ReferenceFileLocate(Constants.ResourceFileRootDirectoryFilename))[0].Trim();
+            }
+
+            catch
+            {
+                return null;
+            }
+        }
+
+        public enum ProgramFilesDirectory { x86, x64 };
+        public static string GetProgramFilesDirectory(ProgramFilesDirectory directory_type)
+        {
+            string directory = null;
+
+            if( directory_type == ProgramFilesDirectory.x64 )
+                directory = (string)Registry.LocalMachine.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion")?.GetValue("ProgramW6432Dir");
+
+            return ( directory != null ) ? directory : Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86);
+        }
+
+        public static Assembly AssemblyResolver(object sender, ResolveEventArgs args)
+        {
+            string assembly_name = new AssemblyName(args.Name).Name;
+
+            if( assembly_name.Equals("zInterfaceCLR") )
+            {
+                var possible_directories = new List<string>();
+
+                // first look for zInterfaceCLR using the resource file directory (debug\bin and then release\bin)
+                try
+                {
+                    string resource_file_root = CalculateResourceFileRoot();
+                    possible_directories.Add(Path.Combine(resource_file_root, @"debug\bin"));
+                    possible_directories.Add(Path.Combine(resource_file_root, @"release\bin"));
+                }
+                catch { }
+
+                // also look in Program Files (x86)
+                var program_files_directory_info = new DirectoryInfo(GetProgramFilesDirectory(ProgramFilesDirectory.x86));
+                possible_directories.AddRange(program_files_directory_info.GetDirectories("CSPro*").Select(x => x.FullName).Reverse());
+
+                foreach( string possible_directory in possible_directories )
+                {
+                    string dll_filename = Path.Combine(possible_directory, assembly_name + ".dll");
+
+                    if( File.Exists(dll_filename) )
+                        return Assembly.LoadFrom(dll_filename);
+                }
+            }
+
+            return null;
         }
 
         public static string Htmlize(string text)

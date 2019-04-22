@@ -9,12 +9,9 @@
     <Import_RootNamespace>Colorizer</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EditControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HighlightWordReader.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)LogicColorizer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)LogicColorizerHtml.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)LogicColorizerInterface.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)LogicColorizerUsersForum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PffColorizer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PffColorizerHtml.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PffColorizerInterface.cs" />

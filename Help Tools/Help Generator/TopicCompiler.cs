@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Colorizer;
 
 namespace Help_Generator
 {
-    class TopicCompiler : LogicColorizerHtmlHelp.GetHtmlFilenameForKeywordInterface
+    class TopicCompiler
     {
         private delegate string StartTagHandlerDelegate(string[] startTagComponents);
         private delegate string EndTagHandlerDelegate(string endTagInnerText);
@@ -856,29 +857,12 @@ namespace Help_Generator
             return text.Substring(startTrimChars,text.Length - startTrimChars - endTrimChars);
         }
 
-        private void CreateLogicPffColorizers()
-        {
-            if( _helpComponents._logicColorizer == null )
-                _helpComponents._logicColorizer = new LogicColorizer(new LogicColorizerHtmlHelp());
-
-            if( _helpComponents._inlineLogicColorizer == null )
-                _helpComponents._inlineLogicColorizer = new LogicColorizer(new LogicColorizerHtmlHelpInline());
-
-            ((LogicColorizerHtmlHelp)_helpComponents._logicColorizer.DefaultLogicColorizer).GetHtmlFilenameForKeywordClass = this;
-            ((LogicColorizerHtmlHelpInline)_helpComponents._inlineLogicColorizer.DefaultLogicColorizer).GetHtmlFilenameForKeywordClass = this;
-
-			if( _helpComponents._messageColorizer == null )
-				_helpComponents._messageColorizer = new LogicColorizer(new LogicColorizerHtmlHelp(),LogicColorizer.SourceType.Message);
-
-            if( _helpComponents._pffColorizer == null )
-                _helpComponents._pffColorizer = new PffColorizer(new PffColorizerHtmlHelp());
-        }
-
-        public string GetHtmlFilenameForKeyword(string helpTopic)
+        public string GetHtmlFilenameForKeyword(string html_filename)
         {
             try
             {
-                Preprocessor.TopicPreprocessor topic = _helpComponents.preprocessor.GetTopic(helpTopic);
+                string help_filename = html_filename.Replace(Constants.TopicOutputExtension, Constants.TopicExtension);
+                Preprocessor.TopicPreprocessor topic = _helpComponents.preprocessor.GetTopic(help_filename);
                 return _topicCompilerSettings.GetHtmlFilename(topic);
             }
 
@@ -890,8 +874,7 @@ namespace Help_Generator
 
         private string EndLogicHandler(string endTagInnerText)
         {
-            CreateLogicPffColorizers();
-            return _helpComponents._logicColorizer.Colorize(TrimOnlyOneNewlineBothEnds(endTagInnerText));
+            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelp, TrimOnlyOneNewlineBothEnds(endTagInnerText), GetHtmlFilenameForKeyword);
         }
 
         private string EndLogicSyntaxHandler(string endTagInnerText)
@@ -916,8 +899,7 @@ namespace Help_Generator
 
         private string EndLogicColorHandler(string endTagInnerText)
         {
-            CreateLogicPffColorizers();
-            return _helpComponents._inlineLogicColorizer.Colorize(endTagInnerText.Trim());
+            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, endTagInnerText.Trim(), GetHtmlFilenameForKeyword);
         }
 
         private string StartLogicTableHandler(string[] startTagComponents)
@@ -927,9 +909,7 @@ namespace Help_Generator
             if( !Int32.TryParse(startTagComponents[0],out columns) || columns < 1 )
                 throw new Exception("The number of columns in a table must be a positive integer");
 
-            CreateLogicPffColorizers();
-
-            List<string> reservedWords = _helpComponents._inlineLogicColorizer.ReservedWordsList;
+            List<string> reservedWords = CSPro.Logic.Colorizer.GetReservedWords().ToList();
 
             int rows = (int)Math.Ceiling((double)reservedWords.Count / columns);
 
@@ -947,7 +927,7 @@ namespace Help_Generator
                     int index = ( c * rows ) + r;
 
                     if( index < reservedWords.Count )
-                        sb.Append(_helpComponents._inlineLogicColorizer.Colorize(reservedWords[index].ToLower()));
+                        sb.Append(CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, reservedWords[index].ToLower(), GetHtmlFilenameForKeyword));
 
                     sb.Append("</td>");
                 }
@@ -962,19 +942,22 @@ namespace Help_Generator
 
         private string EndMessageHandler(string endTagInnerText)
         {
-            CreateLogicPffColorizers();
-            return _helpComponents._messageColorizer.Colorize(TrimOnlyOneNewlineBothEnds(endTagInnerText));
+            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.MessageToHtml, TrimOnlyOneNewlineBothEnds(endTagInnerText), GetHtmlFilenameForKeyword);
         }
 
         private string EndPffHandler(string endTagInnerText)
         {
-            CreateLogicPffColorizers();
+            if( _helpComponents._pffColorizer == null )
+                _helpComponents._pffColorizer = new PffColorizer(new PffColorizerHtmlHelp());
+
             return _helpComponents._pffColorizer.Colorize(TrimOnlyOneNewlineBothEnds(endTagInnerText));
         }
 
         private string EndPffColorHandler(string endTagInnerText)
         {
-            CreateLogicPffColorizers();
+            if( _helpComponents._pffColorizer == null )
+                _helpComponents._pffColorizer = new PffColorizer(new PffColorizerHtmlHelp());
+
             return _helpComponents._pffColorizer.ColorizeWord(endTagInnerText.Trim());
         }
 

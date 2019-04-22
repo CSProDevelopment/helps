@@ -11,6 +11,8 @@ namespace Help_Generator
         [STAThread]
         static void Main()
         {
+            AppDomain.CurrentDomain.AssemblyResolve += Colorizer.HelperFunctions.AssemblyResolver;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

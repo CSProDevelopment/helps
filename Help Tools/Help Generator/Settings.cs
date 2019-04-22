@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Colorizer;
 
 namespace Help_Generator
 {
@@ -103,7 +104,7 @@ namespace Help_Generator
 
                 else
                     throw new Exception(String.Format("The resource file could not be located: {0}{1}",evaluatedResourceFilename,
-                        ( _resourceFileRootDirectory == null ) ? ( "\r\n\r\nPerhaps add a resource file root directory specification file with the name " + Constants.ResourceFileRootDirectoryFilename) : ""));
+                        ( _resourceFileRootDirectory == null ) ? ( "\r\n\r\nPerhaps add a resource file root directory specification file with the name " + Colorizer.Constants.ResourceFileRootDirectoryFilename) : ""));
             }
         }
 
@@ -218,27 +219,19 @@ namespace Help_Generator
             if( !File.Exists(filename) )
             {
                 if( _resourceFileRootDirectory == null )
-                    _resourceFileRootDirectory = CalculateResourceFileRoot(Directory.GetCurrentDirectory());
+                {
+                    try
+                    {
+                        _resourceFileRootDirectory = HelperFunctions.CalculateResourceFileRoot();
+                    }
+                    catch { }
+                }
 
                 if( _resourceFileRootDirectory != null )
                     filename = Path.GetFullPath(Path.Combine(_resourceFileRootDirectory,filename));
             }
 
             return filename;
-        }
-
-        private string CalculateResourceFileRoot(string directory)
-        {
-            string possibleFilename = Path.Combine(directory,Constants.ResourceFileRootDirectoryFilename);
-
-            if( File.Exists(possibleFilename) )
-                return File.ReadAllLines(possibleFilename)[0].Trim();
-
-            else
-            {
-                string parentDirectory = Path.GetFullPath(Path.Combine(directory,".."));
-                return parentDirectory.Equals(directory) ? null : CalculateResourceFileRoot(parentDirectory);
-            }
         }
 
         private void ProcessResourceFile(string filename) // a simple header file reader that searches for definitions
