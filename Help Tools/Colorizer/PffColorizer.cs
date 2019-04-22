@@ -14,9 +14,9 @@ namespace Colorizer
         public PffColorizer()
         {
             HighlightWordReader hwr = new HighlightWordReader(HighlightWordReader.PffFilename);
-            _typeWords = hwr.ReadWordBlock(true);
-            _headingWords = hwr.ReadWordBlock(true);
-            _attributeWords = hwr.ReadWordBlock(true);
+            _typeWords = hwr.ReadWordBlock();
+            _headingWords = hwr.ReadWordBlock();
+            _attributeWords = hwr.ReadWordBlock();
        }
 
         public PffColorizer(PffColorizerInterface defaultPffColorizer) : this()

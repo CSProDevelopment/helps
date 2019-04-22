@@ -83,9 +83,9 @@ namespace Code_Colorizer
 
                 // PFF
                 HighlightWordReader hwr = new HighlightWordReader(HighlightWordReader.PffFilename);
-                words.Add(hwr.ReadWordBlock(true));
-                words.Add(hwr.ReadWordBlock(true));
-                words.Add(hwr.ReadWordBlock(true));
+                words.Add(hwr.ReadWordBlock());
+                words.Add(hwr.ReadWordBlock());
+                words.Add(hwr.ReadWordBlock());
 
                 string[] templateWords = new string[]
                 {
