@@ -73,6 +73,9 @@ namespace Help_Generator
         private string _title;
         private bool _titleIsHeader;
 
+        private enum LogicObject { None, Array, List, Map, ValueSet };
+        private LogicObject _logicObject;
+
         public TopicCompiler(HelpComponents helpComponents,Preprocessor.TopicPreprocessor preprocessedTopic,TopicCompilerSettingsInterface topicCompilerSettings)
         {
             _helpComponents = helpComponents;
@@ -99,8 +102,8 @@ namespace Help_Generator
             _tagSettings.Add(TableCellTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableCellHandler,(EndTagHandlerDelegate)EndTableCellHandler,0,1));
             _tagSettings.Add(SeeAlsoTag,new TagSettings(false,(StartTagHandlerDelegate)StartSeeAlsoHandler,null,1,Int32.MaxValue));
             _tagSettings.Add(LogicTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicHandler,0,0));
-            _tagSettings.Add(LogicSyntaxTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicSyntaxHandler,0,0));
-            _tagSettings.Add(LogicColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicColorHandler,0,0));
+            _tagSettings.Add(LogicSyntaxTag,new TagSettings(true,(StartTagHandlerDelegate)StartLogicObjectHandler,(EndTagHandlerDelegate)EndLogicSyntaxHandler,0,1));
+            _tagSettings.Add(LogicColorTag,new TagSettings(true,(StartTagHandlerDelegate)StartLogicObjectHandler,(EndTagHandlerDelegate)EndLogicColorHandler,0,1));
             _tagSettings.Add(LogicArgumentTag,new TagSettings("<span class=\"code_colorization_argument\">","</span>"));
             _tagSettings.Add(LogicTableTag,new TagSettings(false,(StartTagHandlerDelegate)StartLogicTableHandler,null,1,1));
             _tagSettings.Add(MessageTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndMessageHandler,0,0));
@@ -872,6 +875,26 @@ namespace Help_Generator
             }
         }
 
+        private string StartLogicObjectHandler(string[] startTagComponents)
+        {
+            _logicObject = LogicObject.None;
+
+            if( startTagComponents.Length == 1 )
+            {
+                _logicObject =
+                    startTagComponents[0].Equals(LogicObject.Array.ToString(), StringComparison.InvariantCultureIgnoreCase)    ? LogicObject.Array :
+                    startTagComponents[0].Equals(LogicObject.List.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.List :
+                    startTagComponents[0].Equals(LogicObject.Map.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.Map :
+                    startTagComponents[0].Equals(LogicObject.ValueSet.ToString(), StringComparison.InvariantCultureIgnoreCase) ? LogicObject.ValueSet :
+                                                                                                                                 LogicObject.None;
+            }
+
+            if( startTagComponents.Length != 0 && _logicObject == LogicObject.None )
+                throw new Exception("The logic object domain must be a valid symbol type");
+
+            return "";
+        }        
+
         private string EndLogicHandler(string endTagInnerText)
         {
             return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelp, TrimOnlyOneNewlineBothEnds(endTagInnerText), GetHtmlFilenameForKeyword);
@@ -886,7 +909,8 @@ namespace Help_Generator
             string arg_replaced_text = endTagInnerText.Replace("<arg>", ArgBeginReplacementCharacter)
                                                       .Replace("</arg>", ArgEndReplacementCharacter);
 
-            StringBuilder logic = new StringBuilder(EndLogicHandler(arg_replaced_text));
+            StringBuilder logic = new StringBuilder(CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelp,
+                TrimOnlyOneNewlineBothEnds(arg_replaced_text), GetHtmlFilenameForKeyword, _logicObject.ToString()));
 
             // colorize the text between the optional arguments
             logic.Replace("『", "<span class=\"code_colorization_optional_text\"><font class=\"code_colorization_bracket\">『</font>");
@@ -904,7 +928,7 @@ namespace Help_Generator
 
         private string EndLogicColorHandler(string endTagInnerText)
         {
-            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, HelperFunctions.UnHtmlizeEscapes(endTagInnerText.Trim()), GetHtmlFilenameForKeyword);
+            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, HelperFunctions.UnHtmlizeEscapes(endTagInnerText.Trim()), GetHtmlFilenameForKeyword, _logicObject.ToString());
         }
 
         private string StartLogicTableHandler(string[] startTagComponents)
