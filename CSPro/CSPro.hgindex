@@ -149,7 +149,7 @@ align_things.hgt | Align Text and Fields														#	Align Text and Fields
 	align_things.hgt | Top																		#		Top
 	align_things.hgt | Vertical																	#		Vertical
 change_data_entry_options.hgt | Allow Partial Save												#	Allow Partial Save
-logic_alphabetical_list.hgt																		#	Alphabetical List of Statements and Functions
+logic_alphabetical_list.hgt																		#	Alphabetical List of Functions and Statements
 array_statement.hgt | Alphanumeric																#	Alphanumeric
 	array_statement.hgt | Array																	#		Array
 	data_type.hgt																				#		Data Type
@@ -192,6 +192,8 @@ area_names_file_anm.hgt																			#	Area Names File (.anm)
 operators.hgt | Arithmetic operators															#	Arithmetic operators
 array_statement.hgt | Array																		#	Array
 	array_statement.hgt | Alphanumeric															#		Alphanumeric
+	array_clear_function.hgt																	#		Array.Clear Function
+	array_length_function.hgt																	#		Array.Length Function
 	array_statement.hgt | Numeric																#		Numeric
 	saved_arrays_file_sva.hgt																	#		Saved Arrays File (.sva)
 arrays.hgt																						#	Arrays
@@ -335,6 +337,7 @@ errmsg_function.hgt | Checks																	#	Checks
 extended_controls.hgt | Check box																#	Check box
 choose_topic_sections.hgt																		#	Choose Topic Sections
 clear_function.hgt																				#	Clear Function
+	array_clear_function.hgt																	#		Array.Clear Function
 close_an_application.hgt | Close																#	Close
 	close_an_application.hgt | An Application													#		An Application
 	close_function.hgt | Function																#		Function
@@ -635,6 +638,7 @@ display_questions_without_scrolling.hgt | Display Questions Without Scrolling in
 display_results_for_one_geographic_area.hgt														#	Display Results for One Geographic Area
 distribute_finished_tables_to_other_users.hgt													#	Distribute Finished Tables to Other Users
 document_dictionary_elements.hgt																#	Document Dictionary Elements
+object_dot_notation.hgt | Dot Notation															#	Dot Notation
 do_statement.hgt																				#	Do Statement
 drag_option_menu.hgt																			#	Drag Option Menu
 	drag_option_menu.hgt | Require Enter Key													#		Require Enter Key
@@ -1091,6 +1095,7 @@ cspro_initial_screen_layout.hgt | Layout														#	Layout
 add_stub_leadering.hgt | Leadering																#	Leadering
 	add_stub_leadering.hgt | Stub																#		Stub
 item_length.hgt																					#	Length
+	array_length_function.hgt																	#		Array.Length Function
 	length_function.hgt | Function																#		Function
 	item_length.hgt | Item																		#		Item
 add_dictionary_elements.hgt | Level																#	Level
@@ -1133,6 +1138,7 @@ expressions.hgt | Logical																		#	Logical
 	expressions.hgt																				#		Expressions
 	operators.hgt																				#		Operators
 logic_file_apc.hgt																				#	Logic File (.apc)
+object_dot_notation.hgt																			#	Logic Objects and Dot Notation
 logtext_function.hgt																			#	LogText Function
 operator_statistics_file_log.hgt | Log (Operator Statistics)									#	Log (Operator Statistics)
 log_function.hgt																				#	Log Function
@@ -1158,6 +1164,7 @@ create_a_thematic_map_of_results.hgt | Map														#	Map
 	tool_list.hgt | Viewer																		#		Viewer
 map_data_file_mdf.hgt																			#	Map Data File (.mdf)
 map_file_mpc.hgt																				#	Map File (.mpc)
+map_statement.hgt																				#	Map Statement
 change_the_print_page_setup.hgt | Margins														#	Margins
 matching_the_application_to_the_data_dictionary.hgt												#	Matching the Application to the Data Dictionary
 operators.hgt | Mathematical operators															#	Mathematical operators
@@ -1284,6 +1291,7 @@ numeric_statement.hgt | Numeric																	#	Numeric
 	data_type.hgt | Item																		#		Item
 	numeric_statement.hgt | Statement															#		Statement
 	variables.hgt																				#		Variables
+object_dot_notation.hgt | Objects																#	Objects
 issues_to_consider_when_designing_a_form.hgt | Occurrences										#	Occurrences
 	getocclabel_function.hgt																	#		GetOccLabel Function
 	occurrences.hgt | Item																		#		Item

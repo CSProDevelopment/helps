@@ -470,7 +470,7 @@
 			use_expressions_in_universe_and_value_tallied.hgt									#				Use Expressions in Universe and Value Tallied
 	|CSPro Statements and Functions																#		CSPro Statements and Functions
 		statement_format_symbols.hgt															#			Statement Format Symbols
-		logic_alphabetical_list.hgt																#			Alphabetical List of Statements and Functions
+		logic_alphabetical_list.hgt																#			Alphabetical List of Functions and Statements
 		list_of_reserved_words.hgt																#			List of Reserved Words
 		deprecated_features.hgt																	#			Deprecated Features
 		|Declaration Statements																	#			Declaration Statements
@@ -478,11 +478,17 @@
 			string_statement.hgt																#				String Statement
 			config_statement.hgt																#				Config Statement
 			alpha_statement.hgt																	#				Alpha Statement
-			array_statement.hgt																	#				Array Statement
 			file_statement.hgt																	#				File Statement
 			relation_statement.hgt																#				Relation Statement
 			function_statement.hgt																#				Function Statement
 			additional_function_examples.hgt													#				Additional Examples of User-Defined Functions
+			object_dot_notation.hgt																#				Logic Objects and Dot Notation
+		|Array Object																			#			Array Object
+			array_statement.hgt																	#				Array Statement
+			array_clear_function.hgt															#				Array.Clear Function
+			array_length_function.hgt															#				Array.Length Function
+		|Map Object																				#			Map Object
+			map_statement.hgt																	#				Map Statement
 		|Program Control Statements																#			Program Control Statements
 			break_statement.hgt																	#				Break Statement
 			do_statement.hgt																	#				Do Statement

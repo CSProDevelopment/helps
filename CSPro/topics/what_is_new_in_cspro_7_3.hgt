@@ -20,6 +20,9 @@ This is a detailed list of changes in CSPro 7.3. For a more general overview, se
 <subheader>Logic</subheader>
 
 <list>
+	<li>Replacement of the logic editor with a <link https://www.scintilla.org>Scintilla</link>-derived editor with better performance and functionality, including the ability to change the font size.</li>
+	<li>Introduction of <link object_dot_notation.hgt>logic objects</link> with functions that can be called on the object using dot notation.</li>
+	<li>New functions for the <logiccolor>array</logiccolor> object: <logiccolor array>clear</logiccolor> and <logiccolor array>length</logiccolor>.</li>
 	<li>A logical condition can be specified in <logiccolor>for</logiccolor> loops to restrict the universe of the loop. Additionally, the occurrence counting variable can be declared local to the <logiccolor>for</logiccolor> loop.</li>
 </list>
 

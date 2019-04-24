@@ -37,7 +37,7 @@ i = length(<arg>array_name</arg>『, <arg>dimension</arg>』);
 <subheader>Examples</subheader>
 
 <logic>
-array string usmca_countries(3) = "Canada, Mexico, United States";
+array string usmca_countries(3) = "Canada", "Mexico", "United States";
 length(usmca_countries); // returns 3;
 
 // ... 
@@ -50,3 +50,5 @@ do numeric age_counter = 1 while age_counter <= length(AgeSexDeckArray, 1)
 	enddo;
 enddo;
 </logic>
+
+<seealso array_length_function.hgt />

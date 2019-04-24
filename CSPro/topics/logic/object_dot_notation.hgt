@@ -1,0 +1,38 @@
+﻿<title>Logic Objects and Dot Notation</title>
+
+A CSPro logic object is a variable that is similar to the objects that exist in other programming languages that are "object-oriented." CSPro logic is not fully object-oriented, but some variables have functions (sometimes called "methods") that can be called by using both the variable name as well as the function name.
+
+<logicsyntax>
+<arg>variable_name</arg>.<arg>function_name</arg>();
+</logicsyntax>
+
+The following objects have functions that can be called on the object: <logiccolor>array</logiccolor>, <logiccolor>list</logiccolor>, <logiccolor>map</logiccolor>, and <logiccolor>valueset</logiccolor>. A list of available functions can be found in each of those summary pages.
+
+One way to understand dot notation is to think of it as a shorthand way to specify what variable should be used when performing an operation. For example, here are two ways to work through the elements of a list:
+
+<logic>
+list string household_members;
+
+// CSPro 7.2 and earlier:
+do numeric counter = 1 while counter <= length(household_members)
+
+// CSPro 7.3 and later:
+do numeric counter = 1 while counter <= household_members.length()
+</logic>
+
+Unlike other CSPro functions, the functions that are associated with an object will not show as <font blue>blue</font> and they are not reserved words.
+
+Using a dot specifies that you are accessing a function or variable (property) of the object. For example, a value set object contains two internal variables, codes and labels, both of which are lists, that can be accessed as in:
+
+<logic>
+list string province_labels = PROVINCE_VS.labels;
+errmsg("There are %d provinces", province_labels.length());
+</logic>
+
+This could also be written using multiple dots:
+
+<logic>
+errmsg("There are %d provinces", PROVINCE_VS.labels.length());
+</logic>
+
+<seealso variables.hgt />
