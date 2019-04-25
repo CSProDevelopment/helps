@@ -8,11 +8,11 @@ b = map_name.show();
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.show()</logiccolor> function displays the map named map_name. The map replaces the current question(s) on the screen. The map will continue to be displayed until the user taps on the back button or the <logiccolor map>map.hide()</logiccolor> function is called from within a callback function. The <logiccolor map>map.show()</logiccolor> function will not return until the user has finished interacting with the map. For this reason you should always do the initial map setup (markers, buttons, base map...) before calling <logiccolor map>map.show()</logiccolor>. If you call any of the map functions directly after the call to <logiccolor map>map.show()</logiccolor> they will not be executed until after the map has been hidden. You can however, make modifications to the map while it is showing from logic in a callback function supplied to one of the map functions such as <logiccolor map>setOnClick</logiccolor>, <logiccolor map>addTextButton</logiccolor>, <logiccolor map>addImageButton</logiccolor>, <logiccolor map>setMarkerOnClick</logiccolor>, <logiccolor map>setMarkerOnClickInfoWindow</logiccolor>, or <logiccolor map>setMarkerOnDrag</logiccolor>.
+The <logiccolor map>map.show()</logiccolor> function displays the <link maps.hgt>map</link> named map_name. The map replaces the current question(s) on the screen. The map will continue to be displayed until the user taps on the back button or the <logiccolor map>map.hide()</logiccolor> function is called from within a callback function. The <logiccolor map>map.show()</logiccolor> function will not return until the user has finished interacting with the map. For this reason you should always do the initial map setup (markers, buttons, base map, ...) before calling <logiccolor map>map.show()</logiccolor>. If you call any of the map functions directly after the call to <logiccolor map>map.show()</logiccolor> they will not be executed until after the map has been hidden. You can however, make modifications to the map while it is showing from logic in a callback function supplied to one of the map functions such as <logiccolor map>setOnClick</logiccolor>, <logiccolor map>addTextButton</logiccolor>, <logiccolor map>addImageButton</logiccolor>, <logiccolor map>setMarkerOnClick</logiccolor>, <logiccolor map>setMarkerOnClickInfoWindow</logiccolor>, or <logiccolor map>setMarkerOnDrag</logiccolor>.
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true) if the map is shown successfully and 0 if there is an error.
+The function returns a logical value of 1 (true) if the map is shown successfully and 0 (false) if there is an error.
 
 <subheader>Example</subheader>
 
@@ -21,7 +21,7 @@ PROC GLOBAL
 
 // User function that will be called on button click
 // to close the map
-function closemap(map m)
+function closeMap(map m)
 	m.hide();
 end;
 
@@ -41,4 +41,4 @@ mymap.show();
 errmsg("Done showing map");
 </logic>
 
-<seealso map_statement.hgt map_hide_function.hgt />
+<seealso maps.hgt map_hide_function.hgt />

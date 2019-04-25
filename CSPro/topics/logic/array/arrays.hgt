@@ -1,0 +1,16 @@
+﻿<title>Arrays</title>
+
+In logic, an <logiccolor>array</logiccolor> is an object that contains a collection of elements of the same type, either numeric, alphanumeric, or string. An array can be of many dimensions, though each of these dimensions is of a fixed size. Arrays can be used in various processing operations, including defining a list of constant values (like month names) or working with hotdecks and <link deckarrays.hgt>DeckArrays</link>.
+
+Whenever an array variable is used in the application, a value or numeric expression for each dimension must be given. The initial array contents are zero (if numeric) and blank (if alphanumeric or string) until a value for each dimension is assigned. If using a numeric <link initialize_hot_decks_using_saved_arrays.hgt>saved array</link>, the initial array contents are <logiccolor>default</logiccolor>.
+
+
+<subheader>Functionality</subheader>
+
+An array is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+
+<table 2 header nowrap>
+	<cell>Function</cell><cell>Description</cell>
+	<cell><logiccolor array>clear</logiccolor></cell><cell>Resets all array values to the default value.</cell>
+	<cell><logiccolor array>length</logiccolor></cell><cell>Returns the size of an array dimension.</cell>
+</table>

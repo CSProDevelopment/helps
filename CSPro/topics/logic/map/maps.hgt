@@ -1,0 +1,50 @@
+﻿<title>Maps</title>
+
+In logic, a <logiccolor>map</logiccolor> is an object that can be used to display and control an interactive map. The map may be panned and zoomed with touch controls and may optionally show the user's current location. Using map functions you can add markers at geographic positions on the map, add custom buttons, and set the geographical area displayed. You can also specify user-defined functions in your logic to be called when the user taps on markers, buttons, and on the map itself. Together, these functions allow for rich map-based interactions such as showing households on a map and launching an interview when the user taps a household.
+
+<i>Note that maps are currently only supported on Android. The map functions will do nothing when run on Windows.</i>
+
+To display a map, call the <logiccolor map>show</logiccolor> function. The map will be displayed allowing the user to interact with it until the user taps the back button or the <logiccolor map>hide</logiccolor> function is called from program logic.
+
+You can call the map functions to add markers, buttons, set the basemap, and pan/zoom before showing the map. This will be more efficient than adding them afterwards, especially when adding large numbers of markers. You can also call the map functions after showing the map from within any of the user defined callback functions for map, marker and button clicks and drags.
+
+By default, the map will display a base map from Google Maps which requires an internet connection. With no internet connection the base map will be empty. To display a map without an internet connection you can copy an an offline map tiles file to your device and pass the file to the <logiccolor map>setBaseMap</logiccolor> function. See <link offline_maps.hgt>offline maps</link> for details.
+
+
+<subheader>Functionality</subheader>
+
+A map is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+
+<table 2 header nowrap>
+	<cell>Function</cell><cell>Description</cell>
+	<cell><logiccolor map>show</logiccolor></cell><cell>Display the map and allow the user to interact with it.</cell>
+	<cell><logiccolor map>hide</logiccolor></cell><cell>End display of map if it is currently showing.</cell>
+	<cell><logiccolor map>addMarker</logiccolor></cell><cell>Place a marker on the map at specified latitude and longitude.</cell>
+	<cell><logiccolor map>removeMarker</logiccolor></cell><cell>Delete a marker from the map.</cell>
+	<cell><logiccolor map>setMarkerImage</logiccolor></cell><cell>Set the icon displayed on the map for a marker.</cell>
+	<cell><logiccolor map>setMarkerText</logiccolor></cell><cell>Set text displayed on map for a marker.</cell>
+	<cell><logiccolor map>setMarkerOnClick</logiccolor></cell><cell>Set user defined function that is called when user taps marker.</cell>
+	<cell><logiccolor map>setMarkerOnClickInfoWindow</logiccolor></cell><cell>Set user defined function that is called when user taps on marker pop-up info.</cell>
+	<cell><logiccolor map>setMarkerOnDrag</logiccolor></cell><cell>Set user defined function that is called when user a drags a marker on the map.</cell>
+	<cell><logiccolor map>setMarkerLocation</logiccolor></cell><cell>Move an existing marker to a new position on the map.</cell>
+	<cell><logiccolor map>getMarkerLocation</logiccolor></cell><cell>Retreive the latitude and longitude of a marker on the map.</cell>
+	<cell><logiccolor map>setOnClick</logiccolor></cell><cell>Set user defined function that is called when user taps on the map.</cell>
+	<cell><logiccolor map>addTextButton</logiccolor></cell><cell>Create a button with a text label on the map.</cell>
+	<cell><logiccolor map>addImageButton</logiccolor></cell><cell>Create a button with an icon on the map.</cell>
+	<cell><logiccolor map>removeButton</logiccolor></cell><cell>Delete a button on the map.</cell>
+	<cell><logiccolor map>setBaseMap</logiccolor></cell><cell>Change the map source to an online or offline base map.</cell>
+	<cell><logiccolor map>zoomTo</logiccolor></cell><cell>Pan/zoom the map.</cell>
+</table>
+
+<subheader>Example</subheader>
+
+<logic>
+// Declare a map
+map mymap;
+
+// Add a marker to the map at latitude 38.84839, longitude -76.931098
+mymap.addMarker(38.84839,-76.931098);
+
+// Display the map
+mymap.show();
+</logic>

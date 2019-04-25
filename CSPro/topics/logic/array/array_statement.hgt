@@ -1,6 +1,5 @@
 ﻿<title>Array Statement</title>
 
-
 <subheader>Format</subheader>
 
 <logicsyntax>
@@ -10,9 +9,7 @@ array 『<arg>array_type</arg>』 <arg>array_name</arg>(<arg>dimension1</arg>『
 
 <subheader>Description</subheader>
 
-The <arg>array</arg> statement creates an array with the name <arg>array_name</arg>. CSPro supports arrays of an unlimited number of dimensions.
-
-Only one array at a time can be declared with the array statement. The array name must be unique and contain only letters, numbers, or the underscore ('_') character. The name must begin with a letter.
+The <arg>array</arg> statement creates an <link arrays.hgt>array</link> with the name <arg>array_name</arg>. Only one array at a time can be declared with the array statement. The array name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can <link array_statement.hgt>declare arrays</link> in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 Arrays can be numeric, alphanumeric or string. By default an array is numeric, but the type can be modified by specifying the <arg>array_type</arg>.  If creating an alphanumeric array, the length of each array element can be specified by definining the <arg>array_type</arg> as follows:
 
@@ -20,7 +17,7 @@ Arrays can be numeric, alphanumeric or string. By default an array is numeric, b
 
 If <arg>array_length</arg> is not specified, each element will be 16 characters.
 
-The size of each dimension is specified by supplying a constant positive numeric value, <arg>dimension1</arg> to <arg>dimensionN</arg>. An array must have at least one dimension. A previously defined numeric value can also be used to specify the dimension size. The <logiccolor>length</logiccolor> function can be used to query the size of a dimension.
+The size of each dimension is specified by supplying a constant positive numeric value, <arg>dimension1</arg> to <arg>dimensionN</arg>. An array must have at least one dimension. CSPro supports arrays of an unlimited number of dimensions. A previously defined numeric value can also be used to specify the dimension size. The <logiccolor array>length</logiccolor> function can be used to query the size of a dimension.
 
 The initial values of the elements of an array can be set when declaring the array by listing each value, separated by a comma. If some values are defined and then followed by <logiccolor>...</logiccolor>, that set of values will be used over and over until the entire array has been initialized.
 
@@ -29,17 +26,6 @@ With a numeric array, each element starts with the value 0. For alphanumeric and
 The optional keyword <logiccolor>save</logiccolor> indicates that the array values should be saved to a file and loaded from that file when the program is run again. This allows you to maintain the values of the arrays across multiple runs of the same program. When one or more arrays in the program are marked with <logiccolor>save</logiccolor>, the first time the application is run, a saved array file is created and the values of the arrays are written to the file at the end of program execution. On consecutive runs of the program, the initial values of the arrays are read in from the file. This is particularly useful for setting the initial values of hot decks. In this scenario, the program is run twice. The first run fills the hot deck and saves the hot deck array to the file. The second run loads the values saved from the first run and uses them as the initial values for the hot deck for imputation. See <topic initialize_hot_decks_in_program_logic.hgt /> for more information.
 
 All arrays marked with <logiccolor>save</logiccolor> in the application are written to the same file. This file has the same name as the application but with a .sva file extension appended to it (for example, MyApplication.bch.sva). Saved arrays are not supported in data entry applications.
-
-
-<subheader>Functions</subheader>
-
-An array is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
-
-<table 2 header nowrap>
-	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor array>clear</logiccolor></cell><cell>Resets all array values to the default value.</cell>
-	<cell><logiccolor array>length</logiccolor></cell><cell>Returns the size of an array dimension.</cell>
-</table>
 
 
 <subheader>Example 1 (Numeric)</subheader>

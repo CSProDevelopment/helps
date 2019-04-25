@@ -1,7 +1,0 @@
-﻿<title>Arrays</title>
-
-CSPro supports numeric or alphanumeric arrays of any number of dimensions. You must declare arrays in the <link cspro_program_structure.hgt>global procedure</link> using the <link array_statement.hgt>array statement</link>. Only one variable can be defined in each array statement.
-
-Array names can contain only letters, numbers, or the underscore ('_') character, and must begin with a letter. Array names are not case sensitive, meaning that uppercase and lowercase letters are considered the same. For example, "myvar" and "MyVar" would refer to the same variable.
-
-Whenever the array variable is used in the application, a value or numeric expression for each dimension must be given. The initial array contents are zero (if numeric) and blank (if alphanumeric) until a value for each dimension is assigned. If using a numeric <link initialize_hot_decks_using_saved_arrays.hgt>saved array</link>, the initial array contents are <logiccolor>default</logiccolor>.
