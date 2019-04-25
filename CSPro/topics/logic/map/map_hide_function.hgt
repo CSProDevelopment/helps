@@ -1,0 +1,46 @@
+﻿<title>Map.Hide Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax map>
+b = map_name.hide();
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor map>map.hide()</logiccolor> function hides the map named map_name and returns to data entry. The <logiccolor map>hide()</logiccolor> function should be used in a callback function supplied to one of the map functions such as <logiccolor map>setOnClick</logiccolor>, <logiccolor map>addTextButton</logiccolor>, <logiccolor map>addImageButton</logiccolor>, <logiccolor map>setMarkerOnClick</logiccolor>, <logiccolor map>setMarkerOnClickInfoWindow</logiccolor>, or <logiccolor map>setMarkerOnDrag</logiccolor>. Calling <logiccolor map>hide()</logiccolor> will cause the earlier call to <logiccolor map>map.show()</logiccolor> to complete and return control to the statement following the call to <logiccolor map>map.show()</logiccolor>.
+
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true).
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+// User function that will be called on button click
+// to close the map
+function closemap(map m)
+	m.hide();
+end;
+
+PROC SOMEITEM
+
+// Declare a map
+map mymap;
+
+// Add a button to the map that closes the map when it is clicked
+mymap.addTextButton("close", closeMap);
+
+// show the map, this function will keep running until user clicks
+// close button or uses back button to exit map
+mymap.show();
+
+// This logic is only run AFTER call to hide
+errmsg("Done showing map");
+</logic>
+
+<seealso map_statement.hgt map_show_function.hgt />
