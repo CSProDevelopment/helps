@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = keylist(<arg>dictionary_name</arg>『,<arg>key_listing</arg>』);
+i = keylist(<arg>dictionary_name</arg>『, <arg>key_listing</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>keylist</logiccolor> function fills <arg>key_listing</arg>, an optional string list, with the <link key_function.hgt>keys</link> in the file referenced by <arg>dictionary_name</arg>. The dictionary can be either the main input dictionary of a data entry application or an external dictionary. A dictionary key is a single string comprised of the IDs for a case.
+The <logiccolor>keylist</logiccolor> function fills <arg>key_listing</arg>, an optional string <link lists.hgt>list</link>, with the <link key_function.hgt>keys</link> in the file referenced by <arg>dictionary_name</arg>. The dictionary can be either the main input dictionary of a data entry application or an external dictionary. A dictionary key is a single string comprised of the IDs for a case.
 
 <subheader>Return Value</subheader>
 
@@ -28,18 +28,16 @@ PROC ACTION
 <subheader>Example 2</subheader>
 
 <logic>
-PROC GLOBAL
-
-list string enteredKeys;
-
 PROC HOUSEHOLD_NUMBER
 
-	keylist(CENSUS_DICT,enteredKeys);
+	list string enteredKeys;
 	
-	do numeric keyCtr = 1 while keyCtr <= length(enteredKeys)
+	keylist(CENSUS_DICT, enteredKeys);
+	
+	do numeric keyCtr = 1 while keyCtr <= enteredKeys.length()
 	
 		if HOUSEHOLD_NUMBER = tonumber(enteredKeys(keyCtr)[9:2]) then
-			errmsg("The household number %d has already been entered.",HOUSEHOLD_NUMBER);
+			errmsg("The household number %d has already been entered.", HOUSEHOLD_NUMBER);
 			reenter;
 		endif;
 		

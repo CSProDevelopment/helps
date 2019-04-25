@@ -3,7 +3,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = setreportdata(『<arg>attribute</arg>,』<arg>data_source</arg>);
+b = setreportdata(『<arg>attribute</arg>,』 <arg>data_source</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -16,8 +16,8 @@ The <arg>data_source</arg> must be one of the following:
 	<cell><arg>data_source</arg></cell><cell><b>Description</b></cell>
 	<cell><arg>value</arg></cell><cell>A string expression containing some text.</cell>	
 	<cell><arg>record_name</arg></cell><cell>The contents of a record, including multiply occurring records. In a data entry application, only information up to the number of entered occurrences will be stored.</cell>
-	<cell><arg>list_name</arg></cell><cell>The contents of a list.</cell>
-	<cell><arg>array_name</arg></cell><cell>The contents of a one- or multiple-dimensional array.</cell>
+	<cell><arg>list_name</arg></cell><cell>The contents of a <link lists.hgt>list</link>.</cell>
+	<cell><arg>array_name</arg></cell><cell>The contents of a one- or multiple-dimensional <link arrays.hgt>array</link>.</cell>
 	<cell><arg>sqlquery</arg></cell><cell>The result set of a query executed by the <logiccolor>sqlquery</logiccolor> function. Do not specify that function's optional <arg>result_set</arg> argument, as the result set is stored in memory when called by <logiccolor>setreportdata</logiccolor>.</cell>
 </table>
 
@@ -32,7 +32,7 @@ The function returns a logical value of 1 (true) if the data was stored successf
 <subheader>Example - Text and Record</subheader>
 
 <logic>
-setreportdata("title","Demographic Report");
+setreportdata("title", "Demographic Report");
 setreportdata(PERSON_REC);
 </logic>
 
@@ -44,7 +44,7 @@ string DeviceQuery =
 	"FROM device_info "
 	"GROUP BY device_model;";
 
-setreportdata("device_info",sqlquery(paradata,DeviceQuery));
+setreportdata("device_info", sqlquery(paradata, DeviceQuery));
 </logic>
 
 <seealso report_function.hgt sqlquery_function.hgt templated_reports.hgt />

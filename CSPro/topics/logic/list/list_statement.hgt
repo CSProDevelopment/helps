@@ -1,0 +1,35 @@
+﻿<title>List Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+list 『<arg>list_type</arg>』 <arg>list_name</arg>;
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>list</logiccolor> statement creates a <link lists.hgt>list</link> with the name <arg>list_name</arg>. The list name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare lists globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+
+Lists can be <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. By default a list is numeric, but the type can be modified by specifying the <arg>list_type</arg>.
+
+The initial values of the elements of a list can be set when declaring the array by listing each value, separated by a comma. A list can also be initialized to the values of another list.
+
+
+<subheader>Example</subheader>
+
+<logic>
+// numeric lists
+list DaysPerMonthTypical = 31, 28, 31, 30, 31, 30,
+						   31, 31, 30, 31, 30, 31;
+						
+list numeric DaysPerMonthLeapYears = DaysPerMonthTypical;
+DaysPerMonthLeapYears(2) = 29;
+
+// string lists
+list string MonthNames = "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+						 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec";
+</logic>
+
+
+<seealso lists.hgt arrays.hgt />
