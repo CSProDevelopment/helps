@@ -10,6 +10,8 @@ b = map_name.setMarkerText(<arg>markerId</arg>,<arg>text</arg>『,textColor,back
 
 The <logiccolor map>map.setMarkerText()</logiccolor> sets the icon for the marker with id <arg>markerId</arg> on map map_name to an icon with the specified text and color. The icon will contain the text surrounded by a small outline. <arg>markerId</arg> is the id that was returned by <logiccolor map>map.addMarker()</logiccolor> when the marker was added to the map. <arg>text</arg> is the phrase to display as the marker icon. You can optionally set the color of the text and the background color of the icon by specifying the <arg>textColor</arg> and <arg>backgroundColor</arg>. Colors can be given by the names of common colors ("blue", "red"...) or using an HTML RGB color specification that starts with "#" such as "#404040". If no colors are specified the text will be black on a white background.
 
+<logiccolor map>map.setMarkerText()</logiccolor> sets the text used in the marker icon. To avoid making the map crowded the icon text should be kept short. To associate a longer description with a marker use <logiccolor map>map.setMarkerDesciption()</logiccolor> instead to display additional text in the marker list and in an pop-up on the map when the user taps the marker.
+
 The <arg>text</arg> may contain the following HTML tags:
 <list>
 <li>&ltb&gt - bold</li>
@@ -21,6 +23,8 @@ The <arg>text</arg> may contain the following HTML tags:
 <li>&ltfont&gt - font (including color)</li>
 <li>&ltbr/&gt - line break</li>
 </list>
+
+If the marker icon was previously set with <logiccolor map>map.setMarkerImage()</logiccolor>, calling <logiccolor map>map.setMarkerText()</logiccolor> will replace the marker image with the new text.
 
 <subheader>Return Value</subheader>
 
@@ -37,7 +41,7 @@ map mymap;
 numeric markerId = mymap.addMarker(38.84839,-76.931098);
 
 // Set the icon
-mymap.setMarkerImage(markerId, "resources/marker_icon.png");
+mymap.setMarkerText(markerId, maketext("%v", HH_NUMBER), "white", "black");
 
 // Display the map
 mymap.show();
