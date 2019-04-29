@@ -3,21 +3,31 @@
 <subheader>Format</subheader>
 
 <logicsyntax list>
-LIST_TODO
+b = list_name.clear();
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-LIST_TODO
+The <logiccolor list>list.clear</logiccolor> function removes all values from a <link lists.hgt>list</link>, setting the length to 0.
 
 <subheader>Return Value</subheader>
 
-LIST_TODO
+The function returns a logical value of 1 (true). If the list is read-only, the function returns <logiccolor>default</logiccolor>.
 
 <subheader>Example</subheader>
 
 <logic>
-LIST_TODO
+PROC GLOBAL
+
+list possible_ages;
+
+PROC AGE
+
+	possible_ages.clear();
+	
+	do numeric counter = 1 while counter <= curocc()
+		possible_ages.add(AGE);
+	enddo;
 </logic>
 
 <seealso lists.hgt list_remove_function.hgt />

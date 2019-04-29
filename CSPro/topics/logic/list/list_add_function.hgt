@@ -3,21 +3,27 @@
 <subheader>Format</subheader>
 
 <logicsyntax list>
-LIST_TODO
+i = list_name.add(<arg>value</arg> ‖ <arg>list_name</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-LIST_TODO
+The <logiccolor list>list.add</logiccolor> function adds a single value (the numeric or string expression <arg>value</arg>) or a list of values (<arg>list_name</arg>) to the end of a <link lists.hgt>list</link>. The type of the added value or list must match the type of the receiving list.
 
 <subheader>Return Value</subheader>
 
-LIST_TODO
+The function returns the number of the values added to the list. If the list is read-only, the function returns <logiccolor>default</logiccolor>.
 
 <subheader>Example</subheader>
 
 <logic>
-LIST_TODO
+list string eligible_head_names;
+
+do numeric counter = 1 while counter <= count(PERSON_REC)
+	if AGE(counter) >= 15 and USUAL_MEMBER(counter) = 1 then
+		eligible_head_names.add(NAME(counter));
+	endif;
+enddo;
 </logic>
 
 <seealso lists.hgt list_insert_function.hgt />
