@@ -1,0 +1,47 @@
+﻿<title>Map.SetMarkerText Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax map>
+b = map_name.setMarkerText(<arg>markerId</arg>,<arg>text</arg>『,textColor,backgroundColor』]);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor map>map.setMarkerText()</logiccolor> sets the icon for the marker with id <arg>markerId</arg> on map map_name to an icon with the specified text and color. The icon will contain the text surrounded by a small outline. <arg>markerId</arg> is the id that was returned by <logiccolor map>map.addMarker()</logiccolor> when the marker was added to the map. <arg>text</arg> is the phrase to display as the marker icon. You can optionally set the color of the text and the background color of the icon by specifying the <arg>textColor</arg> and <arg>backgroundColor</arg>. Colors can be given by the names of common colors ("blue", "red"...) or using an HTML RGB color specification that starts with "#" such as "#404040". If no colors are specified the text will be black on a white background.
+
+The <arg>text</arg> may contain the following HTML tags:
+<list>
+<li>&ltb&gt - bold</li>
+<li>&lti&gt - italic</li>
+<li>&ltul&gt - underline</li>
+<li>&ltstrike&gt or &lts&gt - strikethrough</li>
+<li>&ltsup&gt - superscript</li>
+<li>&ltsub&gt - subscript</li>
+<li>&ltfont&gt - font (including color)</li>
+<li>&ltbr/&gt - line break</li>
+</list>
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the marker was found and the text was set successfully
+
+<subheader>Example</subheader>
+
+<logic>
+
+// Declare a map
+map mymap;
+
+// Add a marker to the map at latitude 38.84839, longitude -76.931098
+numeric markerId = mymap.addMarker(38.84839,-76.931098);
+
+// Set the icon
+mymap.setMarkerImage(markerId, "resources/marker_icon.png");
+
+// Display the map
+mymap.show();
+
+</logic>
+
+<seealso maps.hgt map_add_marker_function.hgt map_set_marker_image_function.hgt />

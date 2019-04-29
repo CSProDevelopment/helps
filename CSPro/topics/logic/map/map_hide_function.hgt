@@ -10,8 +10,6 @@ b = map_name.hide();
 
 The <logiccolor map>map.hide()</logiccolor> function hides the <link maps.hgt>map</link> named map_name and returns to data entry. The <logiccolor map>hide()</logiccolor> function should be used in a callback function supplied to one of the map functions such as <logiccolor map>setOnClick</logiccolor>, <logiccolor map>addTextButton</logiccolor>, <logiccolor map>addImageButton</logiccolor>, <logiccolor map>setMarkerOnClick</logiccolor>, <logiccolor map>setMarkerOnClickInfoWindow</logiccolor>, or <logiccolor map>setMarkerOnDrag</logiccolor>. Calling <logiccolor map>hide()</logiccolor> will cause the earlier call to <logiccolor map>map.show()</logiccolor> to complete and return control to the statement following the call to <logiccolor map>map.show()</logiccolor>.
 
-
-
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true).

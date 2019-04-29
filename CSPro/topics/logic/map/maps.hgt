@@ -8,7 +8,7 @@ To display a map, call the <logiccolor map>show</logiccolor> function. The map w
 
 You can call the map functions to add markers, buttons, set the basemap, and pan/zoom before showing the map. This will be more efficient than adding them afterwards, especially when adding large numbers of markers. You can also call the map functions after showing the map from within any of the user defined callback functions for map, marker and button clicks and drags.
 
-By default, the map will display a base map from Google Maps which requires an internet connection. With no internet connection the base map will be empty. To display a map without an internet connection you can copy an an offline map tiles file to your device and pass the file to the <logiccolor map>setBaseMap</logiccolor> function. See <link offline_maps.hgt>offline maps</link> for details.
+By default, the map will display a base map from Google Maps which requires an internet connection. With no internet connection the base map will be empty. To display a map without an internet connection you can copy an an offline map file to your device and pass the file to the <logiccolor map>setBaseMap</logiccolor> function. See <link offline_maps.hgt>offline maps</link> for details.
 
 
 <subheader>Functionality</subheader>
@@ -23,6 +23,7 @@ A map is a CSPro logic object and the following functions can be called via <lin
 	<cell><logiccolor map>removeMarker</logiccolor></cell><cell>Delete a marker from the map.</cell>
 	<cell><logiccolor map>setMarkerImage</logiccolor></cell><cell>Set the icon displayed on the map for a marker.</cell>
 	<cell><logiccolor map>setMarkerText</logiccolor></cell><cell>Set text displayed on map for a marker.</cell>
+	<cell><logiccolor map>setMarkerDescription</logiccolor></cell><cell>Set text displayed in pop-up when marker is tapped and in marker list.</cell>
 	<cell><logiccolor map>setMarkerOnClick</logiccolor></cell><cell>Set user defined function that is called when user taps marker.</cell>
 	<cell><logiccolor map>setMarkerOnClickInfoWindow</logiccolor></cell><cell>Set user defined function that is called when user taps on marker pop-up info.</cell>
 	<cell><logiccolor map>setMarkerOnDrag</logiccolor></cell><cell>Set user defined function that is called when user a drags a marker on the map.</cell>

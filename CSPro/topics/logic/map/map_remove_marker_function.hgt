@@ -1,0 +1,57 @@
+﻿<title>Map.RemoveMarker Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax map>
+b = map_name.removeMarker(<arg>markerId</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor map>map.removeMarker()</logiccolor> function removes a marker from the map map_name. <arg>markerId</arg> should be the id returned by <logiccolor map>map.addMarker()</logiccolor> when the marker was added to the map.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the marker was found and was successfully removed
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+// Function to allow to modify the marker text, marker description or remove the marker
+function editMarker(map m, markerId)
+
+	numeric sel = accept("Edit marker", "Text", "Description", "Remove");
+	if sel = 1 then
+		string newText = prompt("Enter new icon text");
+		if newText <> "" then
+			m.setMarkerText(markerId, newText);
+		endif;
+	elseif sel = 2 then
+		string newDescription = prompt("Enter new icon description");
+		if newDescription <> "" then
+			m.setMarkerDescription(markerId, newDescription);
+		endif;
+	elseif sel = 3 then
+		m.removeMarker(markerId);
+	endif;
+end;
+
+PROC SHOW_MAP
+
+// Declare a map
+map mymap;
+
+// Add a marker to the map at latitude 38.84839, longitude -76.931098
+numeric markerId = mymap.addMarker(38.84839,-76.931098);
+
+// Call edit marker when user taps on pop-up info window
+mymap.setMarkerOnClickInfoWindow(markerId, editMarker(mymap,markerId));
+
+// Display the map
+mymap.show();
+
+</logic>
+
+<seealso maps.hgt map_add_marker_function.hgt />
