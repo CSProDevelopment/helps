@@ -119,6 +119,8 @@ add_dictionary_elements.hgt | Add																#	Add
 	add_or_modify_value_sets.hgt | Value Sets													#		Value Sets
 	add_dictionary_elements.hgt | Value Sets in Dictionary										#		Value Sets in Dictionary
 	add_a_variable_to_a_tabulation.hgt | Variable to a Tabulation								#		Variable to a Tabulation
+map_add_marker_function.hgt | AddMarker Function												#	AddMarker Function
+	map_add_marker_function.hgt																	#		Map.AddMarker Function
 add_a_pagenote_or_footnote.hgt | Add a Pagenote or Footnote to a Table							#	Add a Pagenote or Footnote to a Table
 add_a_subtitle.hgt | Add a Subtitle to a Table													#	Add a Subtitle to a Table
 add_a_variable_to_a_tabulation.hgt																#	Add a Variable to a Tabulation
@@ -128,8 +130,6 @@ list_add_function.hgt | Add Function															#	Add Function
 	list_add_function.hgt																		#		List.Add Function
 add_header_footer_text_to_a_table.hgt															#	Add Header/Footer Text to a Table
 add_or_modify_relations.hgt																		#	Add or Modify Relations
-map_add_marker_function.hgt | AddMarker Function												#	AddMarker Function
-	map_add_marker_function.hgt																	#		Map.AddMarker Function
 add_reader_breaks.hgt | Add Reader Breaks to a Table											#	Add Reader Breaks to a Table
 add_stub_leadering.hgt | Add Stub Leadering to a Table											#	Add Stub Leadering to a Table
 add_subtotals_to_a_table.hgt																	#	Add Subtotals to a Table
@@ -687,8 +687,8 @@ ensure_statement.hgt																			#	Ensure Statement
 cspro_capabilities.hgt | Enter																	#	Enter
 	cspro_capabilities.hgt | Modify and Verify Data												#		Modify and Verify Data
 	enter_question_text.hgt | Question Text in CAPI												#		Question Text in CAPI
-change_data_entry_options.hgt | Enter Key														#	Enter Key
-	change_data_entry_options.hgt | Required													#		Required
+change_field_properties.hgt | Enter Key															#	Enter Key
+	change_field_properties.hgt | Required														#		Required
 enter_statement.hgt																				#	Enter Statement
 errmsg_function.hgt																				#	ErrMsg Function
 errors_in_censuses_and_surveys.hgt | Errors														#	Errors
@@ -827,7 +827,7 @@ change_the_print_page_setup.hgt | Footer														#	Footer
 	change_the_print_page_setup.hgt | Change Print Page Setup									#		Change Print Page Setup
 add_a_pagenote_or_footnote.hgt | Footnote														#	Footnote
 forcase_statement.hgt																			#	ForCase Statement
-change_data_entry_options.hgt | Force out-of-range												#	Force out-of-range
+change_field_properties.hgt | Force Out-of-Range												#	Force Out-of-Range
 forms_design.hgt | Form																			#	Form
 	add_a_form.hgt | Adding																		#		Adding
 	add_fields_to_a_form.hgt | Adding Fields													#		Adding Fields
@@ -1167,17 +1167,18 @@ maps.hgt																						#	Maps
 	map_add_marker_function.hgt																	#		Map.AddMarker Function
 	map_hide_function.hgt																		#		Map.Hide Function
 	map_remove_marker_function.hgt																#		Map.RemoveMarker Function
-	map_set_marker_description_function.hgt														#	Map.SetMarkerDescription Function
+	map_set_marker_description_function.hgt														#		Map.SetMarkerDescription Function
 	map_set_marker_image_function.hgt															#		Map.SetMarkerImage Function
 	map_set_marker_text_function.hgt															#		Map.SetMarkerText Function
 	map_show_function.hgt																		#		Map.Show Function
 	map_statement.hgt																			#		Map Statement
+change_the_print_page_setup.hgt | Margins														#	Margins
 map_add_marker_function.hgt | Markers															#	Markers
 	map_add_marker_function.hgt																	#		Map.AddMarker Function
+	map_remove_marker_function.hgt																#		Map.RemoveMarker Function
+	map_set_marker_description_function.hgt														#		Map.SetMarkerDescription Function
 	map_set_marker_image_function.hgt															#		Map.SetMarkerImage Function
 	map_set_marker_text_function.hgt															#		Map.SetMarkerText Function
-	map_remove_marker_function.hgt																#		Map.RemoveMarker Function
-change_the_print_page_setup.hgt | Margins														#	Margins
 matching_the_application_to_the_data_dictionary.hgt												#	Matching the Application to the Data Dictionary
 operators.hgt | Mathematical operators															#	Mathematical operators
 add_summary_statistics_to_a_table.hgt | Maximum													#	Maximum
@@ -1558,10 +1559,10 @@ drop_files_from_an_application.hgt | Remove														#	Remove
 	drop_files_from_an_application.hgt | Drop a File from an Application						#		Drop a File from an Application
 	remove_a_variable_from_a_tabulation.hgt														#		Remove a Variable from a Tabulation
 	strip_function.hgt | Trailing blanks														#		Trailing blanks
-list_remove_function.hgt | Remove Function														#	Remove Function
-	list_remove_function.hgt																	#		List.Remove Function
 map_remove_marker_function.hgt | RemoveMarker Function											#	RemoveMarker Function
 	map_remove_marker_function.hgt																#		Map.RemoveMarker Function
+list_remove_function.hgt | Remove Function														#	Remove Function
+	list_remove_function.hgt																	#		List.Remove Function
 renaming_tables_and_table_applications.hgt														#	Renaming Tables and Table Applications
 batch_edit_order.hgt | Reorder Editing															#	Reorder Editing
 templated_reports.hgt | Reports																	#	Reports
@@ -1684,9 +1685,12 @@ setfile_function.hgt																			#	SetFile Function
 setfont_function.hgt																			#	SetFont Function
 setlanguage_function.hgt																		#	SetLanguage Function
 setlb_function.hgt																				#	SetLB Function
-map_set_marker_description_function.hgt															#	Map.SetMarkerDescription Function
-map_set_marker_image_function.hgt																#	Map.SetMarkerImage Function
-map_set_marker_text_function.hgt																#	Map.SetMarkerText Function
+map_set_marker_description_function.hgt | SetMarkerDescription Function							#	SetMarkerDescription Function
+	map_set_marker_description_function.hgt														#		Map.SetMarkerDescription Function
+map_set_marker_image_function.hgt | SetMarkerImage Function										#	SetMarkerImage Function
+	map_set_marker_image_function.hgt															#		Map.SetMarkerImage Function
+map_set_marker_text_function.hgt | SetMarkerTextFunction										#	SetMarkerTextFunction
+	map_set_marker_text_function.hgt															#		Map.SetMarkerText Function
 setocclabel_function.hgt																		#	SetOccLabel Function
 setoperatorid_function.hgt																		#	SetOperatorId Function
 screen_orientation.hgt | Setorientation Function												#	Setorientation Function
@@ -2039,6 +2043,7 @@ uuid_function.hgt | UUID																		#	UUID
 uuid_function.hgt																				#	UUID Function
 change_data_entry_options.hgt | Validating Alpha Fields											#	Validating Alpha Fields
 batch_edit_applications.hgt | Validating Data													#	Validating Data
+change_field_properties.hgt | Validation Method													#	Validation Method
 delete_dictionary_elements.hgt | Value															#	Value
 	add_dictionary_elements.hgt | Adding														#		Adding
 	delete_dictionary_elements.hgt | Delete														#		Delete

@@ -1,12 +1,14 @@
 ﻿<title>Change Field Properties for Multiple Fields</title>
-<context HIDD_MULTIPLE_FIELD_PROP />
+<context HID_OPTIONS_FIELD_PROPERTIES HIDD_MULTIPLE_FIELD_PROP />
 
-Select multiple fields on a form and then right-click on a field and select <b>Properties</b>, or press <b>Alt+Enter</b>.
+It is possible to change the properties for many fields at one time. To change the properties for all fields in your application, select <b>Field Properties</b> from the <b>Options</b> menu. Alternatively, select multiple fields on a form and then right-click on a field and select <b>Properties</b>, or press <b>Alt+Enter</b>.
 
 <center><image field_properties_for_multiple_fields.png /></center>
 
-You can select options that you would like to apply to many fields at one time. The attributes will only apply to fields that support the options. For example, if <b>Upper Case</b> is selected, that option will be ignored for numeric fields and will be applied only to alpha fields.
+The selected attributes will only apply to fields that support the options. For example, if <b>Upper Case</b> is selected, that option will be ignored for numeric fields and will be applied only to alpha fields. Selecting <b>&lt;no change&gt;</b> means that that setting will be ignored when applying the new properties.
 
-The <b>Data Capture Type</b> options allow you to change the type of <link extended_controls.hgt>extended control</link> used for the field. It will list the union of valid possibilities for the selected fields, but if a change is requested it will apply the change only to fields that can support the specified type. For example, selecting <b>Check Box</b> will only apply that option to alphanumeric fields that can support checkboxes. The capture type of fields that do not support the selected type will remain unchanged.
+The <b>Data Capture Type</b> options allow you to change the type of <link extended_controls.hgt>extended control</link> used for the field. It will list the union of valid possibilities for the selected fields, but if a change is requested it will apply the change only to fields that can support the specified type. For example, selecting <b>Check Box</b> will only apply that option to alphanumeric fields that can support checkboxes. The capture type of fields that do not support the selected type will remain unchanged. If you would like to set the capture type to the default based on the field's item and value set properties, select <b>&lt;default for field&gt;</b>.
+
+If you selected multiple fields on a form to bring up this dialog but would like to apply the changes to all the fields in your application, select the <b>Apply to all fields</b> option.
 
 <seealso change_field_properties.hgt />

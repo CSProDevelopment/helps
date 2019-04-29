@@ -38,60 +38,6 @@ If you are running CSEntry on a mobile device, there are some options to conside
 </list>
 
 
-<subheader>Require Enter Key</subheader>
-
-At data entry time, the operator may be required to press the Enter key to advance to the next field, or the system may advance automatically when the field is filled with the correct number of digits. In the latter case, the operator can still advance by pressing Enter if the digits are not all filled. You may set this attribute individually for each field.
-
-<list>
-	<li><b>All fields</b>: All fields in the forms file require Enter key to advance. This option adds keystrokes for the operator, but allow the operator to control the cursor movement. Thus it is more consistent with the "heads-up" methodology. Selecting this option will change the setting for all fields.</li>
-	<li><b>No fields</b>: All fields in the forms file advance automatically. This option means the operator will ultimately hit fewer keystrokes, but will have to be aware that the cursor will move automatically when the correct number of digits has been entered in a field. This option is more consistent with the "heads down" methodology. Selecting this option will change the setting for all fields in the form.</li>
-	<li><b>Some fields</b>: You cannot select this option; it is permanently deactivated. If this option is highlighted, it means that there is a combination of enter options in effect; i.e., at least one field in the application has its <b>Require Enter Key</b> option checked and at least one other field has the attribute unchecked. Select one of the other two options to force all fields to the same setting.</li>
-</list>
-
-
-<subheader>Force Out-of-range</subheader>
-
-At data entry time, CSEntry shows a message every time the keyer enters a value that is out of range according to the data dictionary. You may set the attribute to override the message and force the out-of-range value into the data file. If this attribute is not selected, the keyer cannot proceed until a valid value is entered.
-
-<list>
-	<li><b>All fields</b>: When this option is checked, all fields in the forms file can be forced. This option allows out-of-range values to be entered in the data file. To be sure of a file with only valid information, such values must be edited and corrected after keying is completed.</li>
-	<li><b>No fields</b>: No field in the form file may be forced. Checking this option prevents any out-of-range values from being entered in the data file. However, this forces the keyer to edit out-of-range values. For this reason, it is recommended that this option is used only where the persons carrying out the data capture operation are qualified to make such on-the-spot editing decisions.</li>
-	<li><b>Some fields</b>: When this option is highlighted, it indicates that some fields in the forms file permit out-of-range values and others do not. Checking one of the other two options will force all fields in the forms file to the same setting.</li>
-</list>
-
-
-<subheader>Upper Case (alpha only)</subheader>
-
-At data entry time, alphanumeric fields can either allow upper- and lower-case text, or they can force any entered letter to upper case. You may set the upper case attribute for all or some of the alphanumeric fields.
-
-<list>
-	<li><b>All fields</b>: Checking this option forces all alphabetic text entered to upper case. This option permits operators to enter text in either case setting while being assured that the output will be upper-case. This is particularly useful for "yes/no" [Y/N] or letter [A/B/C/D] responses.</li>
-	<li><b>No fields</b>: Checking this option permits entry of case-sensitive alphabetic characters, which is particularly useful for names and addresses. All alphanumeric fields in the forms file will permit mixed upper- and lower-case characters.</li>
-	<li><b>Some fields</b>: When this option is checked, it indicates that different fields in the forms file have different settings. Selecting one of the other two options will force all alphanumeric fields in the forms file to the same setting.</li>
-</list>
-
-
-<subheader>Use Extended Controls</subheader>
-
-<link extended_controls.hgt>Extended controls</link> are dialog boxes that appear during data entry that allow users to choose values from a list rather than key them. These are also the settings used to determine how to display fields on mobile devices.
-
-<list>
-	<li><b>All fields</b>: Checking this option forces all fields with valid value sets to display a suitable extended control.</li>
-	<li><b>No fields</b>: Checking this turns off the extended controls for all fields, forcing each field to be keyed in as a text box.</li>
-	<li><b>Some fields</b>: When this option is checked, it indicates that different fields in the forms file have different settings. Selecting one of the other two options will force all fields in the forms file to the same setting. </li>
-</list>
-
-<subheader>Verify</subheader>
-
-During <link CSEntry::verify_data.hgt>verification</link>, each item is either verified, that is, keyed again and compared with the value currently in the data file, or not verified, that is, displayed on the screen but not entered or changed. You may set the verify attribute for all or some of the fields.
-
-<list>
-	<li><b>All fields</b>: During verification, the cursor will pass through all fields in the same manner as during original keying. This option permits maximum verification of data.</li>
-	<li><b>No fields</b>: No fields are verified. This option can be useful when only a few fields need to be verified: This option can be set globally and then the verify property can be set for the few fields which require verification.</li>
-	<li><b>Some fields</b>: When this option is checked, it indicates that some fields in the forms file will be verified and others will not. Checking one of the other two options will force all fields to the same setting.</li>
-</list>
-
-
 <subheader>Verify Every Nth Case</subheader>
 
 During verification, you may choose to verify only a subset of the cases in the data file, instead of verifying all the cases.

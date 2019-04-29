@@ -13,6 +13,8 @@ This is a detailed list of changes in CSPro 7.3. For a more general overview, se
 <subheader>Data Entry</subheader>
 
 <list>
+	<li>A field's <link extended_controls.hgt>capture type</link> is now considered when validating fields. Date fields must now contain a valid date and check box fields can now only contain values that exist in the value set.</li>
+	<li>The Force Out-of-Range field property has been renamed to the <link change_field_properties.hgt>Validation Method</link> field property. This change allows you to specify out-of-range fields without operator confirmations directly from the form designer (rather than requiring logic).</li>
 	<li>A new <link run_production_data_entry.hgt>PFF attribute</link>, <pffcolor>Key</pffcolor>, combines the functionality of <pffcolor>StartMode</pffcolor> along with the ability to automatically fill in IDs for new cases.</li>
 </list>
 

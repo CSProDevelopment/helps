@@ -24,10 +24,11 @@ Lists can be assigned to other lists, which will replace the initial list with t
 <arg>list_name</arg> = <arg>another_list_name</arg>;
 </logicsyntax>
 
-Individual elements of lists can also be modified:
+Individual elements of lists can also be modified or added by using a one-based index:
 
 <logicsyntax>
-<arg>list_name</arg>(<arg>index_value</arg>) = <arg>value</arg>;
+<arg>list_name</arg>(<arg>index</arg>) = <arg>modify_value</arg>;
+<arg>list_name</arg>(list_name.length() + 1) = <arg>add_value</arg>;
 </logicsyntax>
 
 
