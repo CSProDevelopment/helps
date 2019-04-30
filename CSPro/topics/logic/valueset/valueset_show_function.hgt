@@ -1,0 +1,29 @@
+﻿<title>ValueSet.Show Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax valueset>
+d = valueset_name.show(<arg>heading</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor valueset>valueset.show</logiccolor> function displays the labels from a numeric <link valuesets.hgt>value set</link> and returns the code of the operator's selection. A string expression, <arg>heading</arg>, specifies the title of the window that displays the values. The function is similar to the <logiccolor>accept</logiccolor> function but with the options taken from the value set's labels and the return value taken from the value set's codes.
+
+<subheader>Return Value</subheader>
+
+The function returns the code of the item selected. If the selected value contains a <link special_values.hgt>special value</link>, then that value is returned. The value 0 is returned if the escape key (or back button) is pressed and none of the values is chosen.
+
+<subheader>Example</subheader>
+
+<logic>
+valueset respondent_query;
+
+do numeric counter = 1 while counter <= count(NAME)
+	respondent_query.add(NAME(counter), LINE_NUMBER(counter));
+enddo;
+
+numeric respondent_line_number = respondent_query.show("Who in the household is responding to questions?");
+</logic>
+
+<seealso valuesets.hgt accept_function.hgt show_function.hgt showarray_function.hgt list_show_function.hgt />

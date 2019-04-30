@@ -1,0 +1,45 @@
+﻿<title>ValueSet.Add Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax valueset>
+i = valueset_name.add(<arg>label</arg>『, <arg>image_filename</arg>』, <arg>from_code</arg>『, <arg>to_code</arg> ‖ <arg>special_value</arg>』);
+</logicsyntax>
+
+<logicsyntax>
+i = valueset_name.add(<arg>valueset_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor list>list.add</logiccolor> function adds one or more values to the end of a <link valuesets.hgt>value set</link>. The type of the added code or value set must match the type of the receiving value set.
+
+In the first version, you provide a string expression <arg>label</arg> and either a numeric or string expression <arg>from_code</arg>, which must match the type of the value set. An optional string expression, <arg>image_filename</arg>, provides the filename of an image to be shown as a <link value_set_images.hgt>value set image</link>. For numeric value sets, it is possible to specify a numeric expression <arg>to_code</arg>, which creates a range, or a <arg>special_value</arg>, which is then associated with the <arg>from_code</arg>.
+
+In the second version, you provide a <arg>valueset_name</arg>. This adds all of the values from that value set to the receiving value set.
+
+<subheader>Return Value</subheader>
+
+The function returns the number of the values added to the value set. If the value set is read-only, the function returns <logiccolor>default</logiccolor>.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC SUPERVISOR_MENU
+
+onfocus
+
+	valueset string menu_valueset = SUPERVISOR_MENU_VS;
+	
+	if CAN_SYNC = 1 then
+		menu_valueset.add(SYNC_MENU_VS);
+	endif;
+	
+	forcase HOUSEHOLD_DICT do
+		menu_valueset.add("Review " + getcaselabel(HOUSEHOLD_DICT), key(HOUSEHOLD_DICT));
+	endfor;
+	
+	setvalueset(SUPERVISOR_MENU, menu_valueset);
+</logic>
+
+<seealso valuesets.hgt />

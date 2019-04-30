@@ -1,0 +1,43 @@
+﻿<title>ValueSets</title>
+
+In logic, a <logiccolor>valueset</logiccolor> is an object that contains information about the <link value_sets_description.hgt>possible values</link> that are considered permissible for a field. Each possible value contains a label, a code (the valid value), and can contain a link to an <link value_set_images.hgt>image</link> shown when the value set is <link extended_controls.hgt>displayed</link>. The value set object, once passed to the <logiccolor>setvalueset</logiccolor> function, becomes an item's dynamic value set.
+
+<subheader>Functionality</subheader>
+
+A value set is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+
+<table 2 header nowrap>
+	<cell>Function</cell><cell>Description</cell>
+	<cell><logiccolor list>add</logiccolor></cell><cell>Adds a single value, or all the values from an existing value set, to the value set.</cell>
+	<cell><logiccolor list>remove</logiccolor></cell><cell>Removes the value with the specified code from the value set.</cell>
+	<cell><logiccolor list>clear</logiccolor></cell><cell>Removes all values from the value set.</cell>
+	<cell><logiccolor list>show</logiccolor></cell><cell>Displays the value set's labels (similarly to <logiccolor>accept</logiccolor>) and returns the code of the operator's selection.</cell>
+</table>
+
+In addition to these object functions, value sets contain two built-in <link lists.hgt>list</link> objects: <logiccolor>valueset_name.codes</logiccolor> and <logiccolor>valueset_name.labels</logiccolor>, which contain the codes and labels for the value set. These are read-only lists and can be used in most ways that list objects can be used.
+
+Value sets can be assigned to other value sets, which will replace the initial value set with the values of the assigned value set:
+
+<logicsyntax>
+<arg>valueset_name</arg> = <arg>another_valueset_name</arg>;
+</logicsyntax>
+
+<subheader>Example</subheader>
+
+<logic>
+PROC RESPONDENT
+
+preproc
+
+	valueset respondent_valueset;
+	
+	do numeric counter = 1 while counter <= count(PERSON_REC)
+		if AGE(counter) >= 15 and USUAL_MEMBER(counter) = 1 then
+			respondent_valueset.add(NAME(counter), counter);
+		endif;
+	enddo;
+	
+	setvalueset(RESPONDENT, respondent_valueset);
+</logic>
+
+<seealso arrays.hgt lists.hgt />

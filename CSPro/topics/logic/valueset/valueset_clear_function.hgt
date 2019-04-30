@@ -1,0 +1,33 @@
+﻿<title>ValueSet.Clear Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax valueset>
+b = valueset_name.clear();
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor valueset>valueset.clear</logiccolor> function removes all values from a <link valuesets.hgt>value set</link>.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true). If the value set is read-only, the function returns <logiccolor>default</logiccolor>.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+valueset name_valueset;
+
+PROC LINE_NUMBER_OF_MOTHER
+
+onfocus
+
+	name_valueset.clear();
+
+	// construct value set...
+</logic>
+
+<seealso valuesets.hgt valueset_remove_function.hgt />
