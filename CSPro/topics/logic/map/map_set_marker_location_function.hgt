@@ -1,0 +1,49 @@
+﻿<title>Map.SetMarkerLocation Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax map>
+b = map_name.setMarkerLocation(<arg>markerId</arg>,<arg>latitude</arg>,<arg>longitude</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor map>map.setMarkerLocation()</logiccolor> function moves the marker identified by <arg>markerId</arg> to a location on the map with coordinates <arg>latitude</arg> and <arg>longitude</arg>. <arg>latitude</arg> and <arg>longitude</arg> should are in degrees.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the marker was found and the location was set successfully.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+// Declare a map
+map mymap;
+
+// Declare id for map marker
+numeric markerId;
+
+// This function is called when user taps on map.
+// It moves the marker to the location that the user tapped.
+function mapClicked(lat, lon)
+	mymap.setMarkerLocation(markerId, lat, lon);
+end;
+
+PROC SHOW_MAP
+preproc
+
+// Add a marker to the map at latitude 38.84839, longitude -76.931098
+markerId = dragMap.addMarker(38.84839,-76.931098);
+
+// Set function that is called when the user taps on the map to move the marker
+// to the new position
+dragMap.setOnClick(mapClicked());
+
+// Display the map
+dragMap.show();
+
+</logic>
+
+<seealso maps.hgt map_set_marker_on_click_function.hgt map_get_marker_location_function.hgt />
