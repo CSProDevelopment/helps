@@ -35,14 +35,14 @@ PROC SHOW_MAP
 preproc
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
-markerId = dragMap.addMarker(38.84839,-76.931098);
+markerId = mymap.addMarker(38.84839,-76.931098);
 
 // Set function that is called when the user taps on the map to move the marker
 // to the new position
-dragMap.setOnClick(mapClicked());
+mymap.setOnClick(mapClicked());
 
 // Display the map
-dragMap.show();
+mymap.show();
 
 </logic>
 

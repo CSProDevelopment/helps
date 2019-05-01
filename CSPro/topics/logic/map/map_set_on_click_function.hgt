@@ -1,0 +1,56 @@
+﻿<title>Map.SetOnClick Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax map>
+b = map_name.setOnClick(<arg>markerId</arg>, <arg>callbackFunction</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor map>map.setOnClick()</logiccolor> function sets the function that is called when the user taps on the base map away from any markers. The <arg>callbackFunction</arg> is the name of a user function defined in the global procedure that will be called when the user taps on the map. This function must be declared to take exactly two numeric numeric arguments: the latitude and longitude of the point on the map the user tapped. For example:
+
+<logic>
+function onClickMap(latitude, longitude)
+	// Handle click on map
+end;
+</logic>
+
+If the user taps on a marker rather than on the map itself <arg>callbackFunction</arg> is not called. To capture taps on markers use the <logiccolor map>map.setMarkerOnClick()</logiccolor> function.
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true).
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+// Declare a map
+map mymap;
+
+// Declare id for map marker
+numeric markerId;
+
+// This function is called when user taps on map.
+// It moves the marker to the location that the user tapped.
+function mapClicked(lat, lon)
+	mymap.setMarkerLocation(markerId, lat, lon);
+end;
+
+PROC SHOW_MAP
+preproc
+
+// Add a marker to the map at latitude 38.84839, longitude -76.931098
+markerId = mymap.addMarker(38.84839,-76.931098);
+
+// Set function that is called when the user taps on the map to move the marker
+// to the new position
+mymap.setOnClick(mapClicked());
+
+// Display the map
+mymap.show();
+
+</logic>
+
+<seealso maps.hgt map_set_marker_location_function.hgt map_set_marker_on_click_function.hgt />

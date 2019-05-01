@@ -1,0 +1,57 @@
+﻿<title>Map.SetBaseMap Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax map>
+b = map_name.setBaseMap(<arg>mapType</arg> ‖ <arg>pathToOfflineMap</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor map>map.setBaseMap()</logiccolor> function changes the base map that is displayed for the map map_name. Maps can use either online base maps which require an internet connection to load maps or offline base maps which require an map file stored on the device. 
+
+The first form of the function sets the base map to one of the online map types based on the value of <arg>mapType</arg>:
+
+<table 2>
+<cell>Normal</cell><cell>Standard road map showing streets and outlines of some buildings.</cell>
+<cell>Satellite</cell><cell>Satellite imagery</cell>
+<cell>Hybrid</cell><cell>Features from street map overlaid on satellite imagery</cell>
+<cell>Terrain</cell><cell>Physical map based on terrain information</cell>
+<cell>None</cell><cell>Empty base map. Only markers and buttons are shown.</cell>
+</table>
+
+The second form uses an offline map in a file named named <arg>pathToOfflineMap</arg> stored on the device. For details on supported file types for offline maps see <link offline_maps.hgt>offline maps</link>.
+
+By the default the map type is Normal.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the base map was changed successfully and 0 (false) otherwise (for example, if the offline map is missing or invalid).
+
+<subheader>Example 1 (online map)</subheader>
+
+<logic>
+// Declare a map
+map mymap;
+
+// Change the base map to satellite imagery
+mymap.setBaseMap(satellite);
+
+// Display the map
+mymap.show();
+</logic>
+
+<subheader>Example 2 (offline map)</subheader>
+
+<logic>
+// Declare a map
+map mymap;
+
+// Change the base map to offline map file
+mymap.setBaseMap("maps/suitland_imagery.mbtiles");
+
+// Display the map
+mymap.show();
+</logic>
+
+<seealso maps.hgt offline_maps.hgt />
