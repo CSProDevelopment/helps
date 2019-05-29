@@ -120,7 +120,7 @@ add_dictionary_elements.hgt | Add																#	Add
 	add_dictionary_elements.hgt | Value Sets in Dictionary										#		Value Sets in Dictionary
 	add_a_variable_to_a_tabulation.hgt | Variable to a Tabulation								#		Variable to a Tabulation
 map_add_image_button_function.hgt | AddImageButton Function										#	AddImageButton Function
-	map_add_marker_function.hgt																	#		Map.AddImageButton Function
+	map_add_image_button_function.hgt															#		Map.AddImageButton Function
 map_add_marker_function.hgt | AddMarker Function												#	AddMarker Function
 	map_add_marker_function.hgt																	#		Map.AddMarker Function
 map_add_text_button_function.hgt | AddTextButton Function										#	AddTextButton Function
@@ -247,6 +247,7 @@ blocks.hgt																						#	Blocks
 	change_block_properties.hgt																	#		Change Block Properties
 getbluetoothname_function.hgt | Bluetooth Name													#	Bluetooth Name
 syncconnect_function_bluetooth.hgt | Bluetooth Synchronization									#	Bluetooth Synchronization
+boolean_values.hgt																				#	Boolean Values
 add_borders.hgt | Border																		#	Border
 	add_borders.hgt | Add Borders to a Table													#		Add Borders to a Table
 	add_borders_to_cells.hgt																	#		Add Borders to Cells
@@ -750,6 +751,7 @@ external_files.hgt																				#	External Files
 logic_file_apc.hgt | External Logic File														#	External Logic File
 message_file_mgf.hgt | External Message File													#	External Message File
 viewing_multiple_and_facing_pages.hgt | Facing Pages											#	Facing Pages
+boolean_values.hgt | False																		#	False
 what_is_new_in_cspro.hgt | Features																#	Features
 change_field_font.hgt | Field																	#	Field
 	change_field_font.hgt | Change Box Size														#		Change Box Size
@@ -897,8 +899,8 @@ getdeviceid_function.hgt																		#	GetDeviceID Function
 getimage_function.hgt																			#	GetImage Function
 getlabel_function.hgt																			#	GetLabel Function
 getlanguage_function.hgt																		#	GetLanguage Function
-map_get_marker_location_function.hgt | GetMarkerLocation										#	GetMarkerLocation Function
-	map_get_marker_location_function.hgt														#	Map.GetMarkerLocation Function
+map_get_marker_location_function.hgt | GetMarkerLocation Function								#	GetMarkerLocation Function
+	map_get_marker_location_function.hgt														#		Map.GetMarkerLocation Function
 getnote_function.hgt																			#	GetNote Function
 getocclabel_function.hgt																		#	GetOccLabel Function
 getoperatorid_function.hgt																		#	GetOperatorId Function
@@ -1189,13 +1191,13 @@ maps.hgt																						#	Maps
 	map_set_marker_description_function.hgt														#		Map.SetMarkerDescription Function
 	map_set_marker_image_function.hgt															#		Map.SetMarkerImage Function
 	map_set_marker_location_function.hgt														#		Map.SetMarkerLocation Function
-	map_set_marker_on_click_function.hgt														#		Map.SetMarkerOnClick Function
 	map_set_marker_on_click_info_window_function.hgt											#		Map.SetMarkerOnClickInfoWindow Function
+	map_set_marker_on_click_function.hgt														#		Map.SetMarkerOnClick Function
 	map_set_marker_on_drag_function.hgt															#		Map.SetMarkerOnDrag Function
 	map_set_marker_text_function.hgt															#		Map.SetMarkerText Function
 	map_set_title_function.hgt																	#		Map.SetTitle Function
+	map_show_current_location_function.hgt														#		Map.ShowCurrentLocation Function
 	map_show_function.hgt																		#		Map.Show Function
-	map_show_current_location_function.hgt														#		Map.ShowCurrentLocation Functions
 	map_zoom_to_function.hgt																	#		Map.ZoomTo Function
 	map_statement.hgt																			#		Map Statement
 change_the_print_page_setup.hgt | Margins														#	Margins
@@ -1206,8 +1208,8 @@ map_add_marker_function.hgt | Markers															#	Markers
 	map_set_marker_description_function.hgt														#		Map.SetMarkerDescription Function
 	map_set_marker_image_function.hgt															#		Map.SetMarkerImage Function
 	map_set_marker_location_function.hgt														#		Map.SetMarkerLocation Function
-	map_set_marker_on_click_function.hgt														#		Map.SetMarkerOnClick Function
 	map_set_marker_on_click_info_window_function.hgt											#		Map.SetMarkerOnClickInfoWindow Function
+	map_set_marker_on_click_function.hgt														#		Map.SetMarkerOnClick Function
 	map_set_marker_on_drag_function.hgt															#		Map.SetMarkerOnDrag Function
 	map_set_marker_text_function.hgt															#		Map.SetMarkerText Function
 matching_the_application_to_the_data_dictionary.hgt												#	Matching the Application to the Data Dictionary
@@ -1727,24 +1729,24 @@ map_set_marker_image_function.hgt | SetMarkerImage Function										#	SetMarker
 	map_set_marker_image_function.hgt															#		Map.SetMarkerImage Function
 map_set_marker_location_function.hgt | SetMarkerLocation Function								#	SetMarkerLocation Function
 	map_set_marker_location_function.hgt														#		Map.SetMarkerLocation Function
-map_set_marker_on_click_function.hgt | SetMarkerOnClick Function								#	SetMarkerOnClick Function
-	map_set_marker_on_click_function.hgt														#		Map.SetMarkerOnClick Function
 map_set_marker_on_click_info_window_function.hgt | SetMarkerOnClickInfoWindow Function			#	SetMarkerOnClickInfoWindow Function
 	map_set_marker_on_click_info_window_function.hgt											#		Map.SetMarkerOnClickInfoWindow Function
+map_set_on_click_function.hgt | SetMarkerOnClick Function										#	SetMarkerOnClick Function
+map_set_marker_on_click_function.hgt | SetMarkerOnClick Function								#	SetMarkerOnClick Function
+	map_set_marker_on_click_function.hgt														#		Map.SetMarkerOnClick Function
+	map_set_on_click_function.hgt																#		Map.SetOnClick Function
 map_set_marker_on_drag_function.hgt | SetMarkerOnDrag Function									#	SetMarkerOnDrag Function
 	map_set_marker_on_drag_function.hgt															#		Map.SetMarkerOnDrag Function
 map_set_marker_text_function.hgt | SetMarkerText Function										#	SetMarkerText Function
 	map_set_marker_text_function.hgt															#		Map.SetMarkerText Function
-map_set_on_click_function.hgt | SetMarkerOnClick Function										#	SetOnClick Function
-	map_set_on_click_function.hgt																#		Map.SetOnClick Function
-map_set_title_function.hgt | SetTitle Function													#	SetTitle Function
-	map_set_title_function.hgt																	#		Map.SetTitle Function
 setocclabel_function.hgt																		#	SetOccLabel Function
 setoperatorid_function.hgt																		#	SetOperatorId Function
 screen_orientation.hgt | Setorientation Function												#	Setorientation Function
 setoutput_function.hgt																			#	SetOutput Function
 setproperty_function.hgt																		#	SetProperty Function
 setreportdata_function.hgt																		#	SetReportData Function
+map_set_title_function.hgt | SetTitle Function													#	SetTitle Function
+	map_set_title_function.hgt																	#		Map.SetTitle Function
 setub_function.hgt																				#	SetUB Function
 installing_data_entry_applications.hgt | Setup													#	Setup
 setvaluesets_function.hgt																		#	SetValueSets Function
@@ -2040,6 +2042,7 @@ data_entry_forms_screen_layout.hgt | Tree														#	Tree
 	change_the_view.hgt | Restore																#		Restore
 	trees.hgt																					#		Trees
 	batch_application_screen_layout.hgt | View													#		View
+boolean_values.hgt | True																		#	True
 and_or_truth_table.hgt | Truth Table															#	Truth Table
 	and_or_truth_table.hgt | And/Or																#		And/Or
 	if_and_only_if_operator.hgt | If and Only If												#		If and Only If
