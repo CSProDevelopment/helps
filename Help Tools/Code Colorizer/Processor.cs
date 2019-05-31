@@ -49,10 +49,10 @@ namespace Code_Colorizer
             Clipboard.SetText(htmlCopyText,TextDataFormat.Html);
 		}
 
-        public void UsersForumProcessor(string text)
+        public void UsersProcessor(CSPro.Logic.Colorizer.Format colorizer_format, string text)
         {
             text = HelperFunctions.TrimTrailingSpace(text);
-            string formattedText = CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToCSProUsersForum, text);
+            string formattedText = CSPro.Logic.Colorizer.Colorize(colorizer_format, text);
 
             Clipboard.Clear();
             Clipboard.SetText(formattedText,TextDataFormat.UnicodeText);

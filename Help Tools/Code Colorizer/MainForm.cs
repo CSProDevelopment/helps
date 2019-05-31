@@ -152,6 +152,7 @@ namespace Code_Colorizer
             pffMenuItem.Checked = ( _bufferType == Processor.BufferType.Pff );
             messageMenuItem.Checked = ( _bufferType == Processor.BufferType.Message );
             buttonCopyUsersForum.Enabled = ( _bufferType == Processor.BufferType.Logic );
+            buttonCopyUsersBlog.Enabled = ( _bufferType == Processor.BufferType.Logic );
 
             this.Text = String.Format("{0}{1} [{2}]", _loadedFilename == null ? "" : ( _loadedFilename + " - " ), _initialWindowTitle,
                 ( _bufferType == Processor.BufferType.Logic ) ? "Logic File" :
@@ -206,7 +207,12 @@ namespace Code_Colorizer
 
         private void buttonCopyUsersForum_Click(object sender,EventArgs e)
         {
-			_processor.UsersForumProcessor(editControl.Text);
+			_processor.UsersProcessor(CSPro.Logic.Colorizer.Format.LogicToCSProUsersForum, editControl.Text);
+        }
+
+        private void buttonCopyUsersBlog_Click(object sender, EventArgs e)
+        {
+            _processor.UsersProcessor(CSPro.Logic.Colorizer.Format.LogicToCSProUsersBlog, editControl.Text);
         }
     }
 }

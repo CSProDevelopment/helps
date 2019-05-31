@@ -43,6 +43,7 @@
             this.editControl = new Colorizer.EditControl();
             this.buttonCopyHtml = new System.Windows.Forms.Button();
             this.buttonCopyUsersForum = new System.Windows.Forms.Button();
+            this.buttonCopyUsersBlog = new System.Windows.Forms.Button();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,24 +118,24 @@
             this.logicMenuItem.Checked = true;
             this.logicMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.logicMenuItem.Name = "logicMenuItem";
-            this.logicMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logicMenuItem.Tag = Processor.BufferType.Logic;
+            this.logicMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.logicMenuItem.Tag = Code_Colorizer.Processor.BufferType.Logic;
             this.logicMenuItem.Text = "&Logic";
             this.logicMenuItem.Click += new System.EventHandler(this.languageMenuItem_Click);
             // 
             // pffMenuItem
             // 
             this.pffMenuItem.Name = "pffMenuItem";
-            this.pffMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pffMenuItem.Tag = Processor.BufferType.Pff;
+            this.pffMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.pffMenuItem.Tag = Code_Colorizer.Processor.BufferType.Pff;
             this.pffMenuItem.Text = "&PFF";
             this.pffMenuItem.Click += new System.EventHandler(this.languageMenuItem_Click);
             // 
             // messageMenuItem
             // 
             this.messageMenuItem.Name = "messageMenuItem";
-            this.messageMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.messageMenuItem.Tag = Processor.BufferType.Message;
+            this.messageMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.messageMenuItem.Tag = Code_Colorizer.Processor.BufferType.Message;
             this.messageMenuItem.Text = "&Message";
             this.messageMenuItem.Click += new System.EventHandler(this.languageMenuItem_Click);
             // 
@@ -153,7 +154,7 @@
             // buttonCopyHtml
             // 
             this.buttonCopyHtml.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonCopyHtml.Location = new System.Drawing.Point(405, 626);
+            this.buttonCopyHtml.Location = new System.Drawing.Point(294, 626);
             this.buttonCopyHtml.Name = "buttonCopyHtml";
             this.buttonCopyHtml.Size = new System.Drawing.Size(160, 23);
             this.buttonCopyHtml.TabIndex = 1;
@@ -164,7 +165,7 @@
             // buttonCopyUsersForum
             // 
             this.buttonCopyUsersForum.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonCopyUsersForum.Location = new System.Drawing.Point(620, 626);
+            this.buttonCopyUsersForum.Location = new System.Drawing.Point(512, 626);
             this.buttonCopyUsersForum.Name = "buttonCopyUsersForum";
             this.buttonCopyUsersForum.Size = new System.Drawing.Size(160, 23);
             this.buttonCopyUsersForum.TabIndex = 2;
@@ -172,12 +173,24 @@
             this.buttonCopyUsersForum.UseVisualStyleBackColor = true;
             this.buttonCopyUsersForum.Click += new System.EventHandler(this.buttonCopyUsersForum_Click);
             // 
+            // buttonCopyUsersBlog
+            // 
+            this.buttonCopyUsersBlog.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonCopyUsersBlog.Location = new System.Drawing.Point(730, 626);
+            this.buttonCopyUsersBlog.Name = "buttonCopyUsersBlog";
+            this.buttonCopyUsersBlog.Size = new System.Drawing.Size(160, 23);
+            this.buttonCopyUsersBlog.TabIndex = 3;
+            this.buttonCopyUsersBlog.Text = "Copy Users Blog Code";
+            this.buttonCopyUsersBlog.UseVisualStyleBackColor = true;
+            this.buttonCopyUsersBlog.Click += new System.EventHandler(this.buttonCopyUsersBlog_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.buttonCopyUsersBlog);
             this.Controls.Add(this.buttonCopyUsersForum);
             this.Controls.Add(this.buttonCopyHtml);
             this.Controls.Add(this.editControl);
@@ -213,6 +226,7 @@
         private System.Windows.Forms.Button buttonCopyHtml;
         private System.Windows.Forms.Button buttonCopyUsersForum;
         private System.Windows.Forms.ToolStripMenuItem messageMenuItem;
+        private System.Windows.Forms.Button buttonCopyUsersBlog;
     }
 }
 
