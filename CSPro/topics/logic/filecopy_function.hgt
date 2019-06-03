@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = filecopy(<arg>file_name</arg>,<arg>output_file_name</arg>);
+i = filecopy(<arg>file_name</arg>, <arg>output_file_name</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>filecopy</logiccolor> function copies one file to another file, or a group of files to a folder. The <arg>file_name</arg> and <arg>output_file_name</arg> arguments are string expressions giving the source and destination file names. They can also be file handlers declared in <logiccolor>file</logiccolor> statements in <logiccolor>PROC GLOBAL</logiccolor>.
+The <logiccolor>filecopy</logiccolor> function copies one file to another file or copies a group of files to a folder. The <arg>file_name</arg> is a string expression or string <link lists.hgt>list</link> giving the source file name(s). The <arg>output_file_name</arg> is a string expression giving the destination file or folder name. The arguments can also be file handlers declared in <logiccolor>file</logiccolor> statements.
 
 You can use the wildcard characters "*" and "?" to specify a group of files to copy as the <arg>file_name</arg>. If using wildcard characters, the <arg>output_file_name</arg> must be the name of a folder.
 
@@ -19,16 +19,16 @@ The function returns the number of files copied. If there was an error copying f
 <subheader>Example 1</subheader>
 
 <logic>
-filecopy("Virginia.csdb","VirginiaBackup.csdb");
+filecopy("Virginia.csdb", "Virginia_Backup.csdb");
 </logic>
 
 <subheader>Example 2</subheader>
 
 <logic>
-string backupFolder = pathname(Application) + maketext("Backup%d",timestamp());
+string backupFolder = pathname(Application) + maketext("Backup%d", timestamp());
 dircreate(backupFolder);
 
-filecopy(pathname(Application) + "*.csdb",backupFolder);
+filecopy(pathname(Application) + "*.csdb", backupFolder);
 </logic>
 
 <seealso filerename_function.hgt fileconcat_function.hgt />

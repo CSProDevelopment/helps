@@ -29,6 +29,7 @@ This is a detailed list of changes in CSPro 7.3. For a more general overview, se
 	<li>Simplified creation of dynamic value sets with the new <link valuesets.hgt>valueset</link> object that has the functions: <logiccolor valueset>add</logiccolor>, <logiccolor valueset>clear</logiccolor>, <logiccolor valueset>remove</logiccolor>, and <logiccolor valueset>show</logiccolor>.</li>
 	<li>A logical condition can be specified in <logiccolor>for</logiccolor> loops to restrict the universe of the loop. Additionally, the occurrence counting variable can be declared local to the <logiccolor>for</logiccolor> loop.</li>
 	<li><link boolean_values.hgt>Boolean values</link> <logiccolor>true</logiccolor> and <logiccolor>false</logiccolor> translate to the numeric values 1 and 0.</li>
+	<li>Several of the file functions take string <link lists.hgt>lists</link> as arguments, allowing mass concatenating (<logiccolor>fileconcat</logiccolor>), copying (<logiccolor>filecopy</logiccolor>), deleting (<logiccolor>filedelete</logiccolor>), and renaming (<logiccolor>filerename</logiccolor>) of files. The <logiccolor>filerename</logiccolor> function also accepts a folder as the new file name target.</li>
 </list>
 
 

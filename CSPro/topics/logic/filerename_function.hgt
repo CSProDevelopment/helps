@@ -3,21 +3,23 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = filerename(<arg>old_file_name</arg>,<arg>new_file_name</arg>);
+b = filerename(<arg>old_file_name</arg>, <arg>new_file_name</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>filerename</logiccolor> function changes the name of a file on the disk. The arguments <arg>old_file_name</arg> and <arg>new_file_name</arg> are string expressions giving file names or are file handlers declared in a <logiccolor>file</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>.
+The <logiccolor>filerename</logiccolor> function changes the name of a file or group of files on the disk. The argument <arg>old_file_name</arg> is a string expression or string <link lists.hgt>list</link> giving the existing file name(s). The argument <arg>new_file_name</arg> is a string expression giving the new file name or destination folder name. The arguments can also be file handlers declared in a <logiccolor>file</logiccolor> statement.
+
+You can use the wildcard characters "*" and "?" to specify a group of files to rename as the <arg>old_file_name</arg>. If using wildcard characters, the <arg>new_file_name</arg> must be the name of a folder.
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true) if the file was successfully renamed and 0 (false) otherwise.
+The function returns the number of files renamed. If there was an error renaming files, the function returns <logiccolor>default</logiccolor>.
 
 <subheader>Example</subheader>
 
 <logic>
-filerename("data.csdb",maketext("old_data%d.csdb",timestamp()));
+filerename("data.csdb", maketext("old_data%d.csdb",timestamp()));
 </logic>
 
 <seealso filecopy_function.hgt filedelete_function.hgt />

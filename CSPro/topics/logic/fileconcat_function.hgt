@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = fileconcat(『<arg>dictionary_name</arg>,』<arg>output_file_name</arg>,<arg>file_name1</arg>『,...,<arg>file_nameN</arg>』);
+b = fileconcat(『<arg>dictionary_name</arg>,』 <arg>output_file_name</arg>, <arg>file_name1</arg>『, ..., <arg>file_nameN</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>fileconcat</logiccolor> function concatenates a list of files. The list may contain individual files or wildcard file specifications. The function supports <link CSConcat::concatenation.hgt>two different methods of concatenation</link>:
+The <logiccolor>fileconcat</logiccolor> function concatenates a number of files into a single file. The files to concatenate can be either individual file names or wildcard file specifications. The function supports <link CSConcat::concatenation.hgt>two different methods of concatenation</link>:
 
 <list>
 	<li><b>Concatenate cases</b>: Reads cases from each input file and writes them to the output file, skipping invalid and duplicate cases. This mode requires a data dictionary that describes the format of the input and output data files so that cases may be validated and duplicates may be identified. Concatenate cases mode may be used with data files in either text or <link data_sources.hgt>CSPro DB format</link>.</li>
@@ -19,7 +19,7 @@ To peform a <b>case</b> concatenation, you must specify a <arg>dictionary_name</
 
 To perform <b>content</b> concatenation, do not specify a dictionary. In this case, the input files are appended together without examining their contents. This will be faster but will not eliminate duplicates or invalid cases.
 
-The <arg>output_file_name</arg> is a string expression giving the name of the output file that will contain the concatenated data. The arguments <arg>file_name1</arg> to <arg>file_nameN</arg> are string expressions that contain the names of specific files or a wildcard specification of a group of files.
+The <arg>output_file_name</arg> is a string expression giving the name of the output file that will contain the concatenated data. The arguments <arg>file_name1</arg> to <arg>file_nameN</arg> are either string expressions or string <link lists.hgt>lists</link> that contain the names of specific files or a wildcard specification of a group of files.
 
 <subheader>Return Value</subheader>
 
@@ -28,13 +28,13 @@ The function returns a logical value of 1 (true) if successful and 0 (false) oth
 <subheader>Example 1</subheader>
 
 <logic>
-fileconcat("DMV.txt","District of Columbia.txt","Maryland.txt","Virginia.txt");
+fileconcat("DMV.txt", "District of Columbia.txt", "Maryland.txt", "Virginia.txt");
 </logic>
 
 <subheader>Example 2</subheader>
 
 <logic>
-fileconcat(CENSUS_DICT,"01combined.csdb","01*.csdb");
+fileconcat(CENSUS_DICT, "14combined.csdb", "../Data/14*.csdb");
 </logic>
 
 <seealso filecopy_function.hgt />
