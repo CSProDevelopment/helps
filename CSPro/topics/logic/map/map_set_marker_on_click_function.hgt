@@ -57,7 +57,7 @@ function launchHouseholdQuestionnaire(string caseid)
 	setfile(pff_file, pff_filename, create);
 
 	filewrite(pff_file, "[Run Information]");
-	filewrite(pff_file, "Version=CSPro 7.3");
+	filewrite(pff_file, "Version=CSPro <definition version />");
 	filewrite(pff_file, "AppType=Entry");
 
 	filewrite(pff_file, "[DataEntryInit]");

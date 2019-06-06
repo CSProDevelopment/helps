@@ -37,6 +37,9 @@ PROC GRADE_ATTENDING
 		errmsg("Someone aged under 15 cannot attend %s.", getvaluelabel(GRADE_ATTENDING));
 		reenter;
 	endif;
+	
+	// using the "%l" message formatter, the above error message can also written as:
+	errmsg("Someone aged under 15 cannot attend %l.", GRADE_ATTENDING);
 </logic>
 
-<seealso getlabel_function.hgt />
+<seealso getlabel_function.hgt message_formatting_options.hgt />
