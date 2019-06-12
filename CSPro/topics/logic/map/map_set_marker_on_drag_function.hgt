@@ -22,8 +22,8 @@ The function returns a logical value of 1 (true) if the marker was found and the
 PROC GLOBAL
 
 function onDragMarker(map dragMap, markerId)
-	numeric lat, lon;
-	dragMap.getMarkerLocation(markerId, lat, lon);
+	numeric lat = dragMap.getMarkerLatitude();
+	numeric lon = dragMap.getMarkerLongitude();
 	errmsg("Marker was moved to: %f, %f", lat, lon);	
 end;
 
@@ -44,4 +44,4 @@ dragMap.show();
 
 </logic>
 
-<seealso maps.hgt map_add_marker_function.hgt map_set_marker_on_click_function.hgt map_get_marker_location_function.hgt />
+<seealso maps.hgt map_add_marker_function.hgt map_set_marker_on_click_function.hgt map_get_marker_latitude_function.hgt map_get_marker_longitude_function.hgt />

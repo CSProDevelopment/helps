@@ -351,6 +351,8 @@ choose_topic_sections.hgt																		#	Choose Topic Sections
 clear_function.hgt																				#	Clear Function
 	array_clear_function.hgt																	#		Array.Clear Function
 	list_clear_function.hgt																		#		List.Clear Function
+	map_clear_buttons_function.hgt																#		Map.ClearButtons Function
+	map_clear_markers_function.hgt																#		Map.ClearMarkers Function
 	valueset_clear_function.hgt																	#		ValueSet.Clear Function
 close_an_application.hgt | Close																#	Close
 	close_an_application.hgt | An Application													#		An Application
@@ -900,8 +902,14 @@ getdeviceid_function.hgt																		#	GetDeviceID Function
 getimage_function.hgt																			#	GetImage Function
 getlabel_function.hgt																			#	GetLabel Function
 getlanguage_function.hgt																		#	GetLanguage Function
-map_get_marker_location_function.hgt | GetMarkerLocation Function								#	GetMarkerLocation Function
-	map_get_marker_location_function.hgt														#		Map.GetMarkerLocation Function
+map_get_last_click_latitude_function.hgt | GetLastClickLatitude Function						#	GetLastClickLatitude Function
+	map_get_last_click_latitude_function.hgt													#		Map.GetLastClickLatitude Function
+map_get_last_click_longitude_function.hgt | GetLastClickLongitude Function						#	GetLastClickLongitude Function
+	map_get_last_click_longitude_function.hgt													#		Map.GetLastClickLongitude Function
+map_get_marker_latitude_function.hgt | GetMarkerLatitude Function								#	GetMarkerLatitude Function
+	map_get_marker_latitude_function.hgt														#		Map.GetMarkerLatitude Function
+map_get_marker_longitude_function.hgt | GetMarkerLongitude Function								#	GetMarkerLongitude Function
+	map_get_marker_longitude_function.hgt														#		Map.GetMarkerLongitude Function
 getnote_function.hgt																			#	GetNote Function
 getocclabel_function.hgt																		#	GetOccLabel Function
 getoperatorid_function.hgt																		#	GetOperatorId Function
@@ -1185,7 +1193,12 @@ maps.hgt																						#	Maps
 	map_add_image_button_function.hgt															#		Map.AddImageButton Function
 	map_add_marker_function.hgt																	#		Map.AddMarker Function
 	map_add_text_button_function.hgt															#		Map.AddTextButton Function
-	map_get_marker_location_function.hgt														#		Map.GetMarkerLocation Function
+	map_clear_buttons_function.hgt																#		Map.ClearButtons Function
+	map_clear_markers_function.hgt																#		Map.ClearMarkers Function
+	map_get_last_click_latitude_function.hgt													#		Map.GetLastClickLatitude Function
+	map_get_last_click_longitude_function.hgt													#		Map.GetLastClickLongitude Function
+	map_get_marker_latitude_function.hgt														#		Map.GetMarkerLatitude Function
+	map_get_marker_longitude_function.hgt														#		Map.GetMarkerLongitude Function
 	map_hide_function.hgt																		#		Map.Hide Function
 	map_remove_button_function.hgt																#		Map.RemoveButton Function
 	map_remove_marker_function.hgt																#		Map.RemoveMarker Function
@@ -1205,8 +1218,10 @@ maps.hgt																						#	Maps
 change_the_print_page_setup.hgt | Margins														#	Margins
 map_add_marker_function.hgt | Markers															#	Markers
 	map_add_marker_function.hgt																	#		Map.AddMarker Function
-	map_get_marker_location_function.hgt														#		Map.GetMarkerLocation Function
+	map_get_marker_latitude_function.hgt														#		Map.GetMarkerLatitude Function
+	map_get_marker_longitude_function.hgt														#		Map.GetMarkerLongitude Function
 	map_remove_marker_function.hgt																#		Map.RemoveMarker Function
+	map_clear_markers_function.hgt																#		Map.ClearMarkers Function
 	map_set_marker_description_function.hgt														#		Map.SetMarkerDescription Function
 	map_set_marker_image_function.hgt															#		Map.SetMarkerImage Function
 	map_set_marker_location_function.hgt														#		Map.SetMarkerLocation Function
