@@ -25,10 +25,10 @@ filecopy("Virginia.csdb", "Virginia_Backup.csdb");
 <subheader>Example 2</subheader>
 
 <logic>
-string backupFolder = pathname(Application) + maketext("Backup%d", timestamp());
-dircreate(backupFolder);
+string backup_folder_name = pathconcat(Application, maketext("Backup%d", timestamp()));
+dircreate(backup_folder_name);
 
-filecopy(pathname(Application) + "*.csdb", backupFolder);
+filecopy(pathconcat(Application, "*.csdb"), backup_folder_name);
 </logic>
 
 <seealso filerename_function.hgt fileconcat_function.hgt />

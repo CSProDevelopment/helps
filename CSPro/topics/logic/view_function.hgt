@@ -1,0 +1,23 @@
+﻿<title>View Function</title>
+
+<logicsyntax>
+b = view(<arg>filename</arg> ‖ <arg>website_address</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>view</logiccolor> function launches an external application to view a file or website. The function expects a string expression representing a file (<arg>filename</arg>) or a website URL (<arg>website_address</arg>). If a file is provided, it is opened in the system's default viewer for that file type. If a website URL is provided, it is opened in the the system's default web browser.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the file exists and the external application could be launched successfully and 0 (false) otherwise.
+
+<subheader>Examples</subheader>
+
+<logic>
+view("https://<definition census_website />");
+
+view("../Old Images/carn03.jpg");
+</logic>
+	
+<seealso execsystem_function_desktop.hgt execsystem_function_mobile.hgt />

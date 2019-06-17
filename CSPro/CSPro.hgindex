@@ -1218,10 +1218,10 @@ maps.hgt																						#	Maps
 change_the_print_page_setup.hgt | Margins														#	Margins
 map_add_marker_function.hgt | Markers															#	Markers
 	map_add_marker_function.hgt																	#		Map.AddMarker Function
+	map_clear_markers_function.hgt																#		Map.ClearMarkers Function
 	map_get_marker_latitude_function.hgt														#		Map.GetMarkerLatitude Function
 	map_get_marker_longitude_function.hgt														#		Map.GetMarkerLongitude Function
 	map_remove_marker_function.hgt																#		Map.RemoveMarker Function
-	map_clear_markers_function.hgt																#		Map.ClearMarkers Function
 	map_set_marker_description_function.hgt														#		Map.SetMarkerDescription Function
 	map_set_marker_image_function.hgt															#		Map.SetMarkerImage Function
 	map_set_marker_location_function.hgt														#		Map.SetMarkerLocation Function
@@ -1440,10 +1440,14 @@ parts_of_a_table.hgt																			#	Parts of a Table
 cut_copy_or_paste_things.hgt | Paste															#	Paste
 	cut_copy_or_paste_things.hgt | Copy or Cut Things											#		Copy or Cut Things
 	copy_and_paste_table_specification.hgt | Paste Table Specification							#		Paste Table Specification
-data_entry_path.hgt | Path																		#	Path
+pathconcat_function.hgt																			#	PathConcat Function
+pathname_function.hgt																			#	PathName Function
+pathconcat_function.hgt | Paths (File System)													#	Paths (File System)
+	pathconcat_function.hgt																		#		PathConcat Function
+	pathname_function.hgt																		#		PathName Function
+data_entry_path.hgt | Path (Data Entry)															#	Path (Data Entry)
 	data_entry_path.hgt | Off																	#		Off
 	data_entry_path.hgt | On																	#		On
-pathname_function.hgt																			#	PathName Function
 add_summary_statistics_to_a_table.hgt | Percentile												#	Percentile
 	add_summary_statistics_to_a_table.hgt														#		Add Summary Statistics to a Table
 	produce_summary_statistics.hgt																#		Produce Summary Statistics
@@ -2179,6 +2183,7 @@ change_the_view.hgt | View																		#	View
 	sending_tables_to_the_printer.hgt | Print Tables											#		Print Tables
 viewing_multiple_and_facing_pages.hgt															#	Viewing Multiple and Facing Pages
 views_of_tables.hgt | Views of Table															#	Views of Table
+view_function.hgt																				#	View Function
 visualvalue_function.hgt																		#	VisualValue Function
 impute_function.hgt | VSet																		#	VSet
 	impute_function.hgt																			#		Impute Function

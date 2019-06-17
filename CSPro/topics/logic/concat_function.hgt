@@ -3,7 +3,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = concat(<arg>string1</arg>,<arg>string2</arg>『,...,<arg>stringN</arg>』);
+s = concat(<arg>string1</arg>, <arg>string2</arg>『, ..., <arg>stringN</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -20,7 +20,7 @@ The function returns the concatenated string.
 FIRST_NAME = "John";
 LAST_NAME = "Henry";
 
-string fullName = concat(FIRST_NAME," ",LAST_NAME); // fullName is: John Henry
+string full_name = concat(FIRST_NAME, " ", LAST_NAME); // full_name is: John Henry
 </logic>
 
-<seealso plus_string_concatenation.hgt />
+<seealso plus_string_concatenation.hgt pathconcat_function.hgt />

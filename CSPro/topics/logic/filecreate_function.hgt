@@ -17,8 +17,8 @@ The function returns a logical value of 1 (true) if successful and 0 (false) oth
 <subheader>Example</subheader>
 
 <logic>
-string reportFilename = pathname(Application) + "EA Completion Rate.html";
-filecreate(reportFilename);
+string report_filename = pathconcat(Application, "EA Completion Rate.html");
+filecreate(report_filename);
 </logic>
 
 <seealso dircreate_function.hgt open_function.hgt setfile_function.hgt />

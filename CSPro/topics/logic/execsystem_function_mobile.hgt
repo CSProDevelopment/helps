@@ -20,9 +20,9 @@ The string expression <arg>action</arg> must begin with one of the following com
 	<cell><b>call</b></cell><cell>Place a phone call.</cell>
 	<cell><b>camera</b></cell><cell>Take a photo in .jpg or .png format.</cell>
 	<cell><b>gps</b></cell><cell>View a latitude/longitude point using an installed mapping engine (e.g., Google Maps).</cell>
-	<cell><b>html</b></cell><cell>View a website from within CSEntry.</cell>
+	<cell><b>html</b></cell><cell>View a website from within CSEntry (equivalent to using the <logiccolor>view</logiccolor> function).</cell>
 	<cell><b>sms</b></cell><cell>Send a text message.</cell>
-	<cell><b>view</b></cell><cell>Display an image, play a sound clip, or view a movie.</cell>
+	<cell><b>view</b></cell><cell>Display an image, play a sound clip, or view a movie (equivalent to using the <logiccolor>view</logiccolor> function).</cell>
 </table>
 
 <subheader>Return Value</subheader>
@@ -45,7 +45,7 @@ execsystem("gps:38.84839,-76.931098");
 execsystem("gps:38.84839,-76.931098,CSPro Team at the U.S. Census Bureau");
 
 execsystem("html:https://www.census.gov");
-execsystem("html:file://" + pathname(Application) + "localwebpage.html");
+execsystem("html:file:///" + pathname(Application) + "local_webpage.html");
 
 execsystem("sms:+13017631451");
 execsystem("sms:+13017631451,Hello, CSPro Team!");
@@ -55,4 +55,4 @@ execsystem("view:" + pathname(Application) + "audio.mp3");
 execsystem("view:" + pathname(Application) + "movie.3gp");
 </logic>
 
-<seealso execsystem_function_desktop.hgt execpff_function.hgt />
+<seealso execsystem_function_desktop.hgt execpff_function.hgt view_function.hgt />

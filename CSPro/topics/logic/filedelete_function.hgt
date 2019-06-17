@@ -20,10 +20,10 @@ The function returns the number of files deleted. If there was an error deleting
 
 <logic>
 // delete file "Household.csdb" from the backups folder
-filedelete(pathname(Application) + "Backups/Household.csdb");
+filedelete(pathconcat(Application, "Backups/Household.csdb"));
 
 // delete all data from the backups folder
-filedelete(pathname(Application) + "Backups/*.csdb");
+filedelete(pathconcat(Application, "Backups/*.csdb"));
 </logic>
 
 <seealso filecopy_function.hgt filerename_function.hgt dirdelete_function.hgt />
