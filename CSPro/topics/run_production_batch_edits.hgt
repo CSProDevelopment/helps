@@ -31,12 +31,12 @@ LOOKUP_DICT=.\LookupFile.dat
 [Parameters]
 ViewListing=Always
 ViewResults=Yes
-ListingWidth=80
+ListingWidth=120
 MessageWrap=No
 ErrmsgOverride=No
 InputOrder=Sequential
 Parameter=your choice
-Language=LINGALA
+Language=LN
 OnExit=.\Menu.pff
 </pff>
 
@@ -74,7 +74,7 @@ The <pffcolor>[Parameters]</pffcolor> block is optional. This section defines pa
 <list>
 	<li><pffcolor>ViewListing</pffcolor>=determines whether you see the batch run report. If this entry is missing or set to <b>Always</b>, then you will see the generated report. Other available options are <b>OnError</b>, in which case you will see the listing report only if an error occurred during the run, or <b>Never</b>, in which case you will never be shown the generated report.</li>
 	<li><pffcolor>ViewResults</pffcolor>=determines whether or not the impute and/or write file are displayed in Text Viewer at the end of the run. The available choices are <b>Yes</b> or <b>No</b>. If the entry is missing, the resultant file(s) will be displayed by default. For more information on these files, see <topic run_a_batch_edit_application.hgt />.</li>
-	<li><pffcolor>ListingWidth</pffcolor>=allows you to control the number of characters outputted to the listing file before forcing the start of a new line. This is set to 80 characters by default. If your screen resolution and/or printer permits, it may be useful to increase the width of the listing file.</li>
+	<li><pffcolor>ListingWidth</pffcolor>=allows you to control the number of characters outputted to the listing file before forcing the start of a new line. This is set to 120 characters by default. If your screen resolution and/or printer permits, it may be useful to increase the width of the listing file.</li>
 	<li><pffcolor>MessageWrap</pffcolor>=determines whether or not summary messages displayed at the end of a listing file will be outputted on several lines when they are too long to fit on one line. The default option is <b>No</b>, in which case the messages are truncated so that they fit on one line.</li>
 	<li><pffcolor>ErrmsgOverride</pffcolor>=allows you to override the default behavior of the <logiccolor>errmsg</logiccolor> function. The override only affects <logiccolor>errmsg</logiccolor> functions used in the code without a <logiccolor>case</logiccolor> or <logiccolor>summary</logiccolor> specifier. The option <b>No</b> maintains the default behavior (displaying the messages for each case, as well as in the summary). The option <b>Summary</b> only displays the message in the summary. The option <b>Case</b> displays the message for each case but not in the summary.</li>
 	<li><pffcolor>InputOrder</pffcolor>=allows you to override the default order in which cases are processed in a data file. The default option, <b>Sequential</b>, means that cases will be processed from the first case to the last case, in file order. The option <b>Indexed</b> overrides this order and cases will be processed in alphabetical order of the case IDs. The data file can contain duplicates case IDs if processed in sequential order, but not in indexed order.</li>
