@@ -16,9 +16,9 @@ Version=CSPro <definition version />
 AppType=ParadataConcatenate
 
 [Files]
-InputData=.\SingleLog.cslog
-InputData=.\Paradata\*.cslog
-OutputData=.\MergedLog.csdb
+InputParadata=.\SingleLog.cslog
+InputParadata=.\Paradata\*.cslog
+OutputParadata=.\MergedLog.csdb
 Listing=.\MyParadataConcat.lst
 
 [Parameters]
@@ -31,7 +31,7 @@ The <pffcolor>[Run Information]</pffcolor> block is required and must appear exa
 
 <subheader>[Files]</subheader>
 
-The <pffcolor>[Files]</pffcolor> block is required and names the log(s) to be concatenated and the output log. At a minimum, you must name one input log and one output log. You can use wildcards when defining <pffcolor>InputData</pffcolor>, the input logs.
+The <pffcolor>[Files]</pffcolor> block is required and names the log(s) to be concatenated and the output log. At a minimum, you must name one input log and one output log. You can use wildcards when defining <pffcolor>InputParadata</pffcolor>, the input logs.
 
 <subheader>[Parameters]</subheader>
 
