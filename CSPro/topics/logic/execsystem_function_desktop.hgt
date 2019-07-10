@@ -3,7 +3,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = execsystem(<arg>action</arg>『,<arg>flags</arg>』);
+b = execsystem(<arg>action</arg>『, <arg>flags</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -41,10 +41,10 @@ The function returns a logical value of 1 (true) if the new application is start
 execsystem("calc.exe");
 
 // opens documentation in Text Viewer
-execsystem(maketext('"%sTextView.exe" "C:\Survey\Helps.txt"',pathname(CSPro)),maximized,wait);
+execsystem(maketext('"%sTextView.exe" "C:\Survey\Helps.txt"', pathname(CSPro)), maximized, wait);
 
 // open a website in Internet Explorer
-execsystem(maketext('"%sInternet Explorer\iexplore.exe" "http://<definition csprousers_forum />"',pathname(ProgramFiles32)));
+execsystem(maketext('"%sInternet Explorer\iexplore.exe" "https://<definition csprousers_forum />"', pathname(ProgramFiles32)));
 </logic>
 
 <seealso execsystem_function_mobile.hgt execpff_function.hgt view_function.hgt />

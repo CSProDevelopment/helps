@@ -5,7 +5,7 @@ namespace Help_Generator
     class Constants
     {
         public const string ChmButtonText1 = "CSPro";
-		// the HTML Help Viewer buttons don't seem to be able to open https links, so the next URL is http
+		// the HTML Help Viewer buttons don't seem to be able to open https links, so the next few URLs are http
         public const string ChmButtonLink1 = "http://www.census.gov/data/software/cspro.html";
         public const string ChmButtonText2 = "Forum";
         public const string ChmButtonLink2 = "http://www.csprousers.org/forum/";
