@@ -9,7 +9,7 @@ namespace Help_Generator
         public const string ChmButtonLink1 = "http://www.census.gov/data/software/cspro.html";
         public const string ChmButtonText2 = "Forum";
         public const string ChmButtonLink2 = "http://www.csprousers.org/forum/";
-		public const string OnlineHelpBaseUrl = "http://www.csprousers.org/help/";
+		public const string OnlineHelpBaseUrl = "https://www.csprousers.org/help/";
 
         public const string SharedDirectoryName = "Shared";
         public const string TopicsDirectoryName = "topics";

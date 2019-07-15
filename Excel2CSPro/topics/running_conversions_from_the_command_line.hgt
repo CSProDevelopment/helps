@@ -42,7 +42,7 @@ In the specification file and overrides, the following commands are available:
 	<cell>Command</cell><cell>Description</cell>
 	<cell><b>Excel</b>=</cell><cell>Specifies the input Excel file.</cell>
 	<cell><b>InputDict</b>=</cell><cell>Specifies the CSPro dictionary.</cell>
-	<cell><b>OutputData</b>=</cell><cell>Specifies the name of the output data file. The extension of the file indicates the output is a CSPro DB file or a text file.</cell>
+	<cell><b>OutputData</b>=</cell><cell>Specifies the name of the output data file. The extension of the file indicates the <link CSPro::data_sources.hgt>output type</link>.</cell>
 	<cell><b>StartingRow</b>=</cell><cell>Specifies the starting row where the data is located.</cell>
 	<cell><b>CaseManagement</b>=</cell><cell>Specifies the mode for how cases are added, modified, or deleted.</cell>
 	<cell><b>RunOnlyIfNewer</b>=</cell><cell>Specifies if the conversion can conditionally occur.</cell>
@@ -83,7 +83,7 @@ AppType=Excel2CSPro
 
 [Files]
 Application=.\Convert Data.xl2cs
-InputData=.\Zomba.xlsx
+Excel=.\Zomba.xlsx
 InputDict=.\Clinics.dcf
 OutputData=.\Zomba.csdb
 
@@ -101,7 +101,7 @@ The <pffcolor>[Run Information]</pffcolor> block is required and must appear exa
 
 <subheader>[Files]</subheader>
 
-The <pffcolor>[Files]</pffcolor> block is required and defines the specification file script that will be used during the conversion. The <pffcolor>InputData</pffcolor> command maps to the <b>Excel</b> command defined above, while <pffcolor>InputDict</pffcolor> and <pffcolor>OutputData</pffcolor> are the same as their command line counterparts. If these are not defined, then the conversion will use the values defined in the specification file.
+The <pffcolor>[Files]</pffcolor> block is required and defines the specification file script that will be used during the conversion. The <pffcolor>Excel</pffcolor> command maps to the <b>Excel</b> command defined above, while <pffcolor>InputDict</pffcolor> and <pffcolor>OutputData</pffcolor> are the same as their command line counterparts. If these are not defined, then the conversion will use the values defined in the specification file.
 
 <subheader>[Parameters]</subheader>
 
