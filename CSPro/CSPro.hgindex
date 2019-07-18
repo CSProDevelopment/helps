@@ -300,10 +300,10 @@ errmsg_function.hgt | Case																		#	Case
 issues_to_consider_when_designing_a_form.hgt | Cases and Levels									#	Cases and Levels
 identification_items.hgt | Case ID																#	Case ID
 	identification_items.hgt																	#		Identification Items
-change_data_entry_options.hgt | Case tree														#	Case tree
-	change_data_entry_options.hgt | Show														#		Show
-map_case_list.hgt | Case Listing																#	Case listing
+map_case_list.hgt | Case Listing																#	Case Listing
 	map_case_list.hgt | Displaying the Case Listing on a Map									#		Displaying the Case Listing on a Map
+change_data_entry_options.hgt | Case Tree														#	Case Tree
+	change_data_entry_options.hgt | Show														#		Show
 formats_for_a_part_of_a_table.hgt | Cells														#	Cells
 	formats_for_a_part_of_a_table.hgt															#		Formats for a Part of a Table
 	formatting_row_column_or_cell_data.hgt | Formatting Row: Column and Cell Data				#		Formatting Row: Column and Cell Data
@@ -356,9 +356,9 @@ clear_function.hgt																				#	Clear Function
 	map_clear_buttons_function.hgt																#		Map.ClearButtons Function
 	map_clear_markers_function.hgt																#		Map.ClearMarkers Function
 	valueset_clear_function.hgt																	#		ValueSet.Clear Function
-close_an_application.hgt | Close																#	Close
-	close_an_application.hgt | An Application													#		An Application
-	close_function.hgt | Function																#		Function
+close_an_application.hgt																		#	Close an Application
+close_function.hgt																				#	Close Function
+	file_close_function.hgt																		#		File.Close Function
 cmcode_function.hgt																				#	CMCode Function
 code_edits_of_individual_data_items.hgt															#	Code Edits of Individual Data Items
 define_coding_standards.hgt | Coding Standards													#	Coding Standards
@@ -799,9 +799,13 @@ filename_function.hgt																			#	FileName Function
 fileread_function.hgt																			#	FileRead Function
 filerename_function.hgt																			#	FileRename Function
 files.hgt																						#	Files
+	file_close_function.hgt																		#		File.Close Function
+	file_open_function.hgt																		#		File.Open Function
+	file_read_function.hgt																		#		File.Read Function
+	file_write_function.hgt																		#		File.Write Function
+	file_statement.hgt																			#		File Statement
 filesize_function.hgt																			#	FileSize Function
 filewrite_function.hgt																			#	FileWrite Function
-file_statement.hgt																				#	File Statement
 file_types.hgt																					#	File Types
 	area_names_file_anm.hgt																		#		Area Names File (.anm)
 	batch_edit_application_file_bch.hgt															#		Batch Edit Application File (.bch)
@@ -1192,10 +1196,7 @@ methods_of_correcting_data.hgt | Manual															#	Manual
 	methods_of_correcting_data.hgt | Correction													#		Correction
 	skip_issues.hgt | Skip																		#		Skip
 mapping.hgt | Map																				#	Map
-	mapping.hgt | How to use maps in Data Entry													#		Map in data entry
-	map_case_list.hgt | Map in Case Listing														#		Map in Case Listing
-	maps.hgt | Map in logic																		#		Map in logic
-	map_statement.hgt																			#		Map statement
+	mapping.hgt | How to Use Maps in Data Entry													#		How to Use Maps in Data Entry
 	map_add_image_button_function.hgt															#		Map.AddImageButton Function
 	map_add_marker_function.hgt																	#		Map.AddMarker Function
 	map_add_text_button_function.hgt															#		Map.AddTextButton Function
@@ -1220,6 +1221,9 @@ mapping.hgt | Map																				#	Map
 	map_show_current_location_function.hgt														#		Map.ShowCurrentLocation Function
 	map_show_function.hgt																		#		Map.Show Function
 	map_zoom_to_function.hgt																	#		Map.ZoomTo Function
+	map_case_list.hgt | Map in Case Listing														#		Map in Case Listing
+	maps.hgt | Map in Logic																		#		Map in Logic
+	map_statement.hgt																			#		Map Statement
 	map_statement.hgt																			#		Map Statement
 change_the_print_page_setup.hgt | Margins														#	Margins
 map_add_marker_function.hgt | Markers															#	Markers
@@ -1373,10 +1377,10 @@ onfocus_statement.hgt																			#	OnFocus Statement
 onkey_global_function.hgt																		#	OnKey Global Function
 onoccchange_statement.hgt																		#	OnOccChange Statement
 onstop_global_function.hgt																		#	OnStop Global Function
-open_an_application.hgt | Open																	#	Open
-	open_an_application.hgt | An Existing Application											#		An Existing Application
-	open_an_existing_dictionary_application.hgt | An Existing Dictionary Application			#		An Existing Dictionary Application
-	open_function.hgt | Function																#		Function
+open_an_application.hgt																			#	Open an Existing Application
+open_an_existing_dictionary_application.hgt														#	Open an Existing Dictionary Application
+open_function.hgt																				#	Open Function
+	file_open_function.hgt																		#		File.Open Function
 collaborating_on_cspro_development.hgt | Open Source											#	Open Source
 change_data_entry_options.hgt | Operator														#	Operator
 	change_data_entry_options.hgt | Ask for Operator ID											#		Ask for Operator ID
@@ -1571,6 +1575,8 @@ tally_attributes_for_a_variable.hgt | Ratio														#	Ratio
 	introduction_to_table_post_calculation.hgt | Table Post Calculation							#		Table Post Calculation
 re_test_with_live_data.hgt																		#	Re-Test with Live Data
 add_reader_breaks.hgt | Reader Breaks															#	Reader Breaks
+file_read_function.hgt | Read Function															#	Read Function
+	file_read_function.hgt																		#		File.Read Function
 move_things.hgt | Rearrange Things in a Form													#	Rearrange Things in a Form
 recodes_in_tables_using_value_sets_and_subtables.hgt | Recodes									#	Recodes
 	recodes_in_tables_using_value_sets_and_subtables.hgt | In Tables Using Value Sets and Subtables#		In Tables Using Value Sets and Subtables
@@ -2229,12 +2235,9 @@ table_logic_tablogic.hgt | Working Storage Dictionary											#	Working Storag
 	table_logic_tablogic.hgt | Table Logic														#		Table Logic
 working_storage_file.hgt																		#	Working Storage File
 run_production_batch_edits.hgt | Wrap messages													#	Wrap messages
-run_a_batch_edit_application.hgt | Write														#	Write
-	run_a_batch_edit_application.hgt | File														#		File
-	write_function.hgt | Function																#		Function
-	run_a_batch_edit_application.hgt | Run an Application										#		Run an Application
-	create_a_specialized_report.hgt | Specialized Edit Report									#		Specialized Edit Report
 writecase_function.hgt																			#	WriteCase Function
+write_function.hgt																				#	Write Function
+	file_write_function.hgt																		#		File.Write Function
 zero_fill.hgt																					#	Zero Fill
 formats_for_an_application.hgt | Zero Mask														#	Zero Mask
 map_zoom_to_function.hgt | ZoomTo Function														#	ZoomTo Function

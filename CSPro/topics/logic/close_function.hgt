@@ -19,8 +19,13 @@ The function returns a logical value of 1 (true) if successful and 0 (false) oth
 <subheader>Example</subheader>
 
 <logic>
-close(pffFile);
-execpff(filename(pffFile));
+file report_file;
+
+// ... 
+
+close(report_file);
+
+view(filename(report_file));
 </logic>
 
-<seealso open_function.hgt setfile_function.hgt />
+<seealso open_function.hgt setfile_function.hgt file_close_function.hgt />

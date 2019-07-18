@@ -3,14 +3,15 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-<arg>function_name</arg>(『...,』<arg>message</arg>『,<arg>parameter1</arg>,...,<arg>parameterN</arg>』);
+<arg>function_name</arg>(『...,』 <arg>message</arg>『, <arg>parameter1</arg>, ..., <arg>parameterN</arg>』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
 Several functions take an argument that consists of a message and then an optional number of parameters that are dynamically inserted into the text to create a final message. The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.hgt>message number</link> that contains the message text.
 
-The message can contain optional parameters, <arg>parameter1</arg> to <arg>parameterN</arg>, that will be inserted into the message. Each parameter, denoted in the message text with a percent sign, is sequentially inserted into the message. Parameters can be numeric or string expressions, but the type of parameter must match the type of the receiving field in the message text. There are five formatters:
+The message can contain optional parameters, <arg>parameter1</arg> to <arg>parameterN</arg>, that will be inserted into the message. Each parameter, denoted in the message text with a percent sign, is sequentially inserted into the message. Parameters can be numeric or string expressions, but the type of parameter must match the type of the receiving field in the message text. There are seven formatters:
 
 <table 2 nowrap header>
 	<cell>Formatter</cell><cell>Result</cell>
@@ -23,11 +24,13 @@ The message can contain optional parameters, <arg>parameter1</arg> to <arg>param
 	<cell><logiccolor>"%c"</logiccolor></cell><cell>Inserts the first character of a text string, or no characters if the string is blank.</cell>
 </table>
 
+
 <subheader>Variable Intelligent Formatting</subheader>
 
 The <logiccolor>"%v"</logiccolor> formatter works with either numeric or string variables, whether a dictionary item or a temporary variable. If the formatter is used on an alphanumeric dictionary item or a string variable, then it displays it in the same way as would <logiccolor>"%s"</logiccolor>. However, if a numeric dictionary item is used, then it formats the number in the way that it would be saved, obeying the length, zero fill, and decimal attributes of the field. If a numeric temporary variable is used, then the number is displayed as an integer (<logiccolor>"%d"</logiccolor>) if applicable, or as a decimal value (<logiccolor>"%f"</logiccolor>) with up to six decimal places otherwise.
 
 The <logiccolor>"%l"</logiccolor> formatter looks up the value set label associated with the variable's current value. If found, it displays that label (in the same way that the <logiccolor>getvaluelabel</logiccolor> function does). If no value set label is associated with the value, then the <logiccolor>"%l"</logiccolor> formatter behaves as if it were the <logiccolor>"%v"</logiccolor> formatter.
+
 
 <subheader>Additional Formatting Options</subheader>
 
@@ -41,40 +44,42 @@ Numeric and string parameters have a couple additional parameters that can be sp
 	<li>Numbers are never truncated. Text strings are not truncated unless used as in <logiccolor>"%0.5s"</logiccolor>, where the second part, <logiccolor>".5"</logiccolor>, indicates the maximum number of characters.</li>
 </list>
 
+
 <subheader>Example</subheader>
 
 <logic>
 numeric integerValue = 23456;
 
-errmsg(	"%d"		,integerValue);		//		23456
-errmsg(	"%10d"		,integerValue);		//		     23456
-errmsg(	"%-10d"		,integerValue);		//		23456
-errmsg(	"%010d"		,integerValue);		//		0000023456
-errmsg(	"%+10d"		,integerValue);		//		    +23456
-errmsg(	"%+010d"	,integerValue);		//		+000023456
-errmsg(	"%f"		,integerValue);		//		23456.000000
+errmsg(	"%d"		, integerValue);	//		23456
+errmsg(	"%10d"		, integerValue);	//		     23456
+errmsg(	"%-10d"		, integerValue);	//		23456
+errmsg(	"%010d"		, integerValue);	//		0000023456
+errmsg(	"%+10d"		, integerValue);	//		    +23456
+errmsg(	"%+010d"	, integerValue);	//		+000023456
+errmsg(	"%f"		, integerValue);	//		23456.000000
 
 
 numeric decimalValue = 12.567;
 
-errmsg(	"%f"		,decimalValue);		//		12.567000
-errmsg(	"%10.3f"	,decimalValue);		//		    12.567
-errmsg(	"%-10.3f"	,decimalValue);		//		12.567
-errmsg(	"%10.2f"	,decimalValue);		//		     12.57
-errmsg(	"%10.5f"	,decimalValue);		//		  12.56700
-errmsg(	"%010.3f"	,decimalValue);		//		000012.567
-errmsg(	"%+10.3f"	,decimalValue);		//		   +12.567
-errmsg(	"%+010.3f"	,decimalValue);		//		+00012.567
-errmsg(	"%d"		,decimalValue);		//		12
+errmsg(	"%f"		, decimalValue);	//		12.567000
+errmsg(	"%10.3f"	, decimalValue);	//		    12.567
+errmsg(	"%-10.3f"	, decimalValue);	//		12.567
+errmsg(	"%10.2f"	, decimalValue);	//		     12.57
+errmsg(	"%10.5f"	, decimalValue);	//		  12.56700
+errmsg(	"%010.3f"	, decimalValue);	//		000012.567
+errmsg(	"%+10.3f"	, decimalValue);	//		   +12.567
+errmsg(	"%+010.3f"	, decimalValue);	//		+00012.567
+errmsg(	"%d"		, decimalValue);	//		12
 
 
 string stringValue = "abcdef";
 
-errmsg(	"%s"		,stringValue);		//		abcdef
-errmsg(	"%10s"		,stringValue);		//		    abcdef
-errmsg(	"%-10s"		,stringValue);		//		abcdef
-errmsg(	"%10.3s"	,stringValue);		//		       abc
-errmsg(	"%-10.3s"	,stringValue);		//		abc
+errmsg(	"%s"		, stringValue);		//		abcdef
+errmsg(	"%10s"		, stringValue);		//		    abcdef
+errmsg(	"%-10s"		, stringValue);		//		abcdef
+errmsg(	"%10.3s"	, stringValue);		//		       abc
+errmsg(	"%-10.3s"	, stringValue);		//		abc
 </logic>
 
-<seealso errmsg_function.hgt filewrite_function.hgt logtext_function.hgt maketext_function.hgt trace_function.hgt warning_function.hgt write_function.hgt />
+
+<seealso errmsg_function.hgt filewrite_function.hgt file_write_function.hgt logtext_function.hgt maketext_function.hgt trace_function.hgt warning_function.hgt write_function.hgt />

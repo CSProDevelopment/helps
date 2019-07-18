@@ -1,14 +1,14 @@
-﻿<title>FileWrite Function</title>
+﻿<title>File.Write Function</title>
 
 <subheader>Format</subheader>
 
-<logicsyntax>
-b = filewrite(<arg>file_handler</arg>, <arg>message</arg>『, <arg>parameter1</arg>, ..., <arg>parameterN</arg>』);
+<logicsyntax file>
+b = file_handler.write(<arg>message</arg>『, <arg>parameter1</arg>, ..., <arg>parameterN</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>filewrite</logiccolor> function writes one or more lines of text to the <link files.hgt>file</link> associated with <arg>file_handler</arg>.
+The <logiccolor file>file.write</logiccolor> function writes one or more lines of text to the <link files.hgt>file</link> associated with <arg>file_handler</arg>. This function is equivalent to the <logiccolor>filewrite</logiccolor> function.
 
 The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.hgt>message number</link> that contains the text that is written to the file. If the text contains any <link message_formatting_options.hgt>message formatters</link>, the optional parameters <arg>parameter1</arg> to <arg>parameterN</arg> will be inserted into the text. There are some additional options for file output:
 
@@ -27,17 +27,20 @@ The function returns a logical value of 1 (true) if successful and 0 (false) oth
 <subheader>Example</subheader>
 
 <logic>
-PROC GLOBAL
+file data_file_report;
 
-file ReportFile;
+data_file_report.open("Data File Report.txt", create);
 
-PROC EXAMPLE
+list string data_file_listing;
+dirlist(data_file_listing, "Data", "*.csdb");
 
-	filewrite(ReportFile, "Name, Sex, Age");
-	
-	do numeric counter = 1 while counter <= totocc(PERSON_REC)
-		filewrite(ReportFile, "%s, %d, %d", NAME(counter), SEX(counter), AGE(counter));
-	enddo;
+data_file_report.write("There are %d files in the data directory:", data_file_listing.length());
+data_file_report.write("");
+data_file_report.write(data_file_listing);
+
+data_file_report.close();
+
+view(filename(data_file_report));
 </logic>
  
-<seealso fileread_function.hgt file_write_function.hgt write_function.hgt message_formatting_options.hgt />
+<seealso files.hgt file_read_function.hgt filewrite_function.hgt message_formatting_options.hgt />
