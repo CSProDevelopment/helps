@@ -41,7 +41,7 @@ if syncconnect(CSWeb,"https://www.myserver.org/api") then
 	syncfile(GET,"/MyApp/MyApp.pen");
 
 	// upload all images in images directory to the images directory on the server
-	syncfile(PUT,"Images/*.jpg","/Images");
+	syncfile(PUT,"Images/*.jpg","/Images/);
 
 	syncdisconnect();
 
