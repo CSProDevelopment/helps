@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Colorizer
@@ -13,10 +14,9 @@ namespace Colorizer
 
         public PffColorizer()
         {
-            HighlightWordReader hwr = new HighlightWordReader(HighlightWordReader.PffFilename);
-            _typeWords = hwr.ReadWordBlock();
-            _headingWords = hwr.ReadWordBlock();
-            _attributeWords = hwr.ReadWordBlock();
+            _typeWords = new SortedSet<string>(CSPro.Bridge.PifFile.GetAppTypeWords().Select(x => x.ToUpper()));
+            _headingWords = new SortedSet<string>(CSPro.Bridge.PifFile.GetHeadingWords().Select(x => x.ToUpper()));
+            _attributeWords = new SortedSet<string>(CSPro.Bridge.PifFile.GetAttributeWords().Select(x => x.ToUpper()));
        }
 
         public PffColorizer(PffColorizerInterface defaultPffColorizer) : this()

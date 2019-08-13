@@ -82,10 +82,9 @@ namespace Code_Colorizer
                 words.Add(CSPro.Logic.Colorizer.GetReservedWords());
 
                 // PFF
-                HighlightWordReader hwr = new HighlightWordReader(HighlightWordReader.PffFilename);
-                words.Add(hwr.ReadWordBlock());
-                words.Add(hwr.ReadWordBlock());
-                words.Add(hwr.ReadWordBlock());
+                words.Add(new SortedSet<string>(CSPro.Bridge.PifFile.GetAppTypeWords()));
+                words.Add(new SortedSet<string>(CSPro.Bridge.PifFile.GetHeadingWords()));
+                words.Add(new SortedSet<string>(CSPro.Bridge.PifFile.GetAttributeWords()));
 
                 string[] templateWords = new string[]
                 {
