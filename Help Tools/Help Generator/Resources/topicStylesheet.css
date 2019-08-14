@@ -1,15 +1,15 @@
 body
 {
-	margin: 10px;
-	padding: 0px;
+    margin: 10px;
+    padding: 0px;
 }
 
 body, td, h1, h2
 {
-	background-color: white;
-	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: black;
+    background-color: white;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
 }
 
 h1
@@ -44,7 +44,8 @@ th { font-weight: bold; color: #002050; text-decoration: underline; }
 
 .paragraph { margin-bottom: 20px; }
 
-.code_colorization {
+.code_colorization
+{
     word-wrap: break-word;
     font-family: Consolas, monaco, monospace;
     page-break-inside: avoid !important;
@@ -58,8 +59,10 @@ th { font-weight: bold; color: #002050; text-decoration: underline; }
 
 .code_colorization_optional_text { background-color: whitesmoke; }
 
-@media print {
-    .new-page {
+@media print
+{
+    .new-page
+	{
         page-break-before: always !important;
     }
 }

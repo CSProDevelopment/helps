@@ -19,6 +19,7 @@ namespace Help_Generator
             public string Filename { get; set; }
             public DateTime ModifiedDate { get; set; }
             public bool Shared { get; set; }
+            public bool Optional { get { return Path.GetFileName(Filename)[0] == '_'; } }
 
             public TopicPreprocessor(FileInfo fi,bool shared)
             {

@@ -1,7 +1,11 @@
 ﻿Title=<helps title>
-PdfTitle=<optional PDF title; also an indication that a PDF should be created>
-DefaultTopic=<topic filename of the default topic>
+Output=<CHM, HTML, or PDF>
+Output=<multiple Output entries are allowed>
+DefaultTopic=<topic filename of the default topic for CHM and HTML outputs>
+PdfCoverTopic=<topic filename of the cover page for PDF outputs>
 DefinitionsFile=<optional path with definitions that can be retrieved using the definition tag>
+DefinitionsFile=<multiple DefinitionsFile entries are allowed>
+<definition-attribute>=<definition-value, to add additional definitions>
 ResourceFile=<optional path pointing to the header files used to define context sensitive helps>
 ResourceFile=<multiple ResourceFile entries are allowed>
 # comment

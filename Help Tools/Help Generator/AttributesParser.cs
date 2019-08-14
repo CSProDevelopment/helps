@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Help_Generator
 {
@@ -7,15 +8,19 @@ namespace Help_Generator
     {
         public class AttributeType
         {
+            public string OriginalCaseName;
             public string Name;
             public bool Required;
             public bool MultipleAllowed;
+            public string[] PossibleValues;
 
-            public AttributeType(string name,bool required,bool multipleAllowed)
+            public AttributeType(string name,bool required,bool multipleAllowed,string[] possibleValues)
             {
-                Name = name.ToUpper();
+                OriginalCaseName = name;
+                Name = OriginalCaseName.ToUpper();
                 Required = required;
                 MultipleAllowed = multipleAllowed;
+                PossibleValues = possibleValues;
             }
         }
 
@@ -63,20 +68,24 @@ namespace Help_Generator
                     if( attribute.Length == 0 )
                         throw new Exception("does not contain an attribute");
 
-                    string value = line.Substring(equalsPos + 1). Trim();
+                    string value = line.Substring(equalsPos + 1).Trim();
 
-                    if(  value.Length == 0 )
+                    if( value.Length == 0 )
                         throw new Exception("does not contain a value");
 
                     bool multipleAttributesAllowed = false;
 
                     if( checkAgainstSpecification )
                     {
-                        if( _attributeTypesMap.ContainsKey(attribute) )
-                            multipleAttributesAllowed = _attributeTypesMap[attribute].MultipleAllowed;
+                        AttributeType attribute_type = null;
 
-                        else
-                            throw new Exception("cannot defined the unknown attribute " + attribute);
+                        if( _attributeTypesMap.TryGetValue(attribute, out attribute_type) )
+                        {
+                            if( attribute_type.PossibleValues != null && !attribute_type.PossibleValues.Contains(value) )
+                                throw new Exception($"uses an invalid value for {attribute_type.Name}");
+
+                            multipleAttributesAllowed = attribute_type.MultipleAllowed;
+                        }
                     }
 
                     if( _parsedAttributesMap.ContainsKey(attribute) )

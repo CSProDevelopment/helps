@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Colorizer;
 
@@ -10,20 +11,32 @@ namespace Help_Generator
     {
         private string _settingsFilename;
 
-        private string _helpsTitle;
-        private string _pdfTitle;
-        private Preprocessor.TopicPreprocessor _defaultTopic;
+        public string HelpsTitle { get; private set; }
+
+        public bool ChmOutput { get; private set; }
+        public bool HtmlOutput { get; private set; }
+        public bool PdfOutput { get; private set; }
+
+        public Preprocessor.TopicPreprocessor DefaultTopic { get; private set; }
+        public Preprocessor.TopicPreprocessor PdfCoverTopic { get; private set; }
+
         private Dictionary<string,string> _definitions;
         private List<string> _resourceFiles;
         private HashSet<string> _resourceFileIds;
 
+        static private AttributesParser.AttributeType[] _settingsAttributes = new AttributesParser.AttributeType[]
+        {
+            new AttributesParser.AttributeType(AttributesTitle,true,false,null),
+            new AttributesParser.AttributeType(AttributesOutput,true,true,new string[] { OutputValueChm, OutputValueHtml, OutputValuePdf }),
+            new AttributesParser.AttributeType(AttributesDefaultTopic,false,false,null),
+            new AttributesParser.AttributeType(AttributesPdfCoverTopic,false,false,null),
+            new AttributesParser.AttributeType(AttributesDefinitionsFile,false,true,null),
+            new AttributesParser.AttributeType(AttributesResourceFile,false,true,null)
+        };
+
         private AttributesParser _settingAttributesParser;
         private AttributesParser _definitionAttributesParser;
         private string _resourceFileRootDirectory;
-
-        public string HelpsTitle { get { return _helpsTitle; } }
-        public bool CreatePdf { get { return ( _pdfTitle != null ); } }
-        public Preprocessor.TopicPreprocessor DefaultTopic { get { return _defaultTopic; } }
 
         public Settings(string projectPath)
         {
@@ -33,15 +46,7 @@ namespace Help_Generator
             if( !File.Exists(_settingsFilename) )
                 CreateNewSettingsFile();
 
-            _settingAttributesParser = new AttributesParser(new AttributesParser.AttributeType[]
-                {
-                    new AttributesParser.AttributeType(AttributesTitle,true,false),
-                    new AttributesParser.AttributeType(AttributesPdfTitle,false,false),
-                    new AttributesParser.AttributeType(AttributesDefaultTopic,true,false),
-                    new AttributesParser.AttributeType(AttributesDefinitionsFile,false,false),
-                    new AttributesParser.AttributeType(AttributesResourceFile,false,true)
-                }
-            );
+            _settingAttributesParser = new AttributesParser(_settingsAttributes);
 
             _definitionAttributesParser = new AttributesParser(null);
             _resourceFileRootDirectory = null;
@@ -54,12 +59,20 @@ namespace Help_Generator
                 string fillInText = "=<fill in>";
                 string fillInOrDeleteText = "=<fill in or delete>";
 
-                tw.WriteLine(AttributesTitle + fillInText);
-                tw.WriteLine(AttributesPdfTitle + fillInOrDeleteText);
-                tw.WriteLine(AttributesDefaultTopic + fillInText);
-                tw.WriteLine(AttributesDefinitionsFile + fillInOrDeleteText);
-                tw.WriteLine(AttributesResourceFile + fillInOrDeleteText);
-                tw.WriteLine(AttributesResourceFile + fillInOrDeleteText);
+                foreach( var attribute_type in _settingsAttributes )
+                {
+                    if( attribute_type.PossibleValues == null )
+                    {
+                        for( int i = 0; i < ( attribute_type.MultipleAllowed ? 2 : 1 ); i++ )
+                            tw.WriteLine(attribute_type.OriginalCaseName + ( attribute_type.Required ? fillInText : fillInOrDeleteText ));
+                    }
+
+                    else
+                    {
+                        foreach( string value in attribute_type.PossibleValues )
+                            tw.WriteLine($"{attribute_type.OriginalCaseName}={value}");
+                    }
+                }
             }
         }
 
@@ -70,23 +83,50 @@ namespace Help_Generator
 
         public string HelpText { get { return Properties.Resources.SettingsHelp; } }
 
+        private string GetRequiredTopic(string attribute_name)
+        {
+            string value = _settingAttributesParser.GetSingleValue(attribute_name);
+
+            if( value == null )
+                throw new Exception($"The required attribute {attribute_name} (for the current outputs) was not defined");
+
+            return value;
+        }
+
         public void Compile(string[] lines,Preprocessor preprocessor)
         {
             _settingAttributesParser.Parse(lines);
 
-            _helpsTitle = _settingAttributesParser.GetSingleValue(AttributesTitle);
-            _pdfTitle =  _settingAttributesParser.GetSingleValue(AttributesPdfTitle);
-            _defaultTopic = preprocessor.GetTopic(_settingAttributesParser.GetSingleValue(AttributesDefaultTopic));
+            HelpsTitle = _settingAttributesParser.GetSingleValue(AttributesTitle);
+
+            var output_values = _settingAttributesParser.GetValues(AttributesOutput);
+            ChmOutput = output_values.Contains(OutputValueChm);
+            HtmlOutput = output_values.Contains(OutputValueHtml);
+            PdfOutput = output_values.Contains(OutputValuePdf);
+            
+            DefaultTopic = ( ChmOutput || HtmlOutput ) ? preprocessor.GetTopic(GetRequiredTopic(AttributesDefaultTopic)) : null;
+            PdfCoverTopic = PdfOutput ? preprocessor.GetTopic(GetRequiredTopic(AttributesPdfCoverTopic)) : null;
 
             _definitions = new Dictionary<string,string>();
-            string definitionFilename = _settingAttributesParser.GetSingleValue(AttributesDefinitionsFile);
 
-            if( definitionFilename != null )
+            // add the definitions in the settings file
+            foreach( var kp in _settingAttributesParser.GetPairs() )
+            {
+                if( _settingsAttributes.FirstOrDefault(x => ( kp.Key == x.Name )) == null )
+                    _definitions.Add(kp.Key, kp.Value[0]);
+            }
+
+            foreach( var definitionFilename in _settingAttributesParser.GetValues(AttributesDefinitionsFile) )
             {
                 _definitionAttributesParser.Parse(File.ReadAllLines(definitionFilename));
 
                 foreach( var kp in _definitionAttributesParser.GetPairs() )
-                    _definitions.Add(kp.Key,kp.Value[0]);
+                {
+                    if( _definitions.ContainsKey(kp.Key) )
+                        throw new Exception($"The definition {kp.Key} cannot be specified in multiple files");
+
+                    _definitions.Add(kp.Key, kp.Value[0]);
+                }
             }
 
             _resourceFiles = new List<string>();
@@ -119,8 +159,12 @@ namespace Help_Generator
         }
 
         private const string AttributesTitle = "Title";
-        private const string AttributesPdfTitle = "PdfTitle";
+        private const string AttributesOutput = "Output";
+        private const string OutputValueChm = "CHM";
+        private const string OutputValueHtml = "HTML";
+        private const string OutputValuePdf = "PDF";
         private const string AttributesDefaultTopic = "DefaultTopic";
+        private const string AttributesPdfCoverTopic = "PdfCoverTopic";
         private const string AttributesDefinitionsFile = "DefinitionsFile";
         private const string AttributesResourceFile = "ResourceFile";
 
@@ -134,10 +178,10 @@ namespace Help_Generator
                 tw.WriteLine("[OPTIONS]");
 
                 tw.WriteLine("Compiled File={0}",outputChmFilename);
-                tw.WriteLine("Title={0}",_helpsTitle);
+                tw.WriteLine("Title={0}",HelpsTitle);
                 tw.WriteLine("Contents File={0}",tableOfContentsFilename);
                 tw.WriteLine("Index File={0}",indexFilename);
-                tw.WriteLine("Default topic={0}",outputTopicFilenames[_defaultTopic]);
+                tw.WriteLine("Default topic={0}",outputTopicFilenames[DefaultTopic]);
                 tw.WriteLine("Default Window=main");
                 tw.WriteLine("Auto Index=No");
                 tw.WriteLine("Binary Index=Yes");
@@ -154,7 +198,7 @@ namespace Help_Generator
                     tableOfContentsFilename,
                     indexFilename,
                     "", // default topic
-                    outputTopicFilenames[_defaultTopic], // home topic
+                    outputTopicFilenames[DefaultTopic], // home topic
                     Constants.ChmButtonLink1,
                     Constants.ChmButtonText1,
                     Constants.ChmButtonLink2,
@@ -192,7 +236,7 @@ namespace Help_Generator
                     }
 
                     foreach( string alias in _resourceFileIdsCopy )
-                        tw.WriteLine("{0}={1}",alias,outputTopicFilenames[_defaultTopic]);
+                        tw.WriteLine("{0}={1}",alias,outputTopicFilenames[DefaultTopic]);
                 }
 
                 if( _resourceFiles.Count > 0 )
@@ -261,13 +305,10 @@ namespace Help_Generator
 
         public string GetDefinition(string attribute,Preprocessor preprocessor)
         {
-            if( attribute == "_pdftitle" && _pdfTitle != null ) // a special attribute coming from the settings file
-                return _pdfTitle;
-
             attribute = attribute.ToUpper();
 
-            // compile the file if it hasn't been compiled yet or if the definition is missing (because
-            // the definitions file may have changed since the last compilation)
+            // compile the file if it hasn't been compiled yet or if the definition is missing
+            // (because the definitions file may have changed since the last compilation)
             if( _definitions == null || !_definitions.ContainsKey(attribute) )
                 Compile(preprocessor);
 

@@ -32,31 +32,20 @@ namespace Help_Generator
 
         private BackgroundWorker _backgroundThread;
 
-		private bool DoGenerateChm
+        private bool CompileOnly { get { return ( _generationType == GenerationType.CompileOnly ); } }
+        
+        private bool GenerateOnlyChm
         {
             get
             {
-                return ( _generationType != GenerationType.CompileOnly );
+                return ( ( _generationType == GenerationType.GenerateChmOnly ) ||
+                         ( _generationType == GenerationType.GenerateChmAndClose ) );
             }
         }
 
-		private bool DoGenerateWebsite
-	    {
-            get
-            {
-                return DoGenerateChm &&
-                    ( _generationType != GenerationType.GenerateChmOnly ) &&
-                    ( _generationType != GenerationType.GenerateChmAndClose );
-            }
-        }
-
-    	private bool DoGeneratePdf
-        {
-            get
-            {
-                return DoGenerateWebsite && _helpComponents.settings.CreatePdf;
-            }
-        }
+		private bool DoGenerateChm { get { return ( !CompileOnly && _helpComponents.settings.ChmOutput ); } }
+		private bool DoGenerateWebsite { get { return ( !CompileOnly && !GenerateOnlyChm && _helpComponents.settings.HtmlOutput ); } }
+		private bool DoGeneratePdf { get { return ( !CompileOnly && !GenerateOnlyChm && _helpComponents.settings.PdfOutput ); } }
 
         public GenerateHelpsForm(HelpComponents helpComponents,GenerationType generationType)
         {
@@ -167,7 +156,7 @@ namespace Help_Generator
 
                             case ThreadUpdateMessage.PdfComplete:
                                 pictureBoxCheckmarkPdf.Visible = true;
-                                buttonOpenPdf.Enabled = _helpComponents.settings.CreatePdf;
+                                buttonOpenPdf.Enabled = true;
                                 break;
 
                             case ThreadUpdateMessage.ChmComplete:
@@ -212,7 +201,9 @@ namespace Help_Generator
                     if( ( ( processingStep == 4 ) && !DoGenerateWebsite ) ||
 						( ( processingStep == 5 ) && !DoGeneratePdf ) ||
 						( ( processingStep == 6 ) && !DoGenerateChm ) )
+                    {
                         continue;
+                    }
 
                     _backgroundThread.ReportProgress(0,String.Format("Processing {0}...",stepStrings[processingStep]));
 
@@ -408,7 +399,7 @@ namespace Help_Generator
 						}
 
                         // generate the topic for the PDF
-                        if( DoGeneratePdf && ( twPdf != null ) )
+                        if( twPdf != null )
                         {
                             html = topic.CompileForHtml(topicText,_helpComponents,_pdfTopicCompilerSettings);
                             twPdf.WriteLine(html);
@@ -533,11 +524,9 @@ namespace Help_Generator
             _backgroundThread.ReportProgress(0,"Processing PDF cover page...");
             string outputPdfCoverFilename = Path.Combine(_temporaryFilesPath,"_output_pdf_cover.html");
 
-            Preprocessor.TopicPreprocessor preprocessedTopic = _helpComponents.preprocessor.GetTopic(Constants.PdfCoverFilename);
-            string topicText = File.ReadAllText(preprocessedTopic.Filename);
-
-            Topic topic = new Topic(preprocessedTopic);
-            string html = topic.CompileForHtml(topicText,_helpComponents,_pdfTopicCompilerSettings);
+            string coverTopicText = File.ReadAllText(_helpComponents.settings.PdfCoverTopic.Filename);
+            Topic coverTopic = new Topic(_helpComponents.settings.PdfCoverTopic);
+            string html = coverTopic.CompileForHtml(coverTopicText,_helpComponents,_pdfTopicCompilerSettings);
             File.WriteAllText(outputPdfCoverFilename,PdfHtmlHeader + html + PdfHtmlFooter,Encoding.UTF8);
 
             // generate the PDF

@@ -134,16 +134,17 @@ namespace Help_Generator
             HashSet<Preprocessor.TopicPreprocessor> allTopics = preprocessor.GetAllTopics(false);
 
             RemoveUsedTopics(rootNode,allTopics);
+            
+            StringBuilder sb = new StringBuilder();
 
-            if( allTopics.Count > 0 )
+            foreach( Preprocessor.TopicPreprocessor topic in allTopics )
             {
-                StringBuilder sb = new StringBuilder();
-
-                foreach( Preprocessor.TopicPreprocessor topic in allTopics )
+                if( !topic.Optional )
                     sb.AppendLine(Path.GetFileName(topic.Filename));
-
-                throw new Exception(String.Format("The {0} is missing entries for the topics:\r\n\r\n{1}",fileDescription,sb.ToString()));
             }
+
+            if( sb.Length > 0 )
+                throw new Exception(String.Format("The {0} is missing entries for the topics:\r\n\r\n{1}",fileDescription,sb.ToString()));
 
             return rootNode;
         }
