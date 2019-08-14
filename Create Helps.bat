@@ -2,8 +2,8 @@ SET help_generator="Help Tools\Help Generator\bin\Release\Help Generator.exe"
 
 cd %~dp0
 
-del /q /f /s "Outputs"
-rmdir /q /s "Outputs"
+del /q /f /s "Help Outputs"
+rmdir /q /s "Help Outputs"
 
 %help_generator% /generate "CSBatch\CSBatch.hghelp"
 %help_generator% /generate "CSConcat\CSConcat.hghelp"
