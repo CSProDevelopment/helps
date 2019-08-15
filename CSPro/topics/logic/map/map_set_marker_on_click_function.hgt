@@ -51,28 +51,18 @@ PROC GLOBAL
 
 function launchHouseholdQuestionnaire(string caseid)
 
-	string pff_filename = pathname(Application) + "household.pff";
-
-	file pff_file;
-	setfile(pff_file, pff_filename, create);
-
-	filewrite(pff_file, "[Run Information]");
-	filewrite(pff_file, "Version=CSPro <definition version />");
-	filewrite(pff_file, "AppType=Entry");
-
-	filewrite(pff_file, "[DataEntryInit]");
-	filewrite(pff_file, "Key=%s", caseid);
-
-	filewrite(pff_file, "[Files]");
-	filewrite(pff_file, "Application=%v", "./household.ent");
-	filewrite(pff_file, "InputData=%v", "./household.csdb|CSPRODB");
-	filewrite(pff_file, "Paradata=%v", "./household.cslog");
+	pff household_pff;
 	
-	filewrite(pff_file, "[Parameters]");
-	filewrite(pff_file, "OnExit=%v", "./menu.pff");
-	close(pff_file);
+	household_pff.setproperty("AppType", "Entry");
 
-	execpff(filename(pff_file), stop);
+	household_pff.setproperty("Key", caseid);
+
+	household_pff.setproperty("Application", "Household.ent");
+	household_pff.setproperty("InputData", "Household.csdb");
+	
+	household_pff.setproperty("OnExit", "Menu.pff");
+	
+	household_pff.exec();
 
 end;
 
@@ -94,11 +84,9 @@ forcase LIST_DICT do
 	// When marker is clicked launch household questionnaire application
 	// and prefill the id-items
 	string householdCode = key(LIST_DICT);
-    mymap.setMarkerOnClick(markerId, launchHouseholdQuestionnaire(householdCode);
+    mymap.setMarkerOnClick(markerId, launchHouseholdQuestionnaire(householdCode));
 
 endfor;
-
-
 </logic>
 
 <seealso maps.hgt map_add_marker_function.hgt map_set_marker_on_click_info_window_function.hgt />

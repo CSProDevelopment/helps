@@ -17,9 +17,12 @@ The function returns a string containing the operator ID assigned to or entered 
 <subheader>Example</subheader>
 
 <logic>
-// write out the operator ID for the PFF that we are going to
-// launch so that the interviewer does not have to enter it again
-filewrite(pffFile,"OperatorID=%s",getoperatorid());
+LF_USER_ID = getoperatorid();
+
+if not loadcase(LOGINS_DICT, LF_USER_ID) then
+	errmsg("You do not have access to this system");
+	stop(1);
+endif;
 </logic>
 
 <seealso setoperatorid_function.hgt getdeviceid_function.hgt getusername_function.hgt getbluetoothname_function.hgt />

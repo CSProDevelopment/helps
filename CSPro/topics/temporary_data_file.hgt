@@ -4,50 +4,46 @@ Most CSPro applications sensibly require data files to operate but there may be 
 
 Before CSPro 7.0, it was possible to write "&lt;none&gt;" in the Define File Associations dialog to have CSPro create a temporary data file. Now you can use a <link data_sources.hgt>none data source</link>.
 
-Data entry applications run as they would with a file specified. Batch applications, however, do not run any logic associated with elements of the dictionary. Instead only the application file <logiccolor>preproc</logiccolor> and <logiccolor>postproc</logiccolor> are executed.
+Data entry applications run as they would with a file specified. Batch applications, however, do not run any logic associated with elements of the dictionary. Instead only the application <logiccolor>preproc</logiccolor> and <logiccolor>postproc</logiccolor> are executed.
 
 <logic>
 PROC GLOBAL
 
-// This program concatenates all the *.dat files in a directory by order of date.
-// The program can be run with any dictionary, it is only necessary that the name
-// of the application file procedure is valid.
+// this function concatenates all the .dat files in a directory by order of date
+function ConcatenateDatFiles()
 
-string listingName = "files.txt";
-string pffName = "CSConcat.pff";
-string outputName = "concatenated.dat";
+	string file_listing_filename = "file_listing.txt";
+	string output_filename = "Output/CombinedFiles.dat";
+	
+	// use the DOS dir command to create a file with the list of all .dat files
+    string listing_call = maketext('cmd /c "dir /b /od *.dat > %s"', file_listing_filename);
+    execsystem(listing_call, wait);
+	
+	// open that file and read all of the contents
+	file file_listing_file;
+	list string file_list;
+	
+	file_listing_file.open(file_listing_filename);
+	file_listing_file.read(file_list);
+	file_listing_file.close();
+	
+	filedelete(file_listing_filename);
+	
+	// create and run a pff to concatenate these files
+	pff concat_pff;
+	
+	concat_pff.setproperty("AppType", "Concatenate");
+	concat_pff.setproperty("InputData", file_list);
+	concat_pff.setproperty("OutputData", output_filename);
+    concat_pff.setproperty("Listing", "ConcatenateDatFiles.lst");
+    concat_pff.setproperty("ViewListing", "OnError");
+    concat_pff.setproperty("ViewResults", "No");
+	
+	concat_pff.exec();
 
-file inputFile;
-file pffFile;
+end;
 
 PROC CONCATENATE_FF
 
-	setfile(pffFile,strip(pffName));
-
-	filewrite(pffFile,"[Run Information]");
-	filewrite(pffFile,"Version=CSPro <defintion version />");
-	filewrite(pffFile,"AppType=Concatenate");
-	filewrite(pffFile,"[Files]");
-
-	string str = maketext('cmd /c "dir /b /od *.dat > %s"',listingName);
-	execsystem(str,wait);
-
-	setfile(inputFile,listingName);
-
-	while fileread(inputFile,str) do
-		filewrite(pffFile,"InputData=.\%s",str);
-	enddo;
-
-	close(inputFile);
-	filedelete(listingName);
-
-	filewrite(pffFile,"OutputData=%s",outputName);
-	filewrite(pffFile,"Listing=.\CSConcat.lst");
-	filewrite(pffFile,"[Parameters]");
-	filewrite(pffFile,"ViewListing=No");
-	filewrite(pffFile,"ViewResults=No");
-
-	close(pffFile);
-
-	execpff(pffName);
+	ConcatenateDatFiles();
 </logic>

@@ -21,7 +21,7 @@ PROC USER_ID
 
 	LF_USER_ID = USER_ID;
 
-	if not loadcase(LOGINS_DICT,LF_USER_ID) then
+	if not loadcase(LOGINS_DICT, LF_USER_ID) then
 		errmsg("Invalid login.");
 		reenter;
 	endif;

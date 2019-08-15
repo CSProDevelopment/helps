@@ -1,0 +1,61 @@
+﻿<title>Pff.Exec Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax pff>
+b = pff_name.exec();
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor pff>pff.exec</logiccolor> function starts another CSPro application using the properties defined in the  <link pffs.hgt>pff</link> object. If you modified any of the pff object's properties, it is not necessary to save the file to disk when running it, as this function will save a temporary file to the disk with the defined properties.
+
+For data entry PFFs, the function executes the application and immediately closes the current application (without saving any data). This is the same as running <logiccolor>execpff</logiccolor> with the <logiccolor>stop</logiccolor> argument. For other PFFs, the function executes the application using the <logiccolor>wait</logiccolor> argument. That is, this function is equivalent to:
+
+<logic>
+pff my_pff;
+// ...
+
+if my_pff.getproperty("AppType") = "Entry" then
+	execpff(filename(my_pff), stop);
+else
+	execpff(filename(my_pff), wait);
+endif;
+</logic>
+
+If you want to execute a data entry PFF without closing the current application, you can code:
+
+<logic>
+execpff(filename(my_pff), wait);
+</logic>
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the new application was started successfully and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC INTERVIEW_SELECTION_MENU
+
+	pff application_pff;
+	
+	// conduct the main household interview
+	if INTERVIEW_SELECTION_MENU = 1 then
+		application_pff.load("..\Household\Household.pff");
+	
+	// conduct the agriculture interview
+	else
+		application_pff.load("..\Agriculture\Agriculture.pff");
+	
+	endif;
+		
+	// set the key to the household the user selected
+	application_pff.setproperty("Key", SELECTED_HOUSEHOLD_KEY);
+	
+	// run the program
+	application_pff.exec();
+</logic>
+
+<seealso pffs.hgt execpff_function.hgt />

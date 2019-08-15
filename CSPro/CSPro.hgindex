@@ -50,6 +50,7 @@ notes_file_csnot.hgt | .not																		#	.not
 edit_order_file_ord.hgt | .ord																	#	.ord
 binary_data_entry_application_file_pen.hgt | .pen												#	.pen
 program_information_file_pff.hgt | .pff															#	.pff
+	pffs.hgt | PFF Object																		#		PFF Object
 	run_production_batch_edits.hgt																#		Run Production Batch Edits
 	run_production_data_entry.hgt																#		Run Production Data Entry
 file_types.hgt | .pffRunner																		#	.pffRunner
@@ -732,6 +733,8 @@ execsystem_function_desktop.hgt | ExecSystem Function											#	ExecSystem Fun
 	execsystem_function_desktop.hgt | Desktop													#		Desktop
 	execsystem_function_mobile.hgt | Mobile														#		Mobile
 statements.hgt | Executable Statements															#	Executable Statements
+pff_exec_function.hgt | Exec Function															#	Exec Function
+	pff_exec_function.hgt																		#		Pff.Exec Function
 open_an_application.hgt | Existing Application													#	Existing Application
 	open_an_application.hgt | Open																#		Open
 exit_statement.hgt																				#	Exit Statement
@@ -922,6 +925,7 @@ getoperatorid_function.hgt																		#	GetOperatorId Function
 screen_orientation.hgt | Getorientation Function												#	Getorientation Function
 getos_function.hgt																				#	GetOS Function
 getproperty_function.hgt																		#	GetProperty Function
+	pff_getproperty_function.hgt																#		Pff.GetProperty Function
 getrecord_function.hgt																			#	GetRecord Function
 getsymbol_function.hgt																			#	GetSymbol Function
 getusername_function.hgt																		#	GetUserName Function
@@ -1164,6 +1168,8 @@ loadcase_function.hgt																			#	LoadCase Function
 loading_and_saving_preferences.hgt																#	Loading and Saving Preferences
 loadsetting_function.hgt																		#	LoadSetting Function
 load_and_save_formatting_preferences.hgt														#	Load and Save Formatting Preferences
+pff_load_function.hgt | Load Function															#	Load Function
+	pff_load_function.hgt																		#		Pff.Load Function
 locate_function.hgt																				#	Locate Function
 run_production_data_entry.hgt | Lock															#	Lock
 locking_application_files.hgt																	#	Locking Application Files
@@ -1468,10 +1474,18 @@ add_percents_to_a_table.hgt | Percents															#	Percents
 	tally_attributes_for_a_variable.hgt | Proportions											#		Proportions
 change_field_properties.hgt | Persistent Fields													#	Persistent Fields
 program_information_file_pff.hgt | PFF															#	PFF
+	pffs.hgt | PFF Object																		#		PFF Object
 	run_production_batch_edits.hgt																#		Run Production Batch Edits
 	run_production_data_entry.hgt																#		Run Production Data Entry
 	introduction_to_production_tabulations.hgt | Run Production Tabulation						#		Run Production Tabulation
 	sysparm_function.hgt																		#		SysParm Function
+pffs.hgt																						#	Pffs
+	pff_exec_function.hgt																		#		Pff.Exec Function
+	pff_getproperty_function.hgt																#		Pff.GetProperty Function
+	pff_load_function.hgt																		#		Pff.Load Function
+	pff_save_function.hgt																		#		Pff.Save Function
+	pff_setproperty_function.hgt																#		Pff.SetProperty Function
+	pff_statement.hgt																			#		Pff Statement
 add_pictures.hgt | Pictures																		#	Pictures
 	add_pictures.hgt | Add in CAPI Question Text												#		Add in CAPI Question Text
 	resource_folders.hgt																		#		Resource Folders
@@ -1715,6 +1729,8 @@ savesetting_function.hgt																		#	SaveSetting Function
 save_an_application_with_a_new_name.hgt | Save As												#	Save As
 	save_an_application_with_a_new_name.hgt | Application										#		Application
 	save_dictionary_as_new_file.hgt | Dictionary												#		Dictionary
+pff_save_function.hgt | Save Function															#	Save Function
+	pff_save_function.hgt																		#		Pff.Save Function
 saving_tables_as_text_html_or_rich_text.hgt | Saving Tables as Text HTML or Rich Text			#	Saving Tables as Text HTML or Rich Text
 change_the_view.hgt | Screen																	#	Screen
 	change_the_view.hgt | Full																	#		Full
@@ -1779,6 +1795,7 @@ setoperatorid_function.hgt																		#	SetOperatorId Function
 screen_orientation.hgt | Setorientation Function												#	Setorientation Function
 setoutput_function.hgt																			#	SetOutput Function
 setproperty_function.hgt																		#	SetProperty Function
+	pff_setproperty_function.hgt																#		Pff.SetProperty Function
 setreportdata_function.hgt																		#	SetReportData Function
 map_set_title_function.hgt | SetTitle Function													#	SetTitle Function
 	map_set_title_function.hgt																	#		Map.SetTitle Function

@@ -1,0 +1,19 @@
+﻿<title>Pff Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+pff <arg>pff_name</arg>;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>pff</logiccolor> statement creates a dynamic <link pffs.hgt>pff</link> with the name <arg>pff_name</arg>. The pff name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare pffs globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_listing_example.hgi />
+</logic>
+
+<seealso pffs.hgt />

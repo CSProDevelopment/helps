@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = execpff(<arg>pff_filename</arg>『,<arg>flags</arg>』);
+b = execpff(<arg>pff_filename</arg> ‖ <arg>pff_name</arg>『, <arg>flags</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>execpff</logiccolor> function starts another CSPro application. The function is very similar to <logiccolor>execsystem</logiccolor>, but instead of passing the name of an application or task, you supply a string expression, <arg>pff_filename</arg>, containing the name of a CSPro application's <link program_information_file_pff.hgt>Program Information File (.pff)</link>. This function is useful when conducting surveys that use different machines on which the path of the CSPro executables may differ, or when designing menu programs.
+The <logiccolor>execpff</logiccolor> function starts another CSPro application. This function is useful when designing menu programs or when conducting surveys that use multiple machines on which the path of the CSPro executables may differ. The function is very similar to <logiccolor>execsystem</logiccolor>, but instead of passing the name of an application or task, you supply a string expression, <arg>pff_filename</arg>, containing the name of a CSPro application's <link program_information_file_pff.hgt>Program Information File (.pff)</link>, or <arg>pff_name</arg>, the name of a <link pffs.hgt>pff</link> object. If using a modified but unsaved pff object, it will be saved to a temporary file and then executed.
 
 An optional set of <arg>flags</arg>, described in the <logiccolor>execsystem</logiccolor> helps, allow you to control how the CSPro application is opened.
 
@@ -28,13 +28,13 @@ The function returns a logical value of 1 (true) if the new application is start
 PROC MENU
 
 	if MENU = 1 then
-		execpff("Household.pff",stop);
+		execpff("Household.pff", stop);
 
 	elseif MENU = 2 then
-		execpff("Agriculture.pff",stop);
+		execpff("Agriculture.pff", stop);
 
 	endif;
 
 </logic>
 
-<seealso execsystem_function_desktop.hgt execsystem_function_mobile.hgt />
+<seealso pff_exec_function.hgt execsystem_function_desktop.hgt execsystem_function_mobile.hgt />

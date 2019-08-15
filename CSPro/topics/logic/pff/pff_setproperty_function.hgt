@@ -1,0 +1,64 @@
+﻿<title>Pff.SetProperty Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax pff>
+b = pff_name.setproperty(<arg>property_name</arg>, <arg>property_value</arg> ‖ <arg>string_list</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor pff>pff.setproperty</logiccolor> function modifies the value associated with the <link pffs.hgt>pff</link>'s property specified by the string expression <arg>property_name</arg>. The property will be modified to the value given in the string expression <arg>property_value</arg>. If the <arg>property_value</arg> is blank, the property will be reset to its default value. Alternatively, a <arg>string_list</arg> can be supplied containing values for properties that have multiple values (such as input data filenames).
+
+Properties names can be prefixed with the section name. For example, if you load an existing PFF that has a persistent ID value defined for the item <logiccolor>PROVINCE</logiccolor>, you can code:
+
+<logicsyntax pff>
+pff_name.setproperty("PROVINCE", "50");
+</logicsyntax>
+
+However, if no such property was defined in the PFF, the <logiccolor pff>pff.setproperty</logiccolor> function will not know whether you are modifying a value in the <pffcolor>[DataEntryIds]</pffcolor> section, the <pffcolor>[ExternalFiles]</pffcolor> section, or another section. To avoid this ambiguity, when setting new custom properties, you can specify the section name when setting the property:
+
+<logicsyntax pff>
+pff_name.setproperty("DataEntryIds.PROVINCE", "50");
+</logicsyntax>
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) because it will always successfully set a property. If the property name is unknown, then the value is assigned to a new parameter (defined in a PFF's <pffcolor>[Parameters]</pffcolor> section).
+
+<subheader>Example 1</subheader>
+
+<logic>
+<include include_listing_example.hgi />
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC REPORT_SELECTION
+
+	// run the batch application to generate a report on...
+	pff report_pff;
+	report_pff.load("..\Report\Report.pff");
+
+	// ...the data file for the selected province and region
+	if REPORT_SELECTION = 1 then
+		report_pff.setproperty("InputData", maketext("..\Data\%v%v.csdb", PROVINCE, REGION));
+		
+	// ...the data files for all the regions in the selected province
+	elseif REPORT_SELECTION = 2 then
+		report_pff.setproperty("InputData", maketext("..\Data\%v*.csdb", PROVINCE));
+
+	// ...the data files for the entire country
+	else
+		list string data_files_listing;
+		dirlist(data_files_listing, "..\Data", "*.csdb", recursive);
+		report_pff.setproperty("InputData", data_files_listing);
+	
+	endif;
+	
+	report_pff.exec();
+</logic>
+
+<seealso pffs.hgt pff_getproperty_function.hgt />

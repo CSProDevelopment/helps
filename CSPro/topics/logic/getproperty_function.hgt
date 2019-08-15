@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = getproperty(『<arg>symbol</arg>,』<arg>property_name</arg>);
+s = getproperty(『<arg>symbol</arg>, 』<arg>property_name</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>getproperty</logiccolor> function returns a string containing the current property specified by the string expression <arg>property_name</arg>. If an optional dictionary <arg>symbol</arg>, which can be either an item or a field, is specified, then the property must apply to an item or field. If no symbol is specified, then the property must be an application property.
+The <logiccolor>getproperty</logiccolor> function returns a string containing the current value associated with the property specified by the string expression <arg>property_name</arg>. If an optional dictionary <arg>symbol</arg>, which can be either an item or a field, is specified, then the property must apply to an item or field. If no symbol is specified, then the property must be an application property.
 
 <include include_properties.hgi />
 
