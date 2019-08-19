@@ -8,7 +8,7 @@ lat = map_name.getMarkerLatitude(<arg>markerId</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.getMarkerLatitude()</logiccolor> function retrieves the latitude of the marker identified by <arg>markerId</arg>.
+The <logiccolor map>map.getMarkerLatitude</logiccolor> function retrieves the latitude of the marker identified by <arg>markerId</arg>.
 
 <subheader>Return Value</subheader>
 
@@ -33,7 +33,7 @@ preproc
 map dragMap;
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
-numeric markerId = dragMap.addMarker(38.84839,-76.931098);
+numeric markerId = dragMap.addMarker(38.84839, -76.931098);
 
 // Set function that is called on marker drag
 dragMap.setMarkerOnDrag(markerId, onDragMarker());

@@ -8,21 +8,21 @@ b = map_name.setBaseMap(<arg>mapType</arg> ‖ <arg>pathToOfflineMap</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.setBaseMap()</logiccolor> function changes the base map that is displayed for the map map_name. Maps can use either online base maps which require an internet connection to load maps or offline base maps which require an map file stored on the device. 
+The <logiccolor map>map.setBaseMap</logiccolor> function changes the base map that is displayed for the <link maps.hgt>map</link> <logiccolor>map_name</logiccolor>. Maps can use either online base maps, which requires an Internet connection to load maps, or can use offline base maps, which requires a map file stored on the device. 
 
 The first form of the function sets the base map to one of the online map types based on the value of <arg>mapType</arg>:
 
 <table 2>
-<cell>Normal</cell><cell>Standard road map showing streets and outlines of some buildings.</cell>
-<cell>Satellite</cell><cell>Satellite imagery</cell>
-<cell>Hybrid</cell><cell>Features from street map overlaid on satellite imagery</cell>
-<cell>Terrain</cell><cell>Physical map based on terrain information</cell>
-<cell>None</cell><cell>Empty base map. Only markers and buttons are shown.</cell>
+<cell><b>Normal</b></cell><cell>Standard road map showing streets and outlines of some buildings.</cell>
+<cell><b>Satellite</b></cell><cell>Satellite imagery.</cell>
+<cell><b>Hybrid</b></cell><cell>Features from the street map overlaid on satellite imagery.</cell>
+<cell><b>Terrain</b></cell><cell>Physical map based on terrain information.</cell>
+<cell><b>None</b></cell><cell>Empty base map. Only markers and buttons are shown.</cell>
 </table>
 
 The second form uses an offline map in a file named named <arg>pathToOfflineMap</arg> stored on the device. For details on supported file types for offline maps see <link offline_maps.hgt>offline maps</link>.
 
-By the default the map type is Normal.
+By default the map type is <b>Normal</b>.
 
 <subheader>Return Value</subheader>
 

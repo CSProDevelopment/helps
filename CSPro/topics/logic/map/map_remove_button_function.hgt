@@ -8,7 +8,7 @@ b = map_name.removeButton(<arg>buttonId</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.removeMarker()</logiccolor> function removes a marker from the map map_name. <arg>buttonId</arg> should be the id returned by <logiccolor map>map.addTextButton()</logiccolor> or <logiccolor map>map.addImageButton()</logiccolor> when the button was added to the map.
+The <logiccolor map>map.removeMarker</logiccolor> function removes a marker from the map <logiccolor>map_name</logiccolor>. <arg>buttonId</arg> should be the id returned by <logiccolor map>map.addTextButton</logiccolor> or <logiccolor map>map.addImageButton</logiccolor> when the button was added to the map.
 
 <subheader>Return Value</subheader>
 
@@ -20,7 +20,7 @@ The function returns a logical value of 1 (true) if the button was found and was
 PROC GLOBAL
 
 // Function to remove a button from a map
-function removeButton(map m, buttonId)
+function removeButton(map m, numeric buttonId)
 	m.removeButton(buttonId);
 end;
 

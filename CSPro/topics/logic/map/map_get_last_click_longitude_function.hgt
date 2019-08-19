@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax map>
-lat = map_name.getLastClickLongitude();
+long = map_name.getLastClickLongitude();
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.getLastClickLongitude()</logiccolor> function retrieves the longitude of the last point on the map that the user tapped. This is often used in the callback function passed to <logiccolor map>map.setOnClick()</logiccolor> to get the coordinates of the point that was just tapped. The tapped longitude is only recorded if a user taps on the map itself rather than on a marker. 
+The <logiccolor map>map.getLastClickLongitude</logiccolor> function retrieves the longitude of the last point on the map that the user tapped. This is often used in the callback function passed to <logiccolor map>map.setOnClick</logiccolor> to get the coordinates of the point that was just tapped. The tapped longitude is only recorded if a user taps on the map itself rather than on a marker. 
 
 <subheader>Return Value</subheader>
 
@@ -28,8 +28,8 @@ numeric markerId;
 // This function is called when user taps on map.
 // It moves the marker to the location that the user tapped.
 function mapClicked()
-    numeric lat = map.lastClickLatitude();
-    numeric lon = map.lastClickLongitude();
+    numeric lat = mymap.lastClickLatitude();
+    numeric lon = mymap.lastClickLongitude();
 	mymap.setMarkerLocation(markerId, lat, lon);
 end;
 
@@ -37,7 +37,7 @@ PROC SHOW_MAP
 preproc
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
-markerId = mymap.addMarker(38.84839,-76.931098);
+markerId = mymap.addMarker(38.84839, -76.931098);
 
 // Set function that is called when the user taps on the map to move the marker
 // to the new position

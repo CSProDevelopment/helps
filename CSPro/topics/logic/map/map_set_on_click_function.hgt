@@ -8,11 +8,12 @@ b = map_name.setOnClick(<arg>markerId</arg>, <arg>callbackFunction</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.setOnClick()</logiccolor> function sets the function that is called when the user taps on the base map away from any markers. The <arg>callbackFunction</arg> is the name of a user function defined in the global procedure that will be called when the user taps on the map. The function name may optionally be followed by function arguments which will be passed to the function when it is run. These arguments are evaluated at the time that <logiccolor map>map.setOnClick()</logiccolor> is called rather than at the time the callback is run.
+The <logiccolor map>map.setOnClick</logiccolor> function sets the function that is called when the user taps on the base map away from any markers. The <arg>callbackFunction</arg> is the name of a user function defined in the global procedure that will be called when the user taps on the map. The function name may optionally be followed by function arguments which will be passed to the function when it is run. These arguments are evaluated at the time that <logiccolor map>map.setOnClick</logiccolor> is called rather than at the time the callback is run.
 
-To retreive the coordinates of the map location that was tapped use the functions <logiccolor map>map.getLastClickLatitude()</logiccolor> and <logiccolor map>map.getLastClickLongitude()</logiccolor>.
+To retreive the coordinates of the map location that was tapped use the functions <logiccolor map>map.getLastClickLatitude</logiccolor> and <logiccolor map>map.getLastClickLongitude</logiccolor>.
 
-If the user taps on a marker rather than on the map itself <arg>callbackFunction</arg> is not called. To capture taps on markers use the <logiccolor map>map.setMarkerOnClick()</logiccolor> function.
+If the user taps on a marker rather than on the map itself, <arg>callbackFunction</arg> is not called. To capture taps on markers use the <logiccolor map>map.setMarkerOnClick</logiccolor> function.
+
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true).
@@ -31,8 +32,8 @@ numeric markerId;
 // This function is called when user taps on map.
 // It moves the marker to the location that the user tapped.
 function mapClicked()
-    numeric lat = map.lastClickLatitude();
-    numeric lon = map.lastClickLongitude();
+    numeric lat = mymap.lastClickLatitude();
+    numeric lon = mymap.lastClickLongitude();
 	mymap.setMarkerLocation(markerId, lat, lon);
 end;
 
@@ -40,7 +41,7 @@ PROC SHOW_MAP
 preproc
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
-markerId = mymap.addMarker(38.84839,-76.931098);
+markerId = mymap.addMarker(38.84839, -76.931098);
 
 // Set function that is called when the user taps on the map to move the marker
 // to the new position

@@ -8,7 +8,7 @@ b = map_name.clearButtons();
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.clearButtons()</logiccolor> function removes all the buttons currently on the <link maps.hgt>map</link> named map_name.
+The <logiccolor map>map.clearButtons</logiccolor> function removes all the buttons currently on the <link maps.hgt>map</link> named <logiccolor>map_name</logiccolor>.
 
 <subheader>Return Value</subheader>
 
@@ -32,7 +32,7 @@ function updateButtons(map myMap)
 		myMap.addTextButton("Add", addHousehold(myMap));
 	endif;
 	
-	if showFilerButton then
+	if showFilterButton then
 		myMap.addTextButton("Filter", filterHouseholds(myMap));
 	endif;
 	

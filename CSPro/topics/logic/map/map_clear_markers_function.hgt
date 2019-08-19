@@ -8,7 +8,7 @@ b = map_name.clearMarkers();
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.clearMarkers()</logiccolor> function removes all the markers currently on the <link maps.hgt>map</link> named map_name.
+The <logiccolor map>map.clearMarkers</logiccolor> function removes all the markers currently on the <link maps.hgt>map</link> named <logiccolor>map_name</logiccolor>.
 
 <subheader>Return Value</subheader>
 
@@ -28,12 +28,10 @@ function filterMapHouseholds(map myMap)
 		// Clear current markers
 		myMap.clearMarkers();
 		
-		// Add markers for hosueholds matching status chosen
-		forcase HOUSEHOLD_DICT do
-			if HOUSEHOLD_STATUS = choice then
-				numeric marker = myMap.addMarker(HOUSEHOLD_LATITUDE, HOUSEHOLD_LONGITUDE);
-				myMap.setMarkerDescription(marker, maketext("%l - %s", HOUSEHOLD_NUMBER, HOUSEHOLD_HEAD_NAME));
-			endif;
+		// Add markers for households matching status chosen
+		forcase HOUSEHOLD_DICT WHERE HOUSEHOLD_STATUS = choice do
+			numeric marker = myMap.addMarker(HOUSEHOLD_LATITUDE, HOUSEHOLD_LONGITUDE);
+			myMap.setMarkerDescription(marker, maketext("%l - %s", HOUSEHOLD_NUMBER, HOUSEHOLD_HEAD_NAME));
 		endfor;
 	endif;
 end;

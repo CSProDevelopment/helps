@@ -8,7 +8,7 @@ markerId = map_name.addMarker(<arg>latitude</arg>, <arg>longitude</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.addMarker()</logiccolor> function creates a new marker at the position defined by <arg>latitude</arg> and <arg>longitude</arg> and adds the new marker to the map map_name. Initially the marker will have the default red and black marker icon and no description. You can customize the marker icon using the function <logiccolor map>setMarkerText</logiccolor> or <logiccolor map>setMarkerImage</logiccolor>. You can add a description of the marker using <logiccolor map>setMarkerDescription</logiccolor>. The description will appear in the marker list and in a pop-up when the user taps on the marker.
+The <logiccolor map>map.addMarker</logiccolor> function creates a new marker at the position defined by <arg>latitude</arg> and <arg>longitude</arg> and adds the new marker to the <link maps.hgt>map</link> <logiccolor>map_name</logiccolor>. Initially the marker will have the default red and black marker icon and no description. You can customize the marker icon using the function <logiccolor map>setMarkerText</logiccolor> or <logiccolor map>setMarkerImage</logiccolor>. You can add a description of the marker using <logiccolor map>setMarkerDescription</logiccolor>. The description will appear in the marker list and in a popup when the user taps on the marker.
 
 <subheader>Return Value</subheader>
 
@@ -22,10 +22,10 @@ The function returns the identifier of the new marker which may be used in subse
 map mymap;
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
-numeric markerId = mymap.addMarker(38.84839,-76.931098);
+numeric markerId = mymap.addMarker(38.84839, -76.931098);
 
-// Set marker pop-up text
-mymap.setMarkerDescription(markerId,"CSPro Team at the U.S. Census Bureau");
+// Set marker popup text
+mymap.setMarkerDescription(markerId, "CSPro Team at the U.S. Census Bureau");
 
 </logic>
 

@@ -3,14 +3,14 @@
 <subheader>Format</subheader>
 
 <logicsyntax map>
-b = map_name.setMarkerOnClickInfoWindow(<arg>markerId</arg>,<arg>callbackFunction</arg>);
+b = map_name.setMarkerOnClickInfoWindow(<arg>markerId</arg>, <arg>callbackFunction</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.setMarkerOnClick()</logiccolor> function sets the function that is called when the user taps on the popup-info window for the marker identified by <arg>markerId</arg>. The popup info window is shown when the user taps on the marker and it displays the marker description set by calling <logiccolor map>map.setMarkerDescription()</logiccolor>. After tapping on the marker to display the info window, when the user then taps on the the popup the user-defined function <arg>callbackFunction</arg> will be called.
+The <logiccolor map>map.setMarkerOnClick</logiccolor> function sets the function that is called when the user taps on the popup info window for the marker identified by <arg>markerId</arg>. The popup info window is shown when the user taps on the marker and it displays the marker description set by calling <logiccolor map>map.setMarkerDescription</logiccolor>. After tapping on the marker to display the info window, when the user then taps on the popup, the user-defined function <arg>callbackFunction</arg> will be called.
 
-The <arg>callbackFunction</arg> is the name of a user function defined in the global procedure. The function name may optionally be followed by function arguments which will be passed to the function when it is run. These arguments are evaluated at the time that <logiccolor map>map.setMarkerOnClickInfoWindow()</logiccolor> is called rather than at the time the callback is run. This allows you to reuse the same callback function for multiple markers and to customize the behavior of the callback by passing different arguments to the callback function for each marker.
+The <arg>callbackFunction</arg> is the name of a user function defined in the global procedure. The function name may optionally be followed by function arguments which will be passed to the function when it is run. These arguments are evaluated at the time that <logiccolor map>map.setMarkerOnClickInfoWindow</logiccolor> is called rather than at the time the callback is run. This allows you to reuse the same callback function for multiple markers and to customize the behavior of the callback by passing different arguments to the callback function for each marker.
 
 <subheader>Return Value</subheader>
 
@@ -25,13 +25,13 @@ function clickedOnMarkerInfoWindow()
     errmsg("You clicked on a marker popup");
 end;
 
-PROC ANITEM
+PROC SOMEITEM
 
 // Declare a map
 map mymap;
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
-numeric markerId = mymap.addMarker(38.84839,-76.931098);
+numeric markerId = mymap.addMarker(38.84839, -76.931098);
 
 // Set function that is called on marker info window click
 mymap.setMarkerOnClick(markerId, clickedOnMarkerInfoWindow());
@@ -45,7 +45,6 @@ mymap.show();
 
 <logic>
 PROC GLOBAL
-
 
 function launchHouseholdQuestionnaire(string caseid)
 
@@ -81,7 +80,7 @@ forcase LIST_DICT do
     mymap.setMarkerDescription(markerId, strip(LI_HOUSEHOLD_HEAD_NAME));
 
 	// When the info window is clicked launch household questionnaire application
-	// and prefill the id-items
+	// and prefill the ID items
 	string householdCode = key(LIST_DICT);
     mymap.setMarkerOnClickInfoWindow(markerId, launchHouseholdQuestionnaire(householdCode));
 

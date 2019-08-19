@@ -5,16 +5,16 @@ In addition to showing the already captured cases in a scrolling list on the cas
 
 To enable the map based case listing screen, select <b>Mapping</b> from the <b>Options</b> menu:
 
-<center><image mapping_options.jpg /></center>
+<center><image mapping-options.png /></center>
 
 In the <b>Mapping Options</b> dialog, check the <b>Show case listing on map</b> option and choose the variables in your data dictionary where the coordinates (latitude and longitude) of the cases are stored. These must be numeric variables from the main data dictionary with at least one decimal place. 
 
-For each case in the data file, CSEntry displays a marker on the map at the location specified by the values of the selected latitude and longitude variables. Completed cases are represented by blue markers and partially completed cases are represented by red markers. Tapping on a marker displays a pop-up window on the map containing the case label or case id for the case along with any case notes. Tapping on the pop-up window starts data entry mode for the selected case. You can use the <logiccolor>setcaselabel()</logiccolor> and <logiccolor>putnote()</logiccolor> functions to customize the case label and case note displayed in the marker pop-up window. Both the case label and case note support a limited subset of HTML tags for formatting including &lt;b&gt; (bold), &lt;i&gt; (italic) and &lt;font&gt; (font, size and color).
+For each case in the data file, CSEntry displays a marker on the map at the location specified by the values of the selected latitude and longitude variables. Completed cases are represented by blue markers and partially completed cases are represented by red markers. Tapping on a marker displays a popup window on the map containing the case label or case ID for the case along with any case notes. Tapping on the popup window launches data entry for the selected case. You can use the <logiccolor>setcaselabel</logiccolor> and <logiccolor>putnote</logiccolor> functions to customize the case label and case note displayed in the marker popup window. Both the case label and case note support a limited subset of HTML tags for formatting including &lt;b&gt; (bold), &lt;i&gt; (italic) and &lt;font&gt; (font, size and color).
 
 Any cases that have blank values for the latitude or longitude variable will not be displayed on the map. This means, for example, that a partially saved case where the GPS coordinates have not yet been captured will not be displayed on the map.
 
 Mapping is currently only supported on Android. No maps are displayed in the case listing when running your application on Windows.
 
-By default, the cases will be displayed on a Google Map which requires that the tablet be connected to the internet. In cases where no internet connection is available you can specify and offline map file in the pff file.
+By default, the cases will be displayed with a Google Maps base map, which requires that the Android device be connected to the Internet. In cases where no Internet connection is available, you can <link offline_maps.hgt>specify an offline map</link> file to use in the PFF file.
 
 <seealso mapping.hgt offline_maps.hgt />

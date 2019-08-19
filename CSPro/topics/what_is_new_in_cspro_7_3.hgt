@@ -3,6 +3,15 @@
 
 This is a detailed list of changes in CSPro 7.3. For a more general overview, see the <i>readme.txt</i> file located in the CSPro installation folder.
 
+<subheader>Mapping</subheader>
+
+<list>
+	<li>The introduction of a new <link mapping.hgt>mapping module</link> for displaying maps and allowing users to interact with points. This feature is only available on Android.</li>
+	<li>A simple version, the <link map_case_list.hgt>map case listing</link>, replaces the text-based case listing with a map-based one.</li>
+	<li>Advanced users can use the <logiccolor>map</logiccolor> object to create dynamic and responsive <link maps.hgt>maps</link> in logic.</li>
+</list>
+
+
 <subheader>CSPro Designer</subheader>
 
 <list>
@@ -37,7 +46,7 @@ This is a detailed list of changes in CSPro 7.3. For a more general overview, se
 	<li>The <link lists.hgt>list</link> object is now fully functional, with assignment and new functions: <logiccolor list>add</logiccolor>, <logiccolor list>clear</logiccolor>, <logiccolor list>insert</logiccolor>, <logiccolor list>length</logiccolor>, <logiccolor list>remove</logiccolor>, <logiccolor list>seek</logiccolor>, and <logiccolor list>show</logiccolor>.</li>
 	<li>Simplified creation of dynamic value sets with the new <link valuesets.hgt>valueset</link> object that has the functions: <logiccolor valueset>add</logiccolor>, <logiccolor valueset>clear</logiccolor>, <logiccolor valueset>length</logiccolor>, <logiccolor valueset>remove</logiccolor>, and <logiccolor valueset>show</logiccolor>.</li>
 	<li>Easier way to manipulate and run <link program_information_file_pff.hgt>PFF files</link> with the new <link pffs.hgt>pff</link> object that has the functions: <logiccolor pff>exec</logiccolor>, <logiccolor pff>getproperty</logiccolor>, <logiccolor pff>load</logiccolor>, <logiccolor pff>save</logiccolor>, and <logiccolor pff>setproperty</logiccolor>.</li>
-	<li>A new <logiccolor>map</logiccolor> object that allows display of <topic maps.hgt /> in CSEntry Android</li>
+	<li>A new <logiccolor>map</logiccolor> object that allows the displaying of <link maps.hgt>maps</link> on Android that has the functions: <logiccolor map>addImageButton</logiccolor>, <logiccolor map>addMarker</logiccolor>, <logiccolor map>addTextButton</logiccolor>, <logiccolor map>clearButtons</logiccolor>, <logiccolor map>clearMarkers</logiccolor>, <logiccolor map>getLastClickLatitude</logiccolor>, <logiccolor map>getLastClickLongitude</logiccolor>, <logiccolor map>getMarkerLatitude</logiccolor>, <logiccolor map>getMarkerLongitude</logiccolor>, <logiccolor map>hide</logiccolor>, <logiccolor map>removeButton</logiccolor>, <logiccolor map>removeMarker</logiccolor>, <logiccolor map>setBaseMap</logiccolor>, <logiccolor map>setMarkerDescription</logiccolor>, <logiccolor map>setMarkerImage</logiccolor>, <logiccolor map>setMarkerLocation</logiccolor>, <logiccolor map>setMarkerOnClick</logiccolor>, <logiccolor map>setMarkerOnClickInfoWindow</logiccolor>, <logiccolor map>setMarkerOnDrag</logiccolor>, <logiccolor map>setMarkerText</logiccolor>, <logiccolor map>setOnClick</logiccolor>, <logiccolor map>setTitle</logiccolor>, <logiccolor map>show</logiccolor>, <logiccolor map>showCurrentLocation</logiccolor>, <logiccolor map>zoomTo</logiccolor>.</li>
 	<li>A new function, <logiccolor>pathconcat</logiccolor>, simplifies combining multiple strings into a single string representing a file path.</li>
 	<li>A new function, <logiccolor>view</logiccolor>, launches the system's default viewer to display a file or website.</li>
 	<li>A new <link message_formatting_options.hgt>message formatter</link>, <logiccolor>"%l"</logiccolor>, that displays an item's label from the value set corresponding to an item's current value.</li>
@@ -51,10 +60,9 @@ This is a detailed list of changes in CSPro 7.3. For a more general overview, se
 <subheader>Android</subheader>
 
 <list>
-	<li>It is now possible to <topic map_case_list.hgt /> </li>
+	<li>Reading GPS coordinates now uses Google's Fused Location Provider, which makes it easier to capture coordinates while indoors.</li>
 	<li>The way that <link run_production_data_entry.hgt>hidden applications</link> are shown has been restored to the behavior used up to CSPro 7.1.</li>
 	<li>The add/insert/delete occurrence options on the case tree has been restored to the behavior used up to CSPro 7.1 (displaying in both operator- and system-controlled modes), though these options can be <link csentry_settings_modification.hgt>disabled via logic</link>.</li>
-	<li>Reading GPS coordinates now uses the Google Fused Location Provider which will make it easier to capture coordinates indoors</li>
 </list>
 
 

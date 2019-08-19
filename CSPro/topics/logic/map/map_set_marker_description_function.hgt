@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax map>
-b = map_name.setMarkerDescription(<arg>markerId</arg>,<arg>description</arg>);
+b = map_name.setMarkerDescription(<arg>markerId</arg>, <arg>description</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.setMarkerDescription()</logiccolor> function sets the text shown in the pop-up info window when the marker is tapped. The description is also shown in the list of markers displayed below or to the left of the map.
+The <logiccolor map>map.setMarkerDescription</logiccolor> function sets the text shown in the popup info window when the marker is tapped. The description is also shown in the list of markers displayed below or to the left of the map.
 
 The <arg>description</arg> may contain the following HTML tags:
 <list>
@@ -30,14 +30,13 @@ The function returns a logical value of 1 (true) if the marker was found and the
 <subheader>Example</subheader>
 
 <logic>
-
 // Declare a map
 map mymap;
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
-numeric markerId = mymap.addMarker(38.84839,-76.931098);
+numeric markerId = mymap.addMarker(38.84839, -76.931098);
 
-// Set the pop-up text when marker is tapped to
+// Set the popup text when marker is tapped to
 // display name of head of household and number of household
 // members
 string popupText = maketext("Head: %s %s Males: %d Females %d",

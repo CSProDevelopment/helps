@@ -6,9 +6,9 @@ In logic, a <logiccolor>map</logiccolor> is an object that can be used to displa
 
 To display a map, call the <logiccolor map>show</logiccolor> function. The map will be displayed allowing the user to interact with it until the user taps the back button or the <logiccolor map>hide</logiccolor> function is called from program logic.
 
-You can call the map functions to add markers, buttons, set the basemap, and pan/zoom before showing the map. This will be more efficient than adding them afterwards, especially when adding large numbers of markers. You can also call the map functions after showing the map from within any of the user defined callback functions for map, marker and button clicks and drags.
+You can call map functions to add markers, buttons, set the base map, and pan/zoom before showing the map. This will be more efficient than adding them afterwards, especially when adding large numbers of markers. You can also call the map functions after showing the map from within any of the user-defined callback functions for map, marker, and button clicks and drags.
 
-By default, the map will display a base map from Google Maps which requires an internet connection. With no internet connection the base map will be empty. To display a map without an internet connection you can copy an an offline map file to your device and pass the file to the <logiccolor map>setBaseMap</logiccolor> function. See <link offline_maps.hgt>offline maps</link> for details.
+By default, the map will display a base map from Google Maps, which requires an Internet connection. With no Internet connection the base map will be empty. To display a map without an Internet connection you can copy an an <link offline_maps.hgt>offline map file</link> to your device and pass the file to the <logiccolor map>setBaseMap</logiccolor> function.
 
 
 <subheader>Functionality</subheader>
@@ -18,29 +18,29 @@ A map is a CSPro logic object and the following functions can be called via <lin
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
 	<cell><link map_show_function.hgt>show</link></cell><cell>Display the map and allow the user to interact with it.</cell>
-	<cell><link map_hide_function.hgt>hide</link></cell><cell>End display of map if it is currently showing.</cell>
+	<cell><link map_hide_function.hgt>hide</link></cell><cell>End displaying the map if it is currently showing.</cell>
 	<cell><link map_add_marker_function.hgt>addMarker</link></cell><cell>Place a marker on the map at specified latitude and longitude.</cell>
 	<cell><link map_remove_marker_function.hgt>removeMarker</link></cell><cell>Delete a marker from the map.</cell>
 	<cell><link map_clear_markers_function.hgt>clearMarkers</link></cell><cell>Delete all markers from the map.</cell>
 	<cell><link map_set_marker_image_function.hgt>setMarkerImage</link></cell><cell>Set the icon displayed on the map for a marker.</cell>
-	<cell><link map_set_marker_text_function.hgt>setMarkerText</link></cell><cell>Set text displayed on map for a marker.</cell>
-	<cell><link map_set_marker_description_function.hgt>setMarkerDescription</link></cell><cell>Set text displayed in pop-up when marker is tapped and in marker list.</cell>
-	<cell><link map_set_marker_on_click_function.hgt>setMarkerOnClick</link></cell><cell>Set user defined function that is called when user taps marker.</cell>
-	<cell><link map_set_marker_on_click_info_window_function.hgt>setMarkerOnClickInfoWindow</link></cell><cell>Set user defined function that is called when user taps on marker pop-up info.</cell>
-	<cell><link map_set_marker_on_drag_function.hgt>setMarkerOnDrag</link></cell><cell>Set user defined function that is called when user a drags a marker on the map.</cell>
+	<cell><link map_set_marker_text_function.hgt>setMarkerText</link></cell><cell>Set text displayed on the map for a marker.</cell>
+	<cell><link map_set_marker_description_function.hgt>setMarkerDescription</link></cell><cell>Set text displayed in a popup window when a marker is tapped, and in the marker list.</cell>
+	<cell><link map_set_marker_on_click_function.hgt>setMarkerOnClick</link></cell><cell>Set the user-defined function that is called when the user taps a marker.</cell>
+	<cell><link map_set_marker_on_click_info_window_function.hgt>setMarkerOnClickInfoWindow</link></cell><cell>Set the user-defined function that is called when the user taps on a marker's popup info.</cell>
+	<cell><link map_set_marker_on_drag_function.hgt>setMarkerOnDrag</link></cell><cell>Set the user-defined function that is called when the user a drags a marker on the map.</cell>
 	<cell><link map_set_marker_location_function.hgt>setMarkerLocation</link></cell><cell>Move an existing marker to a new position on the map.</cell>
 	<cell><link map_get_last_click_latitude_function.hgt>getLastClickLatitude</link></cell><cell>Retrieve the latitude of the last point on the map the user tapped.</cell>
 	<cell><link map_get_last_click_longitude_function.hgt>getLastClickLongitude</link></cell><cell>Retrieve the longitude of the last point on the map the user tapped.</cell>
 	<cell><link map_get_marker_latitude_function.hgt>getMarkerLatitude</link></cell><cell>Retrieve the latitude of a marker on the map.</cell>
 	<cell><link map_get_marker_longitude_function.hgt>getMarkerLongitude</link></cell><cell>Retrieve the longitude of a marker on the map.</cell>
-	<cell><link map_set_on_click_function.hgt>setOnClick</link></cell><cell>Set user defined function that is called when user taps on the map.</cell>
-	<cell><link map_set_title_function.hgt>setTitle</link></cell><cell>Set title for map.</cell>
+	<cell><link map_set_on_click_function.hgt>setOnClick</link></cell><cell>Set the user-defined function that is called when the user taps on the map.</cell>
+	<cell><link map_set_title_function.hgt>setTitle</link></cell><cell>Set the title of the map.</cell>
 	<cell><link map_add_text_button_function.hgt>addTextButton</link></cell><cell>Create a button with a text label on the map.</cell>
 	<cell><link map_add_image_button_function.hgt>addImageButton</link></cell><cell>Create a button with an icon on the map.</cell>
 	<cell><link map_remove_button_function.hgt>removeButton</link></cell><cell>Delete a button on the map.</cell>
 	<cell><link map_clear_buttons_function.hgt>clearButtons</link></cell><cell>Delete all buttons from the map.</cell>
 	<cell><link map_set_base_map_function.hgt>setBaseMap</link></cell><cell>Change the map source to an online or offline base map.</cell>
-	<cell><link map_show_current_location_function.hgt>showCurrentLocation</link></cell><cell>Display current location from GPS on the map.</cell>
+	<cell><link map_show_current_location_function.hgt>showCurrentLocation</link></cell><cell>Display the current location (as retrieved from the GPS) on the map.</cell>
 	<cell><link map_zoom_to_function.hgt>zoomTo</link></cell><cell>Pan/zoom the map.</cell>
 </table>
 
@@ -51,8 +51,10 @@ A map is a CSPro logic object and the following functions can be called via <lin
 map mymap;
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
-mymap.addMarker(38.84839,-76.931098);
+mymap.addMarker(38.84839, -76.931098);
 
 // Display the map
 mymap.show();
 </logic>
+
+<seealso map_case_list.hgt />
