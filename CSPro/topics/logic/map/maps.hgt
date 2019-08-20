@@ -8,6 +8,12 @@ To display a map, call the <logiccolor map>show</logiccolor> function. The map w
 
 You can call map functions to add markers, buttons, set the base map, and pan/zoom before showing the map. This will be more efficient than adding them afterwards, especially when adding large numbers of markers. You can also call the map functions after showing the map from within any of the user-defined callback functions for map, marker, and button clicks and drags.
 
+<image map.jpg />
+
+You can add markers to the map using the <logiccolor map>addMarker</logiccolor> function. You can replace the default marker icon with a custom image by calling <logiccolor map>setMarkerImage</logiccolor> or with a text icon using <logiccolor map>setMarkerText</logiccolor>.
+
+By default, the map contains a button to zoom to the users current location. You can add additional buttons to the map by calling <logiccolor map>addImageButton</logiccolor> or <logiccolor map>addTextButton</logiccolor>.
+
 By default, the map will display a base map from Google Maps, which requires an Internet connection. With no Internet connection the base map will be empty. To display a map without an Internet connection you can copy an an <link offline_maps.hgt>offline map file</link> to your device and pass the file to the <logiccolor map>setBaseMap</logiccolor> function.
 
 
