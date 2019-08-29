@@ -87,6 +87,9 @@ forcase LIST_DICT do
     mymap.setMarkerOnClick(markerId, launchHouseholdQuestionnaire(householdCode));
 
 endfor;
+
+// Show the map
+mymap.show();
 </logic>
 
 <seealso maps.hgt map_add_marker_function.hgt map_set_marker_on_click_info_window_function.hgt />

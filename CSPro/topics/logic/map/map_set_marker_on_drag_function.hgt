@@ -37,11 +37,10 @@ map dragMap;
 numeric markerId = dragMap.addMarker(38.84839, -76.931098);
 
 // Set function that is called on marker drag
-dragMap.setMarkerOnDrag(markerId, onDragMarker());
+dragMap.setMarkerOnDrag(markerId, onDragMarker(dragMap, markerId));
 
 // Display the map
 dragMap.show();
-
 </logic>
 
 <seealso maps.hgt map_add_marker_function.hgt map_set_marker_on_click_function.hgt map_get_marker_latitude_function.hgt map_get_marker_longitude_function.hgt />

@@ -28,8 +28,8 @@ numeric markerId;
 // This function is called when user taps on map.
 // It moves the marker to the location that the user tapped.
 function mapClicked()
-    numeric lat = mymap.lastClickLatitude();
-    numeric lon = mymap.lastClickLongitude();
+    numeric lat = mymap.getLastClickLatitude();
+    numeric lon = mymap.getLastClickLongitude();
 	mymap.setMarkerLocation(markerId, lat, lon);
 end;
 

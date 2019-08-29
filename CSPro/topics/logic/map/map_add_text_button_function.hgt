@@ -28,12 +28,13 @@ function closeMap(map m)
 end;
 
 PROC SOMEITEM
+preproc
 
 // Declare a map
 map mymap;
 
 // Add a button to the map that closes the map when it is clicked
-mymap.addTextButton("close", closeMap);
+mymap.addTextButton("close", closeMap(mymap));
 
 // Show the map; this function will keep running until the user clicks
 // the close button or uses the back button to exit the map

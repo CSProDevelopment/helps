@@ -39,18 +39,21 @@ function editMarker(map m, numeric markerId)
 end;
 
 PROC SHOW_MAP
+preproc
 
 // Declare a map
 map mymap;
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
 numeric markerId = mymap.addMarker(38.84839, -76.931098);
+mymap.setMarkerDescription(markerId, "US Census Bureau");
 
 // Call edit marker when user taps on popup info window
 mymap.setMarkerOnClickInfoWindow(markerId, editMarker(mymap, markerId));
 
 // Display the map
 mymap.show();
+
 
 </logic>
 

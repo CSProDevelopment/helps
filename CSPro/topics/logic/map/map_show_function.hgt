@@ -31,7 +31,7 @@ PROC SOMEITEM
 map mymap;
 
 // Add a button to the map that closes the map when it is clicked
-mymap.addTextButton("close", closeMap);
+mymap.addTextButton("close", closeMap(myMap));
 
 // Show the map; this function will keep running until the user clicks
 // the close button or uses the back button to exit the map

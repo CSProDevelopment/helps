@@ -19,19 +19,22 @@ The function returns a logical value of 1 (true) if the button was found and was
 <logic>
 PROC GLOBAL
 
+// Declare a map
+map mymap;
+
+// Id of button that will be shown on map
+numeric buttonId;
+
 // Function to remove a button from a map
-function removeButton(map m, numeric buttonId)
-	m.removeButton(buttonId);
+function removeButton()
+	mymap.removeButton(buttonId);
 end;
 
 PROC SHOW_MAP
 preproc
 
-// Declare a map
-map mymap;
-
 // Add a button that removes itself when it is clicked
-numeric buttonId = mymap.addTextButton("remove me", removeButton(mymap, buttonId));
+buttonId = mymap.addTextButton("remove me", removeButton());
 
 // Display the map
 mymap.show();
