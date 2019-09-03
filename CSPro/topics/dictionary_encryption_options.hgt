@@ -7,6 +7,6 @@ Encryption options can be defined on a per-dictionary basis, controlling whether
 
 These options only apply when using the dictionary to access <link encrypted_data.hgt>encrypted data</link> using the Encrypted CSPro DB data source. By default, passwords used to open such files are not cached on the machine, meaning that the password must be specified every time the file is opened (unless the password is specified in a <link connection_string.hgt>connection string</link>). If you want to allow the storage of passwords, specify the number of minutes that the stored password can be used to open the data file.
 
-The password itself will not be stored on the device; instead, a key that can be used to open the data file will be stored. A clever hacker who accesses this key may be able to open the data but will have a hard time reverse engineering the key to get the original password itself. The key is stored in secure storage on the device.
+The password itself will not be stored on the device; instead, a key that can be used to open the data file will be stored. A clever hacker who accesses this key may be able to open the data but will have a hard time reverse engineering the key to get the original password itself. The key is stored in secure storage on the device. You can use the <link cspro_settings.hgt>CSPro Settings</link> dialog to clear any cached passwords.
 
 <seealso encrypted_data.hgt />
