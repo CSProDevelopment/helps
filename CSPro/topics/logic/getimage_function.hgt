@@ -3,7 +3,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = getimage(<arg>item_name</arg> ‖ <arg>value_set_name</arg>,<arg>value</arg>);
+s = getimage(<arg>item_name</arg> ‖ <arg>value_set_name</arg>, <arg>value</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -19,9 +19,9 @@ The function returns a string containing the image filename, or a blank string i
 <logic>
 PROC IMAGE_SELECTOR
 
-	string imageFilename = getimage(IMAGE_SELECTOR_VS1,IMAGE_SELECTOR);
+	string imageFilename = getimage(IMAGE_SELECTOR_VS1, IMAGE_SELECTOR);
 
-	execsystem("view:" + imageFilename);
+	view(imageFilename);
 </logic>
 
 <seealso getlabel_function.hgt setvalueset_function.hgt />

@@ -17,6 +17,8 @@ A value set is a CSPro logic object and the following functions can be called vi
 
 In addition to these object functions, value sets contain two built-in <link lists.hgt>list</link> objects: <logiccolor>valueset_name.codes</logiccolor> and <logiccolor>valueset_name.labels</logiccolor>, which contain the codes and labels for the value set. These are read-only lists and can be used in most ways that list objects can be used.
 
+Several functions accept value sets as arguments, including: <logiccolor>getimage</logiccolor>, <logiccolor>getlabel</logiccolor>, <logiccolor>invalueset</logiccolor>, <logiccolor>maxvalue</logiccolor>, <logiccolor>minvalue</logiccolor>, <logiccolor>randomin</logiccolor>, <logiccolor>randomizevs</logiccolor>, and <logiccolor>setvalueset</logiccolor>. Value sets can also be used with the <logiccolor>in</logiccolor> operator.
+
 Value sets can be assigned to other value sets, which will replace the initial value set with the values of the assigned value set:
 
 <logicsyntax>

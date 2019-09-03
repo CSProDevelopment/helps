@@ -3,7 +3,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = invalueset(<arg>item_name</arg>『,<arg>value_set_name</arg>』);
+b = invalueset(<arg>item_name</arg>『, <arg>value_set_name</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -18,15 +18,15 @@ The function returns a logical value of 1 (true) if the item's value is within t
 
 <logic>
 if not invalueset(P08_MARITAL_STATUS) then
-	errmsg("Marital status is out of range. Value is %d",P08_MARITAL_STATUS);
+	errmsg("Marital status is out of range. Value is %d", P08_MARITAL_STATUS);
 endif;
 </logic>
 
 <subheader>Example 2</subheader>
 
 <logic>
-if D02_SEX = 1 and not invalueset(D05_CAUSE_DEATH,D05_CAUSE_DEATH_MALE_VS) then
-	errmsg("A man cannot die of %s",getlabel(D05_CAUSE_DEATH,D05_CAUSE_DEATH));
+if D02_SEX = 1 and not invalueset(D05_CAUSE_DEATH, D05_CAUSE_DEATH_MALE_VS) then
+	errmsg("A man cannot die of %l", D05_CAUSE_DEATH);
 	reenter;
 endif;
 </logic>

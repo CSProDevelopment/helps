@@ -3,38 +3,26 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = setvalueset(<arg>item_name</arg>,<arg>value_set_name</arg>);
-</logicsyntax>
-
-<subheader>Format (Dynamic Value Set)</subheader>
-
-<logicsyntax>
-i = setvalueset(<arg>item_name</arg>,<arg>codes_array</arg>,<arg>labels_array</arg>『,images_array』);
+b = setvalueset(<arg>item_name</arg>, <arg>value_set_name</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>setvalueset</logiccolor> function allows you to dynamically change an item's current value set. An item's current value set is used to determine whether or not inputted values are out of range. The current value set is also used to provide the value choices displayed in <link extended_controls.hgt>extended controls</link>. The change of value set is not permanent; it remains in effect only during the current execution of the program or until the next call to <logiccolor>setvalueset</logiccolor>.
+The <logiccolor>setvalueset</logiccolor> function allows you to dynamically change an item's current value set. An item's current value set is used to determine whether or not entered values are out of range. The current value set is also used to provide the value choices displayed in <link extended_controls.hgt>extended controls</link>. The changing of a value set is not permanent; it remains in effect only during the processing of the current case or until the next call to <logiccolor>setvalueset</logiccolor>.
 
 The <arg>item_name</arg> is the name of the item in the data dictionary whose value set is to be changed. The argument is usually an item name but, preceded by the <logiccolor>@</logiccolor> symbol, it can also be a string expression that evaluates to the name of an item; for example:
 
 <logic>
-setvalueset(@getsymbol(),MY_VALUESET_VS1);
+setvalueset(@getsymbol(), MY_VALUESET_VS1);
 </logic>
 
-In the standard form, the argument <arg>value_set_name</arg> is the name of an existing value set in the dictionary for the specified item. The function will replace the values of the current value set for the item with the values from the value set specified by <arg>value_set_name</arg>, which is either the name of a value set or a string expression that evaluates to a value set name.
+The argument <arg>value_set_name</arg> is the name of an existing value set in the dictionary for the specified item. The function will replace the values of the current value set for the item with the values from the value set specified by <arg>value_set_name</arg>, which is either the name of a value set or a string expression that evaluates to a value set name. The <arg>value_set_name</arg> can also be the name of a <link valuesets.hgt>dynamic value set</link>.
 
-With dynamic value sets, the second argument, <arg>codes_array</arg>, is an array of codes to use in the new value set and the third argument, <arg>labels_array</arg>, is an array of labels that correspond to the values in the codes array (the nth element of the labels array is the label for the nth element in the codes array). If the item is numeric, <arg>codes_array</arg> must be a numeric array. If the item is alphanumeric, <arg>codes_array</arg> must be a string array. The <arg>labels_array</arg> must always be a string array. The optional fourth argument, <arg>images_array</arg>, is a string array pointing to image filenames to be used as value set images.
-
-When working with the <arg>codes_array</arg>, to indicate the end of a numeric array, assign the special value <logiccolor>notappl</logiccolor> to the position after the last valid code. To indicate the end of a string array, assign a blank value. This indicates when to stop loading values from the array. 
-
-In versions of CSPro earlier than 6.0, the value set labels and codes array needed to start at index position 0. Zero-based arrays are still permitted, but if a one-based array is passed to the function (and the zeroth element has never been assigned to), then CSPro will start processing the dynamic value set at array position 1.
+The <logiccolor>setvalueset</logiccolor> function can also create dynamic value sets from <link setvalueset_function_with_arrays.hgt>array arguments</link>.
 
 <subheader>Return Value</subheader>
 
-In the standard form, the function returns a logical value of 1 (true) if the value set was changed successfully and 0 (false) otherwise (for example, if the value set name is invalid).
-
-With dynamic value sets, the function returns the number of codes in the newly created value set.
+When using a value set specified in the dictionary, the function returns a logical value of 1 (true) if the value set was changed successfully and 0 (false) otherwise (for example, if the value set name is invalid). With dynamic value sets, the function returns the number of codes in the newly created value set.
 
 <subheader>Example 1</subheader>
 
@@ -44,10 +32,10 @@ PROC D05_CAUSE_DEATH
 onfocus
 
 	if D02_SEX = 1 then
-		setvalueset(SEX,D05_CAUSE_DEATH_MALE_VS);
+		setvalueset(SEX, D05_CAUSE_DEATH_MALE_VS);
 	
 	else
-		setvalueset(SEX,D05_CAUSE_DEATH_FEMALE_VS);
+		setvalueset(SEX, D05_CAUSE_DEATH_FEMALE_VS);
 	
 	endif;
 </logic>
@@ -59,33 +47,21 @@ PROC DISTRICT
 
 preproc
 
-	setvalueset(DISTRICT,maketext("DISTRICT_VS%02d",PROVINCE));
+	setvalueset(DISTRICT, maketext("DISTRICT_VS%v", PROVINCE));
 </logic>
 
 <subheader>Example (Dynamic Value Set)</subheader>
 
 <logic>
-PROC GLOBAL
-
-array vsCodes(100);
-array string vsLabels(100);
-
-PROC DISTRICT
+PROC SECOND_FAVORITE_DRINK
 
 preproc
 
-	vsCodes(1) = 1;
-	vsLabels(1) = "District 1";
+    valueset drink_valueset = FAVORITE_DRINK_VS;
 
-	vsCodes(2) = 2;
-	vsLabels(2) = "District 2";
+    drink_valueset.remove(FAVORITE_DRINK);
 
-	vsCodes(3) = 3;
-	vsLabels(3) = "District 3";
-	
-	vsCodes(4) = notappl; // mark the end of the array
-
-	setvalueset(DISTRICT,vsCodes,vsLabels);
+    setvalueset(SECOND_FAVORITE_DRINK, drink_valueset);
 </logic>
 
 <seealso setvaluesets_function.hgt invalueset_function.hgt />

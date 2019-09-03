@@ -3,7 +3,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = getlabel(<arg>dictionary_symbol</arg> 『,value』);
+s = getlabel(<arg>dictionary_symbol</arg> 『, value』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -11,6 +11,8 @@ s = getlabel(<arg>dictionary_symbol</arg> 『,value』);
 The <logiccolor>getlabel</logiccolor> function returns the label of a <arg>dictionary_symbol</arg> or the text associated with a particular value of the symbol as defined in a value set. If the <arg>value</arg> argument is not specified, then the dictionary symbol's label is returned. The symbol can be the name of a dictionary, level, record, item, or value set.
 
 The <arg>value</arg> argument can only be used if the dictionary symbol is an item or a value set. The <arg>value</arg> is either a numeric or string expression, based on the type of the item. If the argument is used, the label associated with the specified value is returned. If the symbol is an item name, then the value labels from the current value set are returned. If the symbol is a value set, then the value labels from that value set are returned. If no label is associated with the value, then an empty string is returned. This behavior can also be achieved with the <logiccolor>getvaluelabel</logiccolor> function.
+
+When using the <arg>value</arg> argument, a value's code can be returned rather than the value label by using the optional <logiccolor>by label</logiccolor> (as opposed to the default <logiccolor>by code</logiccolor> behavior).
 
 <subheader>Return Value</subheader>
 
@@ -28,6 +30,12 @@ PROC RELATIONSHIP
 
 	write("%s = %s", getlabel($), getlabel($, $));	 // Relationship = Head,
 													 // Relationship = Child, etc.
+													
+PROC BY_EXAMPLE
+
+	write("%s", getlabel(SEX by code, 1));			 // Male 
+	write("%s", getlabel(SEX by label, "Male"));	 // 1
+
 </logic>
 
 <seealso getvaluelabel_function.hgt getsymbol_function.hgt getimage_function.hgt />

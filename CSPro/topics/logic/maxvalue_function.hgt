@@ -20,7 +20,7 @@ The function returns the maximum valid value for an item or value set.
 PROC EDUCATION_CURRENT
 
 	if EDUCATION_CURRENT = 1 and AGE > maxvalue(EDUCATION_CURRENT_PRESCHOOL_VS) then
-		errmsg("Someone aged %d cannot be currently attending preschool.",AGE);
+		errmsg("Someone aged %d cannot be currently attending preschool.", AGE);
 		reenter;
 	endif;
 </logic>

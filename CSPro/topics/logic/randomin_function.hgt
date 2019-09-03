@@ -3,19 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = randomin(<arg>in_list</arg> ‖ <arg>value_set_name</arg>);
+i = randomin(<arg>in_list</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>randomin</logiccolor> function returns a uniformly distributed random integer from one of two categories:
-
-<list>
-	<li>A grouping of non-continuous integers expressed as an <link in_operator.hgt>in list</link> (<arg>in_list</arg>).</li>
-	<li>A <link value_sets_description.hgt>value set</link> (<arg>value_set_name</arg>),</li>
-</list>
-
-You can use the <logiccolor>seed</logiccolor> function to initialize the random number generation.
+The <logiccolor>randomin</logiccolor> function returns a uniformly distributed random integer from a grouping of non-continuous integers expressed as an <link in_operator.hgt>in list</link>. You can use the <logiccolor>seed</logiccolor> function to initialize the random number generation.
 
 <subheader>Return Value</subheader>
 
@@ -24,13 +17,13 @@ The function returns an integer random value. The function will return <logiccol
 <subheader>Examples</subheader>
 
 <logic>
-errmsg("Random tribe code: %d",randomin(TRIBE_VS1));
+errmsg("Random tribe code: %d", randomin(TRIBE_VS1));
 
-errmsg("Non-continuous random number: %d",randomin(-100:-50,50:100,999));
+errmsg("Non-continuous random number: %d", randomin(-100:-50, 50:100, 999));
 
-errmsg("After many calls, 5 will be selected 75% of the time: %d",randomin(5,5,5,8));
+errmsg("After many calls, 5 will be selected 75% of the time: %d", randomin(5, 5, 5, 8));
 
-errmsg("Random month: %d",randomin(1:12)); // same as random(1,12)
+errmsg("Random month: %d", randomin(1:12)); // same as random(1, 12)
 </logic>
 
 <seealso random_function.hgt randomizevs_function.hgt seed_function.hgt />
