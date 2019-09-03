@@ -10,7 +10,7 @@ b = ispartial(『<arg>dictionary_name</arg>』);
 
 The <logiccolor>ispartial</logiccolor> function determines, for data entry input dictionaries whether a case was opened from a partial case, and for external dictionaries where the case is currently marked as a partial save. By default the function looks at the case loaded by the main data entry input dictionary, but an optional argument, <arg>dictionary_name</arg>, allows you to determine the partial save status of cases in external dictionaries.
 
-If executed in a batch application, or if used on an external dictionary, the function only succeeds when used with a <link data_sources.hgt>CSPro DB file</link>.
+If executed in a batch application, or if used on an external dictionary, the function only succeeds when used with a non-text file (such as a <link data_sources.hgt>CSPro DB file</link>).
 
 <subheader>Return Value</subheader>
 

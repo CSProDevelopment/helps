@@ -31,6 +31,7 @@ logic_file_apc.hgt | .app																		#	.app
 batch_edit_application_file_bch.hgt | .bch														#	.bch
 file_types.hgt | .cmp																			#	.cmp
 data_sources.hgt | .csdb																		#	.csdb
+data_sources.hgt | .csdbe																		#	.csdbe
 file_types.hgt | .csds																			#	.csds
 index_file_csidx.hgt | .csidx																	#	.csidx
 paradata_log_file_cslog.hgt | .cslog															#	.cslog
@@ -405,6 +406,7 @@ expressions.hgt | Conditions																	#	Conditions
 config_statement.hgt																			#	Config Statement
 change_data_entry_options.hgt | Confirm End-of-Case												#	Confirm End-of-Case
 connection_function.hgt																			#	Connection Function
+connection_string.hgt																			#	Connection String
 batch_edit_applications.hgt | Consistency Checks												#	Consistency Checks
 consistency_edits.hgt																			#	Consistency Edits
 custom_consolidation.hgt | Consolidation														#	Consolidation
@@ -642,6 +644,7 @@ dictionary_types.hgt | Dictionary																#	Dictionary
 	windows.hgt | Window																		#		Window
 	dictionary_types.hgt | Working																#		Working
 dictionary_analysis.hgt																			#	Dictionary Analysis
+dictionary_encryption_options.hgt																#	Dictionary Encryption Options
 dictionary_macros.hgt																			#	Dictionary Macros
 dircreate_function.hgt																			#	DirCreate Function
 dirdelete_function.hgt																			#	DirDelete Function
@@ -685,6 +688,10 @@ if_statement.hgt | Else																			#	Else
 	if_statement.hgt																			#		If Statement
 if_statement.hgt | Elseif																		#	Elseif
 	if_statement.hgt																			#		If Statement
+data_sources.hgt | Encrypted CSPro DB Data Source												#	Encrypted CSPro DB Data Source
+encrypted_data.hgt																				#	Encrypted Data
+encrypted_data.hgt | Encryption																	#	Encryption
+	dictionary_encryption_options.hgt															#		Dictionary Encryption Options
 function_statement.hgt | End																	#	End
 	function_statement.hgt																		#		Function Statement
 endcase_statement.hgt																			#	EndCase Statement
@@ -818,6 +825,7 @@ file_types.hgt																					#	File Types
 	data_dictionary_file_dcf.hgt																#		Data Dictionary File (.dcf)
 	data_entry_application_file_ent.hgt															#		Data Entry Application File (.ent)
 	edit_order_file_ord.hgt																		#		Edit Order File (.ord)
+	data_sources.hgt | Encrypted CSPro DB File (.csdbe)											#		Encrypted CSPro DB File (.csdbe)
 	forms_file_fmf.hgt																			#		Forms File (.fmf)
 	frequency_specification_file_fqf.hgt														#		Frequency Specification File (.fqf)
 	index_file_csidx.hgt																		#		Index File (.csidx)

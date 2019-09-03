@@ -8,7 +8,7 @@ s = getcaselabel(<arg>dictionary_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>getcaselabel</logiccolor> function returns the label for the case currently associated with the dictionary <arg>dictionary_name</arg>. The dictionary can be either the main input dictionary of a data entry application or an external dictionary. Only cases stored in <link data_sources.hgt>CSPro DB files</link> can have case labels.
+The <logiccolor>getcaselabel</logiccolor> function returns the label for the case currently associated with the dictionary <arg>dictionary_name</arg>. The dictionary can be either the main input dictionary of a data entry application or an external dictionary. Only cases stored in non-text files (such as <link data_sources.hgt>CSPro DB files</link>) can have case labels.
 
 <subheader>Return Value</subheader>
 
@@ -19,9 +19,9 @@ The function returns the label if one has been set, or a blank string if there i
 <logic>
 PROC LAST_FIELD
 
-	string endQuery = maketext("Are you finished entering '%s'?",getcaselabel(CENSUS_DICT));
+	string endQuery = maketext("Are you finished entering '%s'?", getcaselabel(CENSUS_DICT));
 
-	if accept(endQuery,"Yes","No") <> 1 then
+	if accept(endQuery, "Yes", "No") <> 1 then
 		reenter;
 	endif;
 </logic>

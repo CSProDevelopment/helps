@@ -3,7 +3,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = syncdata(<arg>direction</arg>,<arg>dictionary_name</arg>『,<arg>sync_universe</arg>』);
+b = syncdata(<arg>direction</arg>, <arg>dictionary_name</arg>『, <arg>sync_universe</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -28,7 +28,7 @@ By providing an optional string expression for the <arg>sync_universe</arg> argu
 
 The <logiccolor>syncdata</logiccolor> function keeps track of which cases are transferred each time the client and server are synchronized and uses this information to only transfer cases that have been modified since the last synchronization. This significantly reduces the amount of data transferred and therefore reduces bandwidth and the cost of air time. It also reduces the chance that two interviewers overwrite each other's work by both syncing to the same data file on the server. As long as the two interviewers do not modify the same case at the same time, they may both synchronize to the same server without overwriting each other's data.
 
-The <logiccolor>syncdata</logiccolor> function is only supported on data files in the <link data_sources.hgt>CSPro DB</link> format. Data files in the legacy text format may not be synchronized using <logiccolor>syncdata</logiccolor> but instead can be transferred using the <logiccolor>syncfile</logiccolor> function. That function always transfers the entire file, however, increasing the amount of data transferred and allowing for one interviewer to overwrite the changes of another.
+The <logiccolor>syncdata</logiccolor> function is only supported on data files in <link data_sources.hgt>CSPro DB</link> or <link data_sources.hgt>Encrypted CSPro DB</link> formats. Data files in the legacy text format may not be synchronized using <logiccolor>syncdata</logiccolor> but instead can be transferred using the <logiccolor>syncfile</logiccolor> function. That function always transfers the entire file, however, increasing the amount of data transferred and allowing for one interviewer to overwrite the changes of another.
 
 <subheader>Return Value</subheader>
 
@@ -37,13 +37,13 @@ The function returns a logical value of 1 (true) if the transfer was successful 
 <subheader>Example 1</subheader>
 
 <logic>
-if syncconnect(CSWeb,"https://www.myserver.org/api") then
+if syncconnect(CSWeb, "https://www.myserver.org/api") then
 
 	 // send the latest survey data to the server
-	syncdata(PUT,SURVEY_DICT);
+	syncdata(PUT, SURVEY_DICT);
 
 	 // get the latest assignments lookup file from the server
-	syncdata(GET,ASSIGNMENTS_DICT);
+	syncdata(GET, ASSIGNMENTS_DICT);
 
 	syncdisconnect();
 
@@ -56,8 +56,8 @@ endif;
 if syncconnect(Bluetooth) then
 
 	// sync data for only the province and district assigned to the interviewer
-	string assignmentUniverse = maketext("%02d%02d",ASSIGNED_PROVINCE,ASSIGNED_DISTRICT);
-	syncdata(BOTH,CENSUS_DICT,assignmentUniverse);
+	string assignmentUniverse = maketext("%v%v", ASSIGNED_PROVINCE, ASSIGNED_DISTRICT);
+	syncdata(BOTH, CENSUS_DICT, assignmentUniverse);
 
 	syncdisconnect();
 
