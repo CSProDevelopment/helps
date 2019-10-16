@@ -24,10 +24,6 @@ string ftpServerUrl = "ftpes://myserver.org";
 // connect to the FTP server
 if syncconnect(FTP,ftpServerUrl) then
 
-	// get the latest versions of the application files from the FTP server
-	syncfile(GET,"/MyApp/MyApp.pff");
-	syncfile(GET,"/MyApp/MyApp.pen");
-
 	// send the latest cases to the FTP server
 	syncdata(PUT,SURVEY_DICT);
 
@@ -36,4 +32,4 @@ if syncconnect(FTP,ftpServerUrl) then
 endif;
 </logic>
 
-<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_bluetooth.hgt syncconnect_function_dropbox.hgt />
+<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_bluetooth.hgt syncconnect_function_dropbox.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt />

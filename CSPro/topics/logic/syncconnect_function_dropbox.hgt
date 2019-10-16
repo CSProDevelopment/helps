@@ -10,17 +10,13 @@ b = syncconnect(<arg>Dropbox</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>syncconnect</logiccolor> function opens a connection to Dropbox to synchronize data and files over the Internet. The first and only argument must be the keyword <arg>Dropbox</arg>. This requires an account with the online file sharing service <link https://www.dropbox.com/>Dropbox</link>. The first time the connection is made, the user will see a prompt to enter the Dropbox username and password and these settings will be saved in secure storage for future synchronizations. You can use the <link cspro_settings.hgt>CSPro Settings</link> dialog to clear any cached settings.
+The <logiccolor>syncconnect</logiccolor> function opens a connection to Dropbox to synchronize data and files over the Internet. The first and only argument must be the keyword <arg>Dropbox</arg>. This requires an account with the online file sharing service <link https://www.dropbox.com/>Dropbox</link>. It does <b>NOT</b> require that the Dropbox client software be installed on the device. The first time the connection is made, the user will see a prompt to enter the Dropbox username and password and these settings will be saved in secure storage for future synchronizations. You can use the <link cspro_settings.hgt>CSPro Settings</link> dialog to clear any cached settings.
 
 <subheader>Example</subheader>
 
 <logic>
 // connect to Dropbox
 if syncconnect(Dropbox) then
-
-	// get the latest versions of the application files from Dropbox
-	syncfile(GET,"/MyApp/MyApp.pff");
-	syncfile(GET,"/MyApp/MyApp.pen");
 
 	// send the latest cases to Dropbox
 	syncdata(PUT,SURVEY_DICT);
@@ -30,4 +26,4 @@ if syncconnect(Dropbox) then
 endif;
 </logic>
 
-<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_bluetooth.hgt syncconnect_function_ftp.hgt />
+<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_bluetooth.hgt syncconnect_function_ftp.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt />

@@ -20,7 +20,11 @@ The tool will download all of the cases from the data set into a newly created f
 	<li>Open an existing data file.</li>
 	<li>Click the <b>File</b> menu and select <b>Synchronize</b>.</li>
 	<li>Enter the details of the synchronization server (the server type and, if necessary, the URL).</li>
-	<li>Select the syncrhonization direction. There are a <link CSPro::synchronization_simple.hgt>few options</link>, though generally you will choose the default option, <b>GET</b>.</li>
+	<li>Select the synchronization direction. There are a <link CSPro::synchronization_simple.hgt>few options</link>, though generally you will choose the default option, <b>GET</b>.</li>
 </list>
 
 The tool will download, upload, or download and upload, all of the cases in the data file, making sure that the cases in the file match the cases stored on the synchronization server. This process can be automated by running a <link run_production_synchronizations.hgt>production synchronization</link>.
+
+For faster downloads of large datasets from Dropbox you can choose <b>Dropbox folder on this computer</b> as the server type rather than <b>Dropbox (Online)</b>. When this option is selected, rather than downloading the data from Dropbox over the internet, DataViewer will extract the data from the synced Dropbox folder on the computer to create a CSPro data file. In order to use this option, you must have installed the Dropbox client software from www.dropbox.com on your computer and configured it with the same Dropbox account that you are downloading data from. As long as your computer is connected to the internet, the Dropbox client software will continously download data from the Dropbox servers to the local computer. DataViewer can then use the data that was already downloaded to create the CSPro data file.
+
+Similarly for faster downloads when you are running an FTP server on the same computer that you wish to download the data file to, you can choose <b>FTP Folder on this computer</b> rather than <b>FTP Server</b>. When you select this option you must then enter or browse to the FTP folder on the computer where the FTP server has saved the data. The folder you choose should be the FTP server home directory which should contain a folder named CSPro.

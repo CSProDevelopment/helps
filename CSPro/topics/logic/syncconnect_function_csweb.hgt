@@ -22,10 +22,6 @@ string cswebServerUrl = "https://www.myserver.org/api";
 // connect to the CSWeb server
 if syncconnect(CSWeb,cswebServerUrl) then
 
-	// get the latest versions of the application files from the CSWeb server
-	syncfile(GET,"/MyApp/MyApp.pff");
-	syncfile(GET,"/MyApp/MyApp.pen");
-
 	// send the latest cases to the CSWeb server
 	syncdata(PUT,SURVEY_DICT);
 
@@ -34,4 +30,4 @@ if syncconnect(CSWeb,cswebServerUrl) then
 endif;
 </logic>
 
-<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_bluetooth.hgt syncconnect_function_dropbox.hgt syncconnect_function_ftp.hgt />
+<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_bluetooth.hgt syncconnect_function_dropbox.hgt syncconnect_function_ftp.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt />
