@@ -10,7 +10,7 @@ b = syncconnect(<arg>LocalFiles</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>syncconnect</logiccolor> function opens a connection to synchronize data and files using the a folder on the local computer. The first and only argument must be the keyword <arg>LocalFolder</arg>. Rather than synchronize files over the internet this connection assumes that some other service, such as an FTP server, will handle file transfers. CSPro simply copies files and data to/from the local folder. This is mainly useful when downloading large quantities of data which would take a long time to do using a network connection.
+The <logiccolor>syncconnect</logiccolor> function opens a connection to synchronize data and files using the a folder on the local computer. The first argument must be the keyword <arg>LocalFiles</arg> and the second argument must be the path to a local folder on the computer. Rather than synchronize files over the internet this connection assumes that some other service, such as an FTP server, will handle file transfers. CSPro simply copies files and data to/from the local folder. This is mainly useful when downloading large quantities of data which would take a long time to do using a network connection.
 
 <subheader>Example</subheader>
 
