@@ -10,6 +10,8 @@ s = getsymbol();
 
 The <logiccolor>getsymbol</logiccolor> function returns the name of the current procedure being executed.
 
+An optional syntax, <logiccolor>getsymbol(savepartial)</logiccolor>, returns the field name and occurrence information (for multiply-occurring items) of the location of the last <link savepartial_function.hgt>partial save</link>.
+
 <subheader>Return Value</subheader>
 
 The function returns a string with the procedure's name.
