@@ -53,11 +53,11 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="zInterfaceCLR">
-      <HintPath>..\..\..\cspro\debug\bin\zInterfaceCLR.dll</HintPath>
-      <HintPath>..\..\..\dev\code\debug\bin\zInterfaceCLR.dll</HintPath>
-      <HintPath>..\..\..\dev\code\release\bin\zInterfaceCLR.dll</HintPath>
-      <HintPath>..\..\..\main\code\debug\bin\zInterfaceCLR.dll</HintPath>
-      <HintPath>..\..\..\main\code\release\bin\zInterfaceCLR.dll</HintPath>
+      <HintPath Condition="Exists('..\..\..\main\code\release\bin')">..\..\..\main\code\release\bin\zInterfaceCLR.dll</HintPath>
+      <HintPath Condition="Exists('..\..\..\main\code\debug\bin')">..\..\..\main\code\debug\bin\zInterfaceCLR.dll</HintPath>
+      <HintPath Condition="Exists('..\..\..\dev\code\release\bin')">..\..\..\dev\code\release\bin\zInterfaceCLR.dll</HintPath>
+      <HintPath Condition="Exists('..\..\..\dev\code\debug\bin')">..\..\..\dev\code\debug\bin\zInterfaceCLR.dll</HintPath>
+      <HintPath Condition="Exists('..\..\..\cspro\debug\bin')">..\..\..\cspro\debug\bin\zInterfaceCLR.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

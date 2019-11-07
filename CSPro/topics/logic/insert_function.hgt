@@ -1,191 +1,51 @@
 ﻿<title>Insert Function</title>
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<logicsyntax>
+b = insert(<arg>group_name</arg>『(<arg>occurrence</arg>)』);
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
-
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">b =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">insert</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(group</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#FF00FF" face="Courier New"
-													 size="2">[</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">occ</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">]</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 9.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#FF00FF" face="Arial"
-	 size="2">[</font><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">occ</font><font style="font-family: Arial;
-	 font-size: 10pt;" color="#FF00FF" face="Arial" size="2">]</font> <font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">is
- required for multiply-occurring records or items, and is not required
- for singly-occurring records or items</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- insert function inserts missing or otherwise needed data records or item
- occurrences in the current case. It is primarily intended for use in batch
- applications. It should be used with extreme caution in data entry applications
- because of possible conflicts between the operator's actions and the program
- logic.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Return value:</font></b></p>
-<p style="text-align: left; margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The function returns a logical value 1 (true) if successful
- and 0 (false) otherwise.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example 1</font></b> <font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">(for multiply-occurring
- records):</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
- the following example there is a data item in the housing record called
- &quot;H13_persons&quot;, which contains the total number of people living
- in the household. We have decided that if the number of population records
- found in the household is less than this variable, we will insert the
- missing number of population record(s).</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">NumPersons =</font> <font style="font-family: 'Courier New';
-										 font-size: 10pt;" color="#0000FF"
-										 face="Courier New" size="2">count</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-		 size="2">(PERSON_REC);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">do varying</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 face="Courier New"
-														 size="2">I=NumPersons+</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-	 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#0000FF"
-												 face="Courier New" size="2">while</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-		 size="2">I &lt;= h13_persons</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;</font><font style="font-family: 'Courier New';
-										 font-size: 10pt;" color="#0000FF"
-										 face="Courier New" size="2">insert</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-		 size="2">(PERSON_REC(I));</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#008000"
-												 face="Courier New" size="2">{
- note the need for a subscript }</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">enddo</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">It
- makes no difference if the population record has been defined in the dictionary
- as required or not. What is important is that it was defined as a multiply-occurring
- record.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Example 2</font></b> <font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">(for singly-occurring
- records):</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
- this example, we are processing a datafile that did not require housing
- records to be present. However, now we want to force the existence of
- housing records. We could implement this as follows:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">if</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#0000FF"
-												 face="Courier New" size="2">totocc</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(HOUSING) =</font> <font style="font-family: 'Courier New';
-										 font-size: 10pt;" color="#FF0000"
-										 face="Courier New" size="2">0</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;&#160;</font><font style="font-family: 'Courier New';
-										 font-size: 10pt;" color="#0000FF"
-										 face="Courier New" size="2">insert</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(HOUSING);</font> <font style="font-family: 'Courier New';
-										 font-size: 10pt;" color="#008000"
-										 face="Courier New" size="2">{
- note the absence of a subscript }</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">endif</font><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 face="Courier New"
-													 size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
- accomplish this, the housing record</font> <u><font style="font-family: Arial;
-													 font-size: 10pt; text-decoration: underline; "
-													 face="Arial" size="2">must</font></u>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">be
- set to &quot;</font><u><font style="font-family: Arial; font-size: 10pt;
-								 text-decoration: underline; " face="Arial"
-								 size="2">required = no</font></u><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&quot;
- in the dictionary. You cannot use this function for a singly-occurring
- record when the &quot;required&quot; property setting is &quot;yes&quot;.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also:</font></b> <a href="do_statement.html"><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">Do Statement</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="if_statement.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">If Statement</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="totocc_function.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">Totocc Function</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font>
- <a href="count_function.html"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">Count Function</font></a></p>
-</body>
-</html>
+b = insert(<arg>group_name</arg>, <arg>first_occurrence</arg>)『, <arg>last_occurrence</arg>』);
+</logicsyntax>
 
 
-<html><!---♻---></html>
+<subheader>Description</subheader>
+
+The <logiccolor>insert</logiccolor> function inserts missing or otherwise needed data records or item occurrences in the current case. It is primarily intended for use in batch applications. It should be used with extreme caution in data entry applications because of possible conflicts between the operator's actions and the program logic.
+
+The first syntax inserts a single occurrence of the record. When inserting a singly-occurring record, it is not necessary to specify the <arg>occurrence</arg>. The second syntax inserts one or more occurrences of a record, starting with the <arg>first_occurrence</arg> and inserting up to the <arg>last_occurrence</arg>. This allows for the mass inserts of record occurrences.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.
+
+ 
+
+<subheader>Example 1 (Multiply-Occurring Records)</subheader>
+
+In the following example there is a data item in the housing record called <logiccolor>H13_PERSONS</logiccolor>, which contains the total number of people living in the household. We have decided that if the number of population records found in the household is less than this variable, we will insert the missing number of population record(s).
+
+<logic>
+do numeric i = count(PERSON_REC) + 1 while i <= H13_PERSONS
+  insert(PERSON_REC(i));
+enddo;
+</logic>
+
+It makes no difference if the population record has been defined in the dictionary as required or not. What is important is that it was defined as a multiply-occurring record.
+
+ 
+<subheader>Example 2 (Singly-Occurring Records)</subheader>
+
+For this example, we are processing data that did not require housing records to be present. However, now we want to force the existence of housing records. We could implement this as follows:
+
+<logic> 
+if totocc(HOUSING_REC) = 0 then
+	insert(HOUSING_REC); // note the absence of a subscript
+endif;
+</logic> 
+
+To accomplish this, the housing record must be set to <link required_record.hgt>"Required=No"</link> in the dictionary. You cannot use this function for a singly-occurring record when the record is required. 
+
+
+<seealso delete_function.hgt />
