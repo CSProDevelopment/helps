@@ -29,7 +29,7 @@ Parameters can be specified in the <logiccolor>errmsg</logiccolor> function. <li
 The application could use this as follows:
 
 <logic>
-errmsg(1,"June",30,31);
+errmsg(1, "June", 30, 31);
 </logic>
 
 When the function is executed, it knows to use error message 1 and substitute the word "June" for <b>%s</b> in the message text, the number 30 for the first <b>%d</b>, and the number 31 for the second <b>%d</b>. The message "The month of June has only 30 days. You entered 31!" will be displayed on the screen.
@@ -40,7 +40,7 @@ The more general the parameters of the message, the more flexible the message. I
 PROC HHDAY
 
 	if HHMONTH = 6 and HHDAY > 30 then
-		errmsg(1,"June",30,HHDAY);
+		errmsg(1, "June", 30, HHDAY);
 		reenter;
 	endif;
 </logic>
@@ -69,6 +69,13 @@ Language=ZH
 
 Language=FR
 101 Bonjour
+</message>
+
+If you would like to define messages for multiple languages at the same time, separate the name of each language with a comma:
+
+<message>
+Language=HI, PA
+101 नमस्ते
 </message>
 
 You can also use the message file to translate string literals that are used along with the <logiccolor>tr</logiccolor> function. For example:
