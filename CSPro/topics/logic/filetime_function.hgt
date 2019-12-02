@@ -1,0 +1,33 @@
+﻿<title>FileTime Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+d = filetime(<arg>file_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>filetime</logiccolor> function returns the last modified date and time of a file or a directory. The argument <arg>file_name</arg> is either a string expression giving a file or directory name or is a file handler declared in a <logiccolor>file</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>.
+
+<subheader>Return Value</subheader>
+
+If the file or directory exists, the function returns a <link timestamp_function.hgt>timestamp</link> value indicating the last modified date and time. If the file or directory does not exist, the function returns <logiccolor>default</logiccolor>.
+
+<subheader>Example </subheader>
+
+<logic>
+list string photos_list;
+dirlist(photos_list, "../Photos", "*.jpg");
+
+do numeric counter = 1 while counter <= photos_list.length()
+
+	// only sync photos that weren't previously synced	
+	if filetime(photos_list(counter)) > last_sync_timestamp then
+		syncfile(PUT, photos_list(counter), "/Photos/");
+	endif;
+
+enddo;
+</logic>
+
+<seealso timestamp_function.hgt timestring_function.hgt />
