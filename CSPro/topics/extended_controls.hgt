@@ -168,12 +168,24 @@
 <p style="font-size: 10pt; font-weight: normal; font-family: 'Courier New', monospace;"><font
 	 color="#000000"><font color="#0000FF">set</font> attributes(<i>dictionary-symbol</i>)
  assisted off(variable(<font color="#0000FF">title</font>));</font></p>
-<p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;"><span
-	 style="font-weight: bold;">See also:</span> <a href="Getcapturetype_Function.html">Getcapturetype
- Function</a>, <a href="Setcapturetype_Function.html">Setcapturetype Function</a>,
- <a href="Setcapturepos_Function.html">Setcapturepos Function</a></p>
 </body>
 </html>
 
-
 <html><!---♻---></html>
+
+
+<subheader>Validation Method</subheader>
+
+When a capture type is used as part of the <link change_field_properties.hgt>validation method</link>, acceptance of a value is as follows:
+
+<table 3 header>
+	<cell>Capture Type</cell><cell>Numeric Field</cell><cell>Alphanumeric Field</cell>
+	<cell>Text Box / Number Pad</cell><cell>In value set</cell><cell>In value set (only for fields of length 1)</cell>
+	<cell>Radio Button / Drop Down</cell><cell>In value set</cell><cell>In value set</cell>
+	<cell>Combo Box</cell><cell>In value set</cell><cell>In value set (only for fields of length 1)</cell>
+	<cell>Check Box</cell><cell>&mdash;</cell><cell>Comprised of values in the value set</cell>
+	<cell>Date</cell><cell>In value set and a valid date</cell><cell>In value set and a valid date</cell>
+</table>
+
+
+<seealso getcapturetype_function.hgt setcapturetype_function.hgt setcapturepos_function.hgt / >
