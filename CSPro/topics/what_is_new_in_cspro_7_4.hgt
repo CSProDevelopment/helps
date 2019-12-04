@@ -32,6 +32,7 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 	<li>When starting a new case, fields can be prefilled from values specified in a <link run_production_data_entry.hgt>PFF's Parameters section</link>.</li>
 	<li>The compiler no longer issues an error when reentering a protected field.</li>
 	<li>The <link extended_controls.hgt>Combo Box</link> extended control can now be used on discrete numeric fields and alphanumeric fields.</li>
+	<li>On Windows, the search bar on <link extended_controls.hgt>extended control</link> popup windows is now hidden by default.</li>
 </list>
 
 <subheader>Data Viewer</subheader>
@@ -46,6 +47,8 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 	<li>A new function, <logiccolor>ischecked</logiccolor>, returns whether a code is checked as part of a check box field's selections.</li>
 	<li>A new function, <logiccolor>protect</logiccolor>, simplifies changing the protected property of a field.</li>
 	<li>A new function, <logiccolor>filetime</logiccolor>, returns the last modification date/time of a file or a directory.</li>
+	<li>A new statement, <logiccolor>when</logiccolor>, executes a statement based on the value of one or more other variables.</li>
+	<li>A new version of <logiccolor>recode</logiccolor>, sharing the syntax of <logiccolor>when</logiccolor>, with additional options for what the recoded value can be assigned to.</li>
 	<li>Using <logiccolor valueset>valueset.add</logiccolor> it is possible to add a single value or a range of values from an existing value set.</li>
 	<li>New options for the <logiccolor>syncconnect</logiccolor> function to connect to a local Dropbox or FTP folder.</li>
 	<li>A range of occurrences can be supplied to <logiccolor>insert</logiccolor> for mass insertions or <logiccolor>delete</logiccolor> for mass deletions.</li>

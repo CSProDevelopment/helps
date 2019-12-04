@@ -1,0 +1,65 @@
+﻿<title>When Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+when <arg>expression1</arg> 『:: <arg>expression2</arg> :: <arg>expressionN</arg>』;
+    『<arg>value1</arg>』   『:: <arg>value2</arg>       :: <arg>valueN</arg>』     -> <arg>statement</arg>;
+                                                 『-> <arg>else_statement</arg>;』
+endwhen;
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>when</logiccolor> program control statement executes a statement based on the value of one or more other variables, combining <logiccolor>if</logiccolor> statements with the power of <logiccolor>recode</logiccolor>. The statement is similar to statements in other programming languages (like <b>switch</b> in C or <b>when</b> in Kotlin).
+
+One or more expressions, <arg>expression1</arg> to <arg>expressionN</arg>, are given, with each expression separated by two colons <b>::</b>. These expressions must evaluate to either a number or string. Based on the values of each expression, CSPro evaluates each line between the <logiccolor>when</logiccolor> and <logiccolor>endwhen</logiccolor>, trying to match a line's values, <arg>value1</arg> to <arg>valueN</arg>, with the evaluated expressions. Once a line matches, a statement, which is given after the arrow <b>-></b>, is executed and program control moves to statements following the <logiccolor>endwhen</logiccolor>. Only a single statement can be provided per line.
+
+Each value provided must evaluate to the same type (number or string) as its respective expression. A value omitted is considered a match, and if no values are provided, then the optional <arg>else_statement</arg> is executed (assuming no preceding line matched).
+
+Values can be provided in the following ways:
+
+<list>
+	<li>An individual value. For example: <logiccolor>50</logiccolor></li>
+	<li>Using the syntax of <link in_operator.hgt>in lists</link>, meaning that multiple values can be separated with commas and ranges be separated by colons. For example: <logiccolor>1,3,5:9</logiccolor></li>
+	<li>An individual value preceded by one of the following operators: &lt;, &lt;=, &gt;, &gt;=, =, &lt;&gt;. If such an operator is used, the expression's value is compared with the value using the operator. For example: <logiccolor>&gt;= 65</logiccolor></li>
+</list>
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+function SimpleWhenExample(numeric sex, numeric age)
+
+	when sex :: age;
+		 1   ::        -> errmsg("Male");
+		 2   ::  0: 11 -> errmsg("Young female");
+		 2   :: 12: 49 -> errmsg("Fertile female");
+		 2   :: 50:120 -> errmsg("Older female");
+					   -> errmsg("Invalid sex or age");
+	endwhen;
+
+end;
+
+SimpleWhenExample(2,  10); // Young female
+SimpleWhenExample(2,  38); // Fertile female
+SimpleWhenExample(1, 150); // Male
+SimpleWhenExample(2, 150); // Invalid sex or age
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC EMPLOYMENT_STATUS
+
+	when EMPLOYMENT_STATUS;
+		  1:2 => skip to UNEMPLOYMENT;
+		 <= 6 => skip to INFORMAL_EMPLOYMENT
+		 >= 7 => skip to FORMAL_EMPLOYMENT;
+	endwhen;
+</logic>
+
+
+<seealso if_statement.hgt recode_statement.hgt />
