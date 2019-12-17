@@ -5,22 +5,22 @@ Removing duplicates from a data file can occur manually or automatically.
 
 <subheader>Manual Mode</subheader>
 
-If you elect to run CSIndex in manual mode, you will be prompted on how you want to handle duplicate cases found in your data files:
+If you elect to run Index Data in manual mode, you will be prompted on how you want to handle duplicate cases found in your data files:
 
 <center><image duplicates_in_single_file.png /></center>
 
-CSIndex lists the name(s) of the data file(s) in which a duplicate was found. In the above image, two cases were found in the file "codesC.txt" that shared the same case ID. You can view the contents of the case by clicking on the line number where the case was found. Checkmarks indicate cases that you want to keep in your output data file, so to remove a case you must remove a checkmark next to the line number indicating the case to be removed. In the above example, the user is keeping the first incidence of case 151011 from the file "codesC.txt."
+The tool lists the name(s) of the data file(s) in which a duplicate was found. In the above image, two cases were found in the file codesC.txt that shared the same case ID. You can view the contents of the case by clicking on the line number where the case was found. Checkmarks indicate cases that you want to keep in your output data file, so to remove a case you must remove a checkmark next to the line number indicating the case to be removed. In the above example, the user is keeping the first incidence of case 151011 from the file codesC.txt.
 
 <center><image duplicates_in_multiple_files.png /></center>
 
-The above example shows a "global duplicate" in an instance where the user has run CSIndex on multiple input data files. Case 193099 exists in both "codesC.txt" and "codesD.txt" but occurs only once in each file. In the above example, the user has decided to remove case 193099 from "codesC.txt" while keeping the case in "codesD.txt."
+The above example shows a "global duplicate" in an instance when the user has run the tool on multiple input data files. Case 193099 exists in both codesC.txt and codesD.txt but occurs only once in each file. In the above example, the user has decided to remove case 193099 from codesC.txt while keeping the case in codesD.txt.
 
-CSIndex is not able to generate an index for output files with duplicates, so it is recommended that you remove a sufficient number of duplicates such that there will no longer be duplicate cases existing within the output data file.
+The tool is not able to generate an index for output files with duplicates, so it is recommended that you remove a sufficient number of duplicates such that there will no longer be duplicate cases existing within the output data file.
 
 
 <subheader>Automatic Mode</subheader>
 
-If you run CSIndex in automatic mode, CSIndex will keep the first instance of a duplicate case that it encounters and remove the remaining duplicate cases. This is true whether you run CSIndex on one or more data files. For instance, in automatic mode the following will occur:
+If you run Index Data in automatic mode, the tool will keep the first instance of a duplicate case that it encounters and remove the remaining duplicate cases. This is true regardless of whether you run the tool on one or more data files. For instance, in automatic mode the following will occur:
 
 <font monospace>
 <b>FILE 1</b>~!~

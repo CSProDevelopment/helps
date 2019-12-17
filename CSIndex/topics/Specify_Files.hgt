@@ -1,17 +1,21 @@
 ﻿<title>Specify Files</title>
 
+If you want to load the settings from a previous run of the tool, you can select <b>Open</b> from the <b>File</b> menu. You can also save the selected options by selecting <b>Save As</b> from the <b>File</b> menu.
+
 <subheader>Dictionary</subheader>
 
 Select the dictionary that describes the data file(s) that you want to index.
 
-<subheader>Input File(s)</subheader>
+<subheader>Data to Index</subheader>
 
-Select one or more data files. An index file (.csidx) will be generated for each data file selected that does not contain duplicate cases IDs.
+Select one or more data files. An index file (.csidx) will be generated for each text data file selected that does not contain duplicate cases IDs. You can use the <b>Add</b>, <b>Remove</b>, and <b>Clear</b> buttons to modify the input data files. You can also drag files from Windows Explorer onto the tool to add them as input data.
 
-<subheader>Output File</subheader>
+<subheader>Output Data</subheader>
 
-If CSIndex is run in a mode where duplicates may be deleted, you must specify the name of an output file. This is the name of the file that will mirror the contents of your input file but will not include the duplicate cases that you have chosen to be or were automatically removed the file. If you are running CSIndex on more than one input file, you must use a wildcard to specify the name of your output data files. CSPro defaults to the following name using wildcards:
+If the tool is run in a mode where duplicates may be deleted, you must specify the name of an output file. This is the name of the file that will mirror the contents of your input file but will not include the duplicate cases that you have chosen to remove or were automatically removed the file. If you are running the tool on more than one input file, you can use a wildcard to specify the name of your output data files. CSPro defaults to the following name:
 
-<indent>&lt;filename>Fixed&lt;.extension></indent>
+<indent>&lt;filename&gt;-fixed</indent>
 
-You can modify the name of the output file, but make sure that you still use the &lt;filename> wildcards within your name. You can include &lt;.extension> though this is not necessary.
+If you have two input files, A.dat and B.csdb, two output files would result: A-fixed.dat and B-fixed.csdb. You can modify the name of the output file, but make sure that you still use the &lt;filename&gt; wildcards within your name.
+
+Alternatively, if you do not use the &lt;filename&gt; wildcard, you can give the name of a single output file, in which case the input data files will be concatenated together into one resulting output file.

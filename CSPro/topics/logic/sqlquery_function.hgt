@@ -55,7 +55,7 @@ errmsg("%d cases have been verified", numberVerifiedCases);
 <logic>
 list string verifiedCaseKeys;
 
-sqlquery(DICT_NAME, verifiedCaseKeys, "SURVEY_DICT cases.key FROM cases WHERE cases.verified != 0;");
+sqlquery(DICT_NAME, verifiedCaseKeys, "SELECT cases.key FROM cases WHERE cases.verified != 0;");
 
 do numeric ctr = 1 while ctr <= verifiedCaseKeys.length()
 	errmsg("Verified case key: %s", verifiedCaseKeys(ctr));
