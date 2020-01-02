@@ -17,6 +17,10 @@ AppType=Deploy
 
 [Files]
 Application=.\Deployment.csds
+
+[Parameters]
+DeployToOverride=CSWeb
+
 </pff>
 
 
@@ -27,3 +31,11 @@ The <pffcolor>[Run Information]</pffcolor> block is required and must appear exa
 <subheader>[Files]</subheader>
 
 The <pffcolor>[Files]</pffcolor> block is required and defines the script that will be used during the deployment.
+
+<subheader>[Parameters]</subheader>
+
+The <pffcolor>[Parameters]</pffcolor> block is optional and defines additional options for the deployment.
+
+<list>
+	<li><pffcolor>DeployToOverride</pffcolor>= specifies the type of server to be used during the synchronization. Possible options are: <b>None</b><b>CSWeb</b>, <b>Dropbox</b>, <b>FTP</b>, <b>LocalFile</b> and <b>LocalFolder</b></li>
+</list>
