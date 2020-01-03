@@ -36,10 +36,6 @@ The function returns a logical value of 1 (true) if the transfer was successful 
 <logic>
 if syncconnect(CSWeb,"https://www.myserver.org/api") then
 
-	// get the latest versions of the application files from the server
-	syncfile(GET,"/MyApp/MyApp.pff");
-	syncfile(GET,"/MyApp/MyApp.pen");
-
 	// upload all images in images directory to the images directory on the server
 	syncfile(PUT,"Images/*.jpg","/Images/);
 
@@ -48,4 +44,4 @@ if syncconnect(CSWeb,"https://www.myserver.org/api") then
 endif;
 </logic>
 
-<seealso synchronization.hgt syncconnect_function.hgt syncdata_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />
+<seealso synchronization.hgt syncconnect_function.hgt syncdata_function.hgt syncapp_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />
