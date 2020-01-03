@@ -23,6 +23,7 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 
 <list>
 	<li>Enhancements to the logic editor, including parentheses matching and improvements to the find and replace dialogs.</li>
+	<li>The synchronization options has been updated. Synchronization can be removed from an application by unchecking the Enable Synchronization box. The options for downloading application files has been removed in favor of the new <link CSDeploy::update_deployment_mobile.hgt>Update Installed Installed Applications</link></li>
 </list>
 
 
@@ -49,6 +50,7 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 	<li>A new function, <logiccolor>filetime</logiccolor>, returns the last modification date/time of a file or a directory.</li>
 	<li>A new statement, <logiccolor>when</logiccolor>, executes a statement based on the value of one or more other variables.</li>
 	<li>A new version of <logiccolor>recode</logiccolor>, sharing the syntax of <logiccolor>when</logiccolor>, with additional options for what the recoded value can be assigned to.</li>
+	<li>A new function <logiccolor>syncapp</logiccolor> for downloading new versions of an application from a deployment server.</li>
 	<li>Using <logiccolor valueset>valueset.add</logiccolor> it is possible to add a single value or a range of values from an existing value set.</li>
 	<li>New options for the <logiccolor>syncconnect</logiccolor> function to connect to a local Dropbox or FTP folder.</li>
 	<li>A range of occurrences can be supplied to <logiccolor>insert</logiccolor> for mass insertions or <logiccolor>delete</logiccolor> for mass deletions.</li>
@@ -69,6 +71,7 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 <subheader>Android</subheader>
 
 <list>
+	<li>A new menu option <link CSDeploy::update_deployment_mobile.hgt>Update Installed Installed Applications</link> to automatically check for and install new versions of an application that has been updated on a  deployment server</li>
 	<li>A new Settings screen, accessed via the menu on the Entry Applications screen, allows user to <link cspro_settings.hgt>clear saved credentials</link>.</li>
 	<li>The option for selecting that <link run_production_data_entry.hgt>hidden applications</link> are shown has been moved to the Settings screen.</li>
 </list>
@@ -82,6 +85,7 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 	<li>The Index Data tool has also been completely rewritten. It has a new interface that simplifies running the program on multiple input files; it now works with non-text data files; and there is a more modern interface for viewing cases while selecting which duplicate cases to keep.</li>
 	<li>The Sort Data tool allows case sorts on non-text data files that have duplicates.</li>
 	<li>When the Sort Data tool processes a sorting key item that does not exist, it treats it as the lowest possible value, sorting it first when sorting in ascending order. In the past, such values were sorted as 0 (so they would be sorted after negative values when sorting in ascending order).</li>
+	<li>The Deploy Applications tool supports setting files to only be <link CSDeploy::only_on_first_install.hgt>updated when an application is first installed</link> and not on subsequent updates.</li>
 </list>
 
 
