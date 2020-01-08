@@ -8,7 +8,7 @@ i = countcases(<arg>dictionary_name</arg> 『where <arg>condition</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>countcases</logiccolor> function counts the number of cases in a file opened as external dictionary <arg>dictionary_name</arg>. An optional logical <arg>condition</arg>, referencing items in the external dictionary, can be supplied to count the number of cases in the file that meet a certain criterion.
+The <logiccolor>countcases</logiccolor> function counts the number of cases in a file referenced by <arg>dictionary_name</arg>. The dictionary can be either the main input dictionary or an external dictionary. An optional logical <arg>condition</arg>, referencing items in a dictionary, can be supplied to count the number of cases in the file that meet a certain criterion. When using this condition, the dictionary must be an external dictionary.
 
 <subheader>Return Value</subheader>
 
