@@ -99,5 +99,11 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 	<li>Case construction is more forgiving of errors, allowing level 2+ records to appear before their parent level's records. Additionally, level 2+ nodes are joined (by ID) even if some records from a different node separate the nodes. For example, if there is a case with a first level ID of 1 and second level IDs of A and B, in the past, 1/1A/1B/1A would be processed as three second-level nodes, but now they will be handled as two second-level nodes (1/1A+1A/1B).</li>
 </list>
 
+<subheader>CSWeb</subheader>
+
+<list>
+	<li>Add <link CSWeb::viewing_reports.hgt>Sync Report</link> which summarizes the total number of cases uploaded to CSWeb.</li>
+</list>
+
 
 <seealso what_is_new_in_cspro.hgt />
