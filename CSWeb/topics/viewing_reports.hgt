@@ -27,11 +27,11 @@ Notice, that not all dictionary ids require a pair to be defined which will ofte
 If a header row is included and the dictionary ids for the dictionary are province, district, and enumeration area then the format of the first five rows is:
 
 <table 4>
-<cell 1>Province Code</cell><cell 1>Province Label</cell><cell 1>District Code</cell><cell 1>District Label</cell>
-<cell 1>1</cell><cell 1>Artesia</cell><cell 1>1</cell><cell 1>Dongo</cell>
-<cell 1>1</cell><cell 1>Artesia</cell><cell 1>2</cell><cell 1>Idfu</cell>
-<cell 1>2</cell><cell 1>Copal</cell><cell 1>1</cell><cell 1>Baja</cell>
-<cell 1>2</cell><cell 1>Copal</cell><cell 1>2</cell><cell 1>Bassac</cell>
+<cell>Province Code</cell><cell>Province Label</cell><cell>District Code</cell><cell>District Label</cell>
+<cell>1</cell><cell>Artesia</cell><cell>1</cell><cell>Dongo</cell>
+<cell>1</cell><cell>Artesia</cell><cell>2</cell><cell>Idfu</cell>
+<cell>2</cell><cell>Copal</cell><cell>1</cell><cell>Baja</cell>
+<cell>2</cell><cell>Copal</cell><cell>2</cell><cell>Bassac</cell>
 </table>
 
 <subheader>Understanding How Dictionary Design Affects Reports</subheader>
@@ -39,31 +39,31 @@ If a header row is included and the dictionary ids for the dictionary are provin
 To create useful reports it is important to understand how the design of the dictionary affects the report. Each dictionary id will become a column in the report. Typically, each dictionary id is a unique geography and the report summarizes the information by geography.
 
 <table 4>
-<cell 1>Province</cell><cell 1>District</cell><cell 1>Enumeration Area</cell><cell 1>Total</cell>
-<cell 1>Artesia</cell><cell 1>Dongo</cell><cell 1>EA 001</cell><cell 1>56</cell>
-<cell 1>Artesia</cell><cell 1>Idfu</cell><cell 1>EA 007</cell><cell 1>33</cell>
-<cell 1>Copal</cell><cell 1>Baja</cell><cell 1>EA 001</cell><cell 1>0</cell>
-<cell 1>Copal</cell><cell 1>Bassac</cell><cell 1>EA 005</cell><cell 1>74</cell>
+<cell>Province</cell><cell>District</cell><cell>Enumeration Area</cell><cell>Total</cell>
+<cell>Artesia</cell><cell>Dongo</cell><cell>EA 001</cell><cell>56</cell>
+<cell>Artesia</cell><cell>Idfu</cell><cell>EA 007</cell><cell>33</cell>
+<cell>Copal</cell><cell>Baja</cell><cell>EA 001</cell><cell>0</cell>
+<cell>Copal</cell><cell>Bassac</cell><cell>EA 005</cell><cell>74</cell>
 </table>
 
 If the enumerator id is added as a dictionary id item consider how its position affects the report.
 
 <table 5>
-<cell 1>Province</cell><cell 1>District</cell><cell 1>Enumeration Area</cell><cell 1>Enumerator</cell><cell 1>Total</cell>
-<cell 1>Artesia</cell><cell 1>Dongo</cell><cell 1>EA 001</cell><cell 1>Enum001</cell><cell 1>56</cell>
-<cell 1>Artesia</cell><cell 1>Idfu</cell><cell 1>EA 007</cell><cell 1>Enum002</cell><cell 1>33</cell>
-<cell 1>Copal</cell><cell 1>Baja</cell><cell 1>EA 001</cell><cell 1>Enum003</cell><cell 1>0</cell>
-<cell 1>Copal</cell><cell 1>Bassac</cell><cell 1>EA 005</cell><cell 1>Enum004</cell><cell 1>74</cell>
+<cell>Province</cell><cell>District</cell><cell>Enumeration Area</cell><cell>Enumerator</cell><cell>Total</cell>
+<cell>Artesia</cell><cell>Dongo</cell><cell>EA 001</cell><cell>Enum001</cell><cell>56</cell>
+<cell>Artesia</cell><cell>Idfu</cell><cell>EA 007</cell><cell>Enum002</cell><cell>33</cell>
+<cell>Copal</cell><cell>Baja</cell><cell>EA 001</cell><cell>Enum003</cell><cell>0</cell>
+<cell>Copal</cell><cell>Bassac</cell><cell>EA 005</cell><cell>Enum004</cell><cell>74</cell>
 </table>
 
 Above the enumerator id is the last dictionary id. The report summarizes the information by geography, but also allows the analyst to see which enumerator is working there. Additionally, if the province, district, or enumeration area is selected from the dropdown the enumerator will be ignored.
 
 <table 5>
-<cell 1>Enumerator</cell><cell 1>Province</cell><cell 1>District</cell><cell 1>Enumeration Area</cell><cell 1>Total</cell>
-<cell 1>Enum001</cell><cell 1>Artesia</cell><cell 1>Dongo</cell><cell 1>EA 001</cell><cell 1>56</cell>
-<cell 1>Enum002</cell><cell 1>Artesia</cell><cell 1>Idfu</cell><cell 1>EA 007</cell><cell 1>33</cell>
-<cell 1>Enum003</cell><cell 1>Copal</cell><cell 1>Baja</cell><cell 1>EA 001</cell><cell 1>0</cell>
-<cell 1>Enum004</cell><cell 1>Copal</cell><cell 1>Bassac</cell><cell 1>EA 005</cell><cell 1>74</cell>
+<cell>Enumerator</cell><cell>Province</cell><cell>District</cell><cell>Enumeration Area</cell><cell>Total</cell>
+<cell>Enum001</cell><cell>Artesia</cell><cell>Dongo</cell><cell>EA 001</cell><cell>56</cell>
+<cell>Enum002</cell><cell>Artesia</cell><cell>Idfu</cell><cell>EA 007</cell><cell>33</cell>
+<cell>Enum003</cell><cell>Copal</cell><cell>Baja</cell><cell>EA 001</cell><cell>0</cell>
+<cell>Enum004</cell><cell>Copal</cell><cell>Bassac</cell><cell>EA 005</cell><cell>74</cell>
 </table>
 
 Alternatively, if the enumerator id is the first dictionary id then the emphasis will be on the enumerator. All information is summarized by enumerator and then by geography.
@@ -74,4 +74,3 @@ Alternatively, if the enumerator id is the first dictionary id then the emphasis
 	<li><b>Urban/rural</b> do not make the key unique, so they do not need to be id items. However, if used they will double the number of rows in the report. Further, at what position would they be added?</li>
 	<li><b>Longitude/latitude</b> will likely be unique on their own. Making the report nothing more than a list.</li>
 </list>
-
