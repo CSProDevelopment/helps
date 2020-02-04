@@ -1,0 +1,18 @@
+﻿<title>Dictionary Security Options</title>
+<context HID_EDIT_SECURITY_OPTIONS />
+
+Several security options can be defined on a per-dictionary basis. To change these options, select <b>Security Options</b> from the <b>Edit</b> menu. A dialog box will appear with the following options:
+
+<center><image dictionary_security_options.png /></center>
+
+When checked, the first option, <b>Allow the use of Data Viewer to modify data</b>, means that a user can use <link DataViewer::introduction_to_data_viewer.hgt>Data Viewer</link> to delete and modify cases.
+
+When checked, the second option, <b>Allow exporting data to other formats</b>, allows a user to use <link DataViewer::introduction_to_data_viewer.hgt>Data Viewer</link>, the <link CSExport::introduction_to_export_data.hgt>Export Data</link> tool, or the <logiccolor>export</logiccolor> statement to output data to another format.
+
+<subheader>Encryption Options</subheader>
+
+Encryption options control whether or not passwords can be stored for <link data_sources.hgt>data sources</link> using that dictionary. These options only apply when using the dictionary to access <link encrypted_data.hgt>encrypted data</link> using the Encrypted CSPro DB data source. By default, passwords used to open such files are not cached on the machine, meaning that the password must be specified every time the file is opened (unless the password is specified in a <link connection_string.hgt>connection string</link>). If you want to allow the storage of passwords, specify the number of minutes that the stored password can be used to open the data file.
+
+The password itself will not be stored on the device; instead, a key that can be used to open the data file will be stored. A clever hacker who accesses this key may be able to open the data but will have a hard time reverse engineering the key to get the original password itself. The key is stored in secure storage on the device. You can use the <link cspro_settings.hgt>CSPro Settings</link> dialog to clear any cached passwords.
+
+<seealso encrypted_data.hgt />

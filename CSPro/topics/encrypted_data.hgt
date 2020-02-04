@@ -6,7 +6,7 @@ Using the <link data_sources.hgt>Encrypted CSPro DB</link> data source, you can 
 
 An Encrypted CSPro DB file is like a CSPro DB file and can be used in any CSPro application. The only difference is that, upon opening the file, CSPro requires the specification of a password. There are two ways to specify a password:
 
-<b>Password entry</b>: A dialog box will appear allowing the user to enter the password. The password must be at least eight characters. If the data file does not exist and is being created for the first time, the user must enter the password twice to ensure that the password is entered correctly. You can reduce the number of times that a user must enter the password by allowing the password to be <link dictionary_encryption_options.hgt>cached for a specified duration</link> on the machine. When opening an existing file, if the password is not correct, the user will be prompted to enter the password again.
+<b>Password entry</b>: A dialog box will appear allowing the user to enter the password. The password must be at least eight characters. If the data file does not exist and is being created for the first time, the user must enter the password twice to ensure that the password is entered correctly. You can reduce the number of times that a user must enter the password by allowing the password to be <link dictionary_security_options.hgt>cached for a specified duration</link> on the machine. When opening an existing file, if the password is not correct, the user will be prompted to enter the password again.
 
 <b>Connection string</b>: The password can be specified in a <link connection_string.hgt>connection string</link> used in a PFF file or by <logiccolor>setfile</logiccolor>. If the password is specified in the connection string, then the user will not be prompted to enter a password. If the data file does not exist and is being created for the first time, the specified password will be used to encrypt the file. When opening an existing file, if the password is not correct, the opening of the file will fail. For example, the following connection string opens the file <i>pilot-data.csdbe</i> with the password <i>jiw~d_fpF9</i>.
 
@@ -23,7 +23,7 @@ While the data in the file is encrypted, it is also a good idea:
 
 <subheader>Technical Details</subheader>
 
-Encrypted CSPro DB files are SQLite files encrypted using the <link https://www.hwaci.com/sw/sqlite/see.html>SQLite Encryption Extension (SEE)</link> using "AES-256 in OFB mode." The specified password is not used as the key input to SEE but is instead hashed to create a 256-byte key that is used to encrypt the file. If allowed, this hash, not the password, is <link dictionary_encryption_options.hgt>cached on the machine</link>. A fixed salt is used during the hashing process because there is no suitable place to store a dynamic salt. This means that the same password will always result in the same encryption key.
+Encrypted CSPro DB files are SQLite files encrypted using the <link https://www.hwaci.com/sw/sqlite/see.html>SQLite Encryption Extension (SEE)</link> using "AES-256 in OFB mode." The specified password is not used as the key input to SEE but is instead hashed to create a 256-byte key that is used to encrypt the file. If allowed, this hash, not the password, is <link dictionary_security_options.hgt>cached on the machine</link>. A fixed salt is used during the hashing process because there is no suitable place to store a dynamic salt. This means that the same password will always result in the same encryption key.
 
 
-<seealso dictionary_encryption_options.hgt data_sources.hgt connection_string.hgt />
+<seealso dictionary_security_options.hgt data_sources.hgt connection_string.hgt />
