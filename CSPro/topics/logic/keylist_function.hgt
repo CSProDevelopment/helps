@@ -10,6 +10,8 @@ i = keylist(<arg>dictionary_name</arg>『, <arg>key_listing</arg>』);
 
 The <logiccolor>keylist</logiccolor> function fills <arg>key_listing</arg>, an optional string <link lists.hgt>list</link>, with the <link key_function.hgt>keys</link> in the file referenced by <arg>dictionary_name</arg>. The dictionary can be either the main input dictionary or an external dictionary. A dictionary key is a single string comprised of the IDs for a case.
 
+It is possible, by specifying <link set_access_statement.hgt>dictionary access parameters</link> after the dictionary name, to limit the keys that the <logiccolor>keylist</logiccolor> function returns.
+
 <subheader>Return Value</subheader>
 
 The function returns the number of cases in file.

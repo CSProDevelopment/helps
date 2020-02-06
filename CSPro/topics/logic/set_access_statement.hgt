@@ -3,23 +3,57 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-set access(<arg>dictionary_name</arg>) <arg>iteration_type</arg>;
+set access(<arg>dictionary_name</arg>, <arg>type</arg>.<arg>value</arg>『, <arg>type</arg>.<arg>value</arg>, ...』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>set access</logiccolor> statement is used to control the way that CSPro iterates through a data file. By default, CSPro processes cases in a file in ascending key order (e.g., A -> B -> C). With this statement, you can change the default behavior to process cases in descending key order (e.g., C -> B -> A).
+The <logiccolor>set access</logiccolor> statement is used to control the way that CSPro iterates through a data file. By default, CSPro processes all non-deleted cases in file order for the main input file of a batch application or `in ascending key order (e.g., A -> B -> C) for all other files. With this statement, you can change the default behavior to process cases in a different order or to control what cases are processed.
 
-The <arg>dictionary_name</arg> refers to either an external dictionary or the main input file of a batch application. The argument <arg>iteration_type</arg> is either <arg>ascending</arg> or <arg>descending</arg>.
+The <arg>dictionary_name</arg> refers to either an external dictionary or the main input file of a batch application. If the dictionary access parameters are modified while in the middle of iterating through the data file, the next case loaded will be based on the location of the currently loaded case. For example, if you are running a batch application on cases 1 to 5, and then after processing case 3 you change the order to descending, the next cases loaded will be 2 and 1.
 
-<subheader>Example</subheader>
+
+<subheader>Dictionary Access Parameters</subheader>
+
+<table 3 header nowrap>
+	<cell>Type</cell><cell>Values</cell><cell>Description</cell>
+	<cell><arg>OrderType</arg></cell><cell><arg>Indexed</arg></cell><cell>Iterate based on the alphabetical value of the case's key (default for external dictionaries)</cell>
+	<cell></cell><cell><arg>Sequential</arg></cell><cell>Iterate based on the case's position in the file  (default for batch inputs)</cell>
+	<cell 3>&nbsp;</cell>
+	<cell><arg>Order</arg></cell><cell><arg>Ascending</arg></cell><cell>Iterate from low to high value (key or file position) (default)</cell>
+	<cell></cell><cell><arg>Descending</arg></cell><cell>Iterate from high to low value (key or file position)</cell>
+	<cell 3>&nbsp;</cell>
+	<cell><arg>CaseStatus</arg></cell><cell><arg>All</arg></cell><cell>Iterate through all cases, including deleted cases</cell>
+	<cell></cell><cell><arg>NotDeleted</arg></cell><cell>Iterate through all non-deleted cases (default)</cell>
+	<cell></cell><cell><arg>Partial</arg></cell><cell>Iterate through non-deleted partially saved cases</cell>
+	<cell></cell><cell><arg>Duplicate</arg></cell><cell>Iterate through non-deleted cases where there are at least two cases with the same key in the file</cell>
+</table>
+
+
+<subheader>Temporarily Modifying the Dictionary Access Parameters</subheader>
+
+Using <logiccolor>set access</logiccolor>, the dictionary access parameters are modified until the next call to <logiccolor>set access</logiccolor>. However, it is also possible to temporarily change the dictionary access parameters when using several functions or statements. By specifying the parameters in parentheses after the dictionary name in uses of <logiccolor>countcases</logiccolor>, <logiccolor>forcase</logiccolor>, <logiccolor>keylist</logiccolor>, and <logiccolor>selcase</logiccolor>, the access to the dictionary will only be changed for the duration of that routine.
+
+
+<subheader>Example 1</subheader>
 
 <logic>
-PROC SURVEY_FF
+PROC CENSUS_FF
 
 preproc
 
-	set access(SURVEY_DICT) descending;
+	// process the batch input in order from the last province to the first
+	set access(CENSUS_DICT, OrderType.Indexed, Order.Descending);
 </logic>
+
+
+<subheader>Example2</subheader>
+
+<logic>
+forcase CENSUS_DICT(CaseStatus.Partial) do
+	interview_vs.add("Continue interview: " + getcaselabel(CENSUS_DICT), key(CENSUS_DICT));
+endfor;
+</logic>
+
 
 <seealso set_first_statement.hgt set_last_statement.hgt locate_function.hgt />
