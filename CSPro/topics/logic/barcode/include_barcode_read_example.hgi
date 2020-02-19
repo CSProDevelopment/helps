@@ -1,0 +1,7 @@
+﻿PROC BLOOD_SAMPLE
+
+preproc
+
+	if BLOOD_SAMPLE = "" then
+		BLOOD_SAMPLE = barcode.read("Scan the blood sample barcode");
+	endif;

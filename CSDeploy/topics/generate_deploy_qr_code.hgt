@@ -1,18 +1,19 @@
 ﻿<title>Get a QR Code to Scan to Install an Application on a Mobile Device</title>
 
-To simplify installation of deployed applications on mobile devices, CSDeploy will generate a QR code that contains the information needed to download a deployed application and install it on an Android tablet or phone. You can simply scan the QR code with the camera on your Android device and CSEntry will automatically download and install the application. This way you do not have to manually type the server information on the mobile device.
+To simplify installation of deployed applications on mobile devices, CSDeploy can generate a QR code that contains the information needed to download a deployed application and install it on an Android tablet or phone. You can simply scan the QR code with the camera on your Android device and CSEntry will automatically download and install the application. This way you do not have to manually type the server information on the mobile device.
 
-To generate a QR code for deployment, click on the QR code button in the Deploy Applications tool to launch the QR code dialog. This dialog displays the QR code. You can scan the QR code using the camera on your mobile device directly from your computer screen or you can print or save the QR code to use it later by clicking the <b>Print...</b> or <b>Save...</b> buttons.
+To generate a QR code for deployment, click on the QR code button in the Deploy Applications tool to launch the QR code dialog. This dialog displays the QR code. You can scan the QR code using the camera on your mobile device directly from your computer screen or you can print or save the QR code to use it later by clicking the <b>Print</b> or <b>Save</b> buttons.
 
 There are two ways to use the QR code on your Android device to install the deployed application. You can use CSEntry or you can use the camera application directly.
 
 To scan the QR code in CSEntry:
+
 <list>
-	<li>:Open CSEntry on the mobile device.</li>
+	<li>Open CSEntry on the mobile device.</li>
 	<li>In the Entry Applications menu tap the menu icon or menu button and choose <b>Add Application</b>.</li>
-	<li>Choose <b>Scan QR code</b> from the list. This will launch the camera to scan the QR code.</li>
+	<li>Choose <b>QR code</b> from the list. This will launch the camera to scan the QR code.</li>
 	<li>Center the QR code in the camera so that the entire QR code is clearly visible.</li>
-	<li>Once the QR is recognized the installation will start automatically.</li>
+	<li>Once the QR code is recognized the installation will start automatically.</li>
 </list>
 
 To scan the barcode with the camera:
@@ -23,4 +24,4 @@ To scan the barcode with the camera:
 	<li>When the QR code is detected, a notification will be displayed showing a link. Click on the link to launch CSEntry and install the application.</li>
 </list>
 
-If you want to include the username and password in the QR code, check "Include username and password" and enter the username and password below. This option is not available for applications deployed using Dropbox. If you do not include the username and password, CSEntry will prompt the user for it when they scan the QR code. Note that the password in the QR code is not encrypted so do not share a QR code containing a password with someone you do not trust.
+If you want to include the username and password in the QR code, check <b>Include username and password</b> and enter the username and password. This option is not available for applications deployed using Dropbox. If you do not include the username and password, CSEntry will prompt the user for it when they scan the QR code. Note that the password in the QR code is not encrypted so do not share a QR code containing a password with someone you do not trust.
