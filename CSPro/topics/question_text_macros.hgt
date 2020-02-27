@@ -7,6 +7,8 @@ There are a few tasks that you can perform on a data entry application's questio
 
 <b>Remove Unused Text</b>: If you define question text for a field or block but then remove that entity from a form, its question text may remain in the .qsf file. This option will remove any unused&mdash;not connected to a form entity&mdash;question text from that file.
 
+<b>Harmonize Occurrences</b>: Increases the maximum occurrence number of a field or block's question text to match that of the controlling record in the dictionary. This is useful if you increase the number of record occurrences; rather than having to manually increase each question's occurrences values, you can use this option.
+
 <b>Initialize as Dictionary Label</b>: For any field that does not have question text defined, the question text will be set to the field's item dictionary label.
 
 <b>Paste from Clipboard</b>: Using one of the formats specified, a field or block's question text will be set to the text specified on the clipboard.
