@@ -1,0 +1,32 @@
+﻿<title>Hash Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = hash(<arg>text</arg> 『, <arg>length</arg>『, <arg>salt</arg>』』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>hash</logiccolor> function generates a hash value for the string expression <arg>text</arg>. This hash value is a fixed-length representation of the text and can be used for purposes such as storing passwords without storing the actual plaintext password. The hash value of the same text string will always be the same, but it is nontrivial (impossible for CSPro purposes) to work backwards to calculate the original text from the hash value.
+
+The hash value is calculated using a SHA-256 key derivation algorithm. This results in a 32-byte value, which is returned as a hexadecimal string with each byte represented as two characters, thus resulting in a string of a length 64.
+
+Optionally, you can specify a numeric expression <arg>length</arg>, which specifies the length of the hash value in bytes. The string returned will always be twice the value of <arg>length</arg>.
+
+You can also specify a string expression, <arg>salt</arg>, which is an additional input in generating the hash value. You must store this salt value somewhere to be able to use this hash function to perform any checks. More information on hash values, key derivation algorithms, and salt values is readily available online.
+
+<subheader>Return Value</subheader>
+
+The function returns a hash value represented as a hexadecimal string.
+
+<subheader>Example</subheader>
+
+<logic>
+string user_password = prompt("Enter your password", password);
+
+if hash(user_password) <> USER_PASSWORD_HASH then
+	errmsg("Invalid password. You cannot access this system.");
+	stop(1);
+endif;
+</logic>
