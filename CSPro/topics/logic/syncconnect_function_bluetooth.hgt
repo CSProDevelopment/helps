@@ -19,17 +19,17 @@ When connecting over Bluetooth, no Internet connection is required, however the 
 <subheader>Example</subheader>
 
 <logic>
-string serverName = "supervisor21";
+string server_name = "supervisor21";
 
 // connect to the supervisor's device using Bluetooth
-if syncconnect(Bluetooth,serverName) then
+if syncconnect(Bluetooth, server_name) then
 
 	// send the latest cases to the supervisor's device
-	syncdata(PUT,SURVEY_DICT);
+	syncdata(PUT, SURVEY_DICT);
 
 	syncdisconnect();
 
 endif;
 </logic>
 
-<seealso syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_dropbox.hgt syncconnect_function_ftp.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt getbluetoothname_function.hgt />
+<seealso syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_dropbox.hgt syncconnect_function_ftp.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt syncmessage_function.hgt getbluetoothname_function.hgt />

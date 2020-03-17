@@ -54,6 +54,7 @@ There are five logic functions used for synchronization with a server:
 	<li><logiccolor>syncdata</logiccolor> is used to synchronize cases in CSPro data files with the server.</li>
 	<li><logiccolor>syncfile</logiccolor> is used to upload/download non-data files to/from the server.</li>
 	<li><logiccolor>syncapp</logiccolor> is used to update an application on the device from a new version on the server.</li>
+	<li><logiccolor>syncmessage</logiccolor> is used to send to and receive string messages from a Bluetooth server.</li>
 </list>
 
 While it is possible to use <logiccolor>syncfile</logiccolor> to synchronize CSPro data files, it is more efficient to use <logiccolor>syncdata</logiccolor> since it will only send/receive cases that have been modified whereas <logiccolor>syncfile</logiccolor> always sends the entire file.
