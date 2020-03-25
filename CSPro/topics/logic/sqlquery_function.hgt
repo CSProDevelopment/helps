@@ -9,7 +9,7 @@ d = sqlquery(<arg>sqlite_database</arg>『, <arg>result_set</arg>』, <arg>sql_q
 
 <subheader>Description</subheader>
 
-The <logiccolor>sqlquery</logiccolor> function executes a query on a <link https://sqlite.org>SQLite</link> database and returns a result set in a variety of formats. This function is intended for advanced users who are familiar with writing SQL expressions. While most files used by CSPro applications are text files, there are some files that are stored as SQLite databases, including <link paradata.hgt>paradata logs</link>. You can query these files with this function.
+The <logiccolor>sqlquery</logiccolor> function executes a query on a <link https://sqlite.org>SQLite</link> database and returns a result set in a variety of formats. This function is intended for advanced users who are familiar with writing SQL expressions. While many files used by CSPro applications are text files, there are some files that are stored as SQLite databases, including <link csdb_relational_format.hgt>CSPro DB data files</link> and <link paradata.hgt>paradata logs</link>. You can query these files with this function.
 
 
 The first argument, <arg>sqlite_database</arg>, must be one of the following:
@@ -159,4 +159,4 @@ PROC EXAMPLE
 </logic>
 
 
-<seealso paradata_function.hgt setreportdata_function.hgt />
+<seealso csdb_relational_format.hgt paradata_function.hgt setreportdata_function.hgt />

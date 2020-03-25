@@ -16,6 +16,8 @@ The CSPro DB data source is the default type used for newly created data entry f
 
 If you use the CSPro DB type, then the data you collect cannot be directly used with previous versions of CSPro or tools that process text files. You can use the <link tool_list.hgt>Data Viewer</link> tool to convert data from the CSPro DB type to text and vice versa in case you need to use a previous version of CSPro or a preexisting tool that only works with text files.
 
+Starting with version 7.4 the CSPro DB file format stores the data captured in a relational database file using <link https://www.sqlite.org>SQLite</link>. See <topic csdb_relational_format.hgt /> for details.
+
 <subheader>Encrypted CSPro DB</subheader>
 
 The Encrypted CSPro DB data source is a CSPro DB file that is <link encrypted_data.hgt>encrypted</link> with a password and can only be opened with that password. Files created using this type have the extension <b>.csdbe</b>. Without the password there is no way to recover data from the file so it is important to implement a sufficient password management policy.
@@ -24,4 +26,4 @@ The Encrypted CSPro DB data source is a CSPro DB file that is <link encrypted_da
 
 The none data source is not associated with a file and allows you to run programs without needing to associate a dictionary with a file, usually with the assumption that the file association will be determined during the program and assigned using the <logiccolor>setfile</logiccolor> function. Adding cases to a none data source will result in nothing happening and any attempt to load or write cases to the file will appear successful but nothing will happen. This data source is useful for menu programs or instances when you do not initially know what an external dictionary should be set to.
 
-<seealso connection_string.hgt data_source_options.hgt />
+<seealso connection_string.hgt data_source_options.hgt csdb_relational_format.hgt />
