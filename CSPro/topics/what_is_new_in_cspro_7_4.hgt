@@ -14,8 +14,8 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 <subheader>Data Sources</subheader>
 
 <list>
-	<li>Change to the format of the <b>CSPro DB</b> <link data_sources.hgt>data source</link> to store data in a <link csdb_relational_format.hgt>relational database format</link> that can be queried using SQL. <b>CSPro DB</b> files created in version 7.4 cannot be read in earlier versions of CSPro.</li>
-	<li>Introduction of the new <b>Encrypted CSPro DB</b> <link data_sources.hgt>data source</link>, allowing for <link encrypted_data.hgt>file-based data encryption</link> with the ability to <link dictionary_security_options.hgt>cache passwords</link>.</li>
+	<li>Change to the format of the CSPro DB <link data_sources.hgt>data source</link> to store data in a <link csdb_relational_format.hgt>relational database format</link> that can be queried using SQL. CSPro DB files created in version 7.4 cannot be read in earlier versions of CSPro.</li>
+	<li>Introduction of the new Encrypted CSPro DB <link data_sources.hgt>data source</link>, allowing for <link encrypted_data.hgt>file-based data encryption</link> with the ability to <link dictionary_security_options.hgt>cache passwords</link>.</li>
 	<li>Ability to include, as part of a PFF or in a <logiccolor>setfile</logiccolor> function call, a <link connection_string.hgt>connection string</link> that details how to open a data source.</li>
 	<li><link dictionary_security_options.hgt>Dictionary options</link> include the ability to disallow use of a dictionary to modify data in Data Viewer or to export data to another output format.</li>
 </list>
@@ -44,8 +44,7 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 <subheader>Data Viewer</subheader>
 
 <list>
-	<li>Ability to <link DataViewer::downloading_and_synchronizing_data.hgt>download/synchronize</link> data from the local Dropbox folder or a local FTP server folder which can be faster than downloading data over the Internet.</li>
-	<li>Downloading data from CSWeb servers is now faster.</li>
+	<li>Ability to <link DataViewer::downloading_and_synchronizing_data.hgt>download or synchronize</link> data from the local Dropbox folder or a local FTP server folder which can be faster than downloading data over the Internet.</li>
 </list>
 
 
@@ -122,6 +121,7 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 
 <list>
 	<li>A <link CSWeb::viewing_reports.hgt>Sync Report</link> summarizes the total number of cases uploaded to CSWeb.</li>
+	<li>Downloading data from a CSWeb server is now faster.</li>
 </list>
 
 
