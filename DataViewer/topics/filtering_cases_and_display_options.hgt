@@ -2,27 +2,49 @@
 
 <subheader>Filtering Cases</subheader>
 
-To view a subset of the cases in the data file, you can enter a search query to filter the cases shown. The query will only filter by case IDs, not case labels. Enter the query and press <b>Enter</b> or click on the search icon. For example, this query would show only cases whose ID begins with '02':
+To view a subset of the cases in the data file, you can enter a search query to filter the cases shown. The query will only filter by case IDs, not case labels. Click on the magnification glass icon, enter the key prefix, and press <b>Enter</b>. For example, this query only shows cases whose ID begins with "02":
 
 <center><image filter_cases.png /></center>
 
 <subheader>Display Options</subheader>
 
-You can change the display options by selecting options off of the <b>View</b> menu:
+There are several display options that you can change. From the <b>Listing</b> menu:
 
 <list>
-	<li><b>Case Labels</b>: If checked, instead of showing case IDs, case labels are displayed in the case listing.</li>
-	<li><b>Cases in Sort Order</b>: If checked, the case listing sorts cases in key order, as opposed to file order.</li>
-	<li><b>Value Labels</b>: If checked, the label, taken from the first value set, for each value will be shown (in addition to the value's code).</li>
+	<li><b>File Order</b>:<list>
+		<li><b>Sequential</b>: Displays the case listing in file order.</li>
+		<li><b>Indexed</b>: Displays the case listing in key order.</li>
+	</list></li>
+	<li><b>File Filters</b>:<list>
+		<li><b>All Cases</b>: All cases in the data file, including deleted cases, are displayed.</li>
+		<li><b>Not Deleted Cases Only</b>: Cases that are deleted are not shown.</li>
+		<li><b>Partial Cases Only</b>: Only partially saved cases are shown.</li>
+		<li><b>Duplicate Cases Only</b>: Only cases that share an ID with other cases are shown.</li>
+	</list></li>
+	<li><b>File Order</b>:<list>
+		<li><b>Ascending</b>: Using the selected file order, displays the cases in ascending order.</li>
+		<li><b>Descending</b>: Displays the case in descending order.</li>
+	</list></li>
+	<li><b>Case Label Type</b>:<list>
+		<li><b>Case Label</b>: Shows the case label, or the case key if no case label is set.</li>
+		<li><b>Case Key</b>: Shows the case key (a string containing a case's IDs).</li>
+	</list></li>
 </list>
 
-One of the following options can be selected at a time:
+
+From the <b>Case</b> menu:
 
 <list>
-	<li><b>Show All Cases</b>: All cases in the data file are displayed.</li>
-	<li><b>Show Not Deleted Cases Only</b>: Cases that were deleted are not shown.</li>
-	<li><b>Show Partial Cases Only</b>: Only partially saved cases are shown.</li>
-	<li><b>Show Duplicate Cases Only</b>: Only cases that share an ID with other cases are shown.</li>
+	<li><b>Language</b>: Uses the labels in the specified language.</li>
+	<li><b>Dictionary Display / Item Label Type</b>: Controls how dictionary names are displayed, using the name, label, or both.</li>
+	<li><b>Dictionary Display / Item Type</b>: When an item and subitem pairing exists, this controls whether or not the item, subitem, or both are displayed.</li>
+	<li><b>Roster Display / Orientation</b>: Determines if records should be shown in a horizontal or vertical roster format.</li>
+	<li><b>Roster Display / Occurrence Labels</b>: For repeating records or items with occurrence labels, controls whether or not the label, as opposed to the occurrence number, is displayed.</li>
+	<li><b>Value Display / Value Label Type</b>: Determines how values are displayed in a variety of formats, including using the code, label, or both.</li>
+	<li><b>Value Display / Blank Values</b>: Controls whether or not items with blank values are displayed.</li>
+	<li><b>Case Details / Details</b>: Determines whether or not to show extra and non-default information about cases.</li>
+	<li><b>Case Details / Errors</b>: Controls whether or not case errors are shown. Case errors include messages such as whether or not a case has more records than allowed based on dictionary settings.</li>
 </list>
 
-The <b>Refresh</b> option allows you to reload the data file's contents.
+
+The <b>Refresh</b> option on the <b>View</b> menu allows you to reload the data file's contents.
