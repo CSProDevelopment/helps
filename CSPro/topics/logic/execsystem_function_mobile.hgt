@@ -15,7 +15,7 @@ The string expression <arg>action</arg> must begin with one of the following com
 
 <table 2 header nowrap>
 	<cell>Command</cell><cell>Description</cell>
-	<cell><b>app</b></cell><cell>Open another application on the device.</cell>
+	<cell><b>app</b></cell><cell>Open another application on the device. (You can get more control using <link systemapp.hgt>SystemApp</link> instead.)</cell>
 	<cell><b>browse</b></cell><cell>View a website in the Internet browser.</cell>
 	<cell><b>call</b></cell><cell>Place a phone call.</cell>
 	<cell><b>camera</b></cell><cell>Take a photo in .jpg or .png format.</cell>
@@ -55,4 +55,4 @@ execsystem("view:" + pathname(Application) + "audio.mp3");
 execsystem("view:" + pathname(Application) + "movie.3gp");
 </logic>
 
-<seealso execsystem_function_desktop.hgt execpff_function.hgt view_function.hgt />
+<seealso systemapp.hgt execsystem_function_desktop.hgt execpff_function.hgt view_function.hgt />

@@ -1,0 +1,55 @@
+﻿<title>SystemApp.SetArgument Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax SystemApp>
+b = system_app_name.setArgument(<arg>argument</arg>『, <arg>value</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor SystemApp>SystemApp.setArgument</logiccolor> function adds an argument to a <link systemapp.hgt>SystemApp</link> object. The argument will later be used when the system application is <link systemapp_exec_function.hgt>executed</link>. The string expression <arg>argument</arg> and the optional string or numeric expression <arg>value</arg> are processed differently on Android and Windows platforms.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true).
+
+
+<subheader>Android Example</subheader>
+
+On Android, a system application is typically an Android activity. Each argument will be part of the "extras" passed in the <link https://developer.android.com/reference/android/content/Intent>Intent Bundle</link> that opens the activity. If <arg>value</arg> is a string expression, it will be put as a <link https://developer.android.com/reference/android/content/Intent#putExtra(java.lang.String,%20java.lang.String)>String extra</link> associated with the name <arg>argument</arg>. If <arg>value</arg> is a numeric expression, it will be put as a <link https://developer.android.com/reference/android/content/Intent#putExtra(java.lang.String,%20double)>double extra</link> associated with the name <arg>argument</arg>. If <arg>value</arg> is not specified, a null String extra will be used. There is special processing for three <arg>argument</arg> types:
+
+<list>
+	<li><logiccolor>"action"</logiccolor>: The <arg>value</arg> is used as the action when calling <link https://developer.android.com/reference/android/content/Intent#setAction(java.lang.String)>Intent.setAction</link>.</li>
+	<li><logiccolor>"data"</logiccolor>: The <arg>value</arg> (which should be <link https://developer.android.com/reference/android/net/Uri>URI-encoded</link>) is used as the data when calling <link https://developer.android.com/reference/android/content/Intent#setData(android.net.Uri)>Intent.setData</link>.</li>
+	<li><logiccolor>"type"</logiccolor>: The <arg>value</arg> is used as the MIME data type when calling <link https://developer.android.com/reference/android/content/Intent#setType(java.lang.String)>Intent.setType</link>.</li>
+</list>
+
+<logic>
+<include include_android_example.hgi />
+</logic>
+
+
+<subheader>Windows Example</subheader>
+
+On Windows, a system application is an executable program. On Windows, every <arg>argument</arg> is turned into a command line argument passed to the executable. If an <arg>argument</arg> is provided without a corresponding <arg>value</arg> and the <arg>argument</arg> contains spaces and is not wrapped in quotes, the argument will be surrounded by quotes so that it is processed as a single argument by the executable. If a <arg>value</arg> is provided, then the argument and value are concatenated and will not be surrounded by quotes. If <arg>value</arg> is numeric, it will be converted to a string.
+
+<logic>
+// plays the song in Windows Media Player, becoming:
+// wmplayer.exe "Quick Escape.mp3"
+SystemApp windows_media_player;
+windows_media_player.setArgument("Quick Escape.mp3");
+windows_media_player.exec("wmplayer.exe");
+
+// opens the Census Bureau website in Chrome's Incognito mode, becoming:
+// chrome.exe --args --incognito https://www.census.gov
+SystemApp chrome;
+chrome.setArgument("", "--args --incognito");
+chrome.setArgument("https://www.census.gov");
+chrome.exec("chrome.exe");
+</logic>
+
+
+<seealso systemapp.hgt systemapp_exec_function.hgt />
