@@ -11,7 +11,7 @@ b = ischecked(<arg>code</arg>, <arg>check_box_field_name</arg>);
 
 The <logiccolor>ischecked</logiccolor> function returns whether a code is checked as part of a <link extended_controls.hgt>check box</link> field's selections. The <arg>check_box_field_name</arg> is the name of an alphanumeric field that is represented on a form as a check box. The <arg>code</arg> is a string expression containing the code to be checked.
 
-The codes of CSPro check boxes are placed at offsets and this function uses these offsets to check if the code was selected. For example, if the check box field has a length of 20 and each code has a length of 2, then the function checks whether the code is at position 1, 3, ..., 19.
+The codes of CSPro check boxes are placed at uniformly spaced offsets based on the size of the code. For example, if the check box field has a length of 20 and each code has a length of 2, then the function checks positions 1-2 for the code, then positions 3-4, and so on until positions 19-20.
 
 <subheader>Return Value</subheader>
 
