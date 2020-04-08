@@ -1,4 +1,4 @@
-﻿<title>ValueSets</title>
+﻿<title>ValueSet Object</title>
 
 In logic, a <logiccolor>valueset</logiccolor> is an object that contains information about the <link value_sets_description.hgt>possible values</link> that are considered permissible for a field. Each possible value contains a label, a code (the valid value), and can contain a link to an <link value_set_images.hgt>image</link> shown when the value set is <link extended_controls.hgt>displayed</link>. The value set object, once passed to the <logiccolor>setvalueset</logiccolor> function, becomes an item's dynamic value set.
 
@@ -15,7 +15,7 @@ A value set is a CSPro logic object and the following functions can be called vi
 	<cell><logiccolor list>show</logiccolor></cell><cell>Displays the value set's labels (similarly to <logiccolor>accept</logiccolor>) and returns the code of the operator's selection.</cell>
 </table>
 
-In addition to these object functions, value sets contain two built-in <link lists.hgt>list</link> objects: <logiccolor>valueset_name.codes</logiccolor> and <logiccolor>valueset_name.labels</logiccolor>, which contain the codes and labels for the value set. These are read-only lists and can be used in most ways that list objects can be used.
+In addition to these object functions, value sets contain two built-in <link list.hgt>list</link> objects: <logiccolor>valueset_name.codes</logiccolor> and <logiccolor>valueset_name.labels</logiccolor>, which contain the codes and labels for the value set. These are read-only lists and can be used in most ways that list objects can be used.
 
 Several functions accept value sets as arguments, including: <logiccolor>getimage</logiccolor>, <logiccolor>getlabel</logiccolor>, <logiccolor>invalueset</logiccolor>, <logiccolor>maxvalue</logiccolor>, <logiccolor>minvalue</logiccolor>, <logiccolor>randomin</logiccolor>, <logiccolor>randomizevs</logiccolor>, and <logiccolor>setvalueset</logiccolor>. Value sets can also be used with the <logiccolor>in</logiccolor> operator.
 
@@ -43,4 +43,4 @@ preproc
 	setvalueset(RESPONDENT, respondent_valueset);
 </logic>
 
-<seealso arrays.hgt lists.hgt />
+<seealso array.hgt list.hgt />

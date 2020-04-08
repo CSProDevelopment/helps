@@ -8,7 +8,7 @@ d = valueset_name.show(<arg>heading</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor valueset>valueset.show</logiccolor> function displays the labels from a numeric <link valuesets.hgt>value set</link> and returns the code of the operator's selection. A string expression, <arg>heading</arg>, specifies the title of the window that displays the values. The function is similar to the <logiccolor>accept</logiccolor> function but with the options taken from the value set's labels and the return value taken from the value set's codes.
+The <logiccolor valueset>valueset.show</logiccolor> function displays the labels from a numeric <link valueset.hgt>value set</link> and returns the code of the operator's selection. A string expression, <arg>heading</arg>, specifies the title of the window that displays the values. The function is similar to the <logiccolor>accept</logiccolor> function but with the options taken from the value set's labels and the return value taken from the value set's codes.
 
 <subheader>Return Value</subheader>
 
@@ -26,4 +26,4 @@ enddo;
 numeric respondent_line_number = respondent_query.show("Who in the household is responding to questions?");
 </logic>
 
-<seealso valuesets.hgt accept_function.hgt show_function.hgt showarray_function.hgt list_show_function.hgt />
+<seealso valueset.hgt accept_function.hgt show_function.hgt showarray_function.hgt list_show_function.hgt />

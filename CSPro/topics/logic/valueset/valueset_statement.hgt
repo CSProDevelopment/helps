@@ -9,7 +9,7 @@ valueset 『<arg>valueset_type</arg>』 <arg>valueset_name</arg>;
 
 <subheader>Description</subheader>
 
-The <logiccolor>valueset</logiccolor> statement creates a dynamic <link valuesets.hgt>value set</link> with the name <arg>valueset_name</arg>. The value set name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare value sets globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>valueset</logiccolor> statement creates a dynamic <link valueset.hgt>value set</link> with the name <arg>valueset_name</arg>. The value set name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare value sets globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 Value sets can be <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. By default a value set is numeric, but the type can be modified by specifying the <arg>valueset_type</arg>. When associating a value set with an item using <logiccolor>setvalueset</logiccolor>, the type must match the item type (numeric for numeric items, and string for alphanumeric items).
 
@@ -40,4 +40,4 @@ onfocus
 </logic>
 
 
-<seealso valuesets.hgt lists.hgt />
+<seealso valueset.hgt list.hgt />

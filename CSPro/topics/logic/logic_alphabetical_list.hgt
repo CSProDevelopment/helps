@@ -1,6 +1,6 @@
 ﻿<title>Alphabetical List of Functions and Statements</title>
 
-The following table lists functions and statements that can be used in logic. In addition, some CSPro <link object_dot_notation.hgt>objects</link> have functions that can be invoked on the object. A list of such functions can be found in the summary pages for each of these objects: <link arrays.hgt>array</link>, <link files.hgt>file</link>, <link lists.hgt>list</link>, <link maps.hgt>map</link>, <link pffs.hgt>pff</link>, <link systemapp.hgt>SystemApp</link>, and <link valuesets.hgt>valueset</link>.
+The following table lists functions and statements that can be used in logic. In addition, some CSPro <link object_dot_notation.hgt>objects</link> have functions that can be invoked on the object. A list of such functions can be found in the summary pages for each of these objects: <link array.hgt>array</link>, <link file.hgt>file</link>, <link list.hgt>list</link>, <link map.hgt>map</link>, <link pff.hgt>pff</link>, <link systemapp.hgt>SystemApp</link>, and <link valueset.hgt>valueset</link>.
 
 <table 2 header nowrap>
 	<cell>Function/Statement</cell><cell>Description</cell>
@@ -13,7 +13,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>advance</logiccolor></cell><cell>Moves forward field by field to a specified field during data entry.</cell>
 	<cell><logiccolor>alias</logiccolor></cell><cell>Creates an aliased name for a dictionary item, typically to shorten or standardize names.</cell>
 	<cell><logiccolor>alpha</logiccolor></cell><cell>Declares alphanumeric variables used in the application.</cell>
-	<cell><logiccolor>array</logiccolor></cell><cell>Declares an <link arrays.hgt>array</link> object for storing a collection of numbers or strings.</cell>
+	<cell><logiccolor>array</logiccolor></cell><cell>Declares an <link array.hgt>array</link> object for storing a collection of numbers or strings.</cell>
 	<cell><logiccolor>ask</logiccolor></cell><cell>Conditionally jumps forward to the next field during data entry.</cell>
 	<cell><logiccolor>average</logiccolor></cell><cell>Returns the average of an item that occurs multiple times.</cell>
 	<cell 2>&nbsp;</cell>
@@ -127,7 +127,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>killfocus</logiccolor></cell><cell>Declares that the following statements are executed after the object stops being active.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>length</logiccolor></cell><cell>Returns the length of a dictionary item or a string.</cell>
-	<cell><logiccolor>list</logiccolor></cell><cell>Declares a <link lists.hgt>list</link> object for storing a collection of numbers or strings.</cell>
+	<cell><logiccolor>list</logiccolor></cell><cell>Declares a <link list.hgt>list</link> object for storing a collection of numbers or strings.</cell>
 	<cell><logiccolor>loadcase</logiccolor></cell><cell>Reads a case from an external file into memory (usually based on a key).</cell>
 	<cell><logiccolor>loadsetting</logiccolor></cell><cell>Returns a string containing a setting saved using the <logiccolor>savesetting</logiccolor> function.</cell>
 	<cell><logiccolor>locate</logiccolor></cell><cell>Finds but does not load a case in an external file that matches a condition.</cell>
@@ -136,7 +136,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>low</logiccolor></cell><cell>Returns the minimum value in a group of numeric expressions.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>maketext</logiccolor></cell><cell>Returns a formatted string with inserted values.</cell>
-	<cell><logiccolor>map</logiccolor></cell><cell>Declare a <link maps.hgt>map</link> variable that can be used to display interactive maps.</cell>
+	<cell><logiccolor>map</logiccolor></cell><cell>Declare a <link map.hgt>map</link> variable that can be used to display interactive maps.</cell>
 	<cell><logiccolor>max</logiccolor></cell><cell>Returns the maximum value of an item that occurs multiple times.</cell>
 	<cell><logiccolor>maxocc</logiccolor></cell><cell>Returns the maximum number of occurrences of a multiply occurring object.</cell>
 	<cell><logiccolor>maxvalue</logiccolor></cell><cell>Returns the maximum value in an item's range of acceptable values.</cell>
@@ -161,7 +161,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>paradata</logiccolor></cell><cell>Performs an action on the <link paradata.hgt>paradata log</link>.</cell>
 	<cell><logiccolor>pathconcat</logiccolor></cell><cell>Combines multiple strings into one string representing a file path.</cell>
 	<cell><logiccolor>pathname</logiccolor></cell><cell>Returns the path of various special directories.</cell>
-	<cell><logiccolor>pff</logiccolor></cell><cell>Declare a <link pffs.hgt>pff</link> variable that can be used to dynamically modify the way other CSPro applications are executed.</cell>
+	<cell><logiccolor>pff</logiccolor></cell><cell>Declare a <link pff.hgt>pff</link> variable that can be used to dynamically modify the way other CSPro applications are executed.</cell>
 	<cell><logiccolor>pos</logiccolor></cell><cell>Returns the position of a string within another string.</cell>
 	<cell><logiccolor>poschar</logiccolor></cell><cell>Returns the position of any of a series of characters within another string.</cell>
 	<cell><logiccolor>preproc</logiccolor></cell><cell>Declares that the following statements are executed at the beginning of a block.</cell>
@@ -239,6 +239,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>syncserver</logiccolor></cell><cell>Starts running a server on the current device, to which other devices can connect using Bluetooth.</cell>
 	<cell><logiccolor>sysdate</logiccolor></cell><cell>Returns the current system date.</cell>
 	<cell><logiccolor>sysparm</logiccolor></cell><cell>Returns a parameter a PFF file.</cell>
+	<cell><logiccolor>systemapp</logiccolor></cell><cell>Declares a <link systemapp.hgt>SystemApp</link> object for  interacting with external applications.</cell>
 	<cell><logiccolor>systime</logiccolor></cell><cell>Returns the current system time.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>timestamp</logiccolor></cell><cell>Returns the current UNIX time.</cell>
@@ -254,7 +255,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>userbar</logiccolor></cell><cell>Controls the optional display bar in a data entry application.</cell>
 	<cell><logiccolor>uuid</logiccolor></cell><cell>Returns a human-readable string containing a universally unique identifier.</cell>
 	<cell 2>&nbsp;</cell>
-	<cell><logiccolor>valueset</logiccolor></cell><cell>Declares a <link valuesets.hgt>valueset</link> object for storing the contents of a dynamic value set.</cell>
+	<cell><logiccolor>valueset</logiccolor></cell><cell>Declares a <link valueset.hgt>valueset</link> object for storing the contents of a dynamic value set.</cell>
 	<cell><logiccolor>view</logiccolor></cell><cell>Launches the system's default viewer to display a file or website.</cell>
 	<cell><logiccolor>visualvalue</logiccolor></cell><cell>Returns the value of a data item prior to its input.</cell>
 	<cell 2>&nbsp;</cell>
