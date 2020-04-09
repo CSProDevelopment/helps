@@ -8,7 +8,7 @@ i = countnonspecial(<arg>item_name</arg> ‖ <arg>record_name</arg> ‖ <arg>arr
 
 <subheader>Description</subheader>
 
-The function <logiccolor>countnonspecial</logiccolor> counts the number of non-special values within the passed arguments. Special arguments include <logiccolor>missing</logiccolor>, <logiccolor>notappl</logiccolor>, and <logiccolor>default</logiccolor>. The function can receive multiple numeric arguments, including items, records, arrays, and numeric expressions. This function can greatly simplify some programming tasks; for example, the following two lines of code are the same:
+The function <logiccolor>countnonspecial</logiccolor> counts the number of non-special values within the passed arguments. Special arguments include <logiccolor>missing</logiccolor>, <logiccolor>refused</logiccolor>, <logiccolor>notappl</logiccolor>, and <logiccolor>default</logiccolor>. The function can receive multiple numeric arguments, including items, records, arrays, and numeric expressions. This function can greatly simplify some programming tasks; for example, the following two lines of code are the same:
 
 <logic>
 if countnonspecial(RELATIONSHIP,SEX,AGE) = 3 then

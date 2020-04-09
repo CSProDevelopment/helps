@@ -154,8 +154,10 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>onchar</logiccolor></cell><cell>Allows users to trap characters in order to perform special actions or to change the action of the character.</cell>
 	<cell><logiccolor>onfocus</logiccolor></cell><cell>Declares that the following statements are executed just before an object becomes active.</cell>
 	<cell><logiccolor>onkey</logiccolor></cell><cell>Allows users to trap keystrokes in order to perform special actions or to change the action of the key.</cell>
+	<cell><logiccolor>onrefused</logiccolor></cell><cell>Provides a way to override the selection of a <link refused_value.hgt>refused value</link>.</cell>
 	<cell><logiccolor>onoccchange</logiccolor></cell><cell>Declares that the following statements are executed when the group's current occurrence changes.</cell>
 	<cell><logiccolor>onstop</logiccolor></cell><cell>Provides control over stopping or exiting data entry.</cell>
+	<cell><logiccolor>onsyncmessage</logiccolor></cell><cell>Allows users to respond to a message sent by a Bluetooth client using <logiccolor>syncmessage</logiccolor>.</cell>
 	<cell><logiccolor>open</logiccolor></cell><cell>Opens a dictionary or external file.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>paradata</logiccolor></cell><cell>Performs an action on the <link paradata.hgt>paradata log</link>.</cell>
@@ -222,7 +224,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>skip case</logiccolor></cell><cell>Ends processing of the current case in a batch edit run.</cell>
 	<cell><logiccolor>soccurs</logiccolor></cell><cell>Returns the number of occurrences of a record.</cell>
 	<cell><logiccolor>sort</logiccolor></cell><cell>Sorts occurrences of records or items based on the value of an item.</cell>
-	<cell><logiccolor>special</logiccolor></cell><cell>Determines whether a variable's value is <logiccolor>missing</logiccolor>, <logiccolor>notappl</logiccolor>, or <logiccolor>default</logiccolor>.</cell>
+	<cell><logiccolor>special</logiccolor></cell><cell>Determines whether a variable's value is <logiccolor>missing</logiccolor>, <logiccolor>refused</logiccolor>, <logiccolor>notappl</logiccolor>, or <logiccolor>default</logiccolor>.</cell>
 	<cell><logiccolor>sqlquery</logiccolor></cell><cell>Executes a query on a SQLite database and returns a result set in a variety of formats.</cell>
 	<cell><logiccolor>sqrt</logiccolor></cell><cell>Returns the square root of a numeric expression.</cell>
 	<cell><logiccolor>stop</logiccolor></cell><cell>Ends a data entry session or batch edit run.</cell>
