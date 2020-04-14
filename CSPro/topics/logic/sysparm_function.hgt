@@ -12,6 +12,8 @@ The <logiccolor>sysparm</logiccolor> function returns the value of a parameter p
 
 If a string expression <arg>parameter_name</arg> is provided, the function looks to see if there is a parameter with the given name specified in the <pffcolor>[Parameters]</pffcolor> section of the PFF file. If such a parameter exists, it is returned as a string. Using this functionality, you can pass several parameters to your programs.
 
+On Windows, it is possible to check for the presence of a command line argument using this function. If <arg>parameter_name</arg> is not in the PFF file, the function will check if that string is specified in the command line and if so, will return a non-blank string.
+
 <subheader>Return Value</subheader>
 
 The function returns a string containing the parameter.

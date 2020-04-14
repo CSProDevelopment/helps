@@ -55,9 +55,9 @@ SimpleWhenExample(2, 150); // Invalid sex or age
 PROC EMPLOYMENT_STATUS
 
 	when EMPLOYMENT_STATUS;
-		  1:2 => skip to UNEMPLOYMENT;
-		 <= 6 => skip to INFORMAL_EMPLOYMENT
-		 >= 7 => skip to FORMAL_EMPLOYMENT;
+		  1:2 -> skip to UNEMPLOYMENT;
+		 <= 6 -> skip to INFORMAL_EMPLOYMENT
+		 >= 7 -> skip to FORMAL_EMPLOYMENT;
 	endwhen;
 </logic>
 
