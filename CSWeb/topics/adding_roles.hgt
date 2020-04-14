@@ -1,0 +1,55 @@
+﻿<title>Adding Roles</title>
+
+A role is a collection of permissons. Roles make it easy to grant users permissions.
+
+<subheader>Dashboard Permissions</subheader>
+
+There are five dashboards in CSWeb (data, report, apps, users, and roles). A role with a dashboard permission can log into CSWeb and access all the functionality within the dashboard.
+
+<subheader>Dictionary Permissions</subheader>
+
+Dictionary permissions determine whether a role can upload or download via CSEntry, Batch, and Data Viewer. Roles are assigned dictionary permissions on a per dictionary basis.
+
+<subheader>Built in Roles</subheader>
+
+<list>
+	<li>Administrator - Can access all dashboards and upload and download all dictionaries.</li>
+	<li>Standard User - Cannot access any of the dashboards but can upload and download all dictionaries.</li>
+</list>
+
+<subheader>Custom Roles</subheader>
+
+Custom roles allow the creation of additional roles. For example, an Analyst role with only the dashboard permission reports would be appropriate for users that only need to monitor the progress of a survey, but does not need access to the collected data.
+
+<subheader>Adding a Role</subheader>
+
+<list ordered>
+	<li>Navigate to the <b>Roles</b> tab of CSWeb.</li>
+	<li>On the right-hand side click the <b>Add Role</b> button.</li>
+	<li>Enter the role name.</li>
+	<li>Under <b>Dashboards</b> tic a checkbox to assign dashboard permissions.</li>
+	<li>The table will display all dictionaries added to CSWeb. Tic a checkbox to assign dictionary permissions.</li>
+</list>
+
+A role must be assigned at least one permission between the dashboard and dictionary permissions.
+
+<subheader>Editing a Role</subheader>
+
+<list ordered>
+	<li>Navigate to the <b>Roles</b> tab of CSWeb.</li>
+	<li>In the roles table select click the <b>trash</b> icon.</li>
+	<li>Verify the role to deleted.</li>
+</list ordered>
+
+User(s) assigned to the deleted role will be converted to a Standard User.
+
+<subheader>Editing a Role</subheader>
+
+<list>
+	<li>Navigate to the <b>Roles</b> tab of CSWeb.</li>
+	<li>In the roles table select click the <b>pencil</b> icon.</li>
+	<li>Under <b>Dashboards</b> use the checkboxes to add or remove dashboard permissions.</li>
+	<li>In the table use the checkboxes to add or remove dictionary permissons.</li>
+</list>
+
+The role's name cannot be edited. To change, delete the role and re-add with new name.
