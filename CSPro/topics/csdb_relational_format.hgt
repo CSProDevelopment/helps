@@ -7,11 +7,11 @@ CSPro DB files are <link https://www.sqlite.org>SQLite</link> database files. SQ
 
 <subheader>Structure of the Database</subheader>
 
-The structure of the database is based on the data dictionary. Each record in the data dictionary corresponds to a table in the database. The database tables have the same name as the record in the dictionary. Each item in the record corresponds to a column in the table with the same name as the dictionary item. The ID items from the dictionary are stored in a table with name of the dictionary level (a multi-level dictionary will have one such table for each level). The tables for each record are linked to the table for the level by the primary key of the level table which is named <i>&ltlevel name&gt-id</i>.
+The structure of the database is based on the data dictionary. Each record in the data dictionary corresponds to a table in the database. The database tables have the same name as the record in the dictionary. Each item in the record corresponds to a column in the table with the same name as the dictionary item. The ID items from the dictionary are stored in a table named <b>level-1</b> (two level dictionaries will have a second table named <b>level-2</b> for the second level id-items). The tables for each record are linked to the table for the level by the primary key of the level table which is named <b>level 1-id</b>.
 
 <image popstan_schema.png /> 
 
-In the example above, the dictionary has three records: <b>PERSON_REC</b>, <b>HOUSING_REC</b> and <b>DEATHS_REC</b>. The database therefore has the corresponding records <b>person_rec</b>, <b>housing_rec</b> and <b>deaths_rec</b>. The dictionary ID items are in the table <b>popstan2020_level</b> which is linked to the record tables by the column <b>popstan2020_level-id</b>.
+In the example above, the dictionary has three records: <b>PERSON_REC</b>, <b>HOUSING_REC</b> and <b>DEATHS_REC</b>. The database therefore has the corresponding records <b>person_rec</b>, <b>housing_rec</b> and <b>deaths_rec</b>. The dictionary ID items are in the table <b>level-1</b> which is linked to the record tables by the column <b>level-1-id</b>.
 
 Each record table has an auto-increment integer primary key column named <i>&ltrecord name&gt-id</i>. This column does not correspond to any dictionary item and its value is set automatically by SQLite.
 
@@ -27,19 +27,19 @@ CSPro DB files also contain additional tables that store field notes as well as 
 To find the rows in the record tables that correspond to a particular case in the data file, join the record table with the level table using the linking column and filter on the ID items. For example, the following query on the example database above lists all the individuals in province 1, district 1, enumeration area 3, household 1:
 
 <html><pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>SELECT</span> <span style='color:#808030; '>*</span> <span style='color:#800000; font-weight:bold; '>FROM</span> person_rec 
-<span style='color:#800000; font-weight:bold; '>JOIN</span> popstan2020_level <span style='color:#800000; font-weight:bold; '>ON</span> popstan2020_level<span style='color:#808030; '>.</span>`popstan2020_level-id` <span style='color:#808030; '>=</span> person_rec<span style='color:#808030; '>.</span>`popstan2020_level-id`
+<span style='color:#800000; font-weight:bold; '>JOIN</span> `level-1` <span style='color:#800000; font-weight:bold; '>ON</span> `level-1`<span style='color:#808030; '>.</span>`level-1-id` <span style='color:#808030; '>=</span> person_rec<span style='color:#808030; '>.</span>`level-1-id`
 <span style='color:#800000; font-weight:bold; '>WHERE</span> province <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span> <span style='color:#800000; font-weight:bold; '>AND</span> district <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span> <span style='color:#800000; font-weight:bold; '>AND</span> enumeration_area <span style='color:#808030; '>=</span> <span style='color:#008c00; '>3</span> <span style='color:#800000; font-weight:bold; '>AND</span> household_number <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span>
 </pre>
 <!--Created using ToHtml.com on 2020-03-25 14:13:55 UTC --></html>
 
-Note the use of <b>`</b> around <b>popstan2020_level-id</b>. This is required so that SQLite does not treat the "-" character in the name as a minus sign which would cause a syntax error.
+Note the use of <b>`</b> around <b>level-1-id</b>. This is required so that SQLite does not treat the "-" character in the name as a minus sign which would cause a syntax error.
 
 The query above could potentially include data from deleted cases. To exclude deleted cases, join with the cases table and filter on the deleted column:
 
 <html>
 <pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>SELECT</span> <span style='color:#808030; '>*</span> <span style='color:#800000; font-weight:bold; '>FROM</span> person_rec
-<span style='color:#800000; font-weight:bold; '>JOIN</span> popstan2020_level <span style='color:#800000; font-weight:bold; '>ON</span> popstan2020_level<span style='color:#808030; '>.</span>`popstan2020_level-id` <span style='color:#808030; '>=</span> person_rec<span style='color:#808030; '>.</span>`popstan2020_level-id`
-<span style='color:#800000; font-weight:bold; '>JOIN</span> cases <span style='color:#800000; font-weight:bold; '>ON</span> cases<span style='color:#808030; '>.</span>id <span style='color:#808030; '>=</span> popstan2020_level<span style='color:#808030; '>.</span>`case-id`
+<span style='color:#800000; font-weight:bold; '>JOIN</span> `level-1` <span style='color:#800000; font-weight:bold; '>ON</span> `level-1`<span style='color:#808030; '>.</span>`level-1-id` <span style='color:#808030; '>=</span> person_rec<span style='color:#808030; '>.</span>`level-1-id`
+<span style='color:#800000; font-weight:bold; '>JOIN</span> cases <span style='color:#800000; font-weight:bold; '>ON</span> cases<span style='color:#808030; '>.</span>id <span style='color:#808030; '>=</span> `level-1`<span style='color:#808030; '>.</span>`case-id`
 <span style='color:#800000; font-weight:bold; '>WHERE</span> deleted <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span> <span style='color:#800000; font-weight:bold; '>AND</span> province <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span> <span style='color:#800000; font-weight:bold; '>AND</span> district <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span> <span style='color:#800000; font-weight:bold; '>AND</span> enumeration_area <span style='color:#808030; '>=</span> <span style='color:#008c00; '>3</span> <span style='color:#800000; font-weight:bold; '>AND</span> household_number <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span>
 </pre>
 </html>
@@ -48,8 +48,8 @@ Using <b>GROUP BY</b>, the following query gets the number of households by enum
 
 <html>
 <pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>SELECT</span> province<span style='color:#808030; '>,</span> district<span style='color:#808030; '>,</span> enumeration_area<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>COUNT</span><span style='color:#808030; '>(</span><span style='color:#808030; '>*</span><span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>AS</span> `number of households`
-<span style='color:#800000; font-weight:bold; '>FROM</span> popstan2020_level
-<span style='color:#800000; font-weight:bold; '>JOIN</span> cases <span style='color:#800000; font-weight:bold; '>ON</span> cases<span style='color:#808030; '>.</span>id <span style='color:#808030; '>=</span> popstan2020_level<span style='color:#808030; '>.</span>`case-id`
+<span style='color:#800000; font-weight:bold; '>FROM</span> `level-1`
+<span style='color:#800000; font-weight:bold; '>JOIN</span> cases <span style='color:#800000; font-weight:bold; '>ON</span> cases<span style='color:#808030; '>.</span>id <span style='color:#808030; '>=</span> `level-1`<span style='color:#808030; '>.</span>`case-id`
 <span style='color:#800000; font-weight:bold; '>WHERE</span> deleted <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span>
 <span style='color:#800000; font-weight:bold; '>GROUP</span> <span style='color:#800000; font-weight:bold; '>BY</span> province<span style='color:#808030; '>,</span> district<span style='color:#808030; '>,</span> enumeration_area
 </pre>
