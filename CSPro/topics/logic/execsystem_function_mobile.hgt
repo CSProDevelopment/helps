@@ -2,7 +2,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = execsystem(<arg>action</arg>『,<arg>stop</arg>』);
+b = execsystem(<arg>action</arg>『, <arg>stop</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -21,6 +21,7 @@ The string expression <arg>action</arg> must begin with one of the following com
 	<cell><b>camera</b></cell><cell>Take a photo in .jpg or .png format.</cell>
 	<cell><b>gps</b></cell><cell>View a latitude/longitude point using an installed mapping engine (e.g., Google Maps).</cell>
 	<cell><b>html</b></cell><cell>View a website from within CSEntry (equivalent to using the <logiccolor>view</logiccolor> function).</cell>
+	<cell><b>signature</b></cell><cell>Bring up a screen where someone can sign the mobile device, an image of which can be saved in .jpg or .png format.</cell>
 	<cell><b>sms</b></cell><cell>Send a text message.</cell>
 	<cell><b>view</b></cell><cell>Display an image, play a sound clip, or view a movie (equivalent to using the <logiccolor>view</logiccolor> function).</cell>
 </table>
@@ -38,21 +39,24 @@ execsystem("browse:https://www.census.gov");
 
 execsystem("call:+13017631451"); // call the CSPro support number
 
-execsystem("camera:" + pathname(Application) + "photo.jpg");
-execsystem("camera:" + pathname(Application) + "photo.png");
+execsystem("camera:" + pathconcat(Application, "photo.jpg"));
+execsystem("camera:" + pathconcat(Application, "photo.png"));
 
 execsystem("gps:38.84839,-76.931098");
 execsystem("gps:38.84839,-76.931098,CSPro Team at the U.S. Census Bureau");
 
 execsystem("html:https://www.census.gov");
-execsystem("html:file:///" + pathname(Application) + "local_webpage.html");
+execsystem("html:file:///" + pathconcat(Application, "local_webpage.html"));
+
+execsystem("signature:" + pathconcat(Application, "saved-signature.jpg"));
+execsystem("signature:" + pathconcat(Application, "saved-signature.png"));
 
 execsystem("sms:+13017631451");
 execsystem("sms:+13017631451,Hello, CSPro Team!");
 
-execsystem("view:" + pathname(Application) + "picture.jpg");
-execsystem("view:" + pathname(Application) + "audio.mp3");
-execsystem("view:" + pathname(Application) + "movie.3gp");
+execsystem("view:" + pathconcat(Application, "picture.jpg"));
+execsystem("view:" + pathconcat(Application, "audio.mp3"));
+execsystem("view:" + pathconcat(Application, "movie.3gp"));
 </logic>
 
 <seealso systemapp.hgt execsystem_function_desktop.hgt execpff_function.hgt view_function.hgt />
