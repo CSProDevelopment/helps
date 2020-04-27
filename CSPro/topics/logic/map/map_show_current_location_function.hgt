@@ -8,7 +8,7 @@ b = map_name.showCurrentLocation(<arg>show_condition</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.showCurrentLocation</logiccolor> function enables or disables display of the device's current location on the <link maps.hgt>map</link> <logiccolor>map_name</logiccolor>. If <arg>show_condition</arg> is non-zero, the current location is displayed on the map as a blue dot. As the user moves around, the blue dot also moves to follow the user's position. In addition, there is a button in the top left corner of map that zooms the map to the user's current location. If <arg>show_location</arg> is zero, both the blue dot and associated button are hidden. Display of the current location is enabled by default.
+The <logiccolor map>map.showCurrentLocation</logiccolor> function enables or disables display of the device's current location on the <link map.hgt>map</link> <logiccolor>map_name</logiccolor>. If <arg>show_condition</arg> is non-zero, the current location is displayed on the map as a blue dot. As the user moves around, the blue dot also moves to follow the user's position. In addition, there is a button in the top left corner of map that zooms the map to the user's current location. If <arg>show_location</arg> is zero, both the blue dot and associated button are hidden. Display of the current location is enabled by default.
 
 <subheader>Return Value</subheader>
 
@@ -28,4 +28,4 @@ mymap.showCurrentLocation(0);
 mymap.show();
 </logic>
 
-<seealso maps.hgt />
+<seealso map.hgt />

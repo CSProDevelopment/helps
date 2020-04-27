@@ -8,7 +8,7 @@ b = filewrite(<arg>file_handler</arg>, <arg>message</arg>『, <arg>parameter1</a
 
 <subheader>Description</subheader>
 
-The <logiccolor>filewrite</logiccolor> function writes one or more lines of text to the <link files.hgt>file</link> associated with <arg>file_handler</arg>.
+The <logiccolor>filewrite</logiccolor> function writes one or more lines of text to the <link file.hgt>file</link> associated with <arg>file_handler</arg>.
 
 The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.hgt>message number</link> that contains the text that is written to the file. If the text contains any <link message_formatting_options.hgt>message formatters</link>, the optional parameters <arg>parameter1</arg> to <arg>parameterN</arg> will be inserted into the text. There are some additional options for file output:
 
@@ -18,7 +18,7 @@ The <arg>message</arg> is either a string expression or a numeric <link message_
 	<li>To output <b>\n</b> or <b>\f</b> as text instead of a new line or a new page, use a double backslash (e.g., <b>\\n</b>).</li>
 </list>
 
-Alternatively, the <arg>message</arg> can be a string <link lists.hgt>list</link>. If a list is provided, then each string contained in the list is written to the file, allowing for the output of multiple lines of text with one function call.
+Alternatively, the <arg>message</arg> can be a string <link list.hgt>list</link>. If a list is provided, then each string contained in the list is written to the file, allowing for the output of multiple lines of text with one function call.
 
 <subheader>Return Value</subheader>
 

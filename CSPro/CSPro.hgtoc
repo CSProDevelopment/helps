@@ -10,6 +10,7 @@
 			what_is_new_in_cspro_7_1.hgt														#				What's New in CSPro 7.1?
 			what_is_new_in_cspro_7_2.hgt														#				What's New in CSPro 7.2?
 			what_is_new_in_cspro_7_3.hgt														#				What's New in CSPro 7.3?
+			what_is_new_in_cspro_7_4.hgt														#				What's New in CSPro 7.4?
 		|CSPro Applications																		#			CSPro Applications
 			data_entry_applications.hgt															#				Data Entry Applications
 			batch_edit_applications.hgt															#				Batch Edit Applications
@@ -23,6 +24,8 @@
 			windows.hgt																			#				Windows
 		|CSPro General Functionality															#			CSPro General Functionality
 			data_sources.hgt																	#				Data Sources
+			connection_string.hgt																#				Connection String
+			encrypted_data.hgt																	#				Encrypted Data
 			unicode_primer.hgt																	#				Unicode Primer
 			synchronization.hgt																	#				Synchronization Overview
 			paradata.hgt																		#				Paradata
@@ -43,6 +46,7 @@
 			save_an_application_with_a_new_name.hgt												#				Save an Application with a New Name
 			specify_application_file_names.hgt													#				Specify Application File Names
 			pack_an_application.hgt																#				Pack an Application
+			cspro_settings.hgt																	#				CSPro Settings
 			get_help.hgt																		#				Get Help
 			collaborating_on_cspro_development.hgt												#				Collaborating on CSPro Development
 	|Data Dictionary Module																		#		Data Dictionary Module
@@ -125,6 +129,7 @@
 			multiple_language_dictionaries.hgt													#				Multiple Language Dictionaries
 			dictionary_macros.hgt																#				Dictionary Macros
 			dictionary_analysis.hgt																#				Dictionary Analysis
+			dictionary_security_options.hgt														#				Dictionary Security Options
 	|The CSPro Language																			#		The CSPro Language
 		introduction_to_cspro_language.hgt														#			Introduction to CSPro Language
 		data_requirements.hgt																	#			Data Requirements
@@ -134,13 +139,14 @@
 		|Declaration Section																	#			Declaration Section
 			compiler_mode.hgt																	#				Compiler Mode
 			variables.hgt																		#				Variables
-			arrays.hgt																			#				Arrays
-			lists.hgt																			#				Lists
-			valuesets.hgt																		#				ValueSets
-			files.hgt																			#				Files
-			pffs.hgt																			#				Pffs
+			array.hgt																			#				Array Object
+			list.hgt																			#				List Object
+			valueset.hgt																		#				ValueSet Object
+			file.hgt																			#				File Object
+			pff.hgt																				#				Pff Object
+			systemapp.hgt																		#				SystemApp Object
+			map.hgt																				#				Map Object
 			user_defined_functions.hgt															#				User-Defined Functions
-			maps.hgt																			#				Maps
 			alias_statement.hgt																	#				Alias Statement
 			ensure_statement.hgt																#				Ensure Statement
 		|Procedural Sections																	#			Procedural Sections
@@ -170,6 +176,7 @@
 				substring_expressions.hgt														#					Substring Expressions
 				boolean_values.hgt																#					Boolean Values
 				special_values.hgt																#					Special Values
+				refused_value.hgt																#					Refused Value
 			|Operators																			#				Operators
 				operators.hgt																	#					Operators
 				in_operator.hgt																	#					In Operator
@@ -195,6 +202,7 @@
 				data_entry_elements.hgt															#					Data Entry Elements
 				blocks.hgt																		#					Blocks
 				issues_to_consider_when_designing_a_form.hgt									#					Issues to Consider When Designing a Form
+				data_entry_review_tips.hgt														#					Tips on Reviewing Data Entry Applications
 			|Create a Data Entry Application													#				Create a Data Entry Application
 				create_a_new_data_entry_application.hgt											#					Create a New Data Entry Application
 				generate_default_data_entry_forms.hgt											#					Generate Default Data Entry Forms
@@ -274,6 +282,7 @@
 				using_multiple_languages.hgt													#					Using Multiple Languages
 				breaking_off_the_interview.hgt													#					Breaking Off the Interview
 				coming_back_later.hgt															#					Coming Back Later
+				prefilling_values.hgt															#					Prefilling Values
 			|How to ...																			#				How to ...
 				create_a_new_capi_application.hgt												#					Create a New CAPI Application
 				define_languages.hgt															#					Define Languages
@@ -490,6 +499,9 @@
 			array_statement.hgt																	#				Array Statement
 			array_length_function.hgt															#				Array.Length Function
 			array_clear_function.hgt															#				Array.Clear Function
+		|Barcode																				#			Barcode
+			barcode.hgt																			#				Barcode Namespace
+			barcode_read_function.hgt															#				Barcode.Read Function
 		|List Object																			#			List Object
 			list_statement.hgt																	#				List Statement
 			list_add_function.hgt																#				List.Add Function
@@ -519,6 +531,12 @@
 			pff_getproperty_function.hgt														#				Pff.GetProperty Function
 			pff_setproperty_function.hgt														#				Pff.SetProperty Function
 			pff_exec_function.hgt																#				Pff.Exec Function
+		|SystemApp Object																		#			SystemApp Object
+			systemapp_statement.hgt																#				SystemApp Statement
+			systemapp_setargument_function.hgt													#				SystemApp.SetArgument Function
+			systemapp_exec_function.hgt															#				SystemApp.Exec Function
+			systemapp_getresult_function.hgt													#				SystemApp.GetResult Function
+			systemapp_clear_function.hgt														#				SystemApp.Clear Function
 		|Map Object																				#			Map Object
 			map_statement.hgt																	#				Map Statement
 			map_show_function.hgt																#				Map.Show Function
@@ -557,10 +575,12 @@
 			if_statement.hgt																	#				If Statement
 			next_statement.hgt																	#				Next Statement
 			universe_statement.hgt																#				Universe Statement
+			when_statement.hgt																	#				When Statement
 			while_statement.hgt																	#				While Statement
 		|Assignment Statements																	#			Assignment Statements
 			assignment_statement.hgt															#				Assignment Statement
 			recode_statement.hgt																#				Recode Statement
+			recode_statement_pre74.hgt															#				Recode Statement (Deprecated)
 			impute_function.hgt																	#				Impute Function
 			setvalue_function.hgt																#				SetValue Function
 			getvalue_function.hgt																#				GetValue Function
@@ -597,6 +617,7 @@
 			onkey_global_function.hgt															#				OnKey Global Function
 			onstop_global_function.hgt															#				OnStop Global Function
 			prompt_function.hgt																	#				Prompt Function
+			protect_function.hgt																#				Protect Function
 			putnote_function.hgt																#				PutNote Function
 			randomizevs_function.hgt															#				RandomizeVS Function
 			reenter_statement.hgt																#				Reenter Statement
@@ -651,6 +672,8 @@
 			message_formatting_options.hgt														#				Message Formatting Options
 			pos_function.hgt																	#				Pos Function
 			poschar_function.hgt																#				PosChar Function
+			startswith_function.hgt																#				StartsWith Function
+			ischecked_function.hgt																#				IsChecked Function
 			regexmatch_function.hgt																#				RegExMatch Function
 			strip_function.hgt																	#				Strip Function
 			tolower_function.hgt																#				ToLower Function
@@ -689,6 +712,7 @@
 			getlanguage_function.hgt															#				GetLanguage Function
 			getsymbol_function.hgt																#				GetSymbol Function
 			getvaluelabel_function.hgt															#				GetValueLabel Function
+			hash_function.hgt																	#				Hash Function
 			invalueset_function.hgt																#				InValueSet Function
 			loadsetting_function.hgt															#				LoadSetting Function
 			logtext_function.hgt																#				LogText Function
@@ -748,6 +772,7 @@
 			fileread_function.hgt																#				FileRead Function
 			filerename_function.hgt																#				FileRename Function
 			filesize_function.hgt																#				FileSize Function
+			filetime_function.hgt																#				FileTime Function
 			filewrite_function.hgt																#				FileWrite Function
 			find_function.hgt																	#				Find Function
 			key_function.hgt																	#				Key Function
@@ -768,11 +793,15 @@
 			syncconnect_function_csweb.hgt														#				SyncConnect Function (CSWeb)
 			syncconnect_function_bluetooth.hgt													#				SyncConnect Function (Bluetooth)
 			syncconnect_function_dropbox.hgt													#				SyncConnect Function (Dropbox)
+			syncconnect_function_dropbox_local.hgt												#				SyncConnect Function (LocalDropbox)
+			syncconnect_function_files_local.hgt												#				SyncConnect Function (LocalFiles)
 			syncconnect_function_ftp.hgt														#				SyncConnect Function (FTP)
-			syncdata_function.hgt																#				SyncData Function
-			syncdisconnect_function.hgt															#				SyncDisconnect Function
-			syncfile_function.hgt																#				SyncFile Function
 			syncserver_function.hgt																#				SyncServer Function
+			syncdisconnect_function.hgt															#				SyncDisconnect Function
+			syncdata_function.hgt																#				SyncData Function
+			syncfile_function.hgt																#				SyncFile Function
+			syncmessage_function.hgt															#				SyncMessage Function
+			syncapp_function.hgt																#				SyncApp Function
 			getbluetoothname_function.hgt														#				GetBluetoothName Function
 	|Templated Reporting System																	#		Templated Reporting System
 		templated_reports.hgt																	#			Templated Reports
@@ -815,6 +844,7 @@
 			importing_data_to_cspro_format.hgt													#				Importing Data to CSPro Format
 			locking_application_files.hgt														#				Locking Application Files
 			temporary_data_file.hgt																#				Temporary Data File
+			csdb_relational_format.hgt															#				CSPro DB File Format
 			|Files Description																	#				Files Description
 				data_dictionary_file_dcf.hgt													#					Data Dictionary File (.dcf)
 				data_entry_application_file_ent.hgt												#					Data Entry Application File (.ent)

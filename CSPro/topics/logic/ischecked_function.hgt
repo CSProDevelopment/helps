@@ -1,0 +1,32 @@
+﻿<title>IsChecked Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = ischecked(<arg>code</arg>, <arg>check_box_field_name</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>ischecked</logiccolor> function returns whether a code is checked as part of a <link extended_controls.hgt>check box</link> field's selections. The <arg>check_box_field_name</arg> is the name of an alphanumeric field that is represented on a form as a check box. The <arg>code</arg> is a string expression containing the code to be checked.
+
+The codes of CSPro check boxes are placed at uniformly spaced offsets based on the size of the code. For example, if the check box field has a length of 20 and each code has a length of 2, then the function checks positions 1-2 for the code, then positions 3-4, and so on until positions 19-20.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the code was found (at the correct offset) in the check box field and 0 (false) otherwise.
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC LANGUAGES_SPOKEN_OTHER
+
+preproc
+
+	ask if ischecked("Z", LANGUAGES_SPOKEN);
+</logic>
+
+
+<seealso pos_function.hgt startswith_function.hgt />

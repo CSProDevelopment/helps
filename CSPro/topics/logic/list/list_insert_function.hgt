@@ -8,7 +8,7 @@ i = list_name.insert(<arg>index</arg>, <arg>value</arg> ‖ <arg>list_name</arg>
 
 <subheader>Description</subheader>
 
-The <logiccolor list>list.insert</logiccolor> function inserts a single value (the numeric or string expression <arg>value</arg>) or a list of values (<arg>list_name</arg>) at the position in the <link lists.hgt>list</link> referenced by the numeric expression <arg>index</arg>. The type of the inserted value or list must match the type of the receiving list. List index values are one-based, so the index must be between 1 and one past the length of the list. If the index is <logiccolor>1</logiccolor>, the values are inserted at the beginning of the list. If the value is <logiccolor list>list_name.length() + 1</logiccolor>, the values are inserted at the end of the list (as would happen with the <logiccolor list>list.add</logiccolor> function).
+The <logiccolor list>list.insert</logiccolor> function inserts a single value (the numeric or string expression <arg>value</arg>) or a list of values (<arg>list_name</arg>) at the position in the <link list.hgt>list</link> referenced by the numeric expression <arg>index</arg>. The type of the inserted value or list must match the type of the receiving list. List index values are one-based, so the index must be between 1 and one past the length of the list. If the index is <logiccolor>1</logiccolor>, the values are inserted at the beginning of the list. If the value is <logiccolor list>list_name.length() + 1</logiccolor>, the values are inserted at the end of the list (as would happen with the <logiccolor list>list.add</logiccolor> function).
 
 <subheader>Return Value</subheader>
 
@@ -37,4 +37,4 @@ do numeric counter = 1 while counter <= count(PERSON_REC)
 enddo;
 </logic>
 
-<seealso lists.hgt list_add_function.hgt />
+<seealso list.hgt list_add_function.hgt />

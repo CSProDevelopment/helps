@@ -1,12 +1,12 @@
 ﻿<title>Run Production Deployments</title>
 
-You can run production deployments by using the PFF as a command line parameter for CSDeploy.exe (the associated filename of this utility). For example, if you name your PFF file Deploy Data.pff, then you can run the deployment by invoking:
+You can run production deployments by using the PFF as a command line parameter for CSDeploy.exe (the associated filename of this utility). For example, if you name your PFF file Deploy Survey.pff, then you can run the deployment by invoking:
 
-<indent><font monospace>"C:\Program Files (x86)\CSPro <definition version />\CSDeploy.exe" "Deploy Data.pff"</font></indent>
+<indent><font monospace>"C:\Program Files (x86)\CSPro <definition version />\CSDeploy.exe" "Deploy Survey.pff"</font></indent>
 
 This assumes that CSPro was installed in the default directory. Your PFF file must have a .pff extension.
 
-You can create a PFF file in one of two ways: either [1] create one with a text editor (such as Notepad or Wordpad), or [2] have it generated automatically for you when you save a deployment specification file. You can also manipulate PFF files in logic by using the <link CSPro::pffs.hgt>pff</link> object.
+You can create a PFF file in one of two ways: either [1] create one with a text editor (such as Notepad or Wordpad), or [2] have it generated automatically for you when you save a deployment specification file. You can also manipulate PFF files in logic by using the <link CSPro::pff.hgt>pff</link> object.
 
 The following section shows the options available to you in a deployment PFF file. A PFF file is not case sensitive, so you can use any combination of upper and lower case text.
 
@@ -17,6 +17,9 @@ AppType=Deploy
 
 [Files]
 Application=.\Deployment.csds
+
+[Parameters]
+DeployToOverride=CSWeb
 </pff>
 
 
@@ -27,3 +30,11 @@ The <pffcolor>[Run Information]</pffcolor> block is required and must appear exa
 <subheader>[Files]</subheader>
 
 The <pffcolor>[Files]</pffcolor> block is required and defines the script that will be used during the deployment.
+
+<subheader>[Parameters]</subheader>
+
+The <pffcolor>[Parameters]</pffcolor> block is optional and defines additional options for the deployment.
+
+<list>
+	<li><pffcolor>DeployToOverride</pffcolor>= specifies the type of server to be used during the synchronization. Possible options are: <b>None</b>, <b>CSWeb</b>, <b>Dropbox</b>, <b>FTP</b>, <b>LocalFile</b> and <b>LocalFolder</b>.</li>
+</list>

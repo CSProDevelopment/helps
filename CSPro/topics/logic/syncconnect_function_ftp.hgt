@@ -10,7 +10,7 @@ b = syncconnect(<arg>FTP</arg>,<arg>ftp_url</arg>『,<arg>username</arg>『,<arg
 
 <subheader>Description</subheader>
 
-The <logiccolor>syncconnect</logiccolor> function opens a connection to an FTP server to synchronize data and files over the Internet. The first argument must be the keyword <arg>FTP</arg>. The second argument, <arg>ftp_url</arg>, is a string expression of the full URL of the FTP server. The third and fourth arguments, <arg>username</arg> and <arg>password</arg> are optional string arguments of the credentials used to login to the server. If the username and password are not specified, the user will be prompted to enter them the first time the synchronization is run. After the credentials have been entered the first time, they are saved in secure storage on the device and do not need to be entered again.
+The <logiccolor>syncconnect</logiccolor> function opens a connection to an FTP server to synchronize data and files over the Internet. The first argument must be the keyword <arg>FTP</arg>. The second argument, <arg>ftp_url</arg>, is a string expression of the full URL of the FTP server. The third and fourth arguments, <arg>username</arg> and <arg>password</arg> are optional string arguments of the credentials used to login to the server. If the username and password are not specified, the user will be prompted to enter them the first time the synchronization is run. After the credentials have been entered the first time, they are saved in secure storage on the device and do not need to be entered again. You can use the <link cspro_settings.hgt>CSPro Settings</link> dialog to clear any cached credentials.
 
 CSPro synchronization can work with FTP servers using encrypted transmission via TLS/SSL. There are two modes that CSPro supports for encrypted FTP: explicit and implicit. To use explicit TLS/SSL, provide a URL for the server that starts with <logiccolor>"ftpes://"</logiccolor>. To use implicit TLS/SSL, provide a URL for the server that starts with <logiccolor>"ftps://"</logiccolor>. For servers that do not support TLS/SSL, use a URL that starts with <logiccolor>"ftp://"</logiccolor>. FTP over SSH (SFTP) is not supported.
 
@@ -24,10 +24,6 @@ string ftpServerUrl = "ftpes://myserver.org";
 // connect to the FTP server
 if syncconnect(FTP,ftpServerUrl) then
 
-	// get the latest versions of the application files from the FTP server
-	syncfile(GET,"/MyApp/MyApp.pff");
-	syncfile(GET,"/MyApp/MyApp.pen");
-
 	// send the latest cases to the FTP server
 	syncdata(PUT,SURVEY_DICT);
 
@@ -36,4 +32,4 @@ if syncconnect(FTP,ftpServerUrl) then
 endif;
 </logic>
 
-<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_bluetooth.hgt syncconnect_function_dropbox.hgt />
+<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_bluetooth.hgt syncconnect_function_dropbox.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt />

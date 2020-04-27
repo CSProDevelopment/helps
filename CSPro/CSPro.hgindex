@@ -31,6 +31,8 @@ logic_file_apc.hgt | .app																		#	.app
 batch_edit_application_file_bch.hgt | .bch														#	.bch
 file_types.hgt | .cmp																			#	.cmp
 data_sources.hgt | .csdb																		#	.csdb
+data_sources.hgt | .csdbe																		#	.csdbe
+csdb_relational_format.hgt | .csdb format														#	.csdb format
 file_types.hgt | .csds																			#	.csds
 index_file_csidx.hgt | .csidx																	#	.csidx
 paradata_log_file_cslog.hgt | .cslog															#	.cslog
@@ -50,7 +52,7 @@ notes_file_csnot.hgt | .not																		#	.not
 edit_order_file_ord.hgt | .ord																	#	.ord
 binary_data_entry_application_file_pen.hgt | .pen												#	.pen
 program_information_file_pff.hgt | .pff															#	.pff
-	pffs.hgt | PFF Object																		#		PFF Object
+	pff.hgt																						#		Pff Object
 	run_production_batch_edits.hgt																#		Run Production Batch Edits
 	run_production_data_entry.hgt																#		Run Production Data Entry
 file_types.hgt | .pffRunner																		#	.pffRunner
@@ -199,7 +201,7 @@ create_an_area_names_file.hgt | Area															#	Area
 area_captions.hgt																				#	Area Captions
 area_names_file_anm.hgt																			#	Area Names File (.anm)
 operators.hgt | Arithmetic operators															#	Arithmetic operators
-arrays.hgt																						#	Arrays
+array.hgt																						#	Array Object
 	array_clear_function.hgt																	#		Array.Clear Function
 	array_length_function.hgt																	#		Array.Length Function
 	array_statement.hgt																			#		Array Statement
@@ -219,6 +221,8 @@ add_summary_statistics_to_a_table.hgt | Average													#	Average
 	add_summary_statistics_to_a_table.hgt														#		Add Summary Statistics to a Table
 	produce_summary_statistics.hgt																#		Produce Summary Statistics
 average_function.hgt																			#	Average Function
+barcode.hgt																						#	Barcode Namespace
+	barcode_read_function.hgt																	#		Barcode.Read Function
 map_set_base_map_function.hgt | Base Map														#	Base Map
 	map_set_base_map_function.hgt																#		Map.SetBaseMap Function
 batch_application_screen_layout.hgt | Batch														#	Batch
@@ -256,7 +260,6 @@ add_borders.hgt | Border																		#	Border
 add_lines_or_boxes_to_a_form.hgt | Box															#	Box
 	add_lines_or_boxes_to_a_form.hgt | Adding to a Form											#		Adding to a Form
 	change_field_font.hgt | Change Field Box Size												#		Change Field Box Size
-	recode_statement.hgt | Statement															#		Statement
 change_the_repeating_of_boxheads.hgt | Boxhead													#	Boxhead
 	change_the_repeating_of_boxheads.hgt														#		Change the Repeating of Boxheads
 	formats_for_printing.hgt																	#		Formats for Printing
@@ -349,8 +352,10 @@ checking_errors.hgt																				#	Checking Errors
 errmsg_function.hgt | Checks																	#	Checks
 	errmsg_function.hgt | Hard																	#		Hard
 	warning_function.hgt | Soft																	#		Soft
-extended_controls.hgt | Check box																#	Check box
+extended_controls.hgt | Check Box																#	Check Box
+	ischecked_function.hgt																		#		IsChecked Function
 choose_topic_sections.hgt																		#	Choose Topic Sections
+cspro_settings.hgt | Clear Credentials															#	Clear Credentials
 clear_function.hgt																				#	Clear Function
 	array_clear_function.hgt																	#		Array.Clear Function
 	list_clear_function.hgt																		#		List.Clear Function
@@ -404,6 +409,7 @@ expressions.hgt | Conditions																	#	Conditions
 config_statement.hgt																			#	Config Statement
 change_data_entry_options.hgt | Confirm End-of-Case												#	Confirm End-of-Case
 connection_function.hgt																			#	Connection Function
+connection_string.hgt																			#	Connection String
 batch_edit_applications.hgt | Consistency Checks												#	Consistency Checks
 consistency_edits.hgt																			#	Consistency Edits
 custom_consolidation.hgt | Consolidation														#	Consolidation
@@ -461,6 +467,7 @@ create_fills_in_questions.hgt																	#	Create Fills In Questions
 create_general_helps.hgt																		#	Create General Helps
 create_helps_for_fields.hgt																		#	Create Helps for Fields
 create_multiple_subtables.hgt																	#	Create Multiple Subtables
+cspro_settings.hgt | Credentials (Clear)														#	Credentials (Clear)
 create_a_table.hgt | Cross Tabulation															#	Cross Tabulation
 	tabulation_applications.hgt | Applications													#		Applications
 	create_a_new_tabulation_application.hgt | Create an Application								#		Create an Application
@@ -483,10 +490,12 @@ cspro_capabilities.hgt | CSPro																	#	CSPro
 	what_is_cspro.hgt | What is																	#		What is
 create_a_cspro_application.hgt | CSPro Application												#	CSPro Application
 	create_a_cspro_application.hgt | Create														#		Create
+csdb_relational_format.hgt | CSPro DB Data Format												#	CSPro DB Data Format
 data_sources.hgt | CSPro DB Data Source															#	CSPro DB Data Source
 cspro_program_structure.hgt																		#	CSPro Program Structure
 	cspro_program_structure.hgt | Declaration Section											#		Declaration Section
 	cspro_program_structure.hgt | Procedural Section											#		Procedural Section
+cspro_settings.hgt																				#	CSPro Settings
 syncconnect_function_csweb.hgt | CSWeb Synchronization											#	CSWeb Synchronization
 curocc_function.hgt																				#	CurOcc Function
 custom_consolidation.hgt																		#	Custom Consolidation
@@ -532,6 +541,7 @@ adding_logic.hgt | Data Entry																	#	Data Entry
 	change_data_entry_options.hgt | Options														#		Options
 	order_of_executing_data_entry_events.hgt													#		Order of Executing Data Entry Events
 	data_entry_path.hgt | Path																	#		Path
+	data_entry_review_tips.hgt | Review Tips													#		Review Tips
 	run_production_data_entry.hgt | Run Production												#		Run Production
 	data_entry_toolbar.hgt | Toolbar Summary													#		Toolbar Summary
 	data_entry_tree.hgt | Tree																	#		Tree
@@ -606,6 +616,7 @@ errmsg_function.hgt | Denom																		#	Denom
 	errmsg_function.hgt																			#		ErrMsg Function
 tool_list.hgt | Deploy Application																#	Deploy Application
 deprecated_features.hgt																			#	Deprecated Features
+	recode_statement_pre74.hgt																	#		Recode Statement (Deprecated)
 data_entry_elements.hgt | Description															#	Description
 	data_entry_elements.hgt | Fields															#		Fields
 	data_entry_elements.hgt | Forms																#		Forms
@@ -640,8 +651,10 @@ dictionary_types.hgt | Dictionary																#	Dictionary
 	view_the_dictionary_layout.hgt | Viewing Layout												#		Viewing Layout
 	windows.hgt | Window																		#		Window
 	dictionary_types.hgt | Working																#		Working
+set_access_statement.hgt | Dictionary Access Parameters											#	Dictionary Access Parameters
 dictionary_analysis.hgt																			#	Dictionary Analysis
 dictionary_macros.hgt																			#	Dictionary Macros
+dictionary_security_options.hgt																	#	Dictionary Security Options
 dircreate_function.hgt																			#	DirCreate Function
 dirdelete_function.hgt																			#	DirDelete Function
 direxist_function.hgt																			#	DirExist Function
@@ -684,6 +697,10 @@ if_statement.hgt | Else																			#	Else
 	if_statement.hgt																			#		If Statement
 if_statement.hgt | Elseif																		#	Elseif
 	if_statement.hgt																			#		If Statement
+data_sources.hgt | Encrypted CSPro DB Data Source												#	Encrypted CSPro DB Data Source
+encrypted_data.hgt																				#	Encrypted Data
+encrypted_data.hgt | Encryption																	#	Encryption
+	dictionary_security_options.hgt																#		Dictionary Security Options
 function_statement.hgt | End																	#	End
 	function_statement.hgt																		#		Function Statement
 endcase_statement.hgt																			#	EndCase Statement
@@ -700,8 +717,8 @@ add_a_pagenote_or_footnote.hgt | Endnote														#	Endnote
 	formats_for_a_part_of_a_table.hgt															#		Formats for a Part of a Table
 	parts_of_a_table.hgt																		#		Parts of a Table
 recode_statement.hgt | EndRecode																#	EndRecode
-	recode_statement.hgt																		#		Recode Statement
 endgroup_statement.hgt | Endsect Statement														#	Endsect Statement
+when_statement.hgt | EndWhen																	#	EndWhen
 ensure_statement.hgt																			#	Ensure Statement
 cspro_capabilities.hgt | Enter																	#	Enter
 	cspro_capabilities.hgt | Modify and Verify Data												#		Modify and Verify Data
@@ -801,14 +818,15 @@ fileexist_function.hgt																			#	FileExist Function
 filename_function.hgt																			#	FileName Function
 fileread_function.hgt																			#	FileRead Function
 filerename_function.hgt																			#	FileRename Function
-files.hgt																						#	Files
+filesize_function.hgt																			#	FileSize Function
+filetime_function.hgt																			#	FileTime Function
+filewrite_function.hgt																			#	FileWrite Function
+file.hgt																						#	File Object
 	file_close_function.hgt																		#		File.Close Function
 	file_open_function.hgt																		#		File.Open Function
 	file_read_function.hgt																		#		File.Read Function
 	file_write_function.hgt																		#		File.Write Function
 	file_statement.hgt																			#		File Statement
-filesize_function.hgt																			#	FileSize Function
-filewrite_function.hgt																			#	FileWrite Function
 file_types.hgt																					#	File Types
 	area_names_file_anm.hgt																		#		Area Names File (.anm)
 	batch_edit_application_file_bch.hgt															#		Batch Edit Application File (.bch)
@@ -817,6 +835,7 @@ file_types.hgt																					#	File Types
 	data_dictionary_file_dcf.hgt																#		Data Dictionary File (.dcf)
 	data_entry_application_file_ent.hgt															#		Data Entry Application File (.ent)
 	edit_order_file_ord.hgt																		#		Edit Order File (.ord)
+	data_sources.hgt | Encrypted CSPro DB File (.csdbe)											#		Encrypted CSPro DB File (.csdbe)
 	forms_file_fmf.hgt																			#		Forms File (.fmf)
 	frequency_specification_file_fqf.hgt														#		Frequency Specification File (.fqf)
 	index_file_csidx.hgt																		#		Index File (.csidx)
@@ -934,8 +953,8 @@ getvaluelabel_function.hgt																		#	GetValueLabel Function
 getvalue_function.hgt | GetValueNumeric Function												#	GetValueNumeric Function
 getvalue_function.hgt																			#	GetValue Function
 get_help.hgt																					#	Get Help
-arrays.hgt | Global																				#	Global
-	arrays.hgt																					#		Arrays
+cspro_program_structure.hgt | Global															#	Global
+	array.hgt																					#		Array Object
 	compiler_mode.hgt																			#		Compiler Mode
 	numeric_statement.hgt																		#		Numeric Statement
 	cspro_program_structure.hgt | Procedure														#		Procedure
@@ -950,6 +969,7 @@ handle_multiple_answers.hgt																		#	Handle Multiple Answers
 include_exclude_special_values_in_a_variable.hgt | Handle Undefined Values						#	Handle Undefined Values
 hardware_and_software_requirements.hgt															#	Hardware and Software Requirements
 errmsg_function.hgt | Hard Checks																#	Hard Checks
+hash_function.hgt																				#	Hash Function
 has_operator.hgt																				#	Has Operator
 change_the_print_page_setup.hgt | Header														#	Header
 data_entry_philosophies.hgt | Heads-Down Keying													#	Heads-Down Keying
@@ -1057,6 +1077,7 @@ introduction_to_production_tabulations.hgt														#	Introduction to Produc
 introduction_to_run_in_parts.hgt																#	Introduction to Run in Parts
 int_function.hgt																				#	Int Function
 invalueset_function.hgt																			#	InValueSet Function
+ischecked_function.hgt																			#	IsChecked Function
 ispartial_function.hgt																			#	IsPartial Function
 converting_within_issa.hgt | ISSA																#	ISSA
 	converting_within_issa.hgt | Converting a Data Dictionary									#		Converting a Data Dictionary
@@ -1154,7 +1175,7 @@ linked_value_sets.hgt																			#	Linked Value Sets
 run_production_batch_edits.hgt | ListingWidth													#	ListingWidth
 run_a_batch_edit_application.hgt | Listing File													#	Listing File
 listing_file_lst.hgt																			#	Listing File (.lst)
-lists.hgt																						#	Lists
+list.hgt																						#	List Object
 	list_add_function.hgt																		#		List.Add Function
 	list_clear_function.hgt																		#		List.Clear Function
 	list_insert_function.hgt																	#		List.Insert Function
@@ -1170,6 +1191,8 @@ loadsetting_function.hgt																		#	LoadSetting Function
 load_and_save_formatting_preferences.hgt														#	Load and Save Formatting Preferences
 pff_load_function.hgt | Load Function															#	Load Function
 	pff_load_function.hgt																		#		Pff.Load Function
+syncconnect_function_dropbox_local.hgt | LocalDropbox Synchronization							#	LocalDropbox Synchronization
+syncconnect_function_files_local.hgt | LocalFiles Synchronization								#	LocalFiles Synchronization
 locate_function.hgt																				#	Locate Function
 run_production_data_entry.hgt | Lock															#	Lock
 locking_application_files.hgt																	#	Locking Application Files
@@ -1229,7 +1252,7 @@ mapping.hgt | Map																				#	Map
 	map_show_function.hgt																		#		Map.Show Function
 	map_zoom_to_function.hgt																	#		Map.ZoomTo Function
 	map_case_list.hgt | Map in Case Listing														#		Map in Case Listing
-	maps.hgt | Map in Logic																		#		Map in Logic
+	map.hgt | Map in Logic																		#		Map in Logic
 	map_statement.hgt																			#		Map Statement
 	map_statement.hgt																			#		Map Statement
 change_the_print_page_setup.hgt | Margins														#	Margins
@@ -1383,7 +1406,9 @@ onchar_global_function.hgt																		#	OnChar Global Function
 onfocus_statement.hgt																			#	OnFocus Statement
 onkey_global_function.hgt																		#	OnKey Global Function
 onoccchange_statement.hgt																		#	OnOccChange Statement
+refused_value.hgt | OnRefused Global Function													#	OnRefused Global Function
 onstop_global_function.hgt																		#	OnStop Global Function
+syncmessage_function.hgt | OnSyncMessage Global Function										#	OnSyncMessage Global Function
 open_an_application.hgt																			#	Open an Existing Application
 open_an_existing_dictionary_application.hgt														#	Open an Existing Dictionary Application
 open_function.hgt																				#	Open Function
@@ -1474,12 +1499,12 @@ add_percents_to_a_table.hgt | Percents															#	Percents
 	tally_attributes_for_a_variable.hgt | Proportions											#		Proportions
 change_field_properties.hgt | Persistent Fields													#	Persistent Fields
 program_information_file_pff.hgt | PFF															#	PFF
-	pffs.hgt | PFF Object																		#		PFF Object
+	pff.hgt | Object																			#		Object
 	run_production_batch_edits.hgt																#		Run Production Batch Edits
 	run_production_data_entry.hgt																#		Run Production Data Entry
 	introduction_to_production_tabulations.hgt | Run Production Tabulation						#		Run Production Tabulation
 	sysparm_function.hgt																		#		SysParm Function
-pffs.hgt																						#	Pffs
+pff.hgt																							#	Pff Object
 	pff_exec_function.hgt																		#		Pff.Exec Function
 	pff_getproperty_function.hgt																#		Pff.GetProperty Function
 	pff_load_function.hgt																		#		Pff.Load Function
@@ -1513,6 +1538,7 @@ preferences_and_default_formats.hgt | Preferences												#	Preferences
 	load_and_save_formatting_preferences.hgt | Load and Save									#		Load and Save
 	modifying_preferences.hgt | Modifying														#		Modifying
 	share_the_same_format_on_multiple_computers.hgt | Sharing									#		Sharing
+prefilling_values.hgt																			#	Prefilling Values
 prepare_tables_for_posting_to_the_web.hgt														#	Prepare Tables for Posting to the Web
 preproc_statement.hgt																			#	PreProc Statement
 print_all_or_part_of_a_document.hgt | Preview													#	Preview
@@ -1564,6 +1590,7 @@ change_field_properties.hgt | Properties														#	Properties
 	value_set_properties.hgt | Value Set														#		Value Set
 tally_attributes_for_a_variable.hgt | Proportion												#	Proportion
 change_field_properties.hgt | Protected Fields													#	Protected Fields
+protect_function.hgt																			#	Protect Function
 publishdate_function.hgt																		#	PublishDate Function
 putdeck_function.hgt																			#	PutDeck Function
 putnote_function.hgt | Putnote																	#	Putnote
@@ -1621,6 +1648,8 @@ undo_and_redo_changes.hgt | Redo and Undo Changes												#	Redo and Undo Cha
 reenter_statement.hgt																			#	Reenter Statement
 tool_list.hgt | Reformat																		#	Reformat
 	tool_list.hgt | Data																		#		Data
+refused_value.hgt																				#	Refused Value
+	special_values.hgt																			#		Special Values
 regexmatch_function.hgt																			#	RegExMatch Function
 operators.hgt | Relational operators															#	Relational operators
 add_or_modify_relations.hgt | Relations															#	Relations
@@ -1834,6 +1863,7 @@ map_show_current_location_function.hgt | ShowCurrentLocation Function							#	Sh
 showocc_function.hgt																			#	ShowOcc Function
 change_data_entry_options.hgt | Show Case Tree													#	Show Case Tree
 show_values_for_selection.hgt																	#	Show Values for Selection
+execsystem_function_mobile.hgt | Signature														#	Signature
 synchronization_simple.hgt | Simple Synchronization												#	Simple Synchronization
 data_file_type_structure.hgt | Single Record Types												#	Single Record Types
 change_field_font.hgt | Size																	#	Size
@@ -1864,6 +1894,7 @@ special_function.hgt | Special																	#	Special
 	create_a_specialized_report.hgt																#		Create a Specialized Report
 	special_function.hgt | Function																#		Function
 	dictionary_types.hgt | Output Dictionary													#		Output Dictionary
+	special_values.hgt | Values																	#		Values
 special_values.hgt																				#	Special Values
 	special_values.hgt | Defined																#		Defined
 	include_exclude_special_values_in_a_variable.hgt | Include/Exclude Special Values in a Tabulation#		Include/Exclude Special Values in a Tabulation
@@ -1871,12 +1902,14 @@ impute_function.hgt | Specific																	#	Specific
 	impute_function.hgt																			#		Impute Function
 specify_application_file_names.hgt																#	Specify Application File Names
 sqlquery_function.hgt																			#	SqlQuery Function
+csdb_relational_format.hgt | SQL Queries in CSPro DB											#	SQL Queries in CSPro DB
 sqrt_function.hgt | Sqrt																		#	Sqrt
 add_summary_statistics_to_a_table.hgt | Standard Deviation										#	Standard Deviation
 	add_summary_statistics_to_a_table.hgt | Add Summary Statists to a Table						#		Add Summary Statists to a Table
 	produce_summary_statistics.hgt																#		Produce Summary Statistics
 starting_position.hgt | Starting Position of Item												#	Starting Position of Item
 run_production_data_entry.hgt | StartMode														#	StartMode
+startswith_function.hgt																			#	StartsWith Function
 format_tables_for_printing.hgt | Start Page														#	Start Page
 impute_function.hgt | Stat																		#	Stat
 	impute_function.hgt																			#		Impute Function
@@ -1954,20 +1987,30 @@ data_entry_forms_screen_layout.hgt | Switching Between Data Entry Forms and Dict
 synchronization.hgt | Sync																		#	Sync
 	synchronization_simple.hgt | Synchronization (simple)										#		Synchronization (simple)
 	synchronization.hgt | Sync Overview															#		Sync Overview
+syncapp_function.hgt																			#	SyncApp Function
 syncconnect_function.hgt																		#	SyncConnect Function
 	syncconnect_function_bluetooth.hgt | Bluetooth												#		Bluetooth
 	syncconnect_function_csweb.hgt | CSWeb														#		CSWeb
 	syncconnect_function_dropbox.hgt | Dropbox													#		Dropbox
 	syncconnect_function_ftp.hgt | FTP															#		FTP
+	syncconnect_function_dropbox_local.hgt | LocalDropbox										#		LocalDropbox
+	syncconnect_function_files_local.hgt | LocalFiles											#		LocalFiles
 syncdata_function.hgt																			#	SyncData Function
 syncdisconnect_function.hgt																		#	SyncDisconnect Function
 syncfile_function.hgt																			#	SyncFile Function
 synchronization_simple.hgt | Synchronization Options											#	Synchronization Options
+syncmessage_function.hgt																		#	SyncMessage Function
 syncserver_function.hgt																			#	SyncServer Function
 sysdate_function.hgt																			#	SysDate Function
 sysparm_function.hgt																			#	SysParm Function
 operator_vs_system_controlled.hgt | System														#	System
 	operator_vs_system_controlled.hgt | Vs Operator Controlled									#		Vs Operator Controlled
+systemapp.hgt																					#	SystemApp Object
+	systemapp_clear_function.hgt																#		SystemApp.Clear Function
+	systemapp_exec_function.hgt																	#		SystemApp.Exec Function
+	systemapp_getresult_function.hgt															#		SystemApp.GetResult Function
+	systemapp_setargument_function.hgt															#		SystemApp.SetArgument Function
+	systemapp_statement.hgt																		#		SystemApp Statement
 systime_function.hgt																			#	SysTime Function
 add_insert_and_delete_tables.hgt | Table														#	Table
 	add_insert_and_delete_tables.hgt | Add														#		Add
@@ -2132,6 +2175,8 @@ define_a_universe_for_a_table.hgt | Universe													#	Universe
 	use_expressions_in_universe_and_value_tallied.hgt | Using expressions in					#		Using expressions in
 do_statement.hgt | Until																		#	Until
 	do_statement.hgt																			#		Do Statement
+syncapp_function.hgt | Update application														#	Update application
+	syncapp_function.hgt																		#		SyncApp Function
 change_data_entry_options.hgt | Upper															#	Upper
 	change_data_entry_options.hgt | Case														#		Case
 	change_field_properties.hgt | Case Fields													#		Case Fields
@@ -2171,7 +2216,7 @@ delete_dictionary_elements.hgt | Value															#	Value
 	include_exclude_special_values_in_a_variable.hgt | Undefined								#		Undefined
 values.hgt																						#	Values
 valueset_length_function.hgt																	#	ValueSet.Length Function
-valuesets.hgt																					#	ValueSets
+valueset.hgt																					#	ValueSet Object
 	valueset_add_function.hgt																	#		ValueSet.Add Function
 	valueset_clear_function.hgt																	#		ValueSet.Clear Function
 	valueset_remove_function.hgt																#		ValueSet.Remove Function
@@ -2192,7 +2237,7 @@ value_sets_description.hgt | Value Set															#	Value Set
 	modify_dictionary_elements.hgt | Modify														#		Modify
 	names.hgt | Name																			#		Name
 	document_dictionary_elements.hgt | Notes													#		Notes
-	valuesets.hgt | Object																		#		Object
+	valueset.hgt | Object																		#		Object
 	value_set_properties.hgt | Properties														#		Properties
 	recodes_in_tables_using_value_sets_and_subtables.hgt | Recodes in Tables Using Value Sets	#		Recodes in Tables Using Value Sets
 	find_dictionary_elements.hgt | Search														#		Search
@@ -2235,7 +2280,9 @@ what_is_new_in_cspro.hgt																		#	What's New in CSPro?
 	what_is_new_in_cspro_7_1.hgt | CSPro 7.1													#		CSPro 7.1
 	what_is_new_in_cspro_7_2.hgt | CSPro 7.2													#		CSPro 7.2
 	what_is_new_in_cspro_7_3.hgt | CSPro 7.3													#		CSPro 7.3
+	what_is_new_in_cspro_7_4.hgt | CSPro 7.4													#		CSPro 7.4
 what_is_cspro.hgt																				#	What is CSPro?
+when_statement.hgt																				#	When Statement
 average_function.hgt | Where																	#	Where
 	average_function.hgt																		#		Average Function
 	count_function.hgt																			#		Count Function

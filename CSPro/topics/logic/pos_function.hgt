@@ -3,7 +3,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = pos(<arg>substring</arg>,<arg>source_string</arg>);
+i = pos(<arg>substring</arg>, <arg>source_string</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -19,15 +19,15 @@ The function returns the position of the first occurrence of the substring, or i
 <subheader>Examples</subheader>
 
 <logic>
-VALUE = pos("L","FOR THE CHILDREN");	// VALUE will be 12; this is where the
+VALUE = pos("L", "FOR THE CHILDREN");	// VALUE will be 12; this is where the
 										// substring (the letter "L") occurs in the
 										// source string ("FOR THE CHILDREN")
 
-VALUE = pos("DRE","CHILDREN");			// VALUE will be 5; this is where the
+VALUE = pos("DRE", "CHILDREN");			// VALUE will be 5; this is where the
 										// substring ("DRE") occurs in the source string
 
-VALUE = pos("DCN","CHILDREN");			// VALUE will be 0; the substring ("DCN") does
+VALUE = pos("DCN", "CHILDREN");			// VALUE will be 0; the substring ("DCN") does
 										// not occur in the source string
 </logic>
 
-<seealso poschar_function.hgt />
+<seealso poschar_function.hgt startswith_function.hgt ischecked_function.hgt />

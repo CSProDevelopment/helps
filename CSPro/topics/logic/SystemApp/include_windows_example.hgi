@@ -1,0 +1,4 @@
+﻿// play the training video in Windows Media Player
+SystemApp windows_media_player;
+windows_media_player.setArgument(pathconcat("../Videos/Census Training.mp4"));
+windows_media_player.exec("wmplayer.exe");

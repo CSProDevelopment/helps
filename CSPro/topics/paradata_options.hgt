@@ -40,9 +40,10 @@ For advanced users writing SQL queries on the paradata tables, note that the bas
 Some of the events listed above can store sensitive information in the paradata log, which is why you can disable the collection of this information while still storing the non-sensitive portions of the event:
 
 <list>
-	<li><b>Field values</b>: The Field Validation event can store each value entered into a field. This can be useful if you want to look the frequency of valid and invalid values, but if you do not want such data stored in the paradata log, you should disable this.</li>
+	<li><b>Field values</b>: The Field Validation event can store each value entered into a field. This can be useful if you want to look at the frequency of valid and invalid values, but if you do not want such data stored in the paradata log, you should disable this. The Note event also uses this option to determine if note text should be stored in the paradata log.</li>
 	<li><b>GPS coordinates</b>: The GPS event can store the coordinates of the interviewers. If you do not want this data stored in the paradata log, you should disable the collection of the latitude and longitude coordinates, though other information (altitude, accuracy, etc.) will still be stored.</li>
 	<li><b>Cases loaded via logic loops</b>: This is not an option related to sensitive information, but if your application loops through external data files in logic (using <logiccolor>forcase</logiccolor> or <logiccolor>loadcase</logiccolor>), the paradata log will become very large quickly due to a preponderance of Data Source events. You can disable this information if you do not plan to analyze it.</li>
+	<li><b>Initial property values</b>: If this option is enabled, the initial property settings will be stored as Property events in the paradata log when your application begins. This can lead to a large amount of paradata that is potentially not useful. If disabled, only information about changes to properties will be stored.</li>
 </list>
 
 The default setting is for all of these options to be disabled.

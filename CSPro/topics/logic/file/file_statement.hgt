@@ -9,7 +9,7 @@ file <arg>file_handler1</arg>『, ..., <arg>file_handlerN</arg>』;
 
 <subheader>Description</subheader>
 
-The <logiccolor>file</logiccolor> statement creates a <link files.hgt>file </link> handler that is used to read from and write to text files that are not not associated with data dictionaries. <arg>file_handler1</arg> to <arg>file_handlerN</arg> are CSPro names that must be unique and must contain only letters, numbers, or the underscore character. The names must begin with a letter. You can declare files globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>file</logiccolor> statement creates a <link file.hgt>file </link> handler that is used to read from and write to text files that are not not associated with data dictionaries. <arg>file_handler1</arg> to <arg>file_handlerN</arg> are CSPro names that must be unique and must contain only letters, numbers, or the underscore character. The names must begin with a letter. You can declare files globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 If declared globally, the physical name of the file can be specified in the Define File Associations dialog when the application is run. The name can also be specified in a <link program_information_file_pff.hgt>PFF file</link> or at runtime by using the <logiccolor file>open</logiccolor> or <logiccolor>setfile</logiccolor> functions.
 
@@ -22,4 +22,4 @@ PROC GLOBAL
 file VacantHouseholdsReportFile;
 </logic>
 
-<seealso files.hgt />
+<seealso file.hgt />

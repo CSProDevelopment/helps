@@ -1,8 +1,8 @@
-﻿<title>Run CSIndex in Production Mode</title>
+﻿<title>Run Index Data in Production Mode</title>
 
-To create one or more indices in production mode, you can customize the behavior of CSIndex by creating a PFF file.
+To create one or more indices in production mode, you can customize the behavior of Index Data by creating a PFF file.
 
-You can create a PFF file in one of two ways: either create it yourself using a text editor such as Notepad, or simply run CSIndex once and a PFF file will automatically be created for you. It is always called CSIndex.pff and it will be placed in the same folder as your input or output data files. You can also manipulate PFF files in logic by using the <link CSPro::pffs.hgt>pff</link> object.
+You can create a PFF file in one of two ways: either create it yourself using a text editor such as Notepad, or generate one by selecting <b>Save As</b> from the <b>File</b> menu. You can also manipulate PFF files in logic by using the <link CSPro::pff.hgt>pff</link> object.
 
 The following section shows the options available to you in a CSIndex PFF file. A PFF file is not case sensitive, so you can use any combination of upper and lower case text.
 
@@ -16,14 +16,13 @@ InputData=.\File01.dat
 InputData=.\File02.dat
 InputData=.\File03.dat
 InputData=.\File04.dat
-OutputData=.\<filename>Fixed<.extension>
+OutputData=.\<filename>-fixed
 Listing=.\CSIndex.lst
 InputDict=.\DictionaryName.dcf
 
 [Parameters]
-ViewListing=Never
-Silent=Yes
-DeletePrompt=No
+ViewListing=Always
+DuplicateCase=List
 </pff>
 
 <subheader>[Run Information]</subheader>
@@ -32,7 +31,7 @@ The <pffcolor>[Run Information]</pffcolor> block is required and must appear exa
 
 <subheader>[Files]</subheader>
 
-The <pffcolor>[Files]</pffcolor> block is required and names the file(s) to be indexed. At a minimum you must name one input file (<pffcolor>InputData</pffcolor>). If you specify an output file (<pffcolor>OutputData</pffcolor>), CSIndex will attempt to remove duplicates from the input data file(s) and create an output file with the duplicates removed. If more than one input data file is selected, the output file name must use wildcards (see <topic Specify_Files.hgt /> for more information).
+The <pffcolor>[Files]</pffcolor> block is required and names the file(s) to be indexed. At a minimum you must name one input file (<pffcolor>InputData</pffcolor>). If you specify an output file (<pffcolor>OutputData</pffcolor>), the tool will attempt to remove duplicates from the input data file(s) and create an output file with the duplicates removed. If more than one input data file is selected, the output file can include a wildcard (see <topic Specify_Files.hgt /> for more information).
 
 <subheader>[Parameters]</subheader>
 
@@ -40,8 +39,7 @@ The <pffcolor>[Parameters]</pffcolor> block is optional:
 
 <list>
 	<li><pffcolor>ViewListing</pffcolor> determines whether the listing file is viewed. <pffcolor>ViewListing</pffcolor>=Always means that you will always see the generated listing file, while <pffcolor>ViewListing</pffcolor>=Never means that you will never see the generated listing file.</li>
-	<li><pffcolor>Silent</pffcolor> indicates whether you want CSIndex to show its progress during the production run (<pffcolor>Silent</pffcolor>=No), or if you want it to run silently in the background (<pffcolor>Silent</pffcolor>=Yes).</li>
-	<li><pffcolor>DeletePrompt</pffcolor> tells CSIndex whether or not you want duplicate cases removed automatically (<pffcolor>DeletePrompt</pffcolor>=No) or if you want the user to be prompted about what duplicates to remove (<pffcolor>DeletePrompt</pffcolor>=Yes). Note that modes <pffcolor>DeletePrompt</pffcolor>=Yes and <pffcolor>Silent</pffcolor>=Yes are incompatible with each other and in that case CSIndex will default to <pffcolor>Silent</pffcolor>=No.</li>
+	<li><pffcolor>DuplicateCase</pffcolor> indicates in which mode the tool should run. You can automatically remove duplicate cases (<pffcolor>DuplicateCase</pffcolor>=KeepFirst) or you can query the user about duplicates to remove (<pffcolor>DuplicateCase</pffcolor>=Prompt or <pffcolor>DuplicateCase</pffcolor>=PromptIfDifferent). Alternatively, if you do not want to output data, you can get a list of duplicates (<pffcolor>DuplicateCase</pffcolor>=List) or you can view the case contents of duplicates (<pffcolor>DuplicateCase</pffcolor>=View).</li>
 </list>
 
-The default values are <pffcolor>ViewListing</pffcolor>=Always, <pffcolor>Silent</pffcolor>=No, and <pffcolor>DeletePrompt</pffcolor>=Yes.
+The default values are <pffcolor>ViewListing</pffcolor>=Always and <pffcolor>DuplicateCase</pffcolor>=List.

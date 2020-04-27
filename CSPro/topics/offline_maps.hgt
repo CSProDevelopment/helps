@@ -29,4 +29,4 @@ Since offline map files may contain hundreds or thousands of images, they can be
 
 The level of detail of an offline map is a big component of the file size. Levels of detail in offline maps start at zero where the entire world is covered by a single image tile. Each successive level contains four times the number of images as the previous level so level one contains four tiles, level two contains 16 tiles, level 3 contains 64 tiles, etc. Level 20 is detailed enough to see individual buildings. At level 20 the entire world requires over a trillion tiles. By removing the last level of detail of your map you reduce the size of the file by close to two-thirds.
 
-<seealso maps.hgt run_production_data_entry.hgt />
+<seealso map.hgt run_production_data_entry.hgt />

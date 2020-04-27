@@ -7,6 +7,8 @@ For basic <link synchronization.hgt>synchronization</link> scenarios, you can co
 
 <center><image synchronization_options.png /></center>
 
+To add support for data synchronization to your application, check the <b>Enable synchronization</b> box.
+
 The following <b>Server</b> options can be specified:
 
 <list>
@@ -26,13 +28,11 @@ The following <b>Sync</b> options can be specified:
 		<li><b>Download changes from server</b>: Only receive modified data from the server. Do not upload local changes. This might be used for a supervisor who wants to see what changes interviewers have made but does not want to make changes themselves.</li>
 		<li><b>Sync local and remote changes</b>: Send local changes to the server and download changes from the server. This option can be used when multiple interviewers need to work on the same assignments. Note that if both interviewers modify a case at the same time, one will overwrite the changes made by the other.</li>
 	</list></li>
-	<li><b>Download application files</b>: Check this box if you want to download the <link binary_data_entry_application_file_pen.hgt>.pen</link> and <link program_information_file_pff.hgt>.pff</link> files from the server to the local device in order to support application updates in the field.</li>
-	<li><b>Path to application on server</b>: Specify the path on the server where the latest versions of the .pen and .pff files are stored. This is used only if the above option is checked.</li>
 </list>
 
 Simple synchronizations do not support synchronization of external dictionaries or files other than the .pen and .pff files. To implement these advanced synchronization scenarios, you can create your own synchronization routines using <link synchronization.hgt>logic functions</link>.
 
-While it is possible to use the synchronization options to update the application files of an existing application, it is not possible to use them to download the application to a mobile device for the first time. However, the <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link> tool can be used to package and upload an application to a server. Interviewers can then download the application to their mobile device using <link CSDeploy::install_deployment_mobile.hgt>Add Application</link> from the Entry Applications screen of CSEntry.
+The synchronization options are used to synchronize data with a server but are not meant for deploying and updating the application itself. To download an application to a mobile device or update the application files of an existing application on a mobile device use the <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link> tool to package and upload an application to a server. Interviewers can then download the application to their mobile device using <link CSDeploy::install_deployment_mobile.hgt>Add Application</link> from the Entry Applications screen of CSEntry. Interviewers can also download to an application using <link CSDeploy::update_deployment_mobile.hgt>Update Installed Applications</link> from the Entry Applications screen of CSEntry.
 
 <subheader>Running Synchronizations</subheader>
 

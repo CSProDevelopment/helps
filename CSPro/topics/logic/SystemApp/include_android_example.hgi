@@ -1,0 +1,5 @@
+﻿// get directions to the U.S. Census Bureau using Google Maps
+SystemApp google_maps_navigation;
+google_maps_navigation.setArgument("action", "android.intent.action.VIEW");
+google_maps_navigation.setArgument("data", "google.navigation:q=U.S.+Census+Bureau");
+google_maps_navigation.exec("com.google.android.apps.maps");

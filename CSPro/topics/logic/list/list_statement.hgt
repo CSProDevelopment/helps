@@ -9,7 +9,7 @@ list 『<arg>list_type</arg>』 <arg>list_name</arg>;
 
 <subheader>Description</subheader>
 
-The <logiccolor>list</logiccolor> statement creates a <link lists.hgt>list</link> with the name <arg>list_name</arg>. The list name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare lists globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>list</logiccolor> statement creates a <link list.hgt>list</link> with the name <arg>list_name</arg>. The list name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare lists globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 Lists can be <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. By default a list is numeric, but the type can be modified by specifying the <arg>list_type</arg>.
 
@@ -32,4 +32,4 @@ list string MonthNames = "Jan", "Feb", "Mar", "Apr", "May", "Jun",
 </logic>
 
 
-<seealso lists.hgt arrays.hgt valuesets.hgt />
+<seealso list.hgt array.hgt valueset.hgt />

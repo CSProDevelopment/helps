@@ -8,7 +8,7 @@ b = pff_name.setproperty(<arg>property_name</arg>, <arg>property_value</arg> ‖
 
 <subheader>Description</subheader>
 
-The <logiccolor pff>pff.setproperty</logiccolor> function modifies the value associated with the <link pffs.hgt>pff</link>'s property specified by the string expression <arg>property_name</arg>. The property will be modified to the value given in the string expression <arg>property_value</arg>. If the <arg>property_value</arg> is blank, the property will be reset to its default value. Alternatively, a <arg>string_list</arg> can be supplied containing values for properties that have multiple values (such as input data filenames).
+The <logiccolor pff>pff.setproperty</logiccolor> function modifies the value associated with the <link pff.hgt>pff</link>'s property specified by the string expression <arg>property_name</arg>. The property will be modified to the value given in the string expression <arg>property_value</arg>. If the <arg>property_value</arg> is blank, the property will be reset to its default value. Alternatively, a <arg>string_list</arg> can be supplied containing values for properties that have multiple values (such as input data filenames).
 
 Properties names can be prefixed with the section name. For example, if you load an existing PFF that has a persistent ID value defined for the item <logiccolor>PROVINCE</logiccolor>, you can code:
 
@@ -61,4 +61,4 @@ PROC REPORT_SELECTION
 	report_pff.exec();
 </logic>
 
-<seealso pffs.hgt pff_getproperty_function.hgt />
+<seealso pff.hgt pff_getproperty_function.hgt />

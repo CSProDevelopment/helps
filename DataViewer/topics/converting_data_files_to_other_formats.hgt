@@ -2,7 +2,7 @@
 
 <subheader>Conversion Overview</subheader>
 
-The Data Viewer tool can be used to convert from one CSPro data file format to another. For example you can:
+Data Viewer can be used to convert from one CSPro data file format to another. For example you can:
 
 <list>
 	<li>Convert from a CSPro DB file to a text file.</li>
@@ -12,17 +12,18 @@ The Data Viewer tool can be used to convert from one CSPro data file format to a
 When you convert between these formats, in addition to the case contents, the following case-related data will also be converted:
 
 <list>
+	<li>Case labels</li>
 	<li>Case and field notes</li>
 	<li>Partial save statuses</li>
-	<li>Verified information</li>
+	<li>Verification information</li>
 </list>
-
-Text files do not support case labels, so if converting from CSPro DB to text format, case labels will be dropped from the converted file.
 
 <subheader>To convert a data file ...</subheader>
 
 <list ordered>
 	<li><link open_data_files.hgt>Open the data file</link>.</li>
-	<li>Click the <b>Tools</b> menu and select <b>Convert</b>.</li>
-	<li>Enter a file name for the converted data file. If the file has the extension <b>.csdb</b>, the file will be saved in CSPro DB format; otherwise the file will be saved in text format.</li>
+	<li>Click the <b>File</b> menu, select <b>Save As</b>, and then select <b>Data</b>.</li>
+	<li>Enter a file name for the converted data file. If the file has the extension <b>.csdb</b>, the file will be saved in CSPro DB format; if the file has the extension <b>.csdbe</b>, the file will be saved in Encrypted CSPro DB format; otherwise the file will be saved in text format.</li>
 </list>
+
+By selecting <b>Dictionary</b> from the <b>File</b> / <b>Save As</b> menu, you can extract a dictionary that is embedded in a CSPro data file.

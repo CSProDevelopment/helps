@@ -120,6 +120,8 @@ The <pffcolor>[Parameters]</pffcolor> block is optional. This section defines pa
  	<li><pffcolor>OnExit</pffcolor>=specifies a PFF file to run after the data entry program closes. This can be useful, for example, if you want to relaunch a menu program after collecting data.</li>
 </list>
 
+When starting a new case, if the name of a parameter matches the name of a dictionary item, the value of that item will be set to the value specified in the PFF. This is similar to how the persistent fields are processed (see below), but this works for non-persistent fields.
+
 
 <subheader>[DataEntryIDs]</subheader>
 

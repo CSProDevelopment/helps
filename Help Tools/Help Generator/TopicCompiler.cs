@@ -73,7 +73,7 @@ namespace Help_Generator
         private string _title;
         private bool _titleIsHeader;
 
-        private enum LogicObject { None, Array, File, List, Map, Pff, ValueSet };
+        private enum LogicObject { None, Array, File, List, Map, Pff, SystemApp, ValueSet };
         private LogicObject _logicObject;
 
         public TopicCompiler(HelpComponents helpComponents,Preprocessor.TopicPreprocessor preprocessedTopic,TopicCompilerSettingsInterface topicCompilerSettings)
@@ -882,13 +882,14 @@ namespace Help_Generator
             if( startTagComponents.Length == 1 )
             {
                 _logicObject =
-                    startTagComponents[0].Equals(LogicObject.Array.ToString(), StringComparison.InvariantCultureIgnoreCase)    ? LogicObject.Array :
-                    startTagComponents[0].Equals(LogicObject.File.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.File :
-                    startTagComponents[0].Equals(LogicObject.List.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.List :
-                    startTagComponents[0].Equals(LogicObject.Map.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.Map :
-                    startTagComponents[0].Equals(LogicObject.Pff.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.Pff :
-                    startTagComponents[0].Equals(LogicObject.ValueSet.ToString(), StringComparison.InvariantCultureIgnoreCase) ? LogicObject.ValueSet :
-                                                                                                                                 LogicObject.None;
+                    startTagComponents[0].Equals(LogicObject.Array.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.Array :
+                    startTagComponents[0].Equals(LogicObject.File.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.File :
+                    startTagComponents[0].Equals(LogicObject.List.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.List :
+                    startTagComponents[0].Equals(LogicObject.Map.ToString(), StringComparison.InvariantCultureIgnoreCase)       ? LogicObject.Map :
+                    startTagComponents[0].Equals(LogicObject.Pff.ToString(), StringComparison.InvariantCultureIgnoreCase)       ? LogicObject.Pff :
+                    startTagComponents[0].Equals(LogicObject.SystemApp.ToString(), StringComparison.InvariantCultureIgnoreCase) ? LogicObject.SystemApp :
+                    startTagComponents[0].Equals(LogicObject.ValueSet.ToString(), StringComparison.InvariantCultureIgnoreCase)  ? LogicObject.ValueSet :
+                                                                                                                                  LogicObject.None;
             }
 
             if( startTagComponents.Length != 0 && _logicObject == LogicObject.None )

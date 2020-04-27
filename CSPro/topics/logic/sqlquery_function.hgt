@@ -9,7 +9,7 @@ d = sqlquery(<arg>sqlite_database</arg>『, <arg>result_set</arg>』, <arg>sql_q
 
 <subheader>Description</subheader>
 
-The <logiccolor>sqlquery</logiccolor> function executes a query on a <link https://sqlite.org>SQLite</link> database and returns a result set in a variety of formats. This function is intended for advanced users who are familiar with writing SQL expressions. While most files used by CSPro applications are text files, there are some files that are stored as SQLite databases, including <link paradata.hgt>paradata logs</link>. You can query these files with this function.
+The <logiccolor>sqlquery</logiccolor> function executes a query on a <link https://sqlite.org>SQLite</link> database and returns a result set in a variety of formats. This function is intended for advanced users who are familiar with writing SQL expressions. While many files used by CSPro applications are text files, there are some files that are stored as SQLite databases, including <link csdb_relational_format.hgt>CSPro DB data files</link> and <link paradata.hgt>paradata logs</link>. You can query these files with this function.
 
 
 The first argument, <arg>sqlite_database</arg>, must be one of the following:
@@ -17,7 +17,7 @@ The first argument, <arg>sqlite_database</arg>, must be one of the following:
 <table 2>
 	<cell><arg>sqlite_database</arg></cell><cell><b>Description</b></cell>
 	<cell><logiccolor>paradata</logiccolor></cell><cell>The query will be executed on the currently open paradata log. This is the same as: <logiccolor>paradata(query,...)</logiccolor>.</cell>
-	<cell><arg>dictionary_name</arg></cell><cell>The data source pointed to by <arg>dictionary_name</arg> must be of type CSPro DB or text. The query will be executed on the file associated with this data source. If working with text files, you can query the file's <link index_file_csidx.hgt>index</link>.</cell>
+	<cell><arg>dictionary_name</arg></cell><cell>The data source pointed to by <arg>dictionary_name</arg> must be of type CSPro DB, Encrypted CSPro DB, or text. The query will be executed on the file associated with this data source. If working with text files, you can query the file's <link index_file_csidx.hgt>index</link>.</cell>
 	<cell><arg>file_name</arg></cell><cell>The string expression <arg>file_name</arg> gives the file name of a SQLite database. The database will be opened, the query executed, and then the database will be closed. This allows you to work with databases maintained outside of CSPro.</cell>
 </table>
 
@@ -27,8 +27,8 @@ The optional second argument, <arg>result_set</arg>, indicates the destination f
 <table 2>
 	<cell><arg>result_set</arg></cell><cell><b>Description</b></cell>
 	<cell><arg>record_name</arg></cell><cell>The results of a query can fill a CSPro dictionary's record. The <arg>record_name</arg> must point to a record in a <link working_storage_file.hgt>working storage dictionary</link>. The function will look at the column names of the result set to determine which columns of the results get stored in which items of the record. The results cannot be stored in subitems or multiply occurring items.</cell>
-	<cell><arg>list_name</arg></cell><cell>Because <link lists.hgt>lists</link> are only one-dimensional, only the first column of results will be stored in <arg>list_name</arg>, which can be of type <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. Because the size of a list is dynamic, the length of the list will be equal to the number of rows in the result set (up to a maximum of 10,000 rows).</cell>
-	<cell><arg>array_name</arg></cell><cell>You can use one- or two-dimensional <link arrays.hgt>arrays</link> of type <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. When using a one-dimensional array, only the first column of results will be stored in <arg>array_name</arg>. When using a two-dimensional array, each column of results will be stored in a separate column of <arg>array_name</arg>.</cell>
+	<cell><arg>list_name</arg></cell><cell>Because <link list.hgt>lists</link> are only one-dimensional, only the first column of results will be stored in <arg>list_name</arg>, which can be of type <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. Because the size of a list is dynamic, the length of the list will be equal to the number of rows in the result set (up to a maximum of 10,000 rows).</cell>
+	<cell><arg>array_name</arg></cell><cell>You can use one- or two-dimensional <link array.hgt>arrays</link> of type <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. When using a one-dimensional array, only the first column of results will be stored in <arg>array_name</arg>. When using a two-dimensional array, each column of results will be stored in a separate column of <arg>array_name</arg>.</cell>
 </table>
 
 Using a working storage record for the results is advantageous because the results are stored in their proper type. Because lists and arrays are all of one type (<logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>), some results may be converted to a invalid type (for example, a string value may be stored in a numeric array).
@@ -55,7 +55,7 @@ errmsg("%d cases have been verified", numberVerifiedCases);
 <logic>
 list string verifiedCaseKeys;
 
-sqlquery(DICT_NAME, verifiedCaseKeys, "SURVEY_DICT cases.key FROM cases WHERE cases.verified != 0;");
+sqlquery(DICT_NAME, verifiedCaseKeys, "SELECT cases.key FROM cases WHERE cases.verified != 0;");
 
 do numeric ctr = 1 while ctr <= verifiedCaseKeys.length()
 	errmsg("Verified case key: %s", verifiedCaseKeys(ctr));
@@ -159,4 +159,4 @@ PROC EXAMPLE
 </logic>
 
 
-<seealso paradata_function.hgt setreportdata_function.hgt />
+<seealso csdb_relational_format.hgt paradata_function.hgt setreportdata_function.hgt />

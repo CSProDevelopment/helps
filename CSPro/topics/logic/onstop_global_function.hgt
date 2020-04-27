@@ -12,7 +12,7 @@ function OnStop();
 
 When defined, it provides control over what happens when the data entry operator tries to stop data entry using the ESC key, the <image stop_button.png /> Stop button, pressing Ctrl+S, or attempting to exit data entry. When any of the above events occur, the <logiccolor>OnStop</logiccolor> function is executed and no stop dialog (discard, save, cancel) occurs.
 
-If an <logiccolor>OnStop</logiccolor> function has been coded in a data entry application, then when resuming a partial case, no resume dialog ("Do you want to go to last...") occurs. If special actions are required when entering a partial case, check whether a partial case has been entered using the <logiccolor>ispartial</logiccolor> function and program the appropriate action. You can retrieve the name and occurrence number of the last field entered (on a one-level application) by calling <logiccolor>getsymbol(savepartial)</logiccolor> from the <logiccolor>preproc</logiccolor> of the questionnaire.
+If an <logiccolor>OnStop</logiccolor> function has been coded in a data entry application, then when resuming a partial case, no resume dialog ("Do you want to go to last...") occurs. If special actions are required when entering a partial case, check whether a partial case has been entered using the <logiccolor>ispartial</logiccolor> function and program the appropriate action. You can retrieve the name and occurrence number of the last field entered (on a one-level application) by calling <logiccolor>getsymbol(savepartial)</logiccolor>.
 
 The <logiccolor>OnStop</logiccolor> function is not executed when the <logiccolor>stop</logiccolor> function is executed.
 

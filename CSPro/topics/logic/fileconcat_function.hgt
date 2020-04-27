@@ -11,15 +11,15 @@ b = fileconcat(『<arg>dictionary_name</arg>,』 <arg>output_file_name</arg>, <a
 The <logiccolor>fileconcat</logiccolor> function concatenates a number of files into a single file. The files to concatenate can be either individual file names or wildcard file specifications. The function supports <link CSConcat::concatenation.hgt>two different methods of concatenation</link>:
 
 <list>
-	<li><b>Concatenate cases</b>: Reads cases from each input file and writes them to the output file, skipping invalid and duplicate cases. This mode requires a data dictionary that describes the format of the input and output data files so that cases may be validated and duplicates may be identified. Concatenate cases mode may be used with data files in either text or <link data_sources.hgt>CSPro DB format</link>.</li>
-	<li><b>Concatenate file contents</b>: Simply appends one file to the end of another regardless of the file contents. This mode will not work for data files in the newer CSPro DB format.</li>
+	<li><b>Concatenate cases</b>: Reads cases from each input file and writes them to the output file, skipping invalid and duplicate cases. This mode requires a data dictionary that describes the format of the input and output data files so that cases may be validated and duplicates may be identified. Concatenate cases mode may be used with all types of <link data_sources.hgt>CSPro data files</link>.</li>
+	<li><b>Concatenate file contents</b>: Simply appends one file to the end of another regardless of the file contents. This mode will not work for CSPro data files that are not text files (such as CSPro DB files).</li>
 </list>
 
 To peform a <b>case</b> concatenation, you must specify a <arg>dictionary_name</arg> that specifies the layout of the data files being concatenated. When the dictionary is specified, the files are combined by reading each case from each of the input files and writing them to the output file. In this mode, invalid cases and duplicate cases are automatically removed from the output file.
 
 To perform <b>content</b> concatenation, do not specify a dictionary. In this case, the input files are appended together without examining their contents. This will be faster but will not eliminate duplicates or invalid cases.
 
-The <arg>output_file_name</arg> is a string expression giving the name of the output file that will contain the concatenated data. The arguments <arg>file_name1</arg> to <arg>file_nameN</arg> are either string expressions or string <link lists.hgt>lists</link> that contain the names of specific files or a wildcard specification of a group of files.
+The <arg>output_file_name</arg> is a string expression giving the name of the output file that will contain the concatenated data. The arguments <arg>file_name1</arg> to <arg>file_nameN</arg> are either string expressions or string <link list.hgt>lists</link> that contain the names of specific files or a wildcard specification of a group of files.
 
 <subheader>Return Value</subheader>
 

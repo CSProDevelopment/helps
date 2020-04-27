@@ -8,7 +8,7 @@ b = pff_name.save(<arg>pff_filename</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor pff>pff.save</logiccolor> function saves the contents of the <link pffs.hgt>pff</link> object to the disk to a PFF file with the name supplied by the string expression <arg>pff_filename</arg>. Because pff objects can be executed without saving them, this function is not necessary, but may be useful if you want a copy of your PFF file on the disk.
+The <logiccolor pff>pff.save</logiccolor> function saves the contents of the <link pff.hgt>pff</link> object to the disk to a PFF file with the name supplied by the string expression <arg>pff_filename</arg>. Because pff objects can be executed without saving them, this function is not necessary, but may be useful if you want a copy of your PFF file on the disk.
 
 <subheader>Return Value</subheader>
 
@@ -32,4 +32,4 @@ do numeric counter = 1 while counter <= PROVINCE_VS.length()
 enddo;
 </logic>
 
-<seealso pffs.hgt pff_load_function.hgt />
+<seealso pff.hgt pff_load_function.hgt />

@@ -8,7 +8,7 @@ i = list_name.seek(<arg>value</arg>, 『<arg>starting_index</arg> ‖ @<arg>nth_
 
 <subheader>Description</subheader>
 
-The <logiccolor list>list.seek</logiccolor> function returns the one-based index of the first occurrence in the <link lists.hgt>list</link> of <arg>value</arg>. The type of the value must match the type of the list. If the numeric expression <arg>starting_index</arg> is provided, then the function starts searching the for value starting at the index provided. Alternatively, if the @ symbol precedes the numeric expression <arg>nth_occurrence</arg>, the function searches for the n<html><sup>th</sup></html> occurrence of the value.
+The <logiccolor list>list.seek</logiccolor> function returns the one-based index of the first occurrence in the <link list.hgt>list</link> of <arg>value</arg>. The type of the value must match the type of the list. If the numeric expression <arg>starting_index</arg> is provided, then the function starts searching the for value starting at the index provided. Alternatively, if the @ symbol precedes the numeric expression <arg>nth_occurrence</arg>, the function searches for the n<html><sup>th</sup></html> occurrence of the value.
 
 <subheader>Return Value</subheader>
 
@@ -26,4 +26,4 @@ if keys_to_process.seek(key(DICT_NAME)) = 0 then
 endif;
 </logic>
 
-<seealso lists.hgt seek_function.hgt />
+<seealso list.hgt seek_function.hgt />

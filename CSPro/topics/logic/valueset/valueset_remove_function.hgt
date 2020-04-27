@@ -8,7 +8,7 @@ i = valueset_remove.remove(<arg>code</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor valueset>valueset.remove</logiccolor> function removes all values from a <link valuesets.hgt>value set</link> that have a code matching the specified numeric or string expression <arg>code</arg>. The type of the code must match the type of the value set.
+The <logiccolor valueset>valueset.remove</logiccolor> function removes all values from a <link valueset.hgt>value set</link> that have a code matching the specified numeric or string expression <arg>code</arg>. The type of the code must match the type of the value set.
 
 When using a numeric value set with ranges&mdash;both <b>from</b> and <b>to</b> codes are defined&mdash;or defined <link special_values.hgt>special values</link>, the function will remove a value only if it is the <b>from</b> value or if it is the special value.
 
@@ -30,4 +30,4 @@ preproc
 	setvalueset(SECOND_FAVORITE_DRINK, drink_valueset);
 </logic>
 
-<seealso valuesets.hgt valueset_clear_function.hgt />
+<seealso valueset.hgt valueset_clear_function.hgt />
