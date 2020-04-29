@@ -1,6 +1,6 @@
 ﻿<title>Adding Users</title>
 
-Each user is composed of a username, first name, last name, role, email (optional), phone number (optional), and password. The role can be one of the two built-in roles or a custom role. The Administrator can synchronize all dictionaries from CSEntry, Batch, and Data Viewer and log into CSWeb. The Standard User cannot log into CSWeb, but can synchronize all dictionaries from CSEntry, Batch, and Data Viewer.
+Each user is composed of a username, first name, last name, role, email (optional), phone number (optional), and password. The role can be one of two built-in roles or a custom role. The Administrator can synchronize all dictionaries from CSEntry, Batch, and Data Viewer and log into CSWeb. The Standard User cannot log into CSWeb, but can synchronize all dictionaries from CSEntry, Batch, and Data Viewer.
 
 <subheader>Adding a User</subheader>
 
@@ -23,12 +23,12 @@ To import multiple users a CSV file is needed. Each row specifies a single user 
 CSV Field Rules:
 <list>
 <li>First and last name must only contain letters.</li>
-<li>The role is either "Administator" or "Standard User."</li>
+<li>The role is either "Administrator" or "Standard User."</li>
 <li>The password must have least 8 characters.</li>
 <li>The email and phone number can be blank.</li>
 </list>
 
 CSV Example Rows:~!~
 
-<i>user007, James, Bond, Administator, PasSwOrD7</i>~!~
+<i>user007, James, Bond, Administrator, PasSwOrD7</i>~!~
 <i>user008, Bill, Timothy, Standard User, PasSwOrD8, b8@gmail.com, 123-4567</i>
