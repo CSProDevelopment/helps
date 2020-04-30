@@ -35,7 +35,7 @@ If a header row is included and the dictionary ids for the dictionary are provin
 <cell>2</cell><cell>Copal</cell><cell>2</cell><cell>Bassac</cell>
 </table>
 
-Notice the enumeration area was ignored in this example. The province and district would display labels, while the enumeration area would display a code.
+Notice the enumeration area is ignored in this example. The province and district will display labels, while the enumeration area will display a code.
 
 <subheader>Understanding How Dictionary Design Affects Reports</subheader>
 
@@ -74,6 +74,6 @@ Alternatively, if the enumerator id is the first dictionary id then the emphasis
 <subheader>Problematic Dictionary Ids</subheader>
 
 <list>
-	<li><b>Urban/rural</b> do not make the key unique, so they do not need to be id items. However, if used they will double the number of rows in the report. Further, at what position would they be added?</li>
+	<li><b>Urban/rural</b> do not make the key unique, so they do not need to be id items. However, if used they will double the number of rows in the report. Further, at what position will they be added?</li>
 	<li><b>Longitude/latitude</b> will likely be unique on their own. Making the report nothing more than a list.</li>
 </list>
