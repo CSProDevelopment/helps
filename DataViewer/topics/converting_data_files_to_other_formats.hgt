@@ -2,7 +2,7 @@
 
 <subheader>Conversion Overview</subheader>
 
-Data Viewer can be used to convert from one CSPro data file format to another. For example you can:
+Data Viewer can be used to convert from one CSPro data file format to another. For example, you can:
 
 <list>
 	<li>Convert from a CSPro DB file to a text file.</li>
@@ -26,4 +26,8 @@ When you convert between these formats, in addition to the case contents, the fo
 	<li>Enter a file name for the converted data file. If the file has the extension <b>.csdb</b>, the file will be saved in CSPro DB format; if the file has the extension <b>.csdbe</b>, the file will be saved in Encrypted CSPro DB format; otherwise the file will be saved in text format.</li>
 </list>
 
+<subheader>Additional Conversion Operations...</subheader>
+
 By selecting <b>Dictionary</b> from the <b>File</b> / <b>Save As</b> menu, you can extract a dictionary that is embedded in a CSPro data file.
+
+By selecting <b>Notes</b> from the <b>File</b> / <b>Save As</b> menu, you can extract a data file's notes. Based on the file name you provide, Data Viewer will create a data file consisting of the notes as well as a dictionary that can read the notes data.
