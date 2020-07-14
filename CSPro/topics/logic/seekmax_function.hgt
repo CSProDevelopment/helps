@@ -27,29 +27,21 @@ The <span style="font-weight: bold;">seekmax</span> function returns the
 	 text-indent: -12px;"><span style="font-weight: bold;">Return value:</span><br />
 The function returns the occurrence number of an item that meets the condition
  or 0 if no such item is found.</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Example
- 1:</p>
-<p><font style="font-size: 10pt; margin-left: 12px; font-family: 'Courier New', monospace;
-		 font-weight: normal;" color="#000000" size="2" face="Courier New"><font
-	 color="#0000FF">numeric</font>&#160;ptrEldest = <font color="#0000FF">seekmax</font>(AGE
- <font color="#0000FF">in</font> <font color="#FF0000">0</font>:<font color="#FF0000">95</font>),<br />
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ptrEldest12_64 = <font
-	 color="#0000FF">seekmax</font>(AGE <font color="#0000FF">in</font>
- <font color="#FF0000">12</font>:<font color="#FF0000">64</font>),<br />
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ptrYoungest65plus = <font
-	 color="#0000FF">seekmin</font>(AGE <font color="#0000FF">in</font>
- <font color="#FF0000">65</font>:<font color="#FF0000">95</font>);</font></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;"><font
-	 style="font-size: 10pt; margin-left: 12px; font-family: 'Courier New', monospace;
-	 font-weight: normal;" color="#000000" size="2" face="Courier New">See
- also: <span style="font-weight: normal;"><a href="count_function.html"
-											 style="font-weight: normal;">Count
- Function</a>, <a href="Has_Operator.html" style="font-weight: normal;">Has
- Operator</a>, <a href="Seek_Function.html" style="font-weight: normal;">Seek
- Function</a>, <a href="Seekmin_Function.html">Seekmin Function</a>, <a
-	 href="max_function.html" style="font-weight: normal;">Max Function</a></span></font></p>
 </body>
 </html>
 
 
 <html><!---♻---></html>
+
+<subheader>Example</subheader>
+
+<logic>
+// seekmax
+numeric eldest_index = seekmax(AGE);
+numeric eldest_aged_12to64_index = seekmax(AGE in 12:64);
+
+// seekmin
+numeric youngest_aged_65plus_index = seekmin(AGE in 65:95);
+</logic>
+
+<seealso count_function.hgt has_operator.hgt seek_function.hgt seekmin_function.hgt max_function.hgt />

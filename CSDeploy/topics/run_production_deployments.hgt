@@ -20,6 +20,7 @@ Application=.\Deployment.csds
 
 [Parameters]
 DeployToOverride=CSWeb
+SyncUrl=https://www.myserver.org/api
 </pff>
 
 
@@ -37,4 +38,5 @@ The <pffcolor>[Parameters]</pffcolor> block is optional and defines additional o
 
 <list>
 	<li><pffcolor>DeployToOverride</pffcolor>= specifies the type of server to be used during the synchronization. Possible options are: <b>None</b>, <b>CSWeb</b>, <b>Dropbox</b>, <b>FTP</b>, <b>LocalFile</b> and <b>LocalFolder</b>.</li>
+	<li><pffcolor>SyncUrl</pffcolor>= specifies the URL of the server. This is not required, but if specified, the value will override any value specified for a CSWeb or FTP server.</li>
 </list>

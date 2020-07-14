@@ -20,9 +20,10 @@ By default only codes will be shown in the report. However, a CSV file can be im
 <list ordered>
 	<li>The <b>first</b> pair in the CSV file must define the <b>first dictionary id</b></li>
 	<li>Each following pair must correspond to a dictionary id in <b>consecutive order</b></li>
+	<li>Dictionary ids do not require a corresponding pair. However, once a dictionary id has been <b>ignored no more can be defined</b>. The code will be displayed.</li>
 </list>
 
-Notice, that not all dictionary ids require a pair to be defined which will often be the case. The first row of the CSV file is either an optional header or pairs. If the header is included then tic "CSV file has a header row" when importing the CSV file.
+The first row of the CSV file is either an optional header or pairs. If the header is included then tic "CSV file has a header row" when importing the CSV file.
 
 If a header row is included and the dictionary ids for the dictionary are province, district, and enumeration area then the format of the first five rows is:
 
@@ -33,6 +34,8 @@ If a header row is included and the dictionary ids for the dictionary are provin
 <cell>2</cell><cell>Copal</cell><cell>1</cell><cell>Baja</cell>
 <cell>2</cell><cell>Copal</cell><cell>2</cell><cell>Bassac</cell>
 </table>
+
+Notice the enumeration area is ignored in this example. The province and district will display labels, while the enumeration area will display a code.
 
 <subheader>Understanding How Dictionary Design Affects Reports</subheader>
 
@@ -71,6 +74,6 @@ Alternatively, if the enumerator id is the first dictionary id then the emphasis
 <subheader>Problematic Dictionary Ids</subheader>
 
 <list>
-	<li><b>Urban/rural</b> do not make the key unique, so they do not need to be id items. However, if used they will double the number of rows in the report. Further, at what position would they be added?</li>
+	<li><b>Urban/rural</b> do not make the key unique, so they do not need to be id items. However, if used they will double the number of rows in the report. Further, at what position will they be added?</li>
 	<li><b>Longitude/latitude</b> will likely be unique on their own. Making the report nothing more than a list.</li>
 </list>
