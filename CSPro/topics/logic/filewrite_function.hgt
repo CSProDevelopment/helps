@@ -29,15 +29,15 @@ The function returns a logical value of 1 (true) if successful and 0 (false) oth
 <logic>
 PROC GLOBAL
 
-file ReportFile;
+file CsvFile;
 
 PROC EXAMPLE
 
-	filewrite(ReportFile, "Name, Sex, Age");
+	filewrite(CsvFile, "Name,Sex,Age");
 	
 	do numeric counter = 1 while counter <= totocc(PERSON_REC)
-		filewrite(ReportFile, "%s, %d, %d", NAME(counter), SEX(counter), AGE(counter));
+		filewrite(CsvFile, "%s,%d,%d", encode(CSV, NAME(counter)), SEX(counter), AGE(counter));
 	enddo;
 </logic>
  
-<seealso fileread_function.hgt file_write_function.hgt write_function.hgt message_formatting_options.hgt />
+<seealso fileread_function.hgt file_write_function.hgt write_function.hgt message_formatting_options.hgt encode_function.hgt  />
