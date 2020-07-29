@@ -28,7 +28,7 @@ The function returns a logical value of 1 (true) if successful and 0 (false) oth
 do numeric i = totocc(PERSON_REC) while i >= 1 by -1
 
 	if RELATIONSHIP(i) = notappl and SEX(i) = notappl and AGE(i) = notappl then
-		delete(PESRON_REC(i));
+		delete(PERSON_REC(i));
 	endif;
 
 enddo;
