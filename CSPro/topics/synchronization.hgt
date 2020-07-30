@@ -21,7 +21,7 @@ It is possible to synchronize both CSPro data files and other non-data files suc
 
 <subheader>Synchronization Server</subheader>
 
-For synchronization over the Internet, a central server is required. CSPro supports three types of servers: CSWeb, Dropbox and FTP.
+For synchronization over the Internet, a central server is required. CSPro supports three types of servers: CSWeb, Dropbox, and FTP.
 
 <list>
 	<li><b>CSWeb</b>: CSWeb is a web server running the CSPro synchronization server software. It is best for very large surveys and censuses. The server software is written in PHP and can be run on any web server that has PHP and the MySQL database software installed. The server can be set up on a computer at the head office that is connected to the Internet or it may be set up on a hosted website or virtual server in the cloud. Setting and maintaining a server for CSWeb requires knowledge and experience with web server maintainence and cyber security. Users that do not have these skills should consider using Dropbox or FTP instead. For more information about CSWeb servers, see the <link CSWeb::introduction_to_csweb.hgt>CSWeb help documentation</link>.</li>
@@ -46,13 +46,14 @@ For more advanced synchronization scenarios, CSPro has logic functions that can 
 
 <subheader>Synchronization from Logic</subheader>
 
-There are five logic functions used for synchronization with a server:
+There are several logic functions used for synchronization with a server:
 
 <list>
 	<li><logiccolor>syncconnect</logiccolor> is used to connect to the server and initiate the synchronization session.</li>
 	<li><logiccolor>syncdisconnect</logiccolor> is used after synchronizing to end the session.</li>
 	<li><logiccolor>syncdata</logiccolor> is used to synchronize cases in CSPro data files with the server.</li>
 	<li><logiccolor>syncfile</logiccolor> is used to upload/download non-data files to/from the server.</li>
+	<li><logiccolor>syncparadata</logiccolor> is used to synchronize <link paradata.hgt>paradata</link> to/from the server.</li>
 	<li><logiccolor>syncapp</logiccolor> is used to update an application on the device from a new version on the server.</li>
 	<li><logiccolor>syncmessage</logiccolor> is used to send to and receive string messages from a Bluetooth server.</li>
 </list>
@@ -65,10 +66,10 @@ You will generally call <logiccolor>syncconnect</logiccolor> once to start the s
 string cswebServerUrl = "https://www.myserver.org/api";
 
 // connect to the CSWeb server
-if syncconnect(CSWeb,cswebServerUrl) then
+if syncconnect(CSWeb, cswebServerUrl) then
 
 	// send the latest cases to the CSWeb server
-	syncdata(PUT,SURVEY_DICT);
+	syncdata(PUT, SURVEY_DICT);
 
 	syncdisconnect();
 
@@ -78,9 +79,9 @@ endif;
 
 <subheader>Bluetooth Synchronization from Logic</subheader>
 
-Bluetooth synchronization is done between two devices. One device, called the client, has logic similar to what is used for web synchronization. The second device plays the role of server. With Bluetooth synchronization, the server is passive. The device acting as the server runs only a single logic function, <logiccolor>syncserver</logiccolor>, which waits and processes commands from the client device. Only the client device runs <logiccolor>syncconnect</logiccolor>, <logiccolor>syncdisconnect</logiccolor>, <logiccolor>syncdata</logiccolor>, <logiccolor>syncapp</logiccolor>, and <logiccolor>syncfile</logiccolor>.
+Bluetooth synchronization is done between two devices. One device, called the client, has logic similar to what is used for web synchronization. The second device plays the role of server. With Bluetooth synchronization, the server is passive. The device acting as the server runs only a single logic function, <logiccolor>syncserver</logiccolor>, which waits and processes commands from the client device. Only the client device runs <logiccolor>syncconnect</logiccolor>, <logiccolor>syncdisconnect</logiccolor>, <logiccolor>syncdata</logiccolor>, <logiccolor>syncfile</logiccolor>, <logiccolor>syncparadata</logiccolor>, <logiccolor>syncapp</logiccolor>, and <logiccolor>syncmessage</logiccolor>.
 
-The client and server devices must be in close physical proximity in order to connect to each other. The server device must first execute the <logiccolor>syncserver</logiccolor> function which causes it to wait for connections from nearby devices. Then the client device executes <logiccolor>syncconnect</logiccolor> which initiates the connection between the two devices. The client then executes one or more calls to <logiccolor>syncdata</logiccolor> and/or <logiccolor>syncfile</logiccolor>, followed by a call to <logiccolor>syncdisconnect</logiccolor>, which ends the session. This requires that the two operators using the devices coordinate to start the synchronization routines on the two devices at roughly the same time.
+The client and server devices must be in close physical proximity in order to connect to each other. The server device must first execute the <logiccolor>syncserver</logiccolor> function which causes it to wait for connections from nearby devices. Then the client device executes <logiccolor>syncconnect</logiccolor> which initiates the connection between the two devices. The client then executes one or more calls to <logiccolor>syncdata</logiccolor> and/or other sync functions, followed by a call to <logiccolor>syncdisconnect</logiccolor>, which ends the session. This requires that the two operators using the devices coordinate to start the synchronization routines on the two devices at roughly the same time.
 
 <center><image synchronization_bluetooth_server_flow.png /></center>
 
@@ -93,7 +94,7 @@ The following example shows the logic that would be written for the client and f
 if syncconnect(Bluetooth) then
 
 	// send the latest cases to the supervisor
-	syncdata(PUT,SURVEY_DICT);
+	syncdata(PUT, SURVEY_DICT);
 
 	syncdisconnect();
 
@@ -118,4 +119,4 @@ Many errors that you encounter during synchronization are caused by lack of netw
 To get additional details on synchronization errors you can look at the sync.log file. This files lists all synchronization oprtations along with any errors encountered. This includes errors in uploading/downloading applications in Application Deployment and data download in Data Viewer. On Android devices you can find the sync.log file in the CSEntry directory on your tablet or phone. On Windows you can find the file in the directory <i>%AppData%\CSPro</i>. On Windows you can also locate the sync.log file from the Help menu in CSPro Designer under Troubleshooting. When asking for technical support with synchronization issues, please attach the sync.log file from your device to your email or forum post.
 
 
-<seealso synchronization_simple.hgt syncconnect_function.hgt syncdata_function.hgt syncapp_function.hgt syncfile_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />
+<seealso synchronization_simple.hgt syncconnect_function.hgt syncdata_function.hgt syncapp_function.hgt syncfile_function.hgt syncparadata_function.hgt syncmessage_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />

@@ -3,7 +3,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-d = paradata(<arg>action_type</arg>『,<arg>parameter1</arg>,...,<arg>parameterN</arg>』);
+d = paradata(<arg>action_type</arg>『, <arg>parameter1</arg>, ..., <arg>parameterN</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -28,31 +28,27 @@ For the <b>open</b>, <b>close</b>, and <b>flush</b> actions, the function return
 <subheader>Example - Concat</subheader>
 
 <logic>
-PROC GLOBAL
+list string logs_list;
 
-list string logsListing;
+dirlist(logs_list, "C:\Survey\Paradata", "*.cslog");
 
-PROC EXAMPLE
-
-    dirlist(logsListing,"C:\Survey\Paradata","*.cslog");
-
-	// add the paradata logs into the currently open log
-	paradata(concat,filename(paradata),filename(paradata),logsListing);
+// add the paradata logs into the currently open log
+paradata(concat, filename(paradata), filename(paradata), logs_list);
 </logic>
 
 <subheader>Example - Query</subheader>
 
 <logic>
-PROC EXAMPLE
-
-	numeric messageEventsForThisCase = paradata(query,maketext(
-		"SELECT COUNT(*) "
-		"FROM message_event "
-		"JOIN event ON message_event.id = event.id "
-		"JOIN case_instance ON event.case_instance = case_instance.id "
-		"JOIN case_info ON case_instance.case_info = case_info.id "
-		"WHERE case_info.uuid = '%s';",
-		uuid(DICT_NAME)));
+string message_events_query = maketext(
+	"SELECT COUNT(*) "
+	"FROM message_event "
+	"JOIN event ON message_event.id = event.id "
+	"JOIN case_instance ON event.case_instance = case_instance.id "
+	"JOIN case_info ON case_instance.case_info = case_info.id "
+	"WHERE case_info.uuid = '%s';",
+	uuid(DICT_NAME));
+	
+numeric message_events_for_this_case = paradata(query, message_events_query);
 </logic>
 
-<seealso paradata.hgt sqlquery_function.hgt />
+<seealso paradata.hgt sqlquery_function.hgt syncparadata_function.hgt />

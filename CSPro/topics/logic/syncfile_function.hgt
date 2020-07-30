@@ -3,7 +3,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = syncfile(<arg>direction</arg>,<arg>from_path</arg>『,<arg>to_path</arg>』);
+b = syncfile(<arg>direction</arg>, <arg>from_path</arg>『, <arg>to_path</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -34,14 +34,14 @@ The function returns a logical value of 1 (true) if the transfer was successful 
 <subheader>Example</subheader>
 
 <logic>
-if syncconnect(CSWeb,"https://www.myserver.org/api") then
+if syncconnect(CSWeb, "https://www.myserver.org/api") then
 
 	// upload all images in images directory to the images directory on the server
-	syncfile(PUT,"Images/*.jpg","/Images/");
+	syncfile(PUT, "Images/*.jpg", "/Images/");
 
 	syncdisconnect();
 
 endif;
 </logic>
 
-<seealso synchronization.hgt syncconnect_function.hgt syncdata_function.hgt syncapp_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />
+<seealso synchronization.hgt syncconnect_function.hgt syncdata_function.hgt syncparadata_function.hgt syncapp_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />

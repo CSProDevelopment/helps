@@ -15,7 +15,7 @@ The function can upload cases from the local device (client) to the server as we
 <list>
 	<li><b>GET</b>: Download any cases that were modified on the server since the last sync and update or add them to the local data file.</li>
 	<li><b>PUT</b>: Upload to the server any cases that were modified in the local data file since the last sync.</li>
-	<li><b>BOTH</b>: Sync cases in the local data file with the server in both directions (i.e., perform bot a GET and a PUT).</li>
+	<li><b>BOTH</b>: Sync cases in the local data file with the server in both directions (i.e., perform both a GET and a PUT).</li>
 </list>
 
 The <arg>dictionary_name</arg> argument must be the name of a data dictionary corresponding to the data file to synchronize. This can be either the dictionary for the main data file or an external dictionary. CSPro uses the data file that is currently associated with this dictionary, either because it was specified when the application was started or via a call to <logiccolor>setfile</logiccolor> from application logic.
@@ -64,4 +64,4 @@ if syncconnect(Bluetooth) then
 endif;
 </logic>
 
-<seealso synchronization.hgt syncconnect_function.hgt syncfile_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />
+<seealso synchronization.hgt syncconnect_function.hgt syncfile_function.hgt syncparadata_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />
