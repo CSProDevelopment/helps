@@ -128,7 +128,7 @@ enddo;
 
 <subheader>Example - Using Callback Functions</subheader>
 
-Adding the directive <logiccolor>sql</logiccolor> after the <logiccolor>function</logiccolor> keyword when defining a <link function_statement.hgt>user-defined function</link> indicates that the SQLite query can call back into CSPro logic. These functions can accept <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor> parameters as part of the query. In the following example, the same results are displayed as in the previous two examples but without having to store the result set.
+Adding the directive <logiccolor>sql</logiccolor> after the <logiccolor>function</logiccolor> keyword when defining a <link function_statement.hgt>user-defined function</link> indicates that the SQLite query can call back into CSPro logic. These functions can accept <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor> arguments as part of the query. In the following example, the same results are displayed as in the previous two examples but without having to store the result set.
 
 <logic>
 PROC GLOBAL

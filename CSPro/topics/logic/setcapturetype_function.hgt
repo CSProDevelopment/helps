@@ -1,11 +1,11 @@
 ﻿<title>SetCaptureType Function</title>
 
-<i><b>Feature Upgrade</b>: Starting with CSPro 7.1, you should no longer use this function as it may soon be removed from CSPro. To replicate the behavior of the function, you can use the <logiccolor>setproperty</logiccolor> function with the parameter <logiccolor>"CaptureType"</logiccolor> or <logiccolor>"CaptureDateFormat"</logiccolor>.</i>
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.1, you should no longer use this function as it may soon be removed from CSPro. To replicate the behavior of the function, you can use the <logiccolor>setproperty</logiccolor> function with the argument <logiccolor>"CaptureType"</logiccolor> or <logiccolor>"CaptureDateFormat"</logiccolor>.</i>
 
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = setcapturetype(<arg>symbol_name</arg>,<arg>capture_type</arg>『,<arg>date_format</arg>』);
+i = setcapturetype(<arg>symbol_name</arg>, <arg>capture_type</arg>『, <arg>date_format</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -21,7 +21,7 @@ The function returns the number of items that were successfully changed to the s
 <subheader>Example</subheader>
 
 <logic>
-setcapturetype(DATE_OF_BIRTH,5,"YYYYMMDD");
+setcapturetype(DATE_OF_BIRTH, 5, "YYYYMMDD");
 
 errmsg("%d fields changed to radio buttons on the housing form",setcapturetype(HOUSING_FORM,1));
 </logic>

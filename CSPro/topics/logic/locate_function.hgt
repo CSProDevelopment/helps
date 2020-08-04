@@ -8,7 +8,7 @@ b = locate(<arg>dictionary_name</arg>, <arg>relational_operator</arg>, <arg>key_
 
 <subheader>Description</subheader>
 
-The <logiccolor>locate</logiccolor> function finds, but does not load, a case in a data file that matches a specified condition. The function searches the index of a file and finds the first case that matches the specified condition. The case pointer is positioned to the case's location, but the case is not loaded into memory. To load the case into memory, use the <logiccolor>retrieve</logiccolor> function or the <logiccolor>loadcase</logiccolor> function without parameters.
+The <logiccolor>locate</logiccolor> function finds, but does not load, a case in a data file that matches a specified condition. The function searches the index of a file and finds the first case that matches the specified condition. The case pointer is positioned to the case's location, but the case is not loaded into memory. To load the case into memory, use the <logiccolor>retrieve</logiccolor> function or the <logiccolor>loadcase</logiccolor> function without arguments.
 
 The <arg>dictionary_name</arg> refers to either an external dictionary or the main input file of a batch application.
 

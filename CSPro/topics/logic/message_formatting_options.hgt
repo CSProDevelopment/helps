@@ -3,15 +3,15 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-<arg>function_name</arg>(『...,』 <arg>message</arg>『, <arg>parameter1</arg>, ..., <arg>parameterN</arg>』);
+<arg>function_name</arg>(『...,』 <arg>message</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』);
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-Several functions take an argument that consists of a message and then an optional number of parameters that are dynamically inserted into the text to create a final message. The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.hgt>message number</link> that contains the message text.
+Several functions take an argument that consists of a message and then an optional number of arguments that are dynamically inserted into the text to create a final message. The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.hgt>message number</link> that contains the message text.
 
-The message can contain optional parameters, <arg>parameter1</arg> to <arg>parameterN</arg>, that will be inserted into the message. Each parameter, denoted in the message text with a percent sign, is sequentially inserted into the message. Parameters can be numeric or string expressions, but the type of parameter must match the type of the receiving field in the message text. There are seven formatters:
+The message can contain optional arguments, <arg>argument1</arg> to <arg>argumentN</arg>, that will be inserted into the message. Each argument, denoted in the message text with a percent sign, is sequentially inserted into the message. Arguments can be numeric or string expressions, but the type of the argument must match the type of the receiving field in the message text. There are seven formatters:
 
 <table 2 nowrap header>
 	<cell>Formatter</cell><cell>Result</cell>
@@ -20,7 +20,7 @@ The message can contain optional parameters, <arg>parameter1</arg> to <arg>param
 	<cell><logiccolor>"%s"</logiccolor></cell><cell>Inserts a text string.</cell>
 	<cell><logiccolor>"%v"</logiccolor></cell><cell>Inserts a variable formatted intelligently (see below).</cell>
 	<cell><logiccolor>"%l"</logiccolor></cell><cell>Inserts a variable's value label (see below).</cell>
-	<cell><logiccolor>"%p"</logiccolor></cell><cell>Inserts the name of the current procedure, which can be useful for debugging. No parameter should be supplied if using this option.</cell>
+	<cell><logiccolor>"%p"</logiccolor></cell><cell>Inserts the name of the current procedure, which can be useful for debugging. No argument should be supplied if using this option.</cell>
 	<cell><logiccolor>"%c"</logiccolor></cell><cell>Inserts the first character of a text string, or no characters if the string is blank.</cell>
 </table>
 
@@ -34,7 +34,7 @@ The <logiccolor>"%l"</logiccolor> formatter looks up the value set label associa
 
 <subheader>Additional Formatting Options</subheader>
 
-Numeric and string parameters have a couple additional parameters that can be specified after the percent sign: <logiccolor>"%[n]d"</logiccolor>, <logiccolor>"%[n.d]f"</logiccolor>, and <logiccolor>"%[n.d]s"</logiccolor>. In these cases, <logiccolor>"n"</logiccolor> controls the length of the replacement text and <logiccolor>"d"</logiccolor> controls either the number of decimal places shown or the length of the string. There are some rules:
+Numeric and string arguments have a couple additional options that can be specified after the percent sign: <logiccolor>"%[n]d"</logiccolor>, <logiccolor>"%[n.d]f"</logiccolor>, and <logiccolor>"%[n.d]s"</logiccolor>. In these cases, <logiccolor>"n"</logiccolor> controls the length of the replacement text and <logiccolor>"d"</logiccolor> controls either the number of decimal places shown or the length of the string. There are some rules:
 
 <list>
 	<li>If the number is positive, as in <logiccolor>"%+5d"</logiccolor>, the text is right justified to the size of the field (e.g., <logiccolor>"    9"</logiccolor>).</li>

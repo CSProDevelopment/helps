@@ -18,9 +18,9 @@ For example, suppose a message file contains the following lines:
 When an <logiccolor>errmsg(1)</logiccolor> function is executed in a data entry application, the message "This is the first message" is displayed on screen. When an <logiccolor>errmsg(2)</logiccolor> function is executed, the message "This is the second message" is displayed.
 
 
-<subheader>Messages with Parameters</subheader>
+<subheader>Messages with Arguments</subheader>
 
-Parameters can be specified in the <logiccolor>errmsg</logiccolor> function. <link message_formatting_options.hgt>These parameters</link> can be numeric expressions or string expressions. String parameters in the error message text are indicated by <b>%s</b>. Integer numeric parameters are indicated with <b>%d</b>. Decimal numeric parameters are indicated with <b>%f</b>. For example, a message file might contain the following:
+Arguments can be specified in the <logiccolor>errmsg</logiccolor> function. <link message_formatting_options.hgt>These arguments</link> can be numeric expressions or string expressions. String arguments in the error message text are indicated by <b>%s</b>. Integer numeric arguments are indicated with <b>%d</b>. Decimal numeric arguments are indicated with <b>%f</b>. For example, a message file might contain the following:
 
 <message>
 1 The month of %s has only %d days. You entered %d!
@@ -34,7 +34,7 @@ errmsg(1, "June", 30, 31);
 
 When the function is executed, it knows to use error message 1 and substitute the word "June" for <b>%s</b> in the message text, the number 30 for the first <b>%d</b>, and the number 31 for the second <b>%d</b>. The message "The month of June has only 30 days. You entered 31!" will be displayed on the screen.
 
-The more general the parameters of the message, the more flexible the message. In the example below, the value of the variable HHDAY is used as a parameter. The error message will use the value of <logiccolor>HHDAY</logiccolor> if the <logiccolor>errmsg</logiccolor> function is executed.
+The more general the arguments of the message, the more flexible the message. In the example below, the value of the variable HHDAY is used as a argument. The error message will use the value of <logiccolor>HHDAY</logiccolor> if the <logiccolor>errmsg</logiccolor> function is executed.
 
 <logic>
 PROC HHDAY

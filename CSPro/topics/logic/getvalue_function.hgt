@@ -3,18 +3,18 @@
 <subheader>Formats</subheader>
 
 <logicsyntax>
-d = getvalue(<arg>variable_name</arg>『,<arg>occurrence1</arg>,...,<arg>occurrence3</arg>』);
+d = getvalue(<arg>variable_name</arg>『, <arg>occurrence1</arg>, ..., <arg>occurrence3</arg>』);
 
-d = getvaluenumeric(<arg>variable_name</arg>『,<arg>occurrence1</arg>,...,<arg>occurrence3</arg>』);
+d = getvaluenumeric(<arg>variable_name</arg>『, <arg>occurrence1</arg>, ..., <arg>occurrence3</arg>』);
 
-s = getvaluealpha(<arg>variable_name</arg>『,<arg>occurrence1</arg>,...,<arg>occurrence3</arg>』);
+s = getvaluealpha(<arg>variable_name</arg>『, <arg>occurrence1</arg>, ..., <arg>occurrence3</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
 The <logiccolor>getvalue</logiccolor> function returns the value of a variable when the variable name is not known at compilation time (when writing the application). The function searches for a variable with a name stored in the string expression <arg>variable_name</arg>, and if such a variable is found, the function returns the value of that variable.
 
-The functions <logiccolor>getvalue</logiccolor> and <logiccolor>getvaluenumeric</logiccolor> return the value of numeric variables. The function <logiccolor>getvaluealpha</logiccolor> returns the value of an alphanumeric variable. Optional parameters, <arg>occurrence1</arg> to <arg>occurrence3</arg>, allow you to pass occurrence numbers to the function.
+The functions <logiccolor>getvalue</logiccolor> and <logiccolor>getvaluenumeric</logiccolor> return the value of numeric variables. The function <logiccolor>getvaluealpha</logiccolor> returns the value of an alphanumeric variable. Optional arguments, <arg>occurrence1</arg> to <arg>occurrence3</arg>, allow you to pass occurrence numbers to the function.
 
 <subheader>Return Value</subheader>
 
@@ -23,7 +23,7 @@ The function returns the variable's value if the variable name was found. If a n
 <subheader>Example</subheader>
 
 <logic>
-errmsg("The current field's value is %d",getvalue(getsymbol()));
+errmsg("The current field's value is %d", getvalue(getsymbol()));
 </logic>
 
 <seealso setvalue_function.hgt />

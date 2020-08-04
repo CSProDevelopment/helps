@@ -17,7 +17,7 @@ end;
 
 The <logiccolor>syncmessage</logiccolor> function sends a string message from one device to another device that is acting as a <link syncserver_function.hgt>Bluetooth server</link>. The string expression <arg>message_name</arg> identifies the message, and an optional string expression <arg>message_value</arg> defines a value associated with the message. The client device sends this message to a Bluetooth server.
 
-The application running on the Bluetooth server must have a <link user_defined_functions.hgt>user-defined function</link> with the name <logiccolor>OnSyncMessage</logiccolor> that takes two string parameters and returns a string. While the <logiccolor>syncserver</logiccolor> function is running, the <logiccolor>OnSyncMessage</logiccolor> function is called anytime a message is received and the return value of that function is returned to the Bluetooth client.
+The application running on the Bluetooth server must have a <link user_defined_functions.hgt>user-defined function</link> with the name <logiccolor>OnSyncMessage</logiccolor> that has two string parameters and returns a string. While the <logiccolor>syncserver</logiccolor> function is running, the <logiccolor>OnSyncMessage</logiccolor> function is called anytime a message is received and the return value of that function is returned to the Bluetooth client.
 
 
 <subheader>Return Value</subheader>

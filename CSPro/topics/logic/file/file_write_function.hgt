@@ -3,14 +3,14 @@
 <subheader>Format</subheader>
 
 <logicsyntax file>
-b = file_handler.write(<arg>message</arg>『, <arg>parameter1</arg>, ..., <arg>parameterN</arg>』);
+b = file_handler.write(<arg>message</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
 The <logiccolor file>file.write</logiccolor> function writes one or more lines of text to the <link file.hgt>file</link> associated with <arg>file_handler</arg>. This function is equivalent to the <logiccolor>filewrite</logiccolor> function.
 
-The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.hgt>message number</link> that contains the text that is written to the file. If the text contains any <link message_formatting_options.hgt>message formatters</link>, the optional parameters <arg>parameter1</arg> to <arg>parameterN</arg> will be inserted into the text. There are some additional options for file output:
+The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.hgt>message number</link> that contains the text that is written to the file. If the text contains any <link message_formatting_options.hgt>message formatters</link>, the optional arguments <arg>argument1</arg> to <arg>argumentN</arg> will be inserted into the text. There are some additional options for file output:
 
 <list>
 	<li>If you want to break a line of text into two lines, place <b>\n</b> where you want the line divided.</li>

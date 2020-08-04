@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = prompt(<arg>message</arg>『,<arg>initial_value</arg>』『,<arg>prompt_type</arg>』);
+s = prompt(<arg>message</arg>『, <arg>initial_value</arg>』『, <arg>prompt_type</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>prompt</logiccolor> function displays a dialog box showing the string expression <arg>message</arg> and provides a text box for an operator to enter a string value. An optional string expression <arg>initial_value</arg> determines the starting value displayed to the operator. Another optional parameter, <arg>prompt_type</arg>, provides a way to customize the kind of entry permitted. Types include:
+The <logiccolor>prompt</logiccolor> function displays a dialog box showing the string expression <arg>message</arg> and provides a text box for an operator to enter a string value. An optional string expression <arg>initial_value</arg> determines the starting value displayed to the operator. Another optional argument, <arg>prompt_type</arg>, provides a way to customize the kind of entry permitted. Types include:
 
 <list>
 	<li><b>Password</b>: The entered characters will be masked with asterisks.</li>
@@ -31,7 +31,7 @@ string surveyPassword = prompt("Enter your password:",password);
 
 <logic>
 if ROOF_TYPE = 9 then // other (specify)
-	ROOF_TYPE_OTHER = prompt("Specify the kind of roof on the dwelling unit:",ROOF_TYPE_OTHER,multiline);
+	ROOF_TYPE_OTHER = prompt("Specify the kind of roof on the dwelling unit:", ROOF_TYPE_OTHER, multiline);
 endif;
 </logic>
 

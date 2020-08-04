@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = setvalue(<arg>variable_name</arg>,<arg>value</arg>『,<arg>occurrence1</arg>,...,<arg>occurrence3</arg>』);
+b = setvalue(<arg>variable_name</arg>, <arg>value</arg>『, <arg>occurrence1</arg>, ..., <arg>occurrence3</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>setvalue</logiccolor> function executes an assignment when the name of the variable to be assigned to is not known at compilation time (when writing the application). The function searches for a variable with a name stored in the string expression <arg>variable_name</arg>, and if such a variable is found, the function assigns to it the value stored in <arg>value</arg>. If the variable is numeric, then <arg>value</arg> should be a numeric expression, and if the variable is alphanumeric, then it should be a string expression. Optional parameters, <arg>occurrence1</arg> to <arg>occurrence3</arg>, allow you to pass occurrence numbers to the function. This function is especially useful when combined with a <logiccolor>userbar</logiccolor> button or an <logiccolor>OnKey</logiccolor> character sequence.
+The <logiccolor>setvalue</logiccolor> function executes an assignment when the name of the variable to be assigned to is not known at compilation time (when writing the application). The function searches for a variable with a name stored in the string expression <arg>variable_name</arg>, and if such a variable is found, the function assigns to it the value stored in <arg>value</arg>. If the variable is numeric, then <arg>value</arg> should be a numeric expression, and if the variable is alphanumeric, then it should be a string expression. Optional arguments, <arg>occurrence1</arg> to <arg>occurrence3</arg>, allow you to pass occurrence numbers to the function. This function is especially useful when combined with a <logiccolor>userbar</logiccolor> button or an <logiccolor>OnKey</logiccolor> character sequence.
 
 <subheader>Return Value</subheader>
 
@@ -20,17 +20,17 @@ The function returns a logical value of 1 (true) if the variable name was found 
 // the following statements are equivalent but you would not use setvalue
 // because the left-hand side of the assignment is already known
 
-setvalue("NAME","Amelia");
+setvalue("NAME", "Amelia");
 NAME = "Amelia";
 
-setvalue("AGE",20);
+setvalue("AGE", 20);
 AGE = 20;
 
 // below, the left-hand side of the assignment is not known at compilation time
 
-setvalue(getsymbol(),missing); // set the current field to missing
+setvalue(getsymbol(), missing); // set the current field to missing
 
-setvalue(getsymbol(),"DK",3); // set the third occurrence of the current field to "DK"
+setvalue(getsymbol(), "DK", 3); // set the third occurrence of the current field to "DK"
 </logic>
 
 <seealso getvalue_function.hgt assignment_statement.hgt />

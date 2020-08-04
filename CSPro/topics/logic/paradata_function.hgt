@@ -3,7 +3,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-d = paradata(<arg>action_type</arg>『, <arg>parameter1</arg>, ..., <arg>parameterN</arg>』);
+d = paradata(<arg>action_type</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
@@ -12,9 +12,9 @@ The <logiccolor>paradata</logiccolor> function performs an action related to the
 
 <table 2>
 	<cell><arg>action_type</arg></cell><cell><b>Description</b></cell>
-	<cell><b>concat</b></cell><cell>Concatenates several paradata logs into a single log. The first parameter is the file name of the output log. The subsequent parameters are the file names (as string expressions or string lists) of input logs. You can concatenate into the currently open paradata log, but in that case you must also include the currently open paradata log as an input.</cell>
+	<cell><b>concat</b></cell><cell>Concatenates several paradata logs into a single log. The first argument is the file name of the output log. The subsequent arguments are the file names (as string expressions or string lists) of input logs. You can concatenate into the currently open paradata log, but in that case you must also include the currently open paradata log as an input.</cell>
 	<cell><b>query</b></cell><cell>Executes a query on the paradata log. This is the same as: <logiccolor>sqlquery(filename(paradata),...)</logiccolor>.</cell>
-	<cell><b>open</b></cell><cell>Opens a paradata log to start logging events. Specify the file name as a string expression as the sole parameter.</cell>
+	<cell><b>open</b></cell><cell>Opens a paradata log to start logging events. Specify the file name as a string expression as the sole argument.</cell>
 	<cell><b>close</b></cell><cell>Closes the currently open paradata log.</cell>
 	<cell><b>flush</b></cell><cell>Writes all cached paradata events to the log. This is rarely needed, and may only be necessary if you want to query the paradata log from an external application.</cell>
 </table>

@@ -119,11 +119,11 @@ body {
 <p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
 	 font-family: Arial, sans-serif;">&#160;</p>
 <p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;">Each parameter (e.g., &quot;p1&quot;)
- is sequentially inserted into the error message. Parameters can be numeric
- or alphanumeric expressions, but the type of parameter must match the
+	 font-family: Arial, sans-serif;">Each argument (e.g., &quot;p1&quot;)
+ is sequentially inserted into the error message. Arguments can be numeric
+ or alphanumeric expressions, but the type of the argument must match the
  type of the receiving field in the message text. The maximum number of
- parameters in an errmsg function is 20.</p>
+ arguments in an errmsg function is 20.</p>
 <p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
 <p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
 	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
@@ -452,7 +452,7 @@ body {
  keyword is used to give the option of specifying the field to go to in
  response to the error message. A button is placed on the error message
  window for each <span style="font-style: italic;">caption and field-name</span>
- specified as a <span style="font-weight: bold;">select</span> parameter.
+ specified as a <span style="font-weight: bold;">select</span> argument.
  &#160;The caption is what is displayed on the button. When the button
  is clicked, the system goes to the field specified as <span style="font-style: italic;">field-name</span>.
  If <span style="font-weight: bold;">continue</span> is used as the field

@@ -23,7 +23,7 @@ The <arg>from_path</arg> argument is a string expression that specifies the path
 
 The optional <arg>to_path</arg> argument is a string expression that specifies the destination path for the file. If the direction is GET then this is the full path of the destination file name on the client device. If the direction is PUT then this is the path of the destination file or folder on the server. If <arg>to_path</arg> is not specified, then the file will have the same name as the file in the <arg>from_path</arg> and will be saved to the application directory on the client (for GET) or the server root directory (for PUT).
 
-The <arg>from_path</arg> parameter may contain the wildcard characters "*" and "?" to specify a group of files to transfer. In this case, the <arg>to_path</arg> parameter should be the name of a folder to copy all files that match the wildcard pattern into.
+The <arg>from_path</arg> argument may contain the wildcard characters "*" and "?" to specify a group of files to transfer. In this case, the <arg>to_path</arg> argument should be the name of a folder to copy all files that match the wildcard pattern into.
 
 When downloading files using GET, <arg>syncfile</arg> first looks to see if the file already exists on the client device. If it does, it only downloads the file if the server has a different version. It uses the file signature (MD5) to determine if the version of the file on the server is different. This reduces the bandwidth used when downloading large files.
 

@@ -12,7 +12,7 @@ The <logiccolor>savepartial</logiccolor> function saves the current case as a pa
 
 The function can be coded only in the <logiccolor>preproc</logiccolor> or <logiccolor>postproc</logiccolor> of a field. The function cannot be used before all ID values for the case have been entered. You can get the field name where the last partial save occurred by coding <logiccolor>getsymbol(savepartial)</logiccolor>.
 
-An optional parameter, <logiccolor>clear</logiccolor>, results in the removal of <link visualvalue_function.hgt>visual values</link> before the data is saved. This behavior is the same as would happen if the case was completed in a system controlled application. Generally you will want to maintain skipped-over fields in case an interviewer decides to make changes to the case at a later point, so it is rare that you would use this parameter.
+An optional argument, <logiccolor>clear</logiccolor>, results in the removal of <link visualvalue_function.hgt>visual values</link> before the data is saved. This behavior is the same as would happen if the case was completed in a system controlled application. Generally you will want to maintain skipped-over fields in case an interviewer decides to make changes to the case at a later point, so it is rare that you would use this argument.
 
 <subheader>Return Value</subheader>
 

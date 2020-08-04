@@ -1,6 +1,6 @@
 ﻿<title>Set Behavior CanEnter Statement</title>
 
-<i><b>Feature Upgrade</b>: Starting with CSPro 7.1, you should no longer use this function as it may soon be removed from CSPro. To replicate the behavior of the function, you can use the <logiccolor>setproperty</logiccolor> function with the parameter <logiccolor>"CanEnterNotAppl"</logiccolor> or <logiccolor>"CanEnterOutOfRange"</logiccolor>.</i>
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.1, you should no longer use this function as it may soon be removed from CSPro. To replicate the behavior of the function, you can use the <logiccolor>setproperty</logiccolor> function with the argument <logiccolor>"CanEnterNotAppl"</logiccolor> or <logiccolor>"CanEnterOutOfRange"</logiccolor>.</i>
 
 
 <html>
@@ -79,7 +79,7 @@ body {
  your own message.</p>
 <p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
 <p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">If
- no parameters are specified, then the set behavior statement affects all
+ no arguments are specified, then the set behavior statement affects all
  data items from the point where it is executed onward. To limit its scope,
  it must be turned on and off at appropriate times. It is possible, however,
  to specify the name of a field, group, record, form, or dictionary to

@@ -61,9 +61,9 @@
 	 style="font-style: italic;">function-name</span>]);</p>
 <p style="font-size: 10pt; font-family: Arial, sans-serif;">The button
  text comes from the <span style="font-style: italic;">alpha-expression</span>.
- An optional parameter specifies a function that is to be called when the
+ An optional argument specifies a function that is to be called when the
  button is pressed. If the function has parameters, it is necessary to
- specify the values of the parameters. The values of these parameters are
+ specify the values of the arguments. The values of these arguments are
  evaluated when the button is activated by a user, not at the point that
  the button is added to the userbar. Several existing functions (mimicking
  options available on the CSEntry menu) can be specified using the do command:</p>
@@ -91,7 +91,7 @@
 	 style="font-style: italic;">function-name</span>]);</p>
 <p style="font-size: 10pt; font-family: Arial, sans-serif;">The field's
  initial text comes from the <span style="font-style: italic;">alpha-expression</span>.
- As with adding buttons, an optional parameter specifies a function that
+ As with adding buttons, an optional argument specifies a function that
  is called when the user presses enter while typing text in the field.
  The width of the field depends on the initial text, so if you want a large
  field that starts with a blank value, use a long but blank string to initialize

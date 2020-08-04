@@ -8,7 +8,7 @@ s = strip(<arg>string_expression</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>strip</logiccolor> function removes trailing blanks from the <arg>string_expression</arg>. The result of the function is often used as a parameter to other functions such as the <logiccolor>length</logiccolor> and <logiccolor>concat</logiccolor> functions.
+The <logiccolor>strip</logiccolor> function removes trailing blanks from the <arg>string_expression</arg>. The result of the function is often used as an argument to other functions such as the <logiccolor>length</logiccolor> and <logiccolor>concat</logiccolor> functions.
 
 You will generally not have to use the <logiccolor>strip</logiccolor> function when working with variable-length <link string_statement.hgt>strings</link> since they do not have spaces automatically added to the end of the text to match a fixed width.
 
@@ -28,7 +28,7 @@ PROC EXAMPLE
 	firstName = "John";
 	lastName = "Henry";
 
-	fullName = concat(strip(firstName)," ", strip(lastName));
+	fullName = concat(strip(firstName), " ", strip(lastName));
 	numeric nameLength = length(strip(fullName));
 	
 	// fullName is "John Henry "

@@ -74,7 +74,7 @@ i = <font color="#0000FF">gps</font>(read,<span style="font-style: italic;">nume
  command obtains a new GPS reading in a specified time period (in seconds).
  If no time period is specified, the program will pause for up to three
  seconds to obtain a reading. A reading time of up to ten minutes (600
- seconds) may be specified. An optional third parameter displays a message
+ seconds) may be specified. An optional third argument displays a message
  while the program attempts to obtain a GPS reading. The message box has
  a cancel button and if the user cancels the operation, the function returns
  -1. Otherwise the function returns 1 if a reading was successful, 0 otherwise.
