@@ -1,0 +1,111 @@
+﻿<title>Optional Function Parameters</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+function FunctionName(optional numeric parameter1, optional string parameter2)
+
+function FunctionName(numeric parameter1 = <arg>default_number</arg>, string parameter2 = "default string")
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+<link function_statement.hgt>User-defined functions</link> can have optional parameters, which you can specify in two ways. The first way is to use the <logiccolor>optional</logiccolor> keyword before the parameter type. This works with all variable types (numerics, strings, and <link object_dot_notation.hgt>objects</link>) except for arrays, which cannot be used as optional parameters. The second way is by using an = sign when specifying the parameter. This works for numeric and string parameters only.
+
+
+<subheader>Using the Optional Keyword</subheader>
+
+<logicsyntax>
+function MyFunction(optional numeric numeric_value, optional string string_value)
+</logicsyntax>
+
+When you call the function, you do not need to supply arguments for optional parameters. If not otherwise defined with the = sign, a number will be set to <logiccolor>notappl</logiccolor> and a string will be set to a blank string. Any object (such as a hashmap, list, etc.) will be set to its default state (an empty hashmap, a blank list, etc.). Once you specify that a parameter is optional, then all parameters after it must also be optional.
+
+You can call the function like this:
+
+<logic>
+// both arguments specified
+MyFunction(3, "ABC");
+
+// one argument specified (string_value set to "")
+MyFunction(3);
+
+// no arguments specified (numeric_value set to notappl, string_value set to "")
+MyFunction();
+</logic>
+
+
+<subheader>Using an = Sign</subheader>
+
+Using an = sign is for numeric and string parameters only and cannot be used for objects. It is useful for assigning a numeric constant or string literal as the default value:
+
+<logicsyntax>
+function MyFunction(optional numeric numeric_value = 30, optional string string_value = "Hello")
+</logicsyntax>
+
+When using the = sign, you do not need to use the <logiccolor>optional</logiccolor> keyword, but you can specify it if you want.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC GLOBAL
+
+function string GetName(optional numeric person_occurrence)
+
+	// if the argument for the occurrence number (person_occurrence) is not passed
+	// to the function, person_occurrence will be notappl and the function will
+	// return the name from the current record; otherwise, person_occurrence will
+	// be defined and the function will return the name for the specified record
+
+	if person_occurrence = notappl then
+        person_occurrence = curocc(POPULATION_RECORD);
+    endif;
+
+    exit strip(PERSON_NAME(person_occurrence));
+
+end;
+
+
+PROC AGE
+
+	errmsg("%s is %d years younger than the head of household (%s)",
+		GetName(), AGE(1) - AGE, GetName(1));
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC GLOBAL
+
+// This function calculates the age based on the birth date and the enumeration date.
+// If the birth date is not passed to the function or is not set, the function returns
+// a calculated age of 998 which is used to indicate that the age could not be calculated.
+// If the enumeration date is not passed to the function, the function calculates the
+// date based on the default date of March 11, 2020; otherwise it uses the date passed
+// as a function argument.
+
+function numeric CalculateAge(optional birth_date, optional enumeration_date = 20200311)
+
+    if special(birth_date) then
+        exit 998;
+    else
+        exit datediff(birth_date, enumeration_date, "y");
+    endif;
+
+end;
+
+// ...
+
+DOB = 19520218;
+ACTUAL_ENUMERATION_DATE = 20200401;
+
+errmsg("%d", CalculateAge(DOB, ACTUAL_ENUMERATION_DATE)); // 68
+errmsg("%d", CalculateAge(DOB)); 						  // 67
+errmsg("%d", CalculateAge()); 							  // 998
+</logic>
+
+
+<seealso user_defined_functions.hgt function_statement.hgt />

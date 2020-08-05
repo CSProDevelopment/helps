@@ -32,17 +32,20 @@ You can insert the return value of a <link user_defined_functions.hgt>user-defin
 
 <indent>Thinking now about <b>%FIRST_NAME%</b>, what is <b>%SexPronoun%</b> age?</indent>
 
-In logic, a user-defined function with no parameters must be declared, as in:
+In logic, a user-defined function must be declared, as in:
 
 <logic>
 function string SexPronoun()
-	
-	if SEX = 1 then	SexPronoun = "his";
-	else			SexPronoun = "her";
-	endif;
+
+	recode SEX -> SexPronoun;
+		   1   -> "his";
+			   -> "her";
+	endrecode;
 
 end;
 </logic>
+
+The user-defined function must have no parameters or only <link function_parameters_optional.hgt>optional parameters</link>.
 
 
 <subheader>Fills with Line Breaks</subheader>
