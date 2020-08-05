@@ -9,7 +9,7 @@ array 『<arg>array_type</arg>』 <arg>array_name</arg>(<arg>dimension1</arg>『
 
 <subheader>Description</subheader>
 
-The <arg>array</arg> statement creates an <link array.hgt>array</link> with the name <arg>array_name</arg>. Only one array at a time can be declared with the array statement. The array name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can <link array_statement.hgt>declare arrays</link> in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <arg>array</arg> statement creates an <link array.hgt>array</link> with the name <arg>array_name</arg>. Only one array at a time can be declared with the array statement. The array name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare arrays in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 Arrays can be numeric, alphanumeric or string. By default an array is numeric, but the type can be modified by specifying the <arg>array_type</arg>.  If creating an alphanumeric array, the length of each array element can be specified by definining the <arg>array_type</arg> as follows:
 
@@ -78,4 +78,4 @@ PROC DISPLAY_COUNTS
 </logic>
 
 
-<seealso array.hgt list.hgt numeric_statement.hgt alpha_statement.hgt string_statement.hgt saved_arrays_file_sva.hgt />
+<seealso array.hgt hashmap.hgt list.hgt numeric_statement.hgt alpha_statement.hgt string_statement.hgt saved_arrays_file_sva.hgt />

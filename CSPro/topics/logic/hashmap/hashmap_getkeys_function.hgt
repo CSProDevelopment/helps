@@ -1,0 +1,29 @@
+﻿<title>HashMap.GetKeys Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax hashmap>
+i = hashmap_name.getKeys(<arg>list_name</arg> 『, <arg>key_value1</arg>, ..., <arg>key_valueN</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor hashmap>hashmap.getKeys</logiccolor> function fills a <link list.hgt>list</link> with the keys at a specific location in the <link hashmap.hgt>hashmap</link>. Each <arg>key_value</arg> argument must be a numeric or string expression matching the type specified when <link hashmap_statement.hgt>declaring the hashmap</link>. If no arguments are provided, the first-dimension keys are returned; if one argument is provided, the second-dimension keys are returned; and so on.
+
+The argument <arg>list_name</arg> is a numeric or string list whose contents will be cleared and then filled with the hashmap's keys. The type of the list must correspond to the type of keys at the specified location. If the dimension type is <logiccolor>numeric</logiccolor>, then the list must be a numeric list. If the dimension type is <logiccolor>string</logiccolor> or <logiccolor>all</logiccolor>, then the list must be a string list. In the case of <logiccolor>all</logiccolor>, any numeric values added as keys to the hashmap will be converted to strings before being inserted in the string list.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the number of keys added to the list.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_hashmap_example.hgi />
+</logic>
+
+
+<seealso hashmap.hgt hashmap_contains_function.hgt hashmap_length_function.hgt />

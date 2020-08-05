@@ -4,6 +4,7 @@ In logic, an <logiccolor>array</logiccolor> is an object that contains a collect
 
 Whenever an array variable is used in the application, a value or numeric expression for each dimension must be given. The initial array contents are zero (if numeric) and blank (if alphanumeric or string) until a value for each dimension is assigned. If using a numeric <link initialize_hot_decks_using_saved_arrays.hgt>saved array</link>, the initial array contents are <logiccolor>default</logiccolor>.
 
+If you want the behavior of an array but without fixed dimensions, you can use the <link hashmap.hgt>hashmap</link> object, which is an associative array.
 
 <subheader>Functionality</subheader>
 
@@ -15,4 +16,4 @@ An array is a CSPro logic object and the following functions can be called via <
 	<cell><logiccolor array>length</logiccolor></cell><cell>Returns the size of an array dimension.</cell>
 </table>
 
-<seealso list.hgt />
+<seealso hashmap.hgt list.hgt />

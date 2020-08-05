@@ -1,0 +1,28 @@
+﻿PROC GLOBAL
+
+hashmap invalidValuesByPerson default(0);
+
+PROC CENSUS_LEVEL
+
+	list string person_list;
+
+	invalidValuesByPerson.getKeys(person_list);
+
+	do numeric counter = 1 while counter <= person_list.length()
+		errmsg("%s had %d invalid values", strip(person_list(counter)),
+										   invalidValuesByPerson(person_list(counter)));
+	enddo;
+
+	invalidValuesByPerson.clear();
+
+PROC SEX
+
+	if not invalueset(SEX) then
+		inc(invalidValuesByPerson(PERSON_NAME));
+	endif;
+
+PROC AGE
+
+	if not invalueset(AGE) then
+		inc(invalidValuesByPerson(PERSON_NAME));
+	endif;

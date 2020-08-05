@@ -1,0 +1,43 @@
+﻿<title>HashMap Object</title>
+
+In logic, a <logiccolor>hashmap</logiccolor> is similar to an <link array.hgt>array</link> but has dimensions that can be either non-consecutive numbers or strings. A hashmap is an <link https://en.wikipedia.org/wiki/Associative_array>associative array</link> that can be used to store numbers or strings and can dynamically grow or shrink in size.
+
+
+<subheader>Functionality</subheader>
+
+A hashmap is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+
+<table 2 header nowrap>
+	<cell>Function</cell><cell>Description</cell>
+	<cell><logiccolor hashmap>clear</logiccolor></cell><cell>Removes all values from the hashmap.</cell>
+	<cell><logiccolor hashmap>contains</logiccolor></cell><cell>Returns whether a specified key exists.</cell>
+	<cell><logiccolor hashmap>getKeys</logiccolor></cell><cell>Fills a <link list.hgt>list</link> with the hashmap's keys.</cell>
+	<cell><logiccolor hashmap>length</logiccolor></cell><cell>Returns the number of keys.</cell>
+	<cell><logiccolor hashmap>remove</logiccolor></cell><cell>Removes a key.</cell>
+</table>
+
+Hashmaps can be assigned to other hashmaps, which will replace the initial hashmap with the values of the assigned hashmap:
+
+<logicsyntax>
+<arg>hashmap_name</arg> = <arg>another_hashmap_name</arg>;
+</logicsyntax>
+
+When assigning a hashmap to another hashmap, both must have the same value types, and the dimension types must be compatible.
+
+Individual elements of hashmaps can be retrieved or set by using an index to specify the dimension keys:
+
+<logicsyntax>
+<arg>hashmap_name</arg>(<arg>key_value1</arg>『, <arg>key_value2</arg>, ...』) = <arg>value_to_set_or_modify</arg>;
+
+<arg>value_to_retrieve = hashmap_name</arg>(<arg>key_value1</arg>『, <arg>key_value2</arg>, ...』);</arg>
+</logicsyntax>
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_hashmap_example.hgi />
+</logic>
+
+
+<seealso array.hgt list.hgt />

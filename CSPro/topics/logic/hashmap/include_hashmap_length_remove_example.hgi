@@ -1,0 +1,22 @@
+﻿hashmap two_dimensional_hashmap(all, numeric);
+
+two_dimensional_hashmap("A", 9) = 1;
+two_dimensional_hashmap("A", 8) = 1;
+two_dimensional_hashmap("A", 7) = 1;
+two_dimensional_hashmap(100, 6) = 1;
+
+errmsg("%d", two_dimensional_hashmap.length());    // 2 (keys "A" and 100)
+errmsg("%d", two_dimensional_hashmap.length("A")); // 3 (keys 9, 8, and 7)
+errmsg("%d", two_dimensional_hashmap.length(100)); // 1 (key 6)
+
+two_dimensional_hashmap.remove("A", 9);
+
+errmsg("%d", two_dimensional_hashmap.length());    // 2 (keys "A" and 100)
+errmsg("%d", two_dimensional_hashmap.length("A")); // 2 (keys 8 and 7)
+errmsg("%d", two_dimensional_hashmap.length(100)); // 1 (key 6)
+
+two_dimensional_hashmap.remove("A");
+
+errmsg("%d", two_dimensional_hashmap.length());    // 1 (key 100)
+errmsg("%d", two_dimensional_hashmap.length("A")); // 0 (no keys)
+errmsg("%d", two_dimensional_hashmap.length(100)); // 1 (key 6)

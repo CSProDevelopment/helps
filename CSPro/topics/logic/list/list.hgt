@@ -17,7 +17,7 @@ A list is a CSPro logic object and the following functions can be called via <li
 	<cell><logiccolor list>show</logiccolor></cell><cell>Displays the list's values (similarly to <logiccolor>accept</logiccolor>) and returns the index of the operator's selection.</cell>
 </table>
 
-In addition to these object functions, lists can be filled when used as arguments to functions such as <logiccolor>dirlist</logiccolor> and <logiccolor>keylist</logiccolor>.
+In addition to these object functions, lists can be filled when used as arguments to functions such as <logiccolor>dirlist</logiccolor>, <logiccolor>keylist</logiccolor>, and <logiccolor hashmap>hashmap.getKeys</logiccolor>.
 
 Lists can be assigned to other lists, which will replace the initial list with the values of the assigned list:
 
@@ -45,4 +45,4 @@ enddo;
 numeric respondent_index = respondent_query.show("Who in the household is responding to questions?");
 </logic>
 
-<seealso array.hgt valueset.hgt />
+<seealso array.hgt hashmap.hgt valueset.hgt />

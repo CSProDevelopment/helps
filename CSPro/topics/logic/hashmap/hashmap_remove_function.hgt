@@ -1,0 +1,27 @@
+﻿<title>HashMap.Remove Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax hashmap>
+b = hashmap_name.remove(<arg>key_value1</arg>『, ..., <arg>key_valueN</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor hashmap>hashmap.remove</logiccolor> function removes a specific key from a <link hashmap.hgt>hashmap</link>. Each <arg>key_value</arg> argument must be a numeric or string expression matching the type specified when <link hashmap_statement.hgt>declaring the hashmap</link>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the hashmap contained the key and it was removed, and 0 (false) if the key did not exist.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_hashmap_length_remove_example.hgi />
+</logic>
+
+
+<seealso hashmap.hgt hashmap_clear_function.hgt />

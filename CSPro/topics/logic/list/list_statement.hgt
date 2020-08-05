@@ -13,7 +13,7 @@ The <logiccolor>list</logiccolor> statement creates a <link list.hgt>list</link>
 
 Lists can be <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. By default a list is numeric, but the type can be modified by specifying the <arg>list_type</arg>.
 
-The initial values of the elements of a list can be set when declaring the array by listing each value, separated by a comma. A list can also be initialized to the values of another list.
+The initial elements of a list can be set on definition by listing each value, separated by a comma. A list can also be initialized to the values of another list.
 
 
 <subheader>Example</subheader>
@@ -32,4 +32,4 @@ list string MonthNames = "Jan", "Feb", "Mar", "Apr", "May", "Jun",
 </logic>
 
 
-<seealso list.hgt array.hgt valueset.hgt />
+<seealso list.hgt array.hgt hashmap.hgt valueset.hgt />

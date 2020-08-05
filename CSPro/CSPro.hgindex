@@ -205,11 +205,13 @@ array.hgt																						#	Array Object
 	array_clear_function.hgt																	#		Array.Clear Function
 	array_length_function.hgt																	#		Array.Length Function
 	array_statement.hgt																			#		Array Statement
+	hashmap.hgt | Associative Array																#		Associative Array
 	saved_arrays_file_sva.hgt																	#		Saved Arrays File (.sva)
 change_data_entry_options.hgt | Ask for Operator ID												#	Ask for Operator ID
 ask_statement.hgt																				#	Ask Statement
 assignment_statement.hgt																		#	Assignment Statement
 statements.hgt | Assignment Statements															#	Assignment Statements
+hashmap.hgt | Associative Array																	#	Associative Array
 methods_of_correcting_data.hgt | Automatic														#	Automatic
 	methods_of_correcting_data.hgt | Correction													#		Correction
 	manipulate_automatic_reports.hgt | Edit Report												#		Edit Report
@@ -358,6 +360,7 @@ choose_topic_sections.hgt																		#	Choose Topic Sections
 cspro_settings.hgt | Clear Credentials															#	Clear Credentials
 clear_function.hgt																				#	Clear Function
 	array_clear_function.hgt																	#		Array.Clear Function
+	hashmap_clear_function.hgt																	#		HashMap.Clear Function
 	list_clear_function.hgt																		#		List.Clear Function
 	map_clear_buttons_function.hgt																#		Map.ClearButtons Function
 	map_clear_markers_function.hgt																#		Map.ClearMarkers Function
@@ -418,6 +421,8 @@ custom_consolidation.hgt | Consolidation														#	Consolidation
 	run_consolidate_interactively.hgt															#		Run Consolidate Interactively
 	run_consolidate_in_batch.hgt																#		Run Consolidate in Batch
 	introduction_to_run_in_parts.hgt | Run in Parts												#		Run in Parts
+hashmap_contains_function.hgt | Contains Function												#	Contains Function
+	hashmap_contains_function.hgt																#		HashMap.Contains Function
 endgroup_statement.hgt | Controlling Program Flow												#	Controlling Program Flow
 	endgroup_statement.hgt																		#		EndGroup Statement
 	endlevel_statement.hgt																		#		EndLevel Statement
@@ -931,6 +936,8 @@ getcaselabel_function.hgt																		#	GetCaseLabel Function
 getdeck_function.hgt																			#	GetDeck Function
 getdeviceid_function.hgt																		#	GetDeviceID Function
 getimage_function.hgt																			#	GetImage Function
+hashmap_getkeys_function.hgt | GetKeys Function													#	GetKeys Function
+	hashmap_getkeys_function.hgt																#		HashMap.GetKeys Function
 getlabel_function.hgt																			#	GetLabel Function
 getlanguage_function.hgt																		#	GetLanguage Function
 map_get_last_click_latitude_function.hgt | GetLastClickLatitude Function						#	GetLastClickLatitude Function
@@ -972,6 +979,13 @@ handle_multiple_answers.hgt																		#	Handle Multiple Answers
 include_exclude_special_values_in_a_variable.hgt | Handle Undefined Values						#	Handle Undefined Values
 hardware_and_software_requirements.hgt															#	Hardware and Software Requirements
 errmsg_function.hgt | Hard Checks																#	Hard Checks
+hashmap.hgt																						#	HashMap Object
+	hashmap_clear_function.hgt																	#		HashMap.Clear Function
+	hashmap_contains_function.hgt																#		HashMap.Contains Function
+	hashmap_getkeys_function.hgt																#		HashMap.GetKeys Function
+	hashmap_length_function.hgt																	#		HashMap.Length Function
+	hashmap_remove_function.hgt																	#		HashMap.Remove Function
+	hashmap_statement.hgt																		#		HashMap Statement
 hash_function.hgt																				#	Hash Function
 has_operator.hgt																				#	Has Operator
 change_the_print_page_setup.hgt | Header														#	Header
@@ -1155,6 +1169,7 @@ add_stub_leadering.hgt | Leadering																#	Leadering
 item_length.hgt																					#	Length
 	array_length_function.hgt																	#		Array.Length Function
 	length_function.hgt | Function																#		Function
+	hashmap_length_function.hgt																	#		HashMap.Length Function
 	item_length.hgt | Item																		#		Item
 	list_length_function.hgt																	#		List.Length Function
 	valueset_length_function.hgt																#		ValueSet.Length Function
@@ -1399,6 +1414,14 @@ numeric_statement.hgt | Numeric																	#	Numeric
 	numeric_statement.hgt | Statement															#		Statement
 	variables.hgt																				#		Variables
 object_dot_notation.hgt | Objects																#	Objects
+	array.hgt																					#		Array Object
+	file.hgt																					#		File Object
+	hashmap.hgt																					#		HashMap Object
+	list.hgt																					#		List Object
+	map.hgt																						#		Map Object
+	pff.hgt																						#		Pff Object
+	systemapp.hgt																				#		SystemApp Object
+	valueset.hgt																				#		ValueSet Object
 issues_to_consider_when_designing_a_form.hgt | Occurrences										#	Occurrences
 	getocclabel_function.hgt																	#		GetOccLabel Function
 	occurrences.hgt | Item																		#		Item
@@ -1680,6 +1703,7 @@ map_remove_button_function.hgt | RemoveButton Function											#	RemoveButton 
 map_remove_marker_function.hgt | RemoveMarker Function											#	RemoveMarker Function
 	map_remove_marker_function.hgt																#		Map.RemoveMarker Function
 list_remove_function.hgt | Remove Function														#	Remove Function
+	hashmap_remove_function.hgt																	#		HashMap.Remove Function
 	list_remove_function.hgt																	#		List.Remove Function
 	valueset_remove_function.hgt																#		ValueSet.Remove Function
 renaming_tables_and_table_applications.hgt														#	Renaming Tables and Table Applications
