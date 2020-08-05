@@ -140,17 +140,18 @@
 		|Declaration Section																	#			Declaration Section
 			compiler_mode.hgt																	#				Compiler Mode
 			variables.hgt																		#				Variables
-			array.hgt																			#				Array Object
-			hashmap.hgt																			#				HashMap Object
-			list.hgt																			#				List Object
-			valueset.hgt																		#				ValueSet Object
-			file.hgt																			#				File Object
-			pff.hgt																				#				Pff Object
-			systemapp.hgt																		#				SystemApp Object
-			map.hgt																				#				Map Object
-			user_defined_functions.hgt															#				User-Defined Functions
 			alias_statement.hgt																	#				Alias Statement
 			ensure_statement.hgt																#				Ensure Statement
+			user_defined_functions.hgt															#				User-Defined Functions
+			array.hgt																			#				Array Object
+			audio.hgt																			#				Audio Object
+			file.hgt																			#				File Object
+			hashmap.hgt																			#				HashMap Object
+			list.hgt																			#				List Object
+			map.hgt																				#				Map Object
+			pff.hgt																				#				Pff Object
+			systemapp.hgt																		#				SystemApp Object
+			valueset.hgt																		#				ValueSet Object
 		|Procedural Sections																	#			Procedural Sections
 			statements.hgt																		#				Statements
 			proc_statement.hgt																	#				Proc Statement
@@ -275,6 +276,7 @@
 			introduction_to_capi.hgt															#				Introduction to CAPI
 			capi_features.hgt																	#				CAPI Features
 			extended_controls.hgt																#				Extended Controls
+			multimedia_features.hgt																#				Multimedia Features
 			|CAPI Strategies																	#				CAPI Strategies
 				forms.hgt																		#					Forms
 				fields.hgt																		#					Fields
@@ -501,6 +503,17 @@
 			array_statement.hgt																	#				Array Statement
 			array_length_function.hgt															#				Array.Length Function
 			array_clear_function.hgt															#				Array.Clear Function
+		|Audio Object																			#			Audio Object
+			audio_statement.hgt																	#				Audio Statement
+			audio_load_function.hgt																#				Audio.Load Function
+			audio_save_function.hgt																#				Audio.Save Function
+			audio_play_function.hgt																#				Audio.Play Function
+			audio_recordinteractive_function.hgt												#				Audio.RecordInteractive Function
+			audio_record_function.hgt															#				Audio.Record Function
+			audio_stop_function.hgt																#				Audio.Stop Function
+			audio_concat_function.hgt															#				Audio.Concat Function
+			audio_length_function.hgt															#				Audio.Length Function
+			audio_clear_function.hgt															#				Audio.Clear Function
 		|Barcode																				#			Barcode
 			barcode.hgt																			#				Barcode Namespace
 			barcode_read_function.hgt															#				Barcode.Read Function

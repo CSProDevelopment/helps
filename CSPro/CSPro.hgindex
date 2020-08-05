@@ -212,6 +212,17 @@ ask_statement.hgt																				#	Ask Statement
 assignment_statement.hgt																		#	Assignment Statement
 statements.hgt | Assignment Statements															#	Assignment Statements
 hashmap.hgt | Associative Array																	#	Associative Array
+audio.hgt																						#	Audio Object
+	audio_clear_function.hgt																	#		Audio.Clear Function
+	audio_concat_function.hgt																	#		Audio.Concat Function
+	audio_length_function.hgt																	#		Audio.Length Function
+	audio_load_function.hgt																		#		Audio.Load Function
+	audio_play_function.hgt																		#		Audio.Play Function
+	audio_recordinteractive_function.hgt														#		Audio.RecordInteractive Function
+	audio_record_function.hgt																	#		Audio.Record Function
+	audio_save_function.hgt																		#		Audio.Save Function
+	audio_stop_function.hgt																		#		Audio.Stop Function
+	audio_statement.hgt																			#		Audio Statement
 methods_of_correcting_data.hgt | Automatic														#	Automatic
 	methods_of_correcting_data.hgt | Correction													#		Correction
 	manipulate_automatic_reports.hgt | Edit Report												#		Edit Report
@@ -276,6 +287,7 @@ map_add_image_button_function.hgt | Buttons														#	Buttons
 	map_remove_button_function.hgt																#		Map.RemoveButton Function
 do_statement.hgt | By																			#	By
 	do_statement.hgt																			#		Do Statement
+execsystem_function_mobile.hgt | Camera															#	Camera
 introduction_to_capi.hgt | CAPI																	#	CAPI
 	add_pictures.hgt | Add Pictures in Question Text											#		Add Pictures in Question Text
 	breaking_off_the_interview.hgt																#		Breaking Off the Interview
@@ -360,6 +372,7 @@ choose_topic_sections.hgt																		#	Choose Topic Sections
 cspro_settings.hgt | Clear Credentials															#	Clear Credentials
 clear_function.hgt																				#	Clear Function
 	array_clear_function.hgt																	#		Array.Clear Function
+	audio_clear_function.hgt																	#		Audio.Clear Function
 	hashmap_clear_function.hgt																	#		HashMap.Clear Function
 	list_clear_function.hgt																		#		List.Clear Function
 	map_clear_buttons_function.hgt																#		Map.ClearButtons Function
@@ -409,6 +422,7 @@ compress_function.hgt																			#	Compress Function
 tool_list.hgt | Concatenate																		#	Concatenate
 	tool_list.hgt | Data																		#		Data
 concat_function.hgt																				#	Concat Function
+	audio_concat_function.hgt																	#		Audio.Concat Function
 expressions.hgt | Conditions																	#	Conditions
 config_statement.hgt																			#	Config Statement
 change_data_entry_options.hgt | Confirm End-of-Case												#	Confirm End-of-Case
@@ -1168,6 +1182,7 @@ add_stub_leadering.hgt | Leadering																#	Leadering
 	add_stub_leadering.hgt | Stub																#		Stub
 item_length.hgt																					#	Length
 	array_length_function.hgt																	#		Array.Length Function
+	audio_length_function.hgt																	#		Audio.Length Function
 	length_function.hgt | Function																#		Function
 	hashmap_length_function.hgt																	#		HashMap.Length Function
 	item_length.hgt | Item																		#		Item
@@ -1209,6 +1224,7 @@ loading_and_saving_preferences.hgt																#	Loading and Saving Preferenc
 loadsetting_function.hgt																		#	LoadSetting Function
 load_and_save_formatting_preferences.hgt														#	Load and Save Formatting Preferences
 pff_load_function.hgt | Load Function															#	Load Function
+	audio_load_function.hgt																		#		Audio.Load Function
 	pff_load_function.hgt																		#		Pff.Load Function
 syncconnect_function_dropbox_local.hgt | LocalDropbox Synchronization							#	LocalDropbox Synchronization
 syncconnect_function_files_local.hgt | LocalFiles Synchronization								#	LocalFiles Synchronization
@@ -1355,6 +1371,11 @@ move_around_a_dictionary.hgt | Move																#	Move
 	move_things.hgt | Things in a Form															#		Things in a Form
 move_statement.hgt																				#	Move Statement
 moving_around_a_logic_application.hgt															#	Moving Around a Logic Application
+multimedia_features.hgt																			#	Multimedia Features
+	audio.hgt | Audio																			#		Audio
+	barcode.hgt | Barcode																		#		Barcode
+	execsystem_function_mobile.hgt | Camera														#		Camera
+	execsystem_function_mobile.hgt | Signature													#		Signature
 tabulate_items_with_multiple_occurrences.hgt | Multiple											#	Multiple
 	tabulate_items_with_multiple_occurrences.hgt | Occurrences: Tabulate						#		Occurrences: Tabulate
 	data_file_type_structure.hgt | Record Types													#		Record Types
@@ -1415,6 +1436,7 @@ numeric_statement.hgt | Numeric																	#	Numeric
 	variables.hgt																				#		Variables
 object_dot_notation.hgt | Objects																#	Objects
 	array.hgt																					#		Array Object
+	audio.hgt																					#		Audio Object
 	file.hgt																					#		File Object
 	hashmap.hgt																					#		HashMap Object
 	list.hgt																					#		List Object
@@ -1544,6 +1566,8 @@ add_pictures.hgt | Pictures																		#	Pictures
 	add_pictures.hgt | Add in CAPI Question Text												#		Add in CAPI Question Text
 	resource_folders.hgt																		#		Resource Folders
 	value_set_images.hgt																		#		Value Set Images
+audio_play_function.hgt | Play Function															#	Play Function
+	audio_play_function.hgt																		#		Audio.Play Function
 poschar_function.hgt																			#	PosChar Function
 hide_or_change_the_position_of_the_total.hgt | Position											#	Position
 	hide_or_change_the_position_of_the_total.hgt | Change the Position of the Total				#		Change the Position of the Total
@@ -1673,6 +1697,10 @@ batch_edit_tree.hgt | Record																	#	Record
 	data_file_type_structure.hgt | Single Record Type											#		Single Record Type
 	data_file_type_structure.hgt | Type															#		Type
 	record_properties.hgt | Type Value															#		Type Value
+audio_recordinteractive_function.hgt | RecordInteractive Function								#	RecordInteractive Function
+	audio_recordinteractive_function.hgt														#		Audio.RecordInteractive Function
+audio_record_function.hgt | Record Function														#	Record Function
+	audio_record_function.hgt																	#		Audio.Record Function
 undo_and_redo_changes.hgt | Redo and Undo Changes												#	Redo and Undo Changes
 reenter_statement.hgt																			#	Reenter Statement
 tool_list.hgt | Reformat																		#	Reformat
@@ -1789,6 +1817,7 @@ save_an_application_with_a_new_name.hgt | Save As												#	Save As
 	save_an_application_with_a_new_name.hgt | Application										#		Application
 	save_dictionary_as_new_file.hgt | Dictionary												#		Dictionary
 pff_save_function.hgt | Save Function															#	Save Function
+	audio_save_function.hgt																		#		Audio.Save Function
 	pff_save_function.hgt																		#		Pff.Save Function
 saving_tables_as_text_html_or_rich_text.hgt | Saving Tables as Text HTML or Rich Text			#	Saving Tables as Text HTML or Rich Text
 change_the_view.hgt | Screen																	#	Screen
@@ -1953,6 +1982,7 @@ statement_format_symbols.hgt																	#	Statement Format Symbols
 static_imputation.hgt																			#	Static Imputation
 status_file_sts.hgt																				#	Status File (.sts)
 stop_function.hgt																				#	Stop Function
+	audio_stop_function.hgt																		#		Audio.Stop Function
 expressions.hgt | String																		#	String
 	expressions.hgt																				#		Expressions
 	tonumber_function.hgt | String to Number													#		String to Number
@@ -2303,6 +2333,7 @@ viewing_multiple_and_facing_pages.hgt															#	Viewing Multiple and Facin
 views_of_tables.hgt | Views of Table															#	Views of Table
 view_function.hgt																				#	View Function
 visualvalue_function.hgt																		#	VisualValue Function
+audio.hgt | Voice Recording																		#	Voice Recording
 impute_function.hgt | VSet																		#	VSet
 	impute_function.hgt																			#		Impute Function
 warning_function.hgt																			#	Warning Function
