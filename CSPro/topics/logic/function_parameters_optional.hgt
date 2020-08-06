@@ -87,7 +87,7 @@ PROC GLOBAL
 // date based on the default date of March 11, 2020; otherwise it uses the date passed
 // as a function argument.
 
-function numeric CalculateAge(optional birth_date, optional enumeration_date = 20200311)
+function numeric CalculateAge(optional numeric birth_date, optional numeric enumeration_date = 20200311)
 
     if special(birth_date) then
         exit 998;
