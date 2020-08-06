@@ -1,0 +1,89 @@
+﻿<title>Logic Preprocessor</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+#if <arg>condition</arg>
+#elseif <arg>condition</arg>
+#else
+#endif
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+Before CSPro logic is compiled, it passes through a preprocessor that allows you to conditionally compile your code based on certain conditions. This is an advanced feature and is primarily useful when using <link logic_file_apc.hgt>external logic files</link> where certain functionality may only successfully compile based on characteristics of the application.
+
+The preprocessor uses the language's familiar  <logiccolor>if</logiccolor>/<logiccolor>elseif</logiccolor>/<logiccolor>else</logiccolor>/<logiccolor>endif</logiccolor> keywords but with four differences:
+
+<list ordered>
+	<li>The keyword must be preceded by a <logiccolor>#</logiccolor> character.</li>
+	<li>The <logiccolor>#</logiccolor> must be the first non-whitespace character on the line.</li>
+	<li>The whole condition must be specified on a single line.</li>
+	<li>A condition should not end with a <logiccolor>then</logiccolor> keyword.</li>
+</list>
+
+An <logiccolor>#if</logiccolor> and <logiccolor>#endif</logiccolor> pair must exist, and optionally <logiccolor>#elseif</logiccolor> and <logiccolor>#else</logiccolor> can be included as part of a preprocessor block.
+
+The preprocessor is activated before the rest of logic is compiled and thus has limited functionality. Simple math expressions and conditional checks are possible, and there are two functions that can be called:
+
+<logicsyntax>
+AppType(<arg>app_type</arg>)
+</logicsyntax>
+
+This function returns true if your application is of the type specified by <arg>app_type</arg>. Supported types are <logiccolor>Entry</logiccolor>, <logiccolor>Batch</logiccolor>, and <logiccolor>Tabulation</logiccolor>.
+
+<logicsyntax>
+exists(<arg>symbol_name</arg>)
+</logicsyntax>
+
+This function returns true if a symbol exists at compile-time. The function checks for symbols that exist as part of an application (dictionary names, form names, etc.), and not symbols that are created during compilation (user-defined functions, objects, etc.).
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+function string GetEAName(numeric province, numeric district, numeric ea)
+
+    string ea_name = maketext("EA %04d-%02d-%03d", province, district, ea);
+
+    // if we have access to the geocodes dictionary, add the EA description to the name
+#if exists(GEOCODES_DICT)
+
+    GEOCODES_PROVINCE = province;
+    GEOCODES_DISTRICT = district;
+    GEOCODES_EA = ea;
+
+    if loadcase(GEOCODES_DICT, GEOCODES_PROVINCE, GEOCODES_DISTRICT, GEOCODES_EA) then
+        ea_name = ea_name + " / " + strip(EA_DESCRIPTION));
+    endif;
+
+#endif
+
+	exit ea_name;
+
+end;
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+function ValidateLiteracy()
+
+    if HH_EDUCATION in 3:6 and HH_LITERACY <> 1 then
+
+#if AppType(Entry)
+		errmsg("Person with education level %d should be literate. Please correct.", HH_EDUCATION);
+		reenter;
+
+#elseif AppType(Batch)
+		errmsg("Person with education level %d should be literate. Literacy imputed to 1 (literate).", HH_EDUCATION);
+		impute(HH_LITERACY, 1);
+
+#endif
+
+    endif;
+
+end;
+</logic>
