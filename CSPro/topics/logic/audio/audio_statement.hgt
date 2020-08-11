@@ -9,15 +9,15 @@ audio <arg>audio_name</arg>;
 
 <subheader>Description</subheader>
 
-The <logiccolor>audio</logiccolor> statement creates an <link hashmap.hgt>audio</link> object with the name <arg>audio_name</arg>. The audio name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare audio objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>audio</logiccolor> statement creates an <link audio.hgt>audio</link> object with the name <arg>audio_name</arg>. The audio name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare audio objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
-AUDIO_HELP_TODO
+Audio recording and playback are currently only supported on Android.
 
 
 <subheader>Example</subheader>
 
 <logic>
-AUDIO_HELP_TODO
+<include include_audio_example.hgi />
 </logic>
 
 

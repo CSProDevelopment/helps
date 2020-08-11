@@ -9,19 +9,25 @@ b = audio_name.record(『<arg>seconds</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor audio>audio.record</logiccolor> function AUDIO_HELP_TODO ... an <link audio.hgt>audio</link> object. AUDIO_HELP_TODO
+The <logiccolor audio>audio.record</logiccolor> function starts recording audio in the background and stores the recorded audio in an <link audio.hgt>audio</link> object. The call to record begins audio recording and returns immediately. Recording continues until either <logiccolor audio>audio.stop</logiccolor> function is called, If the optional parameter <arg>seconds</arg> is specified, recording will stop after the specified number of seconds have elapsed or <logiccolor audio>audio.stop</logiccolor> is called, whichever comes first. While the audio is recording, CSEntry continues to run and the user is able to enter responses and move around the questionnaire as usual. This is useful if you wish to record portions of the interview for audit purposes. If instead you wish to record audio synchronously, for example to record the response to a single question, use the <logiccolor audio>audio.recordInteractive</logiccolor> function instead.
 
+The recorded audio is stored in the <link audio.hgt>audio</link> object and can be played back using <logiccolor audio>audio.play</logiccolor> or saved to a file using <logiccolor audio>audio.save</logiccolor>. If the <link audio.hgt>audio</link> object already contains an audio recording, the recorded audio will be appended to the existing recording. To replace the existing recording rather than adding to it, call the <logiccolor audio>audio.clear</logiccolor> function before calling <logiccolor audio>audio.record</logiccolor>.
+
+Recorded audio is stored in m4a format (AAC encoded in an MPEG-4 container). Files should be saved with the extension .m4a so that they will be recognized by media players.
+
+Audio recording is only supported on Android. This function will do nothing on Windows.
 
 <subheader>Return Value</subheader>
 
-The function returns AUDIO_HELP_TODO
+The function returns a logical value of 1 (true) if the recording is started successfully and 0 (false) otherwise.
 
 
 <subheader>Example</subheader>
 
 <logic>
-AUDIO_HELP_TODO
+logic>
+<include include_audio_background_example.hgi />
 </logic>
 
 
-<seealso audio.hgt audio_stop_function.hgt audio_recordinteractive_function.hgt />
+<seealso audio.hgt audio_stop_function.hgt audio_recordinteractive_function.hgt audio_clear_function.hgt />
