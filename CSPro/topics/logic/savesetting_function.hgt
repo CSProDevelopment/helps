@@ -8,7 +8,7 @@ b = savesetting(<arg>attribute</arg>, <arg>value</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>savesetting</logiccolor> function saves a setting as an attribute-value pair using string expressions <arg>attribute</arg> and <arg>value</arg>. You can save multiple settings using different attribute strings and can retrieve the settings using the <logiccolor>loadsetting</logiccolor> function. These settings are stored locally on the device and can be accessed by other programs using the attribute string. Using settings is a way to share data between different CSPro applications on the same device.
+The <logiccolor>savesetting</logiccolor> function saves a setting as an attribute-value pair using the string expression <arg>attribute</arg> and the string or numeric expression <arg>value</arg>. You can save multiple settings using different attribute strings and can retrieve the settings using the <logiccolor>loadsetting</logiccolor> function. These settings are stored locally on the device and can be accessed by other programs using the attribute string. Using settings is a way to share data between different CSPro applications on the same device.
 
 The file from which settings are retrieved can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file.
 
