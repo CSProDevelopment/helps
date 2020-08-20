@@ -22,6 +22,7 @@ This is a detailed list of changes in CSPro 7.5. For a more general overview, se
 	<li><link function_statement.hgt>User-defined functions</link> now support <link function_parameters_optional.hgt>optional parameters</link> as well as passing numeric and string values <link function_arguments_ref.hgt>by reference</link>.</li>
 	<li>Conditional compilation of logic is now possible due to the addition of a <link preprocessor.hgt>logic preprocessor</link>.</li>	
 	<li>The <logiccolor valueset>valueset.randomize</logiccolor> function is a new way to randomize value sets (which previously could be done using <logiccolor>randomizevs</logiccolor>). These value set randomizations now obey any seed value provided using the <logiccolor>seed</logiccolor> function.</li>
+	<li>The <logiccolor valueset>valueset.sort</logiccolor> function sorts the order of entries in the value set by either label or code.</li>
 	<li>The <logiccolor>randomin</logiccolor> function now accepts non-integer values in the input <link in_operator.hgt>in list</link>.</li>
 	<li>The <logiccolor list>list.show</logiccolor> and <logiccolor valueset>valueset.show</logiccolor> functions work with string lists and string value sets.</li>
 	<li>New numeric and string variables can be declared inline in the <logiccolor>recode</logiccolor> statement's destination variables section.</li>

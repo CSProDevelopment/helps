@@ -1,0 +1,38 @@
+﻿<title>ValueSet.Sort Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax valueset>
+b = valueset_name.sort(『 ascending ‖ descending 』 『 by code ‖ label 』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor valueset>valueset.sort</logiccolor> function sorts the order of entries in the <link valueset.hgt>value set</link> by either label or code. An optional argument, <logiccolor>ascending</logiccolor> or <logiccolor>descending</logiccolor>, allows for the specification of the sort order. Another optional argument, <logiccolor>by code</logiccolor> or <logiccolor>by label</logiccolor> allows you to specify whether to sort the value set's entries by code or label. By default the value set will be sorted in ascending order by label.
+
+Labels are sorted in case insensitive order, so <logiccolor>"c"</logiccolor> is considered the same as <logiccolor>"C"</logiccolor>. On the other hand, codes for alphanumeric value sets are sorted in case sensitive order, so <logiccolor>"c"</logiccolor> is recognized as different from <logiccolor>"C"</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true).
+
+
+<subheader>Example</subheader>
+
+<logic>
+valueset enumerators_vs;
+
+forcase STAFF_DICT where STAFF_ROLE = 1 do
+	enumerators_vs.add(STAFF_NAME, STAFF_CODE);
+endfor;
+
+enumerators_vs.sort();
+
+setvalueset(ENUMERATOR_LOGIN, enumerators_vs);
+</logic>
+
+
+<seealso valueset_randomize_function.hgt />
