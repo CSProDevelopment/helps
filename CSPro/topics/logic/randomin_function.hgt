@@ -1,18 +1,21 @@
 ﻿<title>RandomIn Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = randomin(<arg>in_list</arg>);
+d = randomin(<arg>in_list</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>randomin</logiccolor> function returns a uniformly distributed random integer from a grouping of non-continuous integers expressed as an <link in_operator.hgt>in list</link>. You can use the <logiccolor>seed</logiccolor> function to initialize the random number generation.
+The <logiccolor>randomin</logiccolor> function returns a random number from a grouping of numeric values expressed as an <link in_operator.hgt>in list</link>. You can use the <logiccolor>seed</logiccolor> function to initialize the random number generation. A non-integer can appear as part of the in list, but if it is part of a range, both the low and high values of the range will be converted to integers and the function will return a uniformly distributed random integer in that range.
+
 
 <subheader>Return Value</subheader>
 
-The function returns an integer random value. The function will return <logiccolor>default</logiccolor> if there were no applicable values to construct a table of non-continuous integers from which to pick a random number. If a value appears more than once in the in list or the value set, it will have a higher probability of being selected by the function.
+The function returns a random value from the values of the in list. The function will return <logiccolor>default</logiccolor> if there were no applicable values to construct a group of valid numbers from which to pick a random number. If a value appears more than once in the in list, it will have a higher probability of being selected by the function.
+
 
 <subheader>Examples</subheader>
 
@@ -21,9 +24,10 @@ errmsg("Random tribe code: %d", randomin(TRIBE_VS1));
 
 errmsg("Non-continuous random number: %d", randomin(-100:-50, 50:100, 999));
 
-errmsg("After many calls, 5 will be selected 75% of the time: %d", randomin(5, 5, 5, 8));
+errmsg("After many calls, 1.23 will be selected 75% of the time: %d", randomin(1.23, 1.23, 1.23, 8));
 
 errmsg("Random month: %d", randomin(1:12)); // same as random(1, 12)
 </logic>
 
-<seealso random_function.hgt randomizevs_function.hgt seed_function.hgt />
+
+<seealso random_function.hgt valueset_randomize_function.hgt seed_function.hgt />

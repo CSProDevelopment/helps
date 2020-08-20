@@ -8,11 +8,12 @@ A value set is a CSPro logic object and the following functions can be called vi
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor list>add</logiccolor></cell><cell>Adds a single value, or all the values from an existing value set, to the value set.</cell>
-	<cell><logiccolor list>remove</logiccolor></cell><cell>Removes the value with the specified code from the value set.</cell>
-	<cell><logiccolor list>clear</logiccolor></cell><cell>Removes all values from the value set.</cell>
-	<cell><logiccolor list>length</logiccolor></cell><cell>Returns the size of the value set.</cell>
-	<cell><logiccolor list>show</logiccolor></cell><cell>Displays the value set's labels (similarly to <logiccolor>accept</logiccolor>) and returns the code of the operator's selection.</cell>
+	<cell><logiccolor valueset>add</logiccolor></cell><cell>Adds a single value, or all the values from an existing value set, to the value set.</cell>
+	<cell><logiccolor valueset>clear</logiccolor></cell><cell>Removes all values from the value set.</cell>
+	<cell><logiccolor valueset>length</logiccolor></cell><cell>Returns the size of the value set.</cell>
+	<cell><logiccolor valueset>randomize</logiccolor></cell><cell>Randomizes the order of entries in the value set.</cell>
+	<cell><logiccolor valueset>remove</logiccolor></cell><cell>Removes the value with the specified code from the value set.</cell>
+	<cell><logiccolor valueset>show</logiccolor></cell><cell>Displays the value set's labels (similarly to <logiccolor>accept</logiccolor>) and returns the code of the operator's selection.</cell>
 </table>
 
 In addition to these object functions, value sets contain two built-in <link list.hgt>list</link> objects: <logiccolor>valueset_name.codes</logiccolor> and <logiccolor>valueset_name.labels</logiccolor>, which contain the codes and labels for the value set. These are read-only lists and can be used in most ways that list objects can be used.

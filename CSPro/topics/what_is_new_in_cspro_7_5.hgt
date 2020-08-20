@@ -21,10 +21,12 @@ This is a detailed list of changes in CSPro 7.5. For a more general overview, se
 	<li>A new function, <logiccolor>encode</logiccolor>, escapes special characters to facilitate writing to HTML or CSV files, or encodes characters when writing out URIs or URI components.</li>
 	<li><link function_statement.hgt>User-defined functions</link> now support <link function_parameters_optional.hgt>optional parameters</link> as well as passing numeric and string values <link function_arguments_ref.hgt>by reference</link>.</li>
 	<li>Conditional compilation of logic is now possible due to the addition of a <link preprocessor.hgt>logic preprocessor</link>.</li>	
-	<li>A new callback function, <logiccolor>OnSystemMessage</logiccolor>, provides a way to override the displaying of system error messages.</li>
-	<li>New numeric and string variables can be declared inline in the <logiccolor>recode</logiccolor> statement's destination variables section.</li>
-	<li>It is possible to check a value against all <link special_values.hgt>special values</link> using the code <logiccolor>special</logiccolor> in an <link in_operator.hgt>in list</link> (which are also used by <logiccolor>recode</logiccolor> and <logiccolor>when</logiccolor> statements).</li>
+	<li>The <logiccolor valueset>valueset.randomize</logiccolor> function is a new way to randomize value sets (which previously could be done using <logiccolor>randomizevs</logiccolor>). These value set randomizations now obey any seed value provided using the <logiccolor>seed</logiccolor> function.</li>
+	<li>The <logiccolor>randomin</logiccolor> function now accepts non-integer values in the input <link in_operator.hgt>in list</link>.</li>
 	<li>The <logiccolor list>list.show</logiccolor> and <logiccolor valueset>valueset.show</logiccolor> functions work with string lists and string value sets.</li>
+	<li>New numeric and string variables can be declared inline in the <logiccolor>recode</logiccolor> statement's destination variables section.</li>
+	<li>A new callback function, <logiccolor>OnSystemMessage</logiccolor>, provides a way to override the displaying of system error messages.</li>
+	<li>It is possible to check a value against all <link special_values.hgt>special values</link> using the code <logiccolor>special</logiccolor> in an <link in_operator.hgt>in list</link> (which are also used by <logiccolor>recode</logiccolor> and <logiccolor>when</logiccolor> statements).</li>
 	<li>The <logiccolor>loadsetting</logiccolor> and <logiccolor>savesetting</logiccolor> functions accepts numeric values as part of the attribute-value pair.</li>
 	<li>The <logiccolor>hash</logiccolor> function accepts numeric values as inputs.</li>
 </list>
