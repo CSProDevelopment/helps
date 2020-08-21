@@ -9,12 +9,15 @@ A list is a CSPro logic object and the following functions can be called via <li
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
 	<cell><logiccolor list>add</logiccolor></cell><cell>Adds a single value, or a list of values, to the end of a list.</cell>
-	<cell><logiccolor list>insert</logiccolor></cell><cell>Inserts a single value, or a list of values, at a given position in the list.</cell>
-	<cell><logiccolor list>remove</logiccolor></cell><cell>Removes the value at a given position from the list.</cell>
 	<cell><logiccolor list>clear</logiccolor></cell><cell>Removes all values from the list.</cell>
+	<cell><logiccolor list>insert</logiccolor></cell><cell>Inserts a single value, or a list of values, at a given position in the list.</cell>
 	<cell><logiccolor list>length</logiccolor></cell><cell>Returns the size of the list.</cell>
+	<cell><logiccolor list>remove</logiccolor></cell><cell>Removes the value at a given position from the list.</cell>
+	<cell><logiccolor list>removeDuplicates</logiccolor></cell><cell>Removes duplicate values from the list.</cell>
+	<cell><logiccolor list>removeIn</logiccolor></cell><cell>Removes values from the list that are specified in an <link in_operator.hgt>in list</link>.</cell>
 	<cell><logiccolor list>seek</logiccolor></cell><cell>Returns the index of a specified value.</cell>
 	<cell><logiccolor list>show</logiccolor></cell><cell>Displays the list's values (similarly to <logiccolor>accept</logiccolor>) and returns the index of the operator's selection.</cell>
+	<cell><logiccolor list>sort</logiccolor></cell><cell>Sorts the list's values in ascending or descending order.</cell>
 </table>
 
 In addition to these object functions, lists can be filled when used as arguments to functions such as <logiccolor>dirlist</logiccolor>, <logiccolor>keylist</logiccolor>, and <logiccolor hashmap>hashmap.getKeys</logiccolor>.
