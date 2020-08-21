@@ -1,0 +1,13 @@
+﻿string data_path = "C:\CSPro Data Files\Region 1\COVID-19 Survey.csdb";
+
+string data_directory = path.getDirectoryName(data_path);
+// result: C:\CSPro Data Files\Region 1\
+
+string data_filename = path.getFilename(data_path);
+// result: COVID-19 Survey.csdb
+
+string data_extension = path.getExtension(data_path);
+// result: .csdb
+
+string data_filename_without_extension = path.getFilenameWithoutExtension(data_path);
+// result: COVID-19 Survey

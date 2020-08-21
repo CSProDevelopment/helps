@@ -1,0 +1,25 @@
+﻿<title>Path Namespace</title>
+
+The path namespace is a set of functions used to perform operations on a path or to get information from a path specification.
+
+
+<subheader>Functionality</subheader>
+
+<table 2 header nowrap>
+	<cell>Function</cell><cell>Description</cell>
+	<cell><logiccolor>path.concat</logiccolor></cell><cell>Combines multiple strings into one string representing a file path.</cell>
+	<cell><logiccolor>path.getDirectoryName</logiccolor></cell><cell>Extracts the directory name from a file path.</cell>
+	<cell><logiccolor>path.getExtension</logiccolor></cell><cell>Extracts the file extension from a file path.</cell>
+	<cell><logiccolor>path.getFileName</logiccolor></cell><cell>Extracts the file name from a file path.</cell>
+	<cell><logiccolor>path.getFileNameWithoutExtension</logiccolor></cell><cell>Extracts the file name without its extension from a file path.</cell>
+</table>
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_path_example.hgi />
+</logic>
+
+
+<seealso pathname_function.hgt />

@@ -1,0 +1,27 @@
+﻿<title>Path.Concat Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = path.concat(<arg>path_string1</arg>『, ..., <arg>path_stringN</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>path.concat</logiccolor> function concatenates the values of multiple string expressions (<arg>path_string1</arg> + ... + <arg>path_stringN</arg>) into one string representing a file path. The first argument can be either a string expression or one of the arguments used in the <logiccolor>pathname</logiccolor> function. The combined paths are returned as an absolute, not relative, path.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the concatenated path string.
+
+
+<subheader>Example</subheader>
+
+<logic>
+string image_filename = path.concat(Application, "../Images", maketext("%v%v.jpg", CLUSTER, HHNO));
+</logic>
+
+
+<seealso path.hgt pathname_function.hgt concat_function.hgt />

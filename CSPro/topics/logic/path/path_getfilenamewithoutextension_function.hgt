@@ -1,0 +1,27 @@
+﻿<title>Path.GetFileNameWithoutExtension Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = path.getFileNameWithoutExtension(<arg>path_string</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>path.getFileNameWithoutExtension</logiccolor> function returns the file name for the path specified in the string expression <arg>path_string</arg>. The file name will not include the extension of the file; to get the file name with the extension, use the <logiccolor>path.getFileName</logiccolor> function.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a string with the directory name and extension removed from the full path.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_path_example.hgi />
+</logic>
+
+
+<seealso path.hgt path_getfilename_function.hgt path_getextension_function.hgt />

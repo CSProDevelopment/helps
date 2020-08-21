@@ -1,5 +1,7 @@
 ﻿<title>PathConcat Function</title>
 
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.5, you are encouraged to use the <logiccolor valueset>path.concat</logiccolor> function.</i>
+
 <subheader>Format</subheader>
 
 <logicsyntax>
@@ -20,4 +22,4 @@ The function returns the concatenated path string.
 string image_filename = pathconcat(Application, "../Images", maketext("%v%v.jpg", CLUSTER, HHNO));
 </logic>
 
-<seealso pathname_function.hgt concat_function.hgt />
+<seealso path_concat_function.hgt pathname_function.hgt concat_function.hgt />

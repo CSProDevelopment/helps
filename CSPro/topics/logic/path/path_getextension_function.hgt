@@ -1,0 +1,27 @@
+﻿<title>Path.GetExtension Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = path.getExtension(<arg>path_string</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>path.getExtension</logiccolor> function returns the file extension for the path specified in the string expression <arg>path_string</arg>. The extension will begin with a <logiccolor>"."</logiccolor>. If the file does not have an extension, a blank string is returned.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the extension extracted from the full path.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_path_example.hgi />
+</logic>
+
+
+<seealso path.hgt path_getfilename_function.hgt path_getfilenamewithoutextension_function.hgt />
