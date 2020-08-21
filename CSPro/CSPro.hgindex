@@ -431,6 +431,7 @@ tool_list.hgt | Concatenate																		#	Concatenate
 	tool_list.hgt | Data																		#		Data
 concat_function.hgt																				#	Concat Function
 	audio_concat_function.hgt																	#		Audio.Concat Function
+	path_concat_function.hgt																	#		Path.Concat Function
 preprocessor.hgt | Conditional Compilation														#	Conditional Compilation
 expressions.hgt | Conditions																	#	Conditions
 config_statement.hgt																			#	Config Statement
@@ -960,6 +961,14 @@ getcapturetype_function.hgt																		#	GetCaptureType Function
 getcaselabel_function.hgt																		#	GetCaseLabel Function
 getdeck_function.hgt																			#	GetDeck Function
 getdeviceid_function.hgt																		#	GetDeviceID Function
+path_getdirectoryname_function.hgt | GetDirectoryName											#	GetDirectoryName
+	path_getdirectoryname_function.hgt															#		Path.GetDirectoryName Function
+path_getextension_function.hgt | GetExtension													#	GetExtension
+	path_getextension_function.hgt																#		Path.GetExtension Function
+path_getfilename_function.hgt | GetFileName														#	GetFileName
+	path_getfilename_function.hgt																#		Path.GetFileName Function
+path_getfilenamewithoutextension_function.hgt | GetFileNameWithoutExtension						#	GetFileNameWithoutExtension
+	path_getfilenamewithoutextension_function.hgt												#		Path.GetFileNameWithoutExtension Function
 getimage_function.hgt																			#	GetImage Function
 hashmap_getkeys_function.hgt | GetKeys Function													#	GetKeys Function
 	hashmap_getkeys_function.hgt																#		HashMap.GetKeys Function
@@ -1555,12 +1564,15 @@ cut_copy_or_paste_things.hgt | Paste															#	Paste
 	copy_and_paste_table_specification.hgt | Paste Table Specification							#		Paste Table Specification
 pathconcat_function.hgt																			#	PathConcat Function
 pathname_function.hgt																			#	PathName Function
-pathconcat_function.hgt | Paths (File System)													#	Paths (File System)
-	pathconcat_function.hgt																		#		PathConcat Function
-	pathname_function.hgt																		#		PathName Function
 data_entry_path.hgt | Path (Data Entry)															#	Path (Data Entry)
 	data_entry_path.hgt | Off																	#		Off
 	data_entry_path.hgt | On																	#		On
+path.hgt																						#	Path Namespace
+	path_concat_function.hgt																	#		Path.Concat Function
+	path_getdirectoryname_function.hgt															#		Path.GetDirectoryName Function
+	path_getextension_function.hgt																#		Path.GetExtension Function
+	path_getfilenamewithoutextension_function.hgt												#		Path.GetFileNameWithoutExtension Function
+	path_getfilename_function.hgt																#		Path.GetFileName Function
 encode_function.hgt | Percent-Encoding															#	Percent-Encoding
 add_summary_statistics_to_a_table.hgt | Percentile												#	Percentile
 	add_summary_statistics_to_a_table.hgt														#		Add Summary Statistics to a Table
@@ -1686,6 +1698,7 @@ random_function.hgt | Random																	#	Random
 randomin_function.hgt																			#	RandomIn Function
 randomizevs_function.hgt																		#	RandomizeVS Function
 valueset_randomize_function.hgt | Randomize Function											#	Randomize Function
+	valueset_randomize_function.hgt																#		ValueSet.Randomize Function
 value_properties.hgt | Ranges																	#	Ranges
 	value_properties.hgt | Multiple Value														#		Multiple Value
 tally_attributes_for_a_variable.hgt | Ratio														#	Ratio
@@ -1752,7 +1765,9 @@ drop_files_from_an_application.hgt | Remove														#	Remove
 map_remove_button_function.hgt | RemoveButton Function											#	RemoveButton Function
 	map_remove_button_function.hgt																#		Map.RemoveButton Function
 list_removeduplicates_function.hgt | RemoveDuplicates Function									#	RemoveDuplicates Function
+	list_removeduplicates_function.hgt															#		List.RemoveDuplicates Function
 list_removein_function.hgt | RemoveIn Function													#	RemoveIn Function
+	list_removein_function.hgt																	#		List.RemoveIn Function
 map_remove_marker_function.hgt | RemoveMarker Function											#	RemoveMarker Function
 	map_remove_marker_function.hgt																#		Map.RemoveMarker Function
 list_remove_function.hgt | Remove Function														#	Remove Function

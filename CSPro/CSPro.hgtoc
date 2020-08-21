@@ -520,6 +520,12 @@
 		|Barcode																				#			Barcode
 			barcode.hgt																			#				Barcode Namespace
 			barcode_read_function.hgt															#				Barcode.Read Function
+		|File Object																			#			File Object
+			file_statement.hgt																	#				File Statement
+			file_open_function.hgt																#				File.Open Function
+			file_close_function.hgt																#				File.Close Function
+			file_read_function.hgt																#				File.Read Function
+			file_write_function.hgt																#				File.Write Function
 		|HashMap Object																			#			HashMap Object
 			hashmap_statement.hgt																#				HashMap Statement
 			hashmap_getkeys_function.hgt														#				HashMap.GetKeys Function
@@ -539,34 +545,6 @@
 			list_length_function.hgt															#				List.Length Function
 			list_show_function.hgt																#				List.Show Function
 			list_sort_function.hgt																#				List.Sort Function
-		|ValueSet Object																		#			ValueSet Object
-			valueset_statement.hgt																#				ValueSet Statement
-			valueset_add_function.hgt															#				ValueSet.Add Function
-			valueset_remove_function.hgt														#				ValueSet.Remove Function
-			valueset_clear_function.hgt															#				ValueSet.Clear Function
-			valueset_length_function.hgt														#				ValueSet.Length Function
-			valueset_randomize_function.hgt														#				ValueSet.Randomize Function
-			valueset_show_function.hgt															#				ValueSet.Show Function
-			valueset_sort_function.hgt															#				ValueSet.Sort Function
-		|File Object																			#			File Object
-			file_statement.hgt																	#				File Statement
-			file_open_function.hgt																#				File.Open Function
-			file_close_function.hgt																#				File.Close Function
-			file_read_function.hgt																#				File.Read Function
-			file_write_function.hgt																#				File.Write Function
-		|Pff Object																				#			Pff Object
-			pff_statement.hgt																	#				Pff Statement
-			pff_load_function.hgt																#				Pff.Load Function
-			pff_save_function.hgt																#				Pff.Save Function
-			pff_getproperty_function.hgt														#				Pff.GetProperty Function
-			pff_setproperty_function.hgt														#				Pff.SetProperty Function
-			pff_exec_function.hgt																#				Pff.Exec Function
-		|SystemApp Object																		#			SystemApp Object
-			systemapp_statement.hgt																#				SystemApp Statement
-			systemapp_setargument_function.hgt													#				SystemApp.SetArgument Function
-			systemapp_exec_function.hgt															#				SystemApp.Exec Function
-			systemapp_getresult_function.hgt													#				SystemApp.GetResult Function
-			systemapp_clear_function.hgt														#				SystemApp.Clear Function
 		|Map Object																				#			Map Object
 			map_statement.hgt																	#				Map Statement
 			map_show_function.hgt																#				Map.Show Function
@@ -595,6 +573,35 @@
 			map_show_current_location_function.hgt												#				Map.ShowCurrentLocation Function
 			map_zoom_to_function.hgt															#				Map.ZoomTo Function
 			offline_maps.hgt																	#				Offline Maps
+		|Path																					#			Path
+			path.hgt																			#				Path Namespace
+			path_concat_function.hgt															#				Path.Concat Function
+			path_getdirectoryname_function.hgt													#				Path.GetDirectoryName Function
+			path_getextension_function.hgt														#				Path.GetExtension Function
+			path_getfilename_function.hgt														#				Path.GetFileName Function
+			path_getfilenamewithoutextension_function.hgt										#				Path.GetFileNameWithoutExtension Function
+		|Pff Object																				#			Pff Object
+			pff_statement.hgt																	#				Pff Statement
+			pff_load_function.hgt																#				Pff.Load Function
+			pff_save_function.hgt																#				Pff.Save Function
+			pff_getproperty_function.hgt														#				Pff.GetProperty Function
+			pff_setproperty_function.hgt														#				Pff.SetProperty Function
+			pff_exec_function.hgt																#				Pff.Exec Function
+		|SystemApp Object																		#			SystemApp Object
+			systemapp_statement.hgt																#				SystemApp Statement
+			systemapp_setargument_function.hgt													#				SystemApp.SetArgument Function
+			systemapp_exec_function.hgt															#				SystemApp.Exec Function
+			systemapp_getresult_function.hgt													#				SystemApp.GetResult Function
+			systemapp_clear_function.hgt														#				SystemApp.Clear Function
+		|ValueSet Object																		#			ValueSet Object
+			valueset_statement.hgt																#				ValueSet Statement
+			valueset_add_function.hgt															#				ValueSet.Add Function
+			valueset_remove_function.hgt														#				ValueSet.Remove Function
+			valueset_clear_function.hgt															#				ValueSet.Clear Function
+			valueset_length_function.hgt														#				ValueSet.Length Function
+			valueset_randomize_function.hgt														#				ValueSet.Randomize Function
+			valueset_show_function.hgt															#				ValueSet.Show Function
+			valueset_sort_function.hgt															#				ValueSet.Sort Function
 		|Program Control Statements																#			Program Control Statements
 			break_statement.hgt																	#				Break Statement
 			do_statement.hgt																	#				Do Statement
