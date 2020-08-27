@@ -8,6 +8,7 @@ This is a detailed list of changes in CSPro 7.5. For a more general overview, se
 
 <list>
 	<li>On Android devices it is possible to <link audio_record_function.hgt>record</link> and <link audio_play_function.hgt>play</link> audio in two modes: <link audio_recordinteractive_function.hgt>interactive mode</link>, with the enumerator able to control the recording; and <link audio_record_function.hgt>background mode</link>, with the recording controlled by logic functions using the new <logiccolor>audio</logiccolor> object.</li>
+	<li>The csentry directory on Android has moved. For new installations the csentry directory will be located at: <b>&lt;external storage&gt;/Android/data/gov.census.cspro.csentry/files/csentry</b>. If you are upgrading from an earlier version of CSEntry, the csentry directoy will remain at <b>&lt;external storage&gt;/csentry</b>.This change is required to support the more stringent security requirements introduced in the latest version of Android.</li>
 </list>
 
 
