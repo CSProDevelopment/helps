@@ -8,7 +8,13 @@ This is a detailed list of changes in CSPro 7.5. For a more general overview, se
 
 <list>
 	<li>On Android devices it is possible to <link audio_record_function.hgt>record</link> and <link audio_play_function.hgt>play</link> audio in two modes: <link audio_recordinteractive_function.hgt>interactive mode</link>, with the enumerator able to control the recording; and <link audio_record_function.hgt>background mode</link>, with the recording controlled by logic functions using the new <logiccolor>audio</logiccolor> object.</li>
-	<li>The csentry directory on Android has moved. For new installations the csentry directory will be located at: <b>&lt;external storage&gt;/Android/data/gov.census.cspro.csentry/files/csentry</b>. If you are upgrading from an earlier version of CSEntry, the csentry directoy will remain at <b>&lt;external storage&gt;/csentry</b>.This change is required to support the more stringent security requirements introduced in the latest version of Android.</li>
+</list>
+
+
+<subheader>Android</subheader>
+
+<list>
+	<li>The <i>csentry</i> directory on Android has moved. For new installations the <i>csentry</i> directory will be located at:<indent><b>&lt;external storage&gt;/Android/data/gov.census.cspro.csentry/files/csentry</b></indent> ~!~If you are upgrading from an earlier version of CSEntry, the <i>csentry</i> directory will remain at:<indent><b>&lt;external storage&gt;/csentry</b></indent> ~!~This change is required to support the more stringent security requirements introduced in the latest versions of Android.</li>
 </list>
 
 
@@ -41,6 +47,13 @@ This is a detailed list of changes in CSPro 7.5. For a more general overview, se
 
 <list>
 	<li>The Deploy Application tool has options to refresh all files or all data entry applications within a folder.</li>
+</list>
+
+
+<subheader>CSWeb</subheader>
+
+<list>
+	<li>CSWeb can convert case data to MySQL/MariaDB relational tables using a <link CSWeb::data_settings.hgt>command line process</link>, allowing for more dynamic reporting.</li>
 </list>
 
 

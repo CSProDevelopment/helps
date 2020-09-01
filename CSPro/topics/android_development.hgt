@@ -7,7 +7,9 @@ CSEntry, CSPro's data collection tool, is available as an Android application fr
 
 In the Android environment you will only be able to run binary data entry applications (<link binary_data_entry_application_file_pen.hgt>.pen files</link>). You will not be able to execute .ent files or any other kind of CSPro application (concatenation, batch processing, etc.). This .pen file, along with the .pff runtime script, constitute the two files needed to run a data entry application on an Android device.
 
-All applications on the Android device must be stored in the csentry folder on your device. Connect your Android device to your computer and, via USB transfer, copy your .pen and .pff files to the Android device. Generally the device's external storage is its SD card. The first time you run the CSEntry application, the csentry folder will be automatically created for you. The application searches subdirectories located in the csentry folder, so it is possible to add multiple applications while maintaining a clean directory structure. Starting with CSPro version 7.5, the csentry directory is located at <b>&lt;external storage&gt;/Android/data/gov.census.cspro.csentry/files</b>. In earlier versions of CSPro it was located at <b>&lt;external storage&gt;/csentry/</b>. If you previously had an older version of CSPro on your Android device, the csentry will not be moved when you upgrade.
+All applications on the Android device must be stored in the <i>csentry</i> folder on your device. Connect your Android device to your computer and, via USB transfer, copy your .pen and .pff files to the Android device. Generally the device's external storage is its SD card. The first time you run the CSEntry application, the <i>csentry</i> folder will be automatically created for you. The application searches subdirectories located in the <i>csentry</i> folder, so it is possible to add multiple applications while maintaining a clean directory structure.
+
+Starting with CSPro version 7.5, the <i>csentry</i> directory is located at <b>&lt;external storage&gt;/Android/data/gov.census.cspro.csentry/files/csentry</b>. In earlier versions it was located at <b>&lt;external storage&gt;/csentry</b>. If you previously had an older version of CSPro on your Android device, the <i>csentry</i> will not be moved when you upgrade.
 
 You can also transfer applications to your device by using the <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link> tool.
 
@@ -25,6 +27,6 @@ Encrypting the phone will require that you supply a PIN or password to protect t
 
 <subheader>Differences Between Windows and Android</subheader>
 
-The Android application only displays one question per screen. A future release may allow the displaying of rosters and multiple fields on a single screen. In addition, though most functions operate identically on the Windows and Android platforms, there are a few functions that behave differently, such as <logiccolor>execsystem</logiccolor>. Notes about differing functionality are noted in the help documents about each function.
+The Android application only displays one question per screen (unless using <link blocks.hgt>blocks</link>). A future release may allow the displaying of rosters and multiple fields on a single screen. In addition, though most functions operate identically on the Windows and Android platforms, there are a few functions that behave differently, such as <logiccolor>execsystem</logiccolor>. Notes about differing functionality are noted in the help documents about each function.
 
 <seealso multimedia_features.hgt />
