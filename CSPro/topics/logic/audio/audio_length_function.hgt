@@ -11,11 +11,11 @@ d = audio_name.length();
 
 The <logiccolor audio>audio.length</logiccolor> function returns the length in seconds of the recording in an <link audio.hgt>audio</link> object.
 
-The <logiccolor audio>audio.length</logiccolor> function only supports audio recorded as AAC encoded audio in an mp4 container (.m4a). This is the format used for audio recorded by CSPro so it will work correctly for audio recorded using the <logiccolor audio>audio.record</logiccolor> or <logiccolor audio>audio.recordInteractive</logiccolor>. The length function will return DEFAULT for audio files recorded by other tools that use a different format such as mp3 or wav.
+The <logiccolor audio>audio.length</logiccolor> function only supports audio recorded as AAC encoded audio in an mp4 container (.m4a). This is the format used for audio recorded by CSPro so it will work correctly for audio recorded using the <logiccolor audio>audio.record</logiccolor> or <logiccolor audio>audio.recordInteractive</logiccolor>. The length function will return <logiccolor>default</logiccolor> for audio files recorded by other tools that use a different format such as mp3 or wav.
 
 <subheader>Return Value</subheader>
 
-The function returns the duration in seconds (and fractional seconds) of the audio recording or DEFAULT if the duration cannot be computed.
+The function returns the duration in seconds (and fractional seconds) of the audio recording or <logiccolor>default</logiccolor> if the duration cannot be computed.
 
 
 <subheader>Example</subheader>

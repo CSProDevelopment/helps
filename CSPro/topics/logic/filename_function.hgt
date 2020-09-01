@@ -12,7 +12,7 @@ The <logiccolor>filename</logiccolor> function returns the fully qualified name 
 
 If providing a <arg>pff_name</arg> (declared in a <logiccolor>pff</logiccolor> statement), the function returns the name of an existing PFF file, or the name of a temporarily created PFF file. If a PFF file was loaded (via <logiccolor pff>pff.load</logiccolor>) and not modified, the name of that PFF file is returned. If the PFF has been modified and not saved, then calling <logiccolor>filename</logiccolor> will save the PFF to a temporary file and the name of that file is returned.
 
-If providing an <arg>audio_name</arg> (declared in an <logiccolor>audio</logiccolor> statement), AUDIO_HELP_TODO.
+If providing an <arg>audio_name</arg> (declared in an <logiccolor>audio</logiccolor> statement), the function returns the name of the audio file associated with the audio object.
 
 The function can also take <logiccolor>paradata</logiccolor> as its argument, in which case it returns the file name of the currently open paradata log.
 

@@ -2,7 +2,7 @@
 
 In logic, an <logiccolor>audio</logiccolor> object represents an audio recording. Audio recordings may be loaded from audio files, saved to audio files, played back or recorded. Audio objects are typically used to record portions of an interview either interactively or in the background. With interactive recording an audio recorder is displayed to the user who then controls when the recording is started and stopped. The user must complete the audio recording before moving to the next survey question. With background recording, the audio recorder is started and stopped using CSPro logic and the user can continue with the survey while the audio is recorded. 
 
-Audio recording is typically implemented by declaring a variable of type audio, calling either the <logiccolor audio>record</logiccolor> or <logiccolor audio>recordInteractive</logiccolor> function and then calling the <logiccolor audio>save</logiccolor> function to save the audio to a file.
+Audio recording is typically implemented by declaring a variable of type <logiccolor>audio</logiccolor>, calling either the <logiccolor audio>record</logiccolor> or <logiccolor audio>recordInteractive</logiccolor> function, and then calling the <logiccolor audio>save</logiccolor> function to save the audio to a file.
 
 Audio recording and playback are currently only supported on Android.
 
@@ -15,7 +15,7 @@ An audio object is a CSPro logic object and the following functions can be calle
 	<cell><logiccolor audio>clear</logiccolor></cell><cell>Erases the audio recording currently stored in the audio object.</cell>
 	<cell><logiccolor audio>concat</logiccolor></cell><cell>Appends an audio recording to the recording stored in the audio object.</cell>
 	<cell><logiccolor audio>length</logiccolor></cell><cell>Returns the length, in seconds, of the recording in the audio object.</cell>
-	<cell><logiccolor audio>load</logiccolor></cell><cell>Reads an audio file and places the result in the audio object.</cell>
+	<cell><logiccolor audio>load</logiccolor></cell><cell>Reads an audio file and places the contents in the audio object.</cell>
 	<cell><logiccolor audio>play</logiccolor></cell><cell>Launches an audio player to play back the contents of the audio object.</cell>
 	<cell><logiccolor audio>record</logiccolor></cell><cell>Starts recording audio in the background.</cell>
 	<cell><logiccolor audio>recordInteractive</logiccolor></cell><cell>Starts interactive audio recording.</cell>
