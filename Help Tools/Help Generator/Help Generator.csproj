@@ -53,9 +53,14 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="zInterfaceCLR">
-      <HintPath Condition="Exists('..\..\..\..\cspro\cspro\release\bin')">..\..\..\..\cspro\cspro\release\bin\zInterfaceCLR.dll</HintPath>
-      <HintPath Condition="Exists('..\..\..\..\cspro\cspro\debug\bin')">..\..\..\..\cspro\cspro\debug\bin\zInterfaceCLR.dll</HintPath>
+    <Reference Include="zBridgeCLR">
+      <HintPath Condition="Exists('..\..\..\..\cspro\cspro\release\bin')">..\..\..\..\cspro\cspro\release\bin\zBridgeCLR.dll</HintPath>
+      <HintPath Condition="Exists('..\..\..\..\cspro\cspro\debug\bin')">..\..\..\..\cspro\cspro\debug\bin\zBridgeCLR.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="zLogicCLR">
+      <HintPath Condition="Exists('..\..\..\..\cspro\cspro\release\bin')">..\..\..\..\cspro\cspro\release\bin\zLogicCLR.dll</HintPath>
+      <HintPath Condition="Exists('..\..\..\..\cspro\cspro\debug\bin')">..\..\..\..\cspro\cspro\debug\bin\zLogicCLR.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

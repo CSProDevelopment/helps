@@ -61,11 +61,11 @@ namespace Colorizer
         {
             string assembly_name = new AssemblyName(args.Name).Name;
 
-            if( assembly_name.Equals("zInterfaceCLR") )
+            if( assembly_name.Equals("zBridgeCLR") || assembly_name.Equals("zLogicCLR") )
             {
                 var possible_directories = new List<string>();
 
-                // first look for zInterfaceCLR using the resource file directory (debug\bin and then release\bin)
+                // first look for the CLR DLLs using the resource file directory (debug\bin and then release\bin)
                 try
                 {
                     string resource_file_root = CalculateResourceFileRoot();
