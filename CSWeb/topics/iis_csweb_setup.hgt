@@ -3,34 +3,38 @@
 Below are the prerequisites for running CSWeb on an IIS server.
 
 <subheader>Add Project Files</subheader>
+
 Copy the <b>root directory</b> of your CSWeb project to <b>&lt;Drive&gt;:\inetpub\wwwroot</b>. The result may look like <b>C:\inetpub\wwwroot\csweb</b>.
 
 <subheader>Update Directory Permissions</subheader>
-You will find the below directories in your document root. Their permissions will need to be updated as shown.
+
+You will find the below directories in your document root. Their permissions will need to be updated as shown for <b>IUSR</b> and <b>IIS_USRS</b> group accounts.
+
 <list>
 	<li> <b>files</b>: Read and Write </li>
-	<li> <b>logs</b>: Read and Write </li>
 	<li> <b>var</b>: Read and Write </li>
-	<li> <b>src\api\app</b>: Read and Write </li>
-	<li> <b>src\ui\src</b>: Read and Write </li>
+	<li> <b>src\AppBundle</b>: Read and Write </li>
+	<li> <b>app\config</b>: Read and Write </li>
 </list>
 
-Let us use the <b>files</b> directory as an example. Right-click on <b>files</b> and select <b>Properties</b>. Then click the <b>Security</b> tab. Press the <b>Add...</b> button and type <b>IUSR</b> under <b>Enter the names to select</b>. Press the <b>Check Names</b> button and confirm your changes. Select the user name you just added, <b>IUSR</b>, then update the permissions under <b>Permissions for IUSR</b> so that <b>Read</b> and <b>Write</b> are allowed. Now repeat this process for <b>logs</b>, <b>var</b>, <b>src\api\app</b>, and <b>src\ui\src</b> setting the correct permissions.
+Let us use the <b>files</b> directory as an example. Right-click on <b>files</b> and select <b>Properties</b>. Then click the <b>Security</b> tab. Press the <b>Add...</b> button and type <b>IUSR</b> under <b>Enter the names to select</b>. Press the <b>Check Names</b> button and confirm your changes. Select the user name you just added, <b>IUSR</b>, then update the permissions under <b>Permissions for IUSR</b> so that <b>Read</b> and <b>Write</b> are allowed. Make sure to assign the same permissions for <b>IIS_USRS</b> group as well. Now repeat this process for <b>var</b>, <b>src\AppBundle</b>, and <b>app\config</b> setting the correct permissions.
 
 <subheader>Add Database</subheader>
+
 Do not forget to start the server. If you installed MySQL Server as a service you can start it by doing the following:
+
 <list ordered>
 	<li> Win + R </li>
 	<li> Run services.msc </li>
 	<li> Right-click on MySQLXX </li>
 	<li> Start </li>
 </list>
+
 Alternatively, if you did not install MySQL server as a service or have a web development environment like WampServer installed, you can start MySQL Server from the command line. You will need to open a command prompt and change directory to the directory that contains <b>mysqld.exe</b>.
 
 <indent><font monospace>> mysqld</font></indent>
 
 Next, you can use MySQL Monitor to add a database. Connect to MySQL Server. You will need to open a command prompt and change directory to the directory that contains <b>mysql.exe</b>.
-
 
 <indent><font monospace>> mysql -u root -p</font></indent>
 
@@ -49,10 +53,13 @@ To verify our work, we can list the databases.
 If you would prefer not to use the command line we recommend <link https://dev.mysql.com/downloads/workbench/>MySQL Workbench</link>.
 
 <subheader>Start IIS</subheader>
+
 If IIS is installed you will find the <b>Internet Information Services (IIS) Manager</b> shortcut under <b>Administrative Tools</b> in the <b>Control Panel</b>. Double click the shortcut to launch the IIS Manager. In the <b>Connections</b> tree on the left-hand side expand <b>Sites</b> and select <b>Default Web Site</b>. You will see your document root below this. On the right-hand side there is an <b>Actions</b> panel. Under <b>Manage Website</b> click <b>Start</b>.
 
 <subheader>Run Setup Script</subheader>
+
 Open a browser and in our case navigate to <b>localhost/csweb/setup</b>. The setup script will first check to make sure your server meets the prerequisites. If your server does not pass, refer to the <topic minimum_requirements.hgt />. Update your server and run the script again. If your server passed the script will ask for the last few configuration details.
+
 <list ordered>
 	<li><b>Database name</b>: the name of the database you created earlier.</li>
 	<li><b>Hostname</b>: this will typically be <b>localhost</b>.</li>
@@ -62,8 +69,10 @@ Open a browser and in our case navigate to <b>localhost/csweb/setup</b>. The set
 </list>
 
 Now verify the final two fields.
+
 <list ordered>
 	<li><b>Path to files directory</b>: for this setup, <b>C:\inetpub\wwwroot\csweb\files</b></li>
 	<li><b>CSWeb API URL</b>: for this setup, <b>http://localhost/csweb/api</b></li>
 </list>
-If everything is correct you will hit next and receive the "Setup Complete!" message. From here log in using <b>admin</b> as the username and the <b>CSWeb admin password</b> you just created. Once you have run the setup script you will <b>not</b> be able to run it again unless you delete <b>src\api\app\config.php</b> and <b>src\ui\src\config.php</b>. 
+
+If everything is correct you will hit next and receive the "Setup Complete!" message. From here log in using <b>admin</b> as the username and the <b>CSWeb admin password</b> you just created. Once you have run the setup script you will <b>not</b> be able to run it again unless you delete <b>src\AppBundle\config.php</b> and the contents of <b>var\cache</b> folder.
