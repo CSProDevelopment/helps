@@ -12,14 +12,16 @@ enddo;
 
 The <logiccolor>while</logiccolor> statement executes one or more statements repeatedly, in a loop, while the logical <arg>condition</arg> is true. Unlike a <logiccolor>do</logiccolor> loop, a counter is not automatically incremented, so you must ensure the termination of the loop. The condition is evaluated on each repetition of the loop before any of the statements are executed.
 
+You can exit the loop early by using <logiccolor>break</logiccolor> and you can continue execution with the next iteration of the loop by using <logiccolor>next</logiccolor>.
+
 <subheader>Example</subheader>
 
 <logic>
-setfile(inputFile,"Countries.txt");
+setfile(inputFile, "Countries.txt");
 
 string countriesLine;
 
-while fileread(inputFile,countriesLine) do
+while fileread(inputFile, countriesLine) do
 	// ...
 enddo;
 </logic>

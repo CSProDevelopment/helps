@@ -14,9 +14,9 @@ The <logiccolor>break</logiccolor> statement exits a <logiccolor>do</logiccolor>
 
 <logic>
 // find the spouse
-numeric ptrSpouse,ctr;
+numeric ptrSpouse;
 
-for ctr in PERSON do
+for numeric ctr in PERSON do
 
 	if P02_REL = 2 then
 		ptrSpouse = ctr;

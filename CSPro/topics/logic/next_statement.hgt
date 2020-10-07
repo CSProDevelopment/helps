@@ -16,7 +16,7 @@ The <logiccolor>next</logiccolor> statement ends a <logiccolor>do</logiccolor>, 
 // fill an array with the occurrence numbers of all spouses
 spouseNumber = 0;
 
-for ctr in PERSON do
+for numeric ctr in PERSON do
 
 	if P02_REL <> 2 then
 		next;
