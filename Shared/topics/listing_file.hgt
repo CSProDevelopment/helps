@@ -13,20 +13,23 @@ The listing file associated with a batch edit application is often the primary o
 
 <subheader>Listing File Formats</subheader>
 
-The traditional CSPro listing file is a text file with the extension <b>.lst</b>. However, you may find it useful to change the listing file output based on the kind of analysis you are conducting. There are four listing file formats. CSPro will output to a format based on the extension of the listing file name.
+The traditional CSPro listing file is a text file with the extension <b>.lst</b>. However, you may find it useful to change the listing file output based on the kind of analysis you are conducting. There are five listing file formats. CSPro will output to a format based on the extension of the listing file name.
 
 <table 3 header>
 	<cell>Format</cell><cell>Extension</cell><cell>Results Viewer</cell>
 	<cell><b>Text</b></cell><cell>.lst</cell><cell>Text Viewer</cell>
 	<cell><b>HTML</b></cell><cell>.html / .htm</cell><cell>Default Internet browser</cell>
+	<cell><b>Excel</b></cell><cell>.xlsx</cell><cell>Microsoft Excel (or other application associated with Excel files)</cell>
 	<cell><b>CSV</b></cell><cell>.csv</cell><cell>Application associated with.csv files (often Microsoft Excel)</cell>
 	<cell><b>CSPro Data</b></cell><cell>.csdb / .dat</cell><cell>Data Viewer</cell>
 </table>
 
 Using any extension not in the table above will result in a text listing file.
 
-The CSV (comma-separated values) and CSPro Data listing files can only be used with applications that contain an input dictionary so they are not suitable for some tabulation applications.
+The Excel, CSV (comma-separated values), and CSPro Data listing files can only be used with applications that contain an input dictionary so they are not suitable for some tabulation applications.
 
-Whereas the text and HTML listing files display keys of cases that had errors in text format, the CSV and CSPro Data listing files output these keys as separate columns/items (e.g., "0901" vs. PROVINCE: 9 / DISTRICT: 1).
+Whereas the text and HTML listing files display keys of cases that had errors in text format, the Excel, CSV, and CSPro Data listing files output these keys as separate columns/items (e.g., "0901" vs. PROVINCE: 9 / DISTRICT: 1).
 
 Error messages that occur outside of a case (for example during the application procedure) are written to all listing file formats except for CSPro Data, which only contains information about case-related errors. When using the CSPro Data listing file, a dictionary that describes the data file will be output using the name of the listing file with the added extension .dcf.
+
+A data entry application's listing file is appended to any existing listing file, whereas listing files for batch and tabulation applications are created from scratch for the program's run. Excel listing files do not support append mode so they may not be a suitable format for data entry applications.
