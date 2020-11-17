@@ -56,11 +56,15 @@
     <Reference Include="zBridgeCLR">
       <HintPath Condition="Exists('..\..\..\..\cspro\cspro\release\bin')">..\..\..\..\cspro\cspro\release\bin\zBridgeCLR.dll</HintPath>
       <HintPath Condition="Exists('..\..\..\..\cspro\cspro\debug\bin')">..\..\..\..\cspro\cspro\debug\bin\zBridgeCLR.dll</HintPath>
+      <HintPath Condition="Exists('..\..\..\cspro\cspro\release\bin')">..\..\..\cspro\cspro\release\bin\zBridgeCLR.dll</HintPath>
+      <HintPath Condition="Exists('..\..\..\cspro\cspro\debug\bin')">..\..\..\cspro\cspro\debug\bin\zBridgeCLR.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="zLogicCLR">
       <HintPath Condition="Exists('..\..\..\..\cspro\cspro\release\bin')">..\..\..\..\cspro\cspro\release\bin\zLogicCLR.dll</HintPath>
       <HintPath Condition="Exists('..\..\..\..\cspro\cspro\debug\bin')">..\..\..\..\cspro\cspro\debug\bin\zLogicCLR.dll</HintPath>
+      <HintPath Condition="Exists('..\..\..\cspro\cspro\release\bin')">..\..\..\cspro\cspro\release\bin\zLogicCLR.dll</HintPath>
+      <HintPath Condition="Exists('..\..\..\cspro\cspro\debug\bin')">..\..\..\cspro\cspro\debug\bin\zLogicCLR.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
