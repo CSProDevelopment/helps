@@ -220,6 +220,7 @@ namespace Help_Generator
                         }
                     }
 
+                    // associate all other IDs with the default topic
                     foreach( string alias in _resourceFileIdsCopy )
                         tw.WriteLine($"{alias}={outputTopicFilenames[DefaultTopic]}");
 
@@ -227,7 +228,7 @@ namespace Help_Generator
                     tw.WriteLine("[MAP]");
 
                     foreach( var context in _resourceIdSet.GetAllContext() )
-                        tw.WriteLine($"#define {context} {_resourceIdSet.GetId(context)}");
+                        tw.WriteLine($"#define {context} {_resourceIdSet.GetId(context, false)}");
                 }
 
 

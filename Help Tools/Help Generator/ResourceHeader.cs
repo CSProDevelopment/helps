@@ -24,6 +24,7 @@ namespace Help_Generator
         
 
         private static Dictionary<string, Dictionary<string, int>> _readIds = new Dictionary<string, Dictionary<string, int>>();
+        private static Dictionary<string, int> _afxResIds;
 
         public static Dictionary<string, int> ReadIds(string project_name)
         {
@@ -58,18 +59,7 @@ namespace Help_Generator
                     if( !File.Exists(filename) )
                         throw new Exception($"The resource header file could not be located: {filename}");
 
-                    foreach( string line in Colorizer.ExternalTextFileReader.ReadAllLines(filename) )
-                    {
-                        var match = regex.Match(line);
-
-                        if( match.Success )
-                        {
-                            string context = match.Groups[1].Value;
-
-                            if( ResourceTypes.Any(x => ( context.IndexOf(x.Prefix) == 0 )) )
-                                ids[context] = int.Parse(match.Groups[2].Value);
-                        }
-                    }
+                    ParseIds(Colorizer.ExternalTextFileReader.ReadAllLines(filename), ids);
                 };
 
                 read_ids(resource_filename);
@@ -81,6 +71,42 @@ namespace Help_Generator
             }
             
             return ids;
+        }
+
+        public static Dictionary<string, int> ReadAfxResIds()
+        {
+            if( _afxResIds == null )
+            {
+                string[] lines = Properties.Resources.afxres.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                _afxResIds = new Dictionary<string, int>();
+                ParseIds(lines, _afxResIds);
+            }
+
+            return _afxResIds;
+        }
+
+        private static void ParseIds(string[] lines, Dictionary<string, int> ids)
+        {
+            var regex = new Regex("^\\s*#define\\s+([a-zA-Z]\\S+)\\s+(\\d+|0[xX][0-9a-fA-F]+)\\s*$");
+
+            foreach( string line in lines )
+            {
+                var match = regex.Match(line);
+
+                if( match.Success )
+                {
+                    string context = match.Groups[1].Value;
+                    
+                    if( ResourceTypes.Any(x => ( context.IndexOf(x.Prefix) == 0 )) )
+                    {
+                        if( match.Groups[2].Value.IndexOf("0x", 0, StringComparison.InvariantCultureIgnoreCase) == 0 )
+                            ids[context] = Convert.ToInt32(match.Groups[2].Value, 16);
+
+                        else
+                            ids[context] = int.Parse(match.Groups[2].Value);
+                    }
+                }
+            }
         }
     }
 }
