@@ -111,6 +111,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceHeader.cs" />
+    <Compile Include="ResourceIdSet.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SyntaxHelp.cs">
       <SubType>Form</SubType>
@@ -233,6 +235,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hgweb_web_topic_current.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\afxres.h" />
   </ItemGroup>
   <Import Project="..\Colorizer\Colorizer.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -19,7 +19,7 @@ namespace Help_Generator.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,6 +61,30 @@ namespace Help_Generator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to // This is a part of the Microsoft Foundation Classes C++ library.
+        ///// Copyright (C) Microsoft Corporation
+        ///// All rights reserved.
+        /////
+        ///// This source code is only intended as a supplement to the
+        ///// Microsoft Foundation Classes Reference and related
+        ///// electronic documentation provided with the library.
+        ///// See these sources for detailed information regarding the
+        ///// Microsoft Foundation Classes product.
+        ///
+        ///#ifndef __AFXRES_H__
+        ///#define __AFXRES_H__
+        ///
+        ///#ifdef RC_INVOKED
+        ///#ifndef _INC_WINDOWS
+        ///#define _IN [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string afxres {
+            get {
+                return ResourceManager.GetString("afxres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Checkmark {
@@ -96,12 +120,14 @@ namespace Help_Generator.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Title=&lt;helps title&gt;
-        ///PdfTitle=&lt;optional PDF title; also an indication that a PDF should be created&gt;
-        ///DefaultTopic=&lt;topic filename of the default topic&gt;
+        ///Output=&lt;CHM, HTML, or PDF&gt;
+        ///Output=&lt;multiple Output entries are allowed&gt;
+        ///DefaultTopic=&lt;topic filename of the default topic for CHM and HTML outputs&gt;
+        ///PdfCoverTopic=&lt;topic filename of the cover page for PDF outputs&gt;
         ///DefinitionsFile=&lt;optional path with definitions that can be retrieved using the definition tag&gt;
-        ///ResourceFile=&lt;optional path pointing to the header files used to define context sensitive helps&gt;
-        ///ResourceFile=&lt;multiple ResourceFile entries are allowed&gt;
-        ///# comment.
+        ///DefinitionsFile=&lt;multiple DefinitionsFile entries are allowed&gt;
+        ///&lt;definition-attribute&gt;=&lt;definition-value, to add additional definitions&gt;
+        ///ResourceFile=&lt;optional name of a projec [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SettingsHelp {
             get {
@@ -114,11 +140,11 @@ namespace Help_Generator.Properties {
         ///&lt;html&gt;
         ///&lt;head&gt;&lt;meta http-equiv=&apos;Content-Type&apos; content=&apos;text/html; charset=UTF-8&apos; /&gt;&lt;title&gt;CSPro Help Generator Syntax&lt;/title&gt;&lt;/head&gt;
         ///&lt;body&gt;
-        ///&lt;div style=&apos;word-wrap:break-word;margin:0px;padding:0px;border:0px;background-color:#ffffff;color:#000000;font-family:Courier New;font-size:10pt;&apos;&gt;
+        ///&lt;div style=&apos;word-wrap:break-word;margin:0px;padding:0px;border:0px;background-color:#ffffff;color:#000000;font-family:Consolas;font-size:10pt;&apos;&gt;
         ///
         ///&lt;p&gt;&lt;strong&gt;Page Title:&lt;/strong&gt; &amp;lt;title&amp;gt;page title&amp;lt;/title&amp;gt; &amp;lt;title noheader&amp;gt;page title (not displayed)&amp;lt;/title&amp;gt;&lt;/p&gt;
         ///
-        ///&lt;p&gt;&lt;strong&gt;Context Sensitive Help:&lt;/strong&gt; &amp;lt;context HIDD_F [rest of string was truncated]&quot;;.
+        ///&lt;p&gt;&lt;strong&gt;Context Sensitive Help:&lt;/strong&gt; &amp;lt;context HIDD_FIEL [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SyntaxHelp {
             get {
@@ -144,16 +170,16 @@ namespace Help_Generator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to body
         ///{
-        ///	margin: 10px;
-        ///	padding: 0px;
+        ///    margin: 10px;
+        ///    padding: 0px;
         ///}
         ///
         ///body, td, h1, h2
         ///{
-        ///	background-color: white;
-        ///	font-family: Calibri, Candara, Segoe, &quot;Segoe UI&quot;, Optima, Arial, Helvetica, sans-serif;
-        ///	font-size: 14px;
-        ///	color: black;
+        ///    background-color: white;
+        ///    font-family: Calibri, Candara, Segoe, &quot;Segoe UI&quot;, Optima, Arial, Helvetica, sans-serif;
+        ///    font-size: 14px;
+        ///    color: black;
         ///}
         ///
         ///h1
@@ -170,8 +196,7 @@ namespace Help_Generator.Properties {
         ///li { margin: 0 0 10px 0; }
         ///
         ///table { margin: 0; }
-        ///th, td { text-align: left; vertical-align:top; padding-right: 20px; }
-        ///t [rest of string was truncated]&quot;;.
+        ///th, td { text-align: left; vertical-align:top; padding [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string TopicStylesheet {
             get {
@@ -233,9 +258,8 @@ namespace Help_Generator.Properties {
         ///
         ///#left
         ///{
-        ///	float: left;
-        ///    width: 200px;
-        /// [rest of string was truncated]&quot;;.
+        ///    float: left;
+        ///    width: 200px [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string WebsiteStylesheet {
             get {
