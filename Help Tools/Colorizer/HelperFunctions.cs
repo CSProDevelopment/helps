@@ -33,19 +33,6 @@ namespace Colorizer
             }
         }
 
-        public static string CalculateResourceFileRoot()
-        {
-            try
-            {
-                return File.ReadAllLines(ReferenceFileLocate(Constants.ResourceFileRootDirectoryFilename))[0].Trim();
-            }
-
-            catch
-            {
-                return null;
-            }
-        }
-
         public enum ProgramFilesDirectory { x86, x64 };
         public static string GetProgramFilesDirectory(ProgramFilesDirectory directory_type)
         {
@@ -65,12 +52,12 @@ namespace Colorizer
             {
                 var possible_directories = new List<string>();
 
-                // first look for the CLR DLLs using the resource file directory (debug\bin and then release\bin)
+                // first look for the CLR DLLs using the code directory (debug\bin and then release\bin)
                 try
                 {
-                    string resource_file_root = CalculateResourceFileRoot();
-                    possible_directories.Add(Path.Combine(resource_file_root, @"debug\bin"));
-                    possible_directories.Add(Path.Combine(resource_file_root, @"release\bin"));
+                    string code_directory = CodeDirectory.GetCodeDirectory();
+                    possible_directories.Add(Path.Combine(code_directory, @"debug\bin"));
+                    possible_directories.Add(Path.Combine(code_directory, @"release\bin"));
                 }
                 catch { }
 
