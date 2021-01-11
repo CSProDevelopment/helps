@@ -12,6 +12,13 @@ This is a detailed list of changes in CSPro 7.6. For a more general overview, se
 	<li>A new feature in the logic editor, <link symbol_analysis.hgt>Symbol Analysis</link>, shows where each dictionary symbol, form symbol, and user-defined function is used in an application.</li>	
 </list>
 
+<subheader>CAPI Question Text</subheader>
+<list>
+	<li>Question text now fully supports <link add_pictures.hgt>images</link>, tables, hyperlinks and <link html_question_text.hgt>HTML code</link>.</li>
+	<li>The question text editor supports <link create_standard_forms.hgt>customizable styles</link> to make it easy to use standard formats throughout a survey. Styles replace the fonts CAPI Font 1 and CAPI Font 2 in earlier versions.</li>
+	<li>The format of the <link question_text_file_qsf.hgt> question text file (.qsf) file</link> has changed. The new file format uses HTML instead of Rich Text Format (RTF). Question text files from earlier versions of CSPro will be converted to the new format when opened in version 7.6. Applications with question text created or edited in version 7.6 can no longer be opened in older versions.</li>
+</list>
+
 
 <subheader>Logic</subheader>
 
