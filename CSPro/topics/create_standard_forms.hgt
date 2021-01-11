@@ -1,8 +1,28 @@
 ﻿<title>Create Standard Forms</title>
 
-Frequently, CAPI applications format question text using one or two specific fonts. CSPro has two dedicated font selections (CAPI font 1 and CAPI font 2) that can be defined and used for this purpose.
+Frequently, CAPI applications format question text using a few specific combinations fonts and colors. For example, 16 point Arial black for literal question text and bold 14 point blue for interviewer instructions. CSPro supports <b>styles</b> that can be defined and used for this purpose. Styles allow you to define standard formats that are shared between all questions in your data entry application.
+
+By default, every CSPro application comes with the following default styles: normal, instruction, heading 1, heading 2 and heading 3. These styles appear in a dropdown list in the toolbar of the question text editor.
+
+<subheader>Applying Styles</subheader>
+
+To apply a style to text in the question editor:
 
 <list ordered>
-	<li>Select <b>Change CAPI Font 1</b> or <b>Change CAPI Font 2</b> from the <b>CAPI Options</b> menu.</li>
-	<li>A font dialog will appear, where you can change the font type and size. You can also change the font formatting (underline, boldface, italic) and color.</li>
+	<li>Select all or a portion of the text in the question text editor.</li>
+	<li>Click on the styles dropdown in the toolbar and choose the style to apply.</li>
 </list>
+
+<subheader>Customizing Styles</subheader>
+
+You can modify the default styles or add your own styles:
+
+<list ordered>
+	<li>Select <b>Edit Styles...</b> from the <b>CAPI Options</b> menu.</li>
+	<li>Select the style to modify from the list on left or click on the <b>+</b> button to add a new style to the list.</li>
+	<li>Change the font type, size, font formatting (underline, boldface, italic) and color as desired.</li>
+	<li>Click <b>OK</b> to save the changes.</li>
+</list>
+
+All question text that uses any of the modified styles are automatically updated to reflect the changes. Any new styles created are added to the styles dropdown list in the question text editor.
+

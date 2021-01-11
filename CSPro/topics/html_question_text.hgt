@@ -1,0 +1,27 @@
+﻿<title>HTML Question Text</title>
+
+For those with experience using HTML, it is possible to format the question using HTML tags and CSS styles. To view the HTML code click on the <b>Code</b> button on the question text editor toolbar.
+
+CSPro supports all tags and attributes in standard HTML 5 including images, tables, and CSS styles.
+
+The HTML for each question does not include the &lt;html&gt; or &lt;body&gt; tags. The HTML question text is inserted into to a complete HTML document that already has those tags.
+
+<subheader>Styles</subheader>
+
+All styles defined in the <link create_standard_forms.hgt>Edit Styles</link> dialog are included as CSS classes in the HTML document by CSPro. These styles can therefore be used in the HTML question text by setting the class attribute of a tag to the name of one of the styles. For example:
+
+<html><pre>
+&lt;p&gt;A question with &lt;span class=&quot;instruction&quot;&gt;a style applied to this part&lt;/span&gt;&lt;/p&gt;
+</pre></html>
+
+The <b>normal</b> style is applied to the &lt;body&gt; tag by CSPro so that all unstyled text in the question text uses the <b>normal</b> style.
+
+In addition, the document created by CSPro sets the background color to yellow on Windows Desktop and to grey on Mobile.
+
+Finally the document adds some basic styling to tables such as borders and padding.
+
+<subheader>External files</subheader>
+
+References to external files such as images and stylsheets may be included in the HTML question text. All paths must be relative paths based on the location of the application (.pen or .ent) file. Absolute paths are not supported. When deploying your application make sure to copy the external files as well or include them in a <link resource_folders.hgt>resource folder</link>.
+
+<seealso change_formatting.hgt question_text_file_qsf.hgt />
