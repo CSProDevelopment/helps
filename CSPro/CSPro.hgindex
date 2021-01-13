@@ -321,6 +321,13 @@ area_captions.hgt | Caption																		#	Caption
 	area_captions.hgt | Area Caption															#		Area Caption
 	formats_for_a_part_of_a_table.hgt															#		Formats for a Part of a Table
 	parts_of_a_table.hgt																		#		Parts of a Table
+capture_types.hgt																				#	Capture Types
+	check_box.hgt																				#		Check Box
+	date_capture_type.hgt																		#		Date Capture Type
+	drop_down.hgt																				#		Drop Down / Combo Box
+	number_pad.hgt																				#		Number Pad
+	radio_button.hgt																			#		Radio Button
+	text_box.hgt																				#		Text Box
 errmsg_function.hgt | Case																		#	Case
 	errmsg_function.hgt																			#		ErrMsg Function
 	skip_case_statement.hgt | Skip Case Function												#		Skip Case Function
@@ -375,7 +382,7 @@ checking_errors.hgt																				#	Checking Errors
 errmsg_function.hgt | Checks																	#	Checks
 	errmsg_function.hgt | Hard																	#		Hard
 	warning_function.hgt | Soft																	#		Soft
-extended_controls.hgt | Check Box																#	Check Box
+check_box.hgt																					#	Check Box
 	ischecked_function.hgt																		#		IsChecked Function
 choose_topic_sections.hgt																		#	Choose Topic Sections
 cspro_settings.hgt | Clear Credentials															#	Clear Credentials
@@ -416,7 +423,7 @@ formatting_row_column_or_cell_data.hgt | Column Head											#	Column Head
 	formatting_row_column_or_cell_data.hgt | Format Column data in a Table						#		Format Column data in a Table
 	hide_or_show_a_row_or_column.hgt | Hide/Show Columns in a Table								#		Hide/Show Columns in a Table
 	parts_of_a_table.hgt																		#		Parts of a Table
-extended_controls.hgt | Combo box																#	Combo box
+drop_down.hgt | Combo Box																		#	Combo Box
 coming_back_later.hgt | Coming Back Later (CAPI)												#	Coming Back Later (CAPI)
 encode_function.hgt | Comma-Separated Values Encoding											#	Comma-Separated Values Encoding
 comments.hgt																					#	Comments
@@ -601,7 +608,7 @@ batch_edit_applications.hgt | Data Validation													#	Data Validation
 dateadd_function.hgt																			#	DateAdd Function
 datediff_function.hgt																			#	DateDiff Function
 datevalid_function.hgt																			#	DateValid Function
-extended_controls.hgt | Date Capture Type														#	Date Capture Type
+date_capture_type.hgt																			#	Date Capture Type
 sysdate_function.hgt | Date Functions															#	Date Functions
 	dateadd_function.hgt																		#		DateAdd Function
 	datediff_function.hgt																		#		DateDiff Function
@@ -708,7 +715,7 @@ drag_option_menu.hgt																			#	Drag Option Menu
 	drag_option_menu.hgt | Use Sub-Items														#		Use Sub-Items
 add_lines_or_boxes_to_a_form.hgt | Draw Boxes on a Form											#	Draw Boxes on a Form
 syncconnect_function_dropbox.hgt | Dropbox Synchronization										#	Dropbox Synchronization
-extended_controls.hgt | Drop down																#	Drop down
+drop_down.hgt | Drop Down																		#	Drop Down
 drop_files_from_an_application.hgt																#	Drop Files from an Application
 include_exclude_special_values_in_a_variable.hgt | Dump											#	Dump
 	include_exclude_special_values_in_a_variable.hgt | Undefined Values							#		Undefined Values
@@ -795,13 +802,6 @@ tool_list.hgt | Export																			#	Export
 export_statement.hgt																			#	Export Statement
 expressions.hgt																					#	Expressions
 extended_controls.hgt																			#	Extended Controls
-extended_controls.hgt																			#	Extended Controls
-	extended_controls.hgt | Check Box															#		Check Box
-	extended_controls.hgt | Combo Box															#		Combo Box
-	extended_controls.hgt | Date																#		Date
-	extended_controls.hgt | Drop Down															#		Drop Down
-	extended_controls.hgt | Radio Button														#		Radio Button
-	extended_controls.hgt | Text Box															#		Text Box
 dictionary_types.hgt | External Dictionary														#	External Dictionary
 external_files.hgt																				#	External Files
 	external_files.hgt | About																	#		About
@@ -1154,8 +1154,8 @@ add_dictionary_elements.hgt | Item																#	Item
 	item_properties.hgt																			#		Item Properties
 	item_properties.hgt | Label																	#		Label
 	labels.hgt																					#		Labels
-	item_properties.hgt | Length																#		Length
 	item_length.hgt																				#		Length
+	item_properties.hgt | Length																#		Length
 	modify_dictionary_elements.hgt | Modify														#		Modify
 	item_properties.hgt | Name																	#		Name
 	names.hgt																					#		Names
@@ -1165,8 +1165,8 @@ add_dictionary_elements.hgt | Item																#	Item
 	item_properties.hgt | Properties															#		Properties
 	find_dictionary_elements.hgt | Search														#		Search
 	selecting_items.hgt | Select																#		Select
-	item_properties.hgt | Starting Position														#		Starting Position
 	starting_position.hgt																		#		Starting Position
+	item_properties.hgt | Starting Position														#		Starting Position
 	sub_items.hgt																				#		Subitems
 	item_properties.hgt | Type																	#		Type
 	item_properties.hgt | Zero Fill																#		Zero Fill
@@ -1454,6 +1454,7 @@ edit_function.hgt | Number																		#	Number
 	edit_function.hgt | Convert to string														#		Convert to string
 	decimal_places.hgt																			#		Decimal Places
 	numbers.hgt																					#		Numbers
+number_pad.hgt																					#	Number Pad
 numeric_statement.hgt | Numeric																	#	Numeric
 	array_statement.hgt | Array																	#		Array
 	expressions.hgt																				#		Expressions
@@ -1695,7 +1696,7 @@ questionnaire_and_dictionary_organization.hgt													#	Questionnaire and Di
 questions.hgt																					#	Questions
 question_text_file_qsf.hgt																		#	Question File (.qsf)
 question_text_macros.hgt																		#	Question Text Macros
-extended_controls.hgt | Radio button															#	Radio button
+radio_button.hgt																				#	Radio Button
 random_function.hgt | Random																	#	Random
 randomin_function.hgt																			#	RandomIn Function
 randomizevs_function.hgt																		#	RandomizeVS Function
@@ -2200,7 +2201,7 @@ add_text_to_a_form.hgt | Text																	#	Text
 	text_strings.hgt | Strings																	#		Strings
 	tool_list.hgt																				#		Tool List
 	tool_list.hgt | Viewer																		#		Viewer
-extended_controls.hgt | Text Box																#	Text Box
+text_box.hgt																					#	Text Box
 data_sources.hgt | Text Data Source																#	Text Data Source
 if_statement.hgt | Then																			#	Then
 	if_statement.hgt																			#		If Statement
