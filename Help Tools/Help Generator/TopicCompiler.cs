@@ -976,7 +976,7 @@ namespace Help_Generator
 
         private string EndMessageHandler(string endTagInnerText)
         {
-            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.MessageToHtml, TrimOnlyOneNewlineBothEnds(endTagInnerText), GetHtmlFilenameForKeyword);
+            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.MessageToHtmlHelp, TrimOnlyOneNewlineBothEnds(endTagInnerText), GetHtmlFilenameForKeyword);
         }
 
         private string EndPffHandler(string endTagInnerText)
