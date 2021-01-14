@@ -1,1 +1,45 @@
 ﻿<title>Capture Types</title>
+
+Occasionally it may be useful to display to an enumerator or keyer the possible values for a given field in a data entry application. For example, if a survey is being conducting on a tablet computer, it may be easier for an enumerator to use a finger or stylus to select a value rather than to key the value using the screen's touch keyboard. CSPro's extended controls allow for such flexibility by allowing the program to specify the capture type associated with a field.
+
+<subheader>Selecting Extended Controls</subheader>
+
+You can indicate that you want to automatically use extended controls by selecting the Use Extended Controls option in DragOptions. If this option is selected, CSPro will automatically choosea capture type for the field based on the field's first value set.
+
+You can manuallychange the capture type for a field by editing the field'sproperties. CSPro allows you to select a capture type that is suitablefor the item's first value set. A warning will appear if the value setis not suitable. In this case, if the value set is compatible at the timeof data entry (because the value set was changed dynamically using the setvalueset function), it willbe used; if not compatible, the field will appear as a Text Box. For moreprogrammatic control, see the setcapturetypefunction.
+
+<center><image capture_types_1.png /></center>
+
+The CSPro Designer shows the fields that use extended controls by coloring the border of the field in blue. The blue border does not exist when the data entry application is run in CSEntry. The field border will be a lighter blue color when the Number Pad capture type is selected.
+
+<center><image capture_types_2.png /></center>
+
+<subheader>Capture Types</subheader>
+
+<list>
+	<li> <topic check_box.hgt /> - Capture multiple response variables </li>
+	<li> <topic date_capture_type.hgt /> - Capture dates </li>
+	<li> <topic drop_down.hgt /> - Captures a discrete value as a drop down or allows for a range as a combo box</li>
+	<li> <topic number_pad.hgt /> - Display number pay for capturing numeric values </li>
+	<li> <topic radio_button.hgt /> - Capture a discrete value </li>
+	<li> <topic text_box.hgt /> - Default option and captures an alpha numeric </li>
+</list>
+
+<subheader>Hiding the Title of an Extended Control Window</subheader>
+
+By default CSEntry displays the label of the value set in the window of the extended control, but this title can be turned off using programmatic logic:
+
+<logic>set attributes(dictionary-symbol)assisted off(variable(title));</logic>
+
+<subheader>Validation Method</subheader>
+
+<table 3>
+<cell><b>Capture Type</b></cell><cell><b>Numeric Field</b></cell><cell><b>Alphanumeric Field</b></cell>
+<cell>Check Box</cell><cell>—</cell><cell>Comprised of values in the value set</cell>
+<cell>Combo Box</cell><cell>In value set</cell><cell>In value set (only for fields of length 1)</cell>
+<cell>Date</cell><cell>In value set and a valid date</cell><cell>In value set and a valid date</cell>
+<cell>Radio Button / Drop Down</cell><cell>In value set</cell><cell>In value set</cell>
+<cell>Text Box / Number Pad</cell><cell>In value set</cell><cell>In value set (only for fields of length 1)</cell>
+</table>
+
+<seealso getcapturetype_function.hgt setcapturetype_function.hgt setcapturepos_function.hgt />
