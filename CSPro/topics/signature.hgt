@@ -1,1 +1,19 @@
 ﻿<title>Signature</title>
+
+Passing the signature command to execsystem opens the signature widget (mobile only). The signature UI includes two options:
+
+<list>
+<li>Save - Tap to save an image of the displayed signature. </li>
+<li>Clear - Tap to to clear the displayed signature. </li>
+</list>
+
+<center><image signature.png /></center>
+
+<subheader>Examples</subheader>
+
+<logic>
+execsystem("signature:" + pathconcat(Application, "saved-signature.jpg"));
+execsystem("signature:" + pathconcat(Application, "saved-signature.png"));
+</logic>
+
+<seealso execsystem_function_mobile.hgt multimedia_features.hgt />

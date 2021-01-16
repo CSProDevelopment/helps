@@ -1,1 +1,19 @@
 ﻿<title>Camera</title>
+
+Passing the camera command to execsystem opens the camera widget (mobile only). The camera UI includes two options:
+
+<list>
+<li>Camera icon - Tap to take photo. </li>
+<li>Flip camera icon - Tap to toggle between the front and rear-facing camera. </li>
+</list>
+
+<center><image camera.png /></center>
+
+<subheader>Examples</subheader>
+
+<logic>
+execsystem("camera:" + pathconcat(Application, "photo.jpg"));
+execsystem("camera:" + pathconcat(Application, "photo.png"));
+</logic>
+
+<seealso execsystem_function_mobile.hgt multimedia_features.hgt />
