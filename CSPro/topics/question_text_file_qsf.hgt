@@ -4,7 +4,7 @@ The question file contains information related to <b>CAPI</b> (<b>C</b>omputer-<
 
 <subheader>File Format</subheader>
 
-Most users don't need to understand the internal format of the .qsf file but for advanced users who wish to use their own tools to read or generate question files the following section describes the file format.
+Most users do not need to understand the internal format of the .qsf file but for advanced users who wish to use their own tools to read or generate question files the following section describes the file format.
 
 You should avoid editing the question text file by hand since small changes to the content or indentation can easily render the file unreadable by CSPro.
 
@@ -13,16 +13,17 @@ The .qsf file is in <link https://yaml.org>YAML</link> format with UTF-8 encodin
 At the top-level the .qsf contains a mapping (associative array) with the following keys:
 
 <list>
-<li>fileType: always set to "Question Text"</li>
-<li>version: version of CSPro that created the question text file example "CSPro 7.6"</li>
-<li>languages: list of <link define_languages.hgt>languages</link> used in the question text file</li>
-<li>styles: list of <link create_standard_forms.hgt>styles</link> used in the question text file</li>
-<li>questions: list of questions with one entry for each field or block in the data entry application that contains non-blank question or help text</li>
+<li><b>fileType</b>: always set to "Question Text"</li>
+<li><b>version</b>: version of CSPro that created the question text file; for example "CSPro <definition version />"</li>
+<li><b>languages</b>: list of <link define_languages.hgt>languages</link> used in the question text file</li>
+<li><b>styles</b>: list of <link question_text_edit_styles.hgt>styles</link> used in the question text file</li>
+<li><b>questions</b>: list of questions, with one entry for each field or block in the data entry application that contains non-blank question or help text</li>
 </list>
+
 
 <subheader>Languages</subheader>
 
-Each language is a mapping with two keys: <b>name</b> and <b>label</b> which contain the name and label defined in the <link define_languages.hgt>languages dialog</link> available from the <b>CAPI Options</b> menu.
+Each language is a mapping with two keys, <b>name</b> and <b>label</b>, which contain the name and label defined in the <link define_languages.hgt>languages dialog</link> available from the <b>CAPI Options</b> menu.
 
 <html><pre>
 languages:
@@ -31,6 +32,7 @@ languages:
  - name: FR
   label: French
 </pre></html>
+
 
 <subheader>Styles</subheader>
 
@@ -41,9 +43,9 @@ Styles are implemented using CSS (Cascading Style Sheets) classes. Since the que
 Each style in the question text file is a mapping with three keys:
 
 <list>
-<li>name: name displayed in the style dropdown and in the <b>Edit Styles</b> dialog.</li>
-<li>className: CSS (Cascading Style Sheets) class name used for the style in the HTML question text.</li>
-<li>css: CSS (Cascading Style Sheets) style definition.</li>
+<li><b>name</b>: name displayed in the style dropdown and in the <link question_text_edit_styles.hgt>Edit Styles</link> dialog</li>
+<li><b>className</b>: CSS class name used for the style in the HTML question text</li>
+<li><b>css</b>: CSS style definition</li>
 </list>
 
 <html><pre>
@@ -58,29 +60,29 @@ styles:
    font-family: Arial;font-size: 14px;color: #0000FF;
 </pre></html>
 
-
 If you were defining the above classes in a CSS file rather in CSPro you would have:
 
 <html><pre>
-.normal { font-family: Arial;font-size: 12px;}
-.instruction { font-family: Arial;font-size: 10px; color: #0000FF;}
+.normal { font-family: Arial;font-size: 16px; }
+.instruction { font-family: Arial;font-size: 14px;color: #0000FF; }
 </pre></html>
 
-Then if in the question text editor in CSPro you set the style for a block of text, the editor will modify the HTML to apply the selected style e.g.
+If in the question text editor in CSPro you set the style for a block of text, the editor will modify the HTML to apply the selected style; e.g.:
 
 <html><pre>
-&lt;p&gt;A question with &lt;span class=&quot;instruction&quot;&gt;a style applied to this part&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;A question with &lt;span class=&quot;instruction&quot;&gt;a style applied to this part&lt;/span&gt;.&lt;/p&gt;
 </pre></html>
 
-Any HTML that doesn't have a class specified will have the normal style applied. This is done by applying the normal class to the body element of the HTML document.
+Any HTML that does not have a class specified will have the normal style applied. This is done by applying the normal class to the body element of the HTML document.
+
 
 <subheader>Questions</subheader>
 
 The bulk of the question text is made up of a list of questions where each question is a mapping with a name and a list of conditions.
 
-The name is the fully qualified name of the dictionary item that the question text is displayed for. This is name of the dictionary and the name of the item separated by ".". For example <b>SIMPLECAPI_DICT.AGE</b>. For question text that is applied to blocks the name is simply the name of the block with no dictionary name or ".".
+The name is the fully qualified name of the dictionary item that the question text is displayed for. This is name of the dictionary and the name of the item separated by period; e.g., <b>SIMPLECAPI_DICT.AGE</b>. For question text that is applied to blocks, the name is simply the name of the block with no dictionary name or period.
 
-The conditions correspond to the entries in the <link create_conditional_questions.hgt>conditions grid</link> that appears underneath the question text editor. Even questions that have no conditions defined in the conditions grid still contain a condition in the qsf file although in that the case the condition logic will be empty. Each condition has three keys: condition logic, questionText and helpText. The logic is the CSPro expression from the conditions grid. The questionText and helpText are mappings from language code (the codes from the languages section described above) to the HTML for the question or help text.
+The conditions correspond to the entries in the <link create_conditional_questions.hgt>conditions grid</link> that appears underneath the question text editor. Even questions that have no conditions defined in the conditions grid still contain a condition in the .qsf file, although in such cases the condition logic is empty. Each condition has three keys: <b>logic</b>, <b>questionText</b>, and <b>helpText</b>. The logic is the CSPro expression from the conditions grid. The questionText and helpText are mappings from language code (the codes from the languages section described above) to the HTML for the question or help text.
 
 <html><pre>
 questions:

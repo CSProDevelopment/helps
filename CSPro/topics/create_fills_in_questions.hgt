@@ -2,7 +2,7 @@
 
 Fills are used to customize <link questions.hgt>question text</link> based on respondents' specific characteristics. This is done by embedding CSPro logic expressions into the text and surrounding them with pairs of tilde characters (~~).
 
-Fills may contain any valid CSPro logic expression that evaluates to a string or numeric value. Logic expressions may include dictionary items, variables, occurrence labels, user-defined functions as well as any built-in CSPro functions and operators.
+Fills may contain any valid CSPro logic expression that evaluates to a string or numeric value. Logic expressions may include dictionary items, variables, occurrence labels, user-defined functions, as well as any built-in CSPro functions and operators.
 
 <subheader>Fills with Dictionary Items or Variables</subheader>
 
@@ -27,6 +27,7 @@ You can customize the question text by inserting an item or group's <link occurr
 
 <indent>How much did you spend on <b>~~getocclabel()~~</b> in the last month?</indent>
 
+
 <subheader>Fills with User-Defined Functions</subheader>
 
 You can insert the return value of a <link user_defined_functions.hgt>user-defined function</link> into the question text. The function can return either numeric or string values. For example:
@@ -47,9 +48,9 @@ end;
 </logic>
 
 
-<subheader>HTML in fills</subheader>
+<subheader>HTML in Fills</subheader>
 
-You can use HTML tags in order to dynamically format fills using logic, however you if you use HTML tags you must surround the fill with three tildes (~~~) instead of two. This tells CSPro not to escape the tags when substituting the fill value. If you use the standard two tildes ~~ the literal HTML will substituted instead of the formatted value.
+You can use HTML tags in order to dynamically format fills using logic. If you use HTML tags, you must surround the fill with three tildes (~~~) instead of two. This tells CSPro not to escape the tags when substituting the fill value. If you use the standard two tildes ~~, the literal HTML will substituted instead of the formatted value.
 
 For example the question text:
 
@@ -83,5 +84,6 @@ enddo;
 
 householdMembers = householdMembers + "</ul>" 
 </logic>
+
 
 <seealso html_question_text.hgt />

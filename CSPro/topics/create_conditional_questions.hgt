@@ -16,6 +16,6 @@ Select an item for which you want to add a condition (from the left-hand tree).
 
 When the entry application comes to this question, it will evaluate the first condition. If it is true, then the question text for that condition will be shown to the user. If not, the next condition will be checked, and so on. If no conditions are satisfied (i.e., they are all false), then no question text will be displayed. It is not necessary to add an actual condition; a blank condition will always evaluate true.
 
-<b>Note:</b> Conditions can be any CSPro logic expression that evaluates to a numeric value including dictionary items or variables, and functions. Conditions may be combined using logic operators such as <b>and</b> and <b>or</b>.
+<b>Note:</b> Conditions can be any CSPro logic expression that evaluates to a numeric value including dictionary items or variables, and functions. Conditions may be combined using logic operators such as <logiccolor>and</logiccolor> and <logiccolor>or</logiccolor>.
 
 For example, to display different question text for a variable in the first row of the roster than in the remaining rows of the roster simply set the first condition to <logiccolor>curocc() = 1</logiccolor> and leave the second condition blank. When the application is on the first row of the roster where the occurrence number is equal to one, the first question text will be shown. On subsequent rows, where the current occurrence is greater than one, the first condition will be false so the second question text will be shown.
