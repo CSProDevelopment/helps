@@ -201,6 +201,7 @@ namespace Help_Generator
             try
             {
                 editControl.Text = File.ReadAllText(_filename);
+                editControl.EmptyUndoBuffer();
                 editControl.SetSavePoint();
                 _modifiedDate = new FileInfo(_filename).LastWriteTimeUtc;
             }
@@ -313,16 +314,21 @@ namespace Help_Generator
             // if a topic's name is on the clipboard, automatically add it
             if( Clipboard.ContainsText() )
             {
-                string clipboardText = Clipboard.GetText().Trim().ToLower();
+                string clipboard_text = Clipboard.GetText().Trim().ToLower();
 
-                try
+                foreach( string extension in new string[] { "", Constants.TopicExtension } )
                 {
-                    _helpComponents.preprocessor.GetTopic(clipboardText);
-                    link = " " + clipboardText;
-                }
+                    try
+                    {
+                        string full_text = clipboard_text + extension;
+                        _helpComponents.preprocessor.GetTopic(full_text);
+                        link = " " + full_text;
+                        break;
+                    }
 
-                catch( Exception )
-                {
+                    catch( Exception )
+                    {
+                    }
                 }
             }               
                 
