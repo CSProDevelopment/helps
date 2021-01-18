@@ -21,8 +21,8 @@ namespace Code_Colorizer
 
             string formattedText =
                 ( buffer_type == BufferType.Logic )   ? CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtml, text) :
-                ( buffer_type == BufferType.Message ) ? CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.MessageToHtml, text) :
-                                                      _pffColorizer.Colorize(new PffColorizerHtml(), text);
+                ( buffer_type == BufferType.Message ) ? CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.MessageToHtmlHelp, text) :
+                                                        _pffColorizer.Colorize(new PffColorizerHtml(), text);
 
             // html to clipboard code from: http://blogs.msdn.com/b/jmstall/archive/2007/01/21/sample-code-html-clipboard.aspx
             string htmlCopyText = "Format:HTML Format Version:1.0\nStartHTML:<<<<<<<1\nEndHTML:<<<<<<<2\nStartFragment:<<<<<<<3\nEndFragment:<<<<<<<4\n";
