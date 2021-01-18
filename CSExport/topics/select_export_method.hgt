@@ -70,19 +70,3 @@ This option only affects items with subitems and only when the entire record is 
 	<li><b>R</b>: This format creates a data file (.DAT) and a R script file (.R) that describes the organization of the data file for a R application. The script file contains data item locations, names, values, and value labels (as factors) for use in R. For information on how to load these files into R, see <topic load_exported_data_into_r.hgt />.</li>
 	<li><b>SPSS, SAS, Stata, and R</b>: This format creates of a data file (.DAT), a SPSS description file (.SPS), a SAS description file (.SAS), two Stata description files (.DCT, .DO), and a R script file (.R).</li>
 </list>
-
-
-<subheader>XML Metadata</subheader>
-
-These options allow you to export the data description and other metadata as an XML file. XML (Extensible Markup Language) is a standard format for storing structured data that is supported by many software packages and programming languages. XML is a very general format that can contain any kind of information and as a result there are a number of domain specific variants of XML. The DDI XML file format is one such variant that is meant for documenting microdata from surveys and censuses. The CSPro XML is another such variant that is designed to represent metadata for CSPro data files.
-
-In addition to exporting the data description from the CSPro data dictionary, you may optionally export CAPI question text if it exists, frequencies and summary statistics from the data file and the name of the variable used to weight the data.
-
-The XML metadata that is generated will match the exported data and description files rather than the input data dictionary. It will include information only from those variables that have been selected for export. Variable position and size information will match the exported data file. To generate XML metadata that matches the input data dictionary and data file, use the Export XML Metadata tool. This tool is named "ExportXMLMetadata.exe" and is generally found in the "C:\Program Files (x86)\CSPro 6.3" folder.
-
-<list>
-	<li><b>DDI 2.0</b>: If this box is checked, the metadata will be exported as a DDI (Data Documentation Initiative) version 2.0 XML file. XML DDI files are a standard way of documenting microdata and can be used with a variety of commercial and freely available tools, including the Microdata Management Toolkit, published by the International Household Survey Network.</li>
-	<li><b>CSPro XML</b>: If this box is checked, the metadata will be exported as a CSPro XML file. CSPro XML files are a variant of XML specific to CSPro. You can write custom scripts to read these files and use the information to import the data file into software packages not otherwise supported by the Export Data tool.</li>
-	<li><b>Weight Variable</b>: You may optionally enter the name of a variable in the data dictionary that is used to weight sample data. If specified, this variable will be marked as a weight variable in the exported XML metadata.</li>
-	<li><b>Frequencies and statistics</b>: If this box is checked, the Export Data tool will generate frequencies and summary statistics (min, max, mean, median, standard deviation, variance) for each variable in the exported data file and include this information in the XML metadata file. If a weight variable has been specified above it will be used in the calculation of the frequencies and statistics.</li>
-</list>
