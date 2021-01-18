@@ -15,6 +15,7 @@ The following section shows the options available to you in a CSEntry PFF file. 
 Version=CSPro <definition version />
 AppType=Entry
 Description=My Survey
+ShowInApplicationListing=Always
 
 [DataEntryInit]
 OperatorID=John
@@ -26,7 +27,6 @@ NoFileOpen=No
 Lock=Verify,Stats
 Interactive=Ask
 CaseListingFilter=12
-ShowInApplicationListing=Always
 
 [Files]
 Application=.\MySurvey.ent
@@ -51,7 +51,12 @@ DISTRICT=05
 
 <subheader>[Run Information]</subheader>
 
-The <pffcolor>[Run Information]</pffcolor> block is required. The <pffcolor>Version</pffcolor> and <pffcolor>AppType</pffcolor> and must appear exactly as shown in the example above. The <pffcolor>Description</pffcolor> is optional. If included, it will be used instead of the name of the file in the list of applications (mobile only) and in the window title during data entry (all platforms).
+The <pffcolor>[Run Information]</pffcolor> block is required. While <pffcolor>Version</pffcolor> and <pffcolor>AppType</pffcolor> must appear exactly as shown in the example above, there are two optional properties:
+
+<list>
+	<li><pffcolor>Description</pffcolor>=if specified, it will be used instead of the name of the file in the list of applications (mobile only) and in the window title during data entry (all platforms).</li>
+	<li><pffcolor>ShowInApplicationListing</pffcolor>=determines whether the application associated with this PFF is displayed on the mobile Entry Applications screen. The possible options are: <b>Always</b> (default), <b>Never</b>, and <b>Hidden</b>. Operators must manually elect to show hidden applications, whereas PFFs with the <b>Never</b> option will never be shown.</li>
+</list>
 
 
 <subheader>[DataEntryInit]</subheader>
@@ -88,7 +93,6 @@ The <pffcolor>[DataEntryInit]</pffcolor> block is optional. It gives you the opp
 	If the mode is followed by a comma and <b>Lock</b>, then the mode cannot be changed by the operator. Otherwise, unless the option is <b>Off</b>, the operator can change the mode from within CSEntry.
 		</li>
 	<li><pffcolor>CaseListingFilter</pffcolor>=filters the cases in the data file shown to the operator. The filter string can use regular expressions. If you have multiple operators entering data to the same data file, this can be a way to prevent operators from interacting with data entered by other operators. The filter is matched against the IDs of each case.</li>
-	<li><pffcolor>ShowInApplicationListing</pffcolor>=determines whether the application associated with this PFF is displayed on the mobile Entry Applications screen. The possible options are: <b>Always</b> (default), <b>Never</b>, and <b>Hidden</b>. Operators must manually elect to show hidden applications, whereas PFFs with the <b>Never</b> option will never be shown.</li>
 </list>
 
 

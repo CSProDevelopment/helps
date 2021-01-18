@@ -6,6 +6,7 @@
 b = pff_name.exec();
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
 The <logiccolor pff>pff.exec</logiccolor> function starts another CSPro application using the properties defined in the  <link pff.hgt>pff</link> object. If you modified any of the pff object's properties, it is not necessary to save the file to disk when running it, as this function will save a temporary file to the disk with the defined properties.
@@ -30,9 +31,15 @@ execpff(filename(my_pff), wait);
 </logic>
 
 
+<subheader>Tools Running in the Same Process</subheader>
+
+The <logiccolor>execpff</logiccolor> help page includes information about how some tools launched via <logiccolor pff>pff.exec</logiccolor> and <logiccolor>execpff</logiccolor> are run in the same process as the calling application.
+
+
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the new application was started successfully and 0 (false) otherwise.
+
 
 <subheader>Example</subheader>
 
@@ -57,5 +64,6 @@ PROC INTERVIEW_SELECTION_MENU
 	// run the program
 	application_pff.exec();
 </logic>
+
 
 <seealso pff.hgt execpff_function.hgt />

@@ -16,6 +16,8 @@ The following section shows the options available to you in a sort PFF file. A P
 [Run Information]
 Version=CSPro <definition version />
 AppType=Sort
+Description=My Program
+ShowInApplicationListing=Always
 
 [Files]
 Application=.\MySort.ssf
@@ -30,7 +32,12 @@ ViewResults=Yes
 
 <subheader>[Run Information]</subheader>
 
-The <pffcolor>[Run Information]</pffcolor> block is required and must appear exactly as shown in the example above.
+The <pffcolor>[Run Information]</pffcolor> block is required. While <pffcolor>Version</pffcolor> and <pffcolor>AppType</pffcolor> must appear exactly as shown in the example above, there are two optional properties:
+
+<list>
+	<li><pffcolor>Description</pffcolor>=if specified, it will be used instead of the name of the file in the list of applications (mobile only).</li>
+	<li><pffcolor>ShowInApplicationListing</pffcolor>=determines whether the application associated with this PFF is displayed on the mobile Entry Applications screen. The possible options are: <b>Always</b> (default), <b>Never</b>, and <b>Hidden</b>. Operators must manually elect to show hidden applications, whereas PFFs with the <b>Never</b> option will never be shown.</li>
+</list>
 
 <subheader>[Files]</subheader>
 

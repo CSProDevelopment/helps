@@ -6,19 +6,30 @@
 b = execpff(<arg>pff_filename</arg> ‖ <arg>pff_name</arg>『, <arg>flags</arg>』);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
 The <logiccolor>execpff</logiccolor> function starts another CSPro application. This function is useful when designing menu programs or when conducting surveys that use multiple machines on which the path of the CSPro executables may differ. The function is very similar to <logiccolor>execsystem</logiccolor>, but instead of passing the name of an application or task, you supply a string expression, <arg>pff_filename</arg>, containing the name of a CSPro application's <link program_information_file_pff.hgt>Program Information File (.pff)</link>, or <arg>pff_name</arg>, the name of a <link pff.hgt>pff</link> object. If using a modified but unsaved pff object, it will be saved to a temporary file and then executed.
 
 An optional set of <arg>flags</arg>, described in the <logiccolor>execsystem</logiccolor> helps, allow you to control how the CSPro application is opened.
 
+
+<subheader>Tools Running in the Same Process</subheader>
+
+Typically the <logiccolor>execpff</logiccolor> function opens a CSPro application as a new program (meaning, for example, that two processes will be running: the one that called <logiccolor>execpff</logiccolor> and one for the launched program). However, some tools can run in the same process as the application that called the function. If the <logiccolor>wait</logiccolor> flag is used when calling <logiccolor>execpff</logiccolor>, the following tools will run in the same process: <link CSDiff::introduction_to_compare_data.hgt>Compare Data</link>, <link CSConcat::introduction_to_concatenate_data.hgt>Concatenate Data</link>, <link CSIndex::Introduction_to_CSIndex.hgt>Index Data</link>, <link ParadataConcat::introduction_to_paradata_concatenator.hgt>Paradata Concatenator</link>, <link CSReFmt::introduction_to_reformat_data.hgt>Reformat Data</link>, and <link CSSort::introduction_to_sort_data.hgt>Sort Data</link>.
+
+
+<subheader>Mobile Behavior</subheader>
+
 On mobile devices, multiple data entry applications cannot be run simultaneously, so the function simply stores the file name of the PFF. When the mobile application returns to the Entry Applications screen, whether via user interaction or via the <logiccolor>stop</logiccolor> function, the passed PFF will be launched. Using <logiccolor>stop</logiccolor> as a flag will cause the PFF to be launched immediately.
 
 If the PFF file that launched the application that calls this function specified an <pffcolor>OnExit</pffcolor> parameter, the <arg>pff_filename</arg> specified by this function will override the <pffcolor>OnExit</pffcolor> parameter.
 
+
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the new application is started successfully and 0 (false) otherwise.
+
 
 <subheader>Example</subheader>
 
@@ -32,7 +43,6 @@ PROC MENU
 		execpff("Agriculture.pff", stop);
 
 	endif;
-
 </logic>
 
 <seealso pff_exec_function.hgt execsystem_function_desktop.hgt execsystem_function_mobile.hgt />
