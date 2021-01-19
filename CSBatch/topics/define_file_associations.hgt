@@ -3,9 +3,9 @@
 
 CSBatch requires a minimum of two files before it can run (an Input Data File and a Listing File), although the minimum number you will be solicited for from the Define File Associations dialog is three (you optionally have the choice of specifying an Output File).
 
-However, some applications use more files. For example, there may be one or more external lookup files. In addition, usage of the <b>write</b> and <b>impute</b> commands require file associations to be supplied.
+However, some applications use more files. For example, there may be one or more external lookup files. In addition, usage of the <logiccolor>write</logiccolor> and <logiccolor>impute</logiccolor> commands require file associations to be supplied.
 
-So you will always see the "Define File Associations" dialog box—what will vary is what is being asked of you. The following shows the order in which files will be solicited from you, and why:
+You will always see the "Define File Associations" dialog box but what will vary is what is being asked of you. The following shows the order in which files will be solicited from you, and why:
 
 <subheader>Input Data File</subheader>
 
@@ -26,6 +26,10 @@ If your program includes one or more <logiccolor>write</logiccolor> functions, C
 <subheader>Impute Freq File</subheader>
 
 If your program includes one or more <logiccolor>impute</logiccolor> functions, CSBatch will ask you for the file to save these imputations to. If you do not provide this file, CSBatch will run on your data, but you will receive an error message about the expected file being missing.
+
+<subheader>Impute Stat Data</subheader>
+
+If your program includes one or more <logiccolor>impute</logiccolor> functions that use the <logiccolor>stat</logiccolor> command, CSBatch will ask you for the name of a data file to save these imputation statistics to. 
 
 <subheader>Listing File</subheader>
 
