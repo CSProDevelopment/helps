@@ -2,10 +2,10 @@
 
 Weighted frequencies are particularly useful when the data records represent a sample of the population being measured. Examples include sample surveys and 10% sample public use census files. Of course, the data must include the weight (often called the "expansion factor") that must be applied to each record. Whereas unweighted frequencies show raw counts, weighted frequencies provide estimates for the entire population.
 
-When you specify a weight, Tabulate Frequencies will tally that value into the appropriate category each time. If no weight value is specified, weight is assumed to be "1."
+When you specify a weight, Tabulate Frequencies will tally that value into the appropriate category each time. If no weight value is specified, the weight is assumed to be "1."
 
 The weight is usually a specific field, defined as an item in the data dictionary. In some unusual situations, the weight may be an expression calculated arithmetically from other dictionary items. Tabulate Frequencies allows any expression that is syntactically valid in the CSPro language.
 
-To specify the weight, simply type the name of the dictionary item (or expression) into the box marked <b>Weight</b> on the main screen.
+To specify the weight, simply type the name of the dictionary item (or expression) into the box marked <b>Weight</b> on the main screen. If you specify a constant number as a weight and it contains decimals, the frequency tables will be produced using that number of decimals. For example, a weight of 1.23 will result in frequency values being displayed with two digits after the decimal mark.
 
-Note that ALL frequency tables will have the same weight definition.
+Note that all frequency tables will have the same weight definition.

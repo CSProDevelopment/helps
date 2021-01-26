@@ -1,0 +1,55 @@
+﻿<title>Select Frequency Options</title>
+
+There are several options that control how the frequencies are generated.
+
+
+<subheader>Type of Frequencies</subheader>
+
+The <b>Type of Frequencies</b> radio button has two settings:
+
+<list>
+	<li><b>Value Sets</b>: Tabulate Frequencies will use whatever value sets are defined for the items you select to determine the ranges that will be shown. If an item has one value set defined, Tabulate Frequencies will use it although it does not appear in the tree on the left. If more than one value set is defined, all value sets will be shown on the tree on the left and automatically selected when you select the item.</li>
+	<li><b>Each Value Found</b>: Tabulate Frequencies will show one row for each distinct value of the item that appears in the data. The values will not be grouped in any way. This is a good way to see a more "true" distribution of the data and is particularly helpful in identifying outliers.</li>
+</list>
+
+
+<subheader>Generate Statistics</subheader>
+
+If the <b>Generate Statistics</b> radio button is set to <b>Yes</b>, Tabulate Frequencies will automatically show the following statistics for each numeric item selected:
+
+<list>
+	<li>Number of numeric categories</li>
+	<li>Minimum</li>
+	<li>Maximum</li>
+	<li>Mean</li>
+	<li>Standard deviation</li>
+	<li>Variance</li>
+	<li>Mode</li>
+	<li>Median</li>
+</list>
+
+If generating statistics, you will also see an option to show <b>Percentiles</b>. If you select a number from the list, the percentiles will be shown along with the statistics. For example, selecting 4 will show quartiles and selecting 10 will show deciles.
+
+
+<subheader>Sort Options</subheader>
+
+The sort options allow you to control the order in which each row of the frequency table appears. The <b>Ascending</b> checkbox controls whether the sort order is ascending or descending, and the sort types include the following options:
+
+<list>
+	<li><b>Value Set</b>: the rows will appear in the order that the values are defined in an item's value set.</li>
+	<li><b>Code</b> (default): the rows will appear in order sorted by each row's value.</li>
+	<li><b>Label</b>: the rows will appear in order sorted by each row's label as defined in an item's value set.</li>
+	<li><b>Frequency</b>: the rows will appear in order based on the frequency of each row's value.</li>
+</list>
+
+
+<subheader>Output Format</subheader>
+
+The output format specifies what kind of frequencies file is generated. The options include:
+
+<list>
+	<li><b>Table</b> (default): A CSPro <link CSPro::tables_file_tbw.hgt>tables file</link> will be created. This file can be viewed in <link TblView::introduction_to_table_viewer.hgt>Table Viewer</link>.</li>
+	<li><b>Text</b>: A text file will be created. This file can be viewed in <link TextView::introduction_to_text_viewer.hgt>Text Viewer</link> or any text editor.</li>
+	<li><b>HTML</b>: A HTML file (with the extension .html) will be created. This file can be viewed in a web browser.</li>
+	<li><b>Excel</b>: An Excel file (with the extension .xlsx) will be created. This file can be viewed in Microsoft Excel.</li>
+</list>

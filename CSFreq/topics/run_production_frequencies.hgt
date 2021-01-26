@@ -20,7 +20,8 @@ AppType=Frequencies
 [Files]
 Application=.\MyFreq.fqf
 InputData=.\Popstan Census.dat
-Listing=.\CSFreq.lst
+Listing=.\MyFreq.lst
+Freqs=.\MyFreq.tbw
 
 [Parameters]
 ViewListing=Always
@@ -33,7 +34,7 @@ The <pffcolor>[Run Information]</pffcolor> block is required and must appear exa
 
 <subheader>[Files]</subheader>
 
-The <pffcolor>[Files]</pffcolor> block is also required, and defines all files used in the frequency run. <pffcolor>InputData</pffcolor> is the data file on which the frequency will be performed. <pffcolor>Listing</pffcolor> indicates the name of the listing file that will be created.
+The <pffcolor>[Files]</pffcolor> block is also required, and defines all files used in the frequency run. <pffcolor>InputData</pffcolor> is the data file on which the frequency will be performed. <pffcolor>Listing</pffcolor> indicates the name of the listing file that will be created. <pffcolor>Freqs</pffcolor> is the name of the tabulated frequencies file.
 
 <subheader>[Parameters]</subheader>
 
@@ -47,4 +48,4 @@ The <pffcolor>[Parameters]</pffcolor> block is optional. <pffcolor>ViewListing</
 
 If the <pffcolor>ViewListing</pffcolor> entry is missing, the default action will be OnError.
 
-<pffcolor>ViewResults</pffcolor> determines whether the tabulated frequencies (.tbw file) is displayed at the end of the run. The available choices are Yes or No. If the <pffcolor>ViewResults</pffcolor> entry is missing, the .tbw file will be displayed by default.
+<pffcolor>ViewResults</pffcolor> determines whether the tabulated frequencies are displayed at the end of the run. The available choices are Yes or No. If the <pffcolor>ViewResults</pffcolor> entry is missing, the frequencies will be displayed by default.
