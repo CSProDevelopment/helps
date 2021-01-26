@@ -1,19 +1,24 @@
 ﻿<title>Camera</title>
 
-Passing the camera command to execsystem opens the camera widget (mobile only). The camera UI includes two options:
+Passing the <logiccolor>camera</logiccolor> command to <logiccolor>execsystem</logiccolor> opens the camera widget on mobile devices. The camera UI includes two options:
 
 <list>
-<li>Camera icon - Tap to take photo. </li>
-<li>Flip camera icon - Tap to toggle between the front and rear-facing camera. </li>
+<li>Camera icon - Tap to take photo.</li>
+<li>Flip camera icon - Tap to toggle between the front and rear-facing camera.</li>
 </list>
 
 <center><image camera.png /></center>
+
+When using <logiccolor>execsystem</logiccolor> to launch the camera, you can include an optional text string that will appear on the mobile device's screen while the camera is active. The string will not be saved to the actual image file. Specify the text by following the image filename with a <logiccolor>"|"</logiccolor> and the overlay text.
+
 
 <subheader>Examples</subheader>
 
 <logic>
 execsystem("camera:" + pathconcat(Application, "photo.jpg"));
-execsystem("camera:" + pathconcat(Application, "photo.png"));
+
+execsystem("camera:evaluation.png|Take a photo of your evaluation form.");
 </logic>
 
-<seealso execsystem_function_mobile.hgt multimedia_features.hgt />
+
+<seealso multimedia_features.hgt execsystem_function_mobile.hgt />

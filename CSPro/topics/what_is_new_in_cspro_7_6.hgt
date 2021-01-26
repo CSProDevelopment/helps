@@ -12,6 +12,16 @@ This is a detailed list of changes in CSPro 7.6. For a more general overview, se
 </list>
 
 
+<subheader>Android</subheader>
+
+<list>
+	<li>The new <link barcode_capture_type.hgt>barcode</link> capture type allows for scanning numeric or string barcodes using the device's camera.</li>
+	<li>The new <link slider.hgt>slider</link> capture type facilitates capturing numeric range values using a graphical slider.</li>
+	<li>When using <logiccolor>execsystem</logiccolor> to launch the <link camera.hgt>camera</link> or <link signature.hgt>signature</link> widgets, it is now possible to specify overlay text that will appear on the device's screen while the widget is active.</li>
+	<li>Applications copied to the <i>csentry</i> directory on a mobile device via a local folder deployment (created using the <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link> tool) can now be updated by the <link CSDeploy::update_deployment_mobile.hgt>Update Installed Applications</link> feature.</li>
+</list>
+
+
 <subheader>CAPI Question Text</subheader>
 <list>
 	<li>Question text now fully supports <link add_pictures.hgt>images</link>, tables, hyperlinks, and <link html_question_text.hgt>HTML code</link>.</li>
