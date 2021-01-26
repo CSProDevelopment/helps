@@ -1,0 +1,8 @@
+freq hh_status_freq(HH_STATUS);
+
+forcase LISTING_DICT where FIPS = 69 do
+	hh_status_freq.tally();
+endfor;
+
+hh_status_freq.view()
+			   heading("Household Status - Northern Mariana Islands");

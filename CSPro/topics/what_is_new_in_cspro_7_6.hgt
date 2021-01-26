@@ -8,6 +8,7 @@ This is a detailed list of changes in CSPro 7.6. For a more general overview, se
 
 <list>
 	<li>The CAPI question text system has been redesigned to use <link html_question_text.hgt>HTML</link> when displaying question text. In addition, question text <link create_fills_in_questions.hgt>fills</link> and <link create_conditional_questions.hgt>conditions</link> can now include any logic expression, so using the full set of CSPro logic functions is now possible when working with question text.</li>
+	<li>The frequency generation system has been overhauled. Frequencies can now be written to <link frequencies_file.hgt>four formats</link>, including Excel and HTML, and they can be generated in data entry applications. The new <link freq.hgt>freq</link> logic object offers a way to tally frequencies in a different way from the traditional <logiccolor>freq</logiccolor> statement.</li>	
 	<li><link listing_file.hgt>Listing files</link> can now be written as Excel or HTML files.</li>
 </list>
 
@@ -18,6 +19,7 @@ This is a detailed list of changes in CSPro 7.6. For a more general overview, se
 	<li>The new <link barcode_capture_type.hgt>barcode</link> capture type allows for scanning numeric or string barcodes using the device's camera.</li>
 	<li>The new <link slider.hgt>slider</link> capture type facilitates capturing numeric range values using a graphical slider.</li>
 	<li>When using <logiccolor>execsystem</logiccolor> to launch the <link camera.hgt>camera</link> or <link signature.hgt>signature</link> widgets, it is now possible to specify overlay text that will appear on the device's screen while the widget is active.</li>
+	<li>Production PFFs for the <link CSDiff::introduction_to_compare_data.hgt>Compare Data</link>, <link CSConcat::introduction_to_concatenate_data.hgt>Concatenate Data</link>, <link CSIndex::Introduction_to_CSIndex.hgt>Index Data</link>, <link ParadataConcat::introduction_to_paradata_concatenator.hgt>Paradata Concatenator</link>, <link CSReFmt::introduction_to_reformat_data.hgt>Reformat Data</link>, and <link CSSort::introduction_to_sort_data.hgt>Sort Data</link> tools can now be executed on Android (with a few <link android_limitations.hgt>limitations</link>).</li>
 	<li>Applications copied to the <i>csentry</i> directory on a mobile device via a local folder deployment (created using the <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link> tool) can now be updated by the <link CSDeploy::update_deployment_mobile.hgt>Update Installed Applications</link> feature.</li>
 </list>
 
@@ -35,6 +37,7 @@ This is a detailed list of changes in CSPro 7.6. For a more general overview, se
 
 <list>
 	<li>The <link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link> tool has new <link CSFreq::select_frequency_options.hgt>options</link>, including the ability to create percentiles, sort the frequencies, and output frequencies in several different formats. The tool can also directly create a batch application to generate the specified frequencies (using the <logiccolor>freq</logiccolor> statement).</li>
+	<li>A new logic object, <link freq.hgt>freq</link>, allows for the creation of frequencies with control over when the values are tallied. It has the functions: <logiccolor freq>clear</logiccolor>, <logiccolor freq>save</logiccolor>, <logiccolor freq>tally</logiccolor>, and <logiccolor freq>view</logiccolor>.</li>
 </list>
 
 
@@ -57,7 +60,6 @@ This is a detailed list of changes in CSPro 7.6. For a more general overview, se
 <subheader>Tools</subheader>
 
 <list>
-	<li>Production PFFs for the <link CSDiff::introduction_to_compare_data.hgt>Compare Data</link>, <link CSConcat::introduction_to_concatenate_data.hgt>Concatenate Data</link>, <link CSIndex::Introduction_to_CSIndex.hgt>Index Data</link>, <link ParadataConcat::introduction_to_paradata_concatenator.hgt>Paradata Concatenator</link>, <link CSReFmt::introduction_to_reformat_data.hgt>Reformat Data</link>, and <link CSSort::introduction_to_sort_data.hgt>Sort Data</link> tools can now be executed on Android (with a few <link android_limitations.hgt>limitations</link>).</li>
 	<li>The <link CSExport::introduction_to_export_data.hgt>Export Data</link> tool can no longer export to DDI 2.0 or CSPro XML formats. In addition, the Export XML Metadata tool has been removed from the CSPro installation. Users still needing this tool can find it on <link https://<definition csprousers_website />><definition csprousers_website /></link>.</li>
 	<li>The Export Data tool can directly <link CSExport::select_export_method.hgt>create a batch application</link> with the specified export settings (using the <logiccolor>export</logiccolor> statement).</li>
 </list>

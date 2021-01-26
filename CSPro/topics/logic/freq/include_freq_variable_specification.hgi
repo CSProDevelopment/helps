@@ -1,0 +1,90 @@
+<subheader>Specifying Variables to Tabulate</subheader>
+
+The <logiccolor>include</logiccolor> command is used to specify what variables should be tabulated. At least one frequency table will be created for every variable specified in the <logiccolor>include</logiccolor> list. The <arg>variables_to_tabulate</arg> is a list of variables, separated by commas, that can include:
+
+<list>
+	<li><b>Dictionary names</b>: dictionaries, records, and items</li>
+	<li><b>Form names</b>: forms, groups, and blocks</li>
+	<li><b>Logic names</b>: <logiccolor>numeric</logiccolor> and <logiccolor>string</logiccolor> variables</li>
+</list>
+
+The optional <logiccolor>exclude</logiccolor> command is used to specify variables that should be removed from the inclusion list. The <arg>variables_not_to_tabulate</arg> is a list of variables as defined above. The <logiccolor>exclude</logiccolor> command is particularly useful when including records. For example, if you want to tabulate most items on a record with a couple exceptions, you might code:
+
+<logic>
+include(PERSON_REC)
+exclude(P25_RELIGION, P26_TRIBE)
+</logic>
+
+
+When including or excluding a name that may contain more than one variable&mdash;dictionaries, records, forms, groups, and blocks&mdash;CSPro uses a rule to determine whether items contained in that grouping should be included in the list of variables to tabulate:
+
+<b>Default rule</b>: Include the item if it has a value set; if no value set is defined, then include the item if it has length 1 - 4.
+
+You can override the default selection by adding one or more of these flags to the <logiccolor>include</logiccolor>/<logiccolor>exclude</logiccolor> list:
+
+<table 2 header nowrap>
+	<cell>Flag</cell><cell>Include/Exclude All...</cell>
+	<cell><logiccolor>numeric</logiccolor></cell><cell>numeric items</cell>
+	<cell><logiccolor>float</logiccolor></cell><cell>numeric items with decimals</cell>
+	<cell><logiccolor>integer</logiccolor></cell><cell>numeric items without decimals</cell>
+	<cell><logiccolor>long</logiccolor></cell><cell>numeric items without decimals and length 3 - 15</cell>
+	<cell><logiccolor>short</logiccolor></cell><cell>numeric items without decimals and length 1 - 2</cell>
+	<cell><logiccolor>alpha</logiccolor></cell><cell>alphanumeric items</cell>
+</table>
+
+These six flags will never include items that have subitems. You can use a combination of flags; for example, this would include all items from <logiccolor>PERSON_REC</logiccolor> with the exception of items that have subitems (though the subitems would be included).
+
+<logic>
+include(numeric, alpha, PERSON_REC)
+</logic>
+
+
+Leaving the <logiccolor>include</logiccolor> list empty is as if you coded the primary dictionary name. For example:
+
+<logic>
+include()
+// may be translated to:
+include(CENSUS_DICT)
+</logic>
+
+
+If you do not need to exclude any variables, the <logiccolor>include</logiccolor> command is optional. For example, these unnamed frequency statements are the same:
+
+<logic>
+freq include(P03_SEX);
+freq(P03_SEX);
+</logic>
+
+
+<subheader>Handling Variable Occurrences</subheader>
+
+By default, when frequencies are tallied for a multiply-occurring item, all of the occurrences of the item are tallied. For example, assuming that <logiccolor>P03_SEX</logiccolor> is on a record with 50 occurrences, coding this will tally all defined occurrences of <logiccolor>P03_SEX</logiccolor>:
+
+<logic>
+freq include(P03_SEX);
+</logic>
+
+If the first house is vacant, then no sex values are tallied; if the second house has three people, then three sex values are tallied; and so on.
+
+If you would like to tally a specific occurrence, you can specify the occurrence in the <logiccolor>include</logiccolor>/<logiccolor>exclude</logiccolor> list. For example, this would create two tables, one for all sex occurrences, and one for the head's sex (assuming that the head is the first occurrence):
+
+<logic>
+freq include(P03_SEX, P03_SEX(1));
+</logic>
+
+You can specify occurrence values when using items or records. <logiccolor>PERSON_REC(1)</logiccolor>, for example, would create tables for the first occurrence of the items in <logiccolor>PERSON_REC</logiccolor>. If you specify an occurrence, the value will be tallied regardless of whether the occurrence exists. For example, while <logiccolor>P03_SEX</logiccolor> would not tally vacant households, <logiccolor>P03_SEX(1)</logiccolor> will include tallies of blank values for vacant households.
+
+An optional command, <logiccolor>disjoint</logiccolor>, is a shortcut way of indicating that a frequency table should be created for every occurrence of a variable. For example, this code would create a table for each of the occurrences of <logiccolor>P03_SEX</logiccolor>, resulting in 50 tables (for occurrence 1, occurrence 2, and so on until occurrence 50):
+
+<logic>
+freq include(P03_SEX)
+	 disjoint;
+</logic>
+
+When using <logiccolor>disjoint</logiccolor>, you can use <logiccolor>(*)</logiccolor> as an occurrence to specify that you would like to ignore the disjoint setting. For example, this code would create 49 tables (for the combined occurrences, for occurrence 3, occurrence 4, and so on until occurrence 50).
+
+<logic>
+freq include(P03_SEX(*), P03_SEX)
+	 exclude(P03_SEX(1), P03_SEX(2))
+	 disjoint;
+</logic>

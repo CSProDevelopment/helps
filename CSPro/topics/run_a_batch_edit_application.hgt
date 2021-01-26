@@ -16,6 +16,7 @@ The following rows are required:
 The following rows are optional, based on the logic in your application:
 
 <list>
+	<li><b>Freq File</b>: If your program contains any <logiccolor>freq</logiccolor> statements, the tabulated frequencies will be written to this file. If you do not specify a frequency file, the frequencies will be written to the listing file (if possible).</li>
 	<li><b>Impute Freq File</b>: If your program contains any <logiccolor>impute</logiccolor> statements, the results of this command will be written to this file. The default file extension is .impute_freq.lst, but you can use whatever you'd like. This field is optional; therefore, if your program contains impute commands, but you forget to specify a frequency file, no file will be generated. Similarly, if you indicate a frequency file but your program does not contain any impute commands, no file will be generated.</li>
 	<li><b>Impute Stat Data</b>: If your program includes one or more <logiccolor>impute</logiccolor> statements that use the <logiccolor>stat</logiccolor> command, the imputation statistics will be saved to the data file specified.</li>
 	<li><b>Write File</b>: If you have any <logiccolor>write</logiccolor> function calls in your program, the results will be saved to this file. This field is optional. If no write file is specified, the <logiccolor>write</logiccolor> function's output is saved to the listing file.</li>

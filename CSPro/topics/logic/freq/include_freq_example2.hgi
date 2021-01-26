@@ -1,0 +1,19 @@
+PROC GLOBAL
+
+// create a freq object that will tally the sex and age of
+// the first occurrence (the head)
+freq head_sex_age_freq(P03_SEX(1), P04_AGE(1));
+
+PROC CENSUS_DICTIONARY_FF
+
+	// save the frequency, formatting the ages using a
+	// 5-year value set
+	head_sex_age_freq.save()
+					  valueset(P04_AGE_5YEAR_VS);
+
+PROC QUEST
+
+	// only tally households that are not vacant
+	if count(PERSON_REC) > 0 then
+		head_sex_age_freq.tally();
+	endif;

@@ -284,6 +284,7 @@ change_the_repeating_of_boxheads.hgt | Boxhead													#	Boxhead
 break_statement.hgt | Break																		#	Break
 	break_statement.hgt																			#		Break Statement
 	add_reader_breaks.hgt | Reader Breaks														#		Reader Breaks
+freq_statement_unnamed.hgt | Breakdown															#	Breakdown
 breaking_off_the_interview.hgt | Breaking Off the Interview in CAPI								#	Breaking Off the Interview in CAPI
 map_add_image_button_function.hgt | Buttons														#	Buttons
 	map_add_image_button_function.hgt															#		Map.AddImageButton Function
@@ -394,6 +395,7 @@ cspro_settings.hgt | Clear Credentials															#	Clear Credentials
 clear_function.hgt																				#	Clear Function
 	array_clear_function.hgt																	#		Array.Clear Function
 	audio_clear_function.hgt																	#		Audio.Clear Function
+	freq_clear_function.hgt																		#		Freq.Clear Function
 	hashmap_clear_function.hgt																	#		HashMap.Clear Function
 	list_clear_function.hgt																		#		List.Clear Function
 	map_clear_buttons_function.hgt																#		Map.ClearButtons Function
@@ -709,6 +711,7 @@ tabulate_categories_with_disjoint_values.hgt | Disjoint Categories								#	Disj
 errmsg_function.hgt | Display Function															#	Display Function
 screen_orientation.hgt																			#	Display Orientation
 display_results_for_one_geographic_area.hgt														#	Display Results for One Geographic Area
+freq_formatting_options.hgt | Distinct															#	Distinct
 distribute_finished_tables_to_other_users.hgt													#	Distribute Finished Tables to Other Users
 document_dictionary_elements.hgt																#	Document Dictionary Elements
 object_dot_notation.hgt | Dot Notation															#	Dot Notation
@@ -939,8 +942,20 @@ forms_file_fmf.hgt																				#	Forms File (.fmf)
 issues_to_consider_when_designing_a_form.hgt | Form Design Issues								#	Form Design Issues
 for_dict_statement.hgt																			#	For (Dictionary) Statement
 for_statement.hgt																				#	For Statement
-tool_list.hgt | Frequencies																		#	Frequencies
-frequency_specification_file_fqf.hgt															#	Frequency Specification File (.fqf)
+freq.hgt | Frequencies																			#	Frequencies
+	freq_formatting_options.hgt | Formatting Options											#		Formatting Options
+	frequencies_file.hgt																		#		Frequencies File
+	frequency_specification_file_fqf.hgt														#		Frequency Specification File (.fqf)
+	freq.hgt																					#		Freq Object
+	freq_statement_unnamed.hgt																	#		Freq Statement (Unnamed)
+	tool_list.hgt | Tabulate Frequencies Tool													#		Tabulate Frequencies Tool
+freq.hgt																						#	Freq Object
+	freq_clear_function.hgt																		#		Freq.Clear Function
+	freq_save_function.hgt																		#		Freq.Save Function
+	freq_tally_function.hgt																		#		Freq.Tally Function
+	freq_view_function.hgt																		#		Freq.View Function
+	freq_statement_named.hgt																	#		Freq Statement (Named)
+freq_statement_unnamed.hgt | Freq Statement														#	Freq Statement
 syncconnect_function_ftp.hgt | FTP Synchronization												#	FTP Synchronization
 run_production_data_entry.hgt | FullScreen														#	FullScreen
 change_the_view.hgt | Full Screen																#	Full Screen
@@ -1443,7 +1458,9 @@ skip_statement.hgt | Next																		#	Next
 nmembers_function.hgt																			#	NMembers Function
 noccurs_function.hgt																			#	NOccurs Function
 run_production_data_entry.hgt | NoFileOpen														#	NoFileOpen
+freq_formatting_options.hgt | NoFreq															#	NoFreq
 noinput_statement.hgt																			#	NoInput Statement
+freq_formatting_options.hgt | NoNetPercents														#	NoNetPercents
 data_sources.hgt | None Data Source																#	None Data Source
 operators.hgt | Not																				#	Not
 	special_values.hgt | Applicable Value														#		Applicable Value
@@ -1535,6 +1552,7 @@ organize_forms.hgt																				#	Organize Forms
 run_a_batch_edit_application.hgt | Output File													#	Output File
 implications_of_data_dictionary_value_sets.hgt | Overlapping Value Sets							#	Overlapping Value Sets
 pack_an_application.hgt																			#	Pack an Application
+freq_formatting_options.hgt | PageLength														#	PageLength
 add_a_pagenote_or_footnote.hgt | Pagenote														#	Pagenote
 	add_a_pagenote_or_footnote.hgt																#		Add a Footnote (Pagenote or Footnote)
 	formats_for_a_part_of_a_table.hgt															#		Formats for a Part of a Table
@@ -1585,6 +1603,7 @@ encode_function.hgt | Percent-Encoding															#	Percent-Encoding
 add_summary_statistics_to_a_table.hgt | Percentile												#	Percentile
 	add_summary_statistics_to_a_table.hgt														#		Add Summary Statistics to a Table
 	produce_summary_statistics.hgt																#		Produce Summary Statistics
+freq_formatting_options.hgt | Percentiles														#	Percentiles
 add_percents_to_a_table.hgt | Percents															#	Percents
 	add_percents_to_a_table.hgt | Including in Tables											#		Including in Tables
 	add_percents_to_a_table.hgt | Only															#		Only
@@ -1870,6 +1889,7 @@ save_an_application_with_a_new_name.hgt | Save As												#	Save As
 	save_dictionary_as_new_file.hgt | Dictionary												#		Dictionary
 pff_save_function.hgt | Save Function															#	Save Function
 	audio_save_function.hgt																		#		Audio.Save Function
+	freq_save_function.hgt																		#		Freq.Save Function
 	pff_save_function.hgt																		#		Pff.Save Function
 saving_tables_as_text_html_or_rich_text.hgt | Saving Tables as Text HTML or Rich Text			#	Saving Tables as Text HTML or Rich Text
 change_the_view.hgt | Screen																	#	Screen
@@ -2190,6 +2210,8 @@ tabulation_keys.hgt | Tabulation keys															#	Tabulation keys
 tally_attributes_for_a_table.hgt | Tally Attributes												#	Tally Attributes
 	tally_attributes_for_a_table.hgt | For a Table/Subtable										#		For a Table/Subtable
 	tally_attributes_for_a_variable.hgt | For a Variable										#		For a Variable
+freq_tally_function.hgt | Tally Function														#	Tally Function
+	freq_tally_function.hgt																		#		Freq.Tally Function
 tally_items_from_related_records.hgt															#	Tally Items from Related Records
 templated_reports.hgt																			#	Templated Reports
 	templated_reports_mustache.hgt																#		Mustache Templated Reports
@@ -2392,6 +2414,7 @@ change_the_view.hgt | View																		#	View
 viewing_multiple_and_facing_pages.hgt															#	Viewing Multiple and Facing Pages
 views_of_tables.hgt | Views of Table															#	Views of Table
 view_function.hgt																				#	View Function
+	freq_view_function.hgt																		#		Freq.View Function
 visualvalue_function.hgt																		#	VisualValue Function
 audio.hgt | Voice Recording																		#	Voice Recording
 impute_function.hgt | VSet																		#	VSet

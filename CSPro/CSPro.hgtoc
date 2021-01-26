@@ -147,6 +147,7 @@
 			array.hgt																			#				Array Object
 			audio.hgt																			#				Audio Object
 			file.hgt																			#				File Object
+			freq.hgt																			#				Freq Object
 			hashmap.hgt																			#				HashMap Object
 			list.hgt																			#				List Object
 			map.hgt																				#				Map Object
@@ -542,6 +543,13 @@
 			file_close_function.hgt																#				File.Close Function
 			file_read_function.hgt																#				File.Read Function
 			file_write_function.hgt																#				File.Write Function
+		|Freq Object																			#			Freq Object
+			freq_statement_named.hgt															#				Freq Statement (Named)
+			freq_formatting_options.hgt															#				Frequency Formatting Options
+			freq_tally_function.hgt																#				Freq.Tally Function
+			freq_clear_function.hgt																#				Freq.Clear Function
+			freq_save_function.hgt																#				Freq.Save Function
+			freq_view_function.hgt																#				Freq.View Function
 		|HashMap Object																			#			HashMap Object
 			hashmap_statement.hgt																#				HashMap Statement
 			hashmap_getkeys_function.hgt														#				HashMap.GetKeys Function
@@ -694,6 +702,7 @@
 		|Batch Edit Statements																	#			Batch Edit Statements
 			endcase_statement.hgt																#				EndCase Statement
 			export_statement.hgt																#				Export Statement
+			freq_statement_unnamed.hgt															#				Freq Statement (Unnamed)
 			getdeck_function.hgt																#				GetDeck Function
 			putdeck_function.hgt																#				PutDeck Function
 			set_behavior_export_statement.hgt													#				Set Behavior Export Statement
@@ -917,6 +926,7 @@
 				paradata_log_file_cslog.hgt														#					Paradata Log File (.cslog)
 				operator_statistics_file_log.hgt												#					Operator Statistics File (.log)
 				listing_file.hgt																#					Listing File
+				frequencies_file.hgt															#					Frequencies File
 				batch_edit_application_file_bch.hgt												#					Batch Edit Application File (.bch)
 				edit_order_file_ord.hgt															#					Edit Order File (.ord)
 				saved_arrays_file_sva.hgt														#					Saved Arrays File (.sva)

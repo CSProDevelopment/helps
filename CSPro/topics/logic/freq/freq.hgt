@@ -1,0 +1,48 @@
+﻿<title>Freq Object</title>
+
+In logic, a <logiccolor>freq</logiccolor> can be one of two things: an <link freq_statement_unnamed.hgt>"unnamed" statement</link> used to generate frequencies with a specific set of behaviors regarding how values are tallied, or a CSPro logic object <link freq_statement_named.hgt>with a name</link>, which allows for the creation of frequencies with control over when the values are tallied. This page is only relevant if using named frequencies.
+
+
+<subheader>Functionality</subheader>
+
+A freq is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+
+<table 2 header nowrap>
+	<cell>Function</cell><cell>Description</cell>
+	<cell><logiccolor freq>clear</logiccolor></cell><cell>Resets all tallies to 0.</cell>
+	<cell><logiccolor freq>save</logiccolor></cell><cell>Saves frequency tables to a file.</cell>
+	<cell><logiccolor freq>tally</logiccolor></cell><cell>Tallies the frequencies.</cell>
+	<cell><logiccolor freq>view</logiccolor></cell><cell>Displays frequency tables in an embedded web browser.</cell>
+</table>
+
+Unlike most CSPro logic objects, freq objects can be not assigned to other freq objects.
+
+If the freq has only one variable as part of its frequency list, individual tallies of the freq can be accessed by using an index:
+
+<logicsyntax>
+<arg>freq_name</arg>(<arg>value</arg>) = <arg>tally</arg>;
+
+<arg>tally</arg> = <arg>freq_name</arg>(<arg>value</arg>);
+</logicsyntax>
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+<include include_freq_example1.hgi />
+
+// show the detailed household status report when some households are incomplete
+if hh_status_freq(1) > 0 then
+	ShowDetailedHouseholdStatusReport();
+endif;
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+<include include_freq_example2.hgi />
+</logic>
+
+
+<seealso freq_statement_unnamed.hgt />
