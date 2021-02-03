@@ -27,9 +27,9 @@ The CSPro Designer shows the fields that use extended controls by coloring the b
 	<li> <topic text_box.hgt /> - Capture numeric or alphanumeric text. The default capture type. </li>
 </list>
 
-<subheader>Hiding the Title of an Extended Control Window</subheader>
+<subheader>Hiding the Title of a Capture Type Window</subheader>
 
-By default CSEntry displays the label of the value set in the window of the extended control, but this title can be turned off using programmatic logic:
+By default CSEntry displays the label of the value set in the window of the capture type, but this title can be turned off using programmatic logic:
 
 <logic>set attributes(dictionary-symbol)assisted off(variable(title));</logic>
 
@@ -37,10 +37,12 @@ By default CSEntry displays the label of the value set in the window of the exte
 
 <table 3>
 <cell><b>Capture Type</b></cell><cell><b>Numeric Field</b></cell><cell><b>Alphanumeric Field</b></cell>
-<cell>Check Box</cell><cell>—</cell><cell>Comprised of values in the value set</cell>
+<cell>Barcode</cell><cell>n/a</cell><cell>n/a</cell>
+<cell>Check Box</cell><cell>n/a</cell><cell>Comprised of values in the value set</cell>
 <cell>Combo Box</cell><cell>In value set</cell><cell>In value set (only for fields of length 1)</cell>
 <cell>Date</cell><cell>In value set and a valid date</cell><cell>In value set and a valid date</cell>
 <cell>Radio Button / Drop Down</cell><cell>In value set</cell><cell>In value set</cell>
+<cell>Slider</cell><cell>In value set</cell><cell>n/a</cell>
 <cell>Text Box / Number Pad</cell><cell>In value set</cell><cell>In value set (only for fields of length 1)</cell>
 </table>
 
