@@ -1,18 +1,18 @@
 ﻿<title>Text Box</title>
 
-The text box attribute is the default option for a field and indicates that no control will be displayed. On Windows, tickmarks divide each character.
+The Text Box attribute is the default option for a field and indicates that no capture type will be displayed. On Windows, tickmarks divide each character.
 
 <center><image unicodeTextbox1.png /></center>
 
 <subheader>Text Box (No Tickmarks)</subheader>
 
-The text box (no tickmarks) option is only available for alphanumeric fields. On Windows, CSEntry will not display any tickmarks and characters will be displayed with any connecting features. This is useful for some scripts, like Arabic, which have elements that connect, or for other languages that require multiple characters to create a composite character. In the CSPro Designer you can click on the field and resize it horizontally to set an appropriate size.
+The Text Box (No Tickmarks) option is only available for alphanumeric fields. On Windows, CSEntry will not display any tickmarks and characters will be displayed with any connecting features. This is useful for some scripts, like Arabic, which have elements that connect, or for other languages that require multiple characters to create a composite character. In the CSPro Designer you can click on the field and resize it horizontally to set an appropriate size.
 
 <center><image unicodeTextbox2.png /></center>
 
 <subheader>Text Box (Multiline)</subheader>
 
-The text box (multiline) capture type provides a convenient way to collect multiple lines of information in one alphanumeric field. This may be useful for information like an address or a memo field. In the CSPro Designer you can click on the field and resize it horizontally and vertically to set an appropriate size. In CSEntry on Windows, the data entry operator can move up and down in the field using the arrow keys, but as with other fields, pressing Enter will move to the next field. To add a line break, the operator must hold down the Control key before pressing Enter.
+The Text Box (Multiline) capture type provides a convenient way to collect multiple lines of information in one alphanumeric field. This may be useful for information like an address or a memo field. In the CSPro Designer you can click on the field and resize it horizontally and vertically to set an appropriate size. In CSEntry on Windows, the data entry operator can move up and down in the field using the arrow keys, but as with other fields, pressing Enter will move to the next field. To add a line break, the operator must hold down the Control key before pressing Enter.
 
 <center><image unicodeTextbox3.png /></center>
 
@@ -24,6 +24,6 @@ For multiline controls, the characters \n will be placed in the field text for e
 
 <font monospace>100 Main Street, Suite 1234\nAnytown, NY 00000-0000</font>
 
-Both of these text box options can also be specified for alpha fields in rosters. To resize the field within a roster you may need to first adjust the roster's row heights or column widths.
+Both of these Text Box options can also be specified for alpha fields in rosters. To resize the field within a roster you may need to first adjust the roster's row heights or column widths.
 
 <seealso getcapturetype_function.hgt setcapturetype_function.hgt setcapturepos_function.hgt />
