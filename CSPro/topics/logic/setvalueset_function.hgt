@@ -8,7 +8,7 @@ b = setvalueset(<arg>item_name</arg>, <arg>value_set_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>setvalueset</logiccolor> function allows you to dynamically change an item's current value set. An item's current value set is used to determine whether or not entered values are out of range. The current value set is also used to provide the value choices displayed in <link extended_controls.hgt>extended controls</link>. The changing of a value set is not permanent; it remains in effect only during the processing of the current case or until the next call to <logiccolor>setvalueset</logiccolor>.
+The <logiccolor>setvalueset</logiccolor> function allows you to dynamically change an item's current value set. An item's current value set is used to determine whether or not entered values are out of range. The current value set is also used to provide the value choices displayed in <link capture_types.hgt>capture types</link>. The changing of a value set is not permanent; it remains in effect only during the processing of the current case or until the next call to <logiccolor>setvalueset</logiccolor>.
 
 The <arg>item_name</arg> is the name of the item in the data dictionary whose value set is to be changed. The argument is usually an item name but, preceded by the <logiccolor>@</logiccolor> symbol, it can also be a string expression that evaluates to the name of an item; for example:
 

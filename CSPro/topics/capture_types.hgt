@@ -1,16 +1,16 @@
 ﻿<title>Capture Types</title>
 
-Occasionally it may be useful to display to an enumerator or keyer the possible values for a given field in a data entry application. For example, if a survey is being conducting on a tablet computer, it may be easier for an enumerator to use a finger or stylus to select a value rather than to key the value using the screen's touch keyboard. CSPro's extended controls allow for such flexibility by allowing the program to specify the capture type associated with a field.
+Occasionally it may be useful to display to an enumerator or keyer the possible values for a given field in a data entry application. For example, if a survey is being conducting on a tablet computer, it may be easier for an enumerator to use a finger or stylus to select a value rather than to key the value using the screen's touch keyboard. CSPro's capture types allow for such flexibility by allowing the program to specify the capture type associated with a field.
 
-<subheader>Selecting Extended Controls</subheader>
+<subheader>Selecting Capture Types</subheader>
 
-You can indicate that you want to automatically use extended controls by selecting the Use Extended Controls option in DragOptions. If this option is selected, CSPro will automatically choosea capture type for the field based on the field's first value set.
+You can indicate that you want to automatically use capture types by selecting the use capture types option in Drag Options. If this option is selected, CSPro will automatically choose a capture type for the field based on the field's first value set.
 
-You can manuallychange the capture type for a field by editing the field'sproperties. CSPro allows you to select a capture type that is suitablefor the item's first value set. A warning will appear if the value setis not suitable. In this case, if the value set is compatible at the timeof data entry (because the value set was changed dynamically using the setvalueset function), it willbe used; if not compatible, the field will appear as a Text Box. For moreprogrammatic control, see the setcapturetypefunction.
+You can manually change the capture type for a field by editing the field's properties. CSPro allows you to select a capture type that is suitablefor the item's first value set. A warning will appear if the value set is not suitable. In this case, if the value set is compatible at the time of data entry (because the value set was changed dynamically using the setvalueset function), it will be used; if not compatible, the field will appear as a Text Box. For more programmatic control, see the setcapturetypefunction.
 
 <center><image capture_types_1.png /></center>
 
-The CSPro Designer shows the fields that use extended controls by coloring the border of the field in blue. The blue border does not exist when the data entry application is run in CSEntry. The field border will be a lighter blue color when the Number Pad capture type is selected.
+The CSPro Designer shows the fields that use capture types by coloring the border of the field in blue. The blue border does not exist when the data entry application is run in CSEntry. The field border will be a lighter blue color when the Number Pad capture type is selected.
 
 <center><image capture_types_2.png /></center>
 
