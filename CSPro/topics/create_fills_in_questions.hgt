@@ -79,7 +79,7 @@ Or more realistically:
 householdMembers = "<ul>";
 
 do numeric ctr = 1 while ctr <= totocc(PERSON_REC)
-	householdMembers = householdMembers + "<li>" + strip(NAME(ctr)) + "</li>";
+	householdMembers = householdMembers + maketext("<li>%s</li>", encode(strip(NAME(ctr))));
 enddo;
 
 householdMembers = householdMembers + "</ul>" 
