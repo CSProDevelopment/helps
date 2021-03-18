@@ -73,7 +73,7 @@ namespace Help_Generator
         private string _title;
         private bool _titleIsHeader;
 
-        private enum LogicObject { None, Array, Audio, File, Freq, HashMap, List, Map, Pff, SystemApp, ValueSet };
+        private enum LogicObject { None, Array, Audio, File, Freq, HashMap, Geometry, List, Map, Pff, SystemApp, ValueSet };
         private LogicObject _logicObject;
 
         public TopicCompiler(HelpComponents helpComponents,Preprocessor.TopicPreprocessor preprocessedTopic,TopicCompilerSettingsInterface topicCompilerSettings)
@@ -886,6 +886,7 @@ namespace Help_Generator
                     startTagComponents[0].Equals(LogicObject.Audio.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.Audio :
                     startTagComponents[0].Equals(LogicObject.File.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.File :
                     startTagComponents[0].Equals(LogicObject.Freq.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.Freq :
+                    startTagComponents[0].Equals(LogicObject.Geometry.ToString(), StringComparison.InvariantCultureIgnoreCase)  ? LogicObject.Geometry :
                     startTagComponents[0].Equals(LogicObject.HashMap.ToString(), StringComparison.InvariantCultureIgnoreCase)   ? LogicObject.HashMap :
                     startTagComponents[0].Equals(LogicObject.List.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.List :
                     startTagComponents[0].Equals(LogicObject.Map.ToString(), StringComparison.InvariantCultureIgnoreCase)       ? LogicObject.Map :

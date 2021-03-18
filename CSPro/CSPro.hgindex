@@ -124,6 +124,8 @@ add_dictionary_elements.hgt | Add																#	Add
 	add_or_modify_value_sets.hgt | Value Sets													#		Value Sets
 	add_dictionary_elements.hgt | Value Sets in Dictionary										#		Value Sets in Dictionary
 	add_a_variable_to_a_tabulation.hgt | Variable to a Tabulation								#		Variable to a Tabulation
+map_add_geometry_function.hgt | AddGeometry Function											#	AddGeometry Function
+	map_add_image_button_function.hgt															#		Map.AddImageButton Function
 map_add_image_button_function.hgt | AddImageButton Function										#	AddImageButton Function
 	map_add_image_button_function.hgt															#		Map.AddImageButton Function
 map_add_marker_function.hgt | AddMarker Function												#	AddMarker Function
@@ -399,6 +401,7 @@ clear_function.hgt																				#	Clear Function
 	hashmap_clear_function.hgt																	#		HashMap.Clear Function
 	list_clear_function.hgt																		#		List.Clear Function
 	map_clear_buttons_function.hgt																#		Map.ClearButtons Function
+	map_clear_geometry_function.hgt																#		Map.ClearGeometry Function
 	map_clear_markers_function.hgt																#		Map.ClearMarkers Function
 	valueset_clear_function.hgt																	#		ValueSet.Clear Function
 close_an_application.hgt																		#	Close an Application
@@ -978,6 +981,26 @@ uuid_function.hgt | Generating a Unique ID														#	Generating a Unique ID
 area_dialog_box.hgt | Geographic																#	Geographic
 	area_dialog_box.hgt | Area Tabulation														#		Area Tabulation
 	area_processing.hgt | Processing															#		Processing
+geometry_load_function.hgt| GeoJSON																#	GeoJSON
+	geometry_load_function.hgt | Load GeoJSON From File											#		Load GeoJSON From File
+	geometry_save_function.hgt | Save GeoJSON to File											#		Save GeoJSON to File	
+geometry.hgt | Geometry																			#	Geometry
+	geometry.hgt | Geometry Object																#		Geometry Object
+	geometry_statement.hgt																		#		Geometry Statement
+	geometry_area_function.hgt																	#		Geometry.Area Function
+	geometry_clear_function.hgt																	#		Geometry.Clear Function
+	geometry_load_function.hgt																	#		Geometry.Load Function
+	geometry_max_latitude_function.hgt															#		Geometry.MaxLatitude Function
+	geometry_max_longitude_function.hgt															#		Geometry.MaxLongitude Function
+	geometry_min_latitude_function.hgt															#		Geometry.MinLatitude Function
+	geometry_min_longitude_function.hgt															#		Geometry.MinLongitude Function
+	geometry_perimeter_function.hgt																#		Geometry.Perimeter Function
+	geometry_save_function.hgt																	#		Geometry.Save Function
+	geometry_trace_polygon_function.hgt															#		Geometry.TracePolygon Function
+	geometry_walk_polygon_function.hgt															#		Geometry.WalkPolygon Function
+	map_add_geometry_function.hgt | Add Geometry to a Map										#		Add Geometry to a Map
+	map_remove_geometry_function.hgt | Remove Geometry From a Map								#		Remove Geometry From a Map
+	map_clear_geometry_function.hgt | Clear All Geometry From a Map								#		Clear All Geometry From a Map
 getbluetoothname_function.hgt																	#	GetBluetoothName Function
 getbuffer_function.hgt																			#	GetBuffer Function
 getcapturetype_function.hgt																		#	GetCaptureType Function
@@ -1631,6 +1654,9 @@ add_pictures.hgt | Pictures																		#	Pictures
 	value_set_images.hgt																		#		Value Set Images
 audio_play_function.hgt | Play Function															#	Play Function
 	audio_play_function.hgt																		#		Audio.Play Function
+geometry_trace_polygon_function.hgt	| Polygon													#	Polygon
+	geometry_trace_polygon_function.hgt															#		Geometry.TracePolygon Function
+	geometry_walk_polygon_function.hgt															#		Geometry.WalkPolygon Function	
 poschar_function.hgt																			#	PosChar Function
 hide_or_change_the_position_of_the_total.hgt | Position											#	Position
 	hide_or_change_the_position_of_the_total.hgt | Change the Position of the Total				#		Change the Position of the Total
@@ -1803,6 +1829,7 @@ map_remove_marker_function.hgt | RemoveMarker Function											#	RemoveMarker 
 list_remove_function.hgt | Remove Function														#	Remove Function
 	hashmap_remove_function.hgt																	#		HashMap.Remove Function
 	list_remove_function.hgt																	#		List.Remove Function
+	map_remove_geometry_function.hgt															#		Map.RemoveGeometry
 	valueset_remove_function.hgt																#		ValueSet.Remove Function
 renaming_tables_and_table_applications.hgt														#	Renaming Tables and Table Applications
 batch_edit_order.hgt | Reorder Editing															#	Reorder Editing
@@ -2291,6 +2318,7 @@ and_or_truth_table.hgt | Truth Table															#	Truth Table
 	and_or_truth_table.hgt | And/Or																#		And/Or
 	if_and_only_if_operator.hgt | If and Only If												#		If and Only If
 tr_function.hgt																					#	Tr Function
+geometry_trace_polygon_function.hgt	| TracePolygon Function										#	TracePolygon Function
 sub_items.hgt | Type																			#	Type
 	sub_items.hgt | Item																		#		Item
 	record_type.hgt																				#		Record Type
@@ -2419,6 +2447,7 @@ visualvalue_function.hgt																		#	VisualValue Function
 audio.hgt | Voice Recording																		#	Voice Recording
 impute_function.hgt | VSet																		#	VSet
 	impute_function.hgt																			#		Impute Function
+geometry_walk_polygon_function.hgt	| WalkPolygon Function										#	WalkPolygon Function
 warning_function.hgt																			#	Warning Function
 prepare_tables_for_posting_to_the_web.hgt | Web													#	Web
 	prepare_tables_for_posting_to_the_web.hgt													#		Prepare Tables for Posting to the Web

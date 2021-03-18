@@ -148,6 +148,7 @@
 			audio.hgt																			#				Audio Object
 			file.hgt																			#				File Object
 			freq.hgt																			#				Freq Object
+			geometry.hgt																		#				Geometry Object
 			hashmap.hgt																			#				HashMap Object
 			list.hgt																			#				List Object
 			map.hgt																				#				Map Object
@@ -549,6 +550,19 @@
 			freq_clear_function.hgt																#				Freq.Clear Function
 			freq_save_function.hgt																#				Freq.Save Function
 			freq_view_function.hgt																#				Freq.View Function
+		|Geometry Object																		#			Geometry Object
+			geometry_statement.hgt																#				Geometry Statement
+			geometry_area_function.hgt															#				Geometry.Area Function
+			geometry_clear_function.hgt															#				Geometry.Clear Function
+			geometry_load_function.hgt															#				Geometry.Load Function
+			geometry_max_latitude_function.hgt													#				Geometry.MaxLatitude Function
+			geometry_max_longitude_function.hgt													#				Geometry.MaxLongitude Function
+			geometry_min_latitude_function.hgt													#				Geometry.MinLatitude Function
+			geometry_min_longitude_function.hgt													#				Geometry.MinLongitude Function
+			geometry_perimeter_function.hgt														#				Geometry.Perimeter Function
+			geometry_save_function.hgt															#				Geometry.Save Function
+			geometry_trace_polygon_function.hgt													#				Geometry.TracePolygon Function
+			geometry_walk_polygon_function.hgt													#				Geometry.WalkPolygon Function
 		|HashMap Object																			#			HashMap Object
 			hashmap_statement.hgt																#				HashMap Statement
 			hashmap_getkeys_function.hgt														#				HashMap.GetKeys Function
@@ -595,6 +609,9 @@
 			map_set_title_function.hgt															#				Map.SetTitle Function
 			map_show_current_location_function.hgt												#				Map.ShowCurrentLocation Function
 			map_zoom_to_function.hgt															#				Map.ZoomTo Function
+			map_add_geometry_function.hgt														#				Map.AddGeometry Function
+			map_remove_geometry_function.hgt													#				Map.RemoveGeometry Function
+			map_clear_geometry_function.hgt  													#				Map.ClearGeometry Function
 			offline_maps.hgt																	#				Offline Maps
 		|Path																					#			Path
 			path.hgt																			#				Path Namespace

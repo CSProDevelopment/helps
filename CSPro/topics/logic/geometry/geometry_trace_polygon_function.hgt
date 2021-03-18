@@ -1,0 +1,60 @@
+﻿<title>Geometry.TracePolygon Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax geometry>
+b = geometry_name.tracePolygon(『<arg>map_name</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor geometry>geometry.tracePolygon</logiccolor> displays a map that the user taps on to place the vertices of a polygon. While tracing the polygon on the map, the user may also drag vertices of the polygon by long pressing on them in order to modify the polygon. The function returns when the user has finished drawing the polygon on the map and taps the save button.
+
+The optional argument <arg>map_name</arg> is the name of a <logiccolor>map</logiccolor> object that will provide the display parameters used for the map that is shown while the user traces the polygon. You can use this parameter to set the <link map_set_base_map_function.hgt>base map</link>, <link map_set_title_function.hgt>title</link> and <link map_zoom_to_function.hgt>location/zoom level</link> of the map. You can also use the <arg>map_name</arg> parameter to display <link map_add_marker_function.hgt>markers</link> and <link map_add_geometry_function.hgt>geometry</link> on the map, however any callbacks for clicking on markers or on the map itself are ignored while tracing the polygon. Any buttons on the map <arg>map_name</arg> are replaced by buttons for saving, clearing and deleting the last point placed while the polygon is being traced. If the argument <arg>map_name</arg> is omitted, a map with default settings is displayed while tracing the polygon.
+
+After tracing the polygon, you can <link geometry_save_function.hgt>save</link> the geometry to a file, compute the <link geometry_area_function.hgt>area</link> of the polygon or compute the <link geometry_perimeter_function.hgt>perimeter</link> of the polygon.
+
+If the <topic geometry.hgt /> geometry_name already contains a polygon, this polygon will be displayed and the user will be able to modify it by long pressing on the vertices to drag them. If the geometry contains more than one polygon, only the first polygon is shown. All entities in the geometry other than polygons are ignored. If the geometry was loaded from GeoJSON, any polygons in entities of type MultiPolygon are ignored. If you wish to capture a new polygon rather than editing the existing geometry, use the <logiccolor geometry>geometry.clear</logiccolor> function before calling <logiccolor geometry>geometry.tracePolygon</logiccolor>.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the user traced a polygon 0 (false) if the file user canceled polygon tracing by tapping the back button.
+
+<subheader>Example 1</subheader>
+
+<logic>
+// Declare a geometry
+geometry outline;
+	
+// Have the user trace the outline of a polygon
+if outline.tracePolygon() then
+
+	// Save the outline to a GeoJSON file
+	outline.save("outline.geojson");
+	
+endif;
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+// Declare a geometry
+geometry plot;
+	
+// Declare a map
+map mymap;
+
+// Set map display parameters
+mymap.setBaseMap("basemap.mbtiles");
+mymap.setTitle("Tap points on the map to outline the plot");
+
+// Have the user trace the outline of a polygon using the map
+if plot.tracePolygon(mymap) then
+
+	// Capture the plot area
+	PLOT_AREA = plot.area;
+	
+endif;
+</logic>
+
+<seealso geometry.hgt geometry_walk_polygon_function.hgt />

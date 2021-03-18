@@ -1,0 +1,62 @@
+﻿<title>Map.RemoveGeometry Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax map>
+b = map_name.removeGeometry(<arg>geometryId</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor map>map.removeGeometry</logiccolor> function removes geometry from the map map_name. <arg>geometryId</arg> should be the id returned by <logiccolor map>map.addGeometry</logiccolor> when the geometry was added to the map.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the geometry was found and was successfully removed and 0 (false) if there is an error.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+// Declare a map
+map mymap;
+
+// Declare a geometry to hold boundary polygon
+geometry boundary;
+
+// Declare a variable to hold the id of the boundary on the map
+numeric boundaryGeometryId;
+
+function showBoundary()
+	// Add boundary polygon to the map and save the id
+	boundaryGeometryId = mymap.addGeometry(boundary);
+end;
+
+function hideBoundary()
+	// Remove the boundary polygon from the map
+	mymap.removeGeometry(boundaryGeometryId);	
+end;
+
+function toggleBoundary()
+	if boundaryGeometryId <> notappl then
+		showBoundary();
+	else
+		hideBoundary();
+	endif;
+end;
+
+PROC SHOW_MAP
+preproc
+
+// Load the boundary polygon from a file
+boundary.load("boundary.geojson");
+
+// Add a button to show/hide the boundary
+mymap.addTextButton("Boundary", toggleBoundary());
+
+// Display the map
+mymap.show();
+</logic>
+
+<seealso map.hgt map_add_geometry_function.hgt map_clear_geometry_function.hgt />
