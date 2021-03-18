@@ -1,0 +1,32 @@
+﻿<title>Geometry Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+geometry <arg>geometry_name</arg>;
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>geometry</logiccolor> statement creates a <link geometry.hgt>geometry</link> with the name <arg>geometry_name</arg>. The geometry name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare geometry globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+
+
+<subheader>Example</subheader>
+
+<logic>
+// Declare a geometry
+geometry mygeometry;
+
+// Capture polygon
+mygeometry.tracePolygon();
+
+// Compute the area of the captured polygon
+AREA = mygeometry.area();
+
+// Save the geometry to a file
+mygeometry.save("polygon.geojson");
+</logic>
+
+
+<seealso geometry.hgt />

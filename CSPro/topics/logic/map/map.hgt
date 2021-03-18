@@ -14,6 +14,8 @@ You can add markers to the map using the <logiccolor map>addMarker</logiccolor> 
 
 By default, the map contains a button to zoom to the users current location. You can add additional buttons to the map by calling <logiccolor map>addImageButton</logiccolor> or <logiccolor map>addTextButton</logiccolor>.
 
+You add vector geometry, such as polygons and polylines, to the map using the <logiccolor map>addGeometry</logiccolor> function.
+
 By default, the map will display a base map from Google Maps, which requires an Internet connection. With no Internet connection the base map will be empty. To display a map without an Internet connection you can copy an an <link offline_maps.hgt>offline map file</link> to your device and pass the file to the <logiccolor map>setBaseMap</logiccolor> function.
 
 
@@ -48,6 +50,9 @@ A map is a CSPro logic object and the following functions can be called via <lin
 	<cell><link map_set_base_map_function.hgt>setBaseMap</link></cell><cell>Change the map source to an online or offline base map.</cell>
 	<cell><link map_show_current_location_function.hgt>showCurrentLocation</link></cell><cell>Display the current location (as retrieved from the GPS) on the map.</cell>
 	<cell><link map_zoom_to_function.hgt>zoomTo</link></cell><cell>Pan/zoom the map.</cell>
+	<cell><link map_add_geometry_function.hgt>addGeometry</link></cell><cell>Add vector geometry to the map.</cell>
+	<cell><link map_remove_geometry_function.hgt>removeGeometry</link></cell><cell>Delete vector geometry from the map.</cell>
+	<cell><link map_clear_geometry_function.hgt>clearGeometry</link></cell><cell>Delete all vector geometry from the map.</cell>
 </table>
 
 <subheader>Example</subheader>
