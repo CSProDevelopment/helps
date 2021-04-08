@@ -1,7 +1,7 @@
 ﻿<title>Define File Associations</title>
 <context IDD_PIFDLG />
 
-CSBatch requires a minimum of two files before it can run (an Input Data File and a Listing File), although the minimum number you will be solicited for from the Define File Associations dialog is three (you optionally have the choice of specifying an Output File).
+CSBatch requires a minimum of two files before it can run (an Input Data File and a Listing File), although the minimum number you will be solicited for from the Define File Associations dialog is three (you optionally have the choice of specifying an Output Data File).
 
 However, some applications use more files. For example, there may be one or more external lookup files. In addition, usage of the <logiccolor>write</logiccolor> and <logiccolor>impute</logiccolor> commands require file associations to be supplied.
 
@@ -9,15 +9,15 @@ You will always see the "Define File Associations" dialog box but what will vary
 
 <subheader>Input Data File</subheader>
 
-This is the file that your program will run upon. For example, if your program contains a series of edits to be performed on your data files, this is your place to name those files. Please note that only one data file can be used in any run—and you must supply it, as CSBatch can not run without it. But rest assured, if you only use this data file as the input data, it will never be altered.
+This is the file that your program will run upon. For example, if your program contains a series of edits to be performed on your data files, this is your place to name those files. You can select a single input file or multiple input files. Rest assured, if you only use this data file as the input data, it will never be altered.
 
 <subheader>External File (dict_name)</subheader>
 
 For each lookup file your application uses, you must supply the data file to which the lookup dictionary refers. CSBatch will not allow you to run your application without naming this file. The name in parenthesis is the unique (internal) dictionary name. A separate line entry will be given for each lookup file attached to your application.
 
-<subheader>Output File</subheader>
+<subheader>Output Data File</subheader>
 
-This is where the modified input data file will be saved. For example, if your program contains a series of edits, the original data file will never be modified. Rather, the changes that you make will be saved in whatever output file you supply, on a case-by-case basis. If no output file is named, no changes will be saved. This is useful when you are debugging or developing your program, as you might prefer to see what's going on by using the errmsg function (which go to the Listing File), rather than seeing the modified data file.
+This is where the modified input data file will be saved. For example, if your program contains a series of edits, the original data file will never be modified. Rather, the changes that you make will be saved in whatever output file you supply, on a case-by-case basis. If no output file is named, no changes will be saved. This is useful when you are debugging or developing your program, as you might prefer to see what's going on by using the <logiccolor>errmsg</logiccolor> function (which go to the Listing File), rather than seeing the modified data file. If you specify more than one file, the cases from the modified input data file will be saved to each output data file.
 
 <subheader>Write File</subheader>
 
