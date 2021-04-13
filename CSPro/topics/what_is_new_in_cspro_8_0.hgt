@@ -7,6 +7,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 <subheader>General</subheader>
 
 <list>
+	<li>The new <link toggle_button.hgt>toggle button</link> capture type presents field data with two states (selected and not selected).</li>
 	<li>Multiple <link CSBatch::define_file_associations.hgt>Output Data</link> entries can be provided for batch applications. Any cases output during the batch run will be written to each of these data sources.</li>
 </list>
 
@@ -14,7 +15,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 <subheader>Logic</subheader>
 
 <list>
-	<li>The <logiccolor>setproperty</logiccolor> function's property value can be specified as a numeric expression instead of having to be written as a string.</li>
+	<li>The <logiccolor>setproperty</logiccolor> function's property value can be specified as a numeric expression instead of having to be given as a string.</li>
 	<li>The <logiccolor>setoutput</logiccolor> function can take a string list as an argument to facilitate specifying multiple output data sources.</li>
 </list>
 

@@ -1,0 +1,9 @@
+﻿<title>Toggle Button</title>
+
+The Toggle Button capture type allows an enumerator to select a single discrete value or to proceed with no selection. To use the capture type, define a single value set value for a numeric or alphanumeric field. If the user selects the Toggle Button, that value will be selected. If the user does not select the Toggle Button, then the field will be validated with a value of <logiccolor>notappl</logiccolor> for numeric fields and <logiccolor>""</logiccolor> for alphanumeric fields.
+
+It is possible to specify labels for the two states (selected and not selected) if the value set contains two values with one value mapped to <logiccolor>notappl</logiccolor> or <logiccolor>""</logiccolor>. Although only the selected state label will appear during data entry, having the other value defined may be useful for other purposes (e.g., using the <logiccolor>invalueset</logiccolor> function or creating frequencies/tabulations).
+
+<center><image toggle_button.png /></center>
+
+<seealso capture_types.hgt radio_button.hgt />
