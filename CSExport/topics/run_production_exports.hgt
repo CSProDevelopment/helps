@@ -37,6 +37,7 @@ MY_DICT=.\MyData.dat
 [Parameters]
 ViewListing=Always
 ViewResults=Yes
+Language=LN
 </pff>
 
 <subheader>Example 2 – Multiple Exported Files</subheader>
@@ -63,6 +64,7 @@ FILE_PEOPLE=.\People.dat
 [Parameters]
 ViewListing=OnError
 ViewResults=No
+Language=LN
 </pff>
 
 
@@ -111,3 +113,5 @@ The <pffcolor>[Parameters]</pffcolor> block is optional. <pffcolor>ViewListing</
 If the <pffcolor>ViewListing</pffcolor> entry is missing, the default action will be OnError.
 
 <pffcolor>ViewResults</pffcolor> determines whether or not the exported file(s) are displayed with Text Viewer at the end of the run. The available choices are Yes or No. If the <pffcolor>ViewResults</pffcolor> entry is missing, the resultant data file(s) will be displayed by default.
+
+<pffcolor>Language</pffcolor> specifies the language that is used when exporting labels.
