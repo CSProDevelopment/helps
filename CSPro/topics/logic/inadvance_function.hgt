@@ -1,0 +1,44 @@
+﻿<title>InAdvance Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = inadvance();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>inadvance</logiccolor> function indicates if an advance is in progress in a data entry application, allowing for the conditional execution of logic based on whether an enumerator has directly entered a field. Advances generally occur when the <logiccolor>advance</logiccolor> statement is executed in logic, when resuming from a partial save, or when operators move from one field to another using the case tree.
+
+A common requirement is to execute some logic only when <b>not</b> advancing. For example, as with the <logiccolor>warning</logiccolor> function, you may want to display a "soft check" error message when the operator directly entered the field, not when resuming from a partial save. These two sets of logic are the same:
+
+<logic>
+warning("...");
+
+if not inadvance() then
+	errmsg("...");
+endif;
+</logic>
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if an advance is being evaluted and 0 (<logiccolor>false</logiccolor>) otherwise. The function always returns 0 for batch and tabulation applications.
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC SURVEY_CONFIRMATION
+
+	// always require the enumerator to confirm that the survey is complete
+	if inadvance() then
+		SURVEY_CONFIRMATION = notappl;
+		reenter;
+	endif;
+</logic>
+
+
+<seealso advance_statement.hgt warning_function.hgt />

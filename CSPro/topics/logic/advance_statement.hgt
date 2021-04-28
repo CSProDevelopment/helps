@@ -1,10 +1,12 @@
 ﻿<title>Advance Statement</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 advance 『to』 『field_name』;
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -15,6 +17,9 @@ The optional <arg>field_name</arg> is either the name of a field or is a string 
 The target field can be located in any record at the same level as the current field, but it cannot be located at a different level. The field must be later on the path than the current field, meaning that it is a field that has not yet been entered. If the field has already been entered, an error message will be displayed during data entry. If you do not know whether the field is earlier in the data path, use the <logiccolor>move</logiccolor> statement.
 
 Note that the <logiccolor>advance</logiccolor> statement behaves differently from the <logiccolor>skip</logiccolor> statement, moving <i>over</i> some number of fields, rather than skipping <i>past</i> the fields.
+
+If you want to conditionally execute logic based on whether or not the program is advancing, the <logiccolor>inadvance</logiccolor> function indicates if an advance is in progress.
+
 
 <subheader>Example</subheader>
 
@@ -33,4 +38,5 @@ preproc
 	endif;
 </logic>
 
-<seealso ask_statement.hgt move_statement.hgt noinput_statement.hgt reenter_statement.hgt skip_statement.hgt />
+
+<seealso inadvance_function.hgt ask_statement.hgt move_statement.hgt noinput_statement.hgt reenter_statement.hgt skip_statement.hgt />
