@@ -58,7 +58,7 @@ namespace Help_Generator
         }
 
         private Dictionary<string,TagSettings> _tagSettings;
-        private Dictionary<string,string> _blockTags;
+        private HashSet<string> _blockTags;
 
         private Stack<string> _tagStack;
         private bool _inBlockTag;
@@ -73,7 +73,8 @@ namespace Help_Generator
         private string _title;
         private bool _titleIsHeader;
 
-        private enum LogicObject { None, Array, Audio, File, Freq, HashMap, Geometry, List, Map, Pff, SystemApp, ValueSet };
+        private enum LogicObject { None, Array, Audio, Document, File, Freq, HashMap, Image, Geometry, List, 
+                                   Map, Pff, SystemApp, ValueSet };
         private LogicObject _logicObject;
 
         public TopicCompiler(HelpComponents helpComponents,Preprocessor.TopicPreprocessor preprocessedTopic,TopicCompilerSettingsInterface topicCompilerSettings)
@@ -113,12 +114,12 @@ namespace Help_Generator
             _tagSettings.Add(CalloutTag, new TagSettings(true, "<div style=\"background-color: lightgrey;border:1px solid black;margin:10px;padding:10px\">", "</div>", 0, 0));
             _tagSettings.Add(PageBreakTag, new TagSettings(false, "<div class=\"new-page\" />", "", 0, 0));
 
-            _blockTags = new Dictionary<string,string>();
-            _blockTags.Add(MakeTag(LogicTag,true),MakeTag(LogicTag,false));
-            _blockTags.Add(MakeTag(LogicSyntaxTag,true),MakeTag(LogicSyntaxTag,false));
-            _blockTags.Add(MakeTag(MessageTag,true),MakeTag(MessageTag,false));
-            _blockTags.Add(MakeTag(PffTag,true),MakeTag(PffTag,false));
-            _blockTags.Add(MakeTag(HtmlTag,true),MakeTag(HtmlTag,false));
+            _blockTags = new HashSet<string>();
+            _blockTags.Add(LogicTag);
+            _blockTags.Add(LogicSyntaxTag);
+            _blockTags.Add(MessageTag);
+            _blockTags.Add(PffTag);
+            _blockTags.Add(HtmlTag);
         }
 
         public string CompileForHtml(string text)
@@ -201,11 +202,11 @@ namespace Help_Generator
 
                 if( inBlockEndTag == null ) // see if there is a block tag specifier
                 {
-                    foreach( var kp in _blockTags )
+                    foreach( string startTag in _blockTags )
                     {
-                        if( line.Contains(kp.Key) )
+                        if( Regex.IsMatch(line, $".*<{startTag}(?: \\S+|)>.*") )
                         {
-                            inBlockEndTag = kp.Value;
+                            inBlockEndTag = MakeTag(startTag, false);
                             break;
                         }
                     }
@@ -395,7 +396,7 @@ namespace Help_Generator
                 throw new Exception("Invalid tag around: " + text.Substring(startTagPos));
 
             // see if this is a block tag
-            if( _blockTags.ContainsKey(MakeTag(tag,true)) )
+            if( _blockTags.Contains(tag) )
                 _inBlockTag = true;
 
             TagSettings thisTagSettings = _tagSettings[tag];
@@ -884,10 +885,12 @@ namespace Help_Generator
                 _logicObject =
                     startTagComponents[0].Equals(LogicObject.Array.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.Array :
                     startTagComponents[0].Equals(LogicObject.Audio.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.Audio :
+                    startTagComponents[0].Equals(LogicObject.Document.ToString(), StringComparison.InvariantCultureIgnoreCase)  ? LogicObject.Document :
                     startTagComponents[0].Equals(LogicObject.File.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.File :
                     startTagComponents[0].Equals(LogicObject.Freq.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.Freq :
                     startTagComponents[0].Equals(LogicObject.Geometry.ToString(), StringComparison.InvariantCultureIgnoreCase)  ? LogicObject.Geometry :
                     startTagComponents[0].Equals(LogicObject.HashMap.ToString(), StringComparison.InvariantCultureIgnoreCase)   ? LogicObject.HashMap :
+                    startTagComponents[0].Equals(LogicObject.Image.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.Image :
                     startTagComponents[0].Equals(LogicObject.List.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.List :
                     startTagComponents[0].Equals(LogicObject.Map.ToString(), StringComparison.InvariantCultureIgnoreCase)       ? LogicObject.Map :
                     startTagComponents[0].Equals(LogicObject.Pff.ToString(), StringComparison.InvariantCultureIgnoreCase)       ? LogicObject.Pff :
@@ -904,7 +907,8 @@ namespace Help_Generator
 
         private string EndLogicHandler(string endTagInnerText)
         {
-            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelp, TrimOnlyOneNewlineBothEnds(endTagInnerText), GetHtmlFilenameForKeyword);
+            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelp, 
+                TrimOnlyOneNewlineBothEnds(endTagInnerText), GetHtmlFilenameForKeyword);
         }
 
         private string EndLogicSyntaxHandler(string endTagInnerText)
@@ -935,7 +939,8 @@ namespace Help_Generator
 
         private string EndLogicColorHandler(string endTagInnerText)
         {
-            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, HelperFunctions.UnHtmlizeEscapes(endTagInnerText.Trim()), GetHtmlFilenameForKeyword, _logicObject.ToString());
+            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, 
+                HelperFunctions.UnHtmlizeEscapes(endTagInnerText.Trim()), GetHtmlFilenameForKeyword, _logicObject.ToString());
         }
 
         private string StartLogicTableHandler(string[] startTagComponents)
