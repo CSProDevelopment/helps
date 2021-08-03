@@ -1,0 +1,15 @@
+// Declare a map
+map mymap;
+
+// Load geometry from a file
+geometry geom;
+geom.load("geom.geojson");
+
+// Add geometry to the map
+mymap.addGeometry(geom);
+
+// Zoom map to fit the bounds of the geometry with 5% padding
+mymap.zoomTo(geom.minLatitude(), geom.minLongitude(), geom.maxLatitude(), geom.maxLongitude(), 5);
+
+// Show the map
+mymap.show();

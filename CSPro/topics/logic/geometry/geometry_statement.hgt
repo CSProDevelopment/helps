@@ -15,17 +15,7 @@ The <logiccolor>geometry</logiccolor> statement creates a <link geometry.hgt>geo
 <subheader>Example</subheader>
 
 <logic>
-// Declare a geometry
-geometry mygeometry;
-
-// Capture polygon
-mygeometry.tracePolygon();
-
-// Compute the area of the captured polygon
-AREA = mygeometry.area();
-
-// Save the geometry to a file
-mygeometry.save("polygon.geojson");
+<include include_geometry_example.hgi />
 </logic>
 
 

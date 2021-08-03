@@ -17,7 +17,6 @@ The function returns a logical value of 1 (true).
 <subheader>Example</subheader>
 
 <logic>
-
 PROC GLOBAL
 
 function editOutline(map m, geometry outline)
@@ -38,7 +37,7 @@ PROC MAP_OUTLINE
 // Declare a map to draw the outline on
 map m;
 
-// Load the outline from a GeoJson file
+// Load the outline from a GeoJSON file
 geometry outline;
 outline.load("outline.geojson");
 
@@ -50,7 +49,6 @@ m.addTextButton("Edit outline", editOutline(m, outline));
 
 // Display the map
 m.show();
-
 </logic>
 
-<seealso map.hgt map_add_geometry_function.hgt map_clear_markers_function.hgt />
+<seealso map.hgt geometry.hgt map_add_geometry_function.hgt map_remove_geometry_function.hgt />

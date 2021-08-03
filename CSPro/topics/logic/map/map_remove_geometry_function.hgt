@@ -8,7 +8,7 @@ b = map_name.removeGeometry(<arg>geometryId</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.removeGeometry</logiccolor> function removes geometry from the map map_name. <arg>geometryId</arg> should be the id returned by <logiccolor map>map.addGeometry</logiccolor> when the geometry was added to the map.
+The <logiccolor map>map.removeGeometry</logiccolor> function removes geometry from the map <logiccolor>map_name</logiccolor>. <arg>geometryId</arg> should be the id returned by <logiccolor map>map.addGeometry</logiccolor> when the geometry was added to the map.
 
 <subheader>Return Value</subheader>
 
@@ -35,11 +35,12 @@ end;
 
 function hideBoundary()
 	// Remove the boundary polygon from the map
-	mymap.removeGeometry(boundaryGeometryId);	
+	mymap.removeGeometry(boundaryGeometryId);
+	boundaryGeometryId = 0;
 end;
 
 function toggleBoundary()
-	if boundaryGeometryId <> notappl then
+	if boundaryGeometryId = 0 then
 		showBoundary();
 	else
 		hideBoundary();
@@ -59,4 +60,4 @@ mymap.addTextButton("Boundary", toggleBoundary());
 mymap.show();
 </logic>
 
-<seealso map.hgt map_add_geometry_function.hgt map_clear_geometry_function.hgt />
+<seealso map.hgt geometry.hgt map_add_geometry_function.hgt map_clear_geometry_function.hgt />

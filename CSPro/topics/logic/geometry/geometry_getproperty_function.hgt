@@ -8,9 +8,9 @@ s = geometry_name.getproperty(<arg>property_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor geometry>geometry.getproperty</logiccolor> function returns a string containing the current value associated with the <link geometry.hgt>geometry</link>'s property specified by the string expression <arg>property_name</arg>. If a geometry contains multiple features, the function returns the value of the first feature that contains a value for <arg>property_name</arg>.
+The <logiccolor geometry>geometry.getproperty</logiccolor> function returns a string containing the current value associated with the <link geometry.hgt>geometry</link>'s property specified by the string expression <arg>property_name</arg>. If a geometry contains multiple features, the function returns the value of the first feature that contains a value for <arg>property_name</arg>. Property names are case sensitive.
 
-Property values may be set using the <topic geometry_setproperty_function.hgt />. When reading a GeoJSON file using the <topic geometry_load_function.hgt />, property names and values are read from the properties section of GeoJSON features.
+Property values may be set using the <logiccolor geometry>geometry.setProperty</logiccolor> function. When reading a GeoJSON file using the <logiccolor geometry>geometry.load</logiccolor> function, property names and values are read from the properties section of GeoJSON features.
 
 
 <subheader>Return Value</subheader>

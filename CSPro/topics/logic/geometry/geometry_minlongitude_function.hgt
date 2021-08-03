@@ -1,0 +1,23 @@
+﻿<title>Geometry.MinLongitude Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax geometry>
+d = geometry_name.minLongitude();
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor geometry>geometry.minLongitude</logiccolor> function finds the smallest longitude value of any point on any element in the <link geometry.hgt>geometry</link> named <logiccolor>geometry_name</logiccolor>. Together with the <logiccolor geometry>geometry.maxLongitude</logiccolor>, <logiccolor geometry>geometry.minLatitude</logiccolor>, and <logiccolor geometry>geometry.maxLatitude</logiccolor> functions it is possible to find the full extent of the geometry.
+
+<subheader>Return Value</subheader>
+
+The function returns the smallest longitude value of any point or any point on a line or polygon in the geometry. If the geometry is empty the function returns <logiccolor>default</logiccolor>.
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_geometry_min_max_latitude_longitude_example.hgi />
+</logic>
+
+<seealso geometry.hgt geometry_maxlongitude_function.hgt geometry_minlatitude_function.hgt geometry_maxlatitude_function.hgt />

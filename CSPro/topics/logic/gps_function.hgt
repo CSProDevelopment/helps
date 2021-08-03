@@ -101,13 +101,13 @@ i = <font color="#0000FF">gps</font>(read,<span style="font-style: italic;">time
  for latitude and longitude. Further attributes of the reading can be queried
  though they are not guaranteed to be valid.</p>
 <p style="font-size: 10pt; font-family: Arial, sans-serif; margin-left: 12px;"><span
-	 style="font-family: 'Courier New', monospace;"><font color="#000000">f
+	 style="font-family: 'Courier New', monospace;"><font color="#000000">d
  = <font color="#0000FF">gps</font>(latitude);<br />
-f = <font color="#0000FF">gps</font>(longitude);<br />
-f = <font color="#0000FF">gps</font>(altitude);<br />
-f = <font color="#0000FF">gps</font>(satellites);<br />
-f = <font color="#0000FF">gps</font>(accuracy);<br />
-f = <font color="#0000FF">gps</font>(readtime);</font></span></p>
+d = <font color="#0000FF">gps</font>(longitude);<br />
+d = <font color="#0000FF">gps</font>(altitude);<br />
+d = <font color="#0000FF">gps</font>(satellites);<br />
+d = <font color="#0000FF">gps</font>(accuracy);<br />
+d = <font color="#0000FF">gps</font>(readtime);</font></span></p>
 <p style="font-size: 10pt; font-family: Arial, sans-serif;"><span style="font-weight: bold;">Latitude</span>
  and <span style="font-weight: bold;">longitude</span> return coordinates
  in degrees. <span style="font-weight: bold;">Altitude</span> returns the
@@ -129,7 +129,7 @@ f = <font color="#0000FF">gps</font>(readtime);</font></span></p>
  of GPS coordinates. Great-circle calculations give a rough approximation
  of the distance between two points. The function returns the distance
  as measured in meters.</p>
-<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 12px;">f
+<p style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 12px;">d
  = <font color="#0000FF">gps</font>(distance,<i>numeric-expression,numeric-expression,numeric-expression,numeric-expression</i>);<br />
 <br />
 <font color="#0000FF">numeric</font> kilometersToCensusBureau = <font color="#0000FF">gps</font>(distance,<font

@@ -73,7 +73,7 @@ namespace Help_Generator
         private string _title;
         private bool _titleIsHeader;
 
-        private enum LogicObject { None, Array, Audio, Document, File, Freq, HashMap, Image, Geometry, List, 
+        private enum LogicObject { None, Array, Audio, Document, File, Freq, Geometry, HashMap, Image, List, 
                                    Map, Pff, SystemApp, ValueSet };
         private LogicObject _logicObject;
 

@@ -126,7 +126,7 @@ add_dictionary_elements.hgt | Add																#	Add
 	add_dictionary_elements.hgt | Value Sets in Dictionary										#		Value Sets in Dictionary
 	add_a_variable_to_a_tabulation.hgt | Variable to a Tabulation								#		Variable to a Tabulation
 map_add_geometry_function.hgt | AddGeometry Function											#	AddGeometry Function
-	map_add_image_button_function.hgt															#		Map.AddImageButton Function
+	map_add_geometry_function.hgt																#		Map.AddGeometry Function
 map_add_image_button_function.hgt | AddImageButton Function										#	AddImageButton Function
 	map_add_image_button_function.hgt															#		Map.AddImageButton Function
 map_add_marker_function.hgt | AddMarker Function												#	AddMarker Function
@@ -205,6 +205,8 @@ create_an_area_names_file.hgt | Area															#	Area
 	area_processing.hgt | Processing															#		Processing
 	tabulate_only_certain_levels_of_geography.hgt | Tabulate Only Certain Levels of Geography	#		Tabulate Only Certain Levels of Geography
 area_captions.hgt																				#	Area Captions
+geometry_area_function.hgt | Area Function														#	Area Function
+	geometry_area_function.hgt																	#		Geometry.Area Function
 area_names_file_anm.hgt																			#	Area Names File (.anm)
 operators.hgt | Arithmetic operators															#	Arithmetic operators
 array.hgt																						#	Array Object
@@ -395,16 +397,20 @@ errmsg_function.hgt | Checks																	#	Checks
 check_box.hgt																					#	Check Box
 	ischecked_function.hgt																		#		IsChecked Function
 choose_topic_sections.hgt																		#	Choose Topic Sections
+map_clear_buttons_function.hgt | ClearButtons Function											#	ClearButtons Function
+	map_clear_buttons_function.hgt																#		Map.ClearButtons Function
+map_clear_geometry_function.hgt | ClearGeometry Function										#	ClearGeometry Function
+	map_clear_geometry_function.hgt																#		Map.ClearGeometry Function
+map_clear_markers_function.hgt | ClearMarkers Function											#	ClearMarkers Function
+	map_clear_markers_function.hgt																#		Map.ClearMarkers Function
 cspro_settings.hgt | Clear Credentials															#	Clear Credentials
 clear_function.hgt																				#	Clear Function
 	array_clear_function.hgt																	#		Array.Clear Function
 	audio_clear_function.hgt																	#		Audio.Clear Function
 	freq_clear_function.hgt																		#		Freq.Clear Function
+	geometry_clear_function.hgt																	#		Geometry.Clear Function
 	hashmap_clear_function.hgt																	#		HashMap.Clear Function
 	list_clear_function.hgt																		#		List.Clear Function
-	map_clear_buttons_function.hgt																#		Map.ClearButtons Function
-	map_clear_geometry_function.hgt																#		Map.ClearGeometry Function
-	map_clear_markers_function.hgt																#		Map.ClearMarkers Function
 	valueset_clear_function.hgt																	#		ValueSet.Clear Function
 close_an_application.hgt																		#	Close an Application
 close_function.hgt																				#	Close Function
@@ -983,28 +989,28 @@ uuid_function.hgt | Generating a Unique ID														#	Generating a Unique ID
 area_dialog_box.hgt | Geographic																#	Geographic
 	area_dialog_box.hgt | Area Tabulation														#		Area Tabulation
 	area_processing.hgt | Processing															#		Processing
-geometry_load_function.hgt| GeoJSON																#	GeoJSON
+geometry_load_function.hgt | GeoJSON															#	GeoJSON
 	geometry_load_function.hgt | Load GeoJSON From File											#		Load GeoJSON From File
-	geometry_save_function.hgt | Save GeoJSON to File											#		Save GeoJSON to File	
+	geometry_save_function.hgt | Save GeoJSON to File											#		Save GeoJSON to File
 geometry.hgt | Geometry																			#	Geometry
-	geometry.hgt | Geometry Object																#		Geometry Object
-	geometry_statement.hgt																		#		Geometry Statement
+	map_add_geometry_function.hgt | Add Geometry to a Map										#		Add Geometry to a Map
+	map_clear_geometry_function.hgt | Clear All Geometry From a Map								#		Clear All Geometry From a Map
 	geometry_area_function.hgt																	#		Geometry.Area Function
 	geometry_clear_function.hgt																	#		Geometry.Clear Function
+	geometry_getproperty_function.hgt															#		Geometry.GetProperty Function
 	geometry_load_function.hgt																	#		Geometry.Load Function
-	geometry_max_latitude_function.hgt															#		Geometry.MaxLatitude Function
-	geometry_max_longitude_function.hgt															#		Geometry.MaxLongitude Function
-	geometry_min_latitude_function.hgt															#		Geometry.MinLatitude Function
-	geometry_min_longitude_function.hgt															#		Geometry.MinLongitude Function
+	geometry_maxlatitude_function.hgt															#		Geometry.MaxLatitude Function
+	geometry_maxlongitude_function.hgt															#		Geometry.MaxLongitude Function
+	geometry_minlatitude_function.hgt															#		Geometry.MinLatitude Function
+	geometry_minlongitude_function.hgt															#		Geometry.MinLongitude Function
 	geometry_perimeter_function.hgt																#		Geometry.Perimeter Function
 	geometry_save_function.hgt																	#		Geometry.Save Function
-	geometry_trace_polygon_function.hgt															#		Geometry.TracePolygon Function
-	geometry_walk_polygon_function.hgt															#		Geometry.WalkPolygon Function
 	geometry_setproperty_function.hgt															#		Geometry.SetProperty Function
-	geometry_getproperty_function.hgt															#		Geometry.GetProperty Function
-	map_add_geometry_function.hgt | Add Geometry to a Map										#		Add Geometry to a Map
+	geometry_tracepolygon_function.hgt															#		Geometry.TracePolygon Function
+	geometry_walkpolygon_function.hgt															#		Geometry.WalkPolygon Function
+	geometry.hgt																				#		Geometry Object
+	geometry_statement.hgt																		#		Geometry Statement
 	map_remove_geometry_function.hgt | Remove Geometry From a Map								#		Remove Geometry From a Map
-	map_clear_geometry_function.hgt | Clear All Geometry From a Map								#		Clear All Geometry From a Map
 getbluetoothname_function.hgt																	#	GetBluetoothName Function
 getbuffer_function.hgt																			#	GetBuffer Function
 getcapturetype_function.hgt																		#	GetCaptureType Function
@@ -1038,8 +1044,8 @@ getoperatorid_function.hgt																		#	GetOperatorId Function
 screen_orientation.hgt | Getorientation Function												#	Getorientation Function
 getos_function.hgt																				#	GetOS Function
 getproperty_function.hgt																		#	GetProperty Function
-	pff_getproperty_function.hgt																#		Pff.GetProperty Function
 	geometry_getproperty_function.hgt															#		Geometry.GetProperty Function
+	pff_getproperty_function.hgt																#		Pff.GetProperty Function
 getrecord_function.hgt																			#	GetRecord Function
 getsymbol_function.hgt																			#	GetSymbol Function
 getusername_function.hgt																		#	GetUserName Function
@@ -1232,7 +1238,7 @@ batch_edit_keys.hgt | Keyboard Summary															#	Keyboard Summary
 data_entry_philosophies.hgt | Keying															#	Keying
 	data_entry_philosophies.hgt | Heads-Down													#		Heads-Down
 	data_entry_philosophies.hgt | Heads-Up														#		Heads-Up
-	skip_issues.hgt | Skips Issues																#		Skips Issues
+	skip_issues.hgt																				#		Skip Issues
 keylist_function.hgt																			#	KeyList Function
 key_function.hgt																				#	Key Function
 onkey_character_map.hgt | Key Override Character Map											#	Key Override Character Map
@@ -1298,6 +1304,7 @@ loadsetting_function.hgt																		#	LoadSetting Function
 load_and_save_formatting_preferences.hgt														#	Load and Save Formatting Preferences
 pff_load_function.hgt | Load Function															#	Load Function
 	audio_load_function.hgt																		#		Audio.Load Function
+	geometry_load_function.hgt																	#		Geometry.Load Function
 	pff_load_function.hgt																		#		Pff.Load Function
 syncconnect_function_dropbox_local.hgt | LocalDropbox Synchronization							#	LocalDropbox Synchronization
 syncconnect_function_files_local.hgt | LocalFiles Synchronization								#	LocalFiles Synchronization
@@ -1337,10 +1344,12 @@ methods_of_correcting_data.hgt | Manual															#	Manual
 	skip_issues.hgt | Skip																		#		Skip
 mapping.hgt | Map																				#	Map
 	mapping.hgt | How to Use Maps in Data Entry													#		How to Use Maps in Data Entry
+	map_add_geometry_function.hgt																#		Map.AddGeometry Function
 	map_add_image_button_function.hgt															#		Map.AddImageButton Function
 	map_add_marker_function.hgt																	#		Map.AddMarker Function
 	map_add_text_button_function.hgt															#		Map.AddTextButton Function
 	map_clear_buttons_function.hgt																#		Map.ClearButtons Function
+	map_clear_geometry_function.hgt																#		Map.ClearGeometry Function
 	map_clear_markers_function.hgt																#		Map.ClearMarkers Function
 	map_get_last_click_latitude_function.hgt													#		Map.GetLastClickLatitude Function
 	map_get_last_click_longitude_function.hgt													#		Map.GetLastClickLongitude Function
@@ -1348,6 +1357,7 @@ mapping.hgt | Map																				#	Map
 	map_get_marker_longitude_function.hgt														#		Map.GetMarkerLongitude Function
 	map_hide_function.hgt																		#		Map.Hide Function
 	map_remove_button_function.hgt																#		Map.RemoveButton Function
+	map_remove_geometry_function.hgt															#		Map.RemoveGeometry Function
 	map_remove_marker_function.hgt																#		Map.RemoveMarker Function
 	map_set_base_map_function.hgt																#		Map.SetBaseMap Function
 	map_set_marker_description_function.hgt														#		Map.SetMarkerDescription Function
@@ -1357,13 +1367,13 @@ mapping.hgt | Map																				#	Map
 	map_set_marker_on_click_function.hgt														#		Map.SetMarkerOnClick Function
 	map_set_marker_on_drag_function.hgt															#		Map.SetMarkerOnDrag Function
 	map_set_marker_text_function.hgt															#		Map.SetMarkerText Function
+	map_set_on_click_function.hgt																#		Map.SetOnClick Function
 	map_set_title_function.hgt																	#		Map.SetTitle Function
 	map_show_current_location_function.hgt														#		Map.ShowCurrentLocation Function
 	map_show_function.hgt																		#		Map.Show Function
 	map_zoom_to_function.hgt																	#		Map.ZoomTo Function
 	map_case_list.hgt | Map in Case Listing														#		Map in Case Listing
 	map.hgt | Map in Logic																		#		Map in Logic
-	map_statement.hgt																			#		Map Statement
 	map_statement.hgt																			#		Map Statement
 change_the_print_page_setup.hgt | Margins														#	Margins
 map_add_marker_function.hgt | Markers															#	Markers
@@ -1386,6 +1396,10 @@ add_summary_statistics_to_a_table.hgt | Maximum													#	Maximum
 	maximum_number.hgt | Number of Record														#		Number of Record
 	produce_summary_statistics.hgt																#		Produce Summary Statistics
 	record_properties.hgt																		#		Record Properties
+geometry_maxlatitude_function.hgt | MaxLatitude Function										#	MaxLatitude Function
+	geometry_maxlatitude_function.hgt															#		Geometry.MaxLatitude Function
+geometry_maxlongitude_function.hgt | MaxLongitude Function										#	MaxLongitude Function
+	geometry_maxlongitude_function.hgt															#		Geometry.MaxLongitude Function
 maxocc_function.hgt																				#	MaxOcc Function
 maxvalue_function.hgt																			#	MaxValue Function
 max_function.hgt																				#	Max Function
@@ -1411,6 +1425,10 @@ methods_of_correcting_data.hgt																	#	Methods of Correcting Data
 add_summary_statistics_to_a_table.hgt | Minimum													#	Minimum
 	add_summary_statistics_to_a_table.hgt														#		Add Summary Statistics to a Table
 	produce_summary_statistics.hgt																#		Produce Summary Statistics
+geometry_minlatitude_function.hgt | MinLatitude Function										#	MinLatitude Function
+	geometry_minlatitude_function.hgt															#		Geometry.MinLatitude Function
+geometry_minlongitude_function.hgt | MinLongitude Function										#	MinLongitude Function
+	geometry_minlongitude_function.hgt															#		Geometry.MinLongitude Function
 minvalue_function.hgt																			#	MinValue Function
 min_function.hgt																				#	Min Function
 change_field_properties.hgt | Mirror Fields														#	Mirror Fields
@@ -1637,6 +1655,8 @@ add_percents_to_a_table.hgt | Percents															#	Percents
 	add_percents_to_a_table.hgt | Including in Tables											#		Including in Tables
 	add_percents_to_a_table.hgt | Only															#		Only
 	tally_attributes_for_a_variable.hgt | Proportions											#		Proportions
+geometry_perimeter_function.hgt | Perimeter Function											#	Perimeter Function
+	geometry_perimeter_function.hgt																#		Geometry.Perimeter Function
 change_field_properties.hgt | Persistent Fields													#	Persistent Fields
 program_information_file_pff.hgt | PFF															#	PFF
 	pff.hgt | Object																			#		Object
@@ -1660,9 +1680,9 @@ add_pictures.hgt | Pictures																		#	Pictures
 	value_set_images.hgt																		#		Value Set Images
 audio_play_function.hgt | Play Function															#	Play Function
 	audio_play_function.hgt																		#		Audio.Play Function
-geometry_trace_polygon_function.hgt	| Polygon													#	Polygon
-	geometry_trace_polygon_function.hgt															#		Geometry.TracePolygon Function
-	geometry_walk_polygon_function.hgt															#		Geometry.WalkPolygon Function	
+geometry_tracepolygon_function.hgt | Polygon													#	Polygon
+	geometry_tracepolygon_function.hgt															#		Geometry.TracePolygon Function
+	geometry_walkpolygon_function.hgt															#		Geometry.WalkPolygon Function
 poschar_function.hgt																			#	PosChar Function
 hide_or_change_the_position_of_the_total.hgt | Position											#	Position
 	hide_or_change_the_position_of_the_total.hgt | Change the Position of the Total				#		Change the Position of the Total
@@ -1828,6 +1848,8 @@ map_remove_button_function.hgt | RemoveButton Function											#	RemoveButton 
 	map_remove_button_function.hgt																#		Map.RemoveButton Function
 list_removeduplicates_function.hgt | RemoveDuplicates Function									#	RemoveDuplicates Function
 	list_removeduplicates_function.hgt															#		List.RemoveDuplicates Function
+map_remove_geometry_function.hgt | RemoveGeometry Function										#	RemoveGeometry Function
+	map_remove_geometry_function.hgt															#		Map.RemoveGeometry Function
 list_removein_function.hgt | RemoveIn Function													#	RemoveIn Function
 	list_removein_function.hgt																	#		List.RemoveIn Function
 map_remove_marker_function.hgt | RemoveMarker Function											#	RemoveMarker Function
@@ -1835,7 +1857,6 @@ map_remove_marker_function.hgt | RemoveMarker Function											#	RemoveMarker 
 list_remove_function.hgt | Remove Function														#	Remove Function
 	hashmap_remove_function.hgt																	#		HashMap.Remove Function
 	list_remove_function.hgt																	#		List.Remove Function
-	map_remove_geometry_function.hgt															#		Map.RemoveGeometry
 	valueset_remove_function.hgt																#		ValueSet.Remove Function
 renaming_tables_and_table_applications.hgt														#	Renaming Tables and Table Applications
 batch_edit_order.hgt | Reorder Editing															#	Reorder Editing
@@ -1923,6 +1944,7 @@ save_an_application_with_a_new_name.hgt | Save As												#	Save As
 pff_save_function.hgt | Save Function															#	Save Function
 	audio_save_function.hgt																		#		Audio.Save Function
 	freq_save_function.hgt																		#		Freq.Save Function
+	geometry_save_function.hgt																	#		Geometry.Save Function
 	pff_save_function.hgt																		#		Pff.Save Function
 saving_tables_as_text_html_or_rich_text.hgt | Saving Tables as Text HTML or Rich Text			#	Saving Tables as Text HTML or Rich Text
 change_the_view.hgt | Screen																	#	Screen
@@ -1990,8 +2012,8 @@ setoperatorid_function.hgt																		#	SetOperatorId Function
 screen_orientation.hgt | Setorientation Function												#	Setorientation Function
 setoutput_function.hgt																			#	SetOutput Function
 setproperty_function.hgt																		#	SetProperty Function
-	pff_setproperty_function.hgt																#		Pff.SetProperty Function
 	geometry_setproperty_function.hgt															#		Geometry.SetProperty Function
+	pff_setproperty_function.hgt																#		Pff.SetProperty Function
 setreportdata_function.hgt																		#	SetReportData Function
 map_set_title_function.hgt | SetTitle Function													#	SetTitle Function
 	map_set_title_function.hgt																	#		Map.SetTitle Function
@@ -2036,7 +2058,6 @@ data_file_type_structure.hgt | Single Record Types												#	Single Record Ty
 change_field_font.hgt | Size																	#	Size
 	change_field_font.hgt | Change Field Box													#		Change Field Box
 data_file_type_structure.hgt | Size of Data Files												#	Size of Data Files
-skip_issues.hgt | skip																			#	skip
 skip_statement.hgt | Skip																		#	Skip
 	skip_issues.hgt | Automatic																	#		Automatic
 	skip_issues.hgt | Issues																	#		Issues
@@ -2309,6 +2330,8 @@ debug_table_totals.hgt | Total																	#	Total
 	add_percents_to_a_table.hgt | Percent														#		Percent
 totocc_function.hgt																				#	TotOcc Function
 toupper_function.hgt																			#	ToUpper Function
+geometry_tracepolygon_function.hgt | TracePolygon Function										#	TracePolygon Function
+	geometry_tracepolygon_function.hgt															#		Geometry.TracePolygon Function
 trace_function.hgt																				#	Trace Function
 strip_function.hgt | Trailing blanks															#	Trailing blanks
 	strip_function.hgt | Remove																	#		Remove
@@ -2326,7 +2349,6 @@ and_or_truth_table.hgt | Truth Table															#	Truth Table
 	and_or_truth_table.hgt | And/Or																#		And/Or
 	if_and_only_if_operator.hgt | If and Only If												#		If and Only If
 tr_function.hgt																					#	Tr Function
-geometry_trace_polygon_function.hgt	| TracePolygon Function										#	TracePolygon Function
 sub_items.hgt | Type																			#	Type
 	sub_items.hgt | Item																		#		Item
 	record_type.hgt																				#		Record Type
@@ -2455,7 +2477,8 @@ visualvalue_function.hgt																		#	VisualValue Function
 audio.hgt | Voice Recording																		#	Voice Recording
 impute_function.hgt | VSet																		#	VSet
 	impute_function.hgt																			#		Impute Function
-geometry_walk_polygon_function.hgt	| WalkPolygon Function										#	WalkPolygon Function
+geometry_walkpolygon_function.hgt | WalkPolygon Function										#	WalkPolygon Function
+	geometry_walkpolygon_function.hgt															#		Geometry.WalkPolygon Function
 warning_function.hgt																			#	Warning Function
 prepare_tables_for_posting_to_the_web.hgt | Web													#	Web
 	prepare_tables_for_posting_to_the_web.hgt													#		Prepare Tables for Posting to the Web

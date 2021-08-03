@@ -6,19 +6,17 @@
 b = geometry_name.load(<arg>filename</arg>);
 </logicsyntax>
 
-
 <subheader>Description</subheader>
 
-The <logiccolor geometry>geometry.load</logiccolor> function reads the file named <arg>filename</arg> and stores the geometry data contained in the file in a <link geometry.hgt>geometry</link> object. The loaded geometry can then be displayed on a map <logiccolor map>map.addGeometry</logiccolor>. 
+The <logiccolor geometry>geometry.load</logiccolor> function reads the file specified by the string expression <arg>filename</arg> and stores the geometry data contained in the file in the <link geometry.hgt>geometry</link> named <logiccolor>geometry_name</logiccolor>. The loaded geometry can be displayed on a map using <logiccolor map>map.addGeometry</logiccolor>. 
 
 CSPro can load geometry from files in <link https://geojson.org>GeoJSON</link> format.
 
-Loading very large GeoJSON files can be slow and may exceed the memory of the mobile device. In some cases it may be neccessary to break up large GeoJSON files into smaller files. For example, rather than using a single file containing geometry for an entire country, create a smaller files for the geometry in each district and then load only the file for the district that the interviewer is currently working in. Alternatively, rather than using geometry you could save the vector data in a custom <link offline_maps.hgt>base map</link>.
+Loading very large GeoJSON files can be slow and may exceed the memory of the device. In some cases it may be necessary to break up large GeoJSON files into smaller files. For example, rather than using a single file containing geometry for an entire country, create smaller files for the geometry in each district and then load only the file for the district that the interviewer is currently working in. Alternatively, rather than using geometry you can save the vector data in a custom <link offline_maps.hgt>base map</link>.
 
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the file was loaded and 0 (false) if the file could not be loaded.
-
 
 <subheader>Example</subheader>
 

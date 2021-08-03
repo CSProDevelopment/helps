@@ -1,0 +1,11 @@
+// Declare a geometry
+geometry mygeometry;
+
+// Capture polygon
+mygeometry.tracePolygon();
+
+// Compute the area of the captured polygon
+AREA = mygeometry.area();
+
+// Save the geometry to a file
+mygeometry.save("polygon.geojson");

@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax geometry>
-geometry.clear();
+b = geometry_name.clear();
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor geometry>geometry.clear</logiccolor> removes all data in the geometry. Any polygons, points or lines that were stored in the geometry object by loading a file or tracing a polygon are deleted, leaving the geometry empty.
+The <logiccolor geometry>geometry.clear</logiccolor> removes all data in the <link geometry.hgt>geometry</link> named <logiccolor>geometry_name</logiccolor>. Any polygons, points, or lines that were stored in the geometry object by loading a file or tracing a polygon are deleted, leaving the geometry empty.
 
 <subheader>Return Value</subheader>
 
@@ -17,6 +17,8 @@ The function returns a logical value of 1 (true).
 <subheader>Example</subheader>
 
 <logic>
+geometry mygeometry;
+
 // Capture polygon
 mygeometry.tracePolygon();
 
