@@ -27,6 +27,17 @@ A map is a CSPro logic object and the following functions can be called via <lin
 	<cell>Function</cell><cell>Description</cell>
 	<cell><link map_show_function.hgt>show</link></cell><cell>Display the map and allow the user to interact with it.</cell>
 	<cell><link map_hide_function.hgt>hide</link></cell><cell>End displaying the map if it is currently showing.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><link map_set_title_function.hgt>setTitle</link></cell><cell>Set the title of the map.</cell>
+	<cell><link map_set_base_map_function.hgt>setBaseMap</link></cell><cell>Change the map source to an online or offline base map.</cell>
+	<cell><link map_zoom_to_function.hgt>zoomTo</link></cell><cell>Pan/zoom the map.</cell>
+	<cell><link map_show_current_location_function.hgt>showCurrentLocation</link></cell><cell>Display the current location (as retrieved from the GPS) on the map.</cell>
+	<cell><link map_savesnapshot_function.hgt>saveSnapshot</link></cell><cell>Save the currently displayed map as an image.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><link map_set_on_click_function.hgt>setOnClick</link></cell><cell>Set the user-defined function that is called when the user taps on the map.</cell>
+	<cell><link map_get_last_click_latitude_function.hgt>getLastClickLatitude</link></cell><cell>Retrieve the latitude of the last point on the map the user tapped.</cell>
+	<cell><link map_get_last_click_longitude_function.hgt>getLastClickLongitude</link></cell><cell>Retrieve the longitude of the last point on the map the user tapped.</cell>
+	<cell 2>&nbsp;</cell>
 	<cell><link map_add_marker_function.hgt>addMarker</link></cell><cell>Place a marker on the map at specified latitude and longitude.</cell>
 	<cell><link map_remove_marker_function.hgt>removeMarker</link></cell><cell>Delete a marker from the map.</cell>
 	<cell><link map_clear_markers_function.hgt>clearMarkers</link></cell><cell>Delete all markers from the map.</cell>
@@ -37,22 +48,17 @@ A map is a CSPro logic object and the following functions can be called via <lin
 	<cell><link map_set_marker_on_click_info_window_function.hgt>setMarkerOnClickInfoWindow</link></cell><cell>Set the user-defined function that is called when the user taps on a marker's popup info.</cell>
 	<cell><link map_set_marker_on_drag_function.hgt>setMarkerOnDrag</link></cell><cell>Set the user-defined function that is called when the user a drags a marker on the map.</cell>
 	<cell><link map_set_marker_location_function.hgt>setMarkerLocation</link></cell><cell>Move an existing marker to a new position on the map.</cell>
-	<cell><link map_get_last_click_latitude_function.hgt>getLastClickLatitude</link></cell><cell>Retrieve the latitude of the last point on the map the user tapped.</cell>
-	<cell><link map_get_last_click_longitude_function.hgt>getLastClickLongitude</link></cell><cell>Retrieve the longitude of the last point on the map the user tapped.</cell>
 	<cell><link map_get_marker_latitude_function.hgt>getMarkerLatitude</link></cell><cell>Retrieve the latitude of a marker on the map.</cell>
 	<cell><link map_get_marker_longitude_function.hgt>getMarkerLongitude</link></cell><cell>Retrieve the longitude of a marker on the map.</cell>
-	<cell><link map_set_on_click_function.hgt>setOnClick</link></cell><cell>Set the user-defined function that is called when the user taps on the map.</cell>
-	<cell><link map_set_title_function.hgt>setTitle</link></cell><cell>Set the title of the map.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><link map_add_geometry_function.hgt>addGeometry</link></cell><cell>Add vector geometry to the map.</cell>
+	<cell><link map_remove_geometry_function.hgt>removeGeometry</link></cell><cell>Delete vector geometry from the map.</cell>
+	<cell><link map_clear_geometry_function.hgt>clearGeometry</link></cell><cell>Delete all vector geometry from the map.</cell>
+	<cell 2>&nbsp;</cell>
 	<cell><link map_add_text_button_function.hgt>addTextButton</link></cell><cell>Create a button with a text label on the map.</cell>
 	<cell><link map_add_image_button_function.hgt>addImageButton</link></cell><cell>Create a button with an icon on the map.</cell>
 	<cell><link map_remove_button_function.hgt>removeButton</link></cell><cell>Delete a button on the map.</cell>
 	<cell><link map_clear_buttons_function.hgt>clearButtons</link></cell><cell>Delete all buttons from the map.</cell>
-	<cell><link map_set_base_map_function.hgt>setBaseMap</link></cell><cell>Change the map source to an online or offline base map.</cell>
-	<cell><link map_show_current_location_function.hgt>showCurrentLocation</link></cell><cell>Display the current location (as retrieved from the GPS) on the map.</cell>
-	<cell><link map_zoom_to_function.hgt>zoomTo</link></cell><cell>Pan/zoom the map.</cell>
-	<cell><link map_add_geometry_function.hgt>addGeometry</link></cell><cell>Add vector geometry to the map.</cell>
-	<cell><link map_remove_geometry_function.hgt>removeGeometry</link></cell><cell>Delete vector geometry from the map.</cell>
-	<cell><link map_clear_geometry_function.hgt>clearGeometry</link></cell><cell>Delete all vector geometry from the map.</cell>
 </table>
 
 <subheader>Example</subheader>
