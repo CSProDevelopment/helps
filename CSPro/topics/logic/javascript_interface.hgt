@@ -1,0 +1,88 @@
+﻿<title>JavaScript Interface</title>
+
+
+<subheader>Overview</subheader>
+
+CSPro displays HTML in an embedded browser when showing <link html_question_text.hgt>question text</link> and when displaying web pages using the <logiccolor>view</logiccolor> function. The HTML content is shown in a Chromium-based web browser (<link https://developer.microsoft.com/en-us/microsoft-edge/webview2>Edge WebView2</link> on Windows, and <link https://developer.android.com/reference/android/webkit/WebView>WebView</link> on Android). There is a limited API that facilitates communication between JavaScript and CSPro. This functionality will grow in future releases, but for now is primarily used for calling <link user_defined_functions.hgt>user-defined functions</link>.
+
+By using JavaScript in question text, you can include links in your question text that perform actions such as opening a manual or skipping to a different question. 
+
+By using JavaScript in HTML shown using <logiccolor>view</logiccolor>, you can create reports that contain interactive features. If the user-defined function executes a movement statement (e.g., <logiccolor>reenter</logiccolor>) or stops the application (using <logiccolor>stop</logiccolor>), the embedded browser will close automatically.
+
+
+<subheader>Syntax</subheader>
+
+Two functions can be called, both prefixed with "CSPro.":
+
+<html><pre>
+CSPro.logic("call to a user-defined function");
+
+CSPro.do("command to execute a specific routine");
+</pre></html>
+
+When using the JavaScript interface, an error will display if CSPro cannot properly interpret the call.
+
+
+<subheader>Logic Function</subheader>
+
+When calling a user-defined function using the CSPro.logic function, only numeric constants and string literals can be passed as arguments to the function. This limitation is due to the absence of the full CSPro compiler when running CSEntry on Android.
+
+
+<subheader>Do Function</subheader>
+
+At present there is only one command, which is recognized by the embedded browser used by <logiccolor>view</logiccolor>:
+
+<list>
+	<li><b>close</b>: Closes the browser (as though the user hit the OK button on Windows or the back button on Android).</li>
+</list>
+
+
+<subheader>Example (Question Text)</subheader>
+
+Question text HTML:
+
+<indent><html><pre>
+&lt;p&gt;What is ~~NAME~~'s occupation?&lt;/p&gt;
+&lt;p&gt;&lt;a href="javascript:CSPro.logic('ViewOccupationList();');"&gt;(view full list of occupations)&lt;/a&gt;&lt;/p&gt;
+</pre></html></indent>
+
+CSPro logic:
+
+<logic>
+function ViewOccupationList()
+	view("ISCO.pdf");
+end;
+</logic>
+
+
+<subheader>Example (HTML Shown Using <logiccolor>View</logiccolor>)</subheader>
+
+HTML:
+
+<indent><html><pre>
+&lt;h1&gt;District Reports&lt;/h1&gt;
+
+&lt;p&gt;Select a province or district report to view:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="javascript:CSPro.logic('ShowDistrictReport(1);');"&gt;Artesia&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="javascript:CSPro.logic('ShowDistrictReport(1, 1);');"&gt;Dongo&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="javascript:CSPro.logic('ShowDistrictReport(1, 13);');"&gt;Varda&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="javascript:CSPro.do('close');"&gt;Return to Program&lt;/a&gt;&lt;/p&gt;
+</pre></html></indent>
+
+CSPro logic:
+
+<logic>
+function ShowDistrictReport(numeric province, numeric district = notappl)
+	// generate report...
+end;
+</logic>
+
+
+<seealso user_defined_functions.hgt userbar_function.hgt />

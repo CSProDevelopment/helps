@@ -1,12 +1,14 @@
 ﻿<title>View Function</title>
 
 <logicsyntax>
-b = view(<arg>filename</arg> ‖ <arg>website_address</arg>』);
+b = view(<arg>filename</arg> ‖ <arg>website_address</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>view</logiccolor> function launches an external application to view a file or website. The function expects a string expression representing a file (<arg>filename</arg>) or a website URL (<arg>website_address</arg>). If a file is provided, it is opened in the system's default viewer for that file type. If a website URL is provided, it is opened in an embedded window using the system's default web browser.
+The <logiccolor>view</logiccolor> function launches an external application to view a file or website. The function expects a string expression representing a file (<arg>filename</arg>) or a website URL (<arg>website_address</arg>). If a file is provided, it is opened in the system's default viewer for that file type. If a website URL or a file with the extension .html or .htm is provided, it is opened in an embedded window using a Chromium-based web browser (<link https://developer.microsoft.com/en-us/microsoft-edge/webview2>Edge WebView2</link> on Windows, and <link https://developer.android.com/reference/android/webkit/WebView>WebView</link> on Android).
+
+When viewing files or websites in the embedded browser, it is possible to use the <link javascript_interface.hgt>JavaScript interface</link> to execute <link user_defined_functions.hgt>user-defined functions</link>.
 
 <subheader>Return Value</subheader>
 
@@ -20,4 +22,4 @@ view("https://<definition census_website />");
 view("../Old Images/carn03.jpg");
 </logic>
 	
-<seealso execsystem_function_desktop.hgt execsystem_function_mobile.hgt />
+<seealso execsystem_function_desktop.hgt execsystem_function_mobile.hgt javascript_interface.hgt />
