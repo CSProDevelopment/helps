@@ -37,6 +37,7 @@ file_types.hgt | .csds																			#	.csds
 index_file_csidx.hgt | .csidx																	#	.csidx
 paradata_log_file_cslog.hgt | .cslog															#	.cslog
 notes_file_csnot.hgt | .csnot																	#	.csnot
+application_properties_file_csprops.hgt | .csprops												#	.csprops
 templated_reports.hgt | .csrs																	#	.csrs
 data_dictionary_file_dcf.hgt | .dcf																#	.dcf
 binary_data_entry_application_file_pen.hgt | .enc												#	.enc
@@ -193,11 +194,14 @@ run_a_data_entry_application.hgt | Applications													#	Applications
 	matching_the_application_to_the_data_dictionary.hgt | Matching to the Data Dictionary		#		Matching to the Data Dictionary
 	moving_around_a_logic_application.hgt | Move Around a Logic Application						#		Move Around a Logic Application
 	open_an_existing_dictionary_application.hgt													#		Open an Existing Dictionary Application
+	properties_application.hgt | Properties														#		Properties
 	run_a_batch_edit_application.hgt | Run a Batch Edit											#		Run a Batch Edit
 	run_a_data_entry_application.hgt | Run a Data Entry											#		Run a Data Entry
 	save_an_application.hgt | Save																#		Save
 	tabulation_applications.hgt | Tabulation													#		Tabulation
 tool_list.hgt | Application Deployment															#	Application Deployment
+properties_application.hgt																		#	Application Properties
+	application_properties_file_csprops.hgt | File (.csprops)									#		File (.csprops)
 print_preview_options.hgt | Apply Changes Across Panels											#	Apply Changes Across Panels
 create_an_area_names_file.hgt | Area															#	Area
 	create_an_area_names_file.hgt | Create a Names File											#		Create a Names File
@@ -357,6 +361,7 @@ formats_for_a_part_of_a_table.hgt | Cells														#	Cells
 	select_and_copy_table_data_to_other_applications.hgt | Select in Table						#		Select in Table
 align_things.hgt | Center Text and Fields														#	Center Text and Fields
 change_data_entry_options.hgt | Change															#	Change
+	properties_application.hgt																	#		Application Properties
 	change_block_properties.hgt | Block Properties												#		Block Properties
 	change_data_entry_options.hgt | Data Entry Options											#		Data Entry Options
 	change_default_text_font.hgt | Default Text Font											#		Default Text Font
@@ -370,6 +375,7 @@ change_data_entry_options.hgt | Change															#	Change
 	change_forms_file_properties.hgt | Forms File Properties									#		Forms File Properties
 	change_form_properties.hgt | Form Properties												#		Form Properties
 	change_level_properties.hgt | Level Properties												#		Level Properties
+	properties_mapping.hgt																		#		Mapping Properties
 	change_the_order_of_entry.hgt | Order of Entry												#		Order of Entry
 	change_the_print_page_setup.hgt | Print Page Setup											#		Print Page Setup
 	change_column_heading_properties.hgt | Roster Column Heading Properties						#		Roster Column Heading Properties
@@ -1217,8 +1223,8 @@ add_dictionary_elements.hgt | Item																#	Item
 	item_properties.hgt | Name																	#		Name
 	names.hgt																					#		Names
 	document_dictionary_elements.hgt | Notes													#		Notes
-	occurrences.hgt																				#		Occurrences
 	item_properties.hgt | Occurrences															#		Occurrences
+	occurrences.hgt																				#		Occurrences
 	item_properties.hgt | Properties															#		Properties
 	find_dictionary_elements.hgt | Search														#		Search
 	selecting_items.hgt | Select																#		Select
@@ -1345,8 +1351,11 @@ cspro_capabilities.hgt | Manipulate Data Files													#	Manipulate Data Fil
 methods_of_correcting_data.hgt | Manual															#	Manual
 	methods_of_correcting_data.hgt | Correction													#		Correction
 	skip_issues.hgt | Skip																		#		Skip
-mapping.hgt | Map																				#	Map
-	mapping.hgt | How to Use Maps in Data Entry													#		How to Use Maps in Data Entry
+mapping.hgt																						#	Mapping
+	map_case_list.hgt | Map Case Listing														#		Map Case Listing
+	map.hgt																						#		Map Object
+	properties_mapping.hgt | Properties															#		Properties
+map.hgt																							#	Map Object
 	map_add_geometry_function.hgt																#		Map.AddGeometry Function
 	map_add_image_button_function.hgt															#		Map.AddImageButton Function
 	map_add_marker_function.hgt																	#		Map.AddMarker Function
@@ -1376,7 +1385,6 @@ mapping.hgt | Map																				#	Map
 	map_show_current_location_function.hgt														#		Map.ShowCurrentLocation Function
 	map_show_function.hgt																		#		Map.Show Function
 	map_zoom_to_function.hgt																	#		Map.ZoomTo Function
-	map_case_list.hgt | Map in Case Listing														#		Map in Case Listing
 	map.hgt | Map in Logic																		#		Map in Logic
 	map_statement.hgt																			#		Map Statement
 change_the_print_page_setup.hgt | Margins														#	Margins
@@ -1746,19 +1754,21 @@ endgroup_statement.hgt | Program Flow															#	Program Flow
 program_information_file_pff.hgt																#	Program Information File (.pff)
 prompt_function.hgt																				#	Prompt Function
 change_field_properties.hgt | Properties														#	Properties
-	change_block_properties.hgt | Change Block													#		Change Block
-	change_field_properties.hgt | Change Field													#		Change Field
-	change_field_properties_for_multiple_fields.hgt | Change Field (Multiple)					#		Change Field (Multiple)
-	change_form_properties.hgt | Change Form													#		Change Form
-	change_forms_file_properties.hgt | Change Forms File										#		Change Forms File
-	change_level_properties.hgt | Change Level													#		Change Level
-	change_roster_properties.hgt | Change Roster												#		Change Roster
-	change_column_heading_properties.hgt | Change Roster Column Heading							#		Change Roster Column Heading
-	change_text_properties.hgt | Change Text													#		Change Text
+	properties_application.hgt | Application													#		Application
+	change_block_properties.hgt | Block															#		Block
+	change_column_heading_properties.hgt | Column Heading										#		Column Heading
 	change_field_properties.hgt | Field															#		Field
+	change_field_properties.hgt | Field															#		Field
+	change_field_properties_for_multiple_fields.hgt | Field (Multiple)							#		Field (Multiple)
+	change_form_properties.hgt | Form															#		Form
+	change_forms_file_properties.hgt | Form File												#		Form File
 	item_properties.hgt | Item																	#		Item
+	change_level_properties.hgt | Level															#		Level
 	level_properties.hgt | Level																#		Level
+	properties_mapping.hgt | Mapping															#		Mapping
 	record_properties.hgt | Record																#		Record
+	change_roster_properties.hgt | Roster														#		Roster
+	change_text_properties.hgt | Text															#		Text
 	value_properties.hgt | Value																#		Value
 	value_set_properties.hgt | Value Set														#		Value Set
 tally_attributes_for_a_variable.hgt | Proportion												#	Proportion
