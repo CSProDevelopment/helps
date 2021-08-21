@@ -1,6 +1,6 @@
 ﻿<title>Data Sources</title>
 
-Prior to version 7.0, CSPro only processed data files that were represented as ASCII and later <link unicode_primer.hgt>UTF-8</link> text files. In addition to the main text data file, CSEntry would create additional files to store information such as the notes, partial save statuses, and other case metadata. To support more dynamic data entry possibilities, there are now multiple data sources to which data can be entered and from which data can be read.
+Prior to version 7.0, CSPro only processed data files that were represented as ASCII, and later, <link unicode_primer.hgt>UTF-8</link> text files. In addition to the main text data file, CSEntry would create additional files to store information such as the notes, partial save statuses, and other case metadata. To support more dynamic data entry possibilities, there are now multiple data sources to which data can be entered and from which data can be read.
 
 CSPro DB is now the default type for newly created data files, and future CSPro features may only be added for the CSPro DB type. When a file exists, CSPro attempts to determine what kind of file it is and then opens it with the appropriate data source handler.
 
@@ -12,11 +12,11 @@ The text data source is what was always used in CSPro prior to version 7.0. Case
 
 <subheader>CSPro DB</subheader>
 
-The CSPro DB data source is the default type used for newly created data entry files. Files created using this type have the extension <b>.csdb</b> and are not text files so they cannot be viewed in <link tool_list.hgt>Text Viewer</link>. All information about a case is stored in this file, including the case contents, case labels, notes, partial save statuses, verification information, revision history, and a copy of the dictionary. The CSPro DB data source simplifies data collection, particularly if conducting a CAPI survey, as all information about cases is stored in a single place and the revision history allows CSPro, when <link syncdata_function.hgt>syncing data</link>, to only sync data that has changed.
+The CSPro DB data source is the default type used for newly-created data entry data files since version 7.0; they have a file extension of <b>.csdb</b>. All information about a case is stored in this file, including the case contents, case labels, notes, partial save statuses, verification information, revision history, and a copy of the dictionary. The CSPro DB data source simplifies data collection, particularly if conducting a CAPI survey, as all information about cases is stored in a single place. It facilitates <link syncdata_function.hgt>syncing data</link>, as this revision history allows CSPro to only sync data that has changed.
 
-If you use the CSPro DB type, then the data you collect cannot be directly used with previous versions of CSPro or tools that process text files. You can use the <link tool_list.hgt>Data Viewer</link> tool to convert data from the CSPro DB type to text and vice versa in case you need to use a previous version of CSPro or a preexisting tool that only works with text files.
+Starting with CSPro 7.4, the CSPro DB file format stores the data captured in a relational database file using <link https://www.sqlite.org>SQLite</link> (see <topic csdb_relational_format.hgt /> for details). Due to this file format change, CSPro DB files created in version 7.4 or later cannot be used in versions 7.0 to 7.3. To use 7.4+ CSPro DB files in these earlier versions of CSPro, convert the CSPro DB file to text format, and then convert it back to CSPro DB format, using the desired version of CSPro.
 
-Starting with CSPro 7.4, the CSPro DB file format stores the data captured in a relational database file using <link https://www.sqlite.org>SQLite</link>. See <topic csdb_relational_format.hgt /> for details.
+Since CSPro DB (<b>.csdb</b>) files are no longer simple UTF-8 files, you can no longer view the collected data directly in  <link tool_list.hgt>Text Viewer</link>; instead, you must use the <link tool_list.hgt>Data Viewer</link> utility. You also can not use <b>.csdb</b> files with CSPro applications or CSPro tools that process text files (version 6.3 and earlier). To do so, use the <link tool_list.hgt>Data Viewer</link> tool to convert data from <b>.csdb</b> files to text.
 
 <subheader>Encrypted CSPro DB</subheader>
 
