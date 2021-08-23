@@ -2,249 +2,28 @@
 
 <subheader>Format 1</subheader>
 
-<font monospace>
-<indent>s = <font blue>maketext</font>(<i>string-exp</i><font magenta>[</font>,p<b>1</b><font magenta>[</font>,p<b>2</b><font magenta>[</font>,...,p<b>n</b><font magenta>]]]</font>);</indent>
-</font>
+<logicsyntax>
+s = maketext(<arg>string-exp</arg>『, <arg>p1</arg>, <arg>p2</arg>, ..., <arg>pN</arg>』);
+</logicsyntax>
 
 <subheader>Format 2</subheader>
 
-<font monospace>
-<indent>s = <font blue>maketext</font>(<i>msg-num</i><font magenta>[</font>,p<b>1</b><font magenta>[</font>,p<b>2</b><font magenta>[</font>,...,p<b>n</b><font magenta>]]]</font>);</indent>
-</font>
+<logicsyntax>
+s = maketext(<arg>msg-num</arg>『, <arg>p1</arg>, <arg>p2</arg>, ..., <arg>pN</arg>』);
+</logicsyntax>
 
- <font magenta>[ ]</font> indicates that this part is optional.
+ 『 』 indicates that this part is optional.
 
 If messages are defined via the message number <i>msg-num</i>, then those messages will be stored in a message file [.mgf]. <i>msg-num</i> can be a number or <link expressions.hgt>numeric expression</link>.
 
 <subheader>Description</subheader>
 
-<indent>The maketext function formats a text string with inserted values. Each argument (e.g., "p<b>1</b>") is sequentially inserted into the text string. Arguments can be numeric or alphanumeric expressions, but the type of the argument must match the type of the receiving field in the string expression.</indent>
+<indent>The maketext function is nearly identical to the <link message_file_mgf.hgt> errmsg </link> function, except that instead of returning a true/false on whether the function successfully executed, it returns the formatted string with inserted values.</indent>
 
-<indent>In the "string expression",</indent>
-
-<indent>%<b><font magenta>[</font>n<font magenta>]</font>d</b> = Insert a number and display it as an integer</indent>
-<indent>%<b><font magenta>[</font>n.d<font magenta>]</font>f</b> = Insert a number and display it as a decimal value</indent>
-<indent>%<b><font magenta>[</font>n.d<font magenta>]</font>s</b> = Insert a text string</indent>
-
-<indent>where "<b>n</b>" is the size of the field and "d<b></b>" is the number of decimal places to show for a number. <i>For a complete list of possible message formatters, see <link hashmap.hgt>Message Formatting Options</link></i>.</indent>
-
-<indent>Numbers are never truncated. Text strings are truncated only if "<b>.d</b>" isused. If "<b>n</b>" is positive, the insert is right-justified in the size of the field. If "<b>n</b>" is negative, the insert is left-justified in the size of the field. If "<b>n</b>" is a positive number with a leading zero, the insert is right-justified in the size of the field and zero-filled to the left. When inserting a number, if "<b>n</b>" is preceded by a "+", the sign of the number is always displayed.</indent>
+<indent>See the <link message_formatting_options.hgt> Message Formatting Options </link> page for a full description of the arguments and how they can be used.</indent>
 
 <subheader>Return Value</subheader>
 
 <indent>The function returns the formatted string.</indent>
-
-<subheader>Example 1</subheader>
-<logic>
-TEXT = maketext("Sex= %d", SEX);
-</logic>
-
-<subheader>Example 2</subheader>
-<html>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<table style="margin-left: 12px;" cellspacing="0" width="39.716%">
-	<col style="width: 41.473%;" />
-	<col style="width: 24.519%;" />
-	<col style="width: 34.008%;" />
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">Value = 23456</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">23456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;&#160;&#160;23456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%-10d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New'; font-size: 10pt;">23456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%010d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New'; font-size: 10pt;">0000023456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%+10d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New'; font-size: 10pt;">&#160;&#160;&#160;&#160;+23456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%+010d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New'; font-size: 10pt;">+000023456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%f</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New'; font-size: 10pt;">23456.000000</p></td>
-	</tr>
-</table>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;">&#160;</p>
-<table style="margin-left: 12px;" cellspacing="0" width="39.716%">
-	<col style="width: 41.749%;" />
-	<col style="width: 25.344%;" />
-	<col style="width: 34.874%;" />
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">Value
-		 = 12.567</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">12.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10.3f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;&#160;12.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%-10.3f&#160;</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">12.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10.2f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;&#160;&#160;12.57</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10.5f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;12.56700</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%010.3f&#160;</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">000012.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%+10.3f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;+12.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%+010.3f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">+00012.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%d&#160;</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">12</p></td>
-	</tr>
-</table>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;">&#160;</p>
-<table style="margin-left: 12px;" cellspacing="0" width="39.716%">
-	<col style="width: 41.749%;" />
-	<col style="width: 26.171%;" />
-	<col style="width: 32.08%;" />
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="margin-left: 0px; font-family: 'Courier New', monospace;
-			 font-size: 10pt;">Value = &quot;abcdef&quot;</p></td>
-		<td style="width: 26.171%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%s</p></td>
-		<td style="width: 32.08%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">abcdef</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 26.171%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10s</p></td>
-		<td style="width: 32.08%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;&#160;abcdef</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 26.171%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%-10s</p></td>
-		<td style="width: 32.08%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">abcdef</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 26.171%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10.3s</p></td>
-		<td style="width: 32.08%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;abc</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 26.171%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%-10.3s</p></td>
-		<td style="width: 32.08%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">abc</p></td>
-	</tr>
-</table>
-
-</html>
 
 <seealso message_formatting_options.hgt message_file_mgf.hgt />
