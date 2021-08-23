@@ -5,11 +5,12 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 <subheader>Paradata</subheader>
 
 <list>
-	<li>The introduction of a new system for collecting <link paradata.hgt>paradata</link> during an application's run. The paradata events are saved to a log file with the extension <link paradata_log_file_cslog.hgt>.cslog</link>. You can control what kinds of events are stored by modifying an application's <link paradata_options.hgt>paradata options</link>.</li>
+	<li>The introduction of a new system for collecting <link paradata.hgt>paradata</link> during an application's run. The paradata events are saved to a log file with the extension <link paradata_log_file_cslog.hgt>.cslog</link>. You can control what kinds of events are stored by modifying an application's <link properties_paradata.hgt>paradata properties</link>.</li>
 	<li>A new logic function, <logiccolor>paradata</logiccolor>, that can be used to control or query the paradata log.</li>
 	<li>A new tool, <link ParadataViewer::introduction_to_paradata_viewer.hgt>Paradata Viewer</link>, that displays reports about the collected paradata.</li>
 	<li>Another new tool, <link ParadataConcat::introduction_to_paradata_concatenator.hgt>Paradata Concatenator</link>, that combines multiple paradata logs into a single log.</li>
 </list>
+
 
 <subheader>Deployment</subheader>
 
@@ -18,12 +19,14 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 	<li>Deployed applications can be downloaded using CSEntry on mobile devices.</li>
 </list>
 
+
 <subheader>Reports</subheader>
 
 <list>
 	<li>An interface for generating <link templated_reports.hgt>HTML-templated reports</link> from case data as well as from results from queries into paradata and other data sets.</li>
 	<li>New logic functions, <logiccolor>setreportdata</logiccolor> and <logiccolor>report</logiccolor>, for setting the inputs and creating the reports.</li>
 </list>
+
 
 <subheader>Messages</subheader>
 
@@ -32,12 +35,14 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 	<li>Applications can link to multiple <link message_file_mgf.hgt>external message files</link>, which can include messages that override the default system messages.</li>
 </list>
 
+
 <subheader>CSPro Designer</subheader>
 
 <list>
 	<li>You can move a value set to the first position, to become the default one shown in a data entry application, by right-clicking on a value set and selecting <b>Make Primary Value Set</b>.</li>
 	<li>If you right-click on a dictionary in the tree, an option, <b>View Data</b>, allows you to open in Data Viewer the data file last associated with that dictionary (as stored in the PFF file).</li>
 </list>
+
 
 <subheader>Data Entry</subheader>
 
@@ -47,6 +52,7 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 	<li>A <link change_data_entry_options.hgt>data entry option</link>, <b>Validate alpha fields</b>, instructs CSEntry to validate values entered into alphanumeric fields using an item's value set, as happens to numeric fields by default.</li>
 	<li>A <link change_data_entry_options.hgt>mobile option</link>, <b>Display value set codes alongside labels</b>, displays a value set's codes in addition to the labels when displaying a field using a control other than a text box.</li>
 </list>
+
 
 <subheader>Logic</subheader>
 
@@ -70,6 +76,7 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 	<li>In a data entry application, when splitting items from a multiply occurring record into multiple groups, you no longer have to specify an occurrence number when referring to items on the split groups (assuming that you want the value of the current occurrence).</li>
 </list>
 
+
 <subheader>Tools</subheader>
 
 <list>
@@ -80,11 +87,13 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 	<li>The Excel to CSPro tool has <link Excel2CSPro::mapping_dictionary_to_excel.hgt>two new options</link>, one for conditionally running conversions based on the existence of file changes, and the other to allow you to update existing files rather than to always create new files.</li>
 </list>
 
+
 <subheader>Synchronization</subheader>
 
 <list>
 	<li>Faster Bluetooth transfer speeds.</li>
 	<li>Fix to allow faster transfer speeds when calling <logiccolor>syncdata</logiccolor> or <logiccolor>syncfile</logiccolor> in the <logiccolor>GET</logiccolor> direction across all synchronization options (Bluetooth, CSWeb, Dropbox, and FTP).</li>
 </list>
+
 
 <seealso what_is_new_in_cspro.hgt />
