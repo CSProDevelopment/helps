@@ -9,6 +9,8 @@ When checked, the first option, <b>Allow the use of Data Viewer to modify data</
 
 When checked, the second option, <b>Allow exporting data to other formats</b>, allows a user to use <link DataViewer::introduction_to_data_viewer.hgt>Data Viewer</link>, the <link CSExport::introduction_to_export_data.hgt>Export Data</link> tool, or the <logiccolor>export</logiccolor> statement to output data to another format.
 
+The first drop-down allows you to choose a time period to cache the password. Available choices are Never, One hour, One day, One week, One month, One year, Forever, and Custom. If One Hour is chosen, 60 minutes will be prefilled; if One Day is chosen, 1440 minutes will be prefilled. If you enter 0 minutes, "Never" will be selected. If you enter a non-zero time period that does not correspond to one of the preset categories, the "Custom" option will be used. "Forever" must be chosen. 
+
 <subheader>Encryption Options</subheader>
 
 Encryption options control whether or not passwords can be stored for <link data_sources.hgt>data sources</link> using that dictionary. These options only apply when using the dictionary to access <link encrypted_data.hgt>encrypted data</link> using the Encrypted CSPro DB data source. By default, passwords used to open such files are not cached on the machine, meaning that the password must be specified every time the file is opened (unless the password is specified in a <link connection_string.hgt>connection string</link>). If you want to allow the storage of passwords, specify the number of minutes that the stored password can be used to open the data file.
