@@ -50,36 +50,35 @@ Numeric and string arguments have a couple additional options that can be specif
 <logic>
 numeric integerValue = 23456;
 
-errmsg( "%d"        , integerValue);    //      23456
-errmsg( "%10d"      , integerValue);    //           23456
-errmsg( "%-10d"     , integerValue);    //      23456
-errmsg( "%010d"     , integerValue);    //      0000023456
-errmsg( "%+10d"     , integerValue);    //          +23456
-errmsg( "%+010d"    , integerValue);    //      +000023456
-errmsg( "%f"        , integerValue);    //      23456.000000
+errmsg( "%d"       , integerValue);      //  23456
+errmsg( "%-10d"    , integerValue);      //  23456
+errmsg( "%10d"     , integerValue);      //       23456
+errmsg( "%+10d"    , integerValue);      //      +23456
+errmsg( "%+010d"   , integerValue);      //  +000023456
+errmsg( "%-010d"   , integerValue);      //  0000023456
+errmsg( "%f"       , integerValue);      //  23456.000000  Note the usage of %f
 
 
 numeric decimalValue = 12.567;
 
-errmsg( "%f"        , decimalValue);    //      12.567000
-errmsg( "%10.3f"    , decimalValue);    //          12.567
-errmsg( "%-10.3f"   , decimalValue);    //      12.567
-errmsg( "%10.2f"    , decimalValue);    //           12.57
-errmsg( "%10.5f"    , decimalValue);    //        12.56700
-errmsg( "%010.3f"   , decimalValue);    //      000012.567
-errmsg( "%+10.3f"   , decimalValue);    //         +12.567
-errmsg( "%+010.3f"  , decimalValue);    //      +00012.567
-errmsg( "%d"        , decimalValue);    //      12
+errmsg( "%f"        , decimalValue);    //   12.567000
+errmsg( "%-10.3f"   , decimalValue);    //   12.567
+errmsg( "%d"        , decimalValue);    //   12			   Note the usage of %d
+errmsg( "%10.2f"    , decimalValue);    //        12.57
+errmsg( "%10.3f"    , decimalValue);    //       12.567
+errmsg( "%+10.3f"   , decimalValue);    //      +12.567
+errmsg( "%+010.3f"  , decimalValue);    //   +00012.567
+errmsg( "%010.3f"   , decimalValue);    //   000012.567
+errmsg( "%10.5f"    , decimalValue);    //     12.56700
 
 
 string stringValue = "abcdef";
 
-errmsg( "%s"        , stringValue);     //      abcdef
-errmsg( "%10s"      , stringValue);     //          abcdef
-errmsg( "%-10s"     , stringValue);     //      abcdef
-errmsg( "%10.3s"    , stringValue);     //             abc
-errmsg( "%-10.3s"   , stringValue);     //      abc
+errmsg( "%s"        , stringValue);     //   abcdef
+errmsg( "%-10s"     , stringValue);     //   abcdef
+errmsg( "%-10.3s"   , stringValue);     //   abc
+errmsg( "%10s"      , stringValue);     //       abcdef
+errmsg( "%10.3s"    , stringValue);     //          abc
 </logic>
-
 
 <seealso errmsg_function.hgt filewrite_function.hgt file_write_function.hgt logtext_function.hgt maketext_function.hgt trace_function.hgt warning_function.hgt write_function.hgt />

@@ -1,6 +1,8 @@
 ﻿<title>Value Sets Description</title>
 
-Value sets let you specify one or more groups of values for a data item or subitem. When using tabulation applications, you will want to choose value set labels to tabulate, as it will give you more descriptive results. The resulting tables will contain row and column labels (or region labels) that correspond to the value labels (or numeric distributions, if no value label is present). In a batch edit application, the use of value sets can help you when using the <link impute_function.hgt>impute function</link>'s <b>valueset</b> option.
+Dictionary value sets let you specify one or more groups of values for a data item or subitem. When using tabulation applications, you will want to use value set labels to tabulate, as it will give you more descriptive results. The resulting tables will contain row and column labels (or region labels) that correspond to the value labels (or numeric distributions, if no value label is present). In a batch edit application, the use of value sets can help you when using the <link impute_function.hgt>impute function</link>'s <b>valueset</b> option.
+
+<subheader>Example 1</subheader>
 
 For example, suppose you have a survey that needs to classify people's ages three different ways: by discrete value, by 5-year cohorts, or by category, such as "Child," "Adult," etc. This is easily done by adding value sets for the AGE data item:
 
@@ -31,8 +33,16 @@ Age&nbsp;by&nbsp;Category&nbsp;&nbsp;AGE_CATEGORY
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Senior&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60&nbsp;&nbsp;&nbsp;&nbsp;98
 </font></indent>
 
-The AGE item now has three defined value sets: AGE, AGE_5YRS, and AGE_CATEGORY. The first value set defines the acceptable range for data entry, while the second and third value sets give a breakdown as you might want to see the data tabulated.
+The AGE item now has three defined value sets: AGE, AGE_5YRS, and AGE_CATEGORY. The first value set defines the acceptable range for data entry, while the second and third value sets give a breakdown as you might want to see the data tabulated. 
 
-The value set will always be added to the end of the item's value set listings. If you add to the wrong place, press the <b>Esc</b> key to stop the add. Use <link undo_and_redo_changes.hgt>undo</link> if you added at the wrong place.
+Each new value set will always be added to the end of the item's value set listings. If you add to the wrong place, press the <b>Esc</b> key to stop the add. Use <link undo_and_redo_changes.hgt>undo</link> if you added at the wrong place. Likewise, you can also just cut (Ctrl+X) the value set and paste it (Ctrl+V) to the desired position. If a value set is not in the first position but you need it to be, you can make it the primary (first) value set by right-clicking on the Value Set Label/Value Set Name row and selecting the "Make Primary Value Set" option.
+
+<subheader>Example 2</subheader>
+
+Continuing on the above, suppose the AGE_5YRS ranges were already entered elsewhere (in an Excel file, or other tab-delimited file). You could simply copy the labels and ranges and paste it directly into the value set screen, saving you the effort of retyping it. 
+
+<subheader>Example 3</subheader>
+
+Suppose you needed to tabulate age by single year&mdash;0 to 99. It would be very tedious to create that value set. Instead, use the <link generate_numeric_value_set.hgt>generate value set</link> tool (note this only works for numeric value sets, not alpha).
 
 <seealso value_set_properties.hgt value_set_images.hgt />
