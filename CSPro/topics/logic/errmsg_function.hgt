@@ -1,37 +1,46 @@
 ﻿<title>ErrMsg Function</title>
 
-
 <subheader>Format 1</subheader>
 
 <logicsyntax>
-b = errmsg(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』)
-   [select(caption-1, field-name-1, ..., caption-n, field-name-n)]
-   [denom=var] [case|summary]);</logicsyntax>
+i = errmsg(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argument20</arg>』)
+
+          『select(<arg>caption1</arg>, <arg>fieldname1</arg>『, ..., <arg>caption5</arg>, <arg>fieldname5</arg>』)』
+          『case|summary』 
+		  『denom=numeric_denom』;</logicsyntax>
 
 <subheader>Format 2</subheader>
 
 <logicsyntax>
-b = errmsg(<arg>msg-num</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』)
-   [select(caption-1, field-name-1, ..., caption-n, field-name-n)]
-   [denom=var] [case|summary];</logicsyntax>
+i = errmsg(<arg>msg_num</arg>『, <arg>argument1</arg>, ..., <arg>argument20</arg>』)
+
+          『select(<arg>caption1</arg>, <arg>fieldname1</arg>『, ..., <arg>caption5</arg>, <arg>fieldname5</arg>』)』
+          『case|summary』 
+		  『denom=numeric_denom』;</logicsyntax>
+
+<subheader>Format 3</subheader>
+
+<logicsyntax>
+i =	errmsg(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argument20</arg>』)
+
+	『select(<arg>caption1</arg>, <arg>fieldname1</arg>『, ..., <arg>caption5</arg>, <arg>fieldname5</arg>』) 『default(<arg>default_option</arg>)』 』
+	『case ‖ summary』
+	『denom = <arg>numeric_denom</arg>』;
+</logicsyntax>
 
 <subheader>Description</subheader>
 
-The <b>errmsg</b> function displays a message on the data entry screen (when used in a Data Entry application) or writes a message to the batch edit report (when used in a Batch Edit application). If messages are defined via the message number msg-num, then those messages will be stored in a message file [.mgf].
+The <logiccolor>errmsg</logiccolor> function displays a message on the data entry screen (when used in a Data Entry application) or writes a message to the output listing file (when used in a Batch Edit application). If messages are defined via the message number <arg>msg_num</arg>, then those messages must be stored in a message file [.mgf].  <arg>msg_num</arg> can be a number or <link expressions.hgt> numeric expression</link>.
 
-<i>msg-num</i> can be a number or <link expressions.hgt> numeric expression</link>.
+Each <arg>argument</arg> is sequentially inserted into the error message. Arguments can be numeric or alphanumeric expressions, but the type of the argument must match the type of the receiving field in the message text. The maximum number of arguments is 20.
 
-Note to ISSA users: Use the <b>errmsg</b> function with the <b>case</b> keyword to replace the <b>"display"</b> function.
-
-Each argument is sequentially inserted into the error message. Arguments can be numericor alphanumeric expressions, but the type of the argument must match thetype of the receiving field in the message text. The maximum number ofarguments in an errmsg function is 20.
-
-In the message text:
+Some of the most common formatting options include (see <link message_formatting_options.hgt>Message Formatting Options</link> for a complete list):
 
 <list>%<b>[n]d</b> = Insert a number and display it as an integer
 %<b>[n.d]f</b> = Insert a number and display it as a decimal value
 %<b>[n.d]s</b> = Insert a text string</list>
 
-<b><i>"n"</i></b> is the size of the field and <b><i>"d"</i></b> is the number of decimal places to show for a number.
+where <b><i>"n"</i></b> is the size of the field and <b><i>"d"</i></b> is the number of decimal places to show for a number.
 
 Numbers are never truncated. Text strings are truncated only if <b><i>".d"</i></b> is used.
 
@@ -73,15 +82,17 @@ errmsg( "%10s"      , stringValue);     //       abcdef
 errmsg( "%10.3s"    , stringValue);     //          abc
 </logic>
 
-The <b>denom</b> keyword allows you to specify a denominator, so that you can show percentages in the summary portion of the output listing. This is very useful for showing edit failure rates. In Example 2 below, the output listing will show the number of times there was more than one head of household divided by the number of households processed during the run. Note that it is the responsibility of the application designer to write logic to put the proper values into the denominator variable.
+The <logiccolor>case</logiccolor> and <logiccolor>summary</logiccolor> keywords give you some control over the output listing. By default, the output listing shows you messages case-by-case, and summarized by the number of times the message was triggered for the run (there is an optional denominator, described below). You can limit the output listing to only case-by-case reporting, or only summary reporting, by using these keywords.
 
-The <b>case</b> and <b>summary</b> keywords give you some control over the output listing. By default, the output listing shows you messages case by case, and also shows you a summary of the number of times the message was triggered (with an optional denominator, described above). You can limit the output listing to only case-by-case reporting, or only summary reporting by using these keywords.
+The <logiccolor>denom</logiccolor> keyword allows you to specify a denominator, so that you can show percentages in the summary portion of the output listing. This is very useful for showing, for example, edit failure rates (and as such, this option is geared towards batch applications rather than data entry applications). In Format 1's Example 2 below, the output listing will show the number of times the head of household had more than one spouse, divided by the number of households processed during the run. Note that it is the responsibility of the application designer to write logic to put the proper values into the denominator variable.
 
-The <b>select</b> keyword is used to give the option of specifying the field to go to in response to the error message. A button is placed on the error message window for each caption and field-name specified as a <b>select</b> argument.  The caption is what is displayed on the button. When the button is clicked, the system goes to the field specified as field-name. If <b>continue</b> is used as the field name, the system continues executing the code following the errmsg function.
+The <b>select</b> keyword is used to give the option of specifying the field to go to in response to the error message. A button is placed on the error message window for each caption and fieldname pair specified as a <b>select</b> argument, with a maximum of 5 possible <b>select</b> argument pairs allowed. The caption will be displayed on the button. When a button is chosen, the system goes to the field specified by fieldname. If <logiccolor>continue</logiccolor> is used as the fieldname, the system proceeds to the next line of logic following the <logiccolor>errmsg</logiccolor> call. If a <arg>default_option</arg> is given, it will place the focus on the select option chosen when the message is presented. This is a good method to prioritize what option you want the user to make (reenter a value vs. continue for example). If a <arg>default_option</arg> is not given, no button will have the focus.
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value 1 (true) if successful and 0 (false) otherwise. When the select keyword is used, the function returns the number of the button that was pressed, with the first button having the value 1.
+The function returns the sequence number of the button pressed. When the <b>select</b> keyword is not used, the function will return 1, as only the "OK" button is presented to the user, corresponding to button #1 ("Cancel" is never presented, and so a code of zero is not possible).
+
+When the <b>select</b> keyword is used, the function returns the sequence number of the button that was pressed, with the first button having the value 1. A maximum of 5 select argument pairs is allowed.
 
 <subheader>Format 1 Examples</subheader>
 
@@ -92,7 +103,9 @@ The function returns a logical value 1 (true) if successful and 0 (false) otherw
 
 <b>Example 2</b>
 
-<logic>errmsg("More than 1 head of household") denom = PERSON_COUNT summary;</logic>
+<logic>if count(PERSONS where RELATIONSHIP=2) > 1 then
+	errmsg("Head of HH has more than 1 spouse") denom = HH_COUNT summary;
+endif;</logic>
 
 
 <b>Example 3</b>

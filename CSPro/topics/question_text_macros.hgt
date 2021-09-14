@@ -1,7 +1,7 @@
 ﻿<title>Question Text Macros</title>
 <context IDD_CAPI_MACROS ID_CAPI_MACROS />
 
-There are a few tasks that you can perform on a data entry application's question text using the question text macros functionality. To access these tasks, either right-click on a form file in the tree and select <b>Question Text Macros</b> or, with the form active, select <b>Question Text Macros</b> from the <b>CAPI</b> menu. A dialog box will appear with the following options:
+There are a few tasks that you can perform on a data entry application's question text using the question text macros functionality. To access these tasks, either right-click on a form file in the tree and select <b>Question Text Macros</b> or, with the form active, select <b>Question Text Macros</b> from the <b>CAPI</b> dropdown menu. A dialog box will appear with the following options:
 
 <b>Audit Undefined Text</b>: This creates a list of fields and blocks that do not have any question text. For most applications, you will want to define question text for all fields and blocks that an enumerator will visit. This option shows you which entities may require question text.
 
@@ -11,6 +11,11 @@ There are a few tasks that you can perform on a data entry application's questio
 
 <b>Initialize as Dictionary Label</b>: For any field that does not have question text defined, the question text will be set to the field's item dictionary label.
 
-<b>Paste from Clipboard</b>: Using one of the formats specified, a field or block's question text will be set to the text specified on the clipboard.
+<b>Paste from Clipboard</b>: Using one of the two formats specified, a field or block's question text will be set to the text specified on the clipboard. The allowable formats are:
+
+<logicsyntax>
+NAME<tab>Question Text
+NAME<tab>LANGUAGE_NAME<tab>Question Text</logicsyntax>
+
 
 <seealso dictionary_macros.hgt />
