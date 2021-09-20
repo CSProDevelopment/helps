@@ -1,0 +1,27 @@
+﻿<title>Path.GetRelativePath Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = path.getRelativePath(<arg>relative_to</arg>, <arg>path</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>path.getRelativePath</logiccolor> function returns a relative path based on the string expression <arg>path</arg>'s location relative to a directory specified by <arg>relative_to</arg>. The <arg>relative_to</arg> argument can be either a string expression or one of the arguments used in the <logiccolor>pathname</logiccolor> function.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a relative path.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_path_example.hgi />
+</logic>
+
+
+<seealso path.hgt />
