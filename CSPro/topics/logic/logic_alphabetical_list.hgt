@@ -34,6 +34,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>countcases</logiccolor></cell><cell>Returns the number of cases in an external file that meet a certain criterion.</cell>
 	<cell><logiccolor>countnonspecial</logiccolor></cell><cell>Returns the number of non-special values in a group of data items.</cell>
 	<cell><logiccolor>curocc</logiccolor></cell><cell>Returns the current occurrence number for a repeating form, roster, or record.</cell>
+	<cell><logiccolor>currentkey</logiccolor></cell><cell>Returns the key (ID string) comprised of the case's current IDs.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>dateadd</logiccolor></cell><cell>Calculates a new date from a starting date and a period of elapsed time.</cell>
 	<cell><logiccolor>datediff</logiccolor></cell><cell>Calculates the difference between two dates.</cell>
@@ -126,7 +127,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>ispartial</logiccolor></cell><cell>Determines whether a case was opened from a partial case or not.</cell>
 	<cell><logiccolor>isverified</logiccolor></cell><cell>Determines whether a case was verified by double-keying.</cell>
 	<cell 2>&nbsp;</cell>
-	<cell><logiccolor>key</logiccolor></cell><cell>Returns the key (ID string) of the currently loaded case.</cell>
+	<cell><logiccolor>key</logiccolor></cell><cell>Returns the key (ID string) of the case's IDs as they existed when the case was last loaded or written.</cell>
 	<cell><logiccolor>keylist</logiccolor></cell><cell>Returns a list containing the keys (ID strings) of cases in a file.</cell>
 	<cell><logiccolor>killfocus</logiccolor></cell><cell>Declares that the following statements are executed after the object stops being active.</cell>
 	<cell 2>&nbsp;</cell>
@@ -171,6 +172,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>path.getExtension</logiccolor></cell><cell>Extracts the file extension from a file path.</cell>
 	<cell><logiccolor>path.getFileName</logiccolor></cell><cell>Extracts the file name from a file path.</cell>
 	<cell><logiccolor>path.getFileNameWithoutExtension</logiccolor></cell><cell>Extracts the file name without its extension from a file path.</cell>
+	<cell><logiccolor>path.getRelativePath</logiccolor></cell><cell>Returns a relative path based on a path's location relative to a directory.</cell>
 	<cell><logiccolor>pathconcat</logiccolor></cell><cell>Combines multiple strings into one string representing a file path.</cell>
 	<cell><logiccolor>pathname</logiccolor></cell><cell>Returns the path of various special directories.</cell>
 	<cell><logiccolor>pff</logiccolor></cell><cell>Declare a <link pff.hgt>pff</link> variable that can be used to dynamically modify the way other CSPro applications are executed.</cell>

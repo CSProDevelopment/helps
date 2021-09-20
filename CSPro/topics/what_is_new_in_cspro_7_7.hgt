@@ -31,6 +31,7 @@ This is a detailed list of changes in CSPro 7.7. For a more general overview, se
 	<li>A new <link map.hgt>map</link> function, <logiccolor map>saveSnapshot</logiccolor>, saves the currently displayed map as an image.</li>
 	<li>A new function, <logiccolor>path.getRelativePath</logiccolor>, returns a relative path based on a path's location relative to a directory.</li>	
 	<li>A new function, <logiccolor>inadvance</logiccolor>, indicates if an advance is in progress in a data entry application, allowing for the conditional execution of logic based on whether an enumerator has directly entered a field.</li>
+	<li>A new function, <logiccolor>currentkey</logiccolor>, returns a key string comprised of a case's current IDs (as opposed to <logiccolor>key</logiccolor>, which uses a case's ID as they existed when the case was last loaded or written).</li>
 	<li>A new operator, <logiccolor>:=</logiccolor>, allows you to specify <link function_named_arguments.hgt>arguments by name</link> for some CSPro functions.</li>
 	<li>The <logiccolor>getproperty</logiccolor> function can now return some system properties (such as the screen resolution).</li>
 	<li>The <logiccolor>setproperty</logiccolor> function's property value can be specified as a numeric expression instead of having to be given as a string.</li>
