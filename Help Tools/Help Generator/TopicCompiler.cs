@@ -91,6 +91,7 @@ namespace Help_Generator
             _tagSettings.Add(CenterTag,new TagSettings("<div align=\"center\">","</div>"));
             _tagSettings.Add(BoldTag,new TagSettings("<b>","</b>"));
             _tagSettings.Add(ItalicsTag,new TagSettings("<i>","</i>"));
+            _tagSettings.Add(SuperscriptTag,new TagSettings("<sup>","</sup>"));
             _tagSettings.Add(FontTag,new TagSettings(true,(StartTagHandlerDelegate)StartFontHandler,"</span>",1,3));
             _tagSettings.Add(ListTag,new TagSettings(true,(StartTagHandlerDelegate)StartListHandler,(EndTagHandlerDelegate)EndTagHandlerUsingFilledEndTagStack,0,1));
             _tagSettings.Add(ListItemTag,new TagSettings("<li>","</li>"));
@@ -1009,6 +1010,7 @@ namespace Help_Generator
         public const string CenterTag = "center";
         public const string BoldTag = "b";
         public const string ItalicsTag = "i";
+        public const string SuperscriptTag = "sup";
         public const string FontTag = "font";
         public const string ListTag = "list";
         public const string ListItemTag = "li";

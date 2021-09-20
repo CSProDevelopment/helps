@@ -1,59 +1,54 @@
 ﻿<subheader>Properties List</subheader>
 
-The following properties apply to the <b>application</b>:
-
-<table 4 header nowrap>
-	<cell>Name</cell><cell>Settable?</cell><cell>Platform</cell><cell>Values</cell>
-	<cell>AppType</cell><cell></cell><cell>All</cell><cell>DataEntry, Batch, Tabulation</cell>
-	<cell><link change_data_entry_options.hgt>AutoAdvanceOnSelection</link></cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
-	<cell><link data_source_options.hgt>AutoPartialSaveMinutes</link></cell><cell>✔</cell><cell>All</cell><cell>(integer of the interval)</cell>
-	<cell><link change_data_entry_options.hgt>CAPI</link></cell><cell></cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>CaseTree</link></cell><cell></cell><cell>All</cell><cell>Always, Desktop, Mobile, Never</cell>
-	<cell><link change_data_entry_options.hgt>CenterForms</link></cell><cell></cell><cell>Desktop</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>ComboBoxShowOnlyDiscreteValues</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link data_source_options.hgt>CreateListing</link></cell><cell></cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link data_source_options.hgt>CreateLog</link></cell><cell></cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>DecimalComma</link></cell><cell></cell><cell>Desktop</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>DisplayCodesAlongsideLabels</link></cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
-	<cell><link data_source_options.hgt>NotesDeleteOtherOperators</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link data_source_options.hgt>NotesEditOtherOperators</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>OperatorID</link></cell><cell></cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link properties_paradata.hgt>ParadataCollection</link></cell><cell></cell><cell>All</cell><cell>AllEvents, SomeEvents, No</cell>
-	<cell><link properties_paradata.hgt>ParadataDeviceStateMinutes</link></cell><cell>✔</cell><cell>All</cell><cell>(integer of the interval)</cell>
-	<cell><link properties_paradata.hgt>ParadataGpsLocationMinutes</link></cell><cell>✔</cell><cell>All</cell><cell>(integer of the interval)</cell>
-	<cell><link properties_paradata.hgt>ParadataRecordCoordinates</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link properties_paradata.hgt>ParadataRecordIteratorLoadCases</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link properties_paradata.hgt>ParadataRecordValues</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>PartialSave</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>Path</link></cell><cell></cell><cell>All</cell><cell>Yes (system controlled), No (operator controlled)</cell>
-	<cell><link change_data_entry_options.hgt>ShowEndCaseDialog</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>ShowErrorMessageNumbers</link></cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>ShowFieldLabels</link></cell><cell></cell><cell>Mobile</cell><cell>Yes, No</cell>
-	<cell>ShowLabelsInCaseTree</cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
-	<cell>ShowNavigationControls</cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>ShowRefusals</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell>ShowSkippedFields</cell><cell>✔</cell><cell>Mobile</cell><cell>Yes, No</cell>
-	<cell>SpecialValuesZero</cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link saved_arrays_file_sva.hgt>UpdateSaveArrayFile</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell><link change_data_entry_options.hgt>ValidateAlphaFields</link></cell><cell>✔</cell><cell>All</cell><cell>Yes, No</cell>
-	<cell>WindowTitle</cell><cell>✔</cell><cell>All</cell><cell>(string of the window title)</cell>
-</table>
-
-The following properties apply to <b>items</b>, none of which are settable:
-
-<table 2 header nowrap>
-	<cell>Name</cell><cell>Values</cell>
-	<cell><link item_properties.hgt>DataType</link></cell><cell>Alpha, Numeric</cell>
-	<cell><link item_properties.hgt>Decimal</link></cell><cell>(integer)</cell>
-	<cell><link item_properties.hgt>DecimalChar</link></cell><cell>Yes, No</cell>
-	<cell><link item_properties.hgt>Len</link></cell><cell>(integer)</cell>
-	<cell><link item_properties.hgt>ZeroFill</link></cell><cell>Yes, No</cell>
-</table>
-
-The following properties apply to <b>fields</b>:
-
 <table 3 header nowrap>
 	<cell>Name</cell><cell>Settable?</cell><cell>Values</cell>
+	<cell 3><font blue><b>System Properties</b></font></cell>
+	<cell>ScreenHeight</cell><cell></cell><cell>(integer of the screen height in pixels)</cell>
+	<cell>ScreenWidth</cell><cell></cell><cell>(integer of the screen width in pixels)</cell>
+	<cell 3>&nbsp;</cell>
+	<cell 3><font blue><b>Application Properties</b></font></cell>
+	<cell>AppType</cell><cell></cell><cell>DataEntry, Batch, Tabulation</cell>
+	<cell><link change_data_entry_options.hgt>AutoAdvanceOnSelection</link> <sup>*M</sup></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>AutoPartialSaveMinutes</link></cell><cell>✔</cell><cell>(integer of the interval)</cell>
+	<cell><link change_data_entry_options.hgt>CAPI</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>CaseTree</link></cell><cell></cell><cell>Always, Desktop, Mobile, Never</cell>
+	<cell><link change_data_entry_options.hgt>CenterForms</link> <sup>*D</sup></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>ComboBoxShowOnlyDiscreteValues</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>CreateListing</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>CreateLog</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>DecimalComma</link> <sup>*D</sup></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>DisplayCodesAlongsideLabels</link> <sup>*M</sup></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>NotesDeleteOtherOperators</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link data_source_options.hgt>NotesEditOtherOperators</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>OperatorID</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link properties_paradata.hgt>ParadataCollection</link></cell><cell></cell><cell>AllEvents, SomeEvents, No</cell>
+	<cell><link properties_paradata.hgt>ParadataDeviceStateMinutes</link></cell><cell>✔</cell><cell>(integer of the interval)</cell>
+	<cell><link properties_paradata.hgt>ParadataGpsLocationMinutes</link></cell><cell>✔</cell><cell>(integer of the interval)</cell>
+	<cell><link properties_paradata.hgt>ParadataRecordCoordinates</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link properties_paradata.hgt>ParadataRecordIteratorLoadCases</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link properties_paradata.hgt>ParadataRecordValues</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>PartialSave</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>Path</link></cell><cell></cell><cell>Yes (system controlled), No (operator controlled)</cell>
+	<cell><link change_data_entry_options.hgt>ShowEndCaseDialog</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>ShowErrorMessageNumbers</link> <sup>*M</sup></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>ShowFieldLabels</link> <sup>*M</sup></cell><cell></cell><cell>Yes, No</cell>
+	<cell>ShowLabelsInCaseTree <sup>*M</sup></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell>ShowNavigationControls <sup>*M</sup></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>ShowRefusals</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell>ShowSkippedFields<sup>*M</sup></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell>SpecialValuesZero</cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link saved_arrays_file_sva.hgt>UpdateSaveArrayFile</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell><link change_data_entry_options.hgt>ValidateAlphaFields</link></cell><cell>✔</cell><cell>Yes, No</cell>
+	<cell>WindowTitle</cell><cell>✔</cell><cell>(string of the window title)</cell>
+	<cell 3>&nbsp;</cell>
+	<cell 3><font blue><b>Item Properties</b></font></cell>
+	<cell><link item_properties.hgt>DataType</link></cell><cell></cell><cell>Alpha, Numeric</cell>
+	<cell><link item_properties.hgt>Decimal</link></cell><cell></cell><cell>(integer)</cell>
+	<cell><link item_properties.hgt>DecimalChar</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell><link item_properties.hgt>Len</link></cell><cell></cell><cell>(integer)</cell>
+	<cell><link item_properties.hgt>ZeroFill</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell 3>&nbsp;</cell>
+	<cell 3><font blue><b>Field Properties</b></font></cell>
 	<cell><link change_field_properties.hgt>AllowMultiLine</link></cell><cell></cell><cell>Yes, No</cell>
 	<cell><link change_field_properties.hgt>AutoIncrement</link></cell><cell></cell><cell>Yes, No</cell>
 	<cell>CanEnterNotAppl</cell><cell>✔</cell><cell>No, Confirm, NoConfirm</cell>
@@ -74,4 +69,6 @@ The following properties apply to <b>fields</b>:
 	<cell><link change_field_properties.hgt>UseUnicodeTextBox</link></cell><cell></cell><cell>Yes, No</cell>
 	<cell><link change_field_properties.hgt>ValidationMethod</link></cell><cell>✔</cell><cell>Default, Confirm, NoConfirm, Custom</cell>
 	<cell><link change_field_properties.hgt>Verify</link></cell><cell></cell><cell>Yes, No</cell>
+	<cell 3>&nbsp;</cell>
+	<cell 3><sup>*D</sup> desktop only, <sup>*M</sup> mobile only</cell>
 </table>

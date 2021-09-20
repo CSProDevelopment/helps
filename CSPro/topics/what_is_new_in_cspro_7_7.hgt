@@ -30,11 +30,12 @@ This is a detailed list of changes in CSPro 7.7. For a more general overview, se
 	<li>New <link map.hgt>map</link> functions for adding and removing <link geometry.hgt>geometry</link> from a map: <logiccolor map>addGeometry</logiccolor>, <logiccolor map>clearGeometry</logiccolor>, and <logiccolor map>removeGeometry</logiccolor>.</li>
 	<li>A new <link map.hgt>map</link> function, <logiccolor map>saveSnapshot</logiccolor>, saves the currently displayed map as an image.</li>
 	<li>A new function, <logiccolor>path.getRelativePath</logiccolor>, returns a relative path based on a path's location relative to a directory.</li>	
-	<li><link logic_file_apc.hgt>External logic files</link> are now editable in the CSPro Designer. Each logic file will appear in the <link data_entry_tree.hgt>form</link> or <link batch_edit_tree.hgt>batch edit</link> tree and can be viewed and modified just like any other <logiccolor>PROC</logiccolor>. Double-clicking on an error or warning in the compiler output window will now show the external logic editing window. If you want the old behavior of opening the file in <link https://notepad-plus-plus.org>Notepad++</link>, hold down the <b>Ctrl</b> button while double-clicking.</li>
 	<li>A new function, <logiccolor>inadvance</logiccolor>, indicates if an advance is in progress in a data entry application, allowing for the conditional execution of logic based on whether an enumerator has directly entered a field.</li>
 	<li>A new operator, <logiccolor>:=</logiccolor>, allows you to specify <link function_named_arguments.hgt>arguments by name</link> for some CSPro functions.</li>
+	<li>The <logiccolor>getproperty</logiccolor> function can now return some system properties (such as the screen resolution).</li>
 	<li>The <logiccolor>setproperty</logiccolor> function's property value can be specified as a numeric expression instead of having to be given as a string.</li>
 	<li>The <logiccolor>setoutput</logiccolor> function can take a string list as an argument to facilitate specifying multiple output data sources.</li>
+	<li><link logic_file_apc.hgt>External logic files</link> are now editable in the CSPro Designer. Each logic file will appear in the <link data_entry_tree.hgt>form</link> or <link batch_edit_tree.hgt>batch edit</link> tree and can be viewed and modified just like any other <logiccolor>PROC</logiccolor>. Double-clicking on an error or warning in the compiler output window will now show the external logic editing window. If you want the old behavior of opening the file in <link https://notepad-plus-plus.org>Notepad++</link>, hold down the <b>Ctrl</b> button while double-clicking.</li>
 </list>
 
 
