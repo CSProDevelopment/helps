@@ -4,6 +4,7 @@ In logic, a <logiccolor>geometry</logiccolor> is an object that can be used to d
 
 <i>Note that displaying geometry on a map and polygon tracing are currently only supported on Android. These functions will do nothing when run on Windows.</i>
 
+
 <subheader>Functionality</subheader>
 
 A geometry is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
@@ -24,6 +25,20 @@ A geometry is a CSPro logic object and the following functions can be called via
 	<cell><link geometry_getproperty_function.hgt>getProperty</link></cell><cell>Retrieve one of the geometry's properties.</cell>
 	<cell><link geometry_setproperty_function.hgt>setProperty</link></cell><cell>Set the value of one of the geometry's properties.</cell>
 </table>
+
+In addition to these object functions, geometry objects can be used as arguments to the <logiccolor>filename</logiccolor>, <logiccolor map>map.addGeometry</logiccolor>, <logiccolor map>map.clearGeometry</logiccolor>, and <logiccolor map>map.removeGeometry</logiccolor> functions.
+
+
+<subheader>Assignments</subheader>
+
+Geometry objects can be assigned to other geometry objects, which will replace the vector geometry with the contents from the assigned geometry object.
+
+<logicsyntax>
+<arg>geometry_name</arg> = <arg>another_geometry_name</arg>;
+</logicsyntax>
+
+When a geometry object is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+
 
 <subheader>Example</subheader>
 

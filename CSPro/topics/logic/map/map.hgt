@@ -61,6 +61,12 @@ A map is a CSPro logic object and the following functions can be called via <lin
 	<cell><link map_clear_buttons_function.hgt>clearButtons</link></cell><cell>Delete all buttons from the map.</cell>
 </table>
 
+
+<subheader>Assignments</subheader>
+
+When a map is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+
+
 <subheader>Example</subheader>
 
 <logic>
@@ -73,5 +79,6 @@ mymap.addMarker(38.84839, -76.931098);
 // Display the map
 mymap.show();
 </logic>
+
 
 <seealso map_case_list.hgt geometry.hgt />

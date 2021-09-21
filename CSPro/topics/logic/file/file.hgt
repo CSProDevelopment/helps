@@ -20,6 +20,11 @@ A file is a CSPro logic object and the following functions can be called via <li
 In addition to these object functions, files can be used as arguments to functions such as <logiccolor>filecopy</logiccolor>, <logiccolor>filedelete</logiccolor>, <logiccolor>fileempty</logiccolor>, <logiccolor>fileexist</logiccolor>, <logiccolor>filename</logiccolor>, <logiccolor>filerename</logiccolor>, <logiccolor>filesize</logiccolor>, <logiccolor>open</logiccolor>, and <logiccolor>pathname</logiccolor>.
 
 
+<subheader>Assignments</subheader>
+
+When a file is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+
+
 <subheader>Example</subheader>
 
 <logic>

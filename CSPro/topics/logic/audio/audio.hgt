@@ -6,6 +6,7 @@ Audio recording is typically implemented by declaring a variable of type <logicc
 
 Audio recording and playback are currently only supported on Android.
 
+
 <subheader>Functionality</subheader>
 
 An audio object is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
@@ -25,11 +26,16 @@ An audio object is a CSPro logic object and the following functions can be calle
 
 In addition to these object functions, audio objects can be used as arguments to the <logiccolor>filename</logiccolor> function.
 
+
+<subheader>Assignments</subheader>
+
 Audio objects can be assigned to other audio objects, which will replace the recorded audio with the recording from the assigned audio object.
 
 <logicsyntax>
 <arg>audio_name</arg> = <arg>another_audio_name</arg>;
 </logicsyntax>
+
+When an audio object is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 
 <subheader>Example</subheader>
