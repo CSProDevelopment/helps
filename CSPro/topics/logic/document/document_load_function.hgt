@@ -1,0 +1,27 @@
+﻿<title>Document.Load Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax document>
+b = document_name.load(<arg>document_filename</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor document>document.load</logiccolor> function reads the text or binary file given by the string expression <arg>document_filename</arg> and stores the contents in the <link document.hgt>document</link> object. The file's entire contents are read at once and will reside in memory as long as the document object exists.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the file was loaded and 0 (false) if the file could not be loaded.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_document_example.hgi />
+</logic>
+
+
+<seealso document.hgt document_save_function.hgt />

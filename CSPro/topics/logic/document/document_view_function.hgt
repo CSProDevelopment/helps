@@ -1,0 +1,33 @@
+﻿<title>Document.View Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax document>
+b = document_name.view();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor document>document.view</logiccolor> function displays the contents of the file stored in a <link document.hgt>document</link> object. The function is equivalent to calling:
+
+<logic>
+view(document_name);
+</logic>
+
+If the document contains an image or HTML, the content will be shown in an embedded window. For other files, an external application is launched to display the file using the system's default viewer for that file type.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the file was displayed, 0 (false) if there was an error viewing the file, and <logiccolor>default</logiccolor> if the document object was empty.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_document_example.hgi />
+</logic>
+
+
+<seealso document.hgt />

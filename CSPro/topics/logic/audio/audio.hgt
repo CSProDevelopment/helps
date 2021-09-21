@@ -35,6 +35,18 @@ Audio objects can be assigned to other audio objects, which will replace the rec
 <arg>audio_name</arg> = <arg>another_audio_name</arg>;
 </logicsyntax>
 
+It is also possible to assign audio objects to a <link document.hgt>document</link>:
+
+<logicsyntax>
+<arg>document_name</arg> = <arg>audio_name</arg>;
+</logicsyntax>
+
+You can also make the reverse assignment, assigning a document to an audio object. A runtime error will occur if the document's data was not audio data.
+
+<logicsyntax>
+<arg>audio_name</arg> = <arg>document_name</arg>;
+</logicsyntax>
+
 When an audio object is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 

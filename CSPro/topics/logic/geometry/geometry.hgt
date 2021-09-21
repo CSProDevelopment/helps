@@ -37,6 +37,18 @@ Geometry objects can be assigned to other geometry objects, which will replace t
 <arg>geometry_name</arg> = <arg>another_geometry_name</arg>;
 </logicsyntax>
 
+It is also possible to assign geometry objects to a <link document.hgt>document</link>:
+
+<logicsyntax>
+<arg>document_name</arg> = <arg>geometry_name</arg>;
+</logicsyntax>
+
+You can also make the reverse assignment, assigning a document to a geometry object. A runtime error will occur if the document's data was not valid geometry data.
+
+<logicsyntax>
+<arg>geometry_name</arg> = <arg>document_name</arg>;
+</logicsyntax>
+
 When a geometry object is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 

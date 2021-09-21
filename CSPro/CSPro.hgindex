@@ -413,6 +413,7 @@ cspro_settings.hgt | Clear Credentials															#	Clear Credentials
 clear_function.hgt																				#	Clear Function
 	array_clear_function.hgt																	#		Array.Clear Function
 	audio_clear_function.hgt																	#		Audio.Clear Function
+	document_clear_function.hgt																	#		Document.Clear Function
 	freq_clear_function.hgt																		#		Freq.Clear Function
 	geometry_clear_function.hgt																	#		Geometry.Clear Function
 	hashmap_clear_function.hgt																	#		HashMap.Clear Function
@@ -683,6 +684,7 @@ errmsg_function.hgt | Denom																		#	Denom
 tool_list.hgt | Deploy Application																#	Deploy Application
 deprecated_features.hgt																			#	Deprecated Features
 	recode_statement_pre74.hgt																	#		Recode Statement (Deprecated)
+document_dictionary_elements.hgt | Describe Dictionary Elements									#	Describe Dictionary Elements
 data_entry_elements.hgt | Description															#	Description
 	data_entry_elements.hgt | Fields															#		Fields
 	data_entry_elements.hgt | Forms																#		Forms
@@ -736,7 +738,12 @@ getproperty_function.hgt | Display Resolution													#	Display Resolution
 display_results_for_one_geographic_area.hgt														#	Display Results for One Geographic Area
 freq_formatting_options.hgt | Distinct															#	Distinct
 distribute_finished_tables_to_other_users.hgt													#	Distribute Finished Tables to Other Users
-document_dictionary_elements.hgt																#	Document Dictionary Elements
+document.hgt																					#	Document Object
+	document_clear_function.hgt																	#		Document.Clear Function
+	document_load_function.hgt																	#		Document.Load Function
+	document_save_function.hgt																	#		Document.Save Function
+	document_view_function.hgt																	#		Document.View Function
+	document_statement.hgt																		#		Document Statement
 object_dot_notation.hgt | Dot Notation															#	Dot Notation
 do_statement.hgt																				#	Do Statement
 drag_option_menu.hgt																			#	Drag Option Menu
@@ -1323,6 +1330,7 @@ loadsetting_function.hgt																		#	LoadSetting Function
 load_and_save_formatting_preferences.hgt														#	Load and Save Formatting Preferences
 pff_load_function.hgt | Load Function															#	Load Function
 	audio_load_function.hgt																		#		Audio.Load Function
+	document_load_function.hgt																	#		Document.Load Function
 	geometry_load_function.hgt																	#		Geometry.Load Function
 	pff_load_function.hgt																		#		Pff.Load Function
 syncconnect_function_dropbox_local.hgt | LocalDropbox Synchronization							#	LocalDropbox Synchronization
@@ -1555,7 +1563,10 @@ numeric_statement.hgt | Numeric																	#	Numeric
 object_dot_notation.hgt | Objects																#	Objects
 	array.hgt																					#		Array Object
 	audio.hgt																					#		Audio Object
+	document.hgt																				#		Document Object
 	file.hgt																					#		File Object
+	freq.hgt																					#		Freq Object
+	geometry.hgt																				#		Geometry Object
 	hashmap.hgt																					#		HashMap Object
 	list.hgt																					#		List Object
 	map.hgt																						#		Map Object
@@ -1970,6 +1981,7 @@ save_an_application_with_a_new_name.hgt | Save As												#	Save As
 	save_dictionary_as_new_file.hgt | Dictionary												#		Dictionary
 pff_save_function.hgt | Save Function															#	Save Function
 	audio_save_function.hgt																		#		Audio.Save Function
+	document_save_function.hgt																	#		Document.Save Function
 	freq_save_function.hgt																		#		Freq.Save Function
 	geometry_save_function.hgt																	#		Geometry.Save Function
 	pff_save_function.hgt																		#		Pff.Save Function
@@ -2504,6 +2516,7 @@ change_the_view.hgt | View																		#	View
 viewing_multiple_and_facing_pages.hgt															#	Viewing Multiple and Facing Pages
 views_of_tables.hgt | Views of Table															#	Views of Table
 view_function.hgt																				#	View Function
+	document_view_function.hgt																	#		Document.View Function
 	freq_view_function.hgt																		#		Freq.View Function
 visualvalue_function.hgt																		#	VisualValue Function
 audio.hgt | Voice Recording																		#	Voice Recording
