@@ -8,7 +8,7 @@ b = map_name.removeMarker(<arg>markerId</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.removeMarker</logiccolor> function removes a marker from the map map_name. <arg>markerId</arg> should be the id returned by <logiccolor map>map.addMarker</logiccolor> when the marker was added to the map.
+The <logiccolor map>map.removeMarker</logiccolor> function removes a marker from the map. The  <arg>markerId</arg> should be the id returned by the <logiccolor map>map.addMarker</logiccolor> function when the marker was added to the map.
 
 <subheader>Return Value</subheader>
 
@@ -19,7 +19,7 @@ The function returns a logical value of 1 (true) if the marker was found and was
 <logic>
 PROC GLOBAL
 
-// Function to allow to modify the marker text, marker description or remove the marker
+// Function that allows the user to modify the marker text or description, or remove the marker from the map
 function editMarker(map m, numeric markerId)
 
 	numeric sel = accept("Edit marker", "Text", "Description", "Remove");
@@ -34,7 +34,9 @@ function editMarker(map m, numeric markerId)
 			m.setMarkerDescription(markerId, newDescription);
 		endif;
 	elseif sel = 3 then
-		m.removeMarker(markerId);
+		if accept ("Confirm marker removal from the map", "Yes", "No")=1 then
+		  m.removeMarker(markerId);
+		endif;
 	endif;
 end;
 
@@ -46,7 +48,7 @@ map mymap;
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
 numeric markerId = mymap.addMarker(38.84839, -76.931098);
-mymap.setMarkerDescription(markerId, "US Census Bureau");
+mymap.setMarkerDescription(markerId, "U.S. Census Bureau");
 
 // Call edit marker when user taps on popup info window
 mymap.setMarkerOnClickInfoWindow(markerId, editMarker(mymap, markerId));

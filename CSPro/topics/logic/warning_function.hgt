@@ -43,7 +43,7 @@ When the <b>select</b> keyword is used, the function returns the sequence number
 <logic>
 PROC MARITAL_STATUS
 postproc
-	if $ in 1,2 { married, partner } and SEX=SEX(HEAD) then
+	if curocc() > 1 and $ in 1,2 { married, partner } and SEX=SEX(HEAD) then
 		warning("Is the sex of this person the same as the head of household's?")
 		       select("Correct", continue,
 			          "Incorrect: Change this person's sex", SEX,

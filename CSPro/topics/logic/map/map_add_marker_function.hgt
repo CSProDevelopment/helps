@@ -3,16 +3,44 @@
 <subheader>Format</subheader>
 
 <logicsyntax map>
-markerId = map_name.addMarker(<arg>latitude</arg>, <arg>longitude</arg>);
+markerId = map_name.addMarker(<arg>latitude</arg>, <arg>longitude</arg>>『, <arg>MarkerColor</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.addMarker</logiccolor> function creates a new marker at the position defined by <arg>latitude</arg> and <arg>longitude</arg> and adds the new marker to the <link map.hgt>map</link> <logiccolor>map_name</logiccolor>. Initially the marker will have the default red and black marker icon and no description. You can customize the marker icon using the function <logiccolor map>setMarkerText</logiccolor> or <logiccolor map>setMarkerImage</logiccolor>. You can add a description of the marker using <logiccolor map>setMarkerDescription</logiccolor>. The description will appear in the marker list and in a popup when the user taps on the marker.
+The <logiccolor map>map.addMarker</logiccolor> function places a (new) marker at the position defined by <arg>latitude</arg> and <arg>longitude</arg>, adding it to the <link map.hgt>map</link> specified by <logiccolor>map_name</logiccolor>. If no color is specified, the default marker color (red) is used. Otherwise, one of the following 10 google map icon colors can be chosen for <arg>MarkerColor</arg>:
+
+<list>
+<li>mm_20_black.png</li>
+<li>mm_20_blue.png</li>
+<li>mm_20_brown.png</li>
+<li>mm_20_gray.png</li>
+<li>mm_20_green.png</li>
+<li>mm_20_orange.png</li>
+<li>mm_20_purple.png</li>
+<li>mm_20_red.png</li>
+<li>mm_20_white.png</li>
+<li>mm_20_yellow.png</li>
+</list>
+
+You can customize the map marker using the function <logiccolor map>setMarkerText</logiccolor> or <logiccolor map>setMarkerImage</logiccolor>. You can further customize the marker by adding a description of the marker using <logiccolor map>setMarkerDescription</logiccolor>. 
 
 <subheader>Return Value</subheader>
 
-The function returns the identifier of the new marker which may be used in subsequent calls to <logiccolor map>removeMarker</logiccolor>, <logiccolor map>setMarkerText</logiccolor>, <logiccolor map>setMarkerImage</logiccolor>, <logiccolor map>setMarkerDescription</logiccolor> <logiccolor map>setMarkerOnClick</logiccolor>, <logiccolor map>setMarkerOnClickInfoWindow</logiccolor>, <logiccolor map>setMarkerOnDrag</logiccolor>, <logiccolor map>setMarkerLocation</logiccolor>, <logiccolor map>getMarkerLatitude</logiccolor>, or <logiccolor map>getMarkerLongitude</logiccolor>.
+The function returns the identifier of the new marker, which can be used in subsequent calls to the following <logiccolor>map</logiccolor> functions:
+
+<list>
+<li><logiccolor map>getMarkerLatitude</logiccolor></li>
+<li><logiccolor map>getMarkerLongitude</logiccolor></li>
+<li><logiccolor map>removeMarker</logiccolor></li>
+<li><logiccolor map>setMarkerDescription</logiccolor></li>
+<li><logiccolor map>setMarkerImage</logiccolor></li>
+<li><logiccolor map>setMarkerLocation</logiccolor></li>
+<li><logiccolor map>setMarkerOnClick</logiccolor></li>
+<li><logiccolor map>setMarkerOnClickInfoWindow</logiccolor></li>
+<li><logiccolor map>setMarkerOnDrag</logiccolor></li>
+<li><logiccolor map>setMarkerText</logiccolor></li>
+</list>
 
 
 <subheader>Example</subheader>
