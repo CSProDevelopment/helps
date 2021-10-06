@@ -10,7 +10,6 @@ This is a detailed list of changes in CSPro 7.7. For a more general overview, se
 	<li>The new <link toggle_button.hgt>toggle button</link> capture type presents field data with two states (selected and not selected).</li>
 	<li>Some <link properties_application.hgt>properties</link> are now saved in a file with the extension <link application_properties_file_csprops.hgt>.csprops</link>. Modifying the properties for <link properties_paradata.hgt>paradata</link> must now be done using the new <link properties_application.hgt>Application Properties</link> dialog.</li>
 	<li>Multiple <link CSBatch::define_file_associations.hgt>Output Data</link> entries can be provided for batch applications. Any cases output during the batch run will be written to each of these data sources.</li>
-    <li>The <link CSExport::introduction_to_export_data.hgt>Export Data</link> and <link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link> tools allow you to specify the dictionary language that is used when exporting labels or creating frequency tables.</li>
 	<li>The <link question_text_file_qsf.hgt>question text file</link> is sorted in form order before saving, potentially making it easier to use when working in a version control environment.</li>
 </list>
 
@@ -25,20 +24,28 @@ This is a detailed list of changes in CSPro 7.7. For a more general overview, se
 <subheader>Logic</subheader>
 
 <list>
+	<li>A new operator, <logiccolor>:=</logiccolor>, allows you to specify <link function_named_arguments.hgt>arguments by name</link> for some CSPro functions.</li>
 	<li>A <link javascript_interface.hgt>JavaScript interface</link> exists to facilitate the invocation of <link user_defined_functions.hgt>user-defined functions</link> from question text and while viewing web pages (using the <logiccolor>view</logiccolor> function).</li>
 	<li>A new object, <link document.hgt>document</link>, facilitates the storage of text or binary files. It has the functions: <logiccolor document>clear</logiccolor>, <logiccolor document>load</logiccolor>, <logiccolor document>save</logiccolor>, and <logiccolor document>view</logiccolor>.</li>	
 	<li>A new object, <link geometry.hgt>geometry</link>, allows for the display and manipulation of vector geometry. It has the functions: <logiccolor geometry>area</logiccolor>, <logiccolor geometry>clear</logiccolor>, <logiccolor geometry>getProperty</logiccolor>, <logiccolor geometry>load</logiccolor>, <logiccolor geometry>maxLatitude</logiccolor>, <logiccolor geometry>maxLongitude</logiccolor>, <logiccolor geometry>minLatitude</logiccolor>, <logiccolor geometry>minLongitude</logiccolor>, <logiccolor geometry>perimeter</logiccolor>, <logiccolor geometry>save</logiccolor>, <logiccolor geometry>setProperty</logiccolor>, <logiccolor geometry>tracePolygon</logiccolor>, and <logiccolor geometry>walkPolygon</logiccolor>.</li>
 	<li>New <link map.hgt>map</link> functions for adding and removing <link geometry.hgt>geometry</link> from a map: <logiccolor map>addGeometry</logiccolor>, <logiccolor map>clearGeometry</logiccolor>, and <logiccolor map>removeGeometry</logiccolor>.</li>
-	<li>A new <link map.hgt>map</link> function, <logiccolor map>saveSnapshot</logiccolor>, saves the currently displayed map as an image.</li>
+	<li>Another new <link map.hgt>map</link> function, <logiccolor map>saveSnapshot</logiccolor>, saves the currently displayed map as an image.</li>
 	<li>A new function, <logiccolor>path.getRelativePath</logiccolor>, returns a relative path based on a path's location relative to a directory.</li>	
+	<li>The <logiccolor>dirlist</logiccolor> function, with a new syntax using <link function_named_arguments.hgt>named arguments</link>, provides additional ways to specify the source directory and wildcard filters. Hidden and system files are no longer included in the directory listing.</li>
 	<li>A new function, <logiccolor>inadvance</logiccolor>, indicates if an advance is in progress in a data entry application, allowing for the conditional execution of logic based on whether an enumerator has directly entered a field.</li>
 	<li>A new function, <logiccolor>currentkey</logiccolor>, returns a key string comprised of a case's current IDs (as opposed to <logiccolor>key</logiccolor>, which uses a case's ID as they existed when the case was last loaded or written).</li>
-	<li>A new operator, <logiccolor>:=</logiccolor>, allows you to specify <link function_named_arguments.hgt>arguments by name</link> for some CSPro functions.</li>
 	<li>The <logiccolor>getproperty</logiccolor> function can now return some system properties (such as the screen resolution).</li>
 	<li>The <logiccolor>setproperty</logiccolor> function's property value can be specified as a numeric expression instead of having to be given as a string.</li>
 	<li>The <logiccolor>setoutput</logiccolor> function can take a string list as an argument to facilitate specifying multiple output data sources.</li>
 	<li>The <logiccolor>view</logiccolor> function has new options that allow users to specify the window size and other attributes of how the embedded web browser will appear when viewing HTML files and websites.</li>
 	<li><link logic_file_apc.hgt>External logic files</link> are now editable in the CSPro Designer. Each logic file will appear in the <link data_entry_tree.hgt>form</link> or <link batch_edit_tree.hgt>batch edit</link> tree and can be viewed and modified just like any other <logiccolor>PROC</logiccolor>. Double-clicking on an error or warning in the compiler output window will now show the external logic editing window. If you want the old behavior of opening the file in <link https://notepad-plus-plus.org>Notepad++</link>, hold down the <b>Ctrl</b> button while double-clicking.</li>
+</list>
+
+
+<subheader>Tools</subheader>
+
+<list>
+    <li>The <link CSExport::introduction_to_export_data.hgt>Export Data</link> and <link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link> tools allow you to specify the dictionary language that is used when exporting labels or creating frequency tables.</li>
 </list>
 
 

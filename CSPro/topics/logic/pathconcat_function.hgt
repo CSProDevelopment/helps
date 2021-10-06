@@ -10,7 +10,7 @@ s = pathconcat(<arg>path1</arg>『, ..., <arg>pathN</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>pathconcat</logiccolor> function concatenates the values of multiple string expressions (<arg>path1</arg> + ... + <arg>pathN</arg>) into one string representing a file path. The first argument can be either a string expression or one of the arguments used in the <logiccolor>pathname</logiccolor> function. The combined paths are returned as an absolute, not relative, path.
+The <logiccolor>pathconcat</logiccolor> function concatenates the values of multiple string expressions (<arg>path1</arg> + ... + <arg>pathN</arg>) into one string representing a file path. The first argument can be either a string expression or one of the path types documented in the <logiccolor>pathname</logiccolor> function. The combined paths are returned as an absolute, not relative, path.
 
 <subheader>Return Value</subheader>
 
