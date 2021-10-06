@@ -23,7 +23,7 @@ The <arg>directory_path</arg> can be one of the following:
 </list>
 
 
-Using <link function_named_arguments.hgt>named arguments</link>, you can specify a string expression, <arg>wildcard</arg>, that is applied to filter the paths added to the string list. For example, <logiccolor>"*.csdb"</logiccolor> would include only <link data_sources.hgt>CSPro DB</link> files. You can specify multiple wildcard filters by separating each filter with a semicolon. The filter <logiccolor>"*.jpg;*.jpeg;*.bmp"</logiccolor> would include both JPEG and BMP files. Instead of using a string expression, you can also use predefined wildcard expression:
+Using <link function_named_arguments.hgt>named arguments</link>, you can specify a string expression, <arg>wildcard</arg>, that is applied to filter the paths added to the string list. For example, <logiccolor>"*.csdb"</logiccolor> would include only <link data_sources.hgt>CSPro DB</link> files. You can specify multiple wildcard filters by separating each filter with a semicolon. The filter <logiccolor>"*.jpg;*.jpeg;*.bmp"</logiccolor> would include both JPEG and BMP files. Instead of using a string expression, you can also use a predefined wildcard expression:
 
 <list>
 	<li><logiccolor>FileType.Audio</logiccolor>: Files that the <link audio.hgt>audio</link> object can read and write.</li>
@@ -65,5 +65,4 @@ dirlist(image_files, Media.Images, filter := FileType.Image);
 </logic>
 
 
-
-<seealso dircreate_function.hgt direxist_function.hgt />
+<seealso path_selectfile_function.hgt dircreate_function.hgt direxist_function.hgt />
