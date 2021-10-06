@@ -9,7 +9,7 @@ b = view(<arg>filename</arg> ‖ <arg>website_address</arg> ‖ <arg>object_name
 
 <subheader>Description</subheader>
 
-The <logiccolor>view</logiccolor> function displays the contents of a file or shows a website. The function expects a string expression representing a file (<arg>filename</arg>) or a website URL (<arg>website_address</arg>), or a CSPro object (<arg>object_name</arg>) such as a <link document.hgt>document</link>. If a website URL or a file with the extension <i>.html</i> or <i>.htm</i> is provided, it is shown in an embedded window. For other files, an external application is launched to display the file using the system's default viewer for that file type.
+The <logiccolor>view</logiccolor> function displays the contents of a file or shows a website. The function expects a string expression representing a file (<arg>filename</arg>) or a website URL (<arg>website_address</arg>), or a CSPro object (<arg>object_name</arg>) such as a <link document.hgt>document</link> or <link freq.hgt>freq</link>. If a website URL or a file with the extension <i>.html</i> or <i>.htm</i> is provided, it is shown in an embedded window. For other files, an external application is launched to display the file using the system's default viewer for that file type.
 
 HTML files or websites are displayed in an embedded window using a Chromium-based web browser (<link https://developer.microsoft.com/en-us/microsoft-edge/webview2>Edge WebView2</link> on Windows; <link https://developer.android.com/reference/android/webkit/WebView>WebView</link> on Android). In this web browser, it is possible to use the <link javascript_interface.hgt>JavaScript interface</link> to execute <link user_defined_functions.hgt>user-defined functions</link>.
 
