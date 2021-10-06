@@ -310,7 +310,7 @@ onstop_global_function.hgt | Callback Functions													#	Callback Functions
 	onstop_global_function.hgt																	#		OnStop Global Function
 	syncmessage_function.hgt | OnSyncMessage Global Function									#		OnSyncMessage Global Function
 	onsystemmessage_global_function.hgt															#		OnSystemMessage Global Function
-camera.hgt																						#	Camera
+image_takephoto_function.hgt | Camera															#	Camera
 introduction_to_capi.hgt | CAPI																	#	CAPI
 	add_pictures.hgt | Add Pictures in Question Text											#		Add Pictures in Question Text
 	breaking_off_the_interview.hgt																#		Breaking Off the Interview
@@ -335,6 +335,8 @@ area_captions.hgt | Caption																		#	Caption
 	area_captions.hgt | Area Caption															#		Area Caption
 	formats_for_a_part_of_a_table.hgt															#		Formats for a Part of a Table
 	parts_of_a_table.hgt																		#		Parts of a Table
+image_capturesignature_function.hgt | CaptureSignature Function									#	CaptureSignature Function
+	image_capturesignature_function.hgt															#		Image.CaptureSignature Function
 capture_types.hgt																				#	Capture Types
 	barcode_capture_type.hgt																	#		Barcode Capture Type
 	check_box.hgt																				#		Check Box
@@ -418,6 +420,7 @@ clear_function.hgt																				#	Clear Function
 	freq_clear_function.hgt																		#		Freq.Clear Function
 	geometry_clear_function.hgt																	#		Geometry.Clear Function
 	hashmap_clear_function.hgt																	#		HashMap.Clear Function
+	image_clear_function.hgt																	#		Image.Clear Function
 	list_clear_function.hgt																		#		List.Clear Function
 	valueset_clear_function.hgt																	#		ValueSet.Clear Function
 close_an_application.hgt																		#	Close an Application
@@ -1109,6 +1112,8 @@ has_operator.hgt																				#	Has Operator
 change_the_print_page_setup.hgt | Header														#	Header
 data_entry_philosophies.hgt | Heads-Down Keying													#	Heads-Down Keying
 data_entry_philosophies.hgt | Heads-Up Keying													#	Heads-Up Keying
+image_height_function.hgt | Height Function														#	Height Function
+	image_height_function.hgt																	#		Image.Height Function
 get_help.hgt | Help																				#	Help
 	get_help.hgt | Support																		#		Support
 views_of_tables.hgt | Hidden Parts																#	Hidden Parts
@@ -1152,6 +1157,16 @@ value_set_images.hgt | Images																	#	Images
 	resource_folders.hgt																		#		Resource Folders
 	value_set_images.hgt																		#		Value Set Images
 image.hgt																						#	Image Object
+	image_capturesignature_function.hgt															#		Image.CaptureSignature Function
+	image_clear_function.hgt																	#		Image.Clear Function
+	image_height_function.hgt																	#		Image.Height Function
+	image_load_function.hgt																		#		Image.Load Function
+	image_resample_function.hgt																	#		Image.Resample Function
+	image_save_function.hgt																		#		Image.Save Function
+	image_takephoto_function.hgt																#		Image.TakePhoto Function
+	image_view_function.hgt																		#		Image.View Function
+	image_width_function.hgt																	#		Image.Width Function
+	image_statement.hgt																			#		Image Statement
 	media_store.hgt																				#		Media Store
 implications_of_data_dictionary_value_sets.hgt | Implications of Data Dictionary Value Names	#	Implications of Data Dictionary Value Names
 compiler_mode.hgt | Implicit Mode																#	Implicit Mode
@@ -1333,6 +1348,7 @@ pff_load_function.hgt | Load Function															#	Load Function
 	audio_load_function.hgt																		#		Audio.Load Function
 	document_load_function.hgt																	#		Document.Load Function
 	geometry_load_function.hgt																	#		Geometry.Load Function
+	image_load_function.hgt																		#		Image.Load Function
 	pff_load_function.hgt																		#		Pff.Load Function
 syncconnect_function_dropbox_local.hgt | LocalDropbox Synchronization							#	LocalDropbox Synchronization
 syncconnect_function_files_local.hgt | LocalFiles Synchronization								#	LocalFiles Synchronization
@@ -1499,9 +1515,10 @@ moving_around_a_logic_application.hgt															#	Moving Around a Logic Appl
 multimedia_features.hgt																			#	Multimedia Features
 	audio.hgt | Audio																			#		Audio
 	barcode.hgt | Barcode																		#		Barcode
-	camera.hgt																					#		Camera
+	image_takephoto_function.hgt | Camera														#		Camera
+	image.hgt																					#		Image Object
 	media_store.hgt																				#		Media Store
-	signature.hgt																				#		Signature
+	image_capturesignature_function.hgt | Signature												#		Signature
 tabulate_items_with_multiple_occurrences.hgt | Multiple											#	Multiple
 	tabulate_items_with_multiple_occurrences.hgt | Occurrences: Tabulate						#		Occurrences: Tabulate
 	data_file_type_structure.hgt | Record Types													#		Record Types
@@ -1571,6 +1588,7 @@ object_dot_notation.hgt | Objects																#	Objects
 	freq.hgt																					#		Freq Object
 	geometry.hgt																				#		Geometry Object
 	hashmap.hgt																					#		HashMap Object
+	image.hgt																					#		Image Object
 	list.hgt																					#		List Object
 	map.hgt																						#		Map Object
 	pff.hgt																						#		Pff Object
@@ -1709,12 +1727,13 @@ pff.hgt																							#	Pff Object
 	pff_save_function.hgt																		#		Pff.Save Function
 	pff_setproperty_function.hgt																#		Pff.SetProperty Function
 	pff_statement.hgt																			#		Pff Statement
-camera.hgt | Photos																				#	Photos
-	camera.hgt | Taking a Photo																	#		Taking a Photo
+image_takephoto_function.hgt | Photos															#	Photos
+	image_takephoto_function.hgt | Taking a Photo												#		Taking a Photo
+	camera.hgt | Taking a Photo Using ExecSystem												#		Taking a Photo Using ExecSystem
 add_pictures.hgt | Pictures																		#	Pictures
 	add_pictures.hgt | Add in CAPI Question Text												#		Add in CAPI Question Text
 	resource_folders.hgt																		#		Resource Folders
-	camera.hgt | Taking a Picture																#		Taking a Picture
+	image_takephoto_function.hgt | Taking a Picture												#		Taking a Picture
 	value_set_images.hgt																		#		Value Set Images
 audio_play_function.hgt | Play Function															#	Play Function
 	audio_play_function.hgt																		#		Audio.Play Function
@@ -1911,6 +1930,8 @@ change_data_entry_options.hgt | Required														#	Required
 	change_data_entry_options.hgt | Enter Key													#		Enter Key
 	hardware_and_software_requirements.hgt | Hardware and Software								#		Hardware and Software
 	required_record.hgt | Record																#		Record
+image_resample_function.hgt | Resample Function													#	Resample Function
+	image_resample_function.hgt																	#		Image.Resample Function
 list_of_reserved_words.hgt | Reserved															#	Reserved
 	list_of_reserved_words.hgt | Commands														#		Commands
 	list_of_reserved_words.hgt | Words															#		Words
@@ -1988,6 +2009,7 @@ pff_save_function.hgt | Save Function															#	Save Function
 	document_save_function.hgt																	#		Document.Save Function
 	freq_save_function.hgt																		#		Freq.Save Function
 	geometry_save_function.hgt																	#		Geometry.Save Function
+	image_save_function.hgt																		#		Image.Save Function
 	pff_save_function.hgt																		#		Pff.Save Function
 saving_tables_as_text_html_or_rich_text.hgt | Saving Tables as Text HTML or Rich Text			#	Saving Tables as Text HTML or Rich Text
 change_the_view.hgt | Screen																	#	Screen
@@ -2102,7 +2124,9 @@ map_show_current_location_function.hgt | ShowCurrentLocation Function							#	Sh
 showocc_function.hgt																			#	ShowOcc Function
 change_data_entry_options.hgt | Show Case Tree													#	Show Case Tree
 show_values_for_selection.hgt																	#	Show Values for Selection
-signature.hgt																					#	Signature
+image_capturesignature_function.hgt | Signature													#	Signature
+	image_capturesignature_function.hgt | Capturing a Signature									#		Capturing a Signature
+	signature.hgt | Capturing a Signature Using ExecSystem										#		Capturing a Signature Using ExecSystem
 synchronization_simple.hgt | Simple Synchronization												#	Simple Synchronization
 data_file_type_structure.hgt | Single Record Types												#	Single Record Types
 change_field_font.hgt | Size																	#	Size
@@ -2313,6 +2337,8 @@ tabulation_applications.hgt | Tabulation Application											#	Tabulation Appl
 	create_a_new_tabulation_application.hgt | Creating											#		Creating
 tabulation_application_file_xtb.hgt																#	Tabulation Application File (.xtb)
 tabulation_keys.hgt | Tabulation keys															#	Tabulation keys
+image_takephoto_function.hgt | TakePhoto Function												#	TakePhoto Function
+	image_takephoto_function.hgt																#		Image.TakePhoto Function
 tally_attributes_for_a_table.hgt | Tally Attributes												#	Tally Attributes
 	tally_attributes_for_a_table.hgt | For a Table/Subtable										#		For a Table/Subtable
 	tally_attributes_for_a_variable.hgt | For a Variable										#		For a Variable
@@ -2527,6 +2553,7 @@ views_of_tables.hgt | Views of Table															#	Views of Table
 view_function.hgt																				#	View Function
 	document_view_function.hgt																	#		Document.View Function
 	freq_view_function.hgt																		#		Freq.View Function
+	image_view_function.hgt																		#		Image.View Function
 visualvalue_function.hgt																		#	VisualValue Function
 audio.hgt | Voice Recording																		#	Voice Recording
 impute_function.hgt | VSet																		#	VSet
@@ -2558,7 +2585,9 @@ average_function.hgt | Where																	#	Where
 	show_function.hgt																			#		Show Function
 	sum_function.hgt																			#		Sum Function
 while_statement.hgt																				#	While Statement
-run_production_batch_edits.hgt | Width of listing file											#	Width of listing file
+image_width_function.hgt | Width Function														#	Width Function
+	image_width_function.hgt																	#		Image.Width Function
+run_production_batch_edits.hgt | Width of Listing File											#	Width of Listing File
 data_entry_forms_screen_layout.hgt | Window														#	Window
 windows.hgt																						#	Windows
 	change_windows.hgt | Change																	#		Change

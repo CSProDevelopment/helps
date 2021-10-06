@@ -26,18 +26,20 @@ Document objects can be assigned to other document objects, which will replace t
 <arg>document_name</arg> = <arg>another_document_name</arg>;
 </logicsyntax>
 
-It is also possible to assign <link audio.hgt>audio</link> and <link geometry.hgt>geometry</link> objects to a document. These assignments will always succeed.
+It is also possible to assign <link audio.hgt>audio</link>, <link geometry.hgt>geometry</link>, and <link image.hgt>image</link> objects to a document. These assignments will always succeed.
 
 <logicsyntax>
 <arg>document_name</arg> = <arg>audio_name</arg>;
 <arg>document_name</arg> = <arg>geometry_name</arg>;
+<arg>document_name</arg> = <arg>image_name</arg>;
 </logicsyntax>
 
-You can also make the reverse assignment, assigning a document to an audio or geometry object. A runtime error will occur if the document's data cannot be converted to those objects.
+You can also make the reverse assignment, assigning a document to an audio, geometry, or image object. A runtime error will occur if the document's data cannot be converted to those objects.
 
 <logicsyntax>
 <arg>audio_name</arg> = <arg>document_name</arg>;
 <arg>geometry_name</arg> = <arg>document_name</arg>;
+<arg>image_name</arg> = <arg>document_name</arg>;
 </logicsyntax>
 
 When a document is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
@@ -48,3 +50,6 @@ When a document is used as an argument to a <link user_defined_functions.hgt>use
 <logic>
 <include include_document_example.hgi />
 </logic>
+
+
+<seealso image.hgt />

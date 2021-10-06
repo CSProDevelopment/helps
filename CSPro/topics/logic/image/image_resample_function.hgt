@@ -1,0 +1,58 @@
+﻿<title>Image.Resample Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax image>
+b = image_name.resample(<arg>width</arg>, <arg>height</arg>);
+
+b = image_name.resample(『width := <arg>width</arg>,』
+						『height := <arg>height</arg>』);
+
+b = image_name.resample(『maxWidth := <arg>max_width</arg>,』
+						『maxHeight := <arg>max_height</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor image>image.resample</logiccolor> function resamples the image held by the <link image.hgt>image</link> object. Resampling modifies the dimensions of the image by either downsampling or upsampling the image. A loss of image quality may occur during the resampling process.
+
+In the first version of the function, two numeric expressions, <arg>width</arg> and <arg>height</arg>, specify the new dimensions, in pixels, of the image. If one of the arguments is <logiccolor>notappl</logiccolor>, then the other dimension will be calculated by maintaining the original image's aspect ratio (the ratio of the width to the height). For example, if an image is 800 x 600, each of the following function calls results in a 400 x 300 image:
+
+<logicsyntax image>
+image_name.resample(400, 300);
+image_name.resample(400, notappl);
+image_name.resample(notappl, 300);
+</logicsyntax>
+
+
+The second and third versions of the function, accessed by using <link function_named_arguments.hgt>named arguments</link>, provide additional ways to control how the image is resampled. Specifying both <arg>width</arg> and <arg>height</arg> is equivalent to the first version of the function; specifying only one of the arguments is as if <logiccolor>notappl</logiccolor> were specified for the other argument. Providing a <arg>max_width</arg> and/or <arg>max_height</arg> will conditionally resample an image only if the image's width or height exceeds the provided maximum. Using the 800 x 600 example from above:
+
+<logicsyntax image>
+image_name.resample(maxWidth := 400);
+image_name.resample(maxHeight := 1200);
+</logicsyntax>
+
+The first function call results in a resampling to 400 x 300. The second function call does not result in a resampling because the original height, 600, does not exceed 1200. In this case, the function still returns 1 even though the image was not resampled.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if the image was resampled, 0 (<logiccolor>false</logiccolor>) if there was an error, and <logiccolor>default</logiccolor> if the image object does not contain an image.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+<include include_image_example_thumbnails.hgi />
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+<include include_image_example.hgi />
+</logic>
+
+
+<seealso image.hgt image_width_function.hgt image_height_function.hgt />
