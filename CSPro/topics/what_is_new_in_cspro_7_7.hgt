@@ -32,9 +32,10 @@ This is a detailed list of changes in CSPro 7.7. For a more general overview, se
 	<li>Another new <link map.hgt>map</link> function, <logiccolor map>saveSnapshot</logiccolor>, saves the currently displayed map as an image.</li>
 	<li>A new function, <logiccolor>path.getRelativePath</logiccolor>, returns a relative path based on a path's location relative to a directory.</li>	
 	<li>Another new <link path.hgt>path</link> function, <logiccolor>path.selectFile</logiccolor>, shows the operator a visual listing of the file system and returns the path of the file the operator selected.</li>	
-	<li>The <logiccolor>dirlist</logiccolor> function, with a new syntax using <link function_named_arguments.hgt>named arguments</link>, provides additional ways to specify the source directory and wildcard filters. Hidden and system files are no longer included in the directory listing.</li>
 	<li>A new function, <logiccolor>inadvance</logiccolor>, indicates if an advance is in progress in a data entry application, allowing for the conditional execution of logic based on whether an enumerator has directly entered a field.</li>
 	<li>A new function, <logiccolor>currentkey</logiccolor>, returns a key string comprised of a case's current IDs (as opposed to <logiccolor>key</logiccolor>, which uses a case's ID as they existed when the case was last loaded or written).</li>
+	<li>A new function, <logiccolor>synctime</logiccolor>, returns the time of the last synchronization of a data file or a specific case. This function can be used to determine if any cases have not been synced.</li>
+	<li>The <logiccolor>dirlist</logiccolor> function, with a new syntax using <link function_named_arguments.hgt>named arguments</link>, provides additional ways to specify the source directory and wildcard filters. Hidden and system files are no longer included in the directory listing.</li>
 	<li>The <logiccolor>getproperty</logiccolor> function can now return some system properties (such as the screen resolution).</li>
 	<li>The <logiccolor>setproperty</logiccolor> function's property value can be specified as a numeric expression instead of having to be given as a string.</li>
 	<li>The <logiccolor>setoutput</logiccolor> function can take a string list as an argument to facilitate specifying multiple output data sources.</li>

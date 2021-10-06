@@ -6,13 +6,16 @@
 d = timestamp();
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
 The <logiccolor>timestamp</logiccolor> function returns the UNIX time, which is, in Coordinated Universal Time (UTC), the number of seconds that have elapsed since January 1, 1970. This value is used by many computer programs and is thus useful for storing times as well as calculating timespans. Because the time is in UTC, it eliminates the need to worry about time zones when working with times.
 
+
 <subheader>Return Value</subheader>
 
 The function returns the UNIX time as a decimal value. The integer part of this value is the number of elapsed seconds, while the decimal part contains the milliseconds.
+
 
 <subheader>Example</subheader>
 
@@ -32,4 +35,5 @@ postproc
 	SURVEY_DURATION = timestamp() - surveyStartTime;
 </logic>
 
-<seealso timestring_function.hgt systime_function.hgt sysdate_function.hgt filetime_function.hgt />
+
+<seealso timestring_function.hgt systime_function.hgt sysdate_function.hgt filetime_function.hgt synctime_function.hgt />

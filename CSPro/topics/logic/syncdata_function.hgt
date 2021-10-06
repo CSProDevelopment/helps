@@ -6,6 +6,7 @@
 b = syncdata(<arg>direction</arg>, <arg>dictionary_name</arg>『, <arg>sync_universe</arg>』);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
 The <logiccolor>syncdata</logiccolor> function transfers cases in a CSPro data file between a device and a synchronization server. Before calling <logiccolor>syncdata</logiccolor>, you must first connect to the server by calling <logiccolor>syncconnect</logiccolor>.
@@ -18,7 +19,7 @@ The function can upload cases from the local device (client) to the server as we
 	<li><b>BOTH</b>: Sync cases in the local data file with the server in both directions (i.e., perform both a GET and a PUT).</li>
 </list>
 
-The <arg>dictionary_name</arg> argument must be the name of a data dictionary corresponding to the data file to synchronize. This can be either the dictionary for the main data file or an external dictionary. CSPro uses the data file that is currently associated with this dictionary, either because it was specified when the application was started or via a call to <logiccolor>setfile</logiccolor> from application logic.
+The <arg>dictionary_name</arg> argument must be the name of a data dictionary corresponding to the data file to synchronize. This dictionary must be an external dictionary. CSPro uses the data file that is currently associated with this dictionary, either because it was specified when the application was started or via a call to <logiccolor>setfile</logiccolor> from application logic.
 
 For synchronization with a CSWeb server, the dictionary must first be uploaded to the server. (See the <link CSWeb::introduction_to_csweb.hgt>CSWeb help documentation</link> for more information.)
 
@@ -30,9 +31,13 @@ The <logiccolor>syncdata</logiccolor> function keeps track of which cases are tr
 
 The <logiccolor>syncdata</logiccolor> function is only supported on data files in <link data_sources.hgt>CSPro DB</link> or <link data_sources.hgt>Encrypted CSPro DB</link> formats. Data files in the legacy text format may not be synchronized using <logiccolor>syncdata</logiccolor> but instead can be transferred using the <logiccolor>syncfile</logiccolor> function. That function always transfers the entire file, however, increasing the amount of data transferred and allowing for one interviewer to overwrite the changes of another.
 
+You can use the <logiccolor>synctime</logiccolor> function to get the time of the last <logiccolor>syncdata</logiccolor> call.
+
+
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the transfer was successful and 0 (false) otherwise.
+
 
 <subheader>Example 1</subheader>
 
@@ -50,18 +55,20 @@ if syncconnect(CSWeb, "https://www.myserver.org/api") then
 endif;
 </logic>
 
+
 <subheader>Example 2</subheader>
 
 <logic>
 if syncconnect(Bluetooth) then
 
 	// sync data for only the province and district assigned to the interviewer
-	string assignmentUniverse = maketext("%v%v", ASSIGNED_PROVINCE, ASSIGNED_DISTRICT);
-	syncdata(BOTH, CENSUS_DICT, assignmentUniverse);
+	string assignment_universe = maketext("%v%v", ASSIGNED_PROVINCE, ASSIGNED_DISTRICT);
+	syncdata(BOTH, CENSUS_DICT, assignment_universe);
 
 	syncdisconnect();
 
 endif;
 </logic>
 
-<seealso synchronization.hgt syncconnect_function.hgt syncfile_function.hgt syncparadata_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />
+
+<seealso synchronization.hgt syncconnect_function.hgt syncfile_function.hgt syncparadata_function.hgt syncdisconnect_function.hgt syncserver_function.hgt synctime_function.hgt  />
