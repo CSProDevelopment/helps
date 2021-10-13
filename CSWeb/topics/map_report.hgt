@@ -1,0 +1,62 @@
+﻿<title>Map Report</title>
+
+The Map Report helps visualize data. If each case has latitude and longitude data associated with it, they can be displayed on the map as a marker. This allows coverage of a geographical area to be reviewed in a glance. Each marker will display additional information if clicked on and from there the case can be opened to take a closer look at its data.
+
+<subheader>Upload Dictionary and Data</subheader>
+
+Upload the dictionary and then the data to the <b>Data</b> page. If the dictionary and data were already uploaded then this step can be skipped. However, the dictionary and data must include <b>latitude</b> and <b>longitude</b> data for each case. Otherwise, the case will not be displayed on the map.
+
+<subheader>Import Labels</subheader>
+
+By default only codes will be shown for id items. Id items appear as values for filters and optionally in the popup dialog. However, a CSV file can be imported that defines code and label pairs, so a label can be displayed in its place. The rules for defining these pairs are as follows:
+
+<list ordered>
+	<li>The <b>first</b> pair in the CSV file must define the <b>first dictionary id</b></li>
+	<li>Each following pair must correspond to a dictionary id in <b>consecutive order</b></li>
+	<li>Dictionary ids do not require a corresponding pair. However, once a dictionary id has been <b>ignored no more can be defined</b>. The code will be displayed.</li>
+</list>
+
+Labels can be imported by clicking the <b>Import Report Labels</b> button on the <b>Data</b> page.
+
+<subheader>Add a Database</subheader>
+
+Add a new database to using the MySQL command line, MySQL workbench, or phpMyAdmin. Create a user with access to the new database. For security reasons the database user should have a corresponding password. This database is different than the database created during the setup of CSWeb. The database will hold relational data after <link CSWeb::data_settings.hgt>processing cases</link>.
+
+<subheader>Add a Configuration</subheader>
+
+See instructions for <link CSWeb::data_settings.hgt>Add Configuration</link>. At the bottom of the <b>Add Configuration</b> dialog check the <b>Enable Map Report</b> checkbox. Then the following configuration details can be entered.
+
+<list ordered>
+	<li> <b>Basemap type</b>: Will use ESRI or Mapbox basemap. </li>
+	<li> <b>Basemap key</b>: Provide an access token. Will need to login into the official Mapbox website. Not necessary if using ESRI. </li>
+	<li> <b>Latitude</b>: Specify the latitude field in the dictionary. </li>
+	<li> <b>Longitude</b>: Specify the longitude field in the dictionary. </li>
+	<li> <b>Map popup items (max 5)</b>: Customize the popup dialog for each marker with additional data from the dictionary. </li>
+</list>
+
+<subheader>Run CSWeb Command Line Process</subheader>
+
+See instructions for <link CSWeb::data_settings.hgt>Processing Cases</link>.
+
+<subheader>Viewing a Map Report</subheader>
+
+Click <b>Map Report</b> on the sidebar to display the map. 
+
+<list ordered>
+	<li> <b>Zoom</b>: Located in the top left-hand corner of the map. Press the <b>+ icon</b> to zoom out and the <b>- icon</b> to zoom in. Alternatively, the mouse wheel will zoom in and out.</li>
+	<li> <b>Filter</b>: Located below the zoom icon. Two levels of filtering are available. They will correspond to the first two id items in the dictionary. A selected filter will filter which map markers are shown on the map.</li>
+	<li> <b>Map type</b>: Located in the top right-hand corner of the map.  Select one of four different types (normal, hybrid, satellite, terain) of maps to display.</li>
+	<li> <b>Pop up dialog</b>: Click on a marker and a popup dialog will display. By default this dialog will include the case key, latitude, longitude, and a <b>View Case</b> link to open the case data. Additionally, information from <b>map popup items</b> will be included if they were selected when adding the configuration.</li>
+</list>
+
+<subheader>Setup Checklist</subheader>
+
+<list ordered>
+	<li> Upload dictionary </li>
+	<li> Upload data (must include latitude and longitude data) </li>
+	<li> (Optional) Import labels </li>
+	<li> Add a database </li>
+	<li> Add a configuration </li>
+	<li> Check Enable Map Report </li>
+	<li> Run CSWeb command line process </li>
+</list>
