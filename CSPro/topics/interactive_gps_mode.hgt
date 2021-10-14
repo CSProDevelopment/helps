@@ -1,0 +1,33 @@
+﻿<title>Interactive GPS Mode</title>
+
+<subheader>Mapless Read</subheader>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = gps(readInteractive『,』
+	『baseMap := <arg>none<arg>,』
+	『readDuration := <arg>duration_in_seconds</arg>,』
+	『message := <arg>message</arg>』);
+</logicsyntax>
+
+<subheader>Map Read</subheader>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = gps(readInteractive『,』
+	『baseMap := <arg>none<arg>,』
+	『readDuration := <arg>duration_in_seconds</arg>,』
+	『message := <arg>message</arg>』);
+</logicsyntax>
+
+<subheader>Selection-Based Read</subheader>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = gps(select『,』
+	『baseMap := <arg>base_map_type<arg>,』
+	『message := <arg>message</arg>』);
+</logicsyntax>
