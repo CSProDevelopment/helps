@@ -15,7 +15,13 @@ Displays a widget with a satellite image that can be tapped to take a GPS readin
 
 <subheader>Format</subheader>
 
-todo: logic syntax appears incorrectly
+<logicsyntax>
+b = gps(readInteractive『,』
+	『optional message",』
+	『baseMap := <arg>none</arg>,』
+	『readDuration := <arg>duration_in_seconds</arg>,』
+	『message := <arg>message</arg>』);
+</logicsyntax>
 
 <subheader>Description</subheader>
 
@@ -28,7 +34,12 @@ Displays a widget with a map and current location indicator. Press the "CAPTURE 
 
 <subheader>Format</subheader>
 
-todo: logic syntax appears incorrectly
+<logicsyntax>
+b = gps(readInteractive『,』
+	『optional message,』
+	『baseMap := <arg>base_map_type or filename</arg>,』
+	『message := <arg>message</arg>』);
+</logicsyntax>
 
 <subheader>Description</subheader>
 
@@ -40,7 +51,12 @@ Displays a widget with a map, current location indicator, and crosshairs. The cr
 
 <subheader>Format</subheader>
 
-todo: logic syntax appears incorrectly
+<logicsyntax>
+b = gps(select『,』
+	『optional message",』
+	『baseMap := <arg>base_map_type or filename</arg>,』
+	『message := <arg>message</arg>』);
+</logicsyntax>
 
 <subheader>Description</subheader>
 
