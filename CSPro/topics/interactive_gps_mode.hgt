@@ -1,33 +1,51 @@
 ﻿<title>Interactive GPS Mode</title>
 
-<subheader>Mapless Read</subheader>
+The interactive GPS mode gives the user three easy and different interfaces to take a GPS reading. It reduces the logic necessary to take a GPS reading in two ways.
+
+<list>
+  <li> Each widgets provides an interface and removes the need for interface logic. </li>
+  <li> Automatically connects and disconnects from the GPS unit. </li>
+</list>
+
+There are three different Interactive GPS Modes described below. Each are <b>Android only</b>.
+
+<subheader>Satellite Widget</subheader>
+
+Displays a widget with a satellite image that can be tapped to take a GPS reading. Close the widget by pressing the close bottom at the bottom.
 
 <subheader>Format</subheader>
 
-<logicsyntax>
-b = gps(readInteractive『,』
-	『baseMap := <arg>none<arg>,』
-	『readDuration := <arg>duration_in_seconds</arg>,』
-	『message := <arg>message</arg>』);
-</logicsyntax>
+todo: logic syntax appears incorrectly
 
-<subheader>Map Read</subheader>
+<subheader>Description</subheader>
 
-<subheader>Format</subheader>
+The <logiccolor>gps</logiccolor> function must be passed the 
+<arg>readInteractive</arg> argument with the optional <arg>baseMap</arg> argument set to none. An optional <arg>readDuration</arg> argument may be used to set the read duration, if it is not specified the read duration will default to 15 seconds. A text string can be provided as either an optional second string argument, or it can be passing in the optional <arg>message</arg> argument set to a string.
 
-<logicsyntax>
-b = gps(readInteractive『,』
-	『baseMap := <arg>none<arg>,』
-	『readDuration := <arg>duration_in_seconds</arg>,』
-	『message := <arg>message</arg>』);
-</logicsyntax>
+<subheader>Map Widget: Current Location</subheader>
 
-<subheader>Selection-Based Read</subheader>
+Displays a widget with a map and current location indicator. Press the "CAPTURE CURRENT GPS LOCATION" to take a GPS reading. Close the widget by pressing the close bottom at the bottom.
 
 <subheader>Format</subheader>
 
-<logicsyntax>
-b = gps(select『,』
-	『baseMap := <arg>base_map_type<arg>,』
-	『message := <arg>message</arg>』);
-</logicsyntax>
+todo: logic syntax appears incorrectly
+
+<subheader>Description</subheader>
+
+The <logiccolor>gps</logiccolor> function must be passed the <arg>readInteractive</arg> argument. The optional <arg>baseMap</arg> argument can set to one of four map types (normal, satellite, hybrid, and terrain). Additionally, a filename can be provided for a TPK or MBTile to display a map while offline. If the optional <arg>baseMap</arg> argument is not passed then the Base Map Calculation will be used. A text string can be provided as either an optional second string argument, or it can be passing in the optional <arg>message</arg> argument set to a string.
+
+<subheader>Map Widget: Select Location</subheader>
+
+Displays a widget with a map, current location indicator, and crosshairs. The crosshairs allow a location to be selected. Press the "CAPTURE SELECTED LOCATION" to take a GPS reading indicated by the crosshairs. Close the widget by pressing the close bottom at the bottom.
+
+<subheader>Format</subheader>
+
+todo: logic syntax appears incorrectly
+
+<subheader>Description</subheader>
+
+The <logiccolor>gps</logiccolor> function must be passed the <arg>select</arg> argument. The optional <arg>baseMap</arg> argument can set to one of four map types (normal, satellite, hybrid, and terrain). Additionally, a filename can be provided for a TPK or MBTile to display a map while offline. If the optional <arg>baseMap</arg> argument is not passed then the Base Map Calculation will be used. A text string can be provided as either an optional second string argument, or it can be passing in the optional <arg>message</arg> argument set to a string. A text string can be provided as either an optional second string argument, or it can be passing in the optional <arg>message</arg> argument set to a string.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if successful and 0 (false). If the function is run on Windows <logiccolor>default</logiccolor> is returned.
