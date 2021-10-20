@@ -1,10 +1,14 @@
 ﻿<title>Multiple Language Dictionaries</title>
 
-It is possible to specify your dictionary's labels in more than one language. To do this, while editing your dictionary, from the <b>Edit</b> menu, select <b>Languages</b>. You can add a language the same way that you <link define_languages.hgt>define CAPI languages</link>. Once your application has more than one language, a toolbar will appear showing the names of the languages:
+You can create dictionary labels in more than one language. To do this, while editing your dictionary, go to the <b>Edit</b> menu and select <b>Languages</b>. You will be presented with the following dialog box, from where you can add (or remove or modify) languages (this is the same way that you <link define_languages.hgt>define CAPI languages</link>). 
+
+<center><image multiple_languages_add_dialog.png /></center>
+
+Once your application has more than one language, the dictionary toolbar will be updated to display the names of all defined languages:
 
 <center><image multiple_languages_toolbar.png /></center>
 
-Each language has its own set of labels for all of the dictionary elements (record labels, item labels, value labels, occurrence labels, etc.). If a label is not defined for a given language, the label will default to the label for the first language. To simplify the editing of labels, you can press the keyboard shortcut <b>Control+Alt+L</b> to change between the languages.
+Each language will have its own set of labels for all of the dictionary elements (record labels, item labels, value labels, occurrence labels, etc.). If a label is not defined for a given language, the label will default to the label for the first language. To simplify the editing of labels, you can press the keyboard shortcut <b>Ctrl+Alt+L</b> to switch between the languages.
 
 When adding items to your data entry forms, you can specify that the field labels should be <link change_field_properties.hgt>directly linked to the dictionary label</link>. This default setting ensures that the field labels change when the user changes the language during data entry.
 

@@ -99,6 +99,11 @@ select_relative_or_absolute_positioning.hgt | Absolute											#	Absolute
 	relative_and_absolute_mode.hgt | Mode														#		Mode
 	select_relative_or_absolute_positioning.hgt | Positioning									#		Positioning
 abs_function.hgt | Abs Function																	#	Abs Function
+data_entry_keys.hgt | Accelerator Keys															#	Accelerator Keys
+	batch_edit_keys.hgt | Batch Edit															#		Batch Edit
+	data_dictionary_keys.hgt | Data Dictionary													#		Data Dictionary
+	data_entry_keys.hgt | Data Entry															#		Data Entry
+	tabulation_keys.hgt | Tabulation															#		Tabulation
 accept_function.hgt																				#	Accept Function
 add_dictionary_elements.hgt | Add																#	Add
 	add_dictionary_elements.hgt | Dictionary Elements											#		Dictionary Elements
@@ -231,6 +236,7 @@ audio.hgt																						#	Audio Object
 	audio_save_function.hgt																		#		Audio.Save Function
 	audio_stop_function.hgt																		#		Audio.Stop Function
 	audio_statement.hgt																			#		Audio Statement
+data_entry_keys.hgt | Autocomplete Word   														#	Autocomplete Word
 methods_of_correcting_data.hgt | Automatic														#	Automatic
 	methods_of_correcting_data.hgt | Correction													#		Correction
 	manipulate_automatic_reports.hgt | Edit Report												#		Edit Report
@@ -680,6 +686,7 @@ data_entry_elements.hgt | Description															#	Description
 	data_entry_elements.hgt | Rosters															#		Rosters
 issues_to_consider_when_designing_a_form.hgt | Design a Form									#	Design a Form
 	issues_to_consider_when_designing_a_form.hgt | Issues										#		Issues
+designer_font_preferences.hgt																	#	Designer Font Preferences
 develop_comprehensive_test_file.hgt																#	Develop Comprehensive Test File
 diagnostics_function.hgt																		#	Diagnostics Function
 dictionary_types.hgt | Dictionary																#	Dictionary
@@ -825,6 +832,10 @@ dictionary_types.hgt | External Dictionary														#	External Dictionary
 external_files.hgt																				#	External Files
 	external_files.hgt | About																	#		About
 	external_files.hgt | Sharing																#		Sharing
+systemapp_exec_function.hgt | External Applications, launching									#	External Applications, launching
+	systemapp.hgt																				#		SystemApp Object
+	execsystem_function_desktop.hgt																#		ExecSystem Function (Desktop)
+	execsystem_function_mobile.hgt																#		ExecSystem Function (Mobile)
 logic_file_apc.hgt | External Logic File														#	External Logic File
 message_file_mgf.hgt | External Message File													#	External Message File
 viewing_multiple_and_facing_pages.hgt | Facing Pages											#	Facing Pages
@@ -918,6 +929,7 @@ change_field_font.hgt | Font																	#	Font
 	change_field_font.hgt | Change Field														#		Change Field
 	change_fonts_or_colors.hgt | Change Fonts in a Table										#		Change Fonts in a Table
 	change_default_text_font.hgt | Default Text													#		Default Text
+	designer_font_preferences.hgt																#		Designer Font Preferences
 	change_field_font.hgt | Field																#		Field
 	print_all_or_part_of_a_document.hgt | Printer Font											#		Printer Font
 change_the_print_page_setup.hgt | Footer														#	Footer
@@ -1045,7 +1057,7 @@ map_get_marker_longitude_function.hgt | GetMarkerLongitude Function								#	Get
 getnote_function.hgt																			#	GetNote Function
 getocclabel_function.hgt																		#	GetOccLabel Function
 getoperatorid_function.hgt																		#	GetOperatorId Function
-screen_orientation.hgt | Getorientation Function												#	Getorientation Function
+screen_orientation.hgt | GetOrientation Function												#	Getorientation Function
 getos_function.hgt																				#	GetOS Function
 getproperty_function.hgt																		#	GetProperty Function
 	geometry_getproperty_function.hgt															#		Geometry.GetProperty Function
@@ -1257,6 +1269,10 @@ define_languages.hgt | Languages																#	Languages
 	getlanguage_function.hgt																	#		GetLanguage Function
 	multiple_language_dictionaries.hgt															#		Multiple Language Dictionaries
 	setlanguage_function.hgt																	#		SetLanguage Function
+systemapp_exec_function.hgt | Launch an external application									#	Launch an external application
+	systemapp.hgt																				#		SystemApp Object
+	execsystem_function_desktop.hgt																#		ExecSystem Function (Desktop)
+	execsystem_function_mobile.hgt																#		ExecSystem Function (Mobile)
 cspro_initial_screen_layout.hgt | Layout														#	Layout
 	cspro_initial_screen_layout.hgt | Initial Screen											#		Initial Screen
 	batch_application_screen_layout.hgt | Screen												#		Screen
@@ -1410,6 +1426,7 @@ geometry_maxlongitude_function.hgt | MaxLongitude Function										#	MaxLongitu
 maxocc_function.hgt																				#	MaxOcc Function
 maxvalue_function.hgt																			#	MaxValue Function
 max_function.hgt																				#	Max Function
+offline_maps.hgt | MBTiles																		#	MBTiles
 add_summary_statistics_to_a_table.hgt | Mean													#	Mean
 	add_summary_statistics_to_a_table.hgt														#		Add Summary Statistics to a Table
 	produce_summary_statistics.hgt																#		Produce Summary Statistics
@@ -1772,6 +1789,7 @@ protect_function.hgt																			#	Protect Function
 publishdate_function.hgt																		#	PublishDate Function
 putdeck_function.hgt																			#	PutDeck Function
 putnote_function.hgt | Putnote																	#	Putnote
+barcode_read_function.hgt | QR Code																#	Read QR Code
 questionnaire_and_dictionary_organization.hgt | Questionnaire									#	Questionnaire
 	questionnaire_and_dictionary_organization.hgt | Form										#		Form
 	questionnaire_and_dictionary_organization.hgt | Identification								#		Identification
@@ -2023,7 +2041,7 @@ setocclabel_function.hgt																		#	SetOccLabel Function
 map_set_on_click_function.hgt | SetOnClick Function												#	SetOnClick Function
 	map_set_on_click_function.hgt																#		Map.SetOnClick Function
 setoperatorid_function.hgt																		#	SetOperatorId Function
-screen_orientation.hgt | Setorientation Function												#	Setorientation Function
+screen_orientation.hgt | SetOrientation Function												#	Setorientation Function
 setoutput_function.hgt																			#	SetOutput Function
 setproperty_function.hgt																		#	SetProperty Function
 	geometry_setproperty_function.hgt															#		Geometry.SetProperty Function
@@ -2344,6 +2362,7 @@ debug_table_totals.hgt | Total																	#	Total
 	add_percents_to_a_table.hgt | Percent														#		Percent
 totocc_function.hgt																				#	TotOcc Function
 toupper_function.hgt																			#	ToUpper Function
+offline_maps.hgt | TPK files																	#	TPK files
 geometry_tracepolygon_function.hgt | TracePolygon Function										#	TracePolygon Function
 	geometry_tracepolygon_function.hgt															#		Geometry.TracePolygon Function
 trace_function.hgt																				#	Trace Function
