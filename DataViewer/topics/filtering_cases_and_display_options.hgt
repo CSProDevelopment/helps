@@ -6,9 +6,16 @@ To view a subset of the cases in the data file, you can enter a search query to 
 
 <center><image filter_cases.png /></center>
 
+<b>Note:</b>
+<list>
+<li>Filtering cases with the key prefix works in tandem with any display file filters (see below).</li>
+<li>As implied (key <b><i>prefix</i></b>), wildcard symbols are not allowed; therefore, the search will always start from the beginning of the case ID. </li>
+<li>To dismiss the key prefix filter, click again on the magnification icon.</li>
+</list>
+
 <subheader>Display Options</subheader>
 
-There are several display options that you can change. From the <b>Listing</b> menu:
+There are several display options that you can choose. From the <b>Listing</b> menu:
 
 <list>
 	<li><b>File Order</b>:<list>
@@ -35,8 +42,8 @@ There are several display options that you can change. From the <b>Listing</b> m
 From the <b>Case</b> menu:
 
 <list>
-	<li><b>Language</b>: Uses the labels in the specified language.</li>
-	<li><b>Dictionary Display / Item Label Type</b>: Controls how dictionary names are displayed, using the name, label, or both.</li>
+	<li><b>Language</b>: Uses the labels in the specified language, should other languages have been defined in the dictionary.</li>
+	<li><b>Dictionary Display / Item Label Type</b>: Controls how dictionary names are displayed, using the label, name, or both.</li>
 	<li><b>Dictionary Display / Item Type</b>: When an item and subitem pairing exists, this controls whether or not the item, subitem, or both are displayed.</li>
 	<li><b>Roster Display / Orientation</b>: Determines if records should be shown in a horizontal or vertical roster format.</li>
 	<li><b>Roster Display / Occurrence Labels</b>: For repeating records or items with occurrence labels, controls whether or not the label, as opposed to the occurrence number, is displayed.</li>
@@ -46,5 +53,19 @@ From the <b>Case</b> menu:
 	<li><b>Case Details / Errors</b>: Controls whether or not case errors are shown. Case errors include messages such as whether or not a case has more records than allowed based on dictionary settings.</li>
 </list>
 
+From the <b>View</b> menu:
 
-The <b>Refresh</b> option on the <b>View</b> menu allows you to reload the data file's contents.
+<list>
+	<li><b>Refresh</b>: Allows you to reload the data file's contents.</li>
+	<li><b>Data Summary</b>: <font red>Closes the right panel display? What exactly is it supposed to do? See my comment about a possible bug in my notes on the Data Viewer (a Word doc)</font>.</li>
+	<li><b>Logic Helper</b>: If no case data is being viewed, provides several logic templates for conducting basic file operations (opening a data file, counting the number of cases in a file, looping through the cases, etc). If a case is open, it will additionally give logic examples on how to load or delete a specific case. Choosing subsequent cases in the Data Viewer tree will adjust the case logic for the selected case.</li>
+</list>
+
+From the <b>Tools</b> menu:
+
+<list>
+	<li><link CSExport::introduction_to_export_data.hgt>Export Data</link>: Launches the CSPro utility using the embedded (<b>.csdb(e)</b>) or associated (<b>.dat</b>) dictionary for the currently-loaded data file.</li>
+	<li><link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link>: Launches the CSPro utility using the embedded (<b>.csdb(e)</b>) or associated (<b>.dat</b>) dictionary for the currently-loaded data file.</li>
+</list>
+
+
