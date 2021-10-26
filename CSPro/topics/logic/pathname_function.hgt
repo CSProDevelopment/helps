@@ -14,6 +14,7 @@ The following <arg>path_type</arg> arguments return the folder name associated w
 	<cell><arg>path_type</arg></cell><cell><b>Description</b></cell>
 	<cell><b>Application</b></cell><cell>The folder where the application file (.ent or .bch) is located.</cell>
 	<cell><b>CSPro</b></cell><cell>The folder where the CSPro executable files are located.</cell>
+	<cell><b>Downloads</b></cell><cell>The operating system's directory for storing downloaded files.</cell>
 	<cell><b>InputFile</b></cell><cell>The folder where the main data file (associated with the primary dictionary) is located.</cell>
 	<cell><b>Temp</b></cell><cell>The operating system's temporary directory.</cell>
 </table></indent>
@@ -22,8 +23,8 @@ There are some options specific to Windows:
 
 <indent><table 2>
 	<cell><arg>path_type</arg></cell><cell><b>Description</b></cell>
-	<cell><b>Documents</b></cell><cell>The current user's Documents folder.</cell>
 	<cell><b>Desktop</b></cell><cell>The current user's Desktop folder.</cell>
+	<cell><b>Documents</b></cell><cell>The current user's Documents folder.</cell>
 	<cell><b>ProgramFiles32</b></cell><cell>The folder containing installed 32-bit applications.</cell>
 	<cell><b>ProgramFiles64</b></cell><cell>The folder containing installed 64-bit applications. If the computer has only a 32-bit processor, this returns the same value as ProgramFiles32.</cell>
 	<cell><b>Windows</b></cell><cell>The folder contains the Windows operating system.</cell>
