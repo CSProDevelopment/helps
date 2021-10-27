@@ -18,47 +18,54 @@ To view a subset of the cases in the data file, you can enter a search query to 
 There are several display options that you can choose. From the <b>Listing</b> menu:
 
 <list>
-	<li><b>File Order</b>:<list>
+	<li><b>File Order</b><list>
 		<li><b>Sequential</b>: Displays the case listing in file order.</li>
 		<li><b>Indexed</b>: Displays the case listing in key order.</li>
 	</list></li>
-	<li><b>File Filters</b>:<list>
+	<li><b>File Filters</b><list>
 		<li><b>All Cases</b>: All cases in the data file, including deleted cases, are displayed.</li>
 		<li><b>Not Deleted Cases Only</b>: Cases that are deleted are not shown.</li>
 		<li><b>Partial Cases Only</b>: Only partially saved cases are shown.</li>
 		<li><b>Duplicate Cases Only</b>: Only cases that share an ID with other cases are shown.</li>
 	</list></li>
-	<li><b>File Order</b>:<list>
+	<li><b>Case Order</b><list>
 		<li><b>Ascending</b>: Using the selected file order, displays the cases in ascending order.</li>
 		<li><b>Descending</b>: Displays the case in descending order.</li>
 	</list></li>
-	<li><b>Case Label Type</b>:<list>
+	<li><b>Case Label Type</b><list>
 		<li><b>Case Label</b>: Shows the case label, or the case key if no case label is set.</li>
 		<li><b>Case Key</b>: Shows the case key (a string containing a case's IDs).</li>
 	</list></li>
 </list>
 
-
 From the <b>Case</b> menu:
 
 <list>
 	<li><b>Language</b>: Uses the labels in the specified language, should other languages have been defined in the dictionary.</li>
-	<li><b>Dictionary Display / Item Label Type</b>: Controls how dictionary names are displayed, using the label, name, or both.</li>
-	<li><b>Dictionary Display / Item Type</b>: When an item and subitem pairing exists, this controls whether or not the item, subitem, or both are displayed.</li>
-	<li><b>Roster Display / Orientation</b>: Determines if records should be shown in a horizontal or vertical roster format.</li>
-	<li><b>Roster Display / Occurrence Labels</b>: For repeating records or items with occurrence labels, controls whether or not the label, as opposed to the occurrence number, is displayed.</li>
-	<li><b>Value Display / Value Label Type</b>: Determines how values are displayed in a variety of formats, including using the code, label, or both.</li>
-	<li><b>Value Display / Blank Values</b>: Controls whether or not items with blank values are displayed.</li>
-	<li><b>Case Details / Details</b>: Determines whether or not to show extra and non-default information about cases.</li>
-	<li><b>Case Details / Errors</b>: Controls whether or not case errors are shown. Case errors include messages such as whether or not a case has more records than allowed based on dictionary settings.</li>
+	<li><b>Dictionary Display</b><list>
+		<li><b>Item Descriptor</b>: Controls how dictionary names are displayed, using the label, name, or both.</li>
+		<li><b>Item/Subitem Display</b>: When an item and subitem pairing exists, this controls whether or not the item, subitem, or both are displayed.</li>
+	</list></li>
+	<li><b>Roster Display</b><list>
+		<li><b>Orientation</b>: Determines if records should be shown in a horizontal or vertical roster layout.</li>
+		<li><b>Occurrence Labels</b>: For repeating records or items with occurrence labels, controls whether or not the label, as opposed to the occurrence number, is displayed.</li>
+	</list></li>
+	<li><b>Value Display</b><list>
+		<li><b>Value Label Type</b>: Determines how values are displayed in a variety of formats, including using the code, label, or both.</li>
+		<li><b>Blank Values</b>: Controls whether or not items with blank values are displayed.</li>
+	</list></li>	
+	<li><b>Case Details</b><list>
+		<li><b>Details</b>: Determines whether or not to show extra and non-default information about cases.</li>
+		<li><b>Errors</b>: Controls whether or not case errors are shown. Case errors include messages such as whether or not a case has more records than allowed based on dictionary settings.</li>
+	</list></li>	
 </list>
 
 From the <b>View</b> menu:
 
 <list>
-	<li><b>Refresh</b>: Allows you to reload the data file's contents.</li>
-	<li><b>Data Summary</b>: <font red>Closes the right panel display? What exactly is it supposed to do? See my comment about a possible bug in my notes on the Data Viewer (a Word doc)</font>.</li>
-	<li><b>Logic Helper</b>: If no case data is being viewed, provides several logic templates for conducting basic file operations (opening a data file, counting the number of cases in a file, looping through the cases, etc). If a case is open, it will additionally give logic examples on how to load or delete a specific case. Choosing subsequent cases in the Data Viewer tree will adjust the case logic for the selected case.</li>
+	<li><b>Refresh</b>: Reloads the data file, should its contents have been modified outside of Data Viewer during viewing.</li>
+	<li><b>Data Summary</b>: Displays the data file name, data file type (.csdb, Encrypted .csdb, or text), and the number of cases in the file.</li>
+	<li><b>Logic Helper</b>: If no case data is being viewed, provides several logic templates for conducting basic file operations (opening a data file, counting the number of cases in a file, looping through the cases, etc). If case data is being viewed, it will additionally give logic examples on how to load or delete the case being viewed. Choosing subsequent cases in the Data Viewer tree will adjust the case logic for the selected case.</li>
 </list>
 
 From the <b>Tools</b> menu:
@@ -68,4 +75,4 @@ From the <b>Tools</b> menu:
 	<li><link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link>: Launches the CSPro utility using the embedded (<b>.csdb(e)</b>) or associated (<b>.dat</b>) dictionary for the currently-loaded data file.</li>
 </list>
 
-
+<seealso navigating_data_viewer_windows.hgt />
