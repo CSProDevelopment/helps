@@ -1,0 +1,17 @@
+<subheader>CSPro DB (.csdb)</subheader>
+
+<b>.csdb</b> is the default file type for Input, Output, and External (i.e., lookup) files, as well as the file generated from any <logiccolor>impute</logiccolor> function calls that use the <logiccolor>stat</logiccolor> option. Listing files can also be written as .csdb files, though the option must be chosen from the dialog's Source Type dropdown
+
+Through the use of <link CSPro::connection_string.hgt>connection strings</link>, you can choose what you want to write to your output files. For example, suppose you just want one record written out, not all records; this is possible with the following parameters:
+
+<pff>population_rec.csdb|record=POP_REC&type=CSProExport</pff>
+
+When this happens a CSPro dictionary will also be generated; it will have the same filename, with <b>.dcf</b> appended to it. Using the above example, you would see <b>population_rec.csdb.dcf</b> had been created. If you wish to control the dictionary's name, you can do so via the "dictionary" <topic connection_string_parameters.hgt /> as follows:
+
+<pff>population_rec.csdb|type=CSProExport&record=POP_REC&dictionary=pop_rec.dcf</pff>
+
+Note how the "type" and "record" arguments were switched above. After the pipe symbol has been given, connection strings can be given in any order; they just need to be combined with the ampersand symbol (&).
+
+<subheader>CSPro DB Encrypted (.csdbe)</subheader>
+
+For any source file entry that allows <b>.csdb</b> files, CSPro's encrypted file type (<b>.csdbe</b>) can also be used. For Input and existing Lookup files, this means the file has already been given a password, which must match the file's password or the run will fail. For files being created (Output, Listing, and possibly Lookup), you will be prompted for each file's password after pressing "OK" on the <b>CSBatch</b> file association dialog. Alternatively, you can provide the password along with the filename by using a <link CSPro::connection_string.hgt>connection string</link>. For example, <logiccolor>"MyOutputFile.csdbe|password=s@feW0rd"</logiccolor>. Be sure to place the pipe symbol immediately after the filename, followed by "password=" and your desired password. See the <topic connection_string_parameters.hgt /> page for a full explanation of the available options and required syntax.

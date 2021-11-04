@@ -1,0 +1,120 @@
+﻿<title>Connection String Parameters</title>
+
+This page explains the numerous types of <link CSPro::connection_string.hgt>connection string</link> attributes available to you when working with files in the CSPro run dialogs. The following matrix presents all string attributes, and what file types they can be used by:
+
+<center><image connection_string_attributes.png /></center>
+
+The attributes listed above are presented below as section headings. When combined with the file name in a run dialog, using connection string attributes (properties) allows you to more tightly control how files are created. As outlined on the <link CSPro::connection_string.hgt>connection string</link> page, a connection string is made up of several components:
+
+<logicsyntax>
+<arg>file_name</arg> | <arg>property_name1</arg>=<arg>property_value1</arg> & <arg>property_name2</arg>=<arg>property_value2</arg> & <arg>property_name3</arg>=<arg>property_value3</arg>
+</logicsyntax>
+
+After the pipe symbol ("|") has been given, connection strings can be given in any order; they just need to be combined with the ampersand symbol (&).		
+		
+<subheader>record</subheader>
+
+When working with a datafile that contains 2+ records, this allows you to select a specific record for output. The format is as follows:
+
+<logicsyntax><arg>file_name</arg> | <arg>record</arg>=<arg>record_name</arg></logicsyntax>	
+
+An example of this attribute being used for the output data file is:
+<pff>.\pop_record.xlsx|record=POP_REC</pff>
+
+Note by combining this option for a given output file, you can create multiple output files. For example, if you dictionary contained a housing and population record, you could output both as separate files&mdash;and as different output file types&mdash;as follows:
+
+<pff>".\pop_record.xlsx|record=POP_REC" ".\housing_record.csv|record=HOUSE_REC"</pff>
+
+Note the first parameter will generate an Excel file, and the second will generate a <b>.csv</b> file. While appearing as a single entry in the run dialog, when you look at the <b>.pff</b> file, you will see they have been written on separate lines as follows:
+
+<pff>
+OutputData=.\pop_record.xlsx|record=POP_REC
+OutputData=.\housing_record.csv|record=HOUSE_REC
+</pff>
+
+If the record attribute is used to generate a CSPro file (either .csdb(e) or .dat), you must include the type attribute set to "CSProExport". This is necessary as it tells the exporter that a CSPro data file is being created, which prompts it to create the dictionary first. The exporter then uses that <b>.dcf</b> to construct the resultant datafile. Therefore, if the housing record above was being written to a .csdb file, the syntax would change to the following:
+
+<pff>.\housing_record.csdb|type=CSProExport&record=HOUSE_REC</pff>
+
+<subheader>mapped-special-values</subheader>
+
+If any special values have been defined in your dictionary (default, missing, or refused), using this option will allow you to control how those values will be written to your file. It can be used on all file types <font red>except CSPro files</font>.
+
+<logicsyntax><arg>file_name</arg> | <arg>mapped-special-values</arg>=<arg>mapped_value</arg>
+</logicsyntax>	
+
+where <arg>mapped_value</arg> can be one of the following:
+<list>
+	<li>code&mdash;the numeric value associated with the special value will be written</li>
+	<li>notappl&mdash;the special value will be written ("default", "missing", "refused")</li>
+	<li>software-missing&mdash;only available when working with SAS files
+</li>
+</list>
+
+<subheader>encoding</subheader>
+
+If you wish to write your files out in a particular encoding scheme, you can use the <b>encoding</b> parameter on <b>.csv</b>, semicolon, <b>.tsv</b>, and SAS files.
+
+<logicsyntax><arg>file_name</arg> | <arg>encoding</arg>=<arg>encoding_value</arg>
+</logicsyntax>	
+
+where <arg>encoding_value</arg> can be: ansi, utf-8, utf-8bom, or unicode
+
+<subheader>header</subheader>
+
+The <b>header</b> option is used with <b>.csv</b>, semicolon, <b>.tsv</b>, and Excel files. As the name implies, it controls the header (first) line written to these files. The available options are:
+	
+	<list>
+	<li>none&mdash;no header will be written</li>
+	<li>names&mdash;the dictionary item's unique name will be used as the column header (the default behavior when this attribute is not present)</li>
+	<li>labels&mdash;the dictionary item's label will be used as the column header</li>
+</list>
+	
+<subheader>values</subheader>
+	
+The <b>values</b> attribute is used with <b>.csv</b>, semicolon, <b>.tsv</b>, and Excel files. It controls how the data file's values are written to the file. Available options are:
+	
+	<list>
+	<li>codes&mdash;numeric codes will be written (the default behavior when this attribute is not present)</li>
+	<li>labels&mdash;the value set's label will be used (for example, if Sex=1 or 2, the labels might read Male and Female)</li>
+	<li>codes-and-labels&mdash;two columns will be written for each data point; the codes, followed by the value set label for that item</li>
+</list>
+
+For example, suppose you want to generate an Excel file that uses the labels in the header and generates two columns for each data point. The syntax for the Output Data file would be as follows:
+
+<pff>.\pop_rec.xlsx|record=POP_REC&header=labels&values=codes-and-labels</pff>
+
+<center><image values_and_labels_attribute.png /></center>
+
+You can see that generating two columns for the relationship, sex, and marital status variables clarified the meaning of those codes; however for other fields, such as age, no additional information is imparted.
+
+<font red>CONTINUE HERE</font>
+
+<subheader>decimal-mark</subheader>
+<subheader>vector</subheader>
+<subheader>factor</subheader>
+
+<subheader>dictionary</subheader>
+
+When generating CSPro data files, using this attribute allows you to explicitly control the file name for the dictionary that will be generated. For example, if this syntax was used for our output file:
+
+<pff>.\housing_record.csdb|type=CSProExport&record=HOUSE_REC</pff>
+
+A dictionary would be generated with the file name <b>housing_record.csdb.dcf</b>. If you would rather have it something else, you can control it by including the dictionary attribute:
+
+<pff>.\housing_record.csdb|type=CSProExport&record=HOUSE_REC&dictionary=housing_rec.dcf</pff>
+
+<subheader>syntax-file</subheader>
+
+<font red>finish</font> to create a SAS program/command file, syntax-file=&lt;FN>.sas
+
+<subheader>type</subheader>
+
+<font red>I haven't included it in the chart above, not sure if it's worth that</font>
+
+type=&lt;foo> is only necessary when the type can't be determined by the file extension; if CSPro can't figure it out, it defaults to text
+
+type=None | Text | CSProDB | EncryptedCSProDB | CSV | Semicolon | Tab | Excel |
+	CSProExport | R | SAS | SPSS | Stata
+
+    

@@ -1,0 +1,15 @@
+<subheader>Comma-Delimited (.csv)</subheader>
+
+This option is available for Output, External (i.e., lookup), and Listing files. It can also be used for the file generated from any <logiccolor>impute</logiccolor> function calls that use the <logiccolor>stat</logiccolor> option. It is a text-based file, readable by Excel or any ASCII editor (such as Notepad or Wordpad). Only non-repeating records will be output to the file; repeating records will be ignored.
+
+<subheader>Tab-delimited (.tsv)</subheader>
+
+This option is available for Output and External (i.e., lookup) files. It can also be used for the file generated from any <logiccolor>impute</logiccolor> function calls that use the <logiccolor>stat</logiccolor> option. However, only non-repeating records will be written to the .<b>tsv</b> file; repeating records will be ignored.
+
+<subheader>Excel (.xlsx)</subheader>
+
+This option is available for all file associations except the Input, Write, and (Saved) Array Files. This will create a native Excel file, which handles commas and single and double quotes correctly. When creating an Excel file, a separate tabsheet will be produced for each record type found.
+
+Additionally, with the usage of <link CSPro::connection_string.hgt>connection strings</link>, you can further control what is written to your Excel file. For example, if you only want the population record, and would also like to see columns for both the values (e.g., 1, 2) and corresponding labels (e.g., male, female) for each dictionary item found, the following <topic connection_string_parameters.hgt /> should be appended to the file name:
+
+<pff>.\POP_REC.xlsx|record=POP_REC&header=labels&values=codes-and-labels</pff>
