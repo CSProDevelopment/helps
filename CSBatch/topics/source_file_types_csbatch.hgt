@@ -2,7 +2,7 @@
 
 <subheader>Overview</subheader>
 
-With the release of 7.7, CSPro now offers more file types than ever to write to; more exciting, with the 7.7 release, all non-CSPro/text file types will be written to natively. No more two-step processing to produce your R, SAS, SPSS, or Stata files. In addition, some new file types have been introduced, such as Excel.
+With the release of 7.7, CSPro now offers more data source types than ever to read from and write to; more exciting, with the 7.7 release, all non-CSPro/text file types will be written to natively. No more two-step processing to produce your R, SAS, SPSS, or Stata files. In addition, some new file types have been introduced, such as Excel.
 
 The following <b>File Associations Matrix</b> provides a summary of the possible file formats found in the <link define_file_associations.hgt>Batch Run Dialog</link>:
 
@@ -10,7 +10,7 @@ The following <b>File Associations Matrix</b> provides a summary of the possible
 
 <b><font 1.5 purple>Standard File Types</font></b>
 
-Standard file types are those found within the Source Type dropdown of the <b>CSBatch</b> run dialog. A description of the file types supported by CSPro, with the default (or required) file extension that can (or must) be used shown in parentheses. Example <link CSPro::connection_string.hgt>connection strings</link> are given for several Source Types below; see the <topic connection_string_parameters.hgt /> page for a full explanation of the available options and required syntax.
+Standard file types are those found within the Source Type dropdown of the <b>CSBatch</b> run dialog. A description of the file types supported by CSPro, with the default (or required) file extension that can (or must) be used shown in parentheses. Example <link CSPro::connection_string.hgt>connection strings</link> are given for several Source Types below; see the <link CSPro::export_attributes.hgt>Export Attributes</link> page for a full explanation of the available options and required syntax.
 
 <subheader>None</subheader>
 
@@ -54,7 +54,7 @@ Depending on the file being specified, a default file extension may or may not b
 
 <b><font 1.5 purple>Special File Types</font></b>
 
-The following Source Types are not selectable in CSBatch's Run dialog; instead, they will only appear based on logic found within your application, or <topic connection_string_parameters.hgt /> provided for the file.
+The following Source Types are not selectable in CSBatch's Run dialog; instead, they will only appear based on logic found within your application, or <link CSPro::export_attributes.hgt>Export Attributes</link> provided for the file.
 
 <subheader>CSPro (Exported)</subheader>
 
@@ -68,7 +68,7 @@ If the <b>.pff</b> file for the batch application were being manually edited, th
 
 <pff>OutputData=.\housing_record.csdb|type=CSProExport&record=HOUSE_REC</pff>
 
-Whenever the type=CSProExport option is used, a dictionary will be generated for you. Note there are numerous options available to you by using connection strings. For a full explanation of the available options and required syntax, see the <topic connection_string_parameters.hgt /> page.
+Whenever the type=CSProExport option is used, a dictionary will be generated for you. Note there are numerous options available to you by using connection strings. For a full explanation of the available options and required syntax, see the <link CSPro::export_attributes.hgt>Export Attributes</link> page.
 
 <subheader>Multiple Files</subheader>
 
@@ -111,3 +111,4 @@ This option is available for Output Data Files, and the file generated from any 
 <pff>myFile.out|type=Semicolon</pff>
 
 When this parameter is added, CSPro will change the Source Type to "Semicolon-delimited". Note when this option is used for Impute Stat files, a dictionary will be created with the same name. 
+

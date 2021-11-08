@@ -1,0 +1,11 @@
+<subheader>Comma-Delimited (.csv)</subheader>
+
+This option is available for External (i.e., lookup) and Input files. It can also be used for the file generated from any <logiccolor>impute</logiccolor> function calls that use the <logiccolor>stat</logiccolor> option. It is a text-based file, readable by Excel or any ASCII editor (such as Notepad or Wordpad). Only non-repeating records will be output to the file; repeating records will be ignored.
+
+<subheader>Tab-delimited (.tsv)</subheader>
+
+This option is available for External (i.e., lookup) and Input files. It can also be used for the file generated from any <logiccolor>impute</logiccolor> function calls that use the <logiccolor>stat</logiccolor> option. However, only non-repeating records will be written to the .<b>tsv</b> file; repeating records will be ignored.
+
+<subheader>Excel (.xlsx)</subheader>
+
+This option is available for all file associations except the (Saved) Array, Write, and Paradata Log Files. This will create a native Excel file, which handles commas and single and double quotes correctly. When creating an Excel file, a separate tabsheet will be produced for each record type found.

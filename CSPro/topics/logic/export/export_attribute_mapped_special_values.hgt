@@ -1,0 +1,17 @@
+﻿<title>Export Attribute: mapped-special-values</title>
+
+If any special values have been used in your dictionary (default, missing, or refused), using this attribute will allow you to control how those values will be written to your new data source. It can be used on any file type except CSPro files (i.e., <b>.csdb</b> and <b>.dat</b>). The format is:
+
+<logicsyntax><arg>file_name</arg> | <arg>mapped-special-values</arg>=<arg>mapped_value</arg>
+</logicsyntax>	
+
+where <arg>mapped_value</arg> can be one of the following:
+<list>
+	<li><b>code</b>&mdash;the numeric value associated with the special value will be written to the data source (the default behavior when this attribute is not used)</li>
+	<li><b>notappl</b>&mdash;the text 'value' associated with the special value will be written (i.e., "default", "missing", "refused")</li>
+	<li><b>software-missing</b>&mdash;available when working with SAS data sources. SAS has two special values, MISSING and REFUSED. If the <b>software-missing</b> option is used, MISSING values will be mapped to .A and REFUSED values will be mapped to .B. If this option is not used and a MISSING value is mapped to, for example, -99, then your SAS file would have -99 instead of .A.</li>
+</list>
+
+If the <b>mapped-special-values</b> attribute is not used, the default behavior will be to write out the numeric values of each dictionary item.
+
+<seealso export_attributes.hgt />

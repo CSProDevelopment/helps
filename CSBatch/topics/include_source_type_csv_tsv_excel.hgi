@@ -10,6 +10,6 @@ This option is available for Output and External (i.e., lookup) files. It can al
 
 This option is available for all file associations except the Input, Write, and (Saved) Array Files. This will create a native Excel file, which handles commas and single and double quotes correctly. When creating an Excel file, a separate tabsheet will be produced for each record type found.
 
-Additionally, with the usage of <link CSPro::connection_string.hgt>connection strings</link>, you can further control what is written to your Excel file. For example, if you only want the population record, and would also like to see columns for both the values (e.g., 1, 2) and corresponding labels (e.g., male, female) for each dictionary item found, the following <topic connection_string_parameters.hgt /> should be appended to the file name:
+Additionally, with the usage of <link CSPro::connection_string.hgt>connection strings</link>, you can further control what is written to your Excel file. For example, if you only want the population record, and would also like to see columns for both the values (e.g., 1, 2) and corresponding labels (e.g., male, female) for each dictionary item found, the following <link CSPro::export_attributes.hgt>Export Attributes</link> should be appended to the file name:
 
 <pff>.\POP_REC.xlsx|record=POP_REC&header=labels&values=codes-and-labels</pff>

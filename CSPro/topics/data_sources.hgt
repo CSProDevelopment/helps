@@ -1,5 +1,7 @@
 ﻿<title>Data Sources</title>
 
+<font red>update this doc to include the other (new) types of (output) data files, and be sure to indicate that some are R/W, whereas other are W-only (SAS, SPSS, etc., i.e., non cspro data files)</font>
+
 Prior to version 7.0, CSPro only processed data files that were represented as ASCII, and later, <link unicode_primer.hgt>UTF-8</link> text files. In addition to the main text data file, CSEntry would create additional files to store information such as the notes, partial save statuses, and other case metadata. To support more dynamic data entry possibilities, there are now multiple data sources to which data can be entered and from which data can be read.
 
 CSPro DB is now the default type for newly created data files, and future CSPro features may only be added for the CSPro DB type. When a file exists, CSPro attempts to determine what kind of file it is and then opens it with the appropriate data source handler.
