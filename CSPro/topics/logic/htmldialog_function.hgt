@@ -7,6 +7,10 @@ s = htmldialog((<arg>html_filename</arg>『,』
 	『<arg>input_data</arg>』
 </logicsyntax>
 
+<subheader>Description</subheader>
+
+The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument. The optional <arg>input_data</arg> argument allows a string to be passed to the HTML template.
+
 <subheader>Format</subheader>
 
 <logicsyntax>
@@ -15,4 +19,23 @@ s = htmldialog((<arg>html_filename</arg>『,』
 	『<arg>displayOptions</arg> := <arg>display_options</arg>』);
 </logicsyntax>
 
+<subheader>Description</subheader>
 
+The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument. The optional named <arg>inputData</arg> argument can be assigned a string that is passed to the HTML template. An optional named <arg>displayOptions</arg> argument can be assigned a JSON string that allows control of display options. A full list of display options are defined below.
+
+<subheader>HTML Template</subheader>
+
+CSPro includes HTML templates in the installation folder for the dialogs it uses. User-created HTML templates allow for further customization of the dialogs. When the <logiccolor>htmldialog</logiccolor> function is called the <arg>html_filename</arg> is first searched for in the current application directory. If a match is not found then the the path <i>.\html\dialogs</i> in the installation folder is searched.
+
+<subheader>Display Options</subheader>
+
+<table 3 header nowrap>	
+	<cell>Name</cell><cell>Platform</cell><cell>Values</cell>
+	<cell>MaxDisplayWidth</cell><cell>Both</cell><cell>Width in pixels</cell>
+	<cell>MaxDisplayHeight</cell><cell>Both</cell><cell>Height in pixels</cell>
+	<cell>Resizable</cell><cell>Windows</cell><cell>Yes, No</cell>
+	<cell>BorderColor</cell><cell>Windows</cell><cell>Color string</cell>
+	<cell>TitleBarColor</cell><cell>Windows</cell><cell>Color string</cell>
+	<cell>TitleBarHeight</cell><cell>Windows</cell><cell>Height in pixels</cell>
+	<cell>Keyboard</cell><cell>Android</cell><cell>0, 1</cell>
+</table>
