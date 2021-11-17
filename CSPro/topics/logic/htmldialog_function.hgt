@@ -4,12 +4,12 @@
 
 <logicsyntax>
 s = htmldialog((<arg>html_filename</arg>『,』
-	『<arg>input_data</arg>』
+	『<arg>input_data</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument. The optional <arg>input_data</arg> argument allows a string to be passed to the HTML template.
+The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument which specifies the HTML template to be used for the dialog. The optional <arg>input_data</arg> argument allows a string to be passed to the HTML template.
 
 <subheader>Format</subheader>
 
@@ -21,11 +21,25 @@ s = htmldialog((<arg>html_filename</arg>『,』
 
 <subheader>Description</subheader>
 
-The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument. The optional named <arg>inputData</arg> argument can be assigned a string that is passed to the HTML template. An optional named <arg>displayOptions</arg> argument can be assigned a JSON string that allows control of display options. A full list of display options are defined below.
+The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument which specifies the HTML template to be used for the dialog.. The optional named <arg>inputData</arg> argument can be assigned a string that is passed to the HTML template. An optional named <arg>displayOptions</arg> argument can be assigned a JSON string that allows control of display options.
 
 <subheader>HTML Template</subheader>
 
 CSPro includes HTML templates in the installation folder for the dialogs it uses. User-created HTML templates allow for further customization of the dialogs. When the <logiccolor>htmldialog</logiccolor> function is called the <arg>html_filename</arg> is first searched for in the current application directory. If a match is not found then the the path <i>.\html\dialogs</i> in the installation folder is searched.
+
+Writing a user-created HTML template can be simplified by first selecting an existing HTML template that is most similar to the planned dialog. Then make a copy of this HTML template in the current application directory and extend it to fit the new dialogs requirements.
+
+<subheader>Input Data</subheader>
+
+The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be simple text string that represents a single value or a JSON string that represents multiple values. The string contents of the input data are retrieved by calling <i>CSPro.getInputData()</i> from the script block of the HTML template.
+
+<html><pre>
+// Simply string
+var inputString = CSPro.getInputData();
+
+// JSON string
+var inputJSON = JSON.parse(CSPro.getInputData());
+</pre></html>
 
 <subheader>Display Options</subheader>
 
@@ -39,3 +53,5 @@ CSPro includes HTML templates in the installation folder for the dialogs it uses
 	<cell>TitleBarHeight</cell><cell>Windows</cell><cell>Height in pixels</cell>
 	<cell>Keyboard</cell><cell>Android</cell><cell>0, 1</cell>
 </table>
+
+<seealso javascript_interface.hgt />
