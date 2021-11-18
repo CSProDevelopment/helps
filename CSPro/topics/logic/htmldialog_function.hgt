@@ -1,6 +1,6 @@
 ﻿<title>HtmlDialog Function</title>
 
-The <logiccolor>htmldialog</logiccolor> function allows for the customization of CSPro dialogs in two ways. First, HTML templates can receive dynamic input data from the CSPro application which can be used as text in the dialogs or to change the behavior of the dialog. Second, user-created HTML templates can be written that allow the application developer complete control of the appearance and behavior of the dialogs.
+The <logiccolor>htmldialog</logiccolor> function allows for the customization of CSPro dialogs in two ways. First, HTML templates can receive dynamic input data from the CSPro application which can be used as text in the dialogs or to change the behavior of the dialog. Second, user-created HTML templates give the application developer complete control of the appearance and behavior of the dialogs.
 
 <subheader>Format</subheader>
 
@@ -23,7 +23,7 @@ s = htmldialog((<arg>html_filename</arg>『,』
 
 <subheader>Description</subheader>
 
-The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument which specifies the HTML template to be used for the dialog.. The optional named <arg>inputData</arg> argument can be assigned a string that is passed to the HTML template. An optional named <arg>displayOptions</arg> argument can be assigned a JSON string that allows control of display options.
+The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument which specifies the HTML template to be used for the dialog.. The optional named <arg>inputData</arg> argument can be assigned a string that is passed to the HTML template. An optional named <arg>displayOptions</arg> argument is a JSON string that allows control of the display settings. All possible display options are shown below in a table.
 
 <subheader>Return Value</subheader>
 
