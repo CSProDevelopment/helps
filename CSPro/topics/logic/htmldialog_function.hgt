@@ -1,5 +1,7 @@
 ﻿<title>HtmlDialog Function</title>
 
+The <logiccolor>htmldialog</logiccolor> function allows for the customization of CSPro dialogs in two ways. First, HTML templates can receive dynamic input data from the CSPro application which can be used as text in the dialogs or to change the behavior of the dialog. Second, user-created HTML templates can be written that allow the application developer complete control of the appearance and behavior of the dialogs.
+
 <subheader>Format</subheader>
 
 <logicsyntax>
@@ -23,6 +25,10 @@ s = htmldialog((<arg>html_filename</arg>『,』
 
 The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument which specifies the HTML template to be used for the dialog.. The optional named <arg>inputData</arg> argument can be assigned a string that is passed to the HTML template. An optional named <arg>displayOptions</arg> argument can be assigned a JSON string that allows control of display options.
 
+<subheader>Return Value</subheader>
+
+The function returns a string. The contents of the string are determined by the HTML templated and returned by a call to <i>CSPro.returnData</i>.
+
 <subheader>HTML Template</subheader>
 
 CSPro includes HTML templates in the installation folder for the dialogs it uses. User-created HTML templates allow for further customization of the dialogs. When the <logiccolor>htmldialog</logiccolor> function is called the <arg>html_filename</arg> is first searched for in the current application directory. If a match is not found then the the path <i>.\html\dialogs</i> in the installation folder is searched.
@@ -45,13 +51,36 @@ var inputJSON = JSON.parse(CSPro.getInputData());
 
 <table 3 header nowrap>	
 	<cell>Name</cell><cell>Platform</cell><cell>Values</cell>
-	<cell>MaxDisplayWidth</cell><cell>Both</cell><cell>Width in pixels</cell>
-	<cell>MaxDisplayHeight</cell><cell>Both</cell><cell>Height in pixels</cell>
-	<cell>Resizable</cell><cell>Windows</cell><cell>Yes, No</cell>
-	<cell>BorderColor</cell><cell>Windows</cell><cell>Color string</cell>
-	<cell>TitleBarColor</cell><cell>Windows</cell><cell>Color string</cell>
-	<cell>TitleBarHeight</cell><cell>Windows</cell><cell>Height in pixels</cell>
-	<cell>Keyboard</cell><cell>Android</cell><cell>0, 1</cell>
+	<cell>width</cell><cell>Both</cell><cell>Width in pixels (e.g., 800)</cell>
+	<cell>height</cell><cell>Both</cell><cell>Height in pixels (e.g., 600)</cell>
+	<cell>resizable</cell><cell>Windows</cell><cell>True, False</cell>
+	<cell>borderColor</cell><cell>Windows</cell><cell>CSS name or hex code (e.g., "black" or "#000000")</cell>
+	<cell>titleBarColor</cell><cell>Windows</cell><cell>CSS name or hex code (e.g., "black" or "#000000")</cell>
+	<cell>titleBarHeight</cell><cell>Windows</cell><cell>Height in pixels (e.g., 50)</cell>
+	<cell>keyboard</cell><cell>Android</cell><cell>True, False</cell>
 </table>
+
+<subheader>Example: Existing HTML Template</subheader>
+
+<logic>
+string input_data = maketext('{ "title": "Enter Some Data!",'
+							 '  "multiline": true,'
+							 '  "allowEmptyText": false }');
+
+string result = htmldialog("text-input.html", input_data);
+</logic>
+
+<subheader>Example: User-Defined HTML Template</subheader>
+
+<logic>
+string input_data = "Hello world!";
+string display_options = maketext('{ "width": "%d",'
+								  '  "height": %d,'
+								  '  "borderColor": "#FF0000" }',
+								  tonumber(getproperty("MaxDisplayWidth")) - 200,
+							      tonumber(getproperty("MaxDisplayHeight")) - 200);
+
+string result = htmldialog("user-defined-dialog.html", inputData := input_data, displayOptions := display_options);
+</logic>
 
 <seealso javascript_interface.hgt />
