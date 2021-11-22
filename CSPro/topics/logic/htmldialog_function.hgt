@@ -27,7 +27,7 @@ The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_fi
 
 <subheader>Return Value</subheader>
 
-The function returns a string. The contents of the string are determined by the HTML templated and returned by a call to <i>CSPro.returnData</i>.
+The function returns a string. The contents of the string are determined by the HTML templated and returned by a call to <i>CSPro.returnData()</i>.
 
 <subheader>HTML Template</subheader>
 
@@ -37,7 +37,7 @@ Writing a user-created HTML template can be simplified by first selecting an exi
 
 <subheader>Input Data</subheader>
 
-The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be simple text string that represents a single value or a JSON string that represents multiple values. The string contents of the input data are retrieved by calling <i>CSPro.getInputData()</i> from the script block of the HTML template.
+The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a JSON string that represents multiple values. The string contents of the input data are retrieved by calling <i>CSPro.getInputData()</i> from the script block of the HTML template.
 
 <html><pre>
 // Simply string
@@ -51,12 +51,12 @@ var inputJSON = JSON.parse(CSPro.getInputData());
 
 <table 3 header nowrap>	
 	<cell>Name</cell><cell>Platform</cell><cell>Values</cell>
-	<cell>width</cell><cell>Both</cell><cell>Width in pixels (e.g., 800)</cell>
-	<cell>height</cell><cell>Both</cell><cell>Height in pixels (e.g., 600)</cell>
+	<cell>width</cell><cell>Both</cell><cell>Width in DIP (e.g., 800)</cell>
+	<cell>height</cell><cell>Both</cell><cell>Height in DIP (e.g., 600)</cell>
 	<cell>resizable</cell><cell>Windows</cell><cell>True, False</cell>
 	<cell>borderColor</cell><cell>Windows</cell><cell>CSS name or hex code (e.g., "black" or "#000000")</cell>
 	<cell>titleBarColor</cell><cell>Windows</cell><cell>CSS name or hex code (e.g., "black" or "#000000")</cell>
-	<cell>titleBarHeight</cell><cell>Windows</cell><cell>Height in pixels (e.g., 50)</cell>
+	<cell>titleBarHeight</cell><cell>Windows</cell><cell>Height in DIP (e.g., 50)</cell>
 	<cell>keyboard</cell><cell>Android</cell><cell>True, False</cell>
 </table>
 
