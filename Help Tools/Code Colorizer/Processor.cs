@@ -6,8 +6,7 @@ namespace Code_Colorizer
 {
 	class Processor
 	{
-        public enum BufferType { Logic, Pff, Message };
-        public enum UsersType { Forum, Blog };
+        public enum BufferType { Logic, Pff, Message, Report };
 
         private CSPro.Logic.Colorizer _colorizer;
         private PffColorizer _pffColorizer;
@@ -18,13 +17,14 @@ namespace Code_Colorizer
             _pffColorizer = new PffColorizer();
 		}
 
-		public void HtmlProcessor(string text, BufferType buffer_type)
+		public void CopyHtml(string text, BufferType buffer_type)
 		{
 			text = HelperFunctions.TrimTrailingSpace(text);
 
             string formattedText =
                 ( buffer_type == BufferType.Logic )   ? _colorizer.LogicToHtml(text) :
                 ( buffer_type == BufferType.Message ) ? _colorizer.MessageToHtml(text) :
+                ( buffer_type == BufferType.Report )  ? _colorizer.HtmlReportToHtml(text) :
                                                         _pffColorizer.Colorize(new PffColorizerHtml(), text);
 
             // html to clipboard code from: http://blogs.msdn.com/b/jmstall/archive/2007/01/21/sample-code-html-clipboard.aspx
@@ -52,13 +52,28 @@ namespace Code_Colorizer
             Clipboard.SetText(htmlCopyText, TextDataFormat.Html);
 		}
 
-        public void UsersProcessor(string text, UsersType users_type)
+        public void CopyTextForCSProUsersForum(string text, BufferType buffer_type)
+        {
+            CopyTextForCSProUsersWorker(true, text, buffer_type);
+        }
+
+        public void CopyTextForCSProUsersBlog(string text, BufferType buffer_type)
+        {
+            CopyTextForCSProUsersWorker(false, text, buffer_type);
+        }
+
+        private void CopyTextForCSProUsersWorker(bool for_forum, string text, BufferType buffer_type)
         {
             text = HelperFunctions.TrimTrailingSpace(text);
 
             string formattedText = 
-                ( users_type == UsersType.Forum ) ? _colorizer.LogicToCSProUsersForum(text) :
-                                                    _colorizer.LogicToCSProUsersBlog(text);
+                ( for_forum && buffer_type == BufferType.Logic )   ? _colorizer.LogicToCSProUsersForum(text) :
+                ( for_forum && buffer_type == BufferType.Message ) ? _colorizer.MessageToCSProUsersForum(text) :
+                ( for_forum && buffer_type == BufferType.Report )  ? _colorizer.HtmlReportToCSProUsersForum(text) :
+                (              buffer_type == BufferType.Logic )   ? _colorizer.LogicToCSProUsersBlog(text) :
+                (              buffer_type == BufferType.Message ) ? _colorizer.MessageToCSProUsersBlog(text) :
+                (              buffer_type == BufferType.Report )  ? _colorizer.HtmlReportToCSProUsersBlog(text) :
+                                                                     "";
 
             Clipboard.Clear();
             Clipboard.SetText(formattedText, TextDataFormat.UnicodeText);

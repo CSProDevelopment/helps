@@ -77,6 +77,7 @@ namespace Help_Generator
         private bool _titleIsHeader;
 
         private string _logicObjectDomain;
+        private bool _reportIsHtml;
 
         public TopicCompiler(Form form, HelpComponents helpComponents, Preprocessor.TopicPreprocessor preprocessedTopic,
                              TopicCompilerSettingsInterface topicCompilerSettings)
@@ -114,6 +115,7 @@ namespace Help_Generator
             _tagSettings.Add(LogicArgumentTag,new TagSettings("<span class=\"code_colorization_argument\">","</span>"));
             _tagSettings.Add(LogicTableTag,new TagSettings(false,(StartTagHandlerDelegate)StartLogicTableHandler,null,1,1));
             _tagSettings.Add(MessageTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndMessageHandler,0,0));
+            _tagSettings.Add(ReportTag,new TagSettings(true,(StartTagHandlerDelegate)StartReportHandler,(EndTagHandlerDelegate)EndReportHandler,0,1));
 			_tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
             _tagSettings.Add(PffColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffColorHandler,0,0));
             _tagSettings.Add(HtmlTag,new TagSettings("",""));
@@ -124,6 +126,7 @@ namespace Help_Generator
             _blockTags.Add(LogicTag);
             _blockTags.Add(LogicSyntaxTag);
             _blockTags.Add(MessageTag);
+            _blockTags.Add(ReportTag);
             _blockTags.Add(PffTag);
             _blockTags.Add(HtmlTag);
         }
@@ -967,6 +970,30 @@ namespace Help_Generator
             return _colorizer.MessageToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText));
         }
 
+        private string StartReportHandler(string[] startTagComponents)
+        {
+            if( startTagComponents.Length == 0 )
+            {
+                _reportIsHtml = false;
+            }
+
+            else
+            {
+                if( !startTagComponents[0].Equals(HtmlAttribute) )
+                    throw new Exception("Invalid report tag: " + startTagComponents[0]);
+
+                _reportIsHtml = true;
+            }
+
+            return "";
+        }
+
+        private string EndReportHandler(string endTagInnerText)
+        {
+            return _reportIsHtml ? _colorizer.HtmlReportToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText)) :
+                                   _colorizer.ReportToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText));
+        }
+
         private string EndPffHandler(string endTagInnerText)
         {
             if( _helpComponents._pffColorizer == null )
@@ -1008,6 +1035,7 @@ namespace Help_Generator
         public const string LogicArgumentTag = "arg";
         public const string LogicTableTag = "logictable";
 		public const string MessageTag = "message";
+		public const string ReportTag = "report";
         public const string PffTag = "pff";
         public const string PffColorTag = "pffcolor";
         public const string HtmlTag = "html";
@@ -1022,6 +1050,7 @@ namespace Help_Generator
         public const string OrderedAttribute = "ordered";
         public const string NoWrapAttribute = "nowrap";
         public const string BorderAttribute = "border";
+        public const string HtmlAttribute = "html";
 
         public const string NewLineMarker = "~!~";
     }

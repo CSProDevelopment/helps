@@ -152,19 +152,22 @@ namespace Code_Colorizer
             logicMenuItem.Checked = ( _bufferType == Processor.BufferType.Logic );
             pffMenuItem.Checked = ( _bufferType == Processor.BufferType.Pff );
             messageMenuItem.Checked = ( _bufferType == Processor.BufferType.Message );
-            buttonCopyUsersForum.Enabled = ( _bufferType == Processor.BufferType.Logic );
-            buttonCopyUsersBlog.Enabled = ( _bufferType == Processor.BufferType.Logic );
+            reportMenuItem.Checked = ( _bufferType == Processor.BufferType.Report );
+
+            buttonCopyUsersForum.Enabled = ( _bufferType != Processor.BufferType.Pff );
+            buttonCopyUsersBlog.Enabled = ( _bufferType != Processor.BufferType.Pff );
 
             this.Text = String.Format("{0}{1} [{2}]", _loadedFilename == null ? "" : ( _loadedFilename + " - " ), _initialWindowTitle,
-                ( _bufferType == Processor.BufferType.Logic ) ? "Logic File" :
-                ( _bufferType == Processor.BufferType.Pff )   ? "PFF File" :
-                                                                "Message File");
+                ( _bufferType == Processor.BufferType.Logic )   ? "Logic File" :
+                ( _bufferType == Processor.BufferType.Pff )     ? "PFF File" :
+                ( _bufferType == Processor.BufferType.Message ) ? "Message File" :
+                                                                  "Report (HTML) File");
         }
 
         private void openMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "CSPro Logic, PFF, and Message Files (*.apc;*.app;*.pff;*.mgf)|*.apc;*.app;*.pff;*.mgf|All files (*.*)|*.*";
+            ofd.Filter = "CSPro Logic, PFF, Message, and Report Files (*.apc;*.app;*.pff;*.mgf;*.html)|*.apc;*.app;*.pff;*.mgf;*.html|All files (*.*)|*.*";
 				 
             if( ofd.ShowDialog() == DialogResult.OK )
                 LoadFile(ofd.FileName);
@@ -188,9 +191,11 @@ namespace Code_Colorizer
                 editControl.Text = File.ReadAllText(filename);
 
                 _loadedFilename = Path.GetFileName(filename);
-                _bufferType = Path.GetExtension(filename).Equals(".pff", StringComparison.InvariantCultureIgnoreCase) ? Processor.BufferType.Pff :
-                              Path.GetExtension(filename).Equals(".mgf", StringComparison.InvariantCultureIgnoreCase) ? Processor.BufferType.Message :
-                                                                                                                        Processor.BufferType.Logic;
+                _bufferType = Path.GetExtension(filename).Equals(".pff", StringComparison.InvariantCultureIgnoreCase)  ? Processor.BufferType.Pff :
+                              Path.GetExtension(filename).Equals(".mgf", StringComparison.InvariantCultureIgnoreCase)  ? Processor.BufferType.Message :
+                              Path.GetExtension(filename).Equals(".html", StringComparison.InvariantCultureIgnoreCase) ? Processor.BufferType.Report :
+                              Path.GetExtension(filename).Equals(".htm", StringComparison.InvariantCultureIgnoreCase)  ? Processor.BufferType.Report :
+                                                                                                                         Processor.BufferType.Logic;
                 RefreshUiElements();
             }
 
@@ -203,17 +208,17 @@ namespace Code_Colorizer
 
         private void buttonCopyHtml_Click(object sender, EventArgs e)
         {
-			_processor.HtmlProcessor(editControl.Text, _bufferType);
+			_processor.CopyHtml(editControl.Text, _bufferType);
         }
 
         private void buttonCopyUsersForum_Click(object sender, EventArgs e)
         {
-			_processor.UsersProcessor(editControl.Text, Processor.UsersType.Forum);
+			_processor.CopyTextForCSProUsersForum(editControl.Text, _bufferType);
         }
 
         private void buttonCopyUsersBlog_Click(object sender, EventArgs e)
         {
-            _processor.UsersProcessor(editControl.Text, Processor.UsersType.Blog);
+            _processor.CopyTextForCSProUsersBlog(editControl.Text, _bufferType);
         }
     }
 }
