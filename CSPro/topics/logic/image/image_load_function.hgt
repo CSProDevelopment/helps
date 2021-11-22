@@ -2,7 +2,7 @@
 
 <subheader>Format</subheader>
 
-<logicsyntax image>
+<logicsyntax>
 b = image_name.load(<arg>image_filename</arg>);
 
 b = image_name.load(<arg>valueset_name</arg>, <arg>value</arg>);
@@ -15,7 +15,7 @@ The <logiccolor image>image.load</logiccolor> function reads an image from a fil
 
 The second version simplifies loading <link value_set_images.hgt>value set images</link>. It is equivalent to calling:
 
-<logicsyntax image>
+<logicsyntax>
 image_name.load(getimage(<arg>valueset_name</arg>, <arg>value</arg>));
 </logicsyntax>
 
