@@ -127,7 +127,7 @@ namespace Help_Generator
 
 		private void DisplayTopic(Preprocessor.TopicPreprocessor preprocessedTopic,string topicText = null)
 		{
-			TopicCompiler topicCompiler = new TopicCompiler(_helpComponents,preprocessedTopic,_topicCompilerSettings);
+			TopicCompiler topicCompiler = new TopicCompiler(this, _helpComponents,preprocessedTopic,_topicCompilerSettings);
 
 			if( topicText == null )
 				topicText = File.ReadAllText(preprocessedTopic.Filename);

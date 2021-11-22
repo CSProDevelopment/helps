@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using Colorizer;
 
 namespace Help_Generator
@@ -68,20 +69,24 @@ namespace Help_Generator
         private HelpComponents _helpComponents;
         private Preprocessor.TopicPreprocessor _preprocessedTopic;
         private TopicCompilerSettingsInterface _topicCompilerSettings;
+        
+        private CSPro.Logic.Colorizer _colorizer;
 
         private StringBuilder _sb;
         private string _title;
         private bool _titleIsHeader;
 
-        private enum LogicObject { None, Array, Audio, Document, File, Freq, Geometry, HashMap, Image, List, 
-                                   Map, Pff, SystemApp, ValueSet };
-        private LogicObject _logicObject;
+        private string _logicObjectDomain;
 
-        public TopicCompiler(HelpComponents helpComponents,Preprocessor.TopicPreprocessor preprocessedTopic,TopicCompilerSettingsInterface topicCompilerSettings)
+        public TopicCompiler(Form form, HelpComponents helpComponents, Preprocessor.TopicPreprocessor preprocessedTopic,
+                             TopicCompilerSettingsInterface topicCompilerSettings)
         {
             _helpComponents = helpComponents;
             _preprocessedTopic = preprocessedTopic;
             _topicCompilerSettings = topicCompilerSettings;
+            
+            _colorizer = new CSPro.Logic.Colorizer(form.Handle.ToInt32(), GetHtmlFilenameForKeyword);
+
             _sb = new StringBuilder();
 
             _tagSettings = new Dictionary<string,TagSettings>();
@@ -879,37 +884,13 @@ namespace Help_Generator
 
         private string StartLogicObjectHandler(string[] startTagComponents)
         {
-            _logicObject = LogicObject.None;
-
-            if( startTagComponents.Length == 1 )
-            {
-                _logicObject =
-                    startTagComponents[0].Equals(LogicObject.Array.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.Array :
-                    startTagComponents[0].Equals(LogicObject.Audio.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.Audio :
-                    startTagComponents[0].Equals(LogicObject.Document.ToString(), StringComparison.InvariantCultureIgnoreCase)  ? LogicObject.Document :
-                    startTagComponents[0].Equals(LogicObject.File.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.File :
-                    startTagComponents[0].Equals(LogicObject.Freq.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.Freq :
-                    startTagComponents[0].Equals(LogicObject.Geometry.ToString(), StringComparison.InvariantCultureIgnoreCase)  ? LogicObject.Geometry :
-                    startTagComponents[0].Equals(LogicObject.HashMap.ToString(), StringComparison.InvariantCultureIgnoreCase)   ? LogicObject.HashMap :
-                    startTagComponents[0].Equals(LogicObject.Image.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.Image :
-                    startTagComponents[0].Equals(LogicObject.List.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.List :
-                    startTagComponents[0].Equals(LogicObject.Map.ToString(), StringComparison.InvariantCultureIgnoreCase)       ? LogicObject.Map :
-                    startTagComponents[0].Equals(LogicObject.Pff.ToString(), StringComparison.InvariantCultureIgnoreCase)       ? LogicObject.Pff :
-                    startTagComponents[0].Equals(LogicObject.SystemApp.ToString(), StringComparison.InvariantCultureIgnoreCase) ? LogicObject.SystemApp :
-                    startTagComponents[0].Equals(LogicObject.ValueSet.ToString(), StringComparison.InvariantCultureIgnoreCase)  ? LogicObject.ValueSet :
-                                                                                                                                  LogicObject.None;
-            }
-
-            if( startTagComponents.Length != 0 && _logicObject == LogicObject.None )
-                throw new Exception("The logic object domain must be a valid symbol type");
-
+            _logicObjectDomain = ( startTagComponents.Length == 1 ) ? startTagComponents[0] : null;
             return "";
         }        
 
         private string EndLogicHandler(string endTagInnerText)
         {
-            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelp, 
-                TrimOnlyOneNewlineBothEnds(endTagInnerText), GetHtmlFilenameForKeyword);
+            return _colorizer.LogicToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText), null);
         }
 
         private string EndLogicSyntaxHandler(string endTagInnerText)
@@ -921,8 +902,8 @@ namespace Help_Generator
             string arg_replaced_text = endTagInnerText.Replace("<arg>", ArgBeginReplacementCharacter)
                                                       .Replace("</arg>", ArgEndReplacementCharacter);
 
-            StringBuilder logic = new StringBuilder(CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelp,
-                TrimOnlyOneNewlineBothEnds(arg_replaced_text), GetHtmlFilenameForKeyword, _logicObject.ToString()));
+            StringBuilder logic = new StringBuilder(_colorizer.LogicToHelps(
+                TrimOnlyOneNewlineBothEnds(arg_replaced_text), _logicObjectDomain));
 
             // colorize the text between the optional arguments
             logic.Replace("『", "<span class=\"code_colorization_optional_text\"><font class=\"code_colorization_bracket\">『</font>");
@@ -940,8 +921,7 @@ namespace Help_Generator
 
         private string EndLogicColorHandler(string endTagInnerText)
         {
-            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, 
-                HelperFunctions.UnHtmlizeEscapes(endTagInnerText.Trim()), GetHtmlFilenameForKeyword, _logicObject.ToString());
+            return _colorizer.LogicToHelpsInline(HelperFunctions.UnHtmlizeEscapes(endTagInnerText.Trim()), _logicObjectDomain);
         }
 
         private string StartLogicTableHandler(string[] startTagComponents)
@@ -969,7 +949,7 @@ namespace Help_Generator
                     int index = ( c * rows ) + r;
 
                     if( index < reservedWords.Count )
-                        sb.Append(CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, reservedWords[index].ToLower(), GetHtmlFilenameForKeyword));
+                        sb.Append(_colorizer.LogicToHelpsInline(reservedWords[index].ToLower(), null));
 
                     sb.Append("</td>");
                 }
@@ -984,7 +964,7 @@ namespace Help_Generator
 
         private string EndMessageHandler(string endTagInnerText)
         {
-            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.MessageToHtmlHelp, TrimOnlyOneNewlineBothEnds(endTagInnerText), GetHtmlFilenameForKeyword);
+            return _colorizer.MessageToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText));
         }
 
         private string EndPffHandler(string endTagInnerText)

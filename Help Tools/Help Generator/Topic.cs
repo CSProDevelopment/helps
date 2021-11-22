@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Help_Generator
 {
@@ -58,9 +59,9 @@ namespace Help_Generator
             return null;
         }
 
-        public string CompileForHtml(string text,HelpComponents helpComponents,TopicCompilerSettingsInterface topicCompilerSettings)
+        public string CompileForHtml(Form form, string text, HelpComponents helpComponents, TopicCompilerSettingsInterface topicCompilerSettings)
         {
-            TopicCompiler topicCompiler = new TopicCompiler(helpComponents,_preprocessedTopic,topicCompilerSettings);
+            TopicCompiler topicCompiler = new TopicCompiler(form, helpComponents,_preprocessedTopic,topicCompilerSettings);
             return topicCompiler.CompileForHtml(text);
         }
     }

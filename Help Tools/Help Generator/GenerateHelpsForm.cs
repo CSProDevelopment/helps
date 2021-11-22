@@ -383,7 +383,7 @@ namespace Help_Generator
 
                         // generate the topic for the CHM
                         string htmlFilename = _chmTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-                        string html = topic.CompileForHtml(topicText,_helpComponents,_chmTopicCompilerSettings);
+                        string html = topic.CompileForHtml(this, topicText, _helpComponents, _chmTopicCompilerSettings);
 
 						if( DoGenerateChm )
 							File.WriteAllText(Path.Combine(_temporaryFilesPath,htmlFilename),html,Encoding.UTF8);
@@ -394,14 +394,14 @@ namespace Help_Generator
 						if( DoGenerateWebsite )
 						{
 							htmlFilename = _websiteTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-							html = topic.CompileForHtml(topicText,_helpComponents,_websiteTopicCompilerSettings);
+							html = topic.CompileForHtml(this, topicText, _helpComponents, _websiteTopicCompilerSettings);
 							File.WriteAllText(Path.Combine(_outputWebsitePath,htmlFilename),html,Encoding.UTF8);
 						}
 
                         // generate the topic for the PDF
                         if( twPdf != null )
                         {
-                            html = topic.CompileForHtml(topicText,_helpComponents,_pdfTopicCompilerSettings);
+                            html = topic.CompileForHtml(this, topicText, _helpComponents, _pdfTopicCompilerSettings);
                             twPdf.WriteLine(html);
                         }
                     }
@@ -526,7 +526,7 @@ namespace Help_Generator
 
             string coverTopicText = File.ReadAllText(_helpComponents.settings.PdfCoverTopic.Filename);
             Topic coverTopic = new Topic(_helpComponents.settings.PdfCoverTopic);
-            string html = coverTopic.CompileForHtml(coverTopicText,_helpComponents,_pdfTopicCompilerSettings);
+            string html = coverTopic.CompileForHtml(this, coverTopicText, _helpComponents, _pdfTopicCompilerSettings);
             File.WriteAllText(outputPdfCoverFilename,PdfHtmlHeader + html + PdfHtmlFooter,Encoding.UTF8);
 
             // generate the PDF

@@ -6,12 +6,15 @@ namespace Code_Colorizer
 {
 	class Processor
 	{
-        internal enum BufferType { Logic, Pff, Message };
+        public enum BufferType { Logic, Pff, Message };
+        public enum UsersType { Forum, Blog };
 
+        private CSPro.Logic.Colorizer _colorizer;
         private PffColorizer _pffColorizer;
 
-        public Processor()
+        public Processor(Form form)
 		{
+            _colorizer = new CSPro.Logic.Colorizer(form.Handle.ToInt32());
             _pffColorizer = new PffColorizer();
 		}
 
@@ -20,8 +23,8 @@ namespace Code_Colorizer
 			text = HelperFunctions.TrimTrailingSpace(text);
 
             string formattedText =
-                ( buffer_type == BufferType.Logic )   ? CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtml, text) :
-                ( buffer_type == BufferType.Message ) ? CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.MessageToHtmlHelp, text) :
+                ( buffer_type == BufferType.Logic )   ? _colorizer.LogicToHtml(text) :
+                ( buffer_type == BufferType.Message ) ? _colorizer.MessageToHtml(text) :
                                                         _pffColorizer.Colorize(new PffColorizerHtml(), text);
 
             // html to clipboard code from: http://blogs.msdn.com/b/jmstall/archive/2007/01/21/sample-code-html-clipboard.aspx
@@ -46,16 +49,19 @@ namespace Code_Colorizer
             htmlCopyText = htmlCopyText.Replace("<<<<<<<4",String.Format("{0,8}",endFragment));
 
             Clipboard.Clear();
-            Clipboard.SetText(htmlCopyText,TextDataFormat.Html);
+            Clipboard.SetText(htmlCopyText, TextDataFormat.Html);
 		}
 
-        public void UsersProcessor(CSPro.Logic.Colorizer.Format colorizer_format, string text)
+        public void UsersProcessor(string text, UsersType users_type)
         {
             text = HelperFunctions.TrimTrailingSpace(text);
-            string formattedText = CSPro.Logic.Colorizer.Colorize(colorizer_format, text);
+
+            string formattedText = 
+                ( users_type == UsersType.Forum ) ? _colorizer.LogicToCSProUsersForum(text) :
+                                                    _colorizer.LogicToCSProUsersBlog(text);
 
             Clipboard.Clear();
-            Clipboard.SetText(formattedText,TextDataFormat.UnicodeText);
+            Clipboard.SetText(formattedText, TextDataFormat.UnicodeText);
         }
 	}
 }

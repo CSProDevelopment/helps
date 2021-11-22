@@ -21,11 +21,11 @@ namespace Code_Colorizer
             _initialWindowTitle = this.Text;
         }
 
-        private void MainForm_Load(object sender,EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             try
             {
-				_processor = new Processor();
+				_processor = new Processor(this);
             }
 
             catch( Exception exception )
@@ -51,16 +51,18 @@ namespace Code_Colorizer
                 }
 
                 else
+                {
                     LoadFile(argument);
+                }
             }
         }
 
-        private void exitMenuItem_Click(object sender,EventArgs e)
+        private void exitMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void notepadMenuItem_Click(object sender,EventArgs e)
+        private void notepadMenuItem_Click(object sender, EventArgs e)
         {
             GenerateNotepadFile(false);
         }
@@ -92,7 +94,7 @@ namespace Code_Colorizer
                 };
 
                 // write out the file
-                using( TextWriter tw = new StreamWriter(outFilename,false,Encoding.ASCII) )
+                using( TextWriter tw = new StreamWriter(outFilename, false, Encoding.ASCII) )
                 {
                     foreach( string fileLine in fileLines )
                     {
@@ -118,11 +120,11 @@ namespace Code_Colorizer
                             StringBuilder sb = new StringBuilder();
 
                             foreach( string word in words[templateIndex] )
-                                sb.AppendFormat("{0}{1}",sb.Length > 0 ? " " : "",word);
+                                sb.AppendFormat("{0}{1}", sb.Length > 0 ? " " : "", word);
 
                             // replace the template
-                            outLine = String.Concat(outLine.Substring(0,startReplacementPos),
-                                sb,outLine.Substring(startReplacementPos + templateWords[templateIndex].Length));
+                            outLine = String.Concat(outLine.Substring(0, startReplacementPos),
+                                sb, outLine.Substring(startReplacementPos + templateWords[templateIndex].Length));
                         }
 
                         tw.WriteLine(outLine);
@@ -139,7 +141,7 @@ namespace Code_Colorizer
             }
         }
 
-        private void languageMenuItem_Click(object sender,EventArgs e)
+        private void languageMenuItem_Click(object sender, EventArgs e)
         {
             _bufferType = (Processor.BufferType)((ToolStripMenuItem)sender).Tag;
             RefreshUiElements();
@@ -159,7 +161,7 @@ namespace Code_Colorizer
                                                                 "Message File");
         }
 
-        private void openMenuItem_Click(object sender,EventArgs e)
+        private void openMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "CSPro Logic, PFF, and Message Files (*.apc;*.app;*.pff;*.mgf)|*.apc;*.app;*.pff;*.mgf|All files (*.*)|*.*";
@@ -168,12 +170,12 @@ namespace Code_Colorizer
                 LoadFile(ofd.FileName);
         }
 
-        private void MainForm_DragEnter(object sender,DragEventArgs e)
+        private void MainForm_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = e.Data.GetDataPresent(DataFormats.FileDrop) ? DragDropEffects.Copy : DragDropEffects.None;
         }
 
-        private void MainForm_DragDrop(object sender,DragEventArgs e)
+        private void MainForm_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             LoadFile(files[0]);
@@ -199,19 +201,19 @@ namespace Code_Colorizer
         }
 
 
-        private void buttonCopyHtml_Click(object sender,EventArgs e)
+        private void buttonCopyHtml_Click(object sender, EventArgs e)
         {
 			_processor.HtmlProcessor(editControl.Text, _bufferType);
         }
 
-        private void buttonCopyUsersForum_Click(object sender,EventArgs e)
+        private void buttonCopyUsersForum_Click(object sender, EventArgs e)
         {
-			_processor.UsersProcessor(CSPro.Logic.Colorizer.Format.LogicToCSProUsersForum, editControl.Text);
+			_processor.UsersProcessor(editControl.Text, Processor.UsersType.Forum);
         }
 
         private void buttonCopyUsersBlog_Click(object sender, EventArgs e)
         {
-            _processor.UsersProcessor(CSPro.Logic.Colorizer.Format.LogicToCSProUsersBlog, editControl.Text);
+            _processor.UsersProcessor(editControl.Text, Processor.UsersType.Blog);
         }
     }
 }
