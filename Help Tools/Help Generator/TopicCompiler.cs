@@ -79,14 +79,15 @@ namespace Help_Generator
         private string _logicObjectDomain;
         private bool _reportIsHtml;
 
-        public TopicCompiler(Form form, HelpComponents helpComponents, Preprocessor.TopicPreprocessor preprocessedTopic,
-                             TopicCompilerSettingsInterface topicCompilerSettings)
+        public TopicCompiler(CSPro.Logic.Colorizer colorizer, HelpComponents helpComponents, 
+            Preprocessor.TopicPreprocessor preprocessedTopic, TopicCompilerSettingsInterface topicCompilerSettings)
         {
             _helpComponents = helpComponents;
             _preprocessedTopic = preprocessedTopic;
             _topicCompilerSettings = topicCompilerSettings;
             
-            _colorizer = new CSPro.Logic.Colorizer(form.Handle.ToInt32(), GetHtmlFilenameForKeyword);
+            _colorizer = colorizer;
+            _colorizer.SetLinkFormatter(GetHtmlFilenameForKeyword);
 
             _sb = new StringBuilder();
 
@@ -129,6 +130,12 @@ namespace Help_Generator
             _blockTags.Add(ReportTag);
             _blockTags.Add(PffTag);
             _blockTags.Add(HtmlTag);
+        }
+
+        public TopicCompiler(Form form, HelpComponents helpComponents, Preprocessor.TopicPreprocessor preprocessedTopic,
+            TopicCompilerSettingsInterface topicCompilerSettings)
+            :   this(new CSPro.Logic.Colorizer(form.Handle.ToInt32()), helpComponents, preprocessedTopic, topicCompilerSettings)
+        {
         }
 
         public string CompileForHtml(string text)

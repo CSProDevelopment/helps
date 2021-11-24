@@ -30,6 +30,8 @@ namespace Help_Generator
         private string _outputPdfTopicsFilename;
         private GeneratePdfTopicCompilerSettings _pdfTopicCompilerSettings;
 
+        private CSPro.Logic.Colorizer _colorizer;
+
         private BackgroundWorker _backgroundThread;
 
         private bool CompileOnly { get { return ( _generationType == GenerationType.CompileOnly ); } }
@@ -47,12 +49,14 @@ namespace Help_Generator
 		private bool DoGenerateWebsite { get { return ( !CompileOnly && !GenerateOnlyChm && _helpComponents.settings.HtmlOutput ); } }
 		private bool DoGeneratePdf { get { return ( !CompileOnly && !GenerateOnlyChm && _helpComponents.settings.PdfOutput ); } }
 
-        public GenerateHelpsForm(HelpComponents helpComponents,GenerationType generationType)
+        public GenerateHelpsForm(HelpComponents helpComponents, GenerationType generationType)
         {
             InitializeComponent();
 
             _helpComponents = helpComponents;
             _generationType = generationType;
+
+            _colorizer = new CSPro.Logic.Colorizer(Handle.ToInt32());
 
             _projectName = new DirectoryInfo(_helpComponents.projectPath).Name;
 
@@ -383,7 +387,7 @@ namespace Help_Generator
 
                         // generate the topic for the CHM
                         string htmlFilename = _chmTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-                        string html = topic.CompileForHtml(this, topicText, _helpComponents, _chmTopicCompilerSettings);
+                        string html = topic.CompileForHtml(_colorizer, topicText, _helpComponents, _chmTopicCompilerSettings);
 
 						if( DoGenerateChm )
 							File.WriteAllText(Path.Combine(_temporaryFilesPath,htmlFilename),html,Encoding.UTF8);
@@ -394,14 +398,14 @@ namespace Help_Generator
 						if( DoGenerateWebsite )
 						{
 							htmlFilename = _websiteTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-							html = topic.CompileForHtml(this, topicText, _helpComponents, _websiteTopicCompilerSettings);
+							html = topic.CompileForHtml(_colorizer, topicText, _helpComponents, _websiteTopicCompilerSettings);
 							File.WriteAllText(Path.Combine(_outputWebsitePath,htmlFilename),html,Encoding.UTF8);
 						}
 
                         // generate the topic for the PDF
                         if( twPdf != null )
                         {
-                            html = topic.CompileForHtml(this, topicText, _helpComponents, _pdfTopicCompilerSettings);
+                            html = topic.CompileForHtml(_colorizer, topicText, _helpComponents, _pdfTopicCompilerSettings);
                             twPdf.WriteLine(html);
                         }
                     }
@@ -526,7 +530,7 @@ namespace Help_Generator
 
             string coverTopicText = File.ReadAllText(_helpComponents.settings.PdfCoverTopic.Filename);
             Topic coverTopic = new Topic(_helpComponents.settings.PdfCoverTopic);
-            string html = coverTopic.CompileForHtml(this, coverTopicText, _helpComponents, _pdfTopicCompilerSettings);
+            string html = coverTopic.CompileForHtml(_colorizer, coverTopicText, _helpComponents, _pdfTopicCompilerSettings);
             File.WriteAllText(outputPdfCoverFilename,PdfHtmlHeader + html + PdfHtmlFooter,Encoding.UTF8);
 
             // generate the PDF
