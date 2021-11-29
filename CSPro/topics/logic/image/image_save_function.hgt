@@ -3,13 +3,13 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = image_name.save(<arg>image_filename</arg>『, quality := <arg><arg>quality</arg></arg>』);
+b = image_name.save(<arg>image_filename</arg>『, quality := <arg>quality</arg>』);
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-The <logiccolor image>image.save</logiccolor> function writes the contents of the <link image.hgt>image</link> object to a file specified by the string expression <arg>image_filename</arg>. The image can be saved in three formats, with the format determined by the file extension: JPEG (.jpg/.jpeg), PNG (.png), and BMP (.bmp). Although GIF files can be loaded by <logiccolor image>image.load</logiccolor>, images cannot be saved to the GIF format.
+The <logiccolor>image.save</logiccolor> function writes the contents of the <link image.hgt>image</link> object to a file specified by the string expression <arg>image_filename</arg>. The image can be saved in three formats, with the format determined by the file extension: JPEG (.jpg/.jpeg), PNG (.png), and BMP (.bmp). Although GIF files can be loaded by <logiccolor>image.load</logiccolor>, images cannot be saved to the GIF format.
 
 When saving to JPEG format, the quality can be specified using a <link function_named_arguments.hgt>named argument</link>. The numeric expression <arg>quality</arg> must be a value from 0 to 100, with 100 being the best quality. If not specified, a value of 95 is used. The file size will be bigger the higher the quality number. This value is ignored if not saving to JPEG format.
 

@@ -15,7 +15,7 @@ b = system_app_name.exec(<arg>executable_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor SystemApp>SystemApp.exec</logiccolor> function executes a system application associated with the <link systemapp.hgt>SystemApp</link> object. Any arguments set using the <logiccolor SystemApp>SystemApp.setArgument</logiccolor> function are passed to the system application. On Android, a system application can return results which can be queried with the <logiccolor SystemApp>SystemApp.getResult</logiccolor> function.
+The <logiccolor>SystemApp.exec</logiccolor> function executes a system application associated with the <link systemapp.hgt>SystemApp</link> object. Any arguments set using the <logiccolor>SystemApp.setArgument</logiccolor> function are passed to the system application. On Android, a system application can return results which can be queried with the <logiccolor>SystemApp.getResult</logiccolor> function.
 
 
 <subheader>Return Value</subheader>
@@ -25,7 +25,7 @@ The function returns a logical value of 1 (true) if the system application is st
 
 <subheader>Android Example</subheader>
 
-On Android, the optional string expression <arg>package_name</arg> specifies the name of the Android application (package) that will be executed. An optional string expression <arg>activity_name</arg> specifies the name of the activity within the package that should be opened. If no arguments are provided, then the arguments specified using <logiccolor SystemApp>SystemApp.setArgument</logiccolor> will be processed by the Android operating system and, if there is a way to handle these arguments, then an appropriate application will be opened.
+On Android, the optional string expression <arg>package_name</arg> specifies the name of the Android application (package) that will be executed. An optional string expression <arg>activity_name</arg> specifies the name of the activity within the package that should be opened. If no arguments are provided, then the arguments specified using <logiccolor>SystemApp.setArgument</logiccolor> will be processed by the Android operating system and, if there is a way to handle these arguments, then an appropriate application will be opened.
 
 <logic>
 <include include_android_example.hgi />

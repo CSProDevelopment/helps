@@ -11,22 +11,22 @@ A geometry is a CSPro logic object and the following functions can be called via
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
-	<cell><link geometry_load_function.hgt>load</link></cell><cell>Read geometry from a GeoJSON file.</cell>
-	<cell><link geometry_save_function.hgt>save</link></cell><cell>Write geometry to a GeoJSON file.</cell>
-	<cell><link geometry_clear_function.hgt>clear</link></cell><cell>Delete all data from the geometry.</cell>
-	<cell><link geometry_tracepolygon_function.hgt>tracePolygon</link></cell><cell>Allow user to draw polygon by tapping points on a map.</cell>
-	<cell><link geometry_walkpolygon_function.hgt>walkPolygon</link></cell><cell>Allow user to draw polygon by walking the perimeter and saving the locations using the GPS.</cell>
-	<cell><link geometry_area_function.hgt>area</link></cell><cell>Compute the area of a polygon.</cell>
-	<cell><link geometry_perimeter_function.hgt>perimeter</link></cell><cell>Compute the perimeter of a polygon.</cell>
-	<cell><link geometry_maxlatitude_function.hgt>maxLatitude</link></cell><cell>Get the largest latitude value of the geometry.</cell>
-	<cell><link geometry_maxlongitude_function.hgt>maxLongitude</link></cell><cell>Get the largest longitude value of the geometry.</cell>
-	<cell><link geometry_minlatitude_function.hgt>minLatitude</link></cell><cell>Get the smallest latitude value of the geometry.</cell>
-	<cell><link geometry_minlongitude_function.hgt>minLongitude</link></cell><cell>Get the smallest longitude value of the geometry.</cell>
-	<cell><link geometry_getproperty_function.hgt>getProperty</link></cell><cell>Retrieve one of the geometry's properties.</cell>
-	<cell><link geometry_setproperty_function.hgt>setProperty</link></cell><cell>Set the value of one of the geometry's properties.</cell>
+	<cell><logiccolor geometry>load</logiccolor></cell><cell>Read geometry from a GeoJSON file.</cell>
+	<cell><logiccolor geometry>save</logiccolor></cell><cell>Write geometry to a GeoJSON file.</cell>
+	<cell><logiccolor geometry>clear</logiccolor></cell><cell>Delete all data from the geometry.</cell>
+	<cell><logiccolor geometry>tracePolygon</logiccolor></cell><cell>Allow user to draw polygon by tapping points on a map.</cell>
+	<cell><logiccolor geometry>walkPolygon</logiccolor></cell><cell>Allow user to draw polygon by walking the perimeter and saving the locations using the GPS.</cell>
+	<cell><logiccolor geometry>area</logiccolor></cell><cell>Compute the area of a polygon.</cell>
+	<cell><logiccolor geometry>perimeter</logiccolor></cell><cell>Compute the perimeter of a polygon.</cell>
+	<cell><logiccolor geometry>maxLatitude</logiccolor></cell><cell>Get the largest latitude value of the geometry.</cell>
+	<cell><logiccolor geometry>maxLongitude</logiccolor></cell><cell>Get the largest longitude value of the geometry.</cell>
+	<cell><logiccolor geometry>minLatitude</logiccolor></cell><cell>Get the smallest latitude value of the geometry.</cell>
+	<cell><logiccolor geometry>minLongitude</logiccolor></cell><cell>Get the smallest longitude value of the geometry.</cell>
+	<cell><logiccolor geometry>getProperty</logiccolor></cell><cell>Retrieve one of the geometry's properties.</cell>
+	<cell><logiccolor geometry>setProperty</logiccolor></cell><cell>Set the value of one of the geometry's properties.</cell>
 </table>
 
-In addition to these object functions, geometry objects can be used as arguments to the <logiccolor>filename</logiccolor>, <logiccolor map>map.addGeometry</logiccolor>, <logiccolor map>map.clearGeometry</logiccolor>, and <logiccolor map>map.removeGeometry</logiccolor> functions.
+In addition to these object functions, geometry objects can be used as arguments to the <logiccolor>filename</logiccolor>, <logiccolor>map.addGeometry</logiccolor>, <logiccolor>map.clearGeometry</logiccolor>, and <logiccolor>map.removeGeometry</logiccolor> functions.
 
 
 <subheader>Assignments</subheader>

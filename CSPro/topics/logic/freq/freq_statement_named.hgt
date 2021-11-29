@@ -17,9 +17,9 @@ include(<arg>variables_to_tabulate</arg>)
 
 The <logiccolor>freq</logiccolor> statement creates a <link freq.hgt>freq</link> object with the name <arg>freq_name</arg>. The freq name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare freqs globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
-The freq object is used to create frequencies that will be written to the <link frequencies_file.hgt>frequencies file</link> (using <logiccolor freq>freq.save</logiccolor>) or displayed in an embedded web browser (using <logiccolor freq>freq.view</logiccolor>).
+The freq object is used to create frequencies that will be written to the <link frequencies_file.hgt>frequencies file</link> (using <logiccolor>freq.save</logiccolor>) or displayed in an embedded web browser (using <logiccolor>freq.view</logiccolor>).
 
-Freq objects are similar to <link freq_statement_unnamed.hgt>unnamed frequencies</link> except that you control when they are tallied (using the <logiccolor freq>freq.tally</logiccolor> function). Because of this, the <logiccolor>universe</logiccolor> and <logiccolor>weight</logiccolor> commands, which are part of the unnamed frequencies specification, are not available. You can control the universe (using an <logiccolor>if</logiccolor> statement) and you can control the weight by passing an argument to the <logiccolor freq>freq.tally</logiccolor> function.
+Freq objects are similar to <link freq_statement_unnamed.hgt>unnamed frequencies</link> except that you control when they are tallied (using the <logiccolor>freq.tally</logiccolor> function). Because of this, the <logiccolor>universe</logiccolor> and <logiccolor>weight</logiccolor> commands, which are part of the unnamed frequencies specification, are not available. You can control the universe (using an <logiccolor>if</logiccolor> statement) and you can control the weight by passing an argument to the <logiccolor>freq.tally</logiccolor> function.
 
 
 <include include_freq_variable_specification.hgi />

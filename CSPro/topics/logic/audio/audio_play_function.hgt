@@ -9,9 +9,9 @@ b = audio_name.play(『<arg>message</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor audio>audio.play</logiccolor> function launches an audio player to play the audio in an <link audio.hgt>audio</link> object. Before calling this function, the audio object must contain audio data recorded using <logiccolor audio>audio.recordInteractive</logiccolor>, <logiccolor audio>audio.record</logiccolor>, or loaded using <logiccolor audio>audio.load</logiccolor>. If the optional argument <arg>message</arg> is provided, the message text is displayed over the audio player.
+The <logiccolor>audio.play</logiccolor> function launches an audio player to play the audio in an <link audio.hgt>audio</link> object. Before calling this function, the audio object must contain audio data recorded using <logiccolor>audio.recordInteractive</logiccolor>, <logiccolor>audio.record</logiccolor>, or loaded using <logiccolor>audio.load</logiccolor>. If the optional argument <arg>message</arg> is provided, the message text is displayed over the audio player.
 
-CSPro can load and play most audio files in any of the following formats: m4a, mp4, mp3, wav, 3gp, flac, ogg, mkv. However, only m4a files (AAC encoded audio in an MPEG-4 container) can be used with the functions <logiccolor audio>audio.concat</logiccolor>, <logiccolor audio>audio.length</logiccolor>, <logiccolor audio>audio.record</logiccolor>, and <logiccolor audio>audio.recordInteractive</logiccolor>.
+CSPro can load and play most audio files in any of the following formats: m4a, mp4, mp3, wav, 3gp, flac, ogg, mkv. However, only m4a files (AAC encoded audio in an MPEG-4 container) can be used with the functions <logiccolor>audio.concat</logiccolor>, <logiccolor>audio.length</logiccolor>, <logiccolor>audio.record</logiccolor>, and <logiccolor>audio.recordInteractive</logiccolor>.
 
 <subheader>Return Value</subheader>
 

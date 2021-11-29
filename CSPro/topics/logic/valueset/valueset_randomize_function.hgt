@@ -10,7 +10,7 @@ b = valueset_name.randomize(『exclude(<arg>exclude_code1</arg>, ..., <arg>exclu
 
 <subheader>Description</subheader>
 
-The <logiccolor valueset>valueset.randomize</logiccolor> function scrambles the order of values in the <link valueset.hgt>value set</link>. The function is useful when using <link capture_types.hgt>capture types</link> in a data entry application. Some survey applications choose to display the possible response categories in a randomized way so as to minimize an enumerator or respondent's selection bias.
+The <logiccolor>valueset.randomize</logiccolor> function scrambles the order of values in the <link valueset.hgt>value set</link>. The function is useful when using <link capture_types.hgt>capture types</link> in a data entry application. Some survey applications choose to display the possible response categories in a randomized way so as to minimize an enumerator or respondent's selection bias.
 
 An optional exclusion list, <arg>exclude_code1</arg>, ..., <arg>exclude_codeN</arg>, allows you to prevent certain values from being given a random order. This is useful for variables like <i>Don't Know</i>, which, after the randomization, would remain at the original location in the list of values.
 

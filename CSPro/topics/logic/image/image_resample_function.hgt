@@ -15,7 +15,7 @@ b = image_name.resample(『maxWidth := <arg>max_width</arg>,』
 
 <subheader>Description</subheader>
 
-The <logiccolor image>image.resample</logiccolor> function resamples the image held by the <link image.hgt>image</link> object. Resampling modifies the dimensions of the image by either downsampling or upsampling the image. A loss of image quality may occur during the resampling process.
+The <logiccolor>image.resample</logiccolor> function resamples the image held by the <link image.hgt>image</link> object. Resampling modifies the dimensions of the image by either downsampling or upsampling the image. A loss of image quality may occur during the resampling process.
 
 In the first version of the function, two numeric expressions, <arg>width</arg> and <arg>height</arg>, specify the new dimensions, in pixels, of the image. If one of the arguments is <logiccolor>notappl</logiccolor>, then the other dimension will be calculated by maintaining the original image's aspect ratio (the ratio of the width to the height). For example, if an image is 800 x 600, each of the following function calls results in a 400 x 300 image:
 

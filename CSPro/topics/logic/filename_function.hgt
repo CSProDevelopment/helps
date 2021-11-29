@@ -10,7 +10,7 @@ s = filename(<arg>dictionary_name</arg> ‖ <arg>file_handler</arg> ‖ <arg>pff
 
 The <logiccolor>filename</logiccolor> function returns the fully qualified name of a file. If supplying a <arg>dictionary_name</arg>, the function returns the name of the data file associated with a data dictionary. If providing a <arg>file_handler</arg> (declared in a <logiccolor>file</logiccolor> statement), the function returns the name of the text file associated with the file handler.
 
-If providing a <arg>pff_name</arg> (declared in a <logiccolor>pff</logiccolor> statement), the function returns the name of an existing PFF file, or the name of a temporarily created PFF file. If a PFF file was loaded (via <logiccolor pff>pff.load</logiccolor>) and not modified, the name of that PFF file is returned. If the PFF has been modified and not saved, then calling <logiccolor>filename</logiccolor> will save the PFF to a temporary file and the name of that file is returned.
+If providing a <arg>pff_name</arg> (declared in a <logiccolor>pff</logiccolor> statement), the function returns the name of an existing PFF file, or the name of a temporarily created PFF file. If a PFF file was loaded (via <logiccolor>pff.load</logiccolor>) and not modified, the name of that PFF file is returned. If the PFF has been modified and not saved, then calling <logiccolor>filename</logiccolor> will save the PFF to a temporary file and the name of that file is returned.
 
 For several other CSPro objects, if passed an <arg>object_name</arg>, the function returns the file name associated with the content of the object. This functionality works on <link audio.hgt>audio</link>, <link document.hgt>document</link>, <link geometry.hgt>geometry</link>, and <link image.hgt>image</link> objects.
 

@@ -4,19 +4,19 @@ In logic, a <logiccolor>map</logiccolor> is an object that can be used to displa
 
 <i>Note that maps are currently only supported on Android. The map functions will do nothing when run on Windows.</i>
 
-To display a map, call the <logiccolor map>show</logiccolor> function. The map will be displayed allowing the user to interact with it until the user taps the back button or the <logiccolor map>hide</logiccolor> function is called from program logic.
+To display a map, call the <logiccolor>map.show</logiccolor> function. The map will be displayed allowing the user to interact with it until the user taps the back button or the <logiccolor>map.hide</logiccolor> function is called from program logic.
 
 You can call map functions to add markers, buttons, set the base map, and pan/zoom before showing the map. This will be more efficient than adding them afterwards, especially when adding large numbers of markers. You can also call the map functions after showing the map from within any of the user-defined callback functions for map, marker, and button clicks and drags.
 
 <center><image map.png /></center>
 
-You can add markers to the map using the <logiccolor map>addMarker</logiccolor> function. You can replace the default marker icon with a custom image by calling <logiccolor map>setMarkerImage</logiccolor> or with a text icon using <logiccolor map>setMarkerText</logiccolor>.
+You can add markers to the map using the <logiccolor>map.addMarker</logiccolor> function. You can replace the default marker icon with a custom image by calling <logiccolor>map.setMarkerImage</logiccolor> or with a text icon using <logiccolor>map.setMarkerText</logiccolor>.
 
-By default, the map contains a button to zoom to the users current location. You can add additional buttons to the map by calling <logiccolor map>addImageButton</logiccolor> or <logiccolor map>addTextButton</logiccolor>.
+By default, the map contains a button to zoom to the users current location. You can add additional buttons to the map by calling <logiccolor>map.addImageButton</logiccolor> or <logiccolor>map.addTextButton</logiccolor>.
 
-You add vector geometry, such as polygons and polylines, to the map using the <logiccolor map>addGeometry</logiccolor> function.
+You add vector geometry, such as polygons and polylines, to the map using the <logiccolor>map.addGeometry</logiccolor> function.
 
-By default, the map will display a base map from Google Maps, which requires an Internet connection. With no Internet connection the base map will be empty. To display a map without an Internet connection you can copy an an <link offline_maps.hgt>offline map file</link> to your device and pass the file to the <logiccolor map>setBaseMap</logiccolor> function.
+By default, the map will display a base map from Google Maps, which requires an Internet connection. With no Internet connection the base map will be empty. To display a map without an Internet connection you can copy an an <link offline_maps.hgt>offline map file</link> to your device and pass the file to the <logiccolor>map.setBaseMap</logiccolor> function.
 
 
 <subheader>Functionality</subheader>

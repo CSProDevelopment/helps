@@ -14,13 +14,13 @@ b = map_name.zoomTo(<arg>min_latitude</arg>, <arg>min_longitude</arg>, <arg>max_
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.zoomTo</logiccolor> function pans and zooms a <link map.hgt>map</link> to center the map on a given point or to fit a rectangular region of the map to the screen. The <logiccolor map>map.zoomTo</logiccolor> function may be used before the map is shown to set the initial view or it may be used in a callback function to change the view while the map is showing.
+The <logiccolor>map.zoomTo</logiccolor> function pans and zooms a <link map.hgt>map</link> to center the map on a given point or to fit a rectangular region of the map to the screen. The <logiccolor>map.zoomTo</logiccolor> function may be used before the map is shown to set the initial view or it may be used in a callback function to change the view while the map is showing.
 
 The first form moves the map so that the point with coordinates (<arg>latitude</arg>, <arg>longitude</arg>) is at the center of the screen. If the optional <arg>zoom_level</arg> is specified, the map is also zoomed to the specified zoom level. <arg>zoom_level</arg> is a number representing the level of detail to show. Zoom level one fits the entire world on the screen and each consecutive zoom level is twice as detailed as the preceding level. Zoom level 15 shows streets and zoom level 20 shows individual buildings. The minimum and maximum zoom levels supported will depend on the base map being used. If no zoom level is specified, the current zoom level is maintained.
 
 The second form pans and zooms the map to fit the rectangular region of the map with corners at (<arg>min_latitude</arg>, <arg>min_longitude</arg>) and (<arg>max_latitude</arg>, <arg>max_longitude</arg>). If the optional <arg>padding</arg> is specified, the map will be zoomed less so that the rectangular region will fit onto the screen with extra padding on each side. This can be used so that the edges of the rectangle do not line up exactly with the edge of the screen. The <arg>padding</arg> is specified as a percentage of the width of the screen. A padding of 5 would add padding equal to 5% of the device screen width.
 
-If no initial view is set by calling <logiccolor map>map.zoomTo</logiccolor> before the map is shown, then the initial view is determined as follows:
+If no initial view is set by calling <logiccolor>map.zoomTo</logiccolor> before the map is shown, then the initial view is determined as follows:
 
 <list>
 <li>If there are any markers, the view is set to fit all of the markers onto the screen.</li>

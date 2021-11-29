@@ -9,7 +9,7 @@ b = pff_name.setproperty(<arg>property_name</arg>, <arg>property_value</arg> ‖
 
 <subheader>Description</subheader>
 
-The <logiccolor pff>pff.setproperty</logiccolor> function modifies the value associated with the <link pff.hgt>pff</link>'s property specified by the string expression <arg>property_name</arg>. The property will be modified to the value given in the string expression <arg>property_value</arg>. If the <arg>property_value</arg> is blank, the property will be reset to its default value. Alternatively, a <arg>string_list</arg> can be supplied containing values for properties that have multiple values (such as input data filenames).
+The <logiccolor>pff.setproperty</logiccolor> function modifies the value associated with the <link pff.hgt>pff</link>'s property specified by the string expression <arg>property_name</arg>. The property will be modified to the value given in the string expression <arg>property_value</arg>. If the <arg>property_value</arg> is blank, the property will be reset to its default value. Alternatively, a <arg>string_list</arg> can be supplied containing values for properties that have multiple values (such as input data filenames).
 
 Property names can be prefixed with the section name. For example, if you load an existing PFF that has a persistent ID value defined for the item <logiccolor>PROVINCE</logiccolor>, you can code:
 
@@ -17,7 +17,7 @@ Property names can be prefixed with the section name. For example, if you load a
 pff_name.setproperty("PROVINCE", "50");
 </logicsyntax>
 
-However, if no such property was defined in the PFF, the <logiccolor pff>pff.setproperty</logiccolor> function will not know whether you are modifying a value in the <pffcolor>[DataEntryIds]</pffcolor> section, the <pffcolor>[ExternalFiles]</pffcolor> section, or another section. To avoid this ambiguity, when setting new custom properties, you can specify the section name when setting the property:
+However, if no such property was defined in the PFF, the <logiccolor>pff.setproperty</logiccolor> function will not know whether you are modifying a value in the <pffcolor>[DataEntryIds]</pffcolor> section, the <pffcolor>[ExternalFiles]</pffcolor> section, or another section. To avoid this ambiguity, when setting new custom properties, you can specify the section name when setting the property:
 
 <logicsyntax>
 pff_name.setproperty("DataEntryIds.PROVINCE", "50");
@@ -26,7 +26,7 @@ pff_name.setproperty("DataEntryIds.PROVINCE", "50");
 
 <subheader>Linking to Embedded Dictionaries</subheader>
 
-When running a data entry application from a <link binary_data_entry_application_file_pen.hgt>.pen file</link>, such as on an Android device, you may not have access to the <link data_dictionary_file_dcf.hgt>dictionary file (.dcf)</link> that may be necessary when running certain programs (such as the <link CSDiff::introduction_to_compare_data.hgt>Compare Data</link> tool). A special version of <logiccolor pff>pff.setproperty</logiccolor>, when used with the <pffcolor>InputDict</pffcolor> and <pffcolor>OutputDict</pffcolor> properties, accepts a dictionary name as an argument. If such an argument is used, certain tools (described in the <logiccolor>execpff</logiccolor> help) will be launched using the dictionary that is embedded in the .pen file.
+When running a data entry application from a <link binary_data_entry_application_file_pen.hgt>.pen file</link>, such as on an Android device, you may not have access to the <link data_dictionary_file_dcf.hgt>dictionary file (.dcf)</link> that may be necessary when running certain programs (such as the <link CSDiff::introduction_to_compare_data.hgt>Compare Data</link> tool). A special version of <logiccolor>pff.setproperty</logiccolor>, when used with the <pffcolor>InputDict</pffcolor> and <pffcolor>OutputDict</pffcolor> properties, accepts a dictionary name as an argument. If such an argument is used, certain tools (described in the <logiccolor>execpff</logiccolor> help) will be launched using the dictionary that is embedded in the .pen file.
 
 <logicsyntax>
 pff_name.setproperty("InputDict", LISTING_DICT);
