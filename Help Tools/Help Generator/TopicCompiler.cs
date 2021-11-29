@@ -148,18 +148,19 @@ namespace Help_Generator
             if( _topicCompilerSettings.AddHtmlHeaderFooter )
             {
                 _sb.Append(
-                    "<html>" +
-                    "<head>" +
-                    "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">" +
+                    "<!doctype html>\n" +
+                    "<html lang=\"en\">\n" +
+                    "<head>\n" +
+                    "<meta charset=\"utf-8\">\n" + 
                     "<title>");
 
                 titlePos = _sb.Length;
 
-                _sb.Append("</title>");
+                _sb.Append("</title>\n");
                 _sb.Append(_topicCompilerSettings.GetTopicStylesheet());
                 _sb.Append(
-                    "</head>" +
-                    "<body>");
+                    "\n</head>\n" +
+                    "<body>\n");
             }
 
             _sb.Append(_topicCompilerSettings.GetStartingHtml(_preprocessedTopic));
@@ -187,7 +188,7 @@ namespace Help_Generator
             if( _topicCompilerSettings.AddHtmlHeaderFooter )
             {
                 _sb.Append(
-                    "</body>" +
+                    "</body>\n" +
                     "</html>");
             }
 
@@ -905,28 +906,7 @@ namespace Help_Generator
 
         private string EndLogicSyntaxHandler(string endTagInnerText)
         {
-            // this assumes that the syntax is set up with proper start/end brackets and tags
-            const string ArgBeginReplacementCharacter = "⛁";
-            const string ArgEndReplacementCharacter = "⛃";
-
-            string arg_replaced_text = endTagInnerText.Replace("<arg>", ArgBeginReplacementCharacter)
-                                                      .Replace("</arg>", ArgEndReplacementCharacter);
-
-            StringBuilder logic = new StringBuilder(_colorizer.LogicToHelps(
-                TrimOnlyOneNewlineBothEnds(arg_replaced_text), _logicObjectDomain));
-
-            // colorize the text between the optional arguments
-            logic.Replace("『", "<span class=\"code_colorization_optional_text\"><font class=\"code_colorization_bracket\">『</font>");
-            logic.Replace("』", "<font class=\"code_colorization_bracket\">』</font></span>");
-
-            // colorize the optional arguments
-            logic.Replace(ArgBeginReplacementCharacter, "<span class=\"code_colorization_argument\">");
-            logic.Replace(ArgEndReplacementCharacter, "</span>");
-
-            // colorize the multiple arguments separator
-            logic.Replace("‖", "<font class=\"code_colorization_bracket\">‖</font>");
-
-            return logic.ToString();
+            return _colorizer.LogicSyntaxToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText), _logicObjectDomain);
         }
 
         private string EndLogicColorHandler(string endTagInnerText)

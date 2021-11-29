@@ -567,16 +567,17 @@ namespace Help_Generator
             get
             {
                 return
-                    "<html>" +
-                    "<head>" +
-                    "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">" +
+                    "<!doctype html>\n" +
+                    "<html lang=\"en\">\n" +
+                    "<head>\n" +
+                    "<meta charset=\"utf-8\">\n" + 
                     _pdfTopicCompilerSettings.GetTopicStylesheet() +
-                    "</head>" +
-                    "<body>";
+                    "\n</head>\n" +
+                    "<body>\n";
             }
         }
 
-        private string PdfHtmlFooter { get { return "</body></html>"; } }
+        private string PdfHtmlFooter { get { return "</body>\n</html>"; } }
 
         private void ListUnusedImages()
         {
