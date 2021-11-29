@@ -540,7 +540,7 @@
 			audio_concat_function.hgt															#				Audio.Concat Function
 			audio_length_function.hgt															#				Audio.Length Function
 			audio_clear_function.hgt															#				Audio.Clear Function
-		|Barcode																				#			Barcode
+		|Barcode and QR Codes																	#			Barcode and QR Codes
 			barcode.hgt																			#				Barcode Namespace
 			barcode_read_function.hgt															#				Barcode.Read Function
 		|Document Object																		#			Document Object
@@ -711,6 +711,7 @@
 			getrecord_function.hgt																#				GetRecord Function
 			getusername_function.hgt															#				GetUserName Function
 			gps_function.hgt																	#				GPS Function
+			interactive_gps_mode.hgt															#				Interactive GPS Mode
 			hideocc_function.hgt																#				HideOcc Function
 			highlighted_function.hgt															#				Highlighted Function
 			inadvance_function.hgt																#				InAdvance Function
@@ -822,6 +823,7 @@
 			getsymbol_function.hgt																#				GetSymbol Function
 			getvaluelabel_function.hgt															#				GetValueLabel Function
 			hash_function.hgt																	#				Hash Function
+			htmldialog_function.hgt																#				HtmlDialog Function
 			invalueset_function.hgt																#				InValueSet Function
 			ischecked_function.hgt																#				IsChecked Function
 			loadsetting_function.hgt															#				LoadSetting Function
@@ -916,6 +918,17 @@
 			syncapp_function.hgt																#				SyncApp Function
 			synctime_function.hgt																#				SyncTime Function
 			getbluetoothname_function.hgt														#				GetBluetoothName Function
+		|Export Attributes																		#			Export Attributes
+			export_attributes.hgt																#				Export Attributes
+			export_attribute_decimal_mark.hgt													#				Export Attribute: decimal-mark
+			export_attribute_dictionary.hgt														#				Export Attribute: dictionary
+			export_attribute_encoding.hgt														#				Export Attribute: encoding
+			export_attribute_header.hgt															#				Export Attribute: header
+			export_attribute_mapped_special_values.hgt											#				Export Attribute: mapped-special-values
+			export_attribute_record.hgt															#				Export Attribute: record
+			export_attribute_syntax_file.hgt													#				Export Attribute: syntax-file
+			export_attribute_type.hgt															#				Export Attribute: type
+			export_attribute_values.hgt															#				Export Attribute: value
 	|Templated Reporting System																	#		Templated Reporting System
 		templated_reports.hgt																	#			Templated Reports
 		templated_reports_mustache.hgt															#			Mustache Templated Reports

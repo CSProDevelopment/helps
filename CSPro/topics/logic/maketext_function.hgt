@@ -1,407 +1,74 @@
 ﻿<title>MakeText Function</title>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Format 1</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<logicsyntax>
+s = maketext(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』);
+</logicsyntax>
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">s =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-									 font-weight: bold;" color="#0000FF"
-									 face="Courier New" size="2">maketext</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(string-exp</font><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#FF00FF"
-														 face="Courier New"
-														 size="2">[</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,p</font><b><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-weight: bold;"
-													 color="#000000" face="Courier New"
-													 size="2">1</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">[</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">,p</font><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#000000" face="Courier New" size="2">2</font></b><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">[</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,...,p</font><b><font style="font-family: 'Courier New';
-														 font-size: 10pt;
-														 font-weight: bold;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">n</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">]]]</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#FF00FF" face="Arial"
-	 size="2">&#160;[ ]</font> <font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">indicates
- that this part is optional.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The maketext function formats a text string with inserted
- values. Each argument (e.g., &quot;p</font><b><font style="font-family: Arial;
-														 font-size: 10pt;
-														 font-weight: bold;"
-														 color="#000000"
-														 face="Arial" size="2">1&quot;</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">) is sequentially inserted into the text string. Arguments
- can be numeric or alphanumeric expressions, but the type of the argument
- must match the type of the receiving field in the string expression.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">In the &quot;string expression&quot;,</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 22.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -0.30pt;"><b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" face="Arial" size="2">%</font></b><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#FF00FF"
-	 face="Arial" size="2">[</font></b><b><i><font style="font-family: Arial;
-													 font-size: 10pt; font-weight: bold;
-													 font-style: italic;"
-													 face="Arial" size="2">n</font></i></b><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#FF00FF"
-	 face="Arial" size="2">]</font></b><b><font style="font-family: Arial;
-												 font-size: 10pt; font-weight: bold;"
-												 face="Arial" size="2">d</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;=&#160;Insert
- a number and display it as an integer</font></p>
-<p style="text-align: left; margin-left: 22.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -0.30pt;"><b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" face="Arial" size="2">%</font></b><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#FF00FF"
-	 face="Arial" size="2">[</font></b><b><i><font style="font-family: Arial;
-													 font-size: 10pt; font-weight: bold;
-													 font-style: italic;"
-													 face="Arial" size="2">n.d</font></i></b><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#FF00FF"
-	 face="Arial" size="2">]</font></b><b><font style="font-family: Arial;
-												 font-size: 10pt; font-weight: bold;"
-												 face="Arial" size="2">f</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;=&#160;Insert
- a number and display it as a decimal value</font></p>
-<p style="text-align: left; margin-left: 22.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -0.30pt;"><b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" face="Arial" size="2">%</font></b><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#FF00FF"
-	 face="Arial" size="2">[</font></b><b><i><font style="font-family: Arial;
-													 font-size: 10pt; font-weight: bold;
-													 font-style: italic;"
-													 face="Arial" size="2">n.d</font></i></b><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#FF00FF"
-	 face="Arial" size="2">]</font></b><b><font style="font-family: Arial;
-												 font-size: 10pt; font-weight: bold;"
-												 face="Arial" size="2">s</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;=&#160;Insert
- a text string</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">where
- &quot;</font><b><i><font style="font-family: Arial; font-size: 10pt; font-weight: bold;
-							 font-style: italic;" face="Arial" size="2">n&quot;</font></i></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">is
- the size of the field and &quot;</font><b><i><font style="font-family: Arial;
-													 font-size: 10pt; font-weight: bold;
-													 font-style: italic;"
-													 face="Arial" size="2">d&quot;</font></i></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">is
- the number of decimal places to show for a number.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Numbers
- are never truncated. Text strings are truncated only if &quot;</font><b><i><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold; font-style: italic;"
-	 face="Arial" size="2">.d&quot;</font></i></b> <font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">is
- used. If &quot;</font><b><i><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold; font-style: italic;"
-									 face="Arial" size="2">n&quot;</font></i></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">is
- positive, the insert is right justified in the size of the field. If &quot;</font><b><i><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold; font-style: italic;"
-	 face="Arial" size="2">n&quot;</font></i></b> <font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">is
- negative, the insert is left-justified in the size of the field. If &quot;</font><b><i><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold; font-style: italic;"
-	 face="Arial" size="2">n&quot;</font></i></b> <font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">is
- a positive number with a leading zero, the insert is right-justified in
- the size of the field and zero-filled to the left. When inserting a number,
- if &quot;</font><b><i><font style="font-family: Arial; font-size: 10pt;
-							 font-weight: bold; font-style: italic;" face="Arial"
-							 size="2">n&quot;</font></i></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">is preceded by a &quot;</font><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">+&quot;</font></b><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">, the sign
- of the number is always displayed.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Return Value:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">The
- function returns the formatted string.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">TEXT =</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-									 color="#0000FF" face="Courier New"
-									 size="2">maketext</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">&quot;Sex
- = %d&quot;</font><font style="font-family: 'Courier New'; font-size: 10pt;"
-						 face="Courier New" size="2">,</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">SEX);</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 2:</font></b><span style="margin-top: 0.00pt;
-														 margin-bottom: 0.00pt;
-														 text-indent: 10.80pt;
-														 text-align: left;">:</span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<table style="margin-left: 12px;" cellspacing="0" width="39.716%">
-	<col style="width: 41.473%;" />
-	<col style="width: 24.519%;" />
-	<col style="width: 34.008%;" />
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">Value = 23456</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">23456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;&#160;&#160;23456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%-10d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New'; font-size: 10pt;">23456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%010d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New'; font-size: 10pt;">0000023456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%+10d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New'; font-size: 10pt;">&#160;&#160;&#160;&#160;+23456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%+010d</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New'; font-size: 10pt;">+000023456</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.473%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 24.519%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%f</p></td>
-		<td style="width: 34.008%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New'; font-size: 10pt;">23456.000000</p></td>
-	</tr>
-</table>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;">&#160;</p>
-<table style="margin-left: 12px;" cellspacing="0" width="39.716%">
-	<col style="width: 41.749%;" />
-	<col style="width: 25.344%;" />
-	<col style="width: 34.874%;" />
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">Value
-		 = 12.567</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">12.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10.3f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;&#160;12.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%-10.3f&#160;</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">12.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10.2f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;&#160;&#160;12.57</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10.5f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;12.56700</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%010.3f&#160;</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">000012.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%+10.3f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;+12.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%+010.3f</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">+00012.567</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;</p></td>
-		<td style="width: 25.344%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%d&#160;</p></td>
-		<td style="width: 34.874%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">12</p></td>
-	</tr>
-</table>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;">&#160;</p>
-<table style="margin-left: 12px;" cellspacing="0" width="39.716%">
-	<col style="width: 41.749%;" />
-	<col style="width: 26.171%;" />
-	<col style="width: 32.08%;" />
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="margin-left: 0px; font-family: 'Courier New', monospace;
-			 font-size: 10pt;">Value = &quot;abcdef&quot;</p></td>
-		<td style="width: 26.171%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%s</p></td>
-		<td style="width: 32.08%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">abcdef</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 26.171%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10s</p></td>
-		<td style="width: 32.08%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;&#160;abcdef</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 26.171%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%-10s</p></td>
-		<td style="width: 32.08%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">abcdef</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 26.171%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%10.3s</p></td>
-		<td style="width: 32.08%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;abc</p></td>
-	</tr>
-	<tr style="vertical-align: top;">
-		<td style="width: 41.749%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; margin-left: 0px;
-			 font-size: 10pt;">&#160;</p></td>
-		<td style="width: 26.171%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">%-10.3s</p></td>
-		<td style="width: 32.08%; padding-right: 10px; padding-left: 10px;"><p
-			 style="font-family: 'Courier New', monospace; font-size: 10pt;">abc</p></td>
-	</tr>
-</table>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: Arial, sans-serif;"></p>
-</body>
-</html>
+<subheader>Format 2</subheader>
+
+<logicsyntax>
+s = maketext(<arg>msg_num</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The maketext function formats a text string with inserted values. Each argument is sequentially inserted into the text string. Arguments can be numeric or alphanumeric expressions, but the type of the argument must match the type of the receiving field in the string expression.
+
+In the string expression:
+
+<list>%<b>[n]d</b> = Insert a number and display it as an integer
+%<b>[n.d]f</b> = Insert a number and display it as a decimal value
+%<b>[n.d]s</b> = Insert a text string</list>
+
+where "<b>n</b>" is the size of the field and "d<b></b>" is the number of decimal places to show for a number. <i>For a complete list of possible message formatters, see <link message_formatting_options.hgt>Message Formatting Options</link></i>.
+
+Numbers are never truncated. Text strings are truncated only if "<b>.d</b>" is used. If "<b>n</b>" is positive, the insert is right-justified in the size of the field. If "<b>n</b>" is negative, the insert is left-justified in the size of the field. If "<b>n</b>" is a positive number with a leading zero, the insert is right-justified in the size of the field and zero-filled to the left. When inserting a number, if "<b>n</b>" is preceded by a "+", the sign of the number is always displayed.
+
+<subheader>Return Value</subheader>
+
+The function returns the formatted string.
+
+<subheader>Example 1</subheader>
+<logic>
+TEXT = maketext("Sex= %d", SEX);
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+numeric integerValue = 23456;
+
+errmsg( "%d"       , integerValue);      //  23456
+errmsg( "%-10d"    , integerValue);      //  23456
+errmsg( "%10d"     , integerValue);      //       23456
+errmsg( "%+10d"    , integerValue);      //      +23456
+errmsg( "%+010d"   , integerValue);      //  +000023456
+errmsg( "%-010d"   , integerValue);      //  0000023456
+errmsg( "%f"       , integerValue);      //  23456.000000  Note the usage of %f
 
 
-<html><!---♻---></html>
+numeric decimalValue = 12.567;
+
+errmsg( "%f"        , decimalValue);    //   12.567000
+errmsg( "%-10.3f"   , decimalValue);    //   12.567
+errmsg( "%d"        , decimalValue);    //   12			  Note the usage of %d
+errmsg( "%10.2f"    , decimalValue);    //        12.57
+errmsg( "%10.3f"    , decimalValue);    //       12.567
+errmsg( "%+10.3f"   , decimalValue);    //      +12.567
+errmsg( "%+010.3f"  , decimalValue);    //   +00012.567
+errmsg( "%010.3f"   , decimalValue);    //   000012.567
+errmsg( "%10.5f"    , decimalValue);    //     12.56700
+
+
+string stringValue = "abcdef";
+
+errmsg( "%s"        , stringValue);     //   abcdef
+errmsg( "%-10s"     , stringValue);     //   abcdef
+errmsg( "%-10.3s"   , stringValue);     //   abc
+errmsg( "%10s"      , stringValue);     //       abcdef
+errmsg( "%10.3s"    , stringValue);     //          abc
+</logic>
 
 <seealso message_formatting_options.hgt message_file_mgf.hgt />

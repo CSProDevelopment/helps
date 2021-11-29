@@ -1,0 +1,36 @@
+﻿<title>Export Data</title>
+
+In addition to exporting data via the <b>Tools > Export Data</b> utility, Data Viewer now has another way to export data to other file formats. It can be found under the menu dropdown: <b>File > Export...</b>
+
+This new export feature allows data to be written natively to all of the currently-supported file formats found within CSExport.exe, with two exceptions:
+
+<list>
+	<li><b>Excel:</b> has been added</li>
+	<li><b>Text Files:</b> are not supported (use <b>File > Save As</b> instead)</li>
+</list>
+
+The table below shows how the output file formats from <b>CSExport.exe</b> compare to Data Viewer's <b>Export Data</b> feature, when the "Output" checkbox is left unchecked:
+
+<image CSExport_vs_ExportData.png />
+
+<subheader>Example 1</subheader>
+
+Let's look at Excel first. Once the <b>Export Data</b> dialog is launched, choose Excel. By default, a single Excel file will be created with the same filename, using the <b>.xlsx</b> extension as shown below. The resultant Excel file will contain one tabsheet for each type of dictionary record found within the <b>.csdb</b> file.
+
+The only deviation from the default settings was the addition of "myFolder". The <b>.csdb</b> file being exported is located in the C:\HFA\data folder, and is named 064C01_200.csdb. The resultant 064C01_200.xlsx file will be placed within the subfolder "myFolder". If this folder does not exist, CSPro will create it&mdash;this will happen regardless of whether the new folder is a subfolder or a higher folder location. This option is available for the output file types Excel, R, and SAS. Checking this box for any other file type will have no effect.
+
+<image export_data_excel_1tabsheet_per_rec.png />
+
+<subheader>Example 2</subheader>
+
+Let's revisit the Excel example. Note the "Output" checkbox selection made below. This tells the Export feature to write out each type of dictionary record found to a separate Excel file, rather than creating a single Excel file, where each record type gets placed on a separate tabsheet. The "Output" checkbox only impacts file types Excel, R, and SAS.
+
+<image export_data_excel_1File_per_rec.png />
+
+<subheader>Summary of Export File Types</subheader>
+
+The table below summarizes the specific files that will be generated for the 6 possible export file types. By default, the output filename will use the data file's name as the base name (although this can be changed). Most exported file types will also append the dictionary record name to the base file name, as most of the export files represent dictionary record types (this part of the name can not be changed). Below shows this relationship (where FN=filename):
+
+<image export_data_filenames.png />
+
+<seealso converting_data_files_to_other_formats.hgt />

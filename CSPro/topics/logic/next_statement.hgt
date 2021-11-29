@@ -28,4 +28,8 @@ for numeric ctr in PERSON do
 enddo;
 </logic>
 
+<subheader>Note</subheader>
+
+Prior to version 7.6, if you were within a data entry application's roster and wrote "next" to skip to the next iteration of the roster, it would compile, but did not work. Checking is more stringent now, and an error message will be generated. You must write "<logiccolor>skip</logiccolor> to next" to accomplish the skip.
+
 <seealso break_statement.hgt exit_statement.hgt />

@@ -4,9 +4,9 @@ The question file contains information related to <b>CAPI</b> (<b>C</b>omputer-<
 
 <subheader>File Format</subheader>
 
-Most users do not need to understand the internal format of the .qsf file but for advanced users who wish to use their own tools to read or generate question files the following section describes the file format.
+Most users do not need to understand the internal format of the .qsf file, but for advanced users who wish to use their own tools to read or generate question files the following section describes the file format.
 
-You should avoid editing the question text file by hand since small changes to the content or indentation can easily render the file unreadable by CSPro.
+You should avoid editing the question text file by hand, since small changes to the content or indentation can easily render the file unreadable by CSPro.
 
 The .qsf file is in <link https://yaml.org>YAML</link> format with UTF-8 encoding.
 
@@ -38,7 +38,7 @@ languages:
 
 The list of styles is used to populate the styles dropdown in the question text editor which can be customized using the <b>Edit Styles</b> dialog available from the <b>CAPI</b> menu.
 
-Styles are implemented using CSS (Cascading Style Sheets) classes. Since the question text itself is in HTML format, styles are applied to the question text using CSS classes just as one would in a standard HTML web page. Each style in the list of styles in the question text file is implemented using a CSS class that describes the style using standard CSS style rules.
+Styles are implemented using CSS (Cascading Style Sheets) classes. Since the question text itself is in <link html_question_text.hgt>HTML</link> format, styles are applied to the question text using CSS classes just as one would in a standard HTML web page. Each style in the list of styles in the question text file is implemented using a CSS class that describes the style using standard CSS style rules.
 
 Each style in the question text file is a mapping with three keys:
 
@@ -74,6 +74,8 @@ If in the question text editor in CSPro you set the style for a block of text, t
 </pre></html>
 
 Any HTML that does not have a class specified will have the normal style applied. This is done by applying the normal class to the body element of the HTML document.
+
+<b>Note:</b> Prior to version 7.6, the format of the question text file was Rich Text Format (RTF). Opening an older data entry application in version 7.6 onwards will automatically convert the QSF file from RTF to HTML&mdash;though you must edit the QSF file to force the conversion. The original RTF will be retained as xxx.qsf.backup. Data entry applications with question text created or edited in version 7.6 can no longer be opened in older versions of CSPro. Should you need to revert the application to a prior version of CSPro, first run the VersionShifter utility, then delete xxx.qsf, and finally rename xxx.qsf.backup to xxx.qsf.
 
 
 <subheader>Questions</subheader>

@@ -1,8 +1,9 @@
 ﻿<title>Binary Data Entry Application File (.pen)</title>
 
 <list>
-	<li>A binary data entry application file is an alternative to the normal set of text data entry application files. It is one file that contains the same information as the set of text files, including the data dictionaries, forms, logic and CAPI question text. It cannot be viewed with any text editor.</li>
-	<li>This file can be <link generate_binary_data_entry_application.hgt>generated</link> in the CSPro designer and opened by CSEntry, on desktop and mobile devices. It cannot be opened by the CSPro designer.</li>
-	<li>Binary data entry application files provide security during a data entry operation. If you distribute this file to the data entry workstations, the operators cannot change the application, even if they have the full CSPro installed on their machines.</li>
-	<li>Binary data entry applications created in versions of CSPro prior to 6.0 had the extension .enc, not .pen. These files cannot be read by this version of CSPro.</li>
+	<li>A binary data entry application file is an alternative to distributing the entire suite of the (text-based) data entry application files. It is a single (binary) file that contains all the information from your data entry application's dictionaries, forms, logic, message file, and CAPI question text.</li>
+	<li>While this file is <link generate_binary_data_entry_application.hgt>generated</link> within the CSPro designer, it cannot be read by the CSPro Designer. It is read by CSEntry, on either desktop or mobile devices. A .pen file cannot be viewed with a text editor.</li>
+	<li>Binary data entry application files provide security during a data entry operation. If you install a .pen file to your data entry operators' workstations, the operators cannot change the application, even if they have the full CSPro installed on their machines.</li>
+	<li><b>.pen</b> files are the only type of file you can install on an Android device.</li>
+	<li>Binary data entry applications created in versions of CSPro prior to version 6.0 used the extension .enc, not .pen. These files cannot be read by CSEntry versions 6.0 or higher.</li>
 </list>

@@ -1,38 +1,56 @@
 ﻿<title>Warning Function</title>
 
-<subheader>Format</subheader>
+<subheader>Format 1</subheader>
 
 <logicsyntax>
-i =	warning(<arg>message</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』);
+i =	warning(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argument20</arg>』);
 </logicsyntax>
 
-<subheader>Format with Additional Options</subheader>
+<subheader>Format 2</subheader>
 
 <logicsyntax>
-i =	warning(<arg>message</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』)
-	『select(<arg>caption1</arg>, <arg>field1</arg>, ..., <arg>captionN</arg>, <arg>fieldN</arg>』) 『default(<arg>default_option</arg>)』 』
+i = warning(<arg>msg_num</arg>『, <arg>argument1</arg>, ..., <arg>argument20</arg>』);
+</logicsyntax>
+
+<subheader>Format 3</subheader>
+
+<logicsyntax>
+i =	warning(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argument20</arg>』)
+
+	『select(<arg>caption1</arg>, <arg>fieldname1</arg>『, ..., <arg>caption5</arg>, <arg>fieldname5</arg>』) 『default(<arg>default_option</arg>)』 』
 	『case ‖ summary』
 	『denom = <arg>numeric_denom</arg>』;
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>warning</logiccolor> function is similar to the <logiccolor>errmsg</logiccolor> function and the arguments and return value are described in the help documentation for that function. The function only has special behavior in a data entry application. If used in a batch or tabulation application, it behaves identically to <logiccolor>errmsg</logiccolor>.
+The <logiccolor>warning</logiccolor> function is similar to the <logiccolor>errmsg</logiccolor> function, with the function only having special behavior within a data entry application. If used in a batch or tabulation application, it behaves identically to <logiccolor>errmsg</logiccolor>.
 
-The function differs from <logiccolor>errmsg</logiccolor> in that it can be used for "soft check" error messages. These messages will not be displayed to the operator when advancing in the case (such as when resuming from a partial save). This can also be useful for information that you want to display to the operator only when they have just filled a field, rather than when moving from one section to another section.
+The <logiccolor>warning</logiccolor> function differs from <logiccolor>errmsg</logiccolor> in that it can be used for "soft check" error messages. These messages will not be displayed to the operator when advancing in the case (such as when resuming from a partial save). This can also be useful for information you want to display just once to the operator, such as during initial entry of a field, rather than when the operator is moving from one section to another section, and the field in question lays somewhere in between. 
 
-If using the <logiccolor>select</logiccolor> option, then one of the field arguments must be <logiccolor>continue</logiccolor> or you must specify the <arg>default_option</arg>. When advancing past this function, a message will not display and then the <arg>default_option</arg> or <logiccolor>continue</logiccolor> will be evaluated.
+Each argument is sequentially inserted into the warning message. Arguments can be numeric or alphanumeric expressions, but the type of the argument must match the type of the receiving field in the message text (see <logiccolor>errmsg</logiccolor> for a complete description of the function's arguments). The maximum number of arguments is 20. If messages are defined via the message number <arg>msg_num</arg>, then those messages will be stored in a message file [.mgf].  <arg>msg_num</arg> can be a number or <link expressions.hgt> numeric expression</link>.
+
+If using the <logiccolor>select</logiccolor> option, then one of the field arguments must be <logiccolor>continue</logiccolor> or you must specify a <arg>default_option</arg>, which corresponds to one of the select choices begin presented. This is necessary if advancing within the application, for while the message will not be displayed, the logic will be evaluated, and CSPro needs to know where to go. See below for an example on this usage. If the system is not processing an advance, using <arg>default_option</arg> places the focus on the select option chosen when the message is presented. If a <arg>default_option</arg> is not given, no button will have the focus.
+
+<subheader>Return Value</subheader>
+
+The function returns the cardinal number of the button pressed. When the <b>select</b> keyword is not used, the function will return 1, as only the "OK" button is presented to the user, corresponding to button #1 ("Cancel" is never presented, and so a code of zero is not possible).
+
+When the <b>select</b> keyword is used, the function returns the sequence number of the button that was pressed, with the first button having the value 1. A maximum of 5 select argument pairs is allowed.
 
 <subheader>Example</subheader>
 
 <logic>
-PROC RELATIONSHIP
-
-	if RELATIONSHIP = 1 then
-		warning("Please confirm that %s is the head of household.", strip(NAME))
-		select("Correct", continue,
-			   "Incorrect: Change Relationship", RELATIONSHIP);
+PROC MARITAL_STATUS
+postproc
+	if curocc() > 1 and $ in 1,2 { married, partner } and SEX=SEX(HEAD) then
+		warning("Is the sex of this person the same as the head of household's?")
+		       select("Correct", continue,
+			          "Incorrect: Change this person's sex", SEX,
+			          "Incorrect: Change the head's sex", SEX(HEAD))
+			          default(1); // during an advance, use the first choice, continue
+							 // if not processing an advance, the focus will be on button 1
 	endif;
 </logic>
- 
+
 <seealso errmsg_function.hgt message_formatting_options.hgt inadvance_function.hgt />

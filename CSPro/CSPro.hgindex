@@ -100,6 +100,11 @@ select_relative_or_absolute_positioning.hgt | Absolute											#	Absolute
 	relative_and_absolute_mode.hgt | Mode														#		Mode
 	select_relative_or_absolute_positioning.hgt | Positioning									#		Positioning
 abs_function.hgt | Abs Function																	#	Abs Function
+data_entry_keys.hgt | Accelerator Keys															#	Accelerator Keys
+	batch_edit_keys.hgt | Batch Edit															#		Batch Edit
+	data_dictionary_keys.hgt | Data Dictionary													#		Data Dictionary
+	data_entry_keys.hgt | Data Entry															#		Data Entry
+	tabulation_keys.hgt | Tabulation															#		Tabulation
 accept_function.hgt																				#	Accept Function
 add_dictionary_elements.hgt | Add																#	Add
 	add_dictionary_elements.hgt | Dictionary Elements											#		Dictionary Elements
@@ -224,6 +229,16 @@ ask_statement.hgt																				#	Ask Statement
 assignment_statement.hgt																		#	Assignment Statement
 statements.hgt | Assignment Statements															#	Assignment Statements
 hashmap.hgt | Associative Array																	#	Associative Array
+export_attributes.hgt | Attributes																#	Attributes
+	export_attribute_decimal_mark.hgt															#		Export Attribute: decimal-mark
+	export_attribute_dictionary.hgt																#		Export Attribute: dictionary
+	export_attribute_encoding.hgt																#		Export Attribute: encoding
+	export_attribute_header.hgt																	#		Export Attribute: header
+	export_attribute_mapped_special_values.hgt													#		Export Attribute: mapped-special-values
+	export_attribute_record.hgt																	#		Export Attribute: record
+	export_attribute_syntax_file.hgt															#		Export Attribute: syntax-file
+	export_attribute_type.hgt																	#		Export Attribute: type
+	export_attribute_values.hgt																	#		Export Attribute: value
 audio.hgt																						#	Audio Object
 	audio_clear_function.hgt																	#		Audio.Clear Function
 	audio_concat_function.hgt																	#		Audio.Concat Function
@@ -693,6 +708,7 @@ data_entry_elements.hgt | Description															#	Description
 	data_entry_elements.hgt | Fields															#		Fields
 	data_entry_elements.hgt | Forms																#		Forms
 	data_entry_elements.hgt | Rosters															#		Rosters
+designer_font_preferences.hgt																	#	Designer Font Preferences
 issues_to_consider_when_designing_a_form.hgt | Design a Form									#	Design a Form
 	issues_to_consider_when_designing_a_form.hgt | Issues										#		Issues
 develop_comprehensive_test_file.hgt																#	Develop Comprehensive Test File
@@ -734,7 +750,7 @@ direxist_function.hgt																			#	DirExist Function
 dirlist_function.hgt																			#	DirList Function
 tabulate_categories_with_disjoint_values.hgt | Disjoint Categories								#	Disjoint Categories
 	tabulate_categories_with_disjoint_values.hgt | In Value Sets								#		In Value Sets
-errmsg_function.hgt | Display Function															#	Display Function
+deprecated_features.hgt | Display Function														#	Display Function
 screen_orientation.hgt																			#	Display Orientation
 getproperty_function.hgt | Display Resolution													#	Display Resolution
 	getproperty_function.hgt | Height															#		Height
@@ -844,6 +860,10 @@ tool_list.hgt | Export																			#	Export
 export_statement.hgt																			#	Export Statement
 expressions.hgt																					#	Expressions
 capture_types.hgt | Extended Controls															#	Extended Controls
+systemapp_exec_function.hgt | External Applications												#	External Applications
+	execsystem_function_desktop.hgt																#		ExecSystem Function (Desktop)
+	execsystem_function_mobile.hgt																#		ExecSystem Function (Mobile)
+	systemapp.hgt																				#		SystemApp Object
 dictionary_types.hgt | External Dictionary														#	External Dictionary
 external_files.hgt																				#	External Files
 	external_files.hgt | About																	#		About
@@ -945,6 +965,7 @@ change_field_font.hgt | Font																	#	Font
 	change_field_font.hgt | Change Field														#		Change Field
 	change_fonts_or_colors.hgt | Change Fonts in a Table										#		Change Fonts in a Table
 	change_default_text_font.hgt | Default Text													#		Default Text
+	designer_font_preferences.hgt																#		Designer Font Preferences
 	change_field_font.hgt | Field																#		Field
 	print_all_or_part_of_a_document.hgt | Printer Font											#		Printer Font
 change_the_print_page_setup.hgt | Footer														#	Footer
@@ -1001,10 +1022,12 @@ user_defined_functions.hgt | Functions															#	Functions
 	additional_function_examples.hgt															#		Additional Examples of User-Defined Functions
 	logic_alphabetical_list.hgt | Alphabetical Listing											#		Alphabetical Listing
 	javascript_interface.hgt | Executing Using JavaScript										#		Executing Using JavaScript
+	additional_function_examples.hgt | Function Pointers										#		Function Pointers
 	function_named_arguments.hgt | Named Arguments												#		Named Arguments
 	function_parameters_optional.hgt															#		Optional Function Parameters
 	function_arguments_ref.hgt																	#		Passing Function Arguments by Reference
-	user_defined_functions.hgt | User Defined													#		User Defined
+	additional_function_examples.hgt | Recursive Functions										#		Recursive Functions
+	user_defined_functions.hgt | User-Defined													#		User-Defined
 function_statement.hgt																			#	Function Statement
 general_batch_editing_issues.hgt																#	General Batch Editing Issues
 cspro_menu.hgt | General Menu Summary															#	General Menu Summary
@@ -1094,6 +1117,7 @@ cspro_program_structure.hgt | Global															#	Global
 print_preview_options.hgt | Goto																#	Goto
 	print_preview_options.hgt																	#		Print Preview Options
 gps_function.hgt																				#	GPS Function
+	interactive_gps_mode.hgt																	#		Interactive GPS Mode
 uuid_function.hgt | GUID																		#	GUID
 guidelines_for_correcting_data.hgt																#	Guidelines for Correcting Data
 handle_multiple_answers.hgt																		#	Handle Multiple Answers
@@ -1140,6 +1164,7 @@ html_question_text.hgt | HTML																	#	HTML
 	javascript_interface.hgt																	#		JavaScript Interface
 	prepare_tables_for_posting_to_the_web.hgt													#		Prepare Tables for Posting to the Web
 	html_question_text.hgt | Question Text														#		Question Text
+htmldialog_function.hgt																			#	HtmlDialog Function
 questionnaire_and_dictionary_organization.hgt | Identification									#	Identification
 	questionnaire_and_dictionary_organization.hgt | Data Dictionary								#		Data Dictionary
 	questionnaire_and_dictionary_organization.hgt | File										#		File
@@ -1217,6 +1242,7 @@ installing_cspro.hgt | Installing																#	Installing
 	uninstalling_cspro.hgt																		#		Uninstalling CSPro
 run_production_data_entry.hgt | Interactive														#	Interactive
 cspro_capabilities.hgt | Interactive Editing													#	Interactive Editing
+interactive_gps_mode.hgt																		#	Interactive GPS Mode
 interpret_reports.hgt																			#	Interpret Reports
 introduction_to_batch_editing.hgt | Introduction to...											#	Introduction to...
 	introduction_to_batch_editing.hgt | Batch Editing											#		Batch Editing
@@ -1450,6 +1476,7 @@ geometry_maxlongitude_function.hgt | MaxLongitude Function										#	MaxLongitu
 maxocc_function.hgt																				#	MaxOcc Function
 maxvalue_function.hgt																			#	MaxValue Function
 max_function.hgt																				#	Max Function
+offline_maps.hgt | MBTiles																		#	MBTiles
 add_summary_statistics_to_a_table.hgt | Mean													#	Mean
 	add_summary_statistics_to_a_table.hgt														#		Add Summary Statistics to a Table
 	produce_summary_statistics.hgt																#		Produce Summary Statistics
@@ -1822,6 +1849,7 @@ protect_function.hgt																			#	Protect Function
 publishdate_function.hgt																		#	PublishDate Function
 putdeck_function.hgt																			#	PutDeck Function
 putnote_function.hgt | Putnote																	#	Putnote
+barcode_read_function.hgt | QR Code																#	QR Code
 questionnaire_and_dictionary_organization.hgt | Questionnaire									#	Questionnaire
 	questionnaire_and_dictionary_organization.hgt | Form										#		Form
 	questionnaire_and_dictionary_organization.hgt | Identification								#		Identification
@@ -1878,6 +1906,7 @@ audio_recordinteractive_function.hgt | RecordInteractive Function								#	Recor
 	audio_recordinteractive_function.hgt														#		Audio.RecordInteractive Function
 audio_record_function.hgt | Record Function														#	Record Function
 	audio_record_function.hgt																	#		Audio.Record Function
+additional_function_examples.hgt | Recursive Functions											#	Recursive Functions
 undo_and_redo_changes.hgt | Redo and Undo Changes												#	Redo and Undo Changes
 reenter_statement.hgt																			#	Reenter Statement
 tool_list.hgt | Reformat																		#	Reformat
@@ -2407,6 +2436,7 @@ debug_table_totals.hgt | Total																	#	Total
 	add_percents_to_a_table.hgt | Percent														#		Percent
 totocc_function.hgt																				#	TotOcc Function
 toupper_function.hgt																			#	ToUpper Function
+offline_maps.hgt | TPK files																	#	TPK files
 geometry_tracepolygon_function.hgt | TracePolygon Function										#	TracePolygon Function
 	geometry_tracepolygon_function.hgt															#		Geometry.TracePolygon Function
 trace_function.hgt																				#	Trace Function

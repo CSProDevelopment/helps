@@ -1,0 +1,43 @@
+﻿<title>Export Attributes</title>
+
+This page explains the numerous types of <link CSPro::connection_string.hgt>connection string</link> attributes available to you when working with files in the CSPro run dialogs. The following matrix presents all string attributes, and what file types they can be used by:
+
+<center><image connection_string_attributes.png /></center>
+
+The attributes listed above are presented below as section headings. When combined with the file name in a run dialog, using connection string attributes (properties) allows you to more tightly control how files are created. As outlined on the <link CSPro::connection_string.hgt>connection string</link> page, a connection string is made up of several components:
+
+<logicsyntax>
+<arg>file_name</arg> | <arg>property_name1</arg>=<arg>property_value1</arg> & <arg>property_name2</arg>=<arg>property_value2</arg> & <arg>property_name3</arg>=<arg>property_value3</arg>
+</logicsyntax>
+
+After the pipe symbol ("|") has been given, connection strings can be given in any order, they just need to be combined with the ampersand symbol (&).
+
+The following is a list of available connection string attributes:
+
+<list>
+	<li><topic export_attribute_record.hgt /></li>
+	<li><topic export_attribute_mapped_special_values.hgt /></li>
+	<li><topic export_attribute_encoding.hgt /></li>
+	<li><topic export_attribute_header.hgt /></li>
+	<li><topic export_attribute_encoding.hgt /></li>
+	<li><topic export_attribute_values.hgt /></li>
+	<li><topic export_attribute_decimal_mark.hgt /></li>
+	<li><font red>vector goes here, </font>see stub below</li>
+	<li><font red>factor goes here, </font>see stub below</li>
+	<li><topic export_attribute_dictionary.hgt /></li>
+	<li><topic export_attribute_syntax_file.hgt /></li>
+	<li><topic export_attribute_type.hgt /></li>
+</list>
+		
+<subheader>vector</subheader>
+
+The <b>vector</b> attribute is available for R data sources. There are three options: codes, factors, and codes-and-factors. 
+
+<font red>GREG,</font> you need to describe this attribute
+
+<subheader>factor</subheader>
+
+The <b>factor</b> attribute is available for R data sources. There are two options: discrete and all.
+
+<font red>GREG,</font> you need to describe this attribute
+

@@ -1,14 +1,19 @@
 ﻿<title>Map.AddMarker Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 markerId = map_name.addMarker(<arg>latitude</arg>, <arg>longitude</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>map.addMarker</logiccolor> function creates a new marker at the position defined by <arg>latitude</arg> and <arg>longitude</arg> and adds the new marker to the <link map.hgt>map</link> <logiccolor>map_name</logiccolor>. Initially the marker will have the default red and black marker icon and no description. You can customize the marker icon using the function <logiccolor>map.setMarkerText</logiccolor> or <logiccolor>map.setMarkerImage</logiccolor>. You can add a description of the marker using <logiccolor>map.setMarkerDescription</logiccolor>. The description will appear in the marker list and in a popup when the user taps on the marker.
+The <logiccolor>map.addMarker</logiccolor> function creates a new marker at the position defined by <arg>latitude</arg> and <arg>longitude</arg> and adds the new marker to the <link map.hgt>map</link> named <logiccolor>map_name</logiccolor>. Initially the marker will have the default red and black marker icon and no description.
+
+You can customize the marker icon using the function <logiccolor>map.setMarkerText</logiccolor> or <logiccolor>map.setMarkerImage</logiccolor>. You can add a description of the marker using <logiccolor>map.setMarkerDescription</logiccolor>. The description will appear in the marker list and in a popup when the user taps on the marker.
+
 
 <subheader>Return Value</subheader>
 
@@ -30,5 +35,6 @@ mymap.setMarkerDescription(markerId, "CSPro Team at the U.S. Census Bureau");
 // Show the map
 mymap.show();
 </logic>
+
 
 <seealso map.hgt map_remove_marker_function.hgt />
