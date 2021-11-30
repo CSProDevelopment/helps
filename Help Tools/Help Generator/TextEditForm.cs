@@ -251,6 +251,23 @@ namespace Help_Generator
             }
         }
 
+        private void linkLabelOpenContainingFolder_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("explorer.exe", $"/select, \"{_filename}\"");
+        }
+
+        private void linkLabelCopyFullPath_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Clipboard.Clear();
+            Clipboard.SetText(_filename);
+        }
+
+        private void linkLabelCopyFilename_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Clipboard.Clear();
+            Clipboard.SetText(Path.GetFileName(_filename));
+        }
+
         public void ProcessEditCommand(string command)
         {
             if( command == "bold" )

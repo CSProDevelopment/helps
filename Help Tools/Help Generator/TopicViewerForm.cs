@@ -22,7 +22,7 @@ namespace Help_Generator
             this.Text = String.Format("{0} - {1}",title,_baseWindowTitle);
 
             if( webBrowser.Document != null )
-                _maintainedScrollTop = webBrowser.Document.Body.ScrollTop;
+                _maintainedScrollTop = webBrowser.Document.GetElementsByTagName("html")[0].ScrollTop;
 
             webBrowser.DocumentText = html;
         }
@@ -31,7 +31,7 @@ namespace Help_Generator
         {
             if( _maintainedScrollTop != null )
             {
-                webBrowser.Document.Body.ScrollTop = (int)_maintainedScrollTop;
+                webBrowser.Document.Window.ScrollTo(0, (int)_maintainedScrollTop);
                 _maintainedScrollTop = null;
             }
         }
