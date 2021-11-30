@@ -3,55 +3,54 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = map_name.setBaseMap(<arg>mapType</arg> ‖ <arg>pathToOfflineMap</arg>);
+b = map_name.setBaseMap(<arg>base_map</arg>);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
-The <logiccolor>map.setBaseMap</logiccolor> function changes the base map that is displayed for the <link map.hgt>map</link> <logiccolor>map_name</logiccolor>. Maps can use either online base maps, which requires an Internet connection to load maps, or can use offline base maps, which requires a map file stored on the device. 
+The <logiccolor>map.setBaseMap</logiccolor> function changes the <link map_base_map_specification.hgt>base map</link> that is displayed when the <link map.hgt>map</link> named <logiccolor>map_name</logiccolor> is shown. Maps can use online base maps, which require an Internet connection to load, or can use offline base maps, which requires a map file stored on the device. 
 
-The first form of the function sets the base map to one of the online map types based on the value of <arg>mapType</arg>:
+To specify an online map, use one of the following names as the <arg>base_map</arg>:
 
-<table 2>
-<cell><b>Normal</b></cell><cell>Standard road map showing streets and outlines of some buildings.</cell>
-<cell><b>Satellite</b></cell><cell>Satellite imagery.</cell>
-<cell><b>Hybrid</b></cell><cell>Features from the street map overlaid on satellite imagery.</cell>
-<cell><b>Terrain</b></cell><cell>Physical map based on terrain information.</cell>
-<cell><b>None</b></cell><cell>Empty base map. Only markers and buttons are shown.</cell>
-</table>
+<include ..\..\include_base_map_names.hgi />
 
-The second form uses an offline map in a file named named <arg>pathToOfflineMap</arg> stored on the device. For details on supported file types for offline maps see <link offline_maps.hgt>offline maps</link>.
+To use an <link offline_maps.hgt>offline map</link>, specify <arg>base_map</arg> using a string expression containing the filename of the offline map.
 
-By default the map type is <b>Normal</b>.
+When no base map is set, the default base map will be calculated using <link map_base_map_specification.hgt>defined rules</link>.
+
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true) if the base map was changed successfully and 0 (false) otherwise (for example, if the offline map is missing or invalid).
+The function returns a logical value of 1 (true) if the base map was changed successfully and 0 (false) otherwise (for example, if the offline map is not found).
 
-<subheader>Example 1 (online map)</subheader>
+
+<subheader>Example 1 (Online Map)</subheader>
 
 <logic>
 // Declare a map
 map mymap;
 
 // Change the base map to satellite imagery
-mymap.setBaseMap(satellite);
+mymap.setBaseMap(Satellite);
 
 // Display the map
 mymap.show();
 </logic>
 
-<subheader>Example 2 (offline map)</subheader>
+
+<subheader>Example 2 (Offline Map)</subheader>
 
 <logic>
 // Declare a map
 map mymap;
 
-// Change the base map to offline map file
-mymap.setBaseMap("maps/suitland_imagery.mbtiles");
+// Change the base map to an offline map file
+mymap.setBaseMap("Maps/Suitland.mbtiles");
 
 // Display the map
 mymap.show();
 </logic>
 
-<seealso map.hgt offline_maps.hgt />
+
+<seealso map.hgt map_base_map_specification.hgt offline_maps.hgt />
