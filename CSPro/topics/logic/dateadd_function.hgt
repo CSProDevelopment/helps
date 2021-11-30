@@ -3,8 +3,9 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = dateadd(<arg>start_date</arg>, <arg>period</arg> 『,<arg>period_type</arg>』);
+i = dateadd(<arg>start_date</arg>, <arg>period</arg>『, <arg>period_type</arg>』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -18,9 +19,18 @@ The <logiccolor>dateadd</logiccolor> function calculates a new date by adding a 
 	<cell><logiccolor>"y"</logiccolor></cell><cell>years</cell>
 </table></indent>
 
+If the period is not an integer, the period will be modified and the calculation will use days. For example, the following calculations are identical:
+
+<logic>
+dateadd(20200319, 1.5, "y");
+dateadd(20200319, 1.5 * 365.25, "d");
+</logic>
+
+
 <subheader>Return Value</subheader>
 
 The function returns a date calculated by adding the period to the starting date. If the starting date cannot be processed, the function returns <logiccolor>default</logiccolor>.
+
 
 <subheader>Examples</subheader>
 
@@ -36,5 +46,6 @@ dateadd(20040820, 3, "y");	// returns 20070820
 
 dateadd(20001010, -3, "m");	// returns 20000710
 </logic>
+
 
 <seealso datediff_function.hgt datevalid_function.hgt sysdate_function.hgt />

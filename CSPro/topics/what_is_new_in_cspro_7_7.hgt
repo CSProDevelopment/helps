@@ -34,6 +34,13 @@ This is a detailed list of changes in CSPro 7.7. For a more general overview, se
 </list>
 
 
+<subheader>CAPI Question Text</subheader>
+
+<list>
+	<li>Question text can be added in <link data_entry_menu.hgt>right-to-left</link> format, facilitating the addition of text in languages such as Arabic or Hebrew.</li>
+</list>
+
+
 <subheader>Logic</subheader>
 
 <list>
@@ -53,7 +60,7 @@ This is a detailed list of changes in CSPro 7.7. For a more general overview, se
 	<li>The <logiccolor>htmldialog</logiccolor> function allows for the creation of custom dialogs using HTML and <link javascript_interface.hgt>JavaScript</link>.</li>
 	<li>The Downloads directory path can be <link pathname_function.hgt>retrieved</link>. Copying files to and from this directory is a useful way to share files between applications on Android 11 devices.</li>
 	<li>The <logiccolor>getproperty</logiccolor> function can now return some system properties (such as the usable screen resolution).</li>
-	<li>The <logiccolor>setproperty</logiccolor> function's property value can be specified as a numeric expression instead of having to be given as a string.</li>
+	<li>The <logiccolor>setproperty</logiccolor> and <logiccolor>pff.setproperty</logiccolor> functions' property values can be specified as numeric expressions instead of having to be given as strings.</li>
 	<li>The <logiccolor>setoutput</logiccolor> function can take a string list as an argument to facilitate specifying multiple output data sources.</li>
 	<li>The <logiccolor>view</logiccolor> function has new options that allow users to specify the window size and other attributes of how the embedded web browser will appear when viewing HTML files and websites.</li>
 </list>
