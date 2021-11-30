@@ -40,7 +40,7 @@ Writing a user-created HTML template can be simplified by first selecting an exi
 The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a JSON string that represents multiple values. The string contents of the input data are retrieved by calling <i>CSPro.getInputData()</i> from the script block of the HTML template.
 
 <color javascript>
-// Simply string
+// Simple string
 var inputString = CSPro.getInputData();
 
 // JSON string
@@ -77,8 +77,8 @@ string input_data = "Hello world!";
 string display_options = maketext('{ "width": "%d",'
 								  '  "height": %d,'
 								  '  "borderColor": "#FF0000" }',
-								  tonumber(getproperty("MaxDisplayWidth")) - 200,
-							      tonumber(getproperty("MaxDisplayHeight")) - 200);
+								  int(tonumber(getproperty("MaxDisplayWidth")) * 0.8),
+							      int(tonumber(getproperty("MaxDisplayHeight")) * 0.8);
 
 string result = htmldialog("user-defined-dialog.html", inputData := input_data, displayOptions := display_options);
 </logic>
