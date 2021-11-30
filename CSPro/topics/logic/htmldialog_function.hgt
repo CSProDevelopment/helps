@@ -39,13 +39,13 @@ Writing a user-created HTML template can be simplified by first selecting an exi
 
 The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a JSON string that represents multiple values. The string contents of the input data are retrieved by calling <i>CSPro.getInputData()</i> from the script block of the HTML template.
 
-<html><pre>
+<color javascript>
 // Simply string
 var inputString = CSPro.getInputData();
 
 // JSON string
 var inputJSON = JSON.parse(CSPro.getInputData());
-</pre></html>
+</color>
 
 <subheader>Display Options</subheader>
 

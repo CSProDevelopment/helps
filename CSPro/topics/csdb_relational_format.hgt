@@ -26,34 +26,32 @@ CSPro DB files also contain additional tables that store field notes as well as 
 
 To find the rows in the record tables that correspond to a particular case in the data file, join the record table with the level table using the linking column and filter on the ID items. For example, the following query on the example database above lists all the individuals in province 1, district 1, enumeration area 3, household 1:
 
-<html><pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>SELECT</span> <span style='color:#808030; '>*</span> <span style='color:#800000; font-weight:bold; '>FROM</span> person_rec 
-<span style='color:#800000; font-weight:bold; '>JOIN</span> `level-1` <span style='color:#800000; font-weight:bold; '>ON</span> `level-1`<span style='color:#808030; '>.</span>`level-1-id` <span style='color:#808030; '>=</span> person_rec<span style='color:#808030; '>.</span>`level-1-id`
-<span style='color:#800000; font-weight:bold; '>WHERE</span> province <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span> <span style='color:#800000; font-weight:bold; '>AND</span> district <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span> <span style='color:#800000; font-weight:bold; '>AND</span> enumeration_area <span style='color:#808030; '>=</span> <span style='color:#008c00; '>3</span> <span style='color:#800000; font-weight:bold; '>AND</span> household_number <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span>
-</pre>
-<!--Created using ToHtml.com on 2020-03-25 14:13:55 UTC --></html>
+<color sql>
+SELECT * FROM person_rec
+JOIN `level-1` ON `level-1`.`level-1-id` = person_rec.`level-1-id`
+WHERE province = 1 AND district = 1 AND enumeration_area = 3 AND household_number = 1
+</color>
 
 Note the use of <b>`</b> around <b>level-1-id</b>. This is required so that SQLite does not treat the "-" character in the name as a minus sign which would cause a syntax error.
 
 The query above could potentially include data from deleted cases. To exclude deleted cases, join with the cases table and filter on the deleted column:
 
-<html>
-<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>SELECT</span> <span style='color:#808030; '>*</span> <span style='color:#800000; font-weight:bold; '>FROM</span> person_rec
-<span style='color:#800000; font-weight:bold; '>JOIN</span> `level-1` <span style='color:#800000; font-weight:bold; '>ON</span> `level-1`<span style='color:#808030; '>.</span>`level-1-id` <span style='color:#808030; '>=</span> person_rec<span style='color:#808030; '>.</span>`level-1-id`
-<span style='color:#800000; font-weight:bold; '>JOIN</span> cases <span style='color:#800000; font-weight:bold; '>ON</span> cases<span style='color:#808030; '>.</span>id <span style='color:#808030; '>=</span> `level-1`<span style='color:#808030; '>.</span>`case-id`
-<span style='color:#800000; font-weight:bold; '>WHERE</span> deleted <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span> <span style='color:#800000; font-weight:bold; '>AND</span> province <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span> <span style='color:#800000; font-weight:bold; '>AND</span> district <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span> <span style='color:#800000; font-weight:bold; '>AND</span> enumeration_area <span style='color:#808030; '>=</span> <span style='color:#008c00; '>3</span> <span style='color:#800000; font-weight:bold; '>AND</span> household_number <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span>
-</pre>
-</html>
+<color sql>
+SELECT * FROM person_rec
+JOIN `level-1` ON `level-1`.`level-1-id` = person_rec.`level-1-id`
+JOIN cases ON cases.id = `level-1`.`case-id`
+WHERE deleted = 0 AND province = 1 AND district = 1 AND enumeration_area = 3 AND household_number = 1
+</color>
 
 Using <b>GROUP BY</b>, the following query gets the number of households by enumeration area:
 
-<html>
-<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>SELECT</span> province<span style='color:#808030; '>,</span> district<span style='color:#808030; '>,</span> enumeration_area<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>COUNT</span><span style='color:#808030; '>(</span><span style='color:#808030; '>*</span><span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>AS</span> `number of households`
-<span style='color:#800000; font-weight:bold; '>FROM</span> `level-1`
-<span style='color:#800000; font-weight:bold; '>JOIN</span> cases <span style='color:#800000; font-weight:bold; '>ON</span> cases<span style='color:#808030; '>.</span>id <span style='color:#808030; '>=</span> `level-1`<span style='color:#808030; '>.</span>`case-id`
-<span style='color:#800000; font-weight:bold; '>WHERE</span> deleted <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span>
-<span style='color:#800000; font-weight:bold; '>GROUP</span> <span style='color:#800000; font-weight:bold; '>BY</span> province<span style='color:#808030; '>,</span> district<span style='color:#808030; '>,</span> enumeration_area
-</pre>
-</html>
+<color sql>
+SELECT province, district, enumeration_area, COUNT(*) AS `number of households`
+FROM `level-1`
+JOIN cases ON cases.id = `level-1`.`case-id`
+WHERE deleted = 0
+GROUP BY province, district, enumeration_area
+</color>
 
 
 <subheader>Modifying the Data</subheader>

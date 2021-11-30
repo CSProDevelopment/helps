@@ -78,6 +78,7 @@ namespace Help_Generator
 
         private string _logicObjectDomain;
         private bool _reportIsHtml;
+        private string _colorLanguage;
 
         public TopicCompiler(CSPro.Logic.Colorizer colorizer, HelpComponents helpComponents, 
             Preprocessor.TopicPreprocessor preprocessedTopic, TopicCompilerSettingsInterface topicCompilerSettings)
@@ -119,6 +120,7 @@ namespace Help_Generator
             _tagSettings.Add(ReportTag,new TagSettings(true,(StartTagHandlerDelegate)StartReportHandler,(EndTagHandlerDelegate)EndReportHandler,0,1));
 			_tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
             _tagSettings.Add(PffColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffColorHandler,0,0));
+            _tagSettings.Add(ColorTag,new TagSettings(true,(StartTagHandlerDelegate)StartColorHandler,(EndTagHandlerDelegate)EndColorHandler,1,1));
             _tagSettings.Add(HtmlTag,new TagSettings("",""));
             _tagSettings.Add(CalloutTag, new TagSettings(true, "<div style=\"background-color: lightgrey;border:1px solid black;margin:10px;padding:10px\">", "</div>", 0, 0));
             _tagSettings.Add(PageBreakTag, new TagSettings(false, "<div class=\"new-page\" />", "", 0, 0));
@@ -129,6 +131,7 @@ namespace Help_Generator
             _blockTags.Add(MessageTag);
             _blockTags.Add(ReportTag);
             _blockTags.Add(PffTag);
+            _blockTags.Add(ColorTag);
             _blockTags.Add(HtmlTag);
         }
 
@@ -997,6 +1000,17 @@ namespace Help_Generator
             return _helpComponents._pffColorizer.ColorizeWord(endTagInnerText.Trim());
         }
 
+        private string StartColorHandler(string[] startTagComponents)
+        {
+            _colorLanguage = startTagComponents[0];
+            return "";
+        }
+
+        private string EndColorHandler(string endTagInnerText)
+        {
+            return _colorizer.LanguageToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText), _colorLanguage);
+        }
+
 
         public const string TagTitle = "title";
         public const string ContextTag = "context";
@@ -1025,6 +1039,7 @@ namespace Help_Generator
 		public const string ReportTag = "report";
         public const string PffTag = "pff";
         public const string PffColorTag = "pffcolor";
+        public const string ColorTag = "color";
         public const string HtmlTag = "html";
         public const string DefinitionTag = "definition";
 		public const string IncludeTag = "include";
