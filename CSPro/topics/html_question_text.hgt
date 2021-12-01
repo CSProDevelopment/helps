@@ -13,9 +13,9 @@ The HTML for each question does not include the &lt;html&gt; or &lt;body&gt; tag
 
 All styles defined in the <link question_text_edit_styles.hgt>Edit Styles</link> dialog are included as CSS classes in the HTML document by CSPro. These styles can therefore be used in the HTML question text by setting the class attribute of a tag to the name of one of the styles. For example:
 
-<indent><html><pre>
-&lt;p&gt;A question with &lt;span class=&quot;instruction&quot;&gt;a style applied to this part&lt;/span&gt;.&lt;/p&gt;
-</pre></html></indent>
+<color html>
+<p>A question with <span class="instruction">a style applied to this part</span>.</p>
+</color>
 
 The <b>normal</b> style is applied to the &lt;body&gt; tag by CSPro so that all unstyled text in the question text uses the <b>normal</b> style.
 
@@ -33,10 +33,10 @@ References to external files such as images and stylesheets may be included in t
 
 A <link javascript_interface.hgt>JavaScript interface</link> exists to facilitate the invocation of <link user_defined_functions.hgt>user-defined functions</link> from question text. This feature allows advanced users to take advantage of the power of JavaScript to allow some interaction between question text and CSPro logic. For example:
 
-<indent><html><pre>
-&lt;p&gt;You are entering person ~~curocc()~~. When all persons have been recorded, 
-&lt;a href="javascript:CSPro.logic('EndPersonRoster();');"&gt;click here&lt;/a&gt;.&lt;/p&gt;
-</pre></html></indent>
+<report html>
+<p>You are entering person ~~curocc()~~. When all persons have been recorded, 
+<a href="javascript:CSPro.runLogicAsync('EndPersonRoster();');">click here</a>.</p>
+</report>
 
 
 <seealso change_formatting.hgt question_text_file_qsf.hgt />

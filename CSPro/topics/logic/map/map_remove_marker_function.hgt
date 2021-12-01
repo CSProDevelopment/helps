@@ -1,25 +1,30 @@
 ﻿<title>Map.RemoveMarker Function</title>
 
+
 <subheader>Format</subheader>
 
-<logicsyntax map>
+<logicsyntax>
 b = map_name.removeMarker(<arg>markerId</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor map>map.removeMarker</logiccolor> function removes a marker from the map. The  <arg>markerId</arg> should be the id returned by the <logiccolor map>map.addMarker</logiccolor> function when the marker was added to the map.
+The <logiccolor>map.removeMarker</logiccolor> function removes a marker from the <link map.hgt>map</link> named <logiccolor>map_name</logiccolor>. The <arg>markerId</arg> should be the id returned by <logiccolor>map.addMarker</logiccolor> function when the marker was added to the map.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the marker was found and was successfully removed and 0 (false) if there is an error.
+
 
 <subheader>Example</subheader>
 
 <logic>
 PROC GLOBAL
 
-// Function that allows the user to modify the marker text or description, or remove the marker from the map
+// Function that allows the user to modify the marker text or description,
+// or to remove the marker from the map
 function editMarker(map m, numeric markerId)
 
 	numeric sel = accept("Edit marker", "Text", "Description", "Remove");
@@ -34,7 +39,7 @@ function editMarker(map m, numeric markerId)
 			m.setMarkerDescription(markerId, newDescription);
 		endif;
 	elseif sel = 3 then
-		if accept ("Confirm marker removal from the map", "Yes", "No")=1 then
+		if accept("Confirm marker removal from the map", "Yes", "No") = 1 then
 		  m.removeMarker(markerId);
 		endif;
 	endif;
@@ -56,5 +61,6 @@ mymap.setMarkerOnClickInfoWindow(markerId, editMarker(mymap, markerId));
 // Display the map
 mymap.show();
 </logic>
+
 
 <seealso map.hgt map_add_marker_function.hgt />

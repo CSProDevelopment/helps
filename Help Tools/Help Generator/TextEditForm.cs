@@ -75,7 +75,7 @@ namespace Help_Generator
                 {
                     _topicCompilerSettings.HelpGeneratorMainForm = ((MainForm)this.ParentForm);
 
-                    string html = ((Topic)_textEditableInterface).CompileForHtml(editControl.Text,_helpComponents,_topicCompilerSettings);
+                    string html = ((Topic)_textEditableInterface).CompileForHtml(this, editControl.Text,_helpComponents,_topicCompilerSettings);
                     UpdateWindowTitle();
 
                     // update the HTML view
@@ -249,6 +249,23 @@ namespace Help_Generator
                     break;
                 }
             }
+        }
+
+        private void linkLabelOpenContainingFolder_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("explorer.exe", $"/select, \"{_filename}\"");
+        }
+
+        private void linkLabelCopyFullPath_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Clipboard.Clear();
+            Clipboard.SetText(_filename);
+        }
+
+        private void linkLabelCopyFilename_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Clipboard.Clear();
+            Clipboard.SetText(Path.GetFileName(_filename));
         }
 
         public void ProcessEditCommand(string command)

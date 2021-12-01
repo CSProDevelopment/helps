@@ -147,10 +147,12 @@
 			user_defined_functions.hgt															#				User-Defined Functions
 			array.hgt																			#				Array Object
 			audio.hgt																			#				Audio Object
+			document.hgt																		#				Document Object
 			file.hgt																			#				File Object
 			freq.hgt																			#				Freq Object
 			geometry.hgt																		#				Geometry Object
 			hashmap.hgt																			#				HashMap Object
+			image.hgt																			#				Image Object
 			list.hgt																			#				List Object
 			map.hgt																				#				Map Object
 			pff.hgt																				#				Pff Object
@@ -197,6 +199,8 @@
 				external_files.hgt																#					External Files
 				lookup_files.hgt																#					Lookup Files
 				working_storage_file.hgt														#					Working Storage File
+			|Miscellaneous																		#				Miscellaneous
+				display_dimensions.hgt															#					Display Dimensions
 	|Data Entry Module																			#		Data Entry Module
 		introduction_to_data_entry.hgt															#			Introduction to Data Entry
 		|Data Entry Application																	#			Data Entry Application
@@ -225,7 +229,6 @@
 				change_the_order_of_entry.hgt													#					Change the Order of Entry
 				change_data_entry_options.hgt													#					Change Data Entry Options
 				data_source_options.hgt															#					Data Source Options
-				paradata_options.hgt															#					Paradata Options
 				synchronization_simple.hgt														#					Simple Synchronizations
 				map_case_list.hgt																#					Display the Case Listing on a Map
 				change_default_text_font.hgt													#					Change Default Text Font
@@ -294,6 +297,7 @@
 				toggle_button.hgt																#					Toggle Button
 			|Multimedia																			#				Multimedia
 				multimedia_features.hgt															#					Multimedia Features
+				media_store.hgt																	#					Media Store
 				camera.hgt																		#					Camera
 				signature.hgt																	#					Signature
 			|CAPI Strategies																	#				CAPI Strategies
@@ -538,20 +542,15 @@
 			audio_concat_function.hgt															#				Audio.Concat Function
 			audio_length_function.hgt															#				Audio.Length Function
 			audio_clear_function.hgt															#				Audio.Clear Function
-		|Barcode and QR Codes																	#			Barcode and QR Code
+		|Barcode and QR Codes																	#			Barcode and QR Codes
 			barcode.hgt																			#				Barcode Namespace
 			barcode_read_function.hgt															#				Barcode.Read Function
-		|Export Attributes																		#			Export Attributes
-			export_attributes.hgt																#				Export Attributes
-			export_attribute_decimal_mark.hgt													#				decimal-mark
-			export_attribute_dictionary.hgt														#				dictionary
-			export_attribute_encoding.hgt														#				encoding
-			export_attribute_header.hgt															#				header
-			export_attribute_mapped_special_values.hgt											#				mapping-special-values
-			export_attribute_record.hgt															#				record
-			export_attribute_syntax_file.hgt													#				syntax-file
-			export_attribute_type.hgt															#				type
-			export_attribute_values.hgt															#				values
+		|Document Object																		#			Document Object
+			document_statement.hgt																#				Document Statement
+			document_load_function.hgt															#				Document.Load Function
+			document_save_function.hgt															#				Document.Save Function
+			document_view_function.hgt															#				Document.View Function
+			document_clear_function.hgt															#				Document.Clear Function
 		|File Object																			#			File Object
 			file_statement.hgt																	#				File Statement
 			file_open_function.hgt																#				File.Open Function
@@ -587,6 +586,17 @@
 			hashmap_length_function.hgt															#				HashMap.Length Function
 			hashmap_remove_function.hgt															#				HashMap.Remove Function
 			hashmap_clear_function.hgt															#				HashMap.Clear Function
+		|Image Object																			#			Image Object
+			image_statement.hgt																	#				Image Statement
+			image_load_function.hgt																#				Image.Load Function
+			image_save_function.hgt																#				Image.Save Function
+			image_width_function.hgt															#				Image.Width Function
+			image_height_function.hgt															#				Image.Height Function
+			image_resample_function.hgt															#				Image.Resample Function
+			image_takephoto_function.hgt														#				Image.TakePhoto Function
+			image_capturesignature_function.hgt													#				Image.CaptureSignature Function
+			image_view_function.hgt																#				Image.View Function
+			image_clear_function.hgt															#				Image.Clear Function
 		|List Object																			#			List Object
 			list_statement.hgt																	#				List Statement
 			list_add_function.hgt																#				List.Add Function
@@ -630,6 +640,7 @@
 			map_add_image_button_function.hgt													#				Map.AddImageButton Function
 			map_remove_button_function.hgt														#				Map.RemoveButton Function
 			map_clear_buttons_function.hgt														#				Map.ClearButtons Function
+			map_base_map_specification.hgt														#				Base Map Specification
 			offline_maps.hgt																	#				Offline Maps
 		|Path																					#			Path
 			path.hgt																			#				Path Namespace
@@ -638,6 +649,8 @@
 			path_getextension_function.hgt														#				Path.GetExtension Function
 			path_getfilename_function.hgt														#				Path.GetFileName Function
 			path_getfilenamewithoutextension_function.hgt										#				Path.GetFileNameWithoutExtension Function
+			path_getrelativepath_function.hgt													#				Path.GetRelativePath Function
+			path_selectfile_function.hgt														#				Path.SelectFile Function
 		|Pff Object																				#			Pff Object
 			pff_statement.hgt																	#				Pff Statement
 			pff_load_function.hgt																#				Pff.Load Function
@@ -701,10 +714,10 @@
 			getrecord_function.hgt																#				GetRecord Function
 			getusername_function.hgt															#				GetUserName Function
 			gps_function.hgt																	#				GPS Function
+			gps_interactive_modes.hgt															#				Interactive GPS Modes
 			hideocc_function.hgt																#				HideOcc Function
 			highlighted_function.hgt															#				Highlighted Function
 			inadvance_function.hgt																#				InAdvance Function
-			interactive_gps_mode.hgt                                                            #               Interactive GPS Mode
 			ispartial_function.hgt																#				IsPartial Function
 			isverified_function.hgt																#				IsVerified Function
 			move_statement.hgt																	#				Move Statement
@@ -859,6 +872,7 @@
 			clear_function.hgt																	#				Clear Function
 			close_function.hgt																	#				Close Function
 			countcases_function.hgt																#				CountCases Function
+			currentkey_function.hgt																#				CurrentKey Function
 			delcase_function.hgt																#				DelCase Function
 			dircreate_function.hgt																#				DirCreate Function
 			dirdelete_function.hgt																#				DirDelete Function
@@ -905,7 +919,19 @@
 			syncmessage_function.hgt															#				SyncMessage Function
 			syncparadata_function.hgt															#				SyncParadata Function
 			syncapp_function.hgt																#				SyncApp Function
+			synctime_function.hgt																#				SyncTime Function
 			getbluetoothname_function.hgt														#				GetBluetoothName Function
+		|Export Attributes																		#			Export Attributes
+			export_attributes.hgt																#				Export Attributes
+			export_attribute_decimal_mark.hgt													#				Export Attribute: decimal-mark
+			export_attribute_dictionary.hgt														#				Export Attribute: dictionary
+			export_attribute_encoding.hgt														#				Export Attribute: encoding
+			export_attribute_header.hgt															#				Export Attribute: header
+			export_attribute_mapped_special_values.hgt											#				Export Attribute: mapped-special-values
+			export_attribute_record.hgt															#				Export Attribute: record
+			export_attribute_syntax_file.hgt													#				Export Attribute: syntax-file
+			export_attribute_type.hgt															#				Export Attribute: type
+			export_attribute_values.hgt															#				Export Attribute: value
 	|Templated Reporting System																	#		Templated Reporting System
 		templated_reports.hgt																	#			Templated Reports
 		templated_reports_mustache.hgt															#			Mustache Templated Reports
@@ -933,16 +959,21 @@
 			data_entry_toolbar.hgt																#				Data Entry Toolbar
 			batch_editing_toolbar.hgt															#				Batch Editing Toolbar
 			tabulation_toolbar.hgt																#				Tabulation Toolbar
-		|Appendix E - Converting Within IMPS or ISSA											#			Appendix E - Converting Within IMPS or ISSA
+		|Appendix E - Application Properties													#			Appendix E - Application Properties
+			properties_application.hgt															#				Application Properties
+			properties_paradata.hgt																#				Paradata Properties
+			properties_mapping.hgt																#				Mapping Properties
+			properties_advanced_features.hgt													#				Advanced Features Properties
+		|Appendix F - Converting Within IMPS or ISSA											#			Appendix F - Converting Within IMPS or ISSA
 			converting_a_data_dictionary.hgt													#				Converting a Data Dictionary
 			converting_within_imps.hgt															#				Converting within IMPS
 			converting_within_issa.hgt															#				Converting within ISSA
 			converting_an_imps_data_entry_application.hgt										#				Converting an IMPS Data Entry Application
 			converting_an_issa_data_entry_application.hgt										#				Converting an ISSA Data Entry Application
-		|Appendix F - Errors in Censuses and Surveys											#			Appendix F - Errors in Censuses and Surveys
+		|Appendix G - Errors in Censuses and Surveys											#			Appendix G - Errors in Censuses and Surveys
 			nature_of_census_and_survey_data.hgt												#				Nature of Census and Survey Data
 			errors_in_censuses_and_surveys.hgt													#				Errors in Censuses and Surveys
-		|Appendix G - File Types																#			Appendix G - File Types
+		|Appendix H - File Types																#			Appendix H - File Types
 			file_types.hgt																		#				File Types
 			importing_data_to_cspro_format.hgt													#				Importing Data to CSPro Format
 			locking_application_files.hgt														#				Locking Application Files
@@ -955,6 +986,7 @@
 				logic_file_apc.hgt																#					Logic File (.apc)
 				message_file_mgf.hgt															#					Message File (.mgf)
 				question_text_file_qsf.hgt														#					Question File (.qsf)
+				application_properties_file_csprops.hgt											#					Application Properties File (.csprops)
 				program_information_file_pff.hgt												#					Program Information File (.pff)
 				binary_data_entry_application_file_pen.hgt										#					Binary Data Entry Application File (.pen)
 				index_file_csidx.hgt															#					Index File (.csidx)

@@ -29,7 +29,7 @@ This is a detailed list of changes in CSPro 7.6. For a more general overview, se
 	<li>Question text now fully supports <link add_pictures.hgt>images</link>, tables, hyperlinks, and <link html_question_text.hgt>HTML code</link>.</li>
 	<li>The question text editor supports <link question_text_edit_styles.hgt>customizable styles</link> to make it easy to use standard formats throughout a survey. Styles replace the fonts <i>CAPI Font 1</i> and <i>CAPI Font 2</i> used in earlier versions.</li>
 	<li><link create_fills_in_questions.hgt>Fills</link> in question text are now delimited with <b>~~</b> instead of <b>%</b>. Fills using % in applications created in earlier versions of CSPro are automatically converted to ~~ when opening the application in version 7.6.</li>
-	<li>The format of the <link question_text_file_qsf.hgt>question text file (.qsf)</link> has changed. The new file format uses HTML instead of Rich Text Format (RTF). Question text files from earlier versions of CSPro will be converted to the new format when opened in version 7.6&mdash;though note you must edit the QSF text to force the conversion to occur. The original RTF version of the QSF file will be retained as xxx.qsf.backup. Should you need to revert the application  to the prior version of CSPro, run the VersionShifter utility first, then rename xxx.qsf.backup to xxx.qsf. Applications with question text created or edited in version 7.6 can no longer be opened in older versions.</li>
+	<li>The format of the <link question_text_file_qsf.hgt>question text file (.qsf)</link> has changed. The new file format uses HTML instead of Rich Text Format (RTF). Question text files from earlier versions of CSPro will be converted to the new format when opened in version 7.6, though you must edit the QSF text to force the conversion to occur. The original RTF version of the QSF file will be retained as xxx.qsf.backup. Applications with question text created or edited in version 7.6 can no longer be opened in older versions.</li>
 </list>
 
 
@@ -53,7 +53,7 @@ This is a detailed list of changes in CSPro 7.6. For a more general overview, se
 	<li>Encrypted SQLite databases can be queried using <logiccolor>sqlquery</logiccolor> by specifying a password in a <link connection_string.hgt>connection string</link> or by having an operator enter the password manually.</li>
 	<li>The counter variable used in a <logiccolor>do</logiccolor> loop can now be any numeric variable (such as a dictionary item or a list element).</li>
 	<li>The <logiccolor>execpff</logiccolor> function, when used on PFFs for several tools with the <logiccolor>wait</logiccolor> flag, now launches the tool without creating a new process.</li>
-	<li>The <logiccolor pff>pff.setproperty</logiccolor> function accepts a dictionary name as an argument, which can be used to run several tools using a dictionary embedded in a <link binary_data_entry_application_file_pen.hgt>.pen file</link>.</li>
+	<li>The <logiccolor>pff.setproperty</logiccolor> function accepts a dictionary name as an argument, which can be used to run several tools using a dictionary embedded in a <link binary_data_entry_application_file_pen.hgt>.pen file</link>.</li>
 </list>
 
 

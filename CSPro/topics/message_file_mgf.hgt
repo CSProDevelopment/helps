@@ -2,7 +2,10 @@
 
 The message file for a data entry application stores the error message text that is displayed during data entry. The message file for a batch application stores the error message text that will be included in the execution report. The message file has the extension <b>.mgf</b>. While creating your application, you can view the message text in a window at the bottom of the logic screen.
 
-You can associate multiple message files with an application, which can be useful if you have messages defined in multiple languages. To do this, select <link add_files_to_an_application.hgt>File -> Add Files</link> and then choose the external message file to add to the application. If you no longer want to use the external message file, you can remove it by selecting <link drop_files_from_an_application.hgt>File -> Drop Files</link>. If the name of the external message file begins with <font monospace>CSProRuntime</font>, then the messages in that file will override the CSPro system messages. See <link collaborating_on_cspro_development.hgt>Collaborating on CSPro Development </link> for more information about this file.
+You can associate multiple message files with an application, which can be useful if you have messages defined in multiple languages. To do this, select <link add_files_to_an_application.hgt>File -> Add Files</link> and then choose the external message file to add to the application. If you no longer want to use the external message file, you can remove it by selecting <link drop_files_from_an_application.hgt>File -> Drop Files</link>.
+
+If the name of an external message file begins with "CSProRuntime," then the messages in that file will override the CSPro system messages. See <link collaborating_on_cspro_development.hgt>Collaborating on CSPro Development </link> for more information about this file.
+
 
 <subheader>Basic Messages</subheader>
 
@@ -86,5 +89,6 @@ FR("Hello") Bonjour
 </message>
 
 Calling <logiccolor>tr("Hello")</logiccolor> in logic will display the correct string based on the current language.
+
 
 <seealso multiple_language_applications.hgt tr_function.hgt />

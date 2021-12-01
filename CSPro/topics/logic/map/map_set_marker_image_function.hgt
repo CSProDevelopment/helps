@@ -2,15 +2,15 @@
 
 <subheader>Format</subheader>
 
-<logicsyntax map>
+<logicsyntax>
 b = map_name.setMarkerImage(<arg>markerId</arg>, <arg>pathToImage</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.setMarkerImage</logiccolor> sets the icon for the marker with id <arg>markerId</arg> on <link map.hgt>map</link> <logiccolor>map_name</logiccolor>. <arg>markerId</arg> is the id that was returned by <logiccolor map>map.addMarker</logiccolor> when the marker was added to the map. <arg>pathToImage</arg> is the path to a file containing the image to display as the marker icon. Standard image files (PNG, JPEG, BMP) are supported.
+The <logiccolor>map.setMarkerImage</logiccolor> sets the icon for the marker with id <arg>markerId</arg> on <link map.hgt>map</link> <logiccolor>map_name</logiccolor>. <arg>markerId</arg> is the id that was returned by <logiccolor>map.addMarker</logiccolor> when the marker was added to the map. <arg>pathToImage</arg> is the path to a file containing the image to display as the marker icon. Standard image files (PNG, JPEG, BMP) are supported.
 
-If the marker icon was previously set with <logiccolor map>map.setMarkerText</logiccolor>, calling <logiccolor map>map.setMarkerImage</logiccolor> will replace the marker text with the image.
+If the marker icon was previously set with <logiccolor>map.setMarkerText</logiccolor>, calling <logiccolor>map.setMarkerImage</logiccolor> will replace the marker text with the image.
 
 <subheader>Return Value</subheader>
 

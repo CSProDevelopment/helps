@@ -1,0 +1,22 @@
+﻿<title>Image Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+image <arg>image_name</arg>;
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>image</logiccolor> statement creates an <link image.hgt>image</link> with the name <arg>image_name</arg>. The image name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare images globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_image_example.hgi />
+</logic>
+
+
+<seealso image.hgt />

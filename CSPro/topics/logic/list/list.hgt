@@ -2,6 +2,7 @@
 
 In logic, a <logiccolor>list</logiccolor> is similar to an <link array.hgt>one-dimensional array</link> but without a defined size. That is, a list is a collection of values, either numeric or string, that can grow or shrink in size.
 
+
 <subheader>Functionality</subheader>
 
 A list is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
@@ -20,7 +21,10 @@ A list is a CSPro logic object and the following functions can be called via <li
 	<cell><logiccolor list>sort</logiccolor></cell><cell>Sorts the list's values in ascending or descending order.</cell>
 </table>
 
-In addition to these object functions, lists can be filled when used as arguments to functions such as <logiccolor>dirlist</logiccolor>, <logiccolor>keylist</logiccolor>, and <logiccolor hashmap>hashmap.getKeys</logiccolor>.
+In addition to these object functions, lists can be filled when used as arguments to functions such as <logiccolor>dirlist</logiccolor>, <logiccolor>keylist</logiccolor>, and <logiccolor>hashmap.getKeys</logiccolor>.
+
+
+<subheader>Assignments</subheader>
 
 Lists can be assigned to other lists, which will replace the initial list with the values of the assigned list:
 
@@ -34,6 +38,8 @@ Individual elements of lists can also be modified or added by using a one-based 
 <arg>list_name</arg>(<arg>index</arg>) = <arg>modify_value</arg>;
 <arg>list_name</arg>(list_name.length() + 1) = <arg>add_value</arg>;
 </logicsyntax>
+
+When a list is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 
 <subheader>Example</subheader>

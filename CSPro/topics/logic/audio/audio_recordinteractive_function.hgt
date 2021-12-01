@@ -2,16 +2,16 @@
 
 <subheader>Format</subheader>
 
-<logicsyntax audio>
+<logicsyntax>
 d = audio_name.recordInteractive(『<arg>message</arg>』);
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-The <logiccolor audio>audio.recordInteractive</logiccolor> function launches an interactive audio recorder that stores a recording to an <link audio.hgt>audio</link> object. When the function is called, the audio recorder screen is displayed. It contains record, save, and clear buttons that control the audio recording. If the optional string argument <arg>message</arg> is specified, the message will be displayed at the top of the recorder screen. The <logiccolor audio>audio.recordInteractive</logiccolor> function does not return until the user has finished recording and taps the save button. This is useful for synchronous recording, for example to have the interviewer record the response to a single question. To record the audio in the background while the user continues to interact with the survey, use the function  <logiccolor audio>audio.record</logiccolor>.
+The <logiccolor>audio.recordInteractive</logiccolor> function launches an interactive audio recorder that stores a recording to an <link audio.hgt>audio</link> object. When the function is called, the audio recorder screen is displayed. It contains record, save, and clear buttons that control the audio recording. If the optional string argument <arg>message</arg> is specified, the message will be displayed at the top of the recorder screen. The <logiccolor>audio.recordInteractive</logiccolor> function does not return until the user has finished recording and taps the save button. This is useful for synchronous recording, for example to have the interviewer record the response to a single question. To record the audio in the background while the user continues to interact with the survey, use the function  <logiccolor>audio.record</logiccolor>.
 
-The recorded audio is stored in the <link audio.hgt>audio</link> object and can be played back using <logiccolor audio>audio.play</logiccolor> or saved to a file using <logiccolor audio>audio.save</logiccolor>. If the <link audio.hgt>audio</link> object already contains an audio recording, the recorded audio will be appended to the existing recording. To replace the existing recording rather than adding to it, call the <logiccolor audio>audio.clear</logiccolor> function before calling <logiccolor audio>audio.recordInteractive</logiccolor>.
+The recorded audio is stored in the <link audio.hgt>audio</link> object and can be played back using <logiccolor>audio.play</logiccolor> or saved to a file using <logiccolor>audio.save</logiccolor>. If the <link audio.hgt>audio</link> object already contains an audio recording, the recorded audio will be appended to the existing recording. To replace the existing recording rather than adding to it, call the <logiccolor>audio.clear</logiccolor> function before calling <logiccolor>audio.recordInteractive</logiccolor>.
 
 Recorded audio is stored in m4a format (AAC encoded in an MPEG-4 container). Files should be saved with the extension .m4a so that they will be recognized by media players.
 

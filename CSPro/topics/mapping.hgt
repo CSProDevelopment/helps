@@ -1,12 +1,12 @@
 ﻿<title>Mapping</title>
 
-CSBatch and CSEntry support displaying interactive maps on both Android and Windows devices. There are two ways to integrate maps into a data entry or batch application:
+CSBatch and CSEntry support displaying interactive maps on both Android and Windows devices. There are two ways to integrate maps into an application:
 
 <list>
-<li>Display the case listing on a map (enabled using the <link map_case_list.hgt>mapping options</link>), where each case in the data file is represented by a marker on the map.</li>
 <li>Use the <logiccolor>map</logiccolor> object in your application logic to display a map with markers and buttons that can be customized using map functions.</li>
+<li>Display the <link map_case_list.hgt>case listing on a map</link>, where each case in the data file is represented by a marker on the map.</li>
 </list>
 
 Maps can use Google Maps for base maps if the device has an Internet connection or you can supply an <link offline_maps.hgt>offline map file</link> to use if there is no connection.
 
-<seealso map_case_list.hgt map.hgt offline_maps.hgt />
+<seealso map.hgt map_base_map_specification.hgt offline_maps.hgt map_case_list.hgt />

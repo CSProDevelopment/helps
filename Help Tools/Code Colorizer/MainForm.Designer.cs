@@ -40,6 +40,7 @@
             this.logicMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pffMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.messageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editControl = new Colorizer.EditControl();
             this.buttonCopyHtml = new System.Windows.Forms.Button();
             this.buttonCopyUsersForum = new System.Windows.Forms.Button();
@@ -108,7 +109,8 @@
             this.languageMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logicMenuItem,
             this.pffMenuItem,
-            this.messageMenuItem});
+            this.messageMenuItem,
+            this.reportMenuItem});
             this.languageMenuItem.Name = "languageMenuItem";
             this.languageMenuItem.Size = new System.Drawing.Size(71, 20);
             this.languageMenuItem.Text = "&Language";
@@ -118,7 +120,7 @@
             this.logicMenuItem.Checked = true;
             this.logicMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.logicMenuItem.Name = "logicMenuItem";
-            this.logicMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.logicMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logicMenuItem.Tag = Code_Colorizer.Processor.BufferType.Logic;
             this.logicMenuItem.Text = "&Logic";
             this.logicMenuItem.Click += new System.EventHandler(this.languageMenuItem_Click);
@@ -126,7 +128,7 @@
             // pffMenuItem
             // 
             this.pffMenuItem.Name = "pffMenuItem";
-            this.pffMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.pffMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pffMenuItem.Tag = Code_Colorizer.Processor.BufferType.Pff;
             this.pffMenuItem.Text = "&PFF";
             this.pffMenuItem.Click += new System.EventHandler(this.languageMenuItem_Click);
@@ -134,10 +136,18 @@
             // messageMenuItem
             // 
             this.messageMenuItem.Name = "messageMenuItem";
-            this.messageMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.messageMenuItem.Size = new System.Drawing.Size(180, 22);
             this.messageMenuItem.Tag = Code_Colorizer.Processor.BufferType.Message;
             this.messageMenuItem.Text = "&Message";
             this.messageMenuItem.Click += new System.EventHandler(this.languageMenuItem_Click);
+            // 
+            // reportMenuItem
+            // 
+            this.reportMenuItem.Name = "reportMenuItem";
+            this.reportMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportMenuItem.Tag = Code_Colorizer.Processor.BufferType.Report;
+            this.reportMenuItem.Text = "&Report (HTML)";
+            this.reportMenuItem.Click += new System.EventHandler(this.languageMenuItem_Click);
             // 
             // editControl
             // 
@@ -227,6 +237,7 @@
         private System.Windows.Forms.Button buttonCopyUsersForum;
         private System.Windows.Forms.ToolStripMenuItem messageMenuItem;
         private System.Windows.Forms.Button buttonCopyUsersBlog;
+        private System.Windows.Forms.ToolStripMenuItem reportMenuItem;
     }
 }
 

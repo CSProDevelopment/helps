@@ -2,11 +2,13 @@
 
 <i>This page describes the <logiccolor>syncconnect</logiccolor> function when connecting to a CSWeb server. For generalized information on the function, see the documentation for the <logiccolor>syncconnect</logiccolor> function.</i>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 b = syncconnect(<arg>CSWeb</arg>,<arg>csweb_url</arg>『,<arg>username</arg>『,<arg>password</arg>』』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -14,20 +16,22 @@ The <logiccolor>syncconnect</logiccolor> function opens a connection to a CSWeb 
 
 For more information about CSWeb servers, see the <link synchronization.hgt>Synchronization Overview</link> and the <link CSWeb::introduction_to_csweb.hgt>CSWeb help documentation</link>.
 
+
 <subheader>Example</subheader>
 
 <logic>
-string cswebServerUrl = "https://www.myserver.org/api";
+string ServerUrl = "https://www.myserver.org/api";
 
 // connect to the CSWeb server
-if syncconnect(CSWeb,cswebServerUrl) then
+if syncconnect(CSWeb, ServerUrl) then
 
 	// send the latest cases to the CSWeb server
-	syncdata(PUT,SURVEY_DICT);
+	syncdata(PUT, SURVEY_DICT);
 
 	syncdisconnect();
 
 endif;
 </logic>
+
 
 <seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_bluetooth.hgt syncconnect_function_dropbox.hgt syncconnect_function_ftp.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt />

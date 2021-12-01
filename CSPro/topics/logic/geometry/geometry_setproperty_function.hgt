@@ -3,16 +3,16 @@
 
 <subheader>Format</subheader>
 
-<logicsyntax geometry>
+<logicsyntax>
 b = geometry_name.setProperty(<arg>property_name</arg>, <arg>property_value</arg>);
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-The <logiccolor geometry>geometry.setProperty</logiccolor> function modifies the value associated with the <link geometry.hgt>geometry</link>'s property specified by the string expression <arg>property_name</arg>. The property will be modified to the value given in the string or numeric expression <arg>property_value</arg>. Properties may not be applied to empty geometry objects so you must first call the <logiccolor geometry>geometry.load</logiccolor>, <logiccolor geometry>geometry.tracePolyon</logiccolor>, or <logiccolor geometry>geometry.walkPolygon</logiccolor> functions to add items to the geometry before setting properties. Property names are case sensitive.
+The <logiccolor>geometry.setProperty</logiccolor> function modifies the value associated with the <link geometry.hgt>geometry</link>'s property specified by the string expression <arg>property_name</arg>. The property will be modified to the value given in the string or numeric expression <arg>property_value</arg>. Properties may not be applied to empty geometry objects so you must first call the <logiccolor>geometry.load</logiccolor>, <logiccolor>geometry.tracePolygon</logiccolor>, or <logiccolor>geometry.walkPolygon</logiccolor> functions to add items to the geometry before setting properties. Property names are case sensitive.
 
-When a geometry item contains multiple features, the property is set to <arg>property_value</arg> in ALL of the features of the geometry. When a geometry item is saved to a GeoJSON file using the <logiccolor geometry>geometry.save</logiccolor> function, the properties are written to the GeoJSON file.
+When a geometry item contains multiple features, the property is set to <arg>property_value</arg> in ALL of the features of the geometry. When a geometry item is saved to a GeoJSON file using the <logiccolor>geometry.save</logiccolor> function, the properties are written to the GeoJSON file.
 
 When displaying the geometry on a map, the following properties may be set to change the visual styling of the vector items:
 

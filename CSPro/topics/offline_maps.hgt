@@ -2,6 +2,7 @@
 
 The default base map shown is the Google Maps road map which requires an Internet connection. You can instead use an offline map from a file stored on your device. Offline map files store map tiles which are images of pieces of a map at various levels of detail. Rather than downloading map images from Google Maps, CSPro will read the images directly from an offline map file.
 
+
 <subheader>Supported Files</subheader>
 
 CSPro supports the following formats for offline map files:
@@ -11,17 +12,21 @@ CSPro supports the following formats for offline map files:
 <cell><b>ArcGIS Tile Package</b></cell><cell>Tile packages exported from ArcGIS. See the <link http://desktop.arcgis.com/en/arcmap/10.3/map/working-with-arcmap/about-tile-packages.htm>ArcGIS Help</link> for details. Tile packages (.tpk files) must be created using the <i>ArcGIS Online/Bing Maps/Google Maps</i> tiling scheme to be compatible with CSPro.</cell>
 </table>
 
+
 <subheader>Putting Maps on Devices</subheader>
 
 Once you have a map file you can copy it to your device via a USB connection. You can also download map files to your device using the <logiccolor>syncfile</logiccolor> command in your logic; however, since map files tend to be large, this may be slow. Map files can be placed anywhere on the device although it is most common to place them within a subfolder of your application's folder. 
 
+
 <subheader>Specifying the Map to Use in the Case Listing</subheader>
 
-Use the <pffcolor>BaseMap</pffcolor> attribute in the <pffcolor>[Files]</pffcolor> section of the <link run_production_data_entry.hgt>PFF file</link> to provide the path to your device's offline map file. See <link map_case_list.hgt>displaying the case listing on a map</link> for more info.
+Use the <pffcolor>BaseMap</pffcolor> attribute in the <pffcolor>[Files]</pffcolor> section of the <link run_production_data_entry.hgt>PFF file</link> to provide the path to your device's offline map file. See <topic map_case_list.hgt /> for more info.
+
 
 <subheader>Specifying the Map to Use With the Map Object</subheader>
 
-When using the <logiccolor>map</logiccolor> object in logic, use the <logiccolor map>map.setBaseMap</logiccolor> function to set the offline map.
+When using the <logiccolor>map</logiccolor> object in logic, use the <logiccolor>map.setBaseMap</logiccolor> function to set the offline map.
+
 
 <subheader>File Size</subheader>
 
@@ -36,4 +41,5 @@ Level 20 is detailed enough to see individual buildings. At level 20 the entire 
 
 Since offline map files may contain hundreds or thousands of images, they can become very large. The file size will depend on the extents of the map and the level of detail. It is not possible to store a map of the entire world, or even of an entire country, at a high level of detail on most devices. When creating your map files, you will need to adjust the extents and level of detail to ensure that the map files will not exceed the available storage space on your device. If your survey will be conducted over a large geographic area, you may need to provide separate maps for each interviewer or each team that only covers their assigned area.
 
-<seealso map.hgt run_production_data_entry.hgt />
+
+<seealso map.hgt map_base_map_specification.hgt />

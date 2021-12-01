@@ -2,14 +2,14 @@
 
 <subheader>Format</subheader>
 
-<logicsyntax pff>
+<logicsyntax>
 b = pff_name.exec();
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-The <logiccolor pff>pff.exec</logiccolor> function starts another CSPro application using the properties defined in the  <link pff.hgt>pff</link> object. If you modified any of the pff object's properties, it is not necessary to save the file to disk when running it, as this function will save a temporary file to the disk with the defined properties.
+The <logiccolor>pff.exec</logiccolor> function starts another CSPro application using the properties defined in the  <link pff.hgt>pff</link> object. If you modified any of the pff object's properties, it is not necessary to save the file to disk when running it, as this function will save a temporary file to the disk with the defined properties.
 
 For data entry PFFs, the function executes the application and immediately closes the current application (without saving any data). This is the same as running <logiccolor>execpff</logiccolor> with the <logiccolor>stop</logiccolor> argument. For other PFFs, the function executes the application using the <logiccolor>wait</logiccolor> argument. That is, this function is equivalent to:
 
@@ -33,7 +33,7 @@ execpff(filename(my_pff), wait);
 
 <subheader>Tools Running in the Same Process</subheader>
 
-The <logiccolor>execpff</logiccolor> help page includes information about how some tools launched via <logiccolor pff>pff.exec</logiccolor> and <logiccolor>execpff</logiccolor> are run in the same process as the calling application.
+The <logiccolor>execpff</logiccolor> help page includes information about how some tools launched via <logiccolor>pff.exec</logiccolor> and <logiccolor>execpff</logiccolor> are run in the same process as the calling application.
 
 
 <subheader>Return Value</subheader>

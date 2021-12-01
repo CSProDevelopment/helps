@@ -15,6 +15,11 @@ A freq is a CSPro logic object and the following functions can be called via <li
 	<cell><logiccolor freq>view</logiccolor></cell><cell>Displays frequency tables in an embedded web browser.</cell>
 </table>
 
+In addition to these object functions, freq objects can be used as an argument to the <logiccolor>view</logiccolor> function.
+
+
+<subheader>Assignments</subheader>
+
 Unlike most CSPro logic objects, freq objects cannot be assigned to other freq objects.
 
 If the freq has only one variable as part of its frequency list, individual tallies of the freq can be accessed by using an index:
@@ -24,6 +29,8 @@ If the freq has only one variable as part of its frequency list, individual tall
 
 <arg>tally</arg> = <arg>freq_name</arg>(<arg>value</arg>);
 </logicsyntax>
+
+When a freq is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 
 <subheader>Example 1</subheader>

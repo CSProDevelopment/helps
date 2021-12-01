@@ -2,7 +2,7 @@
 
 Most files in CSPro are data files, whose structure is defined by a data dictionary are are used in logic by referring to their dictionary names. However, it is also possible to write to text files without an associated data dictionary. Lines of text can be written to a file or read from a file, and these files can also be used in <logiccolor>export</logiccolor> statements.
 
-The physical name of the file can be specified in the Define File Associations dialog when the application is run, in a <link program_information_file_pff.hgt>PFF file</link>, or by using the <logiccolor file>open</logiccolor> or <logiccolor>setfile</logiccolor> functions.
+The physical name of the file can be specified in the Define File Associations dialog when the application is run, in a <link program_information_file_pff.hgt>PFF file</link>, or by using the <logiccolor>file.open</logiccolor>, <logiccolor>open</logiccolor>, or <logiccolor>setfile</logiccolor> functions.
 
 
 <subheader>Functionality</subheader>
@@ -18,6 +18,11 @@ A file is a CSPro logic object and the following functions can be called via <li
 </table>
 
 In addition to these object functions, files can be used as arguments to functions such as <logiccolor>filecopy</logiccolor>, <logiccolor>filedelete</logiccolor>, <logiccolor>fileempty</logiccolor>, <logiccolor>fileexist</logiccolor>, <logiccolor>filename</logiccolor>, <logiccolor>filerename</logiccolor>, <logiccolor>filesize</logiccolor>, <logiccolor>open</logiccolor>, and <logiccolor>pathname</logiccolor>.
+
+
+<subheader>Assignments</subheader>
+
+When a file is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 
 <subheader>Example</subheader>

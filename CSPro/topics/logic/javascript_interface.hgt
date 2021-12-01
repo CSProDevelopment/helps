@@ -1,6 +1,5 @@
 ﻿<title>JavaScript Interface</title>
 
-
 <subheader>Overview</subheader>
 
 CSPro displays HTML in an embedded browser when showing <link html_question_text.hgt>question text</link> and when displaying web pages using the <logiccolor>view</logiccolor> function. The HTML content is shown in a Chromium-based web browser (<link https://developer.microsoft.com/en-us/microsoft-edge/webview2>Edge WebView2</link> on Windows, and <link https://developer.android.com/reference/android/webkit/WebView>WebView</link> on Android). There is a limited API that facilitates communication between JavaScript and CSPro. This functionality will grow in future releases, but for now is primarily used for calling <link user_defined_functions.hgt>user-defined functions</link>.
@@ -14,11 +13,11 @@ By using JavaScript in HTML shown using <logiccolor>view</logiccolor>, you can c
 
 Two functions can be called, both prefixed with "CSPro.":
 
-<html><pre>
+<color javascript>
 CSPro.logic("call to a user-defined function");
 
 CSPro.do("command to execute a specific routine");
-</pre></html>
+</color>
 
 When using the JavaScript interface, an error will display if CSPro cannot properly interpret the call.
 
@@ -41,10 +40,10 @@ At present there is only one command, which is recognized by the embedded browse
 
 Question text HTML:
 
-<indent><html><pre>
-&lt;p&gt;What is ~~NAME~~'s occupation?&lt;/p&gt;
-&lt;p&gt;&lt;a href="javascript:CSPro.logic('ViewOccupationList();');"&gt;(view full list of occupations)&lt;/a&gt;&lt;/p&gt;
-</pre></html></indent>
+<report html>
+<p>What is ~~NAME~~'s occupation?</p>
+<p><a href="javascript:CSPro.logic('ViewOccupationList();');">(view full list of occupations)</a></p>
+</report>
 
 CSPro logic:
 
@@ -59,22 +58,22 @@ end;
 
 HTML:
 
-<indent><html><pre>
-&lt;h1&gt;District Reports&lt;/h1&gt;
+<color html>
+<h1>District Reports</h1>
 
-&lt;p&gt;Select a province or district report to view:&lt;/p&gt;
+<p>Select a province or district report to view:</p>
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="javascript:CSPro.logic('ShowDistrictReport(1);');"&gt;Artesia&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href="javascript:CSPro.logic('ShowDistrictReport(1, 1);');"&gt;Dongo&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="javascript:CSPro.logic('ShowDistrictReport(1, 13);');"&gt;Varda&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+ <li><a href="javascript:CSPro.logic('ShowDistrictReport(1);');">Artesia</a>
+   <ul>
+     <li><a href="javascript:CSPro.logic('ShowDistrictReport(1, 1);');">Dongo</a></li>
+     <li><a href="javascript:CSPro.logic('ShowDistrictReport(1, 13);');">Varda</a></li>
+   </ul>
+ </li>
+</ul>
 
-&lt;p&gt;&lt;a href="javascript:CSPro.do('close');"&gt;Return to Program&lt;/a&gt;&lt;/p&gt;
-</pre></html></indent>
+<p><a href="javascript:CSPro.do('close');">Return to Program</a></p>
+</color>
 
 CSPro logic:
 

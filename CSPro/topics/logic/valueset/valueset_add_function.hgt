@@ -2,7 +2,7 @@
 
 <subheader>Format</subheader>
 
-<logicsyntax valueset>
+<logicsyntax>
 i = valueset_name.add(<arg>label</arg>, <arg>from_code</arg>『, <arg>to_code</arg> ‖ <arg>special_value</arg>』
 					  『, image := <arg>image_filename</arg>』
 					  『, textColor := <arg>color</arg>』);
@@ -15,7 +15,7 @@ i = valueset_name.add(<arg>valueset_name</arg>『, <arg>from_code</arg>』『, <
 
 <subheader>Description</subheader>
 
-The <logiccolor valueset>valueset.add</logiccolor> function adds one or more values to the end of a <link valueset.hgt>value set</link>. The type of the added code or value set must match the type of the receiving value set.
+The <logiccolor>valueset.add</logiccolor> function adds one or more values to the end of a <link valueset.hgt>value set</link>. The type of the added code or value set must match the type of the receiving value set.
 
 In the first version, you provide a string expression <arg>label</arg> and either a numeric or string expression <arg>from_code</arg>, which must match the type of the value set. For numeric value sets, it is possible to specify a numeric expression <arg>to_code</arg>, which creates a range, or a <arg>special_value</arg>, which is then associated with the <arg>from_code</arg>. Using <link function_named_arguments.hgt>named arguments</link>, you can provide a string expression, <arg>image_filename</arg>, to specify the filename of an image to be shown as a <link value_set_images.hgt>value set image</link>. You can also specify the text color of the value by providing a string expression <arg>color</arg> that contains a HTML color name (like <logiccolor>"red"</logiccolor>) or a hex color code (like <logiccolor>"#ff0000"</logiccolor>).
 

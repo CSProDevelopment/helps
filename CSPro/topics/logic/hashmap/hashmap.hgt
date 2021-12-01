@@ -16,6 +16,9 @@ A hashmap is a CSPro logic object and the following functions can be called via 
 	<cell><logiccolor hashmap>remove</logiccolor></cell><cell>Removes a key.</cell>
 </table>
 
+
+<subheader>Assignments</subheader>
+
 Hashmaps can be assigned to other hashmaps, which will replace the initial hashmap with the values of the assigned hashmap:
 
 <logicsyntax>
@@ -31,6 +34,8 @@ Individual elements of hashmaps can be retrieved or set by using an index to spe
 
 <arg>value_to_retrieve</arg> = <arg>hashmap_name</arg>(<arg>key_value1</arg>『, <arg>key_value2</arg>, ...』);
 </logicsyntax>
+
+When a hashmap is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 
 <subheader>Example</subheader>

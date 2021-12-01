@@ -1,0 +1,10 @@
+image tree_photo;
+
+// ... load or take photo
+
+tree_photo.view();
+
+when accept("Are you satisfied with the photo of the tree?", "Yes", "No");
+	1 -> tree_photo.save("Tree Photo.jpg");
+	2 -> tree_photo.clear();
+endwhen;

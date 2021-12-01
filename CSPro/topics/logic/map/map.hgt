@@ -2,19 +2,19 @@
 
 In logic, a <logiccolor>map</logiccolor> is an object that can be used to display and control an interactive map. The map may be panned and zoomed with touch controls and may optionally show the user's current location. Using map functions you can add markers at geographic positions on the map, add custom buttons, and set the geographical area displayed. You can also specify user-defined functions in your logic to be called when the user taps on markers, buttons, and on the map itself. Together, these functions allow for rich map-based interactions such as showing households on a map and launching an interview when the user taps a household.
 
-To display a map, call the <logiccolor map>show</logiccolor> function. The map will be displayed allowing the user to interact with it until the user taps the back button or the <logiccolor map>hide</logiccolor> function is called from program logic.
+To display a map, call the <logiccolor>map.show</logiccolor> function. The map will be displayed allowing the user to interact with it until the user taps the back button or the <logiccolor>map.hide</logiccolor> function is called from program logic.
 
 You can call map functions to add markers, buttons, set the base map, and pan/zoom before showing the map. This will be more efficient than adding them afterwards, especially when adding large numbers of markers. You can also call the map functions after showing the map from within any of the user-defined callback functions for map, marker, and button clicks and drags.
 
 <center><image map.png /></center>
 
-You can add markers to the map using the <logiccolor map>addMarker</logiccolor> function. You can replace the default marker icon with a custom image by calling <logiccolor map>setMarkerImage</logiccolor> or with a text icon using <logiccolor map>setMarkerText</logiccolor>.
+You can add markers to the map using the <logiccolor>map.addMarker</logiccolor> function. You can replace the default marker icon with a custom image by calling <logiccolor>map.setMarkerImage</logiccolor> or with a text icon using <logiccolor>map.setMarkerText</logiccolor>.
 
-By default, the map contains a button to zoom to the users current location. You can add additional buttons to the map by calling <logiccolor map>addImageButton</logiccolor> or <logiccolor map>addTextButton</logiccolor>.
+By default, the map contains a button to zoom to the users current location. You can add additional buttons to the map by calling <logiccolor>map.addImageButton</logiccolor> or <logiccolor>map.addTextButton</logiccolor>.
 
-You add vector geometry, such as polygons and polylines, to the map using the <logiccolor map>addGeometry</logiccolor> function.
+You add vector geometry, such as polygons and polylines, to the map using the <logiccolor>map.addGeometry</logiccolor> function.
 
-By default, the map will display a base map from Google Maps, which requires an Internet connection. With no Internet connection the base map will be empty. To display a map without an Internet connection you can copy an <link offline_maps.hgt>offline map file</link> to your device and pass the file to the <logiccolor map>setBaseMap</logiccolor> function.
+By default, the map will display a base map from Google Maps, which requires an Internet connection. With no Internet connection the base map will be empty. To display a map without an Internet connection you can copy an <link offline_maps.hgt>offline map file</link> to your device and pass the file to the <logiccolor>map.setBaseMap</logiccolor> function.
 
 
 <subheader>Functionality</subheader>
@@ -59,6 +59,12 @@ A <logiccolor>map</logiccolor> is a CSPro logic object that allows the following
 	<cell><link map_clear_buttons_function.hgt>clearButtons</link></cell><cell>Delete all buttons from the map.</cell>
 </table>
 
+
+<subheader>Assignments</subheader>
+
+When a map is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+
+
 <subheader>Example</subheader>
 
 <logic>
@@ -71,5 +77,6 @@ mymap.addMarker(38.84839, -76.931098);
 // Display the map
 mymap.show();
 </logic>
+
 
 <seealso map_case_list.hgt geometry.hgt />

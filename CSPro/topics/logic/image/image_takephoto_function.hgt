@@ -1,0 +1,36 @@
+﻿<title>Image.TakePhoto Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = image_name.takePhoto(『<arg>message</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>image.takePhoto</logiccolor> function takes a photo using a device's camera and stores the photo in the <link image.hgt>image</link> object. This function only works on Android devices. The camera UI includes two options:
+
+<list>
+	<li><b>Flip camera icon</b>: Tap to toggle between the front and rear-facing camera.</li>
+	<li><b>Camera icon</b>: Tap to take the photo.</li>
+</list>
+
+<center><image camera.png /></center>
+
+The optional string expression <arg>message</arg> will appear on the Android device's screen while the camera is active. The string will not be saved to the image.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if a photo was successfully taken and 0 (<logiccolor>false</logiccolor>) if there was an error taking a photo or if the operator canceled the operation.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_image_example.hgi />
+</logic>
+
+
+<seealso image.hgt image_capturesignature_function.hgt />

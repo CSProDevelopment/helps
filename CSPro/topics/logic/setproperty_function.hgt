@@ -9,7 +9,7 @@ i = setproperty(『<arg>symbol</arg>,』 <arg>property_name</arg>, <arg>property
 
 <subheader>Description</subheader>
 
-The <logiccolor>setproperty</logiccolor> function modifies the current property, specified by the string expression <arg>property_name</arg>, associated with an application or a field. If an optional dictionary <arg>symbol</arg> is specified, then the property must apply to a field. If the symbol is not a field but is intead a block, group, form, or dictionary, then the function will try to apply the property to all fields belonging to that symbol. If no symbol is specified, then the property must be an application property. The property will be modified to the value given in the numeric or string expression <arg>property_value</arg>.
+The <logiccolor>setproperty</logiccolor> function modifies the current property, specified by the string expression <arg>property_name</arg>, associated with an application or a field. If an optional dictionary <arg>symbol</arg> is specified, then the property must apply to a field. If the symbol is not a field but is intead a block, group, form, or dictionary, then the function will try to apply the property to all fields belonging to that symbol. If no symbol is specified, then the property must be a system or application property. The property will be modified to the value given in the numeric or string expression <arg>property_value</arg>.
 
 
 <include include_properties.hgi />

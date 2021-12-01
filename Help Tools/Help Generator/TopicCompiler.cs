@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using Colorizer;
 
 namespace Help_Generator
@@ -68,20 +69,27 @@ namespace Help_Generator
         private HelpComponents _helpComponents;
         private Preprocessor.TopicPreprocessor _preprocessedTopic;
         private TopicCompilerSettingsInterface _topicCompilerSettings;
+        
+        private CSPro.Logic.Colorizer _colorizer;
 
         private StringBuilder _sb;
         private string _title;
         private bool _titleIsHeader;
 
-        private enum LogicObject { None, Array, Audio, Document, File, Freq, Geometry, HashMap, Image, List, 
-                                   Map, Pff, SystemApp, ValueSet };
-        private LogicObject _logicObject;
+        private string _logicObjectDomain;
+        private bool _reportIsHtml;
+        private string _colorLanguage;
 
-        public TopicCompiler(HelpComponents helpComponents,Preprocessor.TopicPreprocessor preprocessedTopic,TopicCompilerSettingsInterface topicCompilerSettings)
+        public TopicCompiler(CSPro.Logic.Colorizer colorizer, HelpComponents helpComponents, 
+            Preprocessor.TopicPreprocessor preprocessedTopic, TopicCompilerSettingsInterface topicCompilerSettings)
         {
             _helpComponents = helpComponents;
             _preprocessedTopic = preprocessedTopic;
             _topicCompilerSettings = topicCompilerSettings;
+            
+            _colorizer = colorizer;
+            _colorizer.SetLinkFormatter(GetHtmlFilenameForKeyword);
+
             _sb = new StringBuilder();
 
             _tagSettings = new Dictionary<string,TagSettings>();
@@ -91,6 +99,7 @@ namespace Help_Generator
             _tagSettings.Add(CenterTag,new TagSettings("<div align=\"center\">","</div>"));
             _tagSettings.Add(BoldTag,new TagSettings("<b>","</b>"));
             _tagSettings.Add(ItalicsTag,new TagSettings("<i>","</i>"));
+            _tagSettings.Add(SuperscriptTag,new TagSettings("<sup>","</sup>"));
             _tagSettings.Add(FontTag,new TagSettings(true,(StartTagHandlerDelegate)StartFontHandler,"</span>",1,3));
             _tagSettings.Add(ListTag,new TagSettings(true,(StartTagHandlerDelegate)StartListHandler,(EndTagHandlerDelegate)EndTagHandlerUsingFilledEndTagStack,0,1));
             _tagSettings.Add(ListItemTag,new TagSettings("<li>","</li>"));
@@ -108,8 +117,10 @@ namespace Help_Generator
             _tagSettings.Add(LogicArgumentTag,new TagSettings("<span class=\"code_colorization_argument\">","</span>"));
             _tagSettings.Add(LogicTableTag,new TagSettings(false,(StartTagHandlerDelegate)StartLogicTableHandler,null,1,1));
             _tagSettings.Add(MessageTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndMessageHandler,0,0));
+            _tagSettings.Add(ReportTag,new TagSettings(true,(StartTagHandlerDelegate)StartReportHandler,(EndTagHandlerDelegate)EndReportHandler,0,1));
 			_tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
             _tagSettings.Add(PffColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffColorHandler,0,0));
+            _tagSettings.Add(ColorTag,new TagSettings(true,(StartTagHandlerDelegate)StartColorHandler,(EndTagHandlerDelegate)EndColorHandler,1,1));
             _tagSettings.Add(HtmlTag,new TagSettings("",""));
             _tagSettings.Add(CalloutTag, new TagSettings(true, "<div style=\"background-color: lightgrey;border:1px solid black;margin:10px;padding:10px\">", "</div>", 0, 0));
             _tagSettings.Add(PageBreakTag, new TagSettings(false, "<div class=\"new-page\" />", "", 0, 0));
@@ -118,8 +129,16 @@ namespace Help_Generator
             _blockTags.Add(LogicTag);
             _blockTags.Add(LogicSyntaxTag);
             _blockTags.Add(MessageTag);
+            _blockTags.Add(ReportTag);
             _blockTags.Add(PffTag);
+            _blockTags.Add(ColorTag);
             _blockTags.Add(HtmlTag);
+        }
+
+        public TopicCompiler(Form form, HelpComponents helpComponents, Preprocessor.TopicPreprocessor preprocessedTopic,
+            TopicCompilerSettingsInterface topicCompilerSettings)
+            :   this(new CSPro.Logic.Colorizer(form.Handle.ToInt32()), helpComponents, preprocessedTopic, topicCompilerSettings)
+        {
         }
 
         public string CompileForHtml(string text)
@@ -132,18 +151,19 @@ namespace Help_Generator
             if( _topicCompilerSettings.AddHtmlHeaderFooter )
             {
                 _sb.Append(
-                    "<html>" +
-                    "<head>" +
-                    "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">" +
+                    "<!doctype html>\n" +
+                    "<html lang=\"en\">\n" +
+                    "<head>\n" +
+                    "<meta charset=\"utf-8\">\n" + 
                     "<title>");
 
                 titlePos = _sb.Length;
 
-                _sb.Append("</title>");
+                _sb.Append("</title>\n");
                 _sb.Append(_topicCompilerSettings.GetTopicStylesheet());
                 _sb.Append(
-                    "</head>" +
-                    "<body>");
+                    "\n</head>\n" +
+                    "<body>\n");
             }
 
             _sb.Append(_topicCompilerSettings.GetStartingHtml(_preprocessedTopic));
@@ -171,7 +191,7 @@ namespace Help_Generator
             if( _topicCompilerSettings.AddHtmlHeaderFooter )
             {
                 _sb.Append(
-                    "</body>" +
+                    "</body>\n" +
                     "</html>");
             }
 
@@ -878,69 +898,23 @@ namespace Help_Generator
 
         private string StartLogicObjectHandler(string[] startTagComponents)
         {
-            _logicObject = LogicObject.None;
-
-            if( startTagComponents.Length == 1 )
-            {
-                _logicObject =
-                    startTagComponents[0].Equals(LogicObject.Array.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.Array :
-                    startTagComponents[0].Equals(LogicObject.Audio.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.Audio :
-                    startTagComponents[0].Equals(LogicObject.Document.ToString(), StringComparison.InvariantCultureIgnoreCase)  ? LogicObject.Document :
-                    startTagComponents[0].Equals(LogicObject.File.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.File :
-                    startTagComponents[0].Equals(LogicObject.Freq.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.Freq :
-                    startTagComponents[0].Equals(LogicObject.Geometry.ToString(), StringComparison.InvariantCultureIgnoreCase)  ? LogicObject.Geometry :
-                    startTagComponents[0].Equals(LogicObject.HashMap.ToString(), StringComparison.InvariantCultureIgnoreCase)   ? LogicObject.HashMap :
-                    startTagComponents[0].Equals(LogicObject.Image.ToString(), StringComparison.InvariantCultureIgnoreCase)     ? LogicObject.Image :
-                    startTagComponents[0].Equals(LogicObject.List.ToString(), StringComparison.InvariantCultureIgnoreCase)      ? LogicObject.List :
-                    startTagComponents[0].Equals(LogicObject.Map.ToString(), StringComparison.InvariantCultureIgnoreCase)       ? LogicObject.Map :
-                    startTagComponents[0].Equals(LogicObject.Pff.ToString(), StringComparison.InvariantCultureIgnoreCase)       ? LogicObject.Pff :
-                    startTagComponents[0].Equals(LogicObject.SystemApp.ToString(), StringComparison.InvariantCultureIgnoreCase) ? LogicObject.SystemApp :
-                    startTagComponents[0].Equals(LogicObject.ValueSet.ToString(), StringComparison.InvariantCultureIgnoreCase)  ? LogicObject.ValueSet :
-                                                                                                                                  LogicObject.None;
-            }
-
-            if( startTagComponents.Length != 0 && _logicObject == LogicObject.None )
-                throw new Exception("The logic object domain must be a valid symbol type");
-
+            _logicObjectDomain = ( startTagComponents.Length == 1 ) ? startTagComponents[0] : null;
             return "";
         }        
 
         private string EndLogicHandler(string endTagInnerText)
         {
-            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelp, 
-                TrimOnlyOneNewlineBothEnds(endTagInnerText), GetHtmlFilenameForKeyword);
+            return _colorizer.LogicToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText), null);
         }
 
         private string EndLogicSyntaxHandler(string endTagInnerText)
         {
-            // this assumes that the syntax is set up with proper start/end brackets and tags
-            const string ArgBeginReplacementCharacter = "⛁";
-            const string ArgEndReplacementCharacter = "⛃";
-
-            string arg_replaced_text = endTagInnerText.Replace("<arg>", ArgBeginReplacementCharacter)
-                                                      .Replace("</arg>", ArgEndReplacementCharacter);
-
-            StringBuilder logic = new StringBuilder(CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelp,
-                TrimOnlyOneNewlineBothEnds(arg_replaced_text), GetHtmlFilenameForKeyword, _logicObject.ToString()));
-
-            // colorize the text between the optional arguments
-            logic.Replace("『", "<span class=\"code_colorization_optional_text\"><font class=\"code_colorization_bracket\">『</font>");
-            logic.Replace("』", "<font class=\"code_colorization_bracket\">』</font></span>");
-
-            // colorize the optional arguments
-            logic.Replace(ArgBeginReplacementCharacter, "<span class=\"code_colorization_argument\">");
-            logic.Replace(ArgEndReplacementCharacter, "</span>");
-
-            // colorize the multiple arguments separator
-            logic.Replace("‖", "<font class=\"code_colorization_bracket\">‖</font>");
-
-            return logic.ToString();
+            return _colorizer.LogicSyntaxToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText), _logicObjectDomain);
         }
 
         private string EndLogicColorHandler(string endTagInnerText)
         {
-            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, 
-                HelperFunctions.UnHtmlizeEscapes(endTagInnerText.Trim()), GetHtmlFilenameForKeyword, _logicObject.ToString());
+            return _colorizer.LogicToHelpsInline(HelperFunctions.UnHtmlizeEscapes(endTagInnerText.Trim()), _logicObjectDomain);
         }
 
         private string StartLogicTableHandler(string[] startTagComponents)
@@ -968,7 +942,7 @@ namespace Help_Generator
                     int index = ( c * rows ) + r;
 
                     if( index < reservedWords.Count )
-                        sb.Append(CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.LogicToHtmlHelpInline, reservedWords[index].ToLower(), GetHtmlFilenameForKeyword));
+                        sb.Append(_colorizer.LogicToHelpsInline(reservedWords[index].ToLower(), null));
 
                     sb.Append("</td>");
                 }
@@ -983,7 +957,31 @@ namespace Help_Generator
 
         private string EndMessageHandler(string endTagInnerText)
         {
-            return CSPro.Logic.Colorizer.Colorize(CSPro.Logic.Colorizer.Format.MessageToHtmlHelp, TrimOnlyOneNewlineBothEnds(endTagInnerText), GetHtmlFilenameForKeyword);
+            return _colorizer.MessageToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText));
+        }
+
+        private string StartReportHandler(string[] startTagComponents)
+        {
+            if( startTagComponents.Length == 0 )
+            {
+                _reportIsHtml = false;
+            }
+
+            else
+            {
+                if( !startTagComponents[0].Equals(HtmlAttribute) )
+                    throw new Exception("Invalid report tag: " + startTagComponents[0]);
+
+                _reportIsHtml = true;
+            }
+
+            return "";
+        }
+
+        private string EndReportHandler(string endTagInnerText)
+        {
+            return _reportIsHtml ? _colorizer.HtmlReportToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText)) :
+                                   _colorizer.ReportToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText));
         }
 
         private string EndPffHandler(string endTagInnerText)
@@ -1002,6 +1000,17 @@ namespace Help_Generator
             return _helpComponents._pffColorizer.ColorizeWord(endTagInnerText.Trim());
         }
 
+        private string StartColorHandler(string[] startTagComponents)
+        {
+            _colorLanguage = startTagComponents[0];
+            return "";
+        }
+
+        private string EndColorHandler(string endTagInnerText)
+        {
+            return _colorizer.LanguageToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText), _colorLanguage);
+        }
+
 
         public const string TagTitle = "title";
         public const string ContextTag = "context";
@@ -1009,6 +1018,7 @@ namespace Help_Generator
         public const string CenterTag = "center";
         public const string BoldTag = "b";
         public const string ItalicsTag = "i";
+        public const string SuperscriptTag = "sup";
         public const string FontTag = "font";
         public const string ListTag = "list";
         public const string ListItemTag = "li";
@@ -1026,8 +1036,10 @@ namespace Help_Generator
         public const string LogicArgumentTag = "arg";
         public const string LogicTableTag = "logictable";
 		public const string MessageTag = "message";
+		public const string ReportTag = "report";
         public const string PffTag = "pff";
         public const string PffColorTag = "pffcolor";
+        public const string ColorTag = "color";
         public const string HtmlTag = "html";
         public const string DefinitionTag = "definition";
 		public const string IncludeTag = "include";
@@ -1040,6 +1052,7 @@ namespace Help_Generator
         public const string OrderedAttribute = "ordered";
         public const string NoWrapAttribute = "nowrap";
         public const string BorderAttribute = "border";
+        public const string HtmlAttribute = "html";
 
         public const string NewLineMarker = "~!~";
     }

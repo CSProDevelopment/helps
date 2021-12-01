@@ -2,8 +2,9 @@
 
 If any special values have been used in your dictionary (default, missing, or refused), using this attribute will allow you to control how those values will be written to your new data source. It can be used on any file type except CSPro files (i.e., <b>.csdb</b> and <b>.dat</b>). The format is:
 
-<logicsyntax><arg>file_name</arg> | <arg>mapped-special-values</arg>=<arg>mapped_value</arg>
-</logicsyntax>	
+<indent><font monospace>
+<arg>file_name</arg>|mapped-special-values=<arg>mapped_value</arg>
+</font></indent>
 
 where <arg>mapped_value</arg> can be one of the following:
 <list>

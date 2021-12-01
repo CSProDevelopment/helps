@@ -2,15 +2,15 @@
 
 <subheader>Format</subheader>
 
-<logicsyntax pff>
+<logicsyntax>
 s = pff_name.getproperty(<arg>property_name</arg>『, <arg>string_list</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor pff>pff.getproperty</logiccolor> function returns a string containing the current value associated with the <link pff.hgt>pff</link>'s property specified by the string expression <arg>property_name</arg>. PFF properties all have default values, so even if a property was not explicitly defined in the PFF file, it may have a default value. Some properties, such as input data filenames for batch applications, can have multiple values, and if you want to retrieve all of these values, you must supply a <arg>string_list</arg>, which will contain zero, one, or more strings with the values.
+The <logiccolor>pff.getproperty</logiccolor> function returns a string containing the current value associated with the <link pff.hgt>pff</link>'s property specified by the string expression <arg>property_name</arg>. PFF properties all have default values, so even if a property was not explicitly defined in the PFF file, it may have a default value. Some properties, such as input data filenames for batch applications, can have multiple values, and if you want to retrieve all of these values, you must supply a <arg>string_list</arg>, which will contain zero, one, or more strings with the values.
 
-Properties names can be prefixed with the section name, as explained in <logiccolor pff>pff.setproperty</logiccolor>, but it is generally not necessary to do so when using this function.
+Properties names can be prefixed with the section name, as explained in <logiccolor>pff.setproperty</logiccolor>, but it is generally not necessary to do so when using this function.
 
 The function can be used similarly to <logiccolor>sysparm</logiccolor> to retrieve properties defined in a PFF's <pffcolor>[Parameters]</pffcolor> section.
 

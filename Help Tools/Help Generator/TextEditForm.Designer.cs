@@ -28,10 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelTitle = new System.Windows.Forms.Label();
             this.linkLabelFilename = new System.Windows.Forms.LinkLabel();
             this.textBoxResults = new System.Windows.Forms.TextBox();
             this.editControl = new Colorizer.EditControl();
+            this.linkLabelOpenContainingFolder = new System.Windows.Forms.LinkLabel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.linkLabelCopyFullPath = new System.Windows.Forms.LinkLabel();
+            this.linkLabelCopyFilename = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -48,13 +53,14 @@
             // 
             this.linkLabelFilename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelFilename.LinkColor = System.Drawing.Color.Olive;
-            this.linkLabelFilename.Location = new System.Drawing.Point(307, 10);
+            this.linkLabelFilename.Location = new System.Drawing.Point(231, 10);
             this.linkLabelFilename.Name = "linkLabelFilename";
             this.linkLabelFilename.Size = new System.Drawing.Size(624, 13);
             this.linkLabelFilename.TabIndex = 2;
             this.linkLabelFilename.TabStop = true;
             this.linkLabelFilename.Text = "filename";
             this.linkLabelFilename.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.toolTip.SetToolTip(this.linkLabelFilename, "Open in Notepad++");
             this.linkLabelFilename.VisitedLinkColor = System.Drawing.Color.White;
             this.linkLabelFilename.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelFilename_LinkClicked);
             // 
@@ -83,11 +89,56 @@
             this.editControl.UseTabs = true;
             this.editControl.WrapMode = ScintillaNET.WrapMode.Word;
             // 
+            // linkLabelOpenContainingFolder
+            // 
+            this.linkLabelOpenContainingFolder.AccessibleDescription = "";
+            this.linkLabelOpenContainingFolder.AutoSize = true;
+            this.linkLabelOpenContainingFolder.LinkColor = System.Drawing.Color.DarkKhaki;
+            this.linkLabelOpenContainingFolder.Location = new System.Drawing.Point(864, 10);
+            this.linkLabelOpenContainingFolder.Name = "linkLabelOpenContainingFolder";
+            this.linkLabelOpenContainingFolder.Size = new System.Drawing.Size(14, 13);
+            this.linkLabelOpenContainingFolder.TabIndex = 4;
+            this.linkLabelOpenContainingFolder.TabStop = true;
+            this.linkLabelOpenContainingFolder.Text = "E";
+            this.toolTip.SetToolTip(this.linkLabelOpenContainingFolder, "Open Containing Folder");
+            this.linkLabelOpenContainingFolder.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelOpenContainingFolder_LinkClicked);
+            // 
+            // linkLabelCopyFullPath
+            // 
+            this.linkLabelCopyFullPath.AccessibleDescription = "";
+            this.linkLabelCopyFullPath.AutoSize = true;
+            this.linkLabelCopyFullPath.LinkColor = System.Drawing.Color.DarkKhaki;
+            this.linkLabelCopyFullPath.Location = new System.Drawing.Point(884, 10);
+            this.linkLabelCopyFullPath.Name = "linkLabelCopyFullPath";
+            this.linkLabelCopyFullPath.Size = new System.Drawing.Size(21, 13);
+            this.linkLabelCopyFullPath.TabIndex = 5;
+            this.linkLabelCopyFullPath.TabStop = true;
+            this.linkLabelCopyFullPath.Text = "CP";
+            this.toolTip.SetToolTip(this.linkLabelCopyFullPath, "Copy Full Path");
+            this.linkLabelCopyFullPath.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelCopyFullPath_LinkClicked);
+            // 
+            // linkLabelCopyFilename
+            // 
+            this.linkLabelCopyFilename.AccessibleDescription = "";
+            this.linkLabelCopyFilename.AutoSize = true;
+            this.linkLabelCopyFilename.LinkColor = System.Drawing.Color.DarkKhaki;
+            this.linkLabelCopyFilename.Location = new System.Drawing.Point(911, 10);
+            this.linkLabelCopyFilename.Name = "linkLabelCopyFilename";
+            this.linkLabelCopyFilename.Size = new System.Drawing.Size(20, 13);
+            this.linkLabelCopyFilename.TabIndex = 6;
+            this.linkLabelCopyFilename.TabStop = true;
+            this.linkLabelCopyFilename.Text = "CF";
+            this.toolTip.SetToolTip(this.linkLabelCopyFilename, "Copy Filename");
+            this.linkLabelCopyFilename.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelCopyFilename_LinkClicked);
+            // 
             // TextEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 612);
+            this.Controls.Add(this.linkLabelCopyFilename);
+            this.Controls.Add(this.linkLabelCopyFullPath);
+            this.Controls.Add(this.linkLabelOpenContainingFolder);
             this.Controls.Add(this.textBoxResults);
             this.Controls.Add(this.linkLabelFilename);
             this.Controls.Add(this.labelTitle);
@@ -108,5 +159,9 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.LinkLabel linkLabelFilename;
         private System.Windows.Forms.TextBox textBoxResults;
+        private System.Windows.Forms.LinkLabel linkLabelOpenContainingFolder;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.LinkLabel linkLabelCopyFullPath;
+        private System.Windows.Forms.LinkLabel linkLabelCopyFilename;
     }
 }

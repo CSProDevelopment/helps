@@ -1,0 +1,17 @@
+﻿<title>Media Store</title>
+
+
+On Android, the <link https://developer.android.com/reference/android/provider/MediaStore>Media Store</link> is a mechanism for accessing audio, image, and video content that can be shared across applications. The media of the given type is not necessarily stored in a single directory. The media can all be accessed using the following identifiers:
+
+<list>
+	<li><logiccolor>Media.Audio</logiccolor>: Audio files.</li>
+	<li><logiccolor>Media.Images</logiccolor>: Image files.</li>
+	<li><logiccolor>Media.Video</logiccolor>: Video files.</li>
+</list>
+
+You can use the <logiccolor>dirlist</logiccolor> function to retrieve a list of these files or you can use the <logiccolor>path.selectFile</logiccolor> function to show the operator a visual listing of these files.
+
+Using any of the identifiers on Windows will result in an empty list of files.
+
+
+<seealso multimedia_features.hgt />

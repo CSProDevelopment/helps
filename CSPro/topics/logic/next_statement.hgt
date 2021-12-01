@@ -6,9 +6,13 @@
 next;
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
 The <logiccolor>next</logiccolor> statement ends a <logiccolor>do</logiccolor>, <logiccolor>while</logiccolor>, <logiccolor>for</logiccolor>, or <logiccolor>forcase</logiccolor> loop early and continues execution with the next iteration of the loop. If the next iteration results in the termination of the loop, then execution will begin with the first statement after the <logiccolor>enddo</logiccolor>.
+
+<b>Note</b>: Prior to CSPro 7.6, if you were within a data entry application's roster and wrote <logiccolor>next</logiccolor> to skip to the next iteration of the roster, it would compile, but did not work. Checking is more stringent now, and an error message will be generated. You must write <logiccolor>skip to next</logiccolor> to accomplish the skip.
+
 
 <subheader>Example</subheader>
 
@@ -28,8 +32,5 @@ for numeric ctr in PERSON do
 enddo;
 </logic>
 
-<subheader>Note</subheader>
-
-Prior to version 7.6, if you were within a data entry application's roster and wrote "next" to skip to the next iteration of the roster, it would compile, but did not work. Checking is more stringent now, and an error message will be generated. You must write "<logiccolor>skip</logiccolor> to next" to accomplish the skip.
 
 <seealso break_statement.hgt exit_statement.hgt />

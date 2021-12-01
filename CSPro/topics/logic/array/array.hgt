@@ -6,6 +6,7 @@ Whenever an array variable is used in the application, a value or numeric expres
 
 If you want the behavior of an array but without fixed dimensions, you can use the <link hashmap.hgt>hashmap</link> object, which is an associative array.
 
+
 <subheader>Functionality</subheader>
 
 An array is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
@@ -15,5 +16,11 @@ An array is a CSPro logic object and the following functions can be called via <
 	<cell><logiccolor array>clear</logiccolor></cell><cell>Resets all array values to the default value.</cell>
 	<cell><logiccolor array>length</logiccolor></cell><cell>Returns the size of an array dimension.</cell>
 </table>
+
+
+<subheader>Assignments</subheader>
+
+When an array is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+
 
 <seealso hashmap.hgt list.hgt />

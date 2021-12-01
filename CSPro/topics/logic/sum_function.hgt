@@ -1,24 +1,28 @@
 ﻿<title>Sum Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-d = sum(<arg>multiple-item</arg> [where condition]);
+d = sum(<arg>multiple_item</arg> 『where <arg>condition</arg>』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
-The sum function returns the sum of an item that occurs multiple times. If a where condition is included, the function returns the sum of the occurrences for which the condition is true.
+The sum function returns the sum of an item that occurs multiple times. If a where <arg>condition</arg> is included, the function returns the sum of the occurrences for which the condition is true.
 
-During data entry, the result of the sum calculation depends on where the statement is located. If the sum function is executed prior to the form or roster containing the item, it returns DEFAULT. If it is executed within the form or roster containing the item, it returns the sum up to the current occurrence number. If it is executed after the form or roster containing the item, it returns the sum for all occurrences of the item.
+During data entry, the result of the sum calculation depends on where the statement is located. If the sum function is executed prior to the form or roster containing the item, it returns <logiccolor>default</logiccolor>. If it is executed within the form or roster containing the item, it returns the sum up to the current occurrence number. If it is executed after the form or roster containing the item, it returns the sum for all occurrences of the item.
 
 During batch editing, sum always returns the sum for all occurrences of the item.
 
-If the value of an occurrence of the item is a special value (DEFAULT, MISSING, REFUSED, or NOTAPPL) the occurrence will not be included in the calculation. If none of the occurrences have values other than special values, DEFAULT is returned.
+If the value of an occurrence of the item is a special value (<logiccolor>default</logiccolor>, <logiccolor>missing</logiccolor>, <logiccolor>refused</logiccolor>, or <logiccolor>notappl</logiccolor>) the occurrence will not be included in the calculation. If none of the occurrences have values other than special values, <logiccolor>default</logiccolor> is returned.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a decimal value of the sum.
+
 
 <subheader>Example</subheader>
 
@@ -26,4 +30,3 @@ The function returns a decimal value of the sum.
 TOTAL_INCOME = sum(INCOME);
 TOTAL_FEMALE_INCOME = sum(INCOME where SEX = 2);
 </logic>
-

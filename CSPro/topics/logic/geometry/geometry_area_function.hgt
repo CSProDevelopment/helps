@@ -2,15 +2,15 @@
 
 <subheader>Format</subheader>
 
-<logicsyntax geometry>
+<logicsyntax>
 d = geometry_name.area();
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor geometry>geometry.area</logiccolor> function computes the area, in square meters, of the polygons contained in the <link geometry.hgt>geometry</link> named <logiccolor>geometry_name</logiccolor>. If the geometry object contains multiple polygons, this function returns the sum of the areas of all of these polygons. If the polygons overlap, the results will be incorrect. Points and lines in the geometry are ignored, so if the geometry contains only points and lines, the area will be zero.
+The <logiccolor>geometry.area</logiccolor> function computes the area, in square meters, of the polygons contained in the <link geometry.hgt>geometry</link> named <logiccolor>geometry_name</logiccolor>. If the geometry object contains multiple polygons, this function returns the sum of the areas of all of these polygons. If the polygons overlap, the results will be incorrect. Points and lines in the geometry are ignored, so if the geometry contains only points and lines, the area will be zero.
 
-The <logiccolor geometry>geometry.area</logiccolor> function uses the Haversine formula to approximate the area of the polygon and makes certain assumptions about the diameter and shape of the earth which may give slightly different results than the area calculated by other software packages.
+The <logiccolor>geometry.area</logiccolor> function uses the Haversine formula to approximate the area of the polygon and makes certain assumptions about the diameter and shape of the earth which may give slightly different results than the area calculated by other software packages.
 
 <subheader>Return Value</subheader>
 

@@ -56,6 +56,7 @@ There are several logic functions used for synchronization with a server:
 	<li><logiccolor>syncparadata</logiccolor> is used to synchronize <link paradata.hgt>paradata</link> to/from the server.</li>
 	<li><logiccolor>syncapp</logiccolor> is used to update an application on the device from a new version on the server.</li>
 	<li><logiccolor>syncmessage</logiccolor> is used to send to and receive string messages from a Bluetooth server.</li>
+	<li><logiccolor>synctime</logiccolor> returns the time of the last synchronization of a data file or a specific case.</li>	
 </list>
 
 While it is possible to use <logiccolor>syncfile</logiccolor> to synchronize CSPro data files, it is more efficient to use <logiccolor>syncdata</logiccolor> since it will only send/receive cases that have been modified whereas <logiccolor>syncfile</logiccolor> always sends the entire file.
@@ -63,10 +64,10 @@ While it is possible to use <logiccolor>syncfile</logiccolor> to synchronize CSP
 You will generally call <logiccolor>syncconnect</logiccolor> once to start the session followed by multiple calls to <logiccolor>syncdata</logiccolor>, <logiccolor>syncapp</logiccolor>, and <logiccolor>syncfile</logiccolor>, followed by a call to <logiccolor>syncdisconnect</logiccolor>. In the example below, we connect to the server, download the latest application files and upload cases from the data file associated with the data dictionary <logiccolor>SURVEY_DICT</logiccolor>.
 
 <logic>
-string cswebServerUrl = "https://www.myserver.org/api";
+string ServerUrl = "https://www.myserver.org/api";
 
 // connect to the CSWeb server
-if syncconnect(CSWeb, cswebServerUrl) then
+if syncconnect(CSWeb, ServerUrl) then
 
 	// send the latest cases to the CSWeb server
 	syncdata(PUT, SURVEY_DICT);
@@ -119,4 +120,4 @@ Many errors that you encounter during synchronization are caused by lack of netw
 To get additional details on synchronization errors you can look at the sync.log file. This files lists all synchronization oprtations along with any errors encountered. This includes errors in uploading/downloading applications in Application Deployment and data download in Data Viewer. On Android devices you can find the sync.log file in the CSEntry directory on your tablet or phone. On Windows you can find the file in the directory <i>%AppData%\CSPro</i>. On Windows you can also locate the sync.log file from the Help menu in CSPro Designer under Troubleshooting. When asking for technical support with synchronization issues, please attach the sync.log file from your device to your email or forum post.
 
 
-<seealso synchronization_simple.hgt syncconnect_function.hgt syncdata_function.hgt syncapp_function.hgt syncfile_function.hgt syncparadata_function.hgt syncmessage_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />
+<seealso synchronization_simple.hgt syncconnect_function.hgt syncdata_function.hgt syncapp_function.hgt syncfile_function.hgt syncparadata_function.hgt syncmessage_function.hgt synctime_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />

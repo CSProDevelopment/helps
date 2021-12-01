@@ -2,17 +2,17 @@
 
 <subheader>Format</subheader>
 
-<logicsyntax map>
+<logicsyntax>
 b = map_name.setMarkerOnClick(<arg>markerId</arg>, <arg>callbackFunction</arg>);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor map>map.setMarkerOnClick</logiccolor> function sets the function that is called when the user taps on the marker identified by <arg>markerId</arg>. When the user taps on the marker the user-defined function <arg>callbackFunction</arg> will be called.
+The <logiccolor>map.setMarkerOnClick</logiccolor> function sets the function that is called when the user taps on the marker identified by <arg>markerId</arg>. When the user taps on the marker the user-defined function <arg>callbackFunction</arg> will be called.
 
-The <arg>callbackFunction</arg> is the name of a user function defined in the global procedure. The function name may optionally be followed by function arguments which will be passed to the function when it is run. These arguments are evaluated at the time that <logiccolor map>map.setMarkerOnClick</logiccolor> is called rather than at the time the callback is run. This allows you to reuse the same callback function for multiple markers and to customize the behavior of the callback by passing different arguments to the callback function for each marker.
+The <arg>callbackFunction</arg> is the name of a user function defined in the global procedure. The function name may optionally be followed by function arguments which will be passed to the function when it is run. These arguments are evaluated at the time that <logiccolor>map.setMarkerOnClick</logiccolor> is called rather than at the time the callback is run. This allows you to reuse the same callback function for multiple markers and to customize the behavior of the callback by passing different arguments to the callback function for each marker.
 
-If no on-click function is set for a marker then when the marker is clicked, the default behavior is to center the view on the marker and to display the marker's info window. After setting an on-click function with <logiccolor map>map.setMarkerOnClick</logiccolor> function, the popup info window is not shown when the marker is clicked. If you wish to still display the popup window and also handle taps on the marker you can use the function <logiccolor map>map.setMarkerOnClickInfoWindow()</logiccolor>.
+If no on-click function is set for a marker then when the marker is clicked, the default behavior is to center the view on the marker and to display the marker's info window. After setting an on-click function with <logiccolor>map.setMarkerOnClick</logiccolor> function, the popup info window is not shown when the marker is clicked. If you wish to still display the popup window and also handle taps on the marker you can use the function <logiccolor>map.setMarkerOnClickInfoWindow()</logiccolor>.
 
 <subheader>Return Value</subheader>
 

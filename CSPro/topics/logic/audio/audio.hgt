@@ -2,9 +2,10 @@
 
 In logic, an <logiccolor>audio</logiccolor> object represents an audio recording. Audio recordings may be loaded from audio files, saved to audio files, played back or recorded. Audio objects are typically used to record portions of an interview either interactively or in the background. With interactive recording an audio recorder is displayed to the user who then controls when the recording is started and stopped. The user must complete the audio recording before moving to the next survey question. With background recording, the audio recorder is started and stopped using CSPro logic and the user can continue with the survey while the audio is recorded. 
 
-Audio recording is typically implemented by declaring a variable of type <logiccolor>audio</logiccolor>, calling either the <logiccolor audio>record</logiccolor> or <logiccolor audio>recordInteractive</logiccolor> function, and then calling the <logiccolor audio>save</logiccolor> function to save the audio to a file.
+Audio recording is typically implemented by declaring a variable of type <logiccolor>audio</logiccolor>, calling either the <logiccolor>audio.record</logiccolor> or <logiccolor>audio.recordInteractive</logiccolor> function, and then calling the <logiccolor>audio.save</logiccolor> function to save the audio to a file.
 
 Audio recording and playback are currently only supported on Android.
+
 
 <subheader>Functionality</subheader>
 
@@ -25,11 +26,28 @@ An audio object is a CSPro logic object and the following functions can be calle
 
 In addition to these object functions, audio objects can be used as arguments to the <logiccolor>filename</logiccolor> function.
 
+
+<subheader>Assignments</subheader>
+
 Audio objects can be assigned to other audio objects, which will replace the recorded audio with the recording from the assigned audio object.
 
 <logicsyntax>
 <arg>audio_name</arg> = <arg>another_audio_name</arg>;
 </logicsyntax>
+
+It is also possible to assign audio objects to a <link document.hgt>document</link>:
+
+<logicsyntax>
+<arg>document_name</arg> = <arg>audio_name</arg>;
+</logicsyntax>
+
+You can also make the reverse assignment, assigning a document to an audio object. A runtime error will occur if the document's data was not audio data.
+
+<logicsyntax>
+<arg>audio_name</arg> = <arg>document_name</arg>;
+</logicsyntax>
+
+When an audio object is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 
 <subheader>Example</subheader>
