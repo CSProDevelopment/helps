@@ -490,6 +490,7 @@ config_statement.hgt																			#	Config Statement
 change_data_entry_options.hgt | Confirm End-of-Case												#	Confirm End-of-Case
 connection_function.hgt																			#	Connection Function
 connection_string.hgt																			#	Connection String
+	encode_function.hgt | Percent Encoding														#		Percent Encoding
 batch_edit_applications.hgt | Consistency Checks												#	Consistency Checks
 consistency_edits.hgt																			#	Consistency Edits
 custom_consolidation.hgt | Consolidation														#	Consolidation
@@ -796,6 +797,13 @@ if_statement.hgt | Else																			#	Else
 if_statement.hgt | Elseif																		#	Elseif
 	if_statement.hgt																			#		If Statement
 encode_function.hgt																				#	Encode Function
+	encode_function.hgt | CSV																	#		CSV
+	encode_function.hgt | HTML																	#		HTML
+	encode_function.hgt | JsonString															#		JsonString
+	encode_function.hgt | PercentEncoding														#		PercentEncoding
+	encode_function.hgt | Slashes																#		Slashes
+	encode_function.hgt | URI																	#		URI
+	encode_function.hgt | URIComponent															#		URIComponent
 data_sources.hgt | Encrypted CSPro DB Data Source												#	Encrypted CSPro DB Data Source
 encrypted_data.hgt																				#	Encrypted Data
 encrypted_data.hgt | Encryption																	#	Encryption
@@ -830,6 +838,7 @@ errors_in_censuses_and_surveys.hgt | Errors														#	Errors
 	errors_in_censuses_and_surveys.hgt | In Censuses and Surveys								#		In Censuses and Surveys
 	errors_at_data_entry.hgt | In Data Entry													#		In Data Entry
 change_error_sound.hgt | Error Sound															#	Error Sound
+encode_function.hgt | Escaping Text																#	Escaping Text
 cspro_program_structure.hgt | Events															#	Events
 	killfocus_statement.hgt																		#		KillFocus Statement
 	onfocus_statement.hgt																		#		OnFocus Statement
@@ -1296,6 +1305,9 @@ tabulate_items_with_multiple_occurrences.hgt | Item with Multiple Occurrences			
 	tabulate_items_with_multiple_occurrences.hgt | Tabulate										#		Tabulate
 javascript_interface.hgt																		#	JavaScript Interface
 join_and_split_roster_columns.hgt																#	Join and Split Roster Columns
+encode_function.hgt | JSON																		#	JSON
+	encode_function.hgt | Encoding JSON Strings													#		Encoding JSON Strings
+	geometry_load_function.hgt | GeoJSON														#		GeoJSON
 change_keyboard_input.hgt | Keyboard Input														#	Keyboard Input
 batch_edit_keys.hgt | Keyboard Summary															#	Keyboard Summary
 	batch_edit_keys.hgt | Batch Edit															#		Batch Edit
