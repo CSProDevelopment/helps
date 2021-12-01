@@ -75,7 +75,7 @@ If in the question text editor in CSPro you set the style for a block of text, t
 
 Any HTML that does not have a class specified will have the normal style applied. This is done by applying the normal class to the body element of the HTML document.
 
-<b>Note:</b> Prior to version 7.6, the format of the question text file was Rich Text Format (RTF). Opening an older data entry application in version 7.6 onwards will automatically convert the QSF file from RTF to HTML&mdash;though you must edit the QSF file to force the conversion. The original RTF will be retained as xxx.qsf.backup. Data entry applications with question text created or edited in version 7.6 can no longer be opened in older versions of CSPro. Should you need to revert the application to a prior version of CSPro, first run the VersionShifter utility, then delete xxx.qsf, and finally rename xxx.qsf.backup to xxx.qsf.
+<b>Note:</b> Prior to version 7.6, the format of the question text file was Rich Text Format (RTF). Opening an older data entry application in version 7.6 onwards will automatically convert the QSF file from RTF to HTML&mdash;though you must edit the QSF file to force the conversion. The original RTF will be retained as xxx.qsf.backup. Data entry applications with question text created or edited in version 7.6 can no longer be opened in older versions of CSPro.
 
 
 <subheader>Questions</subheader>
@@ -96,21 +96,21 @@ questions:
             &lt;p&gt;&lt;span class=&quot;name&quot;&gt;~~PersonName()~~:&lt;/span&gt; Are you the head of household? If not, what is your relationship to the head?&lt;/p&gt;
           FR: |
             &lt;p&gt;&lt;span class=&quot;name&quot;&gt;~~PersonName()~~:&lt;/span&gt; &Ecirc;tes-vous le chef de m&eacute;nage? Sinon, quel est votre lien de parent&eacute; avec le chef?&lt;/p&gt;
-		  
+
         helpText:
           EN: |
-          FR: |  
-            
+          FR: |
+
       - logic: headKnown = 1
         questionText:
           EN: |
             &lt;p&gt;&lt;span class=&quot;name&quot;&gt;~~PersonName()~~:&lt;/span&gt; What is your relationship to ~~headText~~?&lt;/p&gt;
           FR: |
             &lt;p&gt;&lt;span class=&quot;name&quot;&gt;~~PersonName()~~:&lt;/span&gt; Quel est votre lien de parent&eacute; avec ~~headText~~?&lt;/p&gt;
-            
+
         helpText:
           EN: |
-          FR: |  
+          FR: |
 </pre></html>
 
 <seealso html_question_text.hgt />

@@ -14,7 +14,9 @@ The <logiccolor>timestamp</logiccolor> function returns the UNIX time, which is,
 
 <subheader>Return Value</subheader>
 
-The function returns the UNIX time as a decimal value. The integer part of this value is the number of elapsed seconds, while the decimal part contains the milliseconds. If you wish to store this value in a dictionary variable, a numeric variable should be defined with the following properties: LEN=13, DEC=3, DEC CHAR=0.
+The function returns the UNIX time as a decimal value. The integer part of this value is the number of elapsed seconds, while the decimal part contains the milliseconds.
+
+If you wish to store this value in a fixed-width numeric variable, the variable should have an integer length of 10 and a decimal length of 3 (for a total length of 13 without a decimal character, or 14 with one).
 
 
 <subheader>Example</subheader>
