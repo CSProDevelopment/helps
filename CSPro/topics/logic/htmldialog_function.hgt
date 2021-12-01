@@ -5,35 +5,38 @@ The <logiccolor>htmldialog</logiccolor> function allows for the customization of
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = htmldialog((<arg>html_filename</arg>『,』
-	『<arg>input_data</arg>』);
+s = htmldialog(<arg>html_filename</arg>『, <arg>input_data</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
 The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument which specifies the HTML template to be used for the dialog. The optional <arg>input_data</arg> argument allows a string to be passed to the HTML template.
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = htmldialog((<arg>html_filename</arg>『,』
-	『<arg>inputData</arg> := <arg>input_data</arg>,』
-	『<arg>displayOptions</arg> := <arg>display_options</arg>』);
+s = htmldialog(<arg>html_filename</arg>,
+			   『inputData := <arg>input_data</arg>,』
+			   『displayOptions := <arg>display_options</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument which specifies the HTML template to be used for the dialog.. The optional named <arg>inputData</arg> argument can be assigned a string that is passed to the HTML template. An optional named <arg>displayOptions</arg> argument is a JSON string that allows control of the display settings. All possible display options are shown below in a table.
+The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument which specifies the HTML template to be used for the dialog. The optional named <arg>input_data</arg> argument can be assigned a string that is passed to the HTML template. An optional named <arg>display_options</arg> argument is a JSON string that allows control of the display settings. All possible display options are shown below in a table.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a string. The contents of the string are determined by the HTML templated and returned by a call to <i>CSPro.returnData()</i>.
+
 
 <subheader>HTML Template</subheader>
 
 CSPro includes HTML templates in the installation folder for the dialogs it uses. User-created HTML templates allow for further customization of the dialogs. When the <logiccolor>htmldialog</logiccolor> function is called the <arg>html_filename</arg> is first searched for in the current application directory. If a match is not found then the the path <i>.\html\dialogs</i> in the installation folder is searched.
 
 Writing a user-created HTML template can be simplified by first selecting an existing HTML template that is most similar to the planned dialog. Then make a copy of this HTML template in the current application directory and extend it to fit the new dialogs requirements.
+
 
 <subheader>Input Data</subheader>
 
@@ -47,18 +50,20 @@ var inputString = CSPro.getInputData();
 var inputJSON = JSON.parse(CSPro.getInputData());
 </color>
 
+
 <subheader>Display Options</subheader>
 
 <table 3 header nowrap>	
 	<cell>Name</cell><cell>Platform</cell><cell>Values</cell>
-	<cell>width</cell><cell>Both</cell><cell>Width in DIP (e.g., 800)</cell>
-	<cell>height</cell><cell>Both</cell><cell>Height in DIP (e.g., 600)</cell>
+	<cell>width</cell><cell>Both</cell><cell>Width in <link display_dimensions.hgt>display units</link></cell>
+	<cell>height</cell><cell>Both</cell><cell>Height in <link display_dimensions.hgt>display units</link></cell>
 	<cell>resizable</cell><cell>Windows</cell><cell>True, False</cell>
 	<cell>borderColor</cell><cell>Windows</cell><cell>CSS name or hex code (e.g., "black" or "#000000")</cell>
 	<cell>titleBarColor</cell><cell>Windows</cell><cell>CSS name or hex code (e.g., "black" or "#000000")</cell>
-	<cell>titleBarHeight</cell><cell>Windows</cell><cell>Height in DIP (e.g., 50)</cell>
+	<cell>titleBarHeight</cell><cell>Windows</cell><cell>Height in <link display_dimensions.hgt>display units</link></cell>
 	<cell>keyboard</cell><cell>Android</cell><cell>True, False</cell>
 </table>
+
 
 <subheader>Example: Existing HTML Template</subheader>
 
@@ -70,6 +75,7 @@ string input_data = maketext('{ "title": "Enter Some Data!",'
 string result = htmldialog("text-input.html", input_data);
 </logic>
 
+
 <subheader>Example: User-Defined HTML Template</subheader>
 
 <logic>
@@ -77,10 +83,12 @@ string input_data = "Hello world!";
 string display_options = maketext('{ "width": "%d",'
 								  '  "height": %d,'
 								  '  "borderColor": "#FF0000" }',
-								  int(tonumber(getproperty("MaxDisplayWidth")) * 0.8),
-							      int(tonumber(getproperty("MaxDisplayHeight")) * 0.8);
+								  tonumber(getproperty("MaxDisplayWidth")) * 0.8,
+							      tonumber(getproperty("MaxDisplayHeight")) * 0.8;
 
-string result = htmldialog("user-defined-dialog.html", inputData := input_data, displayOptions := display_options);
+string result = htmldialog("user-defined-dialog.html", 
+						   inputData := input_data, displayOptions := display_options);
 </logic>
+
 
 <seealso javascript_interface.hgt />
