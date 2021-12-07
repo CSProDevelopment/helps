@@ -38,7 +38,6 @@ index_file_csidx.hgt | .csidx																	#	.csidx
 paradata_log_file_cslog.hgt | .cslog															#	.cslog
 notes_file_csnot.hgt | .csnot																	#	.csnot
 application_properties_file_csprops.hgt | .csprops												#	.csprops
-templated_reports.hgt | .csrs																	#	.csrs
 data_dictionary_file_dcf.hgt | .dcf																#	.dcf
 binary_data_entry_application_file_pen.hgt | .enc												#	.enc
 data_entry_application_file_ent.hgt | .ent														#	.ent
@@ -704,6 +703,11 @@ errmsg_function.hgt | Denom																		#	Denom
 tool_list.hgt | Deploy Application																#	Deploy Application
 deprecated_features.hgt																			#	Deprecated Features
 	recode_statement_pre74.hgt																	#		Recode Statement (Deprecated)
+	templated_reports_pre77.hgt																	#	    Templated Reports (Deprecated)
+	templated_reports_pre77.hgt																	#	    .csrs (Deprecated)
+	templated_reports_mustache_pre77.hgt														#		Mustache Templated Reports (Deprecated)
+	report_function_pre77.hgt																	#		Report Function (Deprecated)
+	setreportdata_function_pre77.hgt															#		SetReportData Function (Deprecated)
 document_dictionary_elements.hgt | Describe Dictionary Elements									#	Describe Dictionary Elements
 data_entry_elements.hgt | Description															#	Description
 	data_entry_elements.hgt | Fields															#		Fields
@@ -1575,7 +1579,6 @@ multiple_language_applications.hgt																#	Multiple Language Applicatio
 multiple_language_dictionaries.hgt																#	Multiple Language Dictionaries
 message_file_mgf.hgt | Multiple Language Messages												#	Multiple Language Messages
 issues_to_consider_when_designing_a_form.hgt | Multiple Records									#	Multiple Records
-templated_reports_mustache.hgt																	#	Mustache Templated Reports
 add_summary_statistics_to_a_table.hgt | N-tiles													#	N-tiles
 	add_summary_statistics_to_a_table.hgt														#		Add Summary Statistics to a Table
 	produce_summary_statistics.hgt																#		Produce Summary Statistics
@@ -1964,11 +1967,8 @@ renaming_tables_and_table_applications.hgt														#	Renaming Tables and Ta
 batch_edit_order.hgt | Reorder Editing															#	Reorder Editing
 replace_function.hgt																			#	Replace Function
 templated_reports.hgt | Reports																	#	Reports
-	templated_reports_mustache.hgt																#		Mustache Templated Reports
-	report_function.hgt																			#		Report Function
-	setreportdata_function.hgt																	#		SetReportData Function
+	templated_reports_pre77.hgt																	#	    Templated Reports (Deprecated)
 	sqlquery_function.hgt																		#		SqlQuery Function
-report_function.hgt																				#	Report Function
 change_data_entry_options.hgt | Required														#	Required
 	change_data_entry_options.hgt | Enter Key													#		Enter Key
 	hardware_and_software_requirements.hgt | Hardware and Software								#		Hardware and Software
@@ -2130,7 +2130,6 @@ setoutput_function.hgt																			#	SetOutput Function
 setproperty_function.hgt																		#	SetProperty Function
 	geometry_setproperty_function.hgt															#		Geometry.SetProperty Function
 	pff_setproperty_function.hgt																#		Pff.SetProperty Function
-setreportdata_function.hgt																		#	SetReportData Function
 map_set_title_function.hgt | SetTitle Function													#	SetTitle Function
 	map_set_title_function.hgt																	#		Map.SetTitle Function
 setub_function.hgt																				#	SetUB Function
@@ -2390,9 +2389,7 @@ freq_tally_function.hgt | Tally Function														#	Tally Function
 	freq_tally_function.hgt																		#		Freq.Tally Function
 tally_items_from_related_records.hgt															#	Tally Items from Related Records
 templated_reports.hgt																			#	Templated Reports
-	templated_reports_mustache.hgt																#		Mustache Templated Reports
-	report_function.hgt																			#		Report Function
-	setreportdata_function.hgt																	#		SetReportData Function
+	templated_reports_pre77.hgt																	#	    Templated Reports (Deprecated)
 	sqlquery_function.hgt																		#		SqlQuery Function
 temporary_data_file.hgt																			#	Temporary Data File
 test_application.hgt | Test																		#	Test

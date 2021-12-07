@@ -1,4 +1,6 @@
-﻿<title>Report Function</title>
+﻿<title>Report Function (Deprecated)</title>
+
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.7, the version of Templated Reports that uses <logiccolor>report</logiccolor> has been superseded by a new version, <link templated_reports.hgt>Templated Reports</link>. This version will be removed in a future version of CSPro.</i>
 
 <subheader>Format</subheader>
 
@@ -26,4 +28,4 @@ report("interviewer_report_template.html");
 report("interviewer_report_template.html","interviewer_report." + getoperatorid() + ".html");
 </logic>
 
-<seealso setreportdata_function.hgt templated_reports.hgt />
+<seealso setreportdata_function_pre77.hgt templated_reports_pre77.hgt />

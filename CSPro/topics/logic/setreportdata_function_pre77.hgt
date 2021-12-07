@@ -1,4 +1,6 @@
-﻿<title>SetReportData Function</title>
+﻿<title>SetReportData Function (Deprecated)</title>
+
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.7, the version of Templated Reports that uses <logiccolor>setreportdata</logiccolor> has been superseded by a new version, <link templated_reports.hgt>Templated Reports</link>. This version will be removed in a future version of CSPro.</i>
 
 <subheader>Format</subheader>
 
@@ -47,4 +49,4 @@ string DeviceQuery =
 setreportdata("device_info", sqlquery(paradata, DeviceQuery));
 </logic>
 
-<seealso report_function.hgt sqlquery_function.hgt templated_reports.hgt />
+<seealso report_function_pre77.hgt sqlquery_function.hgt templated_reports_pre77.hgt />
