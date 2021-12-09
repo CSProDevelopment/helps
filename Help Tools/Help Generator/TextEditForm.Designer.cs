@@ -92,6 +92,7 @@
             // linkLabelOpenContainingFolder
             // 
             this.linkLabelOpenContainingFolder.AccessibleDescription = "";
+            this.linkLabelOpenContainingFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelOpenContainingFolder.AutoSize = true;
             this.linkLabelOpenContainingFolder.LinkColor = System.Drawing.Color.DarkKhaki;
             this.linkLabelOpenContainingFolder.Location = new System.Drawing.Point(864, 10);
@@ -106,6 +107,7 @@
             // linkLabelCopyFullPath
             // 
             this.linkLabelCopyFullPath.AccessibleDescription = "";
+            this.linkLabelCopyFullPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelCopyFullPath.AutoSize = true;
             this.linkLabelCopyFullPath.LinkColor = System.Drawing.Color.DarkKhaki;
             this.linkLabelCopyFullPath.Location = new System.Drawing.Point(884, 10);
@@ -120,6 +122,7 @@
             // linkLabelCopyFilename
             // 
             this.linkLabelCopyFilename.AccessibleDescription = "";
+            this.linkLabelCopyFilename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabelCopyFilename.AutoSize = true;
             this.linkLabelCopyFilename.LinkColor = System.Drawing.Color.DarkKhaki;
             this.linkLabelCopyFilename.Location = new System.Drawing.Point(911, 10);
