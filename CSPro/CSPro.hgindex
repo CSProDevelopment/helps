@@ -2,6 +2,7 @@
 	operators.hgt | Operator																	#		Operator
 	operator_precedence.hgt																		#		Operator Precedence
 this_item.hgt | $																				#	$
+report_write_function.hgt | $.Write Function                                                    #   $.Write Function
 operators.hgt | %																				#	%
 	operators.hgt | Operator																	#		Operator
 	operator_precedence.hgt																		#		Operator Precedence
@@ -1967,8 +1968,11 @@ renaming_tables_and_table_applications.hgt														#	Renaming Tables and Ta
 batch_edit_order.hgt | Reorder Editing															#	Reorder Editing
 replace_function.hgt																			#	Replace Function
 templated_reports.hgt | Reports																	#	Reports
-	templated_reports_pre77.hgt																	#	    Templated Reports (Deprecated)
+	report_save_function.hgt                                                                    #       Report.Save Function
+	report_view_function.hgt                                                                    #       Report.View Function
+	report_write_function.hgt                                                                   #       Report.Write Function
 	sqlquery_function.hgt																		#		SqlQuery Function
+	templated_reports_pre77.hgt																	#	    Templated Reports (Deprecated)
 change_data_entry_options.hgt | Required														#	Required
 	change_data_entry_options.hgt | Enter Key													#		Enter Key
 	hardware_and_software_requirements.hgt | Hardware and Software								#		Hardware and Software
@@ -2055,6 +2059,7 @@ pff_save_function.hgt | Save Function															#	Save Function
 	geometry_save_function.hgt																	#		Geometry.Save Function
 	image_save_function.hgt																		#		Image.Save Function
 	pff_save_function.hgt																		#		Pff.Save Function
+	report_save_function.hgt                                                                    #       Report.Save Function
 saving_tables_as_text_html_or_rich_text.hgt | Saving Tables as Text HTML or Rich Text			#	Saving Tables as Text HTML or Rich Text
 change_the_view.hgt | Screen																	#	Screen
 	change_the_view.hgt | Full																	#		Full
@@ -2389,8 +2394,11 @@ freq_tally_function.hgt | Tally Function														#	Tally Function
 	freq_tally_function.hgt																		#		Freq.Tally Function
 tally_items_from_related_records.hgt															#	Tally Items from Related Records
 templated_reports.hgt																			#	Templated Reports
-	templated_reports_pre77.hgt																	#	    Templated Reports (Deprecated)
+	report_save_function.hgt                                                                    #       Report.Save Function
+	report_view_function.hgt                                                                    #       Report.View Function
+	report_write_function.hgt                                                                   #       Report.Write Function
 	sqlquery_function.hgt																		#		SqlQuery Function
+	templated_reports_pre77.hgt																	#	    Templated Reports (Deprecated)
 temporary_data_file.hgt																			#	Temporary Data File
 test_application.hgt | Test																		#	Test
 	test_application.hgt | Application															#		Application
@@ -2596,6 +2604,7 @@ view_function.hgt																				#	View Function
 	document_view_function.hgt																	#		Document.View Function
 	freq_view_function.hgt																		#		Freq.View Function
 	image_view_function.hgt																		#		Image.View Function
+	report_view_function.hgt                                                                    #       Report.View Function
 visualvalue_function.hgt																		#	VisualValue Function
 audio.hgt | Voice Recording																		#	Voice Recording
 impute_function.hgt | VSet																		#	VSet
@@ -2643,6 +2652,7 @@ run_production_batch_edits.hgt | Wrap messages													#	Wrap messages
 writecase_function.hgt																			#	WriteCase Function
 write_function.hgt																				#	Write Function
 	file_write_function.hgt																		#		File.Write Function
+	report_write_function.hgt                                                                   #       Report.Write Function
 zero_fill.hgt																					#	Zero Fill
 formats_for_an_application.hgt | Zero Mask														#	Zero Mask
 map_zoom_to_function.hgt | ZoomTo Function														#	ZoomTo Function

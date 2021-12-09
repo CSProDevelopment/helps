@@ -1,0 +1,23 @@
+﻿<title>Report.Save Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = report.save(<arg>report_filename</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>report.save</logiccolor> function runs the logic in the templated report and saves the output as a file specified by <arg>report_filename</arg>. The function is meant to be called from outside the templated report.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) successful and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+HOUSEHOLD_REPORT.save(maketext("household_report_%d.html", timestamp()));
+</logic>
+
+<seealso templated_reports.hgt report_view_function.hgt report_write_function.hgt />

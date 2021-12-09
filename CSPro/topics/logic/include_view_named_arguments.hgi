@@ -1,0 +1,12 @@
+HTML files or websites are displayed in an embedded window using a Chromium-based web browser (<link https://developer.microsoft.com/en-us/microsoft-edge/webview2>Edge WebView2</link> on Windows; <link https://developer.android.com/reference/android/webkit/WebView>WebView</link> on Android). In this web browser, it is possible to use the <link javascript_interface.hgt>JavaScript interface</link> to execute <link user_defined_functions.hgt>user-defined functions</link>.
+
+Optional <link function_named_arguments.hgt>named arguments</link> can be used to control how the embedded web browser displays on Windows:
+
+<list>
+	<li><logiccolor>title :=</logiccolor> string expression giving the title of the window.</li>
+	<li><logiccolor>width :=</logiccolor> numeric expression specifying the width of the window in <link display_dimensions.hgt>display units</link>.</li>
+	<li><logiccolor>height :=</logiccolor> numeric expression specifying the height of the window in <link display_dimensions.hgt>display units</link>.</li>
+	<li><logiccolor>showCloseButton :=</logiccolor> conditional expression that, if false, hides the window's <i>Close</i> button.</li>
+</list>
+
+If either the height or width is specified, then both values have to be provided. Hiding the <i>Close</i> button also removes the margin around the web browser, so the browser will fill the entire embedded window.

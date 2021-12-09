@@ -1,0 +1,32 @@
+﻿<title>Report.View Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = report.view(『title := <arg>title</arg>』
+                『width := <arg>width</arg>』
+		        『height := <arg>height</arg>,』
+		        『showCloseButton := <arg>show_close_button</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>report.view</logiccolor> function runs the logic in the templated report and displays the ouput in an embedded web browser. The function is meant to be called from outside the templated report.
+
+<include include_view_named_arguments.hgi />
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) successful and 0 (false) otherwise.
+
+<subheader>Examples</subheader>
+
+<logic>
+HOUSEHOLD_REPORT.view();
+</logic>
+
+<logic>
+HOUSEHOLD_REPORT.view(title := "Household Report", width := 600, height := 400, showCloseButton := false);
+</logic>
+
+<seealso templated_reports.hgt report_save_function.hgt report_write_function.hgt />

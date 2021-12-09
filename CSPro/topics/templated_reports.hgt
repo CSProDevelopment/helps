@@ -52,15 +52,15 @@ A templated report can be previewed in both data entry and batch by pressing <i>
 	numeric partial_count = 0;
 	numeric complete_count = 0;
 	
-	forcase SURVEY_DICT do
-		if ispartial(SURVEY_DICT) then
+	forcase HOUSEHOLD_DICT do
+		if ispartial(HOUSEHOLD_DICT) then
 			inc(partial_count);
 		else
 			inc(complete_count);
 		endif;
 	endfor;
 	
-	$.write("<p><b>%s</b> has %d partial case(s) and %d complete case(s).</p>", getsymbol(SURVEY_DICT), partial_count, complete_count);
+	$.write("<p><b>%s</b> has %d partial case(s) and %d complete case(s).</p>", getsymbol(HOUSEHOLD_DICT), partial_count, complete_count);
 ?>
 </report>
 
