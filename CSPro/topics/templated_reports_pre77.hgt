@@ -49,7 +49,7 @@ There are a few components that make up the reporting system, each described in 
 
 <b>Data</b>
 
-The first component is the data itself. Via calls to <logiccolor>setreportdata</logiccolor>, CSPro creates a JSON object and embeds it as a script with the id <b>cspro_report_data</b>. If your template has such an id defined, it will be overwritten; otherwise, it will be inserted in the output. If you want to define your own templating engine, it must be able to work with this JSON object.
+The first component is the data itself. Via calls to <logiccolor>setreportdata</logiccolor>, CSPro creates a <link json_format.hgt>JSON</link> object and embeds it as a script with the id <b>cspro_report_data</b>. If your template has such an id defined, it will be overwritten; otherwise, it will be inserted in the output. If you want to define your own templating engine, it must be able to work with this JSON object.
 
 
 <b>Report Template</b>

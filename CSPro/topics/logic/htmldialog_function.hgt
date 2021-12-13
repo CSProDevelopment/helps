@@ -23,7 +23,7 @@ s = htmldialog(<arg>html_filename</arg>,
 
 <subheader>Description</subheader>
 
-The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument which specifies the HTML template to be used for the dialog. The optional named <arg>input_data</arg> argument can be assigned a string that is passed to the HTML template. An optional named <arg>display_options</arg> argument is a JSON string that allows control of the display settings. All possible display options are shown below in a table.
+The <logiccolor>htmldialog</logiccolor> function must be passed the <arg>html_filename</arg> argument which specifies the HTML template to be used for the dialog. The optional named <arg>input_data</arg> argument can be assigned a string that is passed to the HTML template. An optional named <arg>display_options</arg> argument is a <link json_format.hgt>JSON</link> string that allows control of the display settings. All possible display options are shown below in a table.
 
 
 <subheader>Return Value</subheader>
@@ -40,7 +40,7 @@ Writing a user-created HTML template can be simplified by first selecting an exi
 
 <subheader>Input Data</subheader>
 
-The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a JSON string that represents multiple values. The string contents of the input data are retrieved by calling <i>CSPro.getInputData()</i> from the script block of the HTML template.
+The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a <link json_format.hgt>JSON</link> string that represents multiple values. The string contents of the input data are retrieved by calling <i>CSPro.getInputData()</i> from the script block of the HTML template.
 
 <color javascript>
 // Simple string
@@ -53,7 +53,7 @@ var inputJSON = JSON.parse(CSPro.getInputData());
 
 <subheader>Display Options</subheader>
 
-<table 3 header nowrap>	
+<table 3 header nowrap>
 	<cell>Name</cell><cell>Platform</cell><cell>Values</cell>
 	<cell>width</cell><cell>Both</cell><cell>Width in <link display_dimensions.hgt>display units</link></cell>
 	<cell>height</cell><cell>Both</cell><cell>Height in <link display_dimensions.hgt>display units</link></cell>
@@ -86,7 +86,7 @@ string display_options = maketext('{ "width": "%d",'
 								  tonumber(getproperty("MaxDisplayWidth")) * 0.8,
 							      tonumber(getproperty("MaxDisplayHeight")) * 0.8;
 
-string result = htmldialog("user-defined-dialog.html", 
+string result = htmldialog("user-defined-dialog.html",
 						   inputData := input_data, displayOptions := display_options);
 </logic>
 
