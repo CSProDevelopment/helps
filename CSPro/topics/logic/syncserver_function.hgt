@@ -3,8 +3,9 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = syncserver(<arg>Bluetooth</arg>『,<arg>file_root_path</arg>』);
+b = syncserver(<arg>Bluetooth</arg>『, <arg>file_root_path</arg>』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -18,9 +19,11 @@ The first argument must be the keyword <arg>Bluetooth</arg>. The second argument
 
 When connecting over Bluetooth, no Internet connection is required, but the two devices must be in close physical proximity.
 
+
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the synchronization was successful and 0 (false) otherwise.
+
 
 <subheader>Example 1</subheader>
 
@@ -29,6 +32,7 @@ The function returns a logical value of 1 (true) if the synchronization was succ
 syncserver(Bluetooth);
 </logic>
 
+
 <subheader>Example 2</subheader>
 
 <logic>
@@ -36,4 +40,5 @@ syncserver(Bluetooth);
 syncserver(Bluetooth, "..");
 </logic>
 
-<seealso synchronization.hgt syncconnect_function.hgt syncdata_function.hgt syncdisconnect_function.hgt syncfile_function.hgt syncmessage_function.hgt />
+
+<seealso synchronization.hgt syncconnect_function.hgt syncdata_function.hgt syncdisconnect_function.hgt syncfile_function.hgt syncmessage_function.hgt setbluetoothname_function.hgt />

@@ -2,11 +2,13 @@
 
 <i>This page describes the <logiccolor>syncconnect</logiccolor> function when connecting, via Bluetooth, to another device running a CSPro application. For generalized information on the function, see the documentation for the <logiccolor>syncconnect</logiccolor> function.</i>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = syncconnect(<arg>Bluetooth</arg>『,<arg>server_device_name</arg>』);
+b = syncconnect(<arg>Bluetooth</arg>『, <arg>server_device_name</arg>』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -32,4 +34,4 @@ if syncconnect(Bluetooth, server_name) then
 endif;
 </logic>
 
-<seealso syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_dropbox.hgt syncconnect_function_ftp.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt syncmessage_function.hgt getbluetoothname_function.hgt />
+<seealso syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_dropbox.hgt syncconnect_function_ftp.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt syncmessage_function.hgt getbluetoothname_function.hgt setbluetoothname_function.hgt />
