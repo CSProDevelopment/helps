@@ -2,7 +2,7 @@
 	operators.hgt | Operator																	#		Operator
 	operator_precedence.hgt																		#		Operator Precedence
 this_item.hgt | $																				#	$
-report_write_function.hgt | $.Write Function                                                    #   $.Write Function
+report_write_function.hgt | $.Write Function													#	$.Write Function
 operators.hgt | %																				#	%
 	operators.hgt | Operator																	#		Operator
 	operator_precedence.hgt																		#		Operator Precedence
@@ -294,6 +294,7 @@ strip_function.hgt | Blanks																		#	Blanks
 blocks.hgt																						#	Blocks
 	change_block_properties.hgt																	#		Change Block Properties
 getbluetoothname_function.hgt | Bluetooth Name													#	Bluetooth Name
+	setbluetoothname_function.hgt | Modify														#		Modify
 syncconnect_function_bluetooth.hgt | Bluetooth Synchronization									#	Bluetooth Synchronization
 boolean_values.hgt																				#	Boolean Values
 add_borders.hgt | Border																		#	Border
@@ -443,6 +444,7 @@ close_function.hgt																				#	Close Function
 	file_close_function.hgt																		#		File.Close Function
 cmcode_function.hgt																				#	CMCode Function
 code_edits_of_individual_data_items.hgt															#	Code Edits of Individual Data Items
+code_folding.hgt																				#	Code Folding
 define_coding_standards.hgt | Coding Standards													#	Coding Standards
 	define_coding_standards.hgt | Define														#		Define
 batch_edit_applications.hgt | Cold Deck															#	Cold Deck
@@ -703,12 +705,12 @@ errmsg_function.hgt | Denom																		#	Denom
 	errmsg_function.hgt																			#		ErrMsg Function
 tool_list.hgt | Deploy Application																#	Deploy Application
 deprecated_features.hgt																			#	Deprecated Features
-	recode_statement_pre74.hgt																	#		Recode Statement (Deprecated)
-	templated_reports_pre77.hgt																	#	    Templated Reports (Deprecated)
-	templated_reports_pre77.hgt																	#	    .csrs (Deprecated)
+	templated_reports_pre77.hgt | .csrs (Deprecated)											#		.csrs (Deprecated)
 	templated_reports_mustache_pre77.hgt														#		Mustache Templated Reports (Deprecated)
+	recode_statement_pre74.hgt																	#		Recode Statement (Deprecated)
 	report_function_pre77.hgt																	#		Report Function (Deprecated)
 	setreportdata_function_pre77.hgt															#		SetReportData Function (Deprecated)
+	templated_reports_pre77.hgt																	#		Templated Reports (Deprecated)
 document_dictionary_elements.hgt | Describe Dictionary Elements									#	Describe Dictionary Elements
 data_entry_elements.hgt | Description															#	Description
 	data_entry_elements.hgt | Fields															#		Fields
@@ -1401,6 +1403,7 @@ run_production_data_entry.hgt | Lock															#	Lock
 locking_application_files.hgt																	#	Locking Application Files
 logic_file_apc.hgt | Logic																		#	Logic
 	batch_edit_applications.hgt																	#		Batch Edit Applications
+	code_folding.hgt																			#		Code Folding
 	order_of_executing_batch_edit_events.hgt | Editing											#		Editing
 	batch_edit_applications.hgt | In Batch Edit Applications									#		In Batch Edit Applications
 	data_entry_applications.hgt | In Data Entry Applications									#		In Data Entry Applications
@@ -1968,11 +1971,11 @@ renaming_tables_and_table_applications.hgt														#	Renaming Tables and Ta
 batch_edit_order.hgt | Reorder Editing															#	Reorder Editing
 replace_function.hgt																			#	Replace Function
 templated_reports.hgt | Reports																	#	Reports
-	report_save_function.hgt                                                                    #       Report.Save Function
-	report_view_function.hgt                                                                    #       Report.View Function
-	report_write_function.hgt                                                                   #       Report.Write Function
+	report_save_function.hgt																	#		Report.Save Function
+	report_view_function.hgt																	#		Report.View Function
+	report_write_function.hgt																	#		Report.Write Function
 	sqlquery_function.hgt																		#		SqlQuery Function
-	templated_reports_pre77.hgt																	#	    Templated Reports (Deprecated)
+	templated_reports_pre77.hgt																	#		Templated Reports (Deprecated)
 change_data_entry_options.hgt | Required														#	Required
 	change_data_entry_options.hgt | Enter Key													#		Enter Key
 	hardware_and_software_requirements.hgt | Hardware and Software								#		Hardware and Software
@@ -2059,7 +2062,7 @@ pff_save_function.hgt | Save Function															#	Save Function
 	geometry_save_function.hgt																	#		Geometry.Save Function
 	image_save_function.hgt																		#		Image.Save Function
 	pff_save_function.hgt																		#		Pff.Save Function
-	report_save_function.hgt                                                                    #       Report.Save Function
+	report_save_function.hgt																	#		Report.Save Function
 saving_tables_as_text_html_or_rich_text.hgt | Saving Tables as Text HTML or Rich Text			#	Saving Tables as Text HTML or Rich Text
 change_the_view.hgt | Screen																	#	Screen
 	change_the_view.hgt | Full																	#		Full
@@ -2105,6 +2108,7 @@ set_attributes_statement.hgt | Set																#	Set
 	compiler_mode.hgt | Implicit																#		Implicit
 map_set_base_map_function.hgt | SetBaseMap Function												#	SetBaseMap Function
 	map_set_base_map_function.hgt																#		Map.SetBaseMap Function
+setbluetoothname_function.hgt																	#	SetBluetoothName Function
 setcapturepos_function.hgt																		#	SetCapturePos Function
 setcapturetype_function.hgt																		#	SetCaptureType Function
 setcaselabel_function.hgt																		#	SetCaseLabel Function
@@ -2394,11 +2398,11 @@ freq_tally_function.hgt | Tally Function														#	Tally Function
 	freq_tally_function.hgt																		#		Freq.Tally Function
 tally_items_from_related_records.hgt															#	Tally Items from Related Records
 templated_reports.hgt																			#	Templated Reports
-	report_save_function.hgt                                                                    #       Report.Save Function
-	report_view_function.hgt                                                                    #       Report.View Function
-	report_write_function.hgt                                                                   #       Report.Write Function
+	report_save_function.hgt																	#		Report.Save Function
+	report_view_function.hgt																	#		Report.View Function
+	report_write_function.hgt																	#		Report.Write Function
 	sqlquery_function.hgt																		#		SqlQuery Function
-	templated_reports_pre77.hgt																	#	    Templated Reports (Deprecated)
+	templated_reports_pre77.hgt																	#		Templated Reports (Deprecated)
 temporary_data_file.hgt																			#	Temporary Data File
 test_application.hgt | Test																		#	Test
 	test_application.hgt | Application															#		Application
@@ -2604,7 +2608,7 @@ view_function.hgt																				#	View Function
 	document_view_function.hgt																	#		Document.View Function
 	freq_view_function.hgt																		#		Freq.View Function
 	image_view_function.hgt																		#		Image.View Function
-	report_view_function.hgt                                                                    #       Report.View Function
+	report_view_function.hgt																	#		Report.View Function
 visualvalue_function.hgt																		#	VisualValue Function
 audio.hgt | Voice Recording																		#	Voice Recording
 impute_function.hgt | VSet																		#	VSet
@@ -2652,7 +2656,7 @@ run_production_batch_edits.hgt | Wrap messages													#	Wrap messages
 writecase_function.hgt																			#	WriteCase Function
 write_function.hgt																				#	Write Function
 	file_write_function.hgt																		#		File.Write Function
-	report_write_function.hgt                                                                   #       Report.Write Function
+	report_write_function.hgt																	#		Report.Write Function
 zero_fill.hgt																					#	Zero Fill
 formats_for_an_application.hgt | Zero Mask														#	Zero Mask
 map_zoom_to_function.hgt | ZoomTo Function														#	ZoomTo Function
