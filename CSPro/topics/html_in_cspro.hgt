@@ -18,6 +18,21 @@ HTML files or websites are displayed in an embedded window using a Chromium-base
 
 When a CSPro application runs, a local web server is launched that serves content stored on the local file system. On Windows, this server uses  <i>localhost</i> as the host and chooses a dynamic port, checking for one that is not in use.
 
+Relative paths that are not based off the root are evaluated from the location of the displayed HTML content:
+
+<list>
+	<li><b>Question Text</b>: Relative to the <link data_entry_application_file_ent.hgt>data entry application (.ent) </link> or <link binary_data_entry_application_file_pen.hgt>.pen file</link>.</li>
+	<li><b>Reports</b>: Relative to the location of the report (or, when running a .pen file, where it would have existed relative to the data entry application).</li>
+	<li><b>HTML Files</b> (shown using <logiccolor>view</logiccolor> or <logiccolor>htmldialog</logiccolor>): Relative to the location of the file.</li>
+</list>
+
+For example, these references in question text would refer to files in the application directory and in a relative directory located one level above the application directory:
+
+<color html>
+<img src="image-in-application-directory.jpg" />
+<img src="../shared/image-in-relative-directory.jpg" />
+</color>
+
 HTML, JavaScript, CSS, and other files that CSPro uses for its operations are located in a <i>html</i> directory. On Windows, these files are typically found here:
 
 <indent><font monospace>C:\Program Files (x86)\CSPro <definition version />\html\</font></indent>
@@ -40,21 +55,6 @@ Fortunately, the local web server treats the <i>html</i> directory as the root o
 <report html>
 <img src="/images/pff-icon.png" />
 </report>
-
-Relative paths that are not based off the root are evaluated from the location of the displayed HTML content:
-
-<list>
-	<li><b>Question Text</b>: Relative to the <link data_entry_application_file_ent.hgt>data entry application (.ent) </link> or <link binary_data_entry_application_file_pen.hgt>.pen file</link>.</li>
-	<li><b>Reports</b>: Relative to the location of the report (or, when running a .pen file, where it would have existed relative to the data entry application).</li>
-	<li><b>HTML Files</b> (shown using <logiccolor>view</logiccolor> or <logiccolor>htmldialog</logiccolor>): Relative to the location of the file.</li>
-</list>
-
-For example, in question text:
-
-<color html>
-<img src="image-in-application-directory.jpg" />
-<img src="../images/image-in-relative-directory.jpg" />
-</color>
 
 
 <subheader>JavaScript Libraries Included With CSPro</subheader>

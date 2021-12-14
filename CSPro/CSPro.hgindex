@@ -573,6 +573,7 @@ cspro_capabilities.hgt | CSPro																	#	CSPro
 	cspro_menu.hgt | General Menu Summary														#		General Menu Summary
 	cspro_initial_screen_layout.hgt | Initial Screen Layout										#		Initial Screen Layout
 	what_is_cspro.hgt | Introduction															#		Introduction
+	javascript_interface.hgt																	#		JavaScript Interface
 	cspro_toolbar.hgt | Toolbar Summary															#		Toolbar Summary
 	tool_list.hgt | Tools																		#		Tools
 	what_is_cspro.hgt | What is																	#		What is
@@ -762,6 +763,8 @@ dirlist_function.hgt																			#	DirList Function
 tabulate_categories_with_disjoint_values.hgt | Disjoint Categories								#	Disjoint Categories
 	tabulate_categories_with_disjoint_values.hgt | In Value Sets								#		In Value Sets
 display_dimensions.hgt																			#	Display Dimensions
+	javascript_interface.hgt | getMaxDisplayHeight (JavaScript)									#		getMaxDisplayHeight (JavaScript)
+	javascript_interface.hgt | getMaxDisplayWidth (JavaScript)									#		getMaxDisplayWidth (JavaScript)
 	getproperty_function.hgt | Height															#		Height
 	getproperty_function.hgt | Width															#		Width
 deprecated_features.hgt | Display Function														#	Display Function
@@ -778,6 +781,7 @@ document.hgt																					#	Document Object
 	document_statement.hgt																		#		Document Statement
 object_dot_notation.hgt | Dot Notation															#	Dot Notation
 do_statement.hgt																				#	Do Statement
+	javascript_interface.hgt | do (JavaScript)													#		do (JavaScript)
 drag_option_menu.hgt																			#	Drag Option Menu
 	drag_option_menu.hgt | Require Enter Key													#		Require Enter Key
 	drag_option_menu.hgt | Roster Options														#		Roster Options
@@ -1082,6 +1086,7 @@ geometry.hgt | Geometry																			#	Geometry
 	geometry.hgt																				#		Geometry Object
 	geometry_statement.hgt																		#		Geometry Statement
 	map_remove_geometry_function.hgt | Remove Geometry From a Map								#		Remove Geometry From a Map
+javascript_interface.hgt | getAsyncResult (JavaScript)											#	getAsyncResult (JavaScript)
 getbluetoothname_function.hgt																	#	GetBluetoothName Function
 getbuffer_function.hgt																			#	GetBuffer Function
 getcapturetype_function.hgt																		#	GetCaptureType Function
@@ -1097,6 +1102,7 @@ path_getfilename_function.hgt | GetFileName														#	GetFileName
 path_getfilenamewithoutextension_function.hgt | GetFileNameWithoutExtension						#	GetFileNameWithoutExtension
 	path_getfilenamewithoutextension_function.hgt												#		Path.GetFileNameWithoutExtension Function
 getimage_function.hgt																			#	GetImage Function
+javascript_interface.hgt | getInputData (JavaScript)											#	getInputData (JavaScript)
 hashmap_getkeys_function.hgt | GetKeys Function													#	GetKeys Function
 	hashmap_getkeys_function.hgt																#		HashMap.GetKeys Function
 getlabel_function.hgt																			#	GetLabel Function
@@ -1109,6 +1115,8 @@ map_get_marker_latitude_function.hgt | GetMarkerLatitude Function								#	GetMa
 	map_get_marker_latitude_function.hgt														#		Map.GetMarkerLatitude Function
 map_get_marker_longitude_function.hgt | GetMarkerLongitude Function								#	GetMarkerLongitude Function
 	map_get_marker_longitude_function.hgt														#		Map.GetMarkerLongitude Function
+javascript_interface.hgt | getMaxDisplayHeight (JavaScript)										#	getMaxDisplayHeight (JavaScript)
+javascript_interface.hgt | getMaxDisplayWidth (JavaScript)										#	getMaxDisplayWidth (JavaScript)
 getnote_function.hgt																			#	GetNote Function
 getocclabel_function.hgt																		#	GetOccLabel Function
 getoperatorid_function.hgt																		#	GetOperatorId Function
@@ -1281,6 +1289,8 @@ introduction_to_run_in_parts.hgt																#	Introduction to Run in Parts
 int_function.hgt																				#	Int Function
 invalueset_function.hgt																			#	InValueSet Function
 invoke_function.hgt																				#	Invoke Function
+	javascript_interface.hgt | invokeAsync (JavaScript)											#		invokeAsync (JavaScript)
+	javascript_interface.hgt | invoke (JavaScript)												#		invoke (JavaScript)
 ischecked_function.hgt																			#	IsChecked Function
 ispartial_function.hgt																			#	IsPartial Function
 converting_within_issa.hgt | ISSA																#	ISSA
@@ -1316,6 +1326,17 @@ add_dictionary_elements.hgt | Item																#	Item
 tabulate_items_with_multiple_occurrences.hgt | Item with Multiple Occurrences					#	Item with Multiple Occurrences
 	tabulate_items_with_multiple_occurrences.hgt | Tabulate										#		Tabulate
 javascript_interface.hgt																		#	JavaScript Interface
+	javascript_interface.hgt | CSPro.do															#		CSPro.do
+	javascript_interface.hgt | CSPro.getAsyncResult												#		CSPro.getAsyncResult
+	javascript_interface.hgt | CSPro.getInputData												#		CSPro.getInputData
+	javascript_interface.hgt | CSPro.getMaxDisplayHeight										#		CSPro.getMaxDisplayHeight
+	javascript_interface.hgt | CSPro.getMaxDisplayWidth											#		CSPro.getMaxDisplayWidth
+	javascript_interface.hgt | CSPro.invoke														#		CSPro.invoke
+	javascript_interface.hgt | CSPro.invokeAsync												#		CSPro.invokeAsync
+	javascript_interface.hgt | CSPro.returnData													#		CSPro.returnData
+	javascript_interface.hgt | CSPro.runLogic													#		CSPro.runLogic
+	javascript_interface.hgt | CSPro.runLogicAsync												#		CSPro.runLogicAsync
+	javascript_interface.hgt | CSPro.setDisplayOptions											#		CSPro.setDisplayOptions
 	html_in_cspro.hgt																			#		HTML in CSPro
 html_in_cspro.hgt | JavaScript Libraries														#	JavaScript Libraries
 	html_in_cspro.hgt | Bootstrap																#		Bootstrap
@@ -2010,6 +2031,7 @@ restrict_a_universe.hgt																			#	Restrict a Universe
 retrieve_function.hgt | Retrieve																#	Retrieve
 	retrieve_function.hgt | Function															#		Function
 	tool_list.hgt | Tables																		#		Tables
+javascript_interface.hgt | returnData (JavaScript)												#	returnData (JavaScript)
 review_edit_specifications.hgt																	#	Review Edit Specifications
 saving_tables_as_text_html_or_rich_text.hgt | Rich Text Format									#	Rich Text Format
 	saving_tables_as_text_html_or_rich_text.hgt | Save Tables as Text: Rich Text or HTML		#		Save Tables as Text: Rich Text or HTML
@@ -2047,6 +2069,8 @@ run_as_batch.hgt | Run																			#	Run
 	run_production_data_entry.hgt | Production Data Entry										#		Production Data Entry
 	run_production_data_entry.hgt																#		Run Production Data Entry
 	sysparm_function.hgt																		#		SysParm Function
+javascript_interface.hgt | runLogicAsync (JavaScript)											#	runLogicAsync (JavaScript)
+javascript_interface.hgt | runLogic (JavaScript)												#	runLogic (JavaScript)
 run_all_in_batch.hgt																			#	Run All in Batch
 run_consolidate_interactively.hgt																#	Run Consolidate Interactively
 run_consolidate_in_batch.hgt																	#	Run Consolidate in Batch
@@ -2126,6 +2150,7 @@ setbluetoothname_function.hgt																	#	SetBluetoothName Function
 setcapturepos_function.hgt																		#	SetCapturePos Function
 setcapturetype_function.hgt																		#	SetCaptureType Function
 setcaselabel_function.hgt																		#	SetCaseLabel Function
+javascript_interface.hgt | setDisplayOptions (JavaScript)										#	setDisplayOptions (JavaScript)
 setfile_function.hgt																			#	SetFile Function
 setfont_function.hgt																			#	SetFont Function
 setlanguage_function.hgt																		#	SetLanguage Function

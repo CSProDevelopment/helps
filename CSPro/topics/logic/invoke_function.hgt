@@ -17,7 +17,7 @@ The <logiccolor>invoke</logiccolor> function allows you to execute <link user_de
 
 The <logiccolor>invoke</logiccolor> function evaluates the string expression <arg>function_name</arg> at runtime, not compile-time. In the function's first version, zero, one, or more arguments are provided directly at compile-time. At runtime, the arguments are checked against the function's parameters, and if they are compatible, the function call is executed.
 
-The function's second version, using <link function_named_arguments.hgt>named arguments</link>, allows arguments to be passed using the string expression <arg>arguments_json</arg>. This text is a <link json_format.hgt>JSON</link> object containing the arguments to the function. In this version, only <logiccolor>numeric</logiccolor>, <logiccolor>string</logiccolor>, and <logiccolor>list</logiccolor> arguments can be provided.
+The function's second version, using <link function_named_arguments.hgt>named arguments</link>, allows arguments to be passed using the string expression <arg>arguments_json</arg>. This text is a <link json_format.hgt>JSON</link> string containing the arguments to the function. In this version, only <logiccolor>numeric</logiccolor>, <logiccolor>string</logiccolor>, and <logiccolor>list</logiccolor> arguments can be provided. List arguments must be provided as JSON arrays.
 
 The <link javascript_interface.hgt>JavaScript interface</link> provides versions of these functions that can be run in JavaScript: <colorinline javascript>CSPro.invoke</colorinline> and <colorinline javascript>CSPro.invokeAsync</colorinline>.
 
