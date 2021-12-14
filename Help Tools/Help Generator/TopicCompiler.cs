@@ -121,6 +121,7 @@ namespace Help_Generator
 			_tagSettings.Add(PffTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffHandler,0,0));
             _tagSettings.Add(PffColorTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndPffColorHandler,0,0));
             _tagSettings.Add(ColorTag,new TagSettings(true,(StartTagHandlerDelegate)StartColorHandler,(EndTagHandlerDelegate)EndColorHandler,1,1));
+            _tagSettings.Add(ColorInlineTag,new TagSettings(true,(StartTagHandlerDelegate)StartColorHandler,(EndTagHandlerDelegate)EndColorInlineHandler,1,1));
             _tagSettings.Add(HtmlTag,new TagSettings("",""));
             _tagSettings.Add(CalloutTag, new TagSettings(true, "<div style=\"background-color: lightgrey;border:1px solid black;margin:10px;padding:10px\">", "</div>", 0, 0));
             _tagSettings.Add(PageBreakTag, new TagSettings(false, "<div class=\"new-page\" />", "", 0, 0));
@@ -1011,6 +1012,11 @@ namespace Help_Generator
             return _colorizer.LanguageToHelps(TrimOnlyOneNewlineBothEnds(endTagInnerText), _colorLanguage);
         }
 
+        private string EndColorInlineHandler(string endTagInnerText)
+        {
+            return _colorizer.LanguageToHelpsInline(TrimOnlyOneNewlineBothEnds(endTagInnerText), _colorLanguage);
+        }
+
 
         public const string TagTitle = "title";
         public const string ContextTag = "context";
@@ -1040,6 +1046,7 @@ namespace Help_Generator
         public const string PffTag = "pff";
         public const string PffColorTag = "pffcolor";
         public const string ColorTag = "color";
+        public const string ColorInlineTag = "colorinline";
         public const string HtmlTag = "html";
         public const string DefinitionTag = "definition";
 		public const string IncludeTag = "include";
