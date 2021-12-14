@@ -1,0 +1,79 @@
+﻿<title>Invoke Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = invoke(<arg>function_name</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』);
+</logicsyntax>
+
+<logicsyntax>
+s = invoke(<arg>function_name</arg>, arguments := <arg>arguments_json</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>invoke</logiccolor> function allows you to execute <link user_defined_functions.hgt>user-defined functions</link> using runtime binding (where the function name is only known at runtime). When compiling an application, the CSPro compiler only knows about functions declared up to the point where a function call is coded, so for more dynamic applications, it can be a challenge to manage function calls when you would like to call a function declared after the point of the call. One workaround is to use <link additional_function_examples.hgt>function pointers</link>; the <logiccolor>invoke</logiccolor> function provides another way to bypass the CSPro compiler limitation.
+
+The <logiccolor>invoke</logiccolor> function evaluates the string expression <arg>function_name</arg> at runtime, not compile-time. In the function's first version, zero, one, or more arguments are provided directly at compile-time. At runtime, the arguments are checked against the function's parameters, and if they are compatible, the function call is executed.
+
+The function's second version, using <link function_named_arguments.hgt>named arguments</link>, allows arguments to be passed using the string expression <arg>arguments_json</arg>. This text is a <link json_format.hgt>JSON</link> object containing the arguments to the function. In this version, only <logiccolor>numeric</logiccolor>, <logiccolor>string</logiccolor>, and <logiccolor>list</logiccolor> arguments can be provided.
+
+The <link javascript_interface.hgt>JavaScript interface</link> provides versions of these functions that can be run in JavaScript: <colorinline javascript>CSPro.invoke</colorinline> and <colorinline javascript>CSPro.invokeAsync</colorinline>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the return value of the user-defined function as a string when successful, and a blank string otherwise. If the function has a numeric return value, the value is converted to a string, which you can convert back to a number using the <logiccolor>tonumber</logiccolor> function.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+function numeric ManipulateValues(numeric value1, numeric value2,
+								  string function_name = "AddValues")
+
+	string result = invoke(function_name, value1, value2);
+	exit tonumber(result);
+
+end;
+
+function AddValues(numeric value1, numeric value2)
+	exit value1 + value2;
+end;
+
+function MultiplyValues(numeric value1, numeric value2)
+	exit value1 * value2;
+end;
+
+// ...
+
+ManipulateValues(16, 16); 					// 32
+ManipulateValues(16, 16, "MultiplyValues"); // 256
+ManipulateValues(16, 16, "DivideValues"); 	// runtime error (DivideValues function does not exist)
+invoke("ManipulateValues", 16, 16);			// "32"
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+function string CombineText(list string values)
+
+	string result;
+
+	do numeric ctr = 1 while ctr <= values.length()
+		result = result + values(ctr) + " ";
+	enddo;
+
+	exit strip(result);
+
+end;
+
+// ...
+
+invoke("CombineText", arguments := '{ "values": [ "Hello,", "World!" ] }'); // Hello, World!
+</logic>
+
+
+<seealso user_defined_functions.hgt javascript_interface.hgt />

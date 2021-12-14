@@ -3,7 +3,8 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-function 『<arg>return_type</arg>』 <arg>function_name</arg>(『<arg>parameter1_type</arg> <arg>parameter1_name</arg>, ...,  <arg>parameterN_type</arg> <arg>parameterN_name</arg>』)
+function 『<arg>return_type</arg>』 <arg>function_name</arg>(『<arg>parameter1_type</arg> <arg>parameter1_name</arg>, ...,』
+									 『<arg>parameterN_type</arg> <arg>parameterN_name</arg>』)
 
 	// statements
 	
@@ -11,6 +12,7 @@ function 『<arg>return_type</arg>』 <arg>function_name</arg>(『<arg>parameter
 
 end;
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -25,6 +27,9 @@ Numeric, string, and alphanumeric variables are local to the function. That is, 
 Other than arrays, parameters are defined the same way you would in other parts of logic. However, with arrays, you do not define the size of the array because the array will match the size of the array passed as an argument. By default, an array is one-dimensional. To specify more than one dimension, use parentheses with the number of dimensions specified using commas. For example, a three-dimensional array must include <logiccolor>(,,)</logiccolor> after the parameter name. Within the function, the function <logiccolor>length</logiccolor> returns the dimension sizes of the passed array.
 
 Functions always return a value, either a numeric, alphanumeric, or string value. If <arg>return_type</arg> is not specified, the function will by default return a numeric value. To assign the function's return value, assign a value to <arg>function_name</arg>. If no return value is specified, the value <logiccolor>default</logiccolor> or a blank string is returned, depending on the return type. The return value can also be specified using the <logiccolor>exit</logiccolor> statement.
+
+When using functions in logic, CSPro will check that the function call is valid at during compilation. However, advanced users may find it useful to program function calls where the function name is only known at runtime. You can use the <logiccolor>invoke</logiccolor> function to execute such functions using runtime binding.
+
 
 <subheader>Example 1</subheader>
 

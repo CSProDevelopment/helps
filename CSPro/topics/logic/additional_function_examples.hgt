@@ -1,6 +1,6 @@
 ﻿<title>Additional Examples of User-Defined Functions</title>
 
-These are examples of more advanced ways to work with user-defined functions in CSPro.
+These are examples of more advanced ways to work with <link user_defined_functions.hgt>user-defined functions</link> in CSPro.
 
 <subheader>Recursive Functions </subheader>
 
@@ -22,7 +22,10 @@ function numeric NumberDescendantsInHH(numeric ptrPerson)
 end;
 </logic>
 
+
 <subheader>Function Pointers</subheader>
+
+(The <logiccolor>invoke</logiccolor> function may provide an alternative to some uses of function pointers.)
 
 <logic>
 function numeric FilteredCountInHH(function filter(numeric))
@@ -55,5 +58,6 @@ PROC ANALYSIS
 	numeric cntTeenagers = FilteredCountInHH(IsTeenager);
 	numeric cntFertileWomen = FilteredCountInHH(IsFertileWoman);
 </logic>
+
 
 <seealso function_statement.hgt function_parameters_optional.hgt function_arguments_ref.hgt />
