@@ -4,7 +4,8 @@
 
 <subheader>Overview</subheader>
 
-CSPro can create HTML reports using case data as well as results from queries into <link paradata.hgt>paradata</link> and other data sets. By specifying tags in the templated reports, CSPro logic can be run and CSPro dictionary variables can be accessed to render a dynamic report.
+CSPro can create <link html_in_cspro.hgt>HTML</link> reports using case data as well as results from queries into <link paradata.hgt>paradata</link> and other data sets. By specifying tags in the templated reports, CSPro logic can be run and CSPro dictionary variables can be accessed to render a dynamic report.
+
 
 <subheader>Functionality</subheader>
 
@@ -12,18 +13,28 @@ Each templated report is a CSPro logic object and the following functions can be
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor list>save</logiccolor></cell><cell>Saves the report to a file.</cell>
-	<cell><logiccolor list>view</logiccolor></cell><cell>Displays report in an embedded web browser.</cell>
-	<cell><logiccolor list>write</logiccolor></cell><cell>Writes text to report.</cell>
+	<cell><logiccolor report>save</logiccolor></cell><cell>Saves the report to a file.</cell>
+	<cell><logiccolor report>view</logiccolor></cell><cell>Displays report in an embedded web browser.</cell>
+	<cell><logiccolor report>write</logiccolor></cell><cell>Writes text to report.</cell>
 </table>
+
+In addition to these object functions, templated reports can be used as arguments to the <logiccolor>filename</logiccolor> and <logiccolor>view</logiccolor> functions.
+
+
+<subheader>Assignments</subheader>
+
+When a templated report is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+
 
 <subheader>Add and Remove</subheader>
 
 A templated report can be added to the project by selecting <i>Add Files...</i> under the <i>Files</i> tab. If the filename ends with the .html extension an additonal dialog will be displayed with templates. The templates have an HTML scaffolding which includes popular CSS and Javascript libraries. A templated report can be removed from the project by selecting <i>Drop Files...</i> under the <i>Files</i> tab.
 
+
 <subheader>CSPro Logic</subheader>
 
 CSPro logic can be embedded in the templated report by starting the logic with <b>&#60;?</b> and and ending the logic with <b>?></b>. The tag can be used to embed inline logic or multiple lines of logic.
+
 
 <subheader>Output</subheader>
 
@@ -32,18 +43,21 @@ There are three ways of writing numerics and strings to templated reports:
 <list ordered>
 <li><b>~~</b>...<b>~~</b> writes to the report the results of the numeric or string expression specified between the tildes.</li>
 <li><b>~~~</b>...<b>~~~</b> is similar to above version except that the text will not be automatically escaped for HTML.</li>
-<li><logiccolor list>write</logiccolor> writes directly to the report.</li>
+<li><logiccolor report>write</logiccolor> writes directly to the report.</li>
 </list>
+
 
 <subheader>Preview</subheader>
 
 A templated report can be previewed in both data entry and batch by pressing <i>CTRL + F5</i>. This will not run the CSPro logic, so the preview will not necessarily look complete. Use it to preview the HTML and CSS.
+
 
 <subheader>Example 1</subheader>
 
 <report>
 <p>Report generated at ~~timestring()~~</p>
 </report>
+
 
 <subheader>Example 2</subheader>
 
@@ -64,4 +78,5 @@ A templated report can be previewed in both data entry and batch by pressing <i>
 ?>
 </report>
 
-<seealso sqlquery_function.hgt />
+
+<seealso html_in_cspro.hgt javascript_interface.hgt />

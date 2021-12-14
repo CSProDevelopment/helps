@@ -42,6 +42,14 @@ This is a detailed list of changes in CSPro 7.7. For a more general overview, se
 </list>
 
 
+<subheader>HTML and JavaScript Integration</subheader>
+
+<list>
+	<li>Introduction of <link html_in_cspro.hgt>HTML</link> dialogs for displaying logic functions (such as <logiccolor>errmsg</logiccolor> and <logiccolor>accept</logiccolor>) as well as other aspects of the CSPro user interface (UI).</li>
+	<li>A <link javascript_interface.hgt>JavaScript interface</link> exists to facilitate the invocation of <link user_defined_functions.hgt>user-defined functions</link> from question text and while viewing web pages (using the <logiccolor>view</logiccolor> or <logiccolor>htmldialog</logiccolor> functions).</li>
+</list>
+
+
 <subheader>Logic</subheader>
 
 <list>
@@ -57,9 +65,8 @@ This is a detailed list of changes in CSPro 7.7. For a more general overview, se
 	<li>A new function, <logiccolor>currentkey</logiccolor>, returns a key string comprised of a case's current IDs (as opposed to <logiccolor>key</logiccolor>, which uses a case's ID as they existed when the case was last loaded or written).</li>
 	<li>A new function, <logiccolor>synctime</logiccolor>, returns the time of the last synchronization of a data file or a specific case. This function can be used to determine if any cases have not been synced.</li>
 	<li>A new function, <logiccolor>setbluetoothname</logiccolor>, allows you to modify the name of the device as broadcast to other Bluetooth devices.</li>
+	<li>The <logiccolor>htmldialog</logiccolor> function allows for the creation of custom dialogs using <link html_in_cspro.hgt>HTML</link> and <link javascript_interface.hgt>JavaScript</link>.</li>
 	<li>A new function, <logiccolor>invoke</logiccolor>, allows you to execute <link user_defined_functions.hgt>user-defined functions</link> using runtime binding (where the function name is only known at runtime).</li>
-	<li>A <link javascript_interface.hgt>JavaScript interface</link> exists to facilitate the invocation of <link user_defined_functions.hgt>user-defined functions</link> from question text and while viewing web pages (using the <logiccolor>view</logiccolor> or <logiccolor>htmldialog</logiccolor> functions).</li>
-	<li>The <logiccolor>htmldialog</logiccolor> function allows for the creation of custom dialogs using HTML and <link javascript_interface.hgt>JavaScript</link>.</li>
 	<li>The Downloads directory path can be <link pathname_function.hgt>retrieved</link>. Copying files to and from this directory is a useful way to share files between applications on Android 11 devices.</li>
 	<li>The <logiccolor>dirlist</logiccolor> function, with a new syntax using <link function_named_arguments.hgt>named arguments</link>, provides additional ways to specify the source directory and wildcard filters. Hidden and system files are no longer included in the directory listing.</li>
 	<li>The <logiccolor>getproperty</logiccolor> function can now return some system properties (such as the <link display_dimensions.hgt>maximum display dimensions</link>).</li>

@@ -6,6 +6,7 @@
 s = pathname(<arg>path_type</arg> ‖ <arg>dictionary_name</arg> ‖ <arg>file_handler</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
 The following <arg>path_type</arg> arguments return the folder name associated with a special directory on your device:
@@ -15,6 +16,7 @@ The following <arg>path_type</arg> arguments return the folder name associated w
 	<cell><b>Application</b></cell><cell>The folder where the application file (.ent or .bch) is located.</cell>
 	<cell><b>CSPro</b></cell><cell>The folder where the CSPro executable files are located.</cell>
 	<cell><b>Downloads</b></cell><cell>The operating system's directory for storing downloaded files.</cell>
+	<cell><b>Html</b></cell><cell>The folder where CSPro's <link html_in_cspro.hgt>HTML files</link> are located.</cell>
 	<cell><b>InputFile</b></cell><cell>The folder where the main data file (associated with the primary dictionary) is located.</cell>
 	<cell><b>Temp</b></cell><cell>The operating system's temporary directory.</cell>
 </table></indent>
@@ -40,16 +42,19 @@ There are some options specific to mobile devices:
 
 If supplying a <arg>dictionary_name</arg>, the function returns the folder name of the dictionary file (.dcf) itself, not of the data file associated with the dictionary. On mobile devices, the function returns the folder name of the .pen file because dictionary files (.dcf) are not used directly when running .pen applications.
 
-If providing a <arg>file_handler</arg> (declared in a <logiccolor>file</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>), the function returns the folder name containing the text file associated with the file handler.
+If providing a <arg>file_handler</arg> (declared in a <logiccolor>file</logiccolor> statement), the function returns the folder name containing the text file associated with the file handler.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a string containing the fully qualified folder name.
+
 
 <subheader>Example</subheader>
 
 <logic>
 setfile(log_file, pathname(Desktop) + "Census Daily Report.txt", create);
 </logic>
+
 
 <seealso path.hgt filename_function.hgt />
