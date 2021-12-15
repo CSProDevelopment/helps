@@ -109,7 +109,7 @@ namespace Help_Generator
             _tagSettings.Add(TopicTag,new TagSettings(false,(StartTagHandlerDelegate)StartTopicHandler,null,1,1));
             _tagSettings.Add(LinkTag,new TagSettings(true,(StartTagHandlerDelegate)StartLinkHandler,"</a>",1,1));
             _tagSettings.Add(TableTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableHandler,(EndTagHandlerDelegate)EndTableHandler,1,4));
-            _tagSettings.Add(TableCellTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableCellHandler,(EndTagHandlerDelegate)EndTableCellHandler,0,1));
+            _tagSettings.Add(TableCellTag,new TagSettings(true,(StartTagHandlerDelegate)StartTableCellHandler,(EndTagHandlerDelegate)EndTableCellHandler,0,2));
             _tagSettings.Add(SeeAlsoTag,new TagSettings(false,(StartTagHandlerDelegate)StartSeeAlsoHandler,null,1,Int32.MaxValue));
             _tagSettings.Add(LogicTag,new TagSettings(true,"",(EndTagHandlerDelegate)EndLogicHandler,0,0));
             _tagSettings.Add(LogicSyntaxTag,new TagSettings(true,(StartTagHandlerDelegate)StartLogicObjectHandler,(EndTagHandlerDelegate)EndLogicSyntaxHandler,0,1));
@@ -499,6 +499,19 @@ namespace Help_Generator
         }
 
 
+        private string[] EnsureUniqueTagComponents(string[] tagComponents)
+        {
+            var duplicateTag = tagComponents.GroupBy(x => x)
+                                            .Where(x => ( x.Count() > 1 ))
+                                            .FirstOrDefault();
+            
+            if( duplicateTag != null )
+                throw new Exception($"You cannot repeat the tag: {duplicateTag.Key}");
+
+            return tagComponents;
+        }
+
+
         private string StartTitleHandler(string[] startTagComponents)
         {
             if( _title != null )
@@ -799,16 +812,22 @@ namespace Help_Generator
         {
             TableSettings tableSettings = GetCurrentTable();
             int cellIndex = tableSettings.CellCount % tableSettings.Columns;
+            bool isFirstCellInRow = ( cellIndex == 0 );
+            bool isHeaderRow = tableSettings.HasHeader && ( tableSettings.CellCount < tableSettings.Columns );
+            bool nowrap = ( isFirstCellInRow && tableSettings.HasNoWrap );
             int columns = 1;
 
-            if( startTagComponents.Length == 1 && ( !Int32.TryParse(startTagComponents[0],out columns) || columns < 1 ) )
-                throw new Exception("The number of columns in a table must be a positive integer");
+            foreach( string startTagComponent in EnsureUniqueTagComponents(startTagComponents) )
+            {
+                if( startTagComponent.Equals(NoWrapAttribute) )
+                    nowrap = true;
+
+                else if( !Int32.TryParse(startTagComponent, out columns) || columns < 1 )
+                    throw new Exception("The number of columns in a table must be a positive integer");
+            }
 
             if( ( cellIndex + columns ) > tableSettings.Columns )
                 throw new Exception("The number of columns including a span cannot exceed the number of columns");
-
-            bool isFirstCellInRow = ( cellIndex == 0 );
-            bool isHeaderRow = tableSettings.HasHeader && ( tableSettings.CellCount < tableSettings.Columns );
 
             tableSettings.CellCount += columns;
 
@@ -817,7 +836,7 @@ namespace Help_Generator
             string span = ( columns > 1 ) ? String.Format(" colspan=\"{0}\"",columns) : "";
 
             string style = "";
-            style += ( isFirstCellInRow && tableSettings.HasNoWrap ) ? "white-space: nowrap; " : "";
+            style += nowrap ? "white-space: nowrap; " : "";
             style += ( tableSettings.HasCenter ) ? "text-align: center;" : "";
             
             string classStr = tableSettings.HasBorder ? " class=\"bordered_table_cell\"" : "";
