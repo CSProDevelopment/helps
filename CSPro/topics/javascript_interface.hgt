@@ -38,7 +38,7 @@ The interface is accessed using several methods belonging to the CSPro object. T
 
 <indent><b><colorinline javascript>CSPro.getAsyncResult()</colorinline></b></indent>
 
-<indent 2>Returns the result of the last executed asynchronous method (CSPro.runLogicAsync or CSPro.invokeAsync). This method executes synchronously.</indent>
+<indent 2>Returns the result of the last completed asynchronous method (CSPro.runLogicAsync or CSPro.invokeAsync). This method executes synchronously.</indent>
 
 
 These methods are available when showing a HTML dialog using the <logiccolor>htmldialog</logiccolor> function:
@@ -56,7 +56,7 @@ These methods are available when showing a HTML dialog using the <logiccolor>htm
 
 <indent><b><colorinline javascript>CSPro.returnData(result)</colorinline></b></indent>
 
-<indent 2>Sets the result of the <logiccolor>htmldialog</logiccolor> function and closes the dialog. The parameter <colorinline javascript>result</colorinline> is a string that will be returned to CSPro logic as the result of the <logiccolor>htmldialog</logiccolor> function. This method executes synchronously.</indent>
+<indent 2>Sets the result of the <logiccolor>htmldialog</logiccolor> function and closes the dialog. The parameter <colorinline javascript>result</colorinline> is a string that will be returned to CSPro logic as the result of the <logiccolor>htmldialog</logiccolor> function. This method executes asynchronously.</indent>
 
 
 This method is occasionally available to run operations that only exist in some contexts:
