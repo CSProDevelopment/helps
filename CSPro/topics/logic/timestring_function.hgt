@@ -8,11 +8,11 @@ s = timestring(『<arg>timestamp_format</arg>』『,<arg>timestamp_value</arg>�
 
 <subheader>Description</subheader>
 
-The <logiccolor>timestring</logiccolor> function returns a formatted string representing the date and time represented by a UNIX time in the local machine's time zone.
+The <logiccolor>timestring</logiccolor> function returns a formatted string containing the date and time as represented by a UNIX time, but using the local machine's time zone (instead of UTC).
 
-The optional string expression <arg>timestamp_format</arg> contains date and time formatters. You can view a list of these formatters on a webpage about the C function <link http://www.cplusplus.com/reference/ctime/strftime/>strftime</link>. If no formatter is supplied, the function returns an expression based on the machine's local settings (using the formatter <logiccolor>"%c"</logiccolor>).
+The optional string expression <arg>timestamp_format</arg> contains date and time formatters. You can view a list of these formatters on a webpage about the C function <link http://www.cplusplus.com/reference/ctime/strftime/>strftime</link>. If no formatter is supplied, the function returns an expression based on the machine's local settings using the formatter <logiccolor>"%c"</logiccolor> (note that the <logiccolor>"%c"</logiccolor> formatter is locale-dependent and so will return a slightly different layout depending on where it is invoked).
 
-The optional numeric expression <arg>timestamp_value</arg> allows you to use a date/time value that came from <logiccolor>timestamp</logiccolor> function. If not supplied, the function uses the current date/time.
+The optional numeric expression <arg>timestamp_value</arg> allows you to use a date/time value that came from the <logiccolor>timestamp</logiccolor> function. If not supplied, the function uses the current date/time.
 
 If querying a SQL database via the <logiccolor>sqlquery</logiccolor> function, you can call this function with the name <b><i>cspro_timestring</i></b>.
 
@@ -23,13 +23,21 @@ The function returns the custom formatted date and time string.
 <subheader>Example</subheader>
 
 <logic>
+// if the current date (the default when no argument is given) is 12/27/2021,
+// then the text displayed would be "Week 52"
+
+errmsg ("Week %W",timestring());
+
 numeric csproFirstReleaseTimestamp = 957528000;
 
-// displays a string similar to: Fri May  5 08:00:00 2000
+// if living in EST, the string will display "Fri May  5 08:00:00 2000"
+// (the string could be slightly different if living in a different locality)
+
 errmsg("%s",timestring(csproFirstReleaseTimestamp));
 
-// displays a string similar to: Friday, May  5, 2000
-errmsg("%s",timestring("%A, %B %e, %Y",csproFirstReleaseTimestamp));
+// the following will display the string "Friday May 05, 2000"
+
+errmsg("%s",timestring("%A %B %d, %Y",csproFirstReleaseTimestamp));
 </logic>
 
 <seealso timestamp_function.hgt systime_function.hgt sysdate_function.hgt />

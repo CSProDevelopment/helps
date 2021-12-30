@@ -1,0 +1,27 @@
+﻿<title>HTML Dialog Boxes in CSPro</title>
+
+<subheader>Who Uses HTML Dialog Boxes?</subheader>
+
+<link html_in_cspro.hgt>HTML is being used in CSPro</link> in a variety of ways, such as for dialog boxes. In particular, CSPro is utilizing HTML for dialogs that require user-interactions, such as the following:
+
+<list>
+	<li>for <logiccolor>accept</logiccolor> dialog boxes</li>
+	<li>for <logiccolor>errmsg</logiccolor> dialog boxes</li>
+	<li>for <logiccolor>prompt</logiccolor> dialog boxes</li>
+	<li>for <logiccolor>selcase</logiccolor> dialog boxes</li>
+	<li>for <logiccolor>show</logiccolor> dialog boxes</li>
+	<li>for <logiccolor>showArray</logiccolor> dialog boxes</li>
+	<li>for <logiccolor>warning</logiccolor> dialog boxes</li>
+	<li>for the operatorID dialog box</li>
+	<li>when editing or reviewing notes within CSEntry</li>
+</list>
+
+<subheader>UI Differences Between Standard & HTML Dialogs</subheader>
+
+While visually the dialog will look a bit different than the standard CSPro dialog, the primary issue of concern is that "grabbing" the dialog to move it has changed (on Windows devices; the dialog is fixed on Android devices). Normally the user can use the cursor to grab the title bar of a dialog and move it around the screen. Now, the user must grab the small sliver of area at the top of the dialog, demarcated by a thin horizontal band just below the main dialog frame as shown below:
+
+<image html_dialog_grab_area.png />
+
+In addition, the dialog box now has a close button (X) in the upper right corner that can be used to dismiss the dialog when appropriate.
+
+Note that the appearance of these dialogs is in transition, and as such, may change in future versions of CSPro.

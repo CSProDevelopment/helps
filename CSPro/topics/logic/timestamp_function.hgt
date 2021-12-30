@@ -9,7 +9,7 @@ d = timestamp();
 
 <subheader>Description</subheader>
 
-The <logiccolor>timestamp</logiccolor> function returns the UNIX time, which is, in Coordinated Universal Time (UTC), the number of seconds that have elapsed since January 1, 1970. This value is used by many computer programs and is thus useful for storing times as well as calculating timespans. Because the time is in UTC, it eliminates the need to worry about time zones when working with times.
+The <logiccolor>timestamp</logiccolor> function returns the UNIX time, which is in Coordinated Universal Time (UTC), the number of seconds that have elapsed since January 1, 1970. This value is used by many computer programs and is thus useful for storing times as well as calculating timespans. Because the time is in UTC, it eliminates the need to worry about time zones when working with times.
 
 
 <subheader>Return Value</subheader>
@@ -31,6 +31,11 @@ PROC CROPS_QUEST
 preproc
 
 	surveyStartTime = timestamp();
+	
+	// if the survey began at 10:58pm on 12/28/2021 EST, 
+	// the UTC time (in seconds) would be 1640750243
+	
+	errmsg ("Survey Start Time = %d",surveyStartTime); 
 
 postproc
 
