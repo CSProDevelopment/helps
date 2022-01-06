@@ -1,85 +1,13 @@
 ﻿<title>Identification Items</title>
 
+Identification items (also referred to as <b>ID items</b>) are those data items that uniquely identify the questionnaire/case. If more than one <link level_description.hgt>dictionary level</link> is used, they define the hierarchical levels at the level of definition and below. ID items usually include geographic items, such as Province, District, or Enumeration Area, as well as other unique identifiers, such as Survey ID or Household number. These data will appear on every record in a data file, as they are "common" to all of the records. The minimum number of ID items is 1, and the maximum number of allowable ID items is 15.
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+You will typically want to structure your dictionary so that the ID items begin in column 2; in this way they will precede all records' <link item_description.hgt>data items</link>, and follow the data file's <link record_type.hgt>record type identifier</link> (as column 1 is usually reserved for the type). 
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+For a pictorial representation of a data file's <link view_the_dictionary_layout.hgt>layout</link>, press <b>Ctrl+L</b> from within its dictionary (L=layout). Pressing <b>Ctrl+L</b> a second time will toggle this view off.
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Identification items (i.e., ID items) are those data items
- that uniquely identify the questionnaire and define hierarchical levels.
- They are usually geographic items, such as</font> <font style="font-family: Arial;
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Arial" size="2">Province,
- District</font><font style="font-family: Arial; font-size: 10pt;" color="#000000"
-						 face="Arial" size="2">, or Enumeration Area, or
- other unique identification, such as</font> <font style="font-family: Arial;
-													 font-size: 10pt;"
-													 color="#000000" face="Arial"
-													 size="2">Survey ID
- Number</font><font style="font-family: Arial; font-size: 10pt;" color="#000000"
-					 face="Arial" size="2">. These data will appear on
- every record in a data file, as they are &quot;common&quot; to all of
- the records. The maximum number of ID items is fifteen.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">If you are using</font> <a href="relative_and_absolute_mode.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">absolute
- mode</font></a><font style="font-family: Arial; font-size: 10pt;" color="#000000"
-						 face="Arial" size="2">, you will typically want
- to structure your dictionary so that the ID items begin in column 2; in
- this way they will precede a record's data items (column 1 is usually
- reserved for the</font> <a href="record_type.html"><font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">record
- type identifier</font></a><font style="font-family: Arial; font-size: 10pt;"
-								 color="#000000" face="Arial" size="2">).
- If you are using</font> <a href="relative_and_absolute_mode.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">relative
- mode</font></a><font style="font-family: Arial; font-size: 10pt;" color="#000000"
-						 face="Arial" size="2">, you have no choice but
- to place the ID Items first; the system assigns a consecutive position
- in the order in which the items are created.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">For
- a <a href="view_the_dictionary_layout.html">pictorial representation</a>,
- open a dictionary in CSPro and press <b><font style="font-weight: bold;">Ctrl+L</font></b>
- (L=layout). Press <b><font style="font-weight: bold;">Ctrl+L</font></b>
- again to toggle this view off.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">See also:</font></b> <a href="item_description.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Item
- Description</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">,</font>
- <a href="sub_items.html"><font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">Sub-Items</font></a><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">,</font> <a href="item_properties.html"><font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">Item
- Properties</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">,</font>
- <a href="add_or_modify_items.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Add or Modify
- Items</font></a></p>
-</body>
-</html>
+<b>Note:</b>
+<list>Zeroes should be avoided when assigning codes to ID items that identify geographic areas, because zeroes are used in CSPro to describe summarized geographic levels. If zeroes are already in the data, they can be <link recode_statement.hgt>recoded</link> to other values with logic.</list>
 
 
-<html><!---♻---></html>
+<seealso item_description.hgt item_properties.hgt add_or_modify_items.hgt sub_items.hgt />

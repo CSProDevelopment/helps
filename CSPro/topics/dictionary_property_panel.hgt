@@ -1,11 +1,8 @@
 ﻿<title>Dictionary Property Panel</title>
 
-<header>READ ME</header> 
-<i>We have the DCF tree, and now we're introducing the DCF prop panel. We need a name for the formerly RHS of the dictionary/now center area. I've seen 'dictionary element' used before (occurrence_labels.hgt), so I'm going to call it the <b>Dictionary Element Listing</b>.</i>
+CSPro is extending where properties can be assigned, and is also in the process of adding new properties (for example, see "Text Color" in the "Appearance" section below). The <b>Property Panel</b> features are in flux, so expect some change in how and what information will be presented to you in the next few releases of CSPro. Currently, most of these properties are set in the dictionary element's <link workspace.hgt>Workspace</link>, although there is some overlap with properties set in the form file (both for the <link change_form_properties.hgt>form</link> itself and for <link change_field_properties.hgt>fields</link> within the form).
 
-CSPro is extending where properties can be assigned, and is also in the process of adding new properties (for example, see "Text Color" in the "Appearances" section below). The Property Panel features are in flux, so expect some change in how and what information will be presented to you in the next few versions. Currently, most of these properties are set in the dictionary's Element Listing, and some can be found as properties in the form file, when the dictionary is used in conjunction with a data entry application.
-
-The Dictionary<b> Property Panel</b> is accessible from the View menu, or by pressing Alt+Enter. The Property Panel for several dictionary elements can be selected directly from the tree. However, for most elements you will need to select the "parent" level or record from the tree, and then select the "child" record or item from the dictionary element listing in order to see their associated Property Panel.
+The dictionary's <b>Property Panel</b> is launched from the View menu option "Property Panel" or by pressing Alt+Enter. To access the <b>Property Panel</b> for specific dictionary elements, many can be viewed by simply selecting an element on the dictionary tree. However, for most elements you will need to select the "parent" level or record from the tree, and then select the "child" record or item from the dictionary element listing in order to see their associated Property Panel.
 
 <subheader>General</subheader>
 
@@ -48,3 +45,4 @@ This property block only applies to <link data_file_type_structure.hgt>repeating
 
 <li><b>Occurrence Labels</b>&mdash;in addition to being able to set <link occurrence_labels.hgt>occurrence labels</link> from the dictionary element listing, this property can be set within the Property Panel as well.</li>
 
+<seealso change_form_properties.hgt change_field_properties.hgt />

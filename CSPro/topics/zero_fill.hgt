@@ -1,15 +1,15 @@
 ﻿<title>Zero Fill</title>
 <context ID_OPTIONS_ZEROFILL />
 
-This item property states whether the numeric data item should contain leading zeros or blanks.
+This item property controls whether numeric data item should be stored with leading zeros or blanks.
 
-For example: During data entry a numeric item with a <link item_length.hgt>length</link> of 3 is encountered. A value of "92" was keyed. How will this value be stored in the data file?
+For example, during data entry a numeric item with a <link item_length.hgt>length</link> of 3 is encountered. A value of "92" was keyed. How will this value be stored in the data file?
 
 <list>
-	<li>If <b>Zero Fill</b> had been set to <b>Yes</b>, the value would appear as: "092"</li>
-	<li>If <b>Zero Fill</b> has been set to <b>No</b>, the value would appear as: " 92"</li>
+	<li>If <b>Zero Fill</b> had been set to <b>Yes</b>, the value would appear as: <logiccolor>"092"</logiccolor></li>
+	<li>If <b>Zero Fill</b> has been set to <b>No</b>, the value would appear as: <logiccolor>" 92"</logiccolor></li>
 </list>
 
-You can set this option for all items by clicking on <b>ZeroFill Default 'Yes'</b> on the <b>Options</b> menu.
+You can set this option for all items by clicking on <b>ZeroFill Default 'Yes'</b> from the <b>Options</b> menu. By default, when adding a dictionary item, zero-fill will be set to <b>No</b>.
 
 <seealso item_properties.hgt />

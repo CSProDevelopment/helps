@@ -1,10 +1,37 @@
 ﻿<title>Value Description</title>
 
-A single value set can contain one or more values. To add multiple ranges to a value, enter one or more spaces as the value label on the next value(s), and the values that follow will become part of the previous value. Multiple ranges are indicated by the lack of a notes box at the beginning of the value line.
+A <link value_sets_description.hgt>value set</link> contains one or more <b>values</b>. A value can represent a single response, or a range of responses, as shown below (note that the final two value columns, 'Special' and 'Image', are not depicted):
 
-Zeroes should be avoided in assigning codes to identification items that identify geographic areas, because zeroes are used in CSPro to describe summarized geographic levels. If zeroes are already in the data, they can be recoded to other values using the CSPro logic.
+<b>Example 1: Dichotomous Values</b>
 
-You can assign a negative number to a value or the starting and/or ending value of a range. Negative numbers have a leading minus (-) sign. Positive numbers have no sign. The minus sign will be displayed in the data file immediately to the left of the value. If the item is "zero-fill," the minus sign will be displayed in the left-most position.
+<indent><table 5 header>
+	<cell>Value Set Label</cell><cell>Value Set Name</cell><cell>Value Label</cell><cell>From</cell><cell>To</cell>
+	<cell>SEX</cell><cell>P03_SEX</cell><cell></cell><cell></cell><cell></cell>
+	<cell></cell><cell></cell><cell>Male</cell><cell>1</cell><cell></cell>
+	<cell></cell><cell></cell><cell>Female</cell><cell>2</cell><cell></cell>
+</table></indent>
+
+<b>Example 2: Continuous Values</b>
+
+Age allows responses 0-95, with no break in the sequence. There is no need to provide a label to the 0-94 range, as the meaning of the response is clear. Only with "95+", which means all persons age 95 years and older, do we need a label.
+
+<indent><table 5 header>
+	<cell>Value Set Label</cell><cell>Value Set Name</cell><cell>Value Label</cell><cell>From</cell><cell>To</cell>
+	<cell>AGE</cell><cell>P04_AGE</cell><cell></cell><cell></cell><cell></cell>
+	<cell></cell><cell></cell><cell></cell><cell>0</cell><cell>94</cell>
+	<cell></cell><cell></cell><cell>95+</cell><cell>95</cell><cell></cell>
+</table></indent>
+
+<b>Example 3: Categorial Values</b>
+
+Not all variables are continuous&mdash;many will have breaks in their responses. The classic example is Industry and Occupation, with a very small portion of Occupation shown below. Notice how "DB & Network Admins" spans two lines. To make these disparate values be considered a single value, press the space bar in the "Value Label" field for the second portion of the response (the 151244-151245 row). This will join the responses into a single value. You will know this is successful by the lack of a notes box at the beginning of the second value line.
+
+<indent><table 5 header>
+	<cell>Value Set Label</cell><cell>Value Set Name</cell><cell>Value Label</cell><cell>From</cell><cell>To</cell>
+	<cell>OCC</cell><cell>P10_OCC</cell><cell></cell><cell></cell><cell></cell>
+	<cell></cell><cell></cell><cell>DB & Network Admins</cell><cell>151241</cell><cell></cell>
+	<cell></cell><cell></cell><cell></cell><cell>151244</cell><cell>151245</cell>
+</table></indent>
 
 New values will always be added to the end of the existing value set listings. If you add to the wrong place, press the Esc key to stop the add. Use <link undo_and_redo_changes.hgt>undo</link> if you added at the wrong place.
 
