@@ -1,7 +1,23 @@
-﻿<title>Compile Logic</title>
+﻿<title>Compile Logic / An Application</title>
 
-When CSPro compiles your logic, it checks the logic you have written to see if there are any errors or warnings. Typical errors including spelling a command incorrectly, not using proper command syntax, and putting logic in the wrong place. Error messages appear in the panel at the bottom of the screen and a red dot appears to the left of the line that contains the error. Typical warning usually involve using commands in questionable ways. Warning messages also appear in the panel at the bottom of the screen and a yellow dot appears to the left of the line that contains the warning.
+Before CSPro can execute your program, it needs to check for errors in the logic. Errors include such problems as misspelling a command, not using proper command syntax, and putting logic in the wrong place. Warnings can also appear during compilation, and often occur from the use of <link deprecated_features.hgt>deprecated features</link>. 
 
-You can choose to compile code for a specific item, or for the entire application. To compile code for a specific item, simply select that item from the tree on the left side of the screen. The associated logic for that item will be displayed in the <b>Logic View</b>. Press <image compile_button.png /> on the toolbar; or from the <b>File</b> menu, select <b>Compile</b>; or press <b>Ctrl+K</b>. The results of your compile will be displayed in the <b>Compiler Output</b> area at the bottom of the screen. When you are ready to compile the entire application, select the topmost entry of the <link data_entry_tree.hgt>data entry tree</link> or <link batch_edit_tree.hgt>batch edits tree</link>. This will display all logic written for the application in the <b>Logic View</b>. You can then press the compile button or press <b>Ctrl+K</b>.
+<subheader>Compile Scope</subheader>
 
-CSPro always compiles your application when you run the <link run_a_data_entry_application.hgt>data entry</link> or <link run_a_batch_edit_application.hgt>batch edit</link> application. If there are errors, you cannot proceed until the errors are corrected.
+You can choose to compile logic for a specific entity (such as a field, roster, or form) or for the entire application. To compile code for a specific entity, simply select that element from the <link data_entry_tree.hgt>form</link> or <link batch_edit_tree.hgt>batch edit</link> tree. The associated logic for that item will be displayed in the <link view_logic.hgt>logic view</link>. If you are ready to compile the entire application, select the root node (the topmost entry of the <link data_entry_tree.hgt>data entry</link> or <link batch_edit_tree.hgt>batch edit</link> tree) and compile. 
+
+<subheader>How to Compile</subheader>
+
+Press <image compile_button.png /> on the toolbar; or from the <b>File</b> menu, select <b>Compile</b>; or press <b>Ctrl+K</b>. 
+
+<subheader>Compiler Results</subheader>
+
+Error and warning messages will appear within the <b>Compiler Output</b> tab of the <link batch_application_screen_layout.hgt>message view</link> at the bottom of the <link workspace.hgt>workspace</link>. A dot will appear to the left of the line of code containing the problem&mdash;red dots indicate an error, yellow dots indicate a warning. Double-clicking the error or warning message will move your cursor to the offending line within the logic view.
+
+To facilitate code development, you should compile your logic on a regular basis to ensure not too many errors are introduced. Depending on the number and type of errors, it can cause CSPro to have difficulty determining the source of the error (for example, missing "end" or "endif" statements can cause a lot of problems). If there are unfinished code blocks that won't compile, they should be commented out until ready to complete.
+
+<subheader>Is My Program Ready to Run?</subheader>
+
+<li>If there are no errors or warnings, the system will display "Compile Successful" within the Compiler Output tab. You are ready to run your application.</li>
+<li>If there are no errors but some warnings, the system will present a message for each problem found within the Compiler Output tab. You can run your application, but should make note of the problems found and attempt to resolve them.</li>
+<li>If one or more errors are found, you will not be able to run your program until they are resolved.</li>

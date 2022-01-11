@@ -8,7 +8,7 @@ The dictionary's <b>Property Panel</b> is launched from the View menu option "Pr
 
 This property block applies to all dictionary elements. However, the Name and Alias properties are not applicable for <link value_description.hgt>dictionary values</link>.
 
-<li><b>Type</b>&mdash;the underlying type of the dictionary element. Allowable types are <link introduction_to_data_dictionary.hgt>dictionary</link>, <link level_description.hgt>level</link>, <link record_description.hgt>record</link>, <link item_description.hgt>item</link>, <b><i>subitem?</i></b>, <link value_sets_description.hgt>value set</link>, and <link value_description.hgt>value</link>. This property is not editable by the user.</li>
+<li><b>Type</b>&mdash;the underlying type of the dictionary element. Allowable types are <link introduction_to_data_dictionary.hgt>dictionary</link>, <link level_description.hgt>level</link>, <link record_description.hgt>record</link>, <link item_description.hgt>item</link>, <link sub_items.hgt>subitem</link>, <link value_sets_description.hgt>value set</link>, and <link value_description.hgt>value</link>. This property is not editable by the user.</li>
 
 <li><b>Label</b>&mdash;the label given to the dictionary element. This property is not editable within the property panel, it must be changed within the Element Listing.</li>
 
@@ -28,14 +28,14 @@ This property block only applies to <link value_description.hgt>dictionary value
 
 <subheader>Item</subheader>
 
-This property block only applies to <link item_description.hgt>dictionary items</link>.
+This property block only applies to dictionary <link item_description.hgt>items</link> and <link sub_items.hgt>subitems</link>.
 
 <li><b>Default Capture Type</b>&mdash;this will set the default capture type associated with an item. When the item is dropped onto a form, it will use this capture type. It will also be used by Data Viewer to more intelligently display data, such as when <link check_box.hgt>checkboxes</link> are chosen. This choice will override the capture type chosen in the data entry's <link change_field_properties.hgt>field properties dialog</link>.
 </li>
 
 <subheader>Numeric Item</subheader>
 
-This property block only applies to <link variables.hgt>numeric dictionary items</link>.
+This property block only applies to <link variables.hgt>numeric dictionary items and subitems</link>.
 
 <li><b>Zero Fill</b>&mdash;in addition to being able to set the <link zero_fill.hgt>zero fill</link> property from the dictionary element listing, this property can be set within the Property Panel as well.</li>
 
