@@ -1,6 +1,6 @@
 ﻿<title>Camera</title>
 
-<i><b>Feature Upgrade</b>: Starting with CSPro 7.7, you should no longer use this method of taking photos, as it may soon be removed from CSPro. To replicate the behavior of the function, you can use the <logiccolor>image.takePhoto</logiccolor> function.</i>
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.7, you should no longer use the <logiccolor>execsystem</logiccolor> method of taking photos, as it may soon be removed from CSPro. To replicate the behavior of the execsystem function call, use the <logiccolor>image.takePhoto</logiccolor> function.</i>
 
 
 Passing the <logiccolor>camera</logiccolor> command to <logiccolor>execsystem</logiccolor> opens the camera widget on mobile devices. The camera UI includes two options:
@@ -24,4 +24,4 @@ execsystem("camera:evaluation.png|Take a photo of your evaluation form.");
 </logic>
 
 
-<seealso multimedia_features.hgt execsystem_function_mobile.hgt />
+<seealso multimedia_features.hgt execsystem_function_mobile.hgt image_capturesignature_function.hgt />

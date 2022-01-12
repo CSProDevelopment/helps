@@ -10,6 +10,9 @@ alias <arg>aliased_name</arg> : <arg>original_name</arg>;
 
 The <logiccolor>alias</logiccolor> statement allows for the creation of new names to alias, or to provide an alternative reference to, names in a program. This can be used to shorten, or lengthen, variable names, or to match names in a dictionary with preexisting code using a certain naming convention.
 
+You can define aliases in logic, or directly in the <link dictionary_property_panel.hgt>dictionary editor</link>.
+
+
 <subheader>Example 1: Shortening Dictionary Names to Quicken the Typing of Variables</subheader>
 
 <logic>
@@ -17,6 +20,7 @@ alias	P14 : P14_AGE,
 		P15 : P15_RELATIONSHIP,
 		P16 : P16_SEX;
 </logic>
+
 
 <subheader>Example 2: Using Aliases to Standardize Variable Names so that Logic Can be Reused Across Programs</subheader>
 

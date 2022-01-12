@@ -1,4 +1,5 @@
 ﻿<title>Templated Reports</title>
+<context ID_VIEW_REPORT_PREVIEW />
 
 <i>(Prior to CSPro 7.7, a <link templated_reports_pre77.hgt>different version</link> of templated reports existed. That version should no longer be used as it will be removed in a future release.)</i>
 
@@ -14,8 +15,8 @@ Each templated report is a CSPro logic object and the following functions can be
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
 	<cell><logiccolor report>save</logiccolor></cell><cell>Saves the report to a file.</cell>
-	<cell><logiccolor report>view</logiccolor></cell><cell>Displays report in an embedded web browser.</cell>
-	<cell><logiccolor report>write</logiccolor></cell><cell>Writes text to report.</cell>
+	<cell><logiccolor report>view</logiccolor></cell><cell>Displays the report in an embedded web browser.</cell>
+	<cell><logiccolor report>write</logiccolor></cell><cell>Writes text to the report.</cell>
 </table>
 
 In addition to these object functions, templated reports can be used as arguments to the <logiccolor>filename</logiccolor> and <logiccolor>view</logiccolor> functions.
@@ -26,42 +27,44 @@ In addition to these object functions, templated reports can be used as argument
 When a templated report is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 
-<subheader>Add and Remove</subheader>
+<subheader>Add, Remove, and Rename</subheader>
 
-A templated report can be added to the project by selecting <i>Add Files...</i> under the <i>Files</i> tab. If the filename ends with the .html extension an additonal dialog will be displayed with templates. The templates have an HTML scaffolding which includes popular CSS and Javascript libraries. A templated report can be removed from the project by selecting <i>Drop Files...</i> under the <i>Files</i> tab.
+A templated report can be added to the project by selecting <link add_files_to_an_application.hgt>Add Files</link> under the <b>Files</b> menu. If creating a new HTML file, an additional dialog will be displayed with template options. The templates have an HTML scaffolding which includes popular CSS and JavaScript libraries. A templated report can be removed from the project by selecting <link drop_files_from_an_application.hgt>Drop Files</link> under the <b>Files</b> menu.
+
+The name of the report will be automatically created based on the filename, but can be modified using the <link change_report_properties.hgt>Report Properties</link> dialog.
 
 
 <subheader>CSPro Logic</subheader>
 
-CSPro logic can be embedded in the templated report by starting the logic with <b>&#60;?</b> and and ending the logic with <b>?></b>. The tag can be used to embed inline logic or multiple lines of logic.
+CSPro logic can be embedded in the templated report by starting the logic with <b>&lt;?</b> and ending the logic with <b>?&gt;</b>. The tag can be used to embed inline logic or multiple lines of logic.
 
 
 <subheader>Output</subheader>
 
-There are three ways of writing numerics and strings to templated reports:
+There are three ways of writing numeric and string expressions to templated reports:
 
 <list ordered>
-<li><b>~~</b>...<b>~~</b> writes to the report the results of the numeric or string expression specified between the tildes.</li>
-<li><b>~~~</b>...<b>~~~</b> is similar to above version except that the text will not be automatically escaped for HTML.</li>
-<li><logiccolor report>write</logiccolor> writes directly to the report.</li>
+<li><b>~~</b>...<b>~~</b> writes the results of the numeric or string expression specified between the tildes.</li>
+<li><b>~~~</b>...<b>~~~</b> is similar to the above version except that the text will not be automatically escaped for HTML.</li>
+<li><logiccolor report>$.write</logiccolor> writes directly to the report.</li>
 </list>
 
 
 <subheader>Preview</subheader>
 
-A templated report can be previewed in both data entry and batch by pressing <i>CTRL + F5</i>. This will not run the CSPro logic, so the preview will not necessarily look complete. Use it to preview the HTML and CSS.
+A templated report can be previewed in both data entry and batch by pressing <b>Ctrl + F5</b>. This will not run the CSPro logic, so the preview will not necessarily look complete. Use it to preview the HTML and CSS.
 
 
 <subheader>Example 1</subheader>
 
-<report>
+<report html>
 <p>Report generated at ~~timestring()~~</p>
 </report>
 
 
 <subheader>Example 2</subheader>
 
-<report>
+<report html>
 <?
 	numeric partial_count = 0;
 	numeric complete_count = 0;
@@ -73,9 +76,8 @@ A templated report can be previewed in both data entry and batch by pressing <i>
 			inc(complete_count);
 		endif;
 	endfor;
-	
-	$.write("<p><b>%s</b> has %d partial case(s) and %d complete case(s).</p>", getsymbol(HOUSEHOLD_DICT), partial_count, complete_count);
-?>
+?>	
+	<p><b>~~getsymbol(HOUSEHOLD_DICT)~~</b> has ~~partial_count~~ partial case(s) and ~~complete_count~~ complete case(s).</p>
 </report>
 
 

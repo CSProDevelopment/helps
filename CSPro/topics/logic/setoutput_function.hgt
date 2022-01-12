@@ -12,7 +12,7 @@ b = setoutput(<arg>file_name</arg>);
 
 The <logiccolor>setoutput</logiccolor> function redirects the output cases of a batch application to the data file specified in the string expression <arg>file_name</arg>. All data will be appended to (added to the end of) the file. If the file exists prior to the application run, you may, depending on the circumstances, want to use the <logiccolor>filedelete</logiccolor> function to remove the file.
 
-You can use sa single file name as an argument or you can specify a string <link list.hgt>list</link>. Using a list allows you to specify multiple output files. Cases will be output to each of the output files specified.
+You can use a single file name as an argument or you can specify a string <link list.hgt>list</link>. Using a list allows you to specify multiple output files. Cases will be output to each of the output files specified.
 
 This function cannot be used in data entry applications.
 

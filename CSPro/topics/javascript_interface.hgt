@@ -11,7 +11,9 @@ When using the JavaScript interface, an error will display if CSPro cannot prope
 
 <subheader>Interface</subheader>
 
-The interface is accessed using several methods belonging to the CSPro object. These methods are always available:
+The interface is accessed using several methods belonging to the CSPro object. Some JavaScript interface methods are called synchronously (sequentially) while others are called asynchronously (concurrently). When a synchronous method is called, the JavaScript instruction following the call will not be executed until the method returns the result from CSPro. When the asynchronous method is called, the JavaScript instruction following this call will be executed immediately without waiting for the return value from CSPro.
+
+These methods are always available:
 
 
 <indent><b><colorinline javascript>CSPro.getMaxDisplayWidth()</colorinline></b></indent>

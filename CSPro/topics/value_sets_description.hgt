@@ -17,9 +17,9 @@ Some of the uses they serve include:
 As mentioned above, value sets are especially useful during data entry, in particular for numeric items. For example, 
 
 <list>
-<li>A data item of fieldwidth 1 would allow values <logiccolor>0-9</logiccolor> to be entered&mdash;not likely useful for non-zero identification items</li>
-<li>A data item of fieldwidth 1 would allow values <logiccolor>0-9</logiccolor> to be entered&mdash;not likely useful for dichotomous responses such as Yes/No or True/False that expect <logiccolor>1</logiccolor> or <logiccolor>2</logiccolor></li>
-<li>A data item of fieldwidth 2 would allow values <logiccolor>-9 to 99</logiccolor> to be entered&mdash;also not likely useful for continuous variables such as age that cannot be negative</li>
+<li>A data item of field width 1 would allow values 0-9 to be entered&mdash;not likely useful for non-zero identification items</li>
+<li>A data item of field width 1 would allow values 0-9 to be entered&mdash;not likely useful for dichotomous responses such as Yes/No or True/False that expect <logiccolor>1</logiccolor> or <logiccolor>2</logiccolor></li>
+<li>A data item of field width 2 would allow values -9 to 99 to be entered&mdash;also not likely useful for continuous variables such as age that cannot be negative</li>
 </list>
 
 Similarly, for alpha variables, and in particular for alpha variables of length 1 that are meant to capture A, B, C, etc. type of responses, failing to create a value set to list the specific letters allowed would end up allowing any character&mdash;blanks and punctuation characters included.
