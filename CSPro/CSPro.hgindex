@@ -604,7 +604,7 @@ tool_list.hgt | Data																			#	Data
 	tool_list.hgt | Reformat																	#		Reformat
 	tool_list.hgt | Sort																		#		Sort
 run_production_data_entry.hgt | DataEntryIDs													#	DataEntryIDs
-data_dictionary.hgt | Data Dictionary (see 'Dictionary')										#	Data Dictionary 
+data_dictionary.hgt | Data Dictionary (see 'Dictionary')										#	Data Dictionary (see 'Dictionary')
 data_dictionary_file_dcf.hgt																	#	Data Dictionary File (.dcf)
 create_a_new_batch_edit_application.hgt | Data Edit Application									#	Data Edit Application
 	create_a_new_batch_edit_application.hgt | Creating											#		Creating
@@ -616,8 +616,9 @@ adding_logic.hgt | Data Entry																	#	Data Entry
 	data_entry_application_file_ent.hgt															#		Data Entry Application File (.ent)
 	data_entry_elements.hgt | Elements															#		Elements
 	errors_at_data_entry.hgt | Errors															#		Errors
-	data_entry_tree.hgt | Forms Tree															#		Forms Tree
 	data_entry_forms_screen_layout.hgt | Forms Screen Layout									#		Forms Screen Layout
+	data_entry_tree.hgt																			#		Forms Tree
+	data_entry_tree.hgt																			#		Forms Tree
 	installing_data_entry_applications.hgt | Installation										#		Installation
 	data_entry_logic_screen_layout.hgt | Logic Screen Layout									#		Logic Screen Layout
 	data_entry_menu.hgt | Menu Summary															#		Menu Summary
@@ -627,7 +628,6 @@ adding_logic.hgt | Data Entry																	#	Data Entry
 	data_entry_review_tips.hgt | Review Tips													#		Review Tips
 	run_production_data_entry.hgt | Run Production												#		Run Production
 	data_entry_toolbar.hgt | Toolbar Summary													#		Toolbar Summary
-	data_entry_tree.hgt																			#		Tree
 	windows.hgt | Window																		#		Window
 data_entry_application_file_ent.hgt																#	Data Entry Application File (.ent)
 data_entry_keys.hgt																				#	Data Entry Keys
@@ -719,8 +719,8 @@ data_dictionary.hgt | Dictionary																#	Dictionary
 	add_dictionary_elements.hgt | Adding Elements												#		Adding Elements
 	tool_list.hgt | Conversion																	#		Conversion
 	converting_a_data_dictionary.hgt | Converting												#		Converting
-	creating_a_dictionary_for_a_new_file.hgt | Creating for a New File							#		Creating for a New File
 	creating_a_dictionary_for_an_existing_file.hgt | Creating for an Existing File				#		Creating for an Existing File
+	creating_a_dictionary_for_a_new_file.hgt | Creating for a New File							#		Creating for a New File
 	delete_dictionary_elements.hgt | Delete														#		Delete
 	dictionary_types.hgt | External																#		External
 	dictionary_hierarchy.hgt | Hierarchy														#		Hierarchy
@@ -1016,7 +1016,7 @@ formats_for_an_application.hgt | Format															#	Format
 forms.hgt																						#	Forms
 	data_entry_elements.hgt | Description														#		Description
 	forms_design.hgt | Design																	#		Design
-	data_entry_tree.hgt | Forms Tree															#		Forms Tree
+	data_entry_tree.hgt																			#		Forms Tree
 	windows.hgt | Window																		#		Window
 forms_file_fmf.hgt																				#	Forms File (.fmf)
 issues_to_consider_when_designing_a_form.hgt | Form Design Issues								#	Form Design Issues
@@ -1188,7 +1188,7 @@ html_in_cspro.hgt | HTML																		#	HTML
 	htmldialog_function.hgt | Custom HTML Dialogs												#		Custom HTML Dialogs
 	properties_advanced_features.hgt | Disabling HTML UI										#		Disabling HTML UI
 	encode_function.hgt | Encoding Strings For Output											#		Encoding Strings For Output
-	html_dialog_UI.hgt																			#		HTML User Interface
+	html_dialog_UI.hgt																			#		HTML Dialog Boxes in CSPro
 	javascript_interface.hgt																	#		JavaScript Interface
 	prepare_tables_for_posting_to_the_web.hgt													#		Prepare Tables for Posting to the Web
 	html_question_text.hgt | Question Text														#		Question Text
@@ -1252,7 +1252,7 @@ tool_list.hgt | Index																			#	Index
 index_file_csidx.hgt																			#	Index File (.csidx)
 add_files_to_an_application.hgt | Insert														#	Insert
 	add_files_to_an_application.hgt | Add File to an Application								#		Add File to an Application
-	insert_dictionary_elements.hgt | Data Item													#		Dictionary Elements 
+	insert_dictionary_elements.hgt | Data Item													#		Data Item
 	add_files_to_an_application.hgt | File in an Application									#		File in an Application
 	insert_function.hgt | Function																#		Function
 	add_insert_and_delete_tables.hgt | Table													#		Table
@@ -1295,12 +1295,12 @@ isverified_function.hgt																			#	IsVerified Function
 add_dictionary_elements.hgt | Item																#	Item
 	add_dictionary_elements.hgt | Adding														#		Adding
 	convert_items_to_subitems.hgt | Convert to Subitem											#		Convert to Subitem
+	data_dictionary_tree.hgt																	#		Data Dictionary Tree
 	data_type.hgt																				#		Data Type
 	decimal_character.hgt																		#		Decimal Character
 	decimal_places.hgt																			#		Decimal Places
 	delete_dictionary_elements.hgt | Delete														#		Delete
 	item_description.hgt | Description															#		Description
-	data_dictionary_tree.hgt																	#		Dictionary Tree
 	find_dictionary_elements.hgt | Find															#		Find
 	insert_dictionary_elements.hgt | Insert														#		Insert
 	labels.hgt | Label																			#		Label
@@ -1434,8 +1434,8 @@ logic_file_apc.hgt | Logic																		#	Logic
 	batch_edit_applications.hgt | In Batch Edit Applications									#		In Batch Edit Applications
 	data_entry_applications.hgt | In Data Entry Applications									#		In Data Entry Applications
 	symbol_analysis.hgt																			#		Symbol Analysis
-	batch_application_screen_layout.hgt | View, Batch Edit Apps									#		View, in Batch Edit Apps
-	data_entry_forms_screen_layout.hgt | View, Data Entry Apps									#		View, in Data Entry Apps
+	batch_application_screen_layout.hgt | View, Batch Edit Apps									#		View, Batch Edit Apps
+	data_entry_forms_screen_layout.hgt | View, Data Entry Apps									#		View, Data Entry Apps
 	view_logic.hgt																				#		View Logic
 expressions.hgt | Logical																		#	Logical
 	expressions.hgt																				#		Expressions
@@ -1562,16 +1562,16 @@ compiler_mode.hgt | Mode																		#	Mode
 	add_summary_statistics_to_a_table.hgt														#		Add Summary Statistics to a Table
 	produce_summary_statistics.hgt																#		Produce Summary Statistics
 modify_dictionary_elements.hgt | Modify															#	Modify
-	demode_function.hgt																			#		DEmode Function
+	demode_function.hgt																			#		DeMode Function
 	modify_dictionary_elements.hgt | Dictionary Elements										#		Dictionary Elements
+	add_or_modify_values.hgt | Dictionary Values												#		Dictionary Values
+	add_or_modify_value_sets.hgt | Dictionary Value Sets										#		Dictionary Value Sets
 	add_or_modify_items.hgt | Items																#		Items
 	add_or_modify_levels.hgt | Levels															#		Levels
 	add_or_modify_records.hgt | Records															#		Records
 	add_or_modify_relations.hgt | Relations in Dictionary										#		Relations in Dictionary
 	modifying_row_and_column_spacing_for_printing.hgt | Row and Column Spacing for Printing		#		Row and Column Spacing for Printing
 	modifying_preferences.hgt | Tabulation Preferences											#		Tabulation Preferences
-	add_or_modify_value_sets.hgt | Dictionary Value Sets										#		Value Sets in Dictionary
-	add_or_modify_values.hgt | Dictionary Values												#		Values in a Dictionary
 add_dictionary_elements.hgt | Modify or Add Dictionary Elements									#	Modify or Add Dictionary Elements
 operators.hgt | Modulo Operator																	#	Modulo Operator
 move_around_a_dictionary.hgt | Move																#	Move
@@ -2374,7 +2374,7 @@ add_insert_and_delete_tables.hgt | Table														#	Table
 	tool_list.hgt | Retrieval																	#		Retrieval
 	save_tables_for_the_table_viewer.hgt | Save													#		Save
 	select_and_copy_table_data_to_other_applications.hgt | Select Cells							#		Select Cells
-	trees.hgt | Trees in CSPro																	#		Trees in CSPro
+	trees.hgt																					#		Trees in CSPro
 	tool_list.hgt | Viewer																		#		Viewer
 	windows.hgt | Window																		#		Window
 tables_file_tbw.hgt																				#	Tables File (.tbw)
@@ -2404,19 +2404,19 @@ area_dialog_box.hgt | Tabulate																	#	Tabulate
 tabulate_items_in_relations.hgt																	#	Tabulate Items in Relations
 tabulation_applications.hgt | Tabulation Application											#	Tabulation Application
 	tabulation_applications.hgt | About															#		About
-	tabulation_application_file_xtb.hgt															#		Application File (.xtb)
-	create_a_table.hgt | Creating a Table														#		Creating a Table
 	create_a_new_tabulation_application.hgt | Creating an Application							#		Creating an Application
+	create_a_table.hgt | Creating a Table														#		Creating a Table
 	cross_tabulations.hgt																		#		Cross Tabulations
-	introduction_to_tabulation.hgt | Introduction to											#		Introduction 
+	introduction_to_tabulation.hgt | Introduction to											#		Introduction to
 	tabulation_keys.hgt | Keyboard Summary														#		Keyboard Summary
 	tabulation_menu.hgt | Menu Summary															#		Menu Summary
-	run_a_tabulation_application.hgt | Running													#		Run
+	run_a_tabulation_application.hgt | Running													#		Running
 	save_tabulations_in_different_formats.hgt | Save in Different Formats						#		Save in Different Formats
+	tabulation_application_file_xtb.hgt															#		Tabulation Application File (.xtb)
 	tabulation_toolbar.hgt | Toolbar															#		Toolbar
 	xtab_tree.hgt | Tree																		#		Tree
 	define_a_universe_for_a_table.hgt | Universe												#		Universe
-	create_tables_with_multiple_variables.hgt | Using Multiple Variables						#		Using Multiple Fields
+	create_tables_with_multiple_variables.hgt | Using Multiple Variables						#		Using Multiple Variables
 tabulation_application_file_xtb.hgt																#	Tabulation Application File (.xtb)
 image_takephoto_function.hgt | TakePhoto Function												#	TakePhoto Function
 	image_takephoto_function.hgt																#		Image.TakePhoto Function
@@ -2496,14 +2496,14 @@ geometry_tracepolygon_function.hgt | TracePolygon Function										#	TracePolyg
 trace_function.hgt																				#	Trace Function
 strip_function.hgt | Trailing blanks															#	Trailing blanks
 	strip_function.hgt | Remove																	#		Remove
-trees.hgt | Tree																				#	Trees in CSPro
-	batch_edit_tree.hgt | Batch Edit															#		Batch Edit Tree
-	data_dictionary_tree.hgt | Data Dictionary													#		Data Dictionary Tree
-	data_entry_tree.hgt | Forms Designer														#		Forms Tree
+trees.hgt | Trees																				#	Trees
+	batch_edit_tree.hgt | Batch Edit															#		Batch Edit
+	data_dictionary_tree.hgt | Data Dictionary													#		Data Dictionary
+	data_entry_tree.hgt | Forms Designer														#		Forms Designer
 	cspro_initial_screen_layout.hgt | Initial Screen Layout										#		Initial Screen Layout
 	change_the_view.hgt | Names in																#		Names in
 	change_the_view.hgt | Restore																#		Restore
-	xtab_tree.hgt | Table																		#		Tabulation Tree
+	xtab_tree.hgt | Tabulation																	#		Tabulation
 	trees.hgt | Trees Overview																	#		Trees Overview
 boolean_values.hgt | True																		#	True
 and_or_truth_table.hgt | Truth Table															#	Truth Table
@@ -2681,7 +2681,7 @@ dictionary_types.hgt | Working Dictionary														#	Working Dictionary
 table_logic_tablogic.hgt | Working Storage Dictionary											#	Working Storage Dictionary
 	table_logic_tablogic.hgt | Table Logic														#		Table Logic
 working_storage_file.hgt																		#	Working Storage File
-Workspace.hgt | Workspaces in CSPro																#	Workspaces in CSPro
+workspace.hgt | Workspaces in CSPro																#	Workspaces in CSPro
 run_production_batch_edits.hgt | Wrap messages													#	Wrap messages
 writecase_function.hgt																			#	WriteCase Function
 write_function.hgt																				#	Write Function
