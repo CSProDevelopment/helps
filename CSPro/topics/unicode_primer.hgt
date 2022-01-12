@@ -14,7 +14,7 @@ Whereas in English it is very clear what makes up one character—one keystroke�
 
 With each character stored as two bytes in memory, there are several ways to write characters to a disk. One way is to write two bytes for every character, but this is costly for most users, the bulk of whom only use characters that can be expressed properly with either the ASCII or ANSI encoding systems. The computer world has settled on using UTF-8, a variable-length encoding scheme that uses between one and four bytes to represent a character. ASCII characters are represented using one byte, other ANSI characters are represented using two bytes, and most Asian characters are represented using three bytes. To identify a file as encoded in UTF-8, a three-byte BOM (byte order mark) is placed at the beginning of a text file. For example, here is the UTF-8 representation of: "I am François from 法国."
 
-<center><image unicodeFrancois.png /></center>
+<center><image unicode_francois.png /></center>
 
 With a UTF-8 encoding, a file's size is not equal to the number of characters in the file. An empty file is three bytes because of the BOM. (The <logiccolor>fileempty</logiccolor> function can be used to determine whether a file is actually empty.) An ASCII file converted to UTF-8 will generally be the size of the original file plus three bytes. An ANSI file that uses non-English characters will be even larger. The name François takes eight bytes to represent in ANSI but uses nine bytes in UTF-8.
 
