@@ -1,36 +1,61 @@
 ﻿<title>Export Data</title>
 
-In addition to exporting data via the <b>Tools > Export Data</b> utility, Data Viewer now has another way to export data to other file formats. It can be found under the menu dropdown: <b>File > Export...</b>
+In addition to exporting data via the <b>Tools > Export Data</b> utility, Data Viewer has another way to export data to other file formats. It can be found under the menu dropdown: <b>File > Export</b>.
 
-This new export feature allows data to be written natively to all of the currently-supported file formats found within CSExport.exe, with two exceptions:
+This export feature allows data to be written natively to the formats supported by the Export Data tool, with two exceptions:
 
 <list>
-	<li><b>Excel:</b> has been added</li>
-	<li><b>Text Files:</b> are not supported (use <b>File > Save As</b> instead)</li>
+	<li><b>Excel:</b> supported in Data Viewer but not in Export Data.</li>
+	<li><b>CSPro Data Files:</b> not supported (use <b>File > Save As</b> instead).</li>
 </list>
 
-The table below shows how the output file formats from <b>CSExport.exe</b> compare to Data Viewer's <b>Export Data</b> feature, when the "Output" checkbox is left unchecked:
+The table below shows how the output file formats from the <b>Export Data</b> tool compare to Data Viewer's <b>Export Data</b> feature, when the "Output" checkbox is left unchecked:
 
-<image CSExport_vs_ExportData.png />
+<table 4 header>
+	<cell>Output File Type</cell><cell>Export Data Tool~!~Filenames</cell><cell>Data Viewer Export~!~Filenames</cell><cell>Notes</cell>
+	<cell><b>CSV</b></cell><cell>filename.csv</cell><cell>filename.csv</cell><cell>Written natively, one file per dictionary record. Handles quote marks properly.</cell>
+	<cell><b>Excel</b></cell><cell>(n/a)</cell><cell>filename.xlsx</cell><cell>Written natively to a single workbook, one worksheet per dictionary record.</cell>
+	<cell><b>R</b></cell><cell>filename.dat~!~filename.R</cell><cell>filename.RData</cell><cell>Written natively to a single file, one vector per dictionary record.</cell>
+	<cell><b>SAS</b></cell><cell>filename.dat~!~filename.sas</cell><cell>filename.xpt~!~filename.xpt.sas</cell><cell>Written natively to the two files shown.</cell> 
+	<cell><b>SPSS</b></cell><cell>filename.dat~!~filename.sps</cell><cell>filename.sav</cell><cell>Written natively, one file per dictionary record.</cell>
+	<cell><b>Stata</b></cell><cell>filename.dat~!~filename.dct~!~filename.do</cell><cell>filename.dta</cell><cell>Written natively, one file per dictionary record.</cell>
+</table>
+
 
 <subheader>Example 1</subheader>
 
-Let's look at Excel first. Once the <b>Export Data</b> dialog is launched, choose Excel. By default, a single Excel file will be created with the same filename, using the <b>.xlsx</b> extension as shown below. The resultant Excel file will contain one tabsheet for each type of dictionary record found within the <b>.csdb</b> file.
+Let's look at Excel first. Once the <b>Export Data</b> dialog is launched, choose Excel. By default, a single Excel workbook will be created with the same filename as the data but using the <b>.xlsx</b> extension, as shown below. The resultant Excel file will contain one worksheet for each dictionary record found in the data file.
 
-The only deviation from the default settings was the addition of "myFolder". The <b>.csdb</b> file being exported is located in the C:\HFA\data folder, and is named 064C01_200.csdb. The resultant 064C01_200.xlsx file will be placed within the subfolder "myFolder". If this folder does not exist, CSPro will create it&mdash;this will happen regardless of whether the new folder is a subfolder or a higher folder location. This option is available for the output file types Excel, R, and SAS. Checking this box for any other file type will have no effect.
+The only deviation from the default settings was the addition of "myFolder." The data file being exported is located in the C:\HFA\data folder, and is named 064C01_200.csdb. The resultant 064C01_200.xlsx file will be placed within the subfolder "myFolder." If this folder does not exist, CSPro will create it.
 
 <image export_data_excel_1tabsheet_per_rec.png />
 
 <subheader>Example 2</subheader>
 
-Let's revisit the Excel example. Note the "Output" checkbox selection made below. This tells the Export feature to write out each type of dictionary record found to a separate Excel file, rather than creating a single Excel file, where each record type gets placed on a separate tabsheet. The "Output" checkbox only impacts file types Excel, R, and SAS.
+Let's revisit the Excel example. Note the "Output" checkbox selection made below. This tells the export feature to write each dictionary record found to a separate Excel workbook (rather than creating a single workbook where each record gets placed on a separate worksheet). The "Output" checkbox only impacts the file types Excel, R, and SAS.
 
 <image export_data_excel_1File_per_rec.png />
 
+
 <subheader>Summary of Export File Types</subheader>
 
-The table below summarizes the specific files that will be generated for the 6 possible export file types. By default, the output filename will use the data file's name as the base name (although this can be changed). Most exported file types will also append the dictionary record name to the base file name, as most of the export files represent dictionary record types (this part of the name can not be changed). Below shows this relationship (where FN=filename):
+The table below summarizes the specific files that will be generated for the six possible export types. By default, the output filename will use the data filename as the base name (although this can be changed). Most exported file types will also append the dictionary record name to the base filename, as most of the export files represent dictionary records (this part of the name cannot be changed).
 
-<image export_data_filenames.png />
+<table 5 header>
+	<cell>New Export Format</cell><cell>Export Filename</cell><cell>Output Box~!~Checked?</cell><cell>Dictionary Record-to-Export File Relationship</cell><cell>Notes on "Output" Checkbox</cell>
+	<cell><b>CSV</b></cell><cell>record_name.csv</cell><cell>No</cell><cell>1 .csv file for each record</cell><cell></cell>
+	<cell><b>CSV</b></cell><cell>record_name.csv</cell><cell>Yes</cell><cell>1 .csv file for each record</cell><cell>No effect, same files output as when 'No' chosen</cell>
+	<cell><b>Excel</b></cell><cell>filename.xlsx</cell><cell>No</cell><cell>1 .xlsx file for the entire data file</cell><cell>Each record is written to a separate worksheet</cell>
+	<cell><b>Excel</b></cell><cell>record_name.xlsx</cell><cell>Yes</cell><cell>1 .xlsx file for each record</cell><cell></cell>
+	<cell><b>R</b></cell><cell>filename.RData</cell><cell>No</cell><cell>1 .RData file for the entire data file</cell><cell>Each record is a separate vector</cell>
+	<cell><b>R</b></cell><cell>record_name.RData</cell><cell>Yes</cell><cell>1 .RData file for each record</cell><cell></cell>
+	<cell><b>SAS</b></cell><cell>filename.xpt~!~filename.xpt.sas</cell><cell>No</cell><cell>1 .xpt/.sas file pair for the entire data file</cell><cell></cell>
+	<cell><b>SAS</b></cell><cell>record_name.xpt~!~record_name.xpt.sas</cell><cell>Yes</cell><cell>1 .xpt/.sas file pair for each record</cell><cell></cell>
+	<cell><b>SPSS</b></cell><cell>record_name.sav</cell><cell>No</cell><cell>1 .sav file for each record</cell><cell></cell>
+	<cell><b>SPSS</b></cell><cell>record_name.sav</cell><cell>Yes</cell><cell>1 .sav file for each record</cell><cell>No effect, same files output as when 'No' chosen</cell>
+	<cell><b>Stata</b></cell><cell>record_name.dta</cell><cell>No</cell><cell>1 .dta file for each record</cell><cell></cell>
+	<cell><b>Stata</b></cell><cell>record_name.dta</cell><cell>Yes</cell><cell>1 .dta file for each record</cell><cell>No effect, same files output as when 'No' chosen</cell>
+</table>
+
 
 <seealso converting_data_files_to_other_formats.hgt />

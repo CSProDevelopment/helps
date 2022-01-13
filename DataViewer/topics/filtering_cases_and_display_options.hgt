@@ -7,11 +7,13 @@ To view a subset of the cases in the data file, you can enter a search query to 
 <center><image filter_cases.png /></center>
 
 <b>Note:</b>
+
 <list>
-<li>Filtering cases with the key prefix works in tandem with any display file filters (see below).</li>
-<li>As implied (key <b><i>prefix</i></b>), wildcard symbols are not allowed; therefore, the search will always start from the beginning of the case ID. </li>
-<li>To dismiss the key prefix filter, click again on the magnification icon.</li>
+	<li>Filtering cases with the key prefix works in tandem with any display file filters (see below).</li>
+	<li>As implied (key <b><i>prefix</i></b>), wildcard symbols are not allowed; therefore, the search will always start from the beginning of the case ID. </li>
+	<li>To dismiss the key prefix filter, click again on the magnification icon.</li>
 </list>
+
 
 <subheader>Display Options</subheader>
 
@@ -38,6 +40,7 @@ There are several display options that you can choose. From the <b>Listing</b> m
 	</list></li>
 </list>
 
+
 From the <b>Case</b> menu:
 
 <list>
@@ -60,19 +63,22 @@ From the <b>Case</b> menu:
 	</list></li>	
 </list>
 
+
 From the <b>View</b> menu:
 
 <list>
 	<li><b>Refresh</b>: Reloads the data file, should its contents have been modified outside of Data Viewer during viewing.</li>
-	<li><b>Data Summary</b>: Displays the data file name, data file type (.csdb, Encrypted .csdb, or text), and the number of cases in the file.</li>
-	<li><b>Logic Helper</b>: If no case data is being viewed, provides several logic templates for conducting basic file operations (opening a data file, counting the number of cases in a file, looping through the cases, etc). If case data is being viewed, it will additionally give logic examples on how to load or delete the case being viewed. Choosing subsequent cases in the Data Viewer tree will adjust the case logic for the selected case.</li>
+	<li><b>Data Summary</b>: Displays the data filename, data file type, and the number of cases in the file.</li>
+	<li><b>Logic Helper</b>: If no case data is being viewed, provides several logic templates for conducting basic file operations (e.g., opening a data file, counting the number of cases in a file, looping through cases, etc.). If case data is being viewed, it will additionally give logic examples on how to load or delete the case being viewed. Choosing subsequent cases in the Data Viewer tree will adjust the case logic for the selected case.</li>
 </list>
+
 
 From the <b>Tools</b> menu:
 
 <list>
-	<li><link CSExport::introduction_to_export_data.hgt>Export Data</link>: Launches the CSPro utility using the embedded (<b>.csdb(e)</b>) or associated (<b>.dat</b>) dictionary for the currently-loaded data file.</li>
-	<li><link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link>: Launches the CSPro utility using the embedded (<b>.csdb(e)</b>) or associated (<b>.dat</b>) dictionary for the currently-loaded data file.</li>
+	<li><link CSExport::introduction_to_export_data.hgt>Export Data</link>: Launches the CSPro utility using the embedded dictionary for the currently-loaded data file.</li>
+	<li><link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link>: Launches the CSPro utility using the embedded dictionary for the currently-loaded data file.</li>
 </list>
+
 
 <seealso navigating_data_viewer_windows.hgt />

@@ -1,23 +1,11 @@
-﻿<title>HTML Dialog Boxes in CSPro</title>
+﻿<title>HTML Dialog Boxes</title>
 
-<subheader>Who Uses HTML Dialog Boxes?</subheader>
+HTML is <link html_in_cspro.hgt>used in CSPro</link> in a variety of ways, including for displaying some dialogs for logic functions, as well as other aspects of the CSPro user interface (UI).
 
-<link html_in_cspro.hgt>HTML is being used in CSPro</link> in a variety of ways, such as for dialog boxes. In particular, CSPro is utilizing HTML for dialogs that require user-interactions, such as:
+On Windows, a HTML dialog looks a bit different from the standard Windows dialogs. Normally a user can use the cursor to grab the title bar of a dialog to move it around the screen. Now, the user must grab the small sliver of area at the top of the dialog, demarcated by a thin horizontal band just below the main dialog frame:
 
-<list>
-	<li><logiccolor>accept</logiccolor>, <logiccolor>errmsg</logiccolor>, <logiccolor>selcase</logiccolor>, <logiccolor>showArray</logiccolor>, and other functions</li>
-	<li>the operatorID dialog box</li>
-	<li>when editing or reviewing notes within CSEntry</li>
-</list>
+<center><image html_dialog_grab_area.png /></center>
 
-<subheader>UI Differences Between Standard & HTML Dialogs</subheader>
+In addition, the dialog box has a close button (X) in the upper right corner that can be used to dismiss the dialog when appropriate.
 
-While visually the dialog will look a bit different than the standard CSPro dialog, the primary issue of concern is that "grabbing" the dialog to move it has changed (on Windows devices; the dialog is fixed on Android devices). Normally the user can use the cursor to grab the title bar of a dialog and move it around the screen. Now, the user must grab the small sliver of area at the top of the dialog, demarcated by a thin horizontal band just below the main dialog frame as shown below:
-
-<image html_dialog_grab_area.png />
-
-In addition, the dialog box now has a close button (X) in the upper right corner that can be used to dismiss the dialog when appropriate.
-
-Note that the appearance of these dialogs is in transition, and as such, may change in future versions of CSPro.
-
-<seealso  htmldialog_function.hgt html_in_cspro.hgt />
+<seealso html_in_cspro.hgt htmldialog_function.hgt />

@@ -1,13 +1,15 @@
 ﻿<title>Capture Types</title>
 
-Occasionally it may be useful to display to an enumerator or keyer the possible values for a given field in a data entry application. For example, if a survey is being conducting on a tablet computer, it may be easier for an enumerator to use a finger or stylus to select a value rather than to key the value using the screen's touch keyboard. CSPro's capture types allow for such flexibility by allowing the program to specify the capture type associated with a field.
+Occasionally it may be useful to display to an enumerator or keyer the possible values for a given field in a data entry application. For example, if a survey is being conducting on a tablet, it may be easier for an enumerator to use a finger or stylus to select a value rather than to key the value using the screen's touch keyboard. CSPro's capture types allow for such flexibility by allowing the program to specify the capture type associated with a field.
 
 
 <subheader>Selecting Capture Types</subheader>
 
-You can indicate that you want to automatically use capture types by selecting the use capture types option in Drag Options. If this option is selected, CSPro will automatically choose a capture type for the field based on the field's first value set.
+You can specify a capture type while editing a <link dictionary_property_panel.hgt>dictionary item</link>, or while modifying a <link change_field_properties.hgt>field's properties</link>. If a field has a capture type specified, it will override the dictionary item's capture type setting.
 
-You can manually change the capture type for a field by editing the field's properties. CSPro allows you to select a capture type that is suitable for the item's first value set. A warning will appear if the value set is not suitable. In this case, if the value set is compatible at the time of data entry (because the value set was changed dynamically using the setvalueset function), it will be used; if not compatible, the field will appear as a Text Box. For more programmatic control, see the setcapturetype function.
+When dragging an item to a form to create a field, you can indicate that you want to automatically use capture types by selecting the <b>Capture Types: CAPI Mode</b> option in the <link drag_option_menu.hgt>Drag Options</link> dialog. If this option is selected, CSPro will automatically choose a capture type for the field based on the field's first value set.
+
+You can manually change the capture type for a field by <link change_field_properties.hgt>editing</link> the field's properties. CSPro allows you to select a capture type that is suitable for the item's first value set. A warning will appear if the value set is not suitable. In this case, if the value set is compatible at the time of data entry (because the value set was changed dynamically using the <logiccolor>setvalueset</logiccolor> function), it will be used; if not compatible, the field will appear using the base type (generally a Text Box).
 
 <center><image capture_types_1.png /></center>
 
