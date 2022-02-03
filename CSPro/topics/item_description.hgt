@@ -1,7 +1,9 @@
 ﻿<title>Item Description</title>
 
-An item describes the response to a question or helps <link questionnaire_and_dictionary_organization.hgt>identify</link> the questionnaire. The item is the most basic element of a questionnaire: age, income, and crop code are all examples of items. Related items should be placed in the same record. And, just like records and levels, data items possess properties (such as a unique name, label, etc).
+A dictionary item describes the response to a question, or can help <link questionnaire_and_dictionary_organization.hgt>identify</link> areas of the questionnaire. The dictionary item is the most basic element of a questionnaire: age, income, and crop code are all examples of items. Generally, related items should be placed in the same record; for example, questions appearing in a single table/roster that are asked of all household members would be candidates for inclusion in the same, repeating, record (possibly named <logiccolor>PERSON_REC</logiccolor>). Likewise, questions regarding the characteristics of a residential living quarters might all be placed in the same record (possibly named <logiccolor>HOUSE_REC</logiccolor>). 
 
-An item can be redefined into <link sub_items.hgt>subitems</link>.
+While data items have some of the same properties as <link record_description.hgt>records</link> and <link level_description.hgt>levels</link> (unique name, descriptive label), dictionary items also have several additional <link item_properties.hgt>properties</link> which are unique to items.
+
+Items can also be redefined into <link sub_items.hgt>subitems</link>; for example, breaking up a date of birth question from a single, 8-digit field into its constituent parts (day, month, and year).
 
 <seealso identification_items.hgt item_properties.hgt add_or_modify_items.hgt />
