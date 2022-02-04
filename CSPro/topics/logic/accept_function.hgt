@@ -1,186 +1,59 @@
 ﻿<title>Accept Function</title>
 
+<subheader>Format 1:</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<logicsyntax>
+i = accept(heading, opt-1, opt-2[,...opt-n]);
+</logicsyntax>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<subheader>Format 2:</subheader>
 
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 text-align: left;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#000000" face="Courier New" size="2">i
- =</font> <b><font style="font-family: 'Courier New'; font-size: 10pt;
-					 font-weight: bold;" color="#0000FF" face="Courier New"
-					 size="2">accept</font></b><font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#000000" face="Courier New"
-													 size="2">(</font><i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 color="#000000" face="Courier New" size="2">heading</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,</font> <i><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-style: italic;"
-													 color="#000000" face="Courier New"
-													 size="2">opt-1</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,</font> <i><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-style: italic;"
-													 color="#000000" face="Courier New"
-													 size="2">opt-2</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">[</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">,...</font><i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 color="#000000" face="Courier New" size="2">opt-n</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">]</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;
-	 font-weight: bold;"><b><font style="font-weight: bold;">Format 2:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 text-align: left;"><font style="font-family: 'Courier New';" face="Courier New">i
- =</font> <b><font style="font-family: 'Courier New'; font-weight: bold;"
-					 color="#0000FF" face="Courier New">accept</font></b><font
-	 style="font-family: 'Courier New';" face="Courier New">(</font><i><font
-	 style="font-family: 'Courier New'; font-style: italic;" face="Courier New">heading</font></i><font
-	 style="font-family: 'Courier New';" face="Courier New">,</font> <span
-	 style="font-family: 'Courier New'; font-style: italic;">alpha-array | string-list</span><font
-	 style="font-family: 'Courier New';" face="Courier New">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-indent: 10.80pt;
-	 text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">The <b><font style="font-weight: bold;">accept</font></b>
- function displays a menu with the heading and list of choices (&quot;opt-1&quot;,
- &quot;opt-2&quot;, etc.). The operator can move the down- or up-arrow
- keys to select the desired options and press <b><font style="font-weight: bold;">Enter</font></b>.
- The operator can also use the mouse to click on the desired option.</p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">&#160;</p>
-<p style="margin-left: 13.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">The number of options will be calculated dynamically
- if an alpha array is passed to the accept function. Each element of the
- array will be displayed until a blank string is found in the array. A string list can also be used for the options.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Return value:</font></b></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
-								 color="#000000" face="Arial" size="2">The
- function returns the number of the option selected: 1 for the first option,
- 2 for the second option, etc. The value 0 is returned if the</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Esc</font></b> <font style="font-family: Arial;
-												 font-size: 10pt;" color="#000000"
-												 face="Arial" size="2">key
- is pressed and none of the options is chosen.</font></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New';" color="#0000FF" face="Courier New">&#160;PROC</font>
- <font style="font-family: 'Courier New';" face="Courier New">UR</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;
-	 color: #0000ff; font-family: 'Courier New';">&#160;<span style="text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">preproc</font></span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;&#160;I =</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF0000" face="Courier New" size="2">0</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;
-	 font-family: 'Courier New';"><font color="#0000FF">&#160;&#160;&#160;do
- <span style="color: #0000ff;">until</span></font> I <font color="#0000FF">in</font>
- <font color="#FF0000">1</font>:<font color="#FF0000">2</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;&#160;I =</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">accept</font><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">(</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">&quot;Area Designation?&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;Urban&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;Rural&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;enddo</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;&#160;$ = I;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;&#160;noinput</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-weight: bold;"><b>Example 2:</b></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New', monospace;
-	 margin-left: 12px; font-weight: normal;"><font color="#000000"><font
-	 color="#0000FF">PROC</font> <font color="#0000FF">GLOBAL</font><br />
-&#160;<br />
-<font color="#0000FF">array</font> <font color="#0000FF">string</font>
- acceptOptions(<font color="#FF0000">20</font>);<br />
-&#160;<br />
-<font color="#0000FF">PROC</font> ACTION<br />
-<br />
-<font color="#0000FF">preproc</font><br />
-<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">numeric</font> ctr;<br />
-&#160;<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">do</font> ctr = <font color="#FF0000">1</font>
- <font color="#0000FF">while</font> ctr &lt;= <font color="#0000FF">count</font>(NAME)<br />
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;acceptOptions(ctr) = NAME(ctr);<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">enddo</font>;<br />
-&#160;<br />
-&#160;&#160;&#160;&#160;acceptOptions(ctr) = <font color="#FF00FF">&quot;&quot;</font>;
- <font color="#008000">//&#160;mark the end of the array<br />
-</font><br />
-&#160;&#160;&#160;&#160;ACTION = <font color="#0000FF">accept</font>(<font
-	 color="#FF00FF">&quot;Select a Person to Interview&quot;</font>,acceptOptions);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="do_statement.html">Do
- Statement</a>, <a href="noinput_statement.html">Noinput Statement</a>,
- <a href="Prompt_Function.html">Prompt Function</a></p>
-</body>
-</html>
+<logicsyntax>
+i = accept(heading, alpha-array | string-list);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The accept function displays a menu with the heading and list of choices ("opt-1", "opt-2", etc.). The operator can move the down- or up-arrow keys to select the desired options and press Enter. The operator can also use the mouse to click on the desired option.
+
+The number of options will be calculated dynamically if an alpha array is passed to the accept function. Each element of the array will be displayed until a blank string is found in the array. A string list can also be used for the options.
+
+<subheader>Return value</subheader>
+
+The function returns the number of the option selected: 1 for the first option, 2 for the second option, etc. The value 0 is returned if the Esc key is pressed and none of the options is chosen.
+
+<subheader>Example 1</subheader>
+
+<logicsyntax>
+PROC UR
+preproc
+   numeric i = 0;
+   do until i in 1:2
+     i = accept("Area Designation?", "Urban", "Rural");
+   enddo;
+   $ = i;
+   noinput;
+</logicsyntax>
+
+<subheader>Example 2</subheader>
+
+<logicsyntax>
+PROC GLOBAL
+array string acceptOptions(20);
+ 
+PROC ACTION
+preproc
+    numeric ctr;
+ 
+    do ctr = 1 while ctr <= count(NAME)
+        acceptOptions(ctr) = NAME(ctr);
+    enddo;
+ 
+    acceptOptions(ctr) = ""; // mark the end of the array
+
+    ACTION = accept("Select a Person to Interview",acceptOptions);
+</logicsyntax>
 
 
-<html><!---♻---></html>
+<seealso do_statement.hgt noinput_statement.hgt Prompt_Function.hgt />
+
