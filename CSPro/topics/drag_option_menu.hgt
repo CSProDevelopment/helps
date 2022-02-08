@@ -1,4 +1,4 @@
-﻿<title>Drag Option Menu</title>
+﻿<title>Drag Options Menu</title>
 <context IDD_DRAG_OPTS ID_EDIT_DRAGOPTS />
 
 Whenever you automatically generate data entry forms, drag an entire dictionary <image tree_icon_dictionary.png />, or drag a dictionary record <image tree_icon_record.png /> onto a form, this dialog box will appear. When you drag an individual dictionary item to a form, this dialog will not appear, but the settings in effect will be used. To access this dialog box without dragging, select <b>Drag</b> from the <b>Options</b> menu.
@@ -26,7 +26,14 @@ If you choose <b>Vertical</b>, CSPro will make rosters in which the occurrences 
 
 If you choose <b>Don't Roster</b>, CSPro will make forms that repeat.
 
-If you select <b>Use occurrence lLabels in roster</b>, the roster's rows, instead of being labeled 1, 2, 3, etc., will use the <link occurrence_labels.hgt>occurrence labels</link> defined for the item or record in the dictionary.
+If you select <b>Use occurrence labels in roster</b>, the roster's rows, instead of being labeled 1, 2, 3, etc., will use the <link occurrence_labels.hgt>occurrence labels</link> defined for the item or record in the dictionary.
+
+
+<subheader>Capture Type Options</subheader>
+
+When <b>CAPI Mode</b> is selected, if the item has a valid value set that can be can be represented by a <link capture_types.hgt>capture type</link> other than a text box, the item will be added to the form with a preselected capture type. The capture type selected depends on the type and length of the item but can be changed once the item is on the form.
+
+If <b>Key-From-Paper Mode</b> is selected, the capture type will default to a text box.
 
 
 <subheader>Require Enter Key on Entry</subheader>
@@ -42,9 +49,3 @@ If this option is checked, the operator must always press the <b>Enter</b> key t
 If you have items with <link sub_items.hgt>subitems</link>, you may check this box to place the subitems, instead of the item, on the form. For example, if you have a <logiccolor>DATE</logiccolor> item that contained the three subitems <logiccolor>DAY</logiccolor>, <logiccolor>MONTH</logiccolor>, and <logiccolor>YEAR</logiccolor>, the subitems, rather than the item <logiccolor>DATE</logiccolor>, would be placed on the form. However, if any of the subitems overlap, the item will be used instead. (This setting has no effect if no subitems are present.)
 
 If this box is left unchecked, items will always be used.
-
-<subheader>Use Capture Types</subheader>
-
-If the item has a valid value set that can be can be represented by a <link capture_types.hgt>capture type</link> other than a text box, the item will be added to the form with a preselected capture type. The control type selected depends on the type and length of the item but can be changed once the item is on the form.
-
-If this box is left unchecked, the control type will default to a text box (keyed entry).
