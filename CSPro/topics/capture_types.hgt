@@ -37,7 +37,7 @@ The CSPro Designer shows the fields that use capture types by coloring the borde
 
 By default CSEntry displays the label of the value set in the window of the capture type, but this title can be turned off using programmatic logic:
 
-<logicsyntax>set attributes(<arg>dictionary_symbol</arg>) assisted off(variable(title));</logicsyntax>
+<logicsyntax>setproperty(<arg>dictionary_symbol</arg>, "ShowExtendedControlTitle", "No");</logicsyntax>
 
 
 <subheader>Validation Method</subheader>
