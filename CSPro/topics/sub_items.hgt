@@ -2,7 +2,7 @@
 
 Subitems allow <link item_description.hgt>items</link> to be broken up into smaller pieces, or across broad categories. In this respect, they let you redefine data items and refer to the same data field in several different ways. The start position of a subitem must be within its parent item.
 
-One useful application of subitems involves date and time fields. A date item, for example, could be referred to as a single 8-digit entity: DDMMYYYY. However, this does not allow you to easily manipulate or refer to a portion of the date (such as the day, month, or year itself). Suppose you had the following definition for date (for demonstrative purposes, only selected item properties are shown):
+One useful application of subitems involves date and time fields. A date item, for example, could be referred to as a single 8-digit entity: YYYYMMDD. However, this does not allow you to easily manipulate or refer to a portion of the date (such as the year, month, or day itself). Suppose you had the following definition for date (for demonstrative purposes, only selected item properties are shown):
 
 <table 5 header nowrap>
 <cell>Item Label</cell><cell>Item Name</cell><cell>Start</cell><cell>Len</cell><cell>Item Type</cell>
@@ -13,9 +13,9 @@ To redefine this item into subitems, you only need to add the following subitems
 
 <table 5 header nowrap> 
 <cell>Item Label</cell><cell>Item Name</cell><cell>Start</cell><cell>Len</cell><cell>Item Type</cell>
-<cell>Day of birth</cell><cell>DOB_DY</cell><cell>20</cell><cell>2</cell><cell>Subitem</cell>
-<cell>Month of birth</cell><cell>DOB_MO</cell><cell>22</cell><cell>2</cell><cell>Subitem</cell>
-<cell>Year of birth</cell><cell>DOB_YR</cell><cell>24</cell><cell>4</cell><cell>Subitem</cell>
+<cell>Year of birth</cell><cell>DOB_YEAR</cell><cell>20</cell><cell>4</cell><cell>Subitem</cell>
+<cell>Month of birth</cell><cell>DOB_MONTH</cell><cell>24</cell><cell>2</cell><cell>Subitem</cell>
+<cell>Day of birth</cell><cell>DOB_DAY</cell><cell>26</cell><cell>2</cell><cell>Subitem</cell>
 </table>
 
 Another reason for using subitems is to make data references available across larger categories. Censuses and surveys often have items of three or four digits in length representing categories such as industry, occupation, or ethnicity. For example, looking at occupation codes:
@@ -36,6 +36,6 @@ It may be useful to test the ranges with the CSPro language at the item level. I
 <cell>Occupation, Minor</cell><cell>OCC_MINOR</cell><cell>45</cell><cell>3</cell><cell>Subitem</cell>
 </table>
  
-<b>NOTE:</b> Identification items cannot have subitems.
+<b>Note:</b> Identification items cannot have subitems.
 
 <seealso item_description.hgt identification_items.hgt item_properties.hgt add_or_modify_items.hgt />

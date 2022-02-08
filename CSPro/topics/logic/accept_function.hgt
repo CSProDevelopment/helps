@@ -1,59 +1,57 @@
 ﻿<title>Accept Function</title>
 
-<subheader>Format 1:</subheader>
+
+<subheader>Format 1</subheader>
 
 <logicsyntax>
-i = accept(heading, opt-1, opt-2[,...opt-n]);
+i = accept(<arg>heading</arg>, <arg>choice1</arg>『, <arg>choice2</arg>, ... <arg>choiceN</arg>』);
 </logicsyntax>
 
-<subheader>Format 2:</subheader>
+<subheader>Format 2</subheader>
 
 <logicsyntax>
-i = accept(heading, alpha-array | string-list);
+i = accept(<arg>heading</arg>, <arg>choices_list</arg> ‖ <arg>choices_array</arg>);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
-The accept function displays a menu with the heading and list of choices ("opt-1", "opt-2", etc.). The operator can move the down- or up-arrow keys to select the desired options and press Enter. The operator can also use the mouse to click on the desired option.
+The <logiccolor>accept</logiccolor> function displays a menu with a heading and a list of choices. The operator can use the down- or up-arrow keys to select the desired choice and press Enter. The operator can also use the mouse to click on the desired choice.
 
-The number of options will be calculated dynamically if an alpha array is passed to the accept function. Each element of the array will be displayed until a blank string is found in the array. A string list can also be used for the options.
+The <arg>heading</arg> text is a string expression. In the first version of the function, each choice (<arg>choice1</arg> to <arg>choiceN</arg>) is provided as a string expression. In the second version of the function, the choices can be provided using a string <link list.hgt>list</link> or a string or alphanumeric <link array.hgt>array</link>. With an array, the number of choices will be calculated dynamically. Each element of the array will be displayed until a blank string is found in the array.
 
-<subheader>Return value</subheader>
 
-The function returns the number of the option selected: 1 for the first option, 2 for the second option, etc. The value 0 is returned if the Esc key is pressed and none of the options is chosen.
+<subheader>Return Value</subheader>
+
+The function returns the index of the choice selected: 1 for the first choice, 2 for the second choice, etc. The value 0 is returned if the Escape key (or back button) is pressed and none of the choices is selected.
+
 
 <subheader>Example 1</subheader>
 
-<logicsyntax>
-PROC UR
-preproc
-   numeric i = 0;
-   do until i in 1:2
-     i = accept("Area Designation?", "Urban", "Rural");
-   enddo;
-   $ = i;
-   noinput;
-</logicsyntax>
+<logic>
+numeric manual_choice = accept("Open which manual?", "Supervisor", "Interviewer");
+
+if manual_choice = 1 then
+	view("../Manuals/Supervisor.pdf");
+
+elseif manual_choice = 2 then
+	view("../Manuals/Interviewer.pdf");
+
+endif;
+</logic>
+
 
 <subheader>Example 2</subheader>
 
-<logicsyntax>
-PROC GLOBAL
-array string acceptOptions(20);
- 
-PROC ACTION
-preproc
-    numeric ctr;
- 
-    do ctr = 1 while ctr <= count(NAME)
-        acceptOptions(ctr) = NAME(ctr);
-    enddo;
- 
-    acceptOptions(ctr) = ""; // mark the end of the array
+<logic>
+list string household_names;
 
-    ACTION = accept("Select a Person to Interview",acceptOptions);
-</logicsyntax>
+do numeric ctr = 1 while ctr <= count(NAME)
+	household_names.add(NAME(ctr));
+enddo;
+
+numeric interview_index = accept("Select a Person to Interview", household_names);
+</logic>
 
 
-<seealso do_statement.hgt noinput_statement.hgt Prompt_Function.hgt />
-
+<seealso prompt_function.hgt />

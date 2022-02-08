@@ -8,12 +8,14 @@ The dictionary tree displays either the <link labels.hgt>labels</link> or names 
 
 Names cannot be duplicated within a dictionary. However, the same name can be used in different dictionaries, and in some cases, it maybe desirable to do so. For example, when using <link lookup_files.hgt>lookup files</link>, you may prefer to use the same identifier name across dictionaries, rather than having 2+ spelling permutations for the same variable  (i.e.,  ID_PROVINCE in the main dictionary versus LU_PROVINCE in the lookup file). This also facilitates cutting and pasting the variables (and their accompanying <link value_sets_description.hgt>value sets</link>) from one dictionary to the other, without having to worry about renaming the variables. 
 
-<b>Note:</b> When repeating variable names among dictionaries, you will have to <b>fully qualify</b> the variable names when referring to them in logic by prefacing them with their unique dictionary's name. This is necessary so that CSPro knows which variable you are referring to/using. Failure to do so will generate a compiler error. For example, using the ID_PROVINCE and LU_PROVINCE names above, logic that would appear as follows:
+<b>Note:</b> When repeating variable names among dictionaries, you will have to <b>fully qualify</b> the variable names when referring to them in logic by prefacing them with their unique dictionary's name. This is necessary so that CSPro knows which variable you are referring to. Failure to do so will generate a compiler error. For example, using the ID_PROVINCE and LU_PROVINCE names above, logic that would appear as follows:
 
-<indent><logiccolor>LU_PROVINCE = ID_PROVINCE;</logiccolor></indent>
+<logic>
+LU_PROVINCE = ID_PROVINCE;
+</logic>
 
 would need to change to:
 
-<indent><logiccolor>LOOKUP_DICT.PROVINCE = MAIN_DICT.PROVINCE;</logiccolor></indent>
-
-
+<logic>
+LOOKUP_DICT.PROVINCE = MAIN_DICT.PROVINCE;
+</logic>
