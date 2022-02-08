@@ -1,10 +1,12 @@
 ﻿<title>GetOS Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 i = getos(『<arg>detailed_information</arg>』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -16,11 +18,22 @@ The <logiccolor>getos</logiccolor> function returns a code that indicates what o
 	<cell>20</cell><cell>Android</cell>
 </table>
 
-An optional alphanumeric variable <arg>detailed_information</arg> can be passed to the function that will give detailed information on the operating system, including the operating system name and the version number. Note, however, that Windows version numbers do not necessarily match the official release numbers. For example, Windows 8.1 has a version number of 6.3.
+It is also possible to get more detailed information about the operating system. If the optional argument <arg>detailed_information</arg> is a <link string_statement.hgt>string</link> variable, the string will be filled with the operating system name and the version number. Alternatively, if passed a one-dimensional string <link hashmap.hgt>hashmap</link>, the hashmap will be filled with several values:
+
+<table 2 header nowrap>
+	<cell>Key</cell><cell>Value</cell>
+	<cell><logiccolor>"name"</logiccolor></cell><cell>Name (e.g., <logiccolor>"Windows"</logiccolor>)</cell>
+	<cell><logiccolor>"version"</logiccolor></cell><cell>Version number (e.g., <logiccolor>"10.0"</logiccolor>)</cell>
+	<cell><logiccolor>"build"</logiccolor></cell><cell>Build number (Windows only; e.g., <logiccolor>"22000"</logiccolor>)</cell>
+</table>
+
+Windows version numbers do not necessarily match the official release numbers. For example, Windows 8.1 has a version number of 6.3.
+
 
 <subheader>Return Value</subheader>
 
-The function returns the operating system code or, optionally, a text description of the operating system.
+The function returns the operating system code and, optionally, more details about the operating system.
+
 
 <subheader>Example</subheader>
 
@@ -34,5 +47,6 @@ errmsg("Code = %d, Text = %s", getos(), operating_system_name);
 // Code = 10, Text = Windows;6.1
 // Code = 20, Text = Android;4.2.2
 </logic>
+
 
 <seealso getoperatorid_function.hgt getusername_function.hgt getbluetoothname_function.hgt />
