@@ -33,6 +33,7 @@ Application=.\MySurvey.ent
 InputData=.\MyData.csdb
 Paradata=.\MyParadataLog.cslog
 CommonStore=.\MySettings.db
+HtmlDialogs=.\MyDialogsDirectory
 BaseMap=.\MyMap.mbtiles
 
 [ExternalFiles]
@@ -105,6 +106,7 @@ The <pffcolor>[Files]</pffcolor> block is required. A description of the files, 
 	<li><pffcolor>InputData</pffcolor>=the data file that an operator will be creating, modifying, or verifying with this data entry application.</li>
 	<li><pffcolor>Paradata</pffcolor>=the name of a file where <link paradata.hgt>events</link> logged during the application's run are saved.</li>
 	<li><pffcolor>CommonStore</pffcolor>=if you use the <logiccolor>loadsetting</logiccolor> or <logiccolor>savesetting</logiccolor> functions in your program, this file overrides the default location where these settings are saved.</li>
+	<li><pffcolor>HtmlDialogs</pffcolor>=the name of a directory that contains custom <link html_dialog_ui.hgt>HTML dialogs</link> that override the default CSPro ones.</li>
 	<li><pffcolor>BaseMap</pffcolor>=the name of the online map or the filename of an offline map used for <link map_base_map_specification.hgt>CSPro mapping</link>.</li>
 </list>
 

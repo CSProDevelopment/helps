@@ -2,6 +2,7 @@
 
 The <logiccolor>htmldialog</logiccolor> function allows for the customization of CSPro dialogs in two ways. First, HTML templates can receive dynamic input data from the CSPro application which can be used as text in the dialogs or to change the behavior of the dialog. Second, user-created HTML templates give the application developer complete control of the appearance and behavior of the dialogs.
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
@@ -31,7 +32,7 @@ The function returns a string. The contents of the string are determined by the 
 
 <subheader>HTML Templates</subheader>
 
-CSPro includes <link html_in_cspro.hgt>HTML templates</link> in the installation folder for the dialogs it uses. User-created HTML templates allow for further customization of the dialogs. When the <logiccolor>htmldialog</logiccolor> function is called, the <arg>html_filename</arg> is first searched for in the current application directory. If a match is not found, then the directory <i>html/dialogs</i> in the CSPro installation folder is also searched.
+CSPro includes <link html_in_cspro.hgt>HTML templates</link> in the installation folder for the dialogs it uses. User-created HTML templates allow for further customization of the dialogs. When the <logiccolor>htmldialog</logiccolor> function is called, the <arg>html_filename</arg> is first searched for in the current application directory. If not found and a <pffcolor>HtmlDialogs</pffcolor> directory override is specified in the <link run_production_data_entry.hgt>PFF file</link>, that directory is searched. If a match is still not found, then the directory <i>html/dialogs</i> in the CSPro installation folder is also searched.
 
 Writing a user-created HTML template can be simplified by first selecting an existing HTML template that is most similar to the planned dialog. Make a copy of this HTML template in the current application directory and extend it to fit the new dialogs requirements.
 
