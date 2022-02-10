@@ -1,7 +1,7 @@
 ﻿<title>Define File Associations</title>
 <context IDD_PIFDLG />
 
-The <b>Define File Associations</b> dialog box is presented when an <b>Entry</b> application is executed. This page explains why certain files are asked of you. To find out more about the allowable <b>Source Type</b> options and what can be chosen, see <topic source_file_types_csentry.hgt />.
+The <b>Define File Associations</b> dialog box is presented when an <b>Entry</b> application is executed. This page explains why certain files are asked of you. To find out more about the allowable <b>Source Type</b> options and what can be chosen, see <topic source_file_types.hgt />.
 
 <b>CSEntry</b> requires a minimum of one file to run (an Input Data File), although the minimum number of files you will be solicited for in the <b>Define File Associations</b> dialog is two (you optionally have the choice of specifying a Paradata Log File). The basic run dialog is shown below:
 
@@ -18,7 +18,7 @@ If all of these features were used, the expanded <b>CSEntry</b> run dialog would
 
 <image file_associations_entry_full.png />
 
-The following describes the files that will be solicited from you in more detail, in the order (more-or-less) presented in the dialog box (depending on the options chosen), and why each is needed. As mentioned at the top, to find out more about the allowable <b>Source Type</b> options and what can be chosen, see <topic source_file_types_csentry.hgt />.
+The following describes the files that will be solicited from you in more detail, in the order (more-or-less) presented in the dialog box (depending on the options chosen), and why each is needed. As mentioned at the top, to find out more about the allowable <b>Source Type</b> options and what can be chosen, see <topic source_file_types.hgt />.
 
 <subheader>Input Data</subheader>
 
@@ -54,4 +54,4 @@ If your program uses <link CSPro::array_statement.hgt>arrays</link>, you can cho
 
 Paradata log files contain information about <link CSPro::paradata.hgt>paradata</link> events stored during an application's run. Files created using this type have the extension <b>.cslog</b> and are not text files&mdash;so they cannot be viewed in Text Viewer&mdash;instead, they must be viewed within <link ParadataViewer::introduction_to_paradata_viewer.hgt>Paradata Viewer</link>. See the <link CSPro::paradata_log_file_cslog.hgt>Paradata Log</link> page for more information on how this file can be used.
 
-<seealso source_file_types_CSEntry.hgt /> 
+<seealso source_file_types.hgt /> 

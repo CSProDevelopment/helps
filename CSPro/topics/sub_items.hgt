@@ -1,134 +1,41 @@
 ﻿<title>Subitems</title>
 
+Subitems allow <link item_description.hgt>items</link> to be broken up into smaller pieces, or across broad categories. In this respect, they let you redefine data items and refer to the same data field in several different ways. The start position of a subitem must be within its parent item.
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+One useful application of subitems involves date and time fields. A date item, for example, could be referred to as a single 8-digit entity: YYYYMMDD. However, this does not allow you to easily manipulate or refer to a portion of the date (such as the year, month, or day itself). Suppose you had the following definition for date (for demonstrative purposes, only selected item properties are shown):
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<table 5 header nowrap>
+<cell>Item Label</cell><cell>Item Name</cell><cell>Start</cell><cell>Len</cell><cell>Item Type</cell>
+<cell>Date of birth</cell><cell>DOB</cell><cell>20</cell><cell>8</cell><cell>Item</cell>
+</table>
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">This item property specifies whether the data is an</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 color="#000000" face="Arial" size="2">Item</font></b> <font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">or a</font> <b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" color="#000000"
-									 face="Arial" size="2">Subitem.</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Subitems allow items to be broken up into smaller pieces,
- or across broad categories. In this respect, they let you redefine data
- items and refer to the same data field in several different ways. The
- start position of a subitem must be within its parent item (the previous
- item).</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">One useful application of subitems involves date and time
- fields. A date item, for example, could be referred to as a single 8-digit
- entity: DDMMYYYY. However, this does not allow you to easily manipulate
- or refer to a portion of the date (such as the day, month, or year itself).
- Suppose you had the following definition for date (for demonstrative purposes,
- not all item properties are being shown):</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">&#160;<b><font style="font-weight: bold;">Item
- Label</font></b>&#160;&#160;&#160;&#160;&#160;<b><font style="font-weight: bold;">Item
- Type</font></b> &#160;<b><font style="font-weight: bold;">Starting_Position&#160;&#160;</font></b><b><font
-	 style="font-weight: bold;">Len</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">&#160;Date of birth &#160;Item
- &#160;&#160;&#160;&#160;&#160;&#160;20 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;8</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">To redefine this item into subitems, you only need to add
- the following subitems:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">&#160;<b><font style="font-weight: bold;">Item
- Label &#160;&#160;&#160;&#160;</font></b><b><font style="font-weight: bold;">Item
- Type</font></b> &#160;<b><font style="font-weight: bold;">Starting_Position</font></b>&#160;&#160;<b><font
-	 style="font-weight: bold;">Len</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">&#160;Day of birth &#160;&#160;Subitem
- &#160;&#160;&#160;20 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">&#160;Month of birth&#160;Subitem
- &#160;&#160;&#160;22 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">&#160;Year of birth &#160;Subitem
- &#160;&#160;&#160;24 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;4</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">Another
- reason for using subitems is to make data references available across
- larger categories. Censuses and surveys often have items of three or four
- digits in length representing categories such as industry, occupation,
- or ethnicity. For occupation codes, the full value refers to a very detailed
- occupation, such as bus driver. The first digit alone refers to the 'major'
- division, such as 'public service'. The first two digits together refer
- to a more detailed 'major' division, such as 'public transportation'.
- It may be useful to test the ranges with the CSPro language at the item
- level. In <a href="introduction_to_tabulation.html"><span>tabulation applications</span></a>,
- tables can be made at the major (1- or 2-digit) or minor (3- or 4-digit)
- divisions. The following example could represent part of an economic survey:</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">&#160;<b><font style="font-weight: bold;">Item
- Label</font></b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<b><font
-	 style="font-weight: bold;">Item Type</font></b> &#160;<b><font style="font-weight: bold;">Starting_Position</font></b>&#160;<b><font
-	 style="font-weight: bold;">Len</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">&#160;Occupation &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Item
- &#160;&#160;&#160;&#160;&#160;&#160;45 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;4</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">&#160;Occupation, Major &#160;&#160;&#160;&#160;&#160;Subitem
- &#160;&#160;&#160;45 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">&#160;Occupation, Sub-major&#160;&#160;Subitem&#160;&#160;&#160;&#160;45&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 font-family: 'Courier New', monospace;">&#160;Occupation, Minor&#160;&#160;&#160;&#160;&#160;&#160;Subitem&#160;&#160;&#160;&#160;45&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;3</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -11.50pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 0.50pt;">In IMPS 3.1, the predecessor to CSPro, it was
- very common to use subitems to redefine data items. This is now more easily
- accomplished with <a href="value_sets_description.html">value sets</a>.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 0.50pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">NOTE: Identification items cannot have subitems.</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -11.50pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">See also:</font></b> <a href="item_description.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Item
- Description</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">,</font>
- <a href="identification_items.html"><font style="font-family: Arial; font-size: 10pt;"
-											 face="Arial" size="2">Identification
- Items</font></a><font style="font-family: Arial; font-size: 10pt;" color="#000000"
-						 face="Arial" size="2">,</font> <a href="item_properties.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Item
- Properties</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="add_or_modify_items.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Add
- or Modify Items</font></a></p>
-</body>
-</html>
+To redefine this item into subitems, you only need to add the following subitems:
 
+<table 5 header nowrap> 
+<cell>Item Label</cell><cell>Item Name</cell><cell>Start</cell><cell>Len</cell><cell>Item Type</cell>
+<cell>Year of birth</cell><cell>DOB_YEAR</cell><cell>20</cell><cell>4</cell><cell>Subitem</cell>
+<cell>Month of birth</cell><cell>DOB_MONTH</cell><cell>24</cell><cell>2</cell><cell>Subitem</cell>
+<cell>Day of birth</cell><cell>DOB_DAY</cell><cell>26</cell><cell>2</cell><cell>Subitem</cell>
+</table>
 
-<html><!---♻---></html>
+Another reason for using subitems is to make data references available across larger categories. Censuses and surveys often have items of three or four digits in length representing categories such as industry, occupation, or ethnicity. For example, looking at occupation codes:
+
+<list>
+<li>the full value refers to a very detailed occupation, such as bus driver</li>
+<li>The first digit alone refers to the 'major' division, such as 'public service'</li>
+<li>The first two digits together refer to a more detailed 'major' division, such as 'public transportation'</li>
+</list>
+
+It may be useful to test the ranges with the CSPro language at the item level. In <link introduction_to_tabulation.hgt>tabulation applications</link>, tables can be made at the major (1- or 2-digit) or minor (3- or 4-digit) divisions. The following example could represent part of an economic survey:
+
+<table 5 header nowrap> 
+<cell>Item Label</cell><cell>Item Name</cell><cell>Start</cell><cell>Len</cell><cell>Item Type</cell>
+<cell>Occupation</cell><cell>OCCUPATION</cell><cell>45</cell><cell>4</cell><cell>Item</cell>
+<cell>Occupation, Major</cell><cell>OCC_MAJOR</cell><cell>45</cell><cell>1</cell><cell>Subitem</cell>
+<cell>Occupation, Sub-major</cell><cell>OCC_SUBMINOR</cell><cell>45</cell><cell>2</cell><cell>Subitem</cell>
+<cell>Occupation, Minor</cell><cell>OCC_MINOR</cell><cell>45</cell><cell>3</cell><cell>Subitem</cell>
+</table>
+ 
+<b>Note:</b> Identification items cannot have subitems.
+
+<seealso item_description.hgt identification_items.hgt item_properties.hgt add_or_modify_items.hgt />

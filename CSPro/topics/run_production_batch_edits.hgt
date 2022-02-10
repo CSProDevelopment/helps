@@ -27,6 +27,7 @@ ImputeStat=.\MyEdits.impute_stat.csdb
 WriteData=.\WriteMessages.txt
 SaveArray=.\MyEdits.bch.sva
 CommonStore=.\MySettings.db
+HtmlDialogs=.\MyDialogsDirectory
 BaseMap=.\MyMap.mbtiles
 
 [ExternalFiles]
@@ -66,6 +67,7 @@ The <pffcolor>[Files]</pffcolor> block is required. A description of the files, 
 	<li><pffcolor>WriteData</pffcolor>=if there are one or more <logiccolor>write</logiccolor> function calls in your program, the text of these statements will be written to this file.</li>
 	<li><pffcolor>SaveArray</pffcolor>=if your program contains one or more <link saved_arrays_file_sva.hgt>saved arrays</link>, the contents of these arrays will be read from and written to this file.</li>
 	<li><pffcolor>CommonStore</pffcolor>=if you use the <logiccolor>loadsetting</logiccolor> or <logiccolor>savesetting</logiccolor> functions in your program, this file overrides the default location where these settings are saved.</li>
+	<li><pffcolor>HtmlDialogs</pffcolor>=the name of a directory that contains custom <link html_dialog_ui.hgt>HTML dialogs</link> that override the default CSPro ones.</li>	
 	<li><pffcolor>BaseMap</pffcolor>=the name of the online map or the filename of an offline map used for <link map_base_map_specification.hgt>CSPro mapping</link>.</li>
 </list>
 
