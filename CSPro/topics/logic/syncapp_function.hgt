@@ -8,7 +8,7 @@ b = syncapp();
 
 <subheader>Description</subheader>
 
-The <logiccolor>syncapp</logiccolor> function updates application files, such as a .pen and .pff, from a new version of the application package on a server. This function is used to make updates, such as bug fixes and other modifications, to an application already deployed on mobile devices in the field. 
+The <logiccolor>syncapp</logiccolor> function updates application files, such as a .pen and .pff, from a new version of the application package (<b>package.json</b>) on a server. This function is used to make updates, such as bug fixes and other modifications, to an application already deployed on mobile devices in the field. 
 
 The function checks for an updated version of the application on the server that the program is currently connected to from a previous call to <logiccolor>syncconnect</logiccolor>. If the version of the application on the server is newer than the currently running version, then the new package is downloaded from the server and the application on the device is updated.
 
