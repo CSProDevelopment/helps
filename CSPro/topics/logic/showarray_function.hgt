@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = showarray(『<arg>heading</arg>,』<arg>array_name</arg>『,<arg>row_count</arg>』『,<arg>column_count</arg>』『,title(<arg>text_list</arg>)』);
+i = showarray(『<arg>heading</arg>,』 <arg>array_name</arg>『, <arg>row_count</arg>』『, <arg>column_count</arg>』『, title(<arg>text_titles</arg>)』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>showarray</logiccolor> function, similar to the <logiccolor>show</logiccolor> and <logiccolor>accept</logiccolor> functions, displays items from an array in a grid. An optional string expression, <arg>heading</arg>, defines the title of the grid, which contains the items in <arg>array_name</arg>. The function is useful as a menu or simply as a way to show values that are relevant to data collection. If the optional numeric expressions <arg>row_count</arg> and <arg>column_count</arg> are not specified, then the function will parse the array, determining the size of the menu based on where the first blank alphanumeric element is found. If you want to override the column headings, you can specify them in with string expressions in <arg>text_title</arg>.
+The <logiccolor>showarray</logiccolor> function, similar to the <logiccolor>show</logiccolor> and <logiccolor>accept</logiccolor> functions, displays items from an array in a grid. An optional string expression, <arg>heading</arg>, defines the title of the grid, which contains the items in <arg>array_name</arg>. The function is useful as a menu or simply as a way to show values that are relevant to data collection. If the optional numeric expressions <arg>row_count</arg> and <arg>column_count</arg> are not specified, then the function will parse the array, determining the size of the menu based on where the first blank alphanumeric element is found. If you want to override the column headings, you can specify them in with string expressions in <arg>text_titles</arg>.
 
 <subheader>Return Value</subheader>
 
@@ -30,8 +30,8 @@ array string unitedNationsCountryCodes(5,3) =
 
 PROC EXAMPLE
 
-numeric countrySelection = showarray("Select a Country",unitedNationsCountryCodes,
-	title("Numerical Code","Country or Area Name","ISO ALPHA-3 Code"));
+numeric countrySelection = showarray("Select a Country", unitedNationsCountryCodes,
+	title("Numerical Code", "Country or Area Name", "ISO ALPHA-3 Code"));
 </logic>
 
 <center><image showarray1.png /></center>
@@ -39,7 +39,7 @@ numeric countrySelection = showarray("Select a Country",unitedNationsCountryCode
 <subheader>Example 2</subheader>
 
 <logic>
-numeric countrySelection = showarray(unitedNationsCountryCodes,3,2);
+numeric countrySelection = showarray(unitedNationsCountryCodes, 3, 2);
 </logic>
 
 <center><image showarray2.png /></center>
