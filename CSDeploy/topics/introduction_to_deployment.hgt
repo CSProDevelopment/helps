@@ -9,6 +9,7 @@ The application deployment tool does the following:
 <list>
 <li>Publishes data entry applications to .pen files for use on mobile</li>
 <li>Packages application files (<link CSPro::binary_data_entry_application_file_pen.hgt>.pen</link> and <link CSPro::program_information_file_pff.hgt>.pff</link>), and optionally other files, into single file for deployment</li>
+<li>Creates a <link CSPro::syncapp_function.hgt>package.json</link> file, which is used to facilitate updates, so that only files that have been modified since last the sync (using the <link CSPro::syncApp_function.hgt>SyncApp() function</link> or Easy Sync) will be downloaded</li>
 <li>Uploads the deployment package file to a server where it can be easily downloaded to mobile devices</li>
 <li>Uploads data dictionaries to the server to use for data synchronization</li>
 </list>
@@ -23,7 +24,7 @@ This guide contains the following information:
 	<li><topic set_deployment_name.hgt /></li>
 	<li><topic add_files_to_deploy.hgt /></li>
 	<li><topic remove_files_from_deploy.hgt /></li>
-	<li><topic choose_deployment_server.hgt /></li>
+	<li><topic deployment_options.hgt /></li>
 	<li><topic install_deployment_mobile.hgt /></li>
 	<li><topic update_deployment_mobile.hgt /></li>
 	<li><topic generate_deploy_qr_code.hgt /></li>
