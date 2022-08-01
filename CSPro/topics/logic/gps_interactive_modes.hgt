@@ -45,7 +45,7 @@ The <logiccolor>gps</logiccolor> function must be passed the <logiccolor>select<
 
 <subheader>Return Value</subheader>
 
-When using these interactive modes, the <logiccolor>gps</logiccolor> function returns a logical value of 1 (true) if successful and 0 (false) otherwise. If the function is run on Windows, the function returns <logiccolor>default</logiccolor>.
+When using these interactive modes, the <logiccolor>gps</logiccolor> function returns a logical value of 1 (true) if successful, 0 (false) if unsuccessful, and -1 if the read is cancelled by pressing the close button. If the function is run on Windows, the function returns <logiccolor>default</logiccolor>.
 
 
 <subheader>Examples</subheader>
