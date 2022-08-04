@@ -14,9 +14,9 @@ namespace Colorizer
 
         public PffColorizer()
         {
-            _typeWords = new SortedSet<string>(CSPro.Bridge.PifFile.GetAppTypeWords().Select(x => x.ToUpper()));
-            _headingWords = new SortedSet<string>(CSPro.Bridge.PifFile.GetHeadingWords().Select(x => x.ToUpper()));
-            _attributeWords = new SortedSet<string>(CSPro.Bridge.PifFile.GetAttributeWords().Select(x => x.ToUpper()));
+            _typeWords = new SortedSet<string>(CSPro.Util.PFF.GetAppTypeWords().Select(x => x.ToUpper()));
+            _headingWords = new SortedSet<string>(CSPro.Util.PFF.GetHeadingWords().Select(x => x.ToUpper()));
+            _attributeWords = new SortedSet<string>(CSPro.Util.PFF.GetAttributeWords().Select(x => x.ToUpper()));
        }
 
         public PffColorizer(PffColorizerInterface defaultPffColorizer) : this()
