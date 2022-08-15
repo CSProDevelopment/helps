@@ -86,13 +86,16 @@ The <logiccolor>case</logiccolor> and <logiccolor>summary</logiccolor> keywords 
 
 The <logiccolor>denom</logiccolor> keyword allows you to specify a denominator, so that you can show percentages in the summary portion of the output listing. This is very useful for showing, for example, edit failure rates (and as such, this option is geared towards batch applications rather than data entry applications). In Format 1's Example 2 below, the output listing will show the number of times the head of household had more than one spouse, divided by the number of households processed during the run. Note that it is the responsibility of the application designer to write logic to put the proper values into the denominator variable.
 
-The <b>select</b> keyword is used to give the option of specifying the field to go to in response to the error message. A button is placed on the error message window for each caption and fieldname pair specified as a <b>select</b> argument, with a maximum of 5 possible <b>select</b> argument pairs allowed. The caption will be displayed on the button. When a button is chosen, the system goes to the field specified by fieldname. If <logiccolor>continue</logiccolor> is used as the fieldname, the system proceeds to the next line of logic following the <logiccolor>errmsg</logiccolor> call. If a <arg>default_option</arg> is given, it will place the focus on the select option chosen when the message is presented. This is a good method to prioritize what option you want the user to make (reenter a value vs. continue for example). If a <arg>default_option</arg> is not given, no button will have the focus.
+The <b>select</b> keyword is used to give the option of specifying the field to go to in response to the error message. A button is placed on the error message window for each caption and fieldname pair specified as a <b>select</b> argument, with a maximum of 5 possible <b>select</b> argument pairs allowed. The caption will be displayed on the button. When a button is chosen, the system goes to the field specified by fieldname. If <logiccolor>continue</logiccolor> is used as the fieldname, the system proceeds to the next line of logic following the <logiccolor>errmsg</logiccolor> call. If a <arg>default_option</arg> is given, it will place the focus on the select option chosen when the message is presented. This is a good method to prioritize what option you want the user to make (reenter a value vs. continue for example). If a <arg>default_option</arg> is not given, no button will have the focus.
+
+If you wish to split message text across two or more lines, refer to the <topic message_formatting_options.hgt /> page.
 
 <subheader>Return Value</subheader>
 
 The function returns the sequence number of the button pressed. When the <b>select</b> keyword is not used, the function will return 1, as only the "OK" button is presented to the user, corresponding to button #1 ("Cancel" is never presented, and so a code of zero is not possible).
 
 When the <b>select</b> keyword is used, the function returns the sequence number of the button that was pressed, with the first button having the value 1. A maximum of 5 select argument pairs is allowed.
+
 
 <subheader>Format 1 Examples</subheader>
 
@@ -127,6 +130,5 @@ Note the <logiccolor>errmsg</logiccolor> call could have also been invoked as fo
 <logic>
 i = 1;
 OK = errmsg (i,"June",30,31);</logic>
-
 
 <seealso warning_function.hgt message_formatting_options.hgt message_file_mgf.hgt />

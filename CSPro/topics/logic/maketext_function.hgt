@@ -26,6 +26,8 @@ where "<b>n</b>" is the size of the field and "d<b></b>" is the number of decima
 
 Numbers are never truncated. Text strings are truncated only if "<b>.d</b>" is used. If "<b>n</b>" is positive, the insert is right-justified in the size of the field. If "<b>n</b>" is negative, the insert is left-justified in the size of the field. If "<b>n</b>" is a positive number with a leading zero, the insert is right-justified in the size of the field and zero-filled to the left. When inserting a number, if "<b>n</b>" is preceded by a "+", the sign of the number is always displayed.
 
+If you wish to split message text across two or more lines, refer to the <topic message_formatting_options.hgt /> page.
+
 <subheader>Return Value</subheader>
 
 The function returns the formatted string.
