@@ -1,265 +1,54 @@
 ﻿<title>Edit Function</title>
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<logicsyntax>
+s = edit(<arg>edit_pattern</arg>, <arg>numeric_expression</arg>);
+</logicsyntax>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<subheader>Description</subheader>
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">s =</font> <b><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-weight: bold;"
-													 color="#0000FF" face="Courier New"
-													 size="2">edit</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><i><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-style: italic;"
-													 color="#000000" face="Courier New"
-													 size="2">edit-pattern</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,</font><i><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-style: italic;"
-													 color="#000000" face="Courier New"
-													 size="2">numeric-expression</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The edit function converts a number to a character string
- defined by the given &quot;edit pattern&quot;. The &quot;edit pattern&quot;
- is a string containing &quot;Z&quot;s or &quot;9&quot;s (i.e., &quot;9999&quot;
- or &quot;ZZ9.99&quot;). Both &quot;9&quot; and &quot;Z&quot; represent
- a digit.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">&#160;</font><b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" color="#000000"
-									 face="Arial" size="2">9</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">&#160;display a digit</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">&#160;</font><b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" color="#000000"
-									 face="Arial" size="2">Z</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">&#160;display a digit, but if it is a leading zero, display
- a blank</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">&#160;</font><b><font style="font-family: Arial; font-size: 10pt;
-									 font-weight: bold;" color="#000000"
-									 face="Arial" size="2">.</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">&#160;display the decimal character</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">&#160;,&#160;</font></b><font style="font-family: Arial;
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Arial" size="2">display
- the thousands separator character</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Any other character will be displayed as itself.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Return value:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">The
- function returns a string</font> <font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">derived
- from the &quot;numeric-expression&quot; argument.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 1:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">X =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#FF0000" face="Courier New"
-													 size="2">87</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">A1 =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">edit</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;ZZZ9&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,X); yields A1 = &quot; 87&quot;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">A2 =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">edit</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;9999&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,X); yields A2 = &quot;0087&quot;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">A3 =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">edit</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;Z999&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,X); yields A3 = &quot; 087&quot;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 2:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">Y =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#FF0000" face="Courier New"
-													 size="2">0</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">A4 =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">edit</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;ZZ9&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,Y); yields A4 = &quot; 0&quot;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">A5 =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">edit</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;999&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,Y); yields A5 = &quot;000&quot;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">A6 =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">edit</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;ZZZ&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,Y); yields A6 = &quot; &quot;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 3:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">A =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">edit</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;99:99:99&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#0000FF"
-												 face="Courier New" size="2">sysdate</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">());</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 4:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">A =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">edit</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;99/99/99&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#0000FF"
-												 face="Courier New" size="2">sysdate</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;DDMMYY&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">));</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example 5:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">A =</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">edit</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;ZZZ,ZZZ,ZZ9&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">,INCOME);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also</font></b><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">:</font>
- <a href="tonumber_function.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">Tonumber
- Function</font></a> <font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="sysdate_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Sysdate
- Function</font></a></p>
-</body>
-</html>
+The edit function converts a number to a character string defined by the given "edit pattern". The "edit pattern" is a string containing "Z"s and/or "9"s (i.e., "9999" or "ZZ9.99"). Both "9" and "Z" represent a digit as follows:
 
+<table 2 nowrap>
+	<cell><b>9</b></cell><cell>display a digit</cell>
+	<cell><b>Z</b></cell><cell>display a digit, but if it would be a leading zero for the given width, display a blank</cell>
+	<cell><b>.</b></cell><cell>display the decimal character</cell>
+	<cell><b>,</b></cell><cell>display the thousands separator character</cell>
+</table>
 
-<html><!---♻---></html>
+Any other character will be displayed as itself.
+
+<subheader>Return value</subheader>
+
+The function returns a string derived from the <arg>numeric_expression</arg> argument.
+
+<subheader>Example 1</subheader>
+
+<logic>X = 87;
+A1 = edit("ZZZ9",X); yields A1 = "  87"
+A2 = edit("9999",X); yields A2 = "0087"
+A3 = edit("Z999",X); yields A3 = " 087"</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>Y = 0;
+A4 = edit("ZZ9",Y); yields A4 = "  0"
+A5 = edit("999",Y); yields A5 = "000"
+A6 = edit("ZZZ",Y); yields A6 = "   "</logic>
+
+<subheader>Example 3</subheader>
+
+<logic>T = edit("99:99:99", systime()); would yield T="16:04:42"</logic> 
+	for the time 4:04pm and 42 seconds
+
+<subheader>Example 4</subheader>
+
+<logic>D = edit("99/99/99",sysdate("DDMMYY"));</logic>
+
+<subheader>Example 5</subheader>
+
+<logic>A = edit("ZZZ,ZZZ,ZZ9",INCOME);</logic>
+ 
+<seealso tonumber_function.hgt sysdate_function.hgt />
+
