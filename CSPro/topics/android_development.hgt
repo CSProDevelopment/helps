@@ -9,7 +9,7 @@ In the Android environment you will only be able to run binary data entry applic
 
 All applications on the Android device must be stored in the <i>csentry</i> folder on your device. Connect your Android device to your computer and, via USB transfer, copy your .pen and .pff files to the Android device. Generally the device's external storage is its SD card. The first time you run the CSEntry application, the <i>csentry</i> folder will be automatically created for you. The application searches subdirectories located in the <i>csentry</i> folder, so it is possible to add multiple applications while maintaining a clean directory structure.
 
-Starting with CSPro version 7.5, the <i>csentry</i> directory is located at <b>&lt;external storage&gt;/Android/data/gov.census.cspro.csentry/files/csentry</b>. In earlier versions it was located at <b>&lt;external storage&gt;/csentry</b>. If you previously had an older version of CSPro on your Android device, the <i>csentry</i> will not be moved when you upgrade.
+<include ../../Shared/topics/csentry_directory.hgt />
 
 You can also transfer applications to your device by using the <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link> tool.
 

@@ -1,0 +1,27 @@
+﻿<title>Removing an Application from Android Devices</title>
+
+After fieldwork is completed and all data is safely removed from the device, you will likely want to remove the CSEntry application (which will remove the data along with it). There are two ways to do this, depending on how the application was installed.
+
+<subheader>CSEntry Apps Deployed via CSWeb, Dropbox, or FTP Server</subheader>
+
+<list ordered><li>Open up a File Manager program</li>
+<li>Drill down to the Android folder. <include ../../Shared/topics/csentry_directory.hgt /></li>
+<li>Delete the folder named after the application</li>
+<li>Drill down one more level into the "Packages" folder</li>
+<li>Remove the installation zip file</li></list>
+
+For example, if the "Simple CAPI" application that accompanies the CSPro installation on your PC had been installed on an Android running version <definition version_full />, you should delete this <b>folder</b>:
+
+<list>&lt;external storage&gt;/Android/data/gov.census.cspro.csentry/files/csentry<b>Simple CAPI</b></list>
+
+and this <b>file</b>:
+
+<list>&lt;external storage&gt;/Android/data/gov.census.cspro.csentry/Packages/<b>Simple CAPI.zip</b></list>
+
+<subheader>CSEntry Apps Deployed Manually</subheader>
+
+If the <link CSPro::program_information_file_pff.hgt>.pff</link> and <link CSPro::binary_data_entry_application_file_pen.hgt>.pen</link> files were copied over manually (via a flashdrive, etc.), then:
+
+<list><li>You will have to know where the files were installed in order to delete them. However, they will be somewhere within the CSEntry folder structure given above (but could be buried in a subfolder location).</li>
+<li>As no installation zip file exists, you do not need to go into the Packages folder.</li></list>
+

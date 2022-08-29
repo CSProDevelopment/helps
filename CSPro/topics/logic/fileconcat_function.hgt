@@ -25,16 +25,30 @@ The <arg>output_file_name</arg> is a string expression giving the name of the ou
 
 The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.
 
-<subheader>Example 1</subheader>
-
-<logic>
-fileconcat("DMV.txt", "District of Columbia.txt", "Maryland.txt", "Virginia.txt");
-</logic>
-
-<subheader>Example 2</subheader>
+<subheader>Example 1 - Case Concatenation</subheader>
 
 <logic>
 fileconcat(CENSUS_DICT, "14combined.csdb", "../Data/14*.csdb");
+</logic>
+
+<subheader>Example 2 - Case Concatenation With Encrypted Files</subheader>
+
+If you wish to create an encrypted output file, use a .csdbe extension:
+
+<logic>fileconcat(CENSUS_DICT, "output.csdbe", "input.csdb");</logic>
+
+In this scenario the user will be prompted to provide a password for the output file. If you prefer to specify the password yourself, include it in the output file specification using a <topic connection_string.hgt />:
+
+<logic>fileconcat(CENSUS_DICT, "output.csdbe|password=1234", "input.csdb");</logic>
+
+Likewise if the input file was a .csdbe file, the user will have to provide the password during the run; or, you can include the password as a connection string.
+
+<subheader>Example 3 - Content Concatenation</subheader>
+
+<b>Content</b> concatenation uses the following syntax:
+
+<logic>
+fileconcat("DMV.txt", "District of Columbia.txt", "Maryland.txt", "Virginia.txt");
 </logic>
 
 <seealso filecopy_function.hgt />
