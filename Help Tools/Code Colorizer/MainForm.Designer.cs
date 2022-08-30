@@ -41,10 +41,14 @@
             this.pffMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.messageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editControl = new Colorizer.EditControl();
+            this.logicVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logicVersion0MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logicVersion8_0MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCopyHtml = new System.Windows.Forms.Button();
             this.buttonCopyUsersForum = new System.Windows.Forms.Button();
             this.buttonCopyUsersBlog = new System.Windows.Forms.Button();
+            this.editControl = new Colorizer.EditControl();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +56,8 @@
             // 
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenuItem,
-            this.languageMenuItem});
+            this.languageMenuItem,
+            this.logicVersionToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(1184, 24);
@@ -120,7 +125,7 @@
             this.logicMenuItem.Checked = true;
             this.logicMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.logicMenuItem.Name = "logicMenuItem";
-            this.logicMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logicMenuItem.Size = new System.Drawing.Size(152, 22);
             this.logicMenuItem.Tag = Code_Colorizer.Processor.BufferType.Logic;
             this.logicMenuItem.Text = "&Logic";
             this.logicMenuItem.Click += new System.EventHandler(this.languageMenuItem_Click);
@@ -128,7 +133,7 @@
             // pffMenuItem
             // 
             this.pffMenuItem.Name = "pffMenuItem";
-            this.pffMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pffMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pffMenuItem.Tag = Code_Colorizer.Processor.BufferType.Pff;
             this.pffMenuItem.Text = "&PFF";
             this.pffMenuItem.Click += new System.EventHandler(this.languageMenuItem_Click);
@@ -136,7 +141,7 @@
             // messageMenuItem
             // 
             this.messageMenuItem.Name = "messageMenuItem";
-            this.messageMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.messageMenuItem.Size = new System.Drawing.Size(152, 22);
             this.messageMenuItem.Tag = Code_Colorizer.Processor.BufferType.Message;
             this.messageMenuItem.Text = "&Message";
             this.messageMenuItem.Click += new System.EventHandler(this.languageMenuItem_Click);
@@ -144,27 +149,40 @@
             // reportMenuItem
             // 
             this.reportMenuItem.Name = "reportMenuItem";
-            this.reportMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportMenuItem.Size = new System.Drawing.Size(152, 22);
             this.reportMenuItem.Tag = Code_Colorizer.Processor.BufferType.Report;
             this.reportMenuItem.Text = "&Report (HTML)";
             this.reportMenuItem.Click += new System.EventHandler(this.languageMenuItem_Click);
             // 
-            // editControl
+            // logicVersionToolStripMenuItem
             // 
-            this.editControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.editControl.Lexer = ScintillaNET.Lexer.Null;
-            this.editControl.Location = new System.Drawing.Point(12, 35);
-            this.editControl.Name = "editControl";
-            this.editControl.Size = new System.Drawing.Size(1160, 581);
-            this.editControl.TabIndex = 0;
-            this.editControl.UseTabs = true;
+            this.logicVersionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logicVersion0MenuItem,
+            this.logicVersion8_0MenuItem});
+            this.logicVersionToolStripMenuItem.Name = "logicVersionToolStripMenuItem";
+            this.logicVersionToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.logicVersionToolStripMenuItem.Text = "Logic Version";
+            // 
+            // logicVersion0MenuItem
+            // 
+            this.logicVersion0MenuItem.Name = "logicVersion0MenuItem";
+            this.logicVersion0MenuItem.Size = new System.Drawing.Size(132, 22);
+            this.logicVersion0MenuItem.Text = "Original";
+            this.logicVersion0MenuItem.Click += new System.EventHandler(this.logicVersionMenuItem_Click);
+            // 
+            // logicVersion8_0MenuItem
+            // 
+            this.logicVersion8_0MenuItem.Checked = true;
+            this.logicVersion8_0MenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.logicVersion8_0MenuItem.Name = "logicVersion8_0MenuItem";
+            this.logicVersion8_0MenuItem.Size = new System.Drawing.Size(132, 22);
+            this.logicVersion8_0MenuItem.Text = "CSPro 8.0+";
+            this.logicVersion8_0MenuItem.Click += new System.EventHandler(this.logicVersionMenuItem_Click);
             // 
             // buttonCopyHtml
             // 
             this.buttonCopyHtml.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonCopyHtml.Location = new System.Drawing.Point(294, 626);
+            this.buttonCopyHtml.Location = new System.Drawing.Point(294, 693);
             this.buttonCopyHtml.Name = "buttonCopyHtml";
             this.buttonCopyHtml.Size = new System.Drawing.Size(160, 23);
             this.buttonCopyHtml.TabIndex = 1;
@@ -175,7 +193,7 @@
             // buttonCopyUsersForum
             // 
             this.buttonCopyUsersForum.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonCopyUsersForum.Location = new System.Drawing.Point(512, 626);
+            this.buttonCopyUsersForum.Location = new System.Drawing.Point(512, 693);
             this.buttonCopyUsersForum.Name = "buttonCopyUsersForum";
             this.buttonCopyUsersForum.Size = new System.Drawing.Size(160, 23);
             this.buttonCopyUsersForum.TabIndex = 2;
@@ -186,7 +204,7 @@
             // buttonCopyUsersBlog
             // 
             this.buttonCopyUsersBlog.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonCopyUsersBlog.Location = new System.Drawing.Point(730, 626);
+            this.buttonCopyUsersBlog.Location = new System.Drawing.Point(730, 693);
             this.buttonCopyUsersBlog.Name = "buttonCopyUsersBlog";
             this.buttonCopyUsersBlog.Size = new System.Drawing.Size(160, 23);
             this.buttonCopyUsersBlog.TabIndex = 3;
@@ -194,12 +212,36 @@
             this.buttonCopyUsersBlog.UseVisualStyleBackColor = true;
             this.buttonCopyUsersBlog.Click += new System.EventHandler(this.buttonCopyUsersBlog_Click);
             // 
+            // editControl
+            // 
+            this.editControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.editControl.Lexer = ScintillaNET.Lexer.Null;
+            this.editControl.Location = new System.Drawing.Point(12, 35);
+            this.editControl.Name = "editControl";
+            this.editControl.Size = new System.Drawing.Size(1160, 322);
+            this.editControl.TabIndex = 0;
+            this.editControl.UseTabs = true;
+            this.editControl.TextChanged += new System.EventHandler(this.editControl_TextChanged);
+            // 
+            // webBrowser
+            // 
+            this.webBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webBrowser.Location = new System.Drawing.Point(12, 378);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(1160, 295);
+            this.webBrowser.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 728);
+            this.Controls.Add(this.webBrowser);
             this.Controls.Add(this.buttonCopyUsersBlog);
             this.Controls.Add(this.buttonCopyUsersForum);
             this.Controls.Add(this.buttonCopyHtml);
@@ -238,6 +280,10 @@
         private System.Windows.Forms.ToolStripMenuItem messageMenuItem;
         private System.Windows.Forms.Button buttonCopyUsersBlog;
         private System.Windows.Forms.ToolStripMenuItem reportMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logicVersionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logicVersion8_0MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logicVersion0MenuItem;
+        private System.Windows.Forms.WebBrowser webBrowser;
     }
 }
 

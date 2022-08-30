@@ -17,15 +17,24 @@ namespace Code_Colorizer
             _pffColorizer = new PffColorizer();
 		}
 
-		public void CopyHtml(string text, BufferType buffer_type)
-		{
+        public void SetLogicVersion(CSPro.Logic.LogicVersion logic_version)
+        {
+            _colorizer.SetLogicVersion(logic_version);
+        }
+
+		public string GetHtml(string text, BufferType buffer_type)
+        {
 			text = HelperFunctions.TrimTrailingSpace(text);
 
-            string formattedText =
-                ( buffer_type == BufferType.Logic )   ? _colorizer.LogicToHtml(text) :
-                ( buffer_type == BufferType.Message ) ? _colorizer.MessageToHtml(text) :
-                ( buffer_type == BufferType.Report )  ? _colorizer.HtmlReportToHtml(text) :
-                                                        _pffColorizer.Colorize(new PffColorizerHtml(), text);
+            return ( buffer_type == BufferType.Logic )   ? _colorizer.LogicToHtml(text) :
+                   ( buffer_type == BufferType.Message ) ? _colorizer.MessageToHtml(text) :
+                   ( buffer_type == BufferType.Report )  ? _colorizer.HtmlReportToHtml(text) :
+                                                           _pffColorizer.Colorize(new PffColorizerHtml(), text);
+        }
+
+		public void CopyHtml(string text, BufferType buffer_type)
+		{
+            string formattedText = GetHtml(text, buffer_type);
 
             // html to clipboard code from: http://blogs.msdn.com/b/jmstall/archive/2007/01/21/sample-code-html-clipboard.aspx
             string htmlCopyText = "Format:HTML Format Version:1.0\nStartHTML:<<<<<<<1\nEndHTML:<<<<<<<2\nStartFragment:<<<<<<<3\nEndFragment:<<<<<<<4\n";
