@@ -274,7 +274,7 @@ namespace Help_Generator
             }                
         }
 
-        private void GenerateHelps(GenerateHelpsForm.GenerationType generationType)
+        private void GenerateHelps(GenerateHelpsForm.GenerationType generationType, string extraParam = null)
         {
             // make sure that all of the files are saved
             foreach( Form form in MdiChildren )
@@ -290,7 +290,7 @@ namespace Help_Generator
             {
                 _helpComponents.preprocessor.Refresh();
 
-                GenerateHelpsForm dlg = new GenerateHelpsForm(_helpComponents,generationType);
+                GenerateHelpsForm dlg = new GenerateHelpsForm(_helpComponents, generationType, extraParam);
                 dlg.ShowDialog();
             }
 
@@ -303,6 +303,16 @@ namespace Help_Generator
         private void generateCompileAllFilesMenuItem_Click(object sender,EventArgs e)
         {
             GenerateHelps(GenerateHelpsForm.GenerationType.CompileOnly);
+        }
+
+        private void generateCompileAllFilesFromThisFileMenuItem_Click(object sender, EventArgs e)
+        {
+            string thisFilename = null;
+
+            if( this.ActiveMdiChild != null && this.ActiveMdiChild is TextEditForm )
+                thisFilename = ((TextEditForm)this.ActiveMdiChild).Filename;
+
+            GenerateHelps(GenerateHelpsForm.GenerationType.CompileOnly, thisFilename);
         }
 
         private void generateHelpsMenuItem_Click(object sender,EventArgs e)

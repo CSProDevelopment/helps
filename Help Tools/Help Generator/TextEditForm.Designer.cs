@@ -151,6 +151,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Text Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TextEditForm_FormClosing);
+            this.Shown += new System.EventHandler(this.TextEditForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
