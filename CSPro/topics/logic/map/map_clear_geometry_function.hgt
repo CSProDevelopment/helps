@@ -1,4 +1,5 @@
-﻿<title>Map.ClearGeometry Function</title>
+﻿<title>Map.clearGeometry Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,20 +7,23 @@
 b = map_name.clearGeometry();
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>map.clearGeometry</logiccolor> function removes all the geometry currently on the <link map.hgt>map</link> named <logiccolor>map_name</logiccolor>. Note that this clears only geometry added using the <logiccolor>map.addGeometry</logiccolor> function. Markers added to the map using <logiccolor>map.addMarker</logiccolor> should be cleared using the function <logiccolor>map.clearMarkers</logiccolor>.
+The <logiccolor>Map.clearGeometry</logiccolor> function removes all the Geometry currently on the <link map.hgt>Map object</link> named <logiccolor>map_name</logiccolor>. Note that this clears only Geometry added using the <logiccolor>Map.addGeometry</logiccolor> function. Markers added to the map using <logiccolor>Map.addMarker</logiccolor> should be cleared using the function <logiccolor>Map.clearMarkers</logiccolor>.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true).
+
 
 <subheader>Example</subheader>
 
 <logic>
 PROC GLOBAL
 
-function editOutline(map m, geometry outline)
+function editOutline(Map m, Geometry outline)
     // Remove existing outline
 	m.clearGeometry();
 	
@@ -35,10 +39,10 @@ end;
 PROC MAP_OUTLINE
 
 // Declare a map to draw the outline on
-map m;
+Map m;
 
 // Load the outline from a GeoJSON file
-geometry outline;
+Geometry outline;
 outline.load("outline.geojson");
 
 // Add the geometry to the map
@@ -50,5 +54,6 @@ m.addTextButton("Edit outline", editOutline(m, outline));
 // Display the map
 m.show();
 </logic>
+
 
 <seealso map.hgt geometry.hgt map_add_geometry_function.hgt map_remove_geometry_function.hgt />

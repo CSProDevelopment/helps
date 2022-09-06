@@ -1,4 +1,5 @@
-﻿<title>List.Remove Function</title>
+﻿<title>List.remove Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,18 +7,21 @@
 b = list_name.remove(<arg>index</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>list.remove</logiccolor> function removes the value at the position in the <link list.hgt>list</link> referenced by the numeric expression <arg>index</arg>. List index values are one-based, so the index must be between 1 and the length of the list.
+The <logiccolor>List.remove</logiccolor> function removes the value at the position in the <link list.hgt>List</link> referenced by the numeric expression <arg>index</arg>. List index values are one-based, so the index must be between 1 and the length of the List.
+
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true) if the value is successfully removed, and 0 (false) otherwise, which indicates that the index is not valid. If the list is read-only, the function returns <logiccolor>default</logiccolor>.
+The function returns a logical value of 1 (true) if the value is successfully removed, and 0 (false) otherwise, which indicates that the index is not valid. If the List is read-only, the function returns <logiccolor>default</logiccolor>.
+
 
 <subheader>Example</subheader>
 
 <logic>
-list string eligible_heads;
+List string eligible_heads;
 
 // ...
 
@@ -31,5 +35,6 @@ if eligible_head_index <> 0 and eligible_heads.length() > 1 then
 
 endif;
 </logic>
+
 
 <seealso list.hgt list_clear_function.hgt list_removeduplicates_function.hgt list_removein_function.hgt />

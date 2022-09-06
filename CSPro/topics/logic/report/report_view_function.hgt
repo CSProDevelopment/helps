@@ -1,4 +1,5 @@
-﻿<title>Report.View Function</title>
+﻿<title>Report.view Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -9,7 +10,7 @@ b = report_name.view(『<arg>optional_named_arguments</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>report.view</logiccolor> function runs the logic in the templated report and displays the output in an embedded web browser. The function is meant to be called from outside the templated report's logic.
+The <logiccolor>Report.view</logiccolor> function runs the logic in the templated report and displays the output in an embedded web browser. The function is meant to be called from outside the templated report's logic.
 
 <include ..\include_view_named_arguments.hgi />
 
@@ -28,5 +29,6 @@ HOUSEHOLD_REPORT.view(title := "Household Report",
 					  width := 600, height := 400, 
 					  showCloseButton := false);
 </logic>
+
 
 <seealso templated_reports.hgt report_save_function.hgt />

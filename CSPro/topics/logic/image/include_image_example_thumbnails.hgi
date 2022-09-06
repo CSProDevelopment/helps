@@ -1,11 +1,11 @@
 // create thumbnails for every image in the Photos directory,
 // placing the thumbnails in the Thumbnails directory
-list string image_listing;
+List string image_listing;
 dirlist(image_listing, "Photos", "*.jpg;*.png");
 
 do numeric counter = 1 while counter <= image_listing.length()
 
-	image thumbnail_image;
+	Image thumbnail_image;
 
 	if thumbnail_image.load(image_listing(counter)) then
 
@@ -13,7 +13,7 @@ do numeric counter = 1 while counter <= image_listing.length()
 		thumbnail_image.resample(thumbnail_image.width() / 4, thumbnail_image.height() / 4);
 
 		// prefix the thumbnail filename with the text "tn"
-		string thumbnail_filename = path.concat("Thumbnails", "tn" + path.getFilename(image_listing(counter)));
+		string thumbnail_filename = Path.concat("Thumbnails", "tn" + Path.getFileName(image_listing(counter)));
 
 		thumbnail_image.save(thumbnail_filename);
 

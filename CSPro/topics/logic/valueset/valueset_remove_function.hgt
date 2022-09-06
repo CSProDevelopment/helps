@@ -1,4 +1,5 @@
-﻿<title>ValueSet.Remove Function</title>
+﻿<title>ValueSet.remove Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,15 +7,18 @@
 i = valueset_remove.remove(<arg>code</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>valueset.remove</logiccolor> function removes all values from a <link valueset.hgt>value set</link> that have a code matching the specified numeric or string expression <arg>code</arg>. The type of the code must match the type of the value set.
+The <logiccolor>ValueSet.remove</logiccolor> function removes all values from a <link valueset.hgt>ValueSet</link> object that have a code matching the specified numeric or string expression <arg>code</arg>. The type of the code must match the type of the value set.
 
 When using a numeric value set with ranges&mdash;both <b>from</b> and <b>to</b> codes are defined&mdash;or defined <link special_values.hgt>special values</link>, the function will remove a value only if it is the <b>from</b> value or if it is the special value.
+
 
 <subheader>Return Value</subheader>
 
 The function returns the number of values with the matching code that were removed from the value set. If the value set is read-only, the function returns <logiccolor>default</logiccolor>.
+
 
 <subheader>Example</subheader>
 
@@ -23,11 +27,12 @@ PROC SECOND_FAVORITE_DRINK
 
 preproc
 
-	valueset drink_valueset = FAVORITE_DRINK_VS;
+	ValueSet drink_valueset = FAVORITE_DRINK_VS;
 
 	drink_valueset.remove(FAVORITE_DRINK);
 
 	setvalueset(SECOND_FAVORITE_DRINK, drink_valueset);
 </logic>
+
 
 <seealso valueset.hgt valueset_clear_function.hgt />

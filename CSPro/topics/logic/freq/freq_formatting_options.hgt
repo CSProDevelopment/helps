@@ -5,11 +5,11 @@ Frequency formatting options can be specified:
 <list>
 	<li>When using the <link freq_statement_unnamed.hgt>unnamed frequency</link> command.</li>
 	<li>When declaring a <link freq_statement_named.hgt>named frequency</link>.</li>
-	<li>When calling the <logiccolor>freq.save</logiccolor> function.</li>
-	<li>When calling the <logiccolor>freq.view</logiccolor> function.</li>
+	<li>When calling the <logiccolor>Freq.save</logiccolor> function.</li>
+	<li>When calling the <logiccolor>Freq.view</logiccolor> function.</li>
 </list>
 
-Any options specified as part of a call to <logiccolor>freq.save</logiccolor> or <logiccolor>freq.view</logiccolor> will override options specified when declaring the named frequency.
+Any options specified as part of a call to <logiccolor>Freq.save</logiccolor> or <logiccolor>Freq.view</logiccolor> will override options specified when declaring the named frequency.
 
 The formatting options include the following commands: <logiccolor>valueset</logiccolor>, <logiccolor>distinct</logiccolor>, <logiccolor>vset</logiccolor>, <logiccolor>heading</logiccolor>, <logiccolor>stat</logiccolor>, <logiccolor>percentiles</logiccolor>, <logiccolor>nofreq</logiccolor>, <logiccolor>decimals</logiccolor>, <logiccolor>sort</logiccolor>, <logiccolor>nonetpercents</logiccolor>, and <logiccolor>pagelength</logiccolor>.
 
@@ -66,7 +66,7 @@ The command <logiccolor>nofreq</logiccolor>, when used with <logiccolor>stat</lo
 The <logiccolor>decimals</logiccolor> command means that the frequency values will be displayed with the specific number of digits after the decimal mark. The numeric constant <arg>number_decimals</arg> must be a value between 1 and 5. For example, 2 will show frequency values such as 126.00 (as opposed to 126). This may be useful if you are using non-integer weights when tallying frequencies.
 
 
-<logicsyntax>sort(『ascending ‖ descending』 by valueset ‖ code ‖ label ‖ freq)</logicsyntax>
+<logicsyntax>sort(『ascending ‖ descending』 by valueset ‖ code ‖ label ‖ Freq)</logicsyntax>
 
 The <logiccolor>sort</logiccolor> command allows you to control the order in which each row of the frequency table appears. The options include:
 
@@ -74,7 +74,7 @@ The <logiccolor>sort</logiccolor> command allows you to control the order in whi
 	<li><logiccolor>by valueset</logiccolor>: the rows will appear in the order that the values are defined in an item's value set.</li>
 	<li><logiccolor>by code</logiccolor>: the rows will appear in order sorted by each row's value.</li>
 	<li><logiccolor>by label</logiccolor>: the rows will appear in order sorted by each row's label as defined in an item's value set.</li>
-	<li><logiccolor>by freq</logiccolor>: the rows will appear in order based on the frequency of each row's value.</li>
+	<li><logiccolor>by Freq</logiccolor>: the rows will appear in order based on the frequency of each row's value.</li>
 </list>
 
 By default, frequency tables are sorted ascending by code. 

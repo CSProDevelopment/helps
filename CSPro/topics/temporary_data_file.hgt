@@ -20,8 +20,8 @@ function ConcatenateDatFiles()
     execsystem(listing_call, wait);
 	
 	// open that file and read all of the contents
-	file file_listing_file;
-	list string file_list;
+	File file_listing_file;
+	List string file_list;
 	
 	file_listing_file.open(file_listing_filename);
 	file_listing_file.read(file_list);
@@ -30,14 +30,14 @@ function ConcatenateDatFiles()
 	filedelete(file_listing_filename);
 	
 	// create and run a pff to concatenate these files
-	pff concat_pff;
+	Pff concat_pff;
 	
-	concat_pff.setproperty("AppType", "Concatenate");
-	concat_pff.setproperty("InputData", file_list);
-	concat_pff.setproperty("OutputData", output_filename);
-    concat_pff.setproperty("Listing", "ConcatenateDatFiles.lst");
-    concat_pff.setproperty("ViewListing", "OnError");
-    concat_pff.setproperty("ViewResults", "No");
+	concat_pff.setProperty("AppType", "Concatenate");
+	concat_pff.setProperty("InputData", file_list);
+	concat_pff.setProperty("OutputData", output_filename);
+    concat_pff.setProperty("Listing", "ConcatenateDatFiles.lst");
+    concat_pff.setProperty("ViewListing", "OnError");
+    concat_pff.setProperty("ViewResults", "No");
 	
 	concat_pff.exec();
 

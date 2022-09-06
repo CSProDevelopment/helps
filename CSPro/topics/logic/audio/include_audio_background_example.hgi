@@ -1,11 +1,13 @@
 PROC GLOBAL
-audio recordingQ1;
+
+Audio recordingQ1;
 
 PROC Q1
+
 preproc
-recordingQ1.record();
+	recordingQ1.record();
 
 postproc
-recordingQ1.stop();
-string audioFilename = maketext("recording%v.m4a", HOUSEHOLD_ID);
-recordingQ1.save(audioFilename);
+	recordingQ1.stop();
+	string audioFilename = maketext("recording%v.m4a", HOUSEHOLD_ID);
+	recordingQ1.save(audioFilename);

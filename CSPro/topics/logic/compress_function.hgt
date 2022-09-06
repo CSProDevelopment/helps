@@ -1,20 +1,24 @@
 ﻿<title>Compress Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 i = compress(<arg>zip_file_name</arg>, <arg>input_file_list</arg> ‖ <arg>input_file_name</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
 The <logiccolor>compress</logiccolor> function compresses one or more files and saves the compressed files in a single .zip file. That file can be decompressed with the <logiccolor>decompress</logiccolor> function or with other popular tools. Compressing data, in addition to saving size, is a convenient way to bundle several files into a single file.
 
-The argument <arg>zip_file_name</arg> is a string expression containing the file name of the output .zip file. If an existing .zip file exists with that name, it will be overwritten. The list of input files can come from a string <link list.hgt>list</link>, <arg>input_file_list</arg>, that could be returned from a <logiccolor>dirlist</logiccolor> function call. Alternatively, the list of input files can come from a string expression <arg>input_file_name</arg>. If using a string expression, you can use the wildcard characters "*" and "?" to specify a group of files.
+The argument <arg>zip_file_name</arg> is a string expression containing the file name of the output .zip file. If an existing .zip file exists with that name, it will be overwritten. The list of input files can come from a string <link list.hgt>List</link>, <arg>input_file_list</arg>, that could be returned from a <logiccolor>dirlist</logiccolor> function call. Alternatively, the list of input files can come from a string expression <arg>input_file_name</arg>. If using a string expression, you can use the wildcard characters "*" and "?" to specify a group of files.
+
 
 <subheader>Return Value</subheader>
 
 The function returns the number of files (but not folders) added to the compressed .zip file. If there was an error creating the compressed file, the function returns <logiccolor>default</logiccolor>.
+
 
 <subheader>Example 1</subheader>
 
@@ -22,14 +26,16 @@ The function returns the number of files (but not folders) added to the compress
 compress("CollectedData.zip", "*.csdb");
 </logic>
 
+
 <subheader>Example 2</subheader>
 
 <logic>
-list string imageFilesListing;
+List string imageFilesListing;
 
 dirlist(imageFilesListing, pathname(InputFile), "*.jpg", recursive);
 
 compress("Images.zip", imageFilesListing);
 </logic>
+
 
 <seealso decompress_function.hgt />

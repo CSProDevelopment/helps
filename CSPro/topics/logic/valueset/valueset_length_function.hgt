@@ -1,4 +1,5 @@
-﻿<title>ValueSet.Length Function</title>
+﻿<title>ValueSet.length Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,13 +7,16 @@
 i = valueset_name.length();
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>valueset.length</logiccolor> function removes the number of values defined in the <link valueset.hgt>value set</link>. When multiple values codes are linked to a single label, each multiple set counts as a single value.
+The <logiccolor>ValueSet.length</logiccolor> function removes the number of values defined in the <link valueset.hgt>ValueSet</link> object. When multiple values codes are linked to a single label, each multiple set counts as a single value.
+
 
 <subheader>Return Value</subheader>
 
 The function returns the length of the value set.
+
 
 <subheader>Example</subheader>
 
@@ -21,7 +25,7 @@ PROC HOUSEHOLD_SELECTION
 
 onfocus
 
-	valueset households_vs;
+	ValueSet households_vs;
 
 	// ...
 	
@@ -30,5 +34,6 @@ onfocus
 		reenter MAIN_MENU;
 	endif;
 </logic>
+
 
 <seealso valueset.hgt />

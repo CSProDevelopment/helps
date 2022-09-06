@@ -1,19 +1,20 @@
 ﻿<title>HashMap Statement</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-hashmap 『<arg>value_type</arg>』 <arg>hashmap_name</arg>『(<arg>dimension_type1</arg>『, ..., <arg>dimension_typeN</arg>』)』 『default(<arg>default_value</arg>)』;
+HashMap 『<arg>value_type</arg>』 <arg>hashmap_name</arg>『(<arg>dimension_type1</arg>『, ..., <arg>dimension_typeN</arg>』)』 『default(<arg>default_value</arg>)』;
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-The <logiccolor>hashmap</logiccolor> statement creates a <link hashmap.hgt>hashmap</link> with the name <arg>hashmap_name</arg>. The hashmap name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare hashmaps globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>HashMap</logiccolor> statement creates a <link hashmap.hgt>HashMap</link> with the name <arg>hashmap_name</arg>. The HashMap name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare HashMap objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
-Hashmap values can be <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. By default a hashmap is numeric, but the type can be modified by specifying the <arg>value_type</arg>.
+HashMap values can be <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. By default a HashMap is numeric, but the type can be modified by specifying the <arg>value_type</arg>.
 
-Unlike an <link array.hgt>array</link>, a hashmap's dimensions are not of fixed size because hashmaps dynamically grow or shrink in size as values are added or removed from the hashmap. A hashmap can have one or more dimensions, and when declaring the hashmap you must specify the type of each dimension. Each <arg>dimension_type</arg> can be:
+Unlike an <link array.hgt>Array</link>, a HashMap's dimensions are not of fixed size because HashMap objects dynamically grow or shrink in size as values are added or removed from the HashMap. A HashMap can have one or more dimensions, and when declaring the HashMap you must specify the type of each dimension. Each <arg>dimension_type</arg> can be:
 
 <indent><table 2 header>
 	<cell>Dimension Type</cell><cell>Key Values</cell>
@@ -22,15 +23,15 @@ Unlike an <link array.hgt>array</link>, a hashmap's dimensions are not of fixed 
 	<cell><logiccolor>string</logiccolor></cell><cell>String values</cell>
 </table></indent>
 
-If no dimensions are specified, then the hashmap is created with a single dimension of type <logiccolor>all</logiccolor>.
+If no dimensions are specified, then the HashMap is created with a single dimension of type <logiccolor>all</logiccolor>.
 
-When assigning a value to a hashmap, all keys will be created as necessary to store the value. However, when retrieving a value, if the keys do not exist, you will get a runtime error and the value <logiccolor>default</logiccolor> or a blank string will be returned. If you want to assign a default value for undefined keys, you can specify a <arg>default_value</arg>, which must be either a numeric constant or a string literal (based on the value type).
+When assigning a value to a HashMap, all keys will be created as necessary to store the value. However, when retrieving a value, if the keys do not exist, you will get a runtime error and the value <logiccolor>default</logiccolor> or a blank string will be returned. If you want to assign a default value for undefined keys, you can specify a <arg>default_value</arg>, which must be either a numeric constant or a string literal (based on the value type).
 
 
 <subheader>Example 1</subheader>
 
 <logic>
-hashmap string simple_hashmap;
+HashMap string simple_hashmap;
 
 simple_hashmap("Kwanzan") = "Cherry Tree";
 simple_hashmap(1603) = "Beginning of Edo period";
@@ -42,7 +43,7 @@ errmsg("%s", simple_hashmap(1868)); // runtime error (1868 is an undefined key)
 <subheader>Example 2</subheader>
 
 <logic>
-hashmap three_dimensional_hashmap(all, numeric, string) default(0);
+HashMap three_dimensional_hashmap(all, numeric, string) default(0);
 
 // proper access:
 three_dimensional_hashmap(1, 2, "Z");

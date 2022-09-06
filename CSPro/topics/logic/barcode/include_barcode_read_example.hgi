@@ -3,5 +3,5 @@
 preproc
 
 	if BLOOD_SAMPLE = "" then
-		BLOOD_SAMPLE = barcode.read("Scan the blood sample barcode");
+		BLOOD_SAMPLE = Barcode.read("Scan the blood sample barcode");
 	endif;

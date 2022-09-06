@@ -1,4 +1,5 @@
-﻿<title>List.Length Function</title>
+﻿<title>List.length Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,18 +7,21 @@
 i = list_name.length();
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>list.length</logiccolor> function returns the size of a <link list.hgt>list</link>, indicating the number of values contained by the list.
+The <logiccolor>List.length</logiccolor> function returns the size of a <link list.hgt>List</link>, indicating the number of values contained by the List.
+
 
 <subheader>Return Value</subheader>
 
-The function returns the length of the list.
+The function returns the length of the List.
+
 
 <subheader>Example</subheader>
 
 <logic>
-list string file_listing;
+List string file_listing;
 
 dirlist(file_listing, pathname(InputFile), "*.csdb");
 
@@ -25,5 +29,6 @@ if file_listing.length() > 0 then
 	skip to DATA_ALREADY_ENTERED;
 endif;
 </logic>
+
 
 <seealso list.hgt length_function.hgt />

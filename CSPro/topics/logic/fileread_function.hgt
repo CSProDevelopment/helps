@@ -1,29 +1,33 @@
 ﻿<title>FileRead Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 b = fileread(<arg>file_handler</arg>, <arg>string_variable</arg> ‖ <arg>string_list</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>fileread</logiccolor> function reads one or more lines of text from the <link file.hgt>file</link> associated with <arg>file_handler</arg>. After the read the file pointer is positioned to the next line in the file. This function reads lines sequentially.
+The <logiccolor>fileread</logiccolor> function reads one or more lines of text from the <link file.hgt>File</link> associated with <arg>file_handler</arg>. After the read the file pointer is positioned to the next line in the file. This function reads lines sequentially.
 
 If a <arg>string_variable</arg> is provided as a argument, a single line of text is read and placed in the variable, which is either a temporary <logiccolor>string</logiccolor> variable or an alphanumeric dictionary item. If the dictionary item is longer than the line of text, blanks will be added at the end. If the item is shorter, the line of text will be truncated.
 
-Alternatively, a string <link list.hgt>list</link> can be used as an argument. In this case, all remaining lines in the file are read and stored in <arg>string_list</arg>.
+Alternatively, a string <link list.hgt>List</link> can be used as an argument. In this case, all remaining lines in the file are read and stored in <arg>string_list</arg>.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.
+
 
 <subheader>Example</subheader>
 
 <logic>
 PROC GLOBAL
 
-file OperatorIdOverrideFile;
+File OperatorIdOverrideFile;
 
 PROC APPLICATION_FF
 
@@ -35,5 +39,6 @@ preproc
 		setoperatorid(operatorid_override);
 	endif;
 </logic>
+
 
 <seealso filewrite_function.hgt file_read_function.hgt />

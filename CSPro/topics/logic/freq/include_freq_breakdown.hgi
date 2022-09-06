@@ -3,10 +3,10 @@
 The optional command <logiccolor>breakdown</logiccolor> allows you to control how alphanumeric items and string variables are tallied. A positive numeric constant, <arg>length</arg>, specifies a number used to split these values before tallying. This can be useful when creating frequencies for data collected using checkboxes. For example, assuming <logiccolor>CHECKBOX_FIELD</logiccolor> occurs twice, first as "AB" and then as "BC":
 
 <logic>
-freq include(CHECKBOX_FIELD); // results in: "AB" (1)
+Freq include(CHECKBOX_FIELD); // results in: "AB" (1)
 							  //			 "BC" (1)
 
-freq include(CHECKBOX_FIELD)  // results in:  "A" (1)
+Freq include(CHECKBOX_FIELD)  // results in:  "A" (1)
 	 breakdown(1); 			  //			  "B" (2)
 							  //			  "C" (1)
 </logic>

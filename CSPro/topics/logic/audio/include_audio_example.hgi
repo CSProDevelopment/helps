@@ -2,47 +2,48 @@
 
 onfocus
 
-// Variable to store the recording
-audio recording;
+	// Variable to store the recording
+	Audio recording;
 
-// Save recording to a file that includes case id-items to differentiate it from
-// audio saved in other cases
-string nameOfAudioFile = maketext("%v%v%vAUDIO_QUESTION.m4a", PROVINCE, DISTRICT, EA);
+	// Save recording to a file that includes case id-items to differentiate it from
+	// audio saved in other cases
+	string nameOfAudioFile = maketext("%v%v%vAUDIO_QUESTION.m4a", PROVINCE, DISTRICT, EA);
 
-// If no audio is recorded for this question then the only option is to record,
-// otherwise allow user to re-record, play or clear recording before continuing
-valueset vs;
-if fileexist(nameOfAudioFile) and recording.load(nameOfAudioFile) then
-	vs.add("Re-record", 1);
-	vs.add("Play recording", 2);
-	vs.add("Clear recording", 3);
-	vs.add("Next question", 4);
-else
-	vs.add("Record", 1);
-endif;
-setvalueset($, vs);
+	// If no audio is recorded for this question then the only option is to record,
+	// otherwise allow user to re-record, play or clear recording before continuing
+	ValueSet vs;
+	if fileexist(nameOfAudioFile) and recording.load(nameOfAudioFile) then
+		vs.add("Re-record", 1);
+		vs.add("Play recording", 2);
+		vs.add("Clear recording", 3);
+		vs.add("Next question", 4);
+	else
+		vs.add("Record", 1);
+	endif;
+
+	setvalueset($, vs);
 
 postproc
 
-if $ = 1 then
-	// Record/re-record
-	recording.clear();
-	string message = "Record the respondents answer to this question";
-	numeric seconds = recording.recordinteractive(message);
-	if seconds > 0 then
-		recording.save(nameOfAudioFile);
-	else
-		errmsg("No audio recorded. Please try again");
+	if $ = 1 then
+		// Record/re-record
+		recording.clear();
+		string message = "Record the respondent's answer to this question";
+		numeric seconds = recording.recordInteractive(message);
+		if seconds > 0 then
+			recording.save(nameOfAudioFile);
+		else
+			errmsg("No audio recorded. Please try again");
+		endif;
+		reenter;
+	elseif $ = 2 then
+		// Play back recording
+		recording.play();
+		reenter;
+	elseif $ = 3 then
+		// Clear the recording
+		filedelete(nameOfAudioFile);
+		reenter;
+	elseif $ = 4 then
+		// Continue to next question
 	endif;
-	reenter;
-elseif $ = 2 then
-	// Play back recording
-	recording.play();
-	reenter;
-elseif $ = 3 then
-	// Clear the recording
-	filedelete(nameOfAudioFile);
-	reenter;
-elseif $ = 4 then
-	// Continue to next question
-endif;

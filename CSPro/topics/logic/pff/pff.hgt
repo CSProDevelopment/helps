@@ -1,33 +1,33 @@
 ﻿<title>Pff Object</title>
 
-In logic, a <logiccolor>pff</logiccolor> is an object that contains information about a CSPro <link program_information_file_pff.hgt>Program Information File (.pff)</link>. PFF files are used to run CSPro applications or tools in production mode. Using the pff object in logic, it is possible to dynamically modify the properties used when running an application or tool.
+In logic, a <logiccolor>Pff</logiccolor> is an object that contains information about a CSPro <link program_information_file_pff.hgt>Program Information File (.pff)</link>. PFF files are used to run CSPro applications or tools in production mode. Using the Pff object in logic, it is possible to dynamically modify the properties used when running an application or tool.
 
 
 <subheader>Functionality</subheader>
 
-A pff is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+A Pff is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor pff>load</logiccolor></cell><cell>Loads the contents a PFF file from the disk.</cell>
-	<cell><logiccolor pff>save</logiccolor></cell><cell>Saves a PFF file to the disk.</cell>
-	<cell><logiccolor pff>getproperty</logiccolor></cell><cell>Gets the value associated with a PFF property.</cell>
-	<cell><logiccolor pff>setproperty</logiccolor></cell><cell>Sets the value associated with a PFF property.</cell>
-	<cell><logiccolor pff>exec</logiccolor></cell><cell>Executes the application or tool associated with the PFF.</cell>
+	<cell><logiccolor Pff>load</logiccolor></cell><cell>Loads the contents a PFF file from the disk.</cell>
+	<cell><logiccolor Pff>save</logiccolor></cell><cell>Saves a PFF file to the disk.</cell>
+	<cell><logiccolor Pff>getProperty</logiccolor></cell><cell>Gets the value associated with a PFF property.</cell>
+	<cell><logiccolor Pff>setProperty</logiccolor></cell><cell>Sets the value associated with a PFF property.</cell>
+	<cell><logiccolor Pff>exec</logiccolor></cell><cell>Executes the application or tool associated with the PFF.</cell>
 </table>
 
-In addition to these object functions, pff objects can be used as arguments to the <logiccolor>filename</logiccolor> function.
+In addition to these object functions, Pff objects can be used as arguments to the <logiccolor>filename</logiccolor> function.
 
 
 <subheader>Assignments</subheader>
 
-Pff objects can be assigned to other pff objects, which will replace the PFF's properties with the properties of the assigned PFF:
+Pff objects can be assigned to other Pff objects, which will replace the Pff's properties with the properties of the assigned Pff:
 
 <logicsyntax>
 <arg>pff_name</arg> = <arg>another_pff_name</arg>;
 </logicsyntax>
 
-When a pff is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+When a Pff is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 
 <subheader>Example</subheader>
@@ -35,5 +35,6 @@ When a pff is used as an argument to a <link user_defined_functions.hgt>user-def
 <logic>
 <include include_listing_example.hgi />
 </logic>
+
 
 <seealso program_information_file_pff.hgt />

@@ -8,8 +8,8 @@ The following is an example of code that will initialize age values based on sex
 PROC GLOBAL
 
 // declare an array and set the initial values
-array AgeSRDeck(2,6) =
-						27, // male head of HH
+
+Array AgeSRDeck(2,6) =  27, // male head of HH
 						30, // male spouse of head
 						 6, // male child of head
 						58, // father of head
@@ -27,12 +27,12 @@ PROC AGE
 	if AGE = notappl then
 		// if the value for age is not valid...
 		// assign the value from the hot deck based on sex and relationship
-		impute(AGE,AgeSRDeck(SEX,RELATIONSHIP));
+		impute(AGE, AgeSRDeck(SEX, RELATIONSHIP));
 
 	else
 		// otherwise...
 		// update the value of the hot deck
-		AgeSRDeck(SEX,RELATIONSHIP) = AGE;
+		AgeSRDeck(SEX, RELATIONSHIP) = AGE;
 
 	endif;
 </logic>

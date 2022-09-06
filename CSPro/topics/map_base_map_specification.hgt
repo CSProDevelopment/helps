@@ -7,7 +7,7 @@ When using CSPro's mapping features, you can use as a base map an online map, wh
 When specifying an online base map name, you can use the name directly or use it as a string expression. For example, these statements have the same effect:
 
 <logic>
-map my_map;
+Map my_map;
 string desired_base_map = "Terrain";
 
 my_map.setBaseMap(Terrain);
@@ -17,7 +17,7 @@ my_map.setBaseMap(desired_base_map);
 
 <subheader>Default Base Map Calculation</subheader>
 
-When using a <link map.hgt>map</link> object, or using functionality such as the <link gps_interactive_modes.hgt>interactive GPS modes</link>, there are ways to specify the base map (by using the <logiccolor>map.setBaseMap</logiccolor> function or by providing a <arg>base_map</arg> argument to the <logiccolor>gps</logiccolor> function call). However, if no base map is specified, the default base map is calculated using the following rules:
+When using a <link map.hgt>Map</link> object, or using functionality such as the <link gps_interactive_modes.hgt>interactive GPS modes</link>, there are ways to specify the base map (by using the <logiccolor>Map.setBaseMap</logiccolor> function or by providing a <arg>base_map</arg> argument to the <logiccolor>gps</logiccolor> function call). However, if no base map is specified, the default base map is calculated using the following rules:
 
 <list ordered>
 	<li>If the PFF has a <pffcolor>BaseMap</pffcolor> attribute set, use it.</li>

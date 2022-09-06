@@ -1,4 +1,4 @@
-﻿<title>Map.RemoveMarker Function</title>
+﻿<title>Map.removeMarker Function</title>
 
 
 <subheader>Format</subheader>
@@ -10,7 +10,7 @@ b = map_name.removeMarker(<arg>markerId</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>map.removeMarker</logiccolor> function removes a marker from the <link map.hgt>map</link> named <logiccolor>map_name</logiccolor>. The <arg>markerId</arg> should be the id returned by <logiccolor>map.addMarker</logiccolor> function when the marker was added to the map.
+The <logiccolor>Map.removeMarker</logiccolor> function removes a marker from the <link map.hgt>Map object</link> named <logiccolor>map_name</logiccolor>. The <arg>markerId</arg> should be the id returned by <logiccolor>Map.addMarker</logiccolor> function when the marker was added to the map.
 
 
 <subheader>Return Value</subheader>
@@ -25,7 +25,7 @@ PROC GLOBAL
 
 // Function that allows the user to modify the marker text or description,
 // or to remove the marker from the map
-function editMarker(map m, numeric markerId)
+function editMarker(Map m, numeric markerId)
 
 	numeric sel = accept("Edit marker", "Text", "Description", "Remove");
 	if sel = 1 then
@@ -49,7 +49,7 @@ PROC SHOW_MAP
 preproc
 
 // Declare a map
-map mymap;
+Map mymap;
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
 numeric markerId = mymap.addMarker(38.84839, -76.931098);

@@ -1,11 +1,12 @@
-﻿<title>Path.SelectFile Function</title>
+﻿<title>Path.selectFile Function</title>
+
 
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = path.selectFile(『<arg>message</arg>』);
+s = Path.selectFile(『<arg>message</arg>』);
 
-s = path.selectFile(『title := <arg>message</arg>,』
+s = Path.selectFile(『title := <arg>message</arg>,』
 					『filter := <arg>wildcard</arg>,』
 					『startDirectory := <arg>start_directory_path</arg>,』
 					『rootDirectory := <arg>root_directory_path</arg>,』
@@ -15,7 +16,7 @@ s = path.selectFile(『title := <arg>message</arg>,』
 
 <subheader>Description</subheader>
 
-The <logiccolor>path.selectFile</logiccolor> function shows the operator a visual listing of the file system and returns the path of the file the operator selected. Hidden and system files are not shown in the visual listing.
+The <logiccolor>Path.selectFile</logiccolor> function shows the operator a visual listing of the file system and returns the path of the file the operator selected. Hidden and system files are not shown in the visual listing.
 
 In the first version, an optional string expression <arg>message</arg> specifies the title of the dialog that shows the file listing. The operator will initially see files starting in the directory where the currently running application is located, and will have access to other files on that drive.
 
@@ -26,9 +27,9 @@ The second version, accessed by using <link function_named_arguments.hgt>named a
 You can specify a string expression, <arg>wildcard</arg>, that is applied to filter the files shown in the visual listing. For example, <logiccolor>"*.csdb"</logiccolor> would show only <link data_sources.hgt>CSPro DB</link> files. You can specify multiple wildcard filters by separating each filter with a semicolon. The filter <logiccolor>"*.jpg;*.jpeg;*.bmp"</logiccolor> would show both JPEG and BMP files. Instead of using a string expression, you can also use a predefined wildcard expression:
 
 <list>
-	<li><logiccolor>FileType.Audio</logiccolor>: Files that the <link audio.hgt>audio</link> object can read and write.</li>
-	<li><logiccolor>FileType.Geometry</logiccolor>: Files that the <link geometry.hgt>geometry</link> object can read and write.</li>
-	<li><logiccolor>FileType.Image</logiccolor>: Files that the <link image.hgt>image</link> object can read and write.</li>
+	<li><logiccolor>FileType.Audio</logiccolor>: Files that the <link Audio.hgt>Audio</link> object can read and write.</li>
+	<li><logiccolor>FileType.Geometry</logiccolor>: Files that the <link Geometry.hgt>Geometry</link> object can read and write.</li>
+	<li><logiccolor>FileType.Image</logiccolor>: Files that the <link image.hgt>Image</link> object can read and write.</li>
 </list>
 
 
@@ -52,7 +53,7 @@ The function returns a string with the path of the selected file, or a blank str
 <subheader>Example 1</subheader>
 
 <logic>
-string pff_filename = path.selectFile(title := "Select an Application to Execute", 
+string pff_filename = Path.selectFile(title := "Select an Application to Execute",
 									  filter := "*.pff");
 
 if pff_filename <> "" then
@@ -64,10 +65,10 @@ endif;
 <subheader>Example 2</subheader>
 
 <logic>
-string data_directory = path.concat(application, "../Data");
-string current_region_data_directory = path.concat(data_directory, maketext("%v", REGION));
+string data_directory = Path.concat(application, "../Data");
+string current_region_data_directory = Path.concat(data_directory, maketext("%v", REGION));
 
-string data_filename = path.selectFile(title := "Select a Data File To Process", 
+string data_filename = Path.selectFile(title := "Select a Data File To Process",
 									   filter := "*.csdb",
 									   rootDirectory := data_directory,
 									   startDirectory := current_region_data_directory);
@@ -77,7 +78,7 @@ string data_filename = path.selectFile(title := "Select a Data File To Process",
 <subheader>Example 3</subheader>
 
 <logic>
-string image_filename = path.selectFile(title := "Select Your Favorite Image", 
+string image_filename = Path.selectFile(title := "Select Your Favorite Image",
 									    rootDirectory := Media.Images);
 </logic>
 

@@ -1,32 +1,32 @@
 ﻿<title>Document Object</title>
 
-In logic, a <logiccolor>document</logiccolor> object facilitates the storage of text or binary files. Unlike CSPro data files, or text files (accessed via <logiccolor>file</logiccolor>), the contents of a document cannot be directly edited.
+In logic, a <logiccolor>Document</logiccolor> object facilitates the storage of text or binary files. Unlike CSPro data files, or text files (accessed via <logiccolor>File</logiccolor>), the contents of a Document cannot be directly edited.
 
 
 <subheader>Functionality</subheader>
 
-A document object is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+A Document object is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor document>load</logiccolor></cell><cell>Reads a file and stores its contents in the document object.</cell>
-	<cell><logiccolor document>save</logiccolor></cell><cell>Writes the contents of the document object to a file.</cell>
-	<cell><logiccolor document>view</logiccolor></cell><cell>Displays the contents of the file held by the document object.</cell>
-	<cell><logiccolor document>clear</logiccolor></cell><cell>Clears the document object's contents.</cell>
+	<cell><logiccolor Document>load</logiccolor></cell><cell>Reads a file and stores its contents in the Document object.</cell>
+	<cell><logiccolor Document>save</logiccolor></cell><cell>Writes the contents of the Document object to a file.</cell>
+	<cell><logiccolor Document>view</logiccolor></cell><cell>Displays the contents of the file held by the Document object.</cell>
+	<cell><logiccolor Document>clear</logiccolor></cell><cell>Clears the Document object's contents.</cell>
 </table>
 
-In addition to these object functions, document objects can be used as arguments to the <logiccolor>filename</logiccolor> and <logiccolor>view</logiccolor> functions.
+In addition to these object functions, Document objects can be used as arguments to the <logiccolor>filename</logiccolor> and <logiccolor>view</logiccolor> functions.
 
 
 <subheader>Assignments</subheader>
 
-Document objects can be assigned to other document objects, which will replace the document's contents with the contents from the assigned document object.
+Document objects can be assigned to other Document objects, which will replace the Document's contents with the contents from the assigned Document object.
 
 <logicsyntax>
 <arg>document_name</arg> = <arg>another_document_name</arg>;
 </logicsyntax>
 
-It is also possible to assign <link audio.hgt>audio</link>, <link geometry.hgt>geometry</link>, and <link image.hgt>image</link> objects to a document. These assignments will always succeed.
+It is also possible to assign <link audio.hgt>Audio</link>, <link geometry.hgt>Geometry</link>, and <link image.hgt>Image</link> objects to a Document. These assignments will always succeed.
 
 <logicsyntax>
 <arg>document_name</arg> = <arg>audio_name</arg>;
@@ -34,7 +34,7 @@ It is also possible to assign <link audio.hgt>audio</link>, <link geometry.hgt>g
 <arg>document_name</arg> = <arg>image_name</arg>;
 </logicsyntax>
 
-You can also make the reverse assignment, assigning a document to an audio, geometry, or image object. A runtime error will occur if the document's data cannot be converted to those objects.
+You can also make the reverse assignment, assigning a Document to an Audio, Geometry, or Image object. A runtime error will occur if the Document's data cannot be converted to those objects.
 
 <logicsyntax>
 <arg>audio_name</arg> = <arg>document_name</arg>;
@@ -42,7 +42,7 @@ You can also make the reverse assignment, assigning a document to an audio, geom
 <arg>image_name</arg> = <arg>document_name</arg>;
 </logicsyntax>
 
-When a document is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+When a Document is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 
 <subheader>Example</subheader>

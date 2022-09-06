@@ -1,4 +1,5 @@
-﻿<title>Map.ClearButtons Function</title>
+﻿<title>Map.clearButtons Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,24 +7,28 @@
 b = map_name.clearButtons();
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>map.clearButtons</logiccolor> function removes all the buttons currently on the <link map.hgt>map</link> named <logiccolor>map_name</logiccolor>.
+The <logiccolor>Map.clearButtons</logiccolor> function removes all the buttons currently on the <link map.hgt>Map object</link> named <logiccolor>map_name</logiccolor>.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true).
 
+
 <subheader>Example</subheader>
 
 <logic>
 PROC GLOBAL
+
 numeric showAddHousehold = true;
 numeric showFilter = true;
 
 // User function that will be called on button click
 // to update the buttons
-function updateButtons(map myMap)
+function updateButtons(Map mymap)
 
 	// Clear existing buttons
 	myMap.clearButtons();
@@ -38,7 +43,7 @@ function updateButtons(map myMap)
 	
 	myMap.addTextButton("Done", closeMap(myMap));
 end;
-
 </logic>
+
 
 <seealso map.hgt map_add_text_button_function.hgt map_add_image_button_function.hgt map_clear_markers_function.hgt />

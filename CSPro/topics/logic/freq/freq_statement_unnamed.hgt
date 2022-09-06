@@ -1,9 +1,10 @@
 ﻿<title>Freq Statement (Unnamed)</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-freq
+Freq
 include(<arg>variables_to_tabulate</arg>)
 『exclude(<arg>variables_not_to_tabulate</arg>)』
 『disjoint』
@@ -17,9 +18,9 @@ include(<arg>variables_to_tabulate</arg>)
 
 <subheader>Description</subheader>
 
-The <logiccolor>freq</logiccolor> statement is used to define a frequency table that will be written to the <link frequencies_file.hgt>frequencies file</link>. Unlike <link freq.hgt>named frequencies</link>, which allow for control over when frequencies are tallied, frequencies generated using the <logiccolor>freq</logiccolor> statement are tallied at the location where they are defined. Due to this, the statement cannot be located in <logiccolor>PROC GLOBAL</logiccolor>, in user-defined functions, or in application procedures.
+The <logiccolor>Freq</logiccolor> statement is used to define a frequency table that will be written to the <link frequencies_file.hgt>frequencies file</link>. Unlike <link freq.hgt>named frequencies</link>, which allow for control over when frequencies are tallied, frequencies generated using the <logiccolor>Freq</logiccolor> statement are tallied at the location where they are defined. Due to this, the statement cannot be located in <logiccolor>PROC GLOBAL</logiccolor>, in user-defined functions, or in application procedures.
 
-The <link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link> tool generates <logiccolor>freq</logiccolor> statements automatically, so one way to learn about how to use the statement is to select items to tabulate in that tool and then use the <b>View</b> -> <b>Batch Logic</b> option to see the commands used to generate the specified frequencies.
+The <link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link> tool generates <logiccolor>Freq</logiccolor> statements automatically, so one way to learn about how to use the statement is to select items to tabulate in that tool and then use the <b>View</b> -> <b>Batch Logic</b> option to see the commands used to generate the specified frequencies.
 
 
 <include include_freq_variable_specification.hgi />
@@ -44,7 +45,7 @@ PROC QUEST
 	// create frequency tables for all numeric items in the
 	// HOUSING_REC record with the exception of H13_PERSONS
 
-	freq
+	Freq
 	include(numeric, HOUSING_REC)
 	exclude(H13_PERSONS);
 </logic>
@@ -65,7 +66,7 @@ PROC QUEST
 	// distinct means that the frequency tables will show all values,
 	// not combining values if the value sets have ranges (such as age 0-4)
 
-	freq
+	Freq
 	include(PERSON_REC(1))
 	universe(totocc(PERSON_REC) > 0)
 	weight(20)
@@ -81,7 +82,7 @@ PROC QUEST
 	// create a frequency table for the item H15_ASSETS, which
 	// was collected using a checkbox with each value of length 2
 
-	freq(H15_ASSETS)
+	Freq(H15_ASSETS)
 	breakdown(2);
 </logic>
 

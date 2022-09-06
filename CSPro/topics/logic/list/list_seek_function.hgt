@@ -1,4 +1,5 @@
-﻿<title>List.Seek Function</title>
+﻿<title>List.seek Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,18 +7,21 @@
 i = list_name.seek(<arg>value</arg>, 『<arg>starting_index</arg> ‖ @<arg>nth_occurrence</arg>』);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>list.seek</logiccolor> function returns the one-based index of the first occurrence in the <link list.hgt>list</link> of <arg>value</arg>. The type of the value must match the type of the list. If the numeric expression <arg>starting_index</arg> is provided, then the function starts searching the for value starting at the index provided. Alternatively, if the @ symbol precedes the numeric expression <arg>nth_occurrence</arg>, the function searches for the n<html><sup>th</sup></html> occurrence of the value.
+The <logiccolor>List.seek</logiccolor> function returns the one-based index of the first occurrence in the <link list.hgt>List</link> of <arg>value</arg>. The type of the value must match the type of the List. If the numeric expression <arg>starting_index</arg> is provided, then the function starts searching the for value starting at the index provided. Alternatively, if the @ symbol precedes the numeric expression <arg>nth_occurrence</arg>, the function searches for the n<html><sup>th</sup></html> occurrence of the value.
+
 
 <subheader>Return Value</subheader>
 
-The function returns the one-based index of the value, if found, and 0 if no such value is in the list.
+The function returns the one-based index of the value, if found, and 0 if no such value is in the List.
+
 
 <subheader>Example</subheader>
 
 <logic>
-list string keys_to_process;
+List string keys_to_process;
 
 // ... 
 
@@ -25,5 +29,6 @@ if keys_to_process.seek(key(DICT_NAME)) = 0 then
 	skip case;
 endif;
 </logic>
+
 
 <seealso list.hgt seek_function.hgt />

@@ -1,4 +1,5 @@
-﻿<title>Freq.Clear Function</title>
+﻿<title>Freq.clear Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -9,7 +10,7 @@ b = freq_name.clear();
 
 <subheader>Description</subheader>
 
-The <logiccolor>freq.clear</logiccolor> function resets all of the tallied frequencies in a <link freq.hgt>freq object</link>, setting each tally to 0.
+The <logiccolor>Freq.clear</logiccolor> function resets all of the tallied frequencies in a <link freq.hgt>Freq object</link>, setting each tally to 0.
 
 
 <subheader>Return Value</subheader>
@@ -20,7 +21,7 @@ The function returns a logical value of 1 (true).
 <subheader>Example</subheader>
 
 <logic>
-freq hh_status_freq(HH_STATUS);
+Freq hh_status_freq(HH_STATUS);
 
 // do something with hh_status_freq
 

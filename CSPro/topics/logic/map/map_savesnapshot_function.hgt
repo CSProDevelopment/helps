@@ -1,4 +1,4 @@
-﻿<title>Map.SaveSnapshot Function</title>
+﻿<title>Map.saveSnapshot Function</title>
 
 
 <subheader>Format</subheader>
@@ -10,7 +10,7 @@ b = map_name.saveSnapshot(<arg>filename</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>map.saveSnapshot</logiccolor> function saves the currently displayed map as an image. The image is specified by the string expression <arg>filename</arg> and must have an extension associated with either JPEG or PNG formats. The map must be currently displayed when this function is called, so it must be executed via a callback function association with a <link map_set_marker_on_click_function.hgt>marker</link> or <link map_add_text_button_function.hgt>button</link>.
+The <logiccolor>Map.saveSnapshot</logiccolor> function saves the currently displayed map as an image. The image is specified by the string expression <arg>filename</arg> and must have an extension associated with either JPEG or PNG formats. The map must be currently displayed when this function is called, so it must be executed via a callback function association with a <link map_set_marker_on_click_function.hgt>marker</link> or <link map_add_text_button_function.hgt>button</link>.
 
 
 <subheader>Return Value</subheader>
@@ -23,13 +23,13 @@ The function returns a logical value of 1 (true) if the map snapshot image was s
 <logic>
 PROC GLOBAL
 
-function SaveMap(map m, string image_filename)
+function SaveMap(Map m, string image_filename)
 	m.saveSnapshot(image_filename);
 end;
 
 PROC EXAMPLE
 
-	map capitals_map;
+	Map capitals_map;
 	
 	// ...
 	

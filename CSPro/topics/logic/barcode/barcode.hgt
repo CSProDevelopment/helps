@@ -7,10 +7,10 @@ When running a data entry application on an Android device, you can use the devi
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor>barcode.read</logiccolor></cell><cell>Reads a barcode and returns its value as a string.</cell>
+	<cell><logiccolor>Barcode.read</logiccolor></cell><cell>Reads a barcode and returns its value as a string.</cell>
 </table>
 
-In addition to barcode functions accessible using logic, you can <link CSDeploy::generate_deploy_qr_code.hgt>generate a QR code</link> that can be used to install applications on mobile devices.
+In addition to Barcode functions accessible using logic, you can <link CSDeploy::generate_deploy_qr_code.hgt>generate a QR code</link> that can be used to install applications on mobile devices.
 
 You can also read barcodes using the <link barcode_capture_type.hgt>Barcode capture type</link>.
 
@@ -20,5 +20,6 @@ You can also read barcodes using the <link barcode_capture_type.hgt>Barcode capt
 <logic>
 <include include_barcode_read_example.hgi />
 </logic>
+
 
 <seealso barcode_capture_type.hgt multimedia_features.hgt />

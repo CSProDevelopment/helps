@@ -1,4 +1,5 @@
-﻿<title>File.Close Function</title>
+﻿<title>File.close Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,9 +7,11 @@
 b = file_handler.close();
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>file.close</logiccolor> function closes the text <link file.hgt>file</link> associated with <arg>file_handler</arg>. You must close a file before using it in any other application. If you do not close the file explicitly, it will be closed when the CSPro application terminates. This function is equivalent to the <logiccolor>close</logiccolor> function.
+The <logiccolor>File.close</logiccolor> function closes the text <link file.hgt>File</link> associated with <arg>file_handler</arg>. You must close a file before using it in any other application. If you do not close the file explicitly, it will be closed when the CSPro application terminates. This function is equivalent to the <logiccolor>close</logiccolor> function.
+
 
 <subheader>Return Value</subheader>
 
@@ -17,7 +20,7 @@ The function returns a logical value of 1 (true) if successful and 0 (false) oth
 <subheader>Example</subheader>
 
 <logic>
-file report_file;
+File report_file;
 
 // ... 
 
@@ -25,5 +28,6 @@ report_file.close();
 
 view(filename(report_file));
 </logic>
+
 
 <seealso file.hgt file_open_function.hgt close_function.hgt />

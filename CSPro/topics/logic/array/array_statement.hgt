@@ -1,17 +1,18 @@
 ﻿<title>Array Statement</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-array 『<arg>array_type</arg>』 <arg>array_name</arg>(<arg>dimension1</arg>『, ..., <arg>dimensionN</arg>』) 『save』;
+Array 『<arg>array_type</arg>』 <arg>array_name</arg>(<arg>dimension1</arg>『, ..., <arg>dimensionN</arg>』) 『save』;
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-The <arg>array</arg> statement creates an <link array.hgt>array</link> with the name <arg>array_name</arg>. Only one array at a time can be declared with the array statement. The array name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare arrays in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>Array</logiccolor> statement creates an <link array.hgt>Array</link> with the name <arg>array_name</arg>. Only one array at a time can be declared with the Array statement. The array name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare arrays in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
-Arrays can be numeric, alphanumeric or string. By default an array is numeric, but the type can be modified by specifying the <arg>array_type</arg>.  If creating an alphanumeric array, the length of each array element can be specified by definining the <arg>array_type</arg> as follows:
+Array objects can be numeric, alphanumeric or string. By default an array is numeric, but the type can be modified by specifying the <arg>array_type</arg>.  If creating an alphanumeric array, the length of each array element can be specified by definining the <arg>array_type</arg> as follows:
 
 <logicsyntax>alpha 『(<arg>array_length</arg>)』</logicsyntax>
 
@@ -36,7 +37,7 @@ All arrays marked with <logiccolor>save</logiccolor> in the application are writ
 <logic>
 PROC GLOBAL
 
-array numeric MinimumAgeMarriage(2) = 15, // male
+Array numeric MinimumAgeMarriage(2) = 15, // male
 									  12; // female
 
 PROC MARRIAGE_AGE
@@ -53,7 +54,7 @@ PROC MARRIAGE_AGE
 <logic>
 PROC GLOBAL
 
-array string Months(12) = "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+Array string Months(12) = "Jan", "Feb", "Mar", "Apr", "May", "Jun",
 						  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec";
 
 function string FormatDate()
@@ -66,7 +67,7 @@ end;
 
 <logic>
 numeric NumberProvinces = 12;
-array numeric SexCountsByProvince(NumberProvinces, 2); // province by sex
+Array numeric SexCountsByProvince(NumberProvinces, 2); // province by sex
 
 PROC SEX
 

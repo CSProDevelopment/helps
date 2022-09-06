@@ -1,4 +1,4 @@
-﻿<title>Freq.Save Function</title>
+﻿<title>Freq.save Function</title>
 
 <subheader>Format</subheader>
 
@@ -9,7 +9,7 @@ b = freq_name.save(『<arg>frequencies_filename</arg>』) 『<arg>formatting_opt
 
 <subheader>Description</subheader>
 
-The <logiccolor>freq.save</logiccolor> function generates frequencies based on the values in a <link freq.hgt>freq object</link> and saves the frequency tables to a <link frequencies_file.hgt>frequencies file</link>. The optional string argument <arg>frequencies_filename</arg> allows you to specify the name of the file. If this argument is not provided, the frequency table will be saved to the file specified by the <pffcolor>Freqs</pffcolor> PFF attribute. If this PFF attribute is not specified, the frequency table will be saved to the listing file (if possible).
+The <logiccolor>Freq.save</logiccolor> function generates frequencies based on the values in a <link freq.hgt>Freq object</link> and saves the frequency tables to a <link frequencies_file.hgt>frequencies file</link>. The optional string argument <arg>frequencies_filename</arg> allows you to specify the name of the file. If this argument is not provided, the frequency table will be saved to the file specified by the <pffcolor>Freqs</pffcolor> PFF attribute. If this PFF attribute is not specified, the frequency table will be saved to the listing file (if possible).
 
 Optional <link freq_formatting_options.hgt>formatting options</link> allow you to control how the frequency tables are generated. The formatting options include the following commands: <logiccolor>valueset</logiccolor>, <logiccolor>distinct</logiccolor>, <logiccolor>vset</logiccolor>, <logiccolor>heading</logiccolor>, <logiccolor>stat</logiccolor>, <logiccolor>percentiles</logiccolor>, <logiccolor>nofreq</logiccolor>, <logiccolor>decimals</logiccolor>, <logiccolor>sort</logiccolor>, <logiccolor>nonetpercents</logiccolor>, and <logiccolor>pagelength</logiccolor>.
 
@@ -22,7 +22,7 @@ The function returns a logical value of 1 (true) if the frequencies are successf
 <subheader>Example</subheader>
 
 <logic>
-freq hh_status_freq(HH_STATUS);
+Freq hh_status_freq(HH_STATUS);
 
 forcase LISTING_DICT where FIPS = 13 do
 	hh_status_freq.tally();

@@ -1,19 +1,19 @@
 ﻿string data_directory = "C:\CSPro Data Files";
 
-string survey_data_path = path.concat(data_directory, "Region 1", "COVID-19 Survey.csdb");
+string survey_data_path = Path.concat(data_directory, "Region 1", "COVID-19 Survey.csdb");
 // result: C:\CSPro Data Files\Region 1\COVID-19 Survey.csdb
 
-string region_data_directory = path.getDirectoryName(survey_data_path);
+string region_data_directory = Path.getDirectoryName(survey_data_path);
 // result: C:\CSPro Data Files\Region 1\
 
-string survey_data_filename = path.getFilename(survey_data_path);
+string survey_data_filename = Path.getFileName(survey_data_path);
 // result: COVID-19 Survey.csdb
 
-string survey_data_extension = path.getExtension(survey_data_path);
+string survey_data_extension = Path.getExtension(survey_data_path);
 // result: .csdb
 
-string survey_data_filename_without_extension = path.getFilenameWithoutExtension(survey_data_path);
+string survey_data_filename_without_extension = Path.getFileNameWithoutExtension(survey_data_path);
 // result: COVID-19 Survey
 
-string survey_data_path_relative_to_data_directory = path.getRelativePath(data_directory, survey_data_path);
+string survey_data_path_relative_to_data_directory = Path.getRelativePath(data_directory, survey_data_path);
 // result: Region 1\COVID-19 Survey.csdb

@@ -34,9 +34,9 @@
  to the value set, the size of the array will automatically reflect the
  changes.</p>
 <p style="font-size: 10pt; font-weight: normal; font-family: 'Courier New', monospace;"><font
-	 color="#000000"><font color="#0000FF">array</font> Age_HD_from_Sex(SEX_VS);
+	 color="#000000"><font color="#0000FF">Array</font> Age_HD_from_Sex(SEX_VS);
  <font color="#008000">//&#160;same as array Age_HD_From_Sex(2);<br />
-</font><font color="#0000FF">array</font> Age_HD_from_Sex_Relationship(SEX_VS,RELATIONSHIP_VS);</font></p>
+</font><font color="#0000FF">Array</font> Age_HD_from_Sex_Relationship(SEX_VS,RELATIONSHIP_VS);</font></p>
 <p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;">To
  create a DeckArray, at least one of the dimensions must be a value set,
  but it is permissible that the other dimensions are declared with a numeric
@@ -44,7 +44,7 @@
  on value sets, it is necessary to specify the indices of any numeric dimensions
  when calling getdeck or putdeck.</p>
 <p style="font-weight: normal; font-family: 'Courier New', monospace; font-size: 10pt;"><font
-	 color="#0000FF">array</font> Age_HD_from_EA_Sex(<font color="#FF0000">200</font>,SEX_VS);
+	 color="#0000FF">Array</font> Age_HD_from_EA_Sex(<font color="#FF0000">200</font>,SEX_VS);
  <font color="#008000">//&#160;same as array Age_HD_From_EA_Sex(200,2);</font></p>
 <p style="font-size: 10pt; font-weight: normal; font-family: 'Courier New', monospace;"><span
 	 style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Accounting
@@ -60,7 +60,7 @@
  who do not belong to the Christian sects identified. This is indicated
  by adding a (+) after the value set name.</p>
 <p style="font-size: 10pt; font-weight: normal; font-family: 'Courier New', monospace;"><font
-	 color="#000000"><font color="#0000FF">array</font> CEB_HD_Religion(RELIGION_CHRISTIAN_SECTS_VS(+));</font></p>
+	 color="#000000"><font color="#0000FF">Array</font> CEB_HD_Religion(RELIGION_CHRISTIAN_SECTS_VS(+));</font></p>
 <p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: bold;">Example
  1</p>
 <p style="font-size: 10pt; font-family: Arial, sans-serif; font-weight: normal;">Simplified
@@ -72,11 +72,11 @@
 <p style="font-size: 10pt; font-weight: normal; font-family: 'Courier New', monospace;"><font
 	 color="#000000"><font color="#0000FF">PROC</font> <font color="#0000FF">GLOBAL</font><br />
 <br />
-<font color="#0000FF">array</font> ageFromSpouseHotdeck(SEX_VS,AGE_VS);<br />
+<font color="#0000FF">Array</font> ageFromSpouseHotdeck(SEX_VS,AGE_VS);<br />
 <br />
 <font color="#0000FF">numeric</font> maxHHSize = <font color="#FF0000">10</font>;<br />
 <br />
-<font color="#0000FF">array</font> ageFromHHSizeHotdeck(<font color="#FF0000">10</font>,SEX_VS);
+<font color="#0000FF">Array</font> ageFromHHSizeHotdeck(<font color="#FF0000">10</font>,SEX_VS);
  <font color="#008000">//&#160;household size is from 1 - 10+<br />
 </font><br />
 <br />
@@ -175,7 +175,7 @@
 </font>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font
 	 color="#008000">//&#160;this after the command:<br />
 </font><br />
-<font color="#0000FF">array</font> ageHotdeck(VS_SEX,VS_EDUC(+));&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font
+<font color="#0000FF">Array</font> ageHotdeck(VS_SEX,VS_EDUC(+));&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font
 	 color="#008000">//&#160;&#160;00 &#160;&#160;00 &#160;&#160;00 &#160;&#160;00<br />
 </font>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font
 	 color="#008000">//&#160;&#160;00 &#160;&#160;00 &#160;&#160;00 &#160;&#160;00<br />

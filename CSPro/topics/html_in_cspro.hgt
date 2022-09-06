@@ -1,5 +1,6 @@
 ﻿<title>HTML in CSPro</title>
 
+
 <subheader>Overview</subheader>
 
 While CSPro is not a web-based application, HTML is used in CSPro in a variety of ways:
@@ -12,6 +13,7 @@ While CSPro is not a web-based application, HTML is used in CSPro in a variety o
 </list>
 
 HTML files or websites are displayed in an embedded window using a Chromium-based web browser (<link https://developer.microsoft.com/en-us/microsoft-edge/webview2>Edge WebView2</link> on Windows; <link https://developer.android.com/reference/android/webkit/WebView>WebView</link> on Android). In this web browser, it is possible to use the <link javascript_interface.hgt>JavaScript interface</link> to interact with various CSPro features.
+
 
 <subheader>Local Web Server and HTML Directory References</subheader>
 
@@ -38,15 +40,15 @@ HTML, JavaScript, CSS, and other files that CSPro uses for its operations are lo
 
 The <logiccolor>pathname</logiccolor> and other path-related functions can return the name of this directory using the <logiccolor>Html</logiccolor> argument.
 
-If you want to access any of the files in that directory in HTML that you write, you should not reference the file using an absolute path (using a file URL) because the web browser that displays the HTML may not be able to access local files. Instead, you should use the <logiccolor>path.getRelativePath</logiccolor> function to construct a relative path from the location of your HTML content. For example, if trying to use the PFF icon from a <link templated_reports.hgt>report</link>:
+If you want to access any of the files in that directory in HTML that you write, you should not reference the file using an absolute path (using a file URL) because the web browser that displays the HTML may not be able to access local files. Instead, you should use the <logiccolor>Path.getRelativePath</logiccolor> function to construct a relative path from the location of your HTML content. For example, if trying to use the PFF icon from a <link templated_reports.hgt>report</link>:
 
 <report html>
 <!-- will not work when displayed in CSPro: -->
-<img src="file:///C:\Program Files (x86)\CSPro <definition version />\html\images\pff-icon.png" />
+<img src="file:///C:/Program Files (x86)/CSPro <definition version />/html/images/pff-icon.png" />
 
 <!-- correct format: -->
-<img src="~~path.getRelativePath(path.getDirectoryName(filename($)),
-								 "C:\Program Files (x86)\CSPro <definition version />\html\images\pff-icon.png")~~" />
+<img src="~~Path.getRelativePath(Path.getDirectoryName(filename($)),
+								 "C:/Program Files (x86)/CSPro <definition version />/html/images/pff-icon.png")~~" />
 </report>
 
 Fortunately, the local web server treats the <i>html</i> directory as the root of the server. The above example can instead be coded as:

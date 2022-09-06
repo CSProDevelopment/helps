@@ -1,8 +1,8 @@
 PROC GLOBAL
 
-// create a freq object that will tally the sex and age of
+// create a Freq object that will tally the sex and age of
 // the first occurrence (the head)
-freq head_sex_age_freq(P03_SEX(1), P04_AGE(1));
+Freq head_sex_age_freq(P03_SEX(1), P04_AGE(1));
 
 PROC CENSUS_DICTIONARY_FF
 

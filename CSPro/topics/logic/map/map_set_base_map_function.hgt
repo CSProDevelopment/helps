@@ -1,4 +1,5 @@
-﻿<title>Map.SetBaseMap Function</title>
+﻿<title>Map.setBaseMap Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -9,7 +10,7 @@ b = map_name.setBaseMap(<arg>base_map</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>map.setBaseMap</logiccolor> function changes the <link map_base_map_specification.hgt>base map</link> that is displayed when the <link map.hgt>map</link> named <logiccolor>map_name</logiccolor> is shown. Maps can use online base maps, which require an Internet connection to load, or can use offline base maps, which requires a map file stored on the device. 
+The <logiccolor>Map.setBaseMap</logiccolor> function changes the <link map_base_map_specification.hgt>base map</link> that is displayed when the <link map.hgt>Map object</link> named <logiccolor>map_name</logiccolor> is shown. Maps can use online base maps, which require an Internet connection to load, or can use offline base maps, which requires a map file stored on the device. 
 
 To specify an online map, use one of the following names as the <arg>base_map</arg>:
 
@@ -29,7 +30,7 @@ The function returns a logical value of 1 (true) if the base map was changed suc
 
 <logic>
 // Declare a map
-map mymap;
+Map mymap;
 
 // Change the base map to satellite imagery
 mymap.setBaseMap(Satellite);
@@ -43,7 +44,7 @@ mymap.show();
 
 <logic>
 // Declare a map
-map mymap;
+Map mymap;
 
 // Change the base map to an offline map file
 mymap.setBaseMap("Maps/Suitland.mbtiles");

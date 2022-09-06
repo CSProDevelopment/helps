@@ -15,7 +15,7 @@ A list of available functions can be found in each of those summary pages.
 One way to understand dot notation is to think of it as a shorthand way to specify what variable should be used when performing an operation. For example, here are two ways to work through the elements of a list:
 
 <logic>
-list string household_members;
+List string household_members;
 
 // CSPro 7.2 and earlier:
 do numeric counter = 1 while counter <= length(household_members)
@@ -29,7 +29,7 @@ Unlike other CSPro functions, the functions that are associated with an object w
 Using a dot specifies that you are accessing a function or variable (property) of the object. For example, a value set object contains two internal variables, codes and labels, both of which are lists, that can be accessed as in:
 
 <logic>
-list string province_labels = PROVINCE_VS.labels;
+List string province_labels = PROVINCE_VS.labels;
 numeric selected_province = province_labels.show("Select a province");
 </logic>
 

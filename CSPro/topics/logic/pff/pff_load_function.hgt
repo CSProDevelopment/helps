@@ -1,4 +1,5 @@
-﻿<title>Pff.Load Function</title>
+﻿<title>Pff.load Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,24 +7,28 @@
 b = pff_name.load(<arg>pff_filename</arg> ‖ <arg>application_name</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>pff.load</logiccolor> function loads the contents from an existing PFF file into a <link pff.hgt>pff</link>. If supplying a string expression, <arg>pff_filename</arg>, the properties from that PFF will be loaded. If supplying an <arg>application_name</arg> (the name of your application, which generally ends with _FF), then the PFF used to run the current application will be loaded.
+The <logiccolor>Pff.load</logiccolor> function loads the contents from an existing PFF file into a <link pff.hgt>Pff</link> object. If supplying a string expression, <arg>pff_filename</arg>, the properties from that PFF will be loaded. If supplying an <arg>application_name</arg> (the name of your application, which generally ends with _FF), then the PFF used to run the current application will be loaded.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the PFF file exists and was successfully loaded and 0 (false) otherwise.
+
 
 <subheader>Example 1</subheader>
 
 <logic>
 // run the household data entry application but change the name
 // of the data file to the current cluster
-pff household_pff;
+Pff household_pff;
 household_pff.load("Household.pff");
-household_pff.setproperty("InputData", maketext("%v.csdb", CLUSTER));
+household_pff.setProperty("InputData", maketext("%v.csdb", CLUSTER));
 household_pff.exec();
 </logic>
+
 
 <subheader>Example 2</subheader>
 
@@ -32,14 +37,15 @@ function DisplayMinorMessage(string message_text)
 
 	// do not display minor messages when running this batch
 	// application and only showing summary messages
-	pff this_application_pff;
+	Pff this_application_pff;
 	this_application_pff.load(CENSUS_FF);
 	
-	if this_application_pff.getproperty("ErrmsgOverride") <> "Summary" then
+	if this_application_pff.getProperty("ErrmsgOverride") <> "Summary" then
 		errmsg("%s", message_text);
 	endif;
 
 end;
 </logic>
+
 
 <seealso pff.hgt pff_save_function.hgt />

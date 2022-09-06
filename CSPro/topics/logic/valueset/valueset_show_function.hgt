@@ -1,4 +1,5 @@
-﻿<title>ValueSet.Show Function</title>
+﻿<title>ValueSet.show Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,18 +7,21 @@
 d = valueset_name.show(『<arg>heading</arg>』);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>valueset.show</logiccolor> function displays the labels from a <link valueset.hgt>value set</link> and returns the code (or index) of the operator's selection. An optional string expression, <arg>heading</arg>, specifies the title of the window that displays the values. The function is similar to the <logiccolor>accept</logiccolor> function but with the options taken from the value set's labels. For numeric value sets, the returned value corresponds with the selected label's code. For a string value set, the returned value is the index of the selected label.
+The <logiccolor>ValueSet.show</logiccolor> function displays the labels from a <link valueset.hgt>ValueSet</link> object and returns the code (or index) of the operator's selection. An optional string expression, <arg>heading</arg>, specifies the title of the window that displays the values. The function is similar to the <logiccolor>accept</logiccolor> function but with the options taken from the value set's labels. For numeric value sets, the returned value corresponds with the selected label's code. For a string value set, the returned value is the index of the selected label.
+
 
 <subheader>Return Value</subheader>
 
 The function returns the code (or index) of the item selected. If the selected value contains a <link special_values.hgt>special value</link>, then that value is returned. The value 0 is returned if the escape key (or back button) is pressed and none of the values is chosen.
 
+
 <subheader>Example</subheader>
 
 <logic>
-valueset respondent_query;
+ValueSet respondent_query;
 
 do numeric counter = 1 while counter <= count(NAME)
 	respondent_query.add(NAME(counter), LINE_NUMBER(counter));
@@ -25,5 +29,6 @@ enddo;
 
 numeric respondent_line_number = respondent_query.show("Who in the household is responding to questions?");
 </logic>
+
 
 <seealso valueset.hgt accept_function.hgt show_function.hgt showarray_function.hgt list_show_function.hgt />
