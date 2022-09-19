@@ -1,155 +1,29 @@
 ﻿<title>Expressions</title>
 
+An expression is a combination of operators and operands. Operands can be constants, items, variables, functions, or some combination thereof. Operators can be <b>arithmetic</b> (+, -, *, /), <b>relational</b> (=, &lt;>, >, &lt;, >=, &lt;=) or <b>logical</b> (<logiccolor>and, or, not</logiccolor>). Every expression evaluates to a value and can therefore be used as a sub-expression of other expressions. There are three types of expressions: numeric, string, and logical.
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Numeric Expressions</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+They evaluate to numbers. The following are numeric expressions:
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">An expression is a combination of operators and operands.
- Operands can be constants, items, variables, functions, or some combination
- thereof.</font> <a href="operators.html"><font style="font-family: Arial;
-												 font-size: 10pt;" face="Arial"
-												 size="2">Operators</font></a>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">can be arithmetic (+, -, *, /), relational (=, &lt;&gt;,
- &gt;, &lt;, &gt;=, &lt;=) or logical (and, or, not). Every expression
- evaluates to a value and can therefore be used as a sub-expression of
- other expressions. There are three types of expressions: numeric, string,
- and logical.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">•&#160;Numeric</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">&#160;</font></b><font style="font-family: Arial;
-													 font-size: 10pt;"
-													 color="#000000" face="Arial"
-													 size="2">They</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">evaluate to numbers. The following are numeric expressions:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 9.60pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#FF0000" face="Courier New" size="2">4</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 9.60pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#FF0000" face="Courier New" size="2">4</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">+</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#FF0000" face="Courier New"
-													 size="2">5</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 9.60pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#000000" face="Courier New" size="2">A
- / B</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 9.60pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#000000" face="Courier New" size="2">A*(B+C/D)</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 9.60pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#000000" face="Courier New" size="2">A
- +</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-				 face="Courier New" size="2">sqrt</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">(B)</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">•&#160;String</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">&#160;</font></b><font style="font-family: Arial;
-													 font-size: 10pt;"
-													 color="#000000" face="Arial"
-													 size="2">They</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">evaluate to strings. The following are string expressions:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 9.60pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 face="Courier New" size="2">answer=</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">&quot;Yes&quot;</font><font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#000000"
-															 face="Courier New"
-															 size="2">;</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 9.60pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">concat</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(FIRST_NAME,</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#FF00FF"
-															 face="Courier New"
-															 size="2">&quot;
- &quot;</font><font style="font-family: 'Courier New'; font-size: 10pt;"
-					 color="#000000" face="Courier New" size="2">, LAST_NAME);</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 9.60pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#0000FF" face="Courier New" size="2">edit</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF00FF"
-												 face="Courier New" size="2">&quot;ZZZZ9&quot;</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">, A + B);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.50pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•&#160;Logical</font></b></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Logical expressions (conditions)</font> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 color="#000000"
-															 face="Arial"
-															 size="2">evaluate
- to</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-					 color="#000000" face="Arial" size="2">true</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">(1) or</font> <b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">false</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">(0). The following are logical conditions:</font></p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 9.60pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#000000" face="Courier New" size="2">KIDS
- &gt;</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-					 color="#FF0000" face="Courier New" size="2">5</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 9.60pt;"><font style="font-family: 'Courier New'; font-size: 10pt;"
-								 color="#000000" face="Courier New" size="2">SEX
- =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-				 face="Courier New" size="2">2</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#0000FF"
-															 face="Courier New"
-															 size="2">and</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">AGE &gt;</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#FF0000"
-															 face="Courier New"
-															 size="2">12</font></p>
-</body>
-</html>
+<logic>4
+4 + 5
+(A / B) + 3
+A * (B + C/D)
+A + sqrt(B)</logic>
 
+<subheader>String Expressions</subheader>
 
-<html><!---♻---></html>
+They evaluate to strings. The following are string expressions:
+
+<logic>answer = "Yes";
+concat(FIRST_NAME, " ", LAST_NAME);
+edit("ZZZZ9", A + B);</logic>
+
+<subheader>Logical Expressions</subheader>
+
+Logical expressions (conditions) evaluate to <logiccolor>true (1)</logiccolor> or <logiccolor>false (0)</logiccolor>. The following are logical conditions:
+
+<logic>KIDS > 5
+SEX = 2 and AGE >= 12</logic>
+
