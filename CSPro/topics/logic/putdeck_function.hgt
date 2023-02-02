@@ -1,94 +1,34 @@
 ﻿<title>PutDeck Function</title>
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<logicsyntax>
+b = putdeck (<arg>array_name</arg>, <arg>numeric_expression</arg>『,<arg>override_dim1</arg>, <arg>override_dim2</arg>, <arg>override_dim3</arg>』);
+</logicsyntax>
+ 
+<subheader>Description</subheader>
 
-<body>
+The <logiccolor>putdeck</logiccolor> function updates the value being stored in the <logiccolor>DeckArray</logiccolor> hot deck by using the current value(s) of the <link value_sets_description.hgt>value set</link> items that were defined as dimensions in the DeckArray declaration. <logiccolor>putdeck</logiccolor> automatically recodes the value set items and accesses the proper cell in the hot deck, where it stores the value of the numeric_expression. If any of the DeckArray dimensions are not associated with a value set, then you must specify the desired numeric index when calling the function.
 
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">d =</font> <span style="color: #0000ff; font-family: 'Courier New';
-								 font-size: 10pt; font-weight: bold;">pu</span><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">tdeck</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">(<span style="font-style: italic;">array-name</span>,<span
-	 style="font-style: italic;">numeric-expression</span>[,<span style="font-style: italic;">override-dim1</span>,</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2"><span style="font-style: italic;">override-dim2</span>,</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2"><span style="font-style: italic;">override-dim3</span></font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">]);</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">putdeck</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">function
- updates the value in the DeckArray hotdeck using the current values in
- the items identified by the value sets used in the declaration of the
- DeckArray. The function automatically recodes the values and accesses
- the proper cell in the hotdeck, where it places the value of the <span
-	 style="font-style: italic;">numeric-expression</span>. If any of the
- dimensions of the DeckArray are not value set dimensions, you must specify
- the numeric index when calling the function.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;
-	 font-family: Arial; font-size: 10pt;">If a (+) is specified after
- the <span style="font-style: italic;">array-name</span>, the &quot;leftover&quot;
- rows for the hotdeck will also be updated with the value. See the <a href="DeckArray_Leftover_Rows.html">leftover
- rows</a> page for more information.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Return
- value:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- function returns 1 if successful or DEFAULT in the case that the values
- supplied are not valid entries in the value sets and thus could not be
- recoded to a proper cell in the hotdeck.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><span
-	 style="font-family: 'Courier New', monospace; font-size: 10pt;"><font
-	 color="#000000"><font color="#0000FF">array</font> education_HD_SexAge(SEX_VS,AGE_FOR_EDUCATION_HD_VS)
- <font color="#0000FF">save</font>;<br />
-<br />
-...<br />
-<br />
-<font color="#0000FF">PROC</font> EDUCATION<br />
-<br />
-&#160;&#160;&#160;&#160;<font color="#0000FF">putdeck</font>(education_HD_SexAge,EDUCATION);
- <font color="#008000">//&#160;use current values for sex and age<br />
-</font>&#160;&#160;&#160;&#160;<font color="#0000FF">putdeck</font>(education_HD_SexAge,EDUCATION,<font
-	 color="#FF0000">1</font>); <font color="#008000">//&#160;override
- sex only<br />
-</font>&#160;&#160;&#160;&#160;<font color="#0000FF">putdeck</font>(education_HD_SexAge,EDUCATION,,<font
-	 color="#FF0000">28</font>); <font color="#008000">//&#160;override
- age only<br />
-</font>&#160;&#160;&#160;&#160;<font color="#0000FF">putdeck</font>(education_HD_SexAge,EDUCATION,<font
-	 color="#FF0000">1</font>,<font color="#FF0000">28</font>); <font color="#008000">//&#160;override
- both value and age</font></font></span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
-	 style="font-weight: bold;">See also:</font></b> <a href="DeckArrays.html"
-														 style="font-family: Arial, sans-serif;">DeckArrays</a>,
- <a href="DeckArray_Leftover_Rows.html">DeckArray Leftover Rows</a>, <a
-	 href="Getdeck_Function.html">Getdeck Function</a></p>
-</body>
-</html>
+If (+) was specified after any of the array_name dimensions, the <link DeckArray_Leftover_Rows.hgt>"leftover"</link> rows for that dimension will be updated whenever an invalid value for that dimension is given.
 
+<subheader>Return Value</subheader>
 
-<html><!---♻---></html>
+The function returns 1 if successful or DEFAULT in the event that the values supplied are not valid entries in the value sets and thus could not be recoded to a proper cell in the hot deck.
+
+<subheader>Example</subheader>
+
+<logic>
+array education_HD_SexAge (SEX_VS, AGE_FOR_EDUCATION_HD_VS) save;
+
+// more code ...
+
+PROC EDUCATION
+
+    putdeck (education_HD_SexAge, EDUCATION);      // use current values for sex and age
+    putdeck (education_HD_SexAge, EDUCATION,1);    // override sex only
+    putdeck (education_HD_SexAge, EDUCATION, ,28); // override age only
+    putdeck (education_HD_SexAge, EDUCATION,1,28); // override both sex and age
+</logic> 
+
+<seealso DeckArrays.hgt DeckArray_Leftover_Rows.hgt Getdeck_Function.hgt />
