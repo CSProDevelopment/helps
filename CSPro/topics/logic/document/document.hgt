@@ -42,6 +42,12 @@ You can also make the reverse assignment, assigning a Document to an Audio, Geom
 <arg>image_name</arg> = <arg>document_name</arg>;
 </logicsyntax>
 
+You can assign a string expression to a Document object, which will replace the Document's contents with the text, as if the contents had been read from a text file.
+
+<logicsyntax>
+<arg>document_name</arg> = "string expression";
+</logicsyntax>
+
 When a Document is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 
