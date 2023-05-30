@@ -6,7 +6,6 @@ You can associate multiple message files with an application, which can be usefu
 
 If the name of an external message file begins with "CSProRuntime," then the messages in that file will override the CSPro system messages. See <link collaborating_on_cspro_development.hgt>Collaborating on CSPro Development </link> for more information about this file.
 
-
 <subheader>Basic Messages</subheader>
 
 Each line in the message file contains one message. A message consists of a message number followed by text. The message text can be up to 240 characters long. It is displayed on the entry screen when an <logiccolor>errmsg</logiccolor> function with the message number is executed in a data entry application. It is written to the execution report when <logiccolor>errmsg</logiccolor> function with the message number is executed in a batch application. The messages can also be accessed with other functions (including <logiccolor>maketext</logiccolor>).
@@ -19,7 +18,6 @@ For example, suppose a message file contains the following lines:
 </message>
 
 When an <logiccolor>errmsg(1)</logiccolor> function is executed in a data entry application, the message "This is the first message" is displayed on screen. When an <logiccolor>errmsg(2)</logiccolor> function is executed, the message "This is the second message" is displayed.
-
 
 <subheader>Messages with Arguments</subheader>
 
@@ -48,6 +46,25 @@ PROC HHDAY
 	endif;
 </logic>
 
+<subheader>Messages With Comments</subheader>
+
+There are two ways to mark text as a <link comments.hgt>comment</link>. The first method is to use the brace symbols <logiccolor>{ }</logiccolor>, the second method is to use the double slashes <logiccolor>//</logiccolor>. Comments can be used to clarify the syntax listed in a message, or identify "ownership" of the message or message blocks (i.e., what code blocks use the messages--global messages or just specific areas?). Unlike lines of logic, comments can not be embedded within the message line or appear at the end of a message line. Comments can only appear on a line by itself.
+
+For example, messages might be grouped as follows in your message file: 
+
+<message>
+// Global messages
+
+0001 If the interview result code <> 1 (interview started), the interview will terminate.
+0002 If consent is not given, the interview will terminate.
+0003 Consent was previously given, are you sure you wish to change it to no?
+
+// date-related messages
+
+0020 Interview year (%d) can not be after system year (%d) 
+0021 Interview date (YYYY/MM/DD=/%4d/%02d/%02d) can not be after system date (YYYY/MM/DD=%4d/%02d/%02d)
+0022 Invalid date (month/day combo not possible (MM/DD=%02d/%02d).
+</message>
 
 <subheader>Messages in Multiple Languages</subheader>
 
