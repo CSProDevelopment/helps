@@ -1,0 +1,42 @@
+﻿<title>HTML Question Text</title>
+
+<subheader>Overview</subheader>
+
+For those with experience using <link html_in_cspro.hgt>HTML</link>, it is possible to format the question using HTML tags and CSS styles. To view the HTML code, click on the <b>Code</b> button on the question text editor toolbar.
+
+CSPro supports all tags and attributes in standard HTML5, including images, tables, and CSS styles.
+
+The HTML for each question does not include the &lt;html&gt; or &lt;body&gt; tags. The HTML question text is inserted into to a complete HTML document that already has those tags.
+
+
+<subheader>Styles</subheader>
+
+All styles defined in the <link question_text_edit_styles.hgt>Edit Styles</link> dialog are included as CSS classes in the HTML document by CSPro. These styles can therefore be used in the HTML question text by setting the class attribute of a tag to the name of one of the styles. For example:
+
+<color html>
+<p>A question with <span class="instruction">a style applied to this part</span>.</p>
+</color>
+
+The <b>normal</b> style is applied to the &lt;body&gt; tag by CSPro so that all unstyled text in the question text uses the <b>normal</b> style.
+
+In addition, the document created by CSPro sets the background color to yellow on Windows Desktop and to gray on Android.
+
+Finally the document adds some basic styling to tables such as borders and padding.
+
+
+<subheader>External Files</subheader>
+
+References to external files such as images and stylesheets may be included in the HTML question text. All paths must be relative paths based on the location of the application (.ent or .pen) file. Absolute paths are not supported. When deploying your application, make sure to copy the external files as well or include them in a <link resource_folders.hgt>resource folder</link>.
+
+
+<subheader>JavaScript Interface</subheader>
+
+A <link javascript_interface.hgt>JavaScript interface</link> exists to facilitate the invocation of <link user_defined_functions.hgt>user-defined functions</link> from question text. This feature allows advanced users to take advantage of the power of JavaScript to allow some interaction between question text and CSPro logic. For example:
+
+<report html>
+<p>You are entering person ~~curocc()~~. When all persons have been recorded, 
+<a href="javascript:CSPro.runLogicAsync('EndPersonRoster();');">click here</a>.</p>
+</report>
+
+
+<seealso html_in_cspro.hgt change_formatting.hgt question_text_file_qsf.hgt />

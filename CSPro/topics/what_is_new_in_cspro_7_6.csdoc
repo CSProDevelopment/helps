@@ -1,0 +1,68 @@
+﻿<title>What's New in CSPro 7.6?</title>
+
+This is a detailed list of changes in CSPro 7.6. For a more general overview, see the <i>readme.txt</i> file located in the CSPro installation folder.
+
+
+<subheader>General</subheader>
+
+<list>
+	<li>The CAPI question text system has been redesigned to use <link html_question_text.hgt>HTML</link> when displaying question text. In addition, question text <link create_fills_in_questions.hgt>fills</link> and <link create_conditional_questions.hgt>conditions</link> can now include any logic expression, so using the full set of CSPro logic functions is now possible when working with question text.</li>
+	<li>The frequency generation system has been overhauled. Frequencies can now be written to <link frequencies_file.hgt>four formats</link>, including Excel and HTML, and they can be generated in data entry applications. The new <link freq.hgt>Freq</link> logic object offers a way to tally frequencies in a different way from the traditional <logiccolor>Freq</logiccolor> statement.</li>	
+	<li><link listing_file.hgt>Listing files</link> can now be written as Excel or HTML files.</li>
+</list>
+
+
+<subheader>Android</subheader>
+
+<list>
+	<li>The new <link barcode_capture_type.hgt>barcode</link> capture type allows for scanning numeric or string barcodes using the device's camera.</li>
+	<li>The new <link slider.hgt>slider</link> capture type facilitates capturing numeric range values using a graphical slider.</li>
+	<li>When using <logiccolor>execsystem</logiccolor> to launch the <link camera.hgt>camera</link> or <link signature.hgt>signature</link> widgets, it is now possible to specify overlay text that will appear on the device's screen while the widget is active.</li>
+	<li>Production PFFs for the <link CSDiff::introduction_to_compare_data.hgt>Compare Data</link>, <link CSConcat::introduction_to_concatenate_data.hgt>Concatenate Data</link>, <link CSIndex::introduction_to_csindex.hgt>Index Data</link>, <link ParadataConcat::introduction_to_paradata_concatenator.hgt>Paradata Concatenator</link>, <link CSReFmt::introduction_to_reformat_data.hgt>Reformat Data</link>, and <link CSSort::introduction_to_sort_data.hgt>Sort Data</link> tools can now be executed on Android (with a few <link android_limitations.hgt>limitations</link>).</li>
+	<li>Applications copied to the <i>csentry</i> directory on a mobile device via a local folder deployment (created using the <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link> tool) can now be updated by the <link CSDeploy::update_deployment_mobile.hgt>Update Installed Applications</link> feature.</li>
+</list>
+
+
+<subheader>CAPI Question Text</subheader>
+
+<list>
+	<li>Question text now fully supports <link add_pictures.hgt>images</link>, tables, hyperlinks, and <link html_question_text.hgt>HTML code</link>.</li>
+	<li>The question text editor supports <link question_text_edit_styles.hgt>customizable styles</link> to make it easy to use standard formats throughout a survey. Styles replace the fonts <i>CAPI Font 1</i> and <i>CAPI Font 2</i> used in earlier versions.</li>
+	<li><link create_fills_in_questions.hgt>Fills</link> in question text are now delimited with <b>~~</b> instead of <b>%</b>. Fills using % in applications created in earlier versions of CSPro are automatically converted to ~~ when opening the application in version 7.6.</li>
+	<li>The format of the <link question_text_file_qsf.hgt>question text file (.qsf)</link> has changed. The new file format uses HTML instead of Rich Text Format (RTF). Question text files from earlier versions of CSPro will be converted to the new format when opened in version 7.6, though you must edit the QSF text to force the conversion to occur. The original RTF version of the QSF file will be retained as xxx.qsf.backup. Applications with question text created or edited in version 7.6 can no longer be opened in older versions.</li>
+</list>
+
+
+<subheader>Frequencies</subheader>
+
+<list>
+	<li>The <link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link> tool has new <link CSFreq::select_frequency_options.hgt>options</link>, including the ability to create percentiles, sort the frequencies, and output frequencies in several different formats. The tool can also directly create a batch application to generate the specified frequencies (using the <logiccolor>Freq</logiccolor> statement).</li>
+	<li>A new logic object, <link freq.hgt>Freq</link>, allows for the creation of frequencies with control over when the values are tallied. It has the functions: <logiccolor Freq>clear</logiccolor>, <logiccolor Freq>save</logiccolor>, <logiccolor Freq>tally</logiccolor>, and <logiccolor Freq>view</logiccolor>.</li>
+</list>
+
+
+<subheader>Logic</subheader>
+
+<list>
+	<li>A new feature in the logic editor, <link symbol_analysis.hgt>Symbol Analysis</link>, shows where each dictionary symbol, form symbol, and user-defined function is used in an application.</li>
+	<li>Double-clicking on an error or warning in the compiler output window that originated from an <link logic_file_apc.hgt>external logic file</link> will result in that file being opened in <link https://notepad-plus-plus.org>Notepad++</link> (if that software is installed).</li>
+	<li>The optional <logiccolor>stop</logiccolor> code has new behavior when running batch applications. If not 1, the application's postproc will be executed; if 1, it will not, which was the behavior for all codes prior to CSPro 7.6.</li>
+	<li><link saved_arrays_file_sva.hgt>Saved arrays</link> are now supported in data entry applications.</li>
+	<li>The <logiccolor>impute</logiccolor> function has several new behaviors: alphanumeric items can be imputed; the return value of the function, when used on a numeric item, is the value of the imputed value; the <logiccolor>vset</logiccolor> option, that worked using a value set index, has been replaced with a <logiccolor>valueset</logiccolor> option that takes a value set name; and the <logiccolor>stat</logiccolor> data file format has changed, as have the <logiccolor>stat</logiccolor> options, including a way to turn on <logiccolor>stat</logiccolor> automatically for all imputations.</li>
+	<li>The <logiccolor>impute</logiccolor> function is fully functional in data entry and tabulation applications (and can be used on Android).</li>
+	<li>Encrypted SQLite databases can be queried using <logiccolor>sqlquery</logiccolor> by specifying a password in a <link connection_string.hgt>connection string</link> or by having an operator enter the password manually.</li>
+	<li>The counter variable used in a <logiccolor>do</logiccolor> loop can now be any numeric variable (such as a dictionary item or a list element).</li>
+	<li>The <logiccolor>execpff</logiccolor> function, when used on PFFs for several tools with the <logiccolor>wait</logiccolor> flag, now launches the tool without creating a new process.</li>
+	<li>The <logiccolor>Pff.setProperty</logiccolor> function accepts a dictionary name as an argument, which can be used to run several tools using a dictionary embedded in a <link binary_data_entry_application_file_pen.hgt>.pen file</link>.</li>
+</list>
+
+
+<subheader>Tools</subheader>
+
+<list>
+	<li>The <link CSExport::introduction_to_export_data.hgt>Export Data</link> tool can no longer export to DDI 2.0 or CSPro XML formats. In addition, the Export XML Metadata tool has been removed from the CSPro installation. Users still needing this tool can find it on <link https://<definition csprousers_website />><definition csprousers_website /></link>.</li>
+	<li>The Export Data tool can directly <link CSExport::select_export_method.hgt>create a batch application</link> with the specified export settings (using the <logiccolor>export</logiccolor> statement).</li>
+</list>
+
+
+<seealso what_is_new_in_cspro.hgt />
