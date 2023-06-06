@@ -14,6 +14,8 @@ b = syncconnect(<arg>CSWeb</arg>,<arg>csweb_url</arg>『,<arg>username</arg>『,
 
 The <logiccolor>syncconnect</logiccolor> function opens a connection to a CSWeb server to synchronize data and files over the Internet. The first argument must be the keyword <arg>CSWeb</arg>. The second argument, <arg>csweb_url</arg>, is a string expression of the full URL of the CSWeb server. The third and fourth arguments, <arg>username</arg> and <arg>password</arg> are optional string arguments of the credentials used to login to the server. If the username and password are not specified, the user will be prompted to enter them the first time the synchronization is run. After the credentials have been entered the first time, they are saved in secure storage on the device and do not need to be entered again. You can use the <link cspro_settings.hgt>CSPro Settings</link> dialog to clear any cached credentials.
 
+<b>Note: </b>If the attempt to establish an internet connection was unsuccessful, CSPro will alert you with an error message. If you wish to preempt this error message in order to handle this situation on your own, use the <topic connection_function.hgt />. 
+
 For more information about CSWeb servers, see the <link synchronization.hgt>Synchronization Overview</link> and the <link CSWeb::introduction_to_csweb.hgt>CSWeb help documentation</link>.
 
 
@@ -34,4 +36,4 @@ endif;
 </logic>
 
 
-<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_bluetooth.hgt syncconnect_function_dropbox.hgt syncconnect_function_ftp.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt />
+<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_bluetooth.hgt syncconnect_function_dropbox.hgt syncconnect_function_ftp.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt connection_function.hgt />

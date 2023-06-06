@@ -1,28 +1,35 @@
 ﻿<title>Array Statement</title>
 
-<subheader>Format</subheader>
+Note the two formats below are identical except in the handling of assigning values to the array dimensions. In Format 1, all dimension values are listed out. In Format 2, the sequence "..." (three dots/periods) can be written at the end of the array declaration when providing start values for the array dimensions. The "..." signifies that all subsequent array dimensions will be assigned the values listed up to that point. See Example 4 below for further clarification.
+
+<subheader>Format 1</subheader>
 
 <logicsyntax>
-array 『<arg>array_type</arg>』 <arg>array_name</arg>(<arg>dimension1</arg>『, ..., <arg>dimensionN</arg>』) 『save』;
+array 『<arg>array_type</arg>』 <arg>array_name</arg>(<arg>dim1</arg>『, ..., <arg>dimN</arg>』) 『save』 『= <arg>dim1_value</arg>『, ..., <arg>dimN_value</arg>』』;
+</logicsyntax>
+
+<subheader>Format 2</subheader>
+
+<logicsyntax>
+array 『<arg>array_type</arg>』 <arg>array_name</arg>(<arg>dim1</arg>『, ..., <arg>dimN</arg>』) 『save』 『= <arg>dim1_value</arg>『, <arg>dim2_value</arg>『, ...』』;
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-The <arg>array</arg> statement creates an <link array.hgt>array</link> with the name <arg>array_name</arg>. Only one array at a time can be declared with the array statement. The array name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare arrays in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>array</logiccolor> statement creates an <link array.hgt>array</link> with the name <arg>array_name</arg>. Only one array at a time can be declared with the array statement. The array name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare arrays in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
-Arrays can be numeric, alphanumeric or string. By default an array is numeric, but the type can be modified by specifying the <arg>array_type</arg>.  If creating an alphanumeric array, the length of each array element can be specified by definining the <arg>array_type</arg> as follows:
+Arrays can be numeric, alphanumeric, or string. By default an array is numeric, but the type can be modified by specifying the <arg>array_type</arg>.  If creating an alphanumeric array, the length of each array element can be specified by definining the <arg>array_type</arg> as follows:
 
 <logicsyntax>alpha 『(<arg>array_length</arg>)』</logicsyntax>
 
 If <arg>array_length</arg> is not specified, each element will be 16 characters.
 
-The size of each dimension is specified by supplying a constant positive numeric value, <arg>dimension1</arg> to <arg>dimensionN</arg>. An array must have at least one dimension. CSPro supports arrays of an unlimited number of dimensions. A previously defined numeric value can also be used to specify the dimension size. The <logiccolor>array.length</logiccolor> function can be used to query the size of a dimension.
+<b>Array Size:</b> The size of each dimension is specified by supplying a constant positive numeric value, <arg>dimension1</arg> to <arg>dimensionN</arg>. An array must have at least one dimension. The starting position of each dimension is 1, not 0. CSPro supports arrays of an unlimited number of dimensions. A previously-defined numeric value can also be used to specify the dimension size. The <logiccolor>array.length</logiccolor> function can be used to query the size of a dimension (see Example 3 below for both these conditions).
 
-The initial values of the elements of an array can be set when declaring the array by listing each value, separated by a comma. If some values are defined and then followed by <logiccolor>...</logiccolor>, that set of values will be used over and over until the entire array has been initialized.
+<b>Initializing Arrays:</b> The initial values of the array elements can be assigned when declaring the array by listing each value you wish to use. If some values are defined followed by <b>...</b>, the values that have been defined to that point will be used over and over until the entire array has been initialized (see Example 4 below).
 
-With a numeric array, each element starts with the value 0. For alphanumeric and string arrays, each element starts as a blank string. If using a numeric <link initialize_hot_decks_using_saved_arrays.hgt>saved array</link>, the initial array contents are <logiccolor>default</logiccolor>.
-
+<b>Array Start Values:</b> With a numeric array, each element starts with the value 0. For alphanumeric and string arrays, each element starts as a blank string. If using a numeric <link initialize_hot_decks_using_saved_arrays.hgt>saved array</link>, the initial array contents are <logiccolor>default</logiccolor>.
 
 <subheader>Saved Arrays</subheader>
 
@@ -33,16 +40,18 @@ All arrays marked with <logiccolor>save</logiccolor> in the application are writ
 
 <subheader>Example 1 (Numeric)</subheader>
 
+By including the <logiccolor>save</logiccolor> option, the contents of the MinAgeMarriage array will be saved to an external <link saved_arrays_file_sva.hgt>.sva file</link>.
+
 <logic>
 PROC GLOBAL
 
-array numeric MinimumAgeMarriage(2) = 15, // male
-									  12; // female
+array numeric MinAgeMarriage(2) save = 15, // male
+									   12; // female
 
 PROC MARRIAGE_AGE
 
-	if MARRIAGE_AGE < MinimumAgeMarriage(SEX) then
-		errmsg("The minimum age of marriage is %d", MinimumAgeMarriage(SEX));
+	if MARRIAGE_AGE < MinAgeMarriage(SEX) then
+		errmsg("The minimum age of marriage is %d", MinAgeMarriage(SEX));
 		reenter;
 	endif;
 </logic>
@@ -65,8 +74,10 @@ end;
 <subheader>Example 3 (Assignment)</subheader>
 
 <logic>
+PROC GLOBAL
+
 numeric NumberProvinces = 12;
-array numeric SexCountsByProvince(NumberProvinces, 2); // province by sex
+array SexCountsByProvince(NumberProvinces, 2); // province by sex
 
 PROC SEX
 
@@ -81,4 +92,25 @@ PROC DISPLAY_COUNTS
 </logic>
 
 
-<seealso array.hgt saved_arrays_file_sva.hgt  deckarrays.hgt deckarray_leftover_rows.hgt hashmap.hgt list.hgt numeric_statement.hgt alpha_statement.hgt string_statement.hgt />
+<subheader>Example 4 (Repeating an Assignment with "...")</subheader>
+
+<logic>
+PROC GLOBAL
+
+// Relationship codes correspond to:
+//   1=head
+//   2=spouse
+//   3=child
+//   4=grandchild
+//   5=parent of head
+//   6=sibling of head
+//   7=other relative
+//   8=unrelated
+
+array HD_Sex_Rel (8) = 1, 2, 1, 1, 2, 2, 1, 2;	// Format 1, all values are explicitly stated
+array HD_Sex_Rel (8) = 0, ...;		// Format 2, zero will be assigned to all array positions
+array HD_Sex_Rel (8) = 1, 2, ...;	// Format 2, values 1 & 2 will be used (respectively) for array positions 3-4, 5-6, and 7-8
+</logic>
+
+
+<seealso array.hgt saved_arrays_file_sva.hgt deckarrays.hgt deckarray_leftover_rows.hgt hashmap.hgt list.hgt numeric_statement.hgt alpha_statement.hgt string_statement.hgt />

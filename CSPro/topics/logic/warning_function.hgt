@@ -32,6 +32,8 @@ Each argument is sequentially inserted into the warning message. Arguments can b
 
 If using the <logiccolor>select</logiccolor> option, then one of the field arguments must be <logiccolor>continue</logiccolor> or you must specify a <arg>default_option</arg>, which corresponds to one of the select choices begin presented. This is necessary if advancing within the application, for while the message will not be displayed, the logic will be evaluated, and CSPro needs to know where to go. See below for an example on this usage. If the system is not processing an advance, using <arg>default_option</arg> places the focus on the select option chosen when the message is presented. If a <arg>default_option</arg> is not given, no button will have the focus.
 
+If you wish to split message text across two or more lines, refer to the <topic message_formatting_options.hgt /> page.
+
 <subheader>Return Value</subheader>
 
 The function returns the cardinal number of the button pressed. When the <b>select</b> keyword is not used, the function will return 1, as only the "OK" button is presented to the user, corresponding to button #1 ("Cancel" is never presented, and so a code of zero is not possible).

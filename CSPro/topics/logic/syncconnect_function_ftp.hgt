@@ -16,6 +16,8 @@ CSPro synchronization can work with FTP servers using encrypted transmission via
 
 You can optionally specify a port number by adding it to the end of the URL, separated by a colon. For example, the URL <logiccolor>"ftp://myserver.com:27"</logiccolor> tells CSPro to connect to port 27. If no port is specified, the standard FTP port will be used (port 21 for FTP or port 990 for FTPS).
 
+<b>Note: </b>If the attempt to establish an internet connection was unsuccessful, CSPro will alert you with an error message. If you wish to preempt this error message in order to handle this situation on your own, use the <topic connection_function.hgt />. 
+
 <subheader>Example</subheader>
 
 <logic>
@@ -32,4 +34,4 @@ if syncconnect(FTP,ftpServerUrl) then
 endif;
 </logic>
 
-<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_bluetooth.hgt syncconnect_function_dropbox.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt />
+<seealso synchronization.hgt syncconnect_function.hgt syncconnect_function_csweb.hgt syncconnect_function_bluetooth.hgt syncconnect_function_dropbox.hgt syncconnect_function_dropbox_local.hgt syncconnect_function_files_local.hgt connection_function.hgt />

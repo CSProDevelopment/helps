@@ -8,11 +8,11 @@ s = getdeviceid();
 
 <subheader>Description</subheader>
 
-The <logiccolor>getdeviceid</logiccolor> function returns a string that can be used to uniquely identify a device. As programmed now, it returns a MAC address on Windows and an <link https://developer.android.com/reference/android/provider/Settings.Secure.html>ANDROID_ID</link> on Android, but this may change in the future. It is theoretically possible that this ID is not unique, but the chance of this happening without deliberate user invention is virtually impossible.
+The <logiccolor>getdeviceid</logiccolor> function returns a string that can be used to uniquely identify a device. As currently programmed, it returns a MAC address on Windows and an <link https://developer.android.com/reference/android/provider/Settings.Secure.html>ANDROID_ID</link> on Android, but this may change in the future. It is theoretically possible that this ID is not unique, but the chance of this happening without deliberate user invention is virtually impossible.
 
 <subheader>Return Value</subheader>
 
-The function returns a string with the unique ID.
+The function returns a string with the unique ID. If you choose to serialize this value to a dictionary, you should declare an alpha variable of length 100.
 
 <subheader>Example</subheader>
 

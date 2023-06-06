@@ -115,9 +115,13 @@ The synchronization functions all assume that your CSPro application is already 
 
 <subheader>Troubleshooting</subheader>
 
-Many errors that you encounter during synchronization are caused by lack of network connectivity. An easy way to check if an error is a problem with your CSPro program rather than a general network error is to try to connect to the sync server in the web browser on the device you are trying to synchronize. For example, if you are trying to synchronize data on a tablet using Dropbox, try to connect to https://www.dropbox.com in the web browser on your tablet. If you are unable to connect in the web browser then there is a problem with your connection to the Internet rather than a problem with your CSPro application.
+Many errors that you may encounter during synchronization are caused by a lack of network connectivity rather than a problem within your CSPro program. An easy way to identify the source of the problem is to attempt to connect to the sync server within your web browser. For example, if you are trying to synchronize data on a tablet using Dropbox, go to <b>https://dropbox.com</b> within its web browser. If you are unable to connect then there is a problem with your connection to the Internet which needs to be resolved.
 
-To get additional details on synchronization errors you can look at the sync.log file. This files lists all synchronization oprtations along with any errors encountered. This includes errors in uploading/downloading applications in Application Deployment and data download in Data Viewer. On Android devices you can find the sync.log file in the CSEntry directory on your tablet or phone. On Windows you can find the file in the directory <i>%AppData%\CSPro</i>. On Windows you can also locate the sync.log file from the Help menu in CSPro Designer under Troubleshooting. When asking for technical support with synchronization issues, please attach the sync.log file from your device to your email or forum post.
+To get additional details on synchronization errors you can look at the sync.log file. This files lists all synchronization operations along with any errors encountered. This includes errors in uploading/downloading applications in Application Deployment and data download in Data Viewer. 
+
+<b>On Android</b> devices you can find the sync.log file in the CSEntry directory. <include ../../Shared/topics/csentry_directory.hgt />
+
+<b>On Windows</b> you can find the file in the directory <i>%AppData%\CSPro</i>. On Windows you can also locate the sync.log file from the Help menu in CSPro Designer under Troubleshooting. When asking for technical support with synchronization issues, please attach the sync.log file from your device to your email or forum post.
 
 
 <seealso synchronization_simple.hgt syncconnect_function.hgt syncdata_function.hgt syncapp_function.hgt syncfile_function.hgt syncparadata_function.hgt syncmessage_function.hgt synctime_function.hgt syncdisconnect_function.hgt syncserver_function.hgt />
