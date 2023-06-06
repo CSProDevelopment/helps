@@ -1,12 +1,12 @@
-<subheader>CSPro DB (.csdb)</subheader>
+﻿<subheader>CSPro DB (.csdb)</subheader>
 
 <b>.csdb</b> is the default file type for Input, Output, and External (i.e., lookup) files, as well as the file generated from any <logiccolor>impute</logiccolor> function calls that use the <logiccolor>stat</logiccolor> option. Listing files can also be written as .csdb files, though the option must be chosen from the dialog's Source Type dropdown
 
-Through the use of <link CSPro::connection_string.hgt>connection strings</link>, you can choose what you want to write to your output files. For example, suppose you just want one record written out, not all records; this is possible with the following parameters:
+Through the use of <link CSPro::connection_string.csdoc>connection strings</link>, you can choose what you want to write to your output files. For example, suppose you just want one record written out, not all records; this is possible with the following parameters:
 
 <pff>population_rec.csdb|record=POP_REC&type=CSProExport</pff>
 
-When this happens a CSPro dictionary will also be generated; it will have the same filename, with <b>.dcf</b> appended to it. Using the above example, you would see <b>population_rec.csdb.dcf</b> had been created. If you wish to control the dictionary's name, you can do so via the "dictionary" <link CSPro::export_attributes.hgt>Export Attributes</link> as follows:
+When this happens a CSPro dictionary will also be generated; it will have the same filename, with <b>.dcf</b> appended to it. Using the above example, you would see <b>population_rec.csdb.dcf</b> had been created. If you wish to control the dictionary's name, you can do so via the "dictionary" <link CSPro::export_attributes.csdoc>Export Attributes</link> as follows:
 
 <pff>population_rec.csdb|type=CSProExport&record=POP_REC&dictionary=pop_rec.dcf</pff>
 

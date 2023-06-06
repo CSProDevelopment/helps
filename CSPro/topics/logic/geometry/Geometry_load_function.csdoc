@@ -10,11 +10,11 @@ b = geometry_name.load(<arg>filename</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Geometry.load</logiccolor> function reads the file specified by the string expression <arg>filename</arg> and stores the geometry data contained in the file in the <link geometry.hgt>Geometry</link> object named <logiccolor>geometry_name</logiccolor>. The loaded geometry can be displayed on a map using <logiccolor>Map.addGeometry</logiccolor>. 
+The <logiccolor>Geometry.load</logiccolor> function reads the file specified by the string expression <arg>filename</arg> and stores the geometry data contained in the file in the <link geometry.csdoc>Geometry</link> object named <logiccolor>geometry_name</logiccolor>. The loaded geometry can be displayed on a map using <logiccolor>Map.addGeometry</logiccolor>.
 
 CSPro can load geometry from files in <link https://geojson.org>GeoJSON</link> format.
 
-Loading very large GeoJSON files can be slow and may exceed the memory of the device. In some cases it may be necessary to break up large GeoJSON files into smaller files. For example, rather than using a single file containing geometry for an entire country, create smaller files for the geometry in each district and then load only the file for the district that the interviewer is currently working in. Alternatively, rather than using geometry you can save the vector data in a custom <link offline_maps.hgt>base map</link>.
+Loading very large GeoJSON files can be slow and may exceed the memory of the device. In some cases it may be necessary to break up large GeoJSON files into smaller files. For example, rather than using a single file containing geometry for an entire country, create smaller files for the geometry in each district and then load only the file for the district that the interviewer is currently working in. Alternatively, rather than using geometry you can save the vector data in a custom <link offline_maps.csdoc>base map</link>.
 
 
 <subheader>Return Value</subheader>
@@ -40,4 +40,4 @@ mymap.show();
 </logic>
 
 
-<seealso geometry.hgt geometry_save_function.hgt />
+<seealso geometry.csdoc geometry_save_function.csdoc />

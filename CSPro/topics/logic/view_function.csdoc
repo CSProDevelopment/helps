@@ -9,7 +9,7 @@ b = view(<arg>filename</arg> ‖ <arg>website_address</arg> ‖ <arg>object_name
 
 <subheader>Description</subheader>
 
-The <logiccolor>view</logiccolor> function displays the contents of a file or shows a website. The function expects a string expression representing a file (<arg>filename</arg>) or a website URL (<arg>website_address</arg>), or a CSPro object (<arg>object_name</arg>) such as a <link document.hgt>Document</link>, <link freq.hgt>Freq</link>, <link image.hgt>Image</link>, or <link templated_reports.hgt>Report</link>. If a website URL or a file with the extension <i>.html</i> or <i>.htm</i> is provided, it is shown in an embedded window. For other files, an external application is launched to display the file using the system's default viewer for that file type.
+The <logiccolor>view</logiccolor> function displays the contents of a file or shows a website. The function expects a string expression representing a file (<arg>filename</arg>) or a website URL (<arg>website_address</arg>), or a CSPro object (<arg>object_name</arg>) such as a <link document.csdoc>Document</link>, <link freq.csdoc>Freq</link>, <link image.csdoc>Image</link>, or <link templated_reports.csdoc>Report</link>. If a website URL or a file with the extension <i>.html</i> or <i>.htm</i> is provided, it is shown in an embedded window. For other files, an external application is launched to display the file using the system's default viewer for that file type.
 
 <include include_view_named_arguments.hgi />
 
@@ -32,4 +32,4 @@ view("hh-report.html", title := "Household Completion Report",
 </logic>
 
 
-<seealso execsystem_function_desktop.hgt execsystem_function_mobile.hgt html_in_cspro.hgt javascript_interface.hgt />
+<seealso execsystem_function_desktop.csdoc execsystem_function_mobile.csdoc html_in_cspro.csdoc javascript_interface.csdoc />

@@ -1,7 +1,7 @@
 ﻿<title>Occurrences</title>
 <context ID_EDIT_FLATTEN_OCCURRENCES />
 
-This item property defines the number of consecutive repetitions of the item in the data record. The dictionary will reserve space equal to the product of the <link item_length.hgt>length</link> of the item times the declared number of occurrences for the item.
+This item property defines the number of consecutive repetitions of the item in the data record. The dictionary will reserve space equal to the product of the <link item_length.csdoc>length</link> of the item times the declared number of occurrences for the item.
 
 For example: A census collects information on births and deaths, and each questionnaire can list the ages of up to a dozen household members who died during the past year. By defining an item "Age at death" with a length of 2 digits and 12 occurrences, the dictionary will reserve a location 24 characters in length for this item.
 
@@ -11,4 +11,4 @@ If an item has multiple occurrences, then its subitems may not have multiple occ
 
 ID items cannot have multiple occurrences.
 
-<seealso item_properties.hgt />
+<seealso item_properties.csdoc />

@@ -20,7 +20,7 @@ The first syntax inserts a single occurrence of the record. When inserting a sin
 
 The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.
 
- 
+
 
 <subheader>Example 1 (Multiply-Occurring Records)</subheader>
 
@@ -34,18 +34,18 @@ enddo;
 
 It makes no difference if the population record has been defined in the dictionary as required or not. What is important is that it was defined as a multiply-occurring record.
 
- 
+
 <subheader>Example 2 (Singly-Occurring Records)</subheader>
 
 For this example, we are processing data that did not require housing records to be present. However, now we want to force the existence of housing records. We could implement this as follows:
 
-<logic> 
+<logic>
 if totocc(HOUSING_REC) = 0 then
 	insert(HOUSING_REC); // note the absence of a subscript
 endif;
-</logic> 
+</logic>
 
-To accomplish this, the housing record must be set to <link required_record.hgt>"Required=No"</link> in the dictionary. You cannot use this function for a singly-occurring record when the record is required. 
+To accomplish this, the housing record must be set to <link required_record.csdoc>"Required=No"</link> in the dictionary. You cannot use this function for a singly-occurring record when the record is required.
 
 
-<seealso delete_function.hgt />
+<seealso delete_function.csdoc />

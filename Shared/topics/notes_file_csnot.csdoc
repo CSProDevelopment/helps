@@ -19,8 +19,8 @@ The format of each note record is as follows:
 
 Note text can contain "\n" characters, which indicate a newline (Enter key) character. If the note text is automatically wrapped in the note text box, there will be no newline characters.
 
-The .csnot file can be processed by another CSPro application by creating a data dictionary for it. You can use the <link CSPro::dictionary_macros.hgt>Dictionary Macros</link> function to automatically create this dictionary.
+The .csnot file can be processed by another CSPro application by creating a data dictionary for it. You can use the <link CSPro::dictionary_macros.csdoc>Dictionary Macros</link> function to automatically create this dictionary.
 
 Notes can be created, edited, and deleted using the <logiccolor>getnote</logiccolor>, <logiccolor>putnote</logiccolor>, and <logiccolor>editnote</logiccolor> functions.
 
-Notes for non-text files (such as <link CSPro::data_sources.hgt>CSPro DB</link> files) are stored within the file itself and not in a .csnot file. Prior to CSPro 7.0, the notes file had the extension .not.
+Notes for non-text files (such as <link CSPro::data_sources.csdoc>CSPro DB</link> files) are stored within the file itself and not in a .csnot file. Prior to CSPro 7.0, the notes file had the extension .not.

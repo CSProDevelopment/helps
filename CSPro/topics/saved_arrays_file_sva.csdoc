@@ -1,10 +1,10 @@
 ﻿<title>Saved Arrays File (.sva)</title>
 
-The saved arrays file stores values from <link array.hgt>arrays</link> in an application marked with the <logiccolor>save</logiccolor> keyword. At the end of program execution, the current values of any saved arrays are written to the file. When the program is run, the saved array file is read and the array is initialized with the values from the saved array file.
+The saved arrays file stores values from <link array.csdoc>arrays</link> in an application marked with the <logiccolor>save</logiccolor> keyword. At the end of program execution, the current values of any saved arrays are written to the file. When the program is run, the saved array file is read and the array is initialized with the values from the saved array file.
 
 CSPro creates the saved arrays file automatically when one or more arrays in an application are marked as a saved array. The name of the saved arrays file is generally the same as that of the application with the additional .sva file extension added (e.g., application_name.bch.sva), but it can be modified using the PFF <pffcolor>SaveArray</pffcolor> attribute.
 
-The saved arrays file is a text file that may be viewed with any text editor, such as Text Viewer or Notepad, or using the <link tool_list.hgt>Save Array Viewer</link>. It is not recommended to make changes to this file outside the CSPro environment. Advanced users might do so, however, to set initial values for arrays.
+The saved arrays file is a text file that may be viewed with any text editor, such as Text Viewer or Notepad, or using the <link tool_list.csdoc>Save Array Viewer</link>. It is not recommended to make changes to this file outside the CSPro environment. Advanced users might do so, however, to set initial values for arrays.
 
 If you want to prevent the file from being updated after a run, which may be desirable if you want to produce the same results from run to run, you can disable the update via logic:
 

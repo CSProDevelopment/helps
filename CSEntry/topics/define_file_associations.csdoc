@@ -1,24 +1,24 @@
 ﻿<title>Define File Associations</title>
 <context IDD_PIFDLG />
 
-The <b>Define File Associations</b> dialog box is presented when an <b>Entry</b> application is executed. This page explains why certain files are asked of you. To find out more about the allowable <b>Source Type</b> options and what can be chosen, see <topic source_file_types.hgt />.
+The <b>Define File Associations</b> dialog box is presented when an <b>Entry</b> application is executed. This page explains why certain files are asked of you. To find out more about the allowable <b>Source Type</b> options and what can be chosen, see <topic source_file_types.csdoc />.
 
 <b>CSEntry</b> requires a minimum of one file to run (an Input Data File), although the minimum number of files you will be solicited for in the <b>Define File Associations</b> dialog is two (you optionally have the choice of specifying a Paradata Log File). The basic run dialog is shown below:
 
 <image file_associations_entry.png />
 
-<b>CSEntry</b> applications will require additional file definitions when one of the following situations occur: 
+<b>CSEntry</b> applications will require additional file definitions when one of the following situations occur:
 
 <list><li>1+ lookup files are used</li>
-<li>the <link cspro::write_function.hgt>write</link> or <link cspro::freq_statement_unnamed.hgt>freq</link> functions are used</li>
-<li>the <link cspro::impute_function.hgt>impute</link> function is used with the <logiccolor>stat</logiccolor> command, or <logiccolor>set impute(on)</logiccolor> is included</li>
-<li>the <link cspro::array_statement.hgt>Array</link> declaration is present with the <logiccolor>save</logiccolor> option</li>
+<li>the <link cspro::write_function.csdoc>write</link> or <link cspro::freq_statement_unnamed.csdoc>freq</link> functions are used</li>
+<li>the <link cspro::impute_function.csdoc>impute</link> function is used with the <logiccolor>stat</logiccolor> command, or <logiccolor>set impute(on)</logiccolor> is included</li>
+<li>the <link cspro::array_statement.csdoc>Array</link> declaration is present with the <logiccolor>save</logiccolor> option</li>
 </list>
 If all of these features were used, the expanded <b>CSEntry</b> run dialog would appear as shown below (in actuality, you would have to scroll to see all expected files&mdash;the dialog has been spliced together to facilitate viewing). Note the file associations listed in the "Source Type" column&mdash;those are the default file types expected for each file, tho most all files allow more than one option to choose from. Also note that four of the data files provide default filenames, as explained further below.
 
 <image file_associations_entry_full.png />
 
-The following describes the files that will be solicited from you in more detail, in the order (more-or-less) presented in the dialog box (depending on the options chosen), and why each is needed. As mentioned at the top, to find out more about the allowable <b>Source Type</b> options and what can be chosen, see <topic source_file_types.hgt />.
+The following describes the files that will be solicited from you in more detail, in the order (more-or-less) presented in the dialog box (depending on the options chosen), and why each is needed. As mentioned at the top, to find out more about the allowable <b>Source Type</b> options and what can be chosen, see <topic source_file_types.csdoc />.
 
 <subheader>Input Data</subheader>
 
@@ -26,32 +26,32 @@ This is the file you will be creating, modifying, or verifying; by default CSEnt
 
 <subheader>External Data (dict_name)</subheader>
 
-For each lookup file included in your application, you will be asked to supply the data file to which the lookup dictionary refers; by default CSEntry expects a source type of <b>.csdb</b>. The name displayed within the parenthesis is the unique (internal) dictionary name. For each lookup file attached to your application, a separate line entry will appear for you to specify the associated data file. If the file does not exist, it will be created (it will be empty if a <link cspro::writecase_function.hgt>writecase</link> call is not made for the associated dictionary).
+For each lookup file included in your application, you will be asked to supply the data file to which the lookup dictionary refers; by default CSEntry expects a source type of <b>.csdb</b>. The name displayed within the parenthesis is the unique (internal) dictionary name. For each lookup file attached to your application, a separate line entry will appear for you to specify the associated data file. If the file does not exist, it will be created (it will be empty if a <link cspro::writecase_function.csdoc>writecase</link> call is not made for the associated dictionary).
 
-You also have the option to specify <link CSPro::data_sources.hgt>none</link> for your lookup file. This can be useful if you know what lookup files you plan to use in your application, you have defined the dictionaries, but you do not yet have the data files themselves ready to use.
+You also have the option to specify <link CSPro::data_sources.csdoc>none</link> for your lookup file. This can be useful if you know what lookup files you plan to use in your application, you have defined the dictionaries, but you do not yet have the data files themselves ready to use.
 
 <subheader>&lt;Write File></subheader>
 
-If your program makes one or more <link cspro::write_function.hgt>write</link> function calls, <b>CSEntry</b> will ask you for the file to write them all to. This file will be a text file, regardless of the file extension used. If you fail to name a file, any <logiccolor>write</logiccolor> function text will be ignored.
+If your program makes one or more <link cspro::write_function.csdoc>write</link> function calls, <b>CSEntry</b> will ask you for the file to write them all to. This file will be a text file, regardless of the file extension used. If you fail to name a file, any <logiccolor>write</logiccolor> function text will be ignored.
 
 <subheader>&lt;Freq File></subheader>
 
-If your program includes one or more <link cspro::freq_statement_unnamed.hgt>freq</link> function calls, <b>CSEntry</b> will ask you for the file to save these frequencies to. If you do not provide a file name, CSEntry will execute, but it will <b>not</b> generate an error message about the expected file being missing. As seen in the expanded dialog above, the default file extension will be <b>.txt</b>, though this can can be changed by the user. Creating a CSPro table by using the <b>.tbw</b> source type is a good second choice.
+If your program includes one or more <link cspro::freq_statement_unnamed.csdoc>freq</link> function calls, <b>CSEntry</b> will ask you for the file to save these frequencies to. If you do not provide a file name, CSEntry will execute, but it will <b>not</b> generate an error message about the expected file being missing. As seen in the expanded dialog above, the default file extension will be <b>.txt</b>, though this can can be changed by the user. Creating a CSPro table by using the <b>.tbw</b> source type is a good second choice.
 
 <subheader>&lt;Impute Freq File></subheader>
 
-If your program includes one or more <link cspro::impute_function.hgt>impute</link> function calls, <b>CSEntry</b> will ask you for the file to save these imputations to. If you do not provide a file name, CSEntry will run on your data, but you will receive an error message about the expected file being missing. As seen in the expanded dialog above, the default file name with extension will be <b>&lt;AppName>_impute_freq.lst</b>, but both can be changed by the user.
+If your program includes one or more <link cspro::impute_function.csdoc>impute</link> function calls, <b>CSEntry</b> will ask you for the file to save these imputations to. If you do not provide a file name, CSEntry will run on your data, but you will receive an error message about the expected file being missing. As seen in the expanded dialog above, the default file name with extension will be <b>&lt;AppName>_impute_freq.lst</b>, but both can be changed by the user.
 
 <subheader>&lt;Impute Stat Data></subheader>
 
-If your program includes one or more <link cspro::impute_function.hgt>impute</link> functions that use the <logiccolor>stat</logiccolor> command, or if you include the <logiccolor>set impute(stat, on);</logiccolor> in your program, <b>CSEntry</b> will ask you for the name of a data file to save these imputation statistics to. As seen in the expanded dialog above, the default file name with extension will be <b>&lt;AppName>_impute_stat.csdb</b>, but both can be changed by the user.
+If your program includes one or more <link cspro::impute_function.csdoc>impute</link> functions that use the <logiccolor>stat</logiccolor> command, or if you include the <logiccolor>set impute(stat, on);</logiccolor> in your program, <b>CSEntry</b> will ask you for the name of a data file to save these imputation statistics to. As seen in the expanded dialog above, the default file name with extension will be <b>&lt;AppName>_impute_stat.csdb</b>, but both can be changed by the user.
 
 <subheader>&lt;Save Array File></subheader>
 
-If your program uses <link CSPro::array_statement.hgt>arrays</link>, you can choose to save the array values between program runs with the optional keyword <logiccolor>save</logiccolor>. When the save option is used, <b>CSEntry</b> will prompt you for a filename. By default the file has the same name as the application, with an <b>.sva</b> file extension. The leading portion of the file name can be changed, but the extension cannot.
+If your program uses <link CSPro::array_statement.csdoc>arrays</link>, you can choose to save the array values between program runs with the optional keyword <logiccolor>save</logiccolor>. When the save option is used, <b>CSEntry</b> will prompt you for a filename. By default the file has the same name as the application, with an <b>.sva</b> file extension. The leading portion of the file name can be changed, but the extension cannot.
 
 <subheader>&lt;Paradata Log></subheader>
 
-Paradata log files contain information about <link CSPro::paradata.hgt>paradata</link> events stored during an application's run. Files created using this type have the extension <b>.cslog</b> and are not text files&mdash;so they cannot be viewed in Text Viewer&mdash;instead, they must be viewed within <link ParadataViewer::introduction_to_paradata_viewer.hgt>Paradata Viewer</link>. See the <link CSPro::paradata_log_file_cslog.hgt>Paradata Log</link> page for more information on how this file can be used.
+Paradata log files contain information about <link CSPro::paradata.csdoc>paradata</link> events stored during an application's run. Files created using this type have the extension <b>.cslog</b> and are not text files&mdash;so they cannot be viewed in Text Viewer&mdash;instead, they must be viewed within <link ParadataViewer::introduction_to_paradata_viewer.csdoc>Paradata Viewer</link>. See the <link CSPro::paradata_log_file_cslog.csdoc>Paradata Log</link> page for more information on how this file can be used.
 
-<seealso source_file_types.hgt /> 
+<seealso source_file_types.csdoc />

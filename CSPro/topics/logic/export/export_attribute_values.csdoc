@@ -1,7 +1,7 @@
 ﻿<title>Export Attribute: value</title>
-	
+
 The <b>values</b> attribute can be used with <b>.csv</b>, semicolon, <b>.tsv</b>, and Excel files. It controls how the data file's values are written to the file. Available options are:
-	
+
 	<list>
 	<li><b>codes</b>&mdash;numeric codes will be written (the default behavior when this attribute is not used)</li>
 	<li><b>labels</b>&mdash;the value set's label will be used (for example, if Sex=1 or 2, the labels might read Male and Female)</li>
@@ -22,4 +22,4 @@ You can see that generating two columns for the relationship, sex, and marital s
 
 yielded no changes. What else could be happening? As you can guess from the ages and see from the column heading, the marital status field was not asked (i.e., it was skipped) for persons under 15 years of age. Oftentimes marital status is asked for all persons regardless of age; in that instance, we would have expected to see "Never Married" or "Single".
 
-<seealso export_attributes.hgt />
+<seealso export_attributes.csdoc />

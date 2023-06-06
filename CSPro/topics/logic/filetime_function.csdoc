@@ -15,7 +15,7 @@ The <logiccolor>filetime</logiccolor> function returns the last modified date an
 
 <subheader>Return Value</subheader>
 
-If the file or directory exists, the function returns a <link timestamp_function.hgt>timestamp</link> value indicating the last modified date and time. If the file or directory does not exist, the function returns <logiccolor>default</logiccolor>.
+If the file or directory exists, the function returns a <link timestamp_function.csdoc>timestamp</link> value indicating the last modified date and time. If the file or directory does not exist, the function returns <logiccolor>default</logiccolor>.
 
 
 <subheader>Example </subheader>
@@ -26,7 +26,7 @@ dirlist(photos_list, "../Photos", "*.jpg");
 
 do numeric counter = 1 while counter <= photos_list.length()
 
-	// only sync photos that weren't previously synced	
+	// only sync photos that weren't previously synced
 	if filetime(photos_list(counter)) > last_sync_timestamp then
 		syncfile(PUT, photos_list(counter), "/Photos/");
 	endif;
@@ -35,4 +35,4 @@ enddo;
 </logic>
 
 
-<seealso timestamp_function.hgt timestring_function.hgt />
+<seealso timestamp_function.csdoc timestring_function.csdoc />

@@ -8,7 +8,7 @@ i = adjlbi(<arg>lower_cmc1</arg>,<arg>upper_cmc1</arg>,<arg>lower_cmc2</arg>,<ar
 
 <subheader>Description</subheader>
 
-The <logiccolor>adjlbi</logiccolor> function adjusts the lower bound of the <i><link cmcode_function.hgt>century month code</link></i> (CMC) of an event based on an interval. It is generally used to calculate the minimum <i>next</i> date of birth based on a date of birth and a minimum number of months allowed between births.
+The <logiccolor>adjlbi</logiccolor> function adjusts the lower bound of the <i><link cmcode_function.csdoc>century month code</link></i> (CMC) of an event based on an interval. It is generally used to calculate the minimum <i>next</i> date of birth based on a date of birth and a minimum number of months allowed between births.
 
 The <arg>lower_cmc1</arg> argument is a numeric expression generally representing the date of birth CMC of a child. The <arg>upper_cmc1</arg> argument is not used (but is used by <arg>adjubi</arg>). The <arg>lower_cmc2</arg> and <arg>upper_cmc2</arg> arguments are numeric expressions generally representing the date of birth CMC range of the child that was born after the child represented in <arg>lower_cmc1</arg>. The <arg>interval</arg> argument is a numeric expression expressing the minimum number of months between events, which is generally the minimum number of months allowed to pass between a woman's successive childbirths.
 
@@ -22,4 +22,4 @@ The function returns the adjusted lower bound of the CMC of an event based on th
 t = adjlbi(ldc(i),udc(i),ldc(j),udc(j),7);
 </logic>
 
-<seealso adjubi_function.hgt adjlba_function.hgt adjuba_function.hgt cmcode_function.hgt setlb_function.hgt setub_function.hgt />
+<seealso adjubi_function.csdoc adjlba_function.csdoc adjuba_function.csdoc cmcode_function.csdoc setlb_function.csdoc setub_function.csdoc />

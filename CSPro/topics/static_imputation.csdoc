@@ -1,6 +1,6 @@
 ﻿<title>Static Imputation</title>
 
-Static <link imputation.hgt>imputation</link> means providing a value from a predetermined set of values. Suppose a person's sex is missing or invalid (out of range). If we decide to change the response using static imputation, there are two basic methods to use: hard coded or from a "cold deck."
+Static <link imputation.csdoc>imputation</link> means providing a value from a predetermined set of values. Suppose a person's sex is missing or invalid (out of range). If we decide to change the response using static imputation, there are two basic methods to use: hard coded or from a "cold deck."
 
 <subheader>Hard Coded</subheader>
 
@@ -32,7 +32,7 @@ For example, suppose a person's age is missing or invalid. We might have a table
 	<cell><b>Male (1)</b></cell><cell>35</cell><cell>50</cell><cell>10</cell><cell>41</cell><cell>65</cell>
 	<cell><b>Female (2)</b></cell><cell>32</cell><cell>48</cell><cell>10</cell><cell>37</cell><cell>68</cell>
 </table>
- 
+
 In the event that a female child was found to have a missing age, she would be given the age of 10. If a female head of the household had a missing age, then her age would be given as 32. This method is acceptable if you do not need to use it often; that is, if very little of your data is missing or invalid. Also, if your population is fairly homogeneous (for example if you were correcting for religion and 90% of the population is Muslim), then this will not result in an unrealistic portrayal of your country.
 
-However, if you find yourself referring to this table often, or you have a very diverse population where a few static values do not give an accurate portrayal, then your data will end up skewed. For these reasons (and others), <link dynamic_imputation_hot_deck.hgt>dynamic imputation</link> is the preferred method.
+However, if you find yourself referring to this table often, or you have a very diverse population where a few static values do not give an accurate portrayal, then your data will end up skewed. For these reasons (and others), <link dynamic_imputation_hot_deck.csdoc>dynamic imputation</link> is the preferred method.

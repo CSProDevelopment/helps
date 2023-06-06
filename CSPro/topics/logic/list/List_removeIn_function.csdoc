@@ -10,7 +10,7 @@ i = list_name.removeIn(<arg>in_list</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>List.removeIn</logiccolor> function removes from a <link list.hgt>List</link> any values that are specified in an <link in_operator.hgt>in list</link>. The values in <arg>in_list</arg> must be numeric for a numeric List and string for a string List. Note that the <logiccolor>in</logiccolor> operator is case sensitive, so when using a string List, specifying <logiccolor>"Cindy"</logiccolor> will not remove <logiccolor>"cindy"</logiccolor>.
+The <logiccolor>List.removeIn</logiccolor> function removes from a <link list.csdoc>List</link> any values that are specified in an <link in_operator.csdoc>in list</link>. The values in <arg>in_list</arg> must be numeric for a numeric List and string for a string List. Note that the <logiccolor>in</logiccolor> operator is case sensitive, so when using a string List, specifying <logiccolor>"Cindy"</logiccolor> will not remove <logiccolor>"cindy"</logiccolor>.
 
 
 <subheader>Return Value</subheader>
@@ -22,7 +22,7 @@ The function returns the number of values removed from the List. If the List is 
 
 <logic>
 List household_ages;
-// ... 
+// ...
 // values: 69, 57, 55, 33, 22, 44, 34, 5
 
 household_ages.removeIn(0:15, 50:99);
@@ -44,4 +44,4 @@ deleted_case_keys.removeIn(not_deleted_case_keys);
 </logic>
 
 
-<seealso list.hgt list_clear_function.hgt list_remove_function.hgt list_removeduplicates_function.hgt />
+<seealso list.csdoc list_clear_function.csdoc list_remove_function.csdoc list_removeduplicates_function.csdoc />

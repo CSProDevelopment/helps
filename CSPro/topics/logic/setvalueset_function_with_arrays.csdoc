@@ -1,6 +1,6 @@
 ﻿<title>SetValueSet Function With Arrays</title>
 
-<i><b>Feature Upgrade</b>: Starting with CSPro 7.3, you should no longer use this function as it may soon be removed from CSPro. To replicate the behavior of the function, you can use the <logiccolor>setvalueset</logiccolor> function with <link valueset.hgt>dynamic value sets</link>.</i>
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.3, you should no longer use this function as it may soon be removed from CSPro. To replicate the behavior of the function, you can use the <logiccolor>setvalueset</logiccolor> function with <link valueset.csdoc>dynamic value sets</link>.</i>
 
 
 <subheader>Format</subheader>
@@ -12,11 +12,11 @@ i = setvalueset(<arg>item_name</arg>, <arg>codes_array</arg>, <arg>labels_array<
 
 <subheader>Description</subheader>
 
-The <logiccolor>setvalueset</logiccolor> function allows you to dynamically change an item's current value set. An item's current value set is used to determine whether or not entered values are out of range. The current value set is also used to provide the value choices displayed in <link capture_types.hgt>capture types</link>. The changing of a value set is not permanent; it remains in effect only during the processing of the current case or until the next call to <logiccolor>setvalueset</logiccolor>.
+The <logiccolor>setvalueset</logiccolor> function allows you to dynamically change an item's current value set. An item's current value set is used to determine whether or not entered values are out of range. The current value set is also used to provide the value choices displayed in <link capture_types.csdoc>capture types</link>. The changing of a value set is not permanent; it remains in effect only during the processing of the current case or until the next call to <logiccolor>setvalueset</logiccolor>.
 
 The <arg>item_name</arg> is the name of the item in the data dictionary whose value set is to be changed.  The second argument, <arg>codes_array</arg>, is an array of codes to use in the new value set and the third argument, <arg>labels_array</arg>, is an array of labels that correspond to the values in the codes array (the nth element of the labels array is the label for the nth element in the codes array). If the item is numeric, <arg>codes_array</arg> must be a numeric array. If the item is alphanumeric, <arg>codes_array</arg> must be a string array. The <arg>labels_array</arg> must always be a string array. The optional fourth argument, <arg>images_array</arg>, is a string array pointing to image filenames to be used as value set images.
 
-When working with the <arg>codes_array</arg>, to indicate the end of a numeric array, assign the special value <logiccolor>notappl</logiccolor> to the position after the last valid code. To indicate the end of a string array, assign a blank value. This indicates when to stop loading values from the array. 
+When working with the <arg>codes_array</arg>, to indicate the end of a numeric array, assign the special value <logiccolor>notappl</logiccolor> to the position after the last valid code. To indicate the end of a string array, assign a blank value. This indicates when to stop loading values from the array.
 
 In versions of CSPro earlier than 6.0, the value set labels and codes array needed to start at index position 0. Zero-based arrays are still permitted, but if a one-based array is passed to the function (and the zeroth element has never been assigned to), then CSPro will start processing the dynamic value set at array position 1.
 
@@ -46,11 +46,11 @@ preproc
 
 	vsCodes(3) = 3;
 	vsLabels(3) = "District 3";
-	
+
 	vsCodes(4) = notappl; // mark the end of the array
 
 	setvalueset(DISTRICT, vsCodes, vsLabels);
 </logic>
 
 
-<seealso setvalueset_function.hgt />
+<seealso setvalueset_function.csdoc />

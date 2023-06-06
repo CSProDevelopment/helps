@@ -10,7 +10,7 @@ b = map_name.saveSnapshot(<arg>filename</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Map.saveSnapshot</logiccolor> function saves the currently displayed map as an image. The image is specified by the string expression <arg>filename</arg> and must have an extension associated with either JPEG or PNG formats. The map must be currently displayed when this function is called, so it must be executed via a callback function association with a <link map_set_marker_on_click_function.hgt>marker</link> or <link map_add_text_button_function.hgt>button</link>.
+The <logiccolor>Map.saveSnapshot</logiccolor> function saves the currently displayed map as an image. The image is specified by the string expression <arg>filename</arg> and must have an extension associated with either JPEG or PNG formats. The map must be currently displayed when this function is called, so it must be executed via a callback function association with a <link Map_setMarkerOnClick_function.csdoc>marker</link> or <link Map_addText_button_function.csdoc>button</link>.
 
 
 <subheader>Return Value</subheader>
@@ -30,11 +30,11 @@ end;
 PROC EXAMPLE
 
 	Map capitals_map;
-	
+
 	// ...
-	
+
 	capitals_map.addTextButton("Save Image", SaveMap(capitals_map, "Capitals.png"));
 </logic>
 
 
-<seealso map.hgt />
+<seealso Map.csdoc />

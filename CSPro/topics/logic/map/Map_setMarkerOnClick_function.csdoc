@@ -55,16 +55,16 @@ PROC GLOBAL
 function launchHouseholdQuestionnaire(string caseid)
 
 	Pff household_pff;
-	
+
 	household_pff.setProperty("AppType", "Entry");
 
 	household_pff.setProperty("Key", caseid);
 
 	household_pff.setProperty("Application", "Household.ent");
 	household_pff.setProperty("InputData", "Household.csdb");
-	
+
 	household_pff.setProperty("OnExit", "Menu.pff");
-	
+
 	household_pff.exec();
 
 end;
@@ -96,4 +96,4 @@ mymap.show();
 </logic>
 
 
-<seealso map.hgt map_add_marker_function.hgt map_set_marker_on_click_info_window_function.hgt />
+<seealso Map.csdoc Map_addMarker_function.csdoc Map_setMarkerOnClickInfoWindow_function.csdoc />

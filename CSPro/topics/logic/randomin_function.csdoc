@@ -9,7 +9,7 @@ d = randomin(<arg>in_list</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>randomin</logiccolor> function returns a random number from a grouping of numeric values expressed as an <link in_operator.hgt>in list</link>. You can use the <logiccolor>seed</logiccolor> function to initialize the random number generation. A non-integer can appear as part of the in list, but if it is part of a range, both the low and high values of the range will be converted to integers and the function will return a uniformly distributed random integer in that range.
+The <logiccolor>randomin</logiccolor> function returns a random number from a grouping of numeric values expressed as an <link in_operator.csdoc>in list</link>. You can use the <logiccolor>seed</logiccolor> function to initialize the random number generation. A non-integer can appear as part of the in list, but if it is part of a range, both the low and high values of the range will be converted to integers and the function will return a uniformly distributed random integer in that range.
 
 
 <subheader>Return Value</subheader>
@@ -30,4 +30,4 @@ errmsg("Random month: %d", randomin(1:12)); // same as random(1, 12)
 </logic>
 
 
-<seealso random_function.hgt valueset_randomize_function.hgt seed_function.hgt />
+<seealso random_function.csdoc valueset_randomize_function.csdoc seed_function.csdoc />

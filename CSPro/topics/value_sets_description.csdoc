@@ -1,6 +1,6 @@
 ﻿<title>Value Sets Description</title>
 
-Creating value sets in the dictionary controls the valid range (for numeric) or valid set of values (for numeric and/or alpha) that a dictionary item (or subitem) can have. Value sets play a key role in CSPro, in particular for numeric items, and should always be created unless there is a strong reason not to do so. 
+Creating value sets in the dictionary controls the valid range (for numeric) or valid set of values (for numeric and/or alpha) that a dictionary item (or subitem) can have. Value sets play a key role in CSPro, in particular for numeric items, and should always be created unless there is a strong reason not to do so.
 
 Some of the uses they serve include:
 
@@ -8,13 +8,13 @@ Some of the uses they serve include:
 <li>During the design phase, as a tool of discussion with subject-matter specialists</li>
 <li>During data entry, to control what values can be entered</li>
 <li>During data entry, to present a list of valid responses from which the enumerator can choose</li>
-<li>Within <link batch_edit_applications.hgt>batch edit applications</link>, to enable usage of the <link impute_function.hgt>impute function</link>'s <b>valueset</b> option</li>
-<li>Within <link introduction_to_tabulation.hgt>tabulation applications</link>, to facilitate <link create_a_table.hgt>table creation</link></li>
+<li>Within <link batch_edit_applications.csdoc>batch edit applications</link>, to enable usage of the <link impute_function.csdoc>impute function</link>'s <b>valueset</b> option</li>
+<li>Within <link introduction_to_tabulation.csdoc>tabulation applications</link>, to facilitate <link create_a_table.csdoc>table creation</link></li>
 <li>To generate code books, useful when exporting a datafile to other formats (e.g., R, SPSS, SAS, and Stata)</li>
 <li>As documentation to explain the characteristics of the data for future reference</li>
 </list>
 
-As mentioned above, value sets are especially useful during data entry, in particular for numeric items. For example, 
+As mentioned above, value sets are especially useful during data entry, in particular for numeric items. For example,
 
 <list>
 <li>A data item of field width 1 would allow values 0-9 to be entered&mdash;not likely useful for non-zero identification items</li>
@@ -24,7 +24,7 @@ As mentioned above, value sets are especially useful during data entry, in parti
 
 Similarly, for alpha variables, and in particular for alpha variables of length 1 that are meant to capture A, B, C, etc. type of responses, failing to create a value set to list the specific letters allowed would end up allowing any character&mdash;blanks and punctuation characters included.
 
-As can be seen in the first example below, each dictionary item can have more than one value set. In addition, if <link multiple_language_dictionaries.hgt>multiple languages</link> are defined for the dictionary, there can be more than one value set for an item&mdash;though note this does not actually create distinct value sets, as they will share the same unique value set name. It only allows you to create value sets in different languages in order to switch between/among them.
+As can be seen in the first example below, each dictionary item can have more than one value set. In addition, if <link multiple_language_dictionaries.csdoc>multiple languages</link> are defined for the dictionary, there can be more than one value set for an item&mdash;though note this does not actually create distinct value sets, as they will share the same unique value set name. It only allows you to create value sets in different languages in order to switch between/among them.
 
 <subheader>Example 1</subheader>
 
@@ -57,16 +57,16 @@ Age&nbsp;by&nbsp;Category&nbsp;&nbsp;AGE_CATEGORY
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Senior&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60&nbsp;&nbsp;&nbsp;&nbsp;98
 </font></indent>
 
-The AGE item now has three defined value sets: AGE, AGE_5YRS, and AGE_CATEGORY. The first value set defines the acceptable range for data entry, while the second and third value sets give a breakdown as you might want to see the data tabulated. 
+The AGE item now has three defined value sets: AGE, AGE_5YRS, and AGE_CATEGORY. The first value set defines the acceptable range for data entry, while the second and third value sets give a breakdown as you might want to see the data tabulated.
 
-Each new value set will always be added to the end of the item's value set listings. If you add to the wrong place, press the <b>Esc</b> key to stop the add. Use <link undo_and_redo_changes.hgt>undo</link> if you added at the wrong place. Likewise, you can also just cut (Ctrl+X) the value set and paste (Ctrl+V) it to the desired position. If a value set is not in the first position but you need it to be, you can make it the primary (first) value set by right-clicking on the Value Set Label/Value Set Name row and selecting the "Make Primary Value Set" option.
+Each new value set will always be added to the end of the item's value set listings. If you add to the wrong place, press the <b>Esc</b> key to stop the add. Use <link undo_and_redo_changes.csdoc>undo</link> if you added at the wrong place. Likewise, you can also just cut (Ctrl+X) the value set and paste (Ctrl+V) it to the desired position. If a value set is not in the first position but you need it to be, you can make it the primary (first) value set by right-clicking on the Value Set Label/Value Set Name row and selecting the "Make Primary Value Set" option.
 
 <subheader>Example 2</subheader>
 
-Continuing with the above value set, suppose the AGE_5YRS ranges were already entered elsewhere such as in an Excel file. You could simply copy the labels and ranges and paste it directly into the value set screen, saving you the effort of retyping it. 
+Continuing with the above value set, suppose the AGE_5YRS ranges were already entered elsewhere such as in an Excel file. You could simply copy the labels and ranges and paste it directly into the value set screen, saving you the effort of retyping it.
 
 <subheader>Example 3</subheader>
 
-Suppose you needed to tabulate age by single years: 0 to 99. It would be very tedious to create that value set. Instead, you could use the <link generate_numeric_value_set.hgt>Generate Value Set</link> tool to create this numeric value set.
+Suppose you needed to tabulate age by single years: 0 to 99. It would be very tedious to create that value set. Instead, you could use the <link generate_numeric_value_set.csdoc>Generate Value Set</link> tool to create this numeric value set.
 
-<seealso value_set_properties.hgt value_set_images.hgt value_description.hgt implications_of_data_dictionary_value_sets.hgt multiple_language_dictionaries.hgt />
+<seealso value_set_properties.csdoc value_set_images.csdoc value_description.csdoc implications_of_data_dictionary_value_sets.csdoc multiple_language_dictionaries.csdoc />

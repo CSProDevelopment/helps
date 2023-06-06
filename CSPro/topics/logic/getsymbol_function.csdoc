@@ -10,7 +10,7 @@ s = getsymbol();
 
 The <logiccolor>getsymbol</logiccolor> function returns the name of the current procedure being executed.
 
-An optional syntax, <logiccolor>getsymbol(savepartial)</logiccolor>, returns the field name and occurrence information (for multiply-occurring items) of the location of the last <link savepartial_function.hgt>partial save</link>.
+An optional syntax, <logiccolor>getsymbol(savepartial)</logiccolor>, returns the field name and occurrence information (for multiply-occurring items) of the location of the last <link savepartial_function.csdoc>partial save</link>.
 
 <subheader>Return Value</subheader>
 
@@ -23,13 +23,13 @@ function OnStop()
 
 	if getsymbol() = "ACTION" then
 		stop(1);
-	
+
 	else
 		reenter ACTION;
-	
+
 	endif;
 
 end;
 </logic>
 
-<seealso getlabel_function.hgt getrecord_function.hgt />
+<seealso getlabel_function.csdoc getrecord_function.csdoc />

@@ -10,7 +10,7 @@ b = filerename(<arg>old_file_name</arg>, <arg>new_file_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>filerename</logiccolor> function changes the name of a file or group of files on the disk. The argument <arg>old_file_name</arg> is a string expression or string <link list.hgt>List</link> giving the existing file name(s). The argument <arg>new_file_name</arg> is a string expression giving the new file name or destination folder name. The arguments can also be file handlers declared in a <logiccolor>File</logiccolor> statement.
+The <logiccolor>filerename</logiccolor> function changes the name of a file or group of files on the disk. The argument <arg>old_file_name</arg> is a string expression or string <link list.csdoc>List</link> giving the existing file name(s). The argument <arg>new_file_name</arg> is a string expression giving the new file name or destination folder name. The arguments can also be file handlers declared in a <logiccolor>File</logiccolor> statement.
 
 You can use the wildcard characters "*" and "?" to specify a group of files to rename as the <arg>old_file_name</arg>. If using wildcard characters, the <arg>new_file_name</arg> must be the name of a folder.
 
@@ -27,4 +27,4 @@ filerename("data.csdb", maketext("old_data%d.csdb",timestamp()));
 </logic>
 
 
-<seealso filecopy_function.hgt filedelete_function.hgt />
+<seealso filecopy_function.csdoc filedelete_function.csdoc />

@@ -10,7 +10,7 @@ s = geometry_name.getProperty(<arg>property_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Geometry.getProperty</logiccolor> function returns a string containing the current value associated with the <link geometry.hgt>Geometry</link> object's property specified by the string expression <arg>property_name</arg>. If a Geometry object contains multiple features, the function returns the value of the first feature that contains a value for <arg>property_name</arg>. Property names are case sensitive.
+The <logiccolor>Geometry.getProperty</logiccolor> function returns a string containing the current value associated with the <link geometry.csdoc>Geometry</link> object's property specified by the string expression <arg>property_name</arg>. If a Geometry object contains multiple features, the function returns the value of the first feature that contains a value for <arg>property_name</arg>. Property names are case sensitive.
 
 Property values may be set using the <logiccolor>Geometry.setProperty</logiccolor> function. When reading a GeoJSON file using the <logiccolor>Geometry.load</logiccolor> function, property names and values are read from the properties section of GeoJSON features.
 
@@ -34,4 +34,4 @@ errmsg("This feature is named %s", feature_name);
 </logic>
 
 
-<seealso geometry.hgt geometry_setproperty_function.hgt />
+<seealso geometry.csdoc geometry_setproperty_function.csdoc />

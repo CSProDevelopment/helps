@@ -22,7 +22,7 @@ The encoding types are:
 	<cell>CSV</cell><cell>Encodes the characters , " and newlines for writing to comma-separated values files.</cell>
 	<cell>URI</cell><cell>Encodes a <link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI>group of characters</link> for writing uniform resource identifiers (URIs).</cell>
 	<cell>URIComponent</cell><cell>Encodes a <link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent>group of characters</link> for writing the components of URIs.</cell>
-	<cell>PercentEncoding</cell><cell>Encodes a <link https://en.wikipedia.org/wiki/Percent-encoding>group of characters</link> for writing to formats such as <link connection_string.hgt>connection strings</link>.</cell>
+	<cell>PercentEncoding</cell><cell>Encodes a <link https://en.wikipedia.org/wiki/Percent-encoding>group of characters</link> for writing to formats such as <link connection_string.csdoc>connection strings</link>.</cell>
 	<cell>JsonString</cell><cell>Encodes text for writing as a valid <link https://datatracker.ietf.org/doc/html/rfc7159#section-7>JSON string</link>.</cell>
 	<cell>Slashes</cell><cell>Adds backslashes to escape <link https://www.php.net/manual/en/function.addslashes.php>quote and backslash</link> characters.</cell>
 </table>
@@ -54,4 +54,4 @@ csv_file.write("%s,%s", encode(strip(ADDRESS)), encode(strip(HEAD_NAME)));
 </logic>
 
 
-<seealso file_write_function.hgt replace_function.hgt />
+<seealso file_write_function.csdoc replace_function.csdoc />

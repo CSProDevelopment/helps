@@ -9,7 +9,7 @@ Audio recording and playback are currently only supported on Android.
 
 <subheader>Functionality</subheader>
 
-An Audio object is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+An Audio object is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
@@ -35,7 +35,7 @@ Audio objects can be assigned to other Audio objects, which will replace the rec
 <arg>audio_name</arg> = <arg>another_audio_name</arg>;
 </logicsyntax>
 
-It is also possible to assign Audio objects to a <link document.hgt>Document</link>:
+It is also possible to assign Audio objects to a <link document.csdoc>Document</link>:
 
 <logicsyntax>
 <arg>document_name</arg> = <arg>audio_name</arg>;
@@ -47,7 +47,7 @@ You can also make the reverse assignment, assigning a Document to an Audio objec
 <arg>audio_name</arg> = <arg>document_name</arg>;
 </logicsyntax>
 
-When an Audio object is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+When an Audio object is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>.
 
 
 <subheader>Example</subheader>
@@ -57,4 +57,4 @@ When an Audio object is used as an argument to a <link user_defined_functions.hg
 </logic>
 
 
-<seealso multimedia_features.hgt />
+<seealso multimedia_features.csdoc />

@@ -8,7 +8,7 @@ i = setub(<arg>month</arg>, <arg>year</arg>, <arg>maximum_cmc</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>setlb</logiccolor> function returns the upper bound of the <i><link cmcode_function.hgt>century month code</link></i> (CMC) of an event. The arguments <arg>month</arg>, <arg>year</arg>, and <arg>maximum_cmc</arg> are all numeric expressions.
+The <logiccolor>setlb</logiccolor> function returns the upper bound of the <i><link cmcode_function.csdoc>century month code</link></i> (CMC) of an event. The arguments <arg>month</arg>, <arg>year</arg>, and <arg>maximum_cmc</arg> are all numeric expressions.
 
 If the month and year are both valid, the function returns the CMC of that date, as if calling:
 
@@ -37,4 +37,4 @@ if CM12Y < 9997 then
 endif;
 </logic>
 
-<seealso setlb_function.hgt cmcode_function.hgt adjlba_function.hgt adjlbi_function.hgt adjuba_function.hgt adjubi_function.hgt />
+<seealso setlb_function.csdoc cmcode_function.csdoc adjlba_function.csdoc adjlbi_function.csdoc adjuba_function.csdoc adjubi_function.csdoc />

@@ -7,7 +7,7 @@ In logic, a <logiccolor>Geometry</logiccolor> is an object that can be used to d
 
 <subheader>Functionality</subheader>
 
-A Geometry is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+A Geometry is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
@@ -37,7 +37,7 @@ Geometry objects can be assigned to other Geometry objects, which will replace t
 <arg>geometry_name</arg> = <arg>another_geometry_name</arg>;
 </logicsyntax>
 
-It is also possible to assign Geometry objects to a <link document.hgt>Document</link>:
+It is also possible to assign Geometry objects to a <link document.csdoc>Document</link>:
 
 <logicsyntax>
 <arg>document_name</arg> = <arg>geometry_name</arg>;
@@ -49,7 +49,7 @@ You can also make the reverse assignment, assigning a Document to a Geometry obj
 <arg>geometry_name</arg> = <arg>document_name</arg>;
 </logicsyntax>
 
-When a Geometry object is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+When a Geometry object is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>.
 
 
 <subheader>Example</subheader>
@@ -58,4 +58,4 @@ When a Geometry object is used as an argument to a <link user_defined_functions.
 <include include_geometry_example.hgi />
 </logic>
 
-<seealso map.hgt />
+<seealso map.csdoc />

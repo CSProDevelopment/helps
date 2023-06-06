@@ -8,7 +8,7 @@ s = tr(<arg>string_expression</arg> ‖ <arg>message_number</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>tr</logiccolor> function translates text into the appropriate language based on the application current's language. The text can come from a <arg>string_expression</arg>, generally a string literal, or from a <arg>message_number</arg>. Text translations are defined in the application's <link message_file_mgf.hgt>message file</link>.
+The <logiccolor>tr</logiccolor> function translates text into the appropriate language based on the application current's language. The text can come from a <arg>string_expression</arg>, generally a string literal, or from a <arg>message_number</arg>. Text translations are defined in the application's <link message_file_mgf.csdoc>message file</link>.
 
 <subheader>Return Value</subheader>
 
@@ -30,4 +30,4 @@ errmsg(tr("Hello"));  // Bonjour
 errmsg(tr("World!")); // World!
 </logic>
 
-<seealso message_file_mgf.hgt multiple_language_applications.hgt setlanguage_function.hgt />
+<seealso message_file_mgf.csdoc multiple_language_applications.csdoc setlanguage_function.csdoc />

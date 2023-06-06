@@ -1,6 +1,6 @@
 ﻿<title>SetReportData Function (Deprecated)</title>
 
-<i><b>Feature Upgrade</b>: Starting with CSPro 7.7, the version of Templated Reports that uses <logiccolor>setreportdata</logiccolor> has been superseded by a new version, <link templated_reports.hgt>Templated Reports</link>. This version will be removed in a future version of CSPro.</i>
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.7, the version of Templated Reports that uses <logiccolor>setreportdata</logiccolor> has been superseded by a new version, <link templated_reports.csdoc>Templated Reports</link>. This version will be removed in a future version of CSPro.</i>
 
 
 <subheader>Format</subheader>
@@ -12,16 +12,16 @@ b = setreportdata(『<arg>attribute</arg>,』 <arg>data_source</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>setreportdata</logiccolor> function stores in memory a piece of data that will later be used by the <logiccolor>report</logiccolor> function to generate a <link templated_reports.hgt>templated report</link>. The string expression <arg>attribute</arg> specifies the key, or tag, that uniquely identifies the piece of data. The attribute is case sensitive. In the report template, you will use this attribute to refer to this data.
+The <logiccolor>setreportdata</logiccolor> function stores in memory a piece of data that will later be used by the <logiccolor>report</logiccolor> function to generate a <link templated_reports.csdoc>templated report</link>. The string expression <arg>attribute</arg> specifies the key, or tag, that uniquely identifies the piece of data. The attribute is case sensitive. In the report template, you will use this attribute to refer to this data.
 
 The <arg>data_source</arg> must be one of the following:
 
 <table 2>
 	<cell><arg>data_source</arg></cell><cell><b>Description</b></cell>
-	<cell><arg>value</arg></cell><cell>A string expression containing some text.</cell>	
+	<cell><arg>value</arg></cell><cell>A string expression containing some text.</cell>
 	<cell><arg>record_name</arg></cell><cell>The contents of a record, including multiply occurring records. In a data entry application, only information up to the number of entered occurrences will be stored.</cell>
-	<cell><arg>list_name</arg></cell><cell>The contents of a <link list.hgt>List</link>.</cell>
-	<cell><arg>array_name</arg></cell><cell>The contents of a one- or multiple-dimensional <link array.hgt>Array</link>.</cell>
+	<cell><arg>list_name</arg></cell><cell>The contents of a <link list.csdoc>List</link>.</cell>
+	<cell><arg>array_name</arg></cell><cell>The contents of a one- or multiple-dimensional <link array.csdoc>Array</link>.</cell>
 	<cell><arg>sqlquery</arg></cell><cell>The result set of a query executed by the <logiccolor>sqlquery</logiccolor> function. Do not specify that function's optional <arg>result_set</arg> argument, as the result set is stored in memory when called by <logiccolor>setreportdata</logiccolor>.</cell>
 </table>
 
@@ -55,4 +55,4 @@ setreportdata("device_info", sqlquery(paradata, DeviceQuery));
 </logic>
 
 
-<seealso report_function_pre77.hgt sqlquery_function.hgt templated_reports_pre77.hgt />
+<seealso report_function_pre77.csdoc sqlquery_function.csdoc templated_reports_pre77.csdoc />

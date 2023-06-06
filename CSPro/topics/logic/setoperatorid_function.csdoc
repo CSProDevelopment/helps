@@ -8,7 +8,7 @@ b = setoperatorid(<arg>operator_id</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>setoperatorid</logiccolor> function sets the operator ID to the string expression <arg>operator_id</arg> for the current data entry session. The operator ID is generally entered by the operator or <link run_production_data_entry.hgt>passed as a parameter</link> in the PFF file, but for some programs, such as menu systems, it may be useful to set the operator ID in logic.
+The <logiccolor>setoperatorid</logiccolor> function sets the operator ID to the string expression <arg>operator_id</arg> for the current data entry session. The operator ID is generally entered by the operator or <link run_production_data_entry.csdoc>passed as a parameter</link> in the PFF file, but for some programs, such as menu systems, it may be useful to set the operator ID in logic.
 
 <subheader>Return Value</subheader>
 
@@ -29,4 +29,4 @@ PROC USER_ID
 	setoperatorid(strip(LF_USER_NAME));
 </logic>
 
-<seealso getoperatorid_function.hgt />
+<seealso getoperatorid_function.csdoc />

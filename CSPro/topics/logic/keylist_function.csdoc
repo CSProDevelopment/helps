@@ -10,9 +10,9 @@ i = keylist(<arg>dictionary_name</arg>『, <arg>key_listing</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>keylist</logiccolor> function fills <arg>key_listing</arg>, an optional string <link list.hgt>List</link>, with the <link key_function.hgt>keys</link> in the file referenced by <arg>dictionary_name</arg>. The dictionary can be either the main input dictionary or an external dictionary. A dictionary key is a single string comprised of the IDs for a case.
+The <logiccolor>keylist</logiccolor> function fills <arg>key_listing</arg>, an optional string <link list.csdoc>List</link>, with the <link key_function.csdoc>keys</link> in the file referenced by <arg>dictionary_name</arg>. The dictionary can be either the main input dictionary or an external dictionary. A dictionary key is a single string comprised of the IDs for a case.
 
-It is possible, by specifying <link set_access_statement.hgt>dictionary access parameters</link> after the dictionary name, to limit the keys that the <logiccolor>keylist</logiccolor> function returns.
+It is possible, by specifying <link set_access_statement.csdoc>dictionary access parameters</link> after the dictionary name, to limit the keys that the <logiccolor>keylist</logiccolor> function returns.
 
 
 <subheader>Return Value</subheader>
@@ -38,18 +38,18 @@ PROC ACTION
 PROC HOUSEHOLD_NUMBER
 
 	List string enteredKeys;
-	
+
 	keylist(CENSUS_DICT, enteredKeys);
-	
+
 	do numeric keyCtr = 1 while keyCtr <= enteredKeys.length()
-	
+
 		if HOUSEHOLD_NUMBER = tonumber(enteredKeys(keyCtr)[9:2]) then
 			errmsg("The household number %d has already been entered.", HOUSEHOLD_NUMBER);
 			reenter;
 		endif;
-		
+
 	enddo;
 </logic>
 
 
-<seealso key_function.hgt />
+<seealso key_function.csdoc />

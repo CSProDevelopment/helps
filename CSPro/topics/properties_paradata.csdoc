@@ -1,7 +1,7 @@
 ﻿<title>Paradata Properties</title>
 <context IDD_PROPERTIES_PARADATA />
 
-To view options related to <link paradata.hgt>paradata</link> collection, select <link properties_application.hgt>Application Properties</link> from the <b>Options</b> menu of a data entry, batch edit, or tabulation application, and then select the <b>Paradata</b> section.
+To view options related to <link paradata.csdoc>paradata</link> collection, select <link properties_application.csdoc>Application Properties</link> from the <b>Options</b> menu of a data entry, batch edit, or tabulation application, and then select the <b>Paradata</b> section.
 
 
 <subheader>Event Collection Options</subheader>
@@ -32,7 +32,7 @@ The following is a summary of each kind of event that CSPro can collect:
 	<li><b>Property</b>: Information about what CSPro settings were used, or changed, during the program's run.</li>
 </list>
 
-You can explore these events in more detail using the Paradata Viewer's <link ParadataViewer::table_metadata.hgt>Table Metadata</link> feature.
+You can explore these events in more detail using the Paradata Viewer's <link ParadataViewer::table_metadata.csdoc>Table Metadata</link> feature.
 
 For advanced users writing SQL queries on the paradata tables, note that the base "event" table links to each of these event tables, and that some of these events link to other tables with names that end in "_info" or "_instance."
 
@@ -63,4 +63,4 @@ Most events are triggered by some action (e.g., an error message appearing), but
 The value listed indicates the number of minutes between events occurring, or 0 if the event should be disabled. For example, a value of 30 for GPS location means that CSEntry will attempt to store the GPS coordinates of the interviewer every half hour.
 
 
-<seealso paradata.hgt />
+<seealso paradata.csdoc />

@@ -12,7 +12,7 @@ The <logiccolor>endlevel</logiccolor> statement ends data entry for the current 
 
 If the statement is executed in a level <b>preproc</b> or <b>postproc</b>, control passes to the <b>postproc</b> of the next-highest level. If it is used in the highest-level <b>postproc</b>, control passes to the form file's <b>postproc</b> (if there is one), and then data entry is terminated for the current case.
 
-In <link operator_vs_system_controlled.hgt>system-controlled</link> applications, CSPro will continue to add cases at the lowest level of a multiple-level dictionary until it is told to stop by <logiccolor>endlevel</logiccolor>. Therefore, the statement should be used in the <b>postproc</b> of the lowest level to end data entry at that level.
+In <link operator_vs_system_controlled.csdoc>system-controlled</link> applications, CSPro will continue to add cases at the lowest level of a multiple-level dictionary until it is told to stop by <logiccolor>endlevel</logiccolor>. Therefore, the statement should be used in the <b>postproc</b> of the lowest level to end data entry at that level.
 
 <subheader>Example</subheader>
 
@@ -22,4 +22,4 @@ if MORE_WOMEN = 0 then
 endif;
 </logic>
 
-<seealso endgroup_statement.hgt />
+<seealso endgroup_statement.csdoc />

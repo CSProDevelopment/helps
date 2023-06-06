@@ -1,6 +1,6 @@
 ﻿<title>Run Production Data Entry</title>
 
-You can customize CSEntry's behavior by creating a <link program_information_file_pff.hgt>PFF file</link>. You can then use the PFF file as a command line parameter for CSEntry.exe. For example, if you name your PFF file MySurvey.pff, then you run the data entry application by invoking:
+You can customize CSEntry's behavior by creating a <link program_information_file_pff.csdoc>PFF file</link>. You can then use the PFF file as a command line parameter for CSEntry.exe. For example, if you name your PFF file MySurvey.pff, then you run the data entry application by invoking:
 
 <indent><font monospace>"C:\Program Files (x86)\CSPro <definition version />\CSEntry.exe" MySurvey.pff</font></indent>
 
@@ -64,7 +64,7 @@ The <pffcolor>[Run Information]</pffcolor> block is required. While <pffcolor>Ve
 The <pffcolor>[DataEntryInit]</pffcolor> block is optional. It gives you the opportunity to customize the following runtime characteristics:
 
 <list>
-	<li><pffcolor>OperatorID</pffcolor>=specifies the <link getoperatorid_function.hgt>operator ID</link> for the purposes of logging <link operator_statistics_file_log.hgt>operator statistics</link>. If this line is not present but your data entry application has been set to <link change_data_entry_options.hgt>ask for this</link>, CSEntry will prompt the operator for one at runtime.</li>
+	<li><pffcolor>OperatorID</pffcolor>=specifies the <link getoperatorid_function.csdoc>operator ID</link> for the purposes of logging <link operator_statistics_file_log.csdoc>operator statistics</link>. If this line is not present but your data entry application has been set to <link change_data_entry_options.csdoc>ask for this</link>, CSEntry will prompt the operator for one at runtime.</li>
 	<li><pffcolor>StartMode</pffcolor>=determines the mode in which CSEntry starts. The possible options are: <b>Add</b>, <b>Modify</b>, and <b>Verify</b>. If this line is not present, one of two things will occur: if the data file does not exist, then the program will start in <b>Add</b> mode; if the data file does exist, then CSEntry will wait for the operator to choose their desired mode. The operator's choices may be constrained due to options indicated in the <pffcolor>Lock</pffcolor> feature.
 	~!~You can also specify the case upon which to act by adding a semicolon and the case IDs of an existing case (for example: <pffcolor>StartMode</pffcolor>=<b>Modify</b>;010502). This will open CSEntry in <b>Modify</b> mode and open the case indicated by the ID. If the <pffcolor>StartMode</pffcolor> conflicts with the <pffcolor>Lock</pffcolor> parameter settings, then the <pffcolor>StartMode</pffcolor> parameter will take precedence.</li>
 	<li><pffcolor>Key</pffcolor>= specifies the case ID to automatically open. If a key is provided that exists in the data file, CSEntry will open that case and then close once the case has been entered. If the case does not exist, a new case is created and the IDs automatically filled from the values specified. If only a partial key is provided, then only the values specified are prefilled. (For example, if the IDs are cluster and household number and the key only specifies the cluster, then the cluster will be automatically filled but the interviewer will have to specify the household number.) The <pffcolor>StartMode</pffcolor> attribute takes precedence over the <pffcolor>Key</pffcolor> attribute. You generally will use only one, if any, in your design. This attribute is typically used in menu programs, often with the output of the <logiccolor>key</logiccolor> logic function.</li>
@@ -76,13 +76,13 @@ The <pffcolor>[DataEntryInit]</pffcolor> block is optional. It gives you the opp
 			<li><b>Add</b>: The operator cannot add new cases.</li>
 			<li><b>Modify</b>: The operator cannot modify existing cases.</li>
 			<li><b>Verify</b>: The operator cannot verify existing cases.</li>
-			<li><b>Stats</b>: The operator cannot view <link operator_statistics_file_log.hgt>operator statistics</link>.</li>
+			<li><b>Stats</b>: The operator cannot view <link operator_statistics_file_log.csdoc>operator statistics</link>.</li>
 			<li><b>Delete</b>: The operator cannot delete cases.</li>
 			<li><b>CaseListing</b>: On mobile CSEntry, the Case Listing screen will be bypassed.</li>
 		</list>
 	Multiple modes can be specified by listing each mode, separated by a comma.
 	</li>
-	<li><pffcolor>Interactive</pffcolor>=specifies the default way that CSEntry runs in <link CSEntry::edit_interactively.hgt>Interactive Edit</link> mode. The possible options are:~!~~!~
+	<li><pffcolor>Interactive</pffcolor>=specifies the default way that CSEntry runs in <link CSEntry::edit_interactively.csdoc>Interactive Edit</link> mode. The possible options are:~!~~!~
 		<list>
 			<li><b>Ask</b>: The default option, CSEntry will ask the operator how to run Interactive Edit.</li>
 			<li><b>Both</b>: CSEntry will display both out-of-range messages and errors generated from the <logiccolor>errmsg</logiccolor> function.</li>
@@ -103,16 +103,16 @@ The <pffcolor>[Files]</pffcolor> block is required. A description of the files, 
 <list>
 	<li><pffcolor>Application</pffcolor>=the name of the data entry application that you created.</li>
 	<li><pffcolor>InputData</pffcolor>=the data file that an operator will be creating, modifying, or verifying with this data entry application.</li>
-	<li><pffcolor>Paradata</pffcolor>=the name of a file where <link paradata.hgt>events</link> logged during the application's run are saved.</li>
+	<li><pffcolor>Paradata</pffcolor>=the name of a file where <link paradata.csdoc>events</link> logged during the application's run are saved.</li>
 	<li><pffcolor>CommonStore</pffcolor>=if you use the <logiccolor>loadsetting</logiccolor> or <logiccolor>savesetting</logiccolor> functions in your program, this file overrides the default location where these settings are saved.</li>
-	<li><pffcolor>HtmlDialogs</pffcolor>=the name of a directory that contains custom <link html_dialog_ui.hgt>HTML dialogs</link> that override the default CSPro ones.</li>
-	<li><pffcolor>BaseMap</pffcolor>=the name of the online map or the filename of an offline map used for <link map_base_map_specification.hgt>CSPro mapping</link>.</li>
+	<li><pffcolor>HtmlDialogs</pffcolor>=the name of a directory that contains custom <link html_dialog_ui.csdoc>HTML dialogs</link> that override the default CSPro ones.</li>
+	<li><pffcolor>BaseMap</pffcolor>=the name of the online map or the filename of an offline map used for <link map_base_map_specification.csdoc>CSPro mapping</link>.</li>
 </list>
 
 
 <subheader>[ExternalFiles]</subheader>
 
-If the <pffcolor>[ExternalFiles]</pffcolor> block is present, it means that a second (or more) dictionary was linked to the data entry application. In the example above, LOOKUP_DICT is the dictionary name, and LookupFile.dat is the name of the data file that contains the <link lookup_files.hgt>lookup codes</link>.
+If the <pffcolor>[ExternalFiles]</pffcolor> block is present, it means that a second (or more) dictionary was linked to the data entry application. In the example above, LOOKUP_DICT is the dictionary name, and LookupFile.dat is the name of the data file that contains the <link lookup_files.csdoc>lookup codes</link>.
 
 
 <subheader>[Parameters]</subheader>
@@ -130,7 +130,7 @@ When starting a new case, if the name of a parameter matches the name of a dicti
 
 <subheader>[DataEntryIDs]</subheader>
 
-The <pffcolor>[DataEntryIDs]</pffcolor> block is for use with any <link change_field_properties.hgt>persistent IDs</link> that you have defined. CSEntry will assign the specified values to the indicated persistent fields when a new data file is created. This feature allows automatic definition of persistent fields, such as geographic IDs. If you provide values and run this on an existing data file, and the PFF file values do not match the values in the data file, then the PFF values will be ignored. The syntax is as follows:
+The <pffcolor>[DataEntryIDs]</pffcolor> block is for use with any <link change_field_properties.csdoc>persistent IDs</link> that you have defined. CSEntry will assign the specified values to the indicated persistent fields when a new data file is created. This feature allows automatic definition of persistent fields, such as geographic IDs. If you provide values and run this on an existing data file, and the PFF file values do not match the values in the data file, then the PFF values will be ignored. The syntax is as follows:
 
 <logicsyntax>
 <arg>id_item_name</arg>=<arg>initial_value</arg>

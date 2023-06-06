@@ -10,7 +10,7 @@ s = editnote(『<arg>dictionary_symbol</arg>』『,<arg>operator_id</arg>』);
 
 The <logiccolor>editnote</logiccolor> function displays the note entry dialog box for adding or changing the note for a field or other dictionary symbol. You can use this function to force the collection of note text. The operator can always create or edit a note manually by pressing <b>Ctrl+N</b> (on desktop CSEntry) or by clicking on the Notes button on mobile CSEntry.
 
-If no arguments are supplied, the note for the current field is displayed for editing. The optional argument <arg>dictionary_symbol</arg> allows you to edit the note for a dictionary item, record, or level. If using the dictionary name, the case note is edited. Another optional string argument, <arg>operator_id</arg>, allows you to edit the note for a particular <link getoperatorid_function.hgt>operator</link>. If no operator ID is supplied, then the note for the current operator will be edited.
+If no arguments are supplied, the note for the current field is displayed for editing. The optional argument <arg>dictionary_symbol</arg> allows you to edit the note for a dictionary item, record, or level. If using the dictionary name, the case note is edited. Another optional string argument, <arg>operator_id</arg>, allows you to edit the note for a particular <link getoperatorid_function.csdoc>operator</link>. If no operator ID is supplied, then the note for the current operator will be edited.
 
 <subheader>Return Value</subheader>
 
@@ -25,5 +25,5 @@ PROC COOKING
 		COOKING_OTHER = editnote();
 	endif;
 </logic>
- 
-<seealso getnote_function.hgt putnote_function.hgt />
+
+<seealso getnote_function.csdoc putnote_function.csdoc />

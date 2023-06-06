@@ -10,9 +10,9 @@ geometryId = map_name.addGeometry(<arg>geometry_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Map.addGeometry</logiccolor> function adds the vector data (points, lines, and polygons) contained in <arg>geometry_name</arg> to the <link map.hgt>Map object</link> named <logiccolor>map_name</logiccolor>. The vector data will be drawn on the map in a layer on top of the base map. Points are rendered as markers while lines and polygons are drawn as lines and polygons. The vector data may be loaded from a GeoJSON file using the function <logiccolor>geometry.load</logiccolor> or traced by the interviewer using the <logiccolor>geometry.tracePolygon</logiccolor> or <logiccolor>geometry.walkPolygon</logiccolor> functions.
+The <logiccolor>Map.addGeometry</logiccolor> function adds the vector data (points, lines, and polygons) contained in <arg>geometry_name</arg> to the <link Map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor>. The vector data will be drawn on the map in a layer on top of the base map. Points are rendered as markers while lines and polygons are drawn as lines and polygons. The vector data may be loaded from a GeoJSON file using the function <logiccolor>geometry.load</logiccolor> or traced by the interviewer using the <logiccolor>geometry.tracePolygon</logiccolor> or <logiccolor>geometry.walkPolygon</logiccolor> functions.
 
-Loading very large GeoJSON files can be slow and may exceed the memory of the device. In some cases it may be necessary to break up large GeoJSON files into smaller files. For example, rather than using a single file containing geometry for an entire country, create smaller files for the geometry in each district and then load only the file for the district that the interviewer is currently working in. Alternatively, rather than using geometry you can save the vector data in a custom <link offline_maps.hgt>base map</link>.
+Loading very large GeoJSON files can be slow and may exceed the memory of the device. In some cases it may be necessary to break up large GeoJSON files into smaller files. For example, rather than using a single file containing geometry for an entire country, create smaller files for the geometry in each district and then load only the file for the district that the interviewer is currently working in. Alternatively, rather than using geometry you can save the vector data in a custom <link offline_maps.csdoc>base map</link>.
 
 
 <subheader>Return Value</subheader>
@@ -38,4 +38,4 @@ mymap.show();
 </logic>
 
 
-<seealso map.hgt geometry.hgt map_remove_geometry_function.hgt map_clear_geometry_function.hgt />
+<seealso Map.csdoc Geometry.csdoc Map_removeGeometry_function.csdoc Map_clearGeometry_function.csdoc />

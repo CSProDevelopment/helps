@@ -26,11 +26,11 @@ PROC FERTILITY
 PROC ROOF_TYPE
 
 	universe HHTYPE = 1 case;
-	
+
 	// the universe is equivalent to:
 	if not HHTYPE = 1 then
 		endcase;
 	endif;
 </logic>
 
-<seealso exit_statement.hgt endcase_statement.hgt if_statement.hgt />
+<seealso exit_statement.csdoc endcase_statement.csdoc if_statement.csdoc />

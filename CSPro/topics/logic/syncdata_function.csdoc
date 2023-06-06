@@ -21,7 +21,7 @@ The function can upload cases from the local device (client) to the server as we
 
 The <arg>dictionary_name</arg> argument must be the name of a data dictionary corresponding to the data file to synchronize. This dictionary must be an external dictionary. CSPro uses the data file that is currently associated with this dictionary, either because it was specified when the application was started or via a call to <logiccolor>setfile</logiccolor> from application logic.
 
-For synchronization with a CSWeb server, the dictionary must first be uploaded to the server. (See the <link CSWeb::introduction_to_csweb.hgt>CSWeb help documentation</link> for more information.)
+For synchronization with a CSWeb server, the dictionary must first be uploaded to the server. (See the <link CSWeb::introduction_to_csweb.csdoc>CSWeb help documentation</link> for more information.)
 
 For peer-to-peer synchronization, the data is written to the file associated with the dictionary of the same name on the device running the server. This means that both devices must have this dictionary added to the currently running CSPro application, either as the main dictionary or as an external dictionary.
 
@@ -29,7 +29,7 @@ By providing an optional string expression for the <arg>sync_universe</arg> argu
 
 The <logiccolor>syncdata</logiccolor> function keeps track of which cases are transferred each time the client and server are synchronized and uses this information to only transfer cases that have been modified since the last synchronization. This significantly reduces the amount of data transferred and therefore reduces bandwidth and the cost of air time. It also reduces the chance that two interviewers overwrite each other's work by both syncing to the same data file on the server. As long as the two interviewers do not modify the same case at the same time, they may both synchronize to the same server without overwriting each other's data.
 
-The <logiccolor>syncdata</logiccolor> function is only supported on data files in <link data_sources.hgt>CSPro DB</link> or <link data_sources.hgt>Encrypted CSPro DB</link> formats. Data files in the legacy text format may not be synchronized using <logiccolor>syncdata</logiccolor> but instead can be transferred using the <logiccolor>syncfile</logiccolor> function. That function always transfers the entire file, however, increasing the amount of data transferred and allowing for one interviewer to overwrite the changes of another.
+The <logiccolor>syncdata</logiccolor> function is only supported on data files in <link data_sources.csdoc>CSPro DB</link> or <link data_sources.csdoc>Encrypted CSPro DB</link> formats. Data files in the legacy text format may not be synchronized using <logiccolor>syncdata</logiccolor> but instead can be transferred using the <logiccolor>syncfile</logiccolor> function. That function always transfers the entire file, however, increasing the amount of data transferred and allowing for one interviewer to overwrite the changes of another.
 
 You can use the <logiccolor>synctime</logiccolor> function to get the time of the last <logiccolor>syncdata</logiccolor> call.
 
@@ -71,4 +71,4 @@ endif;
 </logic>
 
 
-<seealso synchronization.hgt syncconnect_function.hgt syncfile_function.hgt syncparadata_function.hgt syncdisconnect_function.hgt syncserver_function.hgt synctime_function.hgt  />
+<seealso synchronization.csdoc syncconnect_function.csdoc syncfile_function.csdoc syncparadata_function.csdoc syncdisconnect_function.csdoc syncserver_function.csdoc synctime_function.csdoc  />

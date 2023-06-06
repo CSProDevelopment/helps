@@ -10,7 +10,7 @@ b = geometry_name.setProperty(<arg>property_name</arg>, <arg>property_value</arg
 
 <subheader>Description</subheader>
 
-The <logiccolor>Geometry.setProperty</logiccolor> function modifies the value associated with the <link geometry.hgt>Geometry</link> object's property specified by the string expression <arg>property_name</arg>. The property will be modified to the value given in the string or numeric expression <arg>property_value</arg>. Properties may not be applied to empty Geometry objects so you must first call the <logiccolor>Geometry.load</logiccolor>, <logiccolor>Geometry.tracePolygon</logiccolor>, or <logiccolor>Geometry.walkPolygon</logiccolor> functions to add items to the Geometry before setting properties. Property names are case sensitive.
+The <logiccolor>Geometry.setProperty</logiccolor> function modifies the value associated with the <link geometry.csdoc>Geometry</link> object's property specified by the string expression <arg>property_name</arg>. The property will be modified to the value given in the string or numeric expression <arg>property_value</arg>. Properties may not be applied to empty Geometry objects so you must first call the <logiccolor>Geometry.load</logiccolor>, <logiccolor>Geometry.tracePolygon</logiccolor>, or <logiccolor>Geometry.walkPolygon</logiccolor> functions to add items to the Geometry before setting properties. Property names are case sensitive.
 
 When a geometry item contains multiple features, the property is set to <arg>property_value</arg> in ALL of the features of the geometry. When a geometry item is saved to a GeoJSON file using the <logiccolor>Geometry.save</logiccolor> function, the properties are written to the GeoJSON file.
 
@@ -34,7 +34,7 @@ The function returns a logical value of 1 (true) because it will always successf
 <logic>
 // Declare a geometry
 Geometry outline;
-	
+
 // Have the user walk the outline of a polygon
 if outline.walkPolygon() then
 
@@ -43,10 +43,10 @@ if outline.walkPolygon() then
 	outline.setProperty("PROV", PROVINCE);
 	outline.setProperty("DIST", DISTRICT);
 	outline.setProperty("HHNO", HOUSEHOLD_NUMBER);
-	
+
 	// Save the outline to a GeoJSON file
 	outline.save("outline.geojson");
-	
+
 endif;
 </logic>
 
@@ -78,4 +78,4 @@ mymap.show();
 </logic>
 
 
-<seealso geometry.hgt geometry_getproperty_function.hgt />
+<seealso geometry.csdoc geometry_getproperty_function.csdoc />

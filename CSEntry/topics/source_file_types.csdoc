@@ -4,13 +4,13 @@
 
 With the release of 7.7, CSPro now offers more data source types than ever to read from and write to; more exciting, with the 7.7 release, all non-CSPro/text file types will be written to natively. No more two-step processing to produce your R, SAS, SPSS, or Stata files. In addition, some new file types have been introduced, such as Excel.
 
-The following <b>File Associations Matrix</b> provides a summary of the possible file formats found in the <link define_file_associations.hgt>Entry Run Dialog</link>:
+The following <b>File Associations Matrix</b> provides a summary of the possible file formats found in the <link define_file_associations.csdoc>Entry Run Dialog</link>:
 
 <image file_associations_matrix_entry.png />
 
 <b><font 1.5 purple>Standard File Types</font></b>
 
-Standard file types are those found within the Source Type dropdown of the <b>CSEntry</b> run dialog. A description of the file types supported by CSPro, with the default (or required) file extension that can (or must) be used shown in parentheses. Example <link CSPro::connection_string.hgt>connection strings</link> are given for several Source Types below; see the <link CSPro::export_attributes.hgt>Export Attributes</link> page for a full explanation of the available options and required syntax.
+Standard file types are those found within the Source Type dropdown of the <b>CSEntry</b> run dialog. A description of the file types supported by CSPro, with the default (or required) file extension that can (or must) be used shown in parentheses. Example <link CSPro::connection_string.csdoc>connection strings</link> are given for several Source Types below; see the <link CSPro::export_attributes.csdoc>Export Attributes</link> page for a full explanation of the available options and required syntax.
 
 <subheader>None</subheader>
 
@@ -44,21 +44,21 @@ This option is available for Input and External (i.e., lookup) files. It can als
 
 <subheader>CSPro Table (.tbw)</subheader>
 
-The CSPro table file type is available for Freq and Impute Freq Files. CSPro's <b>.tbw</b> files are viewable in any ASCII editor, tho they are meant to be viewed by CSPro's <link TblView::introduction_to_table_viewer.hgt>Table Viewer</link>. There, you will see the familiar tree structure on the left (containing a list of all tables in the file) with the right side of the window devoted to the table display, presented in an Excel-like format.
+The CSPro table file type is available for Freq and Impute Freq Files. CSPro's <b>.tbw</b> files are viewable in any ASCII editor, tho they are meant to be viewed by CSPro's <link TblView::introduction_to_table_viewer.csdoc>Table Viewer</link>. There, you will see the familiar tree structure on the left (containing a list of all tables in the file) with the right side of the window devoted to the table display, presented in an Excel-like format.
 
 <subheader>Text (.lst, .dat, user's choice)</subheader>
 
-Text is the default file association for Freq and Impute Freq Files, tho it can be used for all other file designations, except the (Saved) Array file (which must use the <b>".sva"</b> extension). The generated file is ANSI-based, viewable by any web-browser (such as Firefox or Opera) or any ASCII editor (such as Notepad or Wordpad). 
+Text is the default file association for Freq and Impute Freq Files, tho it can be used for all other file designations, except the (Saved) Array file (which must use the <b>".sva"</b> extension). The generated file is ANSI-based, viewable by any web-browser (such as Firefox or Opera) or any ASCII editor (such as Notepad or Wordpad).
 
 Depending on the file being specified, a default file extension may or may not be given. For example, the Impute Freq Files will be given an <b>".lst"</b> extension by default, tho no default file extension is given to Freq Files. If a non-text file designation was used for Input or Lookup Files and the file type is changed to Text, a default file type of <b>".dat"</b> will be given. (For example, MyCensus.csdb will change to MyCensus.dat if the Source Type is changed from .csdb to Text.) No default extension is given for Write Files. Whatever extension is used, you can always change it to whatever you prefer (for example, <b>".txt"</b>).
 
 <b><font 1.5 purple>Special File Types</font></b>
 
-The following Source Types are not selectable in CSEntry's Run dialog; instead, they will only appear based on logic found within your application, or <link CSPro::export_attributes.hgt>Export Attributes</link> provided for the file.
+The following Source Types are not selectable in CSEntry's Run dialog; instead, they will only appear based on logic found within your application, or <link CSPro::export_attributes.csdoc>Export Attributes</link> provided for the file.
 
 <subheader>Saved Array (.sva)</subheader>
 
-Saving out arrays between runs has many uses, especially when working with <link CSPro::dynamic_imputation_hot_deck.hgt>hot decks</link>. If an <logiccolor>Array</logiccolor> declaration appears anywhere in your program with the <logiccolor>save</logiccolor> keyword, <b>CSEntry</b> will add a file entry to the file associations dialog.
+Saving out arrays between runs has many uses, especially when working with <link CSPro::dynamic_imputation_hot_deck.csdoc>hot decks</link>. If an <logiccolor>Array</logiccolor> declaration appears anywhere in your program with the <logiccolor>save</logiccolor> keyword, <b>CSEntry</b> will add a file entry to the file associations dialog.
 
 <subheader>Semicolon-delimited (user's choice)</subheader>
 
@@ -67,5 +67,3 @@ This option is available for the file generated from any <logiccolor>impute</log
 <pff>myFile.out|type=Semicolon</pff>
 
 When this parameter is added, CSPro will automatically change the Source Type to "Semicolon-delimited" (i.e., it is not a user-selectable data source type). Note a dictionary will be created with the same name (using the example above, you would find myFile.out.dcf had been created).
-
-

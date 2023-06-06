@@ -21,15 +21,15 @@ The <logiccolor>Path.selectFile</logiccolor> function shows the operator a visua
 In the first version, an optional string expression <arg>message</arg> specifies the title of the dialog that shows the file listing. The operator will initially see files starting in the directory where the currently running application is located, and will have access to other files on that drive.
 
 
-The second version, accessed by using <link function_named_arguments.hgt>named arguments</link>, gives you control over the location and kind of files that the operator can choose. The string expression <arg>message</arg> specifies the title of the  dialog that shows the file listing.
+The second version, accessed by using <link function_named_arguments.csdoc>named arguments</link>, gives you control over the location and kind of files that the operator can choose. The string expression <arg>message</arg> specifies the title of the  dialog that shows the file listing.
 
 
-You can specify a string expression, <arg>wildcard</arg>, that is applied to filter the files shown in the visual listing. For example, <logiccolor>"*.csdb"</logiccolor> would show only <link data_sources.hgt>CSPro DB</link> files. You can specify multiple wildcard filters by separating each filter with a semicolon. The filter <logiccolor>"*.jpg;*.jpeg;*.bmp"</logiccolor> would show both JPEG and BMP files. Instead of using a string expression, you can also use a predefined wildcard expression:
+You can specify a string expression, <arg>wildcard</arg>, that is applied to filter the files shown in the visual listing. For example, <logiccolor>"*.csdb"</logiccolor> would show only <link data_sources.csdoc>CSPro DB</link> files. You can specify multiple wildcard filters by separating each filter with a semicolon. The filter <logiccolor>"*.jpg;*.jpeg;*.bmp"</logiccolor> would show both JPEG and BMP files. Instead of using a string expression, you can also use a predefined wildcard expression:
 
 <list>
-	<li><logiccolor>FileType.Audio</logiccolor>: Files that the <link Audio.hgt>Audio</link> object can read and write.</li>
-	<li><logiccolor>FileType.Geometry</logiccolor>: Files that the <link Geometry.hgt>Geometry</link> object can read and write.</li>
-	<li><logiccolor>FileType.Image</logiccolor>: Files that the <link image.hgt>Image</link> object can read and write.</li>
+	<li><logiccolor>FileType.Audio</logiccolor>: Files that the <link Audio.csdoc>Audio</link> object can read and write.</li>
+	<li><logiccolor>FileType.Geometry</logiccolor>: Files that the <link Geometry.csdoc>Geometry</link> object can read and write.</li>
+	<li><logiccolor>FileType.Image</logiccolor>: Files that the <link image.csdoc>Image</link> object can read and write.</li>
 </list>
 
 
@@ -38,7 +38,7 @@ To specify the initial directory shown to the operator, you can specify a <arg>s
 <list>
 	<li>A string expression specifying a directory.</li>
 	<li>One of the path types documented in the <logiccolor>pathname</logiccolor> function.</li>
-	<li>A <link media_store.hgt>media type</link>, which will show the files of the specified media type on Android. These files can reside in multiple directories.</li>
+	<li>A <link media_store.csdoc>media type</link>, which will show the files of the specified media type on Android. These files can reside in multiple directories.</li>
 </list>
 
 
@@ -83,4 +83,4 @@ string image_filename = Path.selectFile(title := "Select Your Favorite Image",
 </logic>
 
 
-<seealso path.hgt dirlist_function.hgt />
+<seealso path.csdoc dirlist_function.csdoc />

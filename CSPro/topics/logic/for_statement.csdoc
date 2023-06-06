@@ -30,19 +30,19 @@ PROC QUEST
 	numeric pointer_oldest_child;
 
 	for numeric occurrence_number in PERSON_REC_EDT do
-	
+
 		if RELATIONSHIP = 2 then
 			pointer_spouse = occurrence_number;
-		
+
 		elseif RELATIONSHIP = 3 then
 			if pointer_oldest_child = 0 or AGE > AGE(pointer_oldest_child) then
 				pointer_oldest_child = occurrence_number;
 			endif;
-			
+
 		endif;
-		
+
 	endfor;
 </logic>
 
 
-<seealso forcase_statement.hgt for_dict_statement.hgt do_statement.hgt while_statement.hgt />
+<seealso forcase_statement.csdoc for_dict_statement.csdoc do_statement.csdoc while_statement.csdoc />

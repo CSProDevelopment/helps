@@ -6,7 +6,7 @@
 i = errmsg(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argument20</arg>』)
 
           『select(<arg>caption1</arg>, <arg>fieldname1</arg>『, ..., <arg>caption5</arg>, <arg>fieldname5</arg>』)』
-          『case|summary』 
+          『case|summary』
 		  『denom=numeric_denom』;</logicsyntax>
 
 <subheader>Format 2</subheader>
@@ -15,7 +15,7 @@ i = errmsg(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argument20<
 i = errmsg(<arg>msg_num</arg>『, <arg>argument1</arg>, ..., <arg>argument20</arg>』)
 
           『select(<arg>caption1</arg>, <arg>fieldname1</arg>『, ..., <arg>caption5</arg>, <arg>fieldname5</arg>』)』
-          『case|summary』 
+          『case|summary』
 		  『denom=numeric_denom』;</logicsyntax>
 
 <subheader>Format 3</subheader>
@@ -30,11 +30,11 @@ i =	errmsg(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argument20<
 
 <subheader>Description</subheader>
 
-The <logiccolor>errmsg</logiccolor> function displays a message on the data entry screen (when used in a Data Entry application) or writes a message to the output listing file (when used in a Batch Edit application). If messages are defined via the message number <arg>msg_num</arg>, then those messages must be stored in a message file [.mgf].  <arg>msg_num</arg> can be a number or <link expressions.hgt> numeric expression</link>.
+The <logiccolor>errmsg</logiccolor> function displays a message on the data entry screen (when used in a Data Entry application) or writes a message to the output listing file (when used in a Batch Edit application). If messages are defined via the message number <arg>msg_num</arg>, then those messages must be stored in a message file [.mgf].  <arg>msg_num</arg> can be a number or <link expressions.csdoc> numeric expression</link>.
 
 Each <arg>argument</arg> is sequentially inserted into the error message. Arguments can be numeric or alphanumeric expressions, but the type of the argument must match the type of the receiving field in the message text. The maximum number of arguments is 20.
 
-Some of the most common formatting options include (see <link message_formatting_options.hgt>Message Formatting Options</link> for a complete list):
+Some of the most common formatting options include (see <link message_formatting_options.csdoc>Message Formatting Options</link> for a complete list):
 
 <list>%<b>[n]d</b> = Insert a number and display it as an integer
 %<b>[n.d]f</b> = Insert a number and display it as a decimal value
@@ -88,7 +88,7 @@ The <logiccolor>denom</logiccolor> keyword allows you to specify a denominator, 
 
 The <b>select</b> keyword is used to give the option of specifying the field to go to in response to the error message. A button is placed on the error message window for each caption and fieldname pair specified as a <b>select</b> argument, with a maximum of 5 possible <b>select</b> argument pairs allowed. The caption will be displayed on the button. When a button is chosen, the system goes to the field specified by fieldname. If <logiccolor>continue</logiccolor> is used as the fieldname, the system proceeds to the next line of logic following the <logiccolor>errmsg</logiccolor> call. If a <arg>default_option</arg> is given, it will place the focus on the select option chosen when the message is presented. This is a good method to prioritize what option you want the user to make (reenter a value vs. continue for example). If a <arg>default_option</arg> is not given, no button will have the focus.
 
-If you wish to split message text across two or more lines, refer to the <topic message_formatting_options.hgt /> page.
+If you wish to split message text across two or more lines, refer to the <topic message_formatting_options.csdoc /> page.
 
 <subheader>Return Value</subheader>
 
@@ -131,4 +131,4 @@ Note the <logiccolor>errmsg</logiccolor> call could have also been invoked as fo
 i = 1;
 OK = errmsg (i,"June",30,31);</logic>
 
-<seealso warning_function.hgt message_formatting_options.hgt message_file_mgf.hgt />
+<seealso warning_function.csdoc message_formatting_options.csdoc message_file_mgf.csdoc />

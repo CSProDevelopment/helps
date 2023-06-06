@@ -14,12 +14,12 @@ By default, the map contains a button to zoom to the users current location. You
 
 You add vector geometry, such as polygons and polylines, to the map using the <logiccolor>Map.addGeometry</logiccolor> function.
 
-By default, the map will display a base map from Google Maps, which requires an Internet connection. With no Internet connection the base map will be empty. To display a map without an Internet connection you can copy an <link offline_maps.hgt>offline map file</link> to your device and pass the file to the <logiccolor>Map.setBaseMap</logiccolor> function.
+By default, the map will display a base map from Google Maps, which requires an Internet connection. With no Internet connection the base map will be empty. To display a map without an Internet connection you can copy an <link offline_maps.csdoc>offline map file</link> to your device and pass the file to the <logiccolor>Map.setBaseMap</logiccolor> function.
 
 
 <subheader>Functionality</subheader>
 
-A <logiccolor>Map</logiccolor> is a CSPro logic object that allows the following functions to be called via <link object_dot_notation.hgt>dot notation</link>:
+A <logiccolor>Map</logiccolor> is a CSPro logic object that allows the following functions to be called via <link object_dot_notation.csdoc>dot notation</link>:
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
@@ -62,7 +62,7 @@ A <logiccolor>Map</logiccolor> is a CSPro logic object that allows the following
 
 <subheader>Assignments</subheader>
 
-When a Map object is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+When a Map object is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>.
 
 
 <subheader>Example</subheader>
@@ -79,4 +79,4 @@ mymap.show();
 </logic>
 
 
-<seealso map_case_list.hgt geometry.hgt />
+<seealso map_case_list.csdoc geometry.csdoc />

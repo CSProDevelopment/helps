@@ -1,6 +1,6 @@
 ﻿<title>Dynamic Imputation (Hot Deck)</title>
 
-Dynamic <link imputation.hgt>imputation</link> refers to the concept of using constantly changing values for your allocation routines. It is similar to <link static_imputation.hgt>static (cold deck) imputation</link>, except that instead of creating a table and assigning allocation values that remain fixed, the tables are continually updated with valid and consistent values taken from the population being edited.
+Dynamic <link imputation.csdoc>imputation</link> refers to the concept of using constantly changing values for your allocation routines. It is similar to <link static_imputation.csdoc>static (cold deck) imputation</link>, except that instead of creating a table and assigning allocation values that remain fixed, the tables are continually updated with valid and consistent values taken from the population being edited.
 
 For example, assume, for a given person, that the age, relationship, and sex codes appear correct and that consistency checks validate these items. You can use the values from this person to update your "cold deck," thus making it a "hot deck." Below is the table given in the cold deck example:
 
@@ -20,4 +20,4 @@ If the person in question is a male 6-year-old child, the table can be updated w
 
 You would proceed in this way for every person in the household who had correct age, sex, and relationship values. Then, when you encounter a person with an invalid or missing age, you can extract from the table, using the sex and relationship of the person, a value for age. This value is more likely to be appropriate for the person than would be a purely random value. (The preceding example is clearly a simplification of the hot deck technique, which requires great care in constructing and updating the tables used for allocation.)
 
-<seealso use_hot_decks.hgt />
+<seealso use_hot_decks.csdoc />

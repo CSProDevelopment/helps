@@ -8,7 +8,7 @@ b = putnote(<arg>note_text</arg>『,<arg>dictionary_symbol</arg>』『,<arg>oper
 
 <subheader>Description</subheader>
 
-The <logiccolor>putnote</logiccolor> function sets the note for a field or other dictionary symbol, replacing the note with the text found in the string expression <arg>note_text</arg>. If the note text is an empty string, the note will be removed. The optional argument <arg>dictionary_symbol</arg> allows you to set the note for a dictionary item, record, or level. If using the dictionary name, the case note is set. Another optional string argument, <arg>operator_id</arg>, allows you to set the note for a particular <link getoperatorid_function.hgt>operator</link>. If no operator ID is supplied, then the note for the current operator will be set.
+The <logiccolor>putnote</logiccolor> function sets the note for a field or other dictionary symbol, replacing the note with the text found in the string expression <arg>note_text</arg>. If the note text is an empty string, the note will be removed. The optional argument <arg>dictionary_symbol</arg> allows you to set the note for a dictionary item, record, or level. If using the dictionary name, the case note is set. Another optional string argument, <arg>operator_id</arg>, allows you to set the note for a particular <link getoperatorid_function.csdoc>operator</link>. If no operator ID is supplied, then the note for the current operator will be set.
 
 <subheader>Return Value</subheader>
 
@@ -23,4 +23,4 @@ PROC STATUS
 	putnote("Interview Status: " + getlabel(STATUS,STATUS),CENSUS_DICT);
 </logic>
 
-<seealso getnote_function.hgt editnote_function.hgt />
+<seealso getnote_function.csdoc editnote_function.csdoc />

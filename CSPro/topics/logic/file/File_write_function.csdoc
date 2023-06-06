@@ -10,9 +10,9 @@ b = file_handler.write(<arg>message</arg>『, <arg>argument1</arg>, ..., <arg>ar
 
 <subheader>Description</subheader>
 
-The <logiccolor>File.write</logiccolor> function writes one or more lines of text to the <link file.hgt>File</link> object associated with <arg>file_handler</arg>. This function is equivalent to the <logiccolor>filewrite</logiccolor> function.
+The <logiccolor>File.write</logiccolor> function writes one or more lines of text to the <link file.csdoc>File</link> object associated with <arg>file_handler</arg>. This function is equivalent to the <logiccolor>filewrite</logiccolor> function.
 
-The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.hgt>message number</link> that contains the text that is written to the file. If the text contains any <link message_formatting_options.hgt>message formatters</link>, the optional arguments <arg>argument1</arg> to <arg>argumentN</arg> will be inserted into the text. There are some additional options for file output:
+The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.csdoc>message number</link> that contains the text that is written to the file. If the text contains any <link message_formatting_options.csdoc>message formatters</link>, the optional arguments <arg>argument1</arg> to <arg>argumentN</arg> will be inserted into the text. There are some additional options for file output:
 
 <list>
 	<li>If you want to break a line of text into two lines, place <b>\n</b> where you want the line divided.</li>
@@ -20,7 +20,7 @@ The <arg>message</arg> is either a string expression or a numeric <link message_
 	<li>To output <b>\n</b> or <b>\f</b> as text instead of a new line or a new page, use a double backslash (e.g., <b>\\n</b>).</li>
 </list>
 
-Alternatively, the <arg>message</arg> can be a string <link list.hgt>List</link>. If a List is provided, then each string contained in the List is written to the file, allowing for the output of multiple lines of text with one function call.
+Alternatively, the <arg>message</arg> can be a string <link list.csdoc>List</link>. If a List is provided, then each string contained in the List is written to the file, allowing for the output of multiple lines of text with one function call.
 
 
 <subheader>Return Value</subheader>
@@ -46,6 +46,6 @@ data_file_report.close();
 
 view(filename(data_file_report));
 </logic>
- 
 
-<seealso file.hgt file_read_function.hgt filewrite_function.hgt message_formatting_options.hgt encode_function.hgt />
+
+<seealso file.csdoc file_read_function.csdoc filewrite_function.csdoc message_formatting_options.csdoc encode_function.csdoc />

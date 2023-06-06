@@ -6,8 +6,8 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 <subheader>General</subheader>
 
 <list>
-	<li>A new special value, <link refused_value.hgt>refused</link>, allows for processing refusals differently from other numeric responses. Refusals are <link value_properties.hgt>defined</link> in a dictionary value set, referenced in logic using <logiccolor>refused</logiccolor>, and are <link change_data_entry_options.hgt>conditionally shown</link> to operators. The entry of refusals can be overridden using the <logiccolor>OnRefused</logiccolor> function.</li>
-	<li>A <link cspro_settings.hgt>CSPro Settings</link> dialog, accessible in the CSPro Designer as well as in CSEntry, allows users to clear saved synchronization and data source credentials.</li>
+	<li>A new special value, <link refused_value.csdoc>refused</link>, allows for processing refusals differently from other numeric responses. Refusals are <link value_properties.csdoc>defined</link> in a dictionary value set, referenced in logic using <logiccolor>refused</logiccolor>, and are <link change_data_entry_options.csdoc>conditionally shown</link> to operators. The entry of refusals can be overridden using the <logiccolor>OnRefused</logiccolor> function.</li>
+	<li>A <link cspro_settings.csdoc>CSPro Settings</link> dialog, accessible in the CSPro Designer as well as in CSEntry, allows users to clear saved synchronization and data source credentials.</li>
 	<li>Licenses for open-source software that CSPro uses have been included and can be accessed using the Help -> About menu in the CSPro Designer.</li>
 </list>
 
@@ -15,10 +15,10 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 <subheader>Data Sources</subheader>
 
 <list>
-	<li>Change to the format of the CSPro DB <link data_sources.hgt>data source</link> to store data in a <link csdb_relational_format.hgt>relational database format</link> that can be queried using SQL. CSPro DB files created in version 7.4 cannot be read in earlier versions of CSPro.</li>
-	<li>Introduction of the new Encrypted CSPro DB <link data_sources.hgt>data source</link>, allowing for <link encrypted_data.hgt>file-based data encryption</link> with the ability to <link dictionary_security_options.hgt>cache passwords</link>.</li>
-	<li>Ability to include, as part of a PFF or in a <logiccolor>setfile</logiccolor> function call, a <link connection_string.hgt>connection string</link> that details how to open a data source.</li>
-	<li><link dictionary_security_options.hgt>Dictionary options</link> include the ability to disallow use of a dictionary to modify data in Data Viewer or to export data to another output format.</li>
+	<li>Change to the format of the CSPro DB <link data_sources.csdoc>data source</link> to store data in a <link csdb_relational_format.csdoc>relational database format</link> that can be queried using SQL. CSPro DB files created in version 7.4 cannot be read in earlier versions of CSPro.</li>
+	<li>Introduction of the new Encrypted CSPro DB <link data_sources.csdoc>data source</link>, allowing for <link encrypted_data.csdoc>file-based data encryption</link> with the ability to <link dictionary_security_options.csdoc>cache passwords</link>.</li>
+	<li>Ability to include, as part of a PFF or in a <logiccolor>setfile</logiccolor> function call, a <link connection_string.csdoc>connection string</link> that details how to open a data source.</li>
+	<li><link dictionary_security_options.csdoc>Dictionary options</link> include the ability to disallow use of a dictionary to modify data in Data Viewer or to export data to another output format.</li>
 </list>
 
 
@@ -26,18 +26,18 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 
 <list>
 	<li>Enhancements to the logic editor, including parentheses matching and improvements to the find and replace dialogs.</li>
-	<li>The <link synchronization_simple.hgt>synchronization options</link> have been updated. Synchronization can be removed from an application by unchecking the Enable Synchronization box. The options for downloading application files has been removed in favor of the new <link CSDeploy::update_deployment_mobile.hgt>Update Installed Applications</link>.</li>
-	<li>Question text occurrence values can be harmonized with dictionary records using a new <link question_text_macros.hgt>question text macro</link>.</li>
+	<li>The <link synchronization_simple.csdoc>synchronization options</link> have been updated. Synchronization can be removed from an application by unchecking the Enable Synchronization box. The options for downloading application files has been removed in favor of the new <link CSDeploy::update_deployment_mobile.csdoc>Update Installed Applications</link>.</li>
+	<li>Question text occurrence values can be harmonized with dictionary records using a new <link question_text_macros.csdoc>question text macro</link>.</li>
 </list>
 
 
 <subheader>Data Entry</subheader>
 
 <list>
-	<li>When starting a new case, fields can be prefilled from values specified in a <link run_production_data_entry.hgt>PFF's Parameters section</link>.</li>
+	<li>When starting a new case, fields can be prefilled from values specified in a <link run_production_data_entry.csdoc>PFF's Parameters section</link>.</li>
 	<li>The compiler no longer issues an error when reentering a protected field.</li>
-	<li>The <link capture_types.hgt>Combo Box</link> capture type can now be used on discrete numeric fields and alphanumeric fields.</li>
-	<li>On Windows, the search bar on <link capture_types.hgt>capture type</link> popup windows is now hidden by default.</li>
+	<li>The <link capture_types.csdoc>Combo Box</link> capture type can now be used on discrete numeric fields and alphanumeric fields.</li>
+	<li>On Windows, the search bar on <link capture_types.csdoc>capture type</link> popup windows is now hidden by default.</li>
 	<li>Inserting a case now only allows for the addition of a single case at a time (regardless of the PFF's <pffcolor>AutoAdd</pffcolor> value).</li>
 </list>
 
@@ -46,8 +46,8 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 
 <list>
 	<li>The tool has been rewritten with additional features including multiple language support and additional ways to view case data.</li>
-	<li>A case's notes <link DataViewer::converting_data_files_to_other_formats.hgt>can be extracted</link> as another CSPro data file, which can then be used for exporting or other data operations.</li>
-	<li>Ability to <link DataViewer::downloading_and_synchronizing_data.hgt>download or synchronize</link> data from the local Dropbox folder or a local FTP server folder which can be faster than downloading data over the Internet.</li>
+	<li>A case's notes <link DataViewer::converting_data_files_to_other_formats.csdoc>can be extracted</link> as another CSPro data file, which can then be used for exporting or other data operations.</li>
+	<li>Ability to <link DataViewer::downloading_and_synchronizing_data.csdoc>download or synchronize</link> data from the local Dropbox folder or a local FTP server folder which can be faster than downloading data over the Internet.</li>
 </list>
 
 
@@ -64,18 +64,18 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 	<li>A new function, <logiccolor>syncapp</logiccolor>, for downloading new versions of an application from a deployment server.</li>
 	<li>A new function, <logiccolor>syncmessage</logiccolor>, sends and receives string messages from a Bluetooth server.</li>
 	<li>A new function, <logiccolor>Barcode.read</logiccolor>, reads a barcode using an Android device's camera.</li>
-	<li>A new object, <link systemapp.hgt>SystemApp</link>, that simplifies interacting with external applications. It has the functions: <logiccolor SystemApp>clear</logiccolor>, <logiccolor SystemApp>exec</logiccolor>, <logiccolor SystemApp>getResult</logiccolor>, and <logiccolor SystemApp>setArgument</logiccolor>.</li>
+	<li>A new object, <link systemapp.csdoc>SystemApp</link>, that simplifies interacting with external applications. It has the functions: <logiccolor SystemApp>clear</logiccolor>, <logiccolor SystemApp>exec</logiccolor>, <logiccolor SystemApp>getResult</logiccolor>, and <logiccolor SystemApp>setArgument</logiccolor>.</li>
 	<li>Using <logiccolor>ValueSet.add</logiccolor> it is possible to add a single value or a range of values from an existing value set.</li>
 	<li>New options for the <logiccolor>syncconnect</logiccolor> function to connect to a local Dropbox or FTP folder.</li>
 	<li>A range of occurrences can be supplied to <logiccolor>insert</logiccolor> for mass insertions or <logiccolor>delete</logiccolor> for mass deletions.</li>
 	<li>The <logiccolor>tolower</logiccolor> and <logiccolor>toupper</logiccolor> functions work properly with accented characters.</li>
 	<li>The <logiccolor>view</logiccolor> function, on Windows, now displays webpages in an embedded browser.</li>
-	<li>The field name of the <link getsymbol_function.hgt>last location of a partial save</link> can now be retrieved in any procedure or function.</li>
-	<li>The <logiccolor>loadcase</logiccolor> and <logiccolor>delcase</logiccolor> functions can now load or delete cases based on a <link key_function.hgt>full key</link> string argument.</li>
+	<li>The field name of the <link getsymbol_function.csdoc>last location of a partial save</link> can now be retrieved in any procedure or function.</li>
+	<li>The <logiccolor>loadcase</logiccolor> and <logiccolor>delcase</logiccolor> functions can now load or delete cases based on a <link key_function.csdoc>full key</link> string argument.</li>
 	<li>The <logiccolor>countcases</logiccolor> and <logiccolor>keylist</logiccolor> functions can now be called, in certain circumstances, on the input dictionary.</li>
 	<li>The <logiccolor>find</logiccolor> and <logiccolor>locate</logiccolor> functions have a new relational operator option, <logiccolor>uuid</logiccolor>, that allows loading cases by a case's UUID.</li>
-	<li>The <logiccolor>set access</logiccolor> function, or optional arguments to the dictionary argument of <logiccolor>countcases</logiccolor>, <logiccolor>forcase</logiccolor>, <logiccolor>keylist</logiccolor>, or <logiccolor>selcase</logiccolor>, allows permanent or temporary modification of the <link set_access_statement.hgt>dictionary access parameters</link>, which control the order and what kinds of cases are processed.</li>
-	<li>The <logiccolor>set first</logiccolor> and <logiccolor>set last</logiccolor> functions now use the <link set_access_statement.hgt>dictionary access parameters</link> when determining what is the first or last case.</li>
+	<li>The <logiccolor>set access</logiccolor> function, or optional arguments to the dictionary argument of <logiccolor>countcases</logiccolor>, <logiccolor>forcase</logiccolor>, <logiccolor>keylist</logiccolor>, or <logiccolor>selcase</logiccolor>, allows permanent or temporary modification of the <link set_access_statement.csdoc>dictionary access parameters</link>, which control the order and what kinds of cases are processed.</li>
+	<li>The <logiccolor>set first</logiccolor> and <logiccolor>set last</logiccolor> functions now use the <link set_access_statement.csdoc>dictionary access parameters</link> when determining what is the first or last case.</li>
 	<li>The <logiccolor>sysparm</logiccolor> function can be used to determine the presence of command line arguments on Windows.</li>
 </list>
 
@@ -83,20 +83,20 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 <subheader>Messages</subheader>
 
 <list>
-	<li>Messages can be defined for multiple languages by <link message_file_mgf.hgt>including multiple language names</link> in the <font monospace>Language</font> directive.</li>
-	<li>Translations of some runtime messages added for Vietnamese. You <link collaborating_on_cspro_development.hgt>can help</link> translate additional messages or add messages in another language.</li>
+	<li>Messages can be defined for multiple languages by <link message_file_mgf.csdoc>including multiple language names</link> in the <font monospace>Language</font> directive.</li>
+	<li>Translations of some runtime messages added for Vietnamese. You <link collaborating_on_cspro_development.csdoc>can help</link> translate additional messages or add messages in another language.</li>
 </list>
 
 
 <subheader>Android</subheader>
 
 <list>
-	<li>An operator (or respondent) can sign the Android screen using the <link execsystem_function_mobile.hgt>execsystem</link> function and have the signature saved as an image file.</li>
-	<li>A new menu option, <link CSDeploy::update_deployment_mobile.hgt>Update Installed Applications</link>, to automatically check for and install new versions of an application that has been updated on a deployment server.</li>
-	<li>Applications can be added to the device by <link CSDeploy::generate_deploy_qr_code.hgt>scanning a QR code.</link></li>
-	<li>A new Settings screen, accessed via the menu on the Entry Applications screen, allows user to <link cspro_settings.hgt>clear saved credentials</link>.</li>
-	<li>The option for selecting that <link run_production_data_entry.hgt>hidden applications</link> are shown has been moved to the Settings screen.</li>
-	<li>The default setting for whether or not the case tree shows on phones and tablets can be <link csentry_settings_modification.hgt>modified via logic</link>.</li>	
+	<li>An operator (or respondent) can sign the Android screen using the <link execsystem_function_mobile.csdoc>execsystem</link> function and have the signature saved as an image file.</li>
+	<li>A new menu option, <link CSDeploy::update_deployment_mobile.csdoc>Update Installed Applications</link>, to automatically check for and install new versions of an application that has been updated on a deployment server.</li>
+	<li>Applications can be added to the device by <link CSDeploy::generate_deploy_qr_code.csdoc>scanning a QR code.</link></li>
+	<li>A new Settings screen, accessed via the menu on the Entry Applications screen, allows user to <link cspro_settings.csdoc>clear saved credentials</link>.</li>
+	<li>The option for selecting that <link run_production_data_entry.csdoc>hidden applications</link> are shown has been moved to the Settings screen.</li>
+	<li>The default setting for whether or not the case tree shows on phones and tablets can be <link csentry_settings_modification.csdoc>modified via logic</link>.</li>
 </list>
 
 
@@ -104,34 +104,34 @@ This is a detailed list of changes in CSPro 7.4. For a more general overview, se
 
 <list>
 	<li>The Concatenate Data, Index Data, and Reformat Data tools now allow the saving of PFFs with the specified settings and the loading of the settings of previous runs.</li>
-	<li>The Reformat Data tool has been completely rewritten. If using a <link data_sources.hgt>data source</link> with an embedded dictionary, such as a CSPro DB file, you do not need to specify the input dictionary. The dictionary differences are displayed with more detailed information, including information on destructive changes that would occur during a reformat.</li>
+	<li>The Reformat Data tool has been completely rewritten. If using a <link data_sources.csdoc>data source</link> with an embedded dictionary, such as a CSPro DB file, you do not need to specify the input dictionary. The dictionary differences are displayed with more detailed information, including information on destructive changes that would occur during a reformat.</li>
 	<li>The Index Data tool has also been completely rewritten. It has a new interface that simplifies running the program on multiple input files; it now works with non-text data files; and there is a more modern interface for viewing cases while selecting which duplicate cases to keep.</li>
 	<li>The Sort Data tool allows case sorts on non-text data files that have duplicates.</li>
 	<li>When the Sort Data tool processes a sorting key item that does not exist, it treats it as the lowest possible value, sorting it first when sorting in ascending order. In the past, such values were sorted as 0 (so they would be sorted after negative values when sorting in ascending order).</li>
-	<li>The Deploy Application tool supports setting files to only be <link CSDeploy::only_on_first_install.hgt>updated when an application is first installed</link> and not on subsequent updates.</li>
-	<li>The Deploy Application tool can <link CSDeploy::generate_deploy_qr_code.hgt>generate a QR code</link> that can be used to install applications on mobile devices.</li>
+	<li>The Deploy Application tool supports setting files to only be <link CSDeploy::only_on_first_install.csdoc>updated when an application is first installed</link> and not on subsequent updates.</li>
+	<li>The Deploy Application tool can <link CSDeploy::generate_deploy_qr_code.csdoc>generate a QR code</link> that can be used to install applications on mobile devices.</li>
 </list>
 
 
 <subheader>Case Processing</subheader>
 
 <list>
-	<li>Items not defined in the dictionary are not written out when a case is saved. In the past, when using <link relative_and_absolute_mode.hgt>absolute positioning</link>, contents of a record that were not defined in the dictionary were still written out when the case was saved.</li>
+	<li>Items not defined in the dictionary are not written out when a case is saved. In the past, when using <link relative_and_absolute_mode.csdoc>absolute positioning</link>, contents of a record that were not defined in the dictionary were still written out when the case was saved.</li>
 	<li>Items that are not valid for the item type are not written as they initially appeared in the input data. For example, if the value for a numeric item was "XX," previously, as long as it was not modified, it would be written as "XX." Now, because it cannot be represented as a valid numeric value, it will be written as <logiccolor>default</logiccolor>.</li>
-	<li>CSPro processes items using the item type specified in the dictionary. Previously, some tools processed items by using the text representation of the item. For example, the Compare Data tool would indicate that "05" and " 5" were different values because of the differing <link zero_fill.hgt>zero fill</link> setting, but now the tool treats those values as equal.</li>
-	<li>When values are saved, <link special_values.hgt>special values</link> are converted only based on linkages defined in the item's primary value set. Any special value specifications defined in non-primary or dynamic value sets are ignored.</li>
+	<li>CSPro processes items using the item type specified in the dictionary. Previously, some tools processed items by using the text representation of the item. For example, the Compare Data tool would indicate that "05" and " 5" were different values because of the differing <link zero_fill.csdoc>zero fill</link> setting, but now the tool treats those values as equal.</li>
+	<li>When values are saved, <link special_values.csdoc>special values</link> are converted only based on linkages defined in the item's primary value set. Any special value specifications defined in non-primary or dynamic value sets are ignored.</li>
 	<li>Case construction is more forgiving of errors, allowing level 2+ records to appear before their parent level's records. Additionally, level 2+ nodes are joined (by ID) even if some records from a different node separate the nodes. For example, if there is a case with a first level ID of 1 and second level IDs of A and B, in the past, 1/1A/1B/1A would be processed as three second-level nodes, but now they will be handled as two second-level nodes (1/1A+1A/1B).</li>
-	<li>The <link notes_file_csnot.hgt>notes</link> and <link status_file_sts.hgt>status</link> files, used when processing text data files, are now created only when necessary. (For example, if there are no notes to save, the file is not created.) The information in those files can now be accessed in non-entry applications using functions like <logiccolor>getnote</logiccolor>. Case labels are also now supported for text data files, with the labels saved to the status file.</li>
+	<li>The <link notes_file_csnot.csdoc>notes</link> and <link status_file_sts.csdoc>status</link> files, used when processing text data files, are now created only when necessary. (For example, if there are no notes to save, the file is not created.) The information in those files can now be accessed in non-entry applications using functions like <logiccolor>getnote</logiccolor>. Case labels are also now supported for text data files, with the labels saved to the status file.</li>
 </list>
 
 
 <subheader>CSWeb</subheader>
 
 <list>
-	<li>A <link CSWeb::sync_report.hgt>Sync Report</link> summarizes the total number of cases uploaded to CSWeb.</li>
-	<li>Create custom <link CSWeb::adding_roles.hgt>roles</link> that specify dashboard and dictionary permissions.</li>
+	<li>A <link CSWeb::sync_report.csdoc>Sync Report</link> summarizes the total number of cases uploaded to CSWeb.</li>
+	<li>Create custom <link CSWeb::adding_roles.csdoc>roles</link> that specify dashboard and dictionary permissions.</li>
 	<li>Downloading data from a CSWeb server is now faster.</li>
 </list>
 
 
-<seealso what_is_new_in_cspro.hgt />
+<seealso what_is_new_in_cspro.csdoc />

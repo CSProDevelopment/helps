@@ -1,18 +1,18 @@
 ﻿<title>Compile Logic / An Application</title>
 
-Before CSPro can execute your program, it needs to check for errors in the logic. Errors include such problems as misspelling a command, not using proper command syntax, and putting logic in the wrong place. Warnings can also appear during compilation, and often occur from the use of <link deprecated_features.hgt>deprecated features</link>. 
+Before CSPro can execute your program, it needs to check for errors in the logic. Errors include such problems as misspelling a command, not using proper command syntax, and putting logic in the wrong place. Warnings can also appear during compilation, and often occur from the use of <link deprecated_features.csdoc>deprecated features</link>.
 
 <subheader>Compile Scope</subheader>
 
-You can choose to compile logic for a specific entity (such as a field, roster, or form) or for the entire application. To compile code for a specific entity, simply select that element from the <link data_entry_tree.hgt>form</link> or <link batch_edit_tree.hgt>batch edit</link> tree. The associated logic for that item will be displayed in the <link view_logic.hgt>logic view</link>. If you are ready to compile the entire application, select the root node (the topmost entry of the <link data_entry_tree.hgt>data entry</link> or <link batch_edit_tree.hgt>batch edit</link> tree) and compile. 
+You can choose to compile logic for a specific entity (such as a field, roster, or form) or for the entire application. To compile code for a specific entity, simply select that element from the <link data_entry_tree.csdoc>form</link> or <link batch_edit_tree.csdoc>batch edit</link> tree. The associated logic for that item will be displayed in the <link view_logic.csdoc>logic view</link>. If you are ready to compile the entire application, select the root node (the topmost entry of the <link data_entry_tree.csdoc>data entry</link> or <link batch_edit_tree.csdoc>batch edit</link> tree) and compile.
 
 <subheader>How to Compile</subheader>
 
-Press <image compile_button.png /> on the toolbar; or from the <b>File</b> menu, select <b>Compile</b>; or press <b>Ctrl+K</b>. 
+Press <image compile_button.png /> on the toolbar; or from the <b>File</b> menu, select <b>Compile</b>; or press <b>Ctrl+K</b>.
 
 <subheader>Compiler Results</subheader>
 
-Error and warning messages will appear within the <b>Compiler Output</b> tab of the <link batch_application_screen_layout.hgt>message view</link> at the bottom of the <link workspace.hgt>workspace</link>. A dot will appear to the left of the line of code containing the problem&mdash;red dots indicate an error, yellow dots indicate a warning. Double-clicking the error or warning message will move your cursor to the offending line within the logic view.
+Error and warning messages will appear within the <b>Compiler Output</b> tab of the <link batch_application_screen_layout.csdoc>message view</link> at the bottom of the <link workspace.csdoc>workspace</link>. A dot will appear to the left of the line of code containing the problem&mdash;red dots indicate an error, yellow dots indicate a warning. Double-clicking the error or warning message will move your cursor to the offending line within the logic view.
 
 To facilitate code development, you should compile your logic on a regular basis to ensure not too many errors are introduced. Depending on the number and type of errors, it can cause CSPro to have difficulty determining the source of the error (for example, missing "end" or "endif" statements can cause a lot of problems). If there are unfinished code blocks that won't compile, they should be commented out until ready to complete.
 

@@ -9,7 +9,7 @@ s = getbluetoothname();
 
 <subheader>Description</subheader>
 
-The <logiccolor>getbluetoothname</logiccolor> function returns the name of the device as broadcast to other Bluetooth devices. When other Bluetooth-enabled devices scan for nearby devices to connect to, this is the name that they will see. 
+The <logiccolor>getbluetoothname</logiccolor> function returns the name of the device as broadcast to other Bluetooth devices. When other Bluetooth-enabled devices scan for nearby devices to connect to, this is the name that they will see.
 
 When using Bluetooth for synchronization between two devices, the Bluetooth name of the device is what is shown in the screen asking the user which device to connect to. The Bluetooth name of one device may be passed as an argument to the <logiccolor>syncconnect</logiccolor> function on the other device in order to connect directly to that device, bypassing the screen asking the user which device to connect to.
 
@@ -33,4 +33,4 @@ preproc
 </logic>
 
 
-<seealso setbluetoothname_function.hgt getdeviceid_function.hgt getoperatorid_function.hgt getos_function.hgt getusername_function.hgt syncconnect_function_bluetooth.hgt />
+<seealso setbluetoothname_function.csdoc getdeviceid_function.csdoc getoperatorid_function.csdoc getos_function.csdoc getusername_function.csdoc syncconnect_function_bluetooth.csdoc />

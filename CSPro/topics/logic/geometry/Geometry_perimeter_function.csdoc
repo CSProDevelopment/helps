@@ -10,7 +10,7 @@ d = geometry_name.perimeter();
 
 <subheader>Description</subheader>
 
-The <logiccolor>Geometry.perimeter</logiccolor> function computes the perimeter, in meters, of the polygons contained in the <link geometry.hgt>Geometry</link> object named <logiccolor>geometry_name</logiccolor>. If the Geometry object contains multiple polygons, this function returns the sum of the perimeters of all of these polygons. Points and lines in the geometry are ignored, so if the geometry contains only points and lines, the perimeter will be zero.
+The <logiccolor>Geometry.perimeter</logiccolor> function computes the perimeter, in meters, of the polygons contained in the <link geometry.csdoc>Geometry</link> object named <logiccolor>geometry_name</logiccolor>. If the Geometry object contains multiple polygons, this function returns the sum of the perimeters of all of these polygons. Points and lines in the geometry are ignored, so if the geometry contains only points and lines, the perimeter will be zero.
 
 The <logiccolor>Geometry.perimeter</logiccolor> function uses the Haversine formula to approximate the distance between points of the polygon and makes certain assumptions about the diameter and shape of the earth which may give slightly different results than the perimeter calculated by other software packages.
 
@@ -34,4 +34,4 @@ PERIMETER = mygeometry.perimeter();
 </logic>
 
 
-<seealso geometry.hgt geometry_area_function.hgt />
+<seealso geometry.csdoc geometry_area_function.csdoc />

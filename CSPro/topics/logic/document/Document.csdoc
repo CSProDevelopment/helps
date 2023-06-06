@@ -5,7 +5,7 @@ In logic, a <logiccolor>Document</logiccolor> object facilitates the storage of 
 
 <subheader>Functionality</subheader>
 
-A Document object is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+A Document object is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
@@ -26,7 +26,7 @@ Document objects can be assigned to other Document objects, which will replace t
 <arg>document_name</arg> = <arg>another_document_name</arg>;
 </logicsyntax>
 
-It is also possible to assign <link audio.hgt>Audio</link>, <link geometry.hgt>Geometry</link>, and <link image.hgt>Image</link> objects to a Document. These assignments will always succeed.
+It is also possible to assign <link audio.csdoc>Audio</link>, <link geometry.csdoc>Geometry</link>, and <link image.csdoc>Image</link> objects to a Document. These assignments will always succeed.
 
 <logicsyntax>
 <arg>document_name</arg> = <arg>audio_name</arg>;
@@ -48,7 +48,7 @@ You can assign a string expression to a Document object, which will replace the 
 <arg>document_name</arg> = "string expression";
 </logicsyntax>
 
-When a Document is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+When a Document is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>.
 
 
 <subheader>Example</subheader>
@@ -58,4 +58,4 @@ When a Document is used as an argument to a <link user_defined_functions.hgt>use
 </logic>
 
 
-<seealso image.hgt />
+<seealso image.csdoc />

@@ -9,7 +9,7 @@ b = syncparadata(<arg>direction</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>syncparadata</logiccolor> function transfers <link paradata.hgt>paradata</link> between a device and a synchronization server. Before calling <logiccolor>syncparadata</logiccolor>, you must first connect to the server by calling <logiccolor>syncconnect</logiccolor>.
+The <logiccolor>syncparadata</logiccolor> function transfers <link paradata.csdoc>paradata</link> between a device and a synchronization server. Before calling <logiccolor>syncparadata</logiccolor>, you must first connect to the server by calling <logiccolor>syncconnect</logiccolor>.
 
 The function can upload paradata from the local device (client) to the server as well as download paradata from the server. The <arg>direction</arg> argument determines which of these operations is performed. It must be one of the following values:
 
@@ -35,13 +35,13 @@ The function returns a logical value of 1 (true) if the transfer was successful 
 if syncconnect(Bluetooth) then
 
 	// other sync actions...
-	
+
 	syncparadata(BOTH);
-	
+
 	syncdisconnect();
-	
+
 endif;
 </logic>
 
 
-<seealso synchronization.hgt syncdata_function.hgt syncfile_function.hgt paradata.hgt paradata_function.hgt />
+<seealso synchronization.csdoc syncdata_function.csdoc syncfile_function.csdoc paradata.csdoc paradata_function.csdoc />

@@ -3,7 +3,7 @@
 This item property specifies the type of data (numeric or alphanumeric) that will be found in the item. The default item type is numeric.
 
 <list>
-	<li><b>Numeric</b> items can contain numbers or blanks, and they may be negative or positive in value. Numeric values will be right-justified and, if requested, <link zero_fill.hgt>zero-filled</link>.</li>
+	<li><b>Numeric</b> items can contain numbers or blanks, and they may be negative or positive in value. Numeric values will be right-justified and, if requested, <link zero_fill.csdoc>zero-filled</link>.</li>
 	<li><b>Alphanumeric</b> items can contain any combination of characters, letters, numeric digits, blanks, or special characters. These values will be left-justified and are blank-filled, whether or not zero-fill has been selected. Declaring M or F for <logiccolor>SEX</logiccolor> is an example of an alphanumeric value.</li>
 </list>
 
@@ -11,4 +11,4 @@ Some responses are quantitative, such as size of farm, and some are qualitative,
 
 Numeric responses can be discrete values or continuous values. An example of a discrete value is sex, 1 (male) or 2 (female). An example of a continuous value is yearly income, which can range from zero to a value limited only by the number of digits permitted for the response. A discrete value may be used to represent a grouping of continuous values. For example, when asking income, one may be asked to select from a choice of ranges of incomes rather than specify the exact income. Thus, the possible responses to the income question could, for example, be a code between 1 and 10.
 
-<seealso item_properties.hgt />
+<seealso item_properties.csdoc />

@@ -8,11 +8,11 @@ b = savepartial(『clear』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>savepartial</logiccolor> function saves the current case as a partially added, modified or verified case. It is useful in a large data entry application to perform intermediate backups. It can also be used to automatically perform a partial save when the keyer stops the case before completing it. Or, you can allow CSEntry to <link change_data_entry_options.hgt>automatically partially save</link> cases.
+The <logiccolor>savepartial</logiccolor> function saves the current case as a partially added, modified or verified case. It is useful in a large data entry application to perform intermediate backups. It can also be used to automatically perform a partial save when the keyer stops the case before completing it. Or, you can allow CSEntry to <link change_data_entry_options.csdoc>automatically partially save</link> cases.
 
 The function can be coded only in the <logiccolor>preproc</logiccolor> or <logiccolor>postproc</logiccolor> of a field. The function cannot be used before all ID values for the case have been entered. You can get the field name where the last partial save occurred by coding <logiccolor>getsymbol(savepartial)</logiccolor>.
 
-An optional argument, <logiccolor>clear</logiccolor>, results in the removal of <link visualvalue_function.hgt>visual values</link> before the data is saved. This behavior is the same as would happen if the case was completed in a system controlled application. Generally you will want to maintain skipped-over fields in case an interviewer decides to make changes to the case at a later point, so it is rare that you would use this argument.
+An optional argument, <logiccolor>clear</logiccolor>, results in the removal of <link visualvalue_function.csdoc>visual values</link> before the data is saved. This behavior is the same as would happen if the case was completed in a system controlled application. Generally you will want to maintain skipped-over fields in case an interviewer decides to make changes to the case at a later point, so it is rare that you would use this argument.
 
 <subheader>Return Value</subheader>
 
@@ -28,4 +28,4 @@ preproc
 	savepartial();
 </logic>
 
-<seealso ispartial_function.hgt stop_function.hgt />
+<seealso ispartial_function.csdoc stop_function.csdoc />

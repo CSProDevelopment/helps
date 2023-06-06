@@ -12,7 +12,7 @@ b = close(<arg>dictionary_name</arg> ‖ <arg>file_handler</arg>);
 
 The <logiccolor>close</logiccolor> function closes a file, whether opened as a dictionary or via a <logiccolor>File</logiccolor> statement. The function closes either a dictionary named <arg>dictionary_name</arg> or a text file associated with <arg>file_handler</arg>.
 
-If closing a dictionary, the dictionary will be set to a <link data_sources.hgt>none data source</link> and will remain set to that source until the previous file is reopened using the <logiccolor>open</logiccolor> function or if a new file is associated with the dictionary using the <logiccolor>setfile</logiccolor> function.
+If closing a dictionary, the dictionary will be set to a <link data_sources.csdoc>none data source</link> and will remain set to that source until the previous file is reopened using the <logiccolor>open</logiccolor> function or if a new file is associated with the dictionary using the <logiccolor>setfile</logiccolor> function.
 
 
 <subheader>Return Value</subheader>
@@ -25,7 +25,7 @@ The function returns a logical value of 1 (true) if successful and 0 (false) oth
 <logic>
 File report_file;
 
-// ... 
+// ...
 
 close(report_file);
 
@@ -33,4 +33,4 @@ view(filename(report_file));
 </logic>
 
 
-<seealso open_function.hgt setfile_function.hgt file_close_function.hgt />
+<seealso open_function.csdoc setfile_function.csdoc file_close_function.csdoc />

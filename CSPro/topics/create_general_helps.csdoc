@@ -5,13 +5,13 @@ Often a specialized general help is needed for a CAPI application. Such a help c
 <list ordered>
 	<li>Put a form with one alpha item at the end of all forms.</li>
 	<li>Make question text for the item be the help text.</li>
-	<li>Code in the <link onkey_global_function.hgt>OnKey</link> function a key that will jump to the help form.</li>
+	<li>Code in the <link onkey_global_function.csdoc>OnKey</link> function a key that will jump to the help form.</li>
 	<li>Code the alpha item on the help form that will be used to jump back.</li>
 </list>
 
 In the code below, <b>Ctrl+H</b> is used to jump to the general help. The data item <logiccolor>X_HELP</logiccolor> is on the form with the help text.
 
-<logic> 
+<logic>
 PROC GLOBAL
 
 string lastField;
@@ -24,7 +24,7 @@ function numeric OnKey(numeric keystroke)
 		lastField = thisField;
 		move to X_HELP;
 	endif;
-	
+
 	OnKey = keystroke;
 
 end;

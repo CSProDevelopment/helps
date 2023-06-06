@@ -2,7 +2,7 @@
 
 To create one or more indices in production mode, you can customize the behavior of Index Data by creating a PFF file.
 
-You can create a PFF file in one of two ways: either create it yourself using a text editor such as Notepad, or generate one by selecting <b>Save As</b> from the <b>File</b> menu. You can also manipulate PFF files in logic by using the <link CSPro::pff.hgt>Pff</link> object.
+You can create a PFF file in one of two ways: either create it yourself using a text editor such as Notepad, or generate one by selecting <b>Save As</b> from the <b>File</b> menu. You can also manipulate PFF files in logic by using the <link CSPro::pff.csdoc>Pff</link> object.
 
 The following section shows the options available to you in a CSIndex PFF file. A PFF file is not case sensitive, so you can use any combination of upper and lower case text.
 
@@ -38,7 +38,7 @@ The <pffcolor>[Run Information]</pffcolor> block is required. While <pffcolor>Ve
 
 <subheader>[Files]</subheader>
 
-The <pffcolor>[Files]</pffcolor> block is required and names the file(s) to be indexed. At a minimum you must name one input file (<pffcolor>InputData</pffcolor>). If you specify an output file (<pffcolor>OutputData</pffcolor>), the tool will attempt to remove duplicates from the input data file(s) and create an output file with the duplicates removed. If more than one input data file is selected, the output file can include a wildcard (see <topic specify_files.hgt /> for more information).
+The <pffcolor>[Files]</pffcolor> block is required and names the file(s) to be indexed. At a minimum you must name one input file (<pffcolor>InputData</pffcolor>). If you specify an output file (<pffcolor>OutputData</pffcolor>), the tool will attempt to remove duplicates from the input data file(s) and create an output file with the duplicates removed. If more than one input data file is selected, the output file can include a wildcard (see <topic specify_files.csdoc /> for more information).
 
 <subheader>[Parameters]</subheader>
 

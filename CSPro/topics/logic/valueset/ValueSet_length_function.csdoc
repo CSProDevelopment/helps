@@ -10,7 +10,7 @@ i = valueset_name.length();
 
 <subheader>Description</subheader>
 
-The <logiccolor>ValueSet.length</logiccolor> function returns the number of values defined in the <link valueset.hgt>ValueSet</link> object. When multiple value codes are linked to a single label, each multiple set counts as a single value.
+The <logiccolor>ValueSet.length</logiccolor> function returns the number of values defined in the <link valueset.csdoc>ValueSet</link> object. When multiple value codes are linked to a single label, each multiple set counts as a single value.
 
 
 <subheader>Return Value</subheader>
@@ -28,7 +28,7 @@ onfocus
 	ValueSet households_vs;
 
 	// ...
-	
+
 	if households_vs.length() = 0 then
 		errmsg("There are no households to select");
 		reenter MAIN_MENU;
@@ -36,4 +36,4 @@ onfocus
 </logic>
 
 
-<seealso valueset.hgt />
+<seealso valueset.csdoc />

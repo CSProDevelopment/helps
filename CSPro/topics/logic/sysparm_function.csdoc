@@ -8,7 +8,7 @@ s = sysparm(『<arg>parameter_name</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>sysparm</logiccolor> function returns the value of a parameter provided in a <link run_production_data_entry.hgt>data entry</link> or <link run_production_batch_edits.hgt>batch edit</link> PFF file. The function returns the parameter as a left-justified string. If no parameter was given in the PFF file, the function returns a blank string.
+The <logiccolor>sysparm</logiccolor> function returns the value of a parameter provided in a <link run_production_data_entry.csdoc>data entry</link> or <link run_production_batch_edits.csdoc>batch edit</link> PFF file. The function returns the parameter as a left-justified string. If no parameter was given in the PFF file, the function returns a blank string.
 
 If a string expression <arg>parameter_name</arg> is provided, the function looks to see if there is a parameter with the given name specified in the <pffcolor>[Parameters]</pffcolor> section of the PFF file. If such a parameter exists, it is returned as a string. Using this functionality, you can pass several parameters to your programs.
 
@@ -35,4 +35,4 @@ STATE = tonumber(sysparm("State"));		// sets STATE to 20
 COUNTY = tonumber(sysparm("County"));	// sets COUNTY to 5
 </logic>
 
-<seealso pff_getproperty_function.hgt />
+<seealso pff_getproperty_function.csdoc />

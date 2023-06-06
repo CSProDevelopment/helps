@@ -3,7 +3,7 @@
 
 <subheader>Setting the Synchronization Options</subheader>
 
-For basic <link synchronization.hgt>synchronization</link> scenarios, you can configure your data entry application for synchronization by selecting <b>Synchronization</b> from the <b>Options</b> menu:
+For basic <link synchronization.csdoc>synchronization</link> scenarios, you can configure your data entry application for synchronization by selecting <b>Synchronization</b> from the <b>Options</b> menu:
 
 <center><image synchronization_options.png /></center>
 
@@ -12,7 +12,7 @@ To add support for data synchronization to your application, check the <b>Enable
 The following <b>Server</b> options can be specified:
 
 <list>
-	<li><b>CSWeb</b>: Synchronize with a CSWeb server. This requires a properly configured CSWeb server. The data dictionary for the application must be uploaded to the CSWeb server. For more information about CSWeb servers, see the <link CSWeb::introduction_to_csweb.hgt>CSWeb help documentation</link>.</li>
+	<li><b>CSWeb</b>: Synchronize with a CSWeb server. This requires a properly configured CSWeb server. The data dictionary for the application must be uploaded to the CSWeb server. For more information about CSWeb servers, see the <link CSWeb::introduction_to_csweb.csdoc>CSWeb help documentation</link>.</li>
 	<li><b>Dropbox</b>: Synchronize using the online file sharing service <link https://www.dropbox.com/>Dropbox</link>. This requires an account with Dropbox.</li>
 	<li><b>FTP</b>: Synchronize using an FTP server. This option requires that you have an account configured on an FTP server.</li>
 	<li><b>URL</b>: Specify the URL of the CSWeb server or the URL of the FTP server. For CSWeb servers the URL should start with http:// or https://. For FTP servers the URL should start with ftp://, ftps:// or ftpes://. The URL is not used for Dropbox.</li>
@@ -30,9 +30,9 @@ The following <b>Sync</b> options can be specified:
 	</list></li>
 </list>
 
-Simple synchronizations do not support synchronization of external dictionaries or files other than the .pen and .pff files. To implement these advanced synchronization scenarios, you can create your own synchronization routines using <link synchronization.hgt>logic functions</link>.
+Simple synchronizations do not support synchronization of external dictionaries or files other than the .pen and .pff files. To implement these advanced synchronization scenarios, you can create your own synchronization routines using <link synchronization.csdoc>logic functions</link>.
 
-The synchronization options are used to synchronize data with a server but are not meant for deploying and updating the application itself. To download an application to a mobile device or update the application files of an existing application on a mobile device use the <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link> tool to package and upload an application to a server. Interviewers can then download the application to their mobile device using <link CSDeploy::install_deployment_mobile.hgt>Add Application</link> from the Entry Applications screen of CSEntry. Interviewers can also download to an application using <link CSDeploy::update_deployment_mobile.hgt>Update Installed Applications</link> from the Entry Applications screen of CSEntry.
+The synchronization options are used to synchronize data with a server but are not meant for deploying and updating the application itself. To download an application to a mobile device or update the application files of an existing application on a mobile device use the <link CSDeploy::introduction_to_deployment.csdoc>Deploy Application</link> tool to package and upload an application to a server. Interviewers can then download the application to their mobile device using <link CSDeploy::install_deployment_mobile.csdoc>Add Application</link> from the Entry Applications screen of CSEntry. Interviewers can also download to an application using <link CSDeploy::update_deployment_mobile.csdoc>Update Installed Applications</link> from the Entry Applications screen of CSEntry.
 
 <subheader>Running Synchronizations</subheader>
 
@@ -46,6 +46,6 @@ On desktop devices, select the <b>Synchronize</b> option off of the <b>File</b> 
 
 <subheader>Downloading Data</subheader>
 
-In order to download the data that has been uploaded to the server, use the Data Viewer's <link DataViewer::downloading_and_synchronizing_data.hgt>download function</link>. This will download all the data on the server into a single CSPro data file that can be used by other CSPro applications and tools.
+In order to download the data that has been uploaded to the server, use the Data Viewer's <link DataViewer::downloading_and_synchronizing_data.csdoc>download function</link>. This will download all the data on the server into a single CSPro data file that can be used by other CSPro applications and tools.
 
-<seealso synchronization.hgt />
+<seealso synchronization.csdoc />

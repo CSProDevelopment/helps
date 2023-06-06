@@ -8,7 +8,7 @@ function OnStop();
 
 <subheader>Description</subheader>
 
-<logiccolor>OnStop</logiccolor> is a special global function. It has no return value and must be placed in the <logiccolor>PROC GLOBAL</logiccolor> section just like any other <link user_defined_functions.hgt>user-defined function</link>.
+<logiccolor>OnStop</logiccolor> is a special global function. It has no return value and must be placed in the <logiccolor>PROC GLOBAL</logiccolor> section just like any other <link user_defined_functions.csdoc>user-defined function</link>.
 
 When defined, it provides control over what happens when the data entry operator tries to stop data entry by pressing the ESC key, the <image stop_button.png /> Stop button, Ctrl+S, or attempting to exit data entry. When any of the above events occur, the <logiccolor>OnStop</logiccolor> function is executed, with no stop dialog (discard, save, cancel) appearing.
 
@@ -16,7 +16,7 @@ The <logiccolor>OnStop</logiccolor> function can be used to prevent the operator
 
 Be aware that if you have added an <logiccolor>OnStop</logiccolor> function to your data entry application, then when a partial case is resumed, no resume dialog ("Do you want to go to last...") appears. Therefore if you wish for this feature to be available to your interviewers, you must code it yourself (<b>see Example 3</b> below).
 
-Similarly, if special actions are required when resuming a partial case, check whether a partial case has been entered by using the <logiccolor>ispartial</logiccolor> function, and then add the appropriate logic. 
+Similarly, if special actions are required when resuming a partial case, check whether a partial case has been entered by using the <logiccolor>ispartial</logiccolor> function, and then add the appropriate logic.
 
 The <logiccolor>OnStop</logiccolor> function is not executed when the <logiccolor>stop</logiccolor> function is executed.
 
@@ -62,6 +62,6 @@ if last_field_entered <> "" then
 		advance to last_field_entered;
 	endif;
 endif;
-</logic> 
+</logic>
 
-<seealso user_defined_functions.hgt function_statement.hgt stop_function.hgt savepartial_function.hgt ispartial_function.hgt endlevel_statement.hgt />
+<seealso user_defined_functions.csdoc function_statement.csdoc stop_function.csdoc savepartial_function.csdoc ispartial_function.csdoc endlevel_statement.csdoc />

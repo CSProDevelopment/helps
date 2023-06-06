@@ -10,7 +10,7 @@ b = map_name.clearMarkers();
 
 <subheader>Description</subheader>
 
-The <logiccolor>Map.clearMarkers</logiccolor> function removes all the markers currently on the <link map.hgt>Map object</link> named <logiccolor>map_name</logiccolor>.
+The <logiccolor>Map.clearMarkers</logiccolor> function removes all the markers currently on the <link Map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor>.
 
 
 <subheader>Return Value</subheader>
@@ -28,10 +28,10 @@ function filterMapHouseholds(Map mymap)
 
 	numeric choice = accept("Choose status to show", "Not started", "Partial", "Complete");
 	if choice > 0 then
-	
+
 		// Clear current markers
 		myMap.clearMarkers();
-		
+
 		// Add markers for households matching status chosen
 		forcase HOUSEHOLD_DICT WHERE HOUSEHOLD_STATUS = choice do
 			numeric marker = myMap.addMarker(HOUSEHOLD_LATITUDE, HOUSEHOLD_LONGITUDE);
@@ -42,4 +42,4 @@ end;
 </logic>
 
 
-<seealso map.hgt map_add_marker_function.hgt map_clear_buttons_function.hgt />
+<seealso Map.csdoc Map_addMarker_function.csdoc Map_clearButtons_function.csdoc />

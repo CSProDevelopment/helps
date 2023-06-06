@@ -14,13 +14,13 @@ s = invoke(<arg>function_name</arg>, arguments := <arg>arguments_json</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>invoke</logiccolor> function allows you to execute <link user_defined_functions.hgt>user-defined functions</link> using runtime binding (where the function name is only known at runtime). When compiling an application, the CSPro compiler only knows about functions declared up to the point where a function call is coded, so for more dynamic applications, it can be a challenge to manage function calls when you would like to call a function declared after the point of the call. One workaround is to use <link additional_function_examples.hgt>function pointers</link>; the <logiccolor>invoke</logiccolor> function provides another way to bypass the CSPro compiler limitation.
+The <logiccolor>invoke</logiccolor> function allows you to execute <link user_defined_functions.csdoc>user-defined functions</link> using runtime binding (where the function name is only known at runtime). When compiling an application, the CSPro compiler only knows about functions declared up to the point where a function call is coded, so for more dynamic applications, it can be a challenge to manage function calls when you would like to call a function declared after the point of the call. One workaround is to use <link additional_function_examples.csdoc>function pointers</link>; the <logiccolor>invoke</logiccolor> function provides another way to bypass the CSPro compiler limitation.
 
 The <logiccolor>invoke</logiccolor> function evaluates the string expression <arg>function_name</arg> at runtime, not compile-time. In the function's first version, zero, one, or more arguments are provided directly at compile-time. At runtime, the arguments are checked against the function's parameters, and if they are compatible, the function call is executed.
 
-The function's second version, using <link function_named_arguments.hgt>named arguments</link>, allows arguments to be passed using the string expression <arg>arguments_json</arg>. This text is a <link json_format.hgt>JSON</link> string containing the arguments to the function. In this version, only <logiccolor>numeric</logiccolor>, <logiccolor>string</logiccolor>, and <logiccolor>List</logiccolor> arguments can be provided. List arguments must be provided as JSON arrays.
+The function's second version, using <link function_named_arguments.csdoc>named arguments</link>, allows arguments to be passed using the string expression <arg>arguments_json</arg>. This text is a <link json_format.csdoc>JSON</link> string containing the arguments to the function. In this version, only <logiccolor>numeric</logiccolor>, <logiccolor>string</logiccolor>, and <logiccolor>List</logiccolor> arguments can be provided. List arguments must be provided as JSON arrays.
 
-The <link javascript_interface.hgt>JavaScript interface</link> provides versions of these functions that can be run in JavaScript: <colorinline javascript>CSPro.invoke</colorinline> and <colorinline javascript>CSPro.invokeAsync</colorinline>.
+The <link javascript_interface.csdoc>JavaScript interface</link> provides versions of these functions that can be run in JavaScript: <colorinline javascript>CSPro.invoke</colorinline> and <colorinline javascript>CSPro.invokeAsync</colorinline>.
 
 
 <subheader>Return Value</subheader>
@@ -77,4 +77,4 @@ invoke("CombineText", arguments := '{ "values": [ "Hello,", "World!" ] }'); // H
 </logic>
 
 
-<seealso user_defined_functions.hgt javascript_interface.hgt />
+<seealso user_defined_functions.csdoc javascript_interface.csdoc />

@@ -15,9 +15,9 @@ end;
 
 <subheader>Description</subheader>
 
-The <logiccolor>syncmessage</logiccolor> function sends a string message from one device to another device that is acting as a <link syncserver_function.hgt>Bluetooth server</link>. The string expression <arg>message_name</arg> identifies the message, and an optional string expression <arg>message_value</arg> defines a value associated with the message. The client device sends this message to a Bluetooth server.
+The <logiccolor>syncmessage</logiccolor> function sends a string message from one device to another device that is acting as a <link syncserver_function.csdoc>Bluetooth server</link>. The string expression <arg>message_name</arg> identifies the message, and an optional string expression <arg>message_value</arg> defines a value associated with the message. The client device sends this message to a Bluetooth server.
 
-The application running on the Bluetooth server must have a <link user_defined_functions.hgt>user-defined function</link> with the name <logiccolor>OnSyncMessage</logiccolor> that has two string parameters and returns a string. While the <logiccolor>syncserver</logiccolor> function is running, the <logiccolor>OnSyncMessage</logiccolor> function is called anytime a message is received and the return value of that function is returned to the Bluetooth client.
+The application running on the Bluetooth server must have a <link user_defined_functions.csdoc>user-defined function</link> with the name <logiccolor>OnSyncMessage</logiccolor> that has two string parameters and returns a string. While the <logiccolor>syncserver</logiccolor> function is running, the <logiccolor>OnSyncMessage</logiccolor> function is called anytime a message is received and the return value of that function is returned to the Bluetooth client.
 
 
 <subheader>Return Value</subheader>
@@ -45,15 +45,15 @@ function string OnSyncMessage(string message_name, string message_value)
 	// store information about the sync in the paradata log
 	if message_name = "STAFF_CODE" then
 		logtext("Syncing with %s at %s", message_value, timestring());
-	
+
 	// return the training mode
 	elseif message_name = "TRAINING_MODE" then
 		exit maketext("%d", TRAINING_MODE);
-	
+
 	endif;
 
 end;
 </logic>
 
 
-<seealso synchronization.hgt syncconnect_function_bluetooth.hgt syncserver_function.hgt />
+<seealso synchronization.csdoc syncconnect_function_bluetooth.csdoc syncserver_function.csdoc />

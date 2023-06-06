@@ -10,7 +10,7 @@ ValueSet 『<arg>valueset_type</arg>』 <arg>valueset_name</arg>;
 
 <subheader>Description</subheader>
 
-The <logiccolor>ValueSet</logiccolor> statement creates a dynamic <link valueset.hgt>value set</link> with the name <arg>valueset_name</arg>. The ValueSet name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare ValueSet objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>ValueSet</logiccolor> statement creates a dynamic <link valueset.csdoc>value set</link> with the name <arg>valueset_name</arg>. The ValueSet name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare ValueSet objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 ValueSet objects can be <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. By default a value set is numeric, but the type can be modified by specifying the <arg>valueset_type</arg>. When associating a value set with an item using <logiccolor>setvalueset</logiccolor>, the type must match the item type (numeric for numeric items, and string for alphanumeric items).
 
@@ -28,17 +28,17 @@ onfocus
 	if USER_ROLE = 1 then
 		menu_valueset.add("Add New Household", 1);
 		menu_valueset.add("View Existing Households", 2);
-	
+
 	// supervisor options
 	else
 		menu_valueset.add("View Household Report", 3);
 
 	endif;
-	
+
 	menu_valueset.add("Quit", 99);
-	
+
 	setvalueset(MENU, menu_valueset);
 </logic>
 
 
-<seealso valueset.hgt list.hgt />
+<seealso valueset.csdoc list.csdoc />

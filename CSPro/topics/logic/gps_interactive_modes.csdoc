@@ -14,7 +14,7 @@ b = gps(readInteractive『, <arg>message</arg>,』
 		『message := <arg>message</arg>』);
 </logicsyntax>
 
-The <logiccolor>gps</logiccolor> function must be passed the <logiccolor>readInteractive</logiccolor> command with the <link function_named_arguments.hgt>named argument</link> <logiccolor>baseMap</logiccolor> set to <logiccolor>None</logiccolor>. The numeric expression <arg>duration_in_seconds</arg> may be used to set the read duration If it is not specified, the read duration will default to 15 seconds. A message can be provided as a string expression as the optional second argument, or via the <arg>message</arg> named argument.
+The <logiccolor>gps</logiccolor> function must be passed the <logiccolor>readInteractive</logiccolor> command with the <link function_named_arguments.csdoc>named argument</link> <logiccolor>baseMap</logiccolor> set to <logiccolor>None</logiccolor>. The numeric expression <arg>duration_in_seconds</arg> may be used to set the read duration If it is not specified, the read duration will default to 15 seconds. A message can be provided as a string expression as the optional second argument, or via the <arg>message</arg> named argument.
 
 
 <subheader>Map Mode: Current Location</subheader>
@@ -27,7 +27,7 @@ b = gps(readInteractive『, <arg>message</arg>,』
 		『message := <arg>message</arg>』);
 </logicsyntax>
 
-The <logiccolor>gps</logiccolor> function must be passed the <logiccolor>readInteractive</logiccolor> command. The optional <link function_named_arguments.hgt>named argument</link> <arg>base_map</arg> can be set to one of four map types (<logiccolor>Normal</logiccolor>, <logiccolor>Satellite</logiccolor>, <logiccolor>Hybrid</logiccolor>, and <logiccolor>Terrain</logiccolor>), or a filename. The filename can specify a TPK or MBTile, so an <link offline_maps.hgt>offline map</link> can be displayed. If no <arg>base_map</arg> is specified, then the base map will be calculated using <link map_base_map_specification.hgt>defined rules</link>. A message can be provided as a string expression as the optional second argument, or via the <arg>message</arg> named argument.
+The <logiccolor>gps</logiccolor> function must be passed the <logiccolor>readInteractive</logiccolor> command. The optional <link function_named_arguments.csdoc>named argument</link> <arg>base_map</arg> can be set to one of four map types (<logiccolor>Normal</logiccolor>, <logiccolor>Satellite</logiccolor>, <logiccolor>Hybrid</logiccolor>, and <logiccolor>Terrain</logiccolor>), or a filename. The filename can specify a TPK or MBTile, so an <link offline_maps.csdoc>offline map</link> can be displayed. If no <arg>base_map</arg> is specified, then the base map will be calculated using <link map_base_map_specification.csdoc>defined rules</link>. A message can be provided as a string expression as the optional second argument, or via the <arg>message</arg> named argument.
 
 
 <subheader>Map Mode: Select Location</subheader>
@@ -40,7 +40,7 @@ b = gps(select『, <arg>message</arg>,』
 		『message := <arg>message</arg>』);
 </logicsyntax>
 
-The <logiccolor>gps</logiccolor> function must be passed the <logiccolor>select</logiccolor> command. The optional <link function_named_arguments.hgt>named argument</link> <arg>base_map</arg> can set to one of five map types (<logiccolor>Normal</logiccolor>, <logiccolor>Satellite</logiccolor>, <logiccolor>Hybrid</logiccolor>, <logiccolor>Terrain</logiccolor>, and <logiccolor>None</logiccolor>), or a filename. The filename can specify a TPK or MBTile, so an <link offline_maps.hgt>offline map</link> can be displayed. If no <arg>base_map</arg> is specified, then the base map will be calculated using <link map_base_map_specification.hgt>defined rules</link>. A message can be provided as a string expression as the optional second argument, or via the <arg>message</arg> named argument.
+The <logiccolor>gps</logiccolor> function must be passed the <logiccolor>select</logiccolor> command. The optional <link function_named_arguments.csdoc>named argument</link> <arg>base_map</arg> can set to one of five map types (<logiccolor>Normal</logiccolor>, <logiccolor>Satellite</logiccolor>, <logiccolor>Hybrid</logiccolor>, <logiccolor>Terrain</logiccolor>, and <logiccolor>None</logiccolor>), or a filename. The filename can specify a TPK or MBTile, so an <link offline_maps.csdoc>offline map</link> can be displayed. If no <arg>base_map</arg> is specified, then the base map will be calculated using <link map_base_map_specification.csdoc>defined rules</link>. A message can be provided as a string expression as the optional second argument, or via the <arg>message</arg> named argument.
 
 
 <subheader>Return Value</subheader>
@@ -66,4 +66,4 @@ gps(select, "Select your current location on the map:",
 </logic>
 
 
-<seealso gps_function.hgt map_base_map_specification.hgt />
+<seealso gps_function.csdoc map_base_map_specification.csdoc />

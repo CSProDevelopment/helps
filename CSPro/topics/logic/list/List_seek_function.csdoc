@@ -10,7 +10,7 @@ i = list_name.seek(<arg>value</arg>, 『<arg>starting_index</arg> ‖ @<arg>nth_
 
 <subheader>Description</subheader>
 
-The <logiccolor>List.seek</logiccolor> function returns the one-based index of the first occurrence in the <link list.hgt>List</link> of <arg>value</arg>. The type of the value must match the type of the List. If the numeric expression <arg>starting_index</arg> is provided, then the function starts searching the for value starting at the index provided. Alternatively, if the @ symbol precedes the numeric expression <arg>nth_occurrence</arg>, the function searches for the n<html><sup>th</sup></html> occurrence of the value.
+The <logiccolor>List.seek</logiccolor> function returns the one-based index of the first occurrence in the <link list.csdoc>List</link> of <arg>value</arg>. The type of the value must match the type of the List. If the numeric expression <arg>starting_index</arg> is provided, then the function starts searching the for value starting at the index provided. Alternatively, if the @ symbol precedes the numeric expression <arg>nth_occurrence</arg>, the function searches for the n<html><sup>th</sup></html> occurrence of the value.
 
 
 <subheader>Return Value</subheader>
@@ -23,7 +23,7 @@ The function returns the one-based index of the value, if found, and 0 if no suc
 <logic>
 List string keys_to_process;
 
-// ... 
+// ...
 
 if keys_to_process.seek(key(DICT_NAME)) = 0 then
 	skip case;
@@ -31,4 +31,4 @@ endif;
 </logic>
 
 
-<seealso list.hgt seek_function.hgt />
+<seealso list.csdoc seek_function.csdoc />

@@ -8,7 +8,7 @@ d = high(<arg>number1</arg>『,<arg>number2</arg>...<arg>numberN</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>high</logiccolor> function returns the maximum (highest) value in a group of numbers represented by numeric expressions <arg>number1</arg> ... <arg>numberN</arg>. The function ignores <link special_values.hgt>special values</link>.
+The <logiccolor>high</logiccolor> function returns the maximum (highest) value in a group of numbers represented by numeric expressions <arg>number1</arg> ... <arg>numberN</arg>. The function ignores <link special_values.csdoc>special values</link>.
 
 <subheader>Return Value</subheader>
 
@@ -21,4 +21,4 @@ errmsg("Lowest value is %f",low(50,-123.45,1982.0605,20)); // displays -123.45
 errmsg("Highest value is %f",high(50,-123.45,1982.0605,20)); // displays 1982.0605
 </logic>
 
-<seealso low_function.hgt maxvalue_function.hgt />
+<seealso low_function.csdoc maxvalue_function.csdoc />

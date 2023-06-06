@@ -15,7 +15,7 @@ Subscripts can be numeric expressions as well as numeric constants. For example,
 
 <logic>SEX(curocc(CHILD));</logic>
 
-refers to the current occurrence of CHILD (<link curocc_function.hgt>curocc</link> is a function that returns the current occurrence of a multiple record). When referring to multiply-occurring items within the scope of their repetition, you do not need to use subscripts, as the current occurrence will be assumed. For example, suppose you have a population record that has multiple occurrences. Belonging to that record are the three variables SEX, AGE, and FERTILITY. If your code is located within any of these variables' procedures, you do not need to use subscripts. To illustrate:
+refers to the current occurrence of CHILD (<link curocc_function.csdoc>curocc</link> is a function that returns the current occurrence of a multiple record). When referring to multiply-occurring items within the scope of their repetition, you do not need to use subscripts, as the current occurrence will be assumed. For example, suppose you have a population record that has multiple occurrences. Belonging to that record are the three variables SEX, AGE, and FERTILITY. If your code is located within any of these variables' procedures, you do not need to use subscripts. To illustrate:
 
 <subheader>Example 1</subheader>
 
@@ -54,5 +54,4 @@ However, if you were to place the exact same logic elsewhere in your program, yo
       endif;
    enddo;</logic>
 
-On the other hand, it simplified our logic for the row number, as we don't need to make a call to <link curocc_function.hgt>curocc</link> anymore to find out what row we're on&mdash;we know it now, as we're controlling the looping.
-
+On the other hand, it simplified our logic for the row number, as we don't need to make a call to <link curocc_function.csdoc>curocc</link> anymore to find out what row we're on&mdash;we know it now, as we're controlling the looping.

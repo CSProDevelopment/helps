@@ -12,17 +12,17 @@ This is a detailed list of changes in CSPro 7.0. For a more general overview, se
 <subheader>Data Sources</subheader>
 
 <list>
-	<li>Introduction of the new <b>CSPro DB</b> and <b>none</b> <link data_sources.hgt>data sources</link>.</li>
-	<li>Using the <link synchronization.hgt>synchronization functions</link>, CSPro DB data files can be synchronized with Dropbox and FTP servers on a case by case, rather than data file, basis.</li>
-	<li>The creation of listing and operator statistics files <link data_source_options.hgt>can be disabled</link>.</li>
+	<li>Introduction of the new <b>CSPro DB</b> and <b>none</b> <link data_sources.csdoc>data sources</link>.</li>
+	<li>Using the <link synchronization.csdoc>synchronization functions</link>, CSPro DB data files can be synchronized with Dropbox and FTP servers on a case by case, rather than data file, basis.</li>
+	<li>The creation of listing and operator statistics files <link data_source_options.csdoc>can be disabled</link>.</li>
 </list>
 
 
 <subheader>Data Entry</subheader>
 
 <list>
-	<li>ID items can be set to <link change_field_properties.hgt>auto increment</link>.</li>
-	<li>Addition of several <link change_data_entry_options.hgt>data entry options</link> for mobile devices:
+	<li>ID items can be set to <link change_field_properties.csdoc>auto increment</link>.</li>
+	<li>Addition of several <link change_data_entry_options.csdoc>data entry options</link> for mobile devices:
 		~!~
 		<list>
 			<li>Automatically advance on selection.</li>
@@ -30,7 +30,7 @@ This is a detailed list of changes in CSPro 7.0. For a more general overview, se
 			<li>Display error message numbers.</li>
 		</list>
 	</li>
-	<li>Addition of several new <link run_production_data_entry.hgt>PFF attributes</link>:
+	<li>Addition of several new <link run_production_data_entry.csdoc>PFF attributes</link>:
 		~!~
 		<list>
 			<li><pffcolor>CaseListingFilter</pffcolor>: Filters the list of cases shown in the case listing.</li>
@@ -39,8 +39,8 @@ This is a detailed list of changes in CSPro 7.0. For a more general overview, se
 			<li><pffcolor>Lock</pffcolor>: New lock flags <b>CaseListing</b> (does not show the case listing screen) and <b>Delete</b> (prevents the user from deleting cases).</li>
 		</list>
 	</li>
-	<li>A <link getnote_function.hgt>case note</link> can be defined, which will display in the case listing.</li>
-	<li>Multiple operators can leave <link getnote_function.hgt>notes</link> on the same field.</li>
+	<li>A <link getnote_function.csdoc>case note</link> can be defined, which will display in the case listing.</li>
+	<li>Multiple operators can leave <link getnote_function.csdoc>notes</link> on the same field.</li>
 	<li>On Windows, the dialog box for the <logiccolor>accept</logiccolor> (and <logiccolor>selcase</logiccolor>, <logiccolor>show</logiccolor>, and <logiccolor>showarray</logiccolor>) function has been redesigned to be more tablet friendly.</li>
 	<li>Cases can now be verified on a case by case basis, rather than having to verify cases in file order.</li>
 	<li>Portuguese language strings added to Android.</li>
@@ -50,7 +50,7 @@ This is a detailed list of changes in CSPro 7.0. For a more general overview, se
 <subheader>Batch</subheader>
 
 <list>
-	<li>A new <link run_production_batch_edits.hgt>PFF attribute</link>, <pffcolor>InputOrder</pffcolor>, allows you to override the default order in which cases are processed in a data file.</li>
+	<li>A new <link run_production_batch_edits.csdoc>PFF attribute</link>, <pffcolor>InputOrder</pffcolor>, allows you to override the default order in which cases are processed in a data file.</li>
 </list>
 
 
@@ -69,7 +69,7 @@ This is a detailed list of changes in CSPro 7.0. For a more general overview, se
 			<li><logiccolor>isverified</logiccolor>: A way to determine whether a case has been verified.</li>
 			<li><logiccolor>keylist</logiccolor>: A function that returns a list of keys in a data file, including the input file in a data entry application.</li>
 			<li><logiccolor>setoperatorid</logiccolor>: A way to set the operator ID in logic.</li>
-			<li><logiccolor>syncconnect</logiccolor>, <logiccolor>syncdata</logiccolor>, <logiccolor>syncdisconnect</logiccolor>, <logiccolor>syncfile</logiccolor>, and <logiccolor>syncserver</logiccolor>: A set of functions to support the new <link synchronization.hgt>synchronization functionality</link>.</li>
+			<li><logiccolor>syncconnect</logiccolor>, <logiccolor>syncdata</logiccolor>, <logiccolor>syncdisconnect</logiccolor>, <logiccolor>syncfile</logiccolor>, and <logiccolor>syncserver</logiccolor>: A set of functions to support the new <link synchronization.csdoc>synchronization functionality</link>.</li>
 			<li><logiccolor>timestamp</logiccolor>: A way to easily calculate time spans by working with UNIX times.</li>
 		</list>
 	</li>
@@ -89,7 +89,7 @@ This is a detailed list of changes in CSPro 7.0. For a more general overview, se
 <subheader>Tools</subheader>
 
 <list>
-	<li>A new tool, <link DataViewer::introduction_to_data_viewer.hgt>Data Viewer</link>, allows for the viewing of data files in dictionary format (in lieu of using Text Viewer). The tool is also used to <link DataViewer::downloading_and_synchronizing_data.hgt>download data from a synchronization server</link>.</li>
+	<li>A new tool, <link DataViewer::introduction_to_data_viewer.csdoc>Data Viewer</link>, allows for the viewing of data files in dictionary format (in lieu of using Text Viewer). The tool is also used to <link DataViewer::downloading_and_synchronizing_data.csdoc>download data from a synchronization server</link>.</li>
 	<li>The <b>Export Data</b> tool can now output Stata exports in Unicode format. To open these exports, you need Stata version 14 or later.</li>
 	<li>The <b>Excel to CSPro</b> tool is much improved, allowing you to create dictionaries from Excel data and to convert data from multiple worksheets.</li>
 	<li>The <b>Concatenate Data</b> tool and the <logiccolor>fileconcat</logiccolor> function now combine case notes, partial save statuses, etc., and the tool can identify duplicate cases in files.</li>
@@ -98,7 +98,7 @@ This is a detailed list of changes in CSPro 7.0. For a more general overview, se
 <subheader>CSWeb</subheader>
 
 <list>
-	<li><link CSWeb::introduction_to_csweb.hgt>CSWeb</link> introduced as a convenient way to synchronize CSPro data files on a central server.</li>
+	<li><link CSWeb::introduction_to_csweb.csdoc>CSWeb</link> introduced as a convenient way to synchronize CSPro data files on a central server.</li>
 </list>
 
 
@@ -106,8 +106,8 @@ This is a detailed list of changes in CSPro 7.0. For a more general overview, se
 
 <list>
 	<li>Introduction of a lightweight CSPro installer, with the CSPro examples now installed to the Documents folder.</li>
-	<li>Introduction of a new custom <link collaborating_on_cspro_development.hgt>help documentation system</link>.</li>
+	<li>Introduction of a new custom <link collaborating_on_cspro_development.csdoc>help documentation system</link>.</li>
 	<li>Fixes to allow CSPro to fully work on Windows 10 systems.</li>
 </list>
 
-<seealso what_is_new_in_cspro.hgt />
+<seealso what_is_new_in_cspro.csdoc />

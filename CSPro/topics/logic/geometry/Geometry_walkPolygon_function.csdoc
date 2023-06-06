@@ -12,9 +12,9 @@ b = geometry_name.walkPolygon(『<arg>map_name</arg>』);
 
 The <logiccolor>Geometry.walkPolygon</logiccolor> function displays an interactive map-based interface allowing the user to create a polygon by walking the perimeter of an area and recording their location using the GPS. The interface is similar to that used by <logiccolor>Geometry.tracePolygon</logiccolor> except that rather than tapping on the map to place the vertices of the polygon, there is an add vertex button that places a vertex at the user's current location as determined by GPS. While walking the outline, the user may also drag vertices of the polygon by long pressing on them in order to modify the polygon. The function returns when the user has finished creating the polygon on the map and taps the save button.
 
-The optional argument <arg>map_name</arg> is the name of a <link map.hgt>Map</link> object that will provide the display parameters used for the map that is shown while the user walks the polygon. You can use this parameter to set the <link map_set_base_map_function.hgt>base map</link>, <link map_set_title_function.hgt>title</link>, and <link map_zoom_to_function.hgt>location/zoom level</link> of the map. You can also use the map parameter to display <link map_add_marker_function.hgt>markers</link> and <link map_add_geometry_function.hgt>geometry</link> on the map, however any callbacks for clicking on markers or on the map itself are ignored while walking the polygon. Any buttons on the map are replaced by buttons for adding a vertex, saving, clearing, and deleting the last point placed while the polygon is being walked. If the argument <arg>map_name</arg> is omitted, a map with default settings is displayed while walking the polygon.
+The optional argument <arg>map_name</arg> is the name of a <link Map.csdoc>Map</link> object that will provide the display parameters used for the map that is shown while the user walks the polygon. You can use this parameter to set the <link Map_setBaseMap_function.csdoc>base map</link>, <link Map_setTitle_function.csdoc>title</link>, and <link Map_zoomTo_function.csdoc>location/zoom level</link> of the map. You can also use the map parameter to display <link Map_addMarker_function.csdoc>markers</link> and <link Map_addGeometry_function.csdoc>geometry</link> on the map, however any callbacks for clicking on markers or on the map itself are ignored while walking the polygon. Any buttons on the map are replaced by buttons for adding a vertex, saving, clearing, and deleting the last point placed while the polygon is being walked. If the argument <arg>map_name</arg> is omitted, a map with default settings is displayed while walking the polygon.
 
-After walking the polygon, you can <link geometry_save_function.hgt>save</link> the geometry to a file, compute the <link geometry_area_function.hgt>area</link> of the polygon, or compute the <link geometry_perimeter_function.hgt>perimeter</link> of the polygon.
+After walking the polygon, you can <link Geometry_save_function.csdoc>save</link> the geometry to a file, compute the <link Geometry_area_function.csdoc>area</link> of the polygon, or compute the <link Geometry_perimeter_function.csdoc>perimeter</link> of the polygon.
 
 If <logiccolor>geometry_name</logiccolor> already contains a polygon, this polygon will be displayed and the user will be able to modify it by long pressing on the vertices to drag them. If the geometry contains more than one polygon, only the first polygon is shown. All entities in the geometry other than polygons are ignored. If the geometry was loaded from GeoJSON, any polygons in entities of type MultiPolygon are ignored. If you wish to capture a new polygon rather than editing the existing geometry, use the <logiccolor>Geometry.clear</logiccolor> function before calling <logiccolor>Geometry.walkPolygon</logiccolor>.
 
@@ -29,13 +29,13 @@ The function returns a logical value of 1 (true) if the user created a polygon a
 <logic>
 // Declare a geometry
 Geometry outline;
-	
+
 // Have the user walk the outline of a polygon
 if outline.walkPolygon() then
 
 	// Save the outline to a GeoJSON file
 	outline.save("outline.geojson");
-	
+
 endif;
 </logic>
 
@@ -45,7 +45,7 @@ endif;
 <logic>
 // Declare a geometry
 Geometry plot;
-	
+
 // Declare a map
 Map mymap;
 
@@ -58,9 +58,9 @@ if plot.walkPolygon(mymap) then
 
 	// Capture the plot area
 	PLOT_AREA = plot.area();
-	
+
 endif;
 </logic>
 
 
-<seealso geometry.hgt geometry_tracepolygon_function.hgt />
+<seealso Geometry.csdoc Geometry_tracePolygon_function.csdoc />

@@ -10,7 +10,7 @@ b = list_name.clear();
 
 <subheader>Description</subheader>
 
-The <logiccolor>List.clear</logiccolor> function removes all values from a <link list.hgt>List</link>, setting the length to 0.
+The <logiccolor>List.clear</logiccolor> function removes all values from a <link list.csdoc>List</link>, setting the length to 0.
 
 
 <subheader>Return Value</subheader>
@@ -28,11 +28,11 @@ List possible_ages;
 PROC AGE
 
 	possible_ages.clear();
-	
+
 	do numeric counter = 1 while counter <= curocc()
 		possible_ages.add(AGE);
 	enddo;
 </logic>
 
 
-<seealso list.hgt list_remove_function.hgt list_removeduplicates_function.hgt list_removein_function.hgt />
+<seealso list.csdoc list_remove_function.csdoc list_removeduplicates_function.csdoc list_removein_function.csdoc />

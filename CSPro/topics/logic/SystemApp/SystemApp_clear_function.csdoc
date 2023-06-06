@@ -10,7 +10,7 @@ b = system_app_name.clear();
 
 <subheader>Description</subheader>
 
-The <logiccolor>SystemApp.clear</logiccolor> function clears any stored <link systemapp_setargument_function.hgt>arguments</link> and <link systemapp_getresult_function.hgt>results</link> associated with a <link systemapp.hgt>SystemApp</link> object.
+The <logiccolor>SystemApp.clear</logiccolor> function clears any stored <link systemapp_setargument_function.csdoc>arguments</link> and <link systemapp_getresult_function.csdoc>results</link> associated with a <link systemapp.csdoc>SystemApp</link> object.
 
 
 <subheader>Return Value</subheader>
@@ -29,7 +29,7 @@ PROC LOCATION
 
 	// clear any previously used arguments
 	google_maps.clear();
-	
+
 	// show barber shops near the location
 	google_maps.setArgument("action", "android.intent.action.VIEW");
 	google_maps.setArgument("data", maketext("geo:%f,%f?q=barber+shop", LATITUDE, LONGITUDE));
@@ -37,4 +37,4 @@ PROC LOCATION
 </logic>
 
 
-<seealso systemapp.hgt />
+<seealso systemapp.csdoc />

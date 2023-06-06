@@ -1,6 +1,6 @@
 ﻿<title>DeckArray Leftover Rows</title>
 
-When using unedited variables as parameters of your <topic deckarrays.hgt />, it may be useful to include a "leftover" (spillover) row for cases in which the variable is not valid. This functionality allows the user to simulate the use of many hot decks using a single array. An example will best explain this functionality.
+When using unedited variables as parameters of your <topic deckarrays.csdoc />, it may be useful to include a "leftover" (spillover) row for cases in which the variable is not valid. This functionality allows the user to simulate the use of many hot decks using a single array. An example will best explain this functionality.
 
 This following is a hot deck for housing type, based on the source of drinking water (H8), the type of toilet (H9), and whether or not the household has electricity (H10).
 
@@ -11,8 +11,8 @@ At the point that housing type (H6) is edited, none of the dependent variables i
 When updating the hot deck in cases where the housing type value is valid, adding a (+) after the DeckArray name will update the "leftover" rows.
 
 <logic>putdeck(housingTypeHD(+),H6); </logic>
-	
-This means that when the hot deck is called upon for an edit or imputation, having valid values for H8, H9, or H10 is not necessary to return a valid value for H6. This fundamentally makes the housing type DeckArray eight hot decks combined into one. The table below explains what happens when executing a <link getdeck_function.hgt>getdeck</link> function call:
+
+This means that when the hot deck is called upon for an edit or imputation, having valid values for H8, H9, or H10 is not necessary to return a valid value for H6. This fundamentally makes the housing type DeckArray eight hot decks combined into one. The table below explains what happens when executing a <link getdeck_function.csdoc>getdeck</link> function call:
 
 <logic>impute(H6,getdeck(housingTypeHD));</logic>
 
@@ -42,4 +42,4 @@ To explain selected table rows in words:
 <li>Row 6: If water and electricity are invalid, the hot deck will be based on the value for toilet.</li>
 <li>Row 8: All 3 values are are invalid, the hot deck value will be based on the previous valid household's values.</li></list>
 
-<seealso deckarrays.hgt getdeck_function.hgt putdeck_function.hgt />
+<seealso deckarrays.csdoc getdeck_function.csdoc putdeck_function.csdoc />

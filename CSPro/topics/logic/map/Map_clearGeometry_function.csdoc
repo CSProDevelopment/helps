@@ -10,7 +10,7 @@ b = map_name.clearGeometry();
 
 <subheader>Description</subheader>
 
-The <logiccolor>Map.clearGeometry</logiccolor> function removes all the Geometry currently on the <link map.hgt>Map object</link> named <logiccolor>map_name</logiccolor>. Note that this clears only Geometry added using the <logiccolor>Map.addGeometry</logiccolor> function. Markers added to the map using <logiccolor>Map.addMarker</logiccolor> should be cleared using the function <logiccolor>Map.clearMarkers</logiccolor>.
+The <logiccolor>Map.clearGeometry</logiccolor> function removes all the Geometry currently on the <link Map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor>. Note that this clears only Geometry added using the <logiccolor>Map.addGeometry</logiccolor> function. Markers added to the map using <logiccolor>Map.addMarker</logiccolor> should be cleared using the function <logiccolor>Map.clearMarkers</logiccolor>.
 
 
 <subheader>Return Value</subheader>
@@ -26,12 +26,12 @@ PROC GLOBAL
 function editOutline(Map m, Geometry outline)
     // Remove existing outline
 	m.clearGeometry();
-	
+
 	// Edit the outline
 	if outline.tracePolygon(m) then
 		outline.save("outline.geojson");
 	endif;
-	
+
 	// Add modified outline to the map
 	m.addGeometry(outline);
 end;
@@ -56,4 +56,4 @@ m.show();
 </logic>
 
 
-<seealso map.hgt geometry.hgt map_add_geometry_function.hgt map_remove_geometry_function.hgt />
+<seealso Map.csdoc Geometry.csdoc Map_addGeometry_function.csdoc Map_removeGeometry_function.csdoc />

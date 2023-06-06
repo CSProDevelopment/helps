@@ -1,6 +1,6 @@
 ﻿<title>DeckArrays</title>
 
-"DeckArrays" in CSPro is a simplified way of working with hot decks. It is important to understand the hot deck process well before using DeckArrays, because the functions <logiccolor>getdeck</logiccolor> and <logiccolor>putdeck</logiccolor> automatically handle recodes and thus hide much of the hot deck behavior from the programmer. DeckArrays eliminate the need for the programmer to recode variables to fit within the boundaries of an array, as the recodes are processed automatically based on values defined within a <link value_sets_description.hgt>value set </link>.
+"DeckArrays" in CSPro is a simplified way of working with hot decks. It is important to understand the hot deck process well before using DeckArrays, because the functions <logiccolor>getdeck</logiccolor> and <logiccolor>putdeck</logiccolor> automatically handle recodes and thus hide much of the hot deck behavior from the programmer. DeckArrays eliminate the need for the programmer to recode variables to fit within the boundaries of an array, as the recodes are processed automatically based on values defined within a <link value_sets_description.csdoc>value set </link>.
 
 Using <b>DeckArrays</b> makes it very easy to change hot deck parameters. For instance, if a subject-matter specialist decides that a variable should be hotdecked based on five-year age intervals but later changes the specification to ten-year age intervals, programming will be trivial if using DeckArrays, whereas with standard hot decks reprogramming the recodes may be time-consuming.
 
@@ -11,13 +11,13 @@ Declare a DeckArray in <logiccolor>PROC GLOBAL</logiccolor> as you would a norma
 <logic>Array Age_HD_from_Sex(SEX_VS);   // same as "Array Age_HD_From_Sex(2);"</logic>
 <logic>Array Age_HD_from_Sex_Relationship(SEX_VS, RELATIONSHIP_VS);</logic>
 
-To create a DeckArray, at least one of the dimensions must be a <link value_sets_description.hgt>value set </link>; however, it is permissible that the other dimensions are declared with a numeric value. Because the program can only recode values for the dimensions that are based on value sets, for any dimensions that were declared with a number, it will be necessary to specify those indices explicitly when making calls to <logiccolor>getdeck</logiccolor> or <logiccolor>putdeck</logiccolor>.
+To create a DeckArray, at least one of the dimensions must be a <link value_sets_description.csdoc>value set </link>; however, it is permissible that the other dimensions are declared with a numeric value. Because the program can only recode values for the dimensions that are based on value sets, for any dimensions that were declared with a number, it will be necessary to specify those indices explicitly when making calls to <logiccolor>getdeck</logiccolor> or <logiccolor>putdeck</logiccolor>.
 
 <logic>Array Age_HD_from_EA_Sex(200, SEX_VS);   // same as "Array Age_HD_From_EA_Sex(200,2);"</logic>
 
 <subheader>Accounting for &quot;Else&quot; Values</subheader>
 
-Occasionally a programmer wants to create a hot deck with a <link deckarray_leftover_rows.hgt>"leftover"</link> row for any values not contained in the value set. Sometimes these are invalid values, other times the value set can be created so that this leftover, or "else" row, consists of values valid for the census or survey. For instance, if a user wants to hot deck a variable based on Christian sects, the programmer would create a value set with all the Christian sects, and then would create a DeckArray with a leftover row for all people who do not belong to the Christian sects identified. Including this extra "spillover" row is indicated by adding a (+) after the value set name.
+Occasionally a programmer wants to create a hot deck with a <link deckarray_leftover_rows.csdoc>"leftover"</link> row for any values not contained in the value set. Sometimes these are invalid values, other times the value set can be created so that this leftover, or "else" row, consists of values valid for the census or survey. For instance, if a user wants to hot deck a variable based on Christian sects, the programmer would create a value set with all the Christian sects, and then would create a DeckArray with a leftover row for all people who do not belong to the Christian sects identified. Including this extra "spillover" row is indicated by adding a (+) after the value set name.
 
 <logic>Array CEB_HD_Religion (RELIGION_CHRISTIAN_SECTS_VS(+));</logic>
 
@@ -145,4 +145,4 @@ AGE = getdeck(ageHotdeck,2,300); // AGE = 14    //  00   00   50   14
 </logic>
 
 
-<seealso Getdeck_Function.hgt Putdeck_Function.hgt DeckArray_Leftover_Rows.hgt />
+<seealso Getdeck_Function.csdoc Putdeck_Function.csdoc DeckArray_Leftover_Rows.csdoc />

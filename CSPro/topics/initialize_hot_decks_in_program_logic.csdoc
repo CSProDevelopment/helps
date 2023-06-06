@@ -1,6 +1,6 @@
 ﻿<title>Initialize Hot Decks in Program Logic</title>
 
-In this technique, the <link dynamic_imputation_hot_deck.hgt>hot deck</link> is initialized in program logic. Hot deck values are updated during the program's execution but the values are not saved externally.
+In this technique, the <link dynamic_imputation_hot_deck.csdoc>hot deck</link> is initialized in program logic. Hot deck values are updated during the program's execution but the values are not saved externally.
 
 The following is an example of code that will initialize age values based on sex and relationship:
 
@@ -37,4 +37,4 @@ PROC AGE
 	endif;
 </logic>
 
-<seealso dynamic_imputation_hot_deck.hgt use_hot_decks.hgt initialize_hot_decks_using_saved_arrays.hgt />
+<seealso dynamic_imputation_hot_deck.csdoc use_hot_decks.csdoc initialize_hot_decks_using_saved_arrays.csdoc />

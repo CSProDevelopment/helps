@@ -7,7 +7,7 @@ b = execsystem(<arg>action</arg>『, <arg>stop</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>execsystem</logiccolor> function, on mobile devices (Android), starts another application or executes a task. There is a related version for applications running on <link execsystem_function_desktop.hgt>desktop CSEntry</link>.
+The <logiccolor>execsystem</logiccolor> function, on mobile devices (Android), starts another application or executes a task. There is a related version for applications running on <link execsystem_function_desktop.csdoc>desktop CSEntry</link>.
 
 If <logiccolor>stop</logiccolor> is coded, the application will immediately close after launching the application, in the same way that would occur if using the <logiccolor>stop</logiccolor> function with an argument of 1.
 
@@ -15,13 +15,13 @@ The string expression <arg>action</arg> must begin with one of the following com
 
 <table 2 header nowrap>
 	<cell>Command</cell><cell>Description</cell>
-	<cell><b>app</b></cell><cell>Open another application on the device. (You can get more control using <link systemapp.hgt>SystemApp</link> instead.)</cell>
+	<cell><b>app</b></cell><cell>Open another application on the device. (You can get more control using <link systemapp.csdoc>SystemApp</link> instead.)</cell>
 	<cell><b>browse</b></cell><cell>View a website in the Internet browser.</cell>
 	<cell><b>call</b></cell><cell>Place a phone call.</cell>
-	<cell><link camera.hgt>camera</link></cell><cell>Take a photo in .jpg or .png format.</cell>
+	<cell><link camera.csdoc>camera</link></cell><cell>Take a photo in .jpg or .png format.</cell>
 	<cell><b>gps</b></cell><cell>View a latitude/longitude point using an installed mapping engine (e.g., Google Maps).</cell>
 	<cell><b>html</b></cell><cell>View a website from within CSEntry (equivalent to using the <logiccolor>view</logiccolor> function).</cell>
-	<cell><link signature.hgt>signature</link></cell><cell>Bring up a screen where someone can sign the mobile device, an image of which can be saved in .jpg or .png format.</cell>
+	<cell><link signature.csdoc>signature</link></cell><cell>Bring up a screen where someone can sign the mobile device, an image of which can be saved in .jpg or .png format.</cell>
 	<cell><b>sms</b></cell><cell>Send a text message.</cell>
 	<cell><b>view</b></cell><cell>Display an image, play a sound clip, or view a movie (equivalent to using the <logiccolor>view</logiccolor> function).</cell>
 </table>
@@ -59,4 +59,4 @@ execsystem("view:" + pathconcat(Application, "audio.mp3"));
 execsystem("view:" + pathconcat(Application, "movie.3gp"));
 </logic>
 
-<seealso systemapp.hgt execsystem_function_desktop.hgt execpff_function.hgt multimedia_features.hgt view_function.hgt />
+<seealso systemapp.csdoc execsystem_function_desktop.csdoc execpff_function.csdoc multimedia_features.csdoc view_function.csdoc />

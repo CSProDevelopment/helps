@@ -1,8 +1,8 @@
 ﻿<title>Operator Statistics File (.log)</title>
 
-CSEntry generates an <link CSEntry::understand_operator_statistics.hgt>operator statistics</link> <b>.log</b> file for the primary data file when executing non-CAPI entry applications. The <b>.log</b> file is a comma-delimited text file with a fixed format. It is designed to be easily imported into other software packages for custom processing. The log file can also be processed by a CSPro application with the appropriate data dictionary. To facilitate this effort, a dictionary matching the <b>.log</b> file's format (shown below) has been provided with the CSPro installation. The dictionary can be found in the Examples folder, %UserProfile%\Documents\CSPro\Examples <definition version />\1 - Data Entry\Data Entry Log File\logfile.dcf
+CSEntry generates an <link CSEntry::understand_operator_statistics.csdoc>operator statistics</link> <b>.log</b> file for the primary data file when executing non-CAPI entry applications. The <b>.log</b> file is a comma-delimited text file with a fixed format. It is designed to be easily imported into other software packages for custom processing. The log file can also be processed by a CSPro application with the appropriate data dictionary. To facilitate this effort, a dictionary matching the <b>.log</b> file's format (shown below) has been provided with the CSPro installation. The dictionary can be found in the Examples folder, %UserProfile%\Documents\CSPro\Examples <definition version />\1 - Data Entry\Data Entry Log File\logfile.dcf
 
-<b>Note:</b> For CAPI entry applications, a <b>.cslog</b> file is generated, which can be viewed using the <link ParadataViewer::introduction_to_paradata_viewer.hgt> ParadataViewer </link> Tool.
+<b>Note:</b> For CAPI entry applications, a <b>.cslog</b> file is generated, which can be viewed using the <link ParadataViewer::introduction_to_paradata_viewer.csdoc> ParadataViewer </link> Tool.
 
 Each record in the <b>.log</b> file represents one data entry session. The record layout is as follows:
 
@@ -37,4 +37,4 @@ Each record in the <b>.log</b> file represents one data entry session. The recor
 	<cell><b>139 - 146</b></cell><cell>Total number of fields verified</cell>
 </table>
 
-<b>See also:</b> <link CSPro::paradata_log_file_cslog.hgt>Paradata Log File</link>
+<b>See also:</b> <link CSPro::paradata_log_file_cslog.csdoc>Paradata Log File</link>

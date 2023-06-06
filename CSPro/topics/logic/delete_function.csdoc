@@ -11,7 +11,7 @@ b = delete(<arg>group_name</arg>, <arg>first_occurrence</arg>)『, <arg>last_occ
 
 <subheader>Description</subheader>
 
-The <logiccolor>delete</logiccolor> function removes incomplete, or otherwise unneeded, records or item occurrences from the current case. It can be used to remove singly- or multiply-occurring records, although if the record is non-repeating (such as the housing record in a typical census application), then it must be defined as <link required_record.hgt>"Required=No"</link> in the dictionary. This function is primarily intended for batch applications. It should be used with extreme caution in data entry applications because of possible conflicts between the operator's actions and the program logic.
+The <logiccolor>delete</logiccolor> function removes incomplete, or otherwise unneeded, records or item occurrences from the current case. It can be used to remove singly- or multiply-occurring records, although if the record is non-repeating (such as the housing record in a typical census application), then it must be defined as <link required_record.csdoc>"Required=No"</link> in the dictionary. This function is primarily intended for batch applications. It should be used with extreme caution in data entry applications because of possible conflicts between the operator's actions and the program logic.
 
 The first syntax deletes a single occurrence of the record. When deleting a singly-occurring record, it is not necessary to specify the <arg>occurrence</arg>. The second syntax deletes one or more occurrences of a record, starting with the <arg>last_occurrence</arg> and deleting up to the <arg>first_occurrence</arg>. This allows for the mass deletion of record occurrences.
 
@@ -50,4 +50,4 @@ endif;
 </logic>
 
 
-<seealso insert_function.hgt />
+<seealso insert_function.csdoc />

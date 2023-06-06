@@ -1,16 +1,16 @@
 ﻿<title>Run a Batch Edit Application</title>
 <context ID_RUNBATCH />
 
-Press <image run_button.png />; or press <b>Ctrl+R</b>; or select <b>Run</b> from the <b>File</b> menu to run a batch application. If you've made changes since you last compiled, CSPro will first <link compile_logic.hgt>compile</link> your application. If your program compiles successfully, you will see a screen that looks similar to this:
+Press <image run_button.png />; or press <b>Ctrl+R</b>; or select <b>Run</b> from the <b>File</b> menu to run a batch application. If you've made changes since you last compiled, CSPro will first <link compile_logic.csdoc>compile</link> your application. If your program compiles successfully, you will see a screen that looks similar to this:
 
 <center><image file_associations_batch_min.png /></center>
 
 The following rows are required:
 
 <list>
-	<li><b>Input Data</b>: This asks for the name of the data file against which you wish to run your batch application. This data file will not be modified in any way; it will only be opened, read, and closed. You can also select <link data_sources.hgt>none</link> as your input data file; useful, for example, when writing menu applications that do not require an input data file.</li>
-	<li><b>Output Data</b>: The output file is where the results of correcting your data will be written. If you are not making any corrections in your program, then the generated file will be an exact copy of the original data file. If you are making corrections to your data file, then this will be the corrected data file. If you do not need a corrected data file, and are simply running the program to generate a report, you can select <link data_sources.hgt>none</link> as the output.</li>
-	<li><b>&lt;Listing File></b>: This asks for the name of the file to which you want to write the results of the run. Results from <logiccolor>errmsg</logiccolor> functions will be written here. This file will always be generated, regardless of whether or not your program includes <logiccolor>errmsg</logiccolor> commands. Listing files generally have the extension <link listing_file.hgt>.lst</link>.</li>
+	<li><b>Input Data</b>: This asks for the name of the data file against which you wish to run your batch application. This data file will not be modified in any way; it will only be opened, read, and closed. You can also select <link data_sources.csdoc>none</link> as your input data file; useful, for example, when writing menu applications that do not require an input data file.</li>
+	<li><b>Output Data</b>: The output file is where the results of correcting your data will be written. If you are not making any corrections in your program, then the generated file will be an exact copy of the original data file. If you are making corrections to your data file, then this will be the corrected data file. If you do not need a corrected data file, and are simply running the program to generate a report, you can select <link data_sources.csdoc>none</link> as the output.</li>
+	<li><b>&lt;Listing File></b>: This asks for the name of the file to which you want to write the results of the run. Results from <logiccolor>errmsg</logiccolor> functions will be written here. This file will always be generated, regardless of whether or not your program includes <logiccolor>errmsg</logiccolor> commands. Listing files generally have the extension <link listing_file.csdoc>.lst</link>.</li>
 </list>
 
 The following rows are optional, based on the logic in your application:
@@ -22,4 +22,4 @@ The following rows are optional, based on the logic in your application:
 	<li><b>&lt;Write File></b>: If you have any <logiccolor>write</logiccolor> function calls in your program, the results will be saved to this file. This field is optional. If no write file is specified, the <logiccolor>write</logiccolor> function's output is saved to the listing file.</li>
 </list>
 
-In addition to these rows, there may be rows where you can specify the names of <link lookup_files.hgt>lookup files</link>, <link file.hgt>external files</link>, and the <link paradata_log_file_cslog.hgt>paradata log</link>.
+In addition to these rows, there may be rows where you can specify the names of <link lookup_files.csdoc>lookup files</link>, <link file.csdoc>external files</link>, and the <link paradata_log_file_cslog.csdoc>paradata log</link>.

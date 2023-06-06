@@ -18,9 +18,9 @@ include(<arg>variables_to_tabulate</arg>)
 
 <subheader>Description</subheader>
 
-The <logiccolor>Freq</logiccolor> statement is used to define a frequency table that will be written to the <link frequencies_file.hgt>frequencies file</link>. Unlike <link freq.hgt>named frequencies</link>, which allow for control over when frequencies are tallied, frequencies generated using the <logiccolor>Freq</logiccolor> statement are tallied at the location where they are defined. Due to this, the statement cannot be located in <logiccolor>PROC GLOBAL</logiccolor>, in user-defined functions, or in application procedures.
+The <logiccolor>Freq</logiccolor> statement is used to define a frequency table that will be written to the <link frequencies_file.csdoc>frequencies file</link>. Unlike <link freq.csdoc>named frequencies</link>, which allow for control over when frequencies are tallied, frequencies generated using the <logiccolor>Freq</logiccolor> statement are tallied at the location where they are defined. Due to this, the statement cannot be located in <logiccolor>PROC GLOBAL</logiccolor>, in user-defined functions, or in application procedures.
 
-The <link CSFreq::introduction_to_tabulate_frequencies.hgt>Tabulate Frequencies</link> tool generates <logiccolor>Freq</logiccolor> statements automatically, so one way to learn about how to use the statement is to select items to tabulate in that tool and then use the <b>View</b> -> <b>Batch Logic</b> option to see the commands used to generate the specified frequencies.
+The <link CSFreq::introduction_to_tabulate_frequencies.csdoc>Tabulate Frequencies</link> tool generates <logiccolor>Freq</logiccolor> statements automatically, so one way to learn about how to use the statement is to select items to tabulate in that tool and then use the <b>View</b> -> <b>Batch Logic</b> option to see the commands used to generate the specified frequencies.
 
 
 <include include_freq_variable_specification.hgi />
@@ -34,7 +34,7 @@ The optional command <logiccolor>universe</logiccolor> allows you to specify a c
 
 The optional command <logiccolor>weight</logiccolor> allows you to weight each tally. The <arg>weight_value</arg> can be a constant number (like <logiccolor>10</logiccolor>), a dictionary item (like <logiccolor>HH_WEIGHT</logiccolor>) or any other numeric expression. If no weight is provided, a weight of 1 is used during the tallying.
 
-Optional <link freq_formatting_options.hgt>formatting options</link> allow you to control how the frequency tables are generated. The formatting options include the following commands: <logiccolor>valueset</logiccolor>, <logiccolor>distinct</logiccolor>, <logiccolor>vset</logiccolor>, <logiccolor>heading</logiccolor>, <logiccolor>stat</logiccolor>, <logiccolor>percentiles</logiccolor>, <logiccolor>nofreq</logiccolor>, <logiccolor>decimals</logiccolor>, <logiccolor>sort</logiccolor>, <logiccolor>nonetpercents</logiccolor>, and <logiccolor>pagelength</logiccolor>.
+Optional <link freq_formatting_options.csdoc>formatting options</link> allow you to control how the frequency tables are generated. The formatting options include the following commands: <logiccolor>valueset</logiccolor>, <logiccolor>distinct</logiccolor>, <logiccolor>vset</logiccolor>, <logiccolor>heading</logiccolor>, <logiccolor>stat</logiccolor>, <logiccolor>percentiles</logiccolor>, <logiccolor>nofreq</logiccolor>, <logiccolor>decimals</logiccolor>, <logiccolor>sort</logiccolor>, <logiccolor>nonetpercents</logiccolor>, and <logiccolor>pagelength</logiccolor>.
 
 
 <subheader>Example 1</subheader>
@@ -87,4 +87,4 @@ PROC QUEST
 </logic>
 
 
-<seealso freq.hgt freq_statement_named.hgt freq_formatting_options.hgt />
+<seealso freq.csdoc freq_statement_named.csdoc freq_formatting_options.csdoc />

@@ -10,15 +10,15 @@ b = map_name.setBaseMap(<arg>base_map</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Map.setBaseMap</logiccolor> function changes the <link map_base_map_specification.hgt>base map</link> that is displayed when the <link map.hgt>Map object</link> named <logiccolor>map_name</logiccolor> is shown. Maps can use online base maps, which require an Internet connection to load, or can use offline base maps, which requires a map file stored on the device. 
+The <logiccolor>Map.setBaseMap</logiccolor> function changes the <link map_base_map_specification.csdoc>base map</link> that is displayed when the <link map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor> is shown. Maps can use online base maps, which require an Internet connection to load, or can use offline base maps, which requires a map file stored on the device.
 
 To specify an online map, use one of the following names as the <arg>base_map</arg>:
 
 <include ..\..\include_base_map_names.hgi />
 
-To use an <link offline_maps.hgt>offline map</link>, specify <arg>base_map</arg> using a string expression containing the filename of the offline map.
+To use an <link offline_maps.csdoc>offline map</link>, specify <arg>base_map</arg> using a string expression containing the filename of the offline map.
 
-When no base map is set, the default base map will be calculated using <link map_base_map_specification.hgt>defined rules</link>.
+When no base map is set, the default base map will be calculated using <link map_base_map_specification.csdoc>defined rules</link>.
 
 
 <subheader>Return Value</subheader>
@@ -54,4 +54,4 @@ mymap.show();
 </logic>
 
 
-<seealso map.hgt map_base_map_specification.hgt offline_maps.hgt />
+<seealso map.csdoc map_base_map_specification.csdoc offline_maps.csdoc />

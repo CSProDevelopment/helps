@@ -35,10 +35,10 @@ function string GetFileUri(string local_filename)
 
 	// get the full path in case the filename is relative
 	local_filename = Path.concat(local_filename);
-	
+
 	// convert all slashes to forward slashes
 	local_filename = replace(local_filename, "\", "/");
-	
+
 	// encode the filename as a URI
 	exit "file:///" + encode(URI, local_filename);
 
@@ -51,4 +51,4 @@ html_file.write("<link rel='stylesheet' type='text/css' href='%s'>", reports_css
 </logic>
 
 
-<seealso encode_function.hgt pos_function.hgt />
+<seealso encode_function.csdoc pos_function.csdoc />

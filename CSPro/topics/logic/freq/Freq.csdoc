@@ -1,11 +1,11 @@
 ﻿<title>Freq Object</title>
 
-In logic, a <logiccolor>Freq</logiccolor> can be one of two things: an <link freq_statement_unnamed.hgt>"unnamed" statement</link> used to generate frequencies with a specific set of behaviors regarding how values are tallied, or a CSPro logic object <link freq_statement_named.hgt>with a name</link>, which allows for the creation of frequencies with control over when the values are tallied. This page is only relevant if using named frequencies.
+In logic, a <logiccolor>Freq</logiccolor> can be one of two things: an <link freq_statement_unnamed.csdoc>"unnamed" statement</link> used to generate frequencies with a specific set of behaviors regarding how values are tallied, or a CSPro logic object <link freq_statement_named.csdoc>with a name</link>, which allows for the creation of frequencies with control over when the values are tallied. This page is only relevant if using named frequencies.
 
 
 <subheader>Functionality</subheader>
 
-A Freq is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+A Freq is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
@@ -30,7 +30,7 @@ If the Freq object has only one variable as part of its frequency list, individu
 <arg>tally</arg> = <arg>freq_name</arg>(<arg>value</arg>);
 </logicsyntax>
 
-When a Freq object is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+When a Freq object is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>.
 
 
 <subheader>Example 1</subheader>
@@ -52,4 +52,4 @@ endif;
 </logic>
 
 
-<seealso freq_statement_unnamed.hgt />
+<seealso freq_statement_unnamed.csdoc />

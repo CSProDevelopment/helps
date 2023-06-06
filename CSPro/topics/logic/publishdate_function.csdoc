@@ -8,7 +8,7 @@ i = publishdate();
 
 <subheader>Description</subheader>
 
-The <logiccolor>publishdate</logiccolor> function returns the date and time that the code was compiled. Generally, this is not particularly meaningful because the code is compiled right before it is executed. The exception to this is when you create <link binary_data_entry_application_file_pen.hgt>compiled binary data entry applications</link>. These files, with the extension .pen, are used to run applications on mobile devices. In the case of a .pen file, the value returned by the function will be the date and time that the .pen file was created.
+The <logiccolor>publishdate</logiccolor> function returns the date and time that the code was compiled. Generally, this is not particularly meaningful because the code is compiled right before it is executed. The exception to this is when you create <link binary_data_entry_application_file_pen.csdoc>compiled binary data entry applications</link>. These files, with the extension .pen, are used to run applications on mobile devices. In the case of a .pen file, the value returned by the function will be the date and time that the .pen file was created.
 
 <subheader>Return Value</subheader>
 
@@ -22,7 +22,7 @@ numeric publishDay = int(publishdate() / 1000000); // ignore the time
 if datediff(publishDay,sysdate("YYYYMMDD")) > 20 then
 	errmsg("This program expires after 20 days. Sync to get a new program.");
 	stop(1);
-endif; 
+endif;
 </logic>
 
-<seealso dateadd_function.hgt datediff_function.hgt sysdate_function.hgt systime_function.hgt />
+<seealso dateadd_function.csdoc datediff_function.csdoc sysdate_function.csdoc systime_function.csdoc />

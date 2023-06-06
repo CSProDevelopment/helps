@@ -8,7 +8,7 @@ i = seek (multiple_item condition[,numeric_expr]);
 
 <subheader>Description</subheader>
 
-The seek function returns the occurrence number of the first item in a multiply-occurring item that satisfies the given condition. If numeric_expr is included, the function starts searching the multiply-occurring record for a true condition starting at occurrence numeric_expr. If an @ symbol precedes the numeric_expr, the function searches for the nth occurrence of the condition. 
+The seek function returns the occurrence number of the first item in a multiply-occurring item that satisfies the given condition. If numeric_expr is included, the function starts searching the multiply-occurring record for a true condition starting at occurrence numeric_expr. If an @ symbol precedes the numeric_expr, the function searches for the nth occurrence of the condition.
 
 <subheader>Return Value</subheader>
 
@@ -39,4 +39,4 @@ numeric secondSpouse = seek(RELATIONSHIP = 2,@2);
 numeric firstFemaleOver15 = seek(SEX=2 and AGE >= 15); // multiple conditions can be given
 </logic>
 
-<seealso count_function.hgt Has_Operator.hgt Seekmax_Function.hgt Seekmin_Function.hgt />
+<seealso count_function.csdoc Has_Operator.csdoc Seekmax_Function.csdoc Seekmin_Function.csdoc />

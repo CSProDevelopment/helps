@@ -9,7 +9,7 @@ b = audio_name.load(<arg>audio_filename</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Audio.load</logiccolor> function reads the audio file named <arg>audio_filename</arg> and stores the audio data contained in the file in an <link audio.hgt>Audio</link> object. The loaded audio can then be played back using <logiccolor>Audio.play</logiccolor> or combined with other audio using <logiccolor>Audio.concat</logiccolor>.
+The <logiccolor>Audio.load</logiccolor> function reads the audio file named <arg>audio_filename</arg> and stores the audio data contained in the file in an <link audio.csdoc>Audio</link> object. The loaded audio can then be played back using <logiccolor>Audio.play</logiccolor> or combined with other audio using <logiccolor>Audio.concat</logiccolor>.
 
 CSPro can load and play most audio files in any of the following formats: m4a, mp4, mp3, wav, 3gp, flac, ogg, mkv. However, only m4a files (AAC encoded audio in an MPEG-4 container) can be used with the functions <logiccolor>Audio.concat</logiccolor>, <logiccolor>Audio.length</logiccolor>, <logiccolor>Audio.record</logiccolor>, and <logiccolor>Audio.recordInteractive</logiccolor>.
 
@@ -29,4 +29,4 @@ endif;
 </logic>
 
 
-<seealso audio.hgt audio_save_function.hgt audio_play_function.hgt />
+<seealso audio.csdoc audio_save_function.csdoc audio_play_function.csdoc />

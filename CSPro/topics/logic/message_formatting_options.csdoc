@@ -9,7 +9,7 @@
 
 <subheader>Description</subheader>
 
-Several functions<font red>*</font> take an argument that consists of a message and then an optional number of arguments that are dynamically inserted into the text to create a final message <i>(<font red>*</font>the complete list of functions can be found at the bottom of this page)</i>. If <arg>message_number</arg> is used, it refers to the the user-numbered messages created in the <link message_file_mgf.hgt>.mgf file</link>.
+Several functions<font red>*</font> take an argument that consists of a message and then an optional number of arguments that are dynamically inserted into the text to create a final message <i>(<font red>*</font>the complete list of functions can be found at the bottom of this page)</i>. If <arg>message_number</arg> is used, it refers to the the user-numbered messages created in the <link message_file_mgf.csdoc>.mgf file</link>.
 
 The message can contain optional arguments, <arg>argument1</arg> to <arg>argumentN</arg>, that will be inserted into the message. Each argument, denoted in the message text with a percent sign, is sequentially inserted into the message. Arguments can be numeric or string expressions, but the type of the argument must match the type of the receiving field in the message text. There are seven formatters:
 
@@ -96,4 +96,4 @@ errmsg( "%10s"      , stringValue);     //       abcdef
 errmsg( "%10.3s"    , stringValue);     //          abc
 </logic>
 
-<seealso errmsg_function.hgt filewrite_function.hgt file_write_function.hgt logtext_function.hgt maketext_function.hgt trace_function.hgt warning_function.hgt write_function.hgt />
+<seealso errmsg_function.csdoc filewrite_function.csdoc file_write_function.csdoc logtext_function.csdoc maketext_function.csdoc trace_function.csdoc warning_function.csdoc write_function.csdoc />

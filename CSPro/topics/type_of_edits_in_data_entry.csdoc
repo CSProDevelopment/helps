@@ -2,11 +2,11 @@
 
 <subheader>Validate Individual Data Items</subheader>
 
-These checks are designed to determine whether a response has a value that is inside or outside the valid limits for that response as defined in the dictionary. The data entry application can be designed to allow <link change_data_entry_options.hgt>forcing out-of-range</link> values, to force the operator to <link reenter_statement.hgt>reenter</link> a valid value, or <link noinput_statement.hgt>not to allow</link> any input on the item.
+These checks are designed to determine whether a response has a value that is inside or outside the valid limits for that response as defined in the dictionary. The data entry application can be designed to allow <link change_data_entry_options.csdoc>forcing out-of-range</link> values, to force the operator to <link reenter_statement.csdoc>reenter</link> a valid value, or <link noinput_statement.csdoc>not to allow</link> any input on the item.
 
 <subheader>Perform Structure or Consistency Edits</subheader>
 
-You can write code to check the <link structure_edits.hgt>structure</link> of the case or test the <link consistency_edits.hgt>consistency</link> within related items. These instructions can be written for any object such as a case, level, form, record, roster, or field. The instructions can be executed before the cursor moves into the object (<logiccolor>onfocus</logiccolor>); at the beginning of an object (<logiccolor>preproc</logiccolor>); after cursor moves off the object (<logiccolor>killfocus</logiccolor>); or at the end of the object (<logiccolor>postproc</logiccolor>). You can also perform <link CSEntry::edit_interactively.hgt>Interactive Editing</link> after you finish entering a case.
+You can write code to check the <link structure_edits.csdoc>structure</link> of the case or test the <link consistency_edits.csdoc>consistency</link> within related items. These instructions can be written for any object such as a case, level, form, record, roster, or field. The instructions can be executed before the cursor moves into the object (<logiccolor>onfocus</logiccolor>); at the beginning of an object (<logiccolor>preproc</logiccolor>); after cursor moves off the object (<logiccolor>killfocus</logiccolor>); or at the end of the object (<logiccolor>postproc</logiccolor>). You can also perform <link CSEntry::edit_interactively.csdoc>Interactive Editing</link> after you finish entering a case.
 
 <subheader>Display Error Messages</subheader>
 
@@ -18,7 +18,7 @@ You can use <logiccolor>skip</logiccolor> or <logiccolor>advance</logiccolor> st
 
 <subheader>Control Stopping Data Entry</subheader>
 
-The <logiccolor>OnStop</logiccolor> function can be used to keep the operator from stopping data entry or to allow stopping only under certain conditions. You can also <logiccolor>stop</logiccolor> the application for the current case or terminate the operation. You can stop the application at any time and the system will <link savepartial_function.hgt>save the partial case</link>. Also see the <logiccolor>ispartial</logiccolor> function.
+The <logiccolor>OnStop</logiccolor> function can be used to keep the operator from stopping data entry or to allow stopping only under certain conditions. You can also <logiccolor>stop</logiccolor> the application for the current case or terminate the operation. You can stop the application at any time and the system will <link savepartial_function.csdoc>save the partial case</link>. Also see the <logiccolor>ispartial</logiccolor> function.
 
 <subheader>Write Notes</subheader>
 

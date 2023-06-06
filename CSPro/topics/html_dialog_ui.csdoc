@@ -1,6 +1,6 @@
 ﻿<title>HTML Dialog Boxes</title>
 
-HTML is <link html_in_cspro.hgt>used in CSPro</link> in a variety of ways, including for displaying some dialogs for logic functions, as well as other aspects of the CSPro user interface (UI).
+HTML is <link html_in_cspro.csdoc>used in CSPro</link> in a variety of ways, including for displaying some dialogs for logic functions, as well as other aspects of the CSPro user interface (UI).
 
 On Windows, a HTML dialog looks a bit different from the standard Windows dialogs. Normally a user can use the cursor to grab the title bar of a dialog to move it around the screen. Now, the user must grab the small sliver of area at the top of the dialog, demarcated by a thin horizontal band just below the main dialog frame:
 
@@ -15,7 +15,7 @@ The HTML files for the dialogs that CSPro uses are typically found here:
 
 <indent><font monospace>C:\Program Files (x86)\CSPro <definition version />\html\dialogs\</font></indent>
 
-To override the look or behavior of the HTML dialogs, it is possible to modify the files in that directory, but any changes will only take effect on the device where the changes are made, and will not affect applications run on Android. Instead, if you want to customize the dialogs, create a copy of the dialogs and reference it by specifying the <pffcolor>HtmlDialogs</pffcolor> directory override in the <link run_production_data_entry.hgt>PFF file</link>.
+To override the look or behavior of the HTML dialogs, it is possible to modify the files in that directory, but any changes will only take effect on the device where the changes are made, and will not affect applications run on Android. Instead, if you want to customize the dialogs, create a copy of the dialogs and reference it by specifying the <pffcolor>HtmlDialogs</pffcolor> directory override in the <link run_production_data_entry.csdoc>PFF file</link>.
 
 
-<seealso html_in_cspro.hgt htmldialog_function.hgt />
+<seealso html_in_cspro.csdoc htmldialog_function.csdoc />

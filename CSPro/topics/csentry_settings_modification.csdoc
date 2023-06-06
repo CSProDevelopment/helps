@@ -23,7 +23,7 @@ It is possible to customize the menus presented to the user when running CSEntry
 	<cell><logiccolor>{ Case Tree Options }</logiccolor></cell>
 	<cell><logiccolor>"CSEntry.Menu.AddInsertOccurrence"</logiccolor>~!~~!~Whether to show the "Add Occurrence" and "Insert Occurrence" menu options when clicking on a group. Values: <logiccolor>"Yes"</logiccolor> (show) or <logiccolor>"No"</logiccolor> (hide)~!~<html>&nbsp;</html></cell>
 	<cell><logiccolor>"CSEntry.Menu.DeleteOccurrence"</logiccolor>~!~~!~Whether to show the "Delete Occurrence" menu option when clicking on a group. Values: <logiccolor>"Yes"</logiccolor> (show) or <logiccolor>"No"</logiccolor> (hide)<html>&nbsp;</html>~!~<html>&nbsp;</html></cell>
-	<cell><logiccolor>"Setting.ShowCaseTreeInOverlay"</logiccolor>~!~~!~Whether to always show the case tree (as opposed to it being displayed only <link android_navigation.hgt>on user demand</link>). Values: <logiccolor>"BasedOnScreenSize"</logiccolor> (generally yes for tablets, no for phones), <logiccolor>"Yes"</logiccolor> (always), or <logiccolor>"No"</logiccolor> (hidden until user demand)~!~<html>&nbsp;</html></cell>
+	<cell><logiccolor>"Setting.ShowCaseTreeInOverlay"</logiccolor>~!~~!~Whether to always show the case tree (as opposed to it being displayed only <link android_navigation.csdoc>on user demand</link>). Values: <logiccolor>"BasedOnScreenSize"</logiccolor> (generally yes for tablets, no for phones), <logiccolor>"Yes"</logiccolor> (always), or <logiccolor>"No"</logiccolor> (hidden until user demand)~!~<html>&nbsp;</html></cell>
 </table>
 
 
@@ -37,4 +37,4 @@ savesetting("CSEntry.Menu.AddApplication", "No");
 savesetting("CSEntry.Setting.HelpUrl", pathname(Application) + "Enumerator Manual.pdf");
 </logic>
 
-<seealso loadsetting_function.hgt savesetting_function.hgt user_configuration_settings.hgt />
+<seealso loadsetting_function.csdoc savesetting_function.csdoc user_configuration_settings.csdoc />

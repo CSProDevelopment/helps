@@ -7,7 +7,7 @@ To enable the map-based case listing screen, select <b>Map Case Listing</b> from
 
 <center><image map_case_listing.png /></center>
 
-In the <b>Map Case Listing</b> dialog, check the <b>Show the case listing on a map</b> option and choose the variables in your data dictionary where the coordinates (latitude and longitude) of each case is stored. The variables must be numeric variables from the main data dictionary with at least one decimal place. 
+In the <b>Map Case Listing</b> dialog, check the <b>Show the case listing on a map</b> option and choose the variables in your data dictionary where the coordinates (latitude and longitude) of each case is stored. The variables must be numeric variables from the main data dictionary with at least one decimal place.
 
 For each case in the data file, CSEntry displays a marker on the map at the location specified by the values of the selected latitude and longitude variables. Completed cases are represented by blue markers and partially-completed cases are represented by red markers. Tapping on a marker displays a popup window on the map containing the case label or case ID for the case, along with any case notes. Tapping on the popup window launches data entry for the selected case. You can use the <logiccolor>setcaselabel</logiccolor> and <logiccolor>putnote</logiccolor> functions to customize the case label and case note displayed in the marker popup window. Both the case label and case note support a limited subset of HTML tags for formatting including &lt;b&gt; (bold), &lt;i&gt; (italic) and &lt;font&gt; (font, size and color).
 
@@ -15,6 +15,6 @@ Any cases that have blank values for the latitude or longitude variable will not
 
 Using the map case listing is currently only supported on Android. No maps are displayed in the case listing when running your application on Windows.
 
-By default, the cases will be displayed with a Google Maps base map, which requires that the Android device be connected to the Internet. You can modify the <link map_base_map_specification.hgt>default base map</link> used, or in cases where no Internet connection is available, you can <link offline_maps.hgt>specify an offline map</link> file to use in the <link run_a_data_entry_application.hgt>PFF file</link>.
+By default, the cases will be displayed with a Google Maps base map, which requires that the Android device be connected to the Internet. You can modify the <link map_base_map_specification.csdoc>default base map</link> used, or in cases where no Internet connection is available, you can <link offline_maps.csdoc>specify an offline map</link> file to use in the <link run_a_data_entry_application.csdoc>PFF file</link>.
 
-<seealso mapping.hgt offline_maps.hgt />
+<seealso mapping.csdoc offline_maps.csdoc />

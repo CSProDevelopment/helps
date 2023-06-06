@@ -8,7 +8,7 @@ b = execsystem(<arg>action</arg>『, <arg>flags</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>execsystem</logiccolor> function, on a desktop, starts another Windows application or process. There is a related version for applications running on <link execsystem_function_mobile.hgt>mobile devices</link>.
+The <logiccolor>execsystem</logiccolor> function, on a desktop, starts another Windows application or process. There is a related version for applications running on <link execsystem_function_mobile.csdoc>mobile devices</link>.
 
 The string expression <arg>action</arg> is the name of the application or process to be started. Command line parameters may be included in this expression. If folder or file names contain blanks, then quotation marks (") must surround the names. In this case CSPro text strings can be surrounded by apostrophes (').
 
@@ -47,4 +47,4 @@ execsystem(maketext('"%sTextView.exe" "C:\Survey\Helps.txt"', pathname(CSPro)), 
 execsystem(maketext('"%sInternet Explorer\iexplore.exe" "https://<definition csprousers_forum />"', pathname(ProgramFiles32)));
 </logic>
 
-<seealso systemapp.hgt execsystem_function_mobile.hgt execpff_function.hgt view_function.hgt />
+<seealso systemapp.csdoc execsystem_function_mobile.csdoc execpff_function.csdoc view_function.csdoc />

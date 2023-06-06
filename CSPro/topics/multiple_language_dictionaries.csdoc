@@ -1,6 +1,6 @@
 ﻿<title>Multiple Language Dictionaries</title>
 
-You can create dictionary labels in more than one language. To do this, while editing your dictionary, go to the <b>Edit</b> menu and select <b>Languages</b>. You will be presented with the following dialog box, from which you can add (or remove or modify) languages. (This is similar to the way that you <link define_languages.hgt>define CAPI languages</link>.)
+You can create dictionary labels in more than one language. To do this, while editing your dictionary, go to the <b>Edit</b> menu and select <b>Languages</b>. You will be presented with the following dialog box, from which you can add (or remove or modify) languages. (This is similar to the way that you <link define_languages.csdoc>define CAPI languages</link>.)
 
 <center><image multiple_languages_add_dialog.png /></center>
 
@@ -10,6 +10,6 @@ Once your application has more than one language, the dictionary toolbar will be
 
 Each language will have its own set of labels for all of the dictionary elements (record labels, item labels, value labels, occurrence labels, etc.). If a label is not defined for a given language, the label will default to the label for the first language. To simplify the editing of labels, you can press the keyboard shortcut <b>Ctrl + Alt + L</b> to switch between the languages.
 
-When adding items to your data entry forms, you can specify that the field labels should be <link change_field_properties.hgt>directly linked to the dictionary label</link>. This default setting ensures that the field labels change when the user changes the language during data entry.
+When adding items to your data entry forms, you can specify that the field labels should be <link change_field_properties.csdoc>directly linked to the dictionary label</link>. This default setting ensures that the field labels change when the user changes the language during data entry.
 
 For your application to fully take advantage of multiple language dictionaries, you must define the languages that you would like to use in the CAPI language section. When running your data entry program, CSEntry will only list languages defined in the CAPI section. In this way, changing a language will change both the CAPI language text as well as the dictionary labels used.

@@ -10,7 +10,7 @@ i = countcases(<arg>dictionary_name</arg> 『where <arg>condition</arg>』);
 
 The <logiccolor>countcases</logiccolor> function counts the number of cases in a file referenced by <arg>dictionary_name</arg>. The dictionary can be either the main input dictionary or an external dictionary. An optional logical <arg>condition</arg>, referencing items in a dictionary, can be supplied to count the number of cases in the file that meet a certain criterion. When using this condition, the dictionary must be an external dictionary.
 
-It is possible, by specifying <link set_access_statement.hgt>dictionary access parameters</link> after the dictionary name, to limit the cases that the <logiccolor>countcases</logiccolor> function processes.
+It is possible, by specifying <link set_access_statement.csdoc>dictionary access parameters</link> after the dictionary name, to limit the cases that the <logiccolor>countcases</logiccolor> function processes.
 
 <subheader>Return Value</subheader>
 
@@ -27,4 +27,4 @@ PROC NEW_INTERVIEWER_NAME
 	endif;
 </logic>
 
-<seealso forcase_statement.hgt find_function.hgt />
+<seealso forcase_statement.csdoc find_function.csdoc />

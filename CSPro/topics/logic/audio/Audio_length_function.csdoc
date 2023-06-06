@@ -10,7 +10,7 @@ d = audio_name.length();
 
 <subheader>Description</subheader>
 
-The <logiccolor>Audio.length</logiccolor> function returns the length in seconds of the recording in an <link audio.hgt>Audio</link> object.
+The <logiccolor>Audio.length</logiccolor> function returns the length in seconds of the recording in an <link audio.csdoc>Audio</link> object.
 
 The <logiccolor>Audio.length</logiccolor> function only supports audio recorded as AAC encoded audio in an mp4 container (.m4a). This is the format used for audio recorded by CSPro so it will work correctly for audio recorded using the <logiccolor>Audio.record</logiccolor> or <logiccolor>Audio.recordInteractive</logiccolor>. The length function will return <logiccolor>default</logiccolor> for audio files recorded by other tools that use a different format such as mp3 or wav.
 
@@ -34,4 +34,4 @@ endif;
 </logic>
 
 
-<seealso audio.hgt />
+<seealso audio.csdoc />

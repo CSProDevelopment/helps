@@ -22,7 +22,7 @@ The <logiccolor>htmldialog</logiccolor> function must be passed a a string expre
 
 In the first version, the optional string expression <arg>input_data</arg> argument allows input data to be passed to the HTML template.
 
-In the second version, the optional <link function_named_arguments.hgt>named argument</link> <arg>input_data</arg> allows input data to be passed to the HTML template. The optional named argument <arg>display_options</arg> argument is a <link json_format.hgt>JSON</link> string that allows control of the display settings. All possible display options are shown below in a table.
+In the second version, the optional <link function_named_arguments.csdoc>named argument</link> <arg>input_data</arg> allows input data to be passed to the HTML template. The optional named argument <arg>display_options</arg> argument is a <link json_format.csdoc>JSON</link> string that allows control of the display settings. All possible display options are shown below in a table.
 
 
 <subheader>Return Value</subheader>
@@ -32,14 +32,14 @@ The function returns a string. The contents of the string are determined by the 
 
 <subheader>HTML Templates</subheader>
 
-CSPro includes <link html_in_cspro.hgt>HTML templates</link> in the installation folder for the dialogs it uses. User-created HTML templates allow for further customization of the dialogs. When the <logiccolor>htmldialog</logiccolor> function is called, the <arg>html_filename</arg> is first searched for in the current application directory. If not found and a <pffcolor>HtmlDialogs</pffcolor> directory override is specified in the <link run_production_data_entry.hgt>PFF file</link>, that directory is searched. If a match is still not found, then the directory <i>html/dialogs</i> in the CSPro installation folder is also searched.
+CSPro includes <link html_in_cspro.csdoc>HTML templates</link> in the installation folder for the dialogs it uses. User-created HTML templates allow for further customization of the dialogs. When the <logiccolor>htmldialog</logiccolor> function is called, the <arg>html_filename</arg> is first searched for in the current application directory. If not found and a <pffcolor>HtmlDialogs</pffcolor> directory override is specified in the <link run_production_data_entry.csdoc>PFF file</link>, that directory is searched. If a match is still not found, then the directory <i>html/dialogs</i> in the CSPro installation folder is also searched.
 
 Writing a user-created HTML template can be simplified by first selecting an existing HTML template that is most similar to the planned dialog. Make a copy of this HTML template in the current application directory and extend it to fit the new dialogs requirements.
 
 
 <subheader>Input Data</subheader>
 
-The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a <link json_format.hgt>JSON</link> string that represents multiple values. The string contents of the input data are retrieved by calling <colorinline javascript>CSPro.getInputData()</colorinline> from the script block of the HTML template.
+The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a <link json_format.csdoc>JSON</link> string that represents multiple values. The string contents of the input data are retrieved by calling <colorinline javascript>CSPro.getInputData()</colorinline> from the script block of the HTML template.
 
 <color javascript>
 // Simple string
@@ -56,12 +56,12 @@ The display options can be set using the optional named argument <arg>display_op
 
 <table 3 header nowrap>
 	<cell>Name</cell><cell>Platform</cell><cell>Values</cell>
-	<cell>width</cell><cell>Both</cell><cell>Width in <link display_dimensions.hgt>display units</link></cell>
-	<cell>height</cell><cell>Both</cell><cell>Height in <link display_dimensions.hgt>display units</link></cell>
+	<cell>width</cell><cell>Both</cell><cell>Width in <link display_dimensions.csdoc>display units</link></cell>
+	<cell>height</cell><cell>Both</cell><cell>Height in <link display_dimensions.csdoc>display units</link></cell>
 	<cell>resizable</cell><cell>Windows</cell><cell>True, False</cell>
 	<cell>borderColor</cell><cell>Windows</cell><cell>CSS name or hex code (e.g., "black" or "#000000")</cell>
 	<cell>titleBarColor</cell><cell>Windows</cell><cell>CSS name or hex code</cell>
-	<cell>titleBarHeight</cell><cell>Windows</cell><cell>Height in <link display_dimensions.hgt>display units</link></cell>
+	<cell>titleBarHeight</cell><cell>Windows</cell><cell>Height in <link display_dimensions.csdoc>display units</link></cell>
 	<cell>keyboard</cell><cell>Android</cell><cell>True, False (whether to show an on-screen keyboard)</cell>
 </table>
 
@@ -95,4 +95,4 @@ string result = htmldialog("user-defined-dialog.html",
 </logic>
 
 
-<seealso html_in_cspro.hgt javascript_interface.hgt />
+<seealso html_in_cspro.csdoc javascript_interface.csdoc />

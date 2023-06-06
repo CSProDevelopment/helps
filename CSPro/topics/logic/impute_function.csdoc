@@ -8,7 +8,7 @@ d = impute(<arg>item_name</arg>, <arg>new_value</arg>)
 	『title(<arg>frequency_table_title</arg>)』
 	『valueset(<arg>valueset_name</arg>)』
 	『specific』
-	『stat(『<arg>item_name1</arg>, ..., <arg>item_nameN</arg>』)』;	
+	『stat(『<arg>item_name1</arg>, ..., <arg>item_nameN</arg>』)』;
 </logicsyntax>
 
 
@@ -18,7 +18,7 @@ The <logiccolor>impute</logiccolor> function assigns a new value to an item. The
 
 <logicsyntax><arg>item_name</arg> = <arg>new_value</arg>;</logicsyntax>
 
-However, unlike using the assignment operator, the <logiccolor>impute</logiccolor> function keeps track of these assignments and generates a report on the frequency of values used in the imputations. These <link imputation.hgt>imputation</link> statistics are useful when cleaning data in a batch application. If your program contains any <logiccolor>impute</logiccolor> statements, the results of this function will be written a frequencies file. The default file extension is .impute_freq.lst, but you can use whatever extension you prefer.
+However, unlike using the assignment operator, the <logiccolor>impute</logiccolor> function keeps track of these assignments and generates a report on the frequency of values used in the imputations. These <link imputation.csdoc>imputation</link> statistics are useful when cleaning data in a batch application. If your program contains any <logiccolor>impute</logiccolor> statements, the results of this function will be written a frequencies file. The default file extension is .impute_freq.lst, but you can use whatever extension you prefer.
 
 The function has several optional arguments:
 
@@ -67,12 +67,12 @@ If an override is coded, any <logiccolor>impute</logiccolor> statement that foll
 Applications using the <logiccolor>impute</logiccolor> function can generate up to three files:
 
 <list>
-	<li>Imputation <link frequencies_file.hgt>frequencies</link> (with the default extension .impute_freq.lst)</li>
+	<li>Imputation <link frequencies_file.csdoc>frequencies</link> (with the default extension .impute_freq.lst)</li>
 	<li>Imputation stat dictionary (if using <logiccolor>stat</logiccolor>, with the default extension .impute_stat.dcf)</li>
 	<li>Imputation stat data (if using <logiccolor>stat</logiccolor>, with the default extension .impute_stat.csdb)</li>
 </list>
 
-You can specify the names of these data files in the <link run_a_batch_edit_application.hgt>File Associations</link> dialog or in your application's <link run_production_batch_edits.hgt>PFF file</link>.
+You can specify the names of these data files in the <link run_a_batch_edit_application.csdoc>File Associations</link> dialog or in your application's <link run_production_batch_edits.csdoc>PFF file</link>.
 
 The frequencies report contains five columns:
 
@@ -114,12 +114,12 @@ if not invalueset(SEX) then
 		impute(SEX, 1)
 		title("Head's Sex")
 		specific;
-	
+
 	else
 		impute(SEX, 3 - SEX(1));
-	
+
 	endif;
 </logic>
 
 
-<seealso imputation.hgt />
+<seealso imputation.csdoc />

@@ -11,20 +11,20 @@ b = syncconnect(<arg>differing_arguments</arg>);
 The <logiccolor>syncconnect</logiccolor> function opens a connection to a server to start a synchronization session. The function has four forms based on the type of connection, with each form described on a separate page:
 
 <list>
-	<li><link syncconnect_function_csweb.hgt>CSWeb</link></li>
-	<li><link syncconnect_function_bluetooth.hgt>Bluetooth</link></li>
-	<li><link syncconnect_function_dropbox.hgt>Dropbox</link></li>
-	<li><link syncconnect_function_ftp.hgt>FTP</link></li>
-	<li><link syncconnect_function_dropbox_local.hgt>LocalDropbox</link></li>
-	<li><link syncconnect_function_files_local.hgt>LocalFiles</link></li>
+	<li><link syncconnect_function_csweb.csdoc>CSWeb</link></li>
+	<li><link syncconnect_function_bluetooth.csdoc>Bluetooth</link></li>
+	<li><link syncconnect_function_dropbox.csdoc>Dropbox</link></li>
+	<li><link syncconnect_function_ftp.csdoc>FTP</link></li>
+	<li><link syncconnect_function_dropbox_local.csdoc>LocalDropbox</link></li>
+	<li><link syncconnect_function_files_local.csdoc>LocalFiles</link></li>
 </list>
 
 After a successful connection, call <logiccolor>syncdata</logiccolor> and <logiccolor>syncfile</logiccolor> to synchronize data and files between the device and the server. When finished transferring data, call <logiccolor>syncdisconnect</logiccolor> to close the connection.
 
-<b>Note: </b>If the attempt to establish an internet connection was unsuccessful, CSPro will alert you with an error message. If you wish to preempt this error message in order to handle this situation on your own, use the <topic connection_function.hgt />. 
+<b>Note: </b>If the attempt to establish an internet connection was unsuccessful, CSPro will alert you with an error message. If you wish to preempt this error message in order to handle this situation on your own, use the <topic connection_function.csdoc />.
 
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the connection was successful and 0 (false) otherwise.
 
-<seealso synchronization.hgt syncdisconnect_function.hgt syncserver_function.hgt syncdata_function.hgt syncfile_function.hgt syncparadata_function.hgt connection_function.hgt />
+<seealso synchronization.csdoc syncdisconnect_function.csdoc syncserver_function.csdoc syncdata_function.csdoc syncfile_function.csdoc syncparadata_function.csdoc connection_function.csdoc />

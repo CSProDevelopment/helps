@@ -1,15 +1,15 @@
 ﻿<title>Templated Reports (Deprecated)</title>
 
-<i><b>Feature Upgrade</b>: Starting with CSPro 7.7, this version of Templated Reports has been superseded by a new version, <link templated_reports.hgt>Templated Reports</link>. This version will be removed in a future version of CSPro.</i>
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.7, this version of Templated Reports has been superseded by a new version, <link templated_reports.csdoc>Templated Reports</link>. This version will be removed in a future version of CSPro.</i>
 
 <subheader>Overview</subheader>
 
-CSPro can create HTML reports using case data as well as results from queries into <link paradata.hgt>paradata</link> and other data sets. By specifying tags in your report template, you indicate to a templating engine what areas of your report are dynamic, and then via the <logiccolor>setreportdata</logiccolor> function, CSPro creates an object that the templating engine uses to render a dynamic report. The reporting system also supports the ability to automatically run queries on data sets based on queries specified in the report template.
+CSPro can create HTML reports using case data as well as results from queries into <link paradata.csdoc>paradata</link> and other data sets. By specifying tags in your report template, you indicate to a templating engine what areas of your report are dynamic, and then via the <logiccolor>setreportdata</logiccolor> function, CSPro creates an object that the templating engine uses to render a dynamic report. The reporting system also supports the ability to automatically run queries on data sets based on queries specified in the report template.
 
 
 <subheader>Basic Functionality</subheader>
 
-This example will demonstrate how to create a simple report using <link templated_reports_mustache_pre77.hgt>Mustache</link>, the default templating engine. The basic report template is a standard HTML file to which you add two components. First, you add a div block with the id <b>cspro_report</b>. This is the placeholder block where the template engine will place the results of its templating.
+This example will demonstrate how to create a simple report using <link templated_reports_mustache_pre77.csdoc>Mustache</link>, the default templating engine. The basic report template is a standard HTML file to which you add two components. First, you add a div block with the id <b>cspro_report</b>. This is the placeholder block where the template engine will place the results of its templating.
 
 <indent><html><xmp>
 <div id="cspro_report"></div>
@@ -49,7 +49,7 @@ There are a few components that make up the reporting system, each described in 
 
 <b>Data</b>
 
-The first component is the data itself. Via calls to <logiccolor>setreportdata</logiccolor>, CSPro creates a <link json_format.hgt>JSON</link> object and embeds it as a script with the id <b>cspro_report_data</b>. If your template has such an id defined, it will be overwritten; otherwise, it will be inserted in the output. If you want to define your own templating engine, it must be able to work with this JSON object.
+The first component is the data itself. Via calls to <logiccolor>setreportdata</logiccolor>, CSPro creates a <link json_format.csdoc>JSON</link> object and embeds it as a script with the id <b>cspro_report_data</b>. If your template has such an id defined, it will be overwritten; otherwise, it will be inserted in the output. If you want to define your own templating engine, it must be able to work with this JSON object.
 
 
 <b>Report Template</b>
@@ -132,4 +132,4 @@ However, if CSPro cannot find the definition of a query or template engine in th
 To see an example of how this works, create a basic report, using the Mustache engine, and the output of the report will use the engine as it is defined in "C:\Program Files (x86)\CSPro <definition version />\Reports\CSPro Reports.csrs." You could override the default Mustache behavior by adding a template engine with the name "mustache" to your report template or to a .csrs file in the directory where your report will be created.
 
 
-<seealso report_function_pre77.hgt setreportdata_function_pre77.hgt sqlquery_function.hgt />
+<seealso report_function_pre77.csdoc setreportdata_function_pre77.csdoc sqlquery_function.csdoc />

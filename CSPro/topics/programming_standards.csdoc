@@ -8,16 +8,16 @@ The list below provides a good starting point towards developing a common set of
 <list ordered>
 	<li><b>Establish a version control system.</b> <link https://git-scm.com>Git</link> is one such system, which is available for download free of charge.</li>
 	<li><b>Backup your programs</b> and all components used by your program on a regular basis (daily or several times a week is a good schedule, depending on the number of changes being made). If you are working as part of a team, other team members may need your updates, so be aware of their needs when deciding when to make a backup.</li>
-	<li><b><link compile_logic.hgt> Compile</link> your program regularly</b> (daily or several times a day) when changes are made, as this will help you identify and resolve syntax and logic errors more quickly.</li>
+	<li><b><link compile_logic.csdoc> Compile</link> your program regularly</b> (daily or several times a day) when changes are made, as this will help you identify and resolve syntax and logic errors more quickly.</li>
 	<li><b>Utilize the CSPro help system</b> and CSPro's reference window as needed to assist with logic development (press F1).</li>
-	<li><b>Add <topic comments.hgt /> to your logic</b> (functions, PROCS, code blocks, etc.) to document your work, ideally when adding or revising your program (adding comments later often never happen, and you are less likely to remember why you coded something a certain way). Remember when working in a team environment that others will be reviewing and possibly modifying your code, and they need to understand what's happening. <i>To document logic within CSPro</i>, use <logiccolor>//</logiccolor> to comment out the remainder of the line, and <logiccolor>{ }</logiccolor> to comment out multiple lines.</li>
+	<li><b>Add <topic comments.csdoc /> to your logic</b> (functions, PROCS, code blocks, etc.) to document your work, ideally when adding or revising your program (adding comments later often never happen, and you are less likely to remember why you coded something a certain way). Remember when working in a team environment that others will be reviewing and possibly modifying your code, and they need to understand what's happening. <i>To document logic within CSPro</i>, use <logiccolor>//</logiccolor> to comment out the remainder of the line, and <logiccolor>{ }</logiccolor> to comment out multiple lines.</li>
 <li><b>Indent your code</b> to reflect your program's execution hierarchy within conditional statements (<logiccolor>if</logiccolor>), loops (<logiccolor>do</logiccolor>, <logiccolor>for</logiccolor>, <logiccolor>forcase</logiccolor>, <logiccolor>while</logiccolor>), and functions. You can let CSPro format your entire program by choosing <b><i>Edit > Format Logic</i></b> within the CSPro development environment.</li>
 	<li><b>Use lowercase</b> when writing CSPro statements.</li>
 	<li><b>Use UPPERCASE</b> when writing CSPro dictionary variable names.</li>
 	<li><b>Use MixedCase</b> when writing globally and locally-declared variables (often referred to as using CamelCase).</li>
-	<li><b>Declare constants</b> in CSPro's <link cspro_program_structure.hgt>PROC GLOBAL</link> block rather than elsewhere in the program.</li>
+	<li><b>Declare constants</b> in CSPro's <link cspro_program_structure.csdoc>PROC GLOBAL</link> block rather than elsewhere in the program.</li>
 	<li><b>Use locally-declared variables</b> when only one procedure, function, or code blocks needs to reference the variable. Remember that the value of the local variable will be reset each time the code block is re-executed (to zero if numeric, to an empty string if alpha).</li>
-	<li><b>Create</b> <link user_defined_functions.hgt> functions</link> to optimize repetitive code blocks (i.e., if the same task will be done in several parts of your program), or if you have a long code block, and moving the logic to a function would facilitate program legibility.</li>
+	<li><b>Create</b> <link user_defined_functions.csdoc> functions</link> to optimize repetitive code blocks (i.e., if the same task will be done in several parts of your program), or if you have a long code block, and moving the logic to a function would facilitate program legibility.</li>
 	<li><b>Consider creating standardized prefixes</b> for variable names. For example:
 		~!~
 		<list>
@@ -35,8 +35,8 @@ The list below provides a good starting point towards developing a common set of
 		</list>
 		(Note that while record type designations in CSPro can also use alpha characters, error message numbers must be entirely numeric.)
 	</li>
-	<li>Do not use <link deprecated_features.hgt>deprecated features</link>, as they may not be supported in a future version of CSPro.</li>
+	<li>Do not use <link deprecated_features.csdoc>deprecated features</link>, as they may not be supported in a future version of CSPro.</li>
 	<li>Take advantage of free support from the U.S. Census Bureau at the <link https://www.csprousers.org/forum/> CSPro Forum</link> (preferred) or email us at <link mailto:<definition mailing_list />><definition mailing_list /></link>.</li>
 </list>
 
-<seealso define_coding_standards.hgt />
+<seealso define_coding_standards.csdoc />

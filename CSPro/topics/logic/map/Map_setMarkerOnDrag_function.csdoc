@@ -28,7 +28,7 @@ PROC GLOBAL
 function onDragMarker(Map dragMap, numeric markerId)
 	numeric lat = dragMap.getMarkerLatitude(markerId);
 	numeric lon = dragMap.getMarkerLongitude(markerId);
-	errmsg("Marker was moved to: %f, %f", lat, lon);	
+	errmsg("Marker was moved to: %f, %f", lat, lon);
 end;
 
 PROC SHOW_MAP
@@ -48,4 +48,4 @@ dragMap.show();
 </logic>
 
 
-<seealso map.hgt map_add_marker_function.hgt map_set_marker_on_click_function.hgt map_get_marker_latitude_function.hgt map_get_marker_longitude_function.hgt />
+<seealso Map.csdoc Map_addMarker_function.csdoc Map_setMarkerOnClick_function.csdoc Map_getMarkerLatitude_function.csdoc Map_getMarkerLongitude_function.csdoc />

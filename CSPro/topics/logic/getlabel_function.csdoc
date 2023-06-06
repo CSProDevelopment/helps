@@ -30,12 +30,12 @@ PROC RELATIONSHIP
 
 	write("%s = %s", getlabel($), getlabel($, $));	 // Relationship = Head,
 													 // Relationship = Child, etc.
-													
+
 PROC BY_EXAMPLE
 
-	write("%s", getlabel(SEX by code, 1));			 // Male 
+	write("%s", getlabel(SEX by code, 1));			 // Male
 	write("%s", getlabel(SEX by label, "Male"));	 // 1
 
 </logic>
 
-<seealso getvaluelabel_function.hgt getsymbol_function.hgt getimage_function.hgt />
+<seealso getvaluelabel_function.csdoc getsymbol_function.csdoc getimage_function.csdoc />

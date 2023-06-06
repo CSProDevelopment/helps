@@ -18,7 +18,7 @@ i = accept(<arg>heading</arg>, <arg>choices_list</arg> ‖ <arg>choices_array</a
 
 The <logiccolor>accept</logiccolor> function displays a menu with a heading and a list of choices. The operator can use the down- or up-arrow keys to select the desired choice and press Enter. The operator can also use the mouse to click on the desired choice.
 
-The <arg>heading</arg> text is a string expression. In the first version of the function, each choice (<arg>choice1</arg> to <arg>choiceN</arg>) is provided as a string expression. In the second version of the function, the choices can be provided using a string <link list.hgt>List</link> or a string or alphanumeric <link array.hgt>Array</link>. With an array, the number of choices will be calculated dynamically. Each element of the array will be displayed until a blank string is found in the array.
+The <arg>heading</arg> text is a string expression. In the first version of the function, each choice (<arg>choice1</arg> to <arg>choiceN</arg>) is provided as a string expression. In the second version of the function, the choices can be provided using a string <link list.csdoc>List</link> or a string or alphanumeric <link array.csdoc>Array</link>. With an array, the number of choices will be calculated dynamically. Each element of the array will be displayed until a blank string is found in the array.
 
 
 <subheader>Return Value</subheader>
@@ -54,4 +54,4 @@ numeric interview_index = accept("Select a Person to Interview", household_names
 </logic>
 
 
-<seealso prompt_function.hgt />
+<seealso prompt_function.csdoc />

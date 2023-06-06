@@ -3,9 +3,9 @@
 
 <subheader>Overview</subheader>
 
-CSPro displays <link html_in_cspro.hgt>HTML</link> in an embedded browser when showing <link html_question_text.hgt>question text</link>, when displaying <link templated_reports.hgt>logic-based reports</link> written in HTML, and when displaying HTML content using the <logiccolor>view</logiccolor> or <logiccolor>htmldialog</logiccolor> functions. The HTML content is shown in a Chromium-based web browser (<link https://developer.microsoft.com/en-us/microsoft-edge/webview2>Edge WebView2</link> on Windows, and <link https://developer.android.com/reference/android/webkit/WebView>WebView</link> on Android). There is a limited API that facilitates communication between JavaScript and CSPro.
+CSPro displays <link html_in_cspro.csdoc>HTML</link> in an embedded browser when showing <link html_question_text.csdoc>question text</link>, when displaying <link templated_reports.csdoc>logic-based reports</link> written in HTML, and when displaying HTML content using the <logiccolor>view</logiccolor> or <logiccolor>htmldialog</logiccolor> functions. The HTML content is shown in a Chromium-based web browser (<link https://developer.microsoft.com/en-us/microsoft-edge/webview2>Edge WebView2</link> on Windows, and <link https://developer.android.com/reference/android/webkit/WebView>WebView</link> on Android). There is a limited API that facilitates communication between JavaScript and CSPro.
 
-By using JavaScript in question text, you can include links in your question text that perform actions such as opening a manual or skipping to a different question.  By using JavaScript in <link templated_reports.hgt>reports</link> or in HTML shown using the <logiccolor>view</logiccolor> or <logiccolor>htmldialog</logiccolor> functions, you can add dynamic interactive features to your application.
+By using JavaScript in question text, you can include links in your question text that perform actions such as opening a manual or skipping to a different question.  By using JavaScript in <link templated_reports.csdoc>reports</link> or in HTML shown using the <logiccolor>view</logiccolor> or <logiccolor>htmldialog</logiccolor> functions, you can add dynamic interactive features to your application.
 
 When using the JavaScript interface, an error will display if CSPro cannot properly interpret the call. When calling a JavaScript method, if a movement statement (e.g., <logiccolor>reenter</logiccolor>) or application halt (e.g., <logiccolor>stop</logiccolor>) occurs, the embedded browser will close automatically.
 
@@ -19,24 +19,24 @@ These methods are always available:
 
 <indent><b><colorinline javascript>CSPro.getMaxDisplayWidth()</colorinline></b></indent>
 
-<indent 2>Returns the <link display_dimensions.hgt>maximum display width</link>. This method executes synchronously.</indent>
+<indent 2>Returns the <link display_dimensions.csdoc>maximum display width</link>. This method executes synchronously.</indent>
 
 
 <indent><b><colorinline javascript>CSPro.getMaxDisplayHeight()</colorinline></b></indent>
 
-<indent 2>Returns the <link display_dimensions.hgt>maximum display height</link>. This method executes synchronously.</indent>
+<indent 2>Returns the <link display_dimensions.csdoc>maximum display height</link>. This method executes synchronously.</indent>
 
 
 <indent><b><colorinline javascript>CSPro.runLogic(logic)</colorinline></b></indent>
 <indent><b><colorinline javascript>CSPro.runLogicAsync(logic, callback = undefined)</colorinline></b></indent>
 
-<indent 2>Runs a <link user_defined_functions.hgt>user-defined function</link> and returns the result of the function as a string. The parameter <colorinline javascript>logic</colorinline> contains the CSPro logic to call the function. The logic will be compiled at runtime, which means the full compiler is not available and thus only numeric constants and string literals can be passed as arguments to the CSPro function. (This limitation is due to the absence of the full CSPro compiler when running CSEntry on Android.) In the asynchronous version of this method, the optional parameter <colorinline javascript>callback</colorinline> is JavaScript code to execute following the running of the CSPro logic. Due to threading issues with the embedded browser, if the user-defined function you call may display UI elements as part of its operations, you must use the asynchronous version.</indent>
+<indent 2>Runs a <link user_defined_functions.csdoc>user-defined function</link> and returns the result of the function as a string. The parameter <colorinline javascript>logic</colorinline> contains the CSPro logic to call the function. The logic will be compiled at runtime, which means the full compiler is not available and thus only numeric constants and string literals can be passed as arguments to the CSPro function. (This limitation is due to the absence of the full CSPro compiler when running CSEntry on Android.) In the asynchronous version of this method, the optional parameter <colorinline javascript>callback</colorinline> is JavaScript code to execute following the running of the CSPro logic. Due to threading issues with the embedded browser, if the user-defined function you call may display UI elements as part of its operations, you must use the asynchronous version.</indent>
 
 
 <indent><b><colorinline javascript>CSPro.invoke(functionName, arguments = undefined)</colorinline></b></indent>
 <indent><b><colorinline javascript>CSPro.invokeAsync(functionName, arguments = undefined, callback = undefined)</colorinline></b></indent>
 
-<indent 2>Runs the <logiccolor>invoke</logiccolor> function to execute a <link user_defined_functions.hgt>user-defined function</link> using runtime binding. The parameter <colorinline javascript>functionName</colorinline> is a string containing the user-defined function name. The optional parameter <colorinline javascript>arguments</colorinline> is a <link json_format.hgt>JSON string </link> containing the arguments to the function. Only numeric constants, string literals, and arrays of numerics and strings can be provided as arguments. (Arrays will be transformed into a CSPro <logiccolor>List</logiccolor>.) In the asynchronous version of this method, the optional parameter <colorinline javascript>callback</colorinline> is JavaScript code to execute following the running of the CSPro logic. Due to threading issues with the embedded browser, if the user-defined function you call may display UI elements as part of its operations, you must use the asynchronous version.</indent>
+<indent 2>Runs the <logiccolor>invoke</logiccolor> function to execute a <link user_defined_functions.csdoc>user-defined function</link> using runtime binding. The parameter <colorinline javascript>functionName</colorinline> is a string containing the user-defined function name. The optional parameter <colorinline javascript>arguments</colorinline> is a <link json_format.csdoc>JSON string </link> containing the arguments to the function. Only numeric constants, string literals, and arrays of numerics and strings can be provided as arguments. (Arrays will be transformed into a CSPro <logiccolor>List</logiccolor>.) In the asynchronous version of this method, the optional parameter <colorinline javascript>callback</colorinline> is JavaScript code to execute following the running of the CSPro logic. Due to threading issues with the embedded browser, if the user-defined function you call may display UI elements as part of its operations, you must use the asynchronous version.</indent>
 
 
 <indent><b><colorinline javascript>CSPro.getAsyncResult()</colorinline></b></indent>
@@ -54,7 +54,7 @@ These methods are available when showing a HTML dialog using the <logiccolor>htm
 
 <indent><b><colorinline javascript>CSPro.setDisplayOptions(displayOptions)</colorinline></b></indent>
 
-<indent 2>Sets the display options used by the <logiccolor>htmldialog</logiccolor> function. The parameter <colorinline javascript>displayOptions</colorinline> is a <link json_format.hgt>JSON string</link> containing one or more of the display options used by the function. This method executes asynchronously.</indent>
+<indent 2>Sets the display options used by the <logiccolor>htmldialog</logiccolor> function. The parameter <colorinline javascript>displayOptions</colorinline> is a <link json_format.csdoc>JSON string</link> containing one or more of the display options used by the function. This method executes asynchronously.</indent>
 
 
 <indent><b><colorinline javascript>CSPro.returnData(result)</colorinline></b></indent>
@@ -127,11 +127,11 @@ An alternate way to call the function using a JavaScript function:
 <color html>
 <script>
 	function showDistrictReport(province, district) {
-		let input = { 
-			"province": province, 
-			"district": district 
+		let input = {
+			"province": province,
+			"district": district
 		};
-        CSPro.invokeAsync("ShowDistrictReport", JSON.stringify(input)); 
+        CSPro.invokeAsync("ShowDistrictReport", JSON.stringify(input));
 	}
 </script>
 
@@ -139,4 +139,4 @@ An alternate way to call the function using a JavaScript function:
 </color>
 
 
-<seealso html_in_cspro.hgt />
+<seealso html_in_cspro.csdoc />

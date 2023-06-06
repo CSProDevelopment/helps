@@ -1,6 +1,6 @@
 ﻿<title>Create Fills In Questions</title>
 
-Fills are used to customize <link questions.hgt>question text</link> based on respondents' specific characteristics. This is done by embedding CSPro logic expressions into the text and surrounding them with pairs of tilde characters (~~).
+Fills are used to customize <link questions.csdoc>question text</link> based on respondents' specific characteristics. This is done by embedding CSPro logic expressions into the text and surrounding them with pairs of tilde characters (~~).
 
 Fills may contain any valid CSPro logic expression that evaluates to a string or numeric value. Logic expressions may include dictionary items, variables, occurrence labels, user-defined functions, as well as any built-in CSPro functions and operators.
 
@@ -23,14 +23,14 @@ When used with numeric values, the fill uses the value code. For example, ~~SEX~
 
 <subheader>Fills with Occurrence Labels</subheader>
 
-You can customize the question text by inserting an item or group's <link occurrence_labels.hgt>occurrence labels</link> into the text. For example:
+You can customize the question text by inserting an item or group's <link occurrence_labels.csdoc>occurrence labels</link> into the text. For example:
 
 <indent>How much did you spend on <b>~~getocclabel()~~</b> in the last month?</indent>
 
 
 <subheader>Fills with User-Defined Functions</subheader>
 
-You can insert the return value of a <link user_defined_functions.hgt>user-defined function</link> into the question text. The function can return either numeric or string values. For example:
+You can insert the return value of a <link user_defined_functions.csdoc>user-defined function</link> into the question text. The function can return either numeric or string values. For example:
 
 <indent>Thinking now about <b>~~FIRST_NAME~~</b>, what is <b>~~SexPronoun()~~</b> age?</indent>
 
@@ -82,8 +82,8 @@ do numeric ctr = 1 while ctr <= totocc(PERSON_REC)
 	householdMembers = householdMembers + maketext("<li>%s</li>", encode(strip(NAME(ctr))));
 enddo;
 
-householdMembers = householdMembers + "</ul>" 
+householdMembers = householdMembers + "</ul>"
 </logic>
 
 
-<seealso html_question_text.hgt />
+<seealso html_question_text.csdoc />

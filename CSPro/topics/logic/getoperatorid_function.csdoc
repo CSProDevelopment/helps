@@ -8,7 +8,7 @@ s = getoperatorid();
 
 <subheader>Description</subheader>
 
-The <logiccolor>getoperatorid</logiccolor> function returns the operator ID for the current operator. The operator ID may have been entered by the operator or <link run_production_data_entry.hgt>passed as a parameter</link> in the PFF file for the run.
+The <logiccolor>getoperatorid</logiccolor> function returns the operator ID for the current operator. The operator ID may have been entered by the operator or <link run_production_data_entry.csdoc>passed as a parameter</link> in the PFF file for the run.
 
 <subheader>Return Value</subheader>
 
@@ -25,4 +25,4 @@ if not loadcase(LOGINS_DICT, LF_USER_ID) then
 endif;
 </logic>
 
-<seealso setoperatorid_function.hgt getdeviceid_function.hgt getusername_function.hgt getbluetoothname_function.hgt />
+<seealso setoperatorid_function.csdoc getdeviceid_function.csdoc getusername_function.csdoc getbluetoothname_function.csdoc />

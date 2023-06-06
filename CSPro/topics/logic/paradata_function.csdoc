@@ -10,7 +10,7 @@ d = paradata(<arg>action_type</arg>『, <arg>argument1</arg>, ..., <arg>argument
 
 <subheader>Description</subheader>
 
-The <logiccolor>paradata</logiccolor> function performs an action related to the <link paradata.hgt>paradata log</link>. The first argument, <arg>action_type</arg>, must be one of the following:
+The <logiccolor>paradata</logiccolor> function performs an action related to the <link paradata.csdoc>paradata log</link>. The first argument, <arg>action_type</arg>, must be one of the following:
 
 <table 2>
 	<cell><arg>action_type</arg></cell><cell><b>Description</b></cell>
@@ -52,9 +52,9 @@ string message_events_query = maketext(
 	"JOIN case_info ON case_instance.case_info = case_info.id "
 	"WHERE case_info.uuid = '%s';",
 	uuid(DICT_NAME));
-	
+
 numeric message_events_for_this_case = paradata(query, message_events_query);
 </logic>
 
 
-<seealso paradata.hgt sqlquery_function.hgt syncparadata_function.hgt />
+<seealso paradata.csdoc sqlquery_function.csdoc syncparadata_function.csdoc />

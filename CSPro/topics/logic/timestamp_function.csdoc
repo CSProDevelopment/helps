@@ -31,11 +31,11 @@ PROC CROPS_QUEST
 preproc
 
 	surveyStartTime = timestamp();
-	
-	// if the survey began at 10:58pm on 12/28/2021 EST, 
+
+	// if the survey began at 10:58pm on 12/28/2021 EST,
 	// the UTC time (in seconds) would be 1640750243
-	
-	errmsg("Survey Start Time = %d", surveyStartTime); 
+
+	errmsg("Survey Start Time = %d", surveyStartTime);
 
 postproc
 
@@ -43,4 +43,4 @@ postproc
 </logic>
 
 
-<seealso timestring_function.hgt systime_function.hgt sysdate_function.hgt filetime_function.hgt synctime_function.hgt />
+<seealso timestring_function.csdoc systime_function.csdoc sysdate_function.csdoc filetime_function.csdoc synctime_function.csdoc />

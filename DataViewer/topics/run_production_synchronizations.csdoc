@@ -1,12 +1,12 @@
 ﻿<title>Run Production Synchronizations</title>
 
-You can run production <link CSPro::synchronization.hgt>synchronizations</link> by customizing their behavior by creating a PFF file. You then use the PFF as a command line parameter for DataViewer.exe (the associated filename of this utility). For example, suppose you've named your Sync PFF <b>Download Data.pff</b>; you can then run the synchronization by invoking this file from the command line:
+You can run production <link CSPro::synchronization.csdoc>synchronizations</link> by customizing their behavior by creating a PFF file. You then use the PFF as a command line parameter for DataViewer.exe (the associated filename of this utility). For example, suppose you've named your Sync PFF <b>Download Data.pff</b>; you can then run the synchronization by invoking this file from the command line:
 
 <indent><font monospace>"C:\Program Files (x86)\CSPro <definition version />\DataViewer.exe" "Download Data.pff"</font></indent>
 
 This assumes that CSPro was installed in the default directory. PFF files always have a <b>.pff</b> extension. Note that you can only sync <b>.csdb(e)</b> files&mdash;data files stored as text can not be synced.
 
-You can create a PFF file in one of two ways: either [1] create one with a text editor (such as Notepad or Wordpad), or [2] let it be generated automatically for you by downloading a data file from a <link CSWeb::introduction_to_csweb.hgt>CSWeb server</link>, <link CSPro::syncconnect_function_dropbox.hgt>Dropbox</link>, or another sync platform. You can also manipulate PFF files in logic by using the <link CSPro::pff.hgt>Pff</link> object.
+You can create a PFF file in one of two ways: either [1] create one with a text editor (such as Notepad or Wordpad), or [2] let it be generated automatically for you by downloading a data file from a <link CSWeb::introduction_to_csweb.csdoc>CSWeb server</link>, <link CSPro::syncconnect_function_dropbox.csdoc>Dropbox</link>, or another sync platform. You can also manipulate PFF files in logic by using the <link CSPro::pff.csdoc>Pff</link> object.
 
 The following section shows the options available to you in a synchronization PFF file. A PFF file is not case sensitive, so you can use any combination of upper and lower case text.
 
@@ -42,7 +42,7 @@ The <pffcolor>[Parameters]</pffcolor> block is required and includes information
 
 <list>
 	<li><pffcolor>SyncType</pffcolor>= specifies the type of server to be used during the synchronization. Possible options include: <b>CSWeb</b>, <b>Dropbox</b>, <b>LocalDropbox</b>, <b>FTP</b>, and <b>LocalFiles</b>.</li>
-	<li><pffcolor>SyncDirection</pffcolor>= specifies the direction of the synchronization. The three options, <b>Get</b>, <b>Put</b>, <b>Both</b>, are detailed in the help documentation for the <link CSPro::syncdata_function.hgt>syncdata function</link>.</li>
+	<li><pffcolor>SyncDirection</pffcolor>= specifies the direction of the synchronization. The three options, <b>Get</b>, <b>Put</b>, <b>Both</b>, are detailed in the help documentation for the <link CSPro::syncdata_function.csdoc>syncdata function</link>.</li>
 	<li><pffcolor>SyncUrl</pffcolor>= specifies the URL of the server. This is not required if syncing with Dropbox.</li>
 	<li><pffcolor>Silent</pffcolor>= determines whether or not to close Data Viewer automatically after the synchronization completes. The value can be <b>Yes</b> or <b>No</b>; it will default to <b>No</b> if this parameter is not listed.</li>
 </list>

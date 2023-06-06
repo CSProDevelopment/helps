@@ -1,6 +1,6 @@
 ﻿<title>Downloading and Synchronizing Data</title>
 
-There are two features within Data Viewer that allow you to download or synchronize your data from the server that was used for <link CSPro::synchronization.hgt>data synchronization</link>. These options only work with CSPro DB (<b>.csdb</b>) or Encrypted CSPro DB (<b>.csdbe</b>) files.
+There are two features within Data Viewer that allow you to download or synchronize your data from the server that was used for <link CSPro::synchronization.csdoc>data synchronization</link>. These options only work with CSPro DB (<b>.csdb</b>) or Encrypted CSPro DB (<b>.csdbe</b>) files.
 
 <subheader>To download a new data file ...</subheader>
 
@@ -20,10 +20,10 @@ The tool will download all of the cases from the data set into the designated fi
 	<li>Open an existing data file.</li>
 	<li>Click the <b>File</b> menu and select <b>Synchronize</b> (or press <b>Ctrl+Shift+S</b>).</li>
 	<li>Enter the details of the synchronization server (the server type and, if necessary, the URL).</li>
-	<li>Select the synchronization direction. There are a <link CSPro::synchronization_simple.hgt>few options</link>, though generally you will choose the default option, <b>GET</b>.</li>
+	<li>Select the synchronization direction. There are a <link CSPro::synchronization_simple.csdoc>few options</link>, though generally you will choose the default option, <b>GET</b>.</li>
 </list>
 
-You can choose to download, upload, or download and upload, all of the cases in the data file, making sure that the cases in the file match the cases stored on the synchronization server. This process can be automated by running a <link run_production_synchronizations.hgt>production synchronization</link>.
+You can choose to download, upload, or download and upload, all of the cases in the data file, making sure that the cases in the file match the cases stored on the synchronization server. This process can be automated by running a <link run_production_synchronizations.csdoc>production synchronization</link>.
 
 For faster downloads of large datasets from Dropbox, you can choose <b>Dropbox Folder on this Computer</b> as the server type rather than <b>Dropbox (Online)</b>. When this option is selected, rather than downloading the data from Dropbox over the Internet, Data Viewer will extract the data from the synced Dropbox folder on the computer to create a CSPro data file. In order to use this option, you must have installed the <link https://www.dropbox.com>Dropbox client software</link> on your computer and configured it with the same Dropbox account that you are downloading data from. As long as your computer is connected to the Internet, the Dropbox client software will continously download data from the Dropbox servers to the local computer. Data Viewer can then use the data that was already downloaded to create the CSPro data file.
 

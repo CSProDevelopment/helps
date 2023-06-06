@@ -22,11 +22,11 @@ In the string expression:
 %<b>[n.d]f</b> = Insert a number and display it as a decimal value
 %<b>[n.d]s</b> = Insert a text string</list>
 
-where "<b>n</b>" is the size of the field and "d<b></b>" is the number of decimal places to show for a number. <i>For a complete list of possible message formatters, see <link message_formatting_options.hgt>Message Formatting Options</link></i>.
+where "<b>n</b>" is the size of the field and "d<b></b>" is the number of decimal places to show for a number. <i>For a complete list of possible message formatters, see <link message_formatting_options.csdoc>Message Formatting Options</link></i>.
 
 Numbers are never truncated. Text strings are truncated only if "<b>.d</b>" is used. If "<b>n</b>" is positive, the insert is right-justified in the size of the field. If "<b>n</b>" is negative, the insert is left-justified in the size of the field. If "<b>n</b>" is a positive number with a leading zero, the insert is right-justified in the size of the field and zero-filled to the left. When inserting a number, if "<b>n</b>" is preceded by a "+", the sign of the number is always displayed.
 
-If you wish to split message text across two or more lines, refer to the <topic message_formatting_options.hgt /> page.
+If you wish to split message text across two or more lines, refer to the <topic message_formatting_options.csdoc /> page.
 
 <subheader>Return Value</subheader>
 
@@ -73,4 +73,4 @@ errmsg( "%10s"      , stringValue);     //       abcdef
 errmsg( "%10.3s"    , stringValue);     //          abc
 </logic>
 
-<seealso message_formatting_options.hgt message_file_mgf.hgt edit_function.hgt />
+<seealso message_formatting_options.csdoc message_file_mgf.csdoc edit_function.csdoc />

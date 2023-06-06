@@ -12,7 +12,7 @@ The <logiccolor>onoccchange</logiccolor> statement declares that the statements 
 
 During data entry, whenever the user moves from one occurrence to another (forward or backward), the <logiccolor>onoccchange</logiccolor> of the group will be executed.
 
-The <logiccolor>onoccchange</logiccolor> statement is not very common, but it may be useful in some CAPI applications, particularly to set <link create_fills_in_questions.hgt>question text fills</link>.
+The <logiccolor>onoccchange</logiccolor> statement is not very common, but it may be useful in some CAPI applications, particularly to set <link create_fills_in_questions.csdoc>question text fills</link>.
 
 <subheader>Example</subheader>
 
@@ -26,4 +26,4 @@ onoccchange
 	endif;
 </logic>
 
-<seealso proc_statement.hgt preproc_statement.hgt onfocus_statement.hgt killfocus_statement.hgt postproc_statement.hgt order_of_executing_data_entry_events.hgt order_of_executing_batch_edit_events.hgt />
+<seealso proc_statement.csdoc preproc_statement.csdoc onfocus_statement.csdoc killfocus_statement.csdoc postproc_statement.csdoc order_of_executing_data_entry_events.csdoc order_of_executing_batch_edit_events.csdoc />

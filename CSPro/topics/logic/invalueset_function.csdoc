@@ -33,7 +33,7 @@ endif;
 
 <subheader>Example 3</subheader>
 
-If you've included <topic special_values.hgt /> in your valueset, but you'd rather exclude them in certain situations, you can accomplish this with a call to the <topic special_function.hgt />. In the example below, we want to see if the expected educational attainment agrees with the person's age, and issue an error message if it does not.
+If you've included <topic special_values.csdoc /> in your valueset, but you'd rather exclude them in certain situations, you can accomplish this with a call to the <topic special_function.csdoc />. In the example below, we want to see if the expected educational attainment agrees with the person's age, and issue an error message if it does not.
 
 <logic>
 PROC P12_EDUCATION
@@ -41,7 +41,7 @@ PROC P12_EDUCATION
 numeric age_agrees_with_education;
 
 if inValueSet(AGE) and !special(AGE) then
-  recode AGE :: $ -> age_agrees_with_education; 
+  recode AGE :: $ -> age_agrees_with_education;
         < 5  :: 0 -> true; 	// for ages 0-4, no educ attainment expected
         5-10 :: 1 -> true; 	// for ages 5-10, primary attainment expected
        11-16 :: 2 -> true; 	// for ages 11-16, secondary attainment expected
@@ -54,4 +54,4 @@ if inValueSet(AGE) and !special(AGE) then
 endif;</logic>
 
 
-<seealso in_operator.hgt setvalueset_function.hgt special_function.hgt />
+<seealso in_operator.csdoc setvalueset_function.csdoc special_function.csdoc />

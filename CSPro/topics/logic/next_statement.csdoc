@@ -25,7 +25,7 @@ for numeric ctr in PERSON do
 	if P02_REL <> 2 then
 		next;
 	endif;
-	
+
 	inc(spouseNumber);
 	spouseIndices(spouseNumber) = ctr;
 
@@ -33,4 +33,4 @@ enddo;
 </logic>
 
 
-<seealso break_statement.hgt exit_statement.hgt />
+<seealso break_statement.csdoc exit_statement.csdoc />

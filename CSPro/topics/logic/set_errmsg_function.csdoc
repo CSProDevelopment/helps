@@ -8,7 +8,7 @@ set errmsg(<arg>message_style</arg>『,<arg>close_message</arg>』『,<arg>close
 
 <subheader>Description</subheader>
 
-CSPro data entry applications have two operating modes: <link operator_vs_system_controlled.hgt>operator- and system-controlled modes</link>. Each mode has a different style error message box. System-controlled mode uses a standard Windows dialog box whereas operator-controlled mode uses a customized yellow box. The <logiccolor>set errmsg</logiccolor> statement allows the user to choose which kind of box to use. The first argument, <arg>message_style</arg>, is one of the following:
+CSPro data entry applications have two operating modes: <link operator_vs_system_controlled.csdoc>operator- and system-controlled modes</link>. Each mode has a different style error message box. System-controlled mode uses a standard Windows dialog box whereas operator-controlled mode uses a customized yellow box. The <logiccolor>set errmsg</logiccolor> statement allows the user to choose which kind of box to use. The first argument, <arg>message_style</arg>, is one of the following:
 
 <list>
 	<li><b>default</b>: Reset the box to the default style for the data entry mode.</li>
@@ -16,7 +16,7 @@ CSPro data entry applications have two operating modes: <link operator_vs_system
 	<li><b>system</b>: Use the system-controlled box.</li>
 </list>
 
-For operator-controlled message boxes, the optional string expression <arg>close_message</arg> allows you to modify the text that appears beneath the error message, which by default is "Press F8 to clear." Another optional argument, the numeric expression <arg>close_keystroke</arg>, modifies <link onkey_character_map.hgt>the keystroke</link> required to close the box.
+For operator-controlled message boxes, the optional string expression <arg>close_message</arg> allows you to modify the text that appears beneath the error message, which by default is "Press F8 to clear." Another optional argument, the numeric expression <arg>close_keystroke</arg>, modifies <link onkey_character_map.csdoc>the keystroke</link> required to close the box.
 
 Calls to this function are ignored when executed on mobile devices.
 
@@ -38,4 +38,4 @@ set errmsg(operator,"Appuyez sur C pour fermer",67);
 set errmsg(operator,67);
 </logic>
 
-<seealso setfont_function.hgt />
+<seealso setfont_function.csdoc />

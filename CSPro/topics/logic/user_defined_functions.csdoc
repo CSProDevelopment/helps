@@ -1,6 +1,6 @@
 ﻿<title>User-Defined Functions</title>
 
-User-defined functions are coded in the <link cspro_program_structure.hgt>declaration</link> portion (<logiccolor>PROC GLOBAL</logiccolor>) of an application. Once defined, they can be used anywhere in an application. Functions are used to perform operations that are used in several different places in an application.
+User-defined functions are coded in the <link cspro_program_structure.csdoc>declaration</link> portion (<logiccolor>PROC GLOBAL</logiccolor>) of an application. Once defined, they can be used anywhere in an application. Functions are used to perform operations that are used in several different places in an application.
 
 Functions are of the form:
 
@@ -10,7 +10,7 @@ Functions are of the form:
 
 Functions may include a list of parameters, which can vary depending on the function call's requirements. This list may be empty (that is, it contains no parameters between the opening and closing parentheses) or it may contain one or more parameters. Each parameter specifies a variable or object that is used by the statements within the function.
 
-Numeric, string, and alphanumeric variables are local to the function. That is, if a variable is passed as an argument, its value in the rest of the application will not be changed by actions within the function (this is called "pass by value"). On the other hand, <link object_dot_notation.hgt>objects</link> (such as arrays and file handlers) passed as arguments refer to the source variable and interactions on the variable affect the source variable (this is called "<link function_arguments_ref.hgt>pass by reference</link>"). If you want to pass a numeric or string variable by reference, you can use the <logiccolor>ref</logiccolor> keyword to signify that changes made in the function should affect the source variable.
+Numeric, string, and alphanumeric variables are local to the function. That is, if a variable is passed as an argument, its value in the rest of the application will not be changed by actions within the function (this is called "pass by value"). On the other hand, <link object_dot_notation.csdoc>objects</link> (such as arrays and file handlers) passed as arguments refer to the source variable and interactions on the variable affect the source variable (this is called "<link function_arguments_ref.csdoc>pass by reference</link>"). If you want to pass a numeric or string variable by reference, you can use the <logiccolor>ref</logiccolor> keyword to signify that changes made in the function should affect the source variable.
 
 A user-defined function:
 
@@ -21,6 +21,6 @@ A user-defined function:
 
 The <logiccolor>function</logiccolor> statement allows the creation of a user-defined function.
 
-You can use the <logiccolor>invoke</logiccolor> function to call a function with the function name specified only at runtime. Additionally, you can execute user-defined functions while viewing HTML content by using the <link javascript_interface.hgt>JavaScript interface</link>.
+You can use the <logiccolor>invoke</logiccolor> function to call a function with the function name specified only at runtime. Additionally, you can execute user-defined functions while viewing HTML content by using the <link javascript_interface.csdoc>JavaScript interface</link>.
 
-<seealso function_statement.hgt additional_function_examples.hgt />
+<seealso function_statement.csdoc additional_function_examples.csdoc />

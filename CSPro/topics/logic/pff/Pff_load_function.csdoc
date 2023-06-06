@@ -10,7 +10,7 @@ b = pff_name.load(<arg>pff_filename</arg> ‖ <arg>application_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Pff.load</logiccolor> function loads the contents from an existing PFF file into a <link pff.hgt>Pff</link> object. If supplying a string expression, <arg>pff_filename</arg>, the properties from that PFF will be loaded. If supplying an <arg>application_name</arg> (the name of your application, which generally ends with _FF), then the PFF used to run the current application will be loaded.
+The <logiccolor>Pff.load</logiccolor> function loads the contents from an existing PFF file into a <link pff.csdoc>Pff</link> object. If supplying a string expression, <arg>pff_filename</arg>, the properties from that PFF will be loaded. If supplying an <arg>application_name</arg> (the name of your application, which generally ends with _FF), then the PFF used to run the current application will be loaded.
 
 
 <subheader>Return Value</subheader>
@@ -39,7 +39,7 @@ function DisplayMinorMessage(string message_text)
 	// application and only showing summary messages
 	Pff this_application_pff;
 	this_application_pff.load(CENSUS_FF);
-	
+
 	if this_application_pff.getProperty("ErrmsgOverride") <> "Summary" then
 		errmsg("%s", message_text);
 	endif;
@@ -48,4 +48,4 @@ end;
 </logic>
 
 
-<seealso pff.hgt pff_save_function.hgt />
+<seealso pff.csdoc pff_save_function.csdoc />

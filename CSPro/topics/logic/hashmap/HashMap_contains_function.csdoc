@@ -10,7 +10,7 @@ b = hashmap_name.contains(<arg>key_value1</arg>ã€Ž, ..., <arg>key_valueN</arg>ã€
 
 <subheader>Description</subheader>
 
-The <logiccolor>HashMap.contains</logiccolor> function returns whether or not a specific key exists in a <link hashmap.hgt>HashMap</link>. Each <arg>key_value</arg> argument must be a numeric or string expression matching the type specified when <link hashmap_statement.hgt>declaring the HashMap</link>.
+The <logiccolor>HashMap.contains</logiccolor> function returns whether or not a specific key exists in a <link hashmap.csdoc>HashMap</link>. Each <arg>key_value</arg> argument must be a numeric or string expression matching the type specified when <link hashmap_statement.csdoc>declaring the HashMap</link>.
 
 
 <subheader>Return Value</subheader>
@@ -33,7 +33,7 @@ preproc
 	forcase SPECIAL_CASES_DICT do
 		casesToOutput(SPECIAL_CASE_KEY) = true;
 	endfor;
-	
+
 PROC CENSUS_LEVEL
 
 preproc
@@ -45,4 +45,4 @@ preproc
 </logic>
 
 
-<seealso hashmap.hgt hashmap_getkeys_function.hgt />
+<seealso hashmap.csdoc hashmap_getkeys_function.csdoc />

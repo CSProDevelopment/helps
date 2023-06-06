@@ -15,7 +15,7 @@ If an <logiccolor>OnChar</logiccolor> function is defined, every character the o
 
 The parameter <arg>key_value</arg> is a numeric code identifying what character was typed using the keyboard. Its value can be used within the function.
 
-You can use the <topic onkey_character_map.hgt /> to determine the value of characters.
+You can use the <topic onkey_character_map.csdoc /> to determine the value of characters.
 
 Calls to this function are ignored when executed on mobile devices.
 
@@ -36,7 +36,7 @@ The <logiccolor>OnChar</logiccolor> function must return an integer value. The v
 
 
 <subheader>Example</subheader>
- 
+
 <logic>
 function OnChar(numeric keystroke)
 
@@ -50,4 +50,4 @@ end;
 </logic>
 
 
-<seealso onkey_global_function.hgt onkey_character_map.hgt user_defined_functions.hgt />
+<seealso onkey_global_function.csdoc onkey_character_map.csdoc user_defined_functions.csdoc />

@@ -8,7 +8,7 @@ b = special(<arg>numeric_expression</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>special</logiccolor> function determines whether the value of <arg>numeric_expression</arg> is one of the four <link special_values.hgt>special values</link>: <logiccolor>missing</logiccolor>, <logiccolor>refused</logiccolor>, <logiccolor>notappl</logiccolor>, or <logiccolor>default</logiccolor>.
+The <logiccolor>special</logiccolor> function determines whether the value of <arg>numeric_expression</arg> is one of the four <link special_values.csdoc>special values</link>: <logiccolor>missing</logiccolor>, <logiccolor>refused</logiccolor>, <logiccolor>notappl</logiccolor>, or <logiccolor>default</logiccolor>.
 
 <subheader>Return Value</subheader>
 
@@ -22,4 +22,4 @@ if special(CHILDREN_EVER_BORN) then
 endif;
 </logic>
 
-<seealso countnonspecial_function.hgt in_operator.hgt />
+<seealso countnonspecial_function.csdoc in_operator.csdoc />

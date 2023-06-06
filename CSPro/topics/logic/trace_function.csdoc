@@ -12,7 +12,7 @@ trace(on);
 trace(on,"filename");
 
 // turns on tracing, clears any contents in the file, and writes messages to "filename"
-trace(on,"filename",clear); 
+trace(on,"filename",clear);
 
 // turns off tracing, closing all open trace windows or files
 trace(off);
@@ -22,7 +22,7 @@ It is possible, by calling the <logiccolor>trace</logiccolor> function twice, to
 
 <subheader>Logging User-Generated Information</subheader>
 
-To send a message to the trace log, simply pass a string to the <logiccolor>trace</logiccolor> function using any <link message_formatting_options.hgt>message formatting options</link> (like used by the <logiccolor>errmsg</logiccolor> function).
+To send a message to the trace log, simply pass a string to the <logiccolor>trace</logiccolor> function using any <link message_formatting_options.csdoc>message formatting options</link> (like used by the <logiccolor>errmsg</logiccolor> function).
 
 <logic>
 if distance > 100 then
@@ -102,4 +102,4 @@ Trace&nbsp;started&nbsp;at&nbsp;02/03/11&nbsp;20:28:35~!~
 Trace&nbsp;stopped&nbsp;at&nbsp;02/03/11&nbsp;20:28:35
 </font></indent>
 
-<seealso logtext_function.hgt message_formatting_options.hgt />
+<seealso logtext_function.csdoc message_formatting_options.csdoc />

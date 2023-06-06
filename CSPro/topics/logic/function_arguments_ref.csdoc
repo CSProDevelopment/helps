@@ -14,7 +14,7 @@ FunctionName(ref MY_VALUE);
 
 <subheader>Description</subheader>
 
-By default, numeric and string variables that are passed as an argument to a function are not changed by actions within the function. This is called "pass by value." On the other hand, <link object_dot_notation.hgt>objects</link> (such as arrays and file handlers) passed as arguments refer to the source variable and interactions on the variable within the function affect the source variable. This is called "pass by reference."
+By default, numeric and string variables that are passed as an argument to a function are not changed by actions within the function. This is called "pass by value." On the other hand, <link object_dot_notation.csdoc>objects</link> (such as arrays and file handlers) passed as arguments refer to the source variable and interactions on the variable within the function affect the source variable. This is called "pass by reference."
 
 If you want to pass a numeric or string variable by reference, you can use the <logiccolor>ref</logiccolor> keyword to signify that changes made in the function should affect the source variable. You cannot use <logiccolor>ref</logiccolor> with expressions, only with numeric and string variables (such as dictionary items, array cells, list cells, etc.).
 
@@ -77,4 +77,4 @@ endif;
 </logic>
 
 
-<seealso user_defined_functions.hgt function_statement.hgt />
+<seealso user_defined_functions.csdoc function_statement.csdoc />

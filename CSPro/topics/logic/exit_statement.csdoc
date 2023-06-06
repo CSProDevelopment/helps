@@ -8,7 +8,7 @@ exit 『<arg>return_value</arg>』;
 
 <subheader>Description</subheader>
 
-The <logiccolor>exit</logiccolor> statement terminates a procedure or <link user_defined_functions.hgt>user-defined function</link> before normal processing is expected to end. When the statement is executed, processing stops for the current procedure or function, and control is passed to the next procedure or function.
+The <logiccolor>exit</logiccolor> statement terminates a procedure or <link user_defined_functions.csdoc>user-defined function</link> before normal processing is expected to end. When the statement is executed, processing stops for the current procedure or function, and control is passed to the next procedure or function.
 
 When utilized in a user-defined function, an optional argument, <arg>return_value</arg>, sets the function's return value before exiting the function. The type of the argument, either a numeric or string expression, must match the function's return type.
 
@@ -37,17 +37,17 @@ end;
 function string QueryForString(string message)
 
 	while 1 do
-		
+
 		string response = prompt(message);
-		
+
 		if response = "" then
 			errmsg("You cannot enter a blank value");
-		
+
 		else
 			exit response;
-		
+
 		endif;
-	
+
 	enddo;
 
 end;
@@ -57,4 +57,4 @@ end;
 errmsg("The non-blank value is %s", QueryForString("Enter a non-blank value"));
 </logic>
 
-<seealso universe_statement.hgt skip_case_statement.hgt stop_function.hgt endcase_statement.hgt />
+<seealso universe_statement.csdoc skip_case_statement.csdoc stop_function.csdoc endcase_statement.csdoc />

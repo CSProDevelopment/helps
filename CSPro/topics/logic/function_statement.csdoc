@@ -7,7 +7,7 @@ function 『<arg>return_type</arg>』 <arg>function_name</arg>(『<arg>parameter
 									 『<arg>parameterN_type</arg> <arg>parameterN_name</arg>』)
 
 	// statements
-	
+
 	『<arg>function_name</arg> = <arg>return_value</arg>;』
 
 end;
@@ -16,13 +16,13 @@ end;
 
 <subheader>Description</subheader>
 
-The <logiccolor>function</logiccolor> statement defines a <link user_defined_functions.hgt>user-defined function</link> with the name <arg>function_name</arg>. Once defined, the function can be called in other user-defined functions or in procedures throughout your application.
+The <logiccolor>function</logiccolor> statement defines a <link user_defined_functions.csdoc>user-defined function</link> with the name <arg>function_name</arg>. Once defined, the function can be called in other user-defined functions or in procedures throughout your application.
 
-Numeric expressions, string expressions, <link object_dot_notation.hgt>objects</link> (such as arrays and file handlers), and <link additional_function_examples.hgt>function pointers</link> can be passed to a user-defined function as arguments. These parameters are defined by specifying the variable type (e.g., <arg>parameter1_type</arg>) and the name of the variable (e.g., <arg>parameter1_name</arg>). If no type is specified, the variable will be considered numeric. Preceding the parameter type with the <logiccolor>optional</logiccolor> keyword marks the parameter as an <link function_parameters_optional.hgt>optional parameter</link> for which a caller does not need to supply a corresponding argument.
+Numeric expressions, string expressions, <link object_dot_notation.csdoc>objects</link> (such as arrays and file handlers), and <link additional_function_examples.csdoc>function pointers</link> can be passed to a user-defined function as arguments. These parameters are defined by specifying the variable type (e.g., <arg>parameter1_type</arg>) and the name of the variable (e.g., <arg>parameter1_name</arg>). If no type is specified, the variable will be considered numeric. Preceding the parameter type with the <logiccolor>optional</logiccolor> keyword marks the parameter as an <link function_parameters_optional.csdoc>optional parameter</link> for which a caller does not need to supply a corresponding argument.
 
 The names used in the parameter list of a function are local to the function. They may not be the same as names that are defined in any dictionary or in <logiccolor>PROC GLOBAL</logiccolor>, but the names can be reused in other functions or procedures.
 
-Numeric, string, and alphanumeric variables are local to the function. That is, if a variable is passed as an argument, its value in the rest of the application will not be changed by actions within the function (this is called "pass by value"). On the other hand, <link object_dot_notation.hgt>objects</link> (such as arrays and file handlers) passed as arguments refer to the source variable and interactions on the variable affect the source variable (this is called "<link function_arguments_ref.hgt>pass by reference</link>"). If you want to pass a numeric or string variable by reference, you can use the <logiccolor>ref</logiccolor> keyword to signify that changes made in the function should affect the source variable.
+Numeric, string, and alphanumeric variables are local to the function. That is, if a variable is passed as an argument, its value in the rest of the application will not be changed by actions within the function (this is called "pass by value"). On the other hand, <link object_dot_notation.csdoc>objects</link> (such as arrays and file handlers) passed as arguments refer to the source variable and interactions on the variable affect the source variable (this is called "<link function_arguments_ref.csdoc>pass by reference</link>"). If you want to pass a numeric or string variable by reference, you can use the <logiccolor>ref</logiccolor> keyword to signify that changes made in the function should affect the source variable.
 
 Other than arrays, parameters are defined the same way you would in other parts of logic. However, with arrays, you do not define the size of the array because the array will match the size of the array passed as an argument. By default, an array is one-dimensional. To specify more than one dimension, use parentheses with the number of dimensions specified using commas. For example, a three-dimensional array must include <logiccolor>(,,)</logiccolor> after the parameter name. Within the function, the function <logiccolor>length</logiccolor> returns the dimension sizes of the passed array.
 
@@ -59,7 +59,7 @@ PROC GLOBAL
 function string GetNameOfFirstFemale()
 
 	numeric female_index = seek(SEX = 2);
-	
+
 	if female_index > 0 then
 		GetNameOfFirstFemale = NAME(female_index);
 	endif;
@@ -76,11 +76,11 @@ PROC GLOBAL
 function numeric SumList(List numeric numeric_list)
 
 	numeric summed_value = 0;
-	
+
 	do numeric counter = 1 while counter <= length(numeric_list)
 		inc(summed_value, numeric_list(counter));
 	enddo;
-	
+
 	SumList = summed_value;
 
 end;
@@ -95,11 +95,11 @@ PROC GLOBAL
 function string CapitalizeFirstLetters(string text)
 
 	do numeric counter = 1 while counter <= length(text)
-	
+
 		if counter = 1 or text[( counter - 1 ):1] = " " then
 			text[counter:1] = toupper(text[counter:1]);
 		endif;
-		
+
 	enddo;
 
 	CapitalizeFirstLetters = text;
@@ -108,4 +108,4 @@ end;
 </logic>
 
 
-<seealso user_defined_functions.hgt function_parameters_optional.hgt function_arguments_ref.hgt additional_function_examples.hgt exit_statement.hgt />
+<seealso user_defined_functions.csdoc function_parameters_optional.csdoc function_arguments_ref.csdoc additional_function_examples.csdoc exit_statement.csdoc />

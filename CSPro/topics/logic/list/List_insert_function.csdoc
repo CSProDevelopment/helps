@@ -10,7 +10,7 @@ i = list_name.insert(<arg>index</arg>, <arg>value</arg> ‖ <arg>list_name</arg>
 
 <subheader>Description</subheader>
 
-The <logiccolor>List.insert</logiccolor> function inserts a single value (the numeric or string expression <arg>value</arg>) or a List of values (<arg>list_name</arg>) at the position in the <link list.hgt>List</link> referenced by the numeric expression <arg>index</arg>. The type of the inserted value or List must match the type of the receiving List. List index values are one-based, so the index must be between 1 and one past the length of the List. If the index is <logiccolor>1</logiccolor>, the values are inserted at the beginning of the List. If the value is <logiccolor>List.length() + 1</logiccolor>, the values are inserted at the end of the List (as would happen with the <logiccolor>List.add</logiccolor> function).
+The <logiccolor>List.insert</logiccolor> function inserts a single value (the numeric or string expression <arg>value</arg>) or a List of values (<arg>list_name</arg>) at the position in the <link list.csdoc>List</link> referenced by the numeric expression <arg>index</arg>. The type of the inserted value or List must match the type of the receiving List. List index values are one-based, so the index must be between 1 and one past the length of the List. If the index is <logiccolor>1</logiccolor>, the values are inserted at the beginning of the List. If the value is <logiccolor>List.length() + 1</logiccolor>, the values are inserted at the end of the List (as would happen with the <logiccolor>List.add</logiccolor> function).
 
 
 <subheader>Return Value</subheader>
@@ -24,16 +24,16 @@ The function returns the number of the values inserted into the List. The functi
 List string eligible_head_names;
 
 do numeric counter = 1 while counter <= count(PERSON_REC)
-	
+
 	if AGE(counter) >= 15 and USUAL_MEMBER(counter) = 1 then
-	
+
 		// insert the names in sorted order
 		numeric insert_index;
-		
+
 		do insert_index = 1 while insert_index <= eligible_head_names.length()
 			and eligible_head_names(insert_index) <= NAME(counter)
 		enddo;
-		
+
 		eligible_head_names.insert(insert_index, NAME(counter));
 
 	endif;
@@ -42,4 +42,4 @@ enddo;
 </logic>
 
 
-<seealso list.hgt list_add_function.hgt />
+<seealso list.csdoc list_add_function.csdoc />

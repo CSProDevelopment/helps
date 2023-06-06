@@ -1,7 +1,7 @@
 ﻿<title>Change Keyboard Input</title>
 <context IDD_KEYBOARD_LAYOUTS />
 
-To manually change the keyboard input for a field, view the <link change_field_properties.hgt>field's properties</link> and select <b>Keyboard Input</b> -> <b>Change</b>.
+To manually change the keyboard input for a field, view the <link change_field_properties.csdoc>field's properties</link> and select <b>Keyboard Input</b> -> <b>Change</b>.
 
 <center><image keyboard_input.png /></center>
 
@@ -21,4 +21,4 @@ In the above scenario, the keyboard input method will only be modified for Field
 
 When CSEntry loads the data entry program, it also loads any keyboard input methods that are not currently active on the machine. The input methods will be unloaded when CSEntry terminates. However, some input methods require additional files that do not come in a standard Windows installation. CSEntry can only use input methods that contain all the required files. If the files do not exist, the Default Keyboard will be used for those fields. Before deploying your application you will want to ensure that the required input methods are installed on each keyer's machine.
 
-<seealso changekeyboard_function.hgt change_field_properties_for_multiple_fields.hgt />
+<seealso changekeyboard_function.csdoc change_field_properties_for_multiple_fields.csdoc />

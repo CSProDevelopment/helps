@@ -27,7 +27,7 @@ PROC USER_NAME
 		errmsg("You, %s, do not have permission to use device %s.",strip(USER_NAME),getdeviceid());
 		reenter;
 
-	endif; 
+	endif;
 </logic>
 
-<seealso getoperatorid_function.hgt getusername_function.hgt getbluetoothname_function.hgt />
+<seealso getoperatorid_function.csdoc getusername_function.csdoc getbluetoothname_function.csdoc />

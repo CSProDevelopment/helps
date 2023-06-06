@@ -9,7 +9,7 @@ CSPro DB files are <link https://www.sqlite.org>SQLite</link> database files. SQ
 
 The structure of the database is based on the data dictionary. Each record in the data dictionary corresponds to a table in the database. The database tables have the same name as the record in the dictionary. Each item in the record corresponds to a column in the table with the same name as the dictionary item. The ID items from the dictionary are stored in a table named <b>level-1</b> (two level dictionaries will have a second table named <b>level-2</b> for the second level id-items). The tables for each record are linked to the table for the level by the primary key of the level table which is named <b>level 1-id</b>.
 
-<image popstan_schema.png /> 
+<image popstan_schema.png />
 
 In the example above, the dictionary has three records: <b>PERSON_REC</b>, <b>HOUSING_REC</b> and <b>DEATHS_REC</b>. The database therefore has the corresponding records <b>person_rec</b>, <b>housing_rec</b> and <b>deaths_rec</b>. The dictionary ID items are in the table <b>level-1</b> which is linked to the record tables by the column <b>level-1-id</b>.
 
@@ -17,7 +17,7 @@ Each record table has an auto-increment integer primary key column named <i>&ltr
 
 Records with multiple occurrences have an additional column named <b>occ</b> which represents the occurrence number. If a case in the data file has, for example, three occurrences of a particular record then the values of the <b>occ</b> column for the rows in the record table for that case will be 1, 2 and 3.
 
-All CSPro DB files also have a table named <b>cases</b> that contains additional information about each case in the data file such as the case label, whether or not the case was deleted, and whether or not it was partially saved. The ID column of the <b>cases</b> table is a <link uuid_function.hgt>UUID</link> stored as a string. The database table for the first level in the dictionary is linked to the cases table by this ID column.
+All CSPro DB files also have a table named <b>cases</b> that contains additional information about each case in the data file such as the case label, whether or not the case was deleted, and whether or not it was partially saved. The ID column of the <b>cases</b> table is a <link uuid_function.csdoc>UUID</link> stored as a string. The database table for the first level in the dictionary is linked to the cases table by this ID column.
 
 CSPro DB files also contain additional tables that store field notes as well as information required for data synchronization.
 
@@ -58,4 +58,4 @@ GROUP BY province, district, enumeration_area
 
 Modifying a CSPro DB file using SQL commands is strongly discouraged. Editing the schema or using update and insert queries to modify the data in a CSPro DB file can leave the file in a state where it can no longer be read by CSPro. In addition, any modifications to cases in the data file that do not correctly update the <b>file_revisions</b> and <b>vector_clock</b> tables will leave the file in a state where data synchronization will no longer work correctly. All modifications to the CSPro DB file should be done using CSPro data entry or batch edit applications or CSPro tools.
 
-<seealso sqlquery_function.hgt data_sources.hgt />
+<seealso sqlquery_function.csdoc data_sources.csdoc />

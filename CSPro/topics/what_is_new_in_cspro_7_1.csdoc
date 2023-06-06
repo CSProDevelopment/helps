@@ -5,17 +5,17 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 <subheader>Paradata</subheader>
 
 <list>
-	<li>The introduction of a new system for collecting <link paradata.hgt>paradata</link> during an application's run. The paradata events are saved to a log file with the extension <link paradata_log_file_cslog.hgt>.cslog</link>. You can control what kinds of events are stored by modifying an application's <link properties_paradata.hgt>paradata properties</link>.</li>
+	<li>The introduction of a new system for collecting <link paradata.csdoc>paradata</link> during an application's run. The paradata events are saved to a log file with the extension <link paradata_log_file_cslog.csdoc>.cslog</link>. You can control what kinds of events are stored by modifying an application's <link properties_paradata.csdoc>paradata properties</link>.</li>
 	<li>A new logic function, <logiccolor>paradata</logiccolor>, that can be used to control or query the paradata log.</li>
-	<li>A new tool, <link ParadataViewer::introduction_to_paradata_viewer.hgt>Paradata Viewer</link>, that displays reports about the collected paradata.</li>
-	<li>Another new tool, <link ParadataConcat::introduction_to_paradata_concatenator.hgt>Paradata Concatenator</link>, that combines multiple paradata logs into a single log.</li>
+	<li>A new tool, <link ParadataViewer::introduction_to_paradata_viewer.csdoc>Paradata Viewer</link>, that displays reports about the collected paradata.</li>
+	<li>Another new tool, <link ParadataConcat::introduction_to_paradata_concatenator.csdoc>Paradata Concatenator</link>, that combines multiple paradata logs into a single log.</li>
 </list>
 
 
 <subheader>Deployment</subheader>
 
 <list>
-	<li>A new tool, <link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link>, that deploys one or multiple applications to a server (or a local file) so that they can be downloaded onto interviewer devices.</li>
+	<li>A new tool, <link CSDeploy::introduction_to_deployment.csdoc>Deploy Application</link>, that deploys one or multiple applications to a server (or a local file) so that they can be downloaded onto interviewer devices.</li>
 	<li>Deployed applications can be downloaded using CSEntry on mobile devices.</li>
 </list>
 
@@ -23,7 +23,7 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 <subheader>Reports</subheader>
 
 <list>
-	<li>An interface for generating <link templated_reports.hgt>HTML-templated reports</link> from case data as well as from results from queries into paradata and other data sets.</li>
+	<li>An interface for generating <link templated_reports.csdoc>HTML-templated reports</link> from case data as well as from results from queries into paradata and other data sets.</li>
 	<li>New logic functions, <logiccolor>setreportdata</logiccolor> and <logiccolor>report</logiccolor>, for setting the inputs and creating the reports.</li>
 </list>
 
@@ -31,8 +31,8 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 <subheader>Messages</subheader>
 
 <list>
-	<li>Expanding <link multiple_language_applications.hgt>multiple language application</link> support, messages defined in the <link message_file_mgf.hgt>message file</link> can be specified in multiple languages. These messages, along with string literals wrapped in the <logiccolor>tr</logiccolor> function, will be displayed in the application's current language.</li>
-	<li>Applications can link to multiple <link message_file_mgf.hgt>external message files</link>, which can include messages that override the default system messages.</li>
+	<li>Expanding <link multiple_language_applications.csdoc>multiple language application</link> support, messages defined in the <link message_file_mgf.csdoc>message file</link> can be specified in multiple languages. These messages, along with string literals wrapped in the <logiccolor>tr</logiccolor> function, will be displayed in the application's current language.</li>
+	<li>Applications can link to multiple <link message_file_mgf.csdoc>external message files</link>, which can include messages that override the default system messages.</li>
 </list>
 
 
@@ -47,10 +47,10 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 <subheader>Data Entry</subheader>
 
 <list>
-	<li>A <link data_source_options.hgt>data source option</link> that allows you to specify the number of minutes after which a case will automatically be partially saved.</li>
-	<li><link create_fills_in_questions.hgt>Question text fills</link> can show the return values of user-defined functions.</li>
-	<li>A <link change_data_entry_options.hgt>data entry option</link>, <b>Validate alpha fields</b>, instructs CSEntry to validate values entered into alphanumeric fields using an item's value set, as happens to numeric fields by default.</li>
-	<li>A <link change_data_entry_options.hgt>mobile option</link>, <b>Display value set codes alongside labels</b>, displays a value set's codes in addition to the labels when displaying a field using a control other than a text box.</li>
+	<li>A <link data_source_options.csdoc>data source option</link> that allows you to specify the number of minutes after which a case will automatically be partially saved.</li>
+	<li><link create_fills_in_questions.csdoc>Question text fills</link> can show the return values of user-defined functions.</li>
+	<li>A <link change_data_entry_options.csdoc>data entry option</link>, <b>Validate alpha fields</b>, instructs CSEntry to validate values entered into alphanumeric fields using an item's value set, as happens to numeric fields by default.</li>
+	<li>A <link change_data_entry_options.csdoc>mobile option</link>, <b>Display value set codes alongside labels</b>, displays a value set's codes in addition to the labels when displaying a field using a control other than a text box.</li>
 </list>
 
 
@@ -58,12 +58,12 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 
 <list>
 	<li>An <logiccolor>errmsg</logiccolor>-like function, <logiccolor>warning</logiccolor>, that can be used for "soft check" error messages. These messages will not be displayed to the operator when advancing in the case (such as when resuming from a partial save).</li>
-	<li>A <link multiple_language_applications.hgt>multiple language application</link> function, <logiccolor>tr</logiccolor>, for correctly displaying string literals or numbered messages in the application's current language.</li>
+	<li>A <link multiple_language_applications.csdoc>multiple language application</link> function, <logiccolor>tr</logiccolor>, for correctly displaying string literals or numbered messages in the application's current language.</li>
 	<li>A new function, <logiccolor>countcases</logiccolor>, counts the number of cases in an external file  that meet a certain criterion.</li>
 	<li>New functions, <logiccolor>getproperty</logiccolor> and <logiccolor>setproperty</logiccolor>, for accessing and changing the properties of fields or the entire application.</li>
-	<li>A new function, <logiccolor>logtext</logiccolor>, for writing user-defined messages to the <link paradata.hgt>paradata</link> log file.</li>
+	<li>A new function, <logiccolor>logtext</logiccolor>, for writing user-defined messages to the <link paradata.csdoc>paradata</link> log file.</li>
 	<li>A new function, <logiccolor>sqlquery</logiccolor>, that executes a query on a SQLite database and returns a result set in a variety of formats. Paradata logs are SQLite databases.</li>
-	<li>A new <link message_formatting_options.hgt>message formatter</link>, <logiccolor>"%v"</logiccolor>, that displays items in the format specified in the dictionary.</li>
+	<li>A new <link message_formatting_options.csdoc>message formatter</link>, <logiccolor>"%v"</logiccolor>, that displays items in the format specified in the dictionary.</li>
 	<li>The <logiccolor>timestamp</logiccolor> function returns the number of milliseconds in addition to the seconds.</li>
 	<li> A new function, <logiccolor>timestring</logiccolor>, returns a custom formatted date and time string based on a given timestamp.</li>
 	<li>The <logiccolor>sysdate</logiccolor> and <logiccolor>systime</logiccolor> functions can return a formatted local date or time from a UNIX time value returned by the <logiccolor>timestamp</logiccolor> function.</li>
@@ -72,7 +72,7 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 	<li>The <logiccolor>writecase</logiccolor> and <logiccolor>delcase</logiccolor> functions now work in a <logiccolor>forcase</logiccolor> loop.</li>
 	<li>Multiple string literals are automatically concatenated into a single string when separated by whitespace (e.g., <logiccolor>"A" "B"</logiccolor> is evaluated as <logiccolor>"AB"</logiccolor>).</li>
 	<li>The <logiccolor>selcase</logiccolor>, <logiccolor>show</logiccolor>, and <logiccolor>showarray</logiccolor> functions can display title headings.</li>
-	<li>The <logiccolor>setfont</logiccolor> function now sets the <link capture_types.hgt>number pad's</link> font differently from that of the other capture types.</li>
+	<li>The <logiccolor>setfont</logiccolor> function now sets the <link capture_types.csdoc>number pad's</link> font differently from that of the other capture types.</li>
 	<li>In a data entry application, when splitting items from a multiply occurring record into multiple groups, you no longer have to specify an occurrence number when referring to items on the split groups (assuming that you want the value of the current occurrence).</li>
 </list>
 
@@ -82,9 +82,9 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 <list>
 	<li>From Data Viewer's <b>Tools</b> menu, you can launch the <b>Export Data</b> and <b>Tabulate Frequencies</b> tools to directly process the cases of the open file.</li>
 	<li>Data Viewer can display each value's label instead of only the code.</li>
-	<li>Data Viewer now shows additional information about data files, including the synchronization history. The tool also has new <link DataViewer::filtering_cases_and_display_options.hgt>filtering options</link> and can show deleted or duplicate cases and can display the contents of a file in sorted key order.</li>
-	<li>Excel to CSPro conversions can now be run via <link Excel2CSPro::running_conversions_from_the_command_line.hgt>PFF files</link> to streamline deployment conversions.</li>
-	<li>The Excel to CSPro tool has <link Excel2CSPro::mapping_dictionary_to_excel.hgt>two new options</link>, one for conditionally running conversions based on the existence of file changes, and the other to allow you to update existing files rather than to always create new files.</li>
+	<li>Data Viewer now shows additional information about data files, including the synchronization history. The tool also has new <link DataViewer::filtering_cases_and_display_options.csdoc>filtering options</link> and can show deleted or duplicate cases and can display the contents of a file in sorted key order.</li>
+	<li>Excel to CSPro conversions can now be run via <link Excel2CSPro::running_conversions_from_the_command_line.csdoc>PFF files</link> to streamline deployment conversions.</li>
+	<li>The Excel to CSPro tool has <link Excel2CSPro::mapping_dictionary_to_excel.csdoc>two new options</link>, one for conditionally running conversions based on the existence of file changes, and the other to allow you to update existing files rather than to always create new files.</li>
 </list>
 
 
@@ -96,4 +96,4 @@ This is a detailed list of changes in CSPro 7.1. For a more general overview, se
 </list>
 
 
-<seealso what_is_new_in_cspro.hgt />
+<seealso what_is_new_in_cspro.csdoc />
