@@ -1,4 +1,4 @@
-﻿<title>List.Sort Function</title>
+﻿<title>List.sort Function</title>
 
 
 <subheader>Format</subheader>
@@ -10,17 +10,18 @@ b = list_name.sort(『ascending ‖ descending』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>list.sort</logiccolor> function sorts the values within a <link list.hgt>list</link>. An optional argument, <logiccolor>ascending</logiccolor> or <logiccolor>descending</logiccolor>, allows for the specification of the sort order. If not specified, the default sort order is ascending. String values are sorted in case sensitive order, so <logiccolor>"c"</logiccolor> is recognized as different from <logiccolor>"C"</logiccolor>.
+The <logiccolor>List.sort</logiccolor> function sorts the values within a <link list.hgt>List</link>. An optional argument, <logiccolor>ascending</logiccolor> or <logiccolor>descending</logiccolor>, allows for the specification of the sort order. If not specified, the default sort order is ascending. String values are sorted in case sensitive order, so <logiccolor>"c"</logiccolor> is recognized as different from <logiccolor>"C"</logiccolor>.
+
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true). If the list is read-only, the function returns <logiccolor>default</logiccolor>.
+The function returns a logical value of 1 (true). If the List is read-only, the function returns <logiccolor>default</logiccolor>.
 
 
 <subheader>Example</subheader>
 
 <logic>
-list string children_names;
+List string children_names;
 
 for POPULATION_RECORD where HH_RELATIONSHIP = 3 do
 	children_names.add(HH_NAME);

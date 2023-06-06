@@ -1,4 +1,5 @@
-﻿<title>Geometry.Save Function</title>
+﻿<title>Geometry.save Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,19 +7,22 @@
 b = geometry_name.save(<arg>filename</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>geometry.save</logiccolor> function saves the vector data (points, lines, and polygons) in the <link geometry.hgt>geometry</link> named <logiccolor>geometry_name</logiccolor> to the file specified by the string expression <arg>filename</arg>. The data is saved in <link https://geojson.org>GeoJSON</link> format.
+The <logiccolor>Geometry.save</logiccolor> function saves the vector data (points, lines, and polygons) in the <link geometry.hgt>Geometry</link> object named <logiccolor>geometry_name</logiccolor> to the file specified by the string expression <arg>filename</arg>. The data is saved in <link https://geojson.org>GeoJSON</link> format.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the file was successfully saved or 0 (false) otherwise.
 
+
 <subheader>Example</subheader>
 
 <logic>
 // Declare a geometry
-geometry outline;
+Geometry outline;
 	
 // Have the user walk the outline of a polygon
 if outline.walkPolygon() then
@@ -28,5 +32,6 @@ if outline.walkPolygon() then
 	
 endif;
 </logic>
+
 
 <seealso geometry.hgt geometry_load_function.hgt />

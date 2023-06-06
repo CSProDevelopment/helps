@@ -48,7 +48,7 @@ namespace Colorizer
         {
             string assembly_name = new AssemblyName(args.Name).Name;
 
-            if( assembly_name.Equals("zBridgeCLR") || assembly_name.Equals("zLogicCLR") )
+            if( assembly_name.Equals("zUtilCLR") || assembly_name.Equals("zLogicCLR") )
             {
                 var possible_directories = new List<string>();
 

@@ -42,7 +42,7 @@ There are some options specific to mobile devices:
 
 If supplying a <arg>dictionary_name</arg>, the function returns the folder name of the dictionary file (.dcf) itself, not of the data file associated with the dictionary. On mobile devices, the function returns the folder name of the .pen file because dictionary files (.dcf) are not used directly when running .pen applications.
 
-If providing a <arg>file_handler</arg> (declared in a <logiccolor>file</logiccolor> statement), the function returns the folder name containing the text file associated with the file handler.
+If providing a <arg>file_handler</arg> (declared in a <logiccolor>File</logiccolor> statement), the function returns the folder name containing the text file associated with the file handler.
 
 
 <subheader>Return Value</subheader>
@@ -53,7 +53,7 @@ The function returns a string containing the fully qualified folder name.
 <subheader>Example</subheader>
 
 <logic>
-setfile(log_file, pathname(Desktop) + "Census Daily Report.txt", create);
+setfile(log_file, Path.concat(Desktop, "Census Daily Report.txt"), create);
 </logic>
 
 

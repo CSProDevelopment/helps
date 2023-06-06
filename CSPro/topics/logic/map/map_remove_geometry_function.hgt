@@ -1,4 +1,5 @@
-﻿<title>Map.RemoveGeometry Function</title>
+﻿<title>Map.removeGeometry Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,13 +7,16 @@
 b = map_name.removeGeometry(<arg>geometryId</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>map.removeGeometry</logiccolor> function removes geometry from the map <logiccolor>map_name</logiccolor>. <arg>geometryId</arg> should be the id returned by <logiccolor>map.addGeometry</logiccolor> when the geometry was added to the map.
+The <logiccolor>Map.removeGeometry</logiccolor> function removes Geometry from the Map <logiccolor>map_name</logiccolor>. <arg>geometryId</arg> should be the id returned by <logiccolor>Map.addGeometry</logiccolor> when the Geometry was added to the Map.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the geometry was found and was successfully removed and 0 (false) if there is an error.
+
 
 <subheader>Example</subheader>
 
@@ -20,10 +24,10 @@ The function returns a logical value of 1 (true) if the geometry was found and w
 PROC GLOBAL
 
 // Declare a map
-map mymap;
+Map mymap;
 
 // Declare a geometry to hold boundary polygon
-geometry boundary;
+Geometry boundary;
 
 // Declare a variable to hold the id of the boundary on the map
 numeric boundaryGeometryId;
@@ -59,5 +63,6 @@ mymap.addTextButton("Boundary", toggleBoundary());
 // Display the map
 mymap.show();
 </logic>
+
 
 <seealso map.hgt geometry.hgt map_add_geometry_function.hgt map_clear_geometry_function.hgt />

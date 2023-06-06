@@ -15,6 +15,7 @@ namespace Help_Generator
 
         private HelpComponents _helpComponents;
         private GenerationType _generationType;
+        private string _extraParam;
 
         private string _projectName;
         private string _outputChmFilename;
@@ -49,12 +50,13 @@ namespace Help_Generator
 		private bool DoGenerateWebsite { get { return ( !CompileOnly && !GenerateOnlyChm && _helpComponents.settings.HtmlOutput ); } }
 		private bool DoGeneratePdf { get { return ( !CompileOnly && !GenerateOnlyChm && _helpComponents.settings.PdfOutput ); } }
 
-        public GenerateHelpsForm(HelpComponents helpComponents, GenerationType generationType)
+        public GenerateHelpsForm(HelpComponents helpComponents, GenerationType generationType, string extraParam)
         {
             InitializeComponent();
 
             _helpComponents = helpComponents;
             _generationType = generationType;
+            _extraParam = extraParam;
 
             _colorizer = new CSPro.Logic.Colorizer(Handle.ToInt32());
 
@@ -376,37 +378,58 @@ namespace Help_Generator
 
 
                     if( unusedSharedTopics.Contains(preprocessedTopic) )
+                    {
                         _backgroundThread.ReportProgress(0,String.Format("Skipping unused shared topic \"{0}\"...",preprocessedTopic.Title));
+                    }
 
                     else
                     {
-                        _backgroundThread.ReportProgress(0,String.Format("Processing topic \"{0}\"...",preprocessedTopic.Title));
+                        bool processTopic = true;
 
-                        Topic topic = new Topic(preprocessedTopic);
-                        string topicText = File.ReadAllText(preprocessedTopic.Filename);
-
-                        // generate the topic for the CHM
-                        string htmlFilename = _chmTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-                        string html = topic.CompileForHtml(_colorizer, topicText, _helpComponents, _chmTopicCompilerSettings);
-
-						if( DoGenerateChm )
-							File.WriteAllText(Path.Combine(_temporaryFilesPath,htmlFilename),html,Encoding.UTF8);
-
-                        _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
-
-                        // generate the topic for the website
-						if( DoGenerateWebsite )
-						{
-							htmlFilename = _websiteTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
-							html = topic.CompileForHtml(_colorizer, topicText, _helpComponents, _websiteTopicCompilerSettings);
-							File.WriteAllText(Path.Combine(_outputWebsitePath,htmlFilename),html,Encoding.UTF8);
-						}
-
-                        // generate the topic for the PDF
-                        if( twPdf != null )
+                        if( _extraParam != null )
                         {
-                            html = topic.CompileForHtml(_colorizer, topicText, _helpComponents, _pdfTopicCompilerSettings);
-                            twPdf.WriteLine(html);
+                            if( _extraParam == preprocessedTopic.Filename )
+                            {
+                                _extraParam = null;
+                            }
+
+                            else
+                            {
+                                processTopic = false;
+                                _backgroundThread.ReportProgress(0, String.Format("Skipping topic \"{0}\"...",preprocessedTopic.Title));
+                            }                            
+                        }
+
+                        if( processTopic )
+                        {
+                            _backgroundThread.ReportProgress(0, $"Processing topic \"{preprocessedTopic.Title}\" ({Path.GetFileName(preprocessedTopic.Filename)})...");
+
+                            Topic topic = new Topic(preprocessedTopic);
+                            string topicText = File.ReadAllText(preprocessedTopic.Filename);
+
+                            // generate the topic for the CHM
+                            string htmlFilename = _chmTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
+                            string html = topic.CompileForHtml(_colorizer, topicText, _helpComponents, _chmTopicCompilerSettings);
+
+						    if( DoGenerateChm )
+							    File.WriteAllText(Path.Combine(_temporaryFilesPath,htmlFilename),html,Encoding.UTF8);
+
+                            _outputTopicFilenames.Add(preprocessedTopic,htmlFilename);
+
+                            // generate the topic for the website
+						    if( DoGenerateWebsite )
+						    {
+							    htmlFilename = _websiteTopicCompilerSettings.GetHtmlFilename(preprocessedTopic);
+							    html = topic.CompileForHtml(_colorizer, topicText, _helpComponents, _websiteTopicCompilerSettings);
+							    File.WriteAllText(Path.Combine(_outputWebsitePath,htmlFilename),html,Encoding.UTF8);
+						    }
+
+                            // generate the topic for the PDF
+                            if( twPdf != null )
+                            {
+                                html = topic.CompileForHtml(_colorizer, topicText, _helpComponents, _pdfTopicCompilerSettings);
+                                twPdf.WriteLine(html);
+                            }
                         }
                     }
 

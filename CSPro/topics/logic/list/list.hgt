@@ -1,51 +1,51 @@
 ﻿<title>List Object</title>
 
-In logic, a <logiccolor>list</logiccolor> is similar to an <link array.hgt>one-dimensional array</link> but without a defined size. That is, a list is a collection of values, either numeric or string, that can grow or shrink in size.
+In logic, a <logiccolor>List</logiccolor> is similar to an <link array.hgt>one-dimensional array</link> but without a defined size. That is, a List is a collection of values, either numeric or string, that can grow or shrink in size.
 
 
 <subheader>Functionality</subheader>
 
-A list is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
+A List is a CSPro logic object and the following functions can be called via <link object_dot_notation.hgt>dot notation</link>:
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor list>add</logiccolor></cell><cell>Adds a single value, or a list of values, to the end of a list.</cell>
-	<cell><logiccolor list>clear</logiccolor></cell><cell>Removes all values from the list.</cell>
-	<cell><logiccolor list>insert</logiccolor></cell><cell>Inserts a single value, or a list of values, at a given position in the list.</cell>
-	<cell><logiccolor list>length</logiccolor></cell><cell>Returns the size of the list.</cell>
-	<cell><logiccolor list>remove</logiccolor></cell><cell>Removes the value at a given position from the list.</cell>
-	<cell><logiccolor list>removeDuplicates</logiccolor></cell><cell>Removes duplicate values from the list.</cell>
-	<cell><logiccolor list>removeIn</logiccolor></cell><cell>Removes values from the list that are specified in an <link in_operator.hgt>in list</link>.</cell>
-	<cell><logiccolor list>seek</logiccolor></cell><cell>Returns the index of a specified value.</cell>
-	<cell><logiccolor list>show</logiccolor></cell><cell>Displays the list's values (similarly to <logiccolor>accept</logiccolor>) and returns the index of the operator's selection.</cell>
-	<cell><logiccolor list>sort</logiccolor></cell><cell>Sorts the list's values in ascending or descending order.</cell>
+	<cell><logiccolor List>add</logiccolor></cell><cell>Adds a single value, or a List of values, to the end of a List.</cell>
+	<cell><logiccolor List>clear</logiccolor></cell><cell>Removes all values from the List.</cell>
+	<cell><logiccolor List>insert</logiccolor></cell><cell>Inserts a single value, or a List of values, at a given position in the List.</cell>
+	<cell><logiccolor List>length</logiccolor></cell><cell>Returns the size of the List.</cell>
+	<cell><logiccolor List>remove</logiccolor></cell><cell>Removes the value at a given position from the List.</cell>
+	<cell><logiccolor List>removeDuplicates</logiccolor></cell><cell>Removes duplicate values from the List.</cell>
+	<cell><logiccolor List>removeIn</logiccolor></cell><cell>Removes values from the List that are specified in an <link in_operator.hgt>in list</link>.</cell>
+	<cell><logiccolor List>seek</logiccolor></cell><cell>Returns the index of a specified value.</cell>
+	<cell><logiccolor List>show</logiccolor></cell><cell>Displays the List object's values (similarly to <logiccolor>accept</logiccolor>) and returns the index of the operator's selection.</cell>
+	<cell><logiccolor List>sort</logiccolor></cell><cell>Sorts the List object's values in ascending or descending order.</cell>
 </table>
 
-In addition to these object functions, lists can be filled when used as arguments to functions such as <logiccolor>dirlist</logiccolor>, <logiccolor>keylist</logiccolor>, and <logiccolor>hashmap.getKeys</logiccolor>.
+In addition to these object functions, List objects can be filled when used as arguments to functions such as <logiccolor>dirlist</logiccolor>, <logiccolor>keylist</logiccolor>, and <logiccolor>hashmap.getKeys</logiccolor>.
 
 
 <subheader>Assignments</subheader>
 
-Lists can be assigned to other lists, which will replace the initial list with the values of the assigned list:
+List objects can be assigned to other List objects, which will replace the initial List with the values of the assigned List:
 
 <logicsyntax>
 <arg>list_name</arg> = <arg>another_list_name</arg>;
 </logicsyntax>
 
-Individual elements of lists can also be modified or added by using a one-based index:
+Individual elements of List objects can also be modified or added by using a one-based index:
 
 <logicsyntax>
 <arg>list_name</arg>(<arg>index</arg>) = <arg>modify_value</arg>;
 <arg>list_name</arg>(list_name.length() + 1) = <arg>add_value</arg>;
 </logicsyntax>
 
-When a list is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
+When a List is used as an argument to a <link user_defined_functions.hgt>user-defined function</link>, it is <link function_arguments_ref.hgt>passed by reference</link>.
 
 
 <subheader>Example</subheader>
 
 <logic>
-list string respondent_query;
+List string respondent_query;
 
 do numeric counter = 1 while counter <= count(NAME)
 	respondent_query.add(NAME(counter));
@@ -53,5 +53,6 @@ enddo;
 
 numeric respondent_index = respondent_query.show("Who in the household is responding to questions?");
 </logic>
+
 
 <seealso array.hgt hashmap.hgt valueset.hgt />

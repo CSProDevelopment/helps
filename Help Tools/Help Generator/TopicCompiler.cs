@@ -962,7 +962,7 @@ namespace Help_Generator
                     int index = ( c * rows ) + r;
 
                     if( index < reservedWords.Count )
-                        sb.Append(_colorizer.LogicToHelpsInline(reservedWords[index].ToLower(), null));
+                        sb.Append(_colorizer.LogicToHelpsInline(reservedWords[index], null));
 
                     sb.Append("</td>");
                 }

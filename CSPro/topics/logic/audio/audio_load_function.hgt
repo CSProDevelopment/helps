@@ -1,4 +1,4 @@
-﻿<title>Audio.Load Function</title>
+﻿<title>Audio.load Function</title>
 
 <subheader>Format</subheader>
 
@@ -9,9 +9,9 @@ b = audio_name.load(<arg>audio_filename</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>audio.load</logiccolor> function reads the audio file named <arg>audio_filename</arg> and stores the audio data contained in the file in an <link audio.hgt>audio</link> object. The loaded audio can then be played back using <logiccolor>audio.play</logiccolor> or combined with other audio using <logiccolor>audio.concat</logiccolor>.
+The <logiccolor>Audio.load</logiccolor> function reads the audio file named <arg>audio_filename</arg> and stores the audio data contained in the file in an <link audio.hgt>Audio</link> object. The loaded audio can then be played back using <logiccolor>Audio.play</logiccolor> or combined with other audio using <logiccolor>Audio.concat</logiccolor>.
 
-CSPro can load and play most audio files in any of the following formats: m4a, mp4, mp3, wav, 3gp, flac, ogg, mkv. However, only m4a files (AAC encoded audio in an MPEG-4 container) can be used with the functions <logiccolor>audio.concat</logiccolor>, <logiccolor>audio.length</logiccolor>, <logiccolor>audio.record</logiccolor>, and <logiccolor>audio.recordInteractive</logiccolor>.
+CSPro can load and play most audio files in any of the following formats: m4a, mp4, mp3, wav, 3gp, flac, ogg, mkv. However, only m4a files (AAC encoded audio in an MPEG-4 container) can be used with the functions <logiccolor>Audio.concat</logiccolor>, <logiccolor>Audio.length</logiccolor>, <logiccolor>Audio.record</logiccolor>, and <logiccolor>Audio.recordInteractive</logiccolor>.
 
 
 <subheader>Return Value</subheader>
@@ -22,7 +22,7 @@ The function returns a logical value of 1 (true) if the file was loaded and 0 (f
 <subheader>Example</subheader>
 
 <logic>
-audio recording;
+Audio recording;
 if recording.load("myrecording.m4a") then
 	recording.play();
 endif;

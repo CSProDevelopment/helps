@@ -1,4 +1,5 @@
-﻿<title>Image.Load Function</title>
+﻿<title>Image.load Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -11,15 +12,15 @@ b = image_name.load(<arg>valueset_name</arg>, <arg>value</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>image.load</logiccolor> function reads an image from a file and stores its contents in the <link image.hgt>image</link> object. In the first version of the function, the string expression <arg>image_filename</arg> specifies the location of the image on the disk.
+The <logiccolor>Image.load</logiccolor> function reads an image from a file and stores its contents in the <link image.hgt>Image</link> object. In the first version of the function, the string expression <arg>image_filename</arg> specifies the location of the image on the disk.
 
 The second version simplifies loading <link value_set_images.hgt>value set images</link>. It is equivalent to calling:
 
-<logicsyntax>
+<logicsyntax Image>
 image_name.load(getimage(<arg>valueset_name</arg>, <arg>value</arg>));
 </logicsyntax>
 
-The following types of images can be loaded: JPEG (.jpg/.jpeg), PNG (.png), BMP (.bmp), and GIF (.gif). Although GIF files can be loaded, the <logiccolor>image.save</logiccolor> function cannot files in the GIF format.
+The following types of images can be loaded: JPEG (.jpg/.jpeg), PNG (.png), BMP (.bmp), and GIF (.gif). Although GIF files can be loaded, the <logiccolor>Image.save</logiccolor> function cannot files in the GIF format.
 
 
 <subheader>Return Value</subheader>

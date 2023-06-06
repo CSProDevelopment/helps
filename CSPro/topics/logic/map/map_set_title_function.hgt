@@ -1,4 +1,5 @@
-﻿<title>Map.SetTitle Function</title>
+﻿<title>Map.setTitle Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,19 +7,22 @@
 b = map_name.setTitle(<arg>title</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>map.setTitle</logiccolor> function sets the text that is displayed directly above the map to the value of the string expression <arg>title</arg>. This can be used to display an instruction to the user such as "Tap on the map at the location of the household." By default the instruction is empty and is not shown. To remove the title call <logiccolor>map.setTitle("")</logiccolor> function with an empty string.
+The <logiccolor>Map.setTitle</logiccolor> function sets the text that is displayed directly above the map to the value of the string expression <arg>title</arg>. This can be used to display an instruction to the user such as "Tap on the map at the location of the household." By default the instruction is empty and is not shown. To remove the title call <logiccolor>Map.setTitle("")</logiccolor> function with an empty string.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true).
 
+
 <subheader>Example</subheader>
 
 <logic>
 // Declare a map
-map mymap;
+Map mymap;
 
 // Set the title text above the map
 mymap.setTitle("Tap on the map to place a household");
@@ -28,5 +32,6 @@ mymap.setOnClick(placeHousehold);
 // Display the map
 mymap.show();
 </logic>
+
 
 <seealso map.hgt />

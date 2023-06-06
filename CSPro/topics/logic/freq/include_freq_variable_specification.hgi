@@ -51,8 +51,8 @@ include(CENSUS_DICT)
 If you do not need to exclude any variables, the <logiccolor>include</logiccolor> command is optional. For example, these unnamed frequency statements are the same:
 
 <logic>
-freq include(P03_SEX);
-freq(P03_SEX);
+Freq include(P03_SEX);
+Freq(P03_SEX);
 </logic>
 
 
@@ -61,7 +61,7 @@ freq(P03_SEX);
 By default, when frequencies are tallied for a multiply-occurring item, all of the occurrences of the item are tallied. For example, assuming that <logiccolor>P03_SEX</logiccolor> is on a record with 50 occurrences, coding this will tally all defined occurrences of <logiccolor>P03_SEX</logiccolor>:
 
 <logic>
-freq include(P03_SEX);
+Freq include(P03_SEX);
 </logic>
 
 If the first house is vacant, then no sex values are tallied; if the second house has three people, then three sex values are tallied; and so on.
@@ -69,7 +69,7 @@ If the first house is vacant, then no sex values are tallied; if the second hous
 If you would like to tally a specific occurrence, you can specify the occurrence in the <logiccolor>include</logiccolor>/<logiccolor>exclude</logiccolor> list. For example, this would create two tables, one for all sex occurrences, and one for the head's sex (assuming that the head is the first occurrence):
 
 <logic>
-freq include(P03_SEX, P03_SEX(1));
+Freq include(P03_SEX, P03_SEX(1));
 </logic>
 
 You can specify occurrence values when using items or records. <logiccolor>PERSON_REC(1)</logiccolor>, for example, would create tables for the first occurrence of the items in <logiccolor>PERSON_REC</logiccolor>. If you specify an occurrence, the value will be tallied regardless of whether the occurrence exists. For example, while <logiccolor>P03_SEX</logiccolor> would not tally vacant households, <logiccolor>P03_SEX(1)</logiccolor> will include tallies of blank values for vacant households.
@@ -77,14 +77,14 @@ You can specify occurrence values when using items or records. <logiccolor>PERSO
 An optional command, <logiccolor>disjoint</logiccolor>, is a shortcut way of indicating that a frequency table should be created for every occurrence of a variable. For example, this code would create a table for each of the occurrences of <logiccolor>P03_SEX</logiccolor>, resulting in 50 tables (for occurrence 1, occurrence 2, and so on until occurrence 50):
 
 <logic>
-freq include(P03_SEX)
+Freq include(P03_SEX)
 	 disjoint;
 </logic>
 
 When using <logiccolor>disjoint</logiccolor>, you can use <logiccolor>(*)</logiccolor> as an occurrence to specify that you would like to ignore the disjoint setting. For example, this code would create 49 tables (for the combined occurrences, for occurrence 3, occurrence 4, and so on until occurrence 50).
 
 <logic>
-freq include(P03_SEX(*), P03_SEX)
+Freq include(P03_SEX(*), P03_SEX)
 	 exclude(P03_SEX(1), P03_SEX(2))
 	 disjoint;
 </logic>

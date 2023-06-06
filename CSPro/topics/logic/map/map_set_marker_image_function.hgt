@@ -1,4 +1,5 @@
-﻿<title>Map.SetMarkerImage Function</title>
+﻿<title>Map.setMarkerImage Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,11 +7,13 @@
 b = map_name.setMarkerImage(<arg>markerId</arg>, <arg>pathToImage</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>map.setMarkerImage</logiccolor> sets the icon for the marker with id <arg>markerId</arg> on <link map.hgt>map</link> <logiccolor>map_name</logiccolor>. <arg>markerId</arg> is the id that was returned by <logiccolor>map.addMarker</logiccolor> when the marker was added to the map. <arg>pathToImage</arg> is the path to a file containing the image to display as the marker icon. Standard image files (PNG, JPEG, BMP) are supported.
+The <logiccolor>Map.setMarkerImage</logiccolor> sets the icon for the marker with id <arg>markerId</arg> on <link map.hgt>Map</link> <logiccolor>map_name</logiccolor>. <arg>markerId</arg> is the id that was returned by <logiccolor>Map.addMarker</logiccolor> when the marker was added to the map. <arg>pathToImage</arg> is the path to a file containing the image to display as the marker icon. Standard image files (PNG, JPEG, BMP) are supported.
 
-If the marker icon was previously set with <logiccolor>map.setMarkerText</logiccolor>, calling <logiccolor>map.setMarkerImage</logiccolor> will replace the marker text with the image.
+If the marker icon was previously set with <logiccolor>Map.setMarkerText</logiccolor>, calling <logiccolor>Map.setMarkerImage</logiccolor> will replace the marker text with the image.
+
 
 <subheader>Return Value</subheader>
 
@@ -21,7 +24,7 @@ The function returns a logical value of 1 (true) if the marker was found and the
 
 <logic>
 // Declare a map
-map mymap;
+Map mymap;
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
 numeric markerId = mymap.addMarker(38.84839, -76.931098);
@@ -31,7 +34,7 @@ mymap.setMarkerImage(markerId, "resources/marker_icon.png");
 
 // Display the map
 mymap.show();
-
 </logic>
+
 
 <seealso map.hgt map_add_marker_function.hgt />

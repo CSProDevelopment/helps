@@ -37,7 +37,7 @@ The function returns a string with the appropriate characters encoded. If the de
 
 <logic>
 // write to a HTML file
-file html_file;
+File html_file;
 
 html_file.write("<p>Enumerator name: %s</p>", encode(strip(ENUMERATOR_NAME)));
 
@@ -46,7 +46,7 @@ html_file.write("<p><img src='file:///%s' alt='House' /></p>", encode(URI, house
 
 
 // write to a CSV file
-file csv_file;
+File csv_file;
 
 encode(CSV);
 csv_file.write("Address,Head of Household");

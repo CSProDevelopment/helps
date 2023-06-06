@@ -1,4 +1,5 @@
-﻿<title>Geometry.Perimeter Function</title>
+﻿<title>Geometry.perimeter Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,21 +7,24 @@
 d = geometry_name.perimeter();
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>geometry.perimeter</logiccolor> function computes the perimeter, in meters, of the polygons contained in the <link geometry.hgt>geometry</link> named <logiccolor>geometry_name</logiccolor>. If the geometry object contains multiple polygons, this function returns the sum of the perimeters of all of these polygons. Points and lines in the geometry are ignored, so if the geometry contains only points and lines, the perimeter will be zero.
+The <logiccolor>Geometry.perimeter</logiccolor> function computes the perimeter, in meters, of the polygons contained in the <link geometry.hgt>Geometry</link> object named <logiccolor>geometry_name</logiccolor>. If the Geometry object contains multiple polygons, this function returns the sum of the perimeters of all of these polygons. Points and lines in the geometry are ignored, so if the geometry contains only points and lines, the perimeter will be zero.
 
-The <logiccolor>geometry.perimeter</logiccolor> function uses the Haversine formula to approximate the distance between points of the polygon and makes certain assumptions about the diameter and shape of the earth which may give slightly different results than the perimeter calculated by other software packages.
+The <logiccolor>Geometry.perimeter</logiccolor> function uses the Haversine formula to approximate the distance between points of the polygon and makes certain assumptions about the diameter and shape of the earth which may give slightly different results than the perimeter calculated by other software packages.
+
 
 <subheader>Return Value</subheader>
 
-The function returns the sum of perimeters of all polygons in the geometry object in meters or <logiccolor>default</logiccolor> if the geometry object is empty.
+The function returns the sum of perimeters of all polygons in the Geometry object in meters or <logiccolor>default</logiccolor> if the Geometry object is empty.
+
 
 <subheader>Example</subheader>
 
 <logic>
 // Declare a geometry
-geometry mygeometry;
+Geometry mygeometry;
 
 // Capture polygon
 mygeometry.tracePolygon();
@@ -28,5 +32,6 @@ mygeometry.tracePolygon();
 // Compute the perimeter of the captured polygon
 PERIMETER = mygeometry.perimeter();
 </logic>
+
 
 <seealso geometry.hgt geometry_area_function.hgt />

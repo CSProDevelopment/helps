@@ -4,7 +4,7 @@ When using unedited variables as parameters of your <topic deckarrays.hgt />, it
 
 This following is a hot deck for housing type, based on the source of drinking water (H8), the type of toilet (H9), and whether or not the household has electricity (H10).
 
-<logic>array housingTypeHD(H8_VS1(+),H9_VS1(+),H10_VS1(+)) save;</logic>
+<logic>Array housingTypeHD(H8_VS1(+), H9_VS1(+), H10_VS1(+)) save;</logic>
 
 At the point that housing type (H6) is edited, none of the dependent variables in the hot deck have been edited, so the values can be blank or invalid. That is why, in the array definition, a (+) has been added after the value set names. The (+) gives an extra row for any value that is not in the value set.
 
@@ -42,5 +42,4 @@ To explain selected table rows in words:
 <li>Row 6: If water and electricity are invalid, the hot deck will be based on the value for toilet.</li>
 <li>Row 8: All 3 values are are invalid, the hot deck value will be based on the previous valid household's values.</li></list>
 
-<seealso DeckArrays.hgt Getdeck_Function.hgt Putdeck_Function.hgt />
-
+<seealso deckarrays.hgt getdeck_function.hgt putdeck_function.hgt />

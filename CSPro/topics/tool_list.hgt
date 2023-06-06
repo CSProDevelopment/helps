@@ -1,5 +1,5 @@
 ﻿<title>Tool List</title>
-<context ID_TOOLS_COMPARE ID_TOOLS_CONCAT ID_TOOLS_CSINDEX ID_TOOLS_DATAVIEWER ID_TOOLS_DEPLOY ID_TOOLS_EXCEL2CSPRO ID_TOOLS_EXPORT ID_TOOLS_FREQ ID_TOOLS_OPERATORSTATSVIEWER ID_TOOLS_PACK ID_TOOLS_PARADATACONCAT ID_TOOLS_PARADATAVIEWER ID_TOOLS_PFFEDITOR ID_TOOLS_PRODUCTIONRUNNER ID_TOOLS_REFORMAT ID_TOOLS_SAVEARRAYVIEWER ID_TOOLS_SORT ID_TOOLS_TABLEVIEW ID_TOOLS_TEXTVIEW  ID_TOOLS_TRS ID_TOOLS_TRS_SETUP />
+<context ID_TOOLS_COMPARE ID_TOOLS_CONCAT ID_TOOLS_CSINDEX ID_TOOLS_DATAVIEWER ID_TOOLS_DEPLOY ID_TOOLS_EXCEL2CSPRO ID_TOOLS_EXPORT ID_TOOLS_FREQ ID_TOOLS_OPERATORSTATSVIEWER ID_TOOLS_PACK ID_TOOLS_PARADATACONCAT ID_TOOLS_PARADATAVIEWER ID_TOOLS_PFFEDITOR ID_TOOLS_PRODUCTIONRUNNER ID_TOOLS_REFORMAT ID_TOOLS_SAVEARRAYVIEWER ID_TOOLS_SORT ID_TOOLS_TABLEVIEW ID_TOOLS_TEXTVIEW />
 
 To run a tool, open the <b>Tools</b> menu and select one of the tools listed below. There is a user's guide for most of the tools.
 
@@ -15,10 +15,6 @@ View the contents of any text file up to a maximum of 32,000 characters wide and
 <subheader><link TblView::introduction_to_table_viewer.hgt>Table Viewer</link></subheader>
 
 Examine, but not change, the contents of any CSPro tables file. A table file is produced by running tabulation applications or using the Tabulate Frequencies tool. You can copy, save, or print all or parts of the tables in RTF (for word processing programs), or HTML (for Internet), or TAB delimited (for spreadsheet) formats.
-
-<subheader><link TRSWin::introduction_to_table_retrieval.hgt>Table Retrieval</link></subheader>
-
-Retrieve and display tables, maps, and other previously prepared documents from a large database of documents based on geography, subject matter, and title. It is very useful as a data dissemination tool.
 
 
 <subheader><link CSDeploy::introduction_to_deployment.hgt>Deploy Application</link></subheader>
@@ -54,10 +50,6 @@ Compare the contents of two data files and identify the differences. The data fi
 <subheader><link CSConcat::introduction_to_concatenate_data.hgt>Concatenate Data</link></subheader>
 
 Concatenate (join end-to-end) two or more CSPro or text files. You do not need a dictionary for this tool when working with text-based files.
-
-<subheader><link TRSSetup::introduction_to_table_retrieval_setup.hgt>Table Retrieval Setup</link></subheader>
-
-Create and modify a set of tables and other documents organized by geographic area, subject and title for use by the Table Retrieval tool.
 
 
 <subheader><link ParadataViewer::introduction_to_paradata_viewer.hgt>Paradata Viewer</link></subheader>
@@ -103,6 +95,10 @@ These tools are no longer distributed with CSPro but are instead available on <l
 
 Convert IMPS and ISSA data dictionaries to CSPro dictionaries, or convert CSPro dictionaries to IMPS or ISSA dictionaries. You can also convert ISSA dictionaries to CSPro dictionary and data entry forms.
 
+<subheader>Convert Shape to Map</subheader>
+
+Convert ESRI ArcView or ArcInfo polygon shape files to a format for Map Viewer.
+
 <subheader>Form Viewer</subheader>
 
 View snapshots of the data collected during a data entry application.
@@ -111,6 +107,10 @@ View snapshots of the data collected during a data entry application.
 
 View, create, and manipulate thematic maps of data.
 
-<subheader>Convert Shape to Map</subheader>
+<subheader>Table Retrieval</subheader>
 
-Convert ESRI ArcView or ArcInfo polygon shape files to a format for Map Viewer.
+Retrieve and display tables, maps, and other previously prepared documents from a large database of documents based on geography, subject matter, and title. It is very useful as a data dissemination tool.
+
+<subheader>Table Retrieval Setup</subheader>
+
+Create and modify a set of tables and other documents organized by geographic area, subject and title for use by the Table Retrieval tool.

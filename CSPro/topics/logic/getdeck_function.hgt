@@ -3,23 +3,23 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-f = getdeck (<arg>array_name</arg>『,<arg>override_dim1</arg>, <arg>override_dim2</arg>, <arg>override_dim3</arg>]』);
+f = getdeck(<arg>array_name</arg>『,<arg>override_dim1</arg>, <arg>override_dim2</arg>, <arg>override_dim3</arg>]』);
 </logicsyntax>
  
 <subheader>Description</subheader>
 
 The <logiccolor>getdeck</logiccolor> function returns the value stored in the <logiccolor>DeckArray</logiccolor> hot deck by using the current value(s) of the <link value_sets_description.hgt>value set</link> items that were defined as dimensions in the DeckArray declaration. The function automatically recodes the values and accesses the proper cell in the hot deck. If any of the DeckArray dimensions are not associated with a value set, then you must specify the desired numeric index when calling the function.
 
-If (+) was specified after any of the array_name dimensions, the <link DeckArray_Leftover_Rows.hgt>"leftover"</link> rows for that dimension will be retrieved whenever an invalid value for that dimension is given.
+If (+) was specified after any of the array_name dimensions, the <link deckarray_leftover_rows.hgt>"leftover"</link> rows for that dimension will be retrieved whenever an invalid value for that dimension is given.
 
-<subheader>Return value</subheader>
+<subheader>Return Value</subheader>
 
-The function returns the value in the hot deck or DEFAULT in the event that the values supplied are not valid entries in the value sets and thus could not be recoded to a proper cell in the hotdeck. Note that DEFAULT will never be returned if all hot deck dimensions allowed <link DeckArray_Leftover_Rows.hgt>"leftover"</link> (i.e., they were defined with a (+)).
+The function returns the value in the hot deck or DEFAULT in the event that the values supplied are not valid entries in the value sets and thus could not be recoded to a proper cell in the hotdeck. Note that DEFAULT will never be returned if all hot deck dimensions allowed <link deckarray_leftover_rows.hgt>"leftover"</link> (i.e., they were defined with a (+)).
 
 <subheader>Example</subheader>
 
 <logic>
-array education_HD_SexAge (SEX_VS, AGE_FOR_EDUCATION_HD_VS) save;
+Array education_HD_SexAge(SEX_VS, AGE_FOR_EDUCATION_HD_VS) save;
 
 // more code ...
 
@@ -31,5 +31,4 @@ PROC EDUCATION
     EDUCATION = getdeck (education_HD_SexAge, 1,28); // override both sex and age
 </logic> 
 
-<seealso DeckArrays.hgt DeckArray_Leftover_Rows.hgt Putdeck_Function.hgt />
-
+<seealso deckarrays.hgt deckarray_leftover_rows.hgt putdeck_function.hgt />

@@ -1,4 +1,4 @@
-image roof_photo;
+Image roof_photo;
 
 if roof_photo.takePhoto("Take a photo of the household's roof.") then
 
@@ -7,7 +7,7 @@ if roof_photo.takePhoto("Take a photo of the household's roof.") then
 	roof_photo.resample(maxWidth := 1600, maxHeight := 1200);
 
 	// save the image using the household key...
-	string base_filename = path.concat(application, "Roof Photos", key(HH_DICT));
+	string base_filename = Path.concat(application, "Roof Photos", key(HH_DICT));
 
 	// ...with 90 quality to prevent the JPEG from being too large
 	roof_photo.save(base_filename + ".jpg", quality := 90);

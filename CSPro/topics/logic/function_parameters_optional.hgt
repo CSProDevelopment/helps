@@ -20,7 +20,7 @@ function FunctionName(numeric parameter1 = <arg>default_number</arg>, string par
 function MyFunction(optional numeric numeric_value, optional string string_value)
 </logicsyntax>
 
-When you call the function, you do not need to supply arguments for optional parameters. If not otherwise defined with the = sign, a number will be set to <logiccolor>notappl</logiccolor> and a string will be set to a blank string. Any object (such as a hashmap, list, etc.) will be set to its default state (an empty hashmap, a blank list, etc.). Once you specify that a parameter is optional, then all parameters after it must also be optional.
+When you call the function, you do not need to supply arguments for optional parameters. If not otherwise defined with the = sign, a number will be set to <logiccolor>notappl</logiccolor> and a string will be set to a blank string. Any object (such as a HashMap, List, etc.) will be set to its default state (an empty HashMap, a blank List, etc.). Once you specify that a parameter is optional, then all parameters after it must also be optional.
 
 You can call the function like this:
 
@@ -71,7 +71,7 @@ end;
 PROC AGE
 
 	errmsg("%s is %d years younger than the head of household (%s)",
-		GetName(), AGE(1) - AGE, GetName(1));
+		   GetName(), AGE(1) - AGE, GetName(1));
 </logic>
 
 

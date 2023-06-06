@@ -84,9 +84,9 @@ namespace Code_Colorizer
                 words.Add(CSPro.Logic.Colorizer.GetReservedWords());
 
                 // PFF
-                words.Add(new SortedSet<string>(CSPro.Bridge.PifFile.GetAppTypeWords()));
-                words.Add(new SortedSet<string>(CSPro.Bridge.PifFile.GetHeadingWords()));
-                words.Add(new SortedSet<string>(CSPro.Bridge.PifFile.GetAttributeWords()));
+                words.Add(new SortedSet<string>(CSPro.Util.PFF.GetAppTypeWords()));
+                words.Add(new SortedSet<string>(CSPro.Util.PFF.GetHeadingWords()));
+                words.Add(new SortedSet<string>(CSPro.Util.PFF.GetAttributeWords()));
 
                 string[] templateWords = new string[]
                 {
@@ -162,6 +162,9 @@ namespace Code_Colorizer
                 ( _bufferType == Processor.BufferType.Pff )     ? "PFF File" :
                 ( _bufferType == Processor.BufferType.Message ) ? "Message File" :
                                                                   "Report (HTML) File");
+
+            // refresh the current coloring
+            editControl_TextChanged(null, null);
         }
 
         private void openMenuItem_Click(object sender, EventArgs e)
@@ -191,11 +194,13 @@ namespace Code_Colorizer
                 editControl.Text = File.ReadAllText(filename);
 
                 _loadedFilename = Path.GetFileName(filename);
-                _bufferType = Path.GetExtension(filename).Equals(".pff", StringComparison.InvariantCultureIgnoreCase)  ? Processor.BufferType.Pff :
-                              Path.GetExtension(filename).Equals(".mgf", StringComparison.InvariantCultureIgnoreCase)  ? Processor.BufferType.Message :
-                              Path.GetExtension(filename).Equals(".html", StringComparison.InvariantCultureIgnoreCase) ? Processor.BufferType.Report :
-                              Path.GetExtension(filename).Equals(".htm", StringComparison.InvariantCultureIgnoreCase)  ? Processor.BufferType.Report :
-                                                                                                                         Processor.BufferType.Logic;
+
+                string extension = Path.GetExtension(filename);
+                _bufferType = extension.Equals(".pff", StringComparison.InvariantCultureIgnoreCase)  ? Processor.BufferType.Pff :
+                              extension.Equals(".mgf", StringComparison.InvariantCultureIgnoreCase)  ? Processor.BufferType.Message :
+                              extension.Equals(".html", StringComparison.InvariantCultureIgnoreCase) ? Processor.BufferType.Report :
+                              extension.Equals(".htm", StringComparison.InvariantCultureIgnoreCase)  ? Processor.BufferType.Report :
+                                                                                                       Processor.BufferType.Logic;
                 RefreshUiElements();
             }
 
@@ -205,6 +210,10 @@ namespace Code_Colorizer
             }
         }
 
+        private void editControl_TextChanged(object sender, EventArgs e)
+        {
+            webBrowser.DocumentText = _processor.GetHtml(editControl.Text, _bufferType);
+        }
 
         private void buttonCopyHtml_Click(object sender, EventArgs e)
         {
@@ -219,6 +228,25 @@ namespace Code_Colorizer
         private void buttonCopyUsersBlog_Click(object sender, EventArgs e)
         {
             _processor.CopyTextForCSProUsersBlog(editControl.Text, _bufferType);
+        }
+
+        private void logicVersionMenuItem_Click(object sender, EventArgs e)
+        {
+            ((ToolStripMenuItem)sender).Checked = true;
+
+            if( sender == logicVersion0MenuItem )
+            {
+                _processor.SetLogicVersion(CSPro.Logic.LogicVersion.V0);
+                logicVersion8_0MenuItem.Checked = false;
+            }
+            
+            else
+            {
+                _processor.SetLogicVersion(CSPro.Logic.LogicVersion.V8_0);
+                logicVersion0MenuItem.Checked = false;
+            }
+
+            RefreshUiElements();
         }
     }
 }

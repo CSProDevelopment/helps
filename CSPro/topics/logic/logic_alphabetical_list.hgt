@@ -15,12 +15,12 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>advance</logiccolor></cell><cell>Moves forward field by field to a specified field during data entry.</cell>
 	<cell><logiccolor>alias</logiccolor></cell><cell>Creates an aliased name for a dictionary item, typically to shorten or standardize names.</cell>
 	<cell><logiccolor>alpha</logiccolor></cell><cell>Declares alphanumeric variables used in the application.</cell>
-	<cell><logiccolor>array</logiccolor></cell><cell>Declares an <link array.hgt>array</link> object for storing a collection of numbers or strings.</cell>
+	<cell><logiccolor>Array</logiccolor></cell><cell>Declares an <link array.hgt>Array</link> object for storing a collection of numbers or strings.</cell>
 	<cell><logiccolor>ask</logiccolor></cell><cell>Conditionally jumps forward to the next field during data entry.</cell>
-	<cell><logiccolor>audio</logiccolor></cell><cell>Declares an <link array.hgt>audio</link> object for recording or playing audio.</cell>
+	<cell><logiccolor>Audio</logiccolor></cell><cell>Declares an <link audio.hgt>Audio</link> object for recording or playing audio.</cell>
 	<cell><logiccolor>average</logiccolor></cell><cell>Returns the average of an item that occurs multiple times.</cell>
 	<cell 2>&nbsp;</cell>
-	<cell><logiccolor>barcode.read</logiccolor></cell><cell>Reads a barcode and returns its value as a string.</cell>
+	<cell><logiccolor>Barcode.read</logiccolor></cell><cell>Reads a barcode and returns its value as a string.</cell>
 	<cell><logiccolor>break</logiccolor></cell><cell>Exits a <logiccolor>do</logiccolor>, <logiccolor>while</logiccolor>, or <logiccolor>for</logiccolor> loop early and continues execution with the first statement after the <logiccolor>enddo</logiccolor>.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>changekeyboard</logiccolor></cell><cell>Modifies the keyboard input associated with certain fields.</cell>
@@ -52,7 +52,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>dirlist</logiccolor></cell><cell>Returns a list containing the file and directory listing of the specified directory.</cell>
 	<cell><logiccolor>display</logiccolor></cell><cell>Displays a message (this function has been superceded by <logiccolor>errmsg</logiccolor>).</cell>
 	<cell><logiccolor>do</logiccolor></cell><cell>Executes one or more statements repeatedly while a logical condition remains true or until a logical condition is no longer true.</cell>
-	<cell><logiccolor>document</logiccolor></cell><cell>Declares a <link document.hgt>document</link> object for storing text or binary files.</cell>
+	<cell><logiccolor>Document</logiccolor></cell><cell>Declares a <link document.hgt>Document</link> object for storing text or binary files.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>edit</logiccolor></cell><cell>Converts a number to a string.</cell>
 	<cell><logiccolor>editnote</logiccolor></cell><cell>Displays the data entry note box for adding or changing.</cell>
@@ -69,27 +69,27 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>exp</logiccolor></cell><cell>Returns the value of e raised to a given power.</cell>
 	<cell><logiccolor>export</logiccolor></cell><cell>Writes a record to an export file.</cell>
 	<cell 2>&nbsp;</cell>
-	<cell><logiccolor>file</logiccolor></cell><cell>Declares one or more files used in the application.</cell>
+	<cell><logiccolor>File</logiccolor></cell><cell>Declares one or more File objects used in the application.</cell>
 	<cell><logiccolor>fileconcat</logiccolor></cell><cell>Concatenates a list of files or a set of files described by a wildcard specification.</cell>
 	<cell><logiccolor>filecopy</logiccolor></cell><cell>Copies a file to another file.</cell>
 	<cell><logiccolor>filecreate</logiccolor></cell><cell>Creates a new file with the given file name.</cell>
 	<cell><logiccolor>filedelete</logiccolor></cell><cell>Deletes a file or group of files.</cell>
 	<cell><logiccolor>fileempty</logiccolor></cell><cell>Determines whether a file exists but is empty.</cell>
 	<cell><logiccolor>fileexist</logiccolor></cell><cell>Determines whether a file exists.</cell>
-	<cell><logiccolor>filename</logiccolor></cell><cell>Returns the file name currently associated with a dictionary or a <logiccolor>file</logiccolor>.</cell>
-	<cell><logiccolor>fileread</logiccolor></cell><cell>Reads a text line from a file into an item or variable.</cell>
+	<cell><logiccolor>filename</logiccolor></cell><cell>Returns the file name currently associated with a dictionary or a <logiccolor>File</logiccolor>.</cell>
+	<cell><logiccolor>fileread</logiccolor></cell><cell>Reads a text line from a File into an item or variable.</cell>
 	<cell><logiccolor>filerename</logiccolor></cell><cell>Changes the name of a file.</cell>
 	<cell><logiccolor>filesize</logiccolor></cell><cell>Returns the size of a file in bytes.</cell>
 	<cell><logiccolor>filetime</logiccolor></cell><cell>Returns the last modification date/time of a file or a directory.</cell>
-	<cell><logiccolor>filewrite</logiccolor></cell><cell>Writes a line of text to a file.</cell>
+	<cell><logiccolor>filewrite</logiccolor></cell><cell>Writes a line of text to a File.</cell>
 	<cell><logiccolor>find</logiccolor></cell><cell>Determines the existence of a case in a data file that matches a condition.</cell>
 	<cell><logiccolor>for</logiccolor></cell><cell>Loops through multiple records or items.</cell>
 	<cell><link for_dict_statement.hgt><font monospace blue>for (dictionary)</font></link></cell><cell>Loops through the cases selected during a <logiccolor>selcase</logiccolor> operation.</cell>
 	<cell><logiccolor>forcase</logiccolor></cell><cell>Loops through the cases in an external file.</cell>
-	<cell><logiccolor>freq</logiccolor></cell><cell>Declares a <link freq.hgt>freq</link> object that allows for the creation of frequencies.</cell>
+	<cell><logiccolor>Freq</logiccolor></cell><cell>Declares a <link freq.hgt>Freq</link> object that allows for the creation of frequencies.</cell>
 	<cell><logiccolor>function</logiccolor></cell><cell>Declares a user-defined function.</cell>
 	<cell 2>&nbsp;</cell>
-	<cell><logiccolor>geometry</logiccolor></cell><cell>Declares a <link geometry.hgt>geometry</link> object for storing vector geometry.</cell>
+	<cell><logiccolor>Geometry</logiccolor></cell><cell>Declares a <link geometry.hgt>Geometry</link> object for storing vector geometry.</cell>
 	<cell><logiccolor>getbluetoothname</logiccolor></cell><cell>Returns the name of the device as broadcast to other Bluetooth devices.</cell>
 	<cell><logiccolor>getbuffer</logiccolor></cell><cell>Returns a string containing the contents of a data item.</cell>
 	<cell><logiccolor>getcapturetype</logiccolor></cell><cell>Returns the capture type associated with a field.</cell>
@@ -115,14 +115,14 @@ The following table lists functions and statements that can be used in logic. In
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>has</logiccolor></cell><cell>Determines whether any of a group of repeating items is within a range of values.</cell>
 	<cell><logiccolor>hash</logiccolor></cell><cell>Calculates the hash value of a string.</cell>
-	<cell><logiccolor>hashmap</logiccolor></cell><cell>Declares a <link hashmap.hgt>hashmap</link> object for storing a collection of numbers or strings in an associative array.</cell>
+	<cell><logiccolor>HashMap</logiccolor></cell><cell>Declares a <link hashmap.hgt>HashMap</link> object for storing a collection of numbers or strings in an associative array.</cell>
 	<cell><logiccolor>hideocc</logiccolor></cell><cell>Visually hides an occurrence row in a roster.</cell>
 	<cell><logiccolor>high</logiccolor></cell><cell>Returns the maximum value in a group of numeric expressions.</cell>
 	<cell><logiccolor>highlighted</logiccolor></cell><cell>Returns whether a field is on path or reached during data entry.</cell>
 	<cell><logiccolor>htmldialog</logiccolor></cell><cell>Displays a custom dialog designed in <link html_in_cspro.hgt>HTML</link> and <link javascript_interface.hgt>JavaScript</link>.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>if</logiccolor></cell><cell>Executes statements conditionally.</cell>
-	<cell><logiccolor>image</logiccolor></cell><cell>Declares an <link image.hgt>image</link> object for storing and manipulating images.</cell>
+	<cell><logiccolor>Image</logiccolor></cell><cell>Declares an <link image.hgt>Image</link> object for storing and manipulating images.</cell>
 	<cell><logiccolor>impute</logiccolor></cell><cell>Assigns a value to a data item and logs the frequency of assignments.</cell>
 	<cell><logiccolor>in</logiccolor></cell><cell>Determines whether a variable is within a range of values.</cell>
 	<cell><logiccolor>inadvance</logiccolor></cell><cell>Indicates if an <logiccolor>advance</logiccolor> is in progress.</cell>
@@ -140,7 +140,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>killfocus</logiccolor></cell><cell>Declares that the following statements are executed after the object stops being active.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>length</logiccolor></cell><cell>Returns the length of a dictionary item or a string.</cell>
-	<cell><logiccolor>list</logiccolor></cell><cell>Declares a <link list.hgt>list</link> object for storing a collection of numbers or strings.</cell>
+	<cell><logiccolor>List</logiccolor></cell><cell>Declares a <link list.hgt>List</link> object for storing a collection of numbers or strings.</cell>
 	<cell><logiccolor>loadcase</logiccolor></cell><cell>Reads a case from an external file into memory (usually based on a key).</cell>
 	<cell><logiccolor>loadsetting</logiccolor></cell><cell>Returns a string containing a setting saved using the <logiccolor>savesetting</logiccolor> function.</cell>
 	<cell><logiccolor>locate</logiccolor></cell><cell>Finds but does not load a case in an external file that matches a condition.</cell>
@@ -149,7 +149,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>low</logiccolor></cell><cell>Returns the minimum value in a group of numeric expressions.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>maketext</logiccolor></cell><cell>Returns a formatted string with inserted values.</cell>
-	<cell><logiccolor>map</logiccolor></cell><cell>Declare a <link map.hgt>map</link> variable that can be used to display interactive maps.</cell>
+	<cell><logiccolor>Map</logiccolor></cell><cell>Declare a <link map.hgt>Map</link> variable that can be used to display interactive maps.</cell>
 	<cell><logiccolor>max</logiccolor></cell><cell>Returns the maximum value of an item that occurs multiple times.</cell>
 	<cell><logiccolor>maxocc</logiccolor></cell><cell>Returns the maximum number of occurrences of a multiply occurring object.</cell>
 	<cell><logiccolor>maxvalue</logiccolor></cell><cell>Returns the maximum value in an item's range of acceptable values.</cell>
@@ -175,20 +175,20 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>open</logiccolor></cell><cell>Opens a dictionary or external file.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>paradata</logiccolor></cell><cell>Performs an action on the <link paradata.hgt>paradata log</link>.</cell>
-	<cell><logiccolor>path.concat</logiccolor></cell><cell>Combines multiple strings into one string representing a file path.</cell>
-	<cell><logiccolor>path.getDirectoryName</logiccolor></cell><cell>Extracts the directory name from a file path.</cell>
-	<cell><logiccolor>path.getExtension</logiccolor></cell><cell>Extracts the file extension from a file path.</cell>
-	<cell><logiccolor>path.getFileName</logiccolor></cell><cell>Extracts the file name from a file path.</cell>
-	<cell><logiccolor>path.getFileNameWithoutExtension</logiccolor></cell><cell>Extracts the file name without its extension from a file path.</cell>
-	<cell><logiccolor>path.getRelativePath</logiccolor></cell><cell>Returns a relative path based on a path's location relative to a directory.</cell>
-	<cell><logiccolor>path.selectFile</logiccolor></cell><cell>Shows the operator a visual listing of the file system and returns the path of the file the operator selected.</cell>
+	<cell><logiccolor>Path.concat</logiccolor></cell><cell>Combines multiple strings into one string representing a file path.</cell>
+	<cell><logiccolor>Path.getDirectoryName</logiccolor></cell><cell>Extracts the directory name from a file path.</cell>
+	<cell><logiccolor>Path.getExtension</logiccolor></cell><cell>Extracts the file extension from a file path.</cell>
+	<cell><logiccolor>Path.getFileName</logiccolor></cell><cell>Extracts the file name from a file path.</cell>
+	<cell><logiccolor>Path.getFileNameWithoutExtension</logiccolor></cell><cell>Extracts the file name without its extension from a file path.</cell>
+	<cell><logiccolor>Path.getRelativePath</logiccolor></cell><cell>Returns a relative path based on a path's location relative to a directory.</cell>
+	<cell><logiccolor>Path.selectFile</logiccolor></cell><cell>Shows the operator a visual listing of the file system and returns the path of the file the operator selected.</cell>
 	<cell><logiccolor>pathconcat</logiccolor></cell><cell>Combines multiple strings into one string representing a file path.</cell>
 	<cell><logiccolor>pathname</logiccolor></cell><cell>Returns the path of various special directories.</cell>
-	<cell><logiccolor>pff</logiccolor></cell><cell>Declare a <link pff.hgt>pff</link> variable that can be used to dynamically modify the way other CSPro applications are executed.</cell>
+	<cell><logiccolor>Pff</logiccolor></cell><cell>Declare a <link pff.hgt>Pff</link> object that can be used to dynamically modify the way other CSPro applications are executed.</cell>
 	<cell><logiccolor>pos</logiccolor></cell><cell>Returns the position of a string within another string.</cell>
 	<cell><logiccolor>poschar</logiccolor></cell><cell>Returns the position of any of a series of characters within another string.</cell>
 	<cell><logiccolor>preproc</logiccolor></cell><cell>Declares that the following statements are executed at the beginning of a block.</cell>
-	<cell><logiccolor>proc</logiccolor></cell><cell>Declares the beginning of a new procedure.</cell>
+	<cell><logiccolor>PROC</logiccolor></cell><cell>Declares the beginning of a new procedure.</cell>
 	<cell><logiccolor>prompt</logiccolor></cell><cell>Prompts the operator to enter an alphanumeric string, also supporting a password masking option.</cell>
 	<cell><logiccolor>protect</logiccolor></cell><cell>Modifies the <link change_field_properties.hgt>protected property</link> of a field.</cell>
 	<cell><logiccolor>postproc</logiccolor></cell><cell>Declares that the following statements are executed at the end of a block.</cell>
@@ -202,9 +202,9 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>recode</logiccolor></cell><cell>Assigns a value to a variable based on the value of one or more other variables.</cell>
 	<cell><logiccolor>reenter</logiccolor></cell><cell>Forces the data entry operator to reenter a previous entered field.</cell>
 	<cell><logiccolor>regexmatch</logiccolor></cell><cell>Returns whether a string matches the regular expression.</cell>
-	<cell><logiccolor>relation</logiccolor></cell><cell>Defines a relation between multiple records or items.</cell>
+	<cell><logiccolor>Relation</logiccolor></cell><cell>Defines a relation between multiple records or items.</cell>
 	<cell><logiccolor>replace</logiccolor></cell><cell>Returns a string with one of more instances of a substring replaced with new text.</cell>
-	<cell><logiccolor>report</logiccolor></cell><cell>Generates a <link templated_reports.hgt>templated report</link>.</cell>
+	<cell><logiccolor>Report</logiccolor></cell><cell>Generates a <link templated_reports.hgt>templated report</link>.</cell>
 	<cell><logiccolor>retrieve</logiccolor></cell><cell>Loads a case from the current position of an external file.</cell>
 	<cell><logiccolor>round</logiccolor></cell><cell>Returns a value rounded to the nearest integer.</cell>
 	<cell 2>&nbsp;</cell>
@@ -241,7 +241,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>setvalueset</logiccolor></cell><cell>Dynamically modifies the value set of an item.</cell>
 	<cell><logiccolor>setvaluesets</logiccolor></cell><cell>Dynamically modifies the value sets for all items in the dictionary.</cell>
 	<cell><logiccolor>show</logiccolor></cell><cell>Displays the occurrences of one or more items from a record or multiply occurring item.</cell>
-	<cell><logiccolor>showarray</logiccolor></cell><cell>Displays the values of one or more elements from an array.</cell>
+	<cell><logiccolor>showarray</logiccolor></cell><cell>Displays the values of one or more elements from an Array.</cell>
 	<cell><logiccolor>showocc</logiccolor></cell><cell>Visually shows (or hides) an occurrence row in a roster.</cell>
 	<cell><logiccolor>skip</logiccolor></cell><cell>Jumps forward to a specified field during data entry.</cell>
 	<cell><logiccolor>skip case</logiccolor></cell><cell>Ends processing of the current case in a batch edit run.</cell>
@@ -283,7 +283,7 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>userbar</logiccolor></cell><cell>Controls the optional display bar in a data entry application.</cell>
 	<cell><logiccolor>uuid</logiccolor></cell><cell>Returns a human-readable string containing a universally unique identifier.</cell>
 	<cell 2>&nbsp;</cell>
-	<cell><logiccolor>valueset</logiccolor></cell><cell>Declares a <link valueset.hgt>valueset</link> object for storing the contents of a dynamic value set.</cell>
+	<cell><logiccolor>ValueSet</logiccolor></cell><cell>Declares a <link valueset.hgt>ValueSet</link> object for storing the contents of a dynamic value set.</cell>
 	<cell><logiccolor>view</logiccolor></cell><cell>Launches the system's default viewer to display a file or website.</cell>
 	<cell><logiccolor>visualvalue</logiccolor></cell><cell>Returns the value of a data item prior to its input.</cell>
 	<cell 2>&nbsp;</cell>

@@ -13,7 +13,7 @@ namespace Help_Generator
     {
         private TextEditableInterface _textEditableInterface;
         private HelpComponents _helpComponents;
-        private string _filename;
+        public string Filename { get; private set; }
         private bool _modified;
         private string _baseWindowTitle;
         private DateTime _modifiedDate;
@@ -27,7 +27,7 @@ namespace Help_Generator
 
             _textEditableInterface = textEditableInterface;
             _helpComponents = helpComponents;
-            _filename = textEditableInterface.Filename;
+            Filename = textEditableInterface.Filename;
 
             _modified = false;
             _baseWindowTitle = this.Text;
@@ -35,12 +35,21 @@ namespace Help_Generator
 
             editControl.SetTextModifiedHandler(this);
 
-            linkLabelFilename.Text = _filename;
+            linkLabelFilename.Text = Filename;
 
             if( _textEditableInterface is Topic )
                 _topicCompilerSettings = new TextEditFormTopicCompilerSettings();
 
             LoadFile();
+        }
+
+        private void TextEditForm_Shown(object sender, EventArgs e)
+        {
+            // resize the form to fill the 90% of the vertical space
+            int newHeight = (int)( Parent.Height * 0.90 ) - Location.Y;
+
+            if( newHeight > 0 )
+                Size = new Size(Size.Width, newHeight);
         }
 
         private void TextEditForm_FormClosing(object sender,FormClosingEventArgs e)
@@ -148,7 +157,7 @@ namespace Help_Generator
         {
             try
             {
-                FileInfo fi = new FileInfo(_filename);
+                FileInfo fi = new FileInfo(Filename);
 
                 if( fi.LastWriteTimeUtc > _modifiedDate )
                 {
@@ -187,7 +196,7 @@ namespace Help_Generator
 
         private DialogResult QueryAndSave()
         {
-            string query = String.Format("Save file {0} ?",new FileInfo(_filename).Name);
+            string query = String.Format("Save file {0} ?",new FileInfo(Filename).Name);
             DialogResult result = MessageBox.Show(query,this.Text,MessageBoxButtons.YesNoCancel);
 
             if( result == DialogResult.Yes )
@@ -200,10 +209,10 @@ namespace Help_Generator
         {
             try
             {
-                editControl.Text = File.ReadAllText(_filename);
+                editControl.Text = File.ReadAllText(Filename);
                 editControl.EmptyUndoBuffer();
                 editControl.SetSavePoint();
-                _modifiedDate = new FileInfo(_filename).LastWriteTimeUtc;
+                _modifiedDate = new FileInfo(Filename).LastWriteTimeUtc;
             }
 
             catch( Exception exception )
@@ -217,9 +226,9 @@ namespace Help_Generator
         {
             try
             {
-                File.WriteAllText(_filename,editControl.Text,Encoding.UTF8);
+                File.WriteAllText(Filename,editControl.Text,Encoding.UTF8);
                 editControl.SetSavePoint();
-                _modifiedDate = new FileInfo(_filename).LastWriteTimeUtc;
+                _modifiedDate = new FileInfo(Filename).LastWriteTimeUtc;
             }
 
             catch( Exception exception )
@@ -245,7 +254,7 @@ namespace Help_Generator
             {
                 if( File.Exists(editorFilename) )
                 {
-                    Process.Start(editorFilename,"\"" + _filename + "\"");
+                    Process.Start(editorFilename,"\"" + Filename + "\"");
                     break;
                 }
             }
@@ -253,19 +262,19 @@ namespace Help_Generator
 
         private void linkLabelOpenContainingFolder_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("explorer.exe", $"/select, \"{_filename}\"");
+            Process.Start("explorer.exe", $"/select, \"{Filename}\"");
         }
 
         private void linkLabelCopyFullPath_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Clipboard.Clear();
-            Clipboard.SetText(_filename);
+            Clipboard.SetText(Filename);
         }
 
         private void linkLabelCopyFilename_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Clipboard.Clear();
-            Clipboard.SetText(Path.GetFileName(_filename));
+            Clipboard.SetText(Path.GetFileName(Filename));
         }
 
         public void ProcessEditCommand(string command)

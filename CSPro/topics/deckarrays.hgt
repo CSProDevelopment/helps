@@ -8,18 +8,18 @@ Using <b>DeckArrays</b> makes it very easy to change hot deck parameters. For in
 
 Declare a DeckArray in <logiccolor>PROC GLOBAL</logiccolor> as you would a normal array, but instead of using numeric dimensions, specify the name of a value set. The size of the dimension will match the size of the value set. If you make changes to the value set, the size of the array will automatically reflect the changes.
 
-<logic>array Age_HD_from_Sex(SEX_VS);   // same as "array Age_HD_From_Sex(2);"</logic>
-<logic>array Age_HD_from_Sex_Relationship(SEX_VS,RELATIONSHIP_VS);</logic>
+<logic>Array Age_HD_from_Sex(SEX_VS);   // same as "Array Age_HD_From_Sex(2);"</logic>
+<logic>Array Age_HD_from_Sex_Relationship(SEX_VS, RELATIONSHIP_VS);</logic>
 
 To create a DeckArray, at least one of the dimensions must be a <link value_sets_description.hgt>value set </link>; however, it is permissible that the other dimensions are declared with a numeric value. Because the program can only recode values for the dimensions that are based on value sets, for any dimensions that were declared with a number, it will be necessary to specify those indices explicitly when making calls to <logiccolor>getdeck</logiccolor> or <logiccolor>putdeck</logiccolor>.
 
-<logic>array Age_HD_from_EA_Sex(200,SEX_VS);   // same as "array Age_HD_From_EA_Sex(200,2);"</logic>
+<logic>Array Age_HD_from_EA_Sex(200, SEX_VS);   // same as "Array Age_HD_From_EA_Sex(200,2);"</logic>
 
 <subheader>Accounting for &quot;Else&quot; Values</subheader>
 
 Occasionally a programmer wants to create a hot deck with a <link deckarray_leftover_rows.hgt>"leftover"</link> row for any values not contained in the value set. Sometimes these are invalid values, other times the value set can be created so that this leftover, or "else" row, consists of values valid for the census or survey. For instance, if a user wants to hot deck a variable based on Christian sects, the programmer would create a value set with all the Christian sects, and then would create a DeckArray with a leftover row for all people who do not belong to the Christian sects identified. Including this extra "spillover" row is indicated by adding a (+) after the value set name.
 
-<logic>array CEB_HD_Religion (RELIGION_CHRISTIAN_SECTS_VS(+));</logic>
+<logic>Array CEB_HD_Religion (RELIGION_CHRISTIAN_SECTS_VS(+));</logic>
 
 <subheader>Example 1</subheader>
 
@@ -30,69 +30,70 @@ PROC GLOBAL
 
 numeric maxHHSize = 10;
 
-array HD_HeadAgeFromHHSize(SEX_VS, 10); // household size is from 1-10
-array HD_HeadAgeFromSpouse(SEX_VS, AGE_VS); // dims = Head's sex + Spouse's age
+Array HD_HeadAgeFromHHSize(SEX_VS, 10); // household size is from 1-10
+Array HD_HeadAgeFromSpouse(SEX_VS, AGE_VS); // dims = Head's sex + Spouse's age
 
 PROC AGE
 
-  universe RELATIONSHIP = 1; // we're only editing head of households here
+	universe RELATIONSHIP = 1; // we're only editing head of households here
 
-  // assumption: by now RELATIONSHIP and SEX have been edited for the head of HH
+	// assumption: by now RELATIONSHIP and SEX have been edited for the head of HH
 
-  numeric ptrSpouse = seek(RELATIONSHIP = 2);  // code 2 means spouse
-  numeric minSpouseAge = 12;
+	numeric ptrSpouse = seek(RELATIONSHIP = 2);  // code 2 means spouse
+	numeric minSpouseAge = 12;
 
-  if SEX = 1 then
-    minSpouseAge = 15; // males cannot marry until 15
-  endif;
+	if SEX = 1 then
+		minSpouseAge = 15; // males cannot marry until 15
+	endif;
 
-  if AGE in 15:95 then  // the head of HH has a valid age
+	if AGE in 15:95 then  // the head of HH has a valid age
 
-	// Then we can update the hot deck based on the head's sex and HH size.
-	// Note if there are more than 10 persons in the HH we are capping it at 10
+		// Then we can update the hot deck based on the head's sex and HH size.
+		// Note if there are more than 10 persons in the HH we are capping it at 10
 
-    putdeck(HD_HeadAgeFromHHSize,AGE,SEX,low(totocc(),maxHHSize));  // update the hot deck
-    putdeck(HD_HeadAgeFromHHSize,AGE,   ,low(totocc(),maxHHSize));  // same as above
-	
-	// now let's see if we can update the other hot deck based on the spouse's age
+		putdeck(HD_HeadAgeFromHHSize,AGE,SEX,low(totocc(),maxHHSize));  // update the hot deck
+		putdeck(HD_HeadAgeFromHHSize,AGE,   ,low(totocc(),maxHHSize));  // same as above
 
-    if ptrSpouse <> 0 and AGE(ptrSpouse) in minSpouseAge:95 then  
-		
-		// the spouse has a valid age
+		// now let's see if we can update the other hot deck based on the spouse's age
 
-        putdeck(HD_HeadAgeFromSpouse, AGE, SEX, AGE(ptrSpouse)); // update the hot deck
-        putdeck(HD_HeadAgeFromSpouse, AGE,    , AGE(ptrSpouse)); // same as above
+		if ptrSpouse <> 0 and AGE(ptrSpouse) in minSpouseAge:95 then
 
-		// Because SEX is located in the current record, and we are currently
-        // processing the head of HH, we don't need to pass in the head of HH's
-		// sex--it can be left blank and CSPro will pick the correct value, since
-		// we defined that array position using the SEX_VS above.
-		
-		// Note the age of the spouse must always be passed to putdeck, because 
-		// we are updating the hot deck based on the spouse's age, not the head
-		// of HH's age (don't forget we will use this hot deck when the age of 
-		// the head is invalid)
+			// the spouse has a valid age
 
-    endif;
+			putdeck(HD_HeadAgeFromSpouse, AGE, SEX, AGE(ptrSpouse)); // update the hot deck
+			putdeck(HD_HeadAgeFromSpouse, AGE,    , AGE(ptrSpouse)); // same as above
 
-else  // the head of household's age is invalid so we must impute it
+			// Because SEX is located in the current record, and we are currently
+			// processing the head of HH, we don't need to pass in the head of HH's
+			// sex--it can be left blank and CSPro will pick the correct value, since
+			// we defined that array position using the SEX_VS above.
 
-  if ptrSpouse <> 0 and AGE(ptrSpouse) in minSpouseAge:95 then  
+			// Note the age of the spouse must always be passed to putdeck, because
+			// we are updating the hot deck based on the spouse's age, not the head
+			// of HH's age (don't forget we will use this hot deck when the age of
+			// the head is invalid)
 
-	// the spouse has a valid age, use the spouse hot deck to retrieve an age for the head
-	
-    impute (AGE, getdeck (HD_HeadAgeFromSpouse, , AGE(ptrSpouse) ) );
+		endif;
 
-  else
-	// the spouse didn't have a valid age, use the other hot deck 
-	// based on the size of the household
-	
-    impute (AGE, getdeck (HD_HeadAgeFromHHSize, low(totocc(),maxHHSize) ) );
+	else  // the head of household's age is invalid so we must impute it
 
-  endif;
-endif;
+		if ptrSpouse <> 0 and AGE(ptrSpouse) in minSpouseAge:95 then
 
+			// the spouse has a valid age, use the spouse hot deck to retrieve an age for the head
+
+			impute (AGE, getdeck (HD_HeadAgeFromSpouse, , AGE(ptrSpouse) ) );
+
+		else
+			// the spouse didn't have a valid age, use the other hot deck
+			// based on the size of the household
+
+			impute (AGE, getdeck (HD_HeadAgeFromHHSize, low(totocc(),maxHHSize) ) );
+
+		endif;
+
+	endif;
 </logic>
+
 
 <subheader>Example 2</subheader>
 
@@ -103,7 +104,7 @@ EDUC_VS has three values: 1 (No schooling), 2 (Primary schooling), 3 (Secondary 
 // Command:                                     // The hot deck looks like
                                                 // this after the command:
 
-array ageHotdeck(SEX_VS,EDUC_VS(+));            //  00   00   00   00
+Array ageHotdeck(SEX_VS,EDUC_VS(+));            //  00   00   00   00
                                                 //  00   00   00   00
 
 SEX = 1;   EDUC = 1;   AGE = 20;                //  20   00   00   00
@@ -141,7 +142,7 @@ putdeck(ageHotdeck,28,0,3); // returns          //  20   00   28   64
 // and no (+) was specified for SEX_VS
                                                 //  20   00   28   64
 AGE = getdeck(ageHotdeck,2,300); // AGE = 14    //  00   00   50   14
-
 </logic>
+
 
 <seealso Getdeck_Function.hgt Putdeck_Function.hgt DeckArray_Leftover_Rows.hgt />

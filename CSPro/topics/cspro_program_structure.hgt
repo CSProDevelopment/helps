@@ -2,9 +2,11 @@
 
 CSPro logic consists of a collection of events defined as procedures. Each procedure performs the operations you specify using CSPro statements and functions written in the CSPro language. A CSPro program includes a declaration section and one or more procedural sections.
 
+
 <subheader>Declaration Section (<logiccolor>PROC GLOBAL</logiccolor>)</subheader>
 
 Declarations and definitions are defined in the <b>global procedure</b>. In this section you declare global <link variables.hgt>variables</link>, <link array.hgt>arrays</link>, <link file_statement.hgt>file handlers</link>, and <link user_defined_functions.hgt>user-defined functions</link>. The global procedure always appears at the beginning of the logic file and begins with the line "<logiccolor>PROC GLOBAL</logiccolor>." Except for within user-defined functions, there are no executable statements in this section. You can edit the <logiccolor>PROC GLOBAL</logiccolor> section by clicking on the topmost entry of the <link data_entry_tree.hgt>data entry edits tree</link> or <link batch_edit_tree.hgt>batch edits tree</link>.
+
 
 <subheader>Example</subheader>
 
@@ -16,7 +18,7 @@ numeric MinAgeDifferenceParent = 12,
 		MaxAgeDifferenceMother = 55;
 
 string personName;
-array validRelationships(5);
+Array validRelationships(5);
 
 // user-defined function
 function numeric IsMotherValidByAge(numeric motherAge, numeric childAge)
@@ -24,11 +26,13 @@ function numeric IsMotherValidByAge(numeric motherAge, numeric childAge)
 end;
 </logic>
 
+
 <subheader>Procedural Section</subheader>
 
 This section contains executable and assignment <link statements.hgt>statements</link> that can be written before (<logiccolor>preproc</logiccolor>) or after (<logiccolor>postproc</logiccolor>) an event. Events always fall under the <logiccolor>PROC</logiccolor> section, which is followed by the name of the forms file, level, form, roster, or field. Statements are assumed to be in the <logiccolor>postproc</logiccolor> unless it is explicitly stated that they are in another procedure.
 
 Data entry applications also have a forms file procedure. The form file <logiccolor>preproc</logiccolor> is executed before a data entry session begins. There are three other procedure types that may be useful in data entry applications: <logiccolor>onfocus</logiccolor>, <logiccolor>killfocus</logiccolor>, and <logiccolor>onoccchange</logiccolor>.
+
 
 <subheader>Example</subheader>
 
@@ -59,5 +63,6 @@ PROC INCOME // field procedure
 
 	// statements (implicitly in the postproc)
 </logic>
+
 
 <seealso proc_statement.hgt preproc_statement.hgt onfocus_statement.hgt onoccchange_statement.hgt killfocus_statement.hgt postproc_statement.hgt order_of_executing_data_entry_events.hgt order_of_executing_batch_edit_events.hgt />

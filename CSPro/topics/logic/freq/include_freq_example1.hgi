@@ -1,4 +1,4 @@
-freq hh_status_freq(HH_STATUS);
+Freq hh_status_freq(HH_STATUS);
 
 forcase LISTING_DICT where FIPS = 69 do
 	hh_status_freq.tally();

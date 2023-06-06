@@ -2,11 +2,13 @@
 
 <i><b>Feature Upgrade</b>: Starting with CSPro 7.3, you should no longer use this function as it may soon be removed from CSPro. To replicate the behavior of the function, you can use the <logiccolor>setvalueset</logiccolor> function with <link valueset.hgt>dynamic value sets</link>.</i>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = setvalueset(<arg>item_name</arg>, <arg>codes_array</arg>, <arg>labels_array</arg>『, images_array』);
+i = setvalueset(<arg>item_name</arg>, <arg>codes_array</arg>, <arg>labels_array</arg>『, <arg>images_array</arg>』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -18,17 +20,19 @@ When working with the <arg>codes_array</arg>, to indicate the end of a numeric a
 
 In versions of CSPro earlier than 6.0, the value set labels and codes array needed to start at index position 0. Zero-based arrays are still permitted, but if a one-based array is passed to the function (and the zeroth element has never been assigned to), then CSPro will start processing the dynamic value set at array position 1.
 
+
 <subheader>Return Value</subheader>
 
 The function returns the number of codes in the newly created value set.
+
 
 <subheader>Example</subheader>
 
 <logic>
 PROC GLOBAL
 
-array vsCodes(100);
-array string vsLabels(100);
+Array vsCodes(100);
+Array string vsLabels(100);
 
 PROC DISTRICT
 
@@ -47,5 +51,6 @@ preproc
 
 	setvalueset(DISTRICT, vsCodes, vsLabels);
 </logic>
+
 
 <seealso setvalueset_function.hgt />

@@ -66,6 +66,7 @@
             this.generateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateCompileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateCompileAllFilesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateCompileAllFilesFromThisFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateCompilationModeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateViewTopicsInChmFormatMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
@@ -386,6 +387,7 @@
             this.generateMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generateCompileMenuItem,
             this.generateCompileAllFilesMenuItem,
+            this.generateCompileAllFilesFromThisFileMenuItem,
             this.generateCompilationModeMenuItem,
             this.toolStripSeparator8,
             this.generateFormatMenuItem,
@@ -415,6 +417,13 @@
             this.generateCompileAllFilesMenuItem.Size = new System.Drawing.Size(236, 22);
             this.generateCompileAllFilesMenuItem.Text = "Compile All Files";
             this.generateCompileAllFilesMenuItem.Click += new System.EventHandler(this.generateCompileAllFilesMenuItem_Click);
+            // 
+            // generateCompileAllFilesFromThisFileMenuItem
+            // 
+            this.generateCompileAllFilesFromThisFileMenuItem.Name = "generateCompileAllFilesFromThisFileMenuItem";
+            this.generateCompileAllFilesFromThisFileMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.generateCompileAllFilesFromThisFileMenuItem.Text = "Compile All Files From This File";
+            this.generateCompileAllFilesFromThisFileMenuItem.Click += new System.EventHandler(this.generateCompileAllFilesFromThisFileMenuItem_Click);
             // 
             // generateCompilationModeMenuItem
             // 
@@ -597,6 +606,7 @@
 		private System.Windows.Forms.ToolStripMenuItem listBuilderToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem filteredTopicsMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateChmHelpOnlyMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateCompileAllFilesFromThisFileMenuItem;
     }
 }
 

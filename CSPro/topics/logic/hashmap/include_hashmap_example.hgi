@@ -1,10 +1,10 @@
 ﻿PROC GLOBAL
 
-hashmap invalidValuesByPerson default(0);
+HashMap invalidValuesByPerson default(0);
 
 PROC CENSUS_LEVEL
 
-	list string person_list;
+	List string person_list;
 
 	invalidValuesByPerson.getKeys(person_list);
 

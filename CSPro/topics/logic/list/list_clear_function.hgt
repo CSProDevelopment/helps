@@ -1,4 +1,5 @@
-﻿<title>List.Clear Function</title>
+﻿<title>List.clear Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,20 +7,23 @@
 b = list_name.clear();
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>list.clear</logiccolor> function removes all values from a <link list.hgt>list</link>, setting the length to 0.
+The <logiccolor>List.clear</logiccolor> function removes all values from a <link list.hgt>List</link>, setting the length to 0.
+
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true). If the list is read-only, the function returns <logiccolor>default</logiccolor>.
+The function returns a logical value of 1 (true). If the List is read-only, the function returns <logiccolor>default</logiccolor>.
+
 
 <subheader>Example</subheader>
 
 <logic>
 PROC GLOBAL
 
-list possible_ages;
+List possible_ages;
 
 PROC AGE
 
@@ -29,5 +33,6 @@ PROC AGE
 		possible_ages.add(AGE);
 	enddo;
 </logic>
+
 
 <seealso list.hgt list_remove_function.hgt list_removeduplicates_function.hgt list_removein_function.hgt />

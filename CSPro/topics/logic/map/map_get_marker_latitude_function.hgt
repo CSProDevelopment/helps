@@ -1,4 +1,5 @@
-﻿<title>Map.GetMarkerLatitude Function</title>
+﻿<title>Map.getMarkerLatitude Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,9 +7,11 @@
 lat = map_name.getMarkerLatitude(<arg>markerId</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>map.getMarkerLatitude</logiccolor> function retrieves the latitude of the marker identified by <arg>markerId</arg>.
+The <logiccolor>Map.getMarkerLatitude</logiccolor> function retrieves the latitude of the marker identified by <arg>markerId</arg>.
+
 
 <subheader>Return Value</subheader>
 
@@ -16,11 +19,10 @@ The function returns the latitude of the marker in degrees if the marker was fou
 
 <subheader>Example</subheader>
 
-
 <logic>
 PROC GLOBAL
 
-function onDragMarker(map dragMap, numeric markerId)
+function onDragMarker(Map dragMap, numeric markerId)
 	numeric lat = dragMap.getMarkerLatitude(markerId);
 	numeric lon = dragMap.getMarkerLongitude(markerId);
 	errmsg("Marker was moved to: %f, %f", lat, lon);	
@@ -30,7 +32,7 @@ PROC SHOW_MAP
 preproc
 
 // Declare a map
-map dragMap;
+Map dragMap;
 
 // Add a marker to the map at latitude 38.84839, longitude -76.931098
 numeric markerId = dragMap.addMarker(38.84839, -76.931098);
@@ -40,7 +42,7 @@ dragMap.setMarkerOnDrag(markerId, onDragMarker(dragMap, markerId));
 
 // Display the map
 dragMap.show();
-
 </logic>
+
 
 <seealso map.hgt map_get_marker_longitude_function.hgt map_set_marker_location_function.hgt map_set_marker_on_drag_function.hgt />

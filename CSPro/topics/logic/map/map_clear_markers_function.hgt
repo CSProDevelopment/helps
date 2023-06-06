@@ -1,4 +1,5 @@
-﻿<title>Map.ClearMarkers Function</title>
+﻿<title>Map.clearMarkers Function</title>
+
 
 <subheader>Format</subheader>
 
@@ -6,11 +7,14 @@
 b = map_name.clearMarkers();
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>map.clearMarkers</logiccolor> function removes all the markers currently on the <link map.hgt>map</link> named <logiccolor>map_name</logiccolor>.
+The <logiccolor>Map.clearMarkers</logiccolor> function removes all the markers currently on the <link map.hgt>Map object</link> named <logiccolor>map_name</logiccolor>.
+
 
 <subheader>Return Value</subheader>
+
 
 The function returns a logical value of 1 (true).
 
@@ -20,7 +24,7 @@ The function returns a logical value of 1 (true).
 
 // User function that will be called on button click
 // to filter households by status
-function filterMapHouseholds(map myMap)
+function filterMapHouseholds(Map mymap)
 
 	numeric choice = accept("Choose status to show", "Not started", "Partial", "Complete");
 	if choice > 0 then
@@ -35,7 +39,7 @@ function filterMapHouseholds(map myMap)
 		endfor;
 	endif;
 end;
-
 </logic>
+
 
 <seealso map.hgt map_add_marker_function.hgt map_clear_buttons_function.hgt />

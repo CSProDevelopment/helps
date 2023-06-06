@@ -1,4 +1,4 @@
-﻿<title>Image.Resample Function</title>
+﻿<title>Image.resample Function</title>
 
 <subheader>Format</subheader>
 
@@ -15,11 +15,11 @@ b = image_name.resample(『maxWidth := <arg>max_width</arg>,』
 
 <subheader>Description</subheader>
 
-The <logiccolor>image.resample</logiccolor> function resamples the image held by the <link image.hgt>image</link> object. Resampling modifies the dimensions of the image by either downsampling or upsampling the image. A loss of image quality may occur during the resampling process.
+The <logiccolor>Image.resample</logiccolor> function resamples the image held by the <link image.hgt>Image</link> object. Resampling modifies the dimensions of the image by either downsampling or upsampling the image. A loss of image quality may occur during the resampling process.
 
 In the first version of the function, two numeric expressions, <arg>width</arg> and <arg>height</arg>, specify the new dimensions, in pixels, of the image. If one of the arguments is <logiccolor>notappl</logiccolor>, then the other dimension will be calculated by maintaining the original image's aspect ratio (the ratio of the width to the height). For example, if an image is 800 x 600, each of the following function calls results in a 400 x 300 image:
 
-<logicsyntax>
+<logicsyntax Image>
 image_name.resample(400, 300);
 image_name.resample(400, notappl);
 image_name.resample(notappl, 300);
@@ -28,7 +28,7 @@ image_name.resample(notappl, 300);
 
 The second and third versions of the function, accessed by using <link function_named_arguments.hgt>named arguments</link>, provide additional ways to control how the image is resampled. Specifying both <arg>width</arg> and <arg>height</arg> is equivalent to the first version of the function; specifying only one of the arguments is as if <logiccolor>notappl</logiccolor> were specified for the other argument. Providing a <arg>max_width</arg> and/or <arg>max_height</arg> will conditionally resample an image only if the image's width or height exceeds the provided maximum. Using the 800 x 600 example from above:
 
-<logicsyntax>
+<logicsyntax Image>
 image_name.resample(maxWidth := 400);
 image_name.resample(maxHeight := 1200);
 </logicsyntax>

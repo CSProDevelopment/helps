@@ -1,33 +1,38 @@
-﻿<title>Pff.GetProperty Function</title>
+﻿<title>Pff.getProperty Function</title>
+
 
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = pff_name.getproperty(<arg>property_name</arg>『, <arg>string_list</arg>』);
+s = pff_name.getProperty(<arg>property_name</arg>『, <arg>string_list</arg>』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
-The <logiccolor>pff.getproperty</logiccolor> function returns a string containing the current value associated with the <link pff.hgt>pff</link>'s property specified by the string expression <arg>property_name</arg>. PFF properties all have default values, so even if a property was not explicitly defined in the PFF file, it may have a default value. Some properties, such as input data filenames for batch applications, can have multiple values, and if you want to retrieve all of these values, you must supply a <arg>string_list</arg>, which will contain zero, one, or more strings with the values.
+The <logiccolor>Pff.getProperty</logiccolor> function returns a string containing the current value associated with the <link pff.hgt>Pff</link>'s property specified by the string expression <arg>property_name</arg>. PFF properties all have default values, so even if a property was not explicitly defined in the PFF file, it may have a default value. Some properties, such as input data filenames for batch applications, can have multiple values, and if you want to retrieve all of these values, you must supply a <arg>string_list</arg>, which will contain zero, one, or more strings with the values.
 
-Properties names can be prefixed with the section name, as explained in <logiccolor>pff.setproperty</logiccolor>, but it is generally not necessary to do so when using this function.
+Properties names can be prefixed with the section name, as explained in <logiccolor>Pff.setProperty</logiccolor>, but it is generally not necessary to do so when using this function.
 
 The function can be used similarly to <logiccolor>sysparm</logiccolor> to retrieve properties defined in a PFF's <pffcolor>[Parameters]</pffcolor> section.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a string with the property information. If the property is invalid, a blank string is returned.
 
+
 <subheader>Example</subheader>
 
 <logic>
 // show our custom report unless the PFF specifies ViewListing=Never
-pff this_application_pff;
+Pff this_application_pff;
 this_application_pff.load(CENSUS_FF);
 
-if this_application_pff.getproperty("ViewListing") <> "Never" then
+if this_application_pff.getProperty("ViewListing") <> "Never" then
 	view("Disability Statistics.csv");
 endif;
 </logic>
+
 
 <seealso pff.hgt pff_setproperty_function.hgt sysparm_function.hgt />

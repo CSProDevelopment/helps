@@ -8,7 +8,7 @@ The following example uses a saved array to initialize a hot deck:
 PROC GLOBAL
 
 // declare an array initialized from the saved array file
-array AgeSRDeck(2,6) save;
+Array AgeSRDeck(2,6) save;
 
 PROC AGE
 
@@ -24,5 +24,6 @@ PROC AGE
 	
 	endif;
 </logic>
+
 
 <seealso dynamic_imputation_hot_deck.hgt use_hot_decks.hgt initialize_hot_decks_in_program_logic.hgt />

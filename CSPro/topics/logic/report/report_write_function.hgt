@@ -1,4 +1,5 @@
-﻿<title>Report.Write Function</title>
+﻿<title>Report.write Function</title>
+
 
 <subheader>Format 1</subheader>
 
@@ -6,15 +7,17 @@
 b = report_name.write(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』)
 </logicsyntax>
 
+
 <subheader>Format 2</subheader>
 
 <logicsyntax>
 b = report_name.write(<arg>msg_num</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』)
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>report.write</logiccolor> function writes text directly to a templated report. The function is meant to be called from within the templated report's logic.
+The <logiccolor>Report.write</logiccolor> function writes text directly to a templated report. The function is meant to be called from within the templated report's logic.
 
 Each <arg>argument</arg> is sequentially inserted into the <arg>string_exp</arg> or <arg>msg_num</arg>. Arguments can be numeric or string expressions, but the type of the argument must match the type of the receiving field in the message text. See <link message_formatting_options.hgt>Message Formatting Options</link> for a complete list of formatting options.
 
