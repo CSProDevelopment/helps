@@ -3,14 +3,8 @@
 
 <list ordered>
 	<li>Click <image run_button.png /> on the toolbar; or from the <b>File</b> menu, select <b>Run</b>; or press <b>Ctrl+R</b>.</li>
-	<li>Enter the name of the file to sort.</li>
-	<li>Enter the name of the file to contain the sorted results.</li>
-	<li>Enter the name of folder that will be used for sort work files.</li>
+	<li>Enter the location of the data file to sort. Note the run dialog will allow you to select .dat or .csdb files. However, CSSort can only sort text-based files (.dat). If you need to sort a .csdb file, use DataViewer's "File -> Save as" feature to save it as a .dat file first.
+</li>
+	<li>Enter the name of the file that will contain the sorted results. CSSort will default to the same file location as the input file. If you prefer another location, use the <b>Browse...</b> button to navigate to it. Note the output file can be either a .dat or .csdb file.</li>
 </list>
 
-<subheader>Tips</subheader>
-
-<list>
-	<li>Use the Browse Buttons to find files.</li>
-	<li>Make sure there is enough disk space to perform the sort. In general, you need twice as much space (work files + result file) as the size of the file to be sorted. The work files and the result file do not have to be on the same drive.</li>
-</list>
