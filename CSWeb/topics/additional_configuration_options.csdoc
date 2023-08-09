@@ -1,37 +1,40 @@
 ﻿<title>Additional Configuration Options</title>
 
-Additional configuration options can be specified by uploading a JSON file on the <link data_settings.csdoc>Data Configuration</link> dialog. Currently, the Process Cases Options is the only option that can be specified.
+Additional configuration options can be given by uploading a JSON file on the <link data_settings.csdoc>Data Configuration</link> dialog. Currently, the Process Cases Options is the only option that can be specified.
 
 <subheader>Process Cases Options</subheader>
 
-Processing cases through the command line can be slow if you have a large dictionary with a lot of data. The solution is to use the Process Cases Options to specify only the variables in the dictionary you are interested in breaking out into a relational database.
+Processing cases through the command line can be slow if you have a large dictionary with a lot of data. The solution is to use the Process Cases Options to specify only the variables in the dictionary that are needed. For example, the dictionary variables used in a report. Only these specified dictionary variables will then be broken out into a relational database when process cases command tool is run.
 
 <subheader>Include</subheader>
 
-The include object is processed first. It will allow you to specify the fields you are interested in breaking out into a relational table. It also accepts records and the entire dictionary. This allows you to specify the dictionary variables you need by addition.
+The include options allows the dictionary variables and records to be targetted for inclusion. The entire dictionary can also be included by not specifying an include option or specifying an empty list for the include option (see example 1). The include option is processed first.
 
 <subheader>Exclude</subheader>
 
-The exclude object is processed after the include object. It will allow you specify which fields to exclude. It also accepts records and the entire dictionary (which would exclude everything). This can be convenient if a group of fields was included through a record or dictionary, but not all fields are necessary. You can now specify the dictionary variables you need by subtraction.
+The exclude option allows the dictionary variables and records to be targetted for exclusion. This can be convenient if a record or the entire dictionary was included, but not all dictionary variables are needed. The exclude option is always processed after the include option.
 
-
-<subheader>Include Example</subheader>
+<subheader>Example 1 (Two Ways to Include the Entire Dictionary)</subheader>
 
 <color JSON>
 {
-  "processCasesOptions": {
-	"include": ["HH_RELATIONSHIP", "HH_SEX", "HH_AGE"]
-  }
+  "processCasesOptions": {}
 }
 </color>
 
-<subheader>Exclude Example</subheader>
+<color JSON>
+{
+  "processCasesOptions": {"include": []}
+}
+</color>
+
+<subheader>Example 2 (Exclude PII Variables)</subheader>
 
 <color JSON>
 {
   "processCasesOptions": {
-	"include": ["PSC_HOUSEHOLD_DICT"],
-	"exclude": ["DWELLING_UNIT_RECORD", "METADATA_RECORD"]
+	"include": ["PERSON_REC", "HOUSING_REC"],
+	"exclude": ["HH_LAST_NAME", "HH_FIRST_NAME", "HH_ADDRESS"]
   }
 }
 </color>
