@@ -14,7 +14,7 @@ The function takes a string expression <arg>property</arg> and then optional str
 
 <table 3 header nowrap border>
 	<cell>Property</cell><cell>Argument</cell><cell>Diagnostic Value</cell>
-	<cell><b>version</b></cell><cell></cell><cell>The currently running CSPro version (<definition version />).</cell>
+	<cell><b>version</b></cell><cell></cell><cell>The currently running CSPro version (<definition CSPro::version />).</cell>
 	<cell><b>version_detailed</b></cell><cell></cell><cell>The currently running CSPro version (<definition version_full />).</cell>
 	<cell><b>releasedate</b></cell><cell></cell><cell>The date that this version of CSPro was released (in YYYYMMDD format).</cell>
 	<cell><b>beta</b></cell><cell></cell><cell>Whether the current CSPro version is a beta version (1 if true, 0 if false).</cell>
@@ -33,7 +33,7 @@ PROC MATERNITY_QUEST
 
 preproc
 
-	if diagnostics("version") <> "<definition version />" then
+	if diagnostics("version") <> "<definition CSPro::version />" then
 		errmsg("This application has not been tested with this version of CSPro. Things may behave differently than expected.");
 	endif;
 </logic>

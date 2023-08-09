@@ -2,7 +2,7 @@
 
 You can run production <link CSPro::synchronization.csdoc>synchronizations</link> by customizing their behavior by creating a PFF file. You then use the PFF as a command line parameter for DataViewer.exe (the associated filename of this utility). For example, suppose you've named your Sync PFF <b>Download Data.pff</b>; you can then run the synchronization by invoking this file from the command line:
 
-<indent><font monospace>"C:\Program Files (x86)\CSPro <definition version />\DataViewer.exe" "Download Data.pff"</font></indent>
+<indent><font monospace>"C:\Program Files (x86)\CSPro <definition CSPro::version />\DataViewer.exe" "Download Data.pff"</font></indent>
 
 This assumes that CSPro was installed in the default directory. PFF files always have a <b>.pff</b> extension. Note that you can only sync <b>.csdb(e)</b> files&mdash;data files stored as text can not be synced.
 
@@ -12,7 +12,7 @@ The following section shows the options available to you in a synchronization PF
 
 <pff>
 [Run Information]
-Version=CSPro <definition version />
+Version=CSPro <definition CSPro::version />
 AppType=Sync
 
 [ExternalFiles]

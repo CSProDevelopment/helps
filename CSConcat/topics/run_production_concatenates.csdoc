@@ -2,7 +2,7 @@
 
 To run production concatenates, you'll need to customize its behavior by creating a PFF file. You can then use the PFF file as a command line parameter in DOS or in a Windows icon for CSConcat.exe (the associated filename of this utility). For example, if you name your PFF MyConcat.pff, then you can run the concatenation program by invoking:
 
-<indent><font monospace>"C:\Program Files (x86)\CSPro <definition version />\CSConcat.exe" MyConcat.pff</font></indent>
+<indent><font monospace>"C:\Program Files (x86)\CSPro <definition CSPro::version />\CSConcat.exe" MyConcat.pff</font></indent>
 
 This assumes that CSPro was installed in the default directory. Your PFF file must have a .pff extension.
 
@@ -12,7 +12,7 @@ The following section shows the options available to you in a CSConcat PFF file.
 
 <pff>
 [Run Information]
-Version=CSPro <definition version />
+Version=CSPro <definition CSPro::version />
 AppType=Concatenate
 Description=My Program
 ShowInApplicationListing=Always

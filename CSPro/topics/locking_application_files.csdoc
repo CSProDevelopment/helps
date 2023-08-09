@@ -15,7 +15,7 @@ For instance:
 <indent 2><font monospace>
 [NoEdit]
 [CSPro Application]
-Version=CSPro <definition version />
+Version=CSPro <definition CSPro::version />
 </font></indent>
 
 When the user tries to open any such data file, the CSPro Designer will give an error message. However, the user can open the files in the context of running an application, whether that is running a batch program or exporting data. This setting only affects the CSPro Designer. It is not particularly robust protection, as a knowledgeable user can remove [NoEdit] from the file, but it will protect against most users modifying application files. With data entry applications, <link binary_data_entry_application_file_pen.csdoc>.pen files</link> can be distributed for more protection against editing.

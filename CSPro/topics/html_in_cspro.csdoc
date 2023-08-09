@@ -36,7 +36,7 @@ For example, these references in question text would refer to files in the appli
 
 HTML, JavaScript, CSS, and other files that CSPro uses for its operations are located in a <i>html</i> directory. On Windows, these files are typically found here:
 
-<indent><font monospace>C:\Program Files (x86)\CSPro <definition version />\html\</font></indent>
+<indent><font monospace>C:\Program Files (x86)\CSPro <definition CSPro::version />\html\</font></indent>
 
 The <logiccolor>pathname</logiccolor> and other path-related functions can return the name of this directory using the <logiccolor>Html</logiccolor> argument.
 
@@ -44,11 +44,11 @@ If you want to access any of the files in that directory in HTML that you write,
 
 <report html>
 <!-- will not work when displayed in CSPro: -->
-<img src="file:///C:/Program Files (x86)/CSPro <definition version />/html/images/pff-icon.png" />
+<img src="file:///C:/Program Files (x86)/CSPro <definition CSPro::version />/html/images/pff-icon.png" />
 
 <!-- correct format: -->
 <img src="~~Path.getRelativePath(Path.getDirectoryName(filename($)),
-								 "C:/Program Files (x86)/CSPro <definition version />/html/images/pff-icon.png")~~" />
+								 "C:/Program Files (x86)/CSPro <definition CSPro::version />/html/images/pff-icon.png")~~" />
 </report>
 
 Fortunately, the local web server treats the <i>html</i> directory as the root of the server. The above example can instead be coded as:

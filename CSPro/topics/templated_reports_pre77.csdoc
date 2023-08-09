@@ -129,7 +129,7 @@ CSPro first reads in any report templates and determines what queries and templa
 
 However, if CSPro cannot find the definition of a query or template engine in the report template, it looks in two places for these definitions, which can be included in report script definition files, which have the extension <b>.csrs</b>. These files consist of script blocks defining queries and template engines. First, CSPro looks in the directory where the report is being created and loads any .csrs files in that directory. If CSPro cannot find the definition of a query or template engine in those files, it then loads the .csrs files that come with default CSPro installation. If it cannot find them in either of these locations, the report generation will result in an error.
 
-To see an example of how this works, create a basic report, using the Mustache engine, and the output of the report will use the engine as it is defined in "C:\Program Files (x86)\CSPro <definition version />\Reports\CSPro Reports.csrs." You could override the default Mustache behavior by adding a template engine with the name "mustache" to your report template or to a .csrs file in the directory where your report will be created.
+To see an example of how this works, create a basic report, using the Mustache engine, and the output of the report will use the engine as it is defined in "C:\Program Files (x86)\CSPro <definition CSPro::version />\Reports\CSPro Reports.csrs." You could override the default Mustache behavior by adding a template engine with the name "mustache" to your report template or to a .csrs file in the directory where your report will be created.
 
 
 <seealso report_function_pre77.csdoc setreportdata_function_pre77.csdoc sqlquery_function.csdoc />
