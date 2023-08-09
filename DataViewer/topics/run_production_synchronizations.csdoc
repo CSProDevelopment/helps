@@ -42,7 +42,7 @@ The <pffcolor>[Parameters]</pffcolor> block is required and includes information
 
 <list>
 	<li><pffcolor>SyncType</pffcolor>= specifies the type of server to be used during the synchronization. Possible options include: <b>CSWeb</b>, <b>Dropbox</b>, <b>LocalDropbox</b>, <b>FTP</b>, and <b>LocalFiles</b>.</li>
-	<li><pffcolor>SyncDirection</pffcolor>= specifies the direction of the synchronization. The three options, <b>Get</b>, <b>Put</b>, <b>Both</b>, are detailed in the help documentation for the <link CSPro::syncdata_function.csdoc>syncdata function</link>.</li>
+	<li><pffcolor>SyncDirection</pffcolor>= specifies the direction of the synchronization. The three options, <b>Get</b>, <b>Put</b>, <b>Both</b>, are detailed in the help documentation for the <logiccolor>syncdata</logiccolor> function.</li>
 	<li><pffcolor>SyncUrl</pffcolor>= specifies the URL of the server. This is not required if syncing with Dropbox.</li>
 	<li><pffcolor>Silent</pffcolor>= determines whether or not to close Data Viewer automatically after the synchronization completes. The value can be <b>Yes</b> or <b>No</b>; it will default to <b>No</b> if this parameter is not listed.</li>
 </list>
