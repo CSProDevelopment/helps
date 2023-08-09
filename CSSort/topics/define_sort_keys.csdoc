@@ -1,38 +1,27 @@
 ﻿<title>Define Sort Keys</title>
 
-The Sort window has two columns; the <b>Items</b> list on the left contains all items available for use as sort keys. The <b>Keys</b> list on the right contains all items that have been selected as keys for the sort. If you begin Sort Data using a dictionary, then no items are selected and hence, all items will appear in the left column. If you begin Sort Data with a sort specification file, then you will most likely have one or more items in the right column.
+The <b>CSSort</b> window has two columns: the <b>Items</b> list on the left that contains all items currently available for use as a sort key, and the <b>Keys</b> list on the right that contains all items that have been selected as keys for the sort. If CSSort was launched using a dictionary, then no items have yet been selected and hence, all items will appear in the left column. However if you begin CSSort with a <link save_a_sort_specification_file.csdoc>sort specifications file (.ssf)</link>, then you will most likely have one or more items in the right column.
 
-Refer to the <link choose_type_of_sort.csdoc>choose type of sort</link> help screen for details on how this will impact the items shown in the left column.
+If the questionnaire IDs listed in the Items list appear incomplete or incorrect, the only way to modify the list is via the data dictionary. Likewise, the order in which the fields are presented is determined by their definition within the dictionary. (Refer to the <link choose_type_of_sort.csdoc>choose type of sort</link> help screen for details on how the type of sort will impact which items are shown in the left column.)
 
-If the Questionnaire IDs listed in the Items List are incomplete or incorrect, the only way to modify its contents is via Data Dictionary. Likewise, the order in which the fields are presented is determined by their definition within Data Dictionary.
+The <b>Keys</b> column indicates the order in which the original (source) data file will be sorted to the new (destination) data file. Normally, if the files are structured in a hierarchical manner using geography as the keys, you would sort from a top-level geoography (the largest geographical area such as Province) to some mid- or low-level geography (a small or local geographic area, such as village or enumeration area). It may not be necessary to sort using all case IDs (case IDs are those fields which make the questionnaire unique), but it will usually make CSPro perform better.
 
-The <b>Keys</b> column indicates the order in which the original (source) data file will be sorted to the new (destination) data file. Normally, if the files are structured in a hierarchical manner using geography as the keys, you would sort from a top-level (the largest geographical region) to some mid- or low-level (a small or local geographic region, such as enumeration area). It may not be necessary to sort by all case IDs (i.e., those fields which make the questionnaire/record unique), but it will usually will make CSPro perform better.
-
-
-To transfer dictionary items to the <b>Key</b> column, do the following:
+To move dictionary items to the <b>Key</b> column, do the following:
 
 <list ordered>
-	<li>Select names from the Items list on the left in the order in which you want Sort Data to sort them.</li>
-	<li>Click <b>Add --&gt;</b> to add selected items to the sort keys column.</li>
+	<li>Select a name from the Items list on the left.</li>
+	<li>Click <b>Add --&gt;</b> to move the selected item to the Keys column.</li>
 	<li>If necessary, use the <b>Move Up</b> and/or <b>Move Down</b> buttons to promote/demote the key(s) to the desired sequence.</li>
 	<li>Use the <b>Ascending</b> and <b>Descending</b> buttons to specify the order of the sorting (the default is ascending).</li>
 </list>
 
+For each item placed in the <b>Key</b> column, you can change its sort value. <b>Ascending</b> means the item will be sorted in A-Z sequence if alphabetic, 0-9 if numeric, or a combination of the two if it is an alphanumeric field. <b>Descending</b> order means it will be sorted in Z-A sequence if alphabetic, 9-0 if numeric, or a combination of the two if it is an alphanumeric field.
+
 <subheader>Tips</subheader>
 
 <list>
-	<li>To select several items, hold the <b>Ctrl</b> key down while you make the additional selections.</li>
-	<li>Click on <b>Add All --&gt;</b> to add all items to the key list.</li>
+	<li>To select several names from the Items list, hold the <b>&lt;ctrl></b> key down while clicking on additional names.</li>
+	<li>To select a sequential block of items, click on the first item, then hold down the <b>&lt;ctrl>+&lt;shift></b> keys simultaneously while clicking on the last item of the block.</li>
+	<li>Click <b>Add All --&gt;</b> to move all items to the Key list.</li>
 	<li>Click on <b>&lt;-- Remove</b>, to remove selected keys, or <b>&lt;-- Remove All</b>, to remove all keys from the key list.</li>
-</list>
-
-Suppose you failed to add an item as a key field, added it, but then realized the sort sequence is out of order—you can correct it quite easily. Select the item in question in the <b>Keys</b> column, then click on the <b>Move Up</b> and/or <b>Move Down</b> buttons to promote or demote the key to the desired sequence. Multiple clicks of the same key "sifts" the item up/down.
-
-For each item that you have added to the <b>Key</b> column, you have the ability to change its sort value. <b>Ascending</b> means it will be sorted in A-Z sequence (if alphabetic), 0-9 (if numeric), or a combination of the two (if an alpha-numeric field). <b>Descending</b> order, therefore, means it will be sorted in Z-A sequence (if alphabetic), 9-0 (if numeric), or a combination of the two (if an alpha-numeric field).
-
-<subheader>Tips</subheader>
-
-<list>
-	<li>If you'd like to change multiple keys at one time, use standard Windows functionality, i.e., hold down the <b>Ctrl</b> key when clicking on items to select additional items.</li>
-	<li>To select a sequential block of items, click on the first item, then hold down the <b>Ctrl+Shift</b> keys simultaneously while clicking on the last item.</li>
 </list>
