@@ -1,20 +1,24 @@
 ﻿<title>IsVerified Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = isVerified(<arg>dictionary_name</arg>);
+b = isverified(<arg>dictionary_name</arg>);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
-The <logiccolor>isVerified</logiccolor> function determines whether a case has been verified by <link cspro_capabilities.csdoc>double-keying</link>. The function, with argument <arg>dictionary_name</arg>, can look at cases in external dictionaries or in batch edit input dictionaries.
+The <logiccolor>isverified</logiccolor> function determines whether a case has been verified by <link cspro_capabilities.csdoc>double-keying</link>. The function, with argument <arg>dictionary_name</arg>, can look at cases in external dictionaries or in batch edit input dictionaries.
 
-The <logiccolor>IsVerified</logiccolor> can not be used on input dictionaries within a data entry application. In that situation, use the <topic demode_function.csdoc /> to ascertain whether the mode of entry is in verification.
+The isverified function cannot be used on input dictionaries within a data entry application. In that situation, use the <logiccolor>demode</logiccolor> function to ascertain whether the mode of entry is in verification.
+
 
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if the case was verified and 0 (false) otherwise.
+
 
 <subheader>Example</subheader>
 
@@ -34,5 +38,6 @@ PROC CASE_MENU
 
 	endif;
 </logic>
+
 
 <seealso ispartial_function.csdoc demode_function.csdoc  />

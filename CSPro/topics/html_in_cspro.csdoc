@@ -29,7 +29,7 @@ Relative paths that are not based off the root are evaluated from the location o
 
 For example, these references in question text would refer to files in the application directory and in a relative directory located one level above the application directory:
 
-<color html>
+<color HTML>
 <img src="image-in-application-directory.jpg" />
 <img src="../shared/image-in-relative-directory.jpg" />
 </color>
@@ -42,7 +42,7 @@ The <logiccolor>pathname</logiccolor> and other path-related functions can retur
 
 If you want to access any of the files in that directory in HTML that you write, you should not reference the file using an absolute path (using a file URL) because the web browser that displays the HTML may not be able to access local files. Instead, you should use the <logiccolor>Path.getRelativePath</logiccolor> function to construct a relative path from the location of your HTML content. For example, if trying to use the PFF icon from a <link templated_reports.csdoc>report</link>:
 
-<report html>
+<report HTML>
 <!-- will not work when displayed in CSPro: -->
 <img src="file:///C:/Program Files (x86)/CSPro <definition CSPro::version />/html/images/pff-icon.png" />
 
@@ -53,7 +53,7 @@ If you want to access any of the files in that directory in HTML that you write,
 
 Fortunately, the local web server treats the <i>html</i> directory as the root of the server. The above example can instead be coded as:
 
-<report html>
+<report HTML>
 <img src="/images/pff-icon.png" />
 </report>
 
@@ -71,7 +71,7 @@ Some popular JavaScript libaries are included in the <i>html</i> directory:
 
 To use these libraries, use the following code:
 
-<color html>
+<color HTML>
 <!-- Bootstrap -->
 <link rel="stylesheet" href="/external/bootstrap/bootstrap.min.css" />
 <link rel="stylesheet" href="/external/bootstrap/bootstrap-icons.css" />

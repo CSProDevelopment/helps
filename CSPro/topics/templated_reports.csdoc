@@ -14,9 +14,9 @@ Each templated report is a CSPro logic object and the following functions can be
 
 <table 2 header nowrap>
 	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor report>save</logiccolor></cell><cell>Saves the report to a file.</cell>
-	<cell><logiccolor report>view</logiccolor></cell><cell>Displays the report in an embedded web browser.</cell>
-	<cell><logiccolor report>write</logiccolor></cell><cell>Writes text to the report.</cell>
+	<cell><logiccolor Report>save</logiccolor></cell><cell>Saves the report to a file.</cell>
+	<cell><logiccolor Report>view</logiccolor></cell><cell>Displays the report in an embedded web browser.</cell>
+	<cell><logiccolor Report>write</logiccolor></cell><cell>Writes text to the report.</cell>
 </table>
 
 In addition to these object functions, templated reports can be used as arguments to the <logiccolor>filename</logiccolor> and <logiccolor>view</logiccolor> functions.
@@ -46,7 +46,7 @@ There are three ways of writing numeric and string expressions to templated repo
 <list ordered>
 <li><b>~~</b>...<b>~~</b> writes the results of the numeric or string expression specified between the tildes.</li>
 <li><b>~~~</b>...<b>~~~</b> is similar to the above version except that the text will not be automatically escaped for HTML.</li>
-<li><logiccolor report>$.write</logiccolor> writes directly to the report.</li>
+<li><logiccolor Report>$.write</logiccolor> writes directly to the report.</li>
 </list>
 
 
@@ -57,14 +57,14 @@ A templated report can be previewed in both data entry and batch by pressing <b>
 
 <subheader>Example 1</subheader>
 
-<report html>
+<report HTML>
 <p>Report generated at ~~timestring()~~</p>
 </report>
 
 
 <subheader>Example 2</subheader>
 
-<report html>
+<report HTML>
 <?
 	numeric partial_count = 0;
 	numeric complete_count = 0;

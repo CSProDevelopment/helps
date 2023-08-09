@@ -3,12 +3,13 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-Export to file_name
-    『rec_name(record_name | alpha_exp)』
-    『rec_type(record_name | alpha_exp)』
-    『case_id (『item_list])』
-    record_item_list
+export to file_name
+		 『rec_name(record_name | alpha_exp)』
+		 『rec_type(record_name | alpha_exp)』
+		 『case_id (『item_list]』)』
+		 record_item_list;
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -28,32 +29,30 @@ The <b>record_item_list</b> specifies the contents of the exported data record. 
 
 Where possible users are encouraged to use the <link CSExport::introduction_to_export_data.csdoc>Export Data</link> tool instead of the export statement.
 
+
 <subheader>Example</subheader>
 
 <logic>
-{Export fertility data for women 15 to 54 years old}
-
+// Export fertility data for women 15 to 54 years old
 PROC GLOBAL
 
-numeric i;
-
-file SPSS_EXPORT;
+File SPSS_EXPORT;
 
 PROC CENSUS_2000_DICTIONARY_FF
 
-PROC QUEST {export done at LEVEL procedure}
+PROC QUEST // export done at LEVEL procedure
 
-  set behavior() export ( SPSS , ItemOnly );
+	set behavior() export(SPSS, ItemOnly);
 
-  do i = 1 until I > totocc(PERSON)
-    if P03_SEX (i) = 2 and P04_AGE(i) in 15:54 then
-      export to SPSS_EXPORT
-				case_id (PROVINCE,DISTRICT,EA,HU,HH)
-				LINE(i), P18_BORN(i), P19_LIVING(i), P20_BORN12(i);
-      errmsg ("Record exported for female ages 15-54") summary;
-    endif;
-  enddo;
-
+	do numeric i = 1 until i > totocc(PERSON)
+		if P03_SEX(i) = 2 and P04_AGE(i) in 15:54 then
+			export to SPSS_EXPORT
+					  case_id(PROVINCE, DISTRICT, EA, HU, HH)
+					  LINE(i), P18_BORN(i), P19_LIVING(i), P20_BORN12(i);
+			errmsg("Record exported for female ages 15-54") summary;
+		endif;
+	enddo;
 </logic>
+
 
 <seealso set_behavior_export_statement.csdoc file_statement.csdoc setfile_function.csdoc CSExport::introduction_to_export_data.csdoc />

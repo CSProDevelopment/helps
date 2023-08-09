@@ -1,10 +1,11 @@
 ﻿<title>Use Hot Decks</title>
 
-Hot decks in CSPro are implemented using <link array_statement.csdoc>arrays</link>. First, you must declare the array under the <logiccolor>PROC GLOBAL</logiccolor> section. Then you need to set the initial values for the hot deck array. There are two ways to initialize and maintain arrays in CSPro:
+Hot decks in CSPro are implemented using <link array_statement.csdoc>Array</link> objects. First, you must declare the array under the <logiccolor>PROC GLOBAL</logiccolor> section. Then you need to set the initial values for the hot deck array. There are two ways to initialize and maintain arrays in CSPro:
 
 <list>
-<li><link initialize_hot_decks_in_program_logic.csdoc>inline</link> (in program logic), or</li>
-<li>using <link initialize_hot_decks_using_saved_arrays.csdoc>saved arrays</link>.</li></list>
+	<li><link initialize_hot_decks_in_program_logic.csdoc>inline</link> (in program logic), or</li>
+	<li>using <link initialize_hot_decks_using_saved_arrays.csdoc>saved arrays</link>.</li>
+</list>
 
 Once the array has been declared and initialized, you need to add logic to check each occurrence of the variable you wish to impute using the hot deck. If the value of the variable is valid, update the hot deck by assigning this value to the appropriate cell in the array. If the value is invalid, set the value of the variable based on the corresponding cell in the hot deck. A simple usage could be:
 
@@ -15,26 +16,26 @@ This example uses the traditional <link initialize_hot_decks_in_program_logic.cs
 <logic>
 PROC GLOBAL
 
-array HD_Age_SexRel (2,8);	// hot deck for age, uses sex & relationship as indices
+Array HD_Age_SexRel(2, 8);	// hot deck for age, uses sex & relationship as indices
 
 PROC AGE
 
 	if AGE = notappl then
 		// if the value for age is invalid:
 		// assign a valid value from the hot deck based on sex and relationship
-		impute(AGE, HD_Age_SexRel (SEX, RELATIONSHIP));
+		impute(AGE, HD_Age_SexRel(SEX, RELATIONSHIP));
 
 	else
 		// otherwise:
 		// update the value of the hot deck with the good value found
-		HD_Age_SexRel (SEX, RELATIONSHIP) = AGE;
+		HD_Age_SexRel(SEX, RELATIONSHIP) = AGE;
 
 	endif;
 </logic>
 
 <subheader>Example 2</subheader>
 
-This example uses the <link initialize_hot_decks_using_saved_arrays.csdoc>SAVE</link> array method of maintaining hot decks.
+This example uses the <link initialize_hot_decks_using_saved_arrays.csdoc>save</link> array method of maintaining hot decks.
 
 <logic>
 PROC GLOBAL
@@ -42,7 +43,7 @@ PROC GLOBAL
 // the hot deck for age uses the sex & relationship value sets
 // to define the array dimensions
 
-array HD_Age_SexRel (SEX_VS,REL_VS) save;
+Array HD_Age_SexRel(SEX_VS, REL_VS) save;
 
 PROC AGE
 

@@ -24,7 +24,7 @@ The function returns a logical value of 1 (true).
 
 // User function that will be called on button click
 // to filter households by status
-function filterMapHouseholds(Map mymap)
+function filterMapHouseholds(Map myMap)
 
 	numeric choice = accept("Choose status to show", "Not started", "Partial", "Complete");
 	if choice > 0 then
@@ -33,11 +33,12 @@ function filterMapHouseholds(Map mymap)
 		myMap.clearMarkers();
 
 		// Add markers for households matching status chosen
-		forcase HOUSEHOLD_DICT WHERE HOUSEHOLD_STATUS = choice do
+		forcase HOUSEHOLD_DICT where HOUSEHOLD_STATUS = choice do
 			numeric marker = myMap.addMarker(HOUSEHOLD_LATITUDE, HOUSEHOLD_LONGITUDE);
 			myMap.setMarkerDescription(marker, maketext("%l - %s", HOUSEHOLD_NUMBER, HOUSEHOLD_HEAD_NAME));
 		endfor;
 	endif;
+
 end;
 </logic>
 

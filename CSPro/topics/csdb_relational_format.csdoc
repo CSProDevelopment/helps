@@ -26,7 +26,7 @@ CSPro DB files also contain additional tables that store field notes as well as 
 
 To find the rows in the record tables that correspond to a particular case in the data file, join the record table with the level table using the linking column and filter on the ID items. For example, the following query on the example database above lists all the individuals in province 1, district 1, enumeration area 3, household 1:
 
-<color sql>
+<color SQL>
 SELECT * FROM person_rec
 JOIN `level-1` ON `level-1`.`level-1-id` = person_rec.`level-1-id`
 WHERE province = 1 AND district = 1 AND enumeration_area = 3 AND household_number = 1
@@ -36,7 +36,7 @@ Note the use of <b>`</b> around <b>level-1-id</b>. This is required so that SQLi
 
 The query above could potentially include data from deleted cases. To exclude deleted cases, join with the cases table and filter on the deleted column:
 
-<color sql>
+<color SQL>
 SELECT * FROM person_rec
 JOIN `level-1` ON `level-1`.`level-1-id` = person_rec.`level-1-id`
 JOIN cases ON cases.id = `level-1`.`case-id`
@@ -45,7 +45,7 @@ WHERE deleted = 0 AND province = 1 AND district = 1 AND enumeration_area = 3 AND
 
 Using <b>GROUP BY</b>, the following query gets the number of households by enumeration area:
 
-<color sql>
+<color SQL>
 SELECT province, district, enumeration_area, COUNT(*) AS `number of households`
 FROM `level-1`
 JOIN cases ON cases.id = `level-1`.`case-id`

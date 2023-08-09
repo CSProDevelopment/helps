@@ -27,7 +27,7 @@ In the second version, the optional <link function_named_arguments.csdoc>named a
 
 <subheader>Return Value</subheader>
 
-The function returns a string. The contents of the string are determined by the HTML template and returned by a JavaScript call to <colorinline javascript>CSPro.returnData()</colorinline>.
+The function returns a string. The contents of the string are determined by the HTML template and returned by a JavaScript call to <colorinline JavaScript>CSPro.returnData()</colorinline>.
 
 
 <subheader>HTML Templates</subheader>
@@ -39,9 +39,9 @@ Writing a user-created HTML template can be simplified by first selecting an exi
 
 <subheader>Input Data</subheader>
 
-The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a <link json_format.csdoc>JSON</link> string that represents multiple values. The string contents of the input data are retrieved by calling <colorinline javascript>CSPro.getInputData()</colorinline> from the script block of the HTML template.
+The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a <link json_format.csdoc>JSON</link> string that represents multiple values. The string contents of the input data are retrieved by calling <colorinline JavaScript>CSPro.getInputData()</colorinline> from the script block of the HTML template.
 
-<color javascript>
+<color JavaScript>
 // Simple string
 var inputString = CSPro.getInputData();
 
@@ -52,7 +52,7 @@ var inputJSON = JSON.parse(CSPro.getInputData());
 
 <subheader>Display Options</subheader>
 
-The display options can be set using the optional named argument <arg>display_options</arg> in CSPro logic, or can be specifed as part of the HTML dialog by executing a JavaScript call to <colorinline javascript>CSPro.setDisplayOptions(displayOptions)</colorinline>.
+The display options can be set using the optional named argument <arg>display_options</arg> in CSPro logic, or can be specifed as part of the HTML dialog by executing a JavaScript call to <colorinline JavaScript>CSPro.setDisplayOptions(displayOptions)</colorinline>.
 
 <table 3 header nowrap>
 	<cell>Name</cell><cell>Platform</cell><cell>Values</cell>
@@ -65,7 +65,7 @@ The display options can be set using the optional named argument <arg>display_op
 	<cell>keyboard</cell><cell>Android</cell><cell>True, False (whether to show an on-screen keyboard)</cell>
 </table>
 
-The default values for <i>resizeable</i> and <i>keyboard</i> are false. If a width and height are not specified, CSPro will wait a few seconds before showing the dialog as it expectantly waits for a call to <colorinline javascript>CSPro.setDisplayOptions(displayOptions)</colorinline>. This behavior is undesirable so it is important to specify the dialog width and height.
+The default values for <i>resizeable</i> and <i>keyboard</i> are false. If a width and height are not specified, CSPro will wait a few seconds before showing the dialog as it expectantly waits for a call to <colorinline JavaScript>CSPro.setDisplayOptions(displayOptions)</colorinline>. This behavior is undesirable so it is important to specify the dialog width and height.
 
 
 <subheader>Example: Existing HTML Template</subheader>

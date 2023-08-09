@@ -30,7 +30,7 @@ endif;
 <logic>
 if ctrHead > 1 then // more than 1 head in the household
 	errmsg("More than 1 head of household (count=%d)",ctrHead);
-	numeric headToDelete = show(PERSON_REC,NAME,RELATIONSHIP,SEX,AGE,WHERE RELATIONSHIP = 1);
+	numeric headToDelete = show(PERSON_REC, NAME, RELATIONSHIP, SEX, AGE, where RELATIONSHIP = 1);
 	// ...
 endif;
 </logic>
