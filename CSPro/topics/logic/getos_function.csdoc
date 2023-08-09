@@ -1,0 +1,52 @@
+﻿<title>GetOS Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = getos(『<arg>detailed_information</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>getos</logiccolor> function returns a code that indicates what operating system is running the program. The codes are:
+
+<table 2 header nowrap>
+	<cell>Code</cell><cell>Operating System</cell>
+	<cell>10</cell><cell>Windows</cell>
+	<cell>20</cell><cell>Android</cell>
+</table>
+
+It is also possible to get more detailed information about the operating system. If the optional argument <arg>detailed_information</arg> is a <link string_statement.csdoc>string</link> variable, the string will be filled with the operating system name and the version number. Alternatively, if passed a one-dimensional string <link HashMap.csdoc>HashMap</link>, the HashMap will be filled with several values:
+
+<table 2 header nowrap>
+	<cell>Key</cell><cell>Value</cell>
+	<cell><logiccolor>"name"</logiccolor></cell><cell>Name (e.g., <logiccolor>"Windows"</logiccolor>)</cell>
+	<cell><logiccolor>"version"</logiccolor></cell><cell>Version number (e.g., <logiccolor>"10.0"</logiccolor>)</cell>
+	<cell><logiccolor>"build"</logiccolor></cell><cell>Build number (Windows only; e.g., <logiccolor>"22000"</logiccolor>)</cell>
+</table>
+
+Windows version numbers do not necessarily match the official release numbers. For example, Windows 8.1 has a version number of 6.3.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the operating system code and, optionally, more details about the operating system.
+
+
+<subheader>Example</subheader>
+
+<logic>
+string operating_system_name;
+getos(operating_system_name);
+
+errmsg("Code = %d, Text = %s", getos(), operating_system_name);
+
+// the above code might display, for example:
+// Code = 10, Text = Windows;6.1
+// Code = 20, Text = Android;4.2.2
+</logic>
+
+
+<seealso getoperatorid_function.csdoc getusername_function.csdoc getbluetoothname_function.csdoc />

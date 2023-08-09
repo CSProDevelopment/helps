@@ -1,0 +1,28 @@
+﻿<title>ForCase Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+forcase <arg>dictionary_name</arg> 『where <arg>condition</arg>』 do
+	// statements
+endfor;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>forcase</logiccolor> statement executes one or more statements repeatedly within a loop for each case in a file opened as external dictionary <arg>dictionary_name</arg>. An optional logical <arg>condition</arg>, referencing items in the external dictionary, can be supplied to restrict the cases processed by the loop.
+
+It is possible, by specifying <link set_access_statement.csdoc>dictionary access parameters</link> after the dictionary name, to limit the cases that the <logiccolor>forcase</logiccolor> loop processes.
+
+<subheader>Example</subheader>
+
+<logic>
+numeric incomplete_households;
+
+forcase CENSUS_DICT where INTERVIEW_STATUS = 3 do
+	inc(incomplete_households);
+endfor;
+
+</logic>
+
+<seealso for_statement.csdoc for_dict_statement.csdoc countcases_function.csdoc loadcase_function.csdoc />

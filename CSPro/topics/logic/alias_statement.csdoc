@@ -1,0 +1,39 @@
+﻿<title>Alias Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+alias <arg>aliased_name</arg> : <arg>original_name</arg>;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>alias</logiccolor> statement allows for the creation of new names to alias, or to provide an alternative reference to, names in a program. This can be used to shorten, or lengthen, variable names, or to match names in a dictionary with preexisting code using a certain naming convention.
+
+You can define aliases in logic, or directly in the <link dictionary_property_panel.csdoc>dictionary editor</link>.
+
+
+<subheader>Example 1: Shortening Dictionary Names to Quicken the Typing of Variables</subheader>
+
+<logic>
+alias	P14 : P14_AGE,
+		P15 : P15_RELATIONSHIP,
+		P16 : P16_SEX;
+</logic>
+
+
+<subheader>Example 2: Using Aliases to Standardize Variable Names so that Logic Can be Reused Across Programs</subheader>
+
+<logic>
+alias	AGE				: P14_AGE,
+		RELATIONSHIP	: P15_RELATIONSHIP,
+		SEX				: P16_SEX;
+</logic>
+
+In both examples, <logiccolor>P14_AGE</logiccolor>, <logiccolor>P15_RELATIONSHIP</logiccolor>, and <logiccolor>P16_SEX</logiccolor> are the names of items declared in a dictionary. Once the <logiccolor>alias</logiccolor> statement has been specified (in <logiccolor>PROC GLOBAL</logiccolor>), the names <logiccolor>P14</logiccolor> and <logiccolor>P14_AGE</logiccolor> can be used interchangeably. For example, these two statements are identical:
+
+<logic>
+if P14_AGE < 18 and P16_SEX = 2 then
+
+if AGE < 18 and SEX = 2 then
+</logic>

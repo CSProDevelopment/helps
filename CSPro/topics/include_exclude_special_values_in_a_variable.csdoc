@@ -1,0 +1,165 @@
+﻿<title>Include/Exclude Special Values in a Variable</title>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ addition of special values to be tallied is available from the</font>
+ <a href="tally_attributes_for_a_table.html"><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">Tally
+ Attributes for a Table</font></a> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">dialog box.
+ It allows you to add rows and columns to your table to tally</font> <a
+	 href="special_values.html"><font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">special values</font></a>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">that
+ are not contained in the value sets for your variables or to remove the
+ rows and columns containing special values that are included in the value
+ sets for your variables.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Use custom special values</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">always
+ applies to all variables in a table. You cannot change the special values
+ for a single variable or single subtable.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ the Tally Attributes dialog box users have the following special value
+ options:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtab_18.png" alt="Special Values in Tally Attributes (Table) Dialog Box"
+	 title="Special Values in Tally Attributes (Table) Dialog Box" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
+ activate the Special Values portion of then menu, check the</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Use custom special values</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">box
+ (as shown).</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">After
+ that select the types of special values you want to add to/remove from
+ the value sets of each item in the table by checking the appropriate box.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">NotAppl</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">values counts
+	 blanks occurring in the data item.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Missing</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">values counts
+	 special codes defined as &quot;missing&quot; in the data dictionary.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Refused</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">values counts
+	 special codes defined as &quot;refused&quot; in the data dictionary.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Default</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">values counts
+	 the invalid values (shown as asterisks &quot;*&quot; in the data).</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Undefined</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">values counts
+	 any values for the item which is not otherwise counted.</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Once</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">Use custom special values</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">is
+ checked, this setting overrides any special values in the value sets for
+ items in the table. If</font> <b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" face="Arial"
+										 size="2">Use custom special values</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">is
+ checked, any of the special values that are checked in the tally attributes
+ dialog will be displayed for every item in the table regardless of whether
+ or not the value set for that item contains the special value. In addition,
+ only the special values that are checked in the dialog box will be displayed
+ in the table even if they appear in the value set for the an item in the
+ table. For example, if your value set contains</font> <b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Notappl</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">and
+ you check</font> <b><font style="font-family: Arial; font-size: 10pt;
+							 font-weight: bold;" face="Arial" size="2">Use
+ custom special values</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">but leave</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">Notappl</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">unchecked
+ then the columns/rows corresponding to the</font> <b><font style="font-family: Arial;
+															 font-size: 10pt;
+															 font-weight: bold;"
+															 face="Arial"
+															 size="2">Notappl</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">value
+ in your value set will be removed from the table. If your value set contains
+ no special values, and you check</font> <b><font style="font-family: Arial;
+													 font-size: 10pt; font-weight: bold;"
+													 face="Arial" size="2">Use
+ custom special values</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">and</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">Notappl</font></b><font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">,
+ then a row or column for</font> <b><font style="font-family: Arial; font-size: 10pt;
+											 font-weight: bold;" face="Arial"
+											 size="2">Notappl</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">will
+ be added for each variable in your table.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-left: 27.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -27.00pt;"><b><font style="font-family: Arial; font-size: 10pt;
+										 font-weight: bold;" face="Arial"
+										 size="2">Note:</font></b> <font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Undefined
+ values count includes blanks if</font> <b><font style="font-family: Arial;
+												 font-size: 10pt; font-weight: bold;"
+												 face="Arial" size="2">Notappl</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">values
+ is not checked. If it is checked then those counts are taken out of the
+ &quot;Undefined values&quot; count and tallied separately. Similar statements
+ apply to other special values.</font></p>
+</body>
+</html>
+
+
+<html><!---♻---></html>
+<build-extra "../images/xtab_18.png" />

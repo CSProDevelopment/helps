@@ -1,0 +1,53 @@
+﻿<title>OnChar Global Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+function OnChar(numeric <arg>key_value</arg>)
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>OnChar</logiccolor> global function allows you to trap characters in order to perform special actions or to change the action of the character. It can also be used to disable or remap characters. This function must be placed in <logiccolor>PROC GLOBAL</logiccolor>.
+
+If an <logiccolor>OnChar</logiccolor> function is defined, every character the operator types is sent to the function for processing. If the function returns a value, then the return value is processed by the field as the character. If a statement in the function causes movement to another field within the case, then the movement is executed. If no function is defined, then characters are unmodified.
+
+The parameter <arg>key_value</arg> is a numeric code identifying what character was typed using the keyboard. Its value can be used within the function.
+
+You can use the <topic onkey_character_map.csdoc /> to determine the value of characters.
+
+Calls to this function are ignored when executed on mobile devices.
+
+
+<subheader>Differences Between <logiccolor>OnKey</logiccolor> and <logiccolor>OnChar</logiccolor></subheader>
+
+The <logiccolor>OnChar</logiccolor> function differs from the <logiccolor>OnKey</logiccolor> function. A keystroke contains information about the key pressed on the keyboard, regardless of what this keystroke eventually maps to. A character refers to the final representation of one or more keystrokes. This is important when using non-Latin languages that require multiple keystrokes to create one character. For example, creating the Chinese character '马' using a Pinyin input system requires two keystrokes: 'm' and 'a.' The code for this character is 39532. If typing such a keystroke, <logiccolor>OnKey</logiccolor> will be called several times before <logiccolor>OnChar</logiccolor> is called. If both <logiccolor>OnKey</logiccolor> and <logiccolor>OnChar</logiccolor> functions exist, <logiccolor>OnKey</logiccolor> will always be called before <logiccolor>OnChar</logiccolor> is called.
+
+
+The <logiccolor>OnChar</logiccolor> function also returns values different from the <logiccolor>OnKey</logiccolor> function for some Latin keystrokes. For example, with Caps Lock off, if a keyer holds down Shift and types 'M,' <logiccolor>OnKey</logiccolor> will return 1077 (1000 for the shift, 77 for 'm'). <logiccolor>OnChar</logiccolor>, on the other hand, will return 77, the character code for 'M.' For a lowercase 'm,' <logiccolor>OnKey</logiccolor> returns 77 and <logiccolor>OnChar</logiccolor> returns 109, the character code for 'm.'
+
+The <logiccolor>OnChar</logiccolor> function does not return any information about whether any of the Shift, Ctrl, or Alt keys were held down when the character was typed.
+
+
+<subheader>Return Value</subheader>
+
+The <logiccolor>OnChar</logiccolor> function must return an integer value. The value should be either the value of the character pressed (the same as the value passed to the function), a substituted character value (remapping the character), or zero (0) to indicate that the character is to be ignored.
+
+
+<subheader>Example</subheader>
+
+<logic>
+function OnChar(numeric keystroke)
+
+	if keystroke = 24110 then // 帮 (bang)
+		move to HELP_FORM;
+	else
+		OnChar = keystroke;
+	endif;
+
+end;
+</logic>
+
+
+<seealso OnKey_global_function.csdoc onkey_character_map.csdoc user_defined_functions.csdoc />

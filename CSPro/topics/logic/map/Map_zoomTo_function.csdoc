@@ -1,0 +1,67 @@
+﻿<title>Map.zoomTo Function</title>
+
+
+<subheader>Format (Point)</subheader>
+
+<logicsyntax>
+b = map_name.zoomTo(<arg>latitude</arg>, <arg>longitude</arg>『, <arg>zoom_level</arg>』);
+</logicsyntax>
+
+<subheader>Format (Rectangle)</subheader>
+
+<logicsyntax>
+b = map_name.zoomTo(<arg>min_latitude</arg>, <arg>min_longitude</arg>, <arg>max_latitude</arg>, <arg>max_longitude</arg>『, <arg>padding</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Map.zoomTo</logiccolor> function pans and zooms a <link Map.csdoc>Map</link> to center the map on a given point, or to fit a rectangular region of the map to the screen. The <logiccolor>Map.zoomTo</logiccolor> function may be used before the map is displayed to set the initial view, or it may be used in a callback function to change the view while the map is showing.
+
+The first format example (point) moves the map so that the point with coordinates (<arg>latitude</arg>, <arg>longitude</arg>) is at the center of the screen. If the optional <arg>zoom_level</arg> is specified, the map is also zoomed to the specified zoom level. <arg>zoom_level</arg> is a number representing the level of detail to show. Zoom level one fits the entire world on the screen. Each consecutive zoom level is twice as detailed as the preceding level. Zoom level 15 shows streets, and zoom level 20 shows individual buildings. The minimum and maximum zoom levels supported will depend on the base map being used. If no zoom level is specified, the current zoom level is maintained.
+
+The second format example (rectangle) pans and zooms the map to fit the rectangular region of the map with corners at (<arg>min_latitude</arg>, <arg>min_longitude</arg>) and (<arg>max_latitude</arg>, <arg>max_longitude</arg>). If the optional <arg>padding</arg> is specified, the map will be zoomed less so that the rectangular region will fit onto the screen with extra padding on each side. This can be used so that the edges of the rectangle do not line up exactly with the edge of the screen. The <arg>padding</arg> is specified as a percentage of the width of the screen. A padding of 5 would add padding equal to 5% of the device screen width.
+
+If <logiccolor>Map.zoomTo</logiccolor> is not called before the map is shown, then the initial view is determined in the order listed:
+
+<list>
+<li>If there are any markers, the view is set to fit all of the markers onto the screen.</li>
+<li>Next, if an offline map file that specifies an extent is used as a base map, the view is set to the extent of the offline map file.</li>
+<li>Last, the initial view is the entire world.</li>
+</list>
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the map is zoomed/panned and 0 (false) if there is an error (for example, if the rectangle is invalid).
+
+
+<subheader>Example 1 (Point)</subheader>
+
+<logic>
+// Declare a map
+Map mymap;
+
+// Set initial view to center on the point 38.84839, -76.931098 at street level
+mymap.zoomTo(38.84839, -76.931098, 15);
+
+// Display the map
+mymap.show();
+</logic>
+
+
+<subheader>Example 2 (Rectangle)</subheader>
+
+<logic>
+// Declare a map
+Map mymap;
+
+// Set initial view to fit a rectangular region with 15% padding
+mymap.zoomTo(38.841546, -76.937428, 38.853679, -76.911550, 15);
+
+// Display the map
+mymap.show();
+</logic>
+
+
+<seealso Map.csdoc />

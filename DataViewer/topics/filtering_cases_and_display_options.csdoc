@@ -1,0 +1,84 @@
+﻿<title>Filtering Cases and Display Options</title>
+
+<subheader>Filtering Cases</subheader>
+
+To view a subset of the cases in the data file, you can enter a search query to filter the cases shown. The query will only filter by case IDs, not case labels. Click on the magnification glass icon, enter the key prefix, and press <b>Enter</b>. For example, this query only shows cases whose ID begins with "02":
+
+<center><image filter_cases.png /></center>
+
+<b>Note:</b>
+
+<list>
+	<li>Filtering cases with the key prefix works in tandem with any display file filters (see below).</li>
+	<li>As implied (key <b><i>prefix</i></b>), wildcard symbols are not allowed; therefore, the search will always start from the beginning of the case ID. </li>
+	<li>To dismiss the key prefix filter, click again on the magnification icon.</li>
+</list>
+
+
+<subheader>Display Options</subheader>
+
+There are several display options that you can choose. From the <b>Listing</b> menu:
+
+<list>
+	<li><b>File Order</b><list>
+		<li><b>Sequential</b>: Displays the case listing in file order.</li>
+		<li><b>Indexed</b>: Displays the case listing in key order.</li>
+	</list></li>
+	<li><b>File Filters</b><list>
+		<li><b>All Cases</b>: All cases in the data file, including deleted cases, are displayed.</li>
+		<li><b>Not Deleted Cases Only</b>: Cases that are deleted are not shown.</li>
+		<li><b>Partial Cases Only</b>: Only partially saved cases are shown.</li>
+		<li><b>Duplicate Cases Only</b>: Only cases that share an ID with other cases are shown.</li>
+	</list></li>
+	<li><b>Case Order</b><list>
+		<li><b>Ascending</b>: Using the selected file order, displays the cases in ascending order.</li>
+		<li><b>Descending</b>: Displays the case in descending order.</li>
+	</list></li>
+	<li><b>Case Label Type</b><list>
+		<li><b>Case Label</b>: Shows the case label, or the case key if no case label is set.</li>
+		<li><b>Case Key</b>: Shows the case key (a string containing a case's IDs).</li>
+	</list></li>
+</list>
+
+
+From the <b>Case</b> menu:
+
+<list>
+	<li><b>Language</b>: Uses the labels in the specified language, should other languages have been defined in the dictionary.</li>
+	<li><b>Dictionary Display</b><list>
+		<li><b>Item Descriptor</b>: Controls how dictionary names are displayed, using the label, name, or both.</li>
+		<li><b>Item/Subitem Display</b>: When an item and subitem pairing exists, this controls whether or not the item, subitem, or both are displayed.</li>
+	</list></li>
+	<li><b>Record Display</b><list>
+		<li><b>Orientation</b>: Determines if records should be shown in a horizontal or vertical roster layout.</li>
+		<li><b>Occurrence Labels</b>: For repeating records or items with occurrence labels, controls whether or not the label, as opposed to the occurrence number, is displayed.</li>
+	</list></li>
+	<li><b>Value Display</b><list>
+		<li><b>Value Label Type</b>: Determines how values are displayed in a variety of formats, including using the code, label, or both.</li>
+		<li><b>Blank Values</b>: Controls whether or not items with blank values are displayed.</li>
+	</list></li>
+	<li><b>Case Details</b><list>
+		<li><b>Details</b>: Determines whether or not to show extra and non-default information about cases.</li>
+		<li><b>Errors</b>: Controls whether or not case errors are shown. Case errors include messages such as whether or not a case has more records than allowed based on dictionary settings.</li>
+	</list></li>
+</list>
+
+
+From the <b>View</b> menu:
+
+<list>
+	<li><b>Refresh</b>: Reloads the data file, should its contents have been modified outside of Data Viewer during viewing.</li>
+	<li><b>Data Summary</b>: Displays the data filename, data file type, and the number of cases in the file.</li>
+	<li><b>Logic Helper</b>: If no case data is being viewed, provides several logic templates for conducting basic file operations (e.g., opening a data file, counting the number of cases in a file, looping through cases, etc.). If case data is being viewed, it will additionally give logic examples on how to load or delete the case being viewed. Choosing subsequent cases in the Data Viewer tree will adjust the case logic for the selected case.</li>
+</list>
+
+
+From the <b>Tools</b> menu:
+
+<list>
+	<li><link CSExport::introduction_to_export_data.csdoc>Export Data</link>: Launches the CSPro utility using the embedded dictionary for the currently-loaded data file.</li>
+	<li><link CSFreq::introduction_to_tabulate_frequencies.csdoc>Tabulate Frequencies</link>: Launches the CSPro utility using the embedded dictionary for the currently-loaded data file.</li>
+</list>
+
+
+<seealso navigating_data_viewer_windows.csdoc />

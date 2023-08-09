@@ -1,0 +1,40 @@
+﻿<title>Map.addMarker Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+markerId = map_name.addMarker(<arg>latitude</arg>, <arg>longitude</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Map.addMarker</logiccolor> function creates a new marker at the position defined by <arg>latitude</arg> and <arg>longitude</arg> and adds the new marker to the <link Map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor>. Initially the marker will have the default red and black marker icon and no description.
+
+You can customize the marker icon using the function <logiccolor>Map.setMarkerText</logiccolor> or <logiccolor>Map.setMarkerImage</logiccolor>. You can add a description of the marker using <logiccolor>Map.setMarkerDescription</logiccolor>. The description will appear in the marker list and in a popup when the user taps on the marker.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the identifier of the new marker which may be used in subsequent calls to <logiccolor>Map.removeMarker</logiccolor>, <logiccolor>Map.setMarkerText</logiccolor>, <logiccolor>Map.setMarkerImage</logiccolor>, <logiccolor>Map.setMarkerDescription</logiccolor> <logiccolor>Map.setMarkerOnClick</logiccolor>, <logiccolor>Map.setMarkerOnClickInfoWindow</logiccolor>, <logiccolor>Map.setMarkerOnDrag</logiccolor>, <logiccolor>Map.setMarkerLocation</logiccolor>, <logiccolor>Map.getMarkerLatitude</logiccolor>, or <logiccolor>Map.getMarkerLongitude</logiccolor>.
+
+
+<subheader>Example</subheader>
+
+<logic>
+// Declare a map
+Map mymap;
+
+// Add a marker to the map at latitude 38.84839, longitude -76.931098
+numeric markerId = mymap.addMarker(38.84839, -76.931098);
+
+// Set marker popup text
+mymap.setMarkerDescription(markerId, "CSPro Team at the U.S. Census Bureau");
+
+// Show the map
+mymap.show();
+</logic>
+
+
+<seealso Map.csdoc Map_removeMarker_function.csdoc />

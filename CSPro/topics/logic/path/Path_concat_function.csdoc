@@ -1,0 +1,28 @@
+﻿<title>Path.concat Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = Path.concat(<arg>path_string1</arg>『, ..., <arg>path_stringN</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Path.concat</logiccolor> function concatenates the values of multiple string expressions (<arg>path_string1</arg> + ... + <arg>path_stringN</arg>) into one string representing a file path. The first argument can be either a string expression or one of the path types documented in the <logiccolor>pathname</logiccolor> function. The combined paths are returned as an absolute, not relative, path.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the concatenated path string.
+
+
+<subheader>Example</subheader>
+
+<logic>
+string image_filename = Path.concat(Application, "../Images", maketext("%v%v.jpg", CLUSTER, HHNO));
+</logic>
+
+
+<seealso Path.csdoc pathname_function.csdoc concat_function.csdoc />

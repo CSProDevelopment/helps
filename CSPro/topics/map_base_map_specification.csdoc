@@ -1,0 +1,27 @@
+﻿<title>Base Map Specification</title>
+
+When using CSPro's mapping features, you can use as a base map an online map, which requires an Internet connection, or an <link offline_maps.csdoc>offline map</link>. Online maps are defined using predefined names:
+
+<include include_base_map_names.hgi />
+
+When specifying an online base map name, you can use the name directly or use it as a string expression. For example, these statements have the same effect:
+
+<logic>
+Map my_map;
+string desired_base_map = "Terrain";
+
+my_map.setBaseMap(Terrain);
+my_map.setBaseMap(desired_base_map);
+</logic>
+
+
+<subheader>Default Base Map Calculation</subheader>
+
+When using a <link Map.csdoc>Map</link> object, or using functionality such as the <link gps_interactive_modes.csdoc>interactive GPS modes</link>, there are ways to specify the base map (by using the <logiccolor>Map.setBaseMap</logiccolor> function or by providing a <arg>base_map</arg> argument to the <logiccolor>gps</logiccolor> function call). However, if no base map is specified, the default base map is calculated using the following rules:
+
+<list ordered>
+	<li>If the PFF has a <pffcolor>BaseMap</pffcolor> attribute set, use it.</li>
+	<li>Otherwise use the Default Base Map setting as defined in the <link properties_mapping.csdoc>Mapping Properties</link>, which defaults to the <b>Normal</b> map type.</li>
+</list>
+
+<seealso mapping.csdoc properties_mapping.csdoc offline_maps.csdoc Map_setBaseMap_function.csdoc />

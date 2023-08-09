@@ -1,0 +1,135 @@
+﻿<title>Templated Reports (Deprecated)</title>
+
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.7, this version of Templated Reports has been superseded by a new version, <link templated_reports.csdoc>Templated Reports</link>. This version will be removed in a future version of CSPro.</i>
+
+<subheader>Overview</subheader>
+
+CSPro can create HTML reports using case data as well as results from queries into <link paradata.csdoc>paradata</link> and other data sets. By specifying tags in your report template, you indicate to a templating engine what areas of your report are dynamic, and then via the <logiccolor>setreportdata</logiccolor> function, CSPro creates an object that the templating engine uses to render a dynamic report. The reporting system also supports the ability to automatically run queries on data sets based on queries specified in the report template.
+
+
+<subheader>Basic Functionality</subheader>
+
+This example will demonstrate how to create a simple report using <link templated_reports_mustache_pre77.csdoc>Mustache</link>, the default templating engine. The basic report template is a standard HTML file to which you add two components. First, you add a div block with the id <b>cspro_report</b>. This is the placeholder block where the template engine will place the results of its templating.
+
+<indent><html><xmp>
+<div id="cspro_report"></div>
+</xmp></html></indent>
+
+Second, you specify the text that you want to pass to the templating engine. Using the script element, you specify the type, <b>application/vnd.cspro.report-template</b>, as well as the id, <b>cspro_report_template</b>. In between the script tags, you specify the HTML. Using Mustache, replacement parameters are defined in between double brackets {{ ... }}, and # and / are used to start and end processing on elements of an array.
+
+<indent><html><xmp>
+<script type="application/vnd.cspro.report-template" id="cspro_report_template">
+    <h2>{{title}}</h2>
+    <table>
+        <tr><th>Name</th><th>Sex</th><th>Age</th></tr>
+        {{#PERSON_REC}}
+            <tr><td>{{NAME}}</td><td>{{SEX}}</td><td>{{AGE}}</td></tr>
+        {{/PERSON_REC}}
+    </table>
+</script>
+</xmp></html></indent>
+
+When CSPro passes this template to Mustache, the templating engine will look to replace {{title}}, and then for each occurrence (array element) of PERSON_REC, it will replace {{NAME}}, {{SEX}}, and {{AGE}}. Once it has done this, it will replace the <b>cspro_report</b> block with the dynamic contents.
+
+Within CSPro, we must pass these parameters to the reporting system. Assuming that our template is saved to a file named <b>simple_report.html</b>, then our code might be as follows:
+
+<logic>
+setreportdata("title","Demographic Report");
+setreportdata(PERSON_REC);
+report("simple_report.html");
+</logic>
+
+The calls to <logiccolor>setreportdata</logiccolor> set the data for the title and copy the information on the person record to an array that can be accessed in the template. The call to <logiccolor>report</logiccolor> specifies the name of the template. CSPro will read the template, pass in the title and person record data, and display the report in a web browser.
+
+
+
+<subheader>Details for Advanced Users</subheader>
+
+There are a few components that make up the reporting system, each described in detail below.
+
+<b>Data</b>
+
+The first component is the data itself. Via calls to <logiccolor>setreportdata</logiccolor>, CSPro creates a <link json_format.csdoc>JSON</link> object and embeds it as a script with the id <b>cspro_report_data</b>. If your template has such an id defined, it will be overwritten; otherwise, it will be inserted in the output. If you want to define your own templating engine, it must be able to work with this JSON object.
+
+
+<b>Report Template</b>
+
+As described above, the report template contains the HTML text that will be passed to the templating engine. That, along with the JSON data, is what turns the template into a dynamic report. The template has a few parameters:
+
+<indent><html><xmp>
+<script type="application/vnd.cspro.report-template"
+        id="..."
+        data-template-engines="..."
+        data-queries="...">
+    <!-- HTML report -->
+</script>
+</xmp></html></indent>
+
+The type must always be <b>application/vnd.cspro.report-template</b>.
+
+The id uniquely identifies the script block. There are no restrictions on its name, but if you want to use the basic report functionality, then the id must be <b>cspro_report_template</b> and there must be a div block with the id <b>cspro_report</b>.
+
+The optional data-template-engines specifies the names of the templating engines that are required to create the report. Separate multiple names with whitespace. If not specified, and if the id is <b>cspro_report_template</b>, Mustache will be used, as that engine comes installed with CSPro. If you specify a templating engine that CSPro cannot locate, the report generation will result in an error.
+
+The optional data-queries specifies the names of any queries whose execution is required to create the report. Separate multiple names with whitespace. CSPro will check if data with the query name has been set via <logiccolor>setreportdata</logiccolor>. If not, it will search for a query with the proper name, and if found, execute it. If no suitable query can be found, the report generation will result in an error.
+
+
+<b>Query</b>
+
+Any queries defined in your template will be executed prior to CSPro generating the report. Queries will be passed through the <logiccolor>setreportdata</logiccolor>/<logiccolor>sqlquery</logiccolor> functions with the result set stored under the attribute defined by data-query-name. The query has a few parameters:
+
+<indent><html><xmp>
+<script type="application/vnd.cspro.query"
+        data-query-name="..."
+        data-description="..."
+        data-source="...">
+    <!-- SQL query -->
+</script>
+</xmp></html></indent>
+
+The type must always be <b>application/vnd.cspro.query</b>.
+
+The data-query-name is the name that CSPro uses to refer to the query. You do not need to specify an id, as CSPro uses this name instead. This is the name that corresponds to entries in a report template's data-queries.
+
+The data-description is optional text that may be used to give a more complete description of the query.
+
+The data-source identifies the source of the query. The reporting system must know on which database to execute the query. The options are either <b>paradata</b>, to execute a query on the currently open paradata log, or a dictionary name, in which case the query is executed on the currently open CSPro data source associated with that dictionary.
+
+
+<b>Template Engine</b>
+
+Most users will not have a reason to add a new templating engine, as Mustache is sufficient for most reports, but some advanced users may want to define their own engine. The engine has a few parameters:
+
+<indent><html><xmp>
+<script type="application/vnd.cspro.template-engine"
+        data-template-engine-name="..."
+        data-script-type="..."
+        data-include-src="..."
+        data-include-type="...">
+    <!-- script code -->
+</script>
+</xmp></html></indent>
+
+The type must always be <b>application/vnd.cspro.template-engine</b>.
+
+The data-template-engine-name is the name that CSPro uses to refer to the template engine. You do not need to specify an id, as CSPro uses this name instead. This is the name that corresponds to entries in a report template's data-template-engines.
+
+The optional data-script-type specifies the type of code located in the script block. If not specified, it defaults to <b>application/javascript</b>.
+
+The optional data-include-src identifies the file, generally a JavaScript file, that contains the source for the templating engine.
+
+The optional data-include-type specifies the type of code found in the file identified by data-include-src. If not specified, it defaults to <b>application/javascript</b>.
+
+CSPro will include in the HTML report the script block of any templating engine necessary to generate the report, as well as links to any (JavaScript) files required to run the template.
+
+
+<b>Evaluating Queries and Template Engines</b>
+
+CSPro first reads in any report templates and determines what queries and template engines are required to create the report. It checks any data set via <logiccolor>setreportdata</logiccolor>, and if that data has an attribute with the same name as a query, then it is assumed that that data overrides the query and the query required by the template is assumed to be handled and is ignored. CSPro then looks in the report template for the definition of any queries and template engines. If they are found, then they are processed.
+
+However, if CSPro cannot find the definition of a query or template engine in the report template, it looks in two places for these definitions, which can be included in report script definition files, which have the extension <b>.csrs</b>. These files consist of script blocks defining queries and template engines. First, CSPro looks in the directory where the report is being created and loads any .csrs files in that directory. If CSPro cannot find the definition of a query or template engine in those files, it then loads the .csrs files that come with default CSPro installation. If it cannot find them in either of these locations, the report generation will result in an error.
+
+To see an example of how this works, create a basic report, using the Mustache engine, and the output of the report will use the engine as it is defined in "C:\Program Files (x86)\CSPro <definition CSPro::version />\Reports\CSPro Reports.csrs." You could override the default Mustache behavior by adding a template engine with the name "mustache" to your report template or to a .csrs file in the directory where your report will be created.
+
+
+<seealso report_function_pre77.csdoc setreportdata_function_pre77.csdoc sqlquery_function.csdoc />

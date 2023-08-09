@@ -1,0 +1,36 @@
+﻿<title>Count Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = count(<arg>multiple_item</arg>『 where = <arg>condition</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>count</logiccolor> function returns the number of occurrences for a repeating form or roster. During data entry, the occurrence value is updated after execution of the postproc for the first field within the repeating form or roster. Note the situations impacting this value:
+
+<li>If the count function is executed prior to the form or roster, it returns 0. </li>
+<li>If it is executed from a field within the form or roster, it returns the current occurrence number. </li>
+<li>If it is executed after the form or roster, it returns the total number of occurrences in the form or roster.</li>
+
+During batch editing, count always returns the total number of occurrences in the multiply-repeating item/record.
+
+If a <b>where</b> condition is included, the function returns the number of occurrences for which the condition is true. If the <b>where</b> condition is not included, the count function and the <logiccolor>noccurs</logiccolor> function return the same result.
+
+
+<subheader>Return Value</subheader>
+
+The function returns an integer count value.
+
+
+<subheader>Examples</subheader>
+
+<logic>
+TOTAL_PERSONS = count(PERSONS);
+
+NUM_CHILDREN = count(PERSONS where RELATIONSHIP = 3);
+</logic>
+
+<seealso noccurs_function.csdoc soccurs_function.csdoc totocc_function.csdoc curocc_function.csdoc seek_function.csdoc has_operator.csdoc />

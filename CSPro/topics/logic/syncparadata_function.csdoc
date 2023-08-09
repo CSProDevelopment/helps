@@ -1,0 +1,47 @@
+﻿<title>SyncParadata Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = syncparadata(<arg>direction</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>syncparadata</logiccolor> function transfers <link paradata.csdoc>paradata</link> between a device and a synchronization server. Before calling <logiccolor>syncparadata</logiccolor>, you must first connect to the server by calling <logiccolor>syncconnect</logiccolor>.
+
+The function can upload paradata from the local device (client) to the server as well as download paradata from the server. The <arg>direction</arg> argument determines which of these operations is performed. It must be one of the following values:
+
+<list>
+	<li><b>GET</b>: Download any paradata that was sent to the server since the last sync and add it to the currently open paradata log.</li>
+	<li><b>PUT</b>: Upload to the server any paradata that was collected since the last sync.</li>
+	<li><b>BOTH</b>: Sync paradata in the currently open paradata log with the server in both directions (i.e., perform both a GET and a PUT).</li>
+</list>
+
+The <logiccolor>syncparadata</logiccolor> function keeps track of what paradata has been transferred each time the client and server are synchronized and uses this information to only transfer paradata that has been collected since the last synchronization. This significantly reduces the amount of data transferred and therefore reduces bandwidth and the cost of air time.
+
+Paradata logs can be very large so be careful about adding paradata synchronizations to your applications. If you are interested in syncing paradata, a general suggestion is to use BOTH when syncing between devices using Bluetooth, and to use PUT to a CSWeb, Dropbox, or FTP server.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the transfer was successful and 0 (false) otherwise.
+
+
+<subheader>Example</subheader>
+
+<logic>
+if syncconnect(Bluetooth) then
+
+	// other sync actions...
+
+	syncparadata(BOTH);
+
+	syncdisconnect();
+
+endif;
+</logic>
+
+
+<seealso synchronization.csdoc syncdata_function.csdoc syncfile_function.csdoc paradata.csdoc paradata_function.csdoc />

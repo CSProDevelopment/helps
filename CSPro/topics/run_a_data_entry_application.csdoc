@@ -1,0 +1,16 @@
+﻿<title>Run a Data Entry Application</title>
+<context ID_GO />
+
+After you have created your forms, you can run the application to start entering data in CSEntry.
+
+Press <image run_button.png />; or press <b>Ctrl+R</b>; or select <b>Run</b> from the <b>File</b> menu to launch CSEntry. You will see a screen that looks like this:
+
+<center><image file_associations_entry.png /></center>
+
+The first row, <b>Input Data File</b>, lists the file name where entered data will be saved. If you want to select an existing file, you can click on the <image ellipses_button.png /> button to select it. Otherwise, you must give the name of the file and the desired <link data_sources.csdoc>data source</link> (generally either a CSPro DB file or a text file).
+
+In addition to this row, there may be rows where you can specify the names of <link lookup_files.csdoc>lookup files</link>, <link File.csdoc>external files</link>, and the <link paradata_log_file_cslog.csdoc>paradata log</link>.
+
+After specifying the file names, CSEntry may ask for the operator's ID. CSEntry keeps track of the operator's keying record and can display the <link CSEntry::view_operator_statistics.csdoc>operator statistics</link> in CSEntry. You can turn off this option in the <link change_data_entry_options.csdoc>data entry options</link>.
+
+You will, of course, want to test the behavior of your data entry application before using it in a production environment, so this is just a quick way to launch CSEntry. When your application is ready for production, you can launch CSEntry independently of CSPro. For assistance with this, see <topic run_production_data_entry.csdoc />.

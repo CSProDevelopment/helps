@@ -1,0 +1,38 @@
+﻿<title>Array.clear Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = array_name.clear();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Array.clear</logiccolor> function resets all values of an array to their default value. For numeric arrays, this is 0, unless the array is a <link initialize_hot_decks_using_saved_arrays.csdoc>saved array</link>, in which case the value is <logiccolor>default</logiccolor>. For alphanumeric and string arrays, the default value is a blank string.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true).
+
+
+<subheader>Example</subheader>
+
+<logic>
+Array string HouseholdMemberNames(100);
+
+// clear the array of household member names so that
+// any previously stored names are removed
+HouseholdMemberNames.clear();
+
+do numeric counter = 1 while counter <= count(NAME)
+	HouseholdMemberNames(counter) = NAME(counter);
+enddo;
+
+numeric selection = showarray(HouseholdMemberNames, title("Select a Household Member"));
+</logic>
+
+
+<seealso Array.csdoc />

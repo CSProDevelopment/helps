@@ -1,0 +1,19 @@
+﻿<title>Relation Description</title>
+
+Relations provide a way of linking one multiple record or item to one or more multiple records or items. For example, suppose a questionnaire contains two record types, child records and mother records. Each child record contains a data item that gives the sequence number of the mother record of the child's mother. A relation can be defined which links child records to mother records so that when data items from a child record are processes, the corresponding mother record data items are available for processing. Relations work much like database joins.
+
+Relations have one primary multiple record or item. Each instance of the primary element in a case is processed one at a time. A relation has one or more secondary records or items. The corresponding secondary elements are linked to the primary element during processing.
+
+There are four types of linking that can defined by relations.
+
+<table 2 header nowrap>
+	<cell>Type</cell><cell>Description</cell>
+	<cell><b>Occurrence to Occurrence</b></cell><cell>Corresponding occurrences of the primary record or item and secondary record or item are linked, that is first occurrences are linked, second occurrences are linked and so on.</cell>
+	<cell><b>Item to Occurrence</b></cell><cell>The value of an item on the primary record is a pointer to the occurrence of the secondary record.</cell>
+	<cell><b>Occurrence to Item</b></cell><cell>The value of an item on the secondary record is a pointer to the occurrence of the primary record.</cell>
+	<cell><b>Item to Item</b></cell><cell>The value of an item on the primary record is compared to the value of an item on the secondary record. If the values are equal, the records are linked.</cell>
+</table>
+
+Relations can be used in <logiccolor>for</logiccolor> statements in batch programs and in the Export Data tool.
+
+<seealso relation_properties.csdoc relation_statement.csdoc />

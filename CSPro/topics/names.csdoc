@@ -1,0 +1,21 @@
+﻿<title>Names</title>
+
+Names identify the dictionary and its elements when they are referenced in CSPro <link cspro_program_structure.csdoc>procedures</link>. Names are required for the dictionary and most of its elements. Names consist of upper case letters (A-Z), digits (0-9), and embedded underscores (_). The first character of a name must be a letter; the last character cannot be an underscore. Names can be any length but must not be CSPro <link list_of_reserved_words.csdoc>reserved words</link>.
+
+<b>Examples</b>: <logiccolor>SEX, RELATIONSHIP, MOTHER_ALIVE, Q102_AGE_CHILD</logiccolor>
+
+The dictionary tree displays either the <link labels.csdoc>labels</link> or names of dictionary elements. You can press <b>Ctrl+T</b> or from the <b>View</b> menu, select <b>Names in Trees</b> at any time to toggle between labels and names.
+
+Names cannot be duplicated within a dictionary. However, the same name can be used in different dictionaries, and in some cases, it maybe desirable to do so. For example, when using <link lookup_files.csdoc>lookup files</link>, you may prefer to use the same identifier name across dictionaries, rather than having 2+ spelling permutations for the same variable  (i.e.,  ID_PROVINCE in the main dictionary versus LU_PROVINCE in the lookup file). This also facilitates cutting and pasting the variables (and their accompanying <link value_sets_description.csdoc>value sets</link>) from one dictionary to the other, without having to worry about renaming the variables.
+
+<b>Note:</b> When repeating variable names among dictionaries, you will have to <b>fully qualify</b> the variable names when referring to them in logic by prefacing them with their unique dictionary's name. This is necessary so that CSPro knows which variable you are referring to. Failure to do so will generate a compiler error. For example, using the ID_PROVINCE and LU_PROVINCE names above, logic that would appear as follows:
+
+<logic>
+LU_PROVINCE = ID_PROVINCE;
+</logic>
+
+would need to change to:
+
+<logic>
+LOOKUP_DICT.PROVINCE = MAIN_DICT.PROVINCE;
+</logic>

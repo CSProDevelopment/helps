@@ -1,0 +1,51 @@
+﻿<title>Pff.load Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = pff_name.load(<arg>pff_filename</arg> ‖ <arg>application_name</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Pff.load</logiccolor> function loads the contents from an existing PFF file into a <link Pff.csdoc>Pff</link> object. If supplying a string expression, <arg>pff_filename</arg>, the properties from that PFF will be loaded. If supplying an <arg>application_name</arg> (the name of your application, which generally ends with _FF), then the PFF used to run the current application will be loaded.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the PFF file exists and was successfully loaded and 0 (false) otherwise.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+// run the household data entry application but change the name
+// of the data file to the current cluster
+Pff household_pff;
+household_pff.load("Household.pff");
+household_pff.setProperty("InputData", maketext("%v.csdb", CLUSTER));
+household_pff.exec();
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+function DisplayMinorMessage(string message_text)
+
+	// do not display minor messages when running this batch
+	// application and only showing summary messages
+	Pff this_application_pff;
+	this_application_pff.load(CENSUS_FF);
+
+	if this_application_pff.getProperty("ErrmsgOverride") <> "Summary" then
+		errmsg("%s", message_text);
+	endif;
+
+end;
+</logic>
+
+
+<seealso Pff.csdoc Pff_save_function.csdoc />

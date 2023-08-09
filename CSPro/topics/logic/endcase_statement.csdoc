@@ -1,0 +1,21 @@
+﻿<title>EndCase Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+endcase;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>endcase</logiccolor> statement ends batch editing for the current questionnaire (case). All remaining procedures beyond where the statement is executed will be skipped. The statement is similar to the <link skip_case_statement.csdoc>skip case</link> command, but in the latter command the case is not saved to the output file. When using <logiccolor>endcase</logiccolor> the case will be saved to the output file.
+
+<subheader>Example</subheader>
+
+<logic>
+if HHTYPE = 2 then
+	endcase;
+endif;
+</logic>
+
+<seealso skip_case_statement.csdoc endlevel_statement.csdoc />

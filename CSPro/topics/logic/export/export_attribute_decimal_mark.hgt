@@ -1,9 +1,0 @@
-﻿<title>Export Attribute: decimal-mark</title>
-
-When creating a new <b>.csv</b>, Semicolon, or <b>.tsv</b> data source, you might want to change the way decimal values are written out. In the U.S. and Canada, a decimal point is used to indicate fractional values (41.38), whereas in many European countries the decimal comma is used (41,38). By default, CSPro uses the decimal point; but by including this attribute and option in your connection string for a file:
-
-<pff>decimal-mark=comma</pff> 
-
-this will be flipped. The two possible values for the decimal-mark attribute are <b>point</b> and <b>comma</b>.
-
-<seealso export_attributes.hgt />

@@ -1,0 +1,27 @@
+﻿<title>KillFocus Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+killfocus
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>killfocus</logiccolor> statement declares that the statements following it are executed when a form, roster, or field <b>stops</b> being active.
+
+Statements in an <logiccolor>killfocus</logiccolor> procedure are executed when you move off the object in which they are coded. When moving <b>forward</b>, any <logiccolor>killfocus</logiccolor> statements are executed before any <logiccolor>postproc</logiccolor> statements. However, when moving <b>backward</b>, the <logiccolor>postproc</logiccolor> statements are <b>not</b> executed and only the <logiccolor>killfocus</logiccolor> statements are executed.
+
+The <logiccolor>killfocus</logiccolor> statement is not very common as most logic operations and checks only occur when moving forward in the application, in which case they can be coded in a <logiccolor>postproc</logiccolor>.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC CEB_MALE
+
+killfocus
+
+	CEB_TOTAL = visualvalue(CEB_MALE) + visualvalue(CEB_FEMALE);
+</logic>
+
+<seealso proc_statement.csdoc preproc_statement.csdoc onfocus_statement.csdoc onoccchange_statement.csdoc postproc_statement.csdoc order_of_executing_data_entry_events.csdoc order_of_executing_batch_edit_events.csdoc />

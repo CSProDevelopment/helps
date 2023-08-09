@@ -1,0 +1,36 @@
+﻿<title>Find Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = find(<arg>dictionary_name</arg>, <arg>relational_operator</arg>, <arg>key_prefix</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>find</logiccolor> function determines the existence of a case in a data file that matches a specified condition. The function searches the index of a file and determines whether any case matches the specified condition. The position in the file is not changed, unlike the similar <logiccolor>locate</logiccolor> function, and no case is loaded into memory.
+
+The <arg>dictionary_name</arg> refers to either an external dictionary or the main input file of an entry or batch application.
+
+The <arg>relational_operator</arg> is one of the following: =, &lt;, &lt;=, &gt;, &gt;=, or <logiccolor>startswith</logiccolor>.
+
+The string expression <arg>key_prefix</arg> specifies the condition to use when searching for cases. Cases with a <link key_function.csdoc>key</link> that begins with or equals the <arg>key_prefix</arg> are considered eligible cases.
+
+An additional option, using <logiccolor>uuid</logiccolor> instead of a relational operator, determines the existence of a case based on the case's UUID, not the case's key. This may be useful when looking up duplicate or deleted cases.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if a case is found and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC OCCUPATION
+
+	if not find(OCCUPATION_CODES_DICT, =, maketext("%04d", OCCUPATION)) then
+		errmsg("The occupation %d is not valid.", OCCUPATION);
+		reenter;
+	endif;
+</logic>
+
+<seealso locate_function.csdoc countcases_function.csdoc />

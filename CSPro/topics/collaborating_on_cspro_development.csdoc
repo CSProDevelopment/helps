@@ -1,0 +1,40 @@
+﻿<title>Collaborating on CSPro Development</title>
+
+CSPro <definition CSPro::version /> is not an open source project but it is in the public domain, meaning that it can be used and distributed at no cost. However, if you are interested in collaborating on the CSPro development, there are currently three projects, changes to which are distributed with CSPro.
+
+
+<subheader>Multiple Language Runtime Messages</subheader>
+
+The runtime, system-level messages that CSPro displays are provided in English. Partial translations for these messages are also provided in a few languages, including Chinese, French, Portuguese, Russian, Spanish, and Vietnamese. If you would like to provide message translations, we welcome your support. Please contact <link mailto:<definition mailing_list />><definition mailing_list /></link> for details.
+
+The complete list of system-level, English-language messages used by CSPro can be found in the installation folder, <b><i>C:\Program Files (x86)\CSPro <definition CSPro::version /></i></b>. The English language message file is named <b>CSProRuntime.en.mgf</b>. The other language message files installed with CSPro are named as follows:
+
+<table 2 header>
+<cell>Name</cell><cell>Language</cell>
+<cell>CSProRuntime.zh.mgf</cell><cell>Chinese</cell>
+<cell>CSProRuntime.fr.mgf</cell><cell>French</cell>
+<cell>CSProRuntime.pt.mgf</cell><cell>Portuguese</cell>
+<cell>CSProRuntime.ru.mgf</cell><cell>Russian</cell>
+<cell>CSProRuntime.es.mgf</cell><cell>Spanish</cell>
+<cell>CSProRuntime.vi.mgf</cell><cell>Vietnamese</cell>
+</table>
+
+<b>Note:</b> If you add an <link message_file_mgf.csdoc>external message file</link> to your application that begins with "CSProRuntime," the messages in that file will override the system messages that CSPro uses.
+
+
+<subheader>Help Documentation</subheader>
+
+The help documentation that you are currently reading is created using a custom tool, Help Generator. The tool, along with the documentation, is hosted on GitHub:
+
+<indent><link https://github.com/CSProDevelopment/helps>https://github.com/CSProDevelopment/helps</link></indent>
+
+The repository has all the tools needed to develop the help documentation. The Help Generator tool is built using Visual Studio. Microsoft distributes a free version, the Community edition, that you can use to create the tool. If you do not have Visual Studio, but want to collaborate on help documentation, email <link mailto:<definition mailing_list />><definition mailing_list /></link> and you will be sent the Help Generator executable and a guide on modifying the help documentation.
+
+
+<subheader>CSPro Examples</subheader>
+
+The CSPro Examples folder is also hosted on GitHub:
+
+<indent><link https://github.com/CSProDevelopment/examples>https://github.com/CSProDevelopment/examples</link></indent>
+
+If you want to modify any existing example, or want to add a new example that you think will be useful to the broader CSPro community, you can collaborate on this project.

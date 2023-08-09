@@ -1,0 +1,22 @@
+﻿<title>SystemApp Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+SystemApp <arg>system_app_name</arg>;
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>SystemApp</logiccolor> statement creates a <link SystemApp.csdoc>SystemApp</link> object with the name <arg>system_app_name</arg>. The SystemApp name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare SystemApp objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_windows_example.hgi />
+</logic>
+
+
+<seealso SystemApp.csdoc />

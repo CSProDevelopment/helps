@@ -1,0 +1,92 @@
+﻿<title>GPS Function</title>
+
+It is possible to take advantage of the functionality of a Global Positioning System (GPS) receiver when designing an application for use on either a laptop or tablet with a GPS receiver. Manipulating the GPS receiver is done from within the program's logic or by using one of the <link gps_interactive_modes.csdoc>interactive GPS modes</link>.
+
+<subheader>Basic Example</subheader>
+
+<logic>
+gps(open); // Android
+
+gps(open, 3, 4800); // Windows (COM3, 4800 baud)
+
+if gps(read, 15) then // attempt to read for up to 15 seconds
+    errmsg("Latitude is %f, longitude is %f", gps(latitude), gps(longitude));
+
+else
+    errmsg("GPS signal could not be acquired");
+
+endif;
+
+gps(close);
+</logic>
+
+
+<subheader>Opening and Closing the GPS Receiver</subheader>
+
+<logicsyntax>
+b = gps(open);
+b = gps(close);
+</logicsyntax>
+
+Before using the device's GPS receiver, it is necessary to open a connection to the GPS unit. After making all necessary GPS readings, close the connection. The function returns 1 if successful, 0 otherwise. If using CSPro on a Windows laptop or tablet, it is necessary to specify the hardware settings of the GPS unit, specifically the number of the COM port and the baud rate (see the above example).
+
+
+<subheader>Obtaining the Last Successful GPS Reading</subheader>
+
+<logicsyntax>
+b = gps(readlast);
+</logicsyntax>
+
+The <b>readlast</b> command obtains the last successful GPS reading, a reading that might be very old. If the GPS unit has been turned on for some time and the device is being used outdoors, it is likely that the reading is very fresh (recent), but if, for example, an enumerator walks inside a building to conduct an interview, the reading may be minutes or hours old, from the last time that the enumerator was outside. The function returns 1 if there was a successful previous reading, 0 otherwise.
+
+
+<subheader>Obtaining a New GPS Reading</subheader>
+
+<logicsyntax>
+b = gps(read);
+b = gps(read, <arg>duration_in_seconds</arg>);
+i = gps(read, <arg>duration_in_seconds</arg>, <arg>message</arg>);
+</logicsyntax>
+
+The <b>read</b> command obtains a new GPS reading in a specified time period. The time period can be provided by supplying a numeric expression <arg>duration_in_seconds</arg>. If no time period is specified, the program will pause for up to three seconds to obtain a reading. A reading time of up to ten minutes (600 seconds) may be specified. An optional third argument, the string expression <arg>message</arg>, displays a message while the program attempts to obtain a GPS reading. The message box has a cancel button and if the user cancels the operation, the function returns -1. Otherwise the function returns 1 if a reading was successful, 0 otherwise. Unlike the <b>readlast</b> command, a successful function call with <b>read</b> guarantees a fresh GPS reading.
+
+It is possible on Android devices to specify a desired level of accuracy for the reading. When specified, the function will continue to take GPS readings until a reading at or below the level of accuracy is achieved. The function will still return 1 if, though timing out, a successful reading at an accuracy level greater than specified was achieved during the allotted time period. This ensures that a GPS reading will be as accurate as possible, but with the assumption that any reading is better than no reading. Use a second numeric expression to specify the level of the accuracy.
+
+<logicsyntax>
+b = gps(read, <arg>duration_in_seconds</arg>, <arg>accuracy</arg>);
+i = gps(read, <arg>duration_in_seconds</arg>, <arg>message</arg>, <arg>accuracy</arg>);
+</logicsyntax>
+
+
+<subheader>Querying a Successful GPS Read</subheader>
+
+If the <b>readlast</b> or <b>read</b> commands returned successfully, the GPS system has valid values for latitude and longitude. Further attributes of the reading can be queried, though they are not guaranteed to be valid.
+
+<logicsyntax>
+d = gps(latitude);
+d = gps(longitude);
+d = gps(altitude);
+d = gps(satellites);
+d = gps(accuracy);
+d = gps(readtime);
+</logicsyntax>
+
+<b>Latitude</b> and <b>longitude</b> return coordinates in degrees. <b>Altitude</b> returns the number of meters above sea level of the reading. <b>Satellites</b> returns the number of satellites used to calculate the values in the last reading. Generally, the greater number of satellites, the better the quality of the reading. <b>Accuracy</b> is a calculation of the precision of the last reading. On Windows devices, an accuracy value of 1 is the most accurate and 50 is the least accurate reading. On Android devices, the value signifies the accuracy of the reading, measured in meters. <b>Readtime</b> returns, in local time, the time of the last successful reading. If the queried value (other than latitude and longitude) is not available, or if the last GPS read was unsuccessful, the function will return <logiccolor>default</logiccolor>.
+
+
+<subheader>Calculating Distances</subheader>
+
+The <logiccolor>gps</logiccolor> function can also calculate great-circle distances between two sets of GPS coordinates. Great-circle calculations give a rough approximation of the distance between two points. The function returns the distance as measured in meters.
+
+<logicsyntax>
+d = gps(distance, <arg>latitude1</arg>, <arg>longitude1</arg>, <arg>latitude2</arg>, <arg>longitude2</arg>);
+</logicsyntax>
+
+For example:
+
+<logic>
+numeric meters_to_census_bureau = gps(distance, 38.846261, -76.929445, gps(latitude), gps(longitude));
+</logic>
+
+
+<seealso gps_interactive_modes.csdoc />

@@ -1,0 +1,53 @@
+﻿<title>Delete Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = delete(<arg>group_name</arg>『(<arg>occurrence</arg>)』);
+
+b = delete(<arg>group_name</arg>, <arg>first_occurrence</arg>)『, <arg>last_occurrence</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>delete</logiccolor> function removes incomplete, or otherwise unneeded, records or item occurrences from the current case. It can be used to remove singly- or multiply-occurring records, although if the record is non-repeating (such as the housing record in a typical census application), then it must be defined as <link required_record.csdoc>"Required=No"</link> in the dictionary. This function is primarily intended for batch applications. It should be used with extreme caution in data entry applications because of possible conflicts between the operator's actions and the program logic.
+
+The first syntax deletes a single occurrence of the record. When deleting a singly-occurring record, it is not necessary to specify the <arg>occurrence</arg>. The second syntax deletes one or more occurrences of a record, starting with the <arg>last_occurrence</arg> and deleting up to the <arg>first_occurrence</arg>. This allows for the mass deletion of record occurrences.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.
+
+
+<subheader>Example 1 (Multiply-Occurring Records)</subheader>
+
+<logic>
+// remove "blank" person records
+do numeric i = totocc(PERSON_REC) while i >= 1 by -1
+
+	if RELATIONSHIP(i) = notappl and SEX(i) = notappl and AGE(i) = notappl then
+		delete(PERSON_REC(i));
+	endif;
+
+enddo;
+</logic>
+
+
+In this example blank person records are deleted from the case. Records following any deleted record are "shifted up" to cover the vacated area. For example, if you delete the second of four records, the third record shifts to the second position and the fourth record shifts to the third position.
+
+It is best to delete the records starting with the last record and moving toward the first. Use a subscript that starts at the last occurrence then is decremented (decreased by 1). In this way you will not need to worry about the records that are shifting positions.
+
+
+<subheader>Example 2 (Singly-Occurring Records)</subheader>
+
+<logic>
+// if person is homeless, delete the record
+if H01_TYPE = 6 then
+	delete(HOUSING_REC); // note the absence of a subscript
+endif;
+</logic>
+
+
+<seealso insert_function.csdoc />

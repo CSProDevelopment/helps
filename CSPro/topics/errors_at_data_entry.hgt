@@ -1,7 +1,0 @@
-﻿<title>Errors at Data Entry</title>
-
-Errors are introduced into the data through miskeying. <link CSEntry::verify_data.hgt>Verification</link> (rekeying or double keying) can reduce these errors. A system called <b>intelligent data entry</b> may be used to prevent invalid entries from ever getting into the system. An intelligent data entry system ensures that the value for each field or data item is within the permissible range of values for that item. Such a system increases the chance that the data entry operator will key in reasonable data and relieves some of the burden on later stages of the data preparation process.
-
-At data entry time, CSEntry shows a message every time the keyer enters a value that is out of range according to the data dictionary. You may set the attribute to override the message and <link change_data_entry_options.hgt>force the out-of-range</link> value into the data file. If this attribute is not selected, the keyer cannot proceed until a valid value is entered.
-
-<seealso data_entry_philosophies.hgt />

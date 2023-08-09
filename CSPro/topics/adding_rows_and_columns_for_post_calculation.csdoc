@@ -1,0 +1,103 @@
+﻿<title>Adding Rows and Columns For Post Calculation</title>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ order to use table post calculations to add additional calculations to
+ the tabulated data, you first need a place in the table to put these calculations.
+ This section describes how to add additional rows or columns to a table.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">As
+ an example, take adding a third column to the following table in which
+ we will place the male to female ratio.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabpost1.jpg" alt="Sex as Column Variable in Table"
+	 title="Sex as Column Variable in Table" width="490" height="120" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">There
+ are two ways to add a new column. We can</font> <a href="add_or_modify_values.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">add
+ a new value to the existing value set</font></a> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">for
+ the existing variable or we can drag a new variable onto the table next
+ to the existing one. Adding a new value to the value set creates a new
+ column under the existing spanner while adding a new variable creates
+ a new column under a new spanner.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabpost2.jpg" alt="Sex Variable in Table with Male/Female Ratio Value"
+	 title="Sex Variable in Table with Male/Female Ratio Value" width="488"
+	 height="111" border="0" /></p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 8pt;" face="Arial" size="2">Male/Female
+ Ratio column added as new value to value set for the variable Sex. The
+ new column is under the Sex spanner.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabpost3.jpg" alt="Sex Variable in Table with Male/Female Ratio Variable"
+	 title="Sex Variable in Table with Male/Female Ratio Variable" width="434"
+	 height="119" border="0" /></p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 8pt;" face="Arial" size="2">Male/Female
+ Ratio column added by dragging a new variable onto the table. The new
+ column is under a separate spanner.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ you add a new value to the value set, make sure to set the value for the
+ new value set entry to a number that does not exist in your data file,
+ otherwise your totals will be incorrect. In the case of Sex, you can use
+ 3, which should not appear in the edited data.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ you would rather add a new variable to the table to create the additional
+ column, you can add any variable in the dictionary since the numbers in
+ the new column will be overwritten by the postcalc logic. You can either
+ add a new value set to the variable which uses the text you want for the
+ column header (for example &quot;Male/Female Ratio&quot;) or you can use
+ an existing value set and</font> <a href="customize_table_text.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">customize
+ the column header text</font></a> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">once you
+ have placed the variable on the table.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">New
+ rows can be added in the same ways, adding a new value to the value set
+ of a variable on the rows or dragging a new variable onto the rows of
+ the table.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See also:</font></b> <a href="add_a_variable_to_a_tabulation.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Add
+ a Variable to a Tabulation</font></a><font style="font-family: Arial;
+											 font-size: 10pt;" face="Arial"
+											 size="2">,</font> <a href="implications_of_data_dictionary_value_sets.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Implications
+ of Data Dictionary Value Sets</font></a></p>
+</body>
+</html>
+
+
+<html><!---♻---></html>
+<build-extra "../images/xtabpost1.jpg" "../images/xtabpost2.jpg" "../images/xtabpost3.jpg" />

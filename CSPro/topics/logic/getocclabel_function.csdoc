@@ -1,0 +1,32 @@
+﻿<title>GetOccLabel Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = getocclabel(『<arg>item_name</arg> ‖ <arg>group_name</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>getocclabel</logiccolor> function returns the occurrence label for a repeating item or group (i.e., the row label of a roster). If no <arg>item_name</arg> or <arg>group_name</arg> is given, the function returns the occurrence label of the current field, as calculated as follows:
+
+<logic>
+s = getocclabel($(curocc($)));
+</logic>
+
+In addition to uses in logic, the function can be used as a <link create_fills_in_questions.csdoc>fill in question text</link>.
+
+<subheader>Return Value</subheader>
+
+The function returns a string containing the occurrence label. If an occurrence label for the item or group does not exist, the function returns a blank string.
+
+<subheader>Example</subheader>
+
+<logic>
+if EXPENSES > SALES then
+	errmsg("You could not have made a profit on %s if expenses were greater than sales.",getocclabel());
+	reenter;
+endif;
+</logic>
+
+<seealso setocclabel_function.csdoc occurrence_labels.csdoc create_fills_in_questions.csdoc />

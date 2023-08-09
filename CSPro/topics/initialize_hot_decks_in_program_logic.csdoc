@@ -1,0 +1,40 @@
+﻿<title>Initialize Hot Decks in Program Logic</title>
+
+In this technique, the <link dynamic_imputation_hot_deck.csdoc>hot deck</link> is initialized in program logic. Hot deck values are updated during the program's execution but the values are not saved externally.
+
+The following is an example of code that will initialize age values based on sex and relationship:
+
+<logic>
+PROC GLOBAL
+
+// declare an array and set the initial values
+
+Array AgeSRDeck(2,6) =  27, // male head of HH
+						30, // male spouse of head
+						 6, // male child of head
+						58, // father of head
+						11, // male other relative of head
+						24, // male non-relative of head
+						32, // female head of HH
+						25, // female spouse of head
+						 8, // female child of head
+						60, // mother of head
+						10, // female other relative of head
+						27; // female non-relative of head
+
+PROC AGE
+
+	if AGE = notappl then
+		// if the value for age is not valid...
+		// assign the value from the hot deck based on sex and relationship
+		impute(AGE, AgeSRDeck(SEX, RELATIONSHIP));
+
+	else
+		// otherwise...
+		// update the value of the hot deck
+		AgeSRDeck(SEX, RELATIONSHIP) = AGE;
+
+	endif;
+</logic>
+
+<seealso dynamic_imputation_hot_deck.csdoc use_hot_decks.csdoc initialize_hot_decks_using_saved_arrays.csdoc />

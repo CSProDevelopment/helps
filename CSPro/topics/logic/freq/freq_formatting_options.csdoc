@@ -1,0 +1,90 @@
+﻿<title>Frequency Formatting Options</title>
+
+Frequency formatting options can be specified:
+
+<list>
+	<li>When using the <link Freq_statement_unnamed.csdoc>unnamed frequency</link> command.</li>
+	<li>When declaring a <link Freq_statement_named.csdoc>named frequency</link>.</li>
+	<li>When calling the <logiccolor>Freq.save</logiccolor> function.</li>
+	<li>When calling the <logiccolor>Freq.view</logiccolor> function.</li>
+</list>
+
+Any options specified as part of a call to <logiccolor>Freq.save</logiccolor> or <logiccolor>Freq.view</logiccolor> will override options specified when declaring the named frequency.
+
+The formatting options include the following commands: <logiccolor>valueset</logiccolor>, <logiccolor>distinct</logiccolor>, <logiccolor>vset</logiccolor>, <logiccolor>heading</logiccolor>, <logiccolor>stat</logiccolor>, <logiccolor>percentiles</logiccolor>, <logiccolor>nofreq</logiccolor>, <logiccolor>decimals</logiccolor>, <logiccolor>sort</logiccolor>, <logiccolor>nonetpercents</logiccolor>, and <logiccolor>pagelength</logiccolor>.
+
+
+
+<subheader>Value Set Specification</subheader>
+
+<logicsyntax>valueset(<arg>value_set_name1</arg>『, ..., <arg>value_set_nameN</arg>』)</logicsyntax>
+
+When creating the frequency table, CSPro tries to find a label to associate with each value in the table. By default, an item's primary value set is used for <link Freq_statement_unnamed.csdoc>unnamed frequencies</link> and the current value set is used for <link Freq_statement_named.csdoc>named frequencies</link>. To instead specify a specific value set to use to lookup the labels, use the <logiccolor>valueset</logiccolor> command and supply one or more value set names. The names of the value sets must match the items that are part of the frequency.
+
+
+<logicsyntax>distinct</logicsyntax>
+
+When using the <logiccolor>valueset</logiccolor> command, the frequency table is generated showing only the labels of values. If you would like to see the values in addition to the labels, you can use the <logiccolor>distinct</logiccolor> command, which will result in each value corresponding to a row in the frequency table. Without this option, a value set range such as 0 - 4 would have resulted in all values between 0 and 4 being displayed in the row with the label "0 - 4." With this option, the table would have up to five rows ("0 | 0 - 4," "1 | 0 - 4," and so on).
+
+
+<logicsyntax>vset</logicsyntax>
+
+The <logiccolor>vset</logiccolor> command typically results in multiple frequency tables being created for each item and is generally used instead of the <logiccolor>valueset</logiccolor> or <logiccolor>distinct</logiccolor> commands. When used, a frequency table is generated using the primary value set with the distinct setting and then frequency tables are generated using each of an item's value sets with the <b>not</b> distinct setting (unless distinct was explicitly specified). For example, if an item has three value sets, four tables would be generated (value set 1 distinct, value set 1 not distinct, value set 2 not distinct, value set 3 not distinct).
+
+
+
+<subheader>Specifying a Heading</subheader>
+
+<logicsyntax>heading(<arg>heading_text1</arg>『, ..., <arg>heading_textN</arg>』)</logicsyntax>
+
+The command <logiccolor>heading</logiccolor> results in the string expressions <arg>heading_text1</arg> to <arg>heading_textN</arg> being displayed as a heading to the frequency tables. These headings are only used in HTML and text frequencies.
+
+
+
+<subheader>Generating Statistics and Percentiles</subheader>
+
+<logicsyntax>stat</logicsyntax>
+
+The command <logiccolor>stat</logiccolor> indicates that statistics will be displayed along with the frequency table. These statistics include a count of how many unique values are part of the frequencies table. If running a numeric frequency, the statistics include values such as the minimum and maximum values, the mean, the standard deviation and variance, the mode, and the median and <link https://personality-project.org/r/html/interp.median.html>interpolated median</link>.
+
+
+<logicsyntax>percentiles(<arg>number_percentiles</arg>)</logicsyntax>
+
+The <logiccolor>percentiles</logiccolor> command means that percentiles will be displayed along with the frequency table. The numeric constant <arg>number_percentiles</arg> must be a value between 2 and 20. For example, 4 will show quartiles and 10 will show deciles.
+
+
+<logicsyntax>nofreq</logicsyntax>
+
+The command <logiccolor>nofreq</logiccolor>, when used with <logiccolor>stat</logiccolor>, indicates that the frequency table should not be shown. With this combination, only the statistics (and/or percentiles) are shown. This option is only used in HTML and text frequencies.
+
+
+
+<subheader>Formatting Options</subheader>
+
+<logicsyntax>decimals(<arg>number_decimals</arg>)</logicsyntax>
+
+The <logiccolor>decimals</logiccolor> command means that the frequency values will be displayed with the specific number of digits after the decimal mark. The numeric constant <arg>number_decimals</arg> must be a value between 1 and 5. For example, 2 will show frequency values such as 126.00 (as opposed to 126). This may be useful if you are using non-integer weights when tallying frequencies.
+
+
+<logicsyntax>sort(『ascending ‖ descending』 by valueset ‖ code ‖ label ‖ Freq)</logicsyntax>
+
+The <logiccolor>sort</logiccolor> command allows you to control the order in which each row of the frequency table appears. The options include:
+
+<list>
+	<li><logiccolor>by valueset</logiccolor>: the rows will appear in the order that the values are defined in an item's value set.</li>
+	<li><logiccolor>by code</logiccolor>: the rows will appear in order sorted by each row's value.</li>
+	<li><logiccolor>by label</logiccolor>: the rows will appear in order sorted by each row's label as defined in an item's value set.</li>
+	<li><logiccolor>by Freq</logiccolor>: the rows will appear in order based on the frequency of each row's value.</li>
+</list>
+
+By default, frequency tables are sorted ascending by code.
+
+
+<logicsyntax>nonetpercents</logicsyntax>
+
+If your frequency table contains blank values, two columns will be added to the frequency table, displaying the net percents (of the frequencies and cumulative frequencies). These net percent columns exclude the blank values from the percent calculations. If you use the <logiccolor>nonetpercents</logiccolor> command, these columns will not be added to the frequency table.
+
+
+<logicsyntax>pagelength(<arg>number_lines</arg>)</logicsyntax>
+
+The <logiccolor>pagelength</logiccolor> command specifies the number of lines that should be written to a frequency file before inserting a page break. The numeric constant <arg>number_lines</arg> must be a non-negative value. This option is only used in text frequencies.

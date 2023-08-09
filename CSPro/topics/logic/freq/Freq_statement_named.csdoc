@@ -1,0 +1,43 @@
+﻿<title>Freq Statement (Named)</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+Freq <arg>freq_name</arg>
+include(<arg>variables_to_tabulate</arg>)
+『exclude(<arg>variables_not_to_tabulate</arg>)』
+『disjoint』
+『breakdown(<arg>length</arg>)』
+『<arg>formatting_options</arg>』
+;
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Freq</logiccolor> statement creates a <link Freq.csdoc>Freq</link> object with the name <arg>freq_name</arg>. The Freq name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare Freq objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+
+The Freq object is used to create frequencies that will be written to the <link frequencies_file.csdoc>frequencies file</link> (using <logiccolor>Freq.save</logiccolor>) or displayed in an embedded web browser (using <logiccolor>Freq.view</logiccolor>).
+
+Freq objects are similar to <link Freq_statement_unnamed.csdoc>unnamed frequencies</link> except that you control when they are tallied (using the <logiccolor>Freq.tally</logiccolor> function). Because of this, the <logiccolor>universe</logiccolor> and <logiccolor>weight</logiccolor> commands, which are part of the unnamed frequencies specification, are not available. You can control the universe (using an <logiccolor>if</logiccolor> statement) and you can control the weight by passing an argument to the <logiccolor>Freq.tally</logiccolor> function.
+
+
+<include include_freq_variable_specification.hgi />
+
+<include include_freq_breakdown.hgi />
+
+
+<subheader>Additional Commands</subheader>
+
+Optional <link freq_formatting_options.csdoc>formatting options</link> allow you to control how the frequency tables are generated. The formatting options include the following commands: <logiccolor>valueset</logiccolor>, <logiccolor>distinct</logiccolor>, <logiccolor>vset</logiccolor>, <logiccolor>heading</logiccolor>, <logiccolor>stat</logiccolor>, <logiccolor>percentiles</logiccolor>, <logiccolor>nofreq</logiccolor>, <logiccolor>decimals</logiccolor>, <logiccolor>sort</logiccolor>, <logiccolor>nonetpercents</logiccolor>, and <logiccolor>pagelength</logiccolor>.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_freq_example2.hgi />
+</logic>
+
+
+<seealso Freq.csdoc Freq_statement_unnamed.csdoc freq_formatting_options.csdoc />

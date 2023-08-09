@@ -1,0 +1,34 @@
+﻿<title>GetCaptureType Function</title>
+
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.1, you should no longer use this function as it may soon be removed from CSPro. To replicate the behavior of the function, you can use the <logiccolor>getproperty</logiccolor> function with the argument <logiccolor>"CaptureType"</logiccolor>.</i>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = getcapturetype(<arg>field_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>getcapturetype</logiccolor> function returns the <link capture_types.csdoc>capture type</link> currently associated with a field on a form. The <arg>field_name</arg> must be located on one of the application's forms.
+
+<subheader>Return Value</subheader>
+
+The function returns the capture type, which is one of the following values:
+
+<include include_capture_types.hgi />
+
+<subheader>Example</subheader>
+
+<logic>
+PROC SEX
+
+onfocus
+
+	// change SEX from a radio button to a drop down box
+	if getcapturetype(SEX) = 1 then
+		setcapturetype(SEX,3);
+	endif;
+</logic>
+
+<seealso setcapturetype_function.csdoc />

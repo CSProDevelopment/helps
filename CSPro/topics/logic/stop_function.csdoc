@@ -1,0 +1,43 @@
+﻿<title>Stop Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = stop(『<arg>stop_code</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>stop</logiccolor> function prematurely ends a CSPro application. The optional numeric expression <arg>stop_code</arg> determines how the program ends. If not specified, the code defaults to 0.
+
+If the function is used in a data entry application, the stop code determines whether data entry is stopped just for the current case or whether the entire data entry application is closed. If the code is 0, entry of the current case is stopped but CSEntry remains active, which is the same behavior as pressing the stop button. If the code is 1, entry of the current case is stopped and CSEntry terminates. If the function is executed in the <logiccolor>postproc</logiccolor> of the first (highest) level, then the data for the case is saved. Otherwise, any data entered for the current case is lost. If you want to avoid losing data, you can call <logiccolor>savepartial</logiccolor> just before the <logiccolor>stop</logiccolor> function.
+
+If the function is used in a batch edit application, the run is always terminated. If an output file was specified in the batch run, neither the current case nor subsequent cases will be saved to the output file. If the code is not 1, the application postproc will be executed, which allows you to execute tasks like writing summary information to a listing file. This is as if you terminated the batch run using the Cancel button. If the code is 1, the application postproc is not executed.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 0 (false) if the program cannot be stopped (for example, if the function is called from an external form). Otherwise the function returns 1 (true).
+
+
+<subheader>Data Entry Example</subheader>
+
+<logic>
+if VALUE = 99 then
+	savepartial();
+	stop(1);
+endif;
+</logic>
+
+
+<subheader>Batch Edit Example</subheader>
+
+<logic>
+if number_total_errors > 100 then
+	stop();
+endif;
+</logic>
+
+
+<seealso endcase_statement.csdoc skip_case_statement.csdoc />

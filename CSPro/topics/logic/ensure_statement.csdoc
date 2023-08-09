@@ -1,0 +1,41 @@
+﻿<title>Ensure Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+ensure numeric <arg>variable_name1</arg>『, ... , <arg>variable_nameN</arg>』;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>ensure</logiccolor> statement allows for the conditional creation of <link numeric_statement.csdoc>numeric variables</link> in the <logiccolor>PROC GLOBAL</logiccolor> section of logic. One or more variable names are specified, and if the name of the variable exists (because of being declared previously in logic, or defined in a dictionary), then it will not be created. If it does not exist, a temporary variable is created just as if it were a declared numeric variables. The initial value of the variable is 0.
+
+This statement is useful when working with applications that reuse blocks of logic with different dictionaries. If a certain routine depends on a dictionary variable, you can use this statement to ensure that the logic compiles without issue. It is important to make sure that your logic works regardless of whether the variable is defined in a dictionary or from the ensure statement.
+
+In versions of CSPro prior to 7.2, you could simulate the behavior of <logiccolor>ensure</logiccolor> by using <link compiler_mode.csdoc>set implicit</link> mode.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+ensure numeric SUPERVISOR_CODE;
+
+PROC DATA_TRANSMISSION
+
+	// assuming that 0 is never a valid value for SUPERVISOR_CODE, then
+	// you could have two synchronization routines in your code, one for
+	// surveys where there are supervisors (and SUPERVISOR_CODE is defined
+	// in a dictionary), and another for surveys where interviewers directly
+	// send data to headquarters
+
+	if SUPERVISOR_CODE = 0 then
+		SyncWithHeadquarters();
+
+	else
+		SyncWithSupervisor();
+
+	endif;
+</logic>
+
+<seealso numeric_statement.csdoc />

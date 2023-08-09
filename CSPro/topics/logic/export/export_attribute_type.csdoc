@@ -1,0 +1,32 @@
+﻿<title>Export Attribute: type</title>
+
+The <b>type</b> attribute can be used with all data sources. However, it has not been included in the chart above. Why? Because it is not normally needed; the <b>type</b> attribute is only necessary when CSPro can't determine what file format should be used when creating a data source. How does CSPro determine the file format? By the file extension. If a file extension is used that CSPro has no association for (for example, ".foo"), CSPro defaults to a text file. But by using the <b>type</b> attribute, you can control that behavior, should you think there might be any confusion.
+
+There are only two times when the <b>type</b> attribute is required.
+
+(1) When you don't want to provide a file name during the run. For example, maybe your application needs a lookup file, but your file isn't quite ready to go. You can add the lookup file to your application, but during your test runs, you can designate "none". In the <b>.pff</b> for your batch, you might see:
+
+<pff>[ExternalFiles]
+GeoLookup=|type=None</pff>
+
+(2) When a CSPro data source is being created via the <b>record</b> attribute. In that situation, type=CSProExport must be included. For example, if creating a data source by extracting the vaccination record from the main data file, the following connection syntax would be needed:
+
+<pff>OutputData=.\VaccRec.csdb|record=VACC_REC&type=CSProExport</pff>
+
+The full list of acceptable <b>type</b> arguments are:
+
+<pff>type=None
+type=Text
+type=CSProDB
+type=EncryptedCSProDB
+type=CSV
+type=Semicolon
+type=Tab
+type=Excel
+type=CSProExport
+type=R
+type=SAS
+type=SPSS
+type=Stata</pff>
+
+<seealso export_attributes.csdoc />

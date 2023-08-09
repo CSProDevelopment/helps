@@ -1,0 +1,62 @@
+﻿<title>Run Production Sorts</title>
+
+To run a production sort, you need to customize its behavior by creating a PFF file. You can then use the PFF file as a command line parameter for CSSort.exe (the associated filename of this utility). For example, if you name your PFF file MySort.ssf.pff, then you run the sort program by invoking:
+
+<indent><font monospace>"C:\Program Files (x86)\CSPro <definition CSPro::version />\CSSort.exe" MySort.ssf.pff</font></indent>
+
+This assumes that CSPro was installed in the default directory. Your PFF file must have a .pff extension.
+
+You can create a PFF file in one of two ways: either [1] create one with a text editor (such as Notepad or Wordpad), or [2] have it generated automatically for you by (a) launching CSSort, (b) making your desired field and sort type selections to the chosen dictionary, (c) saving your selections to a sort specification file (.ssf), and then (d) running CSSort. You can also manipulate PFF files in logic by using the <link CSPro::Pff.csdoc>Pff</link> object.
+
+Note that when CSSort generates a PFF file it automatically appends .pff to the sort specification file name; for example, MySort.ssf.pff. If a sort specification file is not created, then no PFF file will be created after its run.
+
+The following section shows the options available to you in a sort PFF file. A PFF file is not case sensitive, so you can use any combination of upper and lower case text.
+
+<pff>
+[Run Information]
+Version=CSPro <definition CSPro::version />
+AppType=Sort
+Description=My Program
+ShowInApplicationListing=Always
+
+[Files]
+Application=.\MySort.ssf
+InputData=.\MyData.dat
+OutputData=.\MySortedData.dat
+Listing=.\CSSort.lst
+
+[Parameters]
+ViewListing=Always
+ViewResults=Yes
+</pff>
+
+<subheader>[Run Information]</subheader>
+
+The <pffcolor>[Run Information]</pffcolor> block is required. While <pffcolor>Version</pffcolor> and <pffcolor>AppType</pffcolor> must appear exactly as shown in the example above, the other two properties are optional:
+
+<list>
+	<li><pffcolor>Description</pffcolor>=if specified, it will be used instead of the name of the file in the list of applications (mobile only).</li>
+	<li><pffcolor>ShowInApplicationListing</pffcolor>=determines whether the application associated with this PFF is displayed on the mobile Entry Applications screen. The possible options are: <b>Always</b> (default), <b>Never</b>, and <b>Hidden</b>. Operators must manually elect to show hidden applications, whereas PFFs with the <b>Never</b> option will never be shown.</li>
+</list>
+
+<subheader>[Files]</subheader>
+
+The <pffcolor>[Files]</pffcolor> block is required and defines all files used in the sort run. <pffcolor>InputData</pffcolor> is the file to be sorted, and it must be a .dat file (i.e., a text-based file). If the file you wish to sort is a .csdb file, then you must first create a .dat file. You can do this by launching DataViewer and choosing File > Save As > Data. Be sure the file extension is .dat. 
+
+<pffcolor>OutputData</pffcolor> is the sorted data file. Note the sorted data can  be written to either a .dat file (i.e., a text-based file) or to a .csdb file. 
+
+The file given in the <pffcolor>Listing</pffcolor> entry determines what the sort's report will be named.
+
+<subheader>[Parameters]</subheader>
+
+The <pffcolor>[Parameters]</pffcolor> block is optional. <pffcolor>ViewListing</pffcolor> determines whether the listing file is viewed. There are three options:
+
+<list>
+	<li><pffcolor>ViewListing</pffcolor>=Always means you will always see the generated listing file.</li>
+	<li><pffcolor>ViewListing</pffcolor>=Never means you will never see the generated listing file.</li>
+	<li><pffcolor>ViewListing</pffcolor>=OnError means you will see the generated listing file only if an error(s) occurred during the run.</li>
+</list>
+
+If the <pffcolor>ViewListing</pffcolor> entry is missing, the default action will be OnError.
+
+<pffcolor>ViewResults</pffcolor> determines whether the sorted data file is displayed at the end of the run. Your options are "Yes" or "No." If the <pffcolor>ViewResults</pffcolor> line is missing, the sorted data file will not be displayed. By default CSPro creates this option and sets it to No.

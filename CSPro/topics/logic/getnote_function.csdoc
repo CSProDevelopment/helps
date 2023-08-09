@@ -1,0 +1,28 @@
+﻿<title>GetNote Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = getnote(『<arg>dictionary_symbol</arg>』『,<arg>operator_id</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>getnote</logiccolor> function returns a string containing the note for a field or other dictionary symbol. If no arguments are supplied, the note for the current field is returned. The optional argument <arg>dictionary_symbol</arg> allows you to query the note for a dictionary item, record, or level. If using the dictionary name, the case note is returned. Another optional string argument, <arg>operator_id</arg>, allows you to query the note for a particular <link getoperatorid_function.csdoc>operator</link>. If no operator ID is supplied, then the note for the current operator will be returned.
+
+<subheader>Return Value</subheader>
+
+The function returns a string containing the note text. If there is no note, the length of the string will be 0.
+
+<subheader>Example</subheader>
+
+<logic>
+string caseInformation = getcaselabel(CENSUS_DICT);
+
+if length(getnote(CENSUS_DICT)) > 0 then
+	// add the case note to the case label for a full description of the case
+	caseInformation = caseInformation + " - " + getnote(CENSUS_DICT);
+endif;
+</logic>
+
+<seealso putnote_function.csdoc editnote_function.csdoc />

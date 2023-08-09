@@ -1,0 +1,62 @@
+﻿<title>Edit Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = edit(<arg>edit_pattern</arg>, <arg>numeric_expression</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The edit function converts a number to a character string defined by the given "edit pattern". The "edit pattern" is a string containing "Z"s and/or "9"s (i.e., "9999" or "ZZ9.99"). Both "9" and "Z" represent a digit as follows:
+
+<table 2 nowrap>
+	<cell><b>9</b></cell><cell>display a digit</cell>
+	<cell><b>Z</b></cell><cell>display a digit, but if it would be a leading zero for the given width, display a blank</cell>
+	<cell><b>.</b></cell><cell>display the decimal character</cell>
+	<cell><b>,</b></cell><cell>display the thousands separator character</cell>
+</table>
+
+Any other character will be displayed as itself.
+
+<subheader>Return value</subheader>
+
+The function returns a string derived from the <arg>numeric_expression</arg> argument.
+
+<subheader>Example 1</subheader>
+
+<logic>
+X = 87;
+A1 = edit("ZZZ9",X); // yields A1 = "  87"
+A2 = edit("9999",X); // yields A2 = "0087"
+A3 = edit("Z999",X); // yields A3 = " 087"
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+Y = 0;
+A4 = edit("ZZ9",Y); // yields A4 = "  0"
+A5 = edit("999",Y); // yields A5 = "000"
+A6 = edit("ZZZ",Y); // yields A6 = "   "
+</logic>
+
+<subheader>Example 3</subheader>
+
+<logic>
+T = edit("99:99:99", systime()); // yields T = "16:04:42" for the time 4:04pm and 42 seconds
+</logic>
+
+<subheader>Example 4</subheader>
+
+<logic>
+D = edit("99/99/99", sysdate("DDMMYY"));
+</logic>
+
+<subheader>Example 5</subheader>
+
+<logic>
+A = edit("ZZZ,ZZZ,ZZ9", INCOME);
+</logic>
+
+<seealso tonumber_function.csdoc sysdate_function.csdoc maketext_function.csdoc />

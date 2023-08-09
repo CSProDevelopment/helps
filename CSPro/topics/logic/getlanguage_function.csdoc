@@ -1,0 +1,23 @@
+﻿<title>GetLanguage Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = getlanguage();
+</logicsyntax>
+
+<subheader>Return Value</subheader>
+
+The <logiccolor>getlanguage</logiccolor> function returns a string with the name of the language currently being used by the application.
+
+<subheader>Example</subheader>
+
+<logic>
+if getlanguage() = "EN" then
+	errmsg("Hello");
+elseif getlanguage() = "FR" then
+	errmsg("Bonjour");
+endif;
+</logic>
+
+<seealso setlanguage_function.csdoc OnChangeLanguage_global_function.csdoc multiple_language_applications.csdoc />

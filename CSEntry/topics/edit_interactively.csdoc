@@ -1,0 +1,17 @@
+﻿<title>Edit Interactively</title>
+<context ID_INTEDIT ID_INTEDITOPTIONS IDD_INTEDTDLG />
+
+You can search through the data file using your data entry logic to find errors or unexpected conditions and display the data entry form containing each error ready for modification. This is a very convenient way to make corrections to survey data, provided the data volume is not too large, and the operator is knowledgeable enough to make the necessary corrections.
+
+Interactive editing is performed after the data have already been entered. You can use the same programmed logic that was in effect during data entry to find problems that were left unresolved by the original keyer, or you can use different logic to check for other conditions.
+
+To perform interactive editing:
+
+<list ordered>
+	<li>Open the data file, using the data entry application that contains the logic you want to check.</li>
+	<li>Go to Modify mode, starting on the first case you wish to check (usually the first case in the data file).</li>
+	<li>From the <b>Edit</b> menu, select <b>Interactive Edit</b>; or press <b>F11</b>.</li>
+	<li>Select whether to stop on messages, out of range conditions, or both.</li>
+</list>
+
+CSEntry will advance from wherever the cursor is currently positioned, field by field, from the current case through the end of the data file, executing whatever procedures are included in the application's logic. If you have chosen to stop on messages, CSEntry will stop whenever the application logic hits an "errmsg" command. If you have chosen to stop on out of range, CSEntry will stop whenever a field value is other than what is defined in its first value set in the dictionary. (If there are no value sets for a given field, it will never be considered out of range.) When CSEntry stops, it shows the programmed or out or range message, then places you on the appropriate form. You can make changes to the data if you like, and press <b>F11</b> to continue through the data file.

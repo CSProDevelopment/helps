@@ -1,0 +1,71 @@
+﻿<title>CountNonSpecial Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = countnonspecial(<arg>item_name</arg> ‖ <arg>record_name</arg> ‖ <arg>array_name</arg> ‖ <arg>numeric_expression</arg>『, ...』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The function <logiccolor>countnonspecial</logiccolor> counts the number of non-special values within the passed arguments. Special arguments include <logiccolor>missing</logiccolor>, <logiccolor>refused</logiccolor>, <logiccolor>notappl</logiccolor>, and <logiccolor>default</logiccolor>. The function can receive multiple numeric arguments, including items, records, arrays, and numeric expressions. This function can greatly simplify some programming tasks; for example, the following two lines of code are the same:
+
+<logic>
+if countnonspecial(RELATIONSHIP, SEX, AGE) = 3 then
+
+if not special(RELATIONSHIP) and not special(SEX) and not special(AGE) then
+</logic>
+
+If an <logiccolor>Array</logiccolor> object is passed, the function will count the non-special values among all the values in the array. For a multiply occurring item or record, to count the non-special values for all the items or records instead of just the current occurrence, include (*) after the item or record name.
+
+The <logiccolor>countvalid</logiccolor> function is a synonym for this function.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC GLOBAL
+
+	numeric tempVal = notappl;
+	Array tempArray(2, 3) = 1, 2, 3, notappl, missing, default;
+
+PROC EXAMPLE
+
+	countnonspecial(5, tempVal, default, 28 + 31, 3 / 0); // returns 2
+
+	tempVal = 0.123456789;
+	countnonspecial(5, tempVal, default, 28 + 31, 3 / 0); // returns 3
+
+	countnonspecial(5, tempVal, default, 28 + 31, 3 / 0, tempArray); // returns 6
+
+	tempArray(2, 1) = 0;
+	countnonspecial(5, tempVal, default, 28 + 31, 3 / 0, tempArray); // returns 7
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+// in this example SEX is not on the FERTILITY record
+PROC SEX
+
+if SEX <> 2 and countnonspecial(FERTILITY(curocc())) > 3 then
+	errmsg("Sex (%d) is not female but 4+ fertility entries defined so sex changed to female", SEX);
+	impute(SEX, 2);
+endif;
+</logic>
+
+
+<subheader>Example 3</subheader>
+
+<logic>
+numeric numDefinedValues = countnonspecial(SEX(*), AGE(*));
+numeric numPossibleValues = 2 * totocc(POPULATION);
+
+errmsg("%d% of sex and age values are missing", 100 * ( 1 - ( numDefinedValues / numPossibleValues ) ));
+</logic>
+
+
+<seealso special_function.csdoc special_values.csdoc />

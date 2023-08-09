@@ -1,0 +1,39 @@
+﻿<title>Proc Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+PROC <arg>PROCEDURE_NAME</arg>
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>PROC</logiccolor> statement declares the beginning of the procedures for a data entry or batch processing element. The <arg>PROCEDURE_NAME</arg> must always be the name of an object in the forms or edit tree. If you are in the logic view and select a processing element from the tree, the logic view will automatically generate the "<logiccolor>PROC PROCEDURE_NAME</logiccolor>" heading.
+
+If you plan to write logic for more than one procedure, the order of procedures must be as follows:
+
+<logic>
+PROC ITEM_NAME
+
+preproc
+
+	// statements
+
+onfocus
+
+	// statements
+
+onoccchange
+
+	// statements (only valid for rosters and multiply-occurring forms)
+
+killfocus
+
+	// statements
+
+postproc
+
+	// statements
+</logic>
+
+<seealso preproc_statement.csdoc onfocus_statement.csdoc onoccchange_statement.csdoc killfocus_statement.csdoc postproc_statement.csdoc order_of_executing_data_entry_events.csdoc order_of_executing_batch_edit_events.csdoc />

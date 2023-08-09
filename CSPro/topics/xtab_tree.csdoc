@@ -1,0 +1,32 @@
+﻿<title>Tabulation Application Tree</title>
+
+When you create a tabulation application, the tables tree tab will be nearly empty&mdash;only a single table will exist, with the Row Item and Column Item icons there as placeholders. However, as you drag <link item_description.csdoc>dictionary items</link> over to the table <link workspace.csdoc>workspace</link> to <link create_a_table.csdoc>build your tree</link>, you will begin to see it populate. The tree below shows such progress after three tables have been developed.
+
+<image xtab_tree.png />
+
+
+<image xtwnd.jpg /> <b>Tabulation Application</b>
+
+This is the highest level node, also known as the root node. It represents the tabulation application.
+
+<image table.png /> <b>Table</b>
+
+This is the second-tier tree node, just below the root. It represents each table defined in the application. There will always be at least one table in a tabulation application, although there is no maximum number. There are three tables in the tree above.
+
+<image xtab_row_item_parent.png /> <b>Row Item (parent)</b>
+
+This is a third-tier tree node, which will appear just below a table tree entry. It will always be present, even if no child row item has been placed below it. However, if a child column item appears on the table, then a "System Total" entry will appear as a placeholder, informing you that the column totals will appear in the row (see Table 3's Row Items for an example of this).
+
+<image xtab_row_item_child.png /> <b>Row Item (child)</b>
+
+This is a fourth-tier tree node. It can appear in the tree either just below a Row Item parent, or beneath a Row Item child. This second scenario indicates that the data item is nested&mdash;in Table 1, <b>Citizenship</b> is nested below <b>Relationship</b>, and in Table 2, <b>Occupancy Status</b> is nested below <b>Ownership Status</b>. A Row Item can not have a depth of more than two data items. However, it can have any number of data items in sequence. For example, in Table 2 the totals for the <b>Ownership Status</b> Row Item will appear first, followed immediately by the <b>Type of Housing Unit</b> row totals. The values of these two Row Items are not dependent on one another, and more data items could have followed in the row.
+
+<image xtab_col_item_parent.png /> <b>Column Item (parent)</b>
+
+This is a third-tier tree node, which will appear just below the Row Item tree entries.  It will always be present, even if no child column item has been placed below it. Similar to the behavior of the Row Item parent entry, once a child row item appears on the table, then a "System Total" entry will appear as a placeholder, informing you that the row totals will appear in the column (see Table 2's child Column Item for an example of this).
+
+<image xtab_col_item_child.png /> <b>Column Item (child)</b>
+
+This is a fourth-tier tree node. It can appear in the tree just below a Column Item parent, or beneath a Column Item child. The behavior of sequential or nested Column Items is identical to the arrangement explained above for Row Items. There are no nested Column Items in the example tree above, but there are two column data items in sequence in Table 1, <b>Sex</b> and <b>Marital Status</b>.
+
+Pressing<b> Ctrl+T</b> will switch the tabulation tree view between <link labels.csdoc>labels</link> and <link names.csdoc>unique names</link> for the items.

@@ -1,0 +1,25 @@
+﻿<title>Trees</title>
+
+There are two trees on the left side of the screen: the file tree and the case tree.
+
+<subheader>File Tree</subheader>
+
+The file tree shows all cases in the data file. In a single level application, the tree shows the complete IDs for each case. The icons in front of the IDs indicate whether the case is complete or partial. For example the tree might look like:
+
+<center><image file_tree_single_level.png /></center>
+
+In the tree above, the first case has been partially verified, the third case has been partially modified, and the last case has been partially added.
+
+In a multi-level application, the tree shows the level occurrences for each case. In the following example there are two levels.
+
+<center><image file_tree_multiple_levels.png /></center>
+
+Cases in a data entry data file are indexed by their level one ID fields. You cannot have two cases with the same level one IDs in the same data file. Within cases, level occurrence IDs must also be unique, but within the file they may repeat.
+
+<subheader>Case Tree</subheader>
+
+When adding, modifying, or verifying individual cases, a second tree, called a case tree, may be active if this feature was selected during development of the data entry application. The case tree shows the internal structure of the active case. The case does not occur when data entry is stopped. The following is an example of a case tree:
+
+<center><image case_tree.png /></center>
+
+In the tree above, the current value is displayed to the right of each data field. Some tree elements, such as BOOK and PERSON000 have no values beside them because they represent <link forms.csdoc>forms</link> and <link repeating_groups_of_fields.csdoc>rosters</link>, respectively.

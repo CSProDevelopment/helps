@@ -1,0 +1,26 @@
+﻿<title>Step 2: Write Logic and Compile</title>
+
+<subheader>(Exercise 8, Run a Batch Application)</subheader>
+
+We will write the same logic we used in the previous exercise.
+
+<list>
+	<li>Press <b>Ctrl+T</b> to show names instead of labels in the edits tree.</li>
+	<li>Click on the <b>+</b> next to <b>PERSON_RECORD_EDT</b> then click on MARITAL_STATUS. The frame on the right hand side of the screen should show <logiccolor>PROC MARITAL_STATUS</logiccolor> at the top.</li>
+	<li>Type in the logic exactly as you see below.</li>
+	<li>Note that we used <logiccolor>$</logiccolor> in place of MARITAL_STATUS. This is the same thing because the logic is inside the procedure for MARITAL_STATUS. In the CSPro language, <logiccolor>$</logiccolor> is a short way of saying "this item."</li>
+	<li>Compile the logic by clicking <image compile_button.png /> on the toolbar, or pressing <b>Ctrl+K</b> or selecting <b>File</b> -> <b>Compile</b> from the main menu.</li>
+	<li>Correct any errors until you see <b>Compile Successful</b>.</li>
+</list>
+
+<logic>
+PROC MARITAL_STATUS
+
+	if $ = 1 and AGE < 12 then
+		errmsg("Too young to be married");
+	endif;
+</logic>
+
+<center><image exercise_08_02_adding_batch_logic.png /></center>
+
+Continue to the next step: <topic exercise_08_03_run_the_batch_application.csdoc />.

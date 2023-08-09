@@ -1,0 +1,30 @@
+﻿<title>PosChar Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = poschar(<arg>pattern_string</arg>, <arg>source_string</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>poschar</logiccolor> function searches for a collection of characters, represented in a <arg>pattern_string</arg>, within a <arg>source_string</arg>. The function returns the beginning position of the first occurrence of the pattern string in the source string. Both arguments are string expressions, and they are case sensitive, meaning that <logiccolor>"c"</logiccolor> is recognized as different from <logiccolor>"C"</logiccolor>.
+
+<subheader>Return Value</subheader>
+
+The function returns the position of the first occurrence of the pattern string, or if no characters from the pattern string are found, the function returns 0.
+
+<subheader>Examples</subheader>
+
+<logic>
+VALUE = poschar("L", "CHILDREN");	// VALUE will be 4; this is where the
+									// pattern string (the letter "L")
+									// occurs in the source string ("CHILDREN")
+
+VALUE = poschar("LCN", "CHILDREN");	// VALUE will be 1; of the characters in the
+									// pattern string, "C" is the first character
+									// encountered in the source string, and it is
+									// found at position 1
+</logic>
+
+<seealso pos_function.csdoc startswith_function.csdoc replace_function.csdoc ischecked_function.csdoc />

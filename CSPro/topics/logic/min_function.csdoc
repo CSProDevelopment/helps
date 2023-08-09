@@ -1,0 +1,30 @@
+﻿<title>Min Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+d = min(<arg>multiple_item</arg> 『where condition』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>min</logiccolor> function returns the minimum value of an item that occurs multiple times.
+
+<b>During data entry,</b> the result of the minimum calculation depends on where the statement is located. If the <logiccolor>min</logiccolor> function is executed prior to the form or roster containing the item, it returns <logiccolor>default</logiccolor>. If it is executed within the form or roster containing the item, it returns the minimum value up to the current occurrence number. If it is executed after the form or roster containing the item, it returns the minimum value for all occurrences of the item.
+
+<b>During batch editing,</b> if the values of the items are not changed, the result of the minimum calculation is the same, no matter where the function is located. The function will return the minimum value for all occurrences of the item.
+
+If a <logiccolor>where</logiccolor> condition is included, the function returns the minimum value of all occurrences for which the condition is true.
+
+If any occurrence of the item is a special value (<logiccolor>default</logiccolor>, <logiccolor>missing</logiccolor>, <logiccolor>refused</logiccolor>, or <logiccolor>notappl</logiccolor>), the occurrence will not be included in the calculation. If all item occurrences are special values, then <logiccolor>default</logiccolor> will be returned.
+
+<subheader>Return value</subheader>
+
+The function returns a decimal value.
+
+<subheader>Examples</subheader>
+
+<logic>MIN_INCOME = min(INCOME);
+MIN_MALE_INCOME = min(INCOME where SEX = 1);</logic>
+
+<seealso max_function.csdoc />

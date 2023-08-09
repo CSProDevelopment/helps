@@ -1,0 +1,37 @@
+﻿<title>Format an Application</title>
+<context IDD_FORMAT_APP ID_EDIT_APP_FMT />
+
+To bring up the Format (Application) Dialog Box, right click on a table and select Format (Application).
+
+The Format (Application) Dialog Box controls the appearance of numbers and content of text labels in all tables in the file. It is particularly useful for customizing tables in languages other than English. Note that unlike Format (Table) and Format Print (Table), settings made in this dialog box apply to <i>all</i> tables in the file.
+
+<center><image formatapp.jpg /></center>
+
+The following settings are available:
+
+<b>Decimal Symbol</b>: Sets the symbol used to separate the whole and fractional parts of numbers in data cells. By default this is set to period, however it may be set to comma or any other symbol. For example, changing the symbol from period to comma would change the display of a number from 3.14 to 3,14.
+
+<b>Digit Grouping Symbol</b>: Sets the symbol used to separate groups of digits in large numbers in data cells. By default this is set to comma so that numbers are displayed as 123,456,789 but it can be changed, for example to a period so that numbers are displayed as 123.456.789.
+
+<b>Digit Grouping</b>: Controls how digits are grouped together to be separated by the digit grouping symbol. There are three options:
+
+<list>
+	<li>123,456,789 (default): place the digit grouping symbol between each group of three digits.</li>
+	<li>123456789: do not use the digit grouping symbol.</li>
+	<li>12,34,56,789: place the digit grouping symbol between each group of two digits with one group of three digits at the right.</li>
+</list>
+
+
+<b>Display Leading Zeros</b>: Controls whether or not zero should be displayed before the decimal point of a decimal number between zero and one. Leading zeros are displayed by default.
+
+<b>Measurement System</b>: Allows you to switch between US (inches) and metric (centimeters) measurements for page margins. US by default.
+
+<b>Zero Mask</b>: Allows you to change the text that is displayed for data cells that contain a value of exactly zero. By default the zero mask is "-" so any data cell containing a value of zero is displayed as "-" rather than "0".
+
+<b>Rounded to Zero Mask</b>: Allows you to change the text that is displayed for data cells that contain a value of which is rounded off to zero because it cannot be displayed using the number of decimal places for that data cell. For example, if that value in a data cell is calculated to be 0.002 but the number of decimal places for that cell is set to 2, the rounded to zero mask will be displayed in that cell. Having the zero mask and rounded to zero masks be different makes it clear which values are exactly zero and which ones are rounded off. By default the rounded to zero mask is "*". Note that you can change the number of decimal places for a row, column or data cell by using the Format (Table Element) Dialog Box.
+
+<b>Title Template</b>: Sets the text used to automatically generate the first portion of default table titles. When you create a new table, CSPro automatically gives the new table a title. By default, this title begins with "Table %s." where the table number replaces %s. You can change this by entering your own text in this edit box. If you put "%s" in your new title template, it will automatically be replaced with the table number when the table title is generated. As an example, if you put "Tableau %1" in the edit box, your table titles will begin with "Tableau 1", "Tableau 2", …
+
+<b>Continuation Text</b>: Sets the text added to the end of the table title on the printed page and in print preview to indicate that the current page is not the first page of the table. By default this text is "(continued)" so that on all but the first printed page of a table, the title would be, for example, "Table 1: Age by Sex (continued)".
+
+<b>Generated Text</b>: Sets other text (besides title template and continuation text) used by CSPro to generate default text in table titles, column heads, and stubs. To change a particular text string, first select the default string under "Default Text" and then enter the new string under "Alternate Text". For example, to replace the string "Percent" used in stubs and column heads with "%", first select "Percent" from "Default Text" and then type "%" into "Alternate Text". Now any rows or columns with percents in them will have "%" in the stub or column head.

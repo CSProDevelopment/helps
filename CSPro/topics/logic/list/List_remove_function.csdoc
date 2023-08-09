@@ -1,0 +1,40 @@
+﻿<title>List.remove Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = list_name.remove(<arg>index</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>List.remove</logiccolor> function removes the value at the position in the <link List.csdoc>List</link> referenced by the numeric expression <arg>index</arg>. List index values are one-based, so the index must be between 1 and the length of the List.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the value is successfully removed, and 0 (false) otherwise, which indicates that the index is not valid. If the List is read-only, the function returns <logiccolor>default</logiccolor>.
+
+
+<subheader>Example</subheader>
+
+<logic>
+List string eligible_heads;
+
+// ...
+
+numeric eligible_head_index = eligible_heads.show("Select the head");
+
+if eligible_head_index <> 0 and eligible_heads.length() > 1 then
+
+    eligible_heads.remove(eligible_head_index);
+
+    numeric secondary_head_index = eligible_heads.show("Select someone who could also be a head");
+
+endif;
+</logic>
+
+
+<seealso List.csdoc List_clear_function.csdoc List_removeDuplicates_function.csdoc List_removeIn_function.csdoc />

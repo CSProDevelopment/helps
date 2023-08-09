@@ -1,0 +1,39 @@
+﻿<title>CMCode Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = cmcode(<arg>month</arg>, <arg>year</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>cmcode</logiccolor> function returns the <i>century month code</i> (CMC) of the given date using the <arg>month</arg> and <arg>year</arg> numeric expressions. The CMC is the number of months since January 1900. (The CMC for January 1900 is 1.) It is calculated by multiplying the number of years between the argument <arg>year</arg> and 1900 by twelve, then adding the value of argument <arg>month</arg>.
+
+The function returns the value 9999 if the month is less than one or greater than 12, or if either the month or year are equal to a <link special_values.csdoc>special value</link>. The function accepts either 2- or 4-digit years. If a 2-digit year is used, the function assumes that the year is in the 20th century (i.e., 19xx). Four-digit years can be used for years in the 20th or 21st century.
+
+<subheader>Return Value</subheader>
+
+The function returns the CMC of the date.
+
+<subheader>Example 1</subheader>
+
+<logic>
+XMONTH = 6;
+XYEAR = 82;
+DATE = cmcode(XMONTH, XYEAR);
+</logic>
+
+The value of DATE for the given arguments (June 1982) would be ( 82 * 12 ) + 6 = 990.
+
+<subheader>Example 2</subheader>
+
+<logic>
+XMONTH = 2;
+XYEAR = 2000;
+DATE = cmcode(XMONTH, XYEAR);
+</logic>
+
+The value of DATE in this example would be ( ( 2000 - 1900 ) * 12 ) + 2, or 1202.
+
+<seealso dateadd_function.csdoc datediff_function.csdoc datevalid_function.csdoc sysdate_function.csdoc />

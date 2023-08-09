@@ -1,0 +1,63 @@
+﻿<title>Subscripts</title>
+
+Items with multiple occurrences or in multiple records have one name (the item name), but can occur multiple times. In order to indicate the specific occurrence of the item, you may need to use an index or subscript. The subscripts are integers and are numbered from 1.
+
+Imagine that the SEX is an item in the multiple record CHILD.
+
+The expressions:
+
+<table 2 nowrap>
+    <cell><logiccolor>SEX(1)</logiccolor></cell><cell>refers to the sex of the first child</cell>
+    <cell><logiccolor>SEX(3)</logiccolor></cell><cell>refers to the sex of the third child</cell>
+    <cell><logiccolor>SEX(i)</logiccolor></cell><cell>refers to the sex of the i-th child</cell>
+</table>
+
+Subscripts can be numeric expressions as well as numeric constants. For example, the expression:
+
+<logic>SEX(curocc(CHILD));</logic>
+
+refers to the current occurrence of CHILD (<logiccolor>curocc</logiccolor> is a function that returns the current occurrence of a multiple record). When referring to multiply-occurring items within the scope of their repetition, you do not need to use subscripts, as the current occurrence will be assumed. For example, suppose you have a population record that has multiple occurrences. Belonging to that record are the three variables SEX, AGE, and FERTILITY. If your code is located within any of these variables' procedures, you do not need to use subscripts. To illustrate:
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC SEX
+    // this will check the sex and fertility values for each person in the household
+    numeric row_num = curocc();
+
+    if $ = 1 then
+        if fertility <> notappl then
+            errmsg("Row %d: Male found with fertility", row_num);
+        endif;
+    elseif $ = 2 then
+        if age < 10 and fertility <> notappl then
+            errmsg("Row %d: Underage female found with fertility data", row_num);
+        endif;
+    else
+        errmsg("Row %d: Invalid sex code (sex=%d)", row_num, $);
+    endif;
+</logic>
+
+However, if you were to place the exact same logic elsewhere in your program, you would have to programmatically mimic the looping mechanism by using subscripts. For example, if the above code were placed in the QUEST procedure (where QUEST is equivalent to the case), it would need to be adjusted as follows:
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC QUEST
+    NumPeople = count(POP_RECS);
+    do varying numeric i=1 while i <= NumPeople
+        if sex(i) = 1 then
+            if fertility(i) <> notappl then
+                errmsg("Row %d: Male found with fertility", i);
+            endif;
+        elseif sex(i) = 2 then
+            if age(i) < 10 and fertility(i) <> notappl then
+                errmsg("Row %d: Underage female found with fertility data", i);
+            endif;
+        else
+            errmsg("Row %d: Invalid sex code (sex=%d)", i, sex(i));
+        endif;
+    enddo;
+</logic>
+
+On the other hand, it simplified our logic for the row number, as we don't need to make a call to <logiccolor>curocc</logiccolor> anymore to find out what row we're on&mdash;we know it now, as we're controlling the looping.

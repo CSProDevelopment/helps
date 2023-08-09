@@ -1,0 +1,24 @@
+﻿<title>Round Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = round(<arg>numeric_expression</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>round</logiccolor> function returns the rounded value of <arg>numeric_expression</arg>, rounding the number to the integer that is closest to the number.
+
+<subheader>Return Value</subheader>
+
+The function returns the rounded value. If the value of the numeric expression is a <link special_values.csdoc>special value</link>, the function returns the special value.
+
+<subheader>Example</subheader>
+
+<logic>
+// round a price to the nearest nickel (five cents)
+numeric roundedPrice = round(PRICE * 20) / 20;
+</logic>
+
+<seealso int_function.csdoc />

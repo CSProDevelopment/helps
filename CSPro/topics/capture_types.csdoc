@@ -1,0 +1,58 @@
+﻿<title>Capture Types</title>
+
+Occasionally it may be useful to display to an enumerator or keyer the possible values for a given field in a data entry application. For example, if a survey is being conducted on a tablet, it may be easier for an enumerator to use a finger or stylus to select a value, rather than to key the value using the screen's touch keyboard. CSPro's capture types allow for such flexibility by allowing the program to specify the capture type associated with a field.
+
+
+<subheader>Selecting Capture Types</subheader>
+
+You can specify a capture type while editing a <link dictionary_property_panel.csdoc>dictionary item</link>, or while modifying a <link change_field_properties.csdoc>field's properties</link>. If a field has a capture type specified, it will override the dictionary item's capture type setting.
+
+When dragging an item to a form to create a field, you can indicate that you want to automatically use capture types by selecting the <b>Capture Types: CAPI Mode</b> option in the <link drag_option_menu.csdoc>Drag Options</link> dialog. If this option is selected, CSPro will automatically choose a capture type for the field based on the field's first value set.
+
+You can manually change the capture type for a field by <link change_field_properties.csdoc>editing</link> the field's properties. CSPro allows you to select a capture type that is suitable for the item's first value set. A warning will appear if the value set is not suitable. In this case, if the value set is compatible at the time of data entry (because the value set was changed dynamically using the <logiccolor>setvalueset</logiccolor> function), it will be used; if not compatible, the field will appear using the base type (generally a Text Box).
+
+<center><image capture_types_1.png /></center>
+
+The CSPro Designer shows the fields that use capture types by coloring the border of the field in blue. The blue border does not exist when the data entry application is run in CSEntry. The field border will be a lighter blue color when the Number Pad capture type is selected.
+
+<center><image capture_types_2.png /></center>
+
+
+<subheader>Capture Types</subheader>
+
+<list>
+	<li><link barcode_capture_type.csdoc>Barcode</link> - Capture contents of a barcode.</li>
+	<li><topic check_box.csdoc /> - Capture a multiple response variable.</li>
+	<li><link date_capture_type.csdoc>Date</link> - Capture a date.</li>
+	<li><topic drop_down.csdoc /> - Capture a discrete value as a drop down or a numeric range as a combo box.</li>
+	<li><topic number_pad.csdoc /> - Capture a numeric value.</li>
+	<li><topic radio_button.csdoc /> - Capture a discrete value.</li>
+	<li><topic slider.csdoc /> - Capture a numeric range.</li>
+	<li><topic text_box.csdoc /> - Capture numeric or alphanumeric text. The default capture type.</li>
+	<li><topic toggle_button.csdoc /> - Capture a discrete value with two states (selected and not selected)</li>
+</list>
+
+
+<subheader>Hiding the Title of a Capture Type Window</subheader>
+
+By default CSEntry displays the label of the value set in the window of the capture type, but this title can be turned off using programmatic logic:
+
+<logicsyntax>setproperty(<arg>dictionary_symbol</arg>, "ShowExtendedControlTitle", "No");</logicsyntax>
+
+
+<subheader>Validation Method</subheader>
+
+<table 3 header>
+<cell>Capture Type</cell><cell>Numeric Field</cell><cell>Alphanumeric Field</cell>
+<cell>Barcode</cell><cell>In value set</cell><cell>In value set</cell>
+<cell>Check Box</cell><cell>n/a</cell><cell>Comprised of values in the value set</cell>
+<cell>Combo Box</cell><cell>In value set</cell><cell>In value set (only for fields of length 1)</cell>
+<cell>Date</cell><cell>In value set and a valid date</cell><cell>In value set and a valid date</cell>
+<cell>Radio Button / Drop Down</cell><cell>In value set</cell><cell>In value set</cell>
+<cell>Slider</cell><cell>In value set</cell><cell>n/a</cell>
+<cell>Text Box / Number Pad</cell><cell>In value set</cell><cell>In value set (only for fields of length 1)</cell>
+<cell>Toggle Button</cell><cell>In value set or <logiccolor>notappl</logiccolor></cell><cell>In value set or blank</cell>
+</table>
+
+
+<seealso multimedia_features.csdoc getcapturetype_function.csdoc setcapturetype_function.csdoc />

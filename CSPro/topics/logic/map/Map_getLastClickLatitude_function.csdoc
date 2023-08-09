@@ -1,0 +1,55 @@
+﻿<title>Map.getLastClickLatitude Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+lat = map_name.getLastClickLongitude();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Map.getLastClickLatitude</logiccolor> function retrieves the latitude of the last point on the map that the user tapped. This is often used in the callback function passed to <logiccolor>Map.setOnClick</logiccolor> to get the coordinates of the point that was just tapped. The tapped latitude is only recorded if a user taps on the map itself rather than on a marker.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the latitude of the tapped point in degrees or <logiccolor>notappl</logiccolor> if the user has not tapped a point on the map.
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+// Declare a map
+Map mymap;
+
+// Declare id for map marker
+numeric markerId;
+
+// This function is called when user taps on map.
+// It moves the marker to the location that the user tapped.
+function mapClicked()
+    numeric lat = mymap.getLastClickLatitude();
+    numeric lon = mymap.getLastClickLongitude();
+	mymap.setMarkerLocation(markerId, lat, lon);
+end;
+
+PROC SHOW_MAP
+preproc
+
+// Add a marker to the map at latitude 38.84839, longitude -76.931098
+markerId = mymap.addMarker(38.84839, -76.931098);
+
+// Set function that is called when the user taps on the map to move the marker
+// to the new position
+mymap.setOnClick(mapClicked());
+
+// Display the map
+mymap.show();
+</logic>
+
+
+<seealso Map.csdoc Map_getLastClickLongitude_function.csdoc Map_getMarkerLatitude_function.csdoc Map_setMarkerLocation_function.csdoc Map_setMarkerOnDrag_function.csdoc />

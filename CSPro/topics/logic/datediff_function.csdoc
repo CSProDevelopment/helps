@@ -1,0 +1,54 @@
+﻿<title>DateDiff Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = datediff(<arg>start_date</arg>, <arg>end_date</arg> 『,<arg>diff_type</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>datediff</logiccolor> function returns the difference between two dates as a number, defaulting to the number of days between the dates. This function acts similarly to Microsoft Excel's <b>datedif</b> function. The numeric expressions <arg>start_date</arg> and <arg>end_date</arg> must be in YYYYMMDD (year/month/day) format. If no year is present then the current or next year is assumed in order to satisfy the condition that the start date is earlier than the end date. If years are present, it is possible for the start date to be later than the end date, in which case the function returns a negative difference. An optional string expression, <arg>diff_type</arg>, indicates the type of date difference requested, and can be one of the following values:
+
+<indent><table 2 nowrap>
+	<cell><arg>diff_type</arg></cell><cell><b>Description</b></cell>
+	<cell><logiccolor>"d"</logiccolor></cell><cell>days between the start and end dates (default)</cell>
+	<cell><logiccolor>"w"</logiccolor></cell><cell>weeks between the start and end dates</cell>
+	<cell><logiccolor>"m"</logiccolor></cell><cell>months between the start and end dates</cell>
+	<cell><logiccolor>"y"</logiccolor></cell><cell>years between the start and end dates</cell>
+	<cell><logiccolor>"md"</logiccolor></cell><cell>days between the start and end dates ignoring both the years and months of the dates</cell>
+	<cell><logiccolor>"ym"</logiccolor></cell><cell>months between the start and end dates ignoring the years of the dates</cell>
+	<cell><logiccolor>"yd"</logiccolor></cell><cell>days between the start and end dates ignoring the years of the dates</cell>
+</table></indent>
+
+<subheader>Return Value</subheader>
+
+The function returns the requested difference in dates, defaulting to the number of days between the dates. If the dates cannot be processed, the function returns <logiccolor>default</logiccolor>. The function returns values equal to Excel's function for most arguments, but due to processing differences involving leap years, sometimes CSPro's function will return a value different from Excel's.
+
+<subheader>Example 1</subheader>
+
+<logic>
+datediff(19790404, 19820605);		// returns 1158
+datediff(19790404, 19820605, "d");	// returns 1158
+datediff(19790404, 19820605, "w");	// returns 165
+datediff(19790404, 19820605, "m");	// returns 38
+datediff(19790404, 19820605, "y");	// returns 3
+datediff(19790404, 19820605, "md");	// returns 1
+datediff(19790404, 19820605, "ym");	// returns 2
+datediff(19790404, 19820605, "yd");	// returns 62
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+numeric date1 = 20090120;
+numeric date2 = 20121106;
+
+string outputText = "The difference between January 20, 2009 and November 6, 2012 is %d years, %d months, and %d days";
+
+errmsg(outputText, datediff(date1, date2, "y"), datediff(date1, date2, "ym"), datediff(date1, date2, "md"));
+
+// returns ... 3 years, 9 months, and 17 days
+</logic>
+
+<seealso dateadd_function.csdoc datevalid_function.csdoc sysdate_function.csdoc />

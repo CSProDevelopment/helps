@@ -1,0 +1,34 @@
+﻿<title>List.length Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = list_name.length();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>List.length</logiccolor> function returns the size of a <link List.csdoc>List</link>, indicating the number of values contained by the List.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the length of the List.
+
+
+<subheader>Example</subheader>
+
+<logic>
+List string file_listing;
+
+dirlist(file_listing, pathname(InputFile), "*.csdb");
+
+if file_listing.length() > 0 then
+	skip to DATA_ALREADY_ENTERED;
+endif;
+</logic>
+
+
+<seealso List.csdoc length_function.csdoc />

@@ -1,0 +1,35 @@
+﻿<title>StartsWith Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = startswith(<arg>prefix</arg>, <arg>source</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>startswith</logiccolor> function determines whether the string expression <arg>source</arg> begins with the string expression <arg>prefix</arg>. It is the same as checking if:
+
+<logicsyntax>
+pos(<arg>prefix</arg>, <arg>source</arg>) = 1
+</logicsyntax>
+
+In addition to standalone use as a function, <logiccolor>startswith</logiccolor> can be used when specifying <link set_access_statement.csdoc>dictionary access parameters</link>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the source string starts with the prefix and 0 (false) otherwise.
+
+
+<subheader>Examples</subheader>
+
+<logic>
+if startswith("9999", MENU_GEOCODE_SELECTION) then
+	errmsg("Are you sure that you want to continue in training mode?")
+	select("Yes", continue, "No", reenter);
+endif;
+</logic>
+
+<seealso pos_function.csdoc poschar_function.csdoc ischecked_function.csdoc />

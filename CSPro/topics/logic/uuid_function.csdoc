@@ -1,0 +1,35 @@
+﻿<title>UUID Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = uuid(『<arg>dictionary_name</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+This <logiccolor>uuid</logiccolor> function returns a human-readable string containing a universally unique identifier (UUID), also referred to as a globally unique identifier (GUID). This is a 36-character string that will be formatted in groups of 8, 4, 4, 4, and 12 characters, separated by hyphens. For example:
+
+<indent><i>e459e2b6-1fec-4d71-86c1-078cc2fe7433</i></indent>
+
+This is a string representation of a 128-bit number that can essentially be considered globally unique. The probability of generating the same UUID twice is near zero. You will receive a different string every time you call the function.
+
+If an optional <arg>dictionary_name</arg> is specified, the function returns the UUID (internal key) associated with the currently loaded case. This may be useful when working with paradata queries.
+
+<subheader>Return Value</subheader>
+
+The function returns a string containing the human-readable representation of the identifier.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC UNIQUE_ID
+
+preproc
+
+if UNIQUE_ID = "" then
+	UNIQUE_ID = uuid();
+endif;
+</logic>
+
+<seealso random_function.csdoc />

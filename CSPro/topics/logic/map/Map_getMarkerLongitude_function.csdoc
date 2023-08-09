@@ -1,0 +1,49 @@
+﻿<title>Map.getMarkerLongitude Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+long = map_name.getMarkerLongitude(<arg>markerId</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Map.getMarkerLongitude</logiccolor> function retrieves the longitude of the marker identified by <arg>markerId</arg>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the longitude of the marker in degrees if the marker was found and returns <logiccolor>default</logiccolor> if the marker id is invalid.
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+function onDragMarker(Map dragMap, numeric markerId)
+	numeric lat = dragMap.getMarkerLatitude(markerId);
+	numeric lon = dragMap.getMarkerLongitude(markerId);
+	errmsg("Marker was moved to: %f, %f", lat, lon);
+end;
+
+PROC SHOW_MAP
+preproc
+
+// Declare a map
+Map dragMap;
+
+// Add a marker to the map at latitude 38.84839, longitude -76.931098
+numeric markerId = dragMap.addMarker(38.84839, -76.931098);
+
+// Set function that is called on marker drag
+dragMap.setMarkerOnDrag(markerId, onDragMarker(dragMap, markerId));
+
+// Display the map
+dragMap.show();
+</logic>
+
+
+<seealso Map.csdoc Map_getMarkerLatitude_function.csdoc Map_setMarkerLocation_function.csdoc Map_setMarkerOnDrag_function.csdoc />

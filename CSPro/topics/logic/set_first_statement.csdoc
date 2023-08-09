@@ -1,0 +1,27 @@
+﻿<title>Set First Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+set first(<arg>dictionary_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>set first</logiccolor> statement is used, like the <logiccolor>locate</logiccolor> function, to find a specific case in a data file. The case pointer is positioned to the first case. Based on the <link set_access_statement.csdoc>dictionary access parameters</link>, the case is either the first case by indexed (key) order or by sequential (file) order. To load the case into memory, use the <logiccolor>retrieve</logiccolor> function or the <logiccolor>loadcase</logiccolor> function without arguments.
+
+The <arg>dictionary_name</arg> refers to either an external dictionary or the main input file of a batch application. Using this statement with the main input file of a batch application allows you to pass through the same data file more than once in a single run of a batch application.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC MENU
+
+	set first(SURVEY_DICT);
+
+	do while loadcase(SURVEY_DICT)
+		// process the cases in ascending key order
+	enddo;
+</logic>
+
+<seealso set_last_statement.csdoc locate_function.csdoc set_access_statement.csdoc />

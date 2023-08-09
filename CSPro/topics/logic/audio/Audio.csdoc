@@ -1,0 +1,60 @@
+﻿<title>Audio Object</title>
+
+In logic, an <logiccolor>Audio</logiccolor> object represents an audio recording. Audio recordings may be loaded from audio files, saved to audio files, played back or recorded. Audio objects are typically used to record portions of an interview either interactively or in the background. With interactive recording an audio recorder is displayed to the user who then controls when the recording is started and stopped. The user must complete the audio recording before moving to the next survey question. With background recording, the audio recorder is started and stopped using CSPro logic and the user can continue with the survey while the audio is recorded.
+
+Audio recording is typically implemented by declaring a variable of type <logiccolor>Audio</logiccolor>, calling either the <logiccolor>Audio.record</logiccolor> or <logiccolor>Audio.recordInteractive</logiccolor> function, and then calling the <logiccolor>Audio.save</logiccolor> function to save the audio to a file.
+
+Audio recording and playback are currently only supported on Android.
+
+
+<subheader>Functionality</subheader>
+
+An Audio object is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
+
+<table 2 header nowrap>
+	<cell>Function</cell><cell>Description</cell>
+	<cell><logiccolor Audio>clear</logiccolor></cell><cell>Erases the audio recording currently stored in the Audio object.</cell>
+	<cell><logiccolor Audio>concat</logiccolor></cell><cell>Appends an audio recording to the recording stored in the Audio object.</cell>
+	<cell><logiccolor Audio>length</logiccolor></cell><cell>Returns the length, in seconds, of the recording in the Audio object.</cell>
+	<cell><logiccolor Audio>load</logiccolor></cell><cell>Reads an audio file and places the contents in the Audio object.</cell>
+	<cell><logiccolor Audio>play</logiccolor></cell><cell>Launches an audio player to play back the contents of the Audio object.</cell>
+	<cell><logiccolor Audio>record</logiccolor></cell><cell>Starts recording audio in the background.</cell>
+	<cell><logiccolor Audio>recordInteractive</logiccolor></cell><cell>Starts interactive audio recording.</cell>
+	<cell><logiccolor Audio>save</logiccolor></cell><cell>Writes the audio recording to a file.</cell>
+	<cell><logiccolor Audio>stop</logiccolor></cell><cell>Stops the current background recording.</cell>
+</table>
+
+In addition to these object functions, Audio objects can be used as arguments to the <logiccolor>filename</logiccolor> function.
+
+
+<subheader>Assignments</subheader>
+
+Audio objects can be assigned to other Audio objects, which will replace the recorded Audio with the recording from the assigned Audio object.
+
+<logicsyntax>
+<arg>audio_name</arg> = <arg>another_audio_name</arg>;
+</logicsyntax>
+
+It is also possible to assign Audio objects to a <link Document.csdoc>Document</link>:
+
+<logicsyntax>
+<arg>document_name</arg> = <arg>audio_name</arg>;
+</logicsyntax>
+
+You can also make the reverse assignment, assigning a Document to an Audio object. A runtime error will occur if the Document's data was not Audio data.
+
+<logicsyntax>
+<arg>audio_name</arg> = <arg>document_name</arg>;
+</logicsyntax>
+
+When an Audio object is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_audio_example.hgi />
+</logic>
+
+
+<seealso multimedia_features.csdoc />

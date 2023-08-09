@@ -1,0 +1,10 @@
+﻿<title>OnKey Character Map</title>
+<context IDD_ONKEY_CHAR_MAP ID_VIEW_ONKEY_CHAR_MAP />
+
+When editing a data entry application, select <b>View</b> -> <b>OnKey Character Map</b>.
+
+<center><image onkey_character_map.png /></center>
+
+The OnKey Character Map is used to determine the codes for keystrokes or characters. Type a character and the OnKey and OnChar codes for that character will be displayed in the Code field. In the above image, an Arabic keyboard was used to generate the letter Dad. In this example, the OnKey function will be called with the keystroke value 81 because the 'Q' key was pressed to generate the letter 'Dad.' The OnChar function will be called with the character value 1590, representing the Arabic letter.
+
+<seealso OnChar_global_function.csdoc OnKey_global_function.csdoc />

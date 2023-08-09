@@ -1,0 +1,24 @@
+﻿<title>DateValid Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = datevalid(<arg>date</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>datevalid</logiccolor> function determines whether a date is valid. The numeric expression <arg>date</arg> must be in YYYYMMDD (year/month/day) format.
+
+<subheader>Return Value</subheader>
+
+The function returns 1 (true) if the date is valid and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+datevalid(20120229); // returns 1
+datevalid(20130229); // returns 0
+</logic>
+
+<seealso dateadd_function.csdoc datediff_function.csdoc sysdate_function.csdoc />

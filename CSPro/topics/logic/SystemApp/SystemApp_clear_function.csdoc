@@ -1,0 +1,40 @@
+﻿<title>SystemApp.clear Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = system_app_name.clear();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>SystemApp.clear</logiccolor> function clears any stored <link SystemApp_setArgument_function.csdoc>arguments</link> and <link SystemApp_getResult_function.csdoc>results</link> associated with a <link SystemApp.csdoc>SystemApp</link> object.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true).
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+SystemApp google_maps;
+
+PROC LOCATION
+
+	// clear any previously used arguments
+	google_maps.clear();
+
+	// show barber shops near the location
+	google_maps.setArgument("action", "android.intent.action.VIEW");
+	google_maps.setArgument("data", maketext("geo:%f,%f?q=barber+shop", LATITUDE, LONGITUDE));
+	google_maps.exec("com.google.android.apps.maps");
+</logic>
+
+
+<seealso SystemApp.csdoc />

@@ -1,0 +1,36 @@
+﻿<title>GetProperty Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = getproperty(『<arg>symbol</arg>, 』<arg>property_name</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>getproperty</logiccolor> function returns a string containing the current value associated with the property specified by the string expression <arg>property_name</arg>. If an optional dictionary <arg>symbol</arg>, which can be either an item or a field, is specified, then the property must apply to an item or field. If no symbol is specified, then the property must be a system or application property.
+
+
+<include include_properties.hgi />
+
+
+<subheader>Return Value</subheader>
+
+The function returns a string with the property information. If the property is invalid, a blank string is returned.
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC APPLICATION_FF
+
+preproc
+
+	if getproperty("OperatorID") = "No" then
+		setoperatorid(getusername());
+	endif;
+</logic>
+
+
+<seealso setproperty_function.csdoc />

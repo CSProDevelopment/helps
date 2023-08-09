@@ -1,0 +1,41 @@
+﻿<title>Paradata</title>
+
+<subheader>Introduction to Paradata</subheader>
+
+CSPro can automatically collect paradata for your application. Paradata <link https://en.wikipedia.org/wiki/Paradata>is defined</link> as "data about the process by which the survey data [was] collected." In CSPro this includes information about fields and values entered, error messages encountered, and the state of the data collection device.
+
+The paradata log, with the extension <link paradata_log_file_cslog.csdoc>.cslog</link>, is not a typical data file but is instead a SQLite file. Advanced users with an understanding of SQL can query the file from tools outside of CSPro. Alternatively, there is a tool, the <link ParadataViewer::introduction_to_paradata_viewer.csdoc>Paradata Viewer</link>, which allows you to look at the contents of paradata logs. If you have several paradata logs coming from multiple devices, you can combine these using another tool, the <link ParadataConcat::introduction_to_paradata_concatenator.csdoc>Paradata Concatenator</link>. You can also query the paradata log from within CSPro using the <logiccolor>paradata</logiccolor> or <logiccolor>sqlquery</logiccolor> functions. Reports can be generated from paradata by creating a <link templated_reports.csdoc>templated report</link>. Paradata can be synchronized between devices or servers by using the <logiccolor>syncparadata</logiccolor> function.
+
+CSPro collects information about many different kinds of events, which are described in more detail in the <topic properties_paradata.csdoc /> page. You may wish to collect information about only a subset of possible events.
+
+
+<subheader>Enabling Paradata Collection</subheader>
+
+To turn on paradata collection, you must:
+
+<list ordered>
+	<li>Open your application and then select <b>Options</b> -> <b><link properties_application.csdoc>Application Properties</link></b>. You will then be able to modify the <topic properties_paradata.csdoc />.</li>
+	<li>Indicate that you want to collect paradata events and specify any additional options. By default, when creating a new system-controlled data entry application, paradata will be collected, though with a limited set of options.</li>
+	<li>The action in step #2 only indicates that CSPro <i>may</i> collect paradata. To actually turn on the collection, you must specify a filename for the paradata log when <link run_a_data_entry_application.csdoc>running your application</link>. CSPro may suggest a default filename, which you can modify.</li>
+</list>
+
+Paradata can be collected for data entry or batch edit applications. The paradata log is flexible and can be used simultaneously by multiple applications or users.
+
+
+<subheader>Uses of Paradata</subheader>
+
+If you conduct a pilot census or survey, you may find it useful to collect paradata on all devices. By analyzing this data, you may be able to improve and streamline operations for the actual census or survey. You can use paradata to answer certain questions about your application, such as:
+
+<list>
+	<li>Which questions in my survey take the longest to collect? Should I to change the wording of the question to make it simpler?</li>
+	<li>What out-of-range values are interviewers entering? Should these be valid values?</li>
+	<li>What error messages are being triggered the most frequently?</li>
+	<li>Where were interviewers located at a given time?</li>
+	<li>How long did interviewers work?</li>
+	<li>Which tablets had the best battery life?</li>
+</list>
+
+This is just a sampling of questions that can be answered based on the events that are stored in the paradata log. In addition to storing previously unavailable data, the paradata log also contains all of the information that was traditionally saved to the <link listing_file.csdoc>listing file</link>, the <link operator_statistics_file_log.csdoc>operator statistics log (.log)</link>, and the <link impute_function.csdoc>imputation frequencies listing file</link>.
+
+
+<seealso properties_paradata.csdoc paradata_function.csdoc syncparadata_function.csdoc logtext_function.csdoc />

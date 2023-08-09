@@ -1,0 +1,22 @@
+﻿<title>Item Properties</title>
+
+You can view an item's properties by selecting the record to which it belongs (via the dictionary tree tab). When creating an item, the following fields must be set:
+
+<table 2 header>
+	<cell>Property</cell><cell>Meaning</cell>
+	<cell><link labels.csdoc>Label</link></cell><cell>A descriptive text label that identifies the item. It is used as default field text in data entry forms and in default titles in tabulation.</cell>
+	<cell><link names.csdoc>Name</link></cell><cell>The name given to this item for use in CSPro language procedures</cell>
+	<cell><link starting_position.csdoc>Start</link></cell><cell>Indicates the starting position of the item within the record.</cell>
+	<cell><link item_length.csdoc>Len</link></cell><cell>Indicates the length of the data item (i.e., the number of characters necessary to represent the values for the item).</cell>
+	<cell><link data_type.csdoc>Data Type</link></cell><cell>Indicates the type of data (numeric or alphanumeric) that will be found in the item.</cell>
+	<cell><link sub_items.csdoc>Item Type</link></cell><cell>Indicates whether the item is or is not subordinate to, or part of, another item. If the item is part of another item, it is considered a "subitem". If not, it is identified as an "item". <b>Identification items cannot have subitems.</b></cell>
+	<cell><link occurrences.csdoc>Occ</link></cell><cell>The number of times this item will repeat within the record. The default value is "1". <b>Identification items cannot have multiple occurrences.</b></cell>
+	<cell><link decimal_places.csdoc>Dec</link></cell><cell>The number of decimal places (if any) in the item. The default number of decimals is "0". <b>Identification items cannot have decimals.</b></cell>
+	<cell><link decimal_character.csdoc>Dec Char</link></cell><cell>This specifies whether the item should be stored in the data file with an explicit decimal character. This applies only to items or subitems which have been defined with the "Dec" property greater than zero (i.e., Dec >= 1).</cell>
+	<cell><link zero_fill.csdoc>Zero Fill</link></cell><cell>This item property states whether the numeric data item should be stored with leading zeros or blanks. By default, all numbers are positive unless defined otherwise. Positive numbers have no sign. Negative numbers will have a leading minus (-) sign. The minus sign will be displayed in the data file immediately to the left of the value. If the item is zero-filled, the minus sign will be displayed in the left-most position.</cell>
+</table>
+
+
+Press the <b>Esc</b> key to quit modifying without making changes. Press <b>Ctrl+Enter</b> to finish making changes. Use <link undo_and_redo_changes.csdoc>undo</link> if you completed the modification incorrectly. There is no limit on the number of items within a record.
+
+<seealso item_description.csdoc sub_items.csdoc identification_items.csdoc add_or_modify_items.csdoc dictionary_property_panel.csdoc />

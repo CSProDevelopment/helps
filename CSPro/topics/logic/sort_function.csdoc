@@ -1,0 +1,36 @@
+﻿<title>Sort Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = sort(<arg>group_name</arg> using 『-』<arg>item_name1</arg> 『,『-』<arg>item_name2</arg>, ...』 『where <arg>where_condition</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>sort</logiccolor> function sorts occurrences of records or items based on the value of an item or multiple items. It orders the multiple records or items in the specified group in ascending sequence using the specified data item as the sort key. The sort key item must be contained within the record or item sorted. If a negative sign is included before the item name, the sort will be in descending order. If a <arg>where_condition</arg> is included, the function sorts only the occurrences for which the condition is true. When multiple sort keys are provided, the second, third, ... key is only evaluated when the values of the previous keys are identical.
+
+Sort is primarily intended for use in batch applications. It should be used with extreme caution in data entry applications because of possible conflicts between the operator's actions and the program logic.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value 1 (true) if successful and 0 (false) otherwise.
+
+
+<subheader>Examples</subheader>
+
+<logic>
+// sort the people using the line number
+sort(PERSON_EDT using LINE_NUM);
+
+// sort the children by age from oldest to youngest
+sort(PERSON_EDT using -AGE where RELATIONSHIP = 3);
+
+// sort the people first by relationship code (ascending) and then by age (descending)
+sort(PERSON_EDT using RELATIONSHIP, -AGE);
+</logic>
+
+
+<seealso swap_function.csdoc ValueSet_sort_function.csdoc />

@@ -1,0 +1,45 @@
+﻿<title>Type of Edits in Data Entry</title>
+
+<subheader>Validate Individual Data Items</subheader>
+
+These checks are designed to determine whether a response has a value that is inside or outside the valid limits for that response as defined in the dictionary. The data entry application can be designed to allow <link change_data_entry_options.csdoc>forcing out-of-range</link> values, to force the operator to <link reenter_statement.csdoc>reenter</link> a valid value, or <link noinput_statement.csdoc>not to allow</link> any input on the item.
+
+<subheader>Perform Structure or Consistency Edits</subheader>
+
+You can write code to check the <link structure_edits.csdoc>structure</link> of the case or test the <link consistency_edits.csdoc>consistency</link> within related items. These instructions can be written for any object such as a case, level, form, record, roster, or field. The instructions can be executed before the cursor moves into the object (<logiccolor>onfocus</logiccolor>); at the beginning of an object (<logiccolor>preproc</logiccolor>); after cursor moves off the object (<logiccolor>killfocus</logiccolor>); or at the end of the object (<logiccolor>postproc</logiccolor>). You can also perform <link CSEntry::edit_interactively.csdoc>Interactive Editing</link> after you finish entering a case.
+
+<subheader>Display Error Messages</subheader>
+
+The system displays automatic error messages if the item is out-of-range, but you can also use the <logiccolor>errmsg</logiccolor> function to write customized messages to be displayed in the screen during data entry.
+
+<subheader>Control the Data Entry Flow</subheader>
+
+You can use <logiccolor>skip</logiccolor> or <logiccolor>advance</logiccolor> statements to control the data entry flow in a case or end data entry at any time if a particular condition occurs. Also see the <logiccolor>endgroup</logiccolor> and <logiccolor>endlevel</logiccolor> statements.
+
+<subheader>Control Stopping Data Entry</subheader>
+
+The <logiccolor>OnStop</logiccolor> function can be used to keep the operator from stopping data entry or to allow stopping only under certain conditions. You can also <logiccolor>stop</logiccolor> the application for the current case or terminate the operation. You can stop the application at any time and the system will <link savepartial_function.csdoc>save the partial case</link>. Also see the <logiccolor>ispartial</logiccolor> function.
+
+<subheader>Write Notes</subheader>
+
+You can add notes to a field, which can be viewed by the operator and/or edited. These notes can be used to display instructions to the keyer or to elaborate on a particular value. See the <logiccolor>putnote</logiccolor>, <logiccolor>getnote</logiccolor>, and <logiccolor>editnote</logiccolor> functions.
+
+<subheader>Generate Reports</subheader>
+
+You can <logiccolor>write</logiccolor> customized reports to a file. For example, you could create a report to summarize the demographic characteristics in the household.
+
+<subheader>Use Secondary Forms</subheader>
+
+You can use a secondary form to <logiccolor>enter</logiccolor> data under certain conditions.
+
+<subheader>Display Option Menus</subheader>
+
+The system displays a window with the valid values and the operator may select the correct one. See the <logiccolor>accept</logiccolor> or <logiccolor>showarray</logiccolor> functions.
+
+<subheader>Use External Files</subheader>
+
+The most common functions are <logiccolor>loadcase</logiccolor> and <logiccolor>retrieve</logiccolor>. The <logiccolor>selcase</logiccolor> Function can only be used in data entry applications.
+
+<subheader>Examine Content of Item</subheader>
+
+You can examine the content of a numeric item with the <logiccolor>visualvalue</logiccolor> function or alphanumeric item with the <logiccolor>highlighted</logiccolor> function before the item has been keyed.

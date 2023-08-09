@@ -1,0 +1,30 @@
+﻿<title>Freq.tally Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = freq_name.tally(『<arg>weight</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Freq.tally</logiccolor> function tallies the frequency values that are part of a <link Freq.csdoc>Freq object</link>. An optional numeric expression, <arg>weight</arg>, can be used to specify a weight; if not provided, a weight of 1 is used during the tallying.
+
+If using <logiccolor>Freq.tally</logiccolor> in a data entry application, note that a value's <link visualvalue_function.csdoc>visual value</link> is used in the tally.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the number of values that were tallied. If an invalid weight is provided, the function returns <logiccolor>default</logiccolor>.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_freq_example1.hgi />
+</logic>
+
+
+<seealso Freq.csdoc Freq_clear_function.csdoc />

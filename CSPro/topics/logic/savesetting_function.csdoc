@@ -1,0 +1,42 @@
+﻿<title>SaveSetting Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = savesetting(<arg>attribute</arg>, <arg>value</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>savesetting</logiccolor> function saves a setting as an attribute-value pair using the string expression <arg>attribute</arg> and the string or numeric expression <arg>value</arg>. You can save multiple settings using different attribute strings and can retrieve the settings using the <logiccolor>loadsetting</logiccolor> function. These settings are stored locally on the device and can be accessed by other programs using the attribute string. Using settings is a way to share data between different CSPro applications on the same device.
+
+The file from which settings are retrieved can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file.
+
+All settings can be cleared using the following command: <logiccolor>savesetting(clear);</logiccolor>
+
+<subheader>Return Value</subheader>
+
+The function returns 1 (true) if successful or 0 (false) if the function failed.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC INTERVIEWER_NAME
+
+preproc
+
+	string InterviewerNameKey = "InterviewerName";
+
+	INTERVIEWER_NAME = loadsetting(InterviewerNameKey);
+
+postproc
+
+	if INTERVIEWER_NAME = "" then
+		errmsg("You must enter the interviewer's name.");
+		reenter;
+	endif;
+
+	savesetting(InterviewerNameKey, INTERVIEWER_NAME);
+</logic>
+
+<seealso loadsetting_function.csdoc user_configuration_settings.csdoc csentry_settings_modification.csdoc />

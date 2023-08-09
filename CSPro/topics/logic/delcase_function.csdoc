@@ -1,0 +1,29 @@
+﻿<title>DelCase Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = delcase(<arg>dictionary_name</arg>『, <arg>id1</arg>, ..., <arg>idN</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>delcase</logiccolor> function marks a case for deletion in an external file.
+
+The <arg>dictionary_name</arg> must be supplied and refers to an external dictionary associated with your application.
+
+The optional list of ID variables, <arg>id1</arg> ... <arg>idN</arg>, specifies the list of variables that will identify the case to delete from the external file. Generally, each of the variables in the list is defined in a dictionary. The combined length of the variables in the list must equal the length of the case IDs defined for the external dictionary. The function concatenates the variables in the ID list to form a string. Alternatively, you can pass, as a string, the <link key_function.csdoc>full key</link> of the case to delete. The function then deletes from the external file the case whose case identifier matches the string constructed from the list.
+
+If no ID list is provided, the current values of the ID items for the external dictionary are used.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the case existed and was successfully marked for deletion and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+delcase(ASSIGNMENT_DICT, CLUSTER, HH);
+</logic>
+
+<seealso loadcase_function.csdoc writecase_function.csdoc />

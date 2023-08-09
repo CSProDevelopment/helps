@@ -1,0 +1,72 @@
+﻿<title>Select Export Method</title>
+<context IDD_UNIVERSE ID_VIEW_BATCH_LOGIC />
+
+<subheader>Universe</subheader>
+
+The universe allows you to select cases or records to export. Enter the condition, as a CSPro language condition, under which the case or records are to be exported.
+
+Pressing the <b>Edit</b> button will open the Universe Wizard that allows you to build the universe condition step by step. You may also enter the universe condition directly into the text box provided. Remember that CSPro names (not labels) must be used. Use <b>Ctrl+T</b> to switch between names and labels in the dictionary tree.
+
+
+<subheader>Number of Files Created</subheader>
+
+<list>
+	<li><b>One File</b>: All selected items and records are placed in one data file.</li>
+	<li><b>Multiple Files (one for each record type)</b>: There is one file for each record type that has items selected. Only the items from that record type are written to that file. If a case has multiple records of that type, there will be multiple records in the exported file for that type. Only single files can be exported as 'delimited' so this option should not be used with any type of delimited output.</li>
+</list>
+
+For more information, see <link examples_of_export_methods.csdoc>examples of export methods</link>.
+
+
+<subheader>Output of Multiple Record Occurrences</subheader>
+
+<list>
+	<li><b>All in One Record</b>: Multiple occurrences of a record type will be output in a single record in the exported file.</li>
+	<li><b>As Separate Records</b>: Multiple occurrences of a record type will be output as separate records in the exported file.</li>
+	<li><b>Join Single with Multiple Records</b>: When As Separate Records is selected and data from more than one record is chosen, then this option is available. When checked, data from single records is attached to each instance of a multiple record.</li>
+</list>
+
+
+<subheader>Export Record Type</subheader>
+
+These options are only available when As Separate Records is selected. They apply to each record type exported.
+
+<list>
+	<li><b>No</b>: No record type is placed on the exported data file.</li>
+	<li><b>Before Id Items</b>: The record type value is followed by selected ID and record items.</li>
+	<li><b>After Id Items</b>: The selected ID items are followed by the record type, which is followed by the record items.</li>
+</list>
+
+
+<subheader>Export Items or Subitems</subheader>
+
+This option only affects items with subitems and only when the entire record is selected. Items without subitems are always exported if selected.
+
+<list>
+	<li><b>Items Only</b>: When an item has subitems and the entire record is output, only the items, but not the subitems, will be output to the exported file.</li>
+	<li><b>Subitems Only</b>: When an item has subitems and the entire record is output, only the subitems, but not the items, will be output to the exported file.</li>
+	<li><b>Both Items and Subitems</b>: When an item has subitems and the entire record is output, both the items and the subitems will be output as separate fields in the exported file.</li>
+</list>
+
+
+<subheader>Additional Options</subheader>
+
+<list>
+	<li><b>Unicode output</b>: When this option is selected, the output data file and description file (if applicable) will be written in UTF-8 format, rather than in ANSI. This will preserve non-Latin characters in dictionary labels and in alpha fields in the data file. This option is not available for the Stata or R export formats.</li>
+	<li><b>Use comma as decimal mark</b>: For numeric items with decimals, selecting this option will output a comma instead of a period for the decimal mark. This may be desirable for interfacing the output file with other programs. This option is not available for Comma Delimited or CSPro formats.</li>
+</list>
+
+
+<subheader>Export Format</subheader>
+
+<list>
+	<li><b>Tab Delimited</b>: This format creates a text file (.TXT) with each value separated with a tab character. The first line of text contains labels for each variable separated by tabs. This format is useful for sending data to a variety of software such as spread sheet, text processors, or databases.</li>
+	<li><b>Comma Delimited</b>: This format creates a text file (.CSV) with each value separated with a comma. The first line of text contains labels for each variable separated by commas. This format is useful for sending data to a variety of software such as spreadsheet, text processors, or databases.</li>
+	<li><b>Semicolon Delimited</b>: This format creates text file (.CSV) with each value separated with a semicolon. The first line of text contains labels for each variable separated by commas. This format is useful for sending data to a variety of software such as spreadsheet, text processors, or databases.</li>
+	<li><b>CSPro</b>: This format creates a data file (.DAT) and a CSPro data dictionary file (.DCF) that describes the organization of the data file for a CSPro application. The description file contains data item locations, names, labels, and values for use in CSPro.</li>
+	<li><b>SPSS</b>: This format creates a data file (.DAT) and a SPSS description file (.SPS) that describes the organization of the data file for an SPSS application. The description file contains data item locations, names, labels, and values for use in SPSS. For information on how to load these files into SPSS, see <topic load_exported_data_into_spss.csdoc />.</li>
+	<li><b>SAS</b>: This format creates a data file (.DAT) and a SAS description file (.SAS) that describes the organization of the data file for an SAS application. The description file contains data item locations, names, labels, and values for use in SAS. For information on how to load these files into SAS, see <topic load_exported_data_into_sas.csdoc />.</li>
+	<li><b>Stata</b>: This format creates a data file (.DAT) and two Stata description files (.DCT, .DO) that describe the organization of the data file for an Stata application. The .DCT file contains data item locations and names and the .DO file contains data item labels and values. For information on how to load these files into Stata, see <topic load_exported_data_into_stata.csdoc />.</li>
+	<li><b>R</b>: This format creates a data file (.DAT) and a R script file (.R) that describes the organization of the data file for a R application. The script file contains data item locations, names, values, and value labels (as factors) for use in R. For information on how to load these files into R, see <topic load_exported_data_into_r.csdoc />.</li>
+	<li><b>SPSS, SAS, Stata, and R</b>: This format creates of a data file (.DAT), a SPSS description file (.SPS), a SAS description file (.SAS), two Stata description files (.DCT, .DO), and a R script file (.R).</li>
+</list>

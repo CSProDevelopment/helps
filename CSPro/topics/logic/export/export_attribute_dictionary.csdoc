@@ -1,0 +1,13 @@
+﻿<title>Export Attribute: dictionary</title>
+
+When the <b>type=CSProExport</b> attribute is used to generate CSPro data files (<b>.csdb</b> or <b>.dat</b>), a dictionary (<b>.dcf</b>) will be automatically created. The <b>dictionary</b> attribute allows you to control the file name of the <b>.dcf</b>. For example, if the following connection string was used for an output file:
+
+<pff>OutputData=.\PopstanCensus.csdb|type=CSProExport</pff>
+
+A dictionary would be generated with the file name <b>PopstanCensus.csdb.dcf</b>. If you would rather give it a different name, include the dictionary attribute. For example,
+
+<pff>OutputData=.\PopstanCensus.csdb|type=CSProExport&dictionary=PopstanCensus.dcf</pff>
+
+would create a <b>.dcf</b> file named PopstanCensus.dcf.
+
+<seealso export_attributes.csdoc />

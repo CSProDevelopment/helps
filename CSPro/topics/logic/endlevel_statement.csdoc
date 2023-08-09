@@ -1,0 +1,25 @@
+﻿<title>EndLevel Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+endlevel;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>endlevel</logiccolor> statement ends data entry for the current level of the current questionnaire. The effect of this statement depends on where it is used. If it is used in a field, roster, or form procedure, all remaining procedures within that level are skipped and control passes to the level <b>postproc</b>.
+
+If the statement is executed in a level <b>preproc</b> or <b>postproc</b>, control passes to the <b>postproc</b> of the next-highest level. If it is used in the highest-level <b>postproc</b>, control passes to the form file's <b>postproc</b> (if there is one), and then data entry is terminated for the current case.
+
+In <link operator_vs_system_controlled.csdoc>system-controlled</link> applications, CSPro will continue to add cases at the lowest level of a multiple-level dictionary until it is told to stop by <logiccolor>endlevel</logiccolor>. Therefore, the statement should be used in the <b>postproc</b> of the lowest level to end data entry at that level.
+
+<subheader>Example</subheader>
+
+<logic>
+if MORE_WOMEN = 0 then
+	endlevel;
+endif;
+</logic>
+
+<seealso endgroup_statement.csdoc />

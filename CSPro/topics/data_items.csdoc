@@ -1,0 +1,15 @@
+﻿<title>Data Items</title>
+
+Data items are defined in a data dictionary. You can assign a value to a data item, or get the value of a data item in any procedure. The following is an example of the use of data items:
+
+<logic>
+PROC SEX
+
+if AGE > 15 and NumberOfKids <> notappl then
+	$ = 2;
+endif;
+</logic>
+
+However, in developing a data entry or batch edit application, it will frequently be necessary to define variables that do not exist in the data file(s) attached to the application. These variables may be used throughout the application, but only exist during the execution of the application.
+
+<seealso introduction_to_data_dictionary.csdoc add_or_modify_items.csdoc this_item.csdoc />

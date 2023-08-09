@@ -1,0 +1,9 @@
+﻿<title>Questions</title>
+
+CSPro shows customized question text in the top part of the entry window. To help the interviewer distinguish between text for the interviewer and the respondent, consider using different color fonts. For example, things the interviewer should say to the respondent (for example, "How many children do you have?") might be shown in black. Instructions to the interviewer (for example, "Ask of each household member") might be shown in blue. CSPro includes <link question_text_edit_styles.csdoc>customizeable styles</link> which can facilitate this.
+
+Question text can be <link create_fills_in_questions.csdoc>customized using fills</link> or text substitutions. These fills can contain CSPro logic expressions which reference the contents of variables, dictionary items, or user-defined functions. They are identified by the CSPro logic of the object surrounded by two consecutive tilde characters (~~). During the interview, the logic is evaluated and the value of the expression is substituted into the question text. For example, "How old was ~~FIRST_NAME~~ on January 1?" might be transformed into "How old was Edward on January 1?" Fills help customize the question text and frame it for specific respondents.
+
+Your CAPI application can also present different sets of question text based on <link create_conditional_questions.csdoc>conditions</link>. For example, the text for certain questions might differ based on the number of persons in the household. Conditions can also let your application support multiple kinds of questions, depending on criteria you decide.
+
+<seealso change_formatting.csdoc />

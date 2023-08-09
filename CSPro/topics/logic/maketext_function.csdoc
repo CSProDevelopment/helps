@@ -1,0 +1,76 @@
+﻿<title>MakeText Function</title>
+
+<subheader>Format 1</subheader>
+
+<logicsyntax>
+s = maketext(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』);
+</logicsyntax>
+
+<subheader>Format 2</subheader>
+
+<logicsyntax>
+s = maketext(<arg>msg_num</arg>『, <arg>argument1</arg>, ..., <arg>argumentN</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The maketext function formats a text string with inserted values. Each argument is sequentially inserted into the text string. Arguments can be numeric or alphanumeric expressions, but the type of the argument must match the type of the receiving field in the string expression.
+
+In the string expression:
+
+<list>%<b>[n]d</b> = Insert a number and display it as an integer
+%<b>[n.d]f</b> = Insert a number and display it as a decimal value
+%<b>[n.d]s</b> = Insert a text string</list>
+
+where "<b>n</b>" is the size of the field and "d<b></b>" is the number of decimal places to show for a number. <i>For a complete list of possible message formatters, see <link message_formatting_options.csdoc>Message Formatting Options</link></i>.
+
+Numbers are never truncated. Text strings are truncated only if "<b>.d</b>" is used. If "<b>n</b>" is positive, the insert is right-justified in the size of the field. If "<b>n</b>" is negative, the insert is left-justified in the size of the field. If "<b>n</b>" is a positive number with a leading zero, the insert is right-justified in the size of the field and zero-filled to the left. When inserting a number, if "<b>n</b>" is preceded by a "+", the sign of the number is always displayed.
+
+If you wish to split message text across two or more lines, refer to the <topic message_formatting_options.csdoc /> page.
+
+<subheader>Return Value</subheader>
+
+The function returns the formatted string.
+
+<subheader>Example 1</subheader>
+<logic>
+TEXT = maketext("Sex= %d", SEX);
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+numeric integerValue = 23456;
+
+errmsg( "%d"       , integerValue);      //  23456
+errmsg( "%-10d"    , integerValue);      //  23456
+errmsg( "%10d"     , integerValue);      //       23456
+errmsg( "%+10d"    , integerValue);      //      +23456
+errmsg( "%+010d"   , integerValue);      //  +000023456
+errmsg( "%-010d"   , integerValue);      //  0000023456
+errmsg( "%f"       , integerValue);      //  23456.000000  Note the usage of %f
+
+
+numeric decimalValue = 12.567;
+
+errmsg( "%f"        , decimalValue);    //   12.567000
+errmsg( "%-10.3f"   , decimalValue);    //   12.567
+errmsg( "%d"        , decimalValue);    //   12			  Note the usage of %d
+errmsg( "%10.2f"    , decimalValue);    //        12.57
+errmsg( "%10.3f"    , decimalValue);    //       12.567
+errmsg( "%+10.3f"   , decimalValue);    //      +12.567
+errmsg( "%+010.3f"  , decimalValue);    //   +00012.567
+errmsg( "%010.3f"   , decimalValue);    //   000012.567
+errmsg( "%10.5f"    , decimalValue);    //     12.56700
+
+
+string stringValue = "abcdef";
+
+errmsg( "%s"        , stringValue);     //   abcdef
+errmsg( "%-10s"     , stringValue);     //   abcdef
+errmsg( "%-10.3s"   , stringValue);     //   abc
+errmsg( "%10s"      , stringValue);     //       abcdef
+errmsg( "%10.3s"    , stringValue);     //          abc
+</logic>
+
+<seealso message_formatting_options.csdoc message_file_mgf.csdoc edit_function.csdoc />

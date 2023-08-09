@@ -1,0 +1,28 @@
+﻿<title>GetOperatorId Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = getoperatorid();
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>getoperatorid</logiccolor> function returns the operator ID for the current operator. The operator ID may have been entered by the operator or <link run_production_data_entry.csdoc>passed as a parameter</link> in the PFF file for the run.
+
+<subheader>Return Value</subheader>
+
+The function returns a string containing the operator ID assigned to or entered by the current operator. In batch mode it returns a blank string.
+
+<subheader>Example</subheader>
+
+<logic>
+LF_USER_ID = getoperatorid();
+
+if not loadcase(LOGINS_DICT, LF_USER_ID) then
+	errmsg("You do not have access to this system");
+	stop(1);
+endif;
+</logic>
+
+<seealso setoperatorid_function.csdoc getdeviceid_function.csdoc getusername_function.csdoc getbluetoothname_function.csdoc />

@@ -1,0 +1,68 @@
+﻿<title>ValueSet.add Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = valueset_name.add(<arg>label</arg>, <arg>from_code</arg>『, <arg>to_code</arg> ‖ <arg>special_value</arg>』
+					  『, image := <arg>image_filename</arg>』
+					  『, textColor := <arg>color</arg>』);
+</logicsyntax>
+
+<logicsyntax>
+i = valueset_name.add(<arg>valueset_name</arg>『, <arg>from_code</arg>』『, <arg>to_code</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>ValueSet.add</logiccolor> function adds one or more values to the end of a <link ValueSet.csdoc>ValueSet</link> object. The type of the added code or value set must match the type of the receiving value set.
+
+In the first version, you provide a string expression <arg>label</arg> and either a numeric or string expression <arg>from_code</arg>, which must match the type of the value set. For numeric value sets, it is possible to specify a numeric expression <arg>to_code</arg>, which creates a range, or a <arg>special_value</arg>, which is then associated with the <arg>from_code</arg>. Using <link function_named_arguments.csdoc>named arguments</link>, you can provide a string expression, <arg>image_filename</arg>, to specify the filename of an image to be shown as a <link value_set_images.csdoc>value set image</link>. You can also specify the text color of the value by providing a string expression <arg>color</arg> that contains a HTML color name (like <logiccolor>"red"</logiccolor>) or a hex color code (like <logiccolor>"#ff0000"</logiccolor>).
+
+In the second version, you provide a <arg>valueset_name</arg>. This adds all of the values from that value set to the receiving value set. If you specify a <arg>from_code</arg> or <arg>to_code</arg>, then only the values in that range will be added to the receiving value set.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the number of the values added to the value set. If the value set is read-only, the function returns <logiccolor>default</logiccolor>.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC SUPERVISOR_MENU
+
+onfocus
+
+	ValueSet string menu_valueset = SUPERVISOR_MENU_VS;
+
+	if CAN_SYNC = 1 then
+		menu_valueset.add(SYNC_MENU_VS);
+	endif;
+
+	forcase HOUSEHOLD_DICT do
+		menu_valueset.add("Review " + getcaselabel(HOUSEHOLD_DICT), key(HOUSEHOLD_DICT));
+	endfor;
+
+	setvalueset(SUPERVISOR_MENU, menu_valueset);
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC OCCUPATION_MINOR
+
+onfocus
+
+	numeric first_occupation_code = OCCUPATION_MAJOR * 100;
+	numeric last_occupation_code = first_occupation_code + 99;
+
+	ValueSet occupation_minor_valueset;
+	occupation_minor_valueset.add(OCCUPATION_MINOR_VS1, first_occupation_code, last_occupation_code);
+	setvalueset(OCCUPATION_MINOR, occupation_minor_valueset);
+</logic>
+
+
+<seealso ValueSet.csdoc />

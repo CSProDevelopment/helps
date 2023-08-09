@@ -1,0 +1,101 @@
+﻿<title>Using Subtables</title>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Subtables
+ are separate and individual tabulations (&quot;sub&quot;) contained within
+ the definition of a single table. Subtables can be thought of as merged
+ or concatenated to create the whole table.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Each
+ subtable, being independent, has its own set of Tally Attributes as well
+ as the Tally Attributes for the &quot;Entire Table&quot;. To access the
+ attributes of a subtable either right click while the cursor is in the
+ area of the subtable and then select Tally Attributes (Subtable) or right
+ click anywhere in the table, select Tally Attributes (Table), and then
+ select the desired subtable from the drop down menu as shown below.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtab_601.jpg" alt="Selecting Subtables in Tally Atributes (Table) Dialog Box"
+	 title="Selecting Subtables in Tally Atributes (Table) Dialog Box"
+	 width="634" height="317" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ the menu subtables are listed as they appear in the &quot;big&quot; table,
+ from left to right then from top to bottom. The &quot;Names&quot; of the
+ subtables are created from the value sets present. If an item has only
+ one value set then the name of the item itself appears, e.g., P03_SEX
+ in example. If an item has more than one value set then the name of the
+ value set appears, e.g., P04_AGE_VS2 in the example.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Any
+ attributes entered in the &quot;Entire Table&quot; menu except &quot;Unit
+ Tallied&quot; are also incorporated into the subtables. Entries in this
+ menu apply to all subtables in the table.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ the Tally Attributes (Table)</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+	 an item or value is given for &quot;Value Tallied&quot; or &quot;Weight&quot;
+	 it is also MULTIPLIED by any corresponding value give in any subtable.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Any
+	 entry in the &quot;Universe&quot; box is combined with any universe
+	 in a subtable using &quot;and&quot;. In other words, both universe
+	 criteria must be met in order for a tally to be made.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Of
+	 course, any checked &quot;Special values&quot; or &quot;Lowest Break
+	 Level&quot; (applicable only for area processing) always refer to
+	 the entire table including any subtables.</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">With
+ the exception of attributes applying to entire table, individual subtables
+ can each be assigned different weights, universes, etc.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See Also:</font></b> <a href="create_tables_with_multiple_variables.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Create
+ Tabulations with Multiple Variables</font></a><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">,</font>
+ <a href="tally_attributes_for_a_table.html"><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">Tally
+ Attributes for a Table</font></a></p>
+</body>
+</html>
+
+
+<html><!---♻---></html>
+<build-extra "../images/xtab_601.jpg" />

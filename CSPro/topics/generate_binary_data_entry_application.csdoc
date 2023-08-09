@@ -1,0 +1,12 @@
+﻿<title>Generate Binary Data Entry Application</title>
+<context ID_FILE_GENERATEBINARY />
+
+Binary data entry applications provide security during a production data entry operation. A binary data entry application consists of one single file with extension <link binary_data_entry_application_file_pen.csdoc>.pen</link>, which includes the same information as the set of text files that normally make up a data entry application.
+
+This generated file cannot be changed in any way. It cannot be opened by the CSPro Designer and it cannot be read in a text editor. If you make changes to the data entry application, you must generate the binary application again.
+
+The binary application will run identically in CSEntry to a normal (text) application. An operator will not see any difference in behavior.
+
+To generate a binary application, open the application in the normal way, then from the <b>File</b> menu select <b>Publish Entry Application (.pen)</b>.
+
+Before CSPro 6.0, binary data entry applications had the extension .enc. The 'P' in the new extension stands for "portable," which indicates that the file can be run not only on desktop CSEntry, but also on mobile devices. CSPro can no longer read .enc files and if you would like to run an application with such a format, you will have to use an older version of CSPro.

@@ -1,0 +1,26 @@
+﻿<title>ToUpper Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = toupper(<arg>string_expression</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>toupper</logiccolor> function scans the given <arg>string_expression</arg> and converts any lowercase letters to uppercase letters.
+
+<subheader>Return Value</subheader>
+
+The function returns a string with all lowercase letters converted to uppercase letters.
+
+<subheader>Example</subheader>
+
+<logic>
+// each function call will return "HELLO JAMES!"
+X = toupper("hello james!");
+Y = toupper("Hello JaMeS!");
+Z = toupper("HELLO JAMES!");
+</logic>
+
+<seealso tolower_function.csdoc />

@@ -1,0 +1,71 @@
+﻿<title>Tabulations Using Relations</title>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Relations
+ provide a way of linking one multiple record or item to one or more multiple
+ records or items. Once the items on different records are linked through
+ a relation, tallies are done just as if all the items belonged to one
+ record.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
+ example: LFS_LINK is a relation linking a labor force record (LFS) with
+ a person record (PERSON). Both of these records are repeating records.
+ The value that links two records is a number on each record (LFS_NUMBER
+ and SERIAL_NUMBER) which identifies a single person, i.e., is the same
+ on both records.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Here
+ is the definition of the Link.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 9pt;" face="Arial" size="2">--------------------------------------------------------------------------------------------------------------</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 9pt;" face="Arial" size="2">Relation
+ Name Primary Linked by Secondary Linked by</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 9pt;" face="Arial" size="2">--------------------------------------------------------------------------------------------------------------</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 9pt;" face="Arial" size="2">LFS_LINK
+ LFS LFS_NUMBER PERSON SERIAL_NUMBER</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Here
+ is table that tallies an item from both records:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtab_603.jpg" alt="Table Using Relations" title="Table Using Relations"
+	 width="558" height="270" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ items from different multiply occurring records are used in the same subtable,
+ CSPro will automatically choose the relation between them as the unit
+ of tabulation if such a relation exists.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See Also:</font></b> <a href="relation_description.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Relation
+ Description</font></a></p>
+</body>
+</html>
+
+
+<html><!---♻---></html>
+<build-extra "../images/xtab_603.jpg" />

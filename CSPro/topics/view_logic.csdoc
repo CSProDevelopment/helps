@@ -1,0 +1,30 @@
+﻿<title>View Logic</title>
+
+To switch to the logic view within a data entry or batch application you can either:
+
+<list>
+	<li>press the <image logic.jpg /> icon, or </li>
+	<li>from the <b>View</b> menu select "Logic", or</li>
+	<li>press <b>Ctrl+L</b></li>
+</list>
+
+To return to the forms view, you can either:
+
+<list>
+	<li>press the <image formview.jpg /> icon, or</li>
+	<li>from the <b>View</b> menu select "Form", or</li>
+	<li>press <b>Ctrl+M</b></li>
+</list>
+
+From the Logic Window you can create or modify procedures that add logic to your application. The view is divided into two areas:
+
+<center><image logview.jpg /></center>
+
+<b>Upper view</b>: This is the text editor, where you write the logic statements.
+
+<b>Bottom view</b>: Contains two tabs, <b>Compiler Output</b> and <b>Message</b>. The <b>Compiler Output</b> tab displays compiler results of your program. If there are errors in your logic, the compiler will display the error messages here; otherwise, it will display "Compile Successful". The <b>Message</b> tab is where you create user-defined messages to be displayed during, or at the completion of, the execution of your application.
+
+Click on any element of the <topic data_entry_tree.csdoc /> or <topic batch_edit_tree.csdoc /> to see the logic which corresponds to that symbol. For example, if you click on a field, you see the logic for only that field. A group or level can also have logic associated with it. Click on the forms file node (usually the topmost node on form tree) to see the logic for the whole application. This is the way to see and enter logic for the <link cspro_program_structure.csdoc> global procedures</link>.
+
+
+<seealso create_and_edit_logic.csdoc order_of_executing_data_entry_events.csdoc order_of_executing_batch_edit_events.csdoc />

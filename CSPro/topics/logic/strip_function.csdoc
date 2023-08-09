@@ -1,0 +1,38 @@
+﻿<title>Strip Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = strip(<arg>string_expression</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>strip</logiccolor> function removes trailing blanks from the <arg>string_expression</arg>. The result of the function is often used as an argument to other functions such as the <logiccolor>length</logiccolor> and <logiccolor>concat</logiccolor> functions.
+
+You will generally not have to use the <logiccolor>strip</logiccolor> function when working with variable-length <link string_statement.csdoc>strings</link> since they do not have spaces automatically added to the end of the text to match a fixed width.
+
+<subheader>Return Value</subheader>
+
+The function returns a string with no trailing blanks.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+alpha (30) firstName, lastName, fullName;
+
+PROC EXAMPLE
+
+	firstName = "John";
+	lastName = "Henry";
+
+	fullName = concat(strip(firstName), " ", strip(lastName));
+	numeric nameLength = length(strip(fullName));
+
+	// fullName is "John Henry "
+	// nameLength is 10
+</logic>
+
+<seealso alpha_statement.csdoc concat_function.csdoc length_function.csdoc />

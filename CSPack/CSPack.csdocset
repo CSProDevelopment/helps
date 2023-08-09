@@ -1,0 +1,32 @@
+﻿{
+  "title": "CSPro Pack Application Help", 
+  "import": {
+    "tableOfContents": "CSPack.toc", 
+    "index": "CSPack.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ], 
+    "contextIds": [
+      "../Shared/afxres.h", 
+      "CSPack/resource.h"
+    ]
+  }, 
+  "settings": {
+    "imageDirectories": [
+      "images"
+    ], 
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

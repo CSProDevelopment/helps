@@ -1,0 +1,38 @@
+﻿<title>LoadCase Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = loadcase(<arg>dictionary_name</arg>『, <arg>id1</arg>, ..., <arg>idN</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>loadcase</logiccolor> function reads a specified case from an external file into memory. Once the case is loaded, all variables defined in the corresponding dictionary are available for use.
+
+The <arg>dictionary_name</arg> must be supplied and refers to an external dictionary associated with your application.
+
+The optional list of ID variables, <arg>id1</arg> ... <arg>idN</arg>, specifies the list of variables that will identify the case to load from the external file. This process is similar to matching files on the basis of key variables in statistical and database software packages. Generally, each of the variables in the list is defined in a dictionary. The combined length of the variables in the list must equal the length of the case IDs defined for the external dictionary. The function concatenates the variables in the ID list to form a string. Alternatively, you can pass, as a string, the <link key_function.csdoc>full key</link> of the case to load. The function then loads from the external file the case whose case identifier matches the string constructed from the list.
+
+If no ID list is provided, the next logical case in the external file will be loaded. The determination of what is "next" is based on the <link set_access_statement.csdoc>dictionary's access parameters</link>.
+
+(In versions of CSPro prior to 7.0, calling this function would automatically <logiccolor>open</logiccolor> an external file. The function no longer does this, so if you call <logiccolor>close</logiccolor> on an external dictionary, you must <logiccolor>open</logiccolor> it manually before calling this function.)
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the case was loaded successfully and 0 (false) otherwise.
+
+
+<subheader>Example</subheader>
+
+<logic>
+if loadcase(SAMPLE_DICT, CLUSTER, HH) then
+	SURVEY_WEIGHT = SAMPLE_WEIGHT;
+endif;
+</logic>
+
+
+<seealso retrieve_function.csdoc writecase_function.csdoc />

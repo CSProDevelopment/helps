@@ -1,0 +1,33 @@
+﻿<title>Network Data Entry</title>
+
+When keying large numbers of questionnaires using a team, it is possible to take advantage of a local area network (LAN) to make it easier to manage data files. There are multiple options for using a LAN to facilitate data entry. In all cases, CSPro must be installed on each of the computers that will be used for keying.
+
+<subheader>Using a Shared Data File on a Network Drive</subheader>
+
+It is possible to have multiple keyers, each using their own computer, key to a single data file that is located on a shared network folder. When launching the data entry application, enter or browse to the path on the network drive where you want to save the data. After having done this once, the path to the data file will be saved in a <link program_information_file_pff.csdoc>PFF file</link>. You can then place a copy of the data entry application and the PFF file on each computer and have the keyers run the PFF file to start data entry. All keyers will enter data into the same shared data file.
+
+<center><image network_data_entry_using_shared_file.png /></center>
+
+Sharing a single file between multiple simultaneous users is only possible when using non-text files such as <link data_sources.csdoc>CSPro DB</link> files. Data files in text format cannot be shared.
+
+By default, each keyer will be able to view, modify, and verify cases in the shared data file entered by other keyers. This can be restricted by setting the <pffcolor>CaseListingFilter</pffcolor> in the PFF filter. See <topic run_production_data_entry.csdoc /> for more information.
+
+
+<subheader>Using Data Synchronization on the Local Network</subheader>
+
+CSPro supports the transfer of data files between computers using the <link synchronization.csdoc>synchronization</link> feature. This can be used to transfer data between the keyers' computers and a server. Normally synchronization is used to transfer data over the Internet to a central server, but it can also be used with a server that is connected only to the local network.
+
+When using synchronization, each keyer enters data to a separate data file on their computer. After entering data, they use CSEntry's synchronize functionality to transfer the data that they keyed over the network to a server. The combined data from all keyers can then be downloaded from the server.
+
+<center><image network_data_entry_using_sync.png /></center>
+
+CSPro synchronization supports three types of servers: CSWeb, Dropbox, and FTP, any of which can be used for network data entry. CSWeb is a web server based on Apache, PHP, and MySQL. It can be run on any PC running Windows or Linux. For information on how to set up and configure CSWeb, see the see the <link CSWeb::introduction_to_csweb.csdoc>CSWeb help documentation</link>. If you are not familiar with setting up and managing web servers, then it may be easier to use Dropbox or FTP instead. Dropbox does not require a server at all. It simply requires a free account on <link https://www.dropbox.com/>Dropbox</link>. However, it does require a reliable Internet connection since files are stored on servers in the cloud. There are various free FTP server programs that you can use to set up an FTP server on your local network, including FileZilla Server and Microsoft IIS FTP Server. More information about these options can be found online. Note that for network data entry, neither CSWeb nor FTP require a powerful server nor do they need to be connected to the Internet. They can both be run on a standard computer connected to the local network.
+
+To enable synchronization in your data entry application, use the <topic synchronization_simple.csdoc /> documentation. After entering data, keyers select <b>Synchronize</b> from the <b>File</b> menu in CSEntry to send data to the server. To download data from the server, use the <link DataViewer::downloading_and_synchronizing_data.csdoc>Download</link> function of the Data Viewer tool. This will automatically combine the data from all the keyers into a single data file that can be used for further processing.
+
+Data synchronization is only possible when using the <link data_sources.csdoc>CSPro DB</link> and <link data_sources.csdoc>Encrypted CSPro DB</link> file formats. Data files in text format cannot be synchronized.
+
+
+<subheader>Copying Data Files between Computers and Network Drives</subheader>
+
+In older versions of CSPro that did not support data synchronization or sharing files over a network, it was common to have each keyer enter data into a file on their computer and then use either a CSPro program or a DOS batch script to copy files from the keyers' machines to a shared network folder. Following that copying, the <link CSConcat::introduction_to_concatenate_data.csdoc>Concatenate Data</link> tool was used to combine the keyers' files into a single data file for further processing. While this is still possible, it is more complex and error prone than the above options.

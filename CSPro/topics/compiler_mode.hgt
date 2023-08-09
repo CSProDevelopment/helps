@@ -1,5 +1,0 @@
-﻿<title>Compiler Mode</title>
-
-The CSPro compiler operates with the requirement that variables are declared explicitly. You must declare all <link variables.hgt>variables</link> not defined in your dictionary; otherwise, the variables will be flagged as errors by the compiler. The advantage of this is that you do not have to worry about misspelled names.
-
-Prior to CSPro 7.2, there was a compilation mode called implicit that allowed for on-the-fly variable declarations. This was removed because it could easily lead to mistakes based on programmers mistyping variable names. There were some purposes where implicit declaration mode could be useful, which can now be achieved by using the <logiccolor>ensure</logiccolor> statement.

@@ -1,0 +1,84 @@
+﻿<title>Templated Reports</title>
+<context ID_VIEW_REPORT_PREVIEW />
+
+<i>(Prior to CSPro 7.7, a <link templated_reports_pre77.csdoc>different version</link> of templated reports existed. That version should no longer be used as it will be removed in a future release.)</i>
+
+<subheader>Overview</subheader>
+
+CSPro can create <link html_in_cspro.csdoc>HTML</link> reports using case data as well as results from queries into <link paradata.csdoc>paradata</link> and other data sets. By specifying tags in the templated reports, CSPro logic can be run and CSPro dictionary variables can be accessed to render a dynamic report.
+
+
+<subheader>Functionality</subheader>
+
+Each templated report is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
+
+<table 2 header nowrap>
+	<cell>Function</cell><cell>Description</cell>
+	<cell><logiccolor Report>save</logiccolor></cell><cell>Saves the report to a file.</cell>
+	<cell><logiccolor Report>view</logiccolor></cell><cell>Displays the report in an embedded web browser.</cell>
+	<cell><logiccolor Report>write</logiccolor></cell><cell>Writes text to the report.</cell>
+</table>
+
+In addition to these object functions, templated reports can be used as arguments to the <logiccolor>filename</logiccolor> and <logiccolor>view</logiccolor> functions.
+
+
+<subheader>Assignments</subheader>
+
+When a templated report is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>.
+
+
+<subheader>Add, Remove, and Rename</subheader>
+
+A templated report can be added to the project by selecting <link add_files_to_an_application.csdoc>Add Files</link> under the <b>Files</b> menu. If creating a new HTML file, an additional dialog will be displayed with template options. The templates have an HTML scaffolding which includes popular CSS and JavaScript libraries. A templated report can be removed from the project by selecting <link drop_files_from_an_application.csdoc>Drop Files</link> under the <b>Files</b> menu.
+
+The name of the report will be automatically created based on the filename, but can be modified using the <link change_report_properties.csdoc>Report Properties</link> dialog.
+
+
+<subheader>CSPro Logic</subheader>
+
+CSPro logic can be embedded in the templated report by starting the logic with <b>&lt;?</b> and ending the logic with <b>?&gt;</b>. The tag can be used to embed inline logic or multiple lines of logic.
+
+
+<subheader>Output</subheader>
+
+There are three ways of writing numeric and string expressions to templated reports:
+
+<list ordered>
+<li><b>~~</b>...<b>~~</b> writes the results of the numeric or string expression specified between the tildes.</li>
+<li><b>~~~</b>...<b>~~~</b> is similar to the above version except that the text will not be automatically escaped for HTML.</li>
+<li><logiccolor Report>$.write</logiccolor> writes directly to the report.</li>
+</list>
+
+
+<subheader>Preview</subheader>
+
+A templated report can be previewed in both data entry and batch by pressing <b>Ctrl + F5</b>. This will not run the CSPro logic, so the preview will not necessarily look complete. Use it to preview the HTML and CSS.
+
+
+<subheader>Example 1</subheader>
+
+<report HTML>
+<p>Report generated at ~~timestring()~~</p>
+</report>
+
+
+<subheader>Example 2</subheader>
+
+<report HTML>
+<?
+	numeric partial_count = 0;
+	numeric complete_count = 0;
+
+	forcase HOUSEHOLD_DICT do
+		if ispartial(HOUSEHOLD_DICT) then
+			inc(partial_count);
+		else
+			inc(complete_count);
+		endif;
+	endfor;
+?>
+	<p><b>~~getsymbol(HOUSEHOLD_DICT)~~</b> has ~~partial_count~~ partial case(s) and ~~complete_count~~ complete case(s).</p>
+</report>
+
+
+<seealso html_in_cspro.csdoc javascript_interface.csdoc />

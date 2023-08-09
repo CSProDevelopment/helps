@@ -1,0 +1,35 @@
+﻿<title>FileName Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = filename(<arg>dictionary_name</arg> ‖ <arg>file_handler</arg> ‖ <arg>pff_name</arg> ‖ <arg>object_name</arg> ‖ <arg>paradata</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>filename</logiccolor> function returns the fully qualified name of a file. If supplying a <arg>dictionary_name</arg>, the function returns the name of the data file associated with a data dictionary. If providing a <arg>file_handler</arg> (declared in a <logiccolor>File</logiccolor> statement), the function returns the name of the text file associated with the file handler.
+
+If providing a <arg>pff_name</arg> (declared in a <logiccolor>Pff</logiccolor> statement), the function returns the name of an existing PFF file, or the name of a temporarily created PFF file. If a PFF file was loaded (via <logiccolor>Pff.load</logiccolor>) and not modified, the name of that PFF file is returned. If the PFF has been modified and not saved, then calling <logiccolor>filename</logiccolor> will save the PFF to a temporary file and the name of that file is returned.
+
+For several other CSPro objects, if passed an <arg>object_name</arg>, the function returns the file name associated with the content of the object. This functionality works on <link Audio.csdoc>Audio</link>, <link Document.csdoc>Document</link>, <link Geometry.csdoc>Geometry</link>, <link Image.csdoc>Image</link>, and <link templated_reports.csdoc>Report</link> objects.
+
+The function can also take <arg>paradata</arg> as its argument, in which case it returns the file name of the currently open paradata log.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a string containing the folder and file name.
+
+
+<subheader>Example</subheader>
+
+<logic>
+filewrite(report_file, "Report file: %s", filename(report_file));
+filewrite(report_file, "Census data file: %s", filename(CENSUS_DICT));
+</logic>
+
+
+<seealso Path.csdoc pathname_function.csdoc fileexist_function.csdoc filesize_function.csdoc />

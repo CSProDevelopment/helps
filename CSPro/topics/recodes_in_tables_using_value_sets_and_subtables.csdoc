@@ -1,0 +1,237 @@
+﻿<title>Recodes in Tables Using Value Sets and Subtables</title>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Often
+ the variables in your dictionary do not map exactly to the categories
+ desired in your tables and you need to &quot;recode&quot; one or more
+ variables to map it to the groupings you want in the rows and columns
+ of your table. Recodes involving a single variable can be accomplished
+ by creating additional value sets while recodes of multiple variables
+ can be accomplished using multiple subtables.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><u><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold; text-decoration: underline; "
+	 face="Arial" size="2">Single variable recodes</font></u></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
+ recode a single variable, simply create an additional value set for that
+ variable in your dictionary, which regroups the values as desired. Then
+ drag this new value set onto the table.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
+ example if you have the following value set for marital status but would
+ like to count only two categories, Married and Unmarried, in your table.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl1.jpg" alt="Marital Status Value Set" title="Marital Status Value Set"
+	 width="556" height="140" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Create
+ a new value set that regroups the original values for marital status into
+ these new categories.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl2.jpg" alt="Marital Status Value Set with Recoded Values"
+	 title="Marital Status Value Set with Recoded Values" width="555" height="79"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Now
+ drag the new value set onto your table.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl3.jpg" alt="Table Using Recoded Value Set"
+	 title="Table Using Recoded Value Set" width="347" height="136" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Value
+ sets may have disjoint values, one category which contains values from
+ different ranges, for example, one category for values 23, 45, and 67-71
+ (see</font> <a href="tabulate_categories_with_disjoint_values.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Tabulate
+ categories with disjoint values</font></a><font style="font-family: Arial;
+												 font-size: 10pt;" face="Arial"
+												 size="2">).</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><u><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold; text-decoration: underline; "
+	 face="Arial" size="2">Multiple variable recodes</font></u></b></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
+ do a recode using multiple variables, create multiple subtables by dragging
+ the variables onto the table multiple times and set universes on these
+ subtables. For example, if you want to tabulate houses that have &quot;complete
+ plumbing&quot;, meaning that they have piped water, bathing facilities
+ and a toilet inside the housing unit. This involves the following three
+ variables:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl4.jpg" alt="Value Set (Source of Water)" title="Value Set (Source of Water)"
+	 width="446" height="160" border="0" /></p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl5.jpg" alt="Value Set (Type of Bathing Facilties)"
+	 title="Value Set (Type of Bathing Facilties)" width="447" height="159"
+	 border="0" /></p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl6.jpg" alt="Value Set (Type of Toilet Facilities)"
+	 title="Value Set (Type of Toilet Facilities)" width="448" height="160"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ &quot;recoded&quot; variable, &quot;complete plumbing&quot;, has three
+ categories:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Complete
+	 – piped water inside the unit (source of water = 1), and a private
+	 toilet inside the unit (type of toilet = 1) and bathing facilities
+	 inside the unit (type of bathing = 1).</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Some
+	 but not all – any one of the three variables (piped water, flush toilet,
+	 bathing facilities) inside the unit but not all three.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">None
+	 – all other cases.</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
+ create the table for complete plumbing, use 3 subtables, one for each
+ of the 3 possible values of the recoded variable (complete, some but not
+ all, none). Each of these subtables should have only one row. The easiest
+ way to create a subtable with one row is to drag a variable whose value
+ set has only one category onto the table. If no such value set exists,
+ you can create one. In this case, create the value set on the variable
+ &quot;source of water&quot;. In fact, you could use any variable on the
+ same record as the variables we are using in the recode (the housing record
+ in this case). Note that the single category in this value set must include
+ all valid values for the variable so that all housing units will be counted
+ when tabulating the variable.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl7.jpg" alt="Single Category Value Set" title="Single Category Value Set"
+	 width="503" height="200" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Drag
+ this new value set onto the table 4 times, once for each of three possible
+ values of complete plumbing and once for the total.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl8.jpg" alt="Four Subtables using Same Single Category Value Set"
+	 title="Four Subtables using Same Single Category Value Set" width="490"
+	 height="351" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Since
+ we only need one row for each subtable, hide the system generated total
+ in each of the four subtables (see</font> <a href="hide_or_change_the_position_of_the_total.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Hide
+ or Change the Position of the Total</font></a><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">).
+ Also hide the captions for each of the subtables (see</font> <a href="formats_for_a_part_of_a_table.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Formats
+ for a Part of a Table</font></a><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">).</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl9.jpg" alt="Resulting Table with no Universe Restriction"
+	 title="Resulting Table with no Universe Restriction" width="374" height="271"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Next
+ customize the text in the stubs to match the categories for the recode
+ (Total, Complete, Some but not all, None). Also edit the title of the
+ table and put the name of the variable in the Stub Head. See</font> <a
+	 href="customize_table_text.html"><font style="font-family: Arial; font-size: 10pt;"
+											 face="Arial" size="2">Customize
+ Table Text</font></a> <font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">for how to edit text
+ in the table.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl10.jpg" alt="Resulting Table with Universe Restrictions"
+	 title="Resulting Table with Universe Restrictions" width="518" height="233"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Now
+ set the universes for the subtables to correspond to the appropriate values
+ of the complete plumbing recode. The first subtable will be the total
+ so it should use the default universe, which includes all cases. The second
+ subtable represents &quot;complete plumbing&quot; and must include only
+ those cases where piped water, flush toilet AND bathing facilities all
+ equal 1. The third subtable represents &quot;some but not all&quot; and
+ must include the cases where one or two of the variables are equal to
+ 1 but not all of them. The fourth subtable represents &quot;none&quot;
+ and must include all cases where none of the variables are equal to 1.
+ For more information on setting the universe on a subtable see</font>
+ <a href="restrict_a_universe.html"><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">Restrict
+ a Universe</font></a><font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">. This produces the
+ following table:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl11.jpg" alt="Finished Table with Multiple Recodes"
+	 title="Finished Table with Multiple Recodes" width="377" height="153"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Note
+ that often it is preferable to create recoded variables in a batch edit
+ program rather than during tabulation. This recode could have been accomplished
+ by adding a new variable to the dictionary for complete plumbing and writing
+ a batch edit program to set the value of this variable for each case.
+ Then the new complete plumbing variable could be dropped on the table
+ directly rather than creating multiple subtables with universes. This
+ makes the creation of the table much simpler although it involves creating
+ a batch edit application and writing a small amount of logic. Using batch
+ edit is best when the recoded variable will be used in multiple tables.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Another
+ alternative would be to create the recoded variable in the working storage
+ dictionary and use tablogic to set its value to each case. See</font>
+ <a href="table_logic_tablogic.html"><font style="font-family: Arial; font-size: 10pt;"
+											 face="Arial" size="2">Table
+ Logic (tablogic)</font></a> <font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">for more information.</font></p>
+</body>
+</html>
+
+
+<html><!---♻---></html>
+<build-extra "../images/recodetbl1.jpg" "../images/recodetbl2.jpg" "../images/recodetbl3.jpg" "../images/recodetbl4.jpg" "../images/recodetbl5.jpg" "../images/recodetbl6.jpg" "../images/recodetbl7.jpg" "../images/recodetbl8.jpg" "../images/recodetbl9.jpg" "../images/recodetbl10.jpg" "../images/recodetbl11.jpg" />

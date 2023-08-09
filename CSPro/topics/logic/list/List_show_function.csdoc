@@ -1,0 +1,34 @@
+﻿<title>List.show Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = list_name.show(『<arg>heading</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>List.show</logiccolor> function displays the values from a <link List.csdoc>List</link> and returns the index of the operator's selection. An optional string expression, <arg>heading</arg>, specifies the title of the window that displays the values. The function is similar to the <logiccolor>accept</logiccolor> function but with the options taken from the List's values.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the index of the item selected: 1 for the first value, 2 for the second value, etc. The value 0 is returned if the escape key (or back button) is pressed and none of the values is chosen.
+
+
+<subheader>Example</subheader>
+
+<logic>
+List string drink_options = "Water", "Milk", "Soda", "Coffee", "Tea";
+
+numeric favorite_drink_index = drink_options.show("What is your favorite drink?");
+
+if favorite_drink_index <> 0 then
+	errmsg("You like %s the most!", drink_options(favorite_drink_index));
+endif;
+</logic>
+
+
+<seealso List.csdoc List_sort_function.csdoc accept_function.csdoc show_function.csdoc showarray_function.csdoc ValueSet_show_function.csdoc />

@@ -1,0 +1,37 @@
+﻿<title>Additional Configuration Options</title>
+
+Additional configuration options can be specified by uploading a JSON file on the <link data_settings.csdoc>Data Configuration</link> dialog. Currently, the Process Cases Options is the only option that can be specified.
+
+<subheader>Process Cases Options</subheader>
+
+Processing cases through the command line can be slow if you have a large dictionary with a lot of data. The solution is to use the Process Cases Options to specify only the variables in the dictionary you are interested in breaking out into a relational database.
+
+<subheader>Include</subheader>
+
+The include object is processed first. It will allow you to specify the fields you are interested in breaking out into a relational table. It also accepts records and the entire dictionary. This allows you to specify the dictionary variables you need by addition.
+
+<subheader>Exclude</subheader>
+
+The exclude object is processed after the include object. It will allow you specify which fields to exclude. It also accepts records and the entire dictionary (which would exclude everything). This can be convenient if a group of fields was included through a record or dictionary, but not all fields are necessary. You can now specify the dictionary variables you need by subtraction.
+
+
+<subheader>Include Example</subheader>
+
+<color JSON>
+{
+  "processCasesOptions": {
+	"include": ["HH_RELATIONSHIP", "HH_SEX", "HH_AGE"]
+  }
+}
+</color>
+
+<subheader>Exclude Example</subheader>
+
+<color JSON>
+{
+  "processCasesOptions": {
+	"include": ["PSC_HOUSEHOLD_DICT"],
+	"exclude": ["DWELLING_UNIT_RECORD", "METADATA_RECORD"]
+  }
+}
+</color>

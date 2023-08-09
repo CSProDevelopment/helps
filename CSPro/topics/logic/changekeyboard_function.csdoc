@@ -1,0 +1,32 @@
+﻿<title>ChangeKeyboard Function</title>
+
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.1, you should no longer use this function as it may soon be removed from CSPro. To replicate the behavior of the function, you can use the <logiccolor>setproperty</logiccolor> function with the argument <logiccolor>"Keyboard"</logiccolor>.</i>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = changekeyboard(<arg>dictionary_symbol</arg>『,<arg>keyboard_id</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>changekeyboard</logiccolor> function modifies the keyboard input associated with a field on a form. The value <arg>dictionary_symbol</arg> may be an item, group, form, or an entire dictionary. The numeric expression <arg>keyboard_id</arg> refers to a keyboard ID (which can be determined using the <topic change_keyboard_input.csdoc /> dialog box). A keyboard ID of 0 will reset the field to the default keyboard for the application.
+
+Calls to this function are ignored when executed on mobile devices.
+
+<subheader>Return Value</subheader>
+
+The function returns the number of items whose capture positions were successfully changed. If a keyboard ID is not specified, the function will instead return the current keyboard ID associated with a given field.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC NAME
+
+onfocus
+
+	// use the Dvorak keyboard to key in the name
+	changekeyboard(NAME,66569);
+</logic>
+
+<seealso change_keyboard_input.csdoc />

@@ -1,0 +1,26 @@
+﻿<title>ToLower Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = tolower(<arg>string_expression</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>tolower</logiccolor> function scans the given <arg>string_expression</arg> and converts any uppercase letters to lowercase letters.
+
+<subheader>Return Value</subheader>
+
+The function returns a string with all uppercase letters converted to lowercase letters.
+
+<subheader>Example</subheader>
+
+<logic>
+// each function call will return "hello james!"
+X = tolower("hello james!");
+Y = tolower("Hello JaMeS!");
+Z = tolower("HELLO JAMES!");
+</logic>
+
+<seealso toupper_function.csdoc />

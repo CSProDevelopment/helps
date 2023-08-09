@@ -1,0 +1,23 @@
+﻿<title>Trees in CSPro</title>
+
+CSPro uses trees to present what files are currently loaded (such as dictionaries), and more importantly, what files are associated with the active application (dictionaries, forms, batch edits, or tables).
+
+After a dictionary or application is opened or created, the "Files" tree will show the application, along with all files that belong to it. The dictionary tree ("Dicts") will also be present. Then, depending on the type of application opened or created, other trees will also appear.
+
+There are five types of trees in CSPro:
+
+<list>
+<li><b>Files</b> tree&mdash;shows all open applications; expand the tree for a given application and you will see all files that belong to it.</li>
+<li>Dictionaries tree ("<b>Dicts</b>")&mdash;shows all open dictionaries; expand the tree for a given dictionary and you will see its structure (level, records, items, etc).</li>
+<li><b>Edits</b> tree&mdash;shows all open batch edit specifications; the order of the blocks and the fields within each block indicates the order the edits will be processed.</li>
+<li><b>Forms</b> tree&mdash;shows all open form files; expand the tree for a given form file (indicated by the triple yellow boxes), and you will see all form(s) that belong to it, as well as the fields contained on each form.</li>
+<li><b>Tables</b> tree&mdash;shows all open table specifications and their contents.</li>
+</list>
+
+The <b>Files</b> and <b>Dicts</b> trees are always present. The other three trees are only present if the corresponding application is open.
+
+<center><image treetabs.jpg /></center>
+
+The tabs at the bottom control which tree is displayed. Simply click on the desired tab to switch the tree view. Use <b>Ctrl+T</b> to toggle the tree view between full file names & labels (File tab) or unique names & labels (all other tabs). To switch the frame on the right side of the screen to the corresponding view, double-click anywhere on the desired tree.
+
+<seealso data_dictionary_tree.csdoc data_entry_tree.csdoc batch_edit_tree.csdoc />

@@ -1,0 +1,56 @@
+﻿<title>Image Object</title>
+
+In logic, an <logiccolor>Image</logiccolor> object facilitates the storing and manipulating of images. Image objects can contain photos, signatures, or other kinds of visual media. CSPro supports reading and writing to JPEG, PNG, and BMP image formats.
+
+
+<subheader>Functionality</subheader>
+
+An Image object is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
+
+<table 2 header nowrap>
+	<cell>Function</cell><cell>Description</cell>
+	<cell><logiccolor Image>load</logiccolor></cell><cell>Reads an image from a file and stores its contents in the Image object.</cell>
+	<cell><logiccolor Image>save</logiccolor></cell><cell>Writes the contents of the Image object to a file.</cell>
+	<cell><logiccolor Image>width</logiccolor></cell><cell>Returns the width of the image in pixels.</cell>
+	<cell><logiccolor Image>height</logiccolor></cell><cell>Returns the height of the image in pixels.</cell>
+	<cell><logiccolor Image>resample</logiccolor></cell><cell>Resamples the image to change the image's dimensions.</cell>
+	<cell><logiccolor Image>takePhoto</logiccolor></cell><cell>Takes a photo using a device's camera and stores the photo in the Image object. (Android only.)</cell>
+	<cell><logiccolor Image>captureSignature</logiccolor></cell><cell>Allows the drawing of a signature and stores the captured signature in the Image object. (Android only.)</cell>
+	<cell><logiccolor Image>view</logiccolor></cell><cell>Displays the image held by the object.</cell>
+	<cell><logiccolor Image>clear</logiccolor></cell><cell>Clears the Image object's contents.</cell>
+</table>
+
+In addition to these object functions, Image objects can be used as arguments to the <logiccolor>filename</logiccolor> and <logiccolor>view</logiccolor> functions.
+
+
+<subheader>Assignments</subheader>
+
+Image objects can be assigned to other Image objects, which will replace the Image's contents with the contents from the assigned Image object.
+
+<logicsyntax>
+<arg>image_name</arg> = <arg>another_image_name</arg>;
+</logicsyntax>
+
+It is also possible to assign Image objects to a <link Document.csdoc>Document</link>:
+
+<logicsyntax>
+<arg>document_name</arg> = <arg>image_name</arg>;
+</logicsyntax>
+
+You can also make the reverse assignment, assigning a document to an Image object. A runtime error will occur if the Document's data was not a valid image.
+
+<logicsyntax>
+<arg>image_name</arg> = <arg>document_name</arg>;
+</logicsyntax>
+
+When an Image is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_image_example.hgi />
+</logic>
+
+
+<seealso Document.csdoc />

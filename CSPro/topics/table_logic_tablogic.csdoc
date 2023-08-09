@@ -1,0 +1,196 @@
+﻿<title>Table Logic (tablogic)</title>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Table
+ logic (or tablogic) allows you to add CSPro logic that is executed during
+ tabulation. This is mainly used to add your own &quot;recoded&quot; variables
+ to tables instead of using existing variables from your dictionary. This
+ is useful when the categories you want in your table must be tallied based
+ on the values of more than one variable from the dictionary, in other
+ words, when the categories you want must be computed based on the values
+ of multiple variables. In such a case, you can create a new variable with
+ the categories you want and write logic to set its value based on the
+ values of existing variables.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
+ example, if you want to tabulate houses that have &quot;complete plumbing,&quot;
+ meaning that they have piped water, bathing facilities and a toilet inside
+ the housing unit. The categories for &quot;complete plumbing&quot; are:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Complete
+	 – piped water inside the unit, and a private toilet inside the unit
+	 and bathing facilities inside the unit.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Some
+	 but not all –one or more of the three conditions above, but not all
+	 three.</font></p></li>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-left: 6.00pt; margin-top: 0.00pt;
+												 margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">None
+	 – none of the above conditions.</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ variable &quot;complete plumbing&quot; does not exist in the main dictionary.
+ It can be however, be determined based on the values of the following
+ three variables that are in the dictionary:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl4.jpg" alt="Dictionary of Value Set (Source of Water)"
+	 title="Dictionary of Value Set (Source of Water)" width="446" height="160"
+	 border="0" /></p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl5.jpg" alt="Dictionary of Value Set (Type of Bathing Facitlities)"
+	 title="Dictionary of Value Set (Type of Bathing Facitlities)" width="447"
+	 height="159" border="0" /></p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="recodetbl6.jpg" alt="Dictionary of Value Set (Type of Toilet Facilities)"
+	 title="Dictionary of Value Set (Type of Toilet Facilities)" width="448"
+	 height="160" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Rather
+ than adding new variables to your existing dictionary, you can add new
+ variables to the working storage dictionary. The working storage dictionary
+ is a second dictionary that is created automatically when you create a
+ tabulation application. This dictionary is similar to other dictionaries,
+ however there is no data file associated with it. The variables in the
+ working storage dictionary must be set by program logic.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+ this example, we will add the new &quot;complete plumbing variable&quot;
+ to the working storage dictionary. The working storage dictionary appears
+ just below the main dictionary in the dictionary tree. Adding a new variable
+ to the working storage dictionary is the same as adding a variable to
+ any dictionary. Right-click on the &quot;Working Storage Record&quot;
+ under the working storage dictionary in the dictionary tree and choose
+ &quot;Add Item&quot;.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabtablogic1.jpg" alt="Adding an Item to a Working Storage Dictionary"
+	 title="Adding an Item to a Working Storage Dictionary" width="346"
+	 height="496" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Then
+ fill in the label, name and other properties for the new variable.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabtablogic2.jpg" alt="Adding a Label, Name, and Other Properties for the New Item"
+	 title="Adding a Label, Name, and Other Properties for the New Item"
+	 width="1263" height="177" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Next,
+ create the value set for the new variable.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabtablogic3.jpg" alt="Adding a Value Set for the New Item"
+	 title="Adding a Value Set for the New Item" width="841" height="166"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Now
+ drag the new variable onto the table just as if it were a variable in
+ the main dictionary.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabtablogic4.jpg" alt="Table with a Working Storage Variable"
+	 title="Table with a Working Storage Variable" width="396" height="184"
+	 border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Finally
+ add the tablogic to set the value of complete plumbing based on the values
+ of source of water, toilet facilities and bathing facilities. Bring up
+ the Tally Attributes (Table) dialog and enter the following code in the
+ tab logic edit box:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabtablogic5.jpg" alt="Entering Tab Logic in Tally Attributes (Table) Dialog Box"
+	 title="Entering Tab Logic in Tally Attributes (Table) Dialog Box"
+	 width="794" height="612" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
+ above logic will be executed once for each housing record to set the value
+ of complete plumbing for that household. This will result in the following
+ table:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="xtabtablogic6.jpg" alt="Table Result using a Working Storage Variable"
+	 title="Table Result using a Working Storage Variable" width="403"
+	 height="188" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
+ using variables from the working storage dictionary, it is important to
+ pay attention to the unit of tabulation. When using variables from the
+ main dictionary, CSPro can determine the unit of tabulation based on the
+ variables used. If you choose variables from the Person record, such as
+ sex, the unit will be set to the person record. If you choose variables
+ from the housing record, the unit will be set to the housing record. However,
+ when you drag variables from the working storage dictionary onto the table,
+ CSPro does not know which record or records the recodes for these variables
+ will come from. It always sets the unit of tabulation to the first level
+ (questionnaire). In the above example, this does not cause any problems
+ because there is exactly one housing record per questionnaire. However,
+ had we created a recode of variables from the person record, we would
+ need to set the unit to the person record, otherwise we could get errors
+ during tabulation. For more information see</font> <a href="changing_the_unit_of_tabulation.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Changing
+ the Unit of Tabulation</font></a><font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Note
+ that often it is preferable to create recoded variables in a batch edit
+ program rather than during tabulation. This recode could have been accomplished
+ by adding a new variable to the main dictionary for complete plumbing
+ and writing a batch edit program to set the value of this variable for
+ each case. Then the new complete plumbing variable could be dropped on
+ the table directly, rather than using a working storage variable. The
+ advantage of using batch edit is that the logic to set the value of the
+ new variable is done once in a batch edit program rather than done as
+ tablogic in each table in which the variable is used.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Another
+ alternative is to use multiple subtables and value sets to simulate a
+ recoded variable. This can be easier for simple variables, although for
+ recoded variables with more than a few categories, it is generally simpler
+ to use tablogic or batch edit. For more information see <a href="recodes_in_tables_using_value_sets_and_subtables.html">Recodes
+ in Tables Using Value Sets and Subtables</a>.</font></p>
+</body>
+</html>
+
+
+<html><!---♻---></html>
+<build-extra "../images/recodetbl4.jpg" "../images/recodetbl5.jpg" "../images/recodetbl6.jpg" "../images/xtabtablogic1.jpg" "../images/xtabtablogic2.jpg" "../images/xtabtablogic3.jpg" "../images/xtabtablogic4.jpg" "../images/xtabtablogic5.jpg" "../images/xtabtablogic6.jpg" />

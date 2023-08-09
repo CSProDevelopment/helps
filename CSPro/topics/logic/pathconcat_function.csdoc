@@ -1,0 +1,30 @@
+﻿<title>PathConcat Function</title>
+
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.5, you are encouraged to use the <logiccolor>Path.concat</logiccolor> function.</i>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = pathconcat(<arg>path1</arg>『, ..., <arg>pathN</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>pathconcat</logiccolor> function concatenates the values of multiple string expressions (<arg>path1</arg> + ... + <arg>pathN</arg>) into one string representing a file path. The first argument can be either a string expression or one of the path types documented in the <logiccolor>pathname</logiccolor> function. The combined paths are returned as an absolute, not relative, path.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the concatenated path string.
+
+
+<subheader>Example</subheader>
+
+<logic>
+string image_filename = pathconcat(Application, "../Images", maketext("%v%v.jpg", CLUSTER, HHNO));
+</logic>
+
+
+<seealso Path_concat_function.csdoc pathname_function.csdoc concat_function.csdoc />

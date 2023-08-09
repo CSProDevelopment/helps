@@ -1,0 +1,29 @@
+﻿<title>Initialize Hot Decks Using Saved Arrays</title>
+
+In this technique, the <link dynamic_imputation_hot_deck.csdoc>hot deck</link> is initialized by running the program twice and using the results of the first run to initialize the hot deck for the second run. The array is declared using the <logiccolor>save</logiccolor> keyword. No initialization of the array is done in the program logic. The program is run twice. During the first run of the program, the array has not been initialized so it is likely that some imputations from the hot deck will use these uninitialized values. The results (the output file) from the first run of the program are therefore discarded. However, during the first run of the program, the hot deck is filled with valid values. Since the array has been declared as a saved array, these values are written to the <link saved_arrays_file_sva.csdoc>saved arrays file</link>. When the program is run a second time, these values are read from the saved array file and used as initial values from the array. The advantage of this approach over initializing the array in the program logic is that all values used in the hot deck are taken from the data file.
+
+The following example uses a saved array to initialize a hot deck:
+
+<logic>
+PROC GLOBAL
+
+// declare an array initialized from the saved array file
+Array AgeSRDeck(2,6) save;
+
+PROC AGE
+
+	if AGE = notappl then
+		// if the value for age is not valid...
+		// assign the value from the hot deck based on sex and relationship
+		impute(AGE,AgeSRDeck(SEX,RELATIONSHIP));
+
+	else
+		// otherwise...
+		// update the value of the hot deck
+		AgeSRDeck(SEX,RELATIONSHIP) = AGE;
+
+	endif;
+</logic>
+
+
+<seealso dynamic_imputation_hot_deck.csdoc use_hot_decks.csdoc initialize_hot_decks_in_program_logic.csdoc />

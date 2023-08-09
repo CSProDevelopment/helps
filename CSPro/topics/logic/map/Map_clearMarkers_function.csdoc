@@ -1,0 +1,46 @@
+﻿<title>Map.clearMarkers Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = map_name.clearMarkers();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Map.clearMarkers</logiccolor> function removes all the markers currently on the <link Map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+
+The function returns a logical value of 1 (true).
+
+<subheader>Example</subheader>
+
+<logic>
+
+// User function that will be called on button click
+// to filter households by status
+function filterMapHouseholds(Map myMap)
+
+	numeric choice = accept("Choose status to show", "Not started", "Partial", "Complete");
+	if choice > 0 then
+
+		// Clear current markers
+		myMap.clearMarkers();
+
+		// Add markers for households matching status chosen
+		forcase HOUSEHOLD_DICT where HOUSEHOLD_STATUS = choice do
+			numeric marker = myMap.addMarker(HOUSEHOLD_LATITUDE, HOUSEHOLD_LONGITUDE);
+			myMap.setMarkerDescription(marker, maketext("%l - %s", HOUSEHOLD_NUMBER, HOUSEHOLD_HEAD_NAME));
+		endfor;
+	endif;
+
+end;
+</logic>
+
+
+<seealso Map.csdoc Map_addMarker_function.csdoc Map_clearButtons_function.csdoc />

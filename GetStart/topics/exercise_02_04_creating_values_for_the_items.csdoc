@@ -1,0 +1,48 @@
+﻿<title>Step 4: Creating Values for the Items</title>
+
+<subheader>(Exercise 2, Create the Data Dictionary)</subheader>
+
+<link CSPro::value_sets_description.csdoc>Value sets</link> define what data values we expect for a data item. Value sets are used to define ranges of valid values during data entry and to define categories for cross tabulation.
+
+First we will create a value set for <b>Age</b>. We will use ten-year age groups.
+
+<list ordered>
+	<li>Click on the <b>+</b> next to <b>Person record</b> to make sure its items are showing on the tree.</li>
+	<li>Right-click on <b>Age</b> and then select <b>Add Value Set</b>.</li>
+	<li>Press <b>Enter</b> twice to accept the default <b>Value Set Label</b> and <b>Value Set Name</b>. The cursor will drop to the line below into the <b>Value Label</b> column.</li>
+	<li>Type <b>0 to 9</b> for the <b>Value Label</b>, then <b>Enter</b>.</li>
+	<li>Type <b>0</b> as the <b>From</b> value, then <b>Enter</b>.</li>
+	<li>Type <b>9</b> as the <b>To</b> value, then <b>Enter</b> twice, skipping over the <b>Special</b> column.</li>
+	<li>Type <b>10 to 19</b> for the next <b>Value Label</b>, then <b>Enter</b>.</li>
+	<li>Type <b>10</b> as the <b>From</b> value, then <b>Enter</b>.</li>
+	<li>Type <b>19</b> as the <b>To</b> value, then <b>Enter</b> twice, skipping over the <b>Special</b> column.</li>
+	<li>Continue in this fashion until you have reached <b>90 to 99</b>.</li>
+</list>
+
+Next, we will create a value set for <b>Sex</b>.
+
+<list ordered>
+	<li>Right-click on <b>Sex</b>, then select <b>Add Value Set</b>.</li>
+	<li>Press <b>Enter</b> twice to accept the default <b>Value Set Label</b> and <b>Value Set Name</b>. The cursor will drop to the line below into the <b>Value Label</b> column.</li>
+	<li>Type <b>Male</b> as the first <b>Value Label</b>.</li>
+	<li>Type <b>1</b> as the <b>From</b> value.</li>
+	<li>Press <b>Enter</b> twice to skip over the <b>To</b> and <b>Special</b> columns.</li>
+	<li>Type <b>Female</b> as the second <b>Value Label</b>.</li>
+	<li>Type <b>2</b> as the <b>From</b> value.</li>
+	<li>Press <b>Enter</b> twice to skip over the <b>To</b> and <b>Special</b> columns.</li>
+	<li>Press <b>Esc</b> to finish creating the value set.</li>
+</list>
+
+To finish up:
+
+<list ordered>
+	<li>Add a value set for <b>Marital status</b>. Use <b>1</b> for <b>Married</b> and <b>2</b> for <b>Not married</b>.</li>
+	<li>Add values for the <b>Housing record</b> items from the housing information in the questionnaire.</li>
+	<li>Save the work you have done so far: Select <b>File</b> -> <b>Save</b> from the main menu, or click on <image save_button.png /> on the toolbar.</li>
+</list>
+
+When you completed this step, the screen might look something like:
+
+<center><image exercise_02_04_adding_valuesets.png /></center>
+
+This completes this exercise. Continue to the next exercise: <topic exercise_03_01_place_id_and_housing_items_on_form.csdoc />

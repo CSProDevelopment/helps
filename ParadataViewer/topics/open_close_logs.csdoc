@@ -1,0 +1,19 @@
+﻿<title>Open or Close Paradata Logs</title>
+
+<subheader>Opening Logs</subheader>
+
+There are several ways to open paradata logs:
+
+<list>
+	<li>When you install CSPro, the extension <link CSPro::paradata_log_file_cslog.csdoc>.cslog</link> is associated with the Paradata Viewer, so you can open a paradata log by double-clicking on the log using Windows Explorer.</li>
+	<li>You can open the Paradata Viewer and then select <b>File</b> -> <b>Open Log</b>. You can select one more logs.</li>
+	<li>You can open the Paradata Viewer and then drag one or more logs onto the tool from Windows Explorer.</li>
+</list>
+
+The tool can only load one log at a time, so if you select more than one log, you will see a dialog with the title <b>Concatenate Logs?</b> The tool can automatically merge the logs into a single log which the tool can open. You can concatenate the logs to a temporary result, in which case the result will be deleted when the tool is closed. Alternatively, you can concatenate and save the results to a log that you can open again in the future. If you have a log currently open, you can select an option to include that open log in the concatenated result.
+
+You can open a log that is currently in use by CSEntry, but you may not see the events saved by the current data entry application until CSEntry closes.
+
+<subheader>Closing an Open Log</subheader>
+
+To close an open log, simply select <b>File</b> -> <b>Close Log</b>.

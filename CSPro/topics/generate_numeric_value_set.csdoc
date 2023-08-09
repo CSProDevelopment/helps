@@ -1,0 +1,115 @@
+﻿<title>Generate Numeric Value Set</title>
+<context IDD_GENERATE_VSET ID_EDIT_GEN_VALUE_SET />
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
+ generate a value set for a numeric data item:</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">From
+	 the dictionary tree, select the desired item.</font></p></li>
+</ul>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Right
+	 click on the view on the right, or select the</font> <b><font style="font-family: Arial;
+	 font-size: 10pt; font-weight: bold;" face="Arial" size="2">Edit</font></b>
+	 <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">menu.</font></p></li>
+</ul>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Select</font>
+	 <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+				 face="Arial" size="2">Generate Value Set</font></b><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">.
+	 The following dialog box will appear.</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
+	 src="generatevset.jpg" alt="Generate Value Set Dialog Box"
+	 title="Generate Value Set Dialog Box" width="419" height="345" border="0" /></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Value Set Label:</font></b> <font style="font-family: Arial;
+												 font-size: 10pt;" color="#000000"
+												 face="Arial" size="2">A
+ descriptive text label for a collection of categories of an item. Used
+ by the</font> <a href="introduction_to_tabulation.html"><font style="font-family: Arial;
+	 font-size: 10pt;" face="Arial" size="2">Tabulation</font></a> <font
+	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
+	 size="2">module to select tabulation categories. This cannot be left
+ blank.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Value Set Name:</font></b> <font style="font-family: Arial;
+												 font-size: 10pt;" color="#000000"
+												 face="Arial" size="2">The
+ name of this value for use in the</font> <a href="introduction_to_cspro_language.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">CSPro
+ language</font></a> <font style="font-family: Arial; font-size: 10pt;"
+							 color="#000000" face="Arial" size="2">procedures.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">From:</font></b> <font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">The smallest
+ value in the value set.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">To:</font></b> <font style="font-family: Arial; font-size: 10pt;"
+									 face="Arial" size="2">The largest
+ value in the value set.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Interval:</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2">The size
+ of the interval in each value range generated. For example, if 5 year
+ age groups are desired, then the interval is 5. The interval must be greater
+ than 0. If the interval is the smallest positive number that can be contained
+ in the data item, then single values are produced.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Value Label Template:</font></b> <font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">A
+ model for descriptive text of each value or value range that is generated.
+ The characters</font> <b><font style="font-family: Arial; font-size: 10pt;
+								 font-weight: bold;" face="Arial" size="2">%s</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">in
+ the template are replaced by the</font> <b><font style="font-family: Arial;
+													 font-size: 10pt; font-weight: bold;"
+													 face="Arial" size="2">from</font></b>
+ <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">and</font>
+ <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
+			 face="Arial" size="2">to</font></b> <font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">values
+ for each value range. All other characters are output as entered.</font></p>
+</body>
+</html>
+
+
+<html><!---♻---></html>
+<build-extra "../images/generatevset.jpg" />

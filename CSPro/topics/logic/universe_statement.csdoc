@@ -1,0 +1,36 @@
+﻿<title>Universe Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+universe <arg>condition</arg> 『case』;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>universe</logiccolor> statement determines whether to allow normal execution of a procedure or function based on the value of condition. The <arg>condition</arg> following the universe command is evaluated. If the condition is true, then the statements following it are executed. If the condition is false, processing stops for the current procedure or user-defined function, and control is passed to the next procedure or user-defined function.
+
+In batch editing mode, if the optional <logiccolor>case</logiccolor> keyword is specified and the condition is false, the program will stop processing the case but will still write it to the output file.
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC FERTILITY
+
+	universe SEX = 2 and AGE in 12:49;
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC ROOF_TYPE
+
+	universe HHTYPE = 1 case;
+
+	// the universe is equivalent to:
+	if not HHTYPE = 1 then
+		endcase;
+	endif;
+</logic>
+
+<seealso exit_statement.csdoc endcase_statement.csdoc if_statement.csdoc />

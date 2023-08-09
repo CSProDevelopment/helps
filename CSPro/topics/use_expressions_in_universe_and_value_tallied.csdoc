@@ -1,0 +1,51 @@
+﻿<title>Use Expressions in Universe and Value Tallied</title>
+
+You can enter any valid CSPro expression as a universe, weight or value tallied. This includes not only variables, constants, logical operators (<logiccolor>and</logiccolor>, <logiccolor>or</logiccolor>, <logiccolor>not</logiccolor>), and mathematical operators (+, -, *, /, ...) but also CSPro functions (<logiccolor>count</logiccolor>, <logiccolor>sum</logiccolor>, <logiccolor>max</logiccolor>, <logiccolor>special</logiccolor>, ...). Making full use of these expressions allows you to create complex tables very easily. Here are some examples:
+
+<subheader>Universe</subheader>
+
+Tabulate only households where at least one child was born last year with the following universe (assuming that CHILDREN_BORN_LAST_YEAR is a variable on the person record):
+
+<logic>
+count(CHILDREN_BORN_LAST_YEAR) > 0
+</logic>
+
+Count only households with "married couple families," i.e. a household with both a head of household and a spouse present, with the following universe:
+
+<logic>
+count(PERSON where RELATIONSHIP = 1) > 0 and count(PERSON where RELATIONSHIP = 2) > 0
+</logic>
+
+Restrict a table to only households with total household income of greater than $20,000 by using the following universe:
+
+<logic>
+sum(PERSONAL_INCOME) > 20000
+</logic>
+
+This assumes that PERSONAL_INCOME is a variable on the person record. The sum of the incomes of each person in the household is the total income for the entire household.
+
+Restrict a table to only households where the head of household is female with the following universe:
+
+<logic>
+SEX(1) = 2
+</logic>
+
+This assumes that the head of the household is always the first person record (occurrence 1). This will only be true if your data entry program and/or edit program ensure this. If this is not true, then you would need a more complicated expression such as:
+
+<logic>
+count(PERSON where RELATIONSHIP = 1 and SEX = 2) = 1
+</logic>
+
+This will be true only if there is a person in the household who is the head of household and is female. This assumes that there is only one head of household in the household, which should be the case for properly edited data.
+
+<subheader>Value Tallied</subheader>
+
+Often fertility information is captured separately for male and female children and you wish to tabulate it for both sexes. For example, you have variables for <logiccolor>MALE_CHILDREN_BORN</logiccolor> and <logiccolor>FEMALE_CHILDREN_BORN</logiccolor> but no variable for total children born and you want to count the total number of children born. You can use the sum of the two variables in the value tallied:
+
+<logic>
+MALE_CHILDREN_BORN + FEMALE_CHILDREN_BORN
+</logic>
+
+Note that if one or more of the variables is a <link special_values.csdoc>special value</link>, the counts will not be correct. This is because the sum of a special value and a number is a special value.
+
+<seealso restrict_a_universe.csdoc tabulate_values_instead_of_frequencies.csdoc tally_attributes_for_a_table.csdoc />

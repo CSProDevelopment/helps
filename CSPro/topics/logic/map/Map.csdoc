@@ -1,0 +1,82 @@
+﻿<title>Map Object</title>
+
+In logic, a <logiccolor>Map</logiccolor> is an object that can be used to display and control an interactive map. The map may be panned and zoomed with touch controls and may optionally show the user's current location. Using map functions you can add markers at geographic positions on the map, add custom buttons, and set the geographical area displayed. You can also specify user-defined functions in your logic to be called when the user taps on markers, buttons, and on the map itself. Together, these functions allow for rich map-based interactions such as showing households on a map and launching an interview when the user taps a household.
+
+To display a map, call the <logiccolor>Map.show</logiccolor> function. The map will be displayed allowing the user to interact with it until the user taps the back button or the <logiccolor>Map.hide</logiccolor> function is called from program logic.
+
+You can call map functions to add markers, buttons, set the base map, and pan/zoom before showing the map. This will be more efficient than adding them afterwards, especially when adding large numbers of markers. You can also call the map functions after showing the map from within any of the user-defined callback functions for map, marker, and button clicks and drags.
+
+<center><image map.png /></center>
+
+You can add markers to the map using the <logiccolor>Map.addMarker</logiccolor> function. You can replace the default marker icon with a custom image by calling <logiccolor>Map.setMarkerImage</logiccolor> or with a text icon using <logiccolor>Map.setMarkerText</logiccolor>.
+
+By default, the map contains a button to zoom to the users current location. You can add additional buttons to the map by calling <logiccolor>Map.addImageButton</logiccolor> or <logiccolor>Map.addTextButton</logiccolor>.
+
+You add vector geometry, such as polygons and polylines, to the map using the <logiccolor>Map.addGeometry</logiccolor> function.
+
+By default, the map will display a base map from Google Maps, which requires an Internet connection. With no Internet connection the base map will be empty. To display a map without an Internet connection you can copy an <link offline_maps.csdoc>offline map file</link> to your device and pass the file to the <logiccolor>Map.setBaseMap</logiccolor> function.
+
+
+<subheader>Functionality</subheader>
+
+A <logiccolor>Map</logiccolor> is a CSPro logic object that allows the following functions to be called via <link object_dot_notation.csdoc>dot notation</link>:
+
+<table 2 header nowrap>
+	<cell>Function</cell><cell>Description</cell>
+	<cell><logiccolor Map>show</logiccolor></cell><cell>Display the map and allow the user to interact with it.</cell>
+	<cell><logiccolor Map>hide</logiccolor></cell><cell>End displaying the map if it is currently showing.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor Map>setTitle</logiccolor></cell><cell>Set the map title.</cell>
+	<cell><logiccolor Map>setBaseMap</logiccolor></cell><cell>Change the map source to an online or offline base map.</cell>
+	<cell><logiccolor Map>zoomTo</logiccolor></cell><cell>Pan/zoom the map.</cell>
+	<cell><logiccolor Map>showCurrentLocation</logiccolor></cell><cell>Display the current location (as retrieved from the GPS) on the map.</cell>
+	<cell><logiccolor Map>saveSnapshot</logiccolor></cell><cell>Save the currently-displayed map as an image.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor Map>setOnClick</logiccolor></cell><cell>Set the user-defined function that is called when the user taps on the map.</cell>
+	<cell><logiccolor Map>getLastClickLatitude</logiccolor></cell><cell>Retrieve the latitude of the last point on the map the user tapped.</cell>
+	<cell><logiccolor Map>getLastClickLongitude</logiccolor></cell><cell>Retrieve the longitude of the last point on the map the user tapped.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor Map>addMarker</logiccolor></cell><cell>Place a marker on the map at the specified latitude and longitude.</cell>
+	<cell><logiccolor Map>removeMarker</logiccolor></cell><cell>Delete a single marker from the map.</cell>
+	<cell><logiccolor Map>clearMarkers</logiccolor></cell><cell>Delete all markers from the map.</cell>
+	<cell><logiccolor Map>setMarkerImage</logiccolor></cell><cell>Set the icon displayed on the map for a specific marker.</cell>
+	<cell><logiccolor Map>setMarkerText</logiccolor></cell><cell>Set text displayed on the map for a specific marker.</cell>
+	<cell><logiccolor Map>setMarkerDescription</logiccolor></cell><cell>Set text displayed in a popup window when a specific marker is tapped.</cell>
+	<cell><logiccolor Map>setMarkerOnClick</logiccolor></cell><cell>Set the user-defined function that is called when the user taps a marker.</cell>
+	<cell><logiccolor Map>setMarkerOnClickInfoWindow</logiccolor></cell><cell>Set the user-defined function that is called when the user taps on a marker's popup info.</cell>
+	<cell><logiccolor Map>setMarkerOnDrag</logiccolor></cell><cell>Set the user-defined function that is called when the user a drags a marker on the map.</cell>
+	<cell><logiccolor Map>setMarkerLocation</logiccolor></cell><cell>Move an existing marker to a new position on the map.</cell>
+	<cell><logiccolor Map>getMarkerLatitude</logiccolor></cell><cell>Retrieve the latitude of a marker on the map.</cell>
+	<cell><logiccolor Map>getMarkerLongitude</logiccolor></cell><cell>Retrieve the longitude of a marker on the map.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor Map>addGeometry</logiccolor></cell><cell>Add vector geometry to the map.</cell>
+	<cell><logiccolor Map>removeGeometry</logiccolor></cell><cell>Delete vector geometry from the map.</cell>
+	<cell><logiccolor Map>clearGeometry</logiccolor></cell><cell>Delete all vector geometry from the map.</cell>
+	<cell 2>&nbsp;</cell>
+	<cell><logiccolor Map>addTextButton</logiccolor></cell><cell>Create a button with a text label on the map.</cell>
+	<cell><logiccolor Map>addImageButton</logiccolor></cell><cell>Create a button with an icon on the map.</cell>
+	<cell><logiccolor Map>removeButton</logiccolor></cell><cell>Delete a button on the map.</cell>
+	<cell><logiccolor Map>clearButtons</logiccolor></cell><cell>Delete all buttons from the map.</cell>
+</table>
+
+
+<subheader>Assignments</subheader>
+
+When a Map object is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>.
+
+
+<subheader>Example</subheader>
+
+<logic>
+// Declare a map
+Map mymap;
+
+// Add a marker to the map at latitude 38.84839, longitude -76.931098
+mymap.addMarker(38.84839, -76.931098);
+
+// Display the map
+mymap.show();
+</logic>
+
+
+<seealso map_case_list.csdoc Geometry.csdoc />

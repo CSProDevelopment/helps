@@ -1,0 +1,43 @@
+﻿<title>FileSize Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = filesize(<arg>file_name</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>filesize</logiccolor> function returns the size of a file in bytes. The argument <arg>file_name</arg> is either a string expression giving a file name or is a file handler declared in a <logiccolor>File</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+If the file exists, the function returns the size of the file in bytes. If the file does not exist, the function returns <logiccolor>default</logiccolor>.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+if filesize("report.txt") > 0 then
+	errmsg("The report already exists!");
+endif;
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC GLOBAL
+
+File reportFile;
+
+PROC EXAMPLE
+
+	numeric reportSize = filesize(reportFile);
+</logic>
+
+
+<seealso fileempty_function.csdoc fileexist_function.csdoc />

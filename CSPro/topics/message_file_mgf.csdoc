@@ -1,0 +1,115 @@
+﻿<title>Message File (.mgf)</title>
+
+The message file for a data entry application stores the error message text that is displayed during data entry. The message file for a batch application stores the error message text that will be included in the execution report. The message file has the extension <b>.mgf</b>. While creating your application, you can view the message text in a window at the bottom of the logic screen.
+
+You can associate multiple message files with an application, which can be useful if you have messages defined in multiple languages. To do this, select <link add_files_to_an_application.csdoc>File -> Add Files</link> and then choose the external message file to add to the application. If you no longer want to use the external message file, you can remove it by selecting <link drop_files_from_an_application.csdoc>File -> Drop Files</link>.
+
+If the name of an external message file begins with "CSProRuntime," then the messages in that file will override the CSPro system messages. See <link collaborating_on_cspro_development.csdoc>Collaborating on CSPro Development </link> for more information about this file.
+
+
+<subheader>Basic Messages</subheader>
+
+Each line in the message file contains one message. A message consists of a message number followed by text. The message text can be up to 240 characters long. It is displayed on the entry screen when an <logiccolor>errmsg</logiccolor> function with the message number is executed in a data entry application. It is written to the execution report when <logiccolor>errmsg</logiccolor> function with the message number is executed in a batch application. The messages can also be accessed with other functions (including <logiccolor>maketext</logiccolor>).
+
+For example, suppose a message file contains the following lines:
+
+<message>
+1 This is the first message
+2 This is the second message
+</message>
+
+When an <logiccolor>errmsg(1)</logiccolor> function is executed in a data entry application, the message "This is the first message" is displayed on screen. When an <logiccolor>errmsg(2)</logiccolor> function is executed, the message "This is the second message" is displayed.
+
+
+<subheader>Messages with Arguments</subheader>
+
+Arguments can be specified in the <logiccolor>errmsg</logiccolor> function. <link message_formatting_options.csdoc>These arguments</link> can be numeric expressions or string expressions. String arguments in the error message text are indicated by <b>%s</b>. Integer numeric arguments are indicated with <b>%d</b>. Decimal numeric arguments are indicated with <b>%f</b>. For example, a message file might contain the following:
+
+<message>
+1 The month of %s has only %d days. You entered %d!
+</message>
+
+The application could use this as follows:
+
+<logic>
+errmsg(1, "June", 30, 31);
+</logic>
+
+When the function is executed, it knows to use error message 1 and substitute the word "June" for <b>%s</b> in the message text, the number 30 for the first <b>%d</b>, and the number 31 for the second <b>%d</b>. The message "The month of June has only 30 days. You entered 31!" will be displayed on the screen.
+
+The more general the arguments of the message, the more flexible the message. In the example below, the value of the variable HHDAY is used as a argument. The error message will use the value of <logiccolor>HHDAY</logiccolor> if the <logiccolor>errmsg</logiccolor> function is executed.
+
+<logic>
+PROC HHDAY
+
+	if HHMONTH = 6 and HHDAY > 30 then
+		errmsg(1, "June", 30, HHDAY);
+		reenter;
+	endif;
+</logic>
+
+
+<subheader>Messages With Comments</subheader>
+
+There are two ways to mark text as a <link comments.csdoc>comment</link>. The first method is to use the brace symbols <colorinline cspro_v0>{ }</colorinline>, the second method is to use the double slashes <logiccolor>//</logiccolor>. Comments can be used to clarify the syntax listed in a message, or identify "ownership" of the message or message blocks (i.e., what code blocks use the messages--global messages or just specific areas?). Unlike lines of logic, comments can not be embedded within the message line or appear at the end of a message line. Comments can only appear on a line by itself.
+
+For example, messages might be grouped as follows in your message file:
+
+<message>
+// Global messages
+
+0001 If the interview result code <> 1 (interview started), the interview will terminate.
+0002 If consent is not given, the interview will terminate.
+0003 Consent was previously given, are you sure you wish to change it to no?
+
+// Date-related messages
+
+0020 Interview year (%d) can not be after system year (%d).
+0021 Interview date (YYYY/MM/DD=%4d/%02d/%02d) can not be after system date (YYYY/MM/DD=%4d/%02d/%02d).
+0022 Invalid date (month/day combo not possible MM/DD=%02d/%02d).
+</message>
+
+
+<subheader>Messages in Multiple Languages</subheader>
+
+When designing an application that will be used in <link multiple_language_applications.csdoc>multiple languages</link>, you can define multiple messages for a given message number. Use the <link define_languages.csdoc>language name</link>, followed by the message number in parentheses, as shown in this example:
+
+<message>
+101		Hello
+ZH(101) 你好
+FR(101) Bonjour
+</message>
+
+CSPro will automatically display the correct message based on the current language. If no translated message exists for the current language, the default message is shown.
+
+Using the <font monospace>Language</font> directive declares that all subsequent error messages are in a given language. For example, the previous example could be rewritten as:
+
+<message>
+Language=EN
+101 Hello
+
+Language=ZH
+101 你好
+
+Language=FR
+101 Bonjour
+</message>
+
+If you would like to define messages for multiple languages at the same time, separate the name of each language with a comma:
+
+<message>
+Language=HI, PA
+101 नमस्ते
+</message>
+
+You can also use the message file to translate string literals that are used along with the <logiccolor>tr</logiccolor> function. For example:
+
+<message>
+ZH("Hello") 你好
+FR("Hello") Bonjour
+</message>
+
+Calling <logiccolor>tr("Hello")</logiccolor> in logic will display the correct string based on the current language.
+
+
+<seealso multiple_language_applications.csdoc tr_function.csdoc />

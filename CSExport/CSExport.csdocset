@@ -1,0 +1,35 @@
+﻿{
+  "title": "CSPro Export Help", 
+  "import": {
+    "tableOfContents": "CSExport.toc", 
+    "index": "CSExport.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ], 
+    "contextIds": [
+      "../Shared/afxres.h", 
+      "CSExport/resource.h", 
+      "zBridgeO/resource.h", 
+      "zInterfaceF/resource.h", 
+      "zInterfaceF/resource_shared.h"
+    ]
+  }, 
+  "settings": {
+    "imageDirectories": [
+      "images"
+    ], 
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

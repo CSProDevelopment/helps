@@ -1,0 +1,49 @@
+﻿<title>Map.clearButtons Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = map_name.clearButtons();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Map.clearButtons</logiccolor> function removes all the buttons currently on the <link Map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true).
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+numeric showAddHousehold = true;
+numeric showFilter = true;
+
+// User function that will be called on button click
+// to update the buttons
+function updateButtons(Map myMap)
+
+	// Clear existing buttons
+	myMap.clearButtons();
+
+	if showAddHousehold then
+		myMap.addTextButton("Add", addHousehold(myMap));
+	endif;
+
+	if showFilterButton then
+		myMap.addTextButton("Filter", filterHouseholds(myMap));
+	endif;
+
+	myMap.addTextButton("Done", closeMap(myMap));
+end;
+</logic>
+
+
+<seealso Map.csdoc Map_addText_button_function.csdoc Map_addImageButton_function.csdoc Map_clearMarkers_function.csdoc />

@@ -1,0 +1,36 @@
+﻿<title>Move Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+move 『to』 <arg>field_name</arg> 『advance ‖ skip』;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>move</logiccolor> statement allows movement to a field without regard to whether it is before or after the current field. This is particularly useful in an <link OnKey_global_function.csdoc>OnKey</link> or <link userbar_function.csdoc>userbar</link> function because you may not know at what point the function will be called. The <arg>field_name</arg> is either the name of a field or is a string variable specifying the name of the field.
+
+Movement to a field before the current field acts exactly like a <logiccolor>reenter</logiccolor> statement. The action of move to a field after the current field depends on the optional keywords <logiccolor>advance</logiccolor> or <logiccolor>skip</logiccolor>. If no keyword is specified, or if <logiccolor>skip</logiccolor> is coded, then forward movement acts exactly like a <logiccolor>skip</logiccolor> statement, skipping <i>past</i> fields. If <logiccolor>advance</logiccolor> is coded, then forward movement acts exactly like an <logiccolor>advance</logiccolor> statement, moving <i>over</i> fields.
+
+<subheader>Example</subheader>
+
+<logic>
+function numeric OnKey(numeric keystroke)
+
+	if keystroke = 2070 then // Ctrl+F
+		// move to the first person
+		move to NAME(1) advance;
+
+	elseif keystroke = 2076 then // Ctrl+L
+		// move to the last person
+		move to NAME(totocc(PERSON_REC000)) advance;
+
+	else
+		OnKey = keystroke;
+
+	endif;
+
+end;
+</logic>
+
+<seealso advance_statement.csdoc ask_statement.csdoc reenter_statement.csdoc skip_statement.csdoc />

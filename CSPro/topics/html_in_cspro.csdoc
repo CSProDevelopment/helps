@@ -1,0 +1,92 @@
+﻿<title>HTML in CSPro</title>
+
+
+<subheader>Overview</subheader>
+
+While CSPro is not a web-based application, HTML is used in CSPro in a variety of ways:
+
+<list ordered>
+	<li>When displaying <link html_question_text.csdoc>question text</link>.</li>
+	<li>When displaying <link templated_reports.csdoc>logic-based reports</link> written in HTML.</li>
+	<li>When displaying content using the <logiccolor>view</logiccolor> or <logiccolor>htmldialog</logiccolor> functions.</li>
+	<li>When displaying <link html_dialog_ui.csdoc>some dialogs</link> for logic functions, as well as other aspects of the CSPro user interface (UI).</li>
+</list>
+
+HTML files or websites are displayed in an embedded window using a Chromium-based web browser (<link https://developer.microsoft.com/en-us/microsoft-edge/webview2>Edge WebView2</link> on Windows; <link https://developer.android.com/reference/android/webkit/WebView>WebView</link> on Android). In this web browser, it is possible to use the <link javascript_interface.csdoc>JavaScript interface</link> to interact with various CSPro features.
+
+
+<subheader>Local Web Server and HTML Directory References</subheader>
+
+When a CSPro application runs, a local web server is launched that serves content stored on the local file system. On Windows, this server uses  <i>localhost</i> as the host and chooses a dynamic port, checking for one that is not in use.
+
+Relative paths that are not based off the root are evaluated from the location of the displayed HTML content:
+
+<list>
+	<li><b>Question Text</b>: Relative to the <link data_entry_application_file_ent.csdoc>data entry application (.ent) </link> or <link binary_data_entry_application_file_pen.csdoc>.pen file</link>.</li>
+	<li><b>Reports</b>: Relative to the location of the report (or, when running a .pen file, where it would have existed relative to the data entry application).</li>
+	<li><b>HTML Files</b> (shown using <logiccolor>view</logiccolor> or <logiccolor>htmldialog</logiccolor>): Relative to the location of the file.</li>
+</list>
+
+For example, these references in question text would refer to files in the application directory and in a relative directory located one level above the application directory:
+
+<color HTML>
+<img src="image-in-application-directory.jpg" />
+<img src="../shared/image-in-relative-directory.jpg" />
+</color>
+
+HTML, JavaScript, CSS, and other files that CSPro uses for its operations are located in a <i>html</i> directory. On Windows, these files are typically found here:
+
+<indent><font monospace>C:\Program Files (x86)\CSPro <definition CSPro::version />\html\</font></indent>
+
+The <logiccolor>pathname</logiccolor> and other path-related functions can return the name of this directory using the <logiccolor>Html</logiccolor> argument.
+
+If you want to access any of the files in that directory in HTML that you write, you should not reference the file using an absolute path (using a file URL) because the web browser that displays the HTML may not be able to access local files. Instead, you should use the <logiccolor>Path.getRelativePath</logiccolor> function to construct a relative path from the location of your HTML content. For example, if trying to use the PFF icon from a <link templated_reports.csdoc>report</link>:
+
+<report HTML>
+<!-- will not work when displayed in CSPro: -->
+<img src="file:///C:/Program Files (x86)/CSPro <definition CSPro::version />/html/images/pff-icon.png" />
+
+<!-- correct format: -->
+<img src="~~Path.getRelativePath(Path.getDirectoryName(filename($)),
+								 "C:/Program Files (x86)/CSPro <definition CSPro::version />/html/images/pff-icon.png")~~" />
+</report>
+
+Fortunately, the local web server treats the <i>html</i> directory as the root of the server. The above example can instead be coded as:
+
+<report HTML>
+<img src="/images/pff-icon.png" />
+</report>
+
+
+<subheader>JavaScript Libraries Included With CSPro</subheader>
+
+Some popular JavaScript libaries are included in the <i>html</i> directory:
+
+<list>
+	<li><link https://getbootstrap.com>Bootstrap</link>: "Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins."</li>
+	<li><link https://jquery.com>jQuery</link>: "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers".</li>
+	<li><link https://leafletjs.com>Leaflet</link> (Windows only): "Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps."</li>
+	<li><link https://github.com/janl/mustache.js>mustache.js</link>: "Mustache is a logic-less template syntax. It works by expanding tags in a template using values provided in a hash or object."</li>
+</list>
+
+To use these libraries, use the following code:
+
+<color HTML>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="/external/bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" href="/external/bootstrap/bootstrap-icons.css" />
+<script src="/external/bootstrap/bootstrap.bundle.min.js"></script>
+
+<!-- jQuery -->
+<script src="/external/jquery/jquery.min.js"></script>
+
+<!-- Leaflet (Windows only) -->
+<link rel="stylesheet" href="/external/leaflet/leaflet.css" />
+<script src="/external/leaflet/leaflet.js"></script>
+
+<!-- Mustache -->
+<script src="/external/mustache/mustache.min.js"></script>
+</color>
+
+
+<seealso javascript_interface.csdoc />

@@ -1,0 +1,24 @@
+﻿<title>DirCreate Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = dircreate(<arg>directory_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>dircreate</logiccolor> function creates a new directory whose name comes from the string expression <arg>directory_name</arg>. If necessary, parent directories will be added to support the creation of the directory.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if successful and 0 (false) otherwise. If the directory already exists, the function returns 1.
+
+<subheader>Example</subheader>
+
+<logic>
+string backupDirectoryName = pathname(InputFile) + "Backups";
+dircreate(backupDirectoryName);
+</logic>
+
+<seealso direxist_function.csdoc filecreate_function.csdoc />

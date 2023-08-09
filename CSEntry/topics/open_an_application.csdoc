@@ -1,0 +1,25 @@
+﻿<title>Open an Application</title>
+<context ID_FILE_OPEN />
+
+<list ordered>
+	<li>Press <b>Ctrl+O</b>; or from the <b>File</b> menu, select <b>Open Application</b>; or click <image open_button.png /> on the toolbar.</li>
+	<li>Select from the <b>Files of type:</b> at the bottom of the dialog box. You can open either a data entry application file (.ent) or a Program Information file (.pff).</li>
+	<li>If you opened a data entry application file, you will be requested to <link define_file_associations.csdoc>select the name</link> of the data file(s).</li>
+	<li>Enter the Operator ID (if required).</li>
+</list>
+
+If you already have another application open, it will be closed.
+
+CSEntry also accepts a single command-line parameter. It may be one of the two following types:
+
+<list>
+	<li><b>.ent</b>: This is a data entry application file. CSEntry will prompt for the data file(s).</li>
+	<li><b>.pff</b>: CSEntry will open both the application and the data file(s).</li>
+</list>
+
+In either case, you must specify the full filename. For example:
+
+<indent><font monospace>
+"C:\Program Files (x86)\CSPro <definition CSPro::version />\CSEntry.exe" MySurvey.pff
+"C:\Program Files (x86)\CSPro <definition CSPro::version />\CSEntry.exe" "Census Application.ent"
+</font></indent>

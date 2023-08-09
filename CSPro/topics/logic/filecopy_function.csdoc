@@ -1,0 +1,40 @@
+﻿<title>FileCopy Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = filecopy(<arg>file_name</arg>, <arg>output_file_name</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>filecopy</logiccolor> function copies one file to another file or copies a group of files to a folder. The <arg>file_name</arg> is a string expression or string <link List.csdoc>List</link> giving the source file name(s). The <arg>output_file_name</arg> is a string expression giving the destination file or folder name. The arguments can also be file handlers declared in <logiccolor>File</logiccolor> statements.
+
+You can use the wildcard characters "*" and "?" to specify a group of files to copy as the <arg>file_name</arg>. If using wildcard characters, the <arg>output_file_name</arg> must be the name of a folder.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the number of files copied. If there was an error copying files, the function returns <logiccolor>default</logiccolor>.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+filecopy("Virginia.csdb", "Virginia_Backup.csdb");
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+string backup_folder_name = pathconcat(Application, maketext("Backup%d", timestamp()));
+dircreate(backup_folder_name);
+
+filecopy(pathconcat(Application, "*.csdb"), backup_folder_name);
+</logic>
+
+
+<seealso filerename_function.csdoc fileconcat_function.csdoc />

@@ -1,0 +1,107 @@
+﻿<title>Set Behavior SpecialValues Statement</title>
+
+<i><b>Feature Upgrade</b>: Starting with CSPro 7.1, you should no longer use this function as it may soon be removed from CSPro. To replicate the behavior of the function, you can use the <logiccolor>setproperty</logiccolor> function with the argument <logiccolor>"SpecialValuesZero"</logiccolor>.</i>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+</head>
+
+<body>
+
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;
+	 font-family: Arial; font-size: 10pt; font-weight: bold;"><b><font
+	 style="font-weight: bold;">Format:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: 'Courier New';
+	 font-size: 10pt; margin-left: 12px;"><b><font style="font-weight: bold;"
+													 color="#0000FF">set</font></b>
+ <b><font style="font-weight: bold;">behavior</font></b>() <span style="font-weight: bold;">specialvalues</span>(<b><font
+	 style="font-weight: bold;">zero</font></b>) <b><font style="font-weight: bold;">on
+ | off</font></b>;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Description:</font></b></p>
+<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">The</font> <b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">set behavior specialvalues</font></b> <font style="font-family: Arial;
+															 font-size: 10pt;"
+															 face="Arial"
+															 size="2">statement
+ allows special values to be treated as zero (0) values during arithmetic
+ operations, including addition, subtraction, multiplication, division,
+ and modulo. By default this behavior is disabled. The set behavior statement
+ affects all numeric data items from the point where it is executed onward.
+ To limit its scope, it must be turned on and off at appropriate times.</font></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">Example:</font></b></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 24px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;"><span style="color: #0000ff;">PROC</span>
+ <span style="color: #0000ff;">GLOBAL</span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 24px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;"><span style="color: #0000ff;">numeric</span>
+ var1,var2,var3;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;"><span style="color: #0000ff;">numeric</span>
+ result;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 24px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 24px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;"><span style="color: #0000ff;">PROC</span>
+ SUMMATION</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 24px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;">var1 = <span
+	 style="color: #ff0000;">5</span>;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;">var2 = <span
+	 style="color: #ff0000;">10</span>;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;">var3 = <span
+	 style="color: #0000ff;">default</span>;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;"><span style="color: #0000ff;">set</span>
+ behavior() specialvalues(zero) on;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;">result =
+ var1 + var2 + var3; <span style="color: #008000;">// result will be 15
+ </span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;"><span style="color: #0000ff;">set</span>
+ behavior() specialvalues(zero) off;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;">result =
+ var1 + var2 + var3; <span style="color: #008000;">// result will be DEFAULT
+ </span></p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 48px;
+	 font-size: 10pt; font-family: 'Courier New', monospace;">&#160;</p>
+<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
+<p style="margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -18.00pt; text-align: left;"><b><font style="font-family: Arial;
+														 font-size: 10pt;
+														 font-weight: bold;"
+														 face="Arial" size="2">See
+ also:</font></b> <a href="special_values.html"><font style="font-family: Arial;
+													 font-size: 10pt;"
+													 face="Arial" size="2">Special
+ Values</font></a></p>
+</body>
+</html>
+
+
+<html><!---♻---></html>

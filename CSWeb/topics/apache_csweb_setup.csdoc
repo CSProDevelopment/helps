@@ -1,0 +1,36 @@
+﻿<title>Apache CSWeb Setup</title>
+
+Below we have provided a general overview of the steps required to run CSWeb on an Apache server. In this example, it is assumed WampServer has been installed and configured. <b>WampServer is only meant for a development environment.</b> WampServer's configurations for Apache, MySQL, and PHP will be optimized for development and not performance or security. In a production environment WampServer (or XAMPP) should not be used. Instead, Apache, MySQL, and PHP should be installed individually. On Linux this is referred to as the LAMP stack and on Windows as the WAMP stack.
+
+<subheader>Add Project Files</subheader>
+
+Copy the <b>root directory</b> of your CSWeb project to <b>&lt;Drive&gt;:\wamp64\www</b>. The result may look like <b>C:\wamp64\www\csweb</b>. Note that with Apache, the case of the folder name matters. <b>CSWeb</b> and <b>csweb</b> will require different URLs to access the server. For simplicity, we recommend using all lowercase e.g. <b>csweb</b>.
+
+<subheader>Start Apache and MySQL</subheader>
+
+Make sure Apache and MySQL are running.
+
+<subheader>Add Database</subheader>
+
+Add a new database to use for CSWeb using the MySQL command line, MySQL workbench, or phpMyAdmin. Create a user with access to the new database. For security reasons the database user should have a corresponding password.
+
+<subheader>Run Setup Script</subheader>
+
+Open a browser and in our case navigate to <b>localhost/csweb/setup</b>. The setup script will first check to make sure your server meets the prerequisites. If your server does not pass, refer to the <topic minimum_requirements.csdoc />. Update your server and run the script again. If your server passed the script will ask for the last few configuration details.
+
+<list ordered>
+	<li> <b>Database name</b>: the name of the database you created earlier. </li>
+	<li> <b>Hostname</b>: this will typically be <b>localhost</b>. </li>
+	<li> <b>Database username</b>: by default this will be <b>root</b>. </li>
+	<li> <b>Database password</b>: by default this may be <b>blank</b>. Do not use the default password for a live server. </li>
+	<li> <b>CSWeb admin password</b>: create a password to pair with the default user <b>admin</b> to log into CSWeb. </li>
+</list>
+
+Now verify the final two fields.
+
+<list ordered>
+	<li> <b>Path to files directory</b>: for this setup, <b>C:\wamp64\www\csweb\files</b> </li>
+	<li> <b>CSWeb API URL</b>: for this setup, <b>http://localhost/csweb/api</b> </li>
+</list>
+
+If everything is correct you will hit next and receive the "Setup Complete!" message. From here log in using <b>admin</b> as the username and the <b>CSWeb admin password</b> you just created. Once you have run the setup script you will <b>not</b> be able to run it again unless you delete <b>src\AppBundle\config.php</b>.

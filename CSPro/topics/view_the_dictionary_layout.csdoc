@@ -1,0 +1,23 @@
+﻿<title>View the Dictionary Layout</title>
+<context ID_VIEW_LAYOUT />
+
+From the toolbar, press <image layout.jpg />, or press <b>Ctrl+L</b>, or select Layout from the View menu. Any of these options will toggle the display of the current layout of the data dictionary. The display will appear in the lower half of the right-hand screen.
+
+<image ddlayout.jpg />
+
+The layout shows you where, physically, each item in each record is located, how much space has been allocated to it, and if there are any gaps in your file (which is possible when the file's status is <link relative_and_absolute_mode.csdoc>absolute</link>). The color scheme denotes the following:
+
+<image layrt.jpg /> denotes the <topic record_type.csdoc />
+
+<image layid.jpg /> denotes <link identification_items.csdoc>ID Items</link>
+
+<image layitem.jpg /> denotes <link item_description.csdoc>Record Items</link>
+
+<image laysub.jpg /> denotes <topic sub_items.csdoc />
+
+<list>
+	<li>Click on the item on the layout window to move the cursor to the specific item in the dictionary window.</li>
+	<li>Single click on an item to move to the item's definition.</li>
+	<li>Double click on an item to show its value set(s).</li>
+	<li>Press Ctrl+L a second time to close the view.</li>
+</list>

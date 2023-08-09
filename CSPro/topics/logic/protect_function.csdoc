@@ -1,0 +1,34 @@
+﻿<title>Protect Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = protect(<arg>symbol</arg>, <arg>protect_property</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>protect</logiccolor> function modifies the <link change_field_properties.csdoc>protected property</link> of the field <arg>symbol</arg>. If <arg>symbol</arg> is a block, group, form, or dictionary, the function will try to apply the protected property to all fields belonging to that symbol. The numeric expression <arg>protect_property</arg> turns the protected property off (if zero) or on (if nonzero).
+
+<subheader>Return Value</subheader>
+
+The function returns the number of items whose protected property was successfully changed.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC RELATIONSHIP
+
+onfocus
+
+	// automatically set the first person to be the head of the household
+	// and protect the field so that it is not shown to the enumerator
+	if curocc() = 1 then
+		RELATIONSHIP = 1;
+		protect(RELATIONSHIP, true);
+	else
+		protect(RELATIONSHIP, false);
+	endif;
+</logic>
+
+<seealso setproperty_function.csdoc />

@@ -1,0 +1,11 @@
+﻿<title>Converting an ISSA Data Entry Application</title>
+
+If you have an existing ISSA Dictionary that contains forms, CSPro provides a utility to <link converting_within_issa.csdoc>convert</link> it to a CSPro form file (a dictionary will be generated as well).
+
+At any time in CSPro, you can go to the <b>Tools</b> menu option. Select <b>Convert Dictionary</b> from the menu, then choose to convert <b>Between CSPro and ISSA</b> in the opening dialog box.
+
+Next, state that you'd like to convert from <b>ISSA to a CSPro Forms and Data Dictionary</b>. Provide the name of the original ISSA dictionary file, and the name you would like to call the CSPro form file to be generated (a CSPro dictionary file will also be created, and its name will be based on the form file name). Press <b>OK</b> when ready and the files will be created for you. You are then ready to fine-tune the layout of the forms as desired.
+
+Note that this creates a stand-alone dictionary and form file; it does not create a data entry application. Until there exists a data entry application, you cannot write logic for the form variables, nor can you enter data based on this form file. If you would like to generate a data entry application, proceed as you would for creating a new data entry application. When you are asked to provide the name of the form file, simply use the same form file name that was used during the conversion, and CSPro will complete the task.
+
+<b>Note: The Convert Dictionary tool is no longer distributed with CSPro but is instead available on <link https://<definition csprousers_website />><definition csprousers_website /></link>.</b>

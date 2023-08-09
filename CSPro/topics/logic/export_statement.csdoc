@@ -1,0 +1,58 @@
+﻿<title>Export Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+export to file_name
+		 『rec_name(record_name | alpha_exp)』
+		 『rec_type(record_name | alpha_exp)』
+		 『case_id (『item_list]』)』
+		 record_item_list;
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The export statement writes a record to an export file. Export statements can only be coded in <link level_description.csdoc>level</link> procedures.
+
+In the <logiccolor>to</logiccolor> phase, the <b>file_name</b> is a name declared in the <topic File_statement.csdoc /> in <link cspro_program_structure.csdoc>PROC GLOBAL</link>.
+
+The <logiccolor>rec_name</logiccolor>, <logiccolor>rec_type</logiccolor>, and <logiccolor>case_id</logiccolor> phrases can each be coded only once, but can be coded in any order. They all must be coded before <b>record_item_list</b>. The order in which rec_type and case_id are coded determines the order of output of the record type and case ids in the exported record.
+
+The <logiccolor>rec_name</logiccolor> phrase is optional and is only needed when data are exported to CSPro format. When used, the <link labels.csdoc>label</link> and <link names.csdoc>name</link> from the record name in the input dictionary is used for the label and name of the record type created in the exported dictionary. If an <b>alpha_exp</b> is coded, then the label of the record type in the exported data dictionary is the result of the alphanumeric expression and the name is derived from the label. If rec_name is not coded, the labels and record names in the newly-created dictionary will be RECORD001, RECORD002, etc.
+
+The <logiccolor>rec_type</logiccolor> phrase is optional. When coded it places a record type on the exported data record. If a record_name is coded, then the record type value from the record name in the input data dictionary is placed on the exported data file. If an alpha_exp is coded, then the value of the expression is placed on the exported data file.
+
+The <logiccolor>case_id</logiccolor> phrase is optional. When coded it is used to place <link identification_items.csdoc>case identifiers</link> on the exported data record. If case_id() is coded then ALL the case ids from the level in which the export statement is coded are placed on the exported data record. If no case_id phrase is coded and export format is CSPro, the ALL case ids from ALL levels will be output.
+
+The <b>record_item_list</b> specifies the contents of the exported data record. This can be any combination of record names or item names.
+
+Where possible users are encouraged to use the <link CSExport::introduction_to_export_data.csdoc>Export Data</link> tool instead of the export statement.
+
+
+<subheader>Example</subheader>
+
+<logic>
+// Export fertility data for women 15 to 54 years old
+PROC GLOBAL
+
+File SPSS_EXPORT;
+
+PROC CENSUS_2000_DICTIONARY_FF
+
+PROC QUEST // export done at LEVEL procedure
+
+	set behavior() export(SPSS, ItemOnly);
+
+	do numeric i = 1 until i > totocc(PERSON)
+		if P03_SEX(i) = 2 and P04_AGE(i) in 15:54 then
+			export to SPSS_EXPORT
+					  case_id(PROVINCE, DISTRICT, EA, HU, HH)
+					  LINE(i), P18_BORN(i), P19_LIVING(i), P20_BORN12(i);
+			errmsg("Record exported for female ages 15-54") summary;
+		endif;
+	enddo;
+</logic>
+
+
+<seealso set_behavior_export_statement.csdoc File_statement.csdoc setfile_function.csdoc CSExport::introduction_to_export_data.csdoc />

@@ -1,0 +1,37 @@
+﻿<title>Reenter Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+reenter 『<arg>field_name</arg>』;
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>reenter</logiccolor> statement is used to force the entry operator to reenter the contents of the current field or of a field that was entered earlier. The optional <arg>field_name</arg> is either the name of a field or is a string variable specifying the name of the field. If the <arg>field_name</arg> is not specified, the current field is reentered. The field to be reentered must be earlier on the data path than the current variable. If it is not, an error message will be displayed during data entry. If you do not know whether the field is earlier in the data path, use the <logiccolor>move</logiccolor> statement.
+
+When a <logiccolor>reenter</logiccolor> statement is executed, the <logiccolor>preproc</logiccolor> of the reentered field will not be executed. The <logiccolor>postproc</logiccolor> of the field will be executed normally after the field has been reentered. If the field is on a different form than the current field, that form will be displayed automatically.
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC RELATIONSHIP
+
+	if curocc() = 1 and RELATIONSHIP <> 1 then
+		errmsg("The head of household must be entered on the first row.");
+		reenter;
+	endif;
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC DOB_YEAR
+
+	if DOB_YEAR = CensusYear and DOB_MONTH > CensusMonth then
+		errmsg("The date of birth cannot be after the census date. Reenter the month and year.");
+		reenter DOB_MONTH;
+	endif;
+</logic>
+
+<seealso advance_statement.csdoc ask_statement.csdoc move_statement.csdoc skip_statement.csdoc />

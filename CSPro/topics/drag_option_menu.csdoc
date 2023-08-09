@@ -1,0 +1,51 @@
+﻿<title>Drag Options Menu</title>
+<context IDD_DRAG_OPTS ID_EDIT_DRAGOPTS />
+
+Whenever you automatically generate data entry forms, drag an entire dictionary <image tree_icon_dictionary.png />, or drag a dictionary record <image tree_icon_record.png /> onto a form, this dialog box will appear. When you drag an individual dictionary item to a form, this dialog will not appear, but the settings in effect will be used. To access this dialog box without dragging, select <b>Drag</b> from the <b>Options</b> menu.
+
+<center><image drag_options.png /></center>
+
+The following choices are available to customize your drag-and-drop operation:
+
+<subheader>Field Label Options</subheader>
+
+When fields are dragged onto a form from the dictionary, the dictionary text associated with the item is usually also included. You can select whether the item's <link labels.csdoc>label</link> or the item's <link names.csdoc>name</link> is dragged onto the form.
+
+You can also select whether the text is placed to the left or to the right of the data entry box. (This setting has no effect if the item is rostered.)
+
+If you select to use the item labels, you can link the field label to the item. That means that if you change the item's label in the dictionary, then the label on the form will automatically adjust.
+
+
+<subheader>Roster Options</subheader>
+
+This affects dictionary records and items with more than one occurrence. To enter this type of data, you either need a form that repeats (to allow for the multiple occurrences of the data), or you need a <link data_entry_elements.csdoc>roster</link>.
+
+If you choose <b>Horizontal</b>, CSPro will make rosters in which the occurrences are the rows and the fields are the columns. In CSEntry the cursor will move from left to right by default.
+
+If you choose <b>Vertical</b>, CSPro will make rosters in which the occurrences are the columns and the fields are the rows. In CSEntry the cursor will move from top to bottom.
+
+If you choose <b>Don't Roster</b>, CSPro will make forms that repeat.
+
+If you select <b>Use occurrence labels in roster</b>, the roster's rows, instead of being labeled 1, 2, 3, etc., will use the <link occurrence_labels.csdoc>occurrence labels</link> defined for the item or record in the dictionary.
+
+
+<subheader>Capture Type Options</subheader>
+
+When <b>CAPI Mode</b> is selected, if the item has a valid value set that can be can be represented by a <link capture_types.csdoc>capture type</link> other than a text box, the item will be added to the form with a preselected capture type. The capture type selected depends on the type and length of the item but can be changed once the item is on the form.
+
+If <b>Key-From-Paper Mode</b> is selected, the capture type will default to a text box.
+
+
+<subheader>Require Enter Key on Entry</subheader>
+
+This option determines whether the <b>Enter</b> key must be pressed to advance an operator to the next data entry field.
+
+If left unchecked, the cursor will automatically advance to the next field as soon as the maximum number of characters are entered for the field (that is, if the field length is two, then after entering two characters the cursor will advance to the next field). An operator can always hit the <b>Enter</b> key to complete a field without having entered the full complement of digits.
+
+If this option is checked, the operator must always press the <b>Enter</b> key to advance to the next field.
+
+<subheader>Use Subitems When Present</subheader>
+
+If you have items with <link sub_items.csdoc>subitems</link>, you may check this box to place the subitems, instead of the item, on the form. For example, if you have a <logiccolor>DATE</logiccolor> item that contained the three subitems <logiccolor>DAY</logiccolor>, <logiccolor>MONTH</logiccolor>, and <logiccolor>YEAR</logiccolor>, the subitems, rather than the item <logiccolor>DATE</logiccolor>, would be placed on the form. However, if any of the subitems overlap, the item will be used instead. (This setting has no effect if no subitems are present.)
+
+If this box is left unchecked, items will always be used.

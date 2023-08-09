@@ -1,0 +1,24 @@
+﻿<title>Data Dictionary Screen Layout</title>
+
+
+When finished creating the data dictionary application, you will see the screen divided into two windows. The screen on the left displays the <link data_dictionary_tree.csdoc> dictionary tree</link>:
+
+<center><image screendd_init.jpg /></center>
+
+CSPro created the dictionary shown (Poverty) with one level (Poverty questionnaire), and that level contains a set of ID Items (Id Items) and one record (Poverty record).
+
+The screen on the right displays detailed information for the highlighted object in the left-hand screen. For example, if in the left-hand screen the focus (cursor or highlight) is on the first line (<image datadict.jpg />), the right-hand screen will display information about the dictionary as a whole. If the focus in the left-hand screen is moved to the second line (<image level.jpg />) questionnaire level, the right-hand screen will display information about the questionnaire (case), which is the basic element of the file. As the focus is moved down the dictionary tree, the right-hand screen changes to reflect the different items of interest at each successive level.
+
+Note the tabs at the bottom of the left-hand view marked "Files" and "Dicts". Clicking on either of these tabs will bring up the appropriate tree. Within each tree, <b>Ctrl+T</b> toggles the view. For the File Tree, the two views will show either the internal or external names of the files; for the Dictionary Tree, the two views will show either the unique dictionary <link names.csdoc>name</link> or the dictionary <link labels.csdoc>label</link> of each element.
+
+The following is a good strategy for building your dictionary to reflect the data to be collected from your questionnaire:
+
+<list>
+<li>The first thing we suggest you do is to change the <link level_properties.csdoc> level properties</link> to reflect your intended usage.</li>
+<li>Next, determine what <link identification_items.csdoc>ID items</link> are necessary&mdash;remember that ID Items set will appear on each record in the current level, as well as all records in any lower levels.</li>
+<li>Third, create any  additional records for the level, before changing the <link record_properties.csdoc>record properties</link> as needed (e.g., setting the maximum number of occurrences for each record, stipulating whether the record is required or optional, and adding a <link record_type.csdoc>record type</link>, should you have 2+ records).</li>
+<li>Fourth, you're ready to add in <link add_or_modify_items.csdoc>dictionary items</link>&mdash;these generally have a 1-to-1 correspondence to each question on your questionnaire.</li>
+<li>Finally, you're ready to make a final pass to add in <link add_or_modify_value_sets.csdoc>value sets</link> and <link add_or_modify_values.csdoc>values</link> for each data item. This is a critical step, especially for numeric items, and should not be ignored. It determines the valid range of responses for each data item.</li>
+</list>
+
+<seealso dictionary_property_panel.csdoc />

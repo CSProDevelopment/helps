@@ -1,0 +1,163 @@
+﻿<title>SqlQuery Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+d = sqlquery(<arg>sqlite_database</arg>『, <arg>result_set</arg>』, <arg>sql_query</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>sqlquery</logiccolor> function executes a query on a <link https://sqlite.org>SQLite</link> database and returns a result set in a variety of formats. This function is intended for advanced users who are familiar with writing SQL expressions. While many files used by CSPro applications are text files, there are some files that are stored as SQLite databases, including <link csdb_relational_format.csdoc>CSPro DB data files</link> and <link paradata.csdoc>paradata logs</link>. You can query these files with this function.
+
+
+The first argument, <arg>sqlite_database</arg>, must be one of the following:
+
+<table 2>
+	<cell><arg>sqlite_database</arg></cell><cell><b>Description</b></cell>
+	<cell><logiccolor>paradata</logiccolor></cell><cell>The query will be executed on the currently open paradata log. This is the same as: <logiccolor>paradata(query, ...)</logiccolor>.</cell>
+	<cell><arg>dictionary_name</arg></cell><cell>The data source pointed to by <arg>dictionary_name</arg> must be of type CSPro DB, Encrypted CSPro DB, or text. The query will be executed on the file associated with this data source. If working with text files, you can query the file's <link index_file_csidx.csdoc>index</link>.</cell>
+	<cell><arg>file_name</arg></cell><cell>The string expression <arg>file_name</arg> gives the file name of a SQLite database. The database will be opened, the query executed, and then the database will be closed. This allows you to work with databases maintained outside of CSPro. You can query <link encrypted_data.csdoc>encrypted databases</link> by specifying a password in a <link connection_string.csdoc>connection string</link> or by having an operator enter the password manually.</cell>
+</table>
+
+
+The optional second argument, <arg>result_set</arg>, indicates the destination for the result set generated following the execution of the query. If you do not provide a result set for your query, the query must be a scalar query (one that returns a single result such as <logiccolor>"SELECT COUNT(*) FROM ..."</logiccolor>). The result set must be one of the following:
+
+<table 2>
+	<cell><arg>result_set</arg></cell><cell><b>Description</b></cell>
+	<cell><arg>record_name</arg></cell><cell>The results of a query can fill a CSPro dictionary's record. The <arg>record_name</arg> must point to a record in a <link working_storage_file.csdoc>working storage dictionary</link>. The function will look at the column names of the result set to determine which columns of the results get stored in which items of the record. The results cannot be stored in subitems or multiply occurring items.</cell>
+	<cell><arg>list_name</arg></cell><cell>Because <link List.csdoc>List</link> objects are only one-dimensional, only the first column of results will be stored in <arg>list_name</arg>, which can be of type <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. Because the size of a List is dynamic, the length of the List will be equal to the number of rows in the result set (up to a maximum of 10,000 rows).</cell>
+	<cell><arg>array_name</arg></cell><cell>You can use one- or two-dimensional <link Array.csdoc>Array</link> objects of type <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. When using a one-dimensional array, only the first column of results will be stored in <arg>array_name</arg>. When using a two-dimensional array, each column of results will be stored in a separate column of <arg>array_name</arg>.</cell>
+</table>
+
+Using a working storage record for the results is advantageous because the results are stored in their proper type. Because Lists and Array objects are all of one type (<logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>), some results may be converted to a invalid type (for example, a string value may be stored in a numeric array).
+
+
+The final argument, <arg>sql_query</arg>, is a string expression containing the SQL query.
+
+
+<subheader>Return Value</subheader>
+
+If executing a scalar query, the function returns the queried value. Otherwise, the function returns the number of rows stored in the result set. If there was an error executing the query, then the function returns <logiccolor>default</logiccolor>.
+
+
+<subheader>Example - Scalar Query on CSPro DB File</subheader>
+
+<logic>
+numeric numberVerifiedCases = sqlquery(SURVEY_DICT, "SELECT COUNT(*) FROM cases WHERE cases.verified != 0;");
+errmsg("%d cases have been verified", numberVerifiedCases);
+</logic>
+
+
+<subheader>Example - Query on CSPro DB File, Storing Results in List</subheader>
+
+<logic>
+List string verifiedCaseKeys;
+
+sqlquery(DICT_NAME, verifiedCaseKeys, "SELECT cases.key FROM cases WHERE cases.verified != 0;");
+
+do numeric ctr = 1 while ctr <= verifiedCaseKeys.length()
+	errmsg("Verified case key: %s", verifiedCaseKeys(ctr));
+enddo;
+</logic>
+
+
+<subheader>Example - Query on Paradata Log, Storing Results in Array</subheader>
+
+<logic>
+string SessionQuery =
+	"SELECT operatorid_info.operatorid, event_start.time, event_end.time "
+	"FROM session_event session_event_start "
+	"JOIN event event_start ON session_event_start.id = event_start.id "
+	"JOIN session_event session_event_end "
+	"JOIN event event_end ON session_event_end.id = event_end.id AND event_start.session_instance = event_end.session_instance "
+	"JOIN session_instance ON event_start.session_instance = session_instance.id "
+	"JOIN session_info ON session_instance.session_info = session_info.id "
+	"JOIN operatorid_info ON session_info.operatorid_info = operatorid_info.id "
+	"WHERE session_event_start.action = 1 AND session_event_end.action = 0 "
+	"ORDER BY event_start.time;";
+
+Array string entrySessions(500, 3);
+
+numeric numberSessions = sqlquery(paradata, entrySessions, SessionQuery);
+
+do numeric ctr = 1 while ctr <= numberSessions
+	// columns two and three are numeric values, but because they are stored in a
+	// string array, we must convert them before working with them
+	numeric startTimestamp = tonumber(entrySessions(ctr, 2));
+	numeric endTimestamp = tonumber(entrySessions(ctr, 3));
+
+	errmsg("Operator '%s' worked on %s at %s for %0.2f minutes",
+		entrySessions(ctr, 1),
+		edit("9999-99-99", sysdate("YYYYMMDD", startTimestamp)),
+		edit("99:99", systime("HHMM", startTimestamp)),
+		( endTimestamp - startTimestamp ) / 60);
+enddo;
+</logic>
+
+
+<subheader>Example - Query on Paradata Log, Storing Results in Working Storage Record</subheader>
+
+This example displays the same results as the previous example but instead stores the information in a working storage record. This multiply occurring record, <logiccolor>WS_ENTRY_SESSIONS_REC</logiccolor>, contains three items: <logiccolor>OPERATOR_NAME</logiccolor>, <logiccolor>START_TIMESTAMP</logiccolor>, and <logiccolor>END_TIMESTAMP</logiccolor>, with only the first item being alphanumeric. Note that the result set's column names are specified using <logiccolor>"AS"</logiccolor>.
+
+<logic>
+string SessionQuery =
+	"SELECT operatorid_info.operatorid AS OPERATOR_NAME, event_start.time AS START_TIMESTAMP, event_end.time AS END_TIMESTAMP "
+	"FROM session_event session_event_start "
+	"JOIN event event_start ON session_event_start.id = event_start.id "
+	"JOIN session_event session_event_end "
+	"JOIN event event_end ON session_event_end.id = event_end.id AND event_start.session_instance = event_end.session_instance "
+	"JOIN session_instance ON event_start.session_instance = session_instance.id "
+	"JOIN session_info ON session_instance.session_info = session_info.id "
+	"JOIN operatorid_info ON session_info.operatorid_info = operatorid_info.id "
+	"WHERE session_event_start.action = 1 AND session_event_end.action = 0 "
+	"ORDER BY event_start.time;";
+
+sqlquery(paradata, WS_ENTRY_SESSIONS_REC, SessionQuery);
+
+do numeric ctr = 1 while ctr <= count(WS_ENTRY_SESSIONS_REC)
+	errmsg("Operator '%s' worked on %s at %s for %0.2f minutes",
+		strip(OPERATOR_NAME(ctr)),
+		edit("9999-99-99", sysdate("YYYYMMDD", START_TIMESTAMP(ctr))),
+		edit("99:99", systime("HHMM", END_TIMESTAMP(ctr))),
+		( END_TIMESTAMP(ctr) - START_TIMESTAMP(ctr) ) / 60);
+enddo;
+</logic>
+
+
+<subheader>Example - Using Callback Functions</subheader>
+
+Adding the directive <logiccolor>sql</logiccolor> after the <logiccolor>function</logiccolor> keyword when defining a <link function_statement.csdoc>user-defined function</link> indicates that the SQLite query can call back into CSPro logic. These functions can accept <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor> arguments as part of the query. In the following example, the same results are displayed as in the previous two examples but without having to store the result set.
+
+<logic>
+PROC GLOBAL
+
+function sql DisplayEntrySession(string operatorName, numeric startTime, numeric endTime)
+	errmsg("Operator '%s' worked on %s at %s for %0.2f minutes",
+		operatorName,
+		edit("9999-99-99", sysdate("YYYYMMDD",startTime)),
+		edit("99:99", systime("HHMM",endTime)),
+		( endTime - startTime ) / 60);
+end;
+
+PROC EXAMPLE
+
+	string SessionQuery =
+		"SELECT DisplayEntrySession(operatorid_info.operatorid, event_start.time, event_end.time) "
+		"FROM session_event session_event_start "
+		"JOIN event event_start ON session_event_start.id = event_start.id "
+		"JOIN session_event session_event_end "
+		"JOIN event event_end ON session_event_end.id = event_end.id AND event_start.session_instance = event_end.session_instance "
+		"JOIN session_instance ON event_start.session_instance = session_instance.id "
+		"JOIN session_info ON session_instance.session_info = session_info.id "
+		"JOIN operatorid_info ON session_info.operatorid_info = operatorid_info.id "
+		"WHERE session_event_start.action = 1 AND session_event_end.action = 0 "
+		"ORDER BY event_start.time;";
+
+	sqlquery(paradata, SessionQuery);
+</logic>
+
+
+<seealso csdb_relational_format.csdoc paradata_function.csdoc />

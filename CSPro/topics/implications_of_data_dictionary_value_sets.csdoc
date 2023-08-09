@@ -1,0 +1,127 @@
+﻿<title>Implications of Data Dictionary Value Sets</title>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<style type="text/css">/*<![CDATA[*/
+body {
+	background-color: #ffffff;
+}
+/*]]>*/</style>
+</head>
+
+<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+
+<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
+	 text-indent: -11.50pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Within
+ the data dictionary, the user can define multiple value sets for each
+ data item. For use in Tabulation applications, these sets may have value
+ names for both individual values and value ranges. If one table requires
+ five-year age groups but another uses single years of age, both requirements
+ can be met by having two value set definitions for age.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
+ an item in the dictionary has more than one value set, you can choose
+ which of the value sets to use when adding that item to a table. If you
+ drag the item itself from the dictionary, CSPro will add the first value
+ set for that item to the table. However, if you drag one of the value
+ sets underneath the item in the dictionary tree window, CSPro will use
+ the value set that you dragged.</font></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
+ creating a value set, you should take into account the following:</font></p>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Value
+	 labels must be given for the value set since these appear as text
+	 (row or column) in the tables. If no label is given, the corresponding
+	 row/column label will be blank.</font></p></li>
+</ul>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Counts
+	 associated with the value labels are based on the item values defined
+	 for the label. This might be a single value, e.g., Male (sex=1); a
+	 range of values, e.g., Under 5 years old (age from 0 to 4); disjoint
+	 values, e.g., Teacher (occupation=23, 42, or 67); or some combination
+	 of these. That is, each value in the data file that falls into a particular
+	 range/value in the value set will cause the count to be incremented
+	 for the corresponding cell in the table.</font></p></li>
+</ul>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Counts
+	 are ONLY made in the table for item values defined in the value set.
+	 Values in the data file that are not defined in the value set are
+	 not counted. In the example below, the 'Marital Status' value set
+	 is missing codes 2 and 3 from its value set and the total reflects
+	 only the values listed in the value set. The exception to this rule
+	 is when</font> <a href="include_exclude_special_values_in_a_variable.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Special
+	 Values</font></a> <font style="font-family: Arial; font-size: 10pt;"
+							 face="Arial" size="2">are included in the</font>
+	 <a href="tally_attributes_for_a_table.html"><font style="font-family: Arial;
+														 font-size: 10pt;"
+														 face="Arial" size="2">Tally
+	 Attributes</font></a> <font style="font-family: Arial; font-size: 10pt;"
+								 face="Arial" size="2">for the table or
+	 subtable.</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><a
+	 href="tabulate_items_with_multiple_occurrences.html"><img src="xtabmiss.jpg"
+	 alt="Table and Related Value Sets" title="Table and Related Value Sets"
+	 width="725" height="364" border="0" /></a></p>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
+	 the current version of the software, alphanumeric items CANNOT be
+	 tallied.</font></p></li>
+</ul>
+<ul>
+	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
+												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">By
+	 default, certain summary statistics (median, n-tiles and mode) are
+	 calculated using the counts in the values/ranges in the value set.
+	 The accuracy of these summary statistics is highly dependent on the
+	 number and size of values/ranges in the value set. If the range for
+	 a particular variable is large and there are a small number of categories
+	 in the value set, these statistics will be inaccurate. For best results,
+	 when calculating median, mode and n-tiles, use either single values
+	 for discrete variables or small, uniformly sized ranges for continuous
+	 variables. Note that by setting the appropriate options for n-tiles
+	 and median, you can use different categories for the n-tile/median
+	 calculation than those in the value set. See</font> <a href="tally_attributes_for_a_variable.html"><font
+	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Tally
+	 Attributes for a Variable</font></a> <font style="font-family: Arial;
+												 font-size: 10pt;" face="Arial"
+												 size="2">for details.</font></p></li>
+</ul>
+<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
+	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
+	 size="2">See Also:</font></b> <font style="font-family: Arial; font-size: 10pt;"
+										 face="Arial" size="2"><a href="include_exclude_special_values_in_a_variable.html">Include/Exclude
+ Special Values in a Variable</a>, <a href="tally_attributes_for_a_table.html">Tally
+ Attributes for a Table</a>, <a href="value_sets_description.html">Value
+ Sets Description</a>, <a href="create_a_table.html">Create a Table</a>,
+ <a href="add_summary_statistics_to_a_table.html">Add Summary Statistics
+ to a Table</a>, <a href="tabulate_categories_with_disjoint_values.html">Tabulate
+ categories with disjoint values</a>, <a href="debug_table_totals.html">Debug
+ Table Totals</a></font></p>
+</body>
+</html>
+
+
+<html><!---♻---></html>
+<build-extra "../images/xtabmiss.jpg" />

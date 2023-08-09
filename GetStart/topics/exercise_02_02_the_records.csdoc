@@ -1,0 +1,36 @@
+﻿<title>Step 2: The Records</title>
+
+<subheader>(Exercise 2, Create the Data Dictionary)</subheader>
+
+A <link CSPro::record_description.csdoc>record</link> usually corresponds to a section of a questionnaire and consists of a group of related questions.
+
+By default, CSPro creates one record. Our tutorial application will have two records, a <b>Person Record</b> and a <b>Housing Record</b>. We will change the one record that CSPro generated to <b>Person Record</b>, and then add the <b>Housing Record</b>.
+
+First, we will change the one record that CSPro generated to <b>Person Record</b>:
+
+<list ordered>
+	<li>Right-click on <b>MyDict record</b> on the tree on the left, then select <b>Modify Record</b>.</li>
+	<li>Type <b>Person record</b> as the <b>Record Label</b>, then press <b>Enter</b>.</li>
+	<li>Type <b>PERSON_RECORD</b> as the <b>Record Name</b>, then press <b>Enter</b>.</li>
+	<li>Press <b>Enter</b> to leave the <b>Type Value</b> as is.</li>
+	<li>Press <b>N</b> to change <b>Required</b> from <b>Yes</b> to <b>No</b>, then press <b>Enter</b>. Our application can have households with no people, so person records are not required for us.</li>
+	<li>Our application can have up to 10 people in a household, so type <b>10</b>, then <b>Enter</b>, to change <b>Max</b> and complete the changes to this record.</li>
+</list>
+
+Next we will add the <b>Housing Record</b>:
+
+<list ordered>
+	<li>Right-click on <b>Person record</b> on the tree on the left, then select <b>Add Record</b>.</li>
+	<li>Type <b>Housing record</b> as the <b>Record Label</b>, the press <b>Enter</b>.</li>
+	<li>Press <b>Enter</b> to accept <b>HOUSING_RECORD</b> as the <b>Record Name</b>.</li>
+	<li>Press <b>Enter</b> to leave the <b>Type Value</b> as is.</li>
+	<li>Press <b>Enter</b> to leave <b>Required</b> as <b>Yes</b>.</li>
+	<li>Press <b>Enter</b> to leave <b>Max</b> as 1 and start a new record.</li>
+	<li>Press <b>Esc</b> on the blank record to finish making these changes.</li>
+</list>
+
+When you have completed this step the screen should look something like:
+
+<center><image exercise_02_02_adding_records.png /></center>
+
+Continue to the next step: <topic exercise_02_03_creating_the_items.csdoc />.

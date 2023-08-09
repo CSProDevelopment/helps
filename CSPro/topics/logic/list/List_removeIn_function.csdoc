@@ -1,0 +1,47 @@
+﻿<title>List.removeIn Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = list_name.removeIn(<arg>in_list</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>List.removeIn</logiccolor> function removes from a <link List.csdoc>List</link> any values that are specified in an <link in_operator.csdoc>in list</link>. The values in <arg>in_list</arg> must be numeric for a numeric List and string for a string List. Note that the <logiccolor>in</logiccolor> operator is case sensitive, so when using a string List, specifying <logiccolor>"Cindy"</logiccolor> will not remove <logiccolor>"cindy"</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the number of values removed from the List. If the List is read-only, the function returns <logiccolor>default</logiccolor>.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+List household_ages;
+// ...
+// values: 69, 57, 55, 33, 22, 44, 34, 5
+
+household_ages.removeIn(0:15, 50:99);
+// result: 33, 22, 44, 34
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+List string all_case_keys;
+keylist(CENSUS_DICT(CaseStatus.All), all_case_keys);
+
+List string not_deleted_case_keys;
+keylist(CENSUS_DICT(CaseStatus.NotDeleted), not_deleted_case_keys);
+
+List string deleted_case_keys = all_case_keys;
+deleted_case_keys.removeIn(not_deleted_case_keys);
+</logic>
+
+
+<seealso List.csdoc List_clear_function.csdoc List_remove_function.csdoc List_removeDuplicates_function.csdoc />

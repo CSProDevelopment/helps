@@ -1,0 +1,25 @@
+﻿<title>Retrieve Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = retrieve(<arg>dictionary_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>retrieve</logiccolor> function reads a case into memory from the current position of an external file. It is intended for use only after a successful execution of the <logiccolor>locate</logiccolor> function. The <arg>dictionary_name</arg> must refer to an external dictionary.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if a case is retrieved and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+if locate(SURVEY_DICT,>=,"55") and retrieve(SURVEY_DICT) then
+	// process the case
+endif;
+</logic>
+
+<seealso locate_function.csdoc loadcase_function.csdoc />

@@ -1,0 +1,62 @@
+﻿<title>Geometry Object</title>
+
+In logic, a <logiccolor>Geometry</logiccolor> is an object that can be used to display and manipulate vector geometry: points, lines, and polygons. The <logiccolor>Geometry</logiccolor> object can load and save data in GeoJSON format. You can display the geometry on a map, interactively trace polygons on a map, and compute the area and perimeter of polygons.
+
+<i>Note that displaying geometry on a map and polygon tracing are currently only supported on Android. These functions will do nothing when run on Windows.</i>
+
+
+<subheader>Functionality</subheader>
+
+A Geometry is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
+
+<table 2 header nowrap>
+	<cell>Function</cell><cell>Description</cell>
+	<cell><logiccolor Geometry>load</logiccolor></cell><cell>Read geometry from a GeoJSON file.</cell>
+	<cell><logiccolor Geometry>save</logiccolor></cell><cell>Write geometry to a GeoJSON file.</cell>
+	<cell><logiccolor Geometry>clear</logiccolor></cell><cell>Delete all data from the geometry.</cell>
+	<cell><logiccolor Geometry>tracePolygon</logiccolor></cell><cell>Allow user to draw polygon by tapping points on a map.</cell>
+	<cell><logiccolor Geometry>walkPolygon</logiccolor></cell><cell>Allow user to draw polygon by walking the perimeter and saving the locations using the GPS.</cell>
+	<cell><logiccolor Geometry>area</logiccolor></cell><cell>Compute the area of a polygon.</cell>
+	<cell><logiccolor Geometry>perimeter</logiccolor></cell><cell>Compute the perimeter of a polygon.</cell>
+	<cell><logiccolor Geometry>maxLatitude</logiccolor></cell><cell>Get the largest latitude value of the geometry.</cell>
+	<cell><logiccolor Geometry>maxLongitude</logiccolor></cell><cell>Get the largest longitude value of the geometry.</cell>
+	<cell><logiccolor Geometry>minLatitude</logiccolor></cell><cell>Get the smallest latitude value of the geometry.</cell>
+	<cell><logiccolor Geometry>minLongitude</logiccolor></cell><cell>Get the smallest longitude value of the geometry.</cell>
+	<cell><logiccolor Geometry>getProperty</logiccolor></cell><cell>Retrieve one of the geometry's properties.</cell>
+	<cell><logiccolor Geometry>setProperty</logiccolor></cell><cell>Set the value of one of the geometry's properties.</cell>
+</table>
+
+In addition to these object functions, Geometry objects can be used as arguments to the <logiccolor>filename</logiccolor>, <logiccolor>Map.addGeometry</logiccolor>, <logiccolor>Map.clearGeometry</logiccolor>, and <logiccolor>Map.removeGeometry</logiccolor> functions.
+
+
+<subheader>Assignments</subheader>
+
+Geometry objects can be assigned to other Geometry objects, which will replace the vector geometry with the contents from the assigned Geometry object.
+
+<logicsyntax>
+<arg>geometry_name</arg> = <arg>another_geometry_name</arg>;
+</logicsyntax>
+
+It is also possible to assign Geometry objects to a <link Document.csdoc>Document</link>:
+
+<logicsyntax>
+<arg>document_name</arg> = <arg>geometry_name</arg>;
+</logicsyntax>
+
+You can also make the reverse assignment, assigning a Document to a Geometry object. A runtime error will occur if the Document's data was not valid geometry data.
+
+<logicsyntax>
+<arg>geometry_name</arg> = <arg>document_name</arg>;
+</logicsyntax>
+
+When a Geometry object is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_geometry_example.hgi />
+</logic>
+
+
+<seealso Map.csdoc />

@@ -1,0 +1,39 @@
+﻿<title>Clear Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = clear(<arg>dictionary_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>clear</logiccolor> function modifies the memory values of data items defined for the <b>External</b> or <b>Working Storage</b> dictionary <arg>dictionary_name</arg> (the function is not applicable for <b>Main</b> or <b>Special Output</b> dictionaries). Depending on what the <link dictionary_types.csdoc>dictionary type</link> is, the following modification(s) will occur.
+
+External Dictionaries:
+
+<list>
+	<li>Any records found will be deleted, regardless of whether or not the records are required.</li>
+	<li>Since no records will be present, no data items will be present.</li>
+</list>
+
+Working Storage Dictionaries:
+
+<list>
+	<li>The maximum number of allowable records will be present, with the contents cleared.</li>
+	<li>Numeric items will be set to 0.</li>
+	<li>Alphanumeric items will be set to blank.</li>
+</list>
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value 1 (true) if successful and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+clear(OTHERS_DICT);
+enter OTHERS_FF;
+</logic>
+
+<seealso Array_clear_function.csdoc dictionary_types.csdoc />

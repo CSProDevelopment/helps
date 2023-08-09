@@ -1,0 +1,33 @@
+﻿<title>Pos Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = pos(<arg>substring</arg>, <arg>source_string</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>pos</logiccolor> function searches for a grouping of characters, represented in a <arg>substring</arg>, within a <arg>source_string</arg>. The function returns the beginning position of the first occurrence of the substring. Both arguments are string expressions, and they are case sensitive, meaning that <logiccolor>"children"</logiccolor> is recognized as different from <logiccolor>"CHILDREN"</logiccolor>.
+
+If using an <logiccolor>alpha</logiccolor> string or dictionary item, be aware that searching for a space character can lead to the function finding one at the end of your string. You may want to <logiccolor>strip</logiccolor> alphanumeric variables before searching for spaces.
+
+<subheader>Return Value</subheader>
+
+The function returns the position of the first occurrence of the substring, or if the substring is not found, the function returns 0.
+
+<subheader>Examples</subheader>
+
+<logic>
+VALUE = pos("L", "FOR THE CHILDREN");	// VALUE will be 12; this is where the
+										// substring (the letter "L") occurs in the
+										// source string ("FOR THE CHILDREN")
+
+VALUE = pos("DRE", "CHILDREN");			// VALUE will be 5; this is where the
+										// substring ("DRE") occurs in the source string
+
+VALUE = pos("DCN", "CHILDREN");			// VALUE will be 0; the substring ("DCN") does
+										// not occur in the source string
+</logic>
+
+<seealso poschar_function.csdoc startswith_function.csdoc replace_function.csdoc ischecked_function.csdoc />

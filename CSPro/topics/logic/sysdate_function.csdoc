@@ -1,0 +1,42 @@
+﻿<title>SysDate Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = sysdate(『<arg>date_format</arg>『,<arg>timestamp_value</arg>』』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>sysdate</logiccolor> function returns the current system date as an integer. The optional string expression <arg>date_format</arg> is composed of a combination of DD (days), MM (months), and/or YY or YYYY (years). YY returns the current year in two digits, while YYYY returns it in four digits. The strings DD, MM and YY or YYYY can be put together in any order to make up a customized format. If no date format is specified, the function returns the date in the format YYMMDD.
+
+Passing an optional numeric expression, <arg>timestamp_value</arg>, means that instead of using the system date, the function will use the date, in the local machine's time zone, of a date/time value that came from <logiccolor>timestamp</logiccolor> function.
+
+The current date can be returned as a string using the <logiccolor>edit</logiccolor> function as follows:
+
+<logic>
+edit("9999-99-99",sysdate("YYYYDDMM"));
+</logic>
+
+<subheader>Return Value</subheader>
+
+The function returns the system date as an integer. If the date format is invalid, the function returns 0.
+
+<subheader>Example</subheader>
+
+<logic>
+// if the current date is December 17, 1999...
+x = sysdate("DDMMYYYY");	// returns 17121999
+x = sysdate("MMYYYY");		// returns 121999
+x = sysdate("DD");			// returns 17
+x = sysdate();				// returns 991217
+
+// if the current date is March 8, 2000...
+x = sysdate("DDMMYYYY");	// returns 8032000
+x = sysdate("MMYYYY");		// returns 32000
+x = sysdate("MMYY");		// returns 300
+x = sysdate("DD");			// returns 8
+x = sysdate();				// returns 308
+</logic>
+
+<seealso dateadd_function.csdoc datediff_function.csdoc datevalid_function.csdoc publishdate_function.csdoc systime_function.csdoc timestamp_function.csdoc />

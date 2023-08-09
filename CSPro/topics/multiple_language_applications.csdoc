@@ -1,0 +1,14 @@
+﻿<title>Multiple Language Applications</title>
+
+CSPro supports the creation of applications that target multiple languages. The main areas where you can customize text include:
+
+<list>
+	<li><link using_multiple_languages.csdoc>Question text</link>: In a data entry application, the question text for each field can be defined in multiple languages.</li>
+	<li><link multiple_language_dictionaries.csdoc>Dictionary labels</link>: Dictionary labels can be specified in multiple languages. When a field's <link change_field_properties.csdoc>screen text</link> is linked to the dictionary item, then the form text will also change when a data entry application's language changes.</li>
+	<li><link message_file_mgf.csdoc>Messages</link>: Messages displayed or created using functions such as <logiccolor>errmsg</logiccolor> and <logiccolor>maketext</logiccolor> can be defined in multiple languages.</li>
+	<li><link tr_function.csdoc>Logic string literals</link>: Using the <logiccolor>tr</logiccolor> function, string literals can be be specified in multiple languages.</li>
+</list>
+
+In addition to the above functionality, there are several logic functions for working with multiple language applications, including <logiccolor>getlanguage</logiccolor>, <logiccolor>setlanguage</logiccolor>, and <logiccolor>OnChangeLanguage</logiccolor>.
+
+The default starting language can also be specified in the application's <link run_production_data_entry.csdoc>PFF file</link> using the <pffcolor>Language</pffcolor> parameter.

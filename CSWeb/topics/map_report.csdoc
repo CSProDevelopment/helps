@@ -1,0 +1,61 @@
+﻿<title>Map Report</title>
+
+The Map Report helps visualize data. If each case has latitude and longitude data associated with it, then it can be displayed on the map as a marker. This allows coverage of a geographical area to be reviewed in a glance. Each marker displays additional information if clicked on and allows the opening of the case for viewing.
+
+<subheader>Setup Checklist</subheader>
+
+<list ordered>
+	<li> Upload dictionary and data </li>
+	<li> Import labels (optional) </li>
+	<li> Add a database </li>
+	<li> Add a configuration </li>
+	<li> Check Enable Map Report </li>
+	<li> Run CSWeb command line process </li>
+</list>
+
+<subheader>Upload Dictionary and Data</subheader>
+
+Upload the dictionary and then the data to the <b>Data page</b>. If the dictionary and data were already uploaded then this step can be skipped. However, the dictionary and data must include <b>latitude</b> and <b>longitude</b> data for each case. Otherwise, the case will not be displayed on the map.
+
+<subheader>Import Labels</subheader>
+
+By default only codes will be shown for id items. Id items appear as values for filters and optionally in the popup dialog. However, a CSV file can be imported that defines code and label pairs, so a label can be displayed in its place. The rules for defining these pairs are as follows:
+
+<list ordered>
+	<li> The <b>first</b> pair in the CSV file must define the <b>first dictionary id</b> </li>
+	<li> Each following pair must correspond to a dictionary id in <b>consecutive order</b> </li>
+	<li> Dictionary ids do not require a corresponding pair. However, once a dictionary id has been <b>ignored no more can be defined</b>. The code will be displayed. </li>
+</list>
+
+Labels are imported by clicking the <b>Import Report Labels</b> button on the <b>Data page</b>.
+
+<subheader>Add a Database</subheader>
+
+Add a new database to using the MySQL command line, MySQL workbench, or phpMyAdmin. Create a user with access to the new database. For security reasons the database user should have a corresponding password. This database is different than the database created during the setup of CSWeb. The database will hold relational data after <link CSWeb::data_settings.csdoc>processing cases</link>.
+
+<subheader>Add a Configuration</subheader>
+
+See instructions for <link CSWeb::data_settings.csdoc>Add Configuration</link>. At the bottom of the <b>Add Configuration</b> dialog check the <b>Enable Map Report</b> checkbox. Then the following configuration details can be entered.
+
+<list ordered>
+	<li> <b>Tile provider</b>: Allows the selection of the source of base maps (Esri, Mapbox, or local files). </li>
+	<li> <b>Access token</b>: Only necessary if Mapbox was selected as the tile provider. Access tokens can be managed from the access tokens page once a <link https://account.mapbox.com/> Mapbox account </link> has been created. </li>
+	<li> <b>Latitude</b>: Specify the latitude field in the dictionary. </li>
+	<li> <b>Longitude</b>: Specify the longitude field in the dictionary. </li>
+	<li> <b>Map popup items (max 5)</b>: Customize the popup dialog for each marker with additional data from the dictionary. A maximum of five options can be selected. </li>
+</list>
+
+<subheader>Run CSWeb Command Line Process</subheader>
+
+See instructions for <link CSWeb::data_settings.csdoc>Processing Cases</link>. Note that this is not a one-time operation. During data collection the command line process will need to be run repeatedly to update the data displayed on the map.
+
+<subheader>Viewing a Map Report</subheader>
+
+Click <b>Map Report</b> on the sidebar to display the map.
+
+<list ordered>
+	<li> <b>Zoom</b>: Located in the top left-hand corner of the map. Press the <b>+</b> icon to zoom out and the <b>-</b> icon to zoom in. Alternatively, the mouse wheel will zoom in and out. </li>
+	<li> <b>Filter</b>: Located below the zoom icon. Two levels of filtering are available. They will correspond to the first two id items in the dictionary. A selected filter will filter which map markers are shown on the map. </li>
+	<li> <b>Base map</b>: Located in the top right-hand corner of the map. Select one of four different types (normal, hybrid, satellite, terain) of maps to display. </li>
+	<li> <b>Map popup dialog</b>: Click on a marker and a popup dialog will display. By default this dialog will include the case key, latitude, longitude, and a <b>View Case</b> link to open the case for viewing. Additional information from <b>Map popup items (max 5)</b> will be included if selected. </li>
+</list>

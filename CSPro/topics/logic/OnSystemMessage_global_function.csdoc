@@ -1,0 +1,58 @@
+﻿<title>OnSystemMessage Global Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+function numeric OnSystemMessage(『numeric <arg>message_number</arg>』『, numeric <arg>message_type</arg>』『, string <arg>message_text</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+<logiccolor>OnSystemMessage</logiccolor> is a special global function. It is a function that gets called when a system message is issued. This is similar to the <logiccolor>OnKey</logiccolor> or <logiccolor>OnStop</logiccolor> functions, which get called automatically by the running CSPro application, not because of a call to the function in your logic. A system message is a message such as "Invalid subscript," not a user message that comes from an <logiccolor>errmsg</logiccolor> statement.
+
+The function must return a numeric value and you can provide from one to three parameters. If one numeric parameter is provided, then it will receive the message number. If two numeric parameters are provided, the second numeric parameter will get the message type (1 = error, 2 = warning). If a string parameter is provided, then it will receive the message text.
+
+
+<subheader>Return Value</subheader>
+
+Return 0 (false) to suppress the message. Returning anything other than 0 means that the message will be issued (displayed to the enumerator in a data entry application or written to the listing file in a batch application).
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+function OnSystemMessage(numeric message_number, numeric message_type)
+
+    // suppress all warning messages
+    recode message_type -> OnSystemMessage;
+           1            -> true;
+           2            -> false;
+    endrecode;
+
+end;
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+function OnSystemMessage(numeric message_number, string message_text)
+
+	// modify the displayed message for invalid subscript errors
+    if message_number = 1008 then
+        errmsg("Subscript Error (%d). Most likely cause is no children in household. %s", message_number, message_text);
+
+        // suppress the system message
+		exit false;
+
+	endif;
+
+	// issue the message in all other cases
+	exit true;
+
+end;
+</logic>
+
+
+<seealso user_defined_functions.csdoc function_statement.csdoc />

@@ -1,0 +1,40 @@
+﻿<title>Map.saveSnapshot Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = map_name.saveSnapshot(<arg>filename</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Map.saveSnapshot</logiccolor> function saves the currently displayed map as an image. The image is specified by the string expression <arg>filename</arg> and must have an extension associated with either JPEG or PNG formats. The map must be currently displayed when this function is called, so it must be executed via a callback function association with a <link Map_setMarkerOnClick_function.csdoc>marker</link> or <link Map_addText_button_function.csdoc>button</link>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the map snapshot image was successfully saved and 0 (false) otherwise.
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+function SaveMap(Map m, string image_filename)
+	m.saveSnapshot(image_filename);
+end;
+
+PROC EXAMPLE
+
+	Map capitals_map;
+
+	// ...
+
+	capitals_map.addTextButton("Save Image", SaveMap(capitals_map, "Capitals.png"));
+</logic>
+
+
+<seealso Map.csdoc />

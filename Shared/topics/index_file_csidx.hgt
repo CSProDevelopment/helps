@@ -1,9 +1,0 @@
-﻿<title>Index File (.csidx)</title>
-
-The index file stores the case IDs and their physical location in the data file. This helps CSPro applications manipulate the data file more quickly. The file is a binary file and should not be modified file outside of CSPro.
-
-CSPro automatically generates an index file when creating a new data file. CSPro then coordinates between both files as cases are added, modified, or deleted.
-
-When CSPro opens a data file, it looks for the corresponding index file. If it does not find one, CSPro automatically generates a new one. If you suspect, for any reason, that the index file has been corrupted, or does not match the data file, simply delete the index file and let CSPro generate a new one.
-
-An index is only created for <link CSPro::data_sources.hgt>text files</link>. Prior to CSPro 7.0, the data file index had the extension .idx.

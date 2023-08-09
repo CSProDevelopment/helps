@@ -1,0 +1,34 @@
+﻿<title>PutDeck Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = putdeck(<arg>array_name</arg>, <arg>numeric_expression</arg>『, <arg>override_dim1</arg>, <arg>override_dim2</arg>, <arg>override_dim3</arg>』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>putdeck</logiccolor> function updates the value being stored in the <logiccolor>DeckArray</logiccolor> hot deck by using the current value(s) of the <link value_sets_description.csdoc>value set</link> items that were defined as dimensions in the DeckArray declaration. <logiccolor>putdeck</logiccolor> automatically recodes the value set items and accesses the proper cell in the hot deck, where it stores the value of the numeric_expression. If any of the DeckArray dimensions are not associated with a value set, then you must specify the desired numeric index when calling the function.
+
+If (+) was specified after any of the <arg>array_name</arg> dimensions, the <link deckarray_leftover_rows.csdoc>"leftover"</link> rows for that dimension will be updated whenever an invalid value for that dimension is given.
+
+<subheader>Return Value</subheader>
+
+The function returns 1 if successful or DEFAULT in the event that the values supplied are not valid entries in the value sets and thus could not be recoded to a proper cell in the hot deck.
+
+<subheader>Example</subheader>
+
+<logic>
+Array education_HD_SexAge (SEX_VS, AGE_FOR_EDUCATION_HD_VS) save;
+
+// more code ...
+
+PROC EDUCATION
+
+    putdeck(education_HD_SexAge, EDUCATION);      // use current values for sex and age
+    putdeck(education_HD_SexAge, EDUCATION,1);    // override sex only
+    putdeck(education_HD_SexAge, EDUCATION, ,28); // override age only
+    putdeck(education_HD_SexAge, EDUCATION,1,28); // override both sex and age
+</logic>
+
+<seealso deckarrays.csdoc deckarray_leftover_rows.csdoc getdeck_function.csdoc />

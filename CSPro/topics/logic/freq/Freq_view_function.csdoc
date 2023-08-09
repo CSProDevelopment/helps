@@ -1,0 +1,29 @@
+﻿<title>Freq.view Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = freq_name.view() 『<arg>formatting_options</arg>』;
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Freq.view</logiccolor> function generates <link frequencies_file.csdoc>HTML frequencies</link> based on the values in a <link Freq.csdoc>Freq object</link> and displays the frequency tables in an embedded web browser.
+
+Optional <link freq_formatting_options.csdoc>formatting options</link> allow you to control how the frequency tables are generated. The formatting options include the following commands: <logiccolor>valueset</logiccolor>, <logiccolor>distinct</logiccolor>, <logiccolor>vset</logiccolor>, <logiccolor>heading</logiccolor>, <logiccolor>stat</logiccolor>, <logiccolor>percentiles</logiccolor>, <logiccolor>nofreq</logiccolor>, <logiccolor>decimals</logiccolor>, <logiccolor>sort</logiccolor>, <logiccolor>nonetpercents</logiccolor>, and <logiccolor>pagelength</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the frequencies are successfully displayed, and 0 (false) otherwise.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_freq_example1.hgi />
+</logic>
+
+
+<seealso Freq.csdoc Freq_save_function.csdoc freq_formatting_options.csdoc />

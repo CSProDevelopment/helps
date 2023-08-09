@@ -1,0 +1,31 @@
+﻿<title>SetLanguage Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = setlanguage(<arg>language_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>setlanguage</logiccolor> function changes the language being used by an application. Pass a string expression, <arg>language_name</arg>, with the name, not the label, of the language to which you want to change.
+
+<subheader>Return Value</subheader>
+
+The function returns 1 (true) if the language exists and the language was successfully changed. Otherwise it returns 0 (false).
+
+<subheader>Example</subheader>
+
+<logic>
+PROC INTERVIEW_LANGUAGE
+
+	if INTERVIEW_LANGUAGE = 1 then
+		setlanguage("EN");
+	elseif INTERVIEW_LANGUAGE = 2 then
+		setlanguage("FR");
+	else
+		setlanguage("ZH");
+	endif;
+</logic>
+
+<seealso getlanguage_function.csdoc OnChangeLanguage_global_function.csdoc multiple_language_applications.csdoc />

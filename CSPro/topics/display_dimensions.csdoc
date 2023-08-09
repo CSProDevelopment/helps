@@ -1,0 +1,17 @@
+﻿<title>Display Dimensions</title>
+
+When working with "maximum display" width and height figures in CSPro, values are returned that may not correspond exactly to the pixels of the display:
+
+<b>Windows</b>: The value returned depends on the current scaling, but the maximum display dimensions returned account for 90% of the display size after accounting for the size of the Windows taskbar.
+
+<b>Android</b>: The unit returned is <link https://developer.android.com/guide/topics/resources/more-resources#Dimension>density-independent pixels</link>: "an abstract unit that is based on the physical density of the screen."
+
+When using display dimensions, you will generally want to use a scaled value for the width and height rather than using fixed values. For example, to view a webpage at 75% of the maximum display size, you could code:
+
+<logic>
+view("https://<definition csprousers_forum />",
+	 width := tonumber(getproperty("MaxDisplayWidth")) * 0.75,
+	 height := tonumber(getproperty("MaxDisplayHeight")) * 0.75);
+</logic>
+
+<seealso getproperty_function.csdoc javascript_interface.csdoc />

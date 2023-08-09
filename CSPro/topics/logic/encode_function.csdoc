@@ -1,0 +1,57 @@
+﻿<title>Encode Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = encode(『<arg>encoding_type</arg>,』 <arg>text</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>encode</logiccolor> function escapes special characters to facilitate writing to HTML or CSV files, or creates properly encoded strings for a variety of formats.
+
+The optional argument <arg>encoding_type</arg> specifies the format for encoding. The <arg>text</arg> argument is a string expression that specifies the text to encode. If an encoding type is provided with no text, then the default encoding type for the application is modified. An application starts with the default encoding type set to HTML.
+
+The encoding types are:
+
+<table 2 header nowrap>
+	<cell>Encoding Type</cell><cell>Description</cell>
+	<cell>HTML</cell><cell>Encodes the characters &lt; &gt; &amp and newlines for writing to HTML files.</cell>
+	<cell>CSV</cell><cell>Encodes the characters , " and newlines for writing to comma-separated values files.</cell>
+	<cell>URI</cell><cell>Encodes a <link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI>group of characters</link> for writing uniform resource identifiers (URIs).</cell>
+	<cell>URIComponent</cell><cell>Encodes a <link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent>group of characters</link> for writing the components of URIs.</cell>
+	<cell>PercentEncoding</cell><cell>Encodes a <link https://en.wikipedia.org/wiki/Percent-encoding>group of characters</link> for writing to formats such as <link connection_string.csdoc>connection strings</link>.</cell>
+	<cell>JsonString</cell><cell>Encodes text for writing as a valid <link https://datatracker.ietf.org/doc/html/rfc7159#section-7>JSON string</link>.</cell>
+	<cell>Slashes</cell><cell>Adds backslashes to escape <link https://www.php.net/manual/en/function.addslashes.php>quote and backslash</link> characters.</cell>
+</table>
+
+
+<subheader>Return Value</subheader>
+
+The function returns a string with the appropriate characters encoded. If the default encoding type is changed, the function returns a blank string.
+
+
+<subheader>Example</subheader>
+
+<logic>
+// write to a HTML file
+File html_file;
+
+html_file.write("<p>Enumerator name: %s</p>", encode(strip(ENUMERATOR_NAME)));
+
+string house_image_filename = pathconcat("../House Images", key(HOUSING_DICT) + ".jpg");
+html_file.write("<p><img src='file:///%s' alt='House' /></p>", encode(URI, house_image_filename));
+
+
+// write to a CSV file
+File csv_file;
+
+encode(CSV);
+csv_file.write("Address,Head of Household");
+csv_file.write("%s,%s", encode(strip(ADDRESS)), encode(strip(HEAD_NAME)));
+</logic>
+
+
+<seealso File_write_function.csdoc replace_function.csdoc />

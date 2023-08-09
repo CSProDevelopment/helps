@@ -1,0 +1,51 @@
+﻿<title>Insert Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = insert(<arg>group_name</arg>『(<arg>occurrence</arg>)』);
+
+b = insert(<arg>group_name</arg>, <arg>first_occurrence</arg>)『, <arg>last_occurrence</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>insert</logiccolor> function inserts missing or otherwise needed data records or item occurrences in the current case. It is primarily intended for use in batch applications. It should be used with extreme caution in data entry applications because of possible conflicts between the operator's actions and the program logic.
+
+The first syntax inserts a single occurrence of the record. When inserting a singly-occurring record, it is not necessary to specify the <arg>occurrence</arg>. The second syntax inserts one or more occurrences of a record, starting with the <arg>first_occurrence</arg> and inserting up to the <arg>last_occurrence</arg>. This allows for the mass inserts of record occurrences.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.
+
+
+
+<subheader>Example 1 (Multiply-Occurring Records)</subheader>
+
+In the following example there is a data item in the housing record called <logiccolor>H13_PERSONS</logiccolor>, which contains the total number of people living in the household. We have decided that if the number of population records found in the household is less than this variable, we will insert the missing number of population record(s).
+
+<logic>
+do numeric i = count(PERSON_REC) + 1 while i <= H13_PERSONS
+  insert(PERSON_REC(i));
+enddo;
+</logic>
+
+It makes no difference if the population record has been defined in the dictionary as required or not. What is important is that it was defined as a multiply-occurring record.
+
+
+<subheader>Example 2 (Singly-Occurring Records)</subheader>
+
+For this example, we are processing data that did not require housing records to be present. However, now we want to force the existence of housing records. We could implement this as follows:
+
+<logic>
+if totocc(HOUSING_REC) = 0 then
+	insert(HOUSING_REC); // note the absence of a subscript
+endif;
+</logic>
+
+To accomplish this, the housing record must be set to <link required_record.csdoc>"Required=No"</link> in the dictionary. You cannot use this function for a singly-occurring record when the record is required.
+
+
+<seealso delete_function.csdoc />

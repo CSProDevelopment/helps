@@ -1,0 +1,52 @@
+﻿<title>SyncApp Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = syncapp();
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>syncapp</logiccolor> function updates application files, such as a .pen and .pff, from a new version of the application package (<b>package.json</b>) on a server. This function is used to make updates, such as bug fixes and other modifications, to an application already deployed on mobile devices in the field.
+
+The function checks for an updated version of the application on the server that the program is currently connected to from a previous call to <logiccolor>syncconnect</logiccolor>. If the version of the application on the server is newer than the currently running version, then the new package is downloaded from the server and the application on the device is updated.
+
+This function only works on Android. It is not supported on Windows. It may be used with CSWeb, Dropbox and FTP servers as well as with peer to peer synchronization via Bluetooth.
+
+Using <logiccolor>syncapp</logiccolor> is typically only for advanced scenarios, such as when you want to update an application over Bluetooth or when you want to initiate an update from within a menu program. In most cases it is simpler to use <link CSDeploy::update_deployment_mobile.csdoc>Update Installed Applications</link> from the menu in the Entry Applications screen of CSEntry as it does the same update as <logiccolor>syncapp</logiccolor> without requiring any custom logic.
+
+Before calling <logiccolor>syncapp</logiccolor>, you must first connect to a server by calling <logiccolor>syncconnect</logiccolor>.
+
+To use the <logiccolor>syncapp</logiccolor> function, you must first upload the application package to a server using the <link CSDeploy::introduction_to_deployment.csdoc>Deploy Application</link> tool. The <logiccolor>syncapp</logiccolor> function looks for a package on the server with the same package name as the currently running application. If no package matching the current package name has been deployed to the server, the function will display an error. Note that the application package is not necessarily the same as the name of the .pen file. The package name is the name that was entered in the <link CSDeploy::introduction_to_deployment.csdoc>Deploy Application</link> tool when the package was deployed to the server. It is important therefore to always use the same package name whenever deploying updates to an application.
+
+The <logiccolor>syncapp</logiccolor> function only downloads the application if the version of the application on the server is more recent than the version on the mobile device. This is accomplished by storing the date and time the package was uploaded to the server by the <link CSDeploy::introduction_to_deployment.csdoc>Deploy Application</link> tool. This date and time is stored in the application package and is used to determine if the package on the server is newer than the package on the mobile device.
+
+Furthermore, if you are using a CSWeb server or Bluetooth, in order to keep data usage to a minimum, only files that are different in the version of the package on the server from those in the version on the mobile device are downloaded. This way if you have large files in your application package that do not change as part of the update, they will not slow down the update. This optimization is not done for Dropbox or FTP servers.
+
+Files in the downloaded package overwrite the corresponding files on the mobile device. To avoid generating multiple copies of the same file, use the same directory layout, file and folder names in the updated package as were used in the original package.
+
+Files that are marked <b>Only on first install</b> in the deployment package that already exist on the mobile device will be ignored by <logiccolor>syncapp</logiccolor> and are not updated even if a newer version is included in the updated package.
+
+Be careful when including data files in an application package that is used with <logiccolor>syncapp</logiccolor> since any data files that are in use by the current application will be locked which will result in errors when <logiccolor>syncapp</logiccolor> attempts to overwrite them. Either <logiccolor>close</logiccolor> any files that may be updated prior to calling <logiccolor>syncapp</logiccolor> or mark the data files as <b>Only on first install</b> in the <link CSDeploy::introduction_to_deployment.csdoc>Deploy Applications</link> tool and use <logiccolor>syncdata</logiccolor> to update them instead.
+
+Note that if as part of the application update the currently running .pen file is updated to a newer version, <logiccolor>syncapp</logiccolor> will restart the application in order to run the updated version. This means that any logic that follows the call to <logiccolor>syncapp</logiccolor> will not be executed. To avoid problems, make sure that the call to <logiccolor>syncapp</logiccolor> is the last call in the procedure. For example, to combine the application update with calls to <logiccolor>syncdata</logiccolor> to update data files, place the calls to <logiccolor>syncdata</logiccolor> before the call to <logiccolor>syncapp</logiccolor>.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the update was successful and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+if syncconnect(CSWeb,"https://www.myserver.org/api") then
+
+	// get the latest versions of the application files from the server
+	syncapp();
+
+	syncdisconnect();
+
+endif;
+</logic>
+
+<seealso synchronization.csdoc syncconnect_function.csdoc syncdata_function.csdoc syncdisconnect_function.csdoc syncserver_function.csdoc />

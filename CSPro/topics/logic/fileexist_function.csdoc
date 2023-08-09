@@ -1,0 +1,34 @@
+﻿<title>FileExist Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = fileexist(<arg>file_name</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>fileexist</logiccolor> function determines whether a file exists. <arg>file_name</arg> is either a string expression giving a file name or is a file handler declared in a <logiccolor>File</logiccolor> statement in <logiccolor>PROC GLOBAL</logiccolor>.
+
+You can use the wildcard characters "*" and "?" in the <arg>file_name</arg>. In that case the function will determine whether any file matching the specification exists.
+
+Prior to CSPro 6.2, the function determined whether either a file or a directory existed. The <logiccolor>direxist</logiccolor> function must now be used to check for the existence of a directory.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the file exists and 0 (false) otherwise.
+
+
+<subheader>Example</subheader>
+
+<logic>
+if fileexist(householdPffFilename) then
+	filedelete(householdPffFilename);
+endif;
+</logic>
+
+
+<seealso fileempty_function.csdoc filesize_function.csdoc direxist_function.csdoc />

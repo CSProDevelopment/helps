@@ -1,0 +1,28 @@
+﻿<title>MaxValue Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+d = maxvalue(<arg>item_name</arg> ‖ <arg>value_set_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>maxvalue</logiccolor> function returns the maximum valid value for an item or value set. If a numeric <arg>item_name</arg> is provided, the function looks at the current value set for the item, or if no value set exists, looks at the item itself (returning a maximum value based on the item's number of digits). If a numeric <arg>value_set_name</arg> is provided, the function returns the maximum range or discrete value in the value set.
+
+<subheader>Return Value</subheader>
+
+The function returns the maximum valid value for an item or value set.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC EDUCATION_CURRENT
+
+	if EDUCATION_CURRENT = 1 and AGE > maxvalue(EDUCATION_CURRENT_PRESCHOOL_VS) then
+		errmsg("Someone aged %d cannot be currently attending preschool.", AGE);
+		reenter;
+	endif;
+</logic>
+
+<seealso minvalue_function.csdoc high_function.csdoc getlabel_function.csdoc />

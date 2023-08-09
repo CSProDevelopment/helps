@@ -1,0 +1,29 @@
+﻿<title>PreProc Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+preproc
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>preproc</logiccolor> statement declares that the statements following it are executed at the beginning of a run, case, level, record, form, roster, or field.
+
+In data entry applications, statements in a <logiccolor>preproc</logiccolor> procedure are executed when you move <b>forward</b> onto an object. Moving forward occurs when the execution flow moves the cursor onto the object, or when the user goes forward to the object by any means (mouse-click, tab key, arrow keys, etc.). If you move <b>backward</b> onto an object, <logiccolor>preproc</logiccolor> statements are <b>not</b> executed. Moving backward occurs if a keyer reenters a value, goes backward with a mouse click, or uses the Shift+tab or arrow keys to move backward. If you want to execute the statements when you move both forward and backward onto a field, code them in the <logiccolor>onfocus</logiccolor> procedure.
+
+In batch edit applications, a <logiccolor>preproc</logiccolor> is used to execute logic at the beginning of a run, case, level, or record. For an item there is no difference between placing your logic in a <logiccolor>preproc</logiccolor> or <logiccolor>postproc</logiccolor>.
+
+Remember, if you don't code a <logiccolor>preproc</logiccolor> or <logiccolor>postproc</logiccolor> in a <logiccolor>PROC</logiccolor>, all instructions are considered <logiccolor>postproc</logiccolor> statements by default.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC INTERVIEW_DATE
+
+preproc
+
+	INTERVIEW_DATE = sysdate("YYYYMMDD");
+</logic>
+
+<seealso proc_statement.csdoc onfocus_statement.csdoc onoccchange_statement.csdoc killfocus_statement.csdoc postproc_statement.csdoc order_of_executing_data_entry_events.csdoc order_of_executing_batch_edit_events.csdoc />

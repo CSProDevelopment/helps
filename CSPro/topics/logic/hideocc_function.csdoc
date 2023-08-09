@@ -1,0 +1,27 @@
+﻿<title>HideOcc Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = hideocc(<arg>roster_name</arg> ‖ <arg>form_name</arg>『(<arg>occurrence_number</arg>)』);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>hideocc</logiccolor> function hides a roster entry or form occurrence from appearing in the mobile CSEntry case tree. It will also hide the roster entry when using the desktop CSEntry. If no numeric <arg>occurrence_number</arg> is supplied, then the current roster or form occurrence will be hidden.
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value 1 (true) if successful and 0 (false) otherwise.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC KEEP_PERSON
+
+	if KEEP_PERSON = 0 then
+		hideocc(PERSON000);
+	endif;
+</logic>
+
+<seealso showocc_function.csdoc setocclabel_function.csdoc occurrence_labels.csdoc />

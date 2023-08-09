@@ -1,0 +1,68 @@
+﻿<title>DirList Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = dirlist(<arg>list_to_receive_paths</arg>, <arg>directory_path</arg>
+			『, filter := <arg>wildcard</arg>』
+			『, recursive := <arg>recursive_flag</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>dirlist</logiccolor> function fills <arg>list_to_receive_paths</arg>, a string <link List.csdoc>List</link>, with the paths of files and directories located in a directory specified by <arg>directory_path</arg>. The paths included in the List are fully evaluated absolute paths. Hidden and system files are not included in the directory listing.
+
+The <arg>directory_path</arg> can be one of the following:
+
+<list>
+	<li>A string expression specifying a directory.</li>
+	<li>One of the path types documented in the <logiccolor>pathname</logiccolor> function.</li>
+	<li>A <link media_store.csdoc>media type</link>, which will list the files of the specified media type on Android. These files can reside in multiple directories.</li>
+</list>
+
+
+Using <link function_named_arguments.csdoc>named arguments</link>, you can specify a string expression, <arg>wildcard</arg>, that is applied to filter the paths added to the string List. For example, <logiccolor>"*.csdb"</logiccolor> would include only <link data_sources.csdoc>CSPro DB</link> files. You can specify multiple wildcard filters by separating each filter with a semicolon. The filter <logiccolor>"*.jpg;*.jpeg;*.bmp"</logiccolor> would include both JPEG and BMP files. Instead of using a string expression, you can also use a predefined wildcard expression:
+
+<list>
+	<li><logiccolor>FileType.Audio</logiccolor>: Files that the <link Audio.csdoc>Audio</link> object can read and write.</li>
+	<li><logiccolor>FileType.Geometry</logiccolor>: Files that the <link Geometry.csdoc>Geometry</link> object can read and write.</li>
+	<li><logiccolor>FileType.Image</logiccolor>: Files that the <link Image.csdoc>Image</link> object can read and write.</li>
+</list>
+
+
+By default, only files and directories located in the directory are added to the List. To recursively add paths, creating a listing of the specified directory as well as any subdirectories, set the numeric expression <arg>recursive_flag</arg> to <logiccolor>true</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if successful and 0 (<logiccolor>false</logiccolor>) if the directory does not exist or cannot be accessed. If the List is read-only, the function returns <logiccolor>default</logiccolor>.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+write("Shapefile and tile packages in folder and subfolders:");
+
+List string map_files;
+
+dirlist(map_files, "C:/Survey/Maps", filter := "*.shp;*.tpk", recursive := true);
+
+do numeric ctr = 1 while ctr <= map_files.length()
+	write("%s", map_files(ctr));
+enddo;
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+// get a list of all shared images on Android that can be loaded using the image object
+List string image_files;
+
+dirlist(image_files, Media.Images, filter := FileType.Image);
+</logic>
+
+
+<seealso Path_selectFile_function.csdoc dircreate_function.csdoc direxist_function.csdoc />

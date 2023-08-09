@@ -1,0 +1,17 @@
+﻿<title>Boolean Values</title>
+
+There are two numeric values in the CSPro language that translate to boolean values as used in other programming languages. The value <logiccolor>true</logiccolor> is equivalent to 1 and the value <logiccolor>false</logiccolor> is equivalent to 0. Note that you need to be cautious when using <logiccolor>true</logiccolor> in conditional expressions, as a conditional expression is true if it is neither zero nor <link special_values.csdoc>special</link>, but comparing something with <logiccolor>true</logiccolor> is true only if the compared value is 1. That is:
+
+<logic>
+numeric value = 2;
+
+if value then
+	errmsg("This will be displayed");
+endif;
+
+if value = true then
+	errmsg("This will not be displayed");
+endif;
+</logic>
+
+<seealso special_values.csdoc />

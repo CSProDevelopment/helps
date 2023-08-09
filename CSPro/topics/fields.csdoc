@@ -1,0 +1,12 @@
+﻿<title>Fields</title>
+
+In CAPI data entry, consideration needs to be given to the properties of fields used in the application. The following table lists certain <link change_field_properties.csdoc>field properties</link> and how they might be used:
+
+<table 2 nowrap>
+	<cell>Use enter key</cell><cell>This is usually selected, because otherwise the application will automatically advance to the next field, which might be confusing for the interviewer.</cell>
+	<cell>Mirror fields</cell><cell>These are very useful in CAPI applications, as they show the contents of fields in other forms. This can assist the interviewer.</cell>
+	<cell>Protected fields</cell><cell>CAPI applications use protected fields to show calculated or derived values. These provide useful feedback to the interviewer.</cell>
+	<cell>Force out-of-range</cell><cell>This is almost always turned off, since the interviewer should only be allowed to enter valid responses. However, you should consider including "not applicable", "don't know," and "refused" response categories.</cell>
+</table>
+
+CAPI applications frequently make greater use of alphanumeric responses than do traditional key-from-paper systems. This is because of the interactive nature of CAPI, and it also makes the interview more interactive (by capturing names, for example).

@@ -1,0 +1,49 @@
+﻿<title>Map.hide Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = map_name.hide();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Map.hide</logiccolor> function hides the <link Map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor> and returns to the application. The <logiccolor>Map.hide</logiccolor> function should be used in a callback function supplied to one of the map functions such as <logiccolor>Map.setOnClick</logiccolor>, <logiccolor>Map.addTextButton</logiccolor>, <logiccolor>Map.addImageButton</logiccolor>, <logiccolor>Map.setMarkerOnClick</logiccolor>, <logiccolor>Map.setMarkerOnClickInfoWindow</logiccolor>, or <logiccolor>Map.setMarkerOnDrag</logiccolor>. Calling <logiccolor>Map.hide</logiccolor> will cause the earlier call to <logiccolor>Map.show</logiccolor> to complete and return control to the statement following the call to <logiccolor>Map.show</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true).
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+// User function that will be called on button click
+// to close the map
+function closeMap(Map m)
+	m.hide();
+end;
+
+PROC SOMEITEM
+
+// Declare a map
+Map mymap;
+
+// Add a button to the map that closes the map when it is clicked
+mymap.addTextButton("close", closeMap(myMap));
+
+// Show the map; this function will keep running until the user clicks
+// the close button or uses the back button to exit the map
+mymap.show();
+
+// This logic is only run AFTER the call to hide
+errmsg("Done showing map");
+</logic>
+
+
+<seealso Map.csdoc Map_show_function.csdoc />

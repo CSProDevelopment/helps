@@ -1,0 +1,29 @@
+﻿<title>Set Last Statement</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+set last(<arg>dictionary_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>set last</logiccolor> statement is used, like the <logiccolor>locate</logiccolor> function, to find a specific case in a data file. The case pointer is positioned to the last case. Based on the <link set_access_statement.csdoc>dictionary access parameters</link>, the case is either the last case by indexed (key) order or by sequential (file) order. To load the case into memory, use the <logiccolor>retrieve</logiccolor> function or the <logiccolor>loadcase</logiccolor> function without arguments.
+
+The <arg>dictionary_name</arg> refers to either an external dictionary or the main input file of a batch application.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC MENU
+
+	set access(SURVEY_DICT, Order.Descending);
+
+	set last(SURVEY_DICT);
+
+	do while loadcase(SURVEY_DICT)
+		// process the cases in descending key order
+	enddo;
+</logic>
+
+<seealso set_first_statement.csdoc locate_function.csdoc set_access_statement.csdoc />

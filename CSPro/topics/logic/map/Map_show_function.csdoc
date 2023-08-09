@@ -1,0 +1,51 @@
+﻿<title>Map.show Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = map_name.show();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Map.show</logiccolor> function displays the <link Map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor>. The function call replaces the active view (generally either a question or a different map) and displays the map. The map will continue to be displayed until the user taps on the back button or the <logiccolor>Map.hide</logiccolor> function is called from within a callback function.
+
+The <logiccolor>Map.show</logiccolor> function will not finish execution until the user has finished interacting with the map. For this reason, you should do all initial map setup (adding markers, buttons, base map, etc.) <b><i>before</i></b> calling <logiccolor>Map.show</logiccolor>. If any map functions are given after the call to  <logiccolor>Map.show</logiccolor>, they will not be executed until after the map has been hidden. You can, however, make modifications to the map while it is showing from logic in a callback function supplied to one of the map functions such as <logiccolor>Map.setOnClick</logiccolor>, <logiccolor>Map.addTextButton</logiccolor>, <logiccolor>Map.addImageButton</logiccolor>, <logiccolor>Map.setMarkerOnClick</logiccolor>, <logiccolor>Map.setMarkerOnClickInfoWindow</logiccolor>, or <logiccolor>Map.setMarkerOnDrag</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the map was shown successfully and 0 (false) if there was an error.
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+// User function that will be called on button click
+// to close the map
+function closeMap(Map m)
+	m.hide();
+end;
+
+PROC SOMEITEM
+
+// Declare a map
+Map mymap;
+
+// Add a button to the map that closes the map when it is clicked
+mymap.addTextButton("close", closeMap(myMap));
+
+// Show the map; this function will keep running until the user clicks
+// the close button or uses the back button to exit the map
+mymap.show();
+
+// This logic is only run AFTER the call to hide
+errmsg("Done showing map");
+</logic>
+
+
+<seealso Map.csdoc Map_hide_function.csdoc />

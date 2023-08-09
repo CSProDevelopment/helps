@@ -1,0 +1,27 @@
+﻿<title>Geometry.maxLongitude Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+d = geometry_name.maxLongitude();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Geometry.maxLongitude</logiccolor> function finds the largest longitude value of any point on any element in the <link Geometry.csdoc>Geometry</link> object named <logiccolor>geometry_name</logiccolor>. Together with the <logiccolor>Geometry.minLongitude</logiccolor>, <logiccolor>Geometry.minLatitude</logiccolor>, and <logiccolor>Geometry.maxLatitude</logiccolor> functions it is possible to find the full extent of the geometry.
+
+<subheader>Return Value</subheader>
+
+The function returns the largest longitude value of any point or any point on a line or polygon in the geometry. If the Geometry object is empty, the function returns <logiccolor>default</logiccolor>.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_geometry_min_max_latitude_longitude_example.hgi />
+</logic>
+
+
+<seealso Geometry.csdoc Geometry_minLongitude_function.csdoc Geometry_minLatitude_function.csdoc Geometry_maxLatitude_function.csdoc />

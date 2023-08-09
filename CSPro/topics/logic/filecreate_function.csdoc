@@ -1,0 +1,29 @@
+﻿<title>FileCreate Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = filecreate(<arg>file_name</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>filecreate</logiccolor> function creates a new file named after the string expression (or <logiccolor>File</logiccolor> handler) <arg>file_name</arg>. If the file already exists, it is truncated to length three (the bytes in the file will consist only of the <link unicode_primer.csdoc>UTF-8 byte order mark</link>).
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.
+
+
+<subheader>Example</subheader>
+
+<logic>
+string report_filename = pathconcat(Application, "EA Completion Rate.html");
+filecreate(report_filename);
+</logic>
+
+
+<seealso dircreate_function.csdoc open_function.csdoc setfile_function.csdoc />

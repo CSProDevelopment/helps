@@ -1,0 +1,62 @@
+﻿<title>SyncTime Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+d = synctime(<arg>dictionary_name</arg>『, <arg>device_identifier</arg>, <arg>case_identifier</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>synctime</logiccolor> function returns the <link timestamp_function.csdoc>UNIX time</link> of the last synchronization of a data file or a specific case, or <logiccolor>notappl</logiccolor> if no such synchronization has occurred. The <arg>dictionary_name</arg> argument indicates which data file's details are returned. This dictionary can be either the dictionary for the main data file or an external dictionary. CSPro uses the data file that is currently associated with this dictionary, either because it was specified when the application was started or via a call to <logiccolor>setfile</logiccolor> from application logic. Unlike the other synchronization functions, this function can be called without connecting to a server as it returns metadata stored offline in the <link data_sources.csdoc>CSPro DB</link> file.
+
+
+Providing an optional string expression <arg>device_identifier</arg> allows you to query the last synchronization time to a specific device. You can supply the identifier by using a name. A name like <logiccolor>"Bluetooth"</logiccolor> will return information on the last synchronization with <i>any</i> Bluetooth device. A name like <logiccolor>"https://www.myserver.org/api"</logiccolor> will return information on the last synchronization with the specified server.
+
+Alternatively, you can specify <arg>device_identifier</arg> using a device ID. This is most relevant if trying to differentiate between Bluetooth syncs. The device ID corresponds to the value that would be returned by calling <logiccolor>getdeviceid</logiccolor> on the Bluetooth device of interest. For example, providing a device ID like <logiccolor>"6ce7d9416fa72a85"</logiccolor> will return information on the last synchronization with the device that has that ID. If no <arg>device_identifier</arg> is supplied, or if it is blank, then the function will return synchronization information for any device.
+
+
+The optional string expression <arg>case_identifier</arg> allows you to specify a <link uuid_function.csdoc>case UUID</link> to get synchronization information on a case-by-case basis. A case's UUID is a value that uniquely identifies a case, even when multiple cases share the same key (ID items), and can be retrieved using the <logiccolor>uuid</logiccolor> function. The function only returns the synchronization time of the current iteration of the case, so if a case had been synced but has since been modified, the function will return <logiccolor>notappl</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the time of the last synchronization, or <logiccolor>notappl</logiccolor> if there was not a synchronization. In summary:
+
+<indent>
+	<table 3 header nowrap>
+		<cell>Device Identifier</cell><cell>Case Identifier</cell><cell>Last Synchronization Time...</cell>
+		<cell>Undefined or Blank</cell><cell>Undefined or Blank</cell><cell>...of any case to any device</cell>
+		<cell>Not Blank</cell><cell>Undefined or Blank</cell><cell>...of any case to the specified device</cell>
+		<cell>Blank</cell><cell>Not Blank</cell><cell>...of the specified case to any device</cell>
+		<cell>Not Blank</cell><cell>Not Blank</cell><cell>...of the specified case to the specified device</cell>
+	</table>
+</indent>
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+numeric unsynced_cases = countcases(SURVEY_DICT where synctime(SURVEY_DICT, "", uuid(SURVEY_DICT)) = notappl);
+
+if unsynced_cases > 0 then
+	errmsg("There are %d cases on your device that have not been synced to any device.", unsynced_cases);
+endif;
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+string ServerUrl = "https://www.myserver.org/api";
+numeric SecondsInWeek = 60 * 60 * 24 * 7;
+
+when synctime(SURVEY_DICT, ServerUrl);
+	 notappl 						   -> errmsg("You have never synced. Please sync as soon as possible.");
+	 < ( timestamp() - SecondsInWeek ) -> errmsg("You have not synced in a week. Please sync as soon as possible.");
+endwhen;
+</logic>
+
+
+<seealso synchronization.csdoc syncdata_function.csdoc timestamp_function.csdoc timestring_function.csdoc />

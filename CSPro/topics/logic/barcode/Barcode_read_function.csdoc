@@ -1,0 +1,30 @@
+﻿<title>Barcode.read Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = Barcode.read(『<arg>message</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Barcode.read</logiccolor> function starts an Android device's camera and allows the operator to scan a barcode. The barcode can be in <link https://developers.google.com/ml-kit/vision/barcode-scanning>several formats</link>, including QR codes. An optional string expression, <arg>message</arg>, is displayed on top of the camera view and can be used to display instructions to the operator.
+
+This function only works on Android devices and returns a blank string if used on another device.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a string value containing the barcode's value. If the operator canceled before a barcode could be successfully read, the function returns a blank string.
+
+
+<subheader>Example</subheader>
+
+<logic>
+<include include_barcode_read_example.hgi />
+</logic>
+
+
+<seealso Barcode.csdoc barcode_capture_type.csdoc />

@@ -1,0 +1,59 @@
+﻿<title>Run Production Pack</title>
+
+To use CSPack in production mode, you'll need to customize its behavior by creating a PFF file. You can then use the PFF file as a command line parameter for CSPack.exe (the associated filename of this utility). For example, if you name your PFF file "MyPack.pff", you can run CSPack by doing the following from the DOS prompt or a desktop icon:
+
+<indent><font monospace>C:\Program Files\CSPro <definition CSPro::version />\CSPack.exe MyPack.pff</font></indent>
+
+This assumes CSPro was installed in the default directory. Your PFF file must have a ".pff" extension.
+
+The PFF file is a text file so you can create and modify it using any text editor (such as Notepad or Wordpad). Any combination of upper and lower case text may be used. Or, you can run CSPack once, and a PFF file will be automatically created for you—it will be named "CSPack.pff", and will be placed in the same folder as your selected application. You can also manipulate PFF files in logic by using the <link CSPro::Pff.csdoc>Pff</link> object. The following is an example of a CSPack PFF file.
+
+<pff>
+[Run Information]
+Version=CSPro <definition CSPro::version />
+AppType=Pack
+
+[Files]
+Application=.\Census.ent
+Listing=.\CSPack.lst
+ZipFile=.\Census.zip
+
+[Parameters]
+ViewListing=Always
+ViewResults=Yes
+Silent=No
+PackInclude=
+</pff>
+
+<subheader>[Run Information]</subheader>
+
+The <pffcolor>[Run Information]</pffcolor> block is required and must appear exactly as shown in the example above
+
+ <subheader>[Files]</subheader>
+
+The <pffcolor>[Files]</pffcolor> block is required and defines all files that could be used by CSPack. The three entries are optional.
+
+<list>
+	<li><pffcolor>Application</pffcolor>= is the name of the application to be backed up. It must have an extension .ent, .bch, or .xtb.</li>
+	<li><pffcolor>Listing</pffcolor>= indicates the name of the listing file that will be created.</li>
+	<li><pffcolor>ZipFile</pffcolor>= is the name of the ZIP file that will be produced by CSPack.</li>
+</list>
+
+<subheader>[Parameters]</subheader>
+
+The <pffcolor>[Parameters]</pffcolor> block is optional.
+
+<list>
+	<li><pffcolor>ViewListing</pffcolor>= determines whether or not the CSPack report is displayed with TextViewer at the end of the run. If <pffcolor>ViewListing</pffcolor>=Never, then the report is not displayed. If <pffcolor>ViewListing</pffcolor>=OnError, then you will only see the report if any error occurred during ZIP operation. If <pffcolor>ViewListing</pffcolor>=Always, then the results will always be shown. If the line is missing the results will be displayed by default.</li>
+	<li><pffcolor>ViewResults</pffcolor>= determines whether you view the newly created ZIP file. Available options are "Yes" and "No." If the PFF file was automatically generated, this entry will default to "No." If the line is missing the results will be shown.</li>
+	<li><pffcolor>Silent</pffcolor>= determines whether or not to run CSPack interactively, and can be "Yes" or "No." If running silently, the main CSPack dialog box will not be displayed and the pack operation will take place without user intervention. If <pffcolor>Silent</pffcolor>="Yes", the PFF file must contain <pffcolor>Application</pffcolor> and <pffcolor>ZipFile</pffcolor> entries in the <pffcolor>[Files]</pffcolor> section.</li>
+	<li><pffcolor>PackInclude</pffcolor>= specifies whether to include any extra files in the ZIP file. Options, which can be separated by commas, include:
+		<list>
+			<li><b>InputFile</b>: includes the application's input data file</li>
+			<li><b>ExternalFiles</b>: includes any data files associated with the application's external dictionaries</li>
+			<li><b>UserFiles</b>: includes any files associated with the application as user files (generated in logic)</li>
+			<li><b>VSImages</b>: includes any value set images associated with the application's dictionaries</li>
+			<li><b>Resources</b>: includes any files in the application's resource folders</li>
+		</list>
+	</li>
+</list>

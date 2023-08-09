@@ -1,0 +1,69 @@
+﻿<title>Interactive GPS Modes</title>
+
+The interactive GPS modes provide three easy-to-use approaches to taking GPS readings. Each mode displays a widget which lessens the need to design and implement a custom interface. Additionally, each interactive GPS mode automatically opens and closes the GPS unit, so there is no need to call <logiccolor>gps(open)</logiccolor> and <logiccolor>gps(close)</logiccolor>. All three interactive GPS modes are only supported on Android.
+
+
+<subheader>Satellite Mode</subheader>
+
+Displays a widget with a satellite image and a message. The satellite image can be tapped to take a GPS reading. The latitude, longitude, and accuracy are displayed in the bottom-left corner. The message is displayed across the top. Exit the widget by pressing the <i>CLOSE</i> button.
+
+<logicsyntax>
+b = gps(readInteractive『, <arg>message</arg>,』
+		baseMap := None,
+		『readDuration := <arg>duration_in_seconds</arg>,』
+		『message := <arg>message</arg>』);
+</logicsyntax>
+
+The <logiccolor>gps</logiccolor> function must be passed the <logiccolor>readInteractive</logiccolor> command with the <link function_named_arguments.csdoc>named argument</link> <logiccolor>baseMap</logiccolor> set to <logiccolor>None</logiccolor>. The numeric expression <arg>duration_in_seconds</arg> may be used to set the read duration If it is not specified, the read duration will default to 15 seconds. A message can be provided as a string expression as the optional second argument, or via the <arg>message</arg> named argument.
+
+
+<subheader>Map Mode: Current Location</subheader>
+
+Displays a widget with a map, message, and current location indicator. Press the <i>CAPTURE CURRENT GPS LOCATION</i> to take a GPS reading specified by the current location indicator. The latitude, longitude, and accuracy are displayed in the bottom-left corner. In the bottom-right corner there is a center location button that will center the view on the current location. The message is displayed across the top. Exit the widget by pressing the <i>CLOSE</i> button.
+
+<logicsyntax>
+b = gps(readInteractive『, <arg>message</arg>,』
+		『baseMap := <arg>base_map</arg>,』
+		『message := <arg>message</arg>』);
+</logicsyntax>
+
+The <logiccolor>gps</logiccolor> function must be passed the <logiccolor>readInteractive</logiccolor> command. The optional <link function_named_arguments.csdoc>named argument</link> <arg>base_map</arg> can be set to one of four map types (<logiccolor>Normal</logiccolor>, <logiccolor>Satellite</logiccolor>, <logiccolor>Hybrid</logiccolor>, and <logiccolor>Terrain</logiccolor>), or a filename. The filename can specify a TPK or MBTile, so an <link offline_maps.csdoc>offline map</link> can be displayed. If no <arg>base_map</arg> is specified, then the base map will be calculated using <link map_base_map_specification.csdoc>defined rules</link>. A message can be provided as a string expression as the optional second argument, or via the <arg>message</arg> named argument.
+
+
+<subheader>Map Mode: Select Location</subheader>
+
+Displays a widget with a map, message, current location indicator, and a reticle. The reticle allows a location to be selected. Press the <i>CAPTURE SELECTED LOCATION</i> to take a GPS reading indicated by the reticle. The latitude, longitude, and accuracy are displayed in the bottom-left corner. In the bottom-right corner there is a center location button that will center the view on the current location. The message is displayed across the top.  Exit the widget by pressing the <i>CLOSE</i> button at the bottom.
+
+<logicsyntax>
+b = gps(select『, <arg>message</arg>,』
+		『baseMap := <arg>base_map</arg>,』
+		『message := <arg>message</arg>』);
+</logicsyntax>
+
+The <logiccolor>gps</logiccolor> function must be passed the <logiccolor>select</logiccolor> command. The optional <link function_named_arguments.csdoc>named argument</link> <arg>base_map</arg> can set to one of five map types (<logiccolor>Normal</logiccolor>, <logiccolor>Satellite</logiccolor>, <logiccolor>Hybrid</logiccolor>, <logiccolor>Terrain</logiccolor>, and <logiccolor>None</logiccolor>), or a filename. The filename can specify a TPK or MBTile, so an <link offline_maps.csdoc>offline map</link> can be displayed. If no <arg>base_map</arg> is specified, then the base map will be calculated using <link map_base_map_specification.csdoc>defined rules</link>. A message can be provided as a string expression as the optional second argument, or via the <arg>message</arg> named argument.
+
+
+<subheader>Return Value</subheader>
+
+When using these interactive modes, the <logiccolor>gps</logiccolor> function returns a logical value of 1 (true) if successful, 0 (false) if unsuccessful, and -1 if the read is cancelled by pressing the close button. If the function is run on Windows, the function returns <logiccolor>default</logiccolor>.
+
+
+<subheader>Examples</subheader>
+
+<logic>
+// Satellite Mode
+gps(readInteractive,
+	baseMap := None,
+	readDuration := 60,
+	message := "Click on the satellite to take a GPS reading for up to one minute:");
+
+// Map Mode: Current Location
+gps(readInteractive, "Take a GPS reading at your current location:");
+
+// Map Mode: Select Location
+gps(select, "Select your current location on the map:",
+	baseMap := "Suitland.mbtiles");
+</logic>
+
+
+<seealso gps_function.csdoc map_base_map_specification.csdoc />

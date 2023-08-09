@@ -1,0 +1,44 @@
+﻿<title>Mapping Properties</title>
+<context IDD_PROPERTIES_MAPPING IDD_PROPERTIES_MAPPING_TILE_PROVIDER />
+
+To view options related to <link mapping.csdoc>mapping</link>, select <link properties_application.csdoc>Application Properties</link> from the <b>Options</b> menu of a data entry, batch edit, or tabulation application, and then select the <b>Mapping</b> section.
+
+<subheader>Mapping</subheader>
+
+The mapping properties allow control of the following mapping options:
+
+<list>
+<li>The <b>Coordinate Display</b> allows the toggling of the coordinates between decimal and DMS (degrees, minutes, seconds).</li>
+<li>The <b>Default Base Map</b> allows the selection of the base map (normal, hybrid, satellite, terrain, or none). Otherwise, local files can be selected to display offline maps.</li>
+<li>The <b>Tile Provider</b> allows the selection of the source of base maps (Esri or Mapbox).</li>
+</list>
+
+
+<subheader>Esri Tile Provider</subheader>
+
+If Esri is selected as the tile provider then the base maps will be served from their ArcGIS platform. An <link https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys/>API key</link> allows access to the ArcGIS platform. The API key is created once an <link https://developers.arcgis.com/sign-up/>ArcGIS Developer account</link> has been created. The <b>Default Base Map</b> option consists of five different properties. Excluding None, each property is a descriptive label that is associated with a tile layer. By default the associations are:
+
+<table 2 header nowrap>
+	<cell>Name</cell><cell>Tile Layer</cell>
+	<cell>Normal</cell><cell>Streets</cell>
+	<cell>Hybrid</cell><cell>NationalGeographic</cell>
+	<cell>Satellite</cell><cell>Imagery</cell>
+	<cell>Terrain</cell><cell>Topographic</cell>
+</table>
+
+Press the <b>Preview Map</b> button to view changes.
+
+
+<subheader>Mapbox Tile Provider</subheader>
+
+If Mapbox is selected as the tile provider then the base maps will be served from the Mapbox servers. An <link https://docs.mapbox.com/help/glossary/access-token> access token </link> allows access to Mapbox's tools, APIs, or SDKs. Access tokens can be managed from the access tokens page once a <link https://account.mapbox.com> Mapbox account </link> has been created. The <b>Default Base Map</b> option consists of five different properties. Excluding None, each property is a descriptive label that is associated with a tile layer. By default the associations are:
+
+<table 2 header nowrap>
+	<cell>Name</cell><cell>Tile Layer</cell>
+	<cell>Normal</cell><cell>mapbox/streets-v11</cell>
+	<cell>Hybrid</cell><cell>mapbox/satellite-streets-v11</cell>
+	<cell>Satellite</cell><cell>mapbox/satellite-v9</cell>
+	<cell>Terrain</cell><cell>mapbox/outdoors-v11</cell>
+</table>
+
+Press the <b>Preview Map</b> button to view changes.

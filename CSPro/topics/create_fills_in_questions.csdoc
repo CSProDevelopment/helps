@@ -1,0 +1,89 @@
+﻿<title>Create Fills In Questions</title>
+
+Fills are used to customize <link questions.csdoc>question text</link> based on respondents' specific characteristics. This is done by embedding CSPro logic expressions into the text and surrounding them with pairs of tilde characters (~~).
+
+Fills may contain any valid CSPro logic expression that evaluates to a string or numeric value. Logic expressions may include dictionary items, variables, occurrence labels, user-defined functions, as well as any built-in CSPro functions and operators.
+
+<subheader>Fills with Dictionary Items or Variables</subheader>
+
+Enter some question text that needs to be customized. For words or phrases that need to be filled, enter a dictionary item or variable with ~~ characters before and after. For example:
+
+<indent>Can I speak with <b>~~FIRST_NAME~~</b> now?</indent>
+
+When the entry system comes to this text, it will insert the person's FIRST_NAME value into the question text:
+
+<indent>Can I speak with <b>Marjorie</b> now?
+Can I speak with <b>Allyson</b> now?
+</indent>
+
+When used with numeric values, the fill uses the value code. For example, ~~SEX~~ might be 1 or 2. If you want to use the value label, you can use the <logiccolor>getvaluelabel</logiccolor> function:
+
+<indent>How old was <b>~~FIRST_NAME~~</b> when they completed <b>~~getvaluelabel(HIGHEST_GRADE_COMPLETED)~~</b>?</indent>
+
+
+<subheader>Fills with Occurrence Labels</subheader>
+
+You can customize the question text by inserting an item or group's <link occurrence_labels.csdoc>occurrence labels</link> into the text. For example:
+
+<indent>How much did you spend on <b>~~getocclabel()~~</b> in the last month?</indent>
+
+
+<subheader>Fills with User-Defined Functions</subheader>
+
+You can insert the return value of a <link user_defined_functions.csdoc>user-defined function</link> into the question text. The function can return either numeric or string values. For example:
+
+<indent>Thinking now about <b>~~FIRST_NAME~~</b>, what is <b>~~SexPronoun()~~</b> age?</indent>
+
+In logic, a user-defined function must be declared, as in:
+
+<logic>
+function string SexPronoun()
+
+	recode SEX -> SexPronoun;
+		   1   -> "his";
+			   -> "her";
+	endrecode;
+
+end;
+</logic>
+
+
+<subheader>HTML in Fills</subheader>
+
+You can use HTML tags in order to dynamically format fills using logic. If you use HTML tags, you must surround the fill with three tildes (~~~) instead of two. This tells CSPro not to escape the tags when substituting the fill value. If you use the standard two tildes ~~, the literal HTML will substituted instead of the formatted value.
+
+For example the question text:
+
+<indent>You have entered the following household members:</indent>
+
+<indent>~~~householdMembers~~~</indent>
+
+with the following logic:
+
+<logic>
+householdMembers = "<ul><li>Bouba</li><li>Frank</li><li>Chen</li></ul>";
+</logic>
+
+will result in:
+
+<html>
+<div style="text-indent: 20px">
+<p>You have entered the following household members:</p>
+<ul><li>Bouba</li><li>Frank</li><li>Chen</li></ul>
+</div>
+</html>
+
+Or more realistically:
+
+<logic>
+householdMembers = "<ul>";
+
+do numeric ctr = 1 while ctr <= totocc(PERSON_REC)
+	householdMembers = householdMembers + maketext("<li>%s</li>", encode(strip(NAME(ctr))));
+enddo;
+
+householdMembers = householdMembers + "</ul>"
+</logic>
+
+
+<seealso html_question_text.csdoc />

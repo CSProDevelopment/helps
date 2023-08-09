@@ -1,0 +1,97 @@
+﻿<title>Blocks</title>
+
+<subheader>Overview</subheader>
+
+Blocks are a way to group several fields into a related unit. In summary:
+
+<list>
+	<li>Blocks contain some number of fields that come from the same group.</li>
+	<li>On mobile devices, a block's fields can be displayed on the same screen and the operator can enter values into these fields in any order.</li>
+	<li>Blocks can have question text. When running a data entry application, this question text will appear above the question text for each field in the block.</li>
+	<li>Logic can be defined for the block.</li>
+</list>
+
+Blocks are primarily useful for two reasons. Firstly, they provide the mechanism for CSEntry to display multiple fields on a screen. Secondly, they allow you to write logic checks in one place that apply to a number of fields.
+
+The use of blocks is entirely optional. Examples of potential uses of blocks include date fields (day, month, year) or consumption fields (quantity, unit). Alternatively, you can lump together related questions in one block for easy viewing on one screen (e.g., fertility counts of children).
+
+
+<subheader>Creating Blocks</subheader>
+
+To create a new block, select multiple fields in the Forms Tree by holding down the <b>Ctrl</b> key while selecting fields. Once the fields are selected, right-click and select <b>Add Block</b>. A <link change_block_properties.csdoc>dialog box</link> allows you to specify the block's label, name, and whether or not the fields of the block should appear together on the same screen on mobile devices.
+
+Blocks are shown in the Forms Tree with a red icon.
+
+<center><image block_in_form_tree.png /></center>
+
+Only fields can be added to blocks. Blocks can be created from fields on a form or from fields on a roster. To add a field to an existing block, drag the field onto the block. To remove a field from a block, drag it outside of the block. A block can contain no fields, but once it contains one field, it can only contain other items from the same group. For example, if a block contains an item from the population record, then only other items from the population record can be part of the group.
+
+
+<subheader>Using Blocks</subheader>
+
+You can define question text for a block. When running a data entry application on a mobile device, the block's question text appears at the top of the screen, and then each field's individual question text appears underneath. This allows you to have some general text ("What is your date of birth?") and then specific text ("What is your year of birth?"). On Windows desktop, the block and field question text appears in the same window.
+
+You can write logic that will run when the block is entered or exited. For example, if you have a block with two fields, FIELD1 and FIELD2, then logic will be executed in the following order if moving forward in your program:
+
+<b>BLOCK</b> (<logiccolor>preproc</logiccolor>, <logiccolor>onfocus</logiccolor>)~!~
+<b>FIELD1</b> (<logiccolor>preproc</logiccolor>, <logiccolor>onfocus</logiccolor>, <logiccolor>killfocus</logiccolor>, <logiccolor>postproc</logiccolor>)~!~
+<b>FIELD2</b> (<logiccolor>preproc</logiccolor>, <logiccolor>onfocus</logiccolor>, <logiccolor>killfocus</logiccolor>, <logiccolor>postproc</logiccolor>)~!~
+<b>BLOCK</b> (<logiccolor>killfocus</logiccolor>, <logiccolor>postproc</logiccolor>)
+
+Instead of putting logic in the field procedures, you will generally place all logic related to the fields of the block in the block's procedures.
+
+You can refer to blocks in logic in the movement statements (<logiccolor>advance</logiccolor>, <logiccolor>ask</logiccolor>, <logiccolor>move</logiccolor>, <logiccolor>reenter</logiccolor>, <logiccolor>skip</logiccolor>) and you can use the blocks in occurrence-related functions (<logiccolor>count</logiccolor>, <logiccolor>curocc</logiccolor>, <logiccolor>maxocc</logiccolor>, <logiccolor>noccurs</logiccolor>, and <logiccolor>totocc</logiccolor>).
+
+Just as you will generally want to put logic in the block procedures, you will likely want to use the block name in movement statements rather than a field name. One advantage of this is that you can modify or reorder the fields in the block without having to modify movement logic. When using <logiccolor>ask</logiccolor> on a block, if the condition fails, then all of the fields in the block will be skipped.
+
+
+<subheader>"No Field" Blocks</subheader>
+
+A block can exist without any fields added to it. The logic procedures associated with such a block are still executed based on where the block is in the Forms Tree. These blocks can be useful as "control fields," serving as an anchor upon which you can orient your skips.
+
+
+<subheader>Example</subheader>
+
+Thinking about the example in the above image, date of birth (day, month, year), one disadvantage of the one-question-per-screen approach on mobile devices is that it splits related fields onto multiple screens, and, depending on where logic checks are executed, results in a reenter potentially not going to the most relevant field. With blocks, all related fields appear on the screen at the same time, allowing the enumerator to enter the values in any order.
+
+<center><image block_csentry.png /></center>
+
+Only after the enumerator has filled all applicable values will they move past the block. Logic checks for date of birth would thus appear in the block's procedure:
+
+<logic>
+PROC DOB_BLOCK
+
+preproc
+
+	// only ask date of birth in conventional households
+	ask if HH_TYPE = 1;
+
+postproc
+
+	// if the month or day is missing, then assume 1 for these checks
+	numeric dob_mm = DOB_MONTH;
+
+	if dob_mm = missing then
+		dob_mm = 1;
+	endif;
+
+	numeric dob_dd = DOB_DAY;
+
+	if dob_dd = missing then
+		dob_dd = 1;
+	endif;
+
+	numeric dob_yyyymmdd = DOB_YEAR * 10000 + dob_mm * 100 + dob_dd;
+
+	if not datevalid(dob_yyyymmdd) then
+		errmsg("The date of birth is not valid");
+		reenter;
+
+	elseif dob_yyyymmdd > sysdate("YYYYMMDD") then
+		errmsg("The date of birth cannot be in the future");
+		reenter;
+
+	endif;
+</logic>
+
+<seealso change_block_properties.csdoc />

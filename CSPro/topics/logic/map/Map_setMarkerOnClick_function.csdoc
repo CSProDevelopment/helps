@@ -1,0 +1,99 @@
+﻿<title>Map.setMarkerOnClick Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = map_name.setMarkerOnClick(<arg>markerId</arg>, <arg>callbackFunction</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Map.setMarkerOnClick</logiccolor> function sets the function that is called when the user taps on the marker identified by <arg>markerId</arg>. When the user taps on the marker the user-defined function <arg>callbackFunction</arg> will be called.
+
+The <arg>callbackFunction</arg> is the name of a user function defined in the global procedure. The function name may optionally be followed by function arguments which will be passed to the function when it is run. These arguments are evaluated at the time that <logiccolor>Map.setMarkerOnClick</logiccolor> is called rather than at the time the callback is run. This allows you to reuse the same callback function for multiple markers and to customize the behavior of the callback by passing different arguments to the callback function for each marker.
+
+If no on-click function is set for a marker then when the marker is clicked, the default behavior is to center the view on the marker and to display the marker's info window. After setting an on-click function with <logiccolor>Map.setMarkerOnClick</logiccolor> function, the popup info window is not shown when the marker is clicked. If you wish to still display the popup window and also handle taps on the marker you can use the function <logiccolor>Map.setMarkerOnClickInfoWindow()</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if the marker was found and the callback function was set successfully and 0 (false) if there is an error.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC GLOBAL
+
+function clickedOnMarker()
+    errmsg("You clicked on a marker");
+end;
+
+PROC SOMEITEM
+
+// Declare a map
+Map mymap;
+
+// Add a marker to the map at latitude 38.84839, longitude -76.931098
+numeric markerId = mymap.addMarker(38.84839, -76.931098);
+
+// Set function that is called on marker click
+mymap.setMarkerOnClick(markerId, clickedOnMarker());
+
+// Display the map
+mymap.show();
+
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC GLOBAL
+
+function launchHouseholdQuestionnaire(string caseid)
+
+	Pff household_pff;
+
+	household_pff.setProperty("AppType", "Entry");
+
+	household_pff.setProperty("Key", caseid);
+
+	household_pff.setProperty("Application", "Household.ent");
+	household_pff.setProperty("InputData", "Household.csdb");
+
+	household_pff.setProperty("OnExit", "Menu.pff");
+
+	household_pff.exec();
+
+end;
+
+PROC SHOW_HOUSEHOLDS_ON_MAP
+preproc
+
+// Declare a map
+Map mymap;
+
+// Loop through all households in the listing dictionary
+forcase LIST_DICT do
+
+	// Create a marker for household at latitude and longitude from listing file
+    numeric markerId = mymap.addMarker(LI_LATITUDE, LI_LONGITUDE);
+
+	// Set the marker text to the household number
+    mymap.setMarkerText(markerId, maketext("%v", LI_HOUSEHOLD_NUMBER));
+
+	// When marker is clicked launch household questionnaire application
+	// and prefill the ID items
+	string householdCode = key(LIST_DICT);
+    mymap.setMarkerOnClick(markerId, launchHouseholdQuestionnaire(householdCode));
+
+endfor;
+
+// Show the map
+mymap.show();
+</logic>
+
+
+<seealso Map.csdoc Map_addMarker_function.csdoc Map_setMarkerOnClickInfoWindow_function.csdoc />

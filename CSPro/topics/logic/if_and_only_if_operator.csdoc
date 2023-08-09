@@ -1,0 +1,39 @@
+﻿<title>If and Only If Operator</title>
+
+This operator has the following truth table:
+
+<subheader>if and only if (X &lt;=&gt; Y)</subheader>
+
+<table 3 center>
+	<cell></cell><cell 2><b>Y</b></cell>
+	<cell><b>X</b></cell><cell><b>true</b></cell><cell><b>false</b></cell>
+	<cell><b>true</b></cell><cell>true</cell><cell>false</cell>
+	<cell><b>false</b></cell><cell>false</cell><cell>true</cell>
+</table>
+
+The following two sets of code give the same result:
+
+<logic>
+if ( SEX = 2 and AGE >= 10 ) <=> ( CHILDREN_BORN <> notappl ) then
+	errmsg("Children ever born incorrect");
+endif;
+</logic>
+
+and:
+
+<logic>
+if SEX = 2 and AGE >= 10 then
+
+	if CHILDREN_BORN = notappl then
+		errmsg("Children ever born incorrect");
+	endif;
+
+else
+	if CHILDREN_BORN <> notappl then
+		errmsg("Children ever born incorrect");
+	endif;
+
+endif;
+</logic>
+
+<seealso operators.csdoc operator_precedence.csdoc />

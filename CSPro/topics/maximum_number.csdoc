@@ -1,0 +1,9 @@
+﻿<title>Maximum Number</title>
+
+This record property specifies, for the given record, the maximum number of occurrences of that record allowed in one questionnaire.
+
+For example, suppose you are designing a dictionary for a census. You will probably have at least two types of records: one for the household, and one for each person in that household. There should be only one occurrence of the household record, but for the person record you will of course need more than one occurrence, as there will likely be more than one person in a household. Thus, the maximum for the person record could be 25, if limiting yourself to a family unit, or larger, if enumerating group facilities (military barracks, hospitals, mental institutions, etc.).
+
+The maximum number of occurrences that may be specified for any record is 9,999. However, for greater program efficiency we recommend that you never have this many occurrences and that you keep the maximum to the lowest value that is appropriate for your particular application.
+
+<seealso record_description.csdoc record_properties.csdoc />

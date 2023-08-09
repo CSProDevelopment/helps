@@ -1,0 +1,67 @@
+﻿<title>SetValueSet Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = setvalueset(<arg>item_name</arg>, <arg>value_set_name</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>setvalueset</logiccolor> function allows you to dynamically change an item's current value set. An item's current value set is used to determine whether or not entered values are out of range. The current value set is also used to provide the value choices displayed in <link capture_types.csdoc>capture types</link>. The changing of a value set is not permanent; it remains in effect only during the processing of the current case or until the next call to <logiccolor>setvalueset</logiccolor>.
+
+The <arg>item_name</arg> is the name of the item in the data dictionary whose value set is to be changed. The argument is usually an item name but, preceded by the <logiccolor>@</logiccolor> symbol, it can also be a string expression that evaluates to the name of an item; for example:
+
+<logic>
+setvalueset(@getsymbol(), MY_VALUESET_VS1);
+</logic>
+
+The argument <arg>value_set_name</arg> is the name of an existing value set in the dictionary for the specified item. The function will replace the values of the current value set for the item with the values from the value set specified by <arg>value_set_name</arg>, which is either the name of a value set or a string expression that evaluates to a value set name. The <arg>value_set_name</arg> can also be the name of a <link ValueSet.csdoc>dynamic value set</link>.
+
+The <logiccolor>setvalueset</logiccolor> function can also create dynamic value sets from <link setvalueset_function_with_arrays.csdoc>array arguments</link>.
+
+<subheader>Return Value</subheader>
+
+When using a value set specified in the dictionary, the function returns a logical value of 1 (true) if the value set was changed successfully and 0 (false) otherwise (for example, if the value set name is invalid). With dynamic value sets, the function returns the number of codes in the newly created value set.
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC D05_CAUSE_DEATH
+
+onfocus
+
+	if D02_SEX = 1 then
+		setvalueset(SEX, D05_CAUSE_DEATH_MALE_VS);
+
+	else
+		setvalueset(SEX, D05_CAUSE_DEATH_FEMALE_VS);
+
+	endif;
+</logic>
+
+<subheader>Example 2</subheader>
+
+<logic>
+PROC DISTRICT
+
+preproc
+
+	setvalueset(DISTRICT, maketext("DISTRICT_VS%v", PROVINCE));
+</logic>
+
+<subheader>Example (Dynamic Value Set)</subheader>
+
+<logic>
+PROC SECOND_FAVORITE_DRINK
+
+preproc
+
+    valueset drink_valueset = FAVORITE_DRINK_VS;
+
+    drink_valueset.remove(FAVORITE_DRINK);
+
+    setvalueset(SECOND_FAVORITE_DRINK, drink_valueset);
+</logic>
+
+<seealso setvaluesets_function.csdoc invalueset_function.csdoc />

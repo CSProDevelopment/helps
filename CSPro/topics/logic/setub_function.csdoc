@@ -1,0 +1,40 @@
+﻿<title>SetUB Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = setub(<arg>month</arg>, <arg>year</arg>, <arg>maximum_cmc</arg>);
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>setlb</logiccolor> function returns the upper bound of the <i><link cmcode_function.csdoc>century month code</link></i> (CMC) of an event. The arguments <arg>month</arg>, <arg>year</arg>, and <arg>maximum_cmc</arg> are all numeric expressions.
+
+If the month and year are both valid, the function returns the CMC of that date, as if calling:
+
+<logicsyntax>
+i = cmcode(<arg>month</arg>, <arg>year</arg>);
+</logicsyntax>
+
+If the month is invalid but the year is valid, the function returns the CMC of December in the valid year, as if calling:
+
+<logicsyntax>
+i = cmcode(12, <arg>year</arg>);
+</logicsyntax>
+
+If both the month and year are invalid, the function returns the upper bound represented as <arg>maximum_cmc</arg>.
+
+<subheader>Return Value</subheader>
+
+The function returns the upper bound of the CMC of an event.
+
+<subheader>Example</subheader>
+
+<logic>
+if CM12Y < 9997 then
+	ldoblc = setlb(CM12M, CM12Y, 0);
+	udoblc = setub(CM12M, CM12Y, 9999);
+endif;
+</logic>
+
+<seealso setlb_function.csdoc cmcode_function.csdoc adjlba_function.csdoc adjlbi_function.csdoc adjuba_function.csdoc adjubi_function.csdoc />

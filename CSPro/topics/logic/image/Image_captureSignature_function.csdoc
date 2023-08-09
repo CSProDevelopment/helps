@@ -1,0 +1,55 @@
+﻿<title>Image.captureSignature Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = image_name.captureSignature(『<arg>message</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Image.captureSignature</logiccolor> function allows the drawing of a signature and stores the captured signature in the <link Image.csdoc>Image</link> object. This function only works on Android devices. The signature UI includes two options:
+
+<list>
+	<li><b>Save</b>: Tap to save an image of the displayed signature.</li>
+	<li><b>Clear</b>: Tap to to clear the displayed signature.</li>
+</list>
+
+<center><image signature.png /></center>
+
+The optional string expression <arg>message</arg> will appear on the Android device's screen while the signature screen is active. The string will not be saved to the image.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if a signature was successfully captured and 0 (<logiccolor>false</logiccolor>) if there was an error capturing a signature or if the operator canceled the operation.
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC CONSENT
+
+	// have the respondent sign to confirm that they agreed to this interview
+	string consent_filename = Path.concat("Consent Signatures", key(SURVEY_DICT) + ".png");
+
+	// if the file exists, then they must have already consented on a previous
+	// household visit so only take the signature if the file does not exist
+	if not fileexist(consent_filename) then
+
+		string consent_message = "Please sign your name, indicating that you consent to be interviewed for this survey.";
+		Image consent_signature;
+
+		if not consent_signature.captureSignature(consent_message) then
+			errmsg("The respondent must consent before you can continue.");
+			reenter;
+		endif;
+
+		consent_signature.save(consent_filename);
+
+	endif;
+</logic>
+
+
+<seealso Image.csdoc Image_takePhoto_function.csdoc />

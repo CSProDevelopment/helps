@@ -1,0 +1,86 @@
+﻿<title>Path.selectFile Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = Path.selectFile(『<arg>message</arg>』);
+
+s = Path.selectFile(『title := <arg>message</arg>,』
+					『filter := <arg>wildcard</arg>,』
+					『startDirectory := <arg>start_directory_path</arg>,』
+					『rootDirectory := <arg>root_directory_path</arg>,』
+					『showDirectories := <arg>show_directories_flag</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Path.selectFile</logiccolor> function shows the operator a visual listing of the file system and returns the path of the file the operator selected. Hidden and system files are not shown in the visual listing.
+
+In the first version, an optional string expression <arg>message</arg> specifies the title of the dialog that shows the file listing. The operator will initially see files starting in the directory where the currently running application is located, and will have access to other files on that drive.
+
+
+The second version, accessed by using <link function_named_arguments.csdoc>named arguments</link>, gives you control over the location and kind of files that the operator can choose. The string expression <arg>message</arg> specifies the title of the  dialog that shows the file listing.
+
+
+You can specify a string expression, <arg>wildcard</arg>, that is applied to filter the files shown in the visual listing. For example, <logiccolor>"*.csdb"</logiccolor> would show only <link data_sources.csdoc>CSPro DB</link> files. You can specify multiple wildcard filters by separating each filter with a semicolon. The filter <logiccolor>"*.jpg;*.jpeg;*.bmp"</logiccolor> would show both JPEG and BMP files. Instead of using a string expression, you can also use a predefined wildcard expression:
+
+<list>
+	<li><logiccolor>FileType.Audio</logiccolor>: Files that the <link Audio.csdoc>Audio</link> object can read and write.</li>
+	<li><logiccolor>FileType.Geometry</logiccolor>: Files that the <link Geometry.csdoc>Geometry</link> object can read and write.</li>
+	<li><logiccolor>FileType.Image</logiccolor>: Files that the <link Image.csdoc>Image</link> object can read and write.</li>
+</list>
+
+
+To specify the initial directory shown to the operator, you can specify a <arg>start_directory_path</arg>. You can also specify a <arg>root_directory_path</arg>. Specifying a root directory prevents the operator from moving to a location above the root directory. If neither are provided, the operator will initially see files starting in the directory where the currently running application is located, and will have access to other files on that drive. If a root directory is provided without a start directory, the start directory will be set to the root directory. If both a start and root directory are provided, the root directory must be equal to or above the start directory. Both directory paths can be one of the following:
+
+<list>
+	<li>A string expression specifying a directory.</li>
+	<li>One of the path types documented in the <logiccolor>pathname</logiccolor> function.</li>
+	<li>A <link media_store.csdoc>media type</link>, which will show the files of the specified media type on Android. These files can reside in multiple directories.</li>
+</list>
+
+
+By default, both files and directories are shown to the operator. To hide directories, set the numeric expression <arg>show_directories_flag</arg> to <logiccolor>false</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a string with the path of the selected file, or a blank string is no file was selected.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+string pff_filename = Path.selectFile(title := "Select an Application to Execute",
+									  filter := "*.pff");
+
+if pff_filename <> "" then
+	execpff(pff_filename);
+endif;
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+string data_directory = Path.concat(application, "../Data");
+string current_region_data_directory = Path.concat(data_directory, maketext("%v", REGION));
+
+string data_filename = Path.selectFile(title := "Select a Data File To Process",
+									   filter := "*.csdb",
+									   rootDirectory := data_directory,
+									   startDirectory := current_region_data_directory);
+</logic>
+
+
+<subheader>Example 3</subheader>
+
+<logic>
+string image_filename = Path.selectFile(title := "Select Your Favorite Image",
+									    rootDirectory := Media.Images);
+</logic>
+
+
+<seealso Path.csdoc dirlist_function.csdoc />

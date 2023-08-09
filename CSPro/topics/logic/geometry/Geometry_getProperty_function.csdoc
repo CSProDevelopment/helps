@@ -1,0 +1,37 @@
+﻿<title>Geometry.getProperty Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = geometry_name.getProperty(<arg>property_name</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Geometry.getProperty</logiccolor> function returns a string containing the current value associated with the <link Geometry.csdoc>Geometry</link> object's property specified by the string expression <arg>property_name</arg>. If a Geometry object contains multiple features, the function returns the value of the first feature that contains a value for <arg>property_name</arg>. Property names are case sensitive.
+
+Property values may be set using the <logiccolor>Geometry.setProperty</logiccolor> function. When reading a GeoJSON file using the <logiccolor>Geometry.load</logiccolor> function, property names and values are read from the properties section of GeoJSON features.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a string with the property information. If no feature in the geometry has a value for the property, a blank string is returned.
+
+
+<subheader>Example</subheader>
+
+<logic>
+// Load geometry from a file
+Geometry geom;
+geom.load("geom.geojson");
+
+// Read the name property
+string feature_name = geom.getProperty("name");
+
+errmsg("This feature is named %s", feature_name);
+</logic>
+
+
+<seealso Geometry.csdoc Geometry_setProperty_function.csdoc />

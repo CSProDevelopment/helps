@@ -1,0 +1,24 @@
+﻿<title>Change Keyboard Input</title>
+<context IDD_KEYBOARD_LAYOUTS />
+
+To manually change the keyboard input for a field, view the <link change_field_properties.csdoc>field's properties</link> and select <b>Keyboard Input</b> -> <b>Change</b>.
+
+<center><image keyboard_input.png /></center>
+
+You can specify a specific keyboard input method for a field if you would like to avoid making keyers change input methods manually. The list is populated by currently activate input methods. If an input method is not listed, activate it first, typically by modifying the Regional and Language Options in the Control Panel.
+
+The keyboard input method will only apply to the selected field. After the keyer moves away from the field, the input method will return to the default keyboard setting. For example, suppose that there are four fields:
+
+<table 2 header nowrap>
+	<cell>Field Name</cell><cell>Keyboard ID </cell>
+	<cell>Field1</cell><cell>0</cell>
+	<cell>Field2</cell><cell>0</cell>
+	<cell>Field3</cell><cell>1067</cell>
+	<cell>Field4</cell><cell>0</cell>
+</table>
+
+In the above scenario, the keyboard input method will only be modified for Field3, which will be entered in Armenian. However, suppose that the keyer manually changes the keyboard from the default keyboard to Arabic while on the Field2. In that case, Field3 will be entered in Armenian, and then the input method will be changed back to Arabic for Field4. In other words, the Default Keyboard input method resets the keyboard back to whatever input method was last active on another field with a keyboard ID of 0.
+
+When CSEntry loads the data entry program, it also loads any keyboard input methods that are not currently active on the machine. The input methods will be unloaded when CSEntry terminates. However, some input methods require additional files that do not come in a standard Windows installation. CSEntry can only use input methods that contain all the required files. If the files do not exist, the Default Keyboard will be used for those fields. Before deploying your application you will want to ensure that the required input methods are installed on each keyer's machine.
+
+<seealso changekeyboard_function.csdoc change_field_properties_for_multiple_fields.csdoc />

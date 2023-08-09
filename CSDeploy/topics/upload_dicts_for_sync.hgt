@@ -1,9 +1,0 @@
-﻿<title>Upload Dictionaries for Data Synchronization</title>
-
-In order to use <link CSPro::synchronization.hgt>data synchronization</link> to send data captured on mobile devices to a server, you first need to upload the dictionary for the data that you wish synchronize. Uploading your dictionary to the server prepares the server to be able to accept the data when the data is uploaded from a CSPro application in the field. The deployment tool can optionally upload dictionaries in your CSPro applications to the server as part of deployment.
-
-When you add a data entry application to deploy, the deployment tool automatically finds all of the data dictionaries used in that application and adds them to the <b>Dictionaries to Upload for Synchronization</b> window. You should select all dictionaries that will be used for synchronization in your application by checking the box next to the name of the dictionary. If you have configured synchronization using the <link CSPro::synchronization_simple.hgt>synchronization options dialog</link>, make sure that the main dictionary for your application is selected. If you are using the synchronization functions in your application logic, make sure that any dictionary that is used in a call to <link CSPro::syncdata_function.hgt>syncdata</link> is selected.
-
-When you click <b>Deploy</b> to upload your application your application to the server, any dictionaries that have been selected will also be uploaded to the server. If the dictionary has previously been uploaded, it will be updated with the version on your computer.
-
-<b>See also:</b> <link CSPro::synchronization.hgt>Synchronization Overview</link>

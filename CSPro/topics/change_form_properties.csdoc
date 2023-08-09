@@ -1,0 +1,24 @@
+﻿<title>Change Form Properties</title>
+<context IDD_FORMPROP />
+
+Right-click on the form button <image tree_icon_form.png /> on the tree and choose <b>Properties</b>, or right click on empty space on the form itself and choose <b>Form Properties</b>.
+
+<center><image form_properties.png /></center>
+
+<subheader>Label</subheader>
+
+This is descriptive text that helps you identify the current form. It may contain any characters (including blanks) and be up to 120 characters long.
+
+<subheader>Name</subheader>
+
+This is the name of the form which you would use when writing programming logic. It must consist of letters, digits, and the underscore ('_') character. It must not begin or end with underscore.
+
+You can see either labels or names on the forms tree. Press <b>Ctrl+T</b> to switch back and forth between them.
+
+<subheader>Color</subheader>
+
+The button shows the color of the form. To change the form color, click on this button, select a new color and click <b>OK</b>. You can change the form color back to what it was originally (usually gray) by clicking on the <b>Reset Default Color</b> button. You can make all forms the same color by clicking on the <b>Apply to All</b> button.
+
+<subheader>Capture Type Popup Position</subheader>
+
+If your program uses <link capture_types.csdoc>capture types</link>, you can specify where on the form you want the popup boxes to appear. Enable this option by clicking on the <b>Use Custom Settings</b> checkbox and then specify the X (horizontal) and Y (vertical) coordinates for the boxes. The (0,0) origin point of the form is located at the form's top left corner. When editing a form, the status bar will show the X and Y coordinates of your cursor, which is one way to determine your desired coordinates. Clicking <b>Apply to All</b> will set the capture position for all forms. Clicking <b>Disable on All</b> will turn off this functionality for all forms and the popup windows will appear in their default positions, as close to the field as possible. The capture position can also be set in logic using the <logiccolor>setcapturepos</logiccolor> function.
