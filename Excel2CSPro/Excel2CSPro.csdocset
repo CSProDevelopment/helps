@@ -1,5 +1,25 @@
-﻿Title=CSPro Excel to CSPro Help
-Output=CHM
-Output=HTML
-DefaultTopic=introduction_to_excel_to_cspro.csdoc
-DefinitionsFile=..\CSProDefinitions.txt
+﻿{
+  "title": "CSPro Excel to CSPro Help", 
+  "import": {
+    "tableOfContents": "Excel2CSPro.toc", 
+    "index": "Excel2CSPro.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ]
+  }, 
+  "settings": {
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

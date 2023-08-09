@@ -1,7 +1,33 @@
-﻿Title=CSPro Text Viewer Help
-Output=CHM
-Output=HTML
-DefaultTopic=introduction_to_text_viewer.csdoc
-DefinitionsFile=..\CSProDefinitions.txt
-ResourceFile=TextView
-ResourceFile=zUtilO
+﻿{
+  "title": "CSPro Text Viewer Help", 
+  "import": {
+    "tableOfContents": "TextView.toc", 
+    "index": "TextView.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ], 
+    "contextIds": [
+      "../Shared/afxres.h", 
+      "TextView/resource.h", 
+      "zUtilO/resource.h"
+    ]
+  }, 
+  "settings": {
+    "imageDirectories": [
+      "images"
+    ], 
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

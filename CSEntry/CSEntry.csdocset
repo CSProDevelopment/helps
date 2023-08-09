@@ -1,11 +1,36 @@
-﻿Title=CSPro Data Entry Helps
-Output=CHM
-Output=HTML
-Output=PDF
-DefaultTopic=introduction_to_data_entry.csdoc
-PdfCoverTopic=pdf_cover_page.csdoc
-pdf_title=CSPro Data Entry User's Guide
-DefinitionsFile=..\CSProDefinitions.txt
-ResourceFile=CSEntry
-ResourceFile=zBridgeO
-ResourceFile=zUtilF
+﻿{
+  "title": "CSPro Data Entry User's Guide", 
+  "coverPageDocument": "../Shared/topics/pdf_cover_page.csdoc", 
+  "import": {
+    "tableOfContents": "CSEntry.toc", 
+    "index": "CSEntry.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ], 
+    "contextIds": [
+      "../Shared/afxres.h", 
+      "CSEntry/resource.h", 
+      "zBridgeO/resource.h", 
+      "zUtilF/resource.h", 
+      "zUtilF/resource_shared.h"
+    ]
+  }, 
+  "settings": {
+    "imageDirectories": [
+      "images"
+    ], 
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

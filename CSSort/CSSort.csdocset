@@ -1,6 +1,32 @@
-﻿Title=CSPro Sort Data Help
-Output=CHM
-Output=HTML
-DefaultTopic=introduction_to_sort_data.csdoc
-DefinitionsFile=..\CSProDefinitions.txt
-ResourceFile=CSSort
+﻿{
+  "title": "CSPro Sort Data Help", 
+  "import": {
+    "tableOfContents": "CSSort.toc", 
+    "index": "CSSort.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ], 
+    "contextIds": [
+      "../Shared/afxres.h", 
+      "CSSort/resource.h"
+    ]
+  }, 
+  "settings": {
+    "imageDirectories": [
+      "images"
+    ], 
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

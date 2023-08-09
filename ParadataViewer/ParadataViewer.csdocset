@@ -1,5 +1,25 @@
-﻿Title=CSPro Paradadata Viewer Help
-Output=CHM
-Output=HTML
-DefaultTopic=introduction_to_paradata_viewer.csdoc
-DefinitionsFile=..\CSProDefinitions.txt
+﻿{
+  "title": "CSPro Paradadata Viewer Help", 
+  "import": {
+    "tableOfContents": "ParadataViewer.toc", 
+    "index": "ParadataViewer.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ]
+  }, 
+  "settings": {
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

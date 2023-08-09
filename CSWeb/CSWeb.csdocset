@@ -1,8 +1,29 @@
-﻿Title=CSWeb Help
-Output=CHM
-Output=HTML
-Output=PDF
-DefaultTopic=introduction_to_csweb.csdoc
-PdfCoverTopic=pdf_cover_page.csdoc
-pdf_title=CSWeb User's Guide
-DefinitionsFile=..\CSProDefinitions.txt
+﻿{
+  "title": "CSWeb User's Guide", 
+  "coverPageDocument": "../Shared/topics/pdf_cover_page.csdoc", 
+  "import": {
+    "tableOfContents": "CSWeb.toc", 
+    "index": "CSWeb.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ]
+  }, 
+  "settings": {
+    "imageDirectories": [
+      "images"
+    ], 
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

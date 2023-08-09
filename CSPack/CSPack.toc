@@ -1,10 +1,24 @@
-﻿|Pack Application User's Guide																	#	Pack Application User's Guide
-	introduction_to_pack_application.csdoc														#		Introduction to Pack Application
-	|Concepts																					#		Concepts
-		relative_path_names.csdoc																	#			Relative Path Names
-		zip_files.csdoc																			#			ZIP Files
-	|How to ...																					#		How to ...
-		specify_files.csdoc																		#			Specify Files
-		run_pack_application.csdoc																#			Run Pack Application
-		run_production_pack.csdoc																	#			Run Production Pack
-		get_help.csdoc																			#			Get Help
+﻿{
+  "title": "Pack Application User's Guide", 
+  "documents": [
+    { "path": "introduction_to_pack_application.csdoc", "~title": "Introduction to Pack Application" }
+  ], 
+  "chapters": [
+    {
+      "title": "Concepts", 
+      "documents": [
+        { "path": "relative_path_names.csdoc", "~title": "Relative Path Names" }, 
+        { "path": "zip_files.csdoc", "~title": "ZIP Files" }
+      ]
+    }, 
+    {
+      "title": "How to ...", 
+      "documents": [
+        { "path": "specify_files.csdoc", "~title": "Specify Files" }, 
+        { "path": "run_pack_application.csdoc", "~title": "Run Pack Application" }, 
+        { "path": "run_production_pack.csdoc", "~title": "Run Production Pack" }, 
+        { "path": "../Shared/topics/get_help.csdoc", "~title": "Get Help" }
+      ]
+    }
+  ]
+}

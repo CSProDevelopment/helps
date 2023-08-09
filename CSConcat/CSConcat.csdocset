@@ -1,6 +1,29 @@
-﻿Title=CSPro Concatenate Help
-Output=CHM
-Output=HTML
-DefaultTopic=introduction_to_concatenate_data.csdoc
-DefinitionsFile=..\CSProDefinitions.txt
-ResourceFile=CSConcat
+﻿{
+  "title": "CSPro Concatenate Help", 
+  "import": {
+    "tableOfContents": "CSConcat.toc", 
+    "index": "CSConcat.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ], 
+    "contextIds": [
+      "../Shared/afxres.h", 
+      "CSConcat/resource.h"
+    ]
+  }, 
+  "settings": {
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

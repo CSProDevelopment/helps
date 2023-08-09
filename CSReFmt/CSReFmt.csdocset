@@ -1,6 +1,32 @@
-﻿Title=CSPro Reformat Help
-Output=CHM
-Output=HTML
-DefaultTopic=introduction_to_reformat_data.csdoc
-DefinitionsFile=..\CSProDefinitions.txt
-ResourceFile=CSReFmt
+﻿{
+  "title": "CSPro Reformat Help", 
+  "import": {
+    "tableOfContents": "CSReFmt.toc", 
+    "index": "CSReFmt.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ], 
+    "contextIds": [
+      "../Shared/afxres.h", 
+      "CSReFmt/resource.h"
+    ]
+  }, 
+  "settings": {
+    "imageDirectories": [
+      "images"
+    ], 
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

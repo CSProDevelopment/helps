@@ -1,7 +1,34 @@
-﻿Title=CSPro Table Viewer Help
-Output=CHM
-Output=HTML
-DefaultTopic=introduction_to_table_viewer.csdoc
-DefinitionsFile=..\CSProDefinitions.txt
-ResourceFile=TblView
-ResourceFile=zTableF
+﻿{
+  "title": "CSPro Table Viewer Help", 
+  "import": {
+    "tableOfContents": "TblView.toc", 
+    "index": "TblView.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ], 
+    "contextIds": [
+      "../Shared/afxres.h", 
+      "TblView/resource.h", 
+      "zTableF/resource.h", 
+      "zTableF/resource_shared.h"
+    ]
+  }, 
+  "settings": {
+    "imageDirectories": [
+      "images"
+    ], 
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

@@ -1,5 +1,28 @@
-﻿Title=CSPro Data Viewer Help
-Output=CHM
-Output=HTML
-DefaultTopic=introduction_to_data_viewer.csdoc
-DefinitionsFile=..\CSProDefinitions.txt
+﻿{
+  "title": "CSPro Data Viewer Help", 
+  "import": {
+    "tableOfContents": "DataViewer.toc", 
+    "index": "DataViewer.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ]
+  }, 
+  "settings": {
+    "imageDirectories": [
+      "images"
+    ], 
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

@@ -1,6 +1,32 @@
-﻿Title=CSPro Compare Data Help
-Output=CHM
-Output=HTML
-DefaultTopic=introduction_to_compare_data.csdoc
-DefinitionsFile=..\CSProDefinitions.txt
-ResourceFile=CSDiff
+﻿{
+  "title": "CSPro Compare Data Help", 
+  "import": {
+    "tableOfContents": "CSDiff.toc", 
+    "index": "CSDiff.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ], 
+    "contextIds": [
+      "../Shared/afxres.h", 
+      "CSDiff/resource.h"
+    ]
+  }, 
+  "settings": {
+    "imageDirectories": [
+      "images"
+    ], 
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

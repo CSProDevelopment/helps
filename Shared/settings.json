@@ -1,0 +1,62 @@
+﻿{
+  "projectRootDirectory": "..", 
+  "imageDirectories": [
+    {
+      "path": "images", 
+      "recursive": true
+    }
+  ], 
+  "pathAdjustments": [
+    {
+      "path": "topics", 
+      "adjustment": ".", 
+      "relativeToPath": false
+    }
+  ], 
+  "titleLinkage": "outputNamePrefix", 
+  "titleLinkPrefix": "https://www.csprousers.org/help/", 
+  "externalLinkage": "forbid", 
+  "logicLinkage": "project", 
+  "builds": [
+    {
+      "name": "HTML Pages", 
+      "outputDirectory": "../Outputs/HTML Pages", 
+      "buildType": "HTML"
+    }, 
+    {
+      "name": "CSPro Users Help Website", 
+      "outputDirectory": "../Outputs/Website", 
+      "buildType": "website", 
+      "buildDocumentsUsingRelativePaths": false, 
+      "titleLinkage": "suppress"
+    }, 
+    {
+      "name": "Compiled HTML Help", 
+      "outputDirectory": "../Outputs/CHM", 
+      "buildType": "CHM", 
+      "chmButtons": [
+        { "text": "Forum", "link": "http://www.csprousers.org/forum" }, 
+        { "text": "Support", "link": "CSPro::get_help.csdoc" }
+      ]
+    }, 
+    {
+      "name": "PDF Documentation", 
+      "outputDirectory": "../Outputs/PDF", 
+      "buildType": "PDF", 
+      "titleLinkage": "suppress", 
+      "projectLinkage": "suppress", 
+      "logicLinkage": "CSPro Users", 
+      "wkhtmltopdfFlags": [
+        { "type": "global", "flag": "toc" }, 
+        { "type": "global", "flag": "--disable-smart-shrinking" }, 
+        { "type": "global", "flag": "--print-media-type" }, 
+        { "type": "global", "flag": "--page-offset", "value": "-1" }, 
+        { "type": "global", "flag": "--footer-font-name", "value": "\"Calibri\"" }, 
+        { "type": "global", "flag": "--footer-font-size", "value": "9" }, 
+        { "type": "global", "flag": "--footer-left", "value": "\"Page [page] of [toPage]\"" }, 
+        { "type": "global", "flag": "--footer-right", "value": "\"[section]\"" }, 
+        { "type": "global", "flag": "--footer-spacing", "value": "3" }
+      ]
+    }
+  ]
+}

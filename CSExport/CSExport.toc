@@ -1,20 +1,38 @@
-﻿|Export User's Guide																			#	Export User's Guide
-	introduction_to_export_data.csdoc																#		Introduction to Export Data
-	|How to ....																				#		How to ....
-		open_a_dictionary_or_specifications_file.csdoc											#			Open a Dictionary or Specifications File
-		choose_items.csdoc																		#			Choose Items
-		select_export_method.csdoc																#			Select Export Method
-		examples_of_export_methods.csdoc															#			Examples of Export Methods
-		run_export.csdoc																			#			Run Export
-		save_an_export_specifications_file.csdoc													#			Save an Export Specifications File
-		run_production_exports.csdoc																#			Run Production Exports
-		get_help.csdoc																			#			Get Help
-	|Loading Exported Data Into ...																#		Loading Exported Data Into ...
-		load_exported_data_into_r.csdoc | R														#			R
-		load_exported_data_into_sas.csdoc | SAS													#			SAS
-		load_exported_data_into_spss.csdoc | SPSS													#			SPSS
-		load_exported_data_into_stata.csdoc | Stata												#			Stata
-	|Summaries																					#		Summaries
-		menu_summary.csdoc | Menu																	#			Menu
-		toolbar_summary.csdoc | Toolbar															#			Toolbar
-		keys_summary.csdoc | Keys																	#			Keys
+﻿{
+  "title": "Export User's Guide", 
+  "documents": [
+    { "path": "introduction_to_export_data.csdoc", "~title": "Introduction to Export Data" }
+  ], 
+  "chapters": [
+    {
+      "title": "How to ....", 
+      "documents": [
+        { "path": "open_a_dictionary_or_specifications_file.csdoc", "~title": "Open a Dictionary or Specifications File" }, 
+        { "path": "choose_items.csdoc", "~title": "Choose Items" }, 
+        { "path": "select_export_method.csdoc", "~title": "Select Export Method" }, 
+        { "path": "examples_of_export_methods.csdoc", "~title": "Examples of Export Methods" }, 
+        { "path": "run_export.csdoc", "~title": "Run Export" }, 
+        { "path": "save_an_export_specifications_file.csdoc", "~title": "Save an Export Specifications File" }, 
+        { "path": "run_production_exports.csdoc", "~title": "Run Production Exports" }, 
+        { "path": "../Shared/topics/get_help.csdoc", "~title": "Get Help" }
+      ]
+    }, 
+    {
+      "title": "Loading Exported Data Into ...", 
+      "documents": [
+        { "path": "load_exported_data_into_r.csdoc", "title": "R" }, 
+        { "path": "load_exported_data_into_sas.csdoc", "title": "SAS" }, 
+        { "path": "load_exported_data_into_spss.csdoc", "title": "SPSS" }, 
+        { "path": "load_exported_data_into_stata.csdoc", "title": "Stata" }
+      ]
+    }, 
+    {
+      "title": "Summaries", 
+      "documents": [
+        { "path": "menu_summary.csdoc", "title": "Menu" }, 
+        { "path": "toolbar_summary.csdoc", "title": "Toolbar" }, 
+        { "path": "keys_summary.csdoc", "title": "Keys" }
+      ]
+    }
+  ]
+}

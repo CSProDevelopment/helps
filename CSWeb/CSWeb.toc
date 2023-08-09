@@ -1,25 +1,57 @@
-﻿|CSWeb User's Guide																				#	CSWeb User's Guide
-	introduction_to_csweb.csdoc																	#		Introduction to CSWeb
-	|Server Setup																				#		Server Setup
-		minimum_requirements.csdoc																#			Minimum Server Requirements
-		|Apache																					#			Apache
-			apache_server_setup.csdoc																#				Apache Server Setup
-			apache_csweb_setup.csdoc																#				Apache CSWeb Setup
-		|IIS																					#			IIS
-			iis_server_setup.csdoc																#				IIS Server Setup
-			iis_csweb_setup.csdoc																	#				IIS CSWeb Setup
-		|Production																				#			Production
-			production.csdoc																		#				Running CSWeb in Production
-		|Upgrading																				#			Upgrading
-			upgrading.csdoc																		#				Upgrading from Previous Versions
-	|How to ...																					#		How to ...
-		accessing_data.csdoc																		#			Accessing Data
-		adding_roles.csdoc																		#			Adding Roles
-		adding_users.csdoc																		#			Adding Users
-		additional_configuration_options.csdoc													#			Specifying Additional Configuration Options
-		data_settings.csdoc																		#			Data Settings
-		upload_files.csdoc																		#			Upload Files
-		map_report.csdoc																			#			Map Report
-		sync_report.csdoc																			#			Sync Report
-		troubleshooting.csdoc																		#			Troubleshooting
-		get_help.csdoc																			#			Get Help
+﻿{
+  "title": "CSWeb User's Guide", 
+  "documents": [
+    { "path": "introduction_to_csweb.csdoc", "~title": "Introduction to CSWeb" }
+  ], 
+  "chapters": [
+    {
+      "title": "Server Setup", 
+      "documents": [
+        { "path": "minimum_requirements.csdoc", "~title": "Minimum Server Requirements" }
+      ], 
+      "chapters": [
+        {
+          "title": "Apache", 
+          "documents": [
+            { "path": "apache_server_setup.csdoc", "~title": "Apache Server Setup" }, 
+            { "path": "apache_csweb_setup.csdoc", "~title": "Apache CSWeb Setup" }
+          ]
+        }, 
+        {
+          "title": "IIS", 
+          "documents": [
+            { "path": "iis_server_setup.csdoc", "~title": "IIS Server Setup" }, 
+            { "path": "iis_csweb_setup.csdoc", "~title": "IIS CSWeb Setup" }
+          ]
+        }, 
+        {
+          "title": "Production", 
+          "documents": [
+            { "path": "production.csdoc", "~title": "Running CSWeb in Production" }
+          ]
+        }, 
+        {
+          "title": "Upgrading", 
+          "documents": [
+            { "path": "upgrading.csdoc", "~title": "Upgrading from Previous Versions" }
+          ]
+        }
+      ]
+    }, 
+    {
+      "title": "How to ...", 
+      "documents": [
+        { "path": "accessing_data.csdoc", "~title": "Accessing Data" }, 
+        { "path": "adding_roles.csdoc", "~title": "Adding Roles" }, 
+        { "path": "adding_users.csdoc", "~title": "Adding Users" }, 
+        { "path": "additional_configuration_options.csdoc", "~title": "Additional Configuration Options" }, 
+        { "path": "data_settings.csdoc", "~title": "Data Settings" }, 
+        { "path": "upload_files.csdoc", "~title": "Upload Files" }, 
+        { "path": "map_report.csdoc", "~title": "Map Report" }, 
+        { "path": "sync_report.csdoc", "~title": "Sync Report" }, 
+        { "path": "troubleshooting.csdoc", "~title": "Troubleshooting" }, 
+        { "path": "../Shared/topics/get_help.csdoc", "~title": "Get Help" }
+      ]
+    }
+  ]
+}

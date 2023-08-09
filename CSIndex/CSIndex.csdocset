@@ -1,6 +1,32 @@
-﻿Title=CSPro Index Data User's Guide
-Output=CHM
-Output=HTML
-DefaultTopic=introduction_to_csindex.csdoc
-DefinitionsFile=..\CSProDefinitions.txt
-ResourceFile=CSIndex
+﻿{
+  "title": "CSPro Index Data User's Guide", 
+  "import": {
+    "tableOfContents": "CSIndex.toc", 
+    "index": "CSIndex.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ], 
+    "contextIds": [
+      "../Shared/afxres.h", 
+      "CSIndex/resource.h"
+    ]
+  }, 
+  "settings": {
+    "imageDirectories": [
+      "images"
+    ], 
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}

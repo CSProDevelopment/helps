@@ -1,6 +1,29 @@
-﻿Title=CSPro Paradadata Concatenator Help
-Output=CHM
-Output=HTML
-DefaultTopic=introduction_to_paradata_concatenator.csdoc
-DefinitionsFile=..\CSProDefinitions.txt
-ResourceFile=ParadataConcat
+﻿{
+  "title": "CSPro Paradata Concatenator Help", 
+  "import": {
+    "tableOfContents": "ParadataConcat.toc", 
+    "index": "ParadataConcat.index", 
+    "settings": [
+      "../Shared/settings.json"
+    ], 
+    "definitions": [
+      "../Shared/definitions.json"
+    ], 
+    "contextIds": [
+      "../Shared/afxres.h", 
+      "ParadataConcat/resource.h"
+    ]
+  }, 
+  "settings": {
+    "pathAdjustments": [
+      {
+        "path": "topics", 
+        "adjustment": ".", 
+        "relativeToPath": false
+      }
+    ]
+  }, 
+  "documents": [
+    "topics"
+  ]
+}
