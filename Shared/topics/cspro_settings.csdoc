@@ -9,8 +9,10 @@ From <b>CSEntry</b>, two settings are available, Show Hidden Applications and Cl
 
 <b>Show Hidden Applications</b> (<i>CSEntry only</i>): This option is used in tandem with the <link CSPro::run_production_data_entry.csdoc>run production data entry</link> <logiccolor>ShowInApplicationListing=</logiccolor> setting found within a data entry application's [Run Information] block of the PFF. The 3 settings available (Always, Never, Hidden) combine with the CSEntry's Show Hidden Applications setting as follows:
 
-<list><li>ShowInApplicationListing=Always: The operator's selection has no impact, the application will always be shown in the CSEntry application listing.</li>
-<li>ShowInApplicationListing=Never: The operator's selection has no impact, the application will never be shown in the CSEntry application listing.</li>
-<li>ShowInApplicationListing=Hidden: Now the operator's selection has an impact&mdash;the application will be listed in the CSEntry application listing if the operator turned this setting on, and will be hidden if not.</li></list>
+<list>
+	<li>ShowInApplicationListing=Always: The operator's selection has no impact, the application will always be shown in the CSEntry application listing.</li>
+	<li>ShowInApplicationListing=Never: The operator's selection has no impact, the application will never be shown in the CSEntry application listing.</li>
+	<li>ShowInApplicationListing=Hidden: Now the operator's selection has an impact&mdash;the application will be listed in the CSEntry application listing if the operator turned this setting on, and will be hidden if not.</li>
+</list>
 
 <b>Clear Credentials</b>: By selecting this option, any cached credentials saved to secure storage will be removed. These credentials include access tokens to <link CSPro::syncconnect_function_csweb.csdoc>CSWeb servers</link> and <link CSPro::syncconnect_function_dropbox.csdoc>Dropbox</link>, passwords to <link CSPro::syncconnect_function_ftp.csdoc>FTP servers</link>, and hashed password keys used to open <link CSPro::encrypted_data.csdoc>encrypted data files</link>.

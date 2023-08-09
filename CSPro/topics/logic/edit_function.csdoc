@@ -25,29 +25,38 @@ The function returns a string derived from the <arg>numeric_expression</arg> arg
 
 <subheader>Example 1</subheader>
 
-<logic>X = 87;
-A1 = edit("ZZZ9",X); yields A1 = "  87"
-A2 = edit("9999",X); yields A2 = "0087"
-A3 = edit("Z999",X); yields A3 = " 087"</logic>
+<logic>
+X = 87;
+A1 = edit("ZZZ9",X); // yields A1 = "  87"
+A2 = edit("9999",X); // yields A2 = "0087"
+A3 = edit("Z999",X); // yields A3 = " 087"
+</logic>
 
 <subheader>Example 2</subheader>
 
-<logic>Y = 0;
-A4 = edit("ZZ9",Y); yields A4 = "  0"
-A5 = edit("999",Y); yields A5 = "000"
-A6 = edit("ZZZ",Y); yields A6 = "   "</logic>
+<logic>
+Y = 0;
+A4 = edit("ZZ9",Y); // yields A4 = "  0"
+A5 = edit("999",Y); // yields A5 = "000"
+A6 = edit("ZZZ",Y); // yields A6 = "   "
+</logic>
 
 <subheader>Example 3</subheader>
 
-<logic>T = edit("99:99:99", systime()); would yield T="16:04:42"</logic>
-	for the time 4:04pm and 42 seconds
+<logic>
+T = edit("99:99:99", systime()); // yields T = "16:04:42" for the time 4:04pm and 42 seconds
+</logic>
 
 <subheader>Example 4</subheader>
 
-<logic>D = edit("99/99/99",sysdate("DDMMYY"));</logic>
+<logic>
+D = edit("99/99/99", sysdate("DDMMYY"));
+</logic>
 
 <subheader>Example 5</subheader>
 
-<logic>A = edit("ZZZ,ZZZ,ZZ9",INCOME);</logic>
+<logic>
+A = edit("ZZZ,ZZZ,ZZ9", INCOME);
+</logic>
 
 <seealso tonumber_function.csdoc sysdate_function.csdoc maketext_function.csdoc />

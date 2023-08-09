@@ -44,21 +44,6 @@ Numeric and string arguments have a couple additional options that can be specif
 	<li>Numbers are never truncated. Text strings are not truncated unless used as in <logiccolor>"%0.5s"</logiccolor>, where the second part, <logiccolor>".5"</logiccolor>, indicates the maximum number of characters.</li>
 </list>
 
-<subheader>Splitting A Message Across 2+ Lines</subheader>
-
-If you wish to split a message across two or more lines, you can use the newline escape character (\n).
-
-<b><i>Within operator-controlled mode</i></b>, you can simply write:
-
-<logic>errmsg("First line\nSecond Line");</logic>
-
-However, if you are <b><i>within system-controlled mode</i></b>, you will need to temporarily switch over to operator-controlled mode to effect the same change. Therefore, the above example will become:
-
-<logic>set errmsg(operator);
-errmsg("First line\nSecond Line");
-set errmsg(default);
-</logic>
-
 
 <subheader>Example</subheader>
 
@@ -95,5 +80,25 @@ errmsg( "%-10.3s"   , stringValue);     //   abc
 errmsg( "%10s"      , stringValue);     //       abcdef
 errmsg( "%10.3s"    , stringValue);     //          abc
 </logic>
+
+
+<subheader>Splitting A Message Across 2+ Lines</subheader>
+
+If you wish to split a message across two or more lines, you can use the newline escape character (\n).
+
+<b><i>Within operator-controlled mode</i></b>, you can simply write:
+
+<logic>
+errmsg("First line\nSecond Line");
+</logic>
+
+However, if you are <b><i>within system-controlled mode</i></b>, you will need to temporarily switch to operator-controlled mode to effect the same change. Therefore, the above example will become:
+
+<logic>
+set errmsg(operator);
+errmsg("First line\nSecond Line");
+set errmsg(default);
+</logic>
+
 
 <seealso errmsg_function.csdoc filewrite_function.csdoc File_write_function.csdoc logtext_function.csdoc maketext_function.csdoc trace_function.csdoc warning_function.csdoc write_function.csdoc />

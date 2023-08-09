@@ -6,27 +6,25 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-alpha 『(len)』 <arg>var1</arg>『, <arg>var2</arg>, ..., <arg>varN</arg>』;
+alpha 『(<arg>length</arg>)』 <arg>var1</arg>『, <arg>var2</arg>, ..., <arg>varN</arg>』;
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The alpha statement is used to define alphanumeric variables within an application. The len is the number of characters in the variable. The <b>len</b> applies to all variables declared in the same alpha statement. If no len is given, 16 is assigned. The maximum string length that can be declared is 8,192.
+The alpha statement is used to define alphanumeric variables within an application. The <arg>length</arg> is the number of characters in the variable. The length applies to all variables declared in the same alpha statement. If no length is given, 16 is assigned. The maximum string length that can be declared is 8,192.
 
 If you attempt to assign a string that is longer than the variable's size, the string will be truncated from the right. Conversely, it you assign a string that is shorter than the variable's size, the trailing character positions will be blank-filled.
 
 <subheader>Example 1</subheader>
 
 <logic>
-PROC GLOBAL
-  alpha(10) x,y;
+alpha(10) x, y;
 
-PROC A1
-  x = "hi mom";             // x will equal "hi mom    "
-                            //               1234567890
+x = "hi mom";           // x will equal "hi mom    "
+						//               1234567890
 
-  x = "good night, mom";    // x will equal "good night"
-                            //               1234567890
+x = "good night, mom";	// x will equal "good night"
+						//               1234567890
 </logic>
 
 <subheader>Example 2</subheader>
@@ -39,14 +37,13 @@ alpha flag;
 
 PROC Q5
 
-if $ = 1 then
-
-  reply = "Yes";
-  flag = "Y";    // flag will equal "Y               "
-                 //                  1234567890123456
+if Q5 = 1 then
+	reply = "Yes";
+	flag = "Y";    			// flag will equal "Y               "
+							//                  1234567890123456
 else
-  reply = "Not Reported";   // reply will equal "Not"
-                            //                   123
+	reply = "Not Reported"; // reply will equal "Not"
+							//                   123
 endif;
 </logic>
 

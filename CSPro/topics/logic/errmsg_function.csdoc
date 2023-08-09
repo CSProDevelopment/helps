@@ -6,8 +6,9 @@
 i = errmsg(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argument20</arg>』)
 
           『select(<arg>caption1</arg>, <arg>fieldname1</arg>『, ..., <arg>caption5</arg>, <arg>fieldname5</arg>』)』
-          『case|summary』
-		  『denom=numeric_denom』;</logicsyntax>
+		  『case ‖ summary』
+		  『denom = <arg>numeric_denom</arg>』;
+</logicsyntax>
 
 <subheader>Format 2</subheader>
 
@@ -15,17 +16,18 @@ i = errmsg(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argument20<
 i = errmsg(<arg>msg_num</arg>『, <arg>argument1</arg>, ..., <arg>argument20</arg>』)
 
           『select(<arg>caption1</arg>, <arg>fieldname1</arg>『, ..., <arg>caption5</arg>, <arg>fieldname5</arg>』)』
-          『case|summary』
-		  『denom=numeric_denom』;</logicsyntax>
+		  『case ‖ summary』
+		  『denom = <arg>numeric_denom</arg>』;
+</logicsyntax>
 
 <subheader>Format 3</subheader>
 
 <logicsyntax>
 i =	errmsg(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argument20</arg>』)
 
-	『select(<arg>caption1</arg>, <arg>fieldname1</arg>『, ..., <arg>caption5</arg>, <arg>fieldname5</arg>』) 『default(<arg>default_option</arg>)』 』
-	『case ‖ summary』
-	『denom = <arg>numeric_denom</arg>』;
+		  『select(<arg>caption1</arg>, <arg>fieldname1</arg>『, ..., <arg>caption5</arg>, <arg>fieldname5</arg>』) 『default(<arg>default_option</arg>)』 』
+		  『case ‖ summary』
+		  『denom = <arg>numeric_denom</arg>』;
 </logicsyntax>
 
 <subheader>Description</subheader>
