@@ -16,7 +16,7 @@ b = system_app_name.exec(<arg>executable_name</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>SystemApp.exec</logiccolor> function executes a system application associated with the <link systemapp.csdoc>SystemApp</link> object. Any arguments set using the <logiccolor>SystemApp.setArgument</logiccolor> function are passed to the system application. On Android, a system application can return results which can be queried with the <logiccolor>SystemApp.getResult</logiccolor> function.
+The <logiccolor>SystemApp.exec</logiccolor> function executes a system application associated with the <link SystemApp.csdoc>SystemApp</link> object. Any arguments set using the <logiccolor>SystemApp.setArgument</logiccolor> function are passed to the system application. On Android, a system application can return results which can be queried with the <logiccolor>SystemApp.getResult</logiccolor> function.
 
 
 <subheader>Return Value</subheader>
@@ -42,4 +42,4 @@ On Windows, a system application is an executable specified by the string expres
 </logic>
 
 
-<seealso systemapp.csdoc systemapp_setargument_function.csdoc systemapp_getresult_function.csdoc />
+<seealso SystemApp.csdoc SystemApp_setArgument_function.csdoc SystemApp_getResult_function.csdoc />

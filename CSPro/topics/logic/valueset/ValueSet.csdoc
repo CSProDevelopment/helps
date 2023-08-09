@@ -18,7 +18,7 @@ A ValueSet is a CSPro logic object and the following functions can be called via
 	<cell><logiccolor ValueSet>sort</logiccolor></cell><cell>Sorts the order of entries in the value set by either label or code.</cell>
 </table>
 
-In addition to these object functions, ValueSet objects contain two built-in <link list.csdoc>List</link> objects: <logiccolor>valueset_name.codes</logiccolor> and <logiccolor>valueset_name.labels</logiccolor>, which contain the codes and labels for the value set. These are read-only List objects and can be used in most ways that List objects can be used.
+In addition to these object functions, ValueSet objects contain two built-in <link List.csdoc>List</link> objects: <logiccolor>valueset_name.codes</logiccolor> and <logiccolor>valueset_name.labels</logiccolor>, which contain the codes and labels for the value set. These are read-only List objects and can be used in most ways that List objects can be used.
 
 Several functions accept ValueSet objects as arguments, including: <logiccolor>getimage</logiccolor>, <logiccolor>getlabel</logiccolor>, <logiccolor>invalueset</logiccolor>, <logiccolor>maxvalue</logiccolor>, <logiccolor>minvalue</logiccolor>, <logiccolor>randomin</logiccolor>, <logiccolor>randomizevs</logiccolor>, and <logiccolor>setvalueset</logiccolor>. ValueSet objects can also be used with the <logiccolor>in</logiccolor> operator.
 
@@ -53,4 +53,4 @@ preproc
 </logic>
 
 
-<seealso array.csdoc list.csdoc />
+<seealso Array.csdoc List.csdoc />

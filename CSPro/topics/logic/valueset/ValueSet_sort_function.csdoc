@@ -10,7 +10,7 @@ b = valueset_name.sort(『 ascending ‖ descending 』 『 by code ‖ label �
 
 <subheader>Description</subheader>
 
-The <logiccolor>ValueSet.sort</logiccolor> function sorts the order of entries in the <link valueset.csdoc>ValueSet</link> object by either label or code. An optional argument, <logiccolor>ascending</logiccolor> or <logiccolor>descending</logiccolor>, allows for the specification of the sort order. Another optional argument, <logiccolor>by code</logiccolor> or <logiccolor>by label</logiccolor> allows you to specify whether to sort the value set's entries by code or label. By default the value set will be sorted in ascending order by label.
+The <logiccolor>ValueSet.sort</logiccolor> function sorts the order of entries in the <link ValueSet.csdoc>ValueSet</link> object by either label or code. An optional argument, <logiccolor>ascending</logiccolor> or <logiccolor>descending</logiccolor>, allows for the specification of the sort order. Another optional argument, <logiccolor>by code</logiccolor> or <logiccolor>by label</logiccolor> allows you to specify whether to sort the value set's entries by code or label. By default the value set will be sorted in ascending order by label.
 
 Labels are sorted in case insensitive order, so <logiccolor>"c"</logiccolor> is considered the same as <logiccolor>"C"</logiccolor>. On the other hand, codes for alphanumeric value sets are sorted in case sensitive order, so <logiccolor>"c"</logiccolor> is recognized as different from <logiccolor>"C"</logiccolor>.
 
@@ -35,4 +35,4 @@ setvalueset(ENUMERATOR_LOGIN, enumerators_vs);
 </logic>
 
 
-<seealso valueset.csdoc valueset_randomize_function.csdoc />
+<seealso ValueSet.csdoc ValueSet_randomize_function.csdoc />

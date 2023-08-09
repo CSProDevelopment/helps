@@ -16,7 +16,7 @@ The <arg>item_name</arg> is the name of the item in the data dictionary whose va
 setvalueset(@getsymbol(), MY_VALUESET_VS1);
 </logic>
 
-The argument <arg>value_set_name</arg> is the name of an existing value set in the dictionary for the specified item. The function will replace the values of the current value set for the item with the values from the value set specified by <arg>value_set_name</arg>, which is either the name of a value set or a string expression that evaluates to a value set name. The <arg>value_set_name</arg> can also be the name of a <link valueset.csdoc>dynamic value set</link>.
+The argument <arg>value_set_name</arg> is the name of an existing value set in the dictionary for the specified item. The function will replace the values of the current value set for the item with the values from the value set specified by <arg>value_set_name</arg>, which is either the name of a value set or a string expression that evaluates to a value set name. The <arg>value_set_name</arg> can also be the name of a <link ValueSet.csdoc>dynamic value set</link>.
 
 The <logiccolor>setvalueset</logiccolor> function can also create dynamic value sets from <link setvalueset_function_with_arrays.csdoc>array arguments</link>.
 

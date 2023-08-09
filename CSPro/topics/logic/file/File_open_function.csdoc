@@ -10,7 +10,7 @@ b = file_handler.open(<arg>file_name</arg>『, <arg>update</arg> ‖ <arg>append
 
 <subheader>Description</subheader>
 
-The <logiccolor>File.open</logiccolor> function associates the <link file.csdoc>File</link> <arg>file_handler</arg> to a text file on the disk. The <arg>file_name</arg> argument is a string expression containing the file name of the file to be associated with the file. This function is equivalent to the <logiccolor>setfile</logiccolor> function.
+The <logiccolor>File.open</logiccolor> function associates the <link File.csdoc>File</link> <arg>file_handler</arg> to a text file on the disk. The <arg>file_name</arg> argument is a string expression containing the file name of the file to be associated with the file. This function is equivalent to the <logiccolor>setfile</logiccolor> function.
 
 Using the keyword <arg>update</arg>, <arg>append</arg> or <arg>create</arg> is optional. If no keyword is used, the file is opened in <arg>update</arg> mode.
 
@@ -33,4 +33,4 @@ household_report_file.open("Household Report.txt", create);
 </logic>
 
 
-<seealso file.csdoc file_close_function.csdoc setfile_function.csdoc />
+<seealso File.csdoc File_close_function.csdoc setfile_function.csdoc />

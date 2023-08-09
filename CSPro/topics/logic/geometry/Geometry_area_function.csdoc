@@ -10,7 +10,7 @@ d = geometry_name.area();
 
 <subheader>Description</subheader>
 
-The <logiccolor>Geometry.area</logiccolor> function computes the area, in square meters, of the polygons contained in the <link geometry.csdoc>Geometry</link> object named <logiccolor>geometry_name</logiccolor>. If the Geometry object contains multiple polygons, this function returns the sum of the areas of all of these polygons. If the polygons overlap, the results will be incorrect. Points and lines in the geometry are ignored, so if the geometry contains only points and lines, the area will be zero.
+The <logiccolor>Geometry.area</logiccolor> function computes the area, in square meters, of the polygons contained in the <link Geometry.csdoc>Geometry</link> object named <logiccolor>geometry_name</logiccolor>. If the Geometry object contains multiple polygons, this function returns the sum of the areas of all of these polygons. If the polygons overlap, the results will be incorrect. Points and lines in the geometry are ignored, so if the geometry contains only points and lines, the area will be zero.
 
 The <logiccolor>Geometry.area</logiccolor> function uses the Haversine formula to approximate the area of the polygon and makes certain assumptions about the diameter and shape of the earth which may give slightly different results than the area calculated by other software packages.
 
@@ -36,4 +36,4 @@ endif;
 </logic>
 
 
-<seealso geometry.csdoc geometry_perimeter_function.csdoc />
+<seealso Geometry.csdoc Geometry_perimeter_function.csdoc />

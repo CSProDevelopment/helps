@@ -15,7 +15,7 @@ export to file_name
 
 The export statement writes a record to an export file. Export statements can only be coded in <link level_description.csdoc>level</link> procedures.
 
-In the <logiccolor>to</logiccolor> phase, the <b>file_name</b> is a name declared in the <topic file_statement.csdoc /> in <link cspro_program_structure.csdoc>PROC GLOBAL</link>.
+In the <logiccolor>to</logiccolor> phase, the <b>file_name</b> is a name declared in the <topic File_statement.csdoc /> in <link cspro_program_structure.csdoc>PROC GLOBAL</link>.
 
 The <logiccolor>rec_name</logiccolor>, <logiccolor>rec_type</logiccolor>, and <logiccolor>case_id</logiccolor> phrases can each be coded only once, but can be coded in any order. They all must be coded before <b>record_item_list</b>. The order in which rec_type and case_id are coded determines the order of output of the record type and case ids in the exported record.
 
@@ -55,4 +55,4 @@ PROC QUEST // export done at LEVEL procedure
 </logic>
 
 
-<seealso set_behavior_export_statement.csdoc file_statement.csdoc setfile_function.csdoc CSExport::introduction_to_export_data.csdoc />
+<seealso set_behavior_export_statement.csdoc File_statement.csdoc setfile_function.csdoc CSExport::introduction_to_export_data.csdoc />

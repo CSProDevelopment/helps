@@ -4,7 +4,7 @@ Sometimes an interview cannot be completed in one session. CSPro gives the devel
 
 CSPro fully supports partial save, which causes a case to be saved to disk even if it is not yet complete. The case can be continued at a later time. Partial save is a very useful feature in CAPI applications, and should be used if any of the interviews might not be completed in a single sitting. Very small applications, like listing operations or a short-form census, probably would not require partial save ability. To enable partial save, select the box in the data entry options dialog.
 
-The user function <link onstop_global_function.csdoc>OnStop</link> can be used to trap the stop button (<image stop_button.png />) or attempts to exit the interview (for example, by pressing <b>Alt+F4</b>). The developer might want to include a form that manages the exit process and saves the partial case to disk.
+The user function <link OnStop_global_function.csdoc>OnStop</link> can be used to trap the stop button (<image stop_button.png />) or attempts to exit the interview (for example, by pressing <b>Alt+F4</b>). The developer might want to include a form that manages the exit process and saves the partial case to disk.
 
 You could also use OnStop() to intervene and prevent an interview from stopping, or to jump to a callback form before exiting. Your application also could store the field being entered, so that it could jump to that section when the interview is later continued.
 

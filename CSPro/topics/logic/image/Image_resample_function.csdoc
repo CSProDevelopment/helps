@@ -15,7 +15,7 @@ b = image_name.resample(『maxWidth := <arg>max_width</arg>,』
 
 <subheader>Description</subheader>
 
-The <logiccolor>Image.resample</logiccolor> function resamples the image held by the <link image.csdoc>Image</link> object. Resampling modifies the dimensions of the image by either downsampling or upsampling the image. A loss of image quality may occur during the resampling process.
+The <logiccolor>Image.resample</logiccolor> function resamples the image held by the <link Image.csdoc>Image</link> object. Resampling modifies the dimensions of the image by either downsampling or upsampling the image. A loss of image quality may occur during the resampling process.
 
 In the first version of the function, two numeric expressions, <arg>width</arg> and <arg>height</arg>, specify the new dimensions, in pixels, of the image. If one of the arguments is <logiccolor>notappl</logiccolor>, then the other dimension will be calculated by maintaining the original image's aspect ratio (the ratio of the width to the height). For example, if an image is 800 x 600, each of the following function calls results in a 400 x 300 image:
 
@@ -55,4 +55,4 @@ The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if the
 </logic>
 
 
-<seealso image.csdoc image_width_function.csdoc image_height_function.csdoc />
+<seealso Image.csdoc Image_width_function.csdoc Image_height_function.csdoc />

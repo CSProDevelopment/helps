@@ -10,11 +10,11 @@ b = file_handler.read(<arg>string_variable</arg> ‖ <arg>string_list</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>File.read</logiccolor> function reads one or more lines of text from the <link file.csdoc>File</link> associated with <arg>file_handler</arg>. After the read the file pointer is positioned to the next line in the file. This function reads lines sequentially. This function is equivalent to the <logiccolor>fileread</logiccolor> function.
+The <logiccolor>File.read</logiccolor> function reads one or more lines of text from the <link File.csdoc>File</link> associated with <arg>file_handler</arg>. After the read the file pointer is positioned to the next line in the file. This function reads lines sequentially. This function is equivalent to the <logiccolor>fileread</logiccolor> function.
 
 If a <arg>string_variable</arg> is provided as a argument, a single line of text is read and placed in the variable, which is either a temporary <logiccolor>string</logiccolor> variable or an alphanumeric dictionary item. If the dictionary item is longer than the line of text, blanks will be added at the end. If the item is shorter, the line of text will be truncated.
 
-Alternatively, a string <link list.csdoc>List</link> can be used as an argument. In this case, all remaining lines in the file are read and stored in <arg>string_list</arg>.
+Alternatively, a string <link List.csdoc>List</link> can be used as an argument. In this case, all remaining lines in the file are read and stored in <arg>string_list</arg>.
 
 
 <subheader>Return Value</subheader>
@@ -46,4 +46,4 @@ occupation_codes_file.close();
 </logic>
 
 
-<seealso file.csdoc file_write_function.csdoc fileread_function.csdoc />
+<seealso File.csdoc File_write_function.csdoc fileread_function.csdoc />

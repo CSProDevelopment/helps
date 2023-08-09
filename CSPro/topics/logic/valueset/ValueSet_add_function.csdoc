@@ -16,7 +16,7 @@ i = valueset_name.add(<arg>valueset_name</arg>『, <arg>from_code</arg>』『, <
 
 <subheader>Description</subheader>
 
-The <logiccolor>ValueSet.add</logiccolor> function adds one or more values to the end of a <link valueset.csdoc>ValueSet</link> object. The type of the added code or value set must match the type of the receiving value set.
+The <logiccolor>ValueSet.add</logiccolor> function adds one or more values to the end of a <link ValueSet.csdoc>ValueSet</link> object. The type of the added code or value set must match the type of the receiving value set.
 
 In the first version, you provide a string expression <arg>label</arg> and either a numeric or string expression <arg>from_code</arg>, which must match the type of the value set. For numeric value sets, it is possible to specify a numeric expression <arg>to_code</arg>, which creates a range, or a <arg>special_value</arg>, which is then associated with the <arg>from_code</arg>. Using <link function_named_arguments.csdoc>named arguments</link>, you can provide a string expression, <arg>image_filename</arg>, to specify the filename of an image to be shown as a <link value_set_images.csdoc>value set image</link>. You can also specify the text color of the value by providing a string expression <arg>color</arg> that contains a HTML color name (like <logiccolor>"red"</logiccolor>) or a hex color code (like <logiccolor>"#ff0000"</logiccolor>).
 
@@ -65,4 +65,4 @@ onfocus
 </logic>
 
 
-<seealso valueset.csdoc />
+<seealso ValueSet.csdoc />

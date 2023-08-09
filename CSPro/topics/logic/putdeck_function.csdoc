@@ -10,7 +10,7 @@ b = putdeck(<arg>array_name</arg>, <arg>numeric_expression</arg>『, <arg>overri
 
 The <logiccolor>putdeck</logiccolor> function updates the value being stored in the <logiccolor>DeckArray</logiccolor> hot deck by using the current value(s) of the <link value_sets_description.csdoc>value set</link> items that were defined as dimensions in the DeckArray declaration. <logiccolor>putdeck</logiccolor> automatically recodes the value set items and accesses the proper cell in the hot deck, where it stores the value of the numeric_expression. If any of the DeckArray dimensions are not associated with a value set, then you must specify the desired numeric index when calling the function.
 
-If (+) was specified after any of the <arg>array_name</arg> dimensions, the <link DeckArray_Leftover_Rows.csdoc>"leftover"</link> rows for that dimension will be updated whenever an invalid value for that dimension is given.
+If (+) was specified after any of the <arg>array_name</arg> dimensions, the <link deckarray_leftover_rows.csdoc>"leftover"</link> rows for that dimension will be updated whenever an invalid value for that dimension is given.
 
 <subheader>Return Value</subheader>
 

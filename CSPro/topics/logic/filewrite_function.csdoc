@@ -10,7 +10,7 @@ b = filewrite(<arg>file_handler</arg>, <arg>message</arg>『, <arg>argument1</ar
 
 <subheader>Description</subheader>
 
-The <logiccolor>filewrite</logiccolor> function writes one or more lines of text to the <link file.csdoc>File</link> associated with <arg>file_handler</arg>.
+The <logiccolor>filewrite</logiccolor> function writes one or more lines of text to the <link File.csdoc>File</link> associated with <arg>file_handler</arg>.
 
 The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.csdoc>message number</link> that contains the text that is written to the file. If the text contains any <link message_formatting_options.csdoc>message formatters</link>, the optional arguments <arg>argument1</arg> to <arg>argumentN</arg> will be inserted into the text. There are some additional options for file output:
 
@@ -20,7 +20,7 @@ The <arg>message</arg> is either a string expression or a numeric <link message_
 	<li>To output <b>\n</b> or <b>\f</b> as text instead of a new line or a new page, use a double backslash (e.g., <b>\\n</b>).</li>
 </list>
 
-Alternatively, the <arg>message</arg> can be a string <link list.csdoc>List</link>. If a List is provided, then each string contained in the List is written to the file, allowing for the output of multiple lines of text with one function call.
+Alternatively, the <arg>message</arg> can be a string <link List.csdoc>List</link>. If a List is provided, then each string contained in the List is written to the file, allowing for the output of multiple lines of text with one function call.
 
 
 <subheader>Return Value</subheader>
@@ -45,4 +45,4 @@ PROC EXAMPLE
 </logic>
 
 
-<seealso fileread_function.csdoc file_write_function.csdoc write_function.csdoc message_formatting_options.csdoc encode_function.csdoc  />
+<seealso fileread_function.csdoc File_write_function.csdoc write_function.csdoc message_formatting_options.csdoc encode_function.csdoc  />

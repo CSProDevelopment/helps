@@ -18,7 +18,7 @@ include(<arg>variables_to_tabulate</arg>)
 
 <subheader>Description</subheader>
 
-The <logiccolor>Freq</logiccolor> statement is used to define a frequency table that will be written to the <link frequencies_file.csdoc>frequencies file</link>. Unlike <link freq.csdoc>named frequencies</link>, which allow for control over when frequencies are tallied, frequencies generated using the <logiccolor>Freq</logiccolor> statement are tallied at the location where they are defined. Due to this, the statement cannot be located in <logiccolor>PROC GLOBAL</logiccolor>, in user-defined functions, or in application procedures.
+The <logiccolor>Freq</logiccolor> statement is used to define a frequency table that will be written to the <link frequencies_file.csdoc>frequencies file</link>. Unlike <link Freq.csdoc>named frequencies</link>, which allow for control over when frequencies are tallied, frequencies generated using the <logiccolor>Freq</logiccolor> statement are tallied at the location where they are defined. Due to this, the statement cannot be located in <logiccolor>PROC GLOBAL</logiccolor>, in user-defined functions, or in application procedures.
 
 The <link CSFreq::introduction_to_tabulate_frequencies.csdoc>Tabulate Frequencies</link> tool generates <logiccolor>Freq</logiccolor> statements automatically, so one way to learn about how to use the statement is to select items to tabulate in that tool and then use the <b>View</b> -> <b>Batch Logic</b> option to see the commands used to generate the specified frequencies.
 
@@ -87,4 +87,4 @@ PROC QUEST
 </logic>
 
 
-<seealso freq.csdoc freq_statement_named.csdoc freq_formatting_options.csdoc />
+<seealso Freq.csdoc Freq_statement_named.csdoc freq_formatting_options.csdoc />

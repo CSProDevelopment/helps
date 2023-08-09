@@ -16,11 +16,11 @@ include(<arg>variables_to_tabulate</arg>)
 
 <subheader>Description</subheader>
 
-The <logiccolor>Freq</logiccolor> statement creates a <link freq.csdoc>Freq</link> object with the name <arg>freq_name</arg>. The Freq name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare Freq objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>Freq</logiccolor> statement creates a <link Freq.csdoc>Freq</link> object with the name <arg>freq_name</arg>. The Freq name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare Freq objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 The Freq object is used to create frequencies that will be written to the <link frequencies_file.csdoc>frequencies file</link> (using <logiccolor>Freq.save</logiccolor>) or displayed in an embedded web browser (using <logiccolor>Freq.view</logiccolor>).
 
-Freq objects are similar to <link freq_statement_unnamed.csdoc>unnamed frequencies</link> except that you control when they are tallied (using the <logiccolor>Freq.tally</logiccolor> function). Because of this, the <logiccolor>universe</logiccolor> and <logiccolor>weight</logiccolor> commands, which are part of the unnamed frequencies specification, are not available. You can control the universe (using an <logiccolor>if</logiccolor> statement) and you can control the weight by passing an argument to the <logiccolor>Freq.tally</logiccolor> function.
+Freq objects are similar to <link Freq_statement_unnamed.csdoc>unnamed frequencies</link> except that you control when they are tallied (using the <logiccolor>Freq.tally</logiccolor> function). Because of this, the <logiccolor>universe</logiccolor> and <logiccolor>weight</logiccolor> commands, which are part of the unnamed frequencies specification, are not available. You can control the universe (using an <logiccolor>if</logiccolor> statement) and you can control the weight by passing an argument to the <logiccolor>Freq.tally</logiccolor> function.
 
 
 <include include_freq_variable_specification.hgi />
@@ -40,4 +40,4 @@ Optional <link freq_formatting_options.csdoc>formatting options</link> allow you
 </logic>
 
 
-<seealso freq.csdoc freq_statement_unnamed.csdoc freq_formatting_options.csdoc />
+<seealso Freq.csdoc Freq_statement_unnamed.csdoc freq_formatting_options.csdoc />

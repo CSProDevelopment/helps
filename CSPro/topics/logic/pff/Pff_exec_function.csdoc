@@ -9,7 +9,7 @@ b = pff_name.exec();
 
 <subheader>Description</subheader>
 
-The <logiccolor>Pff.exec</logiccolor> function starts another CSPro application using the properties defined in the  <link pff.csdoc>Pff</link> object. If you modified any of the Pff object's properties, it is not necessary to save the file to disk when running it, as this function will save a temporary file to the disk with the defined properties.
+The <logiccolor>Pff.exec</logiccolor> function starts another CSPro application using the properties defined in the  <link Pff.csdoc>Pff</link> object. If you modified any of the Pff object's properties, it is not necessary to save the file to disk when running it, as this function will save a temporary file to the disk with the defined properties.
 
 For data entry PFFs, the function executes the application and immediately closes the current application (without saving any data). This is the same as running <logiccolor>execpff</logiccolor> with the <logiccolor>stop</logiccolor> argument. For other PFFs, the function executes the application using the <logiccolor>wait</logiccolor> argument. That is, this function is equivalent to:
 
@@ -66,4 +66,4 @@ PROC INTERVIEW_SELECTION_MENU
 </logic>
 
 
-<seealso pff.csdoc execpff_function.csdoc />
+<seealso Pff.csdoc execpff_function.csdoc />

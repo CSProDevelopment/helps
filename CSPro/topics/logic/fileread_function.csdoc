@@ -10,11 +10,11 @@ b = fileread(<arg>file_handler</arg>, <arg>string_variable</arg> ‖ <arg>string
 
 <subheader>Description</subheader>
 
-The <logiccolor>fileread</logiccolor> function reads one or more lines of text from the <link file.csdoc>File</link> associated with <arg>file_handler</arg>. After the read the file pointer is positioned to the next line in the file. This function reads lines sequentially.
+The <logiccolor>fileread</logiccolor> function reads one or more lines of text from the <link File.csdoc>File</link> associated with <arg>file_handler</arg>. After the read the file pointer is positioned to the next line in the file. This function reads lines sequentially.
 
 If a <arg>string_variable</arg> is provided as a argument, a single line of text is read and placed in the variable, which is either a temporary <logiccolor>string</logiccolor> variable or an alphanumeric dictionary item. If the dictionary item is longer than the line of text, blanks will be added at the end. If the item is shorter, the line of text will be truncated.
 
-Alternatively, a string <link list.csdoc>List</link> can be used as an argument. In this case, all remaining lines in the file are read and stored in <arg>string_list</arg>.
+Alternatively, a string <link List.csdoc>List</link> can be used as an argument. In this case, all remaining lines in the file are read and stored in <arg>string_list</arg>.
 
 
 <subheader>Return Value</subheader>
@@ -41,4 +41,4 @@ preproc
 </logic>
 
 
-<seealso filewrite_function.csdoc file_read_function.csdoc />
+<seealso filewrite_function.csdoc File_read_function.csdoc />

@@ -10,7 +10,7 @@ s = pff_name.getProperty(<arg>property_name</arg>『, <arg>string_list</arg>』)
 
 <subheader>Description</subheader>
 
-The <logiccolor>Pff.getProperty</logiccolor> function returns a string containing the current value associated with the <link pff.csdoc>Pff</link>'s property specified by the string expression <arg>property_name</arg>. PFF properties all have default values, so even if a property was not explicitly defined in the PFF file, it may have a default value. Some properties, such as input data filenames for batch applications, can have multiple values, and if you want to retrieve all of these values, you must supply a <arg>string_list</arg>, which will contain zero, one, or more strings with the values.
+The <logiccolor>Pff.getProperty</logiccolor> function returns a string containing the current value associated with the <link Pff.csdoc>Pff</link>'s property specified by the string expression <arg>property_name</arg>. PFF properties all have default values, so even if a property was not explicitly defined in the PFF file, it may have a default value. Some properties, such as input data filenames for batch applications, can have multiple values, and if you want to retrieve all of these values, you must supply a <arg>string_list</arg>, which will contain zero, one, or more strings with the values.
 
 Properties names can be prefixed with the section name, as explained in <logiccolor>Pff.setProperty</logiccolor>, but it is generally not necessary to do so when using this function.
 
@@ -35,4 +35,4 @@ endif;
 </logic>
 
 
-<seealso pff.csdoc pff_setproperty_function.csdoc sysparm_function.csdoc />
+<seealso Pff.csdoc Pff_setProperty_function.csdoc sysparm_function.csdoc />

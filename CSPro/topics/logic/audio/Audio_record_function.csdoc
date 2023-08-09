@@ -10,11 +10,11 @@ b = audio_name.record(『<arg>seconds</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Audio.record</logiccolor> function starts recording audio in the background and stores the recorded audio in an <link audio.csdoc>Audio</link> object. The call to record begins audio recording and returns immediately. Recording continues until the <logiccolor>Audio.stop</logiccolor> function is called. If the optional parameter <arg>seconds</arg> is specified, recording will stop after the specified number of seconds have elapsed&mdash;or <logiccolor>Audio.stop</logiccolor>&mdash;is called, whichever action comes first.
+The <logiccolor>Audio.record</logiccolor> function starts recording audio in the background and stores the recorded audio in an <link Audio.csdoc>Audio</link> object. The call to record begins audio recording and returns immediately. Recording continues until the <logiccolor>Audio.stop</logiccolor> function is called. If the optional parameter <arg>seconds</arg> is specified, recording will stop after the specified number of seconds have elapsed&mdash;or <logiccolor>Audio.stop</logiccolor>&mdash;is called, whichever action comes first.
 
 While the audio is recording, CSPro continues to run and the user is able to enter responses and move around the questionnaire as usual. This is useful if you wish to record portions of the interview for audit purposes. If instead you wish to record audio synchronously, for example to record the response to a single question, use the <logiccolor>Audio.recordInteractive</logiccolor> function instead.
 
-The recorded audio is stored in the <link audio.csdoc>Audio</link> object and can be played back using <logiccolor>Audio.play</logiccolor> or saved to a file using <logiccolor>Audio.save</logiccolor>. If the <link audio.csdoc>Audio</link> object already contains an audio recording, the recorded audio will be appended to the existing recording. To replace the existing recording rather than adding to it, call the <logiccolor>Audio.clear</logiccolor> function before calling <logiccolor>Audio.record</logiccolor>.
+The recorded audio is stored in the <link Audio.csdoc>Audio</link> object and can be played back using <logiccolor>Audio.play</logiccolor> or saved to a file using <logiccolor>Audio.save</logiccolor>. If the <link Audio.csdoc>Audio</link> object already contains an audio recording, the recorded audio will be appended to the existing recording. To replace the existing recording rather than adding to it, call the <logiccolor>Audio.clear</logiccolor> function before calling <logiccolor>Audio.record</logiccolor>.
 
 Recorded audio is stored in m4a format (AAC encoded in an MPEG-4 container). Files should be saved with the extension .m4a so that they will be recognized by media players.
 
@@ -33,4 +33,4 @@ The function returns a logical value of 1 (true) if the recording is started suc
 </logic>
 
 
-<seealso audio.csdoc audio_stop_function.csdoc audio_recordinteractive_function.csdoc audio_clear_function.csdoc />
+<seealso Audio.csdoc Audio_stop_function.csdoc Audio_recordInteractive_function.csdoc Audio_clear_function.csdoc />

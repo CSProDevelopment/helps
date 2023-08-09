@@ -10,7 +10,7 @@ b = audio_name.play(『<arg>message</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Audio.play</logiccolor> function launches an audio player to play the audio in an <link audio.csdoc>Audio</link> object. Before calling this function, the Audio object must contain audio data recorded using <logiccolor>Audio.recordInteractive</logiccolor>, <logiccolor>Audio.record</logiccolor>, or loaded using <logiccolor>Audio.load</logiccolor>. If the optional argument <arg>message</arg> is provided, the message text is displayed over the audio player.
+The <logiccolor>Audio.play</logiccolor> function launches an audio player to play the audio in an <link Audio.csdoc>Audio</link> object. Before calling this function, the Audio object must contain audio data recorded using <logiccolor>Audio.recordInteractive</logiccolor>, <logiccolor>Audio.record</logiccolor>, or loaded using <logiccolor>Audio.load</logiccolor>. If the optional argument <arg>message</arg> is provided, the message text is displayed over the audio player.
 
 CSPro can load and play most audio files in any of the following formats: m4a, mp4, mp3, wav, 3gp, flac, ogg, mkv. However, only m4a files (AAC encoded audio in an MPEG-4 container) can be used with the functions <logiccolor>Audio.concat</logiccolor>, <logiccolor>Audio.length</logiccolor>, <logiccolor>Audio.record</logiccolor>, and <logiccolor>Audio.recordInteractive</logiccolor>.
 
@@ -30,4 +30,4 @@ endif;
 </logic>
 
 
-<seealso audio.csdoc audio_load_function.csdoc audio_record_function.csdoc audio_recordinteractive_function.csdoc />
+<seealso Audio.csdoc Audio_load_function.csdoc Audio_record_function.csdoc Audio_recordInteractive_function.csdoc />

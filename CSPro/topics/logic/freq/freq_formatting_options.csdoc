@@ -3,8 +3,8 @@
 Frequency formatting options can be specified:
 
 <list>
-	<li>When using the <link freq_statement_unnamed.csdoc>unnamed frequency</link> command.</li>
-	<li>When declaring a <link freq_statement_named.csdoc>named frequency</link>.</li>
+	<li>When using the <link Freq_statement_unnamed.csdoc>unnamed frequency</link> command.</li>
+	<li>When declaring a <link Freq_statement_named.csdoc>named frequency</link>.</li>
 	<li>When calling the <logiccolor>Freq.save</logiccolor> function.</li>
 	<li>When calling the <logiccolor>Freq.view</logiccolor> function.</li>
 </list>
@@ -19,7 +19,7 @@ The formatting options include the following commands: <logiccolor>valueset</log
 
 <logicsyntax>valueset(<arg>value_set_name1</arg>『, ..., <arg>value_set_nameN</arg>』)</logicsyntax>
 
-When creating the frequency table, CSPro tries to find a label to associate with each value in the table. By default, an item's primary value set is used for <link freq_statement_unnamed.csdoc>unnamed frequencies</link> and the current value set is used for <link freq_statement_named.csdoc>named frequencies</link>. To instead specify a specific value set to use to lookup the labels, use the <logiccolor>valueset</logiccolor> command and supply one or more value set names. The names of the value sets must match the items that are part of the frequency.
+When creating the frequency table, CSPro tries to find a label to associate with each value in the table. By default, an item's primary value set is used for <link Freq_statement_unnamed.csdoc>unnamed frequencies</link> and the current value set is used for <link Freq_statement_named.csdoc>named frequencies</link>. To instead specify a specific value set to use to lookup the labels, use the <logiccolor>valueset</logiccolor> command and supply one or more value set names. The names of the value sets must match the items that are part of the frequency.
 
 
 <logicsyntax>distinct</logicsyntax>

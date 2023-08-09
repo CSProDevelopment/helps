@@ -7,7 +7,7 @@ This is a detailed list of changes in CSPro 7.6. For a more general overview, se
 
 <list>
 	<li>The CAPI question text system has been redesigned to use <link html_question_text.csdoc>HTML</link> when displaying question text. In addition, question text <link create_fills_in_questions.csdoc>fills</link> and <link create_conditional_questions.csdoc>conditions</link> can now include any logic expression, so using the full set of CSPro logic functions is now possible when working with question text.</li>
-	<li>The frequency generation system has been overhauled. Frequencies can now be written to <link frequencies_file.csdoc>four formats</link>, including Excel and HTML, and they can be generated in data entry applications. The new <link freq.csdoc>Freq</link> logic object offers a way to tally frequencies in a different way from the traditional <logiccolor>Freq</logiccolor> statement.</li>
+	<li>The frequency generation system has been overhauled. Frequencies can now be written to <link frequencies_file.csdoc>four formats</link>, including Excel and HTML, and they can be generated in data entry applications. The new <link Freq.csdoc>Freq</link> logic object offers a way to tally frequencies in a different way from the traditional <logiccolor>Freq</logiccolor> statement.</li>
 	<li><link listing_file.csdoc>Listing files</link> can now be written as Excel or HTML files.</li>
 </list>
 
@@ -37,7 +37,7 @@ This is a detailed list of changes in CSPro 7.6. For a more general overview, se
 
 <list>
 	<li>The <link CSFreq::introduction_to_tabulate_frequencies.csdoc>Tabulate Frequencies</link> tool has new <link CSFreq::select_frequency_options.csdoc>options</link>, including the ability to create percentiles, sort the frequencies, and output frequencies in several different formats. The tool can also directly create a batch application to generate the specified frequencies (using the <logiccolor>Freq</logiccolor> statement).</li>
-	<li>A new logic object, <link freq.csdoc>Freq</link>, allows for the creation of frequencies with control over when the values are tallied. It has the functions: <logiccolor Freq>clear</logiccolor>, <logiccolor Freq>save</logiccolor>, <logiccolor Freq>tally</logiccolor>, and <logiccolor Freq>view</logiccolor>.</li>
+	<li>A new logic object, <link Freq.csdoc>Freq</link>, allows for the creation of frequencies with control over when the values are tallied. It has the functions: <logiccolor Freq>clear</logiccolor>, <logiccolor Freq>save</logiccolor>, <logiccolor Freq>tally</logiccolor>, and <logiccolor Freq>view</logiccolor>.</li>
 </list>
 
 

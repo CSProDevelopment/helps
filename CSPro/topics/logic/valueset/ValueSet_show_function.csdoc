@@ -10,7 +10,7 @@ d = valueset_name.show(『<arg>heading</arg>』);
 
 <subheader>Description</subheader>
 
-The <logiccolor>ValueSet.show</logiccolor> function displays the labels from a <link valueset.csdoc>ValueSet</link> object and returns the code (or index) of the operator's selection. An optional string expression, <arg>heading</arg>, specifies the title of the window that displays the values. The function is similar to the <logiccolor>accept</logiccolor> function but with the options taken from the value set's labels. For numeric value sets, the returned value corresponds with the selected label's code. For a string value set, the returned value is the index of the selected label.
+The <logiccolor>ValueSet.show</logiccolor> function displays the labels from a <link ValueSet.csdoc>ValueSet</link> object and returns the code (or index) of the operator's selection. An optional string expression, <arg>heading</arg>, specifies the title of the window that displays the values. The function is similar to the <logiccolor>accept</logiccolor> function but with the options taken from the value set's labels. For numeric value sets, the returned value corresponds with the selected label's code. For a string value set, the returned value is the index of the selected label.
 
 
 <subheader>Return Value</subheader>
@@ -31,4 +31,4 @@ numeric respondent_line_number = respondent_query.show("Who in the household is 
 </logic>
 
 
-<seealso valueset.csdoc accept_function.csdoc show_function.csdoc showarray_function.csdoc list_show_function.csdoc />
+<seealso ValueSet.csdoc accept_function.csdoc show_function.csdoc showarray_function.csdoc List_show_function.csdoc />

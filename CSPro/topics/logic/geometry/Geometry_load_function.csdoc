@@ -10,7 +10,7 @@ b = geometry_name.load(<arg>filename</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Geometry.load</logiccolor> function reads the file specified by the string expression <arg>filename</arg> and stores the geometry data contained in the file in the <link geometry.csdoc>Geometry</link> object named <logiccolor>geometry_name</logiccolor>. The loaded geometry can be displayed on a map using <logiccolor>Map.addGeometry</logiccolor>.
+The <logiccolor>Geometry.load</logiccolor> function reads the file specified by the string expression <arg>filename</arg> and stores the geometry data contained in the file in the <link Geometry.csdoc>Geometry</link> object named <logiccolor>geometry_name</logiccolor>. The loaded geometry can be displayed on a map using <logiccolor>Map.addGeometry</logiccolor>.
 
 CSPro can load geometry from files in <link https://geojson.org>GeoJSON</link> format.
 
@@ -40,4 +40,4 @@ mymap.show();
 </logic>
 
 
-<seealso geometry.csdoc geometry_save_function.csdoc />
+<seealso Geometry.csdoc Geometry_save_function.csdoc />

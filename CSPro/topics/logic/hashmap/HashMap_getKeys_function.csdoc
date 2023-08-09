@@ -10,7 +10,7 @@ i = hashmap_name.getKeys(<arg>list_name</arg> 『, <arg>key_value1</arg>, ..., <
 
 <subheader>Description</subheader>
 
-The <logiccolor>HashMap.getKeys</logiccolor> function fills a <link list.csdoc>List</link> with the keys at a specific location in the <link hashmap.csdoc>HashMap</link>. Each <arg>key_value</arg> argument must be a numeric or string expression matching the type specified when <link hashmap_statement.csdoc>declaring the HashMap</link>. If no arguments are provided, the first-dimension keys are returned; if one argument is provided, the second-dimension keys are returned; and so on.
+The <logiccolor>HashMap.getKeys</logiccolor> function fills a <link List.csdoc>List</link> with the keys at a specific location in the <link HashMap.csdoc>HashMap</link>. Each <arg>key_value</arg> argument must be a numeric or string expression matching the type specified when <link HashMap_statement.csdoc>declaring the HashMap</link>. If no arguments are provided, the first-dimension keys are returned; if one argument is provided, the second-dimension keys are returned; and so on.
 
 The argument <arg>list_name</arg> is a numeric or string List whose contents will be cleared and then filled with the HashMap's keys. The type of the List must correspond to the type of keys at the specified location. If the dimension type is <logiccolor>numeric</logiccolor>, then the List must be a numeric List. If the dimension type is <logiccolor>string</logiccolor> or <logiccolor>all</logiccolor>, then the List must be a string List. In the case of <logiccolor>all</logiccolor>, any numeric values added as keys to the HashMap will be converted to strings before being inserted in the string List.
 
@@ -27,4 +27,4 @@ The function returns the number of keys added to the List.
 </logic>
 
 
-<seealso hashmap.csdoc hashmap_contains_function.csdoc hashmap_length_function.csdoc />
+<seealso HashMap.csdoc HashMap_contains_function.csdoc HashMap_length_function.csdoc />

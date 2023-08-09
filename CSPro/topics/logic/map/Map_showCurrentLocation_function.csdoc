@@ -10,7 +10,7 @@ b = map_name.showCurrentLocation(<arg>show_condition</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Map.showCurrentLocation</logiccolor> function enables or disables display of the device's current location on the <link map.csdoc>Map object</link> <logiccolor>map_name</logiccolor>. If <arg>show_condition</arg> is non-zero, the current location is displayed on the map as a blue dot. As the user moves around, the blue dot also moves to follow the user's position.
+The <logiccolor>Map.showCurrentLocation</logiccolor> function enables or disables display of the device's current location on the <link Map.csdoc>Map object</link> <logiccolor>map_name</logiccolor>. If <arg>show_condition</arg> is non-zero, the current location is displayed on the map as a blue dot. As the user moves around, the blue dot also moves to follow the user's position.
 
 In addition, there is a button on the right side of the map (shown below) that allows the user to zoom to their current location. If <arg>show_location</arg> is zero, both the blue dot and associated button are hidden. Display of the current location is enabled by default.
 
@@ -39,4 +39,4 @@ mymap.show();
 </logic>
 
 
-<seealso map.csdoc />
+<seealso Map.csdoc />

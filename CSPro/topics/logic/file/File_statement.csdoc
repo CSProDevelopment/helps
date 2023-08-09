@@ -10,7 +10,7 @@ File <arg>file_handler1</arg>『, ..., <arg>file_handlerN</arg>』;
 
 <subheader>Description</subheader>
 
-The <logiccolor>File</logiccolor> statement creates a <link file.csdoc>File</link> handler that is used to read from and write to text files that are not not associated with data dictionaries. <arg>file_handler1</arg> to <arg>file_handlerN</arg> are CSPro names that must be unique and must contain only letters, numbers, or the underscore character. The names must begin with a letter. You can declare File objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>File</logiccolor> statement creates a <link File.csdoc>File</link> handler that is used to read from and write to text files that are not not associated with data dictionaries. <arg>file_handler1</arg> to <arg>file_handlerN</arg> are CSPro names that must be unique and must contain only letters, numbers, or the underscore character. The names must begin with a letter. You can declare File objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 If declared globally, the physical name of the file can be specified in the Define File Associations dialog when the application is run. The name can also be specified in a <link program_information_file_pff.csdoc>PFF file</link> or at runtime by using the <logiccolor>File.open</logiccolor>, <logiccolor>open</logiccolor>, or <logiccolor>setfile</logiccolor> functions.
 
@@ -24,4 +24,4 @@ File VacantHouseholdsReportFile;
 </logic>
 
 
-<seealso file.csdoc />
+<seealso File.csdoc />

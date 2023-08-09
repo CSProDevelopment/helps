@@ -10,7 +10,7 @@ List 『<arg>list_type</arg>』 <arg>list_name</arg>;
 
 <subheader>Description</subheader>
 
-The <logiccolor>List</logiccolor> statement creates a <link list.csdoc>List</link> with the name <arg>list_name</arg>. The List name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare List objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>List</logiccolor> statement creates a <link List.csdoc>List</link> with the name <arg>list_name</arg>. The List name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare List objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 List objects can be <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. By default a List is numeric, but the type can be modified by specifying the <arg>list_type</arg>.
 
@@ -34,4 +34,4 @@ List string MonthNames = "Jan", "Feb", "Mar", "Apr", "May", "Jun",
 
 
 
-<seealso list.csdoc array.csdoc hashmap.csdoc valueset.csdoc />
+<seealso List.csdoc Array.csdoc HashMap.csdoc ValueSet.csdoc />

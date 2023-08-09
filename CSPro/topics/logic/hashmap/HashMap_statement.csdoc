@@ -10,11 +10,11 @@ HashMap 『<arg>value_type</arg>』 <arg>hashmap_name</arg>『(<arg>dimension_ty
 
 <subheader>Description</subheader>
 
-The <logiccolor>HashMap</logiccolor> statement creates a <link hashmap.csdoc>HashMap</link> with the name <arg>hashmap_name</arg>. The HashMap name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare HashMap objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>HashMap</logiccolor> statement creates a <link HashMap.csdoc>HashMap</link> with the name <arg>hashmap_name</arg>. The HashMap name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare HashMap objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 HashMap values can be <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor>. By default a HashMap is numeric, but the type can be modified by specifying the <arg>value_type</arg>.
 
-Unlike an <link array.csdoc>Array</link>, a HashMap's dimensions are not of fixed size because HashMap objects dynamically grow or shrink in size as values are added or removed from the HashMap. A HashMap can have one or more dimensions, and when declaring the HashMap you must specify the type of each dimension. Each <arg>dimension_type</arg> can be:
+Unlike an <link Array.csdoc>Array</link>, a HashMap's dimensions are not of fixed size because HashMap objects dynamically grow or shrink in size as values are added or removed from the HashMap. A HashMap can have one or more dimensions, and when declaring the HashMap you must specify the type of each dimension. Each <arg>dimension_type</arg> can be:
 
 <indent><table 2 header>
 	<cell>Dimension Type</cell><cell>Key Values</cell>
@@ -58,4 +58,4 @@ errmsg("%d", three_dimensional_hashmap(99, 88, "YY"));
 </logic>
 
 
-<seealso hashmap.csdoc array.csdoc list.csdoc />
+<seealso HashMap.csdoc Array.csdoc List.csdoc />

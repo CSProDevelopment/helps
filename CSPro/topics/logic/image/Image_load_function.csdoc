@@ -12,7 +12,7 @@ b = image_name.load(<arg>valueset_name</arg>, <arg>value</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Image.load</logiccolor> function reads an image from a file and stores its contents in the <link image.csdoc>Image</link> object. In the first version of the function, the string expression <arg>image_filename</arg> specifies the location of the image on the disk.
+The <logiccolor>Image.load</logiccolor> function reads an image from a file and stores its contents in the <link Image.csdoc>Image</link> object. In the first version of the function, the string expression <arg>image_filename</arg> specifies the location of the image on the disk.
 
 The second version simplifies loading <link value_set_images.csdoc>value set images</link>. It is equivalent to calling:
 
@@ -35,4 +35,4 @@ The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if the
 </logic>
 
 
-<seealso image.csdoc image_save_function.csdoc />
+<seealso Image.csdoc Image_save_function.csdoc />

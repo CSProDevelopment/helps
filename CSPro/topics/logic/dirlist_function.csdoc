@@ -12,7 +12,7 @@ b = dirlist(<arg>list_to_receive_paths</arg>, <arg>directory_path</arg>
 
 <subheader>Description</subheader>
 
-The <logiccolor>dirlist</logiccolor> function fills <arg>list_to_receive_paths</arg>, a string <link list.csdoc>List</link>, with the paths of files and directories located in a directory specified by <arg>directory_path</arg>. The paths included in the List are fully evaluated absolute paths. Hidden and system files are not included in the directory listing.
+The <logiccolor>dirlist</logiccolor> function fills <arg>list_to_receive_paths</arg>, a string <link List.csdoc>List</link>, with the paths of files and directories located in a directory specified by <arg>directory_path</arg>. The paths included in the List are fully evaluated absolute paths. Hidden and system files are not included in the directory listing.
 
 The <arg>directory_path</arg> can be one of the following:
 
@@ -26,9 +26,9 @@ The <arg>directory_path</arg> can be one of the following:
 Using <link function_named_arguments.csdoc>named arguments</link>, you can specify a string expression, <arg>wildcard</arg>, that is applied to filter the paths added to the string List. For example, <logiccolor>"*.csdb"</logiccolor> would include only <link data_sources.csdoc>CSPro DB</link> files. You can specify multiple wildcard filters by separating each filter with a semicolon. The filter <logiccolor>"*.jpg;*.jpeg;*.bmp"</logiccolor> would include both JPEG and BMP files. Instead of using a string expression, you can also use a predefined wildcard expression:
 
 <list>
-	<li><logiccolor>FileType.Audio</logiccolor>: Files that the <link audio.csdoc>Audio</link> object can read and write.</li>
-	<li><logiccolor>FileType.Geometry</logiccolor>: Files that the <link geometry.csdoc>Geometry</link> object can read and write.</li>
-	<li><logiccolor>FileType.Image</logiccolor>: Files that the <link image.csdoc>Image</link> object can read and write.</li>
+	<li><logiccolor>FileType.Audio</logiccolor>: Files that the <link Audio.csdoc>Audio</link> object can read and write.</li>
+	<li><logiccolor>FileType.Geometry</logiccolor>: Files that the <link Geometry.csdoc>Geometry</link> object can read and write.</li>
+	<li><logiccolor>FileType.Image</logiccolor>: Files that the <link Image.csdoc>Image</link> object can read and write.</li>
 </list>
 
 
@@ -65,4 +65,4 @@ dirlist(image_files, Media.Images, filter := FileType.Image);
 </logic>
 
 
-<seealso path_selectfile_function.csdoc dircreate_function.csdoc direxist_function.csdoc />
+<seealso Path_selectFile_function.csdoc dircreate_function.csdoc direxist_function.csdoc />

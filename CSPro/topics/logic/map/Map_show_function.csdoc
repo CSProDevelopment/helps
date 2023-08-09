@@ -10,7 +10,7 @@ b = map_name.show();
 
 <subheader>Description</subheader>
 
-The <logiccolor>Map.show</logiccolor> function displays the <link map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor>. The function call replaces the active view (generally either a question or a different map) and displays the map. The map will continue to be displayed until the user taps on the back button or the <logiccolor>Map.hide</logiccolor> function is called from within a callback function.
+The <logiccolor>Map.show</logiccolor> function displays the <link Map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor>. The function call replaces the active view (generally either a question or a different map) and displays the map. The map will continue to be displayed until the user taps on the back button or the <logiccolor>Map.hide</logiccolor> function is called from within a callback function.
 
 The <logiccolor>Map.show</logiccolor> function will not finish execution until the user has finished interacting with the map. For this reason, you should do all initial map setup (adding markers, buttons, base map, etc.) <b><i>before</i></b> calling <logiccolor>Map.show</logiccolor>. If any map functions are given after the call to  <logiccolor>Map.show</logiccolor>, they will not be executed until after the map has been hidden. You can, however, make modifications to the map while it is showing from logic in a callback function supplied to one of the map functions such as <logiccolor>Map.setOnClick</logiccolor>, <logiccolor>Map.addTextButton</logiccolor>, <logiccolor>Map.addImageButton</logiccolor>, <logiccolor>Map.setMarkerOnClick</logiccolor>, <logiccolor>Map.setMarkerOnClickInfoWindow</logiccolor>, or <logiccolor>Map.setMarkerOnDrag</logiccolor>.
 
@@ -48,4 +48,4 @@ errmsg("Done showing map");
 </logic>
 
 
-<seealso map.csdoc map_hide_function.csdoc />
+<seealso Map.csdoc Map_hide_function.csdoc />

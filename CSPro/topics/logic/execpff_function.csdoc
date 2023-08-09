@@ -9,7 +9,7 @@ b = execpff(<arg>pff_filename</arg> ‖ <arg>pff_name</arg>『, <arg>flags</arg>
 
 <subheader>Description</subheader>
 
-The <logiccolor>execpff</logiccolor> function starts another CSPro application. This function is useful when designing menu programs or when conducting surveys that use multiple machines on which the path of the CSPro executables may differ. The function is very similar to <logiccolor>execsystem</logiccolor>, but instead of passing the name of an application or task, you supply a string expression, <arg>pff_filename</arg>, containing the name of a CSPro application's <link program_information_file_pff.csdoc>Program Information File (.pff)</link>, or <arg>pff_name</arg>, the name of a <link pff.csdoc>Pff</link> object. If using a modified but unsaved pff object, it will be saved to a temporary file and then executed.
+The <logiccolor>execpff</logiccolor> function starts another CSPro application. This function is useful when designing menu programs or when conducting surveys that use multiple machines on which the path of the CSPro executables may differ. The function is very similar to <logiccolor>execsystem</logiccolor>, but instead of passing the name of an application or task, you supply a string expression, <arg>pff_filename</arg>, containing the name of a CSPro application's <link program_information_file_pff.csdoc>Program Information File (.pff)</link>, or <arg>pff_name</arg>, the name of a <link Pff.csdoc>Pff</link> object. If using a modified but unsaved pff object, it will be saved to a temporary file and then executed.
 
 An optional set of <arg>flags</arg>, described in the <logiccolor>execsystem</logiccolor> helps, allow you to control how the CSPro application is opened.
 
@@ -45,4 +45,4 @@ PROC MENU
 	endif;
 </logic>
 
-<seealso pff_exec_function.csdoc execsystem_function_desktop.csdoc execsystem_function_mobile.csdoc />
+<seealso Pff_exec_function.csdoc execsystem_function_desktop.csdoc execsystem_function_mobile.csdoc />

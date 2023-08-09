@@ -16,7 +16,7 @@ b = map_name.zoomTo(<arg>min_latitude</arg>, <arg>min_longitude</arg>, <arg>max_
 
 <subheader>Description</subheader>
 
-The <logiccolor>Map.zoomTo</logiccolor> function pans and zooms a <link map.csdoc>Map</link> to center the map on a given point, or to fit a rectangular region of the map to the screen. The <logiccolor>Map.zoomTo</logiccolor> function may be used before the map is displayed to set the initial view, or it may be used in a callback function to change the view while the map is showing.
+The <logiccolor>Map.zoomTo</logiccolor> function pans and zooms a <link Map.csdoc>Map</link> to center the map on a given point, or to fit a rectangular region of the map to the screen. The <logiccolor>Map.zoomTo</logiccolor> function may be used before the map is displayed to set the initial view, or it may be used in a callback function to change the view while the map is showing.
 
 The first format example (point) moves the map so that the point with coordinates (<arg>latitude</arg>, <arg>longitude</arg>) is at the center of the screen. If the optional <arg>zoom_level</arg> is specified, the map is also zoomed to the specified zoom level. <arg>zoom_level</arg> is a number representing the level of detail to show. Zoom level one fits the entire world on the screen. Each consecutive zoom level is twice as detailed as the preceding level. Zoom level 15 shows streets, and zoom level 20 shows individual buildings. The minimum and maximum zoom levels supported will depend on the base map being used. If no zoom level is specified, the current zoom level is maintained.
 
@@ -64,4 +64,4 @@ mymap.show();
 </logic>
 
 
-<seealso map.csdoc />
+<seealso Map.csdoc />

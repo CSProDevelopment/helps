@@ -18,7 +18,7 @@ Array 『<arg>array_type</arg>』 <arg>array_name</arg>(<arg>dim1</arg>『, ...,
 
 <subheader>Description</subheader>
 
-The <logiccolor>Array</logiccolor> statement creates an <link array.csdoc>Array</link> with the name <arg>array_name</arg>. Only one array at a time can be declared with the Array statement. The array name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare arrays in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
+The <logiccolor>Array</logiccolor> statement creates an <link Array.csdoc>Array</link> with the name <arg>array_name</arg>. Only one array at a time can be declared with the Array statement. The array name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare arrays in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 Array objects can be numeric, alphanumeric or string. By default an array is numeric, but the type can be modified by specifying the <arg>array_type</arg>. If creating an alphanumeric array, the length of each array element can be specified by definining the <arg>array_type</arg> as follows:
 
@@ -115,4 +115,4 @@ Array HD_Sex_Rel (8) = 1, 2, ...;				// Format 2, values 1 & 2 will be used (res
 </logic>
 
 
-<seealso array.csdoc saved_arrays_file_sva.csdoc deckarrays.csdoc deckarray_leftover_rows.csdoc hashmap.csdoc list.csdoc numeric_statement.csdoc alpha_statement.csdoc string_statement.csdoc />
+<seealso Array.csdoc saved_arrays_file_sva.csdoc deckarrays.csdoc deckarray_leftover_rows.csdoc HashMap.csdoc List.csdoc numeric_statement.csdoc alpha_statement.csdoc string_statement.csdoc />

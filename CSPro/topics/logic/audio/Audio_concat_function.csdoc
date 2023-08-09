@@ -10,7 +10,7 @@ b = audio_name.concat(<arg>audio_filename</arg> ‖ <arg>audio_object</arg>);
 
 <subheader>Description</subheader>
 
-The <logiccolor>Audio.concat</logiccolor> function appends an audio recording stored in a file specified by the argument <arg>audio_filename</arg> or an <link audio.csdoc>Audio</link> object specified by the argument <arg>audio_object</arg> to the current recording in an <link audio.csdoc>Audio</link> object. The result is a new recording that combines both recordings and is stored in the initial Audio object.
+The <logiccolor>Audio.concat</logiccolor> function appends an audio recording stored in a file specified by the argument <arg>audio_filename</arg> or an <link Audio.csdoc>Audio</link> object specified by the argument <arg>audio_object</arg> to the current recording in an <link Audio.csdoc>Audio</link> object. The result is a new recording that combines both recordings and is stored in the initial Audio object.
 
 The <logiccolor>Audio.concat</logiccolor> function only works with audio files stored in m4a format (AAC encoded audio stored in an MPEG-4 container). This is the format of files recorded in CSPro using the <logiccolor>Audio.record</logiccolor> and <logiccolor>Audio.recordInteractive</logiccolor> functions. Audio files that come from sources other than CSPro will most likely not work with <logiccolor>Audio.concat</logiccolor>.
 
@@ -63,4 +63,4 @@ postproc
 </logic>
 
 
-<seealso audio.csdoc />
+<seealso Audio.csdoc />
