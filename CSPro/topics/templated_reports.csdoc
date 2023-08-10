@@ -21,10 +21,12 @@ Each templated report is a CSPro logic object and the following functions can be
 
 In addition to these object functions, templated reports can be used as arguments to the <logiccolor>filename</logiccolor> and <logiccolor>view</logiccolor> functions.
 
+Frequency tables can be written directly to a report using the <logiccolor>Freq.save</logiccolor> function.
+
 
 <subheader>Assignments</subheader>
 
-When a templated report is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>.
+When a templated report is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link> (as a <logiccolor>Report</logiccolor> object), it is <link function_arguments_ref.csdoc>passed by reference</link>.
 
 
 <subheader>Add, Remove, and Rename</subheader>

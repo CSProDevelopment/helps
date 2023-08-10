@@ -9,6 +9,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 <list>
 	<li>The <logiccolor>timestamp</logiccolor> function can return UNIX time values by parsing <link https://www.rfc-editor.org/rfc/rfc3339>RFC 3339</link> / <link https://en.wikipedia.org/wiki/ISO_8601>ISO 8601</link> strings, or by specifying a specific date value.</li>
 	<li>A new function, <logiccolor>Map.clear</logiccolor>, resets all properties of a <link Map.csdoc>Map object</link>.</li>
+	<li>Frequency tables can be written directly to <link templated_reports.csdoc>templated reports</link> by using the <logiccolor>Freq.save</logiccolor> function.</li>
 	<li>String expressions can be assigned to <link Document.csdoc>Document</link> objects.</li>
 	<li>Some logic features have been removed or are slated for removal:
 	<list>
