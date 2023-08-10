@@ -1,0 +1,57 @@
+﻿<title>Image.createQRCode Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = image_name.createQRCode(<arg>qr_code_text</arg>,
+							『errorCorrection := <arg>ecc</arg>,』
+							『scale := <arg>scale</arg>,』
+							『quietZone := <arg>quiet_zone</arg>,』
+							『darkColor := <arg>dark_color</arg>,』
+							『lightColor := <arg>light_color</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Image.createQRCode</logiccolor> function creates a <link https://en.wikipedia.org/wiki/QR_code>QR code</link> and sets the contents of the <link Image.csdoc>Image</link> object to this image. The text for the QR code, <arg>qr_code_text</arg>, can be specified using a string or numeric expression.
+
+<include ../barcode/include_createQRCode_arguments.hgi />
+
+This function is similar to the <logiccolor>Barcode.createQRCode</logiccolor> function.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if the QR code was successfully generated, or 0 (<logiccolor>false</logiccolor>) on error.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+Image cspro_<definition version_condensed />_barcode;
+cspro_<definition version_condensed />_barcode.createQRCode("Thanks for using CSPro <definition CSPro::version />!");
+cspro_<definition version_condensed />_barcode.view();
+</logic>
+
+<center><barcode text="Thanks for using CSPro <definition CSPro::version />!" /></center>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+Image csentry_apk_url;
+csentry_apk_url.createQRCode("<definition google_play />",
+							 errorCorrection := "quartile",
+							 scale := 6,
+							 quietZone := 8,
+							 darkColor := "white",
+							 lightColor := "green");
+csentry_apk_url.view();
+</logic>
+
+<center><barcode text="<definition google_play />" errorCorrection="quartile" scale="6" quietZone="8" darkColor="white" lightColor="green" /></center>
+
+
+<seealso Image.csdoc Barcode_createQRCode_function.csdoc Barcode_read_function.csdoc  />
