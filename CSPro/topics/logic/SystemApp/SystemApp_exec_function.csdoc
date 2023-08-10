@@ -24,12 +24,33 @@ The <logiccolor>SystemApp.exec</logiccolor> function executes a system applicati
 The function returns a logical value of 1 (true) if the system application is started successfully and 0 (false) otherwise.
 
 
+<subheader>Android Limitations</subheader>
+
+Starting with Android 11, the version of CSEntry installed using <link <definition google_play />>Google Play</link> is <link https://support.google.com/googleplay/android-developer/answer/10158779?hl=en>prohibited from querying</link> for applications not explicitly specified. Google insists that this restriction is to protect sensitive information. The following packages are specified:
+
+<list>
+	<li>Google Maps (<link https://play.google.com/store/apps/details?id=com.google.android.apps.maps>com.google.android.apps.maps</link>)</li>
+	<li>Organic Maps (<link https://play.google.com/store/apps/details?id=app.organicmaps>app.organicmaps</link>)</li>
+</list>
+
+If you want to execute an application not in the above list, you can sideload a non-Google Play version of CSEntry. This version can query for all applications. To get this version, you must contact the <link mailto:<definition mailing_list />>CSPro development team</link>. Alternatively, you can request that the developers add your desired application to the specified list.
+
+
 <subheader>Android Example</subheader>
 
 On Android, the optional string expression <arg>package_name</arg> specifies the name of the Android application (package) that will be executed. An optional string expression <arg>activity_name</arg> specifies the name of the activity within the package that should be opened. If no arguments are provided, then the arguments specified using <logiccolor>SystemApp.setArgument</logiccolor> will be processed by the Android operating system and, if there is a way to handle these arguments, then an appropriate application will be opened.
 
 <logic>
 <include include_android_example.hgi />
+</logic>
+
+<logic>
+// get driving directions from the White House to the U.S. Census Bureau using an Organic Maps deep link
+SystemApp organic_maps;
+organic_maps.setArgument("data", maketext("om://route?sll=%v,%v&saddr=%s&dll=%v,%v&daddr=%s&type=vehicle",
+										  38.897778, -77.036389, encode(PercentEncoding, "White House"),
+										  38.84839,  -76.931098, encode(PercentEncoding, "U.S. Census Bureau")));
+organic_maps.exec("app.organicmaps");
 </logic>
 
 
