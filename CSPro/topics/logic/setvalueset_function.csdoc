@@ -1,10 +1,14 @@
 ﻿<title>SetValueSet Function</title>
 
+<i><b>Feature Upgrade</b>: Starting with CSPro 8.0, it is no longer possible to use <logiccolor>Array</logiccolor> objects to create dynamic value sets. The <logiccolor>ValueSet</logiccolor> object must be used instead.</i>
+
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 b = setvalueset(<arg>item_name</arg>, <arg>value_set_name</arg>);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -18,7 +22,6 @@ setvalueset(@getsymbol(), MY_VALUESET_VS1);
 
 The argument <arg>value_set_name</arg> is the name of an existing value set in the dictionary for the specified item. The function will replace the values of the current value set for the item with the values from the value set specified by <arg>value_set_name</arg>, which is either the name of a value set or a string expression that evaluates to a value set name. The <arg>value_set_name</arg> can also be the name of a <link ValueSet.csdoc>dynamic value set</link>.
 
-The <logiccolor>setvalueset</logiccolor> function can also create dynamic value sets from <link setvalueset_function_with_arrays.csdoc>array arguments</link>.
 
 <subheader>Return Value</subheader>
 
@@ -40,6 +43,7 @@ onfocus
 	endif;
 </logic>
 
+
 <subheader>Example 2</subheader>
 
 <logic>
@@ -57,11 +61,12 @@ PROC SECOND_FAVORITE_DRINK
 
 preproc
 
-    valueset drink_valueset = FAVORITE_DRINK_VS;
+    ValueSet drink_vs = FAVORITE_DRINK_VS;
 
-    drink_valueset.remove(FAVORITE_DRINK);
+    drink_vs.remove(FAVORITE_DRINK);
 
-    setvalueset(SECOND_FAVORITE_DRINK, drink_valueset);
+    setvalueset(SECOND_FAVORITE_DRINK, drink_vs);
 </logic>
+
 
 <seealso setvaluesets_function.csdoc invalueset_function.csdoc />

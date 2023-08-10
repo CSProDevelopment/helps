@@ -1,10 +1,11 @@
 ﻿<title>Paradata</title>
 
+
 <subheader>Introduction to Paradata</subheader>
 
 CSPro can automatically collect paradata for your application. Paradata <link https://en.wikipedia.org/wiki/Paradata>is defined</link> as "data about the process by which the survey data [was] collected." In CSPro this includes information about fields and values entered, error messages encountered, and the state of the data collection device.
 
-The paradata log, with the extension <link paradata_log_file_cslog.csdoc>.cslog</link>, is not a typical data file but is instead a SQLite file. Advanced users with an understanding of SQL can query the file from tools outside of CSPro. Alternatively, there is a tool, the <link ParadataViewer::introduction_to_paradata_viewer.csdoc>Paradata Viewer</link>, which allows you to look at the contents of paradata logs. If you have several paradata logs coming from multiple devices, you can combine these using another tool, the <link ParadataConcat::introduction_to_paradata_concatenator.csdoc>Paradata Concatenator</link>. You can also query the paradata log from within CSPro using the <logiccolor>paradata</logiccolor> or <logiccolor>sqlquery</logiccolor> functions. Reports can be generated from paradata by creating a <link templated_reports.csdoc>templated report</link>. Paradata can be synchronized between devices or servers by using the <logiccolor>syncparadata</logiccolor> function.
+The paradata log, with the extension <link paradata_log_file_cslog.csdoc>.cslog</link>, is not a typical data file but is instead a SQLite file. Advanced users with an understanding of SQL can query the file from tools outside of CSPro. Alternatively, there is a tool, the <link ParadataViewer::introduction_to_paradata_viewer.csdoc>Paradata Viewer</link>, which allows you to look at the contents of paradata logs. If you have several paradata logs coming from multiple devices, you can combine these using another tool, the <link ParadataConcat::introduction_to_paradata_concatenator.csdoc>Paradata Concatenator</link>. You can also query the paradata log from within CSPro using the <logiccolor>paradata</logiccolor> or <logiccolor>sqlquery</logiccolor> functions. Paradata can be synchronized between devices or servers by using the <logiccolor>syncparadata</logiccolor> function.
 
 CSPro collects information about many different kinds of events, which are described in more detail in the <topic properties_paradata.csdoc /> page. You may wish to collect information about only a subset of possible events.
 
