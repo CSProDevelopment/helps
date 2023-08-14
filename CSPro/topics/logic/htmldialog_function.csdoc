@@ -22,7 +22,7 @@ The <logiccolor>htmldialog</logiccolor> function must be passed a a string expre
 
 In the first version, the optional string expression <arg>input_data</arg> argument allows input data to be passed to the HTML template.
 
-In the second version, the optional <link function_named_arguments.csdoc>named argument</link> <arg>input_data</arg> allows input data to be passed to the HTML template. The optional named argument <arg>display_options</arg> argument is a <link json_format.csdoc>JSON</link> string that allows control of the display settings. All possible display options are shown below in a table.
+In the second version, the optional <link function_named_arguments.csdoc>named argument</link> <arg>input_data</arg> allows input data to be passed to the HTML template. The optional named argument <arg>display_options</arg> argument is a <link JSON_primer.csdoc>JSON</link> string that allows control of the display settings. All possible display options are shown below in a table.
 
 
 <subheader>Return Value</subheader>
@@ -39,7 +39,7 @@ Writing a user-created HTML template can be simplified by first selecting an exi
 
 <subheader>Input Data</subheader>
 
-The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a <link json_format.csdoc>JSON</link> string that represents multiple values. The string contents of the input data are retrieved by calling <colorinline JavaScript>CSPro.getInputData()</colorinline> from the script block of the HTML template.
+The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a <link JSON_primer.csdoc>JSON</link> string that represents multiple values. The string contents of the input data are retrieved by calling <colorinline JavaScript>CSPro.getInputData()</colorinline> from the script block of the HTML template.
 
 <color JavaScript>
 // Simple string

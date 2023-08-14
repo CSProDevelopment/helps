@@ -36,7 +36,7 @@ These methods are always available:
 <indent><b><colorinline JavaScript>CSPro.invoke(functionName, arguments = undefined)</colorinline></b></indent>
 <indent><b><colorinline JavaScript>CSPro.invokeAsync(functionName, arguments = undefined, callback = undefined)</colorinline></b></indent>
 
-<indent 2>Runs the <logiccolor>invoke</logiccolor> function to execute a <link user_defined_functions.csdoc>user-defined function</link> using runtime binding. The parameter <colorinline JavaScript>functionName</colorinline> is a string containing the user-defined function name. The optional parameter <colorinline JavaScript>arguments</colorinline> is a <link json_format.csdoc>JSON string </link> containing the arguments to the function. Only numeric constants, string literals, and arrays of numerics and strings can be provided as arguments. (Arrays will be transformed into a CSPro <logiccolor>List</logiccolor>.) In the asynchronous version of this method, the optional parameter <colorinline JavaScript>callback</colorinline> is JavaScript code to execute following the running of the CSPro logic. Due to threading issues with the embedded browser, if the user-defined function you call may display UI elements as part of its operations, you must use the asynchronous version.</indent>
+<indent 2>Runs the <logiccolor>invoke</logiccolor> function to execute a <link user_defined_functions.csdoc>user-defined function</link> using runtime binding. The parameter <colorinline JavaScript>functionName</colorinline> is a string containing the user-defined function name. The optional parameter <colorinline JavaScript>arguments</colorinline> is a <link JSON_primer.csdoc>JSON string </link> containing the arguments to the function. Only numeric constants, string literals, and arrays of numerics and strings can be provided as arguments. (Arrays will be transformed into a CSPro <logiccolor>List</logiccolor>.) In the asynchronous version of this method, the optional parameter <colorinline JavaScript>callback</colorinline> is JavaScript code to execute following the running of the CSPro logic. Due to threading issues with the embedded browser, if the user-defined function you call may display UI elements as part of its operations, you must use the asynchronous version.</indent>
 
 
 <indent><b><colorinline JavaScript>CSPro.getAsyncResult()</colorinline></b></indent>
@@ -54,7 +54,7 @@ These methods are available when showing a HTML dialog using the <logiccolor>htm
 
 <indent><b><colorinline JavaScript>CSPro.setDisplayOptions(displayOptions)</colorinline></b></indent>
 
-<indent 2>Sets the display options used by the <logiccolor>htmldialog</logiccolor> function. The parameter <colorinline JavaScript>displayOptions</colorinline> is a <link json_format.csdoc>JSON string</link> containing one or more of the display options used by the function. This method executes asynchronously.</indent>
+<indent 2>Sets the display options used by the <logiccolor>htmldialog</logiccolor> function. The parameter <colorinline JavaScript>displayOptions</colorinline> is a <link JSON_primer.csdoc>JSON string</link> containing one or more of the display options used by the function. This method executes asynchronously.</indent>
 
 
 <indent><b><colorinline JavaScript>CSPro.returnData(result)</colorinline></b></indent>
