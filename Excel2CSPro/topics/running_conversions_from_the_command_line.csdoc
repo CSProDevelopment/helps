@@ -1,8 +1,9 @@
 ﻿<title>Running Conversions from the Command Line</title>
 
-The Excel to CSPro can be run from the command line, either in an automated way or by bringing up a specification file for modification. Assuming that CSPro was installed to the default directory, the tool is likely found here:
+The Excel to CSPro tool can be run from the command line, either in an automated way or by bringing up a specification file for modification. Assuming that CSPro was installed to the default directory, the tool is likely found here:
 
 <indent><font monospace>"C:\Program Files (x86)\CSPro <definition CSPro::version />\Excel2CSPro.exe"</font></indent>
+
 
 <subheader>Opening and Running a Specification File</subheader>
 
@@ -14,54 +15,9 @@ If you want to open the specification file, run the conversion, and close the to
 
 <indent><font monospace>"C:\Program Files (x86)\CSPro <definition CSPro::version />\Excel2CSPro.exe" <b>/run</b> "My Specifications File.xs2cs"</font></indent>
 
-<subheader>Overriding Parameters in the Specification File</subheader>
+If you want to run the conversion only when the Excel file has a newer file date than the CSPro data file, use the <b>/runifnewer</b> argument:
 
-It is possible to override the parameters in specification files. Parameters include the names of the files, the starting row for conversion, and the record and item mappings. As Excel to CSPro processes a specification file, it takes the first entry for a file or mapping. In the example below, the input spreadsheet will be Virginia.xlsx:
-
-<indent><font monospace>
-Excel=.\Virginia.xlsx
-Excel=.\Maryland.xlsx
-</font></indent>
-
-Parameters specified on the command line are considered before the contents of a specification file. For example, to run the above conversion from the command line on a file called "North Carolina.xlsx":
-
-<indent><font monospace>"C:\Program Files (x86)\CSPro <definition CSPro::version />\Excel2CSPro.exe" /run "My Specifications File.xs2cs" <b>"Excel=North Carolina.xlsx"</b></font></indent>
-
-If you had a spreadsheet with two worksheets, Asia and Europe, with the same column specifications, you could use the tool to map the CSPro records and items to one worksheet and then process them using a batch script:
-
-<indent><font monospace>
-"C:\Program Files (x86)\CSPro <definition CSPro::version />\Excel2CSPro.exe" /run "Eurasia.xs2cs" <b>"OutputData=Asia.csdb" "Mapping=POPULATION_DATA_REC;;Asia"</b>~!~
-"C:\Program Files (x86)\CSPro <definition CSPro::version />\Excel2CSPro.exe" /run "Eurasia.xs2cs" <b>"OutputData=Europe.csdb" "Mapping=POPULATION_DATA_REC;;Europe"</b>
-</font></indent>
-
-<subheader>Specification File Mappings</subheader>
-
-In the specification file and overrides, the following commands are available:
-
-<table 2 header>
-	<cell>Command</cell><cell>Description</cell>
-	<cell><b>Excel</b>=</cell><cell>Specifies the input Excel file.</cell>
-	<cell><b>InputDict</b>=</cell><cell>Specifies the CSPro dictionary.</cell>
-	<cell><b>OutputData</b>=</cell><cell>Specifies the name of the output data file. The extension of the file indicates the <link CSPro::data_sources.csdoc>output type</link>.</cell>
-	<cell><b>StartingRow</b>=</cell><cell>Specifies the starting row where the data is located.</cell>
-	<cell><b>CaseManagement</b>=</cell><cell>Specifies the mode for how cases are added, modified, or deleted.</cell>
-	<cell><b>RunOnlyIfNewer</b>=</cell><cell>Specifies if the conversion can conditionally occur.</cell>
-	<cell><b>Mapping</b>=</cell><cell>Specifies a mapping between a dictionary record and an Excel worksheet or a dictionary item and an Excel column.</cell>
-</table>
-
-Dictionary record to worksheet mappings take the form:
-
-<indent><font monospace>Mapping=PERSON_REC;@1;People</font></indent>
-
-<b>@1</b> as an index meaning that this is the first worksheet in the spreadsheet. <b>People</b> is the name of the worksheet. When processing mappings, Excel to CSPro first tries to find the worksheet using the name. If the name is not present, then the index is used. When overriding values, you can provide either a name, an index, or both.
-
-Dictionary item to column mappings take the form:
-
-<indent><font monospace>Mapping=P02_RELATIONSHIP;@3</font></indent>
-
-Item mappings list only the column number in the worksheet that corresponds to the item. Mapped ID items must be prefaced with the record name, as in:
-
-<indent><font monospace>Mapping=PERSON_REC.HOUSEHOLD_NUMBER;@1</font></indent>
+<indent><font monospace>"C:\Program Files (x86)\CSPro <definition CSPro::version />\Excel2CSPro.exe" <b>/runifnewer</b> "My Specifications File.xs2cs"</font></indent>
 
 
 <subheader>Running Production Conversions</subheader>
@@ -86,12 +42,6 @@ Application=.\Convert Data.xl2cs
 Excel=.\Zomba.xlsx
 InputDict=.\Clinics.dcf
 OutputData=.\Zomba.csdb
-
-[Parameters]
-StartingRow=2
-CaseManagement=ModifyAddDeleteCases
-RunOnlyIfNewer=No
-Mapping=CLINIC_NAME;@2
 </pff>
 
 
@@ -99,10 +49,16 @@ Mapping=CLINIC_NAME;@2
 
 The <pffcolor>[Run Information]</pffcolor> block is required and must appear exactly as shown in the example above.
 
+
 <subheader>[Files]</subheader>
 
-The <pffcolor>[Files]</pffcolor> block is required and defines the specification file script that will be used during the conversion. The <pffcolor>Excel</pffcolor> command maps to the <b>Excel</b> command defined above, while <pffcolor>InputDict</pffcolor> and <pffcolor>OutputData</pffcolor> are the same as their command line counterparts. If these are not defined, then the conversion will use the values defined in the specification file.
+The <pffcolor>[Files]</pffcolor> block is required.  A description of the files, not all of which have to be specified, is as follows:
 
-<subheader>[Parameters]</subheader>
+<list>
+	<li><pffcolor>Application</pffcolor>=the name of the specification file script that will be used during the conversion.</li>
+	<li><pffcolor>Excel</pffcolor>=the input Excel file.</li>
+	<li><pffcolor>InputDict</pffcolor>=the CSPro dictionary.</li>
+	<li><pffcolor>OutputData</pffcolor>=the name of the output data file. The extension of the file indicates the <link CSPro::data_sources.csdoc>output type</link>.</li>
+</list>
 
-Just as you can override the <b>StartingRow</b>, <b>CaseManagement</b>, <b>RunOnlyIfNewer</b>, and <b>Mapping</b> commands from the command line, you can do the same by specifying them in the <pffcolor>[Parameters]</pffcolor> block.
+The <pffcolor>Excel</pffcolor>, <pffcolor>InputDict</pffcolor> and <pffcolor>OutputData</pffcolor> commands do not need to be defined. If not defined, the conversion will use the values defined in the specification file.
