@@ -16,6 +16,10 @@ To reconfigure or reset your CSWeb installation:
 	<li>Open your web browser and launch the CSWeb setup page.</li>
 </list>
 
+<subheader>Code or configuration changes not taking effect</subheader>
+
+Delete the cache if you notice that your changes are not taking effect when you refresh the browser. From the CSWeb root folder the path to the cache folder is <i>var/cache</i>. Then refresh the browser.
+
 <subheader>Common errors during CSWeb setup</subheader>
 
 <i>Failed to connect to database. SQLSTATE[HY000] [1045] Access denied for user</i>
@@ -43,3 +47,8 @@ Either the server URL is incorrect or your device is not connected to the networ
 <i>Resource not found on server</i>
 
 The server URL is not correct. The host portion of the URL is probably correct but the part that follows is not. This often happens when "ui" is used instead of "api" at the end of the URL. For example, <i>http://example.org/csweb/ui</i> instead of <i>http://example.org/csweb/api</i>. Always use "api" when syncing with CSWeb from CSPro and use "ui" only when accessing CSWeb from your web browser.
+
+<subheader>Issues with CURL library when using IIS</subheader>
+
+If you run into issues with the CURL library while using IIS a workaround is to disable the curl extensioon in php.ini and enable allow_url_fopen.
+
