@@ -12,7 +12,7 @@ skip;
 
 <subheader>Description</subheader>
 
-The <logiccolor>skip</logiccolor> statement skips to the a field located after the current field. The argument <arg>field_name</arg> is either the name of a field or is a string variable specifying the name of the field. If the field has multiple occurrences, and if skipping from a field not on the same repeating form or roster, the target occurrence number must be specified to skip to the correct occurrence.
+The <logiccolor>skip</logiccolor> statement skips to the <arg>field_name</arg> given. The field must be forward in the path; that is, it must be located after the current field. The argument <arg>field_name</arg> is either the name of a field, or it is a string variable specifying the name of the field. If the field you wish to skip to has multiple occurrences and you are not skipping from a field within the same repeating form or roster, the target occurrence number must be specified to skip to the correct occurrence.
 
 The <logiccolor>next</logiccolor> keyword skips to the next occurrence of <arg>multiply_occurring_field_name</arg>. If the target field is on the same repeating form or roster as the current field, control will move to the next occurrence of the target field. If not, control will move to the first occurrence of the target field. Occurrence numbers cannot be used with the <logiccolor>next</logiccolor> keyword.
 
