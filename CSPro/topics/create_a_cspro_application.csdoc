@@ -3,16 +3,23 @@
 
 Click <image new_button.png /> on the toolbar; or from the <b>File</b> menu, select <b>New</b>; or press <b>Ctrl+N</b>. The following dialog box will appear:
 
-<center><image new_application_batch_edit.png /></center>
+<center><image new_application.png /></center>
 
 Select the type of application you want to create and press <b>OK</b>. You can create one of the following applications:
 
-<list>
-	<li><link create_a_new_data_entry_application.csdoc>Data Entry Application</link>: To enter data, generally from a paper questionnaire.</li>
-	<li><link create_a_new_data_entry_application.csdoc>CAPI Data Entry Application</link>: To enter data, generally by using computer-assisted personal interviewing (CAPI).</li>
-	<li><link create_a_new_batch_edit_application.csdoc>Batch Edit Application</link>: To detect and correct errors in data file.</li>
-	<li><link create_a_new_tabulation_application.csdoc>Tabulation Application</link>: To produce publication ready tables.</li>
-</list>
+<table 3 header>
+	<cell>Category</cell><cell>Type</cell><cell>Description</cell>
+	<cell nowrap><b><i>Entry</i></b></cell><cell nowrap><b>CAPI Data Entry Application</b></cell><cell>A <link create_a_new_data_entry_application.csdoc>data entry application</link> will be created with <link data_entry_application_types.csdoc>settings tailored</link> for conducting Computer Assisted Personal Interviewing (CAPI) censuses and surveys. The program will use <link operator_vs_system_controlled.csdoc>system-controlled mode</link> to ensure enumerators strictly follow any value and logic checks.</cell>
+	<cell></cell><cell nowrap><b>PAPI Data Entry Application</b></cell><cell>A <link create_a_new_data_entry_application.csdoc>data entry application</link> will be created with <link data_entry_application_types.csdoc>settings tailored</link> for keying PAPI (Paper and Pencil Interviewing) forms collected during a census or survey. The program will use <link operator_vs_system_controlled.csdoc>operator-controlled mode</link> to give keyers maximum flexibility while entering the data on the forms.</cell>
+	<cell></cell><cell nowrap><b>Operational Control Application</b></cell><cell>A <link create_a_new_data_entry_application.csdoc>data entry application</link> will be created with <link data_entry_application_types.csdoc>settings tailored</link> for managing operational control, which is sometimes called a menu program. These programs are not intended to collect data that will be saved, but rather to lead enumerators through a series of options, presenting actions to be taken.</cell>
+	<cell 3>&nbsp;</cell>
+	<cell nowrap><b><i>Batch</i></b></cell><cell nowrap><b>Batch Edit Application</b></cell><cell><link create_a_new_batch_edit_application.csdoc>Batch edit applications</link> are generally used to detect and correct errors in data files. They can also be used for running logic as a script, or to export data.</cell>
+	<cell 3>&nbsp;</cell>
+	<cell nowrap><b><i>Tabulation</i></b></cell><cell nowrap><b>Tabulation Application</b></cell><cell><link create_a_new_tabulation_application.csdoc>Tabulation applications</link> produce publication-ready tables.</cell>
+	<cell 3>&nbsp;</cell>
+	<cell nowrap><b><i>Other</i></b></cell><cell nowrap><b>Dictionary</b></cell><cell><link creating_a_dictionary_for_a_new_file.csdoc>Dictionaries</link> describe CSPro data files. If you are creating a new application, you may prefer creating the entire application rather than a standalone dictionary.</cell>
+	<cell></cell><cell nowrap><b>Form</b></cell><cell><link forms_file_fmf.csdoc>Forms</link> contain the order and instructions for collecting information as part of a data entry application. This option does not create a complete data entry application; it is most commonly used to bring in a standalone form used by several applications, such as a consent form. If you are creating a new application, you should select either the CAPI or PAPI entry options.</cell>
+</table>
 
 You will then be prompted to enter the file name of the application. Enter the file name of the application and press <b>Create</b>.
 

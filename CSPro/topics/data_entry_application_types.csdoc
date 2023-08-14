@@ -1,0 +1,40 @@
+﻿<title>Data Entry Application Types</title>
+
+When <link create_a_cspro_application.csdoc>creating a new application</link>, there are three types of <link data_entry_applications.csdoc>data entry application</link> templates available:
+
+<list>
+	<li><b>CAPI Data Entry Application</b>: for CAPI (Computer Assisted Personal Interviewing) applications.</li>
+	<li><b>PAPI Data Entry Application</b>: for PAPI (Paper and Pencil Interviewing), also called key-from-paper, applications.</li>
+	<li><b>Operational Control Application</b>: for operational control, also called "menu," applications.</li>
+</list>
+
+These three types are all data entry applications, but the initial <link change_data_entry_options.csdoc>data entry options</link> are different based on the selection. If you want to switch from one type to another, you can modify the settings as described below.
+
+
+<table 4 header>
+	<cell>Setting</cell><cell><center>CAPI</center></cell><cell><center>PAPI</center></cell><cell><center>Operation Control</center></cell>
+	<cell><link change_data_entry_options.csdoc>Use question text</link></cell><cell><center>Yes</center></cell><cell></cell><cell><center>Yes</center></cell>
+	<cell><link properties_paradata.csdoc>Enable paradata</link></cell><cell><center>All events</center></cell><cell></cell><cell></cell>
+	<cell><link change_data_entry_options.csdoc>Show case tree</link></cell><cell><center>Only on mobile</center></cell><cell><center>Only on mobile</center></cell><cell></cell>
+	<cell><link change_data_entry_options.csdoc>Show only discrete values in combo boxes</link></cell><cell><center>Yes</center></cell><cell></cell><cell><center>Yes</center></cell>
+	<cell><link change_data_entry_options.csdoc>Automatically advance on selection</link></cell><cell></cell><cell></cell><cell><center>Yes</center></cell>
+	<cell><link change_data_entry_options.csdoc>Ask for an operator ID</link></cell><cell></cell><cell><center>Yes</center></cell><cell></cell>
+	<cell><link data_source_options.csdoc>Create a listing file</link></cell><cell></cell><cell><center>Yes</center></cell><cell></cell>
+	<cell><link data_source_options.csdoc>Create an operator statistics file</link></cell><cell></cell><cell><center>Yes</center></cell><cell></cell>
+	<cell><link change_data_entry_options.csdoc>Display error message numbers</link></cell><cell></cell><cell><center>Yes</center></cell><cell></cell>
+</table>
+
+
+<subheader>Default PFF for Operational Control Applications</subheader>
+
+For CAPI and PAPI applications, no <link run_production_data_entry.csdoc>PFF file</link> is created until you run the application for the first time. At that point, you can <link run_a_data_entry_application.csdoc>specify the files</link> associated with your application. For operational control applications, a default PFF is created with the following settings that differ from the defaults:
+
+<list>
+	<li>Input data: <link data_sources.csdoc>None</link></li>
+	<li>Start Mode: Add</li>
+	<li>Case Listing: Locked</li>
+	<li>Full Screen: Yes</li>
+</list>
+
+
+<seealso change_data_entry_options.csdoc data_source_options.csdoc properties_paradata.csdoc />
