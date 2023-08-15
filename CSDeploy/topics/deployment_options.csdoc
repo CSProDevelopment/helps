@@ -3,18 +3,18 @@
 In order to make your application package available to mobile or Windows devices, you have two strategies:
 
 <list>
-<li>Deploy to a server that is accessible over a network, from which a device can download your data entry application.</li>
-<li>"Deploy" to a local folder or create a zip file, which can then be used to manually install your application to a device.</li>
+	<li>Deploy to a server that is accessible over a network, from which a device can download your data entry application.</li>
+	<li>"Deploy" to a local folder or create a ZIP file, which can then be used to manually install your application to a device.</li>
 </list>
 
 The web-based deployment strategy can be accomplished using options 1-3 below. The "local" deployment strategy can be accomplished using options 4-5 below. The local option is useful when you wish to deploy your application to a PC, or you wish to conduct an assembly-line installation of your application across hundreds or thousands of devices using a thumb drive.
 
 <list ordered>
-<li><b>CSWeb</b>: A free web application that can run in a local data center or be hosted on a server in the cloud. Best for censuses and large surveys. Requires skills in setting up and administering a website and SQL database.</li>
-<li><b>Dropbox</b>: A free service for synchronization with servers in the cloud. Data is stored on the servers managed by Dropbox in the United States. Best for small surveys when the skills and infrastructure for setting up CSWeb are limited or not available.</li>
-<li><b>FTP</b>: CSPro can synchronize with any FTP (File Transfer Protocol) server accessible over the network. Best for small surveys when the skills and infrastructure for setting up CSWeb are not available and you do not want your data on the Dropbox servers.</li>
-<li><b>Local folder</b>: Provide a local folder location for CSDeploy to write the files to. Useful when needing to create an installation package for non-Android devices (i.e., a PC).</li>
-<li><b>Zip file</b>: Creates a single zipped file of all the files and folder structure(s) created with the "Local Folder" deployment option. Another way to facilitate installation on non-Android devices.</li>
+	<li><b>CSWeb</b>: A free web application that can run in a local data center or be hosted on a server in the cloud. Best for censuses and large surveys. Requires skills in setting up and administering a website and SQL database.</li>
+	<li><b>Dropbox</b>: A free service for synchronization with servers in the cloud. Data is stored on the servers managed by Dropbox in the United States. Best for small surveys when the skills and infrastructure for setting up CSWeb are limited or not available.</li>
+	<li><b>FTP</b>: CSPro can synchronize with any FTP (File Transfer Protocol) server accessible over the network. Best for small surveys when the skills and infrastructure for setting up CSWeb are not available and you do not want your data on the Dropbox servers.</li>
+	<li><b>Local folder</b>: Provide a local folder location for CSDeploy to write the files to. Useful when needing to create an installation package for non-Android devices (i.e., a PC).</li>
+	<li><b>ZIP file</b>: Creates a single ZIP file of all the files and folder structure(s) created with the "Local Folder" deployment option. Another way to facilitate installation on non-Android devices.</li>
 </list>
 
 If you choose to deploy your application to <b>CSWeb</b>, you will first need to setup and configure a CSWeb server. See the <link CSWeb::introduction_to_csweb.csdoc>CSWeb User's Guide</link> for details. Once you have a CSWeb server up and running, choose <b>CSWeb</b> under <b>Deploy To</b> and enter the URL for your server next to <b>Server URL</b>. Note that for CSWeb, the server URL will start with <i>http://</i> or <i>https://</i> and end with <i>/api</i>. For example, <i>http://www.myserver.com/cweb/api</i>. After clicking <b>Deploy</b>, you will be prompted for the username and password for the CSWeb server.
@@ -25,9 +25,8 @@ To deploy to an <b>FTP</b> server, choose <b>FTP</b> under <b>Deploy To</b>. Aft
 
 To deploy to a <b>Local folder</b>, choose <b>Local folder</b> under <b>Deploy To</b> and provide a fully-qualified folder designation (drive + folder name(s)). The .pen, .pff, and other files and/or folders that are part of your application will be placed in the designated folder.
 
-To create a <b>.zip</b>, choose <b>Zip file</b> under <b>Deploy To</b> and provide a fully-qualified folder designation (drive + folder name(s)). The .pen, .pff, and any other selected files and/or folders that are part of your application will be placed in the designated folder.
+To create a <b>.zip</b>, choose <b>ZIP file</b> under <b>Deploy To</b> and provide a fully-qualified folder designation (drive + folder name(s)). The .pen, .pff, and any other selected files and/or folders that are part of your application will be placed in the designated folder.
 
-
-If you chose to deploy your package to a server, you can now <topic install_deployment_mobile.csdoc />. If you chose the Local folder or .zip file deploy options, you will have to manually copy the files over using a thumb drive.
+If you chose to deploy your package to a server, you can now <topic install_deployment_mobile.csdoc />. If you chose the Local folder or ZIP file deploy options, you will have to manually copy the files over using a thumb drive.
 
 <seealso generate_deploy_qr_code.csdoc />

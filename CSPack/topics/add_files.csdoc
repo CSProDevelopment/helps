@@ -1,0 +1,15 @@
+﻿<title>Add Files</title>
+
+Once CSPack is launched, the following dialog box appears:
+
+<center><image pack_app_dialog.png /></center>
+
+If CSPack was launched from CSPro while an application was loaded, then CSPack will place that application in the <b>"Inputs"</b> area, as it assumes you wish to zip this (active) application. If CSPack was not launched under that scenario, then the "Inputs" area will be empty. Once launched, there are three choices:
+
+<list>
+	<li>Open an existing <b>.cspack</b> specification file by choosing <b>File > Open</b> or pressing <b>Ctrl+O</b>. Opening an existing file will undo any changes made.</li>
+	<li>Click on the <b>"Add File"</b> button: this lets you choose from one of the three types of CSPro applications (<b>.ent</b>, <b>.bch</b>, or <b>.xtb</b>), or any file type if the <b>"All Files (*.*)"</b> file specification is chosen.</li>
+	<li>Click on the <b>"Add Folder"</b> button: this allows you to choose a folder anywhere on your computer. All files located within it will be added. See the <link choose_pack_options.csdoc>recursive directories</link> option if you wish to include all subfolders in the ZIP file as well.</li>
+</list>
+
+As applications, files, or folders continue to be added, their names will appear in the "Inputs" area. See the <link choose_pack_options.csdoc>options</link> page for information about the <b>"Extra Inclusions"</b> block.

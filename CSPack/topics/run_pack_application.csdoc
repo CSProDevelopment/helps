@@ -1,9 +1,15 @@
-﻿<title>Run Pack Application</title>
+﻿<title>Run CSPack</title>
 
-<list ordered>
-	<li>Click the "Pack" button on file dialog box.</li>
-	<li>CSPack will analyze your application, and identify the different files that are used by it.</li>
-	<li>If your ZIP file already exists, you will be asked to confirm whether or not you want to update it. Note that its contents will be updated, so other files that might be in the ZIP file will be preserved.</li>
-	<li>CSPack will add all the application's files to the specified ZIP file. A message as to whether or not the backup was successful will be displayed.</li>
-	<li>A report (CSPack.lst) detailing what happened will be displayed.</li>
-</list>
+<subheader>Backup (ZIP File)</subheader>
+
+This designates the ZIP file that will be created from the assembled CSPro application(s), files, and/or folder(s). When selecting files to add to your ZIP file, if the first item chosen is an application, then CSPack will provide a default file name in the <b>"ZIP File"</b> field based on the application name, replacing the extension with <b>.zip</b>.
+
+You can modify the file name specified or output ZIP file folder location by typing directly in the <b>ZIP File</b> area. Click on the <b>Browse</b> button to facilitate finding the desired ZIP file folder location.
+
+When ready to zip up your file(s), click on the <b>Pack</b> button. A results listing will appear in <b>Text Viewer</b>, which will state the ZIP file name created, what files and/or folders were included, and whether there were any problems encountered during the operation. A summary line at the end will state how many files were zipped and the space that was saved. An example of this is:
+
+<indent><font monospace>ZIP file created successfully (15 files compressed with a space saving of 74%)</font></indent>
+
+<subheader>Input Details</subheader>
+
+Since the <b>Inputs</b> area only displays application and folder names rather than their constituent parts, clicking on the <b>Input Details</b> button allows you to view which files will be included in the ZIP file. It displays these details in a separate window.
