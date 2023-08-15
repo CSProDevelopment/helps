@@ -1,11 +1,11 @@
 ﻿<title>Value Set Images</title>
 
-In addition to the response values for a field, you can associate an image with some or all of the values. In this way, an the interviewer can select a response based on the picture. This can be helpful, for example, in CAPI situations where an interview must select units of measure or other things that may best be described visually. This is also useful for asking sensitive questions of people who may be illiterate (e.g., "What political party do you favor?").
+In addition to the response values for a field, you can associate an image with some or all of the values. In this way, an interviewer can select a response based on the picture. This can be helpful, for example, in CAPI situations where an interviewer must select units of measure or other things that may best be described visually. This is also useful for asking sensitive questions of people who may be illiterate (e.g., "What political party do you favor?").
 
 <center><image valueset_image_selection.png /></center>
 
-To associate an image with a value, click on the "..." button at the end of the value row and then select the image. Images in five file formats are supported: .jpg, .gif, .bmp, .png, and .tif.
+To associate an image with a value, show the <link dictionary_property_panel.csdoc>dictionary property panel</link> and modify the <b>Image</b> property. Images in five file formats are supported: .jpg, .gif, .bmp, .png, and .tif.
 
-If you are deploying a data entry application to another computer or an mobile device, you must remember to distribute the images along with the CSEntry data entry application. If you want CSPro to automatically bundle the images with the <link binary_data_entry_application_file_pen.csdoc>data entry .pen file</link>, you may want to put the images in a special folder and then denote that folder as a <link resource_folders.csdoc>resource folder</link>.
+If you are deploying a data entry application to another computer or a mobile device, you must remember to distribute the images along with the CSEntry data entry application. If you want CSPro to automatically bundle the images with the <link binary_data_entry_application_file_pen.csdoc>data entry .pen file</link>, you may want to put the images in a special folder and then denote that folder as a <link resource_folders.csdoc>resource folder</link>.
 
-<seealso setvalueset_function.csdoc />
+<seealso ValueSet_add_function.csdoc Image_load_function.csdoc getimage_function.csdoc />

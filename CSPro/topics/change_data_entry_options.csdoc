@@ -21,7 +21,7 @@ This choice is very important and will have a large effect at data entry time. S
 	<li><b>Always show refusals</b>: If this box is checked, <link refused_value.csdoc>refused</link> values defined in a value set will always be shown to the operator. If unchecked, the operator can view refused values by selecting the <link CSEntry::change_view.csdoc>Show Refusal Options</link> menu option.</li>
 	<li><b>Center forms on screen</b>: If this box is checked, CSEntry will center forms horizontally in the display window.</li>
 	<li><b>Decimal mark is a comma</b>: If this box is checked, CSEntry will use a comma instead of a period when showing numeric fields with a decimal component. The keyer must also type a comma instead of a period to enter the values after the decimal mark.</li>
-	<li><b>Right-to-left entry</b>: If this box is checked, CSEntry will orient rosters in a right-to-left manner, which is useful for languages like Arabic. The first column of a roster will be the furthest right in the roster and the roster will scroll from right to left..</li>
+	<li><b>Right-to-left entry</b>: If this box is checked, CSEntry will orient rosters in a right-to-left manner, which is useful for languages like Arabic. The first column of a roster will be the furthest right in the roster and the roster will scroll from right to left.</li>
 </list>
 
 
@@ -47,3 +47,6 @@ During verification, you may choose to verify only a subset of the cases in the 
 	<li><b>Start</b>: This is the number of the first case in the data file to verify. For example, if this value is 5, and the frequency is 10, cases number 5, 15, 25, etc. will be verified. The case number is determined by the physical order of the cases in the data file. The start value must be less than or equal to the frequency value.</li>
 	<li><b>Random Start</b>: You may check this box instead of specifying a start value. CSEntry will then choose a random number for the start value. The random number will be between 1 and the frequency value.</li>
 </list>
+
+
+<seealso data_entry_application_types.csdoc />

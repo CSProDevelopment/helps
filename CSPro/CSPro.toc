@@ -364,6 +364,7 @@
                 "title": "Create a Data Entry Application", 
                 "documents": [
                   { "path": "create_a_new_data_entry_application.csdoc", "~title": "Create a New Data Entry Application" }, 
+                  { "path": "data_entry_application_types.csdoc", "~title": "Data Entry Application Types" }, 
                   { "path": "generate_default_data_entry_forms.csdoc", "~title": "Generate Default Data Entry Forms" }, 
                   { "path": "drag_option_menu.csdoc", "~title": "Drag Options Menu" }, 
                   { "path": "data_entry_forms_screen_layout.csdoc", "~title": "Data Entry Forms Screen Layout" }, 
@@ -904,7 +905,8 @@
             "title": "Barcode and QR Codes", 
             "documents": [
               { "path": "Barcode.csdoc", "~title": "Barcode Namespace" }, 
-              { "path": "Barcode_read_function.csdoc", "~title": "Barcode.read Function" }
+              { "path": "Barcode_read_function.csdoc", "~title": "Barcode.read Function" }, 
+              { "path": "Barcode_createQRCode_function.csdoc", "~title": "Barcode.createQRCode Function" }
             ]
           }, 
           {
@@ -977,6 +979,7 @@
               { "path": "Image_width_function.csdoc", "~title": "Image.width Function" }, 
               { "path": "Image_height_function.csdoc", "~title": "Image.height Function" }, 
               { "path": "Image_resample_function.csdoc", "~title": "Image.resample Function" }, 
+              { "path": "Image_createQRCode_function.csdoc", "~title": "Image.createQRCode Function" }, 
               { "path": "Image_takePhoto_function.csdoc", "~title": "Image.takePhoto Function" }, 
               { "path": "Image_captureSignature_function.csdoc", "~title": "Image.captureSignature Function" }, 
               { "path": "Image_view_function.csdoc", "~title": "Image.view Function" }, 
@@ -1005,6 +1008,7 @@
               { "path": "Map_statement.csdoc", "~title": "Map Statement" }, 
               { "path": "Map_show_function.csdoc", "~title": "Map.show Function" }, 
               { "path": "Map_hide_function.csdoc", "~title": "Map.hide Function" }, 
+              { "path": "Map_clear_function.csdoc", "~title": "Map.clear Function" }, 
               { "path": "Map_setTitle_function.csdoc", "~title": "Map.setTitle Function" }, 
               { "path": "Map_setBaseMap_function.csdoc", "~title": "Map.setBaseMap Function" }, 
               { "path": "Map_zoomTo_function.csdoc", "~title": "Map.zoomTo Function" }, 
@@ -1277,13 +1281,10 @@
               { "path": "paradata_function.csdoc", "~title": "Paradata Function" }, 
               { "path": "pathconcat_function.csdoc", "~title": "PathConcat Function" }, 
               { "path": "pathname_function.csdoc", "~title": "PathName Function" }, 
-              { "path": "report_function_pre77.csdoc", "~title": "Report Function (Deprecated)" }, 
               { "path": "savesetting_function.csdoc", "~title": "SaveSetting Function" }, 
               { "path": "setlanguage_function.csdoc", "~title": "SetLanguage Function" }, 
               { "path": "setproperty_function.csdoc", "~title": "SetProperty Function" }, 
-              { "path": "setreportdata_function_pre77.csdoc", "~title": "SetReportData Function (Deprecated)" }, 
               { "path": "setvalueset_function.csdoc", "~title": "SetValueSet Function" }, 
-              { "path": "setvalueset_function_with_arrays.csdoc", "~title": "SetValueSet Function With Arrays" }, 
               { "path": "setvaluesets_function.csdoc", "~title": "SetValueSets Function" }, 
               { "path": "special_function.csdoc", "~title": "Special Function" }, 
               { "path": "sqlquery_function.csdoc", "~title": "SqlQuery Function" }, 
@@ -1311,7 +1312,7 @@
               { "path": "setub_function.csdoc", "~title": "SetUB Function" }, 
               { "path": "sysdate_function.csdoc", "~title": "SysDate Function" }, 
               { "path": "systime_function.csdoc", "~title": "SysTime Function" }, 
-              { "path": "timestamp_function.csdoc", "~title": "Timestamp Function" }, 
+              { "path": "timestamp_function.csdoc", "~title": "timestamp Function" }, 
               { "path": "timestring_function.csdoc", "~title": "TimeString Function" }
             ]
           }, 
@@ -1400,9 +1401,7 @@
           { "path": "templated_reports.csdoc", "~title": "Templated Reports" }, 
           { "path": "Report_save_function.csdoc", "~title": "Report.save Function" }, 
           { "path": "Report_view_function.csdoc", "~title": "Report.view Function" }, 
-          { "path": "Report_write_function.csdoc", "~title": "Report.write Function" }, 
-          { "path": "templated_reports_pre77.csdoc", "~title": "Templated Reports (Deprecated)" }, 
-          { "path": "templated_reports_mustache_pre77.csdoc", "~title": "Mustache Templated Reports (Deprecated)" }
+          { "path": "Report_write_function.csdoc", "~title": "Report.write Function" }
         ]
       }, 
       {
@@ -1411,7 +1410,7 @@
           { "path": "html_in_cspro.csdoc", "~title": "HTML in CSPro" }, 
           { "path": "html_dialog_ui.csdoc", "~title": "HTML Dialog Boxes" }, 
           { "path": "javascript_interface.csdoc", "~title": "JavaScript Interface" }, 
-          { "path": "json_format.csdoc", "~title": "JSON Format" }
+          { "path": "JSON_primer.csdoc", "~title": "JSON Primer" }
         ]
       }, 
       {
@@ -1486,6 +1485,7 @@
             "title": "Appendix H - File Types", 
             "documents": [
               { "path": "file_types.csdoc", "~title": "File Types" }, 
+              { "path": "JSON_specification_files.csdoc", "~title": "JSON Specification Files" }, 
               { "path": "importing_data_to_cspro_format.csdoc", "~title": "Importing Data to CSPro Format" }, 
               { "path": "locking_application_files.csdoc", "~title": "Locking Application Files" }, 
               { "path": "temporary_data_file.csdoc", "~title": "Temporary Data File" }, 

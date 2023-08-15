@@ -1,0 +1,37 @@
+﻿<title>Map.clear Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = map_name.clear();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Map.clear</logiccolor> function resets all properties for the <link Map.csdoc>Map object</link> named <logiccolor>map_name</logiccolor>, clearing buttons, geometry, and markers; resetting the base map and title; etc.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true).
+
+
+<subheader>Example</subheader>
+
+<logic>
+function buildMap(Map myMap)
+
+	// clear all properties
+	myMap.clear();
+
+	// build the map
+	myMap.setBaseMap("Maps/Suitland.mbtiles");
+	// ...
+
+end;
+</logic>
+
+
+<seealso Map.csdoc Map_clearButtons_function.csdoc Map_clearGeometry_function.csdoc Map_clearMarkers_function.csdoc />

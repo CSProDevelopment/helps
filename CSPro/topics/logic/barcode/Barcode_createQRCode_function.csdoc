@@ -1,0 +1,53 @@
+﻿<title>Barcode.createQRCode Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = Barcode.createQRCode(<arg>image_filename</arg>, <arg>qr_code_text</arg>,
+						 『errorCorrection := <arg>ecc</arg>,』
+						 『scale := <arg>scale</arg>,』
+						 『quietZone := <arg>quiet_zone</arg>,』
+						 『darkColor := <arg>dark_color</arg>,』
+						 『lightColor := <arg>light_color</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Barcode.createQRCode</logiccolor> function creates a <link https://en.wikipedia.org/wiki/QR_code>QR code</link> and saves the image of the QR code to a file specified by the string expression <arg>image_filename</arg>. The text for the QR code, <arg>qr_code_text</arg>, can be specified using a string or numeric expression.
+
+<include include_createQRCode_arguments.hgi />
+
+This function is similar to the <logiccolor>Image.createQRCode</logiccolor> function.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if the QR code was successfully generated and the image was saved, or 0 (<logiccolor>false</logiccolor>) on error.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+Barcode.createQRCode("cspro-<definition version_condensed />-barcode.png", "Thanks for using CSPro <definition CSPro::version />!");
+</logic>
+
+<center><barcode text="Thanks for using CSPro <definition CSPro::version />!" /></center>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+Barcode.createQRCode("Google-Play-CSEntry-url.jpg",
+					 "<definition google_play />",
+					 errorCorrection := "quartile",
+					 scale := 6,
+					 quietZone := 8,
+					 darkColor := "white",
+					 lightColor := "green");
+</logic>
+
+<center><barcode text="<definition google_play />" errorCorrection="quartile" scale="6" quietZone="8" darkColor="white" lightColor="green" /></center>
+
+
+<seealso Barcode.csdoc Barcode_read_function.csdoc Image_createQRCode_function.csdoc  />

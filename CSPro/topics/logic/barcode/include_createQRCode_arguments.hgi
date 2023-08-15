@@ -1,0 +1,11 @@
+Using <link function_named_arguments.csdoc>named arguments</link>, you can control how the QR code is created:
+
+<list>
+	<li><logiccolor>errorCorrection :=</logiccolor> <link https://en.wikipedia.org/wiki/QR_code#Error_correction>error correction</link> level, specified as a string expression evaluating to one of four levels: <logiccolor>"low" ‖ "medium" ‖ "quartile" ‖ "high"</logiccolor>. The higher the level, the larger the dimensions of QR code, as well as the increased likelihood that a partially corrupted QR code can be read. In addition to the words, the level can be specified using single letters: <logiccolor>"L" ‖ "M" ‖ "Q" ‖ "H"</logiccolor>. (Default setting: medium.)</li>
+	<li><logiccolor>scale :=</logiccolor> the number of pixels per "module," specified as a numeric expression. The value cannot be less than 1, and the higher the value, the larger the dimensions of the QR code. (Default setting: 4.)</li>
+	<li><logiccolor>quietZone :=</logiccolor> the "quiet zone" (margin) around the QR code, specified as a numeric expression in "modules." The value cannot be less than 4. (Default setting: 4. Using the default scale and quiet zone results in a margin of 4 x 4 = 16 pixels.)</li>
+	<li><logiccolor>darkColor :=</logiccolor> the color of the dark areas, specified as a string expression evaluating to a HTML color name (like <logiccolor>"red"</logiccolor>) or a hex color code (like <logiccolor>"#ff0000"</logiccolor>). (Default: black.)</li>
+	<li><logiccolor>lightColor :=</logiccolor> the color of the light areas, specified as a string expression. (Default: white.)</li>
+</list>
+
+The dimensions of the created QR code image are not known prior to creation as they depend in part on the length of the input text, as well as the error correction level.

@@ -102,7 +102,6 @@
     ]
   }, 
   { "path": "function_named_arguments.csdoc", "title": ":=" }, 
-  { "path": "locking_application_files.csdoc", "title": "[NoEdit]" }, 
   { "path": "operators.csdoc", "title": "^", 
     "subindex": [ 
       { "path": "operators.csdoc", "title": "Operator" }, 
@@ -513,6 +512,7 @@
       { "path": "create_a_new_capi_application.csdoc", "title": "Create a New Application" }, 
       { "path": "create_conditional_questions.csdoc", "~title": "Create Conditional Questions" }, 
       { "path": "create_fills_in_questions.csdoc", "~title": "Create Fills In Questions" }, 
+      { "path": "data_entry_application_types.csdoc", "~title": "Data Entry Application Types" }, 
       { "path": "question_text_edit_styles.csdoc", "title": "Edit Styles" }, 
       { "path": "change_data_entry_options.csdoc", "title": "Enable Question Text" }, 
       { "path": "enter_question_text.csdoc", "~title": "Enter Question Text" }, 
@@ -650,6 +650,7 @@
       { "path": "HashMap_clear_function.csdoc", "~title": "HashMap.clear Function" }, 
       { "path": "Image_clear_function.csdoc", "~title": "Image.clear Function" }, 
       { "path": "List_clear_function.csdoc", "~title": "List.clear Function" }, 
+      { "path": "Map_clear_function.csdoc", "~title": "Map.clear Function" }, 
       { "path": "ValueSet_clear_function.csdoc", "~title": "ValueSet.clear Function" }
     ]
   }, 
@@ -838,6 +839,12 @@
   { "path": "create_general_helps.csdoc", "~title": "Create General Helps" }, 
   { "path": "create_helps_for_fields.csdoc", "~title": "Create Helps for Fields" }, 
   { "path": "create_multiple_subtables.csdoc", "~title": "Create Multiple Subtables" }, 
+  { "path": "Barcode_createQRCode_function.csdoc", "title": "createQRCode Function", 
+    "subindex": [ 
+      { "path": "Barcode_createQRCode_function.csdoc", "~title": "Barcode.createQRCode Function" }, 
+      { "path": "Image_createQRCode_function.csdoc", "~title": "Image.createQRCode Function" }
+    ]
+  }, 
   { "path": "cspro_settings.csdoc", "title": "Credentials (Clear)" }, 
   { "path": "create_a_table.csdoc", "title": "Cross Tabulation", 
     "subindex": [ 
@@ -881,7 +888,12 @@
     ]
   }, 
   { "path": "cspro_settings.csdoc", "~title": "CSPro Settings" }, 
-  { "path": "encode_function.csdoc", "title": "CSV Encoding" }, 
+  { "path": "encode_function.csdoc", "title": "CSV", 
+    "subindex": [ 
+      { "path": "encode_function.csdoc", "title": "CSV Encoding" }, 
+      { "path": "listing_file.csdoc", "~title": "Listing File" }
+    ]
+  }, 
   { "path": "syncconnect_function_csweb.csdoc", "title": "CSWeb Synchronization" }, 
   { "path": "curocc_function.csdoc", "~title": "CurOcc Function" }, 
   { "path": "currentkey_function.csdoc", "~title": "CurrentKey Function", 
@@ -919,6 +931,7 @@
     "subindex": [ 
       { "path": "adding_logic.csdoc", "title": "Add Logic" }, 
       { "path": "data_entry_keys.csdoc", "title": "Application Keys" }, 
+      { "path": "data_entry_application_types.csdoc", "title": "Application Types" }, 
       { "path": "data_entry_applications.csdoc", "title": "Applications" }, 
       { "path": "create_a_new_data_entry_application.csdoc", "title": "Create a New Application" }, 
       { "path": "data_entry_application_file_ent.csdoc", "~title": "Data Entry Application File (.ent)" }, 
@@ -973,7 +986,10 @@
       { "path": "dateadd_function.csdoc", "~title": "DateAdd Function" }, 
       { "path": "datediff_function.csdoc", "~title": "DateDiff Function" }, 
       { "path": "datevalid_function.csdoc", "~title": "DateValid Function" }, 
-      { "path": "sysdate_function.csdoc", "~title": "SysDate Function" }
+      { "path": "sysdate_function.csdoc", "~title": "SysDate Function" }, 
+      { "path": "systime_function.csdoc", "~title": "SysTime Function" }, 
+      { "path": "timestamp_function.csdoc", "~title": "timestamp Function" }, 
+      { "path": "timestring_function.csdoc", "~title": "TimeString Function" }
     ]
   }, 
   { "path": "dateadd_function.csdoc", "~title": "DateAdd Function" }, 
@@ -1042,12 +1058,7 @@
   { "path": "tool_list.csdoc", "title": "Deploy Application" }, 
   { "path": "deprecated_features.csdoc", "~title": "Deprecated Features", 
     "subindex": [ 
-      { "path": "templated_reports_pre77.csdoc", "title": ".csrs (Deprecated)" }, 
-      { "path": "templated_reports_mustache_pre77.csdoc", "~title": "Mustache Templated Reports (Deprecated)" }, 
-      { "path": "recode_statement_pre74.csdoc", "~title": "Recode Statement (Deprecated)" }, 
-      { "path": "report_function_pre77.csdoc", "~title": "Report Function (Deprecated)" }, 
-      { "path": "setreportdata_function_pre77.csdoc", "~title": "SetReportData Function (Deprecated)" }, 
-      { "path": "templated_reports_pre77.csdoc", "~title": "Templated Reports (Deprecated)" }
+      { "path": "recode_statement_pre74.csdoc", "~title": "Recode Statement (Deprecated)" }
     ]
   }, 
   { "path": "document_dictionary_elements.csdoc", "title": "Describe Dictionary Elements" }, 
@@ -1280,6 +1291,13 @@
     "subindex": [ 
       { "path": "cspro_capabilities.csdoc", "title": "Data Files" }, 
       { "path": "cspro_capabilities.csdoc", "title": "Editing Results" }
+    ]
+  }, 
+  { "path": "tool_list.csdoc", "title": "Excel", 
+    "subindex": [ 
+      { "path": "tool_list.csdoc", "title": "Excel to CSPro Tool" }, 
+      { "path": "frequencies_file.csdoc", "title": "Frequency File" }, 
+      { "path": "listing_file.csdoc", "~title": "Listing File" }
     ]
   }, 
   { "path": "include_exclude_special_values_in_a_variable.csdoc", "title": "Exclude", 
@@ -1752,8 +1770,10 @@
       { "path": "htmldialog_function.csdoc", "title": "Custom HTML Dialogs" }, 
       { "path": "properties_advanced_features.csdoc", "title": "Disabling HTML UI" }, 
       { "path": "encode_function.csdoc", "title": "Encoding Strings For Output" }, 
+      { "path": "frequencies_file.csdoc", "title": "Frequency File" }, 
       { "path": "html_dialog_ui.csdoc", "~title": "HTML Dialog Boxes" }, 
       { "path": "javascript_interface.csdoc", "~title": "JavaScript Interface" }, 
+      { "path": "listing_file.csdoc", "~title": "Listing File" }, 
       { "path": "prepare_tables_for_posting_to_the_web.csdoc", "~title": "Prepare Tables for Posting to the Web" }, 
       { "path": "html_question_text.csdoc", "title": "Question Text" }
     ]
@@ -1894,6 +1914,7 @@
     ]
   }, 
   { "path": "ischecked_function.csdoc", "~title": "IsChecked Function" }, 
+  { "path": "timestamp_function.csdoc", "title": "ISO 8601" }, 
   { "path": "ispartial_function.csdoc", "~title": "IsPartial Function" }, 
   { "path": "converting_within_issa.csdoc", "title": "ISSA", 
     "subindex": [ 
@@ -1961,10 +1982,13 @@
   }, 
   { "path": "join_and_split_roster_columns.csdoc", "~title": "Join and Split Roster Columns" }, 
   { "path": "html_in_cspro.csdoc", "title": "jQuery" }, 
-  { "path": "json_format.csdoc", "title": "JSON", 
+  { "path": "JSON_primer.csdoc", "title": "JSON", 
     "subindex": [ 
       { "path": "encode_function.csdoc", "title": "Encoding JSON Strings" }, 
-      { "path": "Geometry_load_function.csdoc", "title": "GeoJSON" }
+      { "path": "frequencies_file.csdoc", "title": "Frequency File" }, 
+      { "path": "Geometry_load_function.csdoc", "title": "GeoJSON" }, 
+      { "path": "listing_file.csdoc", "~title": "Listing File" }, 
+      { "path": "JSON_specification_files.csdoc", "title": "Specification Files" }
     ]
   }, 
   { "path": "key_function.csdoc", "~title": "Key Function", 
@@ -2145,6 +2169,7 @@
       { "path": "Map_addImageButton_function.csdoc", "~title": "Map.addImageButton Function" }, 
       { "path": "Map_addMarker_function.csdoc", "~title": "Map.addMarker Function" }, 
       { "path": "Map_addText_button_function.csdoc", "~title": "Map.addTextButton Function" }, 
+      { "path": "Map_clear_function.csdoc", "~title": "Map.clear Function" }, 
       { "path": "Map_clearButtons_function.csdoc", "~title": "Map.clearButtons Function" }, 
       { "path": "Map_clearGeometry_function.csdoc", "~title": "Map.clearGeometry Function" }, 
       { "path": "Map_clearMarkers_function.csdoc", "~title": "Map.clearMarkers Function" }, 
@@ -2459,6 +2484,7 @@
     ]
   }, 
   { "path": "collaborating_on_cspro_development.csdoc", "title": "Open Source" }, 
+  { "path": "data_entry_application_types.csdoc", "title": "Operational Control" }, 
   { "path": "change_data_entry_options.csdoc", "title": "Operator", 
     "subindex": [ 
       { "path": "change_data_entry_options.csdoc", "title": "Ask for Operator ID" }, 
@@ -2527,6 +2553,7 @@
       { "path": "parts_of_a_table.csdoc", "~title": "Parts of a Table" }
     ]
   }, 
+  { "path": "data_entry_application_types.csdoc", "title": "PAPI" }, 
   { "path": "paradata.csdoc", "~title": "Paradata", 
     "subindex": [ 
       { "path": "paradata_log_file_cslog.csdoc", "title": ".cslog" }, 
@@ -2769,7 +2796,13 @@
   { "path": "publishdate_function.csdoc", "~title": "PublishDate Function" }, 
   { "path": "putdeck_function.csdoc", "~title": "PutDeck Function" }, 
   { "path": "putnote_function.csdoc", "title": "Putnote" }, 
-  { "path": "Barcode_read_function.csdoc", "title": "QR Code" }, 
+  { "path": "Barcode_read_function.csdoc", "title": "QR Code", 
+    "subindex": [ 
+      { "path": "Barcode_createQRCode_function.csdoc", "~title": "Barcode.createQRCode Function" }, 
+      { "path": "Barcode_read_function.csdoc", "~title": "Barcode.read Function" }, 
+      { "path": "Image_createQRCode_function.csdoc", "~title": "Image.createQRCode Function" }
+    ]
+  }, 
   { "path": "names.csdoc", "title": "Qualified Dictionary Names" }, 
   { "path": "question_text_file_qsf.csdoc", "~title": "Question File (.qsf)" }, 
   { "path": "question_text_macros.csdoc", "~title": "Question Text Macros" }, 
@@ -2934,12 +2967,12 @@
   { "path": "replace_function.csdoc", "~title": "Replace Function" }, 
   { "path": "templated_reports.csdoc", "title": "Reports", 
     "subindex": [ 
+      { "path": "Freq_save_function.csdoc", "title": "Embed Frequencies" }, 
       { "path": "Report_save_function.csdoc", "~title": "Report.save Function" }, 
       { "path": "Report_view_function.csdoc", "~title": "Report.view Function" }, 
       { "path": "Report_write_function.csdoc", "~title": "Report.write Function" }, 
       { "path": "change_report_properties.csdoc", "title": "Report Properties" }, 
-      { "path": "sqlquery_function.csdoc", "~title": "SqlQuery Function" }, 
-      { "path": "templated_reports_pre77.csdoc", "~title": "Templated Reports (Deprecated)" }
+      { "path": "sqlquery_function.csdoc", "~title": "SqlQuery Function" }
     ]
   }, 
   { "path": "change_data_entry_options.csdoc", "title": "Required", 
@@ -2979,6 +3012,7 @@
   }, 
   { "path": "javascript_interface.csdoc", "title": "returnData (JavaScript)" }, 
   { "path": "review_edit_specifications.csdoc", "~title": "Review Edit Specifications" }, 
+  { "path": "timestamp_function.csdoc", "title": "RFC 3339" }, 
   { "path": "saving_tables_as_text_html_or_rich_text.csdoc", "title": "Rich Text Format", 
     "subindex": [ 
       { "path": "saving_tables_as_text_html_or_rich_text.csdoc", "title": "Save Tables as Text: Rich Text or HTML" }
@@ -3228,7 +3262,6 @@
   { "path": "installing_data_entry_applications.csdoc", "title": "Setup" }, 
   { "path": "setvalue_function.csdoc", "~title": "SetValue Function" }, 
   { "path": "setvalueset_function.csdoc", "~title": "SetValueSet Function" }, 
-  { "path": "setvalueset_function_with_arrays.csdoc", "~title": "SetValueSet Function With Arrays" }, 
   { "path": "setvaluesets_function.csdoc", "~title": "SetValueSets Function" }, 
   { "path": "share_the_same_format_on_multiple_computers.csdoc", "~title": "Share the Same Format on Multiple Computers" }, 
   { "path": "external_files.csdoc", "title": "Sharing External Files" }, 
@@ -3594,8 +3627,7 @@
       { "path": "Report_view_function.csdoc", "~title": "Report.view Function" }, 
       { "path": "Report_write_function.csdoc", "~title": "Report.write Function" }, 
       { "path": "change_report_properties.csdoc", "title": "Report Properties" }, 
-      { "path": "sqlquery_function.csdoc", "~title": "SqlQuery Function" }, 
-      { "path": "templated_reports_pre77.csdoc", "~title": "Templated Reports (Deprecated)" }
+      { "path": "sqlquery_function.csdoc", "~title": "SqlQuery Function" }
     ]
   }, 
   { "path": "temporary_data_file.csdoc", "~title": "Temporary Data File" }, 
@@ -3638,7 +3670,7 @@
       { "path": "systime_function.csdoc", "~title": "SysTime Function" }
     ]
   }, 
-  { "path": "timestamp_function.csdoc", "~title": "Timestamp Function" }, 
+  { "path": "timestamp_function.csdoc", "~title": "timestamp Function" }, 
   { "path": "timestring_function.csdoc", "~title": "TimeString Function" }, 
   { "path": "formats_for_a_part_of_a_table.csdoc", "title": "Title" }, 
   { "path": "advance_statement.csdoc", "title": "To", 
