@@ -17,6 +17,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 
 <list>
 	<li>The <link create_a_cspro_application.csdoc>New File dialog</link> has been redesigned. Note that the first option has changed to the <link data_entry_application_types.csdoc>CAPI Data Entry Application</link> type.</li>
+	<li>The Files tab context menu has an option, Pack Application, that simplifies creating a ZIP file of an application's components (by automating the <link CSPack::introduction_to_pack_application.csdoc>Pack Application</link> process).</li>
 </list>
 
 
@@ -33,6 +34,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 <subheader>Android</subheader>
 
 <list>
+	<li>Production PFFs for the <link CSPack::introduction_to_pack_application.csdoc>Pack Application</link> tool can now be executed on Android.</li>
 	<li>Security restrictions added by Google for Android 11+ devices prevent the <logiccolor>SystemApp</logiccolor> object from launching most applications. More details, and workarounds,  are detailed on the <logiccolor>SystemApp.exec</logiccolor> page.</li>
 	<li>The aspect ratio of photos taken using the device's camera can be modified using the <link csentry_settings_modification.csdoc>CSEntry.Setting.CameraAspectRatio</link> setting.</li>
 </list>
@@ -46,7 +48,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 	<li>A new function, <logiccolor>Map.clear</logiccolor>, resets all properties of a <link Map.csdoc>Map object</link>.</li>
 	<li>Frequency tables can be written directly to <link templated_reports.csdoc>templated reports</link> by using the <logiccolor>Freq.save</logiccolor> function.</li>
 	<li>String expressions can be assigned to <link Document.csdoc>Document</link> objects.</li>
-	<li>Some logic features have been removed or are slated for removal:
+	<li>Some logic features have been <link deprecated_features.csdoc>removed</link> or are slated for removal:
 	<list>
 		<li>Creating dynamic value sets using <logiccolor>Array</logiccolor> objects has been removed. The <logiccolor>ValueSet</logiccolor> object should be used instead. When running a .pen file created prior to CSPro 8.0, the functions will execute properly (though this will not be the case in a future release).</li>
 		<li>The <logiccolor>box</logiccolor> / <logiccolor>endbox</logiccolor> syntax for <link recode_statement.csdoc>recoding variables</link> has been removed. When running a .pen file created prior to CSPro 8.0, the functions will execute properly (though this will not be the case in a future release).</li>
@@ -61,6 +63,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 <subheader>Tools</subheader>
 
 <list>
+	<li>The <link CSPack::introduction_to_pack_application.csdoc>Pack Application</link> tool has been redesigned and supports packing multiple applications or inputs. Pack specifications can also be saved to a .cspack file for reuse.</li>
 	<li>It is no longer possible to override Excel to CSPro parameters from the <link Excel2CSPro::running_conversions_from_the_command_line.csdoc>command line</link>, though some overrides can still be specified in the PFF.</li>
 	<li>The Table Retrieval and Table Retrieval Setup tools have been removed from the CSPro installation. Users still needing these tools can find them on <link https://<definition csprousers_website />><definition csprousers_website /></link>.</li>
 </list>

@@ -6,16 +6,24 @@ When an application or folder has been selected for zipping and is highlighted i
 
 <subheader>Extra Inclusions</subheader>
 
-In addition to the files belonging to a single application that will be zipped, additional files can be added to the zip that are (a) referenced in the application (options 1 or 3), (b) described in the PFF itself (options 4 or 5), or (c) created in the application logic (option 6). If no PFF file is available for a given application, then only options 1-3 will be active (<font red>however opt 6 should still be active, as i don't need the pff to tell me if this is happening</font>). Options 1-6 only apply when zipping an application, whereas option 7 only applies when zipping a folder. The available options are as follows:
+In addition to the files belonging to a single application that will be zipped, additional files can be added to the ZIP file that are:
+
+<list>
+	<li>Referenced in the application (options 1 or 3).</li>
+	<li>Described in the PFF itself (options 4 or 5).</li>
+	<li>Created in the application logic (option 6).</li>
+</list>
+
+If no PFF file is available for a given application, then only options 1-3 will be active. Options 1-6 only apply when zipping an application, whereas option 7 only applies when zipping a folder. The available options are as follows:
 
 <list ordered>
 	<li><b>Value Set Images</b>: includes any value set images associated with the application's dictionaries.</li>
 	<li><b>Application PFF</b>: includes the PFF associated with the selected application (checked by default).</li>
 	<li><b>Resource Folders</b>: includes all folders (with their contents) that were added to an application as a resource folder.</li>
-	<li><b>Input Data</b>: includes the application's input data file(s). While entry applications can only have 1 input file, batch and cross-tabulation applications can have 1 or more input files.</li>
+	<li><b>Input Data</b>: includes the application's input data file(s). While entry applications can only have 1 input file, batch and tabulation applications can have 1 or more input files.</li>
 	<li><b>External Dictionary Data</b>: includes all data files associated with the application's external dictionaries.</li>
-	<li><b>User Files (generated in logic)</b>: includes any files that wre generated via logic in the application.</li>
-	<li><b>Recursive Directories</b>: this option allows any subfolders within the selected folder to be included in the zip.</li>
+	<li><b>User Files (generated in logic)</b>: includes any files that were generated via logic in the application.</li>
+	<li><b>Recursive Directories</b>: this option allows any subfolders within the selected folder to be included in the ZIP file.</li>
 </list>
 
-Note when an application or folder is highlighted in the <b>Inputs</b> area, that file name will be listed after <b>Extra Inclusions</b>. In the example above, this corresponds to <b>Extra Inclusions: Household.ent</b>. If a non-application file is highlighted in the <b>Inputs</b> area, the file name will not display as none of the options are available.
+Note that when an application or folder is highlighted in the <b>Inputs</b> area, that file name will be listed after <b>Extra Inclusions</b>. In the example above, this corresponds to <b>Extra Inclusions: Household.ent</b>. If a non-application file is highlighted in the <b>Inputs</b> area, the file name will not display as none of the options are available.
