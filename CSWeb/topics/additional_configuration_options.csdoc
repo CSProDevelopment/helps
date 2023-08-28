@@ -1,6 +1,6 @@
 ﻿<title>Additional Configuration Options</title>
 
-Additional configuration options can be given by uploading a JSON file on the <link data_settings.csdoc>Data Configuration</link> dialog. Currently, the Process Cases Options is the only option that can be specified.
+Additional configuration options can be given by uploading a JSON file on the <link data_settings.csdoc>Data Configuration</link> dialog. Currently, the Process Cases Options is the only option that can be specified. If additional configuration is not specified, all dictionary variables are included while breaking out the case data into the relational tables.
 
 <subheader>Process Cases Options</subheader>
 
@@ -8,27 +8,24 @@ Processing cases through the command line can be slow if you have a large dictio
 
 <subheader>Include</subheader>
 
-The include options allows the dictionary variables and records to be targetted for inclusion. The entire dictionary can also be included by not specifying an include option or specifying an empty list for the include option (see example 1). The include option is processed first.
+The include options allows the dictionary variables and records to be targeted for inclusion. The entire dictionary can also be included by not specifying an include option or specifying an empty list for the include option (see example 1). The include option is processed first.
 
 <subheader>Exclude</subheader>
 
-The exclude option allows the dictionary variables and records to be targetted for exclusion. This can be convenient if a record or the entire dictionary was included, but not all dictionary variables are needed. The exclude option is always processed after the include option.
+The exclude option allows the dictionary variables and records to be targeted for exclusion. This can be convenient if a record or the entire dictionary was included, but not all dictionary variables are needed. The exclude option is always processed after the include option.
 
-<subheader>Example 1 (Two Ways to Include the Entire Dictionary)</subheader>
-
-<color JSON>
-{
-  "processCasesOptions": {}
-}
-</color>
+<subheader>Example 1 (Include the entire dictionary and exclude a record)</subheader>
 
 <color JSON>
 {
-  "processCasesOptions": {"include": []}
+  "processCasesOptions":{
+	"include": [],
+	"exclude": ["HOUSING_REC"]
+  }
 }
 </color>
 
-<subheader>Example 2 (Exclude PII Variables)</subheader>
+<subheader>Example 2 (Include two records and exclude PII variables)</subheader>
 
 <color JSON>
 {

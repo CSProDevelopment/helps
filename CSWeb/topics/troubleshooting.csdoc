@@ -13,6 +13,7 @@ To reconfigure or reset your CSWeb installation:
 <list ordered>
 	<li>Locate the CSWeb sources folder in your web server's root directory.</li>
 	<li>Delete the file <b>src/AppBundle/config.php</b>.</li>
+	<li>Delete the contents of <b>var/cache</b> folder.</li>
 	<li>Open your web browser and launch the CSWeb setup page.</li>
 </list>
 
@@ -28,7 +29,7 @@ The database username and database password are not correct. They should be set 
 
 <i>Failed to connect to database. SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No such host is known.</i>
 
-The hostname is incorrect. This should be the hostname for the MySQL database, not the server hostname. In most cases the hostname should be "localhost" unless your database and web server are running on different computers. The hostname should NOT include "http://". If MySQL is running on a different port than the default, you should add the port to the hostname. For example "localhost:3307".
+The hostname is incorrect. This should be the hostname for the MySQL database, not the server hostname. In most cases the hostname should be "localhost" unless your database and web server are running on different computers. The hostname should NOT include "http://". If MySQL is running on a different port than the default, you should add the port to the hostname. For example, "localhost:3307".
 
 <i>Something went terribly wrong</i>
 
@@ -38,7 +39,7 @@ This is a general error that could be caused by a number of different problems w
 
 <i>Failed to connect to localhost</i>
 
-You are using a server URL that uses localhost. Localhost can only be used to access the server from a web browser running on the server itself. To access the server from another computer or device you must use either a domain name or the IP address of the server. If your server does not have a domain name or a static IP address you will need to obtain one. If you are unsure how to do this you may want to consider using Dropbox synchronization instead of CSWeb.
+You are using a server URL that uses localhost. Localhost can only be used to access the server from a web browser running on the server itself. To access the server from another computer or device you must use either a domain name or the IP address of the server. If your server does not have a domain name or a static IP address you will need to obtain one. If you are unsure how to do this, you may want to consider using Dropbox synchronization instead of CSWeb.
 
 <i>Unable to resolve host</i>
 
@@ -50,5 +51,5 @@ The server URL is not correct. The host portion of the URL is probably correct b
 
 <subheader>Issues with CURL library when using IIS</subheader>
 
-If you run into issues with the CURL library while using IIS a workaround is to disable the curl extensioon in php.ini and enable allow_url_fopen.
+If you run into issues with the CURL library while using IIS a workaround is to disable the curl extension in php.ini and enable allow_url_fopen.
 
