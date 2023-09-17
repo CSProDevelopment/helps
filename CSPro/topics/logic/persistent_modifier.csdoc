@@ -1,0 +1,61 @@
+﻿<title>persistent Variable Modifier</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+persistent <arg>variable_type</arg> <arg>variable1</arg>『, ..., <arg>variableN</arg>』;
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>persistent</logiccolor> variable modifier is used when declaring a variable to indicate that the variable's value should retain its value from one run of an application to another.
+
+The variable's initial value can be specified in logic. This value will be used to initialize the variable when no value exists from a previous application run. Otherwise, the variable's initial value will come from its value at the end of the previous application's run. If no initial value is given and no previous value exists, the variable starts in its initial default state (e.g., 0 for <logiccolor>numeric</logiccolor> variables, <logiccolor>""</logiccolor> for <logiccolor>string</logiccolor> variables, etc.). The storage of values is case-sensitive by variable name, so a variable named <logiccolor>x</logiccolor> will not be initialized with a value from a variable named <logiccolor>X</logiccolor>.
+
+The file from which these values are saved and loaded can can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file. Because the <pffcolor>CommonStore</pffcolor> file is not an encrypted file, it is best not to store sensitive information using persistent variables.
+
+If the <pffcolor>CommonStore</pffcolor> has a value for a persistent variable but that value is not appropriate for the variable type, a runtime error message will display and the value will not be applied. This could occur, for example, if a persistent string is modified to a persistent numeric and the previous value, while valid for a string, may not be valid for a numeric variable.
+
+Persistent variables declared locally (not in <logiccolor>PROC GLOBAL</logiccolor>) are not reset upon revisiting the procedure, function, or scoped block, which is the default behavior for non-persistent variables. If using a persistent variable locally, that name cannot be reused for another persistent variable elsewhere in logic.
+
+The <logiccolor>persistent</logiccolor> modifier can be used when declaring variables of types:
+
+<list>
+    <li><logiccolor>numeric</logiccolor></li>
+    <li><logiccolor>string</logiccolor>, <logiccolor>alpha</logiccolor></li>
+    <li><logiccolor>Audio</logiccolor>, <logiccolor>Document</logiccolor>, <logiccolor>Geometry</logiccolor>, <logiccolor>HashMap</logiccolor>, <logiccolor>Image</logiccolor>, <logiccolor>List</logiccolor>, <logiccolor>SystemApp</logiccolor>, <logiccolor>ValueSet</logiccolor></li>
+</list>
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC EA
+
+preproc
+
+    persistent string lastSelectedEA;
+    EA = lastSelectedEA;
+
+postproc
+
+    lastSelectedEA = EA;
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+do numeric ctr = 1 while ctr <= 5
+    persistent numeric baseValue = 100;
+    errmsg("%d", inc(baseValue));
+enddo;
+
+// expected output on the first run: 101, 102, 103, 104, 105
+// expected output on the second run: 106, 107, 108, 109, 110
+</logic>
+
+
+<seealso config_modifier.csdoc ensure_modifier.csdoc />

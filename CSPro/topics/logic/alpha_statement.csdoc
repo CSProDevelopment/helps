@@ -9,11 +9,22 @@
 alpha 『(<arg>length</arg>)』 <arg>var1</arg>『, <arg>var2</arg>, ..., <arg>varN</arg>』;
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The alpha statement is used to define alphanumeric variables within an application. The <arg>length</arg> is the number of characters in the variable. The length applies to all variables declared in the same alpha statement. If no length is given, 16 is assigned. The maximum string length that can be declared is 8,192.
+The <logiccolor>alpha</logiccolor> statement is used to define alphanumeric variables within an application. The <arg>length</arg> is the number of characters in the variable. The length applies to all variables declared in the same alpha statement. If no length is given, 16 is assigned. The maximum string length that can be declared is 8,192.
 
 If you attempt to assign a string that is longer than the variable's size, the string will be truncated from the right. Conversely, it you assign a string that is shorter than the variable's size, the trailing character positions will be blank-filled.
+
+
+<subheader>Variable Modifiers</subheader>
+
+The following variable modifiers apply to alphanumeric variables:
+
+<list>
+	<li><logiccolor>persistent</logiccolor>: to persist the variable's value from one run of an application to another.</li>
+</list>
+
 
 <subheader>Example 1</subheader>
 

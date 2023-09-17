@@ -13,6 +13,15 @@ Document <arg>document_name</arg>;
 The <logiccolor>Document</logiccolor> statement creates a <link Document.csdoc>Document</link> with the name <arg>document_name</arg>. The Document name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare Documents globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 
+<subheader>Variable Modifiers</subheader>
+
+The following variable modifiers apply to Document objects:
+
+<list>
+	<li><logiccolor>persistent</logiccolor>: to persist the variable's value from one run of an application to another.</li>
+</list>
+
+
 <subheader>Example</subheader>
 
 <logic>

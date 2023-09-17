@@ -10,7 +10,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 
 <list>
 	<li>Many specification files are now saved in <link JSON_specification_files.csdoc>JSON format</link>, which facilitates working with them in other programming languages or when using other tools. Once you save files in this format, you will not be able to work with them in earlier versions of CSPro.</li>
-	<li>A new <link data_entry_application_types.csdoc>data entry application type</link>, Operational Control Application, facilitates creating "menu" programs.</li>
+	<li>A new <link data_entry_application_types.csdoc>data entry application type</link>, Operational Control Application, facilitates creating "menu" programs. Other features to simplify working with menu programs include the <logiccolor>persistent</logiccolor> variable modifier.</li>
 	<li>A new tool, <link CSView::introduction.csdoc>CSView</link>, displays files in a web browser that has access to the <link action_invoker.csdoc>Action Invoker</link>. The tool can be launched <link CSView::run_production_views.csdoc>via a PFF</link>, and is associated with <link CSView::supported_files.csdoc>.cshtml files</link> on Windows, so it can be used as a starting point for some programs.</li>
 	<li><link listing_file.csdoc>Listing files</link> and <link frequencies_file.csdoc>frequencies</link> can be written to JSON format.</li>
 </list>
@@ -49,9 +49,10 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 	<li><link https://en.wikipedia.org/wiki/QR_code>QR code</link> images can be created using the <logiccolor>Barcode.createQRCode</logiccolor> and <logiccolor>Image.createQRCode</logiccolor> functions.</li>
 	<li>The <logiccolor>timestamp</logiccolor> function can return UNIX time values by parsing <link https://www.rfc-editor.org/rfc/rfc3339>RFC 3339</link> / <link https://en.wikipedia.org/wiki/ISO_8601>ISO 8601</link> strings, or by specifying a specific date value.</li>
 	<li>A new function, <logiccolor>Map.clear</logiccolor>, resets all properties of a <link Map.csdoc>Map object</link>.</li>
+	<li>A new variable modifier, <logiccolor>persistent</logiccolor>, allows logic variables to retain their values from one run of an application to another.</li>
+	<li>The <logiccolor>config</logiccolor> variable modifier can now be used with <logiccolor>numeric</logiccolor> variables, and can be used with variables not declared in <logiccolor>PROC GLOBAL</logiccolor>.</li>
 	<li>Frequency tables can be written directly to <link templated_reports.csdoc>templated reports</link> by using the <logiccolor>Freq.save</logiccolor> function.</li>
 	<li>String expressions can be assigned to <link Document.csdoc>Document</link> objects.</li>
-	<li>The <logiccolor>config</logiccolor> variable modifier can now be used with <logiccolor>numeric</logiccolor> variables, and can be used with variables not declared in <logiccolor>PROC GLOBAL</logiccolor>.</li>
 	<li>Some logic features have been <link deprecated_features.csdoc>removed</link> or are slated for removal:
 	<list>
 		<li>Creating dynamic value sets using <logiccolor>Array</logiccolor> objects has been removed. The <logiccolor>ValueSet</logiccolor> object should be used instead. When running a .pen file created prior to CSPro 8.0, the functions will execute properly (though this will not be the case in a future release).</li>

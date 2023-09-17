@@ -22,8 +22,9 @@ While a locally-declared variable can not have the same name as a globally-decla
 The following variable modifiers apply to numeric variables:
 
 <list>
-	<li><logiccolor>config</logiccolor>: to initialize the variable from <link user_configuration_settings.csdoc>configuration settings</link></li>
-	<li><logiccolor>ensure</logiccolor>: to create a variable only when it has not already been declared in a dictionary or logic</li>
+	<li><logiccolor>config</logiccolor>: to initialize the variable from <link user_configuration_settings.csdoc>configuration settings</link>.</li>
+	<li><logiccolor>ensure</logiccolor>: to create a variable only when it has not already been declared in a dictionary or logic.</li>
+	<li><logiccolor>persistent</logiccolor>: to persist the variable's value from one run of an application to another.</li>
 </list>
 
 

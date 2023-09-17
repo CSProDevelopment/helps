@@ -13,6 +13,15 @@ Geometry <arg>geometry_name</arg>;
 The <logiccolor>Geometry</logiccolor> statement creates a <link Geometry.csdoc>Geometry</link> object with the name <arg>geometry_name</arg>. The Geometry name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare Geometry objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 
+<subheader>Variable Modifiers</subheader>
+
+The following variable modifiers apply to Geometry objects:
+
+<list>
+	<li><logiccolor>persistent</logiccolor>: to persist the variable's value from one run of an application to another.</li>
+</list>
+
+
 <subheader>Example</subheader>
 
 <logic>

@@ -1,10 +1,12 @@
 ﻿<title>SaveSetting Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 b = savesetting(<arg>attribute</arg>, <arg>value</arg>);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -14,9 +16,11 @@ The file from which settings are retrieved can be modified by altering the <pffc
 
 All settings can be cleared using the following command: <logiccolor>savesetting(clear);</logiccolor>
 
+
 <subheader>Return Value</subheader>
 
 The function returns 1 (true) if successful or 0 (false) if the function failed.
+
 
 <subheader>Example</subheader>
 
@@ -39,4 +43,4 @@ postproc
 	savesetting(InterviewerNameKey, INTERVIEWER_NAME);
 </logic>
 
-<seealso loadsetting_function.csdoc user_configuration_settings.csdoc csentry_settings_modification.csdoc />
+<seealso loadsetting_function.csdoc user_configuration_settings.csdoc persistent_modifier.csdoc csentry_settings_modification.csdoc />

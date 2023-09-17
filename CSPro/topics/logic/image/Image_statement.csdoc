@@ -12,6 +12,15 @@ Image <arg>image_name</arg>;
 The <logiccolor>Image</logiccolor> statement creates an <link Image.csdoc>Image</link> with the name <arg>image_name</arg>. The Image name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter. You can declare Image objects globally in <logiccolor>PROC GLOBAL</logiccolor> or locally in functions or procedures.
 
 
+<subheader>Variable Modifiers</subheader>
+
+The following variable modifiers apply to Image objects:
+
+<list>
+	<li><logiccolor>persistent</logiccolor>: to persist the variable's value from one run of an application to another.</li>
+</list>
+
+
 <subheader>Example</subheader>
 
 <logic>
