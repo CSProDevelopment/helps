@@ -1,20 +1,26 @@
 ﻿<title>VisualValue Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 d = visualvalue(<arg>field_name</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>visualvalue</logiccolor> function is used to access the contents of a data item before the data item has been entered. When an item is on a form as a field, CSPro will give its value in logic as <arg>notappl</arg> until the item has been entered. If you know that the field has been previously filled, perhaps because the operator is in modify mode or is resuming from a partial save, you can use this function to get the value stored in the item that is on the form and represented as <arg>field_name</arg>.
+The <logiccolor>visualvalue</logiccolor> function is used to access the contents of a numeric data item before the data item has been entered, what is known as the "<link visual_values.csdoc>visual value</link>." When an item is on a form as a field, CSPro will give its value in logic as <logiccolor>notappl</logiccolor> until the item has been entered. If you know that the field has been previously filled, perhaps because the operator is in modify mode or is resuming from a partial save, you can use this function to get the value stored in the item that is on the form and represented as <arg>field_name</arg>.
+
+If you exclusively need to refer to a field using its visual value, you can also use the <link change_field_properties.csdoc>Always Visual Value</link> field property to indicate that CSPro should always return the field's visual value (without the need for the <logiccolor>visualvalue</logiccolor> function).
 
 This function is for use only with numeric fields. Refering to alphanumeric fields will always result in the evaluation of the field's visual value.
+
 
 <subheader>Return Value</subheader>
 
 The function returns the numeric value of the field.
+
 
 <subheader>Example</subheader>
 
@@ -29,4 +35,5 @@ preproc
 	endif;
 </logic>
 
-<seealso highlighted_function.csdoc />
+
+<seealso visual_values.csdoc highlighted_function.csdoc />
