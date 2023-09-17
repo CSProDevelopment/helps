@@ -17,13 +17,13 @@ In addition to the files belonging to a single application that will be zipped, 
 If no PFF file is available for a given application, then only options 1-3 will be active. Options 1-6 only apply when zipping an application, whereas option 7 only applies when zipping a folder. The available options are as follows:
 
 <list ordered>
-	<li><b>Value Set Images</b>: includes any value set images associated with the application's dictionaries.</li>
-	<li><b>Application PFF</b>: includes the PFF associated with the selected application (checked by default).</li>
-	<li><b>Resource Folders</b>: includes all folders (with their contents) that were added to an application as a resource folder.</li>
-	<li><b>Input Data</b>: includes the application's input data file(s). While entry applications can only have 1 input file, batch and tabulation applications can have 1 or more input files.</li>
-	<li><b>External Dictionary Data</b>: includes all data files associated with the application's external dictionaries.</li>
-	<li><b>User Files (generated in logic)</b>: includes any files that were generated via logic in the application.</li>
-	<li><b>Recursive Directories</b>: this option allows any subfolders within the selected folder to be included in the ZIP file.</li>
+	<li><b>Value Set Images</b>: Includes any value set images associated with the application's dictionaries.</li>
+	<li><b>Application PFF</b>: Includes the PFF associated with the selected application (checked by default).</li>
+	<li><b>Resource Folders</b>: Includes all folders (with their contents) that were added to an application as a resource folder.</li>
+	<li><b>Input Data</b>: Includes the application's input data file(s). In addition to the data, any auxiliary files (such as <link CSPro::notes_file_csnot.csdoc>notes</link>) are also included. While data entry applications can have only one input file, batch and tabulation applications can have one or more input files.</li>
+	<li><b>External Dictionary Data</b>: Includes all data files associated with the application's external dictionaries.</li>
+	<li><b>User Files (generated in logic)</b>: Includes any files that were generated via logic in the application.</li>
+	<li><b>Recursive Directories</b>: This option allows any subfolders within the selected folder to be included in the ZIP file.</li>
 </list>
 
 Note that when an application or folder is highlighted in the <b>Inputs</b> area, that file name will be listed after <b>Extra Inclusions</b>. In the example above, this corresponds to <b>Extra Inclusions: Household.ent</b>. If a non-application file is highlighted in the <b>Inputs</b> area, the file name will not display as none of the options are available.
