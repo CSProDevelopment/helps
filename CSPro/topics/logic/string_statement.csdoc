@@ -1,123 +1,42 @@
 ﻿<title>String Statement</title>
 
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Format</subheader>
 
-<body>
-
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">&#160;</font><b><font style="font-family: 'Courier New';
-									 font-size: 10pt; font-weight: bold;"
-									 color="#0000FF" face="Courier New"
-									 size="2">string</font></b> <i><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-style: italic;"
-	 face="Courier New" size="2">var-1</font></i><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#FF00FF"
-														 face="Courier New"
-														 size="2">[</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-	 size="2">,</font> <i><font style="font-family: 'Courier New'; font-size: 10pt;
-								 font-style: italic;" face="Courier New"
-								 size="2">var-2</font></i><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">[</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">...,</font> <i><font style="font-family: 'Courier New';
-														 font-size: 10pt;
-														 font-style: italic;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">var-n</font></i><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">]]</font><font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">The</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">string </font></b><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">statement
- is used to define alphanumeric variables temporarily used in the application.
- It is similar to the <span style="font-weight: bold;">alpha</span><span>
- statement but, unlike variables created with that statement, variables
- created as strings have no fixed length. Strings can be used anywhere
- an alpha variable can be used. (Strings were only introduced starting
- in CSPro 6.0 so much of the documentation refers to alpha variables.)
- Strings start out with a length of 0 and then automatically resize to
- match whatever is assigned to it. This feature make strings the preferred
- text variable to use, unless the length of the string is needed for formatting
- and calculation purposes.</span></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;
-	 font-family: Arial; font-size: 10pt; font-weight: bold;"><b><font
-	 style="font-weight: bold;">Examples:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;
-	 font-family: Arial; font-size: 10pt; font-weight: normal;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;
-	 font-size: 10pt; font-weight: bold; font-family: 'Courier New', monospace;"><span
-	 style="font-weight: normal;"><font style="font-weight: normal;" color="#0000FF">PROC</font><font
-	 style="font-weight: normal;"> </font><font style="font-weight: normal;"
-												 color="#0000FF">GLOBAL</font><font
-	 style="font-weight: normal;"><br />
-<br />
-</font><font style="font-weight: normal;" color="#0000FF">alpha</font><font
-	 style="font-weight: normal;"> (</font><font style="font-weight: normal;"
-												 color="#FF0000">10</font><font
-	 style="font-weight: normal;">) myAlpha;<br />
-</font><font style="font-weight: normal;" color="#0000FF">string</font><font
-	 style="font-weight: normal;"> myString;<br />
-<br />
-</font><font style="font-weight: normal;" color="#0000FF">PROC</font><font
-	 style="font-weight: normal;"> EXAMPLE<br />
-<br />
-&#160;&#160;&#160;&#160;</font><font style="font-weight: normal;" color="#008000">//&#160;myString
- starts out empty, with length 0<br />
-</font><font style="font-weight: normal;"><br />
-&#160;&#160;&#160;&#160;myString = </font><font style="font-weight: normal;"
-												 color="#FF00FF">&quot;This
- is a test.&quot;</font><font style="font-weight: normal;"> </font><font
-	 style="font-weight: normal;" color="#008000">//&#160;myString's length
- is now 15<br />
-</font><font style="font-weight: normal;"><br />
-&#160;&#160;&#160;&#160;myAlpha = </font><font style="font-weight: normal;"
-												 color="#FF00FF">&quot;Hello&quot;</font><font
-	 style="font-weight: normal;">;<br />
-&#160;&#160;&#160;&#160;myString = myAlpha; </font><font style="font-weight: normal;"
-														 color="#008000">//&#160;myString's
- length is now 10: &quot;Hello &#160;&#160;&#160;&#160;&quot;<br />
-</font><font style="font-weight: normal;"><br />
-&#160;&#160;&#160;&#160;myString = </font><font style="font-weight: normal;"
-												 color="#FF00FF">&quot;Hello&quot;</font><font
-	 style="font-weight: normal;">; </font><font style="font-weight: normal;"
-												 color="#008000">//&#160;myString's
- length is now 5: &quot;Hello&quot;</font></span></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;
-	 font-family: Arial; font-size: 10pt; font-weight: bold;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;
-	 font-family: Arial, sans-serif; font-size: 10pt;"><b><font style="font-weight: bold;">See
- also:</font></b> <a href="alpha_statement.html">Alpha Statement</a>, <a
-	 href="array_statement.html" style="font-family: Arial, sans-serif;
-	 font-size: 10pt;">Array Statement</a>, <a href="numeric_statement.html"
-												 style="font-family: Arial, sans-serif;
-												 font-size: 10pt;">Numeric
- Statement</a></p>
-</body>
-</html>
+<logicsyntax>
+string <arg>variable1</arg>『, <arg>variable2</arg>, ..., <arg>variableN</arg>』;
+</logicsyntax>
 
 
-<html><!---♻---></html>
+<subheader>Description</subheader>
+
+The <logiccolor>string</logiccolor> statement is used to define alphanumeric variables temporarily used in the application. It is similar to the <logiccolor>alpha</logiccolor> statement but, unlike variables created with that statement, variables created as strings have no fixed length. Strings can be used anywhere an alpha variable can be used. Strings start out with a length of 0 and then automatically resize to match whatever is assigned to it. This feature make strings the preferred text variable to use, unless the length of the string is needed for formatting and calculation purposes.
+
+
+<subheader>Variable Modifiers</subheader>
+
+The following variable modifiers apply to string variables:
+
+<list>
+	<li><logiccolor>config</logiccolor>: to initialize the variable from <link user_configuration_settings.csdoc>configuration settings</link></li>
+</list>
+
+
+<subheader>Example</subheader>
+
+<logic>
+alpha (10) myAlpha;
+string myString;
+
+// myString starts out empty, with length 0
+
+myString = "This is a test." // myString's length is now 15
+
+myAlpha = "Hello";
+myString = myAlpha; // myString's length is now 10: "Hello     "
+
+myString = "Hello"; // myString's length is now 5: "Hello"
+</logic>
+
+
+<seealso alpha_statement.csdoc Array_statement.csdoc numeric_statement.csdoc  />

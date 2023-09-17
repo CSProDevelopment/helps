@@ -1,36 +1,51 @@
 ﻿<title>Numeric Statement</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-numeric <arg>var1</arg>『, <arg>var2</arg>, ..., <arg>varN</arg>』;
+numeric <arg>variable1</arg>『, <arg>variable2</arg>, ..., <arg>variableN</arg>』;
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
-The <b>numeric</b> statement declares temporary numeric variables used in applications. They will not be saved to a data file defined by a dictionary. A numeric variable is an integer or decimal number significant to 15 digits. Upon declaration a numeric variable's initial value will be zero.
+The <logiccolor>numeric</logiccolor> statement declares temporary numeric variables used in applications. They will not be saved to a data file defined by a dictionary. A numeric variable is an integer or decimal number significant to 15 digits. Upon declaration a numeric variable's initial value will be 0.
 
 Local variables, with a limited scope, can also be declared in functions and <logiccolor>PROC</logiccolor>s. The variable will only exist and be accessible from within the function or PROC where it is declared. (In the case of a PROC, it is available in all events within that PROC after its declaration. For example, a numeric declared in the preproc will still be accessible in the postproc.)
 
 While a locally-declared variable can not have the same name as a globally-declared variable, the same local variable name can be reused in other PROCS associated with individual variables.
 
+
+<subheader>Variable Modifiers</subheader>
+
+The following variable modifiers apply to numeric variables:
+
+<list>
+	<li><logiccolor>config</logiccolor>: to initialize the variable from <link user_configuration_settings.csdoc>configuration settings</link></li>
+	<li><logiccolor>ensure</logiccolor>: to create a variable only when it has not already been declared in a dictionary or logic</li>
+</list>
+
+
 <subheader>Example</subheader>
 
 <logic>
 PROC GLOBAL
-  numeric NumOfKids, NumOfMoms;
+
+numeric NumOfKids, NumOfMoms;
 
 PROC CHILDREN
-  numeric x;
+	numeric x;
 
-  NumOfKids = NumOfKids + 1;
-  x = NumOfKids + NumOfAdults;
+	NumOfKids = NumOfKids + 1;
+	x = NumOfKids + NumOfAdults;
 
 PROC BIOLOGICAL_MOTHER
-  numeric x;	// redeclaring a variable named "x", which is ok
+	numeric x;	// redeclaring a variable named "x", which is okay
 
-  NumOfMoms = NumOfMoms + 1;
-  x = NumOfMoms + NumOfDads;
+	NumOfMoms = NumOfMoms + 1;
+	x = NumOfMoms + NumOfDads;
 </logic>
 
-<seealso Array_statement.csdoc alpha_statement.csdoc string_statement.csdoc ensure_statement.csdoc />
+
+<seealso Array_statement.csdoc string_statement.csdoc ensure_modifier.csdoc />

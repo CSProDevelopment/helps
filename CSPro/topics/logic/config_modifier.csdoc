@@ -1,0 +1,46 @@
+﻿<title>Config Modifier</title>
+
+
+<subheader>Format</subheader>
+
+
+<logicsyntax>
+config <arg>variable_type</arg> <arg>variable1</arg>『, ..., <arg>variableN</arg>』;
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>config</logiccolor> variable modifier is used when declaring a variable to indicate that the variable's initial value should come from a value specified in the <link user_configuration_settings.csdoc>configuration settings</link>. If there is no value defined in the configuration settings and no initial value is provided in logic, the compiler will issue a warning message. When looking for the initial value, the case of the variable name must match the case of the attribute defined in the configuration settings.
+
+The <logiccolor>config</logiccolor> modifier can be used when declaring variables of types:
+
+<list>
+	<li><logiccolor>numeric</logiccolor></li>
+	<li><logiccolor>string</logiccolor></li>
+</list>
+
+If no value exists in the configuration settings, numeric values will default to the value <logiccolor>notappl</logiccolor> and strings will default to <logiccolor>""</logiccolor>.
+
+
+<subheader>Example 1</subheader>
+
+<logic>
+// if no attribute named "serverUrl" exists in the configuration settings,
+// the compiler will issue a warning and the variable's value will start as ""
+config string serverUrl;
+
+syncconnect(CSWeb, serverUrl);
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+<logic>
+// if an attribute named "censusYear" exists in the configuration settings, its value will initialize censusYear;
+// if no attribute exists, censusYear will start as <definition System::year />
+config numeric censusYear = <definition System::year />;
+</logic>
+
+
+<seealso user_configuration_settings.csdoc ensure_modifier.csdoc />
