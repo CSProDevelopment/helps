@@ -24,24 +24,21 @@ preproc
 	noinput;
 </logic>
 
+
 <subheader>Configuration Settings</subheader>
 
-Configuration settings are stored locally on your device and are loaded at compile time. The value of a configuration setting is accessible by declaring a string variable using the <logiccolor>config</logiccolor> type. Unlike user settings, configuration settings cannot be modified in logic. They can only be modified using the dialog box.
+Configuration settings are stored locally on your device and are loaded at compile time. The value of a configuration setting is accessible by declaring a variable using the <logiccolor>config</logiccolor> modifier. Unlike user settings, configuration settings cannot be modified in logic. They can only be modified using the dialog box.
 
 Because <link binary_data_entry_application_file_pen.csdoc>binary data entry applications (.pen files)</link> are only compiled with the .pen file is created, the configuration settings stored on the computer used to create the file are saved in the .pen file.
 
-Configuration settings are a convenient way to store some information outside of your <link logic_file_apc.csdoc>logic file</link>. If you are using a revision control system (e.g., git), there may be some values, like the URL you are using to synchronize data, that you do not want to store in your publicly visible logic. You can define these settings on your machine without having to share them with strangers. For example, this is logic that you can safely commit to GitHub:
+Configuration settings are a convenient way to store some information outside of your <link logic_file_apc.csdoc>logic file</link>. If you are using a revision control system (e.g., Git), there may be some values, like the URL you are using to synchronize data, that you do not want to store in your publicly visible logic. You can define these settings on your machine without having to share them with strangers. For example, this is logic that you can safely commit to a public repository:
 
 <logic>
-PROC GLOBAL
+config ftpServerUrl;
 
-config ftp_server_url;
-
-PROC EXAMPLE
-
-	syncconnect(FTP, ftp_server_url);
+syncconnect(FTP, ftpServerUrl);
 </logic>
 
-For this to work, you need to use the dialog box to add an attribute <b>ftp_server_url</b> with its value being the FTP server URL.
+For this to work, you need to use the dialog box to add an attribute <logiccolor>"ftpServerUrl"</logiccolor> with the FTP server URL as its value.
 
-<seealso config_statement.csdoc loadsetting_function.csdoc savesetting_function.csdoc csentry_settings_modification.csdoc />
+<seealso config_modifier.csdoc loadsetting_function.csdoc savesetting_function.csdoc csentry_settings_modification.csdoc />

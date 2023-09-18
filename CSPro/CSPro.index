@@ -57,6 +57,8 @@
   { "path": "data_sources.csdoc", "title": ".csdb" }, 
   { "path": "csdb_relational_format.csdoc", "title": ".csdb format" }, 
   { "path": "data_sources.csdoc", "title": ".csdbe" }, 
+  { "path": "file_types.csdoc", "title": ".csdoc" }, 
+  { "path": "file_types.csdoc", "title": ".csdocset" }, 
   { "path": "file_types.csdoc", "title": ".csds" }, 
   { "path": "file_types.csdoc", "title": ".cshtml" }, 
   { "path": "index_file_csidx.csdoc", "title": ".csidx" }, 
@@ -181,7 +183,14 @@
     ]
   }, 
   { "path": "accept_function.csdoc", "~title": "Accept Function" }, 
-  { "path": "action_invoker.csdoc", "~title": "Action Invoker" }, 
+  { "path": "action_invoker.csdoc", "~title": "Action Invoker Overview", 
+    "subindex": [ 
+      { "path": "action_invoker_execution_json.csdoc", "title": "Executing Using JSON" }, 
+      { "path": "action_invoker_execution_cspro_logic.csdoc", "title": "Execution in CSPro Logic" }, 
+      { "path": "action_invoker_execution_javascript_embedded.csdoc", "title": "Execution in Embedded JavaScript" }, 
+      { "path": "action_invoker_execution_javascript_web.csdoc", "title": "Execution in JavaScript Run From Web Pages" }
+    ]
+  }, 
   { "path": "add_dictionary_elements.csdoc", "title": "Add", 
     "subindex": [ 
       { "path": "add_dictionary_elements.csdoc", "title": "Dictionary Elements" }, 
@@ -277,6 +286,7 @@
       { "path": "variables.csdoc", "~title": "Variables" }
     ]
   }, 
+  { "path": "change_field_properties.csdoc", "title": "Always Visual Value" }, 
   { "path": "names.csdoc", "title": "Ambiguous Dictionary Names" }, 
   { "path": "and_or_truth_table.csdoc", "title": "And" }, 
   { "path": "android_development.csdoc", "title": "Android", 
@@ -479,6 +489,7 @@
     ]
   }, 
   { "path": "Freq_statement_unnamed.csdoc", "title": "Breakdown" }, 
+  { "path": "breaking_changes.csdoc", "~title": "Breaking Changes" }, 
   { "path": "breaking_off_the_interview.csdoc", "title": "Breaking Off the Interview in CAPI" }, 
   { "path": "Map_addImageButton_function.csdoc", "title": "Buttons", 
     "subindex": [ 
@@ -628,6 +639,7 @@
       { "path": "decimal_character.csdoc", "title": "Decimal" }
     ]
   }, 
+  { "path": "html_in_cspro.csdoc", "title": "Chart.js" }, 
   { "path": "check_box.csdoc", "~title": "Check Box", 
     "subindex": [ 
       { "path": "ischecked_function.csdoc", "~title": "IsChecked Function" }
@@ -753,7 +765,7 @@
   }, 
   { "path": "preprocessor.csdoc", "title": "Conditional Compilation" }, 
   { "path": "create_conditional_questions.csdoc", "title": "Conditional Questions in CAPI" }, 
-  { "path": "config_statement.csdoc", "~title": "Config Statement" }, 
+  { "path": "config_modifier.csdoc", "~title": "config Variable Modifier" }, 
   { "path": "change_data_entry_options.csdoc", "title": "Confirm End-of-Case" }, 
   { "path": "connection_function.csdoc", "~title": "Connection Function" }, 
   { "path": "connection_string.csdoc", "~title": "Connection String", 
@@ -861,7 +873,8 @@
     ]
   }, 
   { "path": "run_production_batch_edits.csdoc", "title": "CSBatch" }, 
-  { "path": "data_sources.csdoc", "~title": "CSEntry Data Source File Types" }, 
+  { "path": "tool_list.csdoc", "title": "CSCode" }, 
+  { "path": "tool_list.csdoc", "title": "CSDocument" }, 
   { "path": "csentry_settings_modification.csdoc", "~title": "CSEntry Settings Modification" }, 
   { "path": "cspro_capabilities.csdoc", "title": "CSPro", 
     "subindex": [ 
@@ -981,6 +994,16 @@
   { "path": "introduction_to_data_dictionary.csdoc", "title": "Data Organization" }, 
   { "path": "record_description.csdoc", "title": "Data Records" }, 
   { "path": "data_source_options.csdoc", "~title": "Data Source Options" }, 
+  { "path": "data_sources.csdoc", "~title": "Data Sources", 
+    "subindex": [ 
+      { "path": "data_sources.csdoc", "title": "CSPro DB" }, 
+      { "path": "data_sources.csdoc", "title": "Encrypted CSPro DB" }, 
+      { "path": "data_source_memory.csdoc", "title": "In-Memory" }, 
+      { "path": "data_source_json.csdoc", "title": "JSON" }, 
+      { "path": "data_sources.csdoc", "title": "None" }, 
+      { "path": "data_sources.csdoc", "title": "Text" }
+    ]
+  }, 
   { "path": "data_type.csdoc", "~title": "Data Type" }, 
   { "path": "batch_edit_applications.csdoc", "title": "Data Validation" }, 
   { "path": "run_production_data_entry.csdoc", "title": "DataEntryIDs" }, 
@@ -1258,7 +1281,7 @@
   { "path": "recode_statement.csdoc", "title": "EndRecode" }, 
   { "path": "endgroup_statement.csdoc", "title": "Endsect Statement" }, 
   { "path": "when_statement.csdoc", "title": "EndWhen" }, 
-  { "path": "ensure_statement.csdoc", "~title": "Ensure Statement" }, 
+  { "path": "ensure_modifier.csdoc", "~title": "ensure Variable Modifier" }, 
   { "path": "cspro_capabilities.csdoc", "title": "Enter", 
     "subindex": [ 
       { "path": "cspro_capabilities.csdoc", "title": "Modify and Verify Data" }, 
@@ -1852,6 +1875,7 @@
       { "path": "operator_precedence.csdoc", "~title": "Operator Precedence" }
     ]
   }, 
+  { "path": "data_source_memory.csdoc", "~title": "In-Memory Data Source" }, 
   { "path": "inadvance_function.csdoc", "~title": "InAdvance Function" }, 
   { "path": "inc_function.csdoc", "~title": "Inc Function" }, 
   { "path": "add_percents_to_a_table.csdoc", "title": "Include Percents" }, 
@@ -1979,9 +2003,11 @@
   { "path": "html_in_cspro.csdoc", "title": "JavaScript Libraries", 
     "subindex": [ 
       { "path": "html_in_cspro.csdoc", "title": "Bootstrap" }, 
+      { "path": "html_in_cspro.csdoc", "title": "Chart.js" }, 
       { "path": "html_in_cspro.csdoc", "title": "jQuery" }, 
       { "path": "html_in_cspro.csdoc", "title": "Leaflet" }, 
-      { "path": "html_in_cspro.csdoc", "title": "mustache.js" }
+      { "path": "html_in_cspro.csdoc", "title": "mustache.js" }, 
+      { "path": "html_in_cspro.csdoc", "title": "sprintf-js" }
     ]
   }, 
   { "path": "join_and_split_roster_columns.csdoc", "~title": "Join and Split Roster Columns" }, 
@@ -1995,6 +2021,7 @@
       { "path": "JSON_specification_files.csdoc", "title": "Specification Files" }
     ]
   }, 
+  { "path": "data_source_json.csdoc", "~title": "JSON Data Source" }, 
   { "path": "key_function.csdoc", "~title": "Key Function", 
     "subindex": [ 
       { "path": "currentkey_function.csdoc", "title": "Current Key" }, 
@@ -2641,6 +2668,7 @@
     ]
   }, 
   { "path": "change_field_properties.csdoc", "title": "Persistent Fields" }, 
+  { "path": "persistent_modifier.csdoc", "~title": "persistent Variable Modifier" }, 
   { "path": "program_information_file_pff.csdoc", "title": "PFF", 
     "subindex": [ 
       { "path": "Pff.csdoc", "title": "Object" }, 
@@ -3374,6 +3402,7 @@
     ]
   }, 
   { "path": "specify_application_file_names.csdoc", "~title": "Specify Application File Names" }, 
+  { "path": "html_in_cspro.csdoc", "title": "sprintf-js" }, 
   { "path": "csdb_relational_format.csdoc", "title": "SQL Queries in CSPro DB" }, 
   { "path": "sqlquery_function.csdoc", "~title": "SqlQuery Function" }, 
   { "path": "sqrt_function.csdoc", "title": "Sqrt" }, 
@@ -3690,12 +3719,18 @@
     "subindex": [ 
       { "path": "tool_list.csdoc", "title": "Compare Data" }, 
       { "path": "tool_list.csdoc", "title": "Concatenate Data" }, 
+      { "path": "tool_list.csdoc", "title": "Convert Dictionary" }, 
+      { "path": "tool_list.csdoc", "title": "Convert Shape to Map" }, 
+      { "path": "tool_list.csdoc", "title": "CSCode" }, 
+      { "path": "tool_list.csdoc", "title": "CSDocument" }, 
       { "path": "tool_list.csdoc", "title": "CSView" }, 
       { "path": "tool_list.csdoc", "title": "Data Viewer" }, 
       { "path": "tool_list.csdoc", "title": "Deploy Application" }, 
       { "path": "tool_list.csdoc", "title": "Excel to CSPro" }, 
       { "path": "tool_list.csdoc", "title": "Export Data" }, 
+      { "path": "tool_list.csdoc", "title": "Form Viewer" }, 
       { "path": "tool_list.csdoc", "title": "Index Data" }, 
+      { "path": "tool_list.csdoc", "title": "Map Viewer" }, 
       { "path": "tool_list.csdoc", "title": "Operator Statistics Viewer" }, 
       { "path": "tool_list.csdoc", "title": "Pack Application" }, 
       { "path": "tool_list.csdoc", "title": "Paradata Concatenator" }, 
@@ -3706,6 +3741,7 @@
       { "path": "tool_list.csdoc", "title": "Save Array Viewer" }, 
       { "path": "tool_list.csdoc", "title": "Sort Data" }, 
       { "path": "tool_list.csdoc", "title": "Table Retrieval" }, 
+      { "path": "tool_list.csdoc", "title": "Table Retrieval Setup" }, 
       { "path": "tool_list.csdoc", "title": "Table Viewer" }, 
       { "path": "tool_list.csdoc", "title": "Tabulate Frequencies" }, 
       { "path": "tool_list.csdoc", "title": "Text Encoding Converter" }, 
@@ -3909,6 +3945,13 @@
       { "path": "ValueSet_statement.csdoc", "~title": "ValueSet Statement" }
     ]
   }, 
+  { "path": "config_modifier.csdoc", "title": "Variable Modifiers", 
+    "subindex": [ 
+      { "path": "config_modifier.csdoc", "title": "config" }, 
+      { "path": "ensure_modifier.csdoc", "title": "ensure" }, 
+      { "path": "persistent_modifier.csdoc", "title": "persistent" }
+    ]
+  }, 
   { "path": "add_a_variable_to_a_tabulation.csdoc", "title": "Variables", 
     "subindex": [ 
       { "path": "add_a_variable_to_a_tabulation.csdoc", "title": "Adding to a Table" }, 
@@ -3958,7 +4001,13 @@
   }, 
   { "path": "viewing_multiple_and_facing_pages.csdoc", "~title": "Viewing Multiple and Facing Pages" }, 
   { "path": "views_of_tables.csdoc", "title": "Views of Table" }, 
-  { "path": "visualvalue_function.csdoc", "~title": "VisualValue Function" }, 
+  { "path": "visual_values.csdoc", "title": "Visual Values", 
+    "subindex": [ 
+      { "path": "change_field_properties.csdoc", "title": "Always Visual Value" }, 
+      { "path": "visual_values.csdoc", "~title": "Visual Values for Numeric Fields" }, 
+      { "path": "visualvalue_function.csdoc", "~title": "VisualValue Function" }
+    ]
+  }, 
   { "path": "Audio.csdoc", "title": "Voice Recording" }, 
   { "path": "impute_function.csdoc", "title": "VSet", 
     "subindex": [ 
@@ -3985,6 +4034,7 @@
   { "path": "what_is_cspro.csdoc", "~title": "What is CSPro?" }, 
   { "path": "what_is_new_in_cspro.csdoc", "~title": "What's New in CSPro?", 
     "subindex": [ 
+      { "path": "breaking_changes.csdoc", "~title": "Breaking Changes" }, 
       { "path": "what_is_new_in_cspro_7_0.csdoc", "title": "CSPro 7.0" }, 
       { "path": "what_is_new_in_cspro_7_1.csdoc", "title": "CSPro 7.1" }, 
       { "path": "what_is_new_in_cspro_7_2.csdoc", "title": "CSPro 7.2" }, 

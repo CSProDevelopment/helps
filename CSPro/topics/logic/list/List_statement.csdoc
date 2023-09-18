@@ -17,6 +17,15 @@ List objects can be <logiccolor>numeric</logiccolor> or <logiccolor>string</logi
 The initial elements of a List can be set on definition by listing each value, separated by a comma. A List can also be initialized to the values of another List.
 
 
+<subheader>Variable Modifiers</subheader>
+
+The following variable modifiers apply to List objects:
+
+<list>
+	<li><logiccolor>persistent</logiccolor>: to persist the variable's value from one run of an application to another.</li>
+</list>
+
+
 <subheader>Example</subheader>
 
 <logic>
@@ -31,7 +40,6 @@ DaysPerMonthLeapYears(2) = 29;
 List string MonthNames = "Jan", "Feb", "Mar", "Apr", "May", "Jun",
 						 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec";
 </logic>
-
 
 
 <seealso List.csdoc Array.csdoc HashMap.csdoc ValueSet.csdoc />

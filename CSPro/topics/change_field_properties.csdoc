@@ -5,64 +5,85 @@ Right-click on a field in the tree or on the form and select <b>Properties</b>. 
 
 <center><image field_properties.png /></center>
 
+
 <subheader>Field Name</subheader>
 
 This is the name of the dictionary item associated with this field. It is the name you use to refer to this field when writing logic. Mirror fields will show the dictionary name with three digits appended to it. You cannot change this property.
+
 
 <subheader>Screen Text</subheader>
 
 This is the text that is associated with the data entry box on the form. It is also the text that is displayed on the mobile case tree for the field. If <b>Linked to dictionary item</b> is checked, then the screen text is synced to the label of the associated dictionary item. That is, if the dictionary item's label changes, then the screen text will change automatically.
 
+
 <subheader>Skip to</subheader>
 
 This is the name of the field that will be skipped to if the operator presses the plus (+) key on the numeric keypad. If the "skip to" field it is blank and the plus key is pressed, CSPro skips to the next field in sequence. "Skip to" is available only in operator-controlled data entry mode.
+
 
 <subheader>Capture Type</subheader>
 
 This attribute allows you to specify a <link capture_types.csdoc>capture type</link> (a popup window that shows entries in the value set) for the field, or to change the appearance of an alpha field.
 
+
 <subheader>Validation Method</subheader>
 
 This attribute allows you to specify how CSEntry validates the value entered in the field. The default option <b>Use value set and capture type</b> means that CSEntry will ensure that a value is part of the field's value set (if applicable), and also, for date and check box capture types, that the value is valid (beyond simply the value set checks). The option <b>Allow out of range with confirmation</b> means that, if the value is not in the value set or invalid based on the capture type, the operator will be presented with a confirmation message and the operator can accept the invalid value. The option <b>Allow out of range without confirmation</b> allows the entry of any value into the field. More information about validation can be found on the <link capture_types.csdoc>capture types</link> page.
+
 
 <subheader>Keyboard Input</subheader>
 
 This attribute allows you to choose a <link change_keyboard_input.csdoc>keyboard ID</link> that specifies what keyboard input to use for the field, which may be useful in multiple language environments.
 
+
 <subheader>Persistent</subheader>
 
 Check this box to make a field persistent. Persistent fields are ID fields that take the value from the previous case in the data file as their default. Persistent fields are typically used for geographic IDs that change very rarely from one case to another. These fields are shown as light gray boxes on the form. In CSEntry, the operator must press a special key (<b>F7</b>) to change the value of a persistent field. You can make any ID field (except for mirror fields) persistent.
+
 
 <subheader>Auto Increment</subheader>
 
 Check this box to make a field auto increment. Auto increment fields are ID fields that receive an automatic value based on a calculation using the other cases in a data file. For the first case in the data file, the ID field is set to 1. For subsequent cases, the field takes the value of the highest value in the data file plus 1. Auto increment fields are similar to sequential fields except that they work on ID fields across multiple cases, whereas sequential fields work across a repeating group in a single case.
 
+
 <subheader>Sequential</subheader>
 
 Check this box to make a field sequential. Sequential fields automatically increment at data entry time. They are commonly used as occurrence-number fields in multiple groups. A sequential field takes the value 1 on the first occurrence. For subsequent occurrences, CSEntry will use the value of the previous occurrence and add 1. If the field is not also marked as protected, the operator may change the sequence at any time by simply keying a new value, and from that point, CSEntry will use this new value to continue the sequential incrementation. You can make any field (except for mirror fields) sequential. You can define your own kinds of sequential behavior for fields by writing pre-processing logic. In this case, do not use the sequential field attribute.
+
 
 <subheader>Protected</subheader>
 
 Check this box to make a field protected. Protected fields are not keyed during data entry. Protected fields are commonly used to display a value that is calculated elsewhere (for example, the sum of other keyed fields). You must write logic to set the value of a protected field. You can make any field protected.
 
+
 <subheader>Mirror</subheader>
 
 Mirror fields show the value of a previously entered field on the screen. The cursor never goes to a mirror field during data entry. Mirror fields are useful to display values from one screen on another screen. Any singly occurring item can be a mirror field. A common use of mirror fields is to show the geographic IDs on all screens. The first form might contain the geographic ID fields which the operator keys in, and subsequent forms might contain the geographic ID mirror fields, which will show the operator the ID values even when the ID form is not on screen. The first time you drag a dictionary item onto a form you create the normal entry field. On each subsequent occasion that you drag the same dictionary item onto a form, you create a mirror field.
+
 
 <subheader>Upper Case</subheader>
 
 Check this box to make a field upper case. Alphanumeric fields can be upper case. This means that every alphabetic character that is keyed will be forced to upper case.
 
+
 <subheader>Use Enter Key</subheader>
 
 Check this box if you want to force the data entry operator to <link change_data_entry_options.csdoc>press the Enter</link> key to advance to the next field. If left unchecked, the cursor automatically advances to the next field (after the maximum number of characters have been entered).
+
 
 <subheader>Verify</subheader>
 
 Check this box if you want to <link change_data_entry_options.csdoc>verify the field</link> when the operator is in verification mode. If left unchecked, verification is skipped. If checked, verification will occur as follows: after each field is keyed, the value entered is compared with the value currently in the data file. If there is a difference, an error message is displayed, and the field must be reentered.
 
+
 <subheader>Hide in Case Tree</subheader>
 
 Check this box if you do not want the field to appear in the mobile case tree. You might, for example, have some control fields that the interviewer does not need to see when conducting the interview.
+
+
+<subheader>Always Visual Value</subheader>
+
+Check this box for numeric fields if you want the field's <link visual_values.csdoc>visual value</link> to always be returned in logic, ignoring the field's <link highlighted_function.csdoc>entry status</link> (e.g., skipped, not yet entered, etc.).
+
 
 <seealso change_field_properties_for_multiple_fields.csdoc />

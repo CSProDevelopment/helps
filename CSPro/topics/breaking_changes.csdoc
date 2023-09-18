@@ -1,0 +1,60 @@
+﻿<title>Breaking Changes</title>
+
+In general, newer versions of CSPro can execute applications and process data created in earlier versions of CSPro, but occasionally there are significant changes that result in behavior that is different from the previous versions. This list, as well as the list of <link deprecated_features.csdoc>deprecated features</link>, is intended to help users keep abreast of changes that may impact their applications or any external tools that were written to interact with CSPro specification and data files. For information on how to handle the changes, review the <link what_is_new_in_cspro.csdoc>What's New</link> page for the version when the change occurred.
+
+
+<subheader>CSPro 8.0</subheader>
+
+<list>
+	<li>The specification files for files with the following extensions are now saved in <link JSON_specification_files.csdoc>JSON format</link>: .bch, .cmp, .csprops, .dcf, .ent, .exf, .fqf, .ssf, .xl2cs, .xtb. The most significant change concerns <link data_dictionary_file_dcf.csdoc>dictionaries</link> (.dcf), as any external tools that parse CSPro dictionaries must be modified to handle the new format.</li>
+	<li>Creating dynamic value sets using <logiccolor>Array</logiccolor> objects is no longer possible.</li>
+	<li>The <logiccolor>box</logiccolor> / <logiccolor>endbox</logiccolor> syntax for <link recode_statement.csdoc>recoding variables</link> is no longer supported.</li>
+	<li>The templated reporting system introduced in CSPro 7.1 has been removed.</li>
+</list>
+
+
+<subheader>CSPro 7.4</subheader>
+
+<list>
+	<li>The internal format of <link data_sources.csdoc>CSPro DB</link> files changed and can no longer be opened in previous versions of CSPro.</li>
+</list>
+
+
+<subheader>CSPro 7.2</subheader>
+
+<list>
+	<li>Synchronizing files and data using .pnc files is no longer possible.</li>
+	<li>Implicit compilation mode, which allowed for on-the-fly variable declarations, has been removed.</li>
+</list>
+		
+		
+<subheader>CSPro 7.0</subheader>
+
+<list>
+	<li>The format of the <link notes_file_csnot.csdoc>notes file</link> associated with <link data_sources.csdoc>text data files</link> changed (as well as the extension from .not to .csnot).</li>
+</list>
+
+
+<subheader>CSPro 6.2</subheader>
+
+<list>
+	<li>The <logiccolor>fileexist</logiccolor> function no longer returns true if the path exists as a directory (as opposed to a file).</li>
+</list>
+        
+
+<subheader>CSPro 6.0</subheader>
+
+<list>
+	<li>The format of the <link binary_data_entry_application_file_pen.csdoc>compiled data entry</link> format changed (as well as the extension from .enc to .pen). CSEntry can no longer run .enc files.</li>
+	<li>The <logiccolor>seed</logiccolor> function returns a different sequence of random numbers.</li>
+</list>
+
+
+<subheader>CSPro 5.0</subheader>
+
+<list>
+	<li>Specification and data files are saved in <link unicode_primer.csdoc>UTF-8 format</link> with a BOM (byte order mark). Reading these files in external tools that expect an ANSI encoding may result in problems.</li>
+</list>
+
+
+<seealso deprecated_features.csdoc what_is_new_in_cspro.csdoc />

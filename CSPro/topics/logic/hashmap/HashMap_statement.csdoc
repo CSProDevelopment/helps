@@ -28,6 +28,15 @@ If no dimensions are specified, then the HashMap is created with a single dimens
 When assigning a value to a HashMap, all keys will be created as necessary to store the value. However, when retrieving a value, if the keys do not exist, you will get a runtime error and the value <logiccolor>default</logiccolor> or a blank string will be returned. If you want to assign a default value for undefined keys, you can specify a <arg>default_value</arg>, which must be either a numeric constant or a string literal (based on the value type).
 
 
+<subheader>Variable Modifiers</subheader>
+
+The following variable modifiers apply to HashMap objects:
+
+<list>
+	<li><logiccolor>persistent</logiccolor>: to persist the variable's value from one run of an application to another.</li>
+</list>
+
+
 <subheader>Example 1</subheader>
 
 <logic>

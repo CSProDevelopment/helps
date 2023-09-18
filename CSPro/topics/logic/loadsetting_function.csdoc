@@ -1,10 +1,12 @@
 ﻿<title>LoadSetting Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 s = loadsetting(<arg>attribute</arg> 『,<arg>default_setting</arg>』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -12,9 +14,11 @@ The <logiccolor>loadsetting</logiccolor> function, using the string expression <
 
 The file from which settings are retrieved can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file. If an attribute does not exist in the specified file but does exist in the global settings database (shared by all CSPro applications), then that global attribute-value pair is used.
 
+
 <subheader>Return Value</subheader>
 
 The function returns a string containing the value associated with the attribute. If no value is associated with the attribute, then the function returns a blank string unless a default setting has been provided, in which case it returns the default setting.
+
 
 <subheader>Example</subheader>
 
@@ -36,4 +40,4 @@ preproc
 	setlanguage(loadsetting("Language", "EN"));
 </logic>
 
-<seealso savesetting_function.csdoc user_configuration_settings.csdoc csentry_settings_modification.csdoc />
+<seealso savesetting_function.csdoc user_configuration_settings.csdoc persistent_modifier.csdoc csentry_settings_modification.csdoc />

@@ -1,0 +1,94 @@
+﻿<title>Visual Values for Numeric Fields</title>
+
+
+<subheader>Overview</subheader>
+
+When referencing variables in a data entry application's logic<arg></arg>, the value of numeric dictionary items depends on the state of the field on <link data_entry_path.csdoc>path</link>. If a field has been entered (and has the <link CSEntry::field_colors.csdoc>field color green</link>), its value is returned. However, if:
+
+<list>
+	<li>A numeric dictionary item is on a form.</li>
+	<li>The data for that form is being entered.</li>
+	<li>The field is not on path (<link CSEntry::field_colors.csdoc>green</link>) because it has been skipped, or not yet entered.</li>
+</list>
+
+Under these conditions, referencing this numeric item in logic will return the <link special_values.csdoc>special</link> value <logiccolor>notappl</logiccolor> (not applicable). To get the value displayed in the field, even if that field is skipped, you want the "visual value" for the field, which can be accessed using the <logiccolor>visualvalue</logiccolor> function.
+
+
+<subheader>Behavior in Conditional Statements</subheader>
+
+Because of how CSPro handles special values, the default behavior of not returning visual values can be useful. For example, if a question, <logiccolor>MARITAL_STATUS</logiccolor>, is asked of people aged 12+, a field might have logic such as this:
+
+<logic>
+PROC AGE_AT_FIRST_MARRIAGE
+
+preproc
+
+	// only ask if the person is married, separated, or divorced
+	ask if MARITAL_STATUS in 2, 4, 5;
+</logic>
+
+In an enumerator enters an age of <logiccolor>15</logiccolor>, indicates that the person is married (<logiccolor>2</logiccolor>), and then goes back to modify the age to <logiccolor>10</logiccolor>, the <logiccolor>MARITAL_STATUS</logiccolor> field is skipped. However, the value for that field was <logiccolor>2</logiccolor> from the previous entry. When executing the logic for <logiccolor>AGE_AT_FIRST_MARRIAGE</logiccolor>, because <logiccolor>MARITAL_STATUS</logiccolor> was skipped, the value used in logic is <logiccolor>notappl</logiccolor> instead of <logiccolor>2</logiccolor> and the <logiccolor>ask if</logiccolor> control statement works as expected.
+
+If the logic were instead written as:
+
+<logic>
+ask if visualvalue(MARITAL_STATUS) in 2, 4, 5;
+</logic>
+
+The question would be asked because the visual value, the value shown on the screen during data entry, indicates that <logiccolor>MARITAL_STATUS</logiccolor> is <logiccolor>2</logiccolor> because of the prior entry. If CSPro already returned visual values, logic such as this would have to be rewritten to keep track of the field's entry status. For example:
+
+<logic>
+ask if highlighted(MARITAL_STATUS) and
+       visualvalue(MARITAL_STATUS) in 2, 4, 5;
+</logic>
+
+
+<subheader>Accessing a Field's Value Prior to Entry</subheader>
+
+There are some circumstances, particularly when modifying cases, when you may want to access a field's value prior to it being entered (or reentered). In these cases, you use the <logiccolor>visualvalue</logiccolor> function to access the field's value from a previous entry. For example:
+
+<logic>
+PROC INTERVIEW_START_DATE
+
+preproc
+
+	// do not overwrite the start date if modifying the case
+	if visualvalue(INTERVIEW_START_DATE) = notappl then
+		INTERVIEW_START_DATE = sysdate("YYYYMMDD");
+	endif;
+</logic>
+
+
+<subheader>Always Visual Value</subheader>
+
+In some applications, particularly operational control ("menu") programs, the CSPro behavior of looking at the status of the field before evaluating the value may not be desirable. In such cases, you can use the <link change_field_properties.csdoc>Always Visual Value</link> field property to indicate that CSPro should always return the field's visual value. This can also be set in logic. For example:
+
+<logic>
+PROC VALUE
+
+preproc
+
+	VALUE = 123;
+
+	// displays |NOTAPPL| |123| because VALUE has not been entered at this point
+	errmsg("|%d| |%d|", VALUE, visualvalue(VALUE));
+
+	setproperty(VALUE, "AlwaysVisualValue", "Yes");
+
+	// displays |123| |123|
+	errmsg("|%d| |%d|", VALUE, visualvalue(VALUE));
+
+postproc
+
+	// assuming VALUE was not changed, this always displays |123| |123| regardless of
+	// the AlwaysVisualValue flag because VALUE has been entered at this point
+	errmsg("|%d| |%d|", VALUE, visualvalue(VALUE));
+</logic>
+
+
+<subheader>Visual Values When Writing Cases</subheader>
+
+When a case is written to a <link data_sources.csdoc>data source</link> in <link operator_vs_system_controlled.csdoc>system-controlled mode</link>, the visual values for skipped fields are cleared. When <link savepartial_function.csdoc>partially saving a case</link>, the visual values are maintained unless using a special argument to <logiccolor>savepartial</logiccolor>.
+
+
+<seealso visualvalue_function.csdoc highlighted_function.csdoc C:\code\helps\CSPro\topics\change_field_properties.csdoc />

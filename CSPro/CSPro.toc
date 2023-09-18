@@ -26,7 +26,8 @@
               { "path": "what_is_new_in_cspro_7_5.csdoc", "~title": "What's New in CSPro 7.5?" }, 
               { "path": "what_is_new_in_cspro_7_6.csdoc", "~title": "What's New in CSPro 7.6?" }, 
               { "path": "what_is_new_in_cspro_7_7.csdoc", "~title": "What's New in CSPro 7.7?" }, 
-              { "path": "what_is_new_in_cspro_8_0.csdoc", "~title": "What's New in CSPro 8.0?" }
+              { "path": "what_is_new_in_cspro_8_0.csdoc", "~title": "What's New in CSPro 8.0?" }, 
+              { "path": "breaking_changes.csdoc", "~title": "Breaking Changes" }
             ]
           }, 
           {
@@ -52,7 +53,7 @@
           {
             "title": "CSPro General Functionality", 
             "documents": [
-              { "path": "data_sources.csdoc", "~title": "CSEntry Data Source File Types" }, 
+              { "path": "data_sources.csdoc", "~title": "Data Sources" }, 
               { "path": "connection_string.csdoc", "~title": "Connection String" }, 
               { "path": "encrypted_data.csdoc", "~title": "Encrypted Data" }, 
               { "path": "unicode_primer.csdoc", "~title": "Unicode Primer" }, 
@@ -235,7 +236,6 @@
               { "path": "compiler_mode.csdoc", "~title": "Compiler Mode" }, 
               { "path": "variables.csdoc", "~title": "Variables" }, 
               { "path": "alias_statement.csdoc", "~title": "Alias Statement" }, 
-              { "path": "ensure_statement.csdoc", "~title": "Ensure Statement" }, 
               { "path": "user_defined_functions.csdoc", "~title": "User-Defined Functions" }, 
               { "path": "Array.csdoc", "~title": "Array Object" }, 
               { "path": "Audio.csdoc", "~title": "Audio Object" }, 
@@ -854,6 +854,13 @@
         ]
       }, 
       {
+        "title": "Data Sources", 
+        "documents": [
+          { "path": "data_source_json.csdoc", "~title": "JSON Data Source" }, 
+          { "path": "data_source_memory.csdoc", "~title": "In-Memory Data Source" }
+        ]
+      }, 
+      {
         "title": "CSPro Statements and Functions", 
         "documents": [
           { "path": "statement_format_symbols.csdoc", "~title": "Statement Format Symbols" }, 
@@ -867,8 +874,11 @@
             "documents": [
               { "path": "numeric_statement.csdoc", "~title": "Numeric Statement" }, 
               { "path": "string_statement.csdoc", "~title": "String Statement" }, 
-              { "path": "config_statement.csdoc", "~title": "Config Statement" }, 
               { "path": "alpha_statement.csdoc", "~title": "Alpha Statement" }, 
+              { "path": "config_modifier.csdoc", "~title": "config Variable Modifier" }, 
+              { "path": "ensure_modifier.csdoc", "~title": "ensure Variable Modifier" }, 
+              { "path": "persistent_modifier.csdoc", "~title": "persistent Variable Modifier" }, 
+              { "path": "visual_values.csdoc", "~title": "Visual Values for Numeric Fields" }, 
               { "path": "relation_statement.csdoc", "~title": "Relation Statement" }, 
               { "path": "function_named_arguments.csdoc", "~title": "Function Named Arguments" }, 
               { "path": "function_statement.csdoc", "~title": "Function Statement" }, 
@@ -1416,7 +1426,18 @@
       {
         "title": "Action Invoker", 
         "documents": [
-          { "path": "action_invoker.csdoc", "~title": "Action Invoker" }
+          { "path": "action_invoker.csdoc", "title": "Overview" }
+        ], 
+        "chapters": [
+          {
+            "title": "Execution Environments", 
+            "documents": [
+              { "path": "action_invoker_execution_cspro_logic.csdoc", "title": "CSPro Logic" }, 
+              { "path": "action_invoker_execution_javascript_embedded.csdoc", "title": "JavaScript (Embedded)" }, 
+              { "path": "action_invoker_execution_javascript_web.csdoc", "title": "JavaScript (Run From Web Pages)" }, 
+              { "path": "action_invoker_execution_json.csdoc", "title": "JSON" }
+            ]
+          }
         ]
       }, 
       {
@@ -1588,6 +1609,12 @@
   }, 
   {
     "project": "ParadataViewer"
+  }, 
+  {
+    "project": "CSCode"
+  }, 
+  {
+    "project": "CSDocument"
   }, 
   {
     "project": "CSView"
