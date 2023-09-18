@@ -1,5 +1,6 @@
 ﻿<title>Warning Function</title>
 
+
 <subheader>Format 1</subheader>
 
 <logicsyntax>
@@ -22,17 +23,19 @@ i =	warning(<arg>string_exp</arg>『, <arg>argument1</arg>, ..., <arg>argument20
 	『denom = <arg>numeric_denom</arg>』;
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
 The <logiccolor>warning</logiccolor> function is similar to the <logiccolor>errmsg</logiccolor> function, with the function only having special behavior within a data entry application. If used in a batch or tabulation application, it behaves identically to <logiccolor>errmsg</logiccolor>.
 
 The <logiccolor>warning</logiccolor> function differs from <logiccolor>errmsg</logiccolor> in that it can be used for "soft check" error messages. These messages will not be displayed to the operator when advancing in the case (such as when resuming from a partial save). This can also be useful for information you want to display just once to the operator, such as during initial entry of a field, rather than when the operator is moving from one section to another section, and the field in question lays somewhere in between.
 
-Each argument is sequentially inserted into the warning message. Arguments can be numeric or alphanumeric expressions, but the type of the argument must match the type of the receiving field in the message text (see <logiccolor>errmsg</logiccolor> for a complete description of the function's arguments). The maximum number of arguments is 20. If messages are defined via the message number <arg>msg_num</arg>, then those messages will be stored in a message file [.mgf].  <arg>msg_num</arg> can be a number or <link expressions.csdoc> numeric expression</link>.
+Each argument is sequentially inserted into the warning message. Arguments can be numeric or alphanumeric expressions, but the type of the argument must match the type of the receiving field in the message text (see <logiccolor>errmsg</logiccolor> for a complete description of the function's arguments). The maximum number of arguments is 20. If messages are defined via the message number <arg>msg_num</arg>, then those messages will be stored in a <link message_file_mgf.csdoc>message file</link>. <arg>msg_num</arg> can be a number or <link expressions.csdoc> numeric expression</link>.
 
 If using the <logiccolor>select</logiccolor> option, then one of the field arguments must be <logiccolor>continue</logiccolor> or you must specify a <arg>default_option</arg>, which corresponds to one of the select choices begin presented. This is necessary if advancing within the application, for while the message will not be displayed, the logic will be evaluated, and CSPro needs to know where to go. See below for an example on this usage. If the system is not processing an advance, using <arg>default_option</arg> places the focus on the select option chosen when the message is presented. If a <arg>default_option</arg> is not given, no button will have the focus.
 
 If you wish to split message text across two or more lines, refer to the <topic message_formatting_options.csdoc /> page.
+
 
 <subheader>Return Value</subheader>
 
@@ -40,19 +43,21 @@ The function returns the cardinal number of the button pressed. When the <b>sele
 
 When the <b>select</b> keyword is used, the function returns the sequence number of the button that was pressed, with the first button having the value 1. A maximum of 5 select argument pairs is allowed.
 
+
 <subheader>Example</subheader>
 
 <logic>
 PROC MARITAL_STATUS
-postproc
-	if curocc() > 1 and $ in 1,2 { married, partner } and SEX=SEX(HEAD) then
-		warning("Is the sex of this person the same as the head of household's?")
-		       select("Correct", continue,
-			          "Incorrect: Change this person's sex", SEX,
-			          "Incorrect: Change the head's sex", SEX(HEAD))
-			          default(1); // during an advance, use the first choice, continue
-							 // if not processing an advance, the focus will be on button 1
+
+	if curocc() > 1 and MARITAL_STATUS in 1, 2 /* married, partner */ and SEX = SEX(HEAD) then
+		warning("Is the sex of this person the same as that of the head of household?")
+		select("Correct", continue,
+			   "Incorrect: Change this person's sex", SEX,
+			   "Incorrect: Change the head's sex", SEX(HEAD))
+		default(1); // during an advance, use the first choice: continue;
+					// if not processing an advance, the focus will be on button 1
 	endif;
 </logic>
+
 
 <seealso errmsg_function.csdoc message_formatting_options.csdoc inadvance_function.csdoc />

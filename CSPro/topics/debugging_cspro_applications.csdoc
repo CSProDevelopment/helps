@@ -1,6 +1,6 @@
 ﻿<title>Debugging CSPro Applications</title>
 
-There is no structured debugger that works with CSPro. However, there are several techniques that can be used to find problems and solve them. One technique is to "comment out" code. By enclosing specific code between braces <logiccolor>{ }</logiccolor>, you can isolate specific areas of code that may be the cause of your problem.
+There is no structured debugger that works with CSPro. However, there are several techniques that can be used to find problems and solve them. One technique is to "comment out" code. By enclosing specific code between <link comments.csdoc>multiline comments</link> <logiccolor>/* */</logiccolor>, you can isolate specific areas of code that may be the cause of your problem.
 
 Another technique is to use error messages with the <logiccolor>errmsg</logiccolor> function. The generation of an error message tells you that program control has passed to that point in your application. The error message can also include variable values to indicate the status of those variables at that point.
 
