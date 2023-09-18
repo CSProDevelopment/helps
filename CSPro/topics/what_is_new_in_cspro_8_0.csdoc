@@ -18,6 +18,14 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 </list>
 
 
+<subheader>Data Sources</subheader>
+
+<list>
+	<li>A new <link data_sources.csdoc>data source</link>, <link data_source_json.csdoc>JSON</link>, allows cases to be stored in JSON format in a file comprising a single JSON array of case objects. The data source allows duplicate cases (like CSPro DB) but does not support synchronization.</li>
+	<li>A new <link data_sources.csdoc>data source</link>, <link data_source_memory.csdoc>In-Memory</link>, allows for the temporary collection or processing of case data for one or more cases. This case data is stored only in memory and expires at the end ofan application's run.</li>
+</list>
+
+
 <subheader>CSPro Designer</subheader>
 
 <list>
