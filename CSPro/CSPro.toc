@@ -1419,7 +1419,18 @@
       {
         "title": "Action Invoker", 
         "documents": [
-          { "path": "action_invoker.csdoc", "~title": "Action Invoker" }
+          { "path": "action_invoker.csdoc", "title": "Overview" }
+        ], 
+        "chapters": [
+          {
+            "title": "Execution Environments", 
+            "documents": [
+              { "path": "action_invoker_execution_cspro_logic.csdoc", "title": "CSPro Logic" }, 
+              { "path": "action_invoker_execution_javascript_embedded.csdoc", "title": "JavaScript (Embedded)" }, 
+              { "path": "action_invoker_execution_javascript_web.csdoc", "title": "JavaScript (Run From Web Pages)" }, 
+              { "path": "action_invoker_execution_json.csdoc", "title": "JSON" }
+            ]
+          }
         ]
       }, 
       {
