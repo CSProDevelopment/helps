@@ -16,7 +16,7 @@ The <logiccolor>prompt</logiccolor> function displays a dialog box showing the s
 	<li><b>Password</b>: The entered characters will be masked with asterisks.</li>
 	<li><b>Uppercase</b>: Alphabetical characters will automatically be converted to their uppercase equivalents.</li>
 	<li><b>Numeric</b>: Only numeric characters can be entered.</li>
-	<li><b>Multiline</b>: The text box will support multiple lines of data entry and the Enter key on the keyboard will insert carriage returns, which will be converted to <logiccolor>"\n"</logiccolor> in the returned value.</li>
+	<li><b>Multiline</b>: The text box will support multiple lines of data entry. Lines are separated by the <link newline_handling.csdoc>newline character</link>: <logiccolor>'\n'</logiccolor>.</li>
 </list>
 
 The <b>password</b> and <b>multiline</b> options are not compatible so when using one of these options, the other option cannot be used.

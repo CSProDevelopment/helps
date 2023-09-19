@@ -27,9 +27,11 @@ The function returns a logical value of 1 (true) if at least one physical file i
 <logic>
 PROC PROVINCE
 
-    // this will split the contents of the input data file into
-    // one file for each province code
-    setoutput(maketext(".\split\%02d.dat", PROVINCE));
+    // split the contents of the input data file into one file for each province code;
+	// the output files will be put in a directory called "split"
+	string output_path = Path.concat("split", maketext("%02d.dat", PROVINCE));
+
+    setoutput(output_path);
 </logic>
 
 

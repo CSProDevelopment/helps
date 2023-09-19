@@ -16,8 +16,7 @@ The format of each note record is as follows:
 	<li>The remaining characters are the note text.</li>
 </list>
 
-
-Note text can contain "\n" characters, which indicate a newline (Enter key) character. If the note text is automatically wrapped in the note text box, there will be no newline characters.
+Note text can contain <link newline_handling.csdoc>newline characters</link>. If the note text is automatically wrapped in the note text box, there will be no newline characters, but the user can use the Enter key to manually insert new lines. If using the Original <link logic_version.csdoc>logic version</link>, newlines will be written as <b>\n</b> and backslash characters will be written as <b>\\</b>. Using the CSPro 8.0+ logic version, newline characters are written as <b>␤</b>.
 
 The .csnot file can be processed by another CSPro application by creating a data dictionary for it. You can use the <link CSPro::dictionary_macros.csdoc>Dictionary Macros</link> function to automatically create this dictionary.
 

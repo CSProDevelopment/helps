@@ -34,7 +34,7 @@ For the <b>open</b>, <b>close</b>, and <b>flush</b> actions, the function return
 <logic>
 List string logs_list;
 
-dirlist(logs_list, "C:\Survey\Paradata", "*.cslog");
+dirlist(logs_list, "C:/Survey/Paradata", "*.cslog");
 
 // add the paradata logs into the currently open log
 paradata(concat, filename(paradata), filename(paradata), logs_list);
