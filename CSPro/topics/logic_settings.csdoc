@@ -22,7 +22,14 @@ Note that even with this checked, variable names must be unique on a case-insens
 
 <subheader>Logic Version</subheader>
 
-HELP_TODO
+The <link logic_version.csdoc>logic version</link> controls how <link string_literals.csdoc>string literals</link> and <link comments.csdoc>multiline comments</link> are handled, as well as whether strings are right-padded <link string_comparisons.csdoc>during comparisons</link>.
+
+<list>
+	<li>Original (the only version up to CSPro 7.7)</li>
+	<li>CSPro 8.0+</li>
+</list>
+
+For new applications, using the latest logic version is recommended. A comprehensive description of differences in the versions is available here: <topic logic_version.csdoc />.
 
 
 <subheader>Action Invoker</subheader>

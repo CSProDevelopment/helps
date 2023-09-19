@@ -1,0 +1,32 @@
+﻿<title>Logic Version</title>
+
+
+<subheader>Overview</subheader>
+
+CSPro has two logic versions, and the version you select (using <link logic_settings.csdoc>Logic Settings</link>) controls several aspects of how logic is compiled and executed. The differences are summarized in the following table, and then described in more detail.
+
+<table 3 header>
+    <cell>Feature</cell><cell>Original Version</cell><cell>CSPro 8.0+ Version</cell>
+    <cell>Multiline comments</cell><cell><colorinline cspro_v0>{ }</colorinline></cell><cell><logiccolor>/* */</logiccolor></cell>
+    <cell>Verbatim string literals</cell><cell>✗</cell><cell>supported</cell>
+    <cell>Escape sequences in string literals</cell><cell>✗</cell><cell>supported</cell>
+    <cell>String comparisons</cell><cell>Ignores trailing spaces</cell><cell>Exact string comparison</cell>
+</table>
+
+
+<subheader>Multiline Comments</subheader>
+
+HELP_TODO
+
+
+<subheader>String Literals</subheader>
+
+HELP_TODO
+
+
+<subheader>String Comparisons</subheader>
+
+HELP_TODO
+
+
+<seealso logic_settings.csdoc />
