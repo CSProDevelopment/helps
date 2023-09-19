@@ -9,7 +9,7 @@ If the name of an external message file begins with "CSProRuntime," then the mes
 
 <subheader>Basic Messages</subheader>
 
-Each line in the message file contains one message. A message consists of a message number followed by text. The message text can be up to 240 characters long. It is displayed on the entry screen when an <logiccolor>errmsg</logiccolor> function with the message number is executed in a data entry application. It is written to the execution report when <logiccolor>errmsg</logiccolor> function with the message number is executed in a batch application. The messages can also be accessed with other functions (including <logiccolor>maketext</logiccolor>).
+Each line in the message file contains one message. A message consists of a message number followed by text. It is displayed on the entry screen when an <logiccolor>errmsg</logiccolor> function with the message number is executed in a data entry application. It is written to the execution report when <logiccolor>errmsg</logiccolor> function with the message number is executed in a batch application. The messages can also be accessed with other functions (including <logiccolor>maketext</logiccolor>).
 
 For example, suppose a message file contains the following lines:
 
@@ -18,7 +18,7 @@ For example, suppose a message file contains the following lines:
 2 This is the second message
 </message>
 
-When an <logiccolor>errmsg(1)</logiccolor> function is executed in a data entry application, the message "This is the first message" is displayed on screen. When an <logiccolor>errmsg(2)</logiccolor> function is executed, the message "This is the second message" is displayed.
+When <logiccolor>errmsg(1)</logiccolor> is executed in a data entry application, the message "This is the first message" is displayed on screen. When <logiccolor>errmsg(2)</logiccolor> is executed, the message "This is the second message" is displayed.
 
 
 <subheader>Messages with Arguments</subheader>
@@ -37,7 +37,7 @@ errmsg(1, "June", 30, 31);
 
 When the function is executed, it knows to use error message 1 and substitute the word "June" for <b>%s</b> in the message text, the number 30 for the first <b>%d</b>, and the number 31 for the second <b>%d</b>. The message "The month of June has only 30 days. You entered 31!" will be displayed on the screen.
 
-The more general the arguments of the message, the more flexible the message. In the example below, the value of the variable HHDAY is used as a argument. The error message will use the value of <logiccolor>HHDAY</logiccolor> if the <logiccolor>errmsg</logiccolor> function is executed.
+The more general the arguments of the message, the more flexible the message. In the example below, the value of the variable HHDAY is used as an argument. The error message will use the value of <logiccolor>HHDAY</logiccolor> if the <logiccolor>errmsg</logiccolor> function is executed.
 
 <logic>
 PROC HHDAY
@@ -49,11 +49,13 @@ PROC HHDAY
 </logic>
 
 
-<subheader>Messages With Comments</subheader>
+<subheader>Commenting Message Files</subheader>
 
-There are two ways to mark text as a <link comments.csdoc>comment</link>. The first method is to use the brace symbols <colorinline cspro_v0>{ }</colorinline>, the second method is to use the double slashes <logiccolor>//</logiccolor>. Comments can be used to clarify the syntax listed in a message, or identify "ownership" of the message or message blocks (i.e., what code blocks use the messages--global messages or just specific areas?). Unlike lines of logic, comments can not be embedded within the message line or appear at the end of a message line. Comments can only appear on a line by itself.
+<link comments.csdoc>Comments</link> can be used to clarify the syntax listed in a message, or to identify "ownership" of the message or message blocks (i.e., what code blocks use the messages: global messages or just specific areas?).
 
-For example, messages might be grouped as follows in your message file:
+There are three ways to mark message text as a comment. In all cases, the comment characters must appear at the beginning of the line. You can use single-line comments (<logiccolor>//</logiccolor>), and both the <link logic_version.csdoc>new and old</link> logic versions of multiline comments (<logiccolor>/* */</logiccolor>, <colorinline cspro_v0>{ }</colorinline>). Unlike in logic, multiline comments cannot appear in the middle of a line. A multiline comment can end on the same line that it started, or at the beginning of a subsequent line.
+
+For example, messages might be grouped in your message file as follows:
 
 <message>
 // Global messages
@@ -62,10 +64,10 @@ For example, messages might be grouped as follows in your message file:
 0002 If consent is not given, the interview will terminate.
 0003 Consent was previously given, are you sure you wish to change it to no?
 
-// Date-related messages
+/* Date-related messages */
 
-0020 Interview year (%d) can not be after system year (%d).
-0021 Interview date (YYYY/MM/DD=%4d/%02d/%02d) can not be after system date (YYYY/MM/DD=%4d/%02d/%02d).
+0020 Interview year (%d) cannot be after system year (%d).
+0021 Interview date (YYYY/MM/DD=%4d/%02d/%02d) cannot be after system date (YYYY/MM/DD=%4d/%02d/%02d).
 0022 Invalid date (month/day combo not possible MM/DD=%02d/%02d).
 </message>
 
@@ -82,7 +84,7 @@ FR(101) Bonjour
 
 CSPro will automatically display the correct message based on the current language. If no translated message exists for the current language, the default message is shown.
 
-Using the <font monospace>Language</font> directive declares that all subsequent error messages are in a given language. For example, the previous example could be rewritten as:
+Using the <colorinline message>Language=</colorinline> directive declares that all subsequent error messages are in a given language. For example, the previous example could be rewritten as:
 
 <message>
 Language=EN
