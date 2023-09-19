@@ -14,7 +14,7 @@ The <logiccolor>numeric</logiccolor> statement declares temporary numeric variab
 
 Local variables, with a limited scope, can also be declared in functions and <logiccolor>PROC</logiccolor>s. The variable will only exist and be accessible from within the function or PROC where it is declared. (In the case of a PROC, it is available in all events within that PROC after its declaration. For example, a numeric declared in the preproc will still be accessible in the postproc.)
 
-While a locally-declared variable can not have the same name as a globally-declared variable, the same local variable name can be reused in other PROCS associated with individual variables.
+While a locally-declared variable cannot have the same name as a globally-declared variable, the same local variable name can be reused in other PROCS associated with individual variables.
 
 
 <subheader>Variable Modifiers</subheader>
