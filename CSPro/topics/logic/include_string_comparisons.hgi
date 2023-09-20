@@ -1,0 +1,15 @@
+﻿The original routine to <link string_comparisons.csdoc>compare strings</link> right-pads strings with space (blank) characters as necessary so that the length of the string does not factor into the comparison. This applies to comparisons using:
+
+<list>
+    <li>String comparison functions: <logiccolor>compare</logiccolor> and <logiccolor>compareNoCase</logiccolor></li>
+    <li>String <link operators.csdoc>operators</link>: <logiccolor>=</logiccolor>, <logiccolor><></logiccolor>, <logiccolor><</logiccolor>, <logiccolor><=</logiccolor>, <logiccolor>>=</logiccolor>, <logiccolor>></logiccolor>, <logiccolor>in</logiccolor>, and <logiccolor>has</logiccolor></li>
+    <li>Statements that can compare strings: <logiccolor>recode</logiccolor> and <logiccolor>when</logiccolor></li>
+    <li>Other functions: <logiccolor>List.removeIn</logiccolor></li>
+</list>
+
+With logic version CSPro 8.0+, strings are compared without any padding. This is desirable for most strings, but when comparing strings against <link data_type.csdoc>alphanumeric dictionary items</link>, which are right-padded to match the <link item_length.csdoc>dictionary item length</link>, you will likely want to use the <logiccolor>strip</logiccolor> function when comparing strings; for example:
+
+<logic>
+if BIRD_NAME = "Bobolink" then        // Original logic version
+if strip(BIRD_NAME) = "Bobolink" then // CSPro 8.0+ logic version
+</logic>

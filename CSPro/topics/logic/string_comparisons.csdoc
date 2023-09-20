@@ -1,6 +1,38 @@
 ﻿<title>String Comparisons</title>
 
-HELP_TODO
+There are a variety of ways to compare two strings in CSPro logic. However, the way that strings are compared depends on the <link logic_version.csdoc>logic version</link>.
+
+<include include_string_comparisons.hgi />
 
 
-<seealso logic_settings.csdoc />
+<subheader>Comparison Results</subheader>
+
+The following table shows the results of string operations that are not impacted by padding and lead to the same result regardless of logic version.
+
+<table 10 header center nowrap>
+	<cell>Left String</cell><cell>Right String</cell> <cell>compare</cell><cell>compareNoCase</cell><cell>=</cell><cell>&lt;&gt;</cell><cell>&lt;</cell><cell>&lt;=</cell><cell>&gt;=</cell><cell>&gt;</cell>
+	<cell><logiccolor>"abc"</logiccolor></cell><cell><logiccolor>"abc"</logiccolor></cell><cell><logiccolor>0</logiccolor></cell><cell><logiccolor>0</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell>
+	<cell 10>&nbsp;</cell>
+	<cell><logiccolor>"abc"</logiccolor></cell><cell><logiccolor>"ABC"</logiccolor></cell><cell><logiccolor>1</logiccolor></cell><cell><logiccolor>0</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell>
+	<cell><logiccolor>"ABC"</logiccolor></cell><cell><logiccolor>"abc"</logiccolor></cell><cell><logiccolor>-1</logiccolor></cell><cell><logiccolor>0</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>false</logiccolor></cell>
+	<cell 10>&nbsp;</cell>
+	<cell><logiccolor>"abc"</logiccolor></cell><cell><logiccolor>"abcd"</logiccolor></cell><cell><logiccolor>-1</logiccolor></cell><cell><logiccolor>-1</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>false</logiccolor></cell>
+	<cell><logiccolor>"abcd"</logiccolor></cell><cell><logiccolor>"abc"</logiccolor></cell><cell><logiccolor>1</logiccolor></cell><cell><logiccolor>1</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell>
+	<cell 10>&nbsp;</cell>
+	<cell><logiccolor>"abc"</logiccolor></cell><cell><logiccolor>"xyz"</logiccolor></cell><cell><logiccolor>-1</logiccolor></cell><cell><logiccolor>-1</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>false</logiccolor></cell>
+	<cell><logiccolor>"xyz"</logiccolor></cell><cell><logiccolor>"abc"</logiccolor></cell><cell><logiccolor>1</logiccolor></cell><cell><logiccolor>1</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell>
+</table>
+
+The following table shows the results of string operations that are impacted by padding based on the logic version.
+
+<table 11 header center nowrap>
+	<cell>Left String</cell><cell>Right String</cell><cell>Logic Version</cell> <cell>compare</cell><cell>compareNoCase</cell><cell>=</cell><cell>&lt;&gt;</cell><cell>&lt;</cell><cell>&lt;=</cell><cell>&gt;=</cell><cell>&gt;</cell>
+	<cell><logiccolor>"abc"</logiccolor></cell><cell><logiccolor>"abc   "</logiccolor></cell><cell>Original</cell><cell><logiccolor>0</logiccolor></cell><cell><logiccolor>0</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell>
+	<cell 2>&nbsp;</cell><cell>CSPro 8.0+</cell><cell><logiccolor>-1</logiccolor></cell><cell><logiccolor>-1</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>false</logiccolor></cell>
+	<cell 11>&nbsp;</cell>
+	<cell><logiccolor>"abc   "</logiccolor></cell><cell><logiccolor>"abc"</logiccolor></cell><cell>Original</cell><cell><logiccolor>0</logiccolor></cell><cell><logiccolor>0</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell>
+	<cell 2>&nbsp;</cell><cell>CSPro 8.0+</cell><cell><logiccolor>1</logiccolor></cell><cell><logiccolor>1</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>false</logiccolor></cell><cell><logiccolor>true</logiccolor></cell><cell><logiccolor>true</logiccolor></cell>
+</table>
+
+
+<seealso logic_version.csdoc />

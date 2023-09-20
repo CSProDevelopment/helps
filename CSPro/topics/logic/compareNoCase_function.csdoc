@@ -1,0 +1,38 @@
+﻿<title>compareNoCase Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+i = compareNoCase(<arg>string1</arg>, <arg>string2</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>compareNoCase</logiccolor> function <link string_comparisons.csdoc>compares</link> the two strings expressions <arg>string1</arg> and <arg>string2</arg> character by character to determine the alphabetical (collating sequence) order of the strings. The strings are compared in a case-insensitive manner. The <logiccolor>compare</logiccolor> function compares strings in a case-sensitive manner.
+
+<b>Note</b>: When using the Original <link logic_version.csdoc>logic version</link>, if <arg>string1</arg> and <arg>string2</arg> are of different lengths, the function will pad the shorter string with blanks to carry out the comparison. For example, <logiccolor>compareNoCase("a", "A   ")</logiccolor> returns 0, whereas it returns -1 when using logic version CSPro 8.0+.
+
+
+<subheader>Return Value</subheader>
+
+The function returns an integer value of:
+
+<table 2 nowrap>
+	<cell>-1</cell><cell>if <arg>string1</arg> would be listed alphabetically before <arg>string2.</arg></cell>
+	<cell>0</cell><cell>if the strings are identical.</cell>
+	<cell>1</cell><cell>if <arg>string1</arg> would be listed alphabetically after <arg>string2</arg>.</cell>
+</table>
+
+
+<subheader>Example</subheader>
+
+<logic>
+if compareNoCase(FAMILY_NAME, PREVIOUS_ROUND_FAMILY_NAME) = 0 then
+	// ...
+endif;
+</logic>
+
+
+<seealso compare_function.csdoc />
