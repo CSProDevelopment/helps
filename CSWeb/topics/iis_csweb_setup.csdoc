@@ -8,7 +8,7 @@ Copy the <b>root directory</b> of your CSWeb project to <b>&lt;Drive&gt;:\inetpu
 
 <subheader>Update Directory Permissions</subheader>
 
-You will find the below directories in your document root. Their permissions will need to be updated as shown for <b>IUSR</b> and <b>IIS_USRS</b> group accounts.
+You will find the below directories in your document root. Their permissions will need to be updated as shown for <b>IUSR</b> and <b>IIS_IUSRS</b> group accounts.
 
 <list>
 	<li> <b>files</b>: Read and Write </li>
@@ -17,7 +17,7 @@ You will find the below directories in your document root. Their permissions wil
 	<li> <b>app\config</b>: Read and Write </li>
 </list>
 
-Let us use the <b>files</b> directory as an example. Right-click on <b>files</b> and select <b>Properties</b>. Then click the <b>Security</b> tab. Press the <b>Add...</b> button and type <b>IUSR</b> under <b>Enter the names to select</b>. Press the <b>Check Names</b> button and confirm your changes. Select the user name you just added, <b>IUSR</b>, then update the permissions under <b>Permissions for IUSR</b> so that <b>Read</b> and <b>Write</b> are allowed. Make sure to assign the same permissions for <b>IIS_USRS</b> group as well. Now repeat this process for <b>var</b>, <b>src\AppBundle</b>, and <b>app\config</b> setting the correct permissions.
+Let us use the <b>files</b> directory as an example. Right-click on <b>files</b> and select <b>Properties</b>. Then click the <b>Security</b> tab. Press the <b>Add...</b> button and type <b>IUSR</b> under <b>Enter the names to select</b>. Press the <b>Check Names</b> button and confirm your changes. Select the user name you just added, <b>IUSR</b>, then update the permissions under <b>Permissions for IUSR</b> so that <b>Read</b> and <b>Write</b> are allowed. Make sure to assign the same permissions for <b>IIS_IUSRS</b> group as well. Now repeat this process for <b>var</b>, <b>src\AppBundle</b>, and <b>app\config</b> setting the correct permissions.
 
 <subheader>Add Database</subheader>
 
