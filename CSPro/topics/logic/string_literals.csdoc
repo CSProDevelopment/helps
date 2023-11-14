@@ -1,21 +1,83 @@
 ﻿<title>String Literals</title>
 
-A text string is any set of characters in the computer's character set enclosed between a pair of quotation marks (") or apostrophes ('). Any spaces enclosed within the quotation marks or apostrophes are considered part of the text string. Upper- and lower-case letters may be used. However, a text string 'a' is different from a text string 'A.' If you wish to have apostrophes (') embedded within your string, you must use the quotation marks (") to enclose it, and vice-versa. For example:
+A string literal is zero or more characters enclosed between a pair of double quotation marks (<logiccolor>"..."</logiccolor>) or single quotation marks  (<logiccolor>'...'</logiccolor>). In CSPro, string literals will appear in the text editor colored in <font magenta><b>magenta</b></font>. Any spaces enclosed within the quotation marks are considered part of the string literal. Uppercase and lowercase letters may be used, and the string literal <logiccolor>"a"</logiccolor> <link string_comparisons.csdoc>is different</link> than <logiccolor>"A"</logiccolor>.
+
+String literals are compiled differently based on an application's <link logic_version.csdoc>logic settings</link>.
+
+
+<subheader>Logic Version: Original</subheader>
+
+The original version of <link string_literals.csdoc>string literals</link> does not allow for escape sequences. If you wish to have single quotation marks embedded within your string, you must use double quotation marks to enclose it, and vice versa. For example, this results in a compiler error:
+
+<color cspro_v0>
+myString = 'That's great!';
+</color>
+
+This would set <logiccolor>myString</logiccolor> to <logiccolor>'that'</logiccolor> and the trailing <logiccolor>'s great!'</logiccolor> would be considered outside the string, and would therefore result in a compiler error. Thus, if you wanted to accomplish the above, you must write:
+
+<color cspro_v0>
+myString = "That's great!";
+</color>
+
+Similarly, if you wanted to embed double quotation marks within your string, you must write the string as follows:
+
+<color cspro_v0>
+myString = 'The chair is 23" high';
+</color>
+
+
+<subheader>Escape Sequences (Logic Version: CSPro 8.0+)</subheader>
+
+With logic version CSPro 8.0+, escape sequences are processed. An escape sequence begins with a backslash character and is followed by a valid character. For example, using this logic version, the string above could be written as:
 
 <logic>
-MyString = 'That's great!'; 
+myString = 'That\'s great!';
 </logic>
 
-This would set MyString to "that" and the trailing "s great!" would be considered outside the string, and would therefore provoke a compiler error. Thus, if you wanted to accomplish the above, you must write:
+The backspace before the single quotation mark indicates that the next character is a special character. In this case, the special character does not end the string literal, but instead places a single quotation mark into the string without terminating the string literal. Note that the text editor colors escape sequences slightly differently than the other characters in a string literal.
+
+The following escape sequences are recognized by CSPro.
+
+<table 2 header>
+	<cell>Escape Sequence</cell><cell>Description</cell>
+	<cell>\'</cell><cell>single quotation mark</cell>
+	<cell>\"</cell><cell>double quotation mark</cell>
+	<cell>\\</cell><cell>backslash</cell>
+	<cell>\a</cell><cell>audible bell</cell>
+	<cell>\b</cell><cell>backspace</cell>
+	<cell>\f</cell><cell>form feed</cell>
+	<cell>\n</cell><cell>line feed</cell>
+	<cell>\r</cell><cell>carriage return</cell>
+	<cell>\t</cell><cell>horizontal tab</cell>
+	<cell>\v</cell><cell>vertical tab</cell>
+</table>
+
+The most common escape sequences are: \', \", \\, and \n. When using double quotation marks to surround a string literal, it is not required to escape single quotation marks, and vice versa.
+
+Here are some examples of string literals with escape sequences that are valid with logic version CSPro 8.0+:
 
 <logic>
-MyString = "That's great!";
+// all display: "abc"
+//              'xyz'
+errmsg("\"abc\"\n\'xyz\'");
+errmsg("\"abc\"\n'xyz'");
+errmsg('\"abc\"\n\'xyz\'');
+errmsg('"abc"\n\'xyz\'');
 </logic>
 
-Similarly, if you wanted to embed quotation marks within your string, you must write the string as follows:
+
+<subheader>Verbatim String Literals (Logic Version: CSPro 8.0+)</subheader>
+
+When using string literals that contain many backslash characters, such as a Windows file path, it may be convenient to use a verbatim string literal (when using logic version CSPro 8.0+). To create a verbatim string literal, use an @ character, immediately followed by text surrounded by double quotation marks. For example, these two strings are identical:
+
+<include include_verbatim_string_literal.hgi />
+
+Within a verbatim string literal, the only character that must be escaped is a double quotation mark, which is escaped as two subsequent quotation marks: "". For example:
 
 <logic>
-MyString = 'The chair is 23" high';
+// displays: The woman asked, "What is your favorite letter: a \ b \ c \ x \ y \ z?"
+errmsg(@"The woman asked, ""What is your favorite letter: a \ b \ c \ x \ y \ z?""");
 </logic>
 
-Strings that are surrounded by quotation marks will appear in <font magenta><b>magenta</b></font>. Strings that are surrounded by apostrophes will appear in <b>black</b>. We recommend using quotation marks ("), and if the text of the string does not turn magenta when you think you have completed entering it, it will be quickly apparent that you have not terminated your string properly.
+
+<seealso string_comparisons.csdoc logic_version.csdoc />

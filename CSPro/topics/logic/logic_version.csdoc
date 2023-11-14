@@ -23,7 +23,15 @@ When using logic version CSPro 8.0+, multiline comments start with <font monospa
 
 <subheader>String Literals</subheader>
 
-HELP_TODO
+The original version of <link string_literals.csdoc>string literals</link> does not allow for escape sequences. A few functions have special processing for characters following backslashes; for example, <colorinline cspro_v0>"\n"</colorinline> introduces a <link newline_handling.csdoc>new line</link> in an <logiccolor>errmsg</logiccolor>; <colorinline cspro_v0>"\f"</colorinline> introduces a form feed by <logiccolor>filewrite</logiccolor>. However, this can lead to unintended results; for example, it is not possible to display the error message "eight\nine\ten" on a single line because the backspace character preceding "nine" would be interpreted as a newline character.
+
+With logic version CSPro 8.0+, <link string_literals.csdoc>escape sequences</link> are processed. An escape sequence begins with a backslash character and is followed by a valid character. Because a backslash begins an escape sequence, if taking an older CSPro application and using a newer logic version, look throughout the code for backslash characters and escape them accordingly. For example, a string like <colorinline cspro_v0>"a\b\c"</colorinline> would be rewritten as <logiccolor>"a\\b\\c"</logiccolor>. Note that the text editor colors escape sequences slightly differently than the other characters in a string literal.
+
+Because escape sequences allow characters to exist in CSPro that were previously not allowed, review how CSPro <link newline_handling.csdoc>handles newline characters</link>.
+
+In addition to escape sequences, with logic version CSPro 8.0+, you can use <link string_literals.csdoc>verbatim string literals</link>, which are useful for specifying text that may contain many backslash characters. For example, these two strings are identical:
+
+<include include_verbatim_string_literal.hgi />
 
 
 <subheader>String Comparisons</subheader>
