@@ -21,6 +21,17 @@ For example, suppose a message file contains the following lines:
 When <logiccolor>errmsg(1)</logiccolor> is executed in a data entry application, the message "This is the first message" is displayed on screen. When <logiccolor>errmsg(2)</logiccolor> is executed, the message "This is the second message" is displayed.
 
 
+<subheader>Message Text Escape Sequences</subheader>
+
+By default, the message text following the message number is processed without regard to <link string_literals.csdoc>escape sequences</link> (character sequences that begin with a backslash character). However, if using <link logic_version.csdoc>logic version</link> CSPro 8.0+, message text that begins with a single or double quotation mark is processed as if it were a string literal or verbatim string literal. For example, the following messages are identical:
+
+<message>
+// all evaluate to: I like to use backslashes \ and "quotation" 'marks'!
+1 I like to use backslashes \ and "quotation" 'marks'!
+1 "I like to use backslashes \\ and \"quotation\" 'marks'!"
+1 @"I like to use backslashes \ and ""quotation"" 'marks'!"
+</message>
+
 <subheader>Messages with Arguments</subheader>
 
 Arguments can be specified in the <logiccolor>errmsg</logiccolor> function. <link message_formatting_options.csdoc>These arguments</link> can be numeric expressions or string expressions. String arguments in the error message text are indicated by <b>%s</b>. Integer numeric arguments are indicated with <b>%d</b>. Decimal numeric arguments are indicated with <b>%f</b>. For example, a message file might contain the following:
@@ -112,6 +123,12 @@ FR("Hello") Bonjour
 </message>
 
 Calling <logiccolor>tr("Hello")</logiccolor> in logic will display the correct string based on the current language.
+
+Based on the <link logic_version.csdoc>logic version</link>, escape sequences in translated string literals may be processed. For example:
+
+<message>
+FR("first line\nsecond line") "première ligne\ndeuxième ligne"
+</message>
 
 
 <seealso multiple_language_applications.csdoc tr_function.csdoc />

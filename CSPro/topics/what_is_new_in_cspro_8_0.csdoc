@@ -33,6 +33,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 	<li>The <link create_a_cspro_application.csdoc>New File dialog</link> has been redesigned. Note that the first option has changed to the <link data_entry_application_types.csdoc>CAPI Data Entry Application</link> type.</li>
 	<li>The Files tab context menu has an option, Pack Application, that simplifies creating a ZIP file of an application's components (by automating the <link CSPack::introduction_to_pack_application.csdoc>Pack Application</link> process).</li>
 	<li><link "https://en.wikipedia.org/wiki/Approximate_string_matching">Approximate string matching</link> is used to better suggest symbol and functions names in the logic editor's autocomplete feature as well as in compiler errors.</li>
+	<li>The messages defined in <link message_file_mgf.csdoc>message files</link> are now checked for validity while compiling an application. Double-clicking on an error or warning in the compiler output window that originated from an external message file will result in that file being opened in <link CSCode::introduction.csdoc>CSCode</link>.</li>
 </list>
 
 
@@ -74,6 +75,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 	<li>The <logiccolor>config</logiccolor> variable modifier can now be used with <logiccolor>numeric</logiccolor> variables, and can be used with variables not declared in <logiccolor>PROC GLOBAL</logiccolor>.</li>
 	<li>Frequency tables can be written directly to <link templated_reports.csdoc>templated reports</link> by using the <logiccolor>Freq.save</logiccolor> function.</li>
 	<li>String expressions can be assigned to <link Document.csdoc>Document</link> objects.</li>
+	<li>Double-clicking on an error or warning in the compiler output window that originated from an <link logic_file_apc.csdoc>external logic file</link> while holding the <b>Ctrl</b> button will result in that file being opened in <link CSCode::introduction.csdoc>CSCode</link>, no longer Notepad++.</li>
 	<li>Some logic features have been <link deprecated_features.csdoc>removed</link> or are slated for removal:
 		<list>
 			<li>Creating dynamic value sets using <logiccolor>Array</logiccolor> objects has been removed. The <logiccolor>ValueSet</logiccolor> object should be used instead. When running a .pen file created prior to CSPro 8.0, the functions will execute properly (though this will not be the case in a future release).</li>
@@ -96,7 +98,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 <subheader>HTML and JavaScript</subheader>
 
 <list>
-	<li>Two additional <link html_in_cspro.csdoc>JavaScript libraries</link>, Chart.js and sprintf-js, and included in the <i>external</i> directory on both Windows and Android.</li>
+	<li>Five additional <link html_in_cspro.csdoc>JavaScript libraries</link> are included in the <i>html/external</i> directory on both Windows and Android: <link "https://www.chartjs.org">Chart.js</link>, <link "https://handlebarsjs.com">Handlebars.js</link>, <link "https://jqueryui.com">jQuery UI</link>, <link "https://lindell.me/JsBarcode">JsBarcode</link>, and <link "https://github.com/alexei/sprintf.js">sprintf-js</link>.</li>
 </list>
 
 
