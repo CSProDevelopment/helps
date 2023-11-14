@@ -13,13 +13,13 @@ s = prompt(<arg>message</arg>『, <arg>initial_value</arg>』『, <arg>prompt_ty
 The <logiccolor>prompt</logiccolor> function displays a dialog box showing the string expression <arg>message</arg> and provides a text box for an operator to enter a string value. An optional string expression <arg>initial_value</arg> determines the starting value displayed to the operator. Another optional argument, <arg>prompt_type</arg>, provides a way to customize the kind of entry permitted. Types include:
 
 <list>
-	<li><b>Password</b>: The entered characters will be masked with asterisks.</li>
-	<li><b>Uppercase</b>: Alphabetical characters will automatically be converted to their uppercase equivalents.</li>
-	<li><b>Numeric</b>: Only numeric characters can be entered.</li>
-	<li><b>Multiline</b>: The text box will support multiple lines of data entry. Lines are separated by the <link newline_handling.csdoc>newline character</link>: <logiccolor>'\n'</logiccolor>.</li>
+	<li><b>password</b>: The entered characters will be masked with asterisks.</li>
+	<li><b>uppercase</b>: Alphabetical characters will automatically be converted to their uppercase equivalents.</li>
+	<li><b>numeric</b>: Only numeric characters can be entered.</li>
+	<li><b>multiline</b>: The text box will support multiple lines of data entry. Lines are separated by the <link newline_handling.csdoc>newline character</link>: <logiccolor>'\n'</logiccolor>.</li>
 </list>
 
-The <b>password</b> and <b>multiline</b> options are not compatible so when using one of these options, the other option cannot be used.
+The <b>password</b> and <b>multiline</b> options are not compatible so when using one of these options, the other option cannot be used. If an <arg>initial_value</arg> is specified that contains newline characters, but the <b>multiline</b> option is not used, the newlines are converted to spaces.
 
 
 <subheader>Return Value</subheader>

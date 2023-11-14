@@ -66,6 +66,7 @@
   { "path": "paradata_log_file_cslog.csdoc", "title": ".cslog" }, 
   { "path": "notes_file_csnot.csdoc", "title": ".csnot" }, 
   { "path": "application_properties_file_csprops.csdoc", "title": ".csprops" }, 
+  { "path": "data_source_text.csdoc", "title": ".dat" }, 
   { "path": "data_dictionary_file_dcf.csdoc", "title": ".dcf" }, 
   { "path": "binary_data_entry_application_file_pen.csdoc", "title": ".enc" }, 
   { "path": "data_entry_application_file_ent.csdoc", "title": ".ent" }, 
@@ -89,6 +90,7 @@
   }, 
   { "path": "file_types.csdoc", "title": ".pffRunner" }, 
   { "path": "question_text_file_qsf.csdoc", "title": ".qsf" }, 
+  { "path": "data_source_semicolon.csdoc", "title": ".skv" }, 
   { "path": "file_types.csdoc", "title": ".ssf" }, 
   { "path": "status_file_sts.csdoc", "title": ".sts" }, 
   { "path": "saved_arrays_file_sva.csdoc", "title": ".sva" }, 
@@ -96,6 +98,7 @@
   { "path": "table_matrices_index_file_tabidx.csdoc", "title": ".tabidx" }, 
   { "path": "table_matrices_index_file_tabidx.csdoc", "title": ".tai" }, 
   { "path": "tables_file_tbw.csdoc", "title": ".tbw" }, 
+  { "path": "data_source_tab.csdoc", "title": ".tsv" }, 
   { "path": "file_types.csdoc", "title": ".xl2cs" }, 
   { "path": "tabulation_application_file_xtb.csdoc", "title": ".xtb" }, 
   { "path": "table_specifications_file_xts.csdoc", "title": ".xts" }, 
@@ -1014,6 +1017,9 @@
       { "path": "data_source_memory.csdoc", "title": "In-Memory" }, 
       { "path": "data_source_json.csdoc", "title": "JSON" }, 
       { "path": "data_sources.csdoc", "title": "None" }, 
+      { "path": "data_source_semicolon.csdoc", "title": "Semicolon Delimited" }, 
+      { "path": "data_source_tab.csdoc", "title": "Tab" }, 
+      { "path": "data_source_text.csdoc", "title": "Text" }, 
       { "path": "data_sources.csdoc", "title": "Text" }
     ]
   }, 
@@ -3218,6 +3224,7 @@
       { "path": "Path_selectFile_function.csdoc", "~title": "Path.selectFile Function" }
     ]
   }, 
+  { "path": "data_source_semicolon.csdoc", "~title": "Semicolon Delimited Data Source" }, 
   { "path": "order_of_executing_data_entry_events.csdoc", "title": "Sequence", 
     "subindex": [ 
       { "path": "order_of_executing_data_entry_events.csdoc", "title": "Dictated by CSPro" }, 
@@ -3594,6 +3601,7 @@
     ]
   }, 
   { "path": "systime_function.csdoc", "~title": "SysTime Function" }, 
+  { "path": "data_source_tab.csdoc", "~title": "Tab Delimited Data Source" }, 
   { "path": "add_insert_and_delete_tables.csdoc", "title": "Table", 
     "subindex": [ 
       { "path": "add_insert_and_delete_tables.csdoc", "title": "Add" }, 
@@ -3707,7 +3715,7 @@
     ]
   }, 
   { "path": "text_box.csdoc", "~title": "Text Box" }, 
-  { "path": "data_sources.csdoc", "title": "Text Data Source" }, 
+  { "path": "data_source_text.csdoc", "~title": "Text Data Source" }, 
   { "path": "if_statement.csdoc", "title": "Then", 
     "subindex": [ 
       { "path": "if_statement.csdoc", "~title": "If Statement" }
@@ -4119,5 +4127,6 @@
       { "path": "Map_zoomTo_function.csdoc", "~title": "Map.zoomTo Function" }
     ]
   }, 
-  { "path": "newline_handling.csdoc", "title": "\\n (newline)" }
+  { "path": "newline_handling.csdoc", "title": "\\n (newline)" }, 
+  { "path": "newline_handling.csdoc", "title": "␤" }
 ]

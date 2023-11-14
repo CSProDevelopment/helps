@@ -75,6 +75,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 	<li>The <logiccolor>config</logiccolor> variable modifier can now be used with <logiccolor>numeric</logiccolor> variables, and can be used with variables not declared in <logiccolor>PROC GLOBAL</logiccolor>.</li>
 	<li>Frequency tables can be written directly to <link templated_reports.csdoc>templated reports</link> by using the <logiccolor>Freq.save</logiccolor> function.</li>
 	<li>String expressions can be assigned to <link Document.csdoc>Document</link> objects.</li>
+	<li>Lines written using <logiccolor>File.write</logiccolor> or <logiccolor>filewrite</logiccolor> are now terminated with a single <logiccolor>"\n"</logiccolor> character, no longer with <logiccolor>"\r\n"</logiccolor>.</li>
 	<li>Double-clicking on an error or warning in the compiler output window that originated from an <link logic_file_apc.csdoc>external logic file</link> while holding the <b>Ctrl</b> button will result in that file being opened in <link CSCode::introduction.csdoc>CSCode</link>, no longer Notepad++.</li>
 	<li>Some logic features have been <link deprecated_features.csdoc>removed</link> or are slated for removal:
 		<list>

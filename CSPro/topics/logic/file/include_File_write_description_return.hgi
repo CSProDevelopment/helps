@@ -1,0 +1,14 @@
+The <arg>message</arg> is either a string expression or a numeric <link message_file_mgf.csdoc>message number</link> that contains the text that is written to the file. If the text contains any <link message_formatting_options.csdoc>message formatters</link>, the optional arguments <arg>argument1</arg> to <arg>argumentN</arg> will be inserted into the text. There are some additional options for file output:
+
+<list>
+	<li>If you want to break a line of text into two lines, place <logiccolor>'\n'</logiccolor> (<link newline_handling.csdoc>newline</link>) where you want the line divided.</li>
+	<li>If you want a text line to begin on a new page, place <logiccolor>'\f'</logiccolor> (form feed) at the beginning of the text string.</li>
+	<li>If using the Original <link logic_version.csdoc>logic version</link>, to output <b>\n</b> or <b>\f</b> as text instead of a new line or a new page, use a double backslash (e.g., <logiccolor>"\\n"</logiccolor>).</li>
+</list>
+
+Alternatively, the <arg>message</arg> can be a string <link List.csdoc>List</link>. If a List is provided, then each string contained in the List is written to the file, allowing for the output of multiple lines of text with one function call.
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.

@@ -2,12 +2,12 @@
 
 A string literal is zero or more characters enclosed between a pair of double quotation marks (<logiccolor>"..."</logiccolor>) or single quotation marks  (<logiccolor>'...'</logiccolor>). In CSPro, string literals will appear in the text editor colored in <font magenta><b>magenta</b></font>. Any spaces enclosed within the quotation marks are considered part of the string literal. Uppercase and lowercase letters may be used, and the string literal <logiccolor>"a"</logiccolor> <link string_comparisons.csdoc>is different</link> than <logiccolor>"A"</logiccolor>.
 
-String literals are compiled differently based on an application's <link logic_version.csdoc>logic settings</link>.
+String literals are compiled differently based on an application's <link logic_version.csdoc>logic version</link>.
 
 
 <subheader>Logic Version: Original</subheader>
 
-The original version of <link string_literals.csdoc>string literals</link> does not allow for escape sequences. If you wish to have single quotation marks embedded within your string, you must use double quotation marks to enclose it, and vice versa. For example, this results in a compiler error:
+The <link logic_version.csdoc>original version</link> of string literals does not allow for escape sequences. If you wish to have single quotation marks embedded within your string, you must use double quotation marks to enclose it, and vice versa. For example, this results in a compiler error:
 
 <color cspro_v0>
 myString = 'That's great!';
@@ -28,7 +28,7 @@ myString = 'The chair is 23" high';
 
 <subheader>Escape Sequences (Logic Version: CSPro 8.0+)</subheader>
 
-With logic version CSPro 8.0+, escape sequences are processed. An escape sequence begins with a backslash character and is followed by a valid character. For example, using this logic version, the string above could be written as:
+With <link logic_version.csdoc>logic version</link> CSPro 8.0+, escape sequences are processed. An escape sequence begins with a backslash character and is followed by a valid character. For example, using this logic version, the string above could be written as:
 
 <logic>
 myString = 'That\'s great!';
@@ -52,7 +52,7 @@ The following escape sequences are recognized by CSPro.
 	<cell>\v</cell><cell>vertical tab</cell>
 </table>
 
-The most common escape sequences are: \', \", \\, and \n. When using double quotation marks to surround a string literal, it is not required to escape single quotation marks, and vice versa.
+The escape sequences used most frequently are for quotation marks (\' and \"), backslashes (\\), and <link newline_handling.csdoc>newline characters</link> (\n). When using double quotation marks to surround a string literal, it is not required to escape single quotation marks, and vice versa.
 
 Here are some examples of string literals with escape sequences that are valid with logic version CSPro 8.0+:
 

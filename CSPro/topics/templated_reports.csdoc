@@ -51,6 +51,8 @@ There are three ways of writing numeric and string expressions to templated repo
 <li><logiccolor Report>$.write</logiccolor> writes directly to the report.</li>
 </list>
 
+Be aware that outputting <link newline_handling.csdoc>newlines</link> to a non-HTML report, such as a CSV file, can lead to formatting issues unless properly escaped with the <logiccolor>encode</logiccolor> function.
+
 
 <subheader>Preview</subheader>
 
