@@ -1,0 +1,32 @@
+<subheader>Example (CSPro Logic)</subheader>
+
+<logic>
+string clipboardText = CS.Clipboard.getText();
+
+if clipboardText = "" then
+    clipboardText = "<There was no text on the clipboard.>";
+endif;
+
+clipboardText = maketext("Clipboard text modified by CSPro at %s: %s", timestring(), clipboardText);
+
+CS.Clipboard.putText(text := clipboardText);
+</logic>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+let clipboardText = CS.Clipboard.getText();
+
+if( clipboardText === undefined ) {
+    clipboardText = "<There was no text on the clipboard.>";
+}
+
+clipboardText = "Clipboard text modified by CSPro at " +
+                new Date().toString() + ": " +
+                clipboardText;
+
+CS.Clipboard.putText({
+    text: clipboardText
+});
+</color>

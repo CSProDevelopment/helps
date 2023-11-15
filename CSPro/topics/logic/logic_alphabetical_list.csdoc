@@ -1,6 +1,6 @@
 ﻿<title>Alphabetical List of Functions and Statements</title>
 
-The following table lists functions and statements that can be used in logic. In addition, some CSPro <link object_dot_notation.csdoc>objects</link> have functions that can be invoked on the object. A list of such functions can be found in the summary pages for each of these objects:
+The following table lists functions and statements that can be used in logic. Listings that are marked <sup>(CS)</sup> are part of the <link action_invoker.csdoc>Action Invoker</link>. In addition, some CSPro <link object_dot_notation.csdoc>objects</link> have functions that can be invoked on the object. A list of such functions can be found in the summary pages for each of these objects:
 
 <include include_object_list.hgi / >
 
@@ -26,6 +26,8 @@ The following table lists functions and statements that can be used in logic. In
 	<cell 2>&nbsp;</cell>
 	<cell><logiccolor>changekeyboard</logiccolor></cell><cell>Modifies the keyboard input associated with certain fields.</cell>
 	<cell><logiccolor>clear</logiccolor></cell><cell>Initializes the memory values of data items defined in external files to zero or blank.</cell>
+	<cell><action>Clipboard.getText</action> <sup>(CS)</sup></cell><cell>Gets the text on the clipboard.</cell>
+	<cell><action>Clipboard.putText</action> <sup>(CS)</sup></cell><cell>Puts text onto the clipboard.</cell>
 	<cell><logiccolor>close</logiccolor></cell><cell>Closes a previously opened file.</cell>
 	<cell><logiccolor>cmcode</logiccolor></cell><cell>Returns the number of months since the year 1900 given a month and year.</cell>
 	<cell><logiccolor>compare</logiccolor></cell><cell>Returns the alphabetical order (i.e., collating sequence) of two strings using a case-sensitive comparison.</cell>

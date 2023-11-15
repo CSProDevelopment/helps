@@ -1,0 +1,34 @@
+﻿<title>Clipboard.putText Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.Clipboard.putText(<arg>text</arg> := ...)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+	<cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+	<cell><arg>text</arg></cell><cell>The text to put onto the clipboard.</cell><cell>string, number~!~required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Clipboard.putText</action> <link action_invoker.csdoc>action</link> puts text onto the clipboard. The text will be available to other applications, or from within CSPro using the <action>Clipboard.getText</action> action.
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action does not throw exceptions on Windows. On Android, the action can throw an exception if there is an error accessing the clipboard.
+
+
+<include include_clipboard_examples.hgi />
+
+
+<seealso CS_Clipboard.csdoc CS_Clipboard_getText.csdoc />

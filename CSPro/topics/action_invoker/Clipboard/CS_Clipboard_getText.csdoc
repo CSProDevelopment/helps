@@ -1,0 +1,31 @@
+﻿<title>Clipboard.getText Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Clipboard.getText();
+</logicsyntax>
+
+The action does not require any arguments.
+
+
+<subheader>Description</subheader>
+
+The <action>Clipboard.getText</action> <link action_invoker.csdoc>action</link> returns text currently on the clipboard. If the clipboard contains data that cannot be represented as text, the action will not return anything.
+
+
+<subheader>Return Value</subheader>
+
+If text is currently on the clipboard, the action returns a string containing the text on the clipboard. If no text is on the clipboard, the action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action does not throw exceptions.
+
+
+<include include_clipboard_examples.hgi />
+
+
+<seealso CS_Clipboard.csdoc CS_Clipboard_putText.csdoc />
