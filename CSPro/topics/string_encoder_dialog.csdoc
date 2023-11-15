@@ -1,0 +1,32 @@
+﻿<title>String Encoder Dialog</title>
+<context ID_CODE_STRING_ENCODER IDD_STRING_ENCODER />
+
+When editing a data entry or batch application, select <b>Code</b> -> <b>String Encoder</b>. A dialog is shown that facilitates working with <link string_literals.csdoc>string literals</link> by encoding and decoding text into a variety of string literal formats.
+
+<center><image string_encoder_dialog.png /></center>
+
+The String Encoder dialog allows you enter text in one of four formats and to see the text encoded in the other three formats:
+
+<list>
+	<li>Text</li>
+	<li>CSPro Logic</li>
+	<li><link JSON_primer.csdoc>JSON</link> String</li>
+	<li><link "https://en.wikipedia.org/wiki/Percent-encoding">Percent Encoding</link> (used in <link connection_string.csdoc>connection strings</link>)</li>
+</list>
+
+The text in each section is updated as you type, and if there is an error parsing the text, the error is displayed in red above the text.
+
+<center><image string_encoder_dialog_error.png /></center>
+
+The <b>Copy</b> button copies the text in that section to the clipboard. Within CSPro logic, the <logiccolor>encode</logiccolor> function can convert text to JSON string and percent encoding formats.
+
+A few options allow you to control the encoding:
+
+<list>
+	<li><b>CSPro Logic: Split newlines across multiple lines</b>: If checked, newlines in the text input will be split on multiple lines for readability, resulting in multiple string literals that are automatically concatenated by the CSPro compiler. This option is enabled only when using <link logic_version.csdoc>logic version</link> CSPro 8.0+.</li>
+	<li><b>CSPro Logic: Use verbatim string literals</b>: If checked, the text will be encoded as a <link string_literals.csdoc>verbatim string literal</link>. This option is enabled only when using <link logic_version.csdoc>logic version</link> CSPro 8.0+.</li>
+	<li><b>JSON: Escape forward slashes</b>: Forward slashes in JSON strings do not need to be escaped, but many libraries do escape such characters. If checked, forward slashes are escaped.</li>
+</list>
+
+
+<seealso string_literals.csdoc path_adjuster_dialog.csdoc encode_function.csdoc />
