@@ -1,4 +1,5 @@
 ﻿<title>Data Entry Menu</title>
+<context ID_CODE_PASTE_STRING_LITERAL />
 
 The following is a summary of the menu options available while editing data entry applications:
 
@@ -31,7 +32,6 @@ The following is a summary of the menu options available while editing data entr
 	<cell>Find</cell><cell>Find text in the procedures.</cell>
 	<cell>Find Next</cell><cell>Find the next occurrence of text in the procedures.</cell>
 	<cell>Replace</cell><cell>Replace text with new text in the procedures.</cell>
-	<cell><link symbol_analysis.csdoc>Symbol Analysis</link></cell><cell>View information about where each dictionary symbol, form symbol, and user-defined function is used in an application.</cell>
 	<cell>Format Logic</cell><cell>Format the logic using a defined CSPro code formatting style.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell 2><subheader>View</subheader></cell>
@@ -41,8 +41,8 @@ The following is a summary of the menu options available while editing data entr
 	<cell><link change_the_view.csdoc>Full Screen</link></cell><cell>Hide the trees and show full screen view.</cell>
 	<cell><link data_entry_elements.csdoc>Form</link></cell><cell>Show forms in the right-hand window.</cell>
 	<cell><link view_logic.csdoc>Logic</link></cell><cell>Show logic procedures in the right-hand window.</cell>
-	<cell><link questions.csdoc>CAPI Questions</link></cell><cell>Show the screen to enter question text.</cell>
-	<cell><link code_folding.csdoc>Code Folding</link></cell><cell>Options to fold the application's logic.</cell>
+	<cell><link questions.csdoc>Question Text</link></cell><cell>Show the screen to enter question text.</cell>
+	<cell><link templated_reports.csdoc>Report Preview</link></cell><cell>Displays a preview of a <link templated_reports.csdoc>templated report</link>.</cell>
 	<cell><link onkey_character_map.csdoc>OnKey Character Map</link></cell><cell>Calculate <logiccolor>OnKey</logiccolor> and <logiccolor>OnChar</logiccolor> codes.</cell>
 	<cell><link user_configuration_settings.csdoc>User and Configuration Settings</link></cell><cell>Open a dialog that allows you to edit the user and configuration settings.</cell>
 	<cell 2>&nbsp;</cell>
@@ -56,20 +56,21 @@ The following is a summary of the menu options available while editing data entr
 	<cell><link map_case_list.csdoc>Map Case Listing</link></cell><cell>Allow already-captured cases to be displayed on a map using the case's latitude and longitude coordinates.</cell>
 	<cell><link change_default_text_font.csdoc>Default Text Font</link></cell><cell>Change the default text font settings.</cell>
 	<cell><link change_field_font.csdoc>Field Font</link></cell><cell>Change the field font settings.</cell>
-	<cell><link deprecated_features.csdoc>Deprecation Warnings</link></cell><cell>Modify the setting for the kind of deprecation warnings to display during compilation.</cell>
+	<cell><link change_field_colors.csdoc>Field Colors</link></cell><cell>Modify the field colors used by CSEntry.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell 2><subheader>Align</subheader></cell>
 	<cell><link align_things.csdoc>Left</link></cell><cell>Position to left-most item.</cell>
 	<cell><link align_things.csdoc>Center</link></cell><cell>Center items as a group.</cell>
 	<cell><link align_things.csdoc>Right</link></cell><cell>Position to right-most item.</cell>
 	<cell><link align_things.csdoc>Top</link></cell><cell>Position to top-most item.</cell>
-	<cell><link align_things.csdoc>Mid</link></cell><cell>Align mid-points of items as a group.</cell>
+	<cell><link align_things.csdoc>Middle</link></cell><cell>Align mid-points of items as a group.</cell>
 	<cell><link align_things.csdoc>Bottom</link></cell><cell>Position to bottom-most item.</cell>
 	<cell><link align_things.csdoc>Evenly Horizontal</link></cell><cell>Space evenly left to right.</cell>
 	<cell><link align_things.csdoc>Evenly Vertical</link></cell><cell>Space evenly top to bottom.</cell>
+	<include include_menu_code.hgi />
 	<cell 2>&nbsp;</cell>
-	<cell 2><subheader>CAPI</subheader></cell>
-	<cell><link define_languages.csdoc>CAPI Languages</link></cell><cell>Define the set of CAPI languages used in application.</cell>
+	<cell 2><subheader>Question Text</subheader></cell>
+	<cell><link define_languages.csdoc>Languages</link></cell><cell>Define the set of CAPI languages used in application.</cell>
 	<cell><link question_text_edit_styles.csdoc>Edit Styles</link></cell><cell>Define custom styles to use in the question window.</cell>
 	<cell>Bold</cell><cell>Switch between <b>bold</b> and non-bold text.</cell>
 	<cell>Italic</cell><cell>Switch between <i>italicized</i> and non-italicized text.</cell>

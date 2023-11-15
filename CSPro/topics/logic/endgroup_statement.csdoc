@@ -8,7 +8,7 @@ endgroup;
 
 <subheader>Description</subheader>
 
-The <logiccolor>endgroup</logiccolor> statement finishes data entry for the current group (roster or multiply-occurring form) in a data entry application. It can not be used in a batch application. If the statement is used in an item procedure, it causes an automatic skip to the <b>postproc</b> of the current group/record. If the statement is executed in the <b>preproc</b> of the group/record, the entire group/record is skipped and control passes to the group/record's <b>postproc</b>.
+The <logiccolor>endgroup</logiccolor> statement finishes data entry for the current group (roster or multiply-occurring form) in a data entry application. It cannot be used in a batch application. If the statement is used in an item procedure, it causes an automatic skip to the <b>postproc</b> of the current group/record. If the statement is executed in the <b>preproc</b> of the group/record, the entire group/record is skipped and control passes to the group/record's <b>postproc</b>.
 
 This function has superseded the <font blue>endsect</font> statement. Where <font blue>endsect</font> exists in an application, it will continue to work, but users creating new applications should adopt the <logiccolor>endgroup</logiccolor> instruction.
 

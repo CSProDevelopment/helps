@@ -4,6 +4,7 @@ The following table lists functions and statements that can be used in logic. In
 
 <include include_object_list.hgi / >
 
+
 <table 2 header nowrap>
 	<cell>Function/Statement</cell><cell>Description</cell>
 	<cell><logiccolor>abs</logiccolor></cell><cell>Returns the absolute value of a numeric expression.</cell>
@@ -27,7 +28,8 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>clear</logiccolor></cell><cell>Initializes the memory values of data items defined in external files to zero or blank.</cell>
 	<cell><logiccolor>close</logiccolor></cell><cell>Closes a previously opened file.</cell>
 	<cell><logiccolor>cmcode</logiccolor></cell><cell>Returns the number of months since the year 1900 given a month and year.</cell>
-	<cell><logiccolor>compare</logiccolor></cell><cell>Returns the alphabetical order (i.e., collating sequence) of the two strings.</cell>
+	<cell><logiccolor>compare</logiccolor></cell><cell>Returns the alphabetical order (i.e., collating sequence) of two strings using a case-sensitive comparison.</cell>
+	<cell><logiccolor>compareNoCase</logiccolor></cell><cell>Returns the alphabetical order of two strings using a case-insensitive comparison.</cell>
 	<cell><logiccolor>compress</logiccolor></cell><cell>Compresses some number of files into a single ZIP file.</cell>
 	<cell><logiccolor>concat</logiccolor></cell><cell>Joins two or more strings into one string.</cell>
 	<cell><logiccolor>config</logiccolor></cell><cell>Declares <logiccolor>string</logiccolor> variables prefilled with values defined in the <link user_configuration_settings.csdoc>configuration settings</link>.</cell>
@@ -292,5 +294,6 @@ The following table lists functions and statements that can be used in logic. In
 	<cell><logiccolor>write</logiccolor></cell><cell>Write to a text file.</cell>
 	<cell><logiccolor>writecase</logiccolor></cell><cell>Writes a case from memory to an external file.</cell>
 </table>
+
 
 <seealso list_of_reserved_words.csdoc />

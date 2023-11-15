@@ -4,11 +4,13 @@ The Text Box attribute is the default option for a field and indicates that no c
 
 <center><image unicode_textbox1.png /></center>
 
+
 <subheader>Text Box (No Tickmarks)</subheader>
 
 The Text Box (No Tickmarks) option is only available for alphanumeric fields. On Windows, CSEntry will not display any tickmarks and characters will be displayed with connecting features, if any are associated with the script being used. This is useful for some scripts, like Arabic, which have elements that connect, or for other languages that require multiple characters to create a composite character. In the CSPro Designer, you can click on the field and resize it horizontally to set an appropriate size. During entry, ahould an interviewer wish to paste values into this field, they can trigger the context menu by pressing Shift+F10 and choose the paste option.
 
 <center><image unicode_textbox2.png /></center>
+
 
 <subheader>Text Box (Multiline)</subheader>
 
@@ -16,14 +18,14 @@ The Text Box (Multiline) capture type provides a convenient way to collect multi
 
 <center><image unicode_textbox3.png /></center>
 
+For multiline controls, a <link newline_handling.csdoc>newline character</link>, <logiccolor>'\n'</logiccolor>, is placed in the field text for every line break.
+
 Due to the lack of tickmarks, a data entry operator will not immediately know how many characters they have entered into the field and how many characters are remaining. CSEntry shows, on the status bar at the bottom of the screen, the number of characters entered, and the total size of the field.
 
 <center><image unicode_textbox4.png /></center>
 
-For multiline controls, the characters \n will be placed in the field text for every line break. CSEntry will automatically interpret \n characters as linebreaks, but if you use your data with another software package, you may need to adjust for this behavior. In the above screenshot, the text would appear in the data file as:
-
-<font monospace>100 Main Street, Suite 1234\nAnytown, NY 00000-0000</font>
 
 Both of these Text Box options can also be specified for alpha fields in rosters. To resize the field within a roster you may need to first adjust the roster's row heights or column widths.
+
 
 <seealso capture_types.csdoc number_pad.csdoc />

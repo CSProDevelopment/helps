@@ -1,14 +1,19 @@
-﻿<title>Compare Function</title>
+﻿<title>compare Function</title>
+
 
 <subheader>Format</subheader>
 
 <logicsyntax>
-i = compare(<arg>string1</arg>,<arg>string2</arg>);
+i = compare(<arg>string1</arg>, <arg>string2</arg>);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
-The <logiccolor>compare</logiccolor> function compares the two strings expressions <arg>string1</arg> and <arg>string2</arg> character by character to determine the alphabetical (collating sequence) order of the strings. If <arg>string1</arg> and <arg>string2</arg> are of different lengths, the function will pad the shorter string with blanks to carry out the comparison.
+The <logiccolor>compare</logiccolor> function <link string_comparisons.csdoc>compares</link> the two strings expressions <arg>string1</arg> and <arg>string2</arg> character by character to determine the alphabetical (collating sequence) order of the strings. The strings are compared in a case-sensitive manner. The <logiccolor>compareNoCase</logiccolor> function compares strings in a case-insensitive manner.
+
+<b>Note</b>: When using the Original <link logic_version.csdoc>logic version</link>, if <arg>string1</arg> and <arg>string2</arg> are of different lengths, the function will pad the shorter string with blanks to carry out the comparison. For example, <logiccolor>compare("a", "a   ")</logiccolor> returns 0, whereas it returns -1 when using logic version CSPro 8.0+.
+
 
 <subheader>Return Value</subheader>
 
@@ -20,13 +25,15 @@ The function returns an integer value of:
 	<cell>1</cell><cell>if <arg>string1</arg> would be listed alphabetically after <arg>string2</arg>.</cell>
 </table>
 
+
 <subheader>Example</subheader>
 
 <logic>
-if compare(thisCaseKey,previousCaseKey) = -1 then
+if compare(thisCaseKey, previousCaseKey) = -1 then
 	// ...
 endif;
 </logic>
+
 
 Direct string comparisons can also be made. For example, the following code is permissible:
 
@@ -35,3 +42,6 @@ if thisCaseKey < previousCaseKey then
 	// ...
 endif;
 </logic>
+
+
+<seealso compareNoCase_function.csdoc operators.csdoc />

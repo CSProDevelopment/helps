@@ -2,6 +2,7 @@
 
 An expression is a combination of operators and operands. Operands can be constants, items, variables, functions, or some combination thereof. Operators can be <b>arithmetic</b> (+, -, *, /), <b>relational</b> (=, &lt;>, >, &lt;, >=, &lt;=) or <b>logical</b> (<logiccolor>and, or, not</logiccolor>). Every expression evaluates to a value and can therefore be used as a sub-expression of other expressions. There are three types of expressions: numeric, string, and logical.
 
+
 <subheader>Numeric Expressions</subheader>
 
 They evaluate to numbers. The following are numeric expressions:
@@ -14,15 +15,17 @@ A * (B + C/D)
 A + sqrt(B)
 </logic>
 
+
 <subheader>String Expressions</subheader>
 
 They evaluate to strings. The following are string expressions:
 
 <logic>
-answer = "Yes";
-concat(FIRST_NAME, " ", LAST_NAME);
-edit("ZZZZ9", A + B);
+"Yes"
+concat(FIRST_NAME, " ", LAST_NAME)
+edit("ZZZZ9", A + B)
 </logic>
+
 
 <subheader>Logical Expressions</subheader>
 

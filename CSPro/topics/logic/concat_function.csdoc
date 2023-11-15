@@ -1,18 +1,22 @@
 ﻿<title>Concat Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 s = concat(<arg>string1</arg>, <arg>string2</arg>『, ..., <arg>stringN</arg>』);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <logiccolor>concat</logiccolor> function concatenates the values of two or more string expressions (<arg>string1</arg> + <arg>string2</arg> + ... + <arg>stringN</arg>). The strings can be alphanumeric items, text strings, or functions that return strings. You can also use the + operator to concatenate strings.
+The <logiccolor>concat</logiccolor> function concatenates the values of two or more string expressions (<arg>string1</arg> + <arg>string2</arg> + ... + <arg>stringN</arg>). The strings can be alphanumeric items, text strings, or functions that return strings. You can also use the <link string_concatenation.csdoc>+ operator</link> to concatenate strings.
+
 
 <subheader>Return Value</subheader>
 
 The function returns the concatenated string.
+
 
 <subheader>Example</subheader>
 
@@ -23,4 +27,5 @@ LAST_NAME = "Henry";
 string full_name = concat(FIRST_NAME, " ", LAST_NAME); // full_name is: John Henry
 </logic>
 
-<seealso plus_string_concatenation.csdoc pathconcat_function.csdoc />
+
+<seealso string_concatenation.csdoc pathconcat_function.csdoc />

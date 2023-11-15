@@ -271,15 +271,20 @@
               { "path": "create_and_edit_logic.csdoc", "~title": "Create and Edit Logic" }, 
               { "path": "find_and_replace_logic.csdoc", "~title": "Find and Replace Logic" }, 
               { "path": "compile_logic.csdoc", "~title": "Compile Logic / An Application" }, 
+              { "path": "onkey_character_map.csdoc", "~title": "OnKey Character Map" }, 
+              { "path": "user_configuration_settings.csdoc", "~title": "User and Configuration Settings" }, 
+              { "path": "string_encoder_dialog.csdoc", "~title": "String Encoder Dialog" }, 
+              { "path": "path_adjuster_dialog.csdoc", "~title": "Path Adjuster Dialog" }, 
               { "path": "symbol_analysis.csdoc", "~title": "Symbol Analysis" }
             ]
           }, 
           {
             "title": "Language Elements", 
             "documents": [
+              { "path": "logic_version.csdoc", "title": "Version" }, 
               { "path": "delimiters.csdoc", "~title": "Delimiters" }, 
               { "path": "comments.csdoc", "~title": "Comments" }, 
-              { "path": "preprocessor.csdoc", "~title": "Logic Preprocessor" }
+              { "path": "preprocessor.csdoc", "title": "Preprocessor" }
             ], 
             "chapters": [
               {
@@ -289,23 +294,25 @@
                   { "path": "this_item.csdoc", "~title": "This Item ($)" }, 
                   { "path": "subscripts.csdoc", "~title": "Subscripts" }, 
                   { "path": "numbers.csdoc", "~title": "Numbers" }, 
-                  { "path": "text_strings.csdoc", "~title": "Text Strings" }
+                  { "path": "boolean_values.csdoc", "~title": "Boolean Values" }, 
+                  { "path": "special_values.csdoc", "~title": "Special Values" }, 
+                  { "path": "refused_value.csdoc", "~title": "Refused Value" }, 
+                  { "path": "string_literals.csdoc", "~title": "String Literals" }, 
+                  { "path": "newline_handling.csdoc", "~title": "Newline Handling" }
                 ]
               }, 
               {
                 "title": "Expressions", 
                 "documents": [
                   { "path": "expressions.csdoc", "~title": "Expressions" }, 
-                  { "path": "substring_expressions.csdoc", "~title": "Substring Expressions" }, 
-                  { "path": "boolean_values.csdoc", "~title": "Boolean Values" }, 
-                  { "path": "special_values.csdoc", "~title": "Special Values" }, 
-                  { "path": "refused_value.csdoc", "~title": "Refused Value" }
+                  { "path": "substring_expressions.csdoc", "~title": "Substring Expressions" }
                 ]
               }, 
               {
                 "title": "Operators", 
                 "documents": [
                   { "path": "operators.csdoc", "~title": "Operators" }, 
+                  { "path": "string_comparisons.csdoc", "~title": "String Comparisons" }, 
                   { "path": "in_operator.csdoc", "~title": "In Operator" }, 
                   { "path": "has_operator.csdoc", "~title": "Has Operator" }, 
                   { "path": "if_and_only_if_operator.csdoc", "~title": "If and Only If Operator" }, 
@@ -461,8 +468,6 @@
                   { "path": "moving_around_a_logic_application.csdoc", "~title": "Moving Around a Logic Application" }, 
                   { "path": "order_of_executing_data_entry_events.csdoc", "~title": "Order of Executing Data Entry Events" }, 
                   { "path": "sequence_dictated_by_designer.csdoc", "~title": "Sequence Dictated by Designer" }, 
-                  { "path": "onkey_character_map.csdoc", "~title": "OnKey Character Map" }, 
-                  { "path": "user_configuration_settings.csdoc", "~title": "User and Configuration Settings" }, 
                   { "path": "run_as_batch.csdoc", "~title": "Run as Batch" }
                 ]
               }
@@ -856,8 +861,11 @@
       {
         "title": "Data Sources", 
         "documents": [
+          { "path": "data_source_text.csdoc", "~title": "Text Data Source" }, 
           { "path": "data_source_json.csdoc", "~title": "JSON Data Source" }, 
-          { "path": "data_source_memory.csdoc", "~title": "In-Memory Data Source" }
+          { "path": "data_source_memory.csdoc", "~title": "In-Memory Data Source" }, 
+          { "path": "data_source_tab.csdoc", "~title": "Tab Delimited Data Source" }, 
+          { "path": "data_source_semicolon.csdoc", "~title": "Semicolon Delimited Data Source" }
         ]
       }, 
       {
@@ -1220,9 +1228,10 @@
           {
             "title": "String Functions", 
             "documents": [
-              { "path": "compare_function.csdoc", "~title": "Compare Function" }, 
+              { "path": "compare_function.csdoc", "~title": "compare Function" }, 
+              { "path": "compareNoCase_function.csdoc", "~title": "compareNoCase Function" }, 
               { "path": "concat_function.csdoc", "~title": "Concat Function" }, 
-              { "path": "plus_string_concatenation.csdoc", "~title": "String Concatenation Operator" }, 
+              { "path": "string_concatenation.csdoc", "~title": "String Concatenation Operator" }, 
               { "path": "edit_function.csdoc", "~title": "Edit Function" }, 
               { "path": "getbuffer_function.csdoc", "~title": "GetBuffer Function" }, 
               { "path": "length_function.csdoc", "~title": "Length Function" }, 
@@ -1488,6 +1497,7 @@
               { "path": "properties_application.csdoc", "~title": "Application Properties" }, 
               { "path": "properties_paradata.csdoc", "~title": "Paradata Properties" }, 
               { "path": "properties_mapping.csdoc", "~title": "Mapping Properties" }, 
+              { "path": "logic_settings.csdoc", "~title": "Logic Settings" }, 
               { "path": "properties_advanced_features.csdoc", "~title": "Advanced Features Properties" }
             ]
           }, 

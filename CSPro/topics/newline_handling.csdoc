@@ -1,0 +1,59 @@
+﻿<title>Newline Handling</title>
+
+When using <link logic_version.csdoc>logic version</link> CSPro 8.0+, newline characters are introduced into <link string_literals.csdoc>string literals</link> when using the escape sequence <logiccolor>'\n'</logiccolor>. This character is handled throughout CSPro as one would generally expect; for example:
+
+<list>
+	<li>When displaying error messages that contain text with newline characters, the message will be <link errmsg_function.csdoc>displayed</link>, or written to a <link listing_file.csdoc>listing file</link>, on multiple lines.</li>
+	<li>When processing fills in <link create_fills_in_questions.csdoc>question text</link> or <link templated_reports.csdoc>HTML templated reports</link>, newline characters are converted to &lt;br&gt; line break elements.</li>
+	<li>When a user enters text on multiple lines using a <link text_box.csdoc>text box field</link> or in a <link CSEntry::add_a_note.csdoc>note</link>, the newline will be stored in the item or note as a <logiccolor>'\n'</logiccolor> character.</li>
+</list>
+
+For historical reasons, some text editors represent newlines as a combination of a carriage return and a line feed character: <logiccolor>"\r\n"</logiccolor>. CSPro does not use <logiccolor>"\r"</logiccolor> characters, so the length of the string "A&lt;line break&gt;B" is 3, not 4.
+
+
+<subheader>Single Line Newline Handling</subheader>
+
+In certain circumstances, when multiline text is not permissible, newline characters are either removed, converted to a space character, <logiccolor>' '</logiccolor>, or converted to the <link "https://www.w3.org/TR/xml-entity-names/024.html">Unicode symbol for a newline</link>, <logiccolor>'␤'</logiccolor>.
+
+Newlines are <b>removed</b> when:
+
+<list>
+	<li>Item data is written to a <link data_source_semicolon.csdoc>semicolon delimited data source</link>.</li>
+</list>
+
+
+Newlines are <b>converted to spaces</b> (<logiccolor>' '</logiccolor>) when:
+
+<list>
+	<li>Calling <logiccolor>prompt</logiccolor>, not using the <b>multiline</b> feature, with an initial value containing newlines.</li>
+	<li>Calling <logiccolor>userbar</logiccolor> to add text for buttons, fields, and text (on Windows only).</li>
+	<li>Displaying item values in <link CSEntry::trees.csdoc>CSEntry's case tree</link>.</li>
+	<li>When displaying an item's value in a single line <link text_box.csdoc>text box field</link>.</li>
+</list>
+
+
+Newlines are <b>converted to newline symbols</b> (<logiccolor>'␤'</logiccolor>) when:
+
+<list>
+	<li>Item data is written to a <link data_source_text.csdoc>text data source</link>. The <logiccolor>'␤'</logiccolor> character is also used for the <link notes_file_csnot.csdoc>text notes</link> and <link status_file_sts.csdoc>text status</link> files.</li>
+	<li>Item data is written using the <logiccolor>export</logiccolor> statement.</li>
+	<li>Used as a <link program_information_file_pff.csdoc>PFF</link> property value.</li>
+	<li>Writing case keys to a <link listing_file.csdoc>text listing file</link>.</li>
+	<li>Displaying case keys and labels in <link DataViewer::introduction_to_data_viewer.csdoc>Data Viewer</link>.</li>
+	<li>Displaying case keys and labels in <link CSEntry::trees.csdoc>CSEntry's case listing</link> (on Windows only).</li>
+</list>
+
+
+<subheader>Newlines Using Logic Version: Original</subheader>
+
+When using the Original <link logic_version.csdoc>logic version</link>, escape sequences cannot generally be used, but in a few cases, newlines are processed:
+
+<list>
+	<li>When displaying messages with <logiccolor>errmsg</logiccolor>, <colorinline cspro_v0>"\n"</colorinline> is treated as a newline character.</li>
+	<li>When processing the title and choices for the <logiccolor>accept</logiccolor> function, <colorinline cspro_v0>"\n"</colorinline> is treated as a newline character.</li>
+	<li>When handling the title and initial value for the <logiccolor>prompt</logiccolor> function, <colorinline cspro_v0>"\n"</colorinline> is treated as a newline character and <colorinline cspro_v0>"\\"</colorinline> is treated as a backslash character.</li>
+	<li>When <link CSEntry::add_a_note.csdoc>adding</link> or <link editnote_function.csdoc>editing</link> a note, <colorinline cspro_v0>"\n"</colorinline> is treated as a newline character and <colorinline cspro_v0>"\\"</colorinline> is treated as a backslash character.</li>
+</list>
+
+
+<seealso logic_version.csdoc string_literals.csdoc />

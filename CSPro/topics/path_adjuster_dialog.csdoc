@@ -1,0 +1,22 @@
+﻿<title>Path Adjuster Dialog</title>
+<context ID_CODE_PATH_ADJUSTER IDD_PATH_ADJUSTER />
+
+When editing a data entry or batch application, select <b>Code</b> -> <b>Path Adjuster</b>. A dialog is shown that facilitates working with absolute and relative paths in CSPro logic.
+
+<center><image path_adjuster_dialog.png /></center>
+
+The dialog allows you to specify a path and see how it is expressed as a <link string_literals.csdoc>string literal</link>, with proper escaping for the backslash characters. In the above example, the path "C:\AMO\Images\UVA.jpg" must be written using escaped backslashes when using <link logic_version.csdoc>logic version</link> CSPro 8.0+: <logiccolor>"C:\\AMO\\Images\\UVA.jpg"</logiccolor>. The <b>Always use forward slashes</b> option replaces backslashes in paths with forward slashes; e.g., <logiccolor>"C:/AMO/Images/UVA.jpg"</logiccolor>.
+
+If specifying a directory or file path in the <b>Relative To</b> field, the dialog will display the evaluated relative path. In the above example, relative paths would appear as following:
+
+<table 2 header>
+	<cell>Relative To (Directory)</cell><cell>Relative Path (CSPro Logic)</cell>
+	<cell>C:\AMO</cell><cell><logiccolor>"Images\\UVA.jpg"</logiccolor></cell>
+	<cell>C:\AMO\Images</cell><cell><logiccolor>"UVA.jpg"</logiccolor></cell>
+	<cell>C:\AMO\Reports</cell><cell><logiccolor>"..\\Images\\UVA.jpg"</logiccolor></cell>
+</table>
+
+The <b>...</b> button allows you to browse for a directory or file path. The <b>Copy</b> button copies the text, or CSPro logic, to the clipboard.
+
+
+<seealso string_literals.csdoc string_encoder_dialog.csdoc Path_getRelativePath_function.csdoc />

@@ -1,0 +1,51 @@
+﻿<title>Logic Settings</title>
+<context IDD_LOGIC_SETTINGS />
+
+To view and modify logic settings, select <link properties_application.csdoc>Application Properties</link> from the <b>Options</b> menu of a data entry, batch edit, or tabulation application, and then select the <b>Logic Settings</b> section. These settings are also available from <link tool_list.csdoc>tools</link> that use logic.
+
+Logic settings are saved to the application file (<link data_entry_application_file_ent.csdoc>.ent</link>, <link batch_edit_application_file_bch.csdoc>.bch</link>, <link tabulation_application_file_xtb.csdoc>.xtb</link>), or to the tool specification files (<link CSExport::introduction_to_export_data.csdoc>.exf</link>, <link frequency_specification_file_fqf.csdoc>.fqf</link>).
+
+
+<subheader>Case Sensitivity</subheader>
+
+If checked, the compiler will enforce case sensitivity when processing:
+
+<list>
+	<li>Symbol names such as dictionary and form names, logic variables, etc.</li>
+	<li>Special callback functions such as <link OnKey_global_function.csdoc>OnKey</link>.</li>
+</list>
+
+Although CSPro logic is case-insensitive, many other programming languages are case-sensitive, meaning that "AGE" is different from "age". Having CSPro enforce case sensitivity may help you write better (and more careful) code. CSPro dictionary and form variables are added to logic as uppercase names.
+
+Note that even with this checked, variable names must be unique on a case-insensitive basis, so if a variable with the name "AGE" is declared, it is not possible to declare another variable with the name "age".
+
+
+<subheader>Logic Version</subheader>
+
+The <link logic_version.csdoc>logic version</link> controls how <link string_literals.csdoc>string literals</link> and <link comments.csdoc>multiline comments</link> are handled, as well as whether strings are right-padded <link string_comparisons.csdoc>during comparisons</link>.
+
+<list>
+	<li>Original (the only version up to CSPro 7.7)</li>
+	<li>CSPro 8.0+</li>
+</list>
+
+For new applications, using the latest logic version is recommended. A comprehensive description of differences in the versions is available here: <topic logic_version.csdoc />.
+
+
+<subheader>Action Invoker</subheader>
+
+HELP_TODO
+
+
+<subheader>CSPro Default Settings</subheader>
+
+By clicking <b>Set as Default</b>, the logic settings shown will become the default logic settings for new applications, as well as for tools that use logic. It is recommended that you decide what settings fit your needs and then use these settings for all new applications. If no default settings have been set, new applications are created using:
+
+<list>
+	<li><b>Case Sensitivity</b>: No</li>
+	<li><b>Logic Version</b>: Original</li>
+	<li><b>Action Invoker</b>: Convert results for CSPro logic; allow users to approve when no access token is provided</li>
+</list>
+
+
+<seealso logic_version.csdoc />

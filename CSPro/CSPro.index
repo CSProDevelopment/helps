@@ -49,6 +49,7 @@
       { "path": "formats_for_an_application.csdoc", "title": "Rounded to Zero Mask" }
     ]
   }, 
+  { "path": "comments.csdoc", "title": "*/" }, 
   { "path": "area_names_file_anm.csdoc", "title": ".anm" }, 
   { "path": "logic_file_apc.csdoc", "title": ".apc" }, 
   { "path": "logic_file_apc.csdoc", "title": ".app" }, 
@@ -65,6 +66,7 @@
   { "path": "paradata_log_file_cslog.csdoc", "title": ".cslog" }, 
   { "path": "notes_file_csnot.csdoc", "title": ".csnot" }, 
   { "path": "application_properties_file_csprops.csdoc", "title": ".csprops" }, 
+  { "path": "data_source_text.csdoc", "title": ".dat" }, 
   { "path": "data_dictionary_file_dcf.csdoc", "title": ".dcf" }, 
   { "path": "binary_data_entry_application_file_pen.csdoc", "title": ".enc" }, 
   { "path": "data_entry_application_file_ent.csdoc", "title": ".ent" }, 
@@ -88,6 +90,7 @@
   }, 
   { "path": "file_types.csdoc", "title": ".pffRunner" }, 
   { "path": "question_text_file_qsf.csdoc", "title": ".qsf" }, 
+  { "path": "data_source_semicolon.csdoc", "title": ".skv" }, 
   { "path": "file_types.csdoc", "title": ".ssf" }, 
   { "path": "status_file_sts.csdoc", "title": ".sts" }, 
   { "path": "saved_arrays_file_sva.csdoc", "title": ".sva" }, 
@@ -95,6 +98,7 @@
   { "path": "table_matrices_index_file_tabidx.csdoc", "title": ".tabidx" }, 
   { "path": "table_matrices_index_file_tabidx.csdoc", "title": ".tai" }, 
   { "path": "tables_file_tbw.csdoc", "title": ".tbw" }, 
+  { "path": "data_source_tab.csdoc", "title": ".tsv" }, 
   { "path": "file_types.csdoc", "title": ".xl2cs" }, 
   { "path": "tabulation_application_file_xtb.csdoc", "title": ".xtb" }, 
   { "path": "table_specifications_file_xts.csdoc", "title": ".xts" }, 
@@ -104,6 +108,8 @@
       { "path": "operator_precedence.csdoc", "~title": "Operator Precedence" }
     ]
   }, 
+  { "path": "comments.csdoc", "title": "/*" }, 
+  { "path": "comments.csdoc", "title": "//" }, 
   { "path": "function_named_arguments.csdoc", "title": ":=" }, 
   { "path": "operators.csdoc", "title": "^", 
     "subindex": [ 
@@ -407,6 +413,7 @@
     ]
   }, 
   { "path": "average_function.csdoc", "~title": "Average Function" }, 
+  { "path": "string_literals.csdoc", "title": "Backslash" }, 
   { "path": "barcode_capture_type.csdoc", "~title": "Barcode Capture Type" }, 
   { "path": "Barcode.csdoc", "~title": "Barcode Namespace", 
     "subindex": [ 
@@ -581,6 +588,14 @@
       { "path": "map_case_list.csdoc", "title": "Displaying the Case Listing on a Map" }
     ]
   }, 
+  { "path": "string_comparisons.csdoc", "title": "Case Sensitivity", 
+    "subindex": [ 
+      { "path": "compare_function.csdoc", "~title": "compare Function" }, 
+      { "path": "compareNoCase_function.csdoc", "~title": "compareNoCase Function" }, 
+      { "path": "logic_settings.csdoc", "~title": "Logic Settings" }, 
+      { "path": "string_comparisons.csdoc", "~title": "String Comparisons" }
+    ]
+  }, 
   { "path": "change_data_entry_options.csdoc", "title": "Case Tree", 
     "subindex": [ 
       { "path": "change_data_entry_options.csdoc", "title": "Show" }
@@ -750,6 +765,7 @@
       { "path": "compare_function.csdoc", "title": "Function" }
     ]
   }, 
+  { "path": "compareNoCase_function.csdoc", "~title": "compareNoCase Function" }, 
   { "path": "compile_logic.csdoc", "~title": "Compile Logic / An Application" }, 
   { "path": "compress_function.csdoc", "~title": "Compress Function" }, 
   { "path": "concat_function.csdoc", "~title": "Concat Function", 
@@ -1001,6 +1017,9 @@
       { "path": "data_source_memory.csdoc", "title": "In-Memory" }, 
       { "path": "data_source_json.csdoc", "title": "JSON" }, 
       { "path": "data_sources.csdoc", "title": "None" }, 
+      { "path": "data_source_semicolon.csdoc", "title": "Semicolon Delimited" }, 
+      { "path": "data_source_tab.csdoc", "title": "Tab" }, 
+      { "path": "data_source_text.csdoc", "title": "Text" }, 
       { "path": "data_sources.csdoc", "title": "Text" }
     ]
   }, 
@@ -1240,6 +1259,7 @@
       { "path": "encode_function.csdoc", "title": "JsonString" }, 
       { "path": "encode_function.csdoc", "title": "PercentEncoding" }, 
       { "path": "encode_function.csdoc", "title": "Slashes" }, 
+      { "path": "string_encoder_dialog.csdoc", "~title": "String Encoder Dialog" }, 
       { "path": "encode_function.csdoc", "title": "URI" }, 
       { "path": "encode_function.csdoc", "title": "URIComponent" }
     ]
@@ -1302,7 +1322,14 @@
       { "path": "errors_at_data_entry.csdoc", "title": "In Data Entry" }
     ]
   }, 
-  { "path": "encode_function.csdoc", "title": "Escaping Text" }, 
+  { "path": "string_literals.csdoc", "title": "Escape Sequences" }, 
+  { "path": "string_literals.csdoc", "title": "Escaping Text", 
+    "subindex": [ 
+      { "path": "encode_function.csdoc", "~title": "Encode Function" }, 
+      { "path": "string_encoder_dialog.csdoc", "~title": "String Encoder Dialog" }, 
+      { "path": "string_literals.csdoc", "~title": "String Literals" }
+    ]
+  }, 
   { "path": "cspro_program_structure.csdoc", "title": "Events", 
     "subindex": [ 
       { "path": "killfocus_statement.csdoc", "~title": "KillFocus Statement" }, 
@@ -1525,6 +1552,7 @@
     ]
   }, 
   { "path": "issues_to_consider_when_designing_a_form.csdoc", "title": "Form Design Issues" }, 
+  { "path": "string_literals.csdoc", "title": "Form Feed" }, 
   { "path": "formats_for_an_application.csdoc", "title": "Format", 
     "subindex": [ 
       { "path": "formats_for_an_application.csdoc", "title": "Application" }, 
@@ -2103,6 +2131,7 @@
     ]
   }, 
   { "path": "issues_to_consider_when_designing_a_form.csdoc", "title": "Levels and Cases" }, 
+  { "path": "string_literals.csdoc", "title": "Line Feed" }, 
   { "path": "add_lines_or_boxes_to_a_form.csdoc", "title": "Lines", 
     "subindex": [ 
       { "path": "add_lines_or_boxes_to_a_form.csdoc", "title": "Adding to a Form" }, 
@@ -2155,7 +2184,9 @@
       { "path": "logic_file_apc.csdoc", "title": "External Logic File" }, 
       { "path": "batch_edit_applications.csdoc", "title": "In Batch Edit Applications" }, 
       { "path": "data_entry_applications.csdoc", "title": "In Data Entry Applications" }, 
+      { "path": "logic_settings.csdoc", "title": "Settings" }, 
       { "path": "symbol_analysis.csdoc", "~title": "Symbol Analysis" }, 
+      { "path": "logic_version.csdoc", "title": "Version" }, 
       { "path": "view_logic.csdoc", "~title": "View Logic" }, 
       { "path": "batch_application_screen_layout.csdoc", "title": "View, Batch Edit Apps" }, 
       { "path": "data_entry_forms_screen_layout.csdoc", "title": "View, Data Entry Apps" }
@@ -2423,6 +2454,7 @@
   { "path": "navigating_between_pages_tables_and_areas.csdoc", "title": "Navigating Between Pages  Tables  and Areas" }, 
   { "path": "network_data_entry.csdoc", "~title": "Network Data Entry" }, 
   { "path": "what_is_new_in_cspro.csdoc", "title": "New Features" }, 
+  { "path": "newline_handling.csdoc", "~title": "Newline Handling" }, 
   { "path": "skip_statement.csdoc", "title": "Next", 
     "subindex": [ 
       { "path": "skip_statement.csdoc", "~title": "Skip Statement" }, 
@@ -2634,6 +2666,7 @@
       { "path": "data_entry_path.csdoc", "title": "On" }
     ]
   }, 
+  { "path": "path_adjuster_dialog.csdoc", "~title": "Path Adjuster Dialog" }, 
   { "path": "Path.csdoc", "~title": "Path Namespace", 
     "subindex": [ 
       { "path": "Path_concat_function.csdoc", "~title": "Path.concat Function" }, 
@@ -3199,6 +3232,7 @@
       { "path": "Path_selectFile_function.csdoc", "~title": "Path.selectFile Function" }
     ]
   }, 
+  { "path": "data_source_semicolon.csdoc", "~title": "Semicolon Delimited Data Source" }, 
   { "path": "order_of_executing_data_entry_events.csdoc", "title": "Sequence", 
     "subindex": [ 
       { "path": "order_of_executing_data_entry_events.csdoc", "title": "Dictated by CSPro" }, 
@@ -3438,15 +3472,20 @@
   }, 
   { "path": "expressions.csdoc", "title": "String", 
     "subindex": [ 
+      { "path": "compare_function.csdoc", "~title": "compare Function" }, 
+      { "path": "compareNoCase_function.csdoc", "~title": "compareNoCase Function" }, 
+      { "path": "string_comparisons.csdoc", "title": "Comparisons" }, 
+      { "path": "string_concatenation.csdoc", "title": "Concatenation Using +" }, 
+      { "path": "tonumber_function.csdoc", "title": "Convert to Number" }, 
       { "path": "expressions.csdoc", "~title": "Expressions" }, 
-      { "path": "tonumber_function.csdoc", "title": "String to Number" }, 
+      { "path": "string_literals.csdoc", "title": "Literals" }, 
+      { "path": "newline_handling.csdoc", "~title": "Newline Handling" }, 
+      { "path": "string_statement.csdoc", "title": "Statement" }, 
+      { "path": "string_encoder_dialog.csdoc", "~title": "String Encoder Dialog" }, 
       { "path": "substring_expressions.csdoc", "~title": "Substring Expressions" }, 
-      { "path": "text_strings.csdoc", "title": "Text" }, 
       { "path": "variables.csdoc", "~title": "Variables" }
     ]
   }, 
-  { "path": "plus_string_concatenation.csdoc", "~title": "String Concatenation Operator" }, 
-  { "path": "string_statement.csdoc", "~title": "String Statement" }, 
   { "path": "strip_function.csdoc", "title": "Strip function" }, 
   { "path": "structure_edits.csdoc", "~title": "Structure Edits" }, 
   { "path": "structure_movement.csdoc", "~title": "Structure Movement" }, 
@@ -3571,6 +3610,7 @@
     ]
   }, 
   { "path": "systime_function.csdoc", "~title": "SysTime Function" }, 
+  { "path": "data_source_tab.csdoc", "~title": "Tab Delimited Data Source" }, 
   { "path": "add_insert_and_delete_tables.csdoc", "title": "Table", 
     "subindex": [ 
       { "path": "add_insert_and_delete_tables.csdoc", "title": "Add" }, 
@@ -3678,13 +3718,13 @@
       { "path": "customize_table_text.csdoc", "~title": "Customize Table Text" }, 
       { "path": "change_default_text_font.csdoc", "title": "Default Font" }, 
       { "path": "save_tables_for_the_table_viewer.csdoc", "title": "Save Tables as Text: Rich Text or HTML" }, 
-      { "path": "text_strings.csdoc", "title": "Strings" }, 
+      { "path": "string_literals.csdoc", "~title": "String Literals" }, 
       { "path": "tool_list.csdoc", "~title": "Tool List" }, 
       { "path": "tool_list.csdoc", "title": "Viewer" }
     ]
   }, 
   { "path": "text_box.csdoc", "~title": "Text Box" }, 
-  { "path": "data_sources.csdoc", "title": "Text Data Source" }, 
+  { "path": "data_source_text.csdoc", "~title": "Text Data Source" }, 
   { "path": "if_statement.csdoc", "title": "Then", 
     "subindex": [ 
       { "path": "if_statement.csdoc", "~title": "If Statement" }
@@ -3969,6 +4009,7 @@
       { "path": "do_statement.csdoc", "~title": "Do Statement" }
     ]
   }, 
+  { "path": "string_literals.csdoc", "title": "Verbatim String Literals" }, 
   { "path": "change_data_entry_options.csdoc", "title": "Verify", 
     "subindex": [ 
       { "path": "demode_function.csdoc", "~title": "DeMode Function" }, 
@@ -4094,5 +4135,7 @@
     "subindex": [ 
       { "path": "Map_zoomTo_function.csdoc", "~title": "Map.zoomTo Function" }
     ]
-  }
+  }, 
+  { "path": "newline_handling.csdoc", "title": "\\n (newline)" }, 
+  { "path": "newline_handling.csdoc", "title": "␤" }
 ]

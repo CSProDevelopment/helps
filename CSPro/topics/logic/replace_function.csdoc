@@ -12,6 +12,7 @@ s = replace(<arg>source_text</arg>, <arg>old_text</arg>, <arg>new_text</arg>);
 
 The <logiccolor>replace</logiccolor> function looks at <arg>source_text</arg> and replaces one or more instances of the substring <arg>old_text</arg> with the value in <arg>new_text</arg>. All arguments are string expressions and the replacement is case sensitive, meaning that <logiccolor>"c"</logiccolor> is recognized as different from <logiccolor>"C"</logiccolor>.
 
+
 <subheader>Return Value</subheader>
 
 The function returns a new string with the replaced text.
@@ -36,8 +37,8 @@ function string GetFileUri(string local_filename)
 	// get the full path in case the filename is relative
 	local_filename = Path.concat(local_filename);
 
-	// convert all slashes to forward slashes
-	local_filename = replace(local_filename, "\", "/");
+	// convert all backslashes to forward slashes
+	local_filename = replace(local_filename, "\\", "/");
 
 	// encode the filename as a URI
 	exit "file:///" + encode(URI, local_filename);

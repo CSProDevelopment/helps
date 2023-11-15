@@ -45,6 +45,15 @@ Numeric and string arguments have a couple additional options that can be specif
 </list>
 
 
+<subheader>Splitting A Message Across Multiple Lines</subheader>
+
+If you wish to split a message across two or more lines, you can use the <link newline_handling.csdoc>newline</link> escape sequence: <logiccolor>'\n'</logiccolor>
+
+<logic>
+errmsg("First line\nSecond Line");
+</logic>
+
+
 <subheader>Example</subheader>
 
 <logic>
@@ -79,25 +88,6 @@ errmsg( "%-10s"     , stringValue);     //   abcdef
 errmsg( "%-10.3s"   , stringValue);     //   abc
 errmsg( "%10s"      , stringValue);     //       abcdef
 errmsg( "%10.3s"    , stringValue);     //          abc
-</logic>
-
-
-<subheader>Splitting A Message Across 2+ Lines</subheader>
-
-If you wish to split a message across two or more lines, you can use the newline escape character (\n).
-
-<b><i>Within operator-controlled mode</i></b>, you can simply write:
-
-<logic>
-errmsg("First line\nSecond Line");
-</logic>
-
-However, if you are <b><i>within system-controlled mode</i></b>, you will need to temporarily switch to operator-controlled mode to effect the same change. Therefore, the above example will become:
-
-<logic>
-set errmsg(operator);
-errmsg("First line\nSecond Line");
-set errmsg(default);
 </logic>
 
 

@@ -1,58 +1,41 @@
 ﻿<title>Comments</title>
 
-Comments make applications easier to understand. It is highly recommended that CSPro applications be documented through the liberal use of comments.
+Comments make applications easier to understand. It is highly recommended that CSPro applications be documented through the liberal use of comments. While editing logic and message files, comments are displayed as <font monospace green>green text</font>.
 
-Within logic, they are used to explain the purpose of specific statements or to temporarily disable statements to help find errors. Within <link message_file_mgf.csdoc>message files</link>, comments can be used to clarify the syntax listed in a message, or identify "ownership" of the message or message blocks (i.e., what code blocks use the messages--global messages or just specific areas?).
+Within logic, they are used to explain the purpose of specific statements or to temporarily disable statements to help find errors. Within message files comments can be used to clarify the syntax listed in a message, or to identify "ownership" of the message or message blocks (i.e., what code blocks use the messages?).
+
 
 <subheader>Comments Within Logic</subheader>
 
-There are two ways to mark text as a comment. The first method is to use the brace symbols. Any text enclosed by braces <colorinline cspro_v0>{ }</colorinline> is a comment. As soon as you add the starting brace symbol <colorinline cspro_v0>{</colorinline>, ALL subsequent logic will turn green until a closing brace is encountered <font monospace green>}</font>. The braces are useful when wanting to mark several lines of text as a comment, since you only need to mark the start and end of the block; or if you want to embed a comment in the middle of a line of logic, but want the rest of the line to be evaluated.
+There are two ways to mark text as a comment. The first method is to use two forward slashes: <logiccolor>//</logiccolor>. Everything on the line that follows the slashes is a comment. This is useful when you just want to insert a comment at the end of a line, or to comment a few lines of code.
 
-The second method to mark text as a comment is to use the double slashes <logiccolor>//</logiccolor>. Everything on a line that follows the double slashes is a comment. This is useful when you just want to insert a single line of comment, or a few lines of comments.
+The second method is to use multiline comments, starting with <font monospace green>/*</font> and ending in <font monospace green>*/</font>. As soon as the <font monospace green>/*</font> is encountered, all subsequent text is considered a comment until the closing sequence <font monospace green>*/</font> is encountered. Multiline comments are useful when you want to comment many lines of text, as you only need to mark the start and end of the block; or if you want to embed a comment in the middle of a line of logic but want the rest of the line to be evaluated.
 
-Comments can be placed anywhere in your logic. Since they are ignored by the compiler, they will not be checked for syntax errors. Comments can be nested; that is, comments within comments are allowed.
+Comments can be placed anywhere in your logic. Because comments are ignored by the compiler, they will not be checked for syntax errors. Comments can be nested; that is, comments within comments are allowed.
 
-<subheader>Comments Within a Message File</subheader>
+<b>Note</b>: In <link logic_version.csdoc>older CSPro applications</link>, multiline comments use braces: <colorinline cspro_v0>{ }</colorinline> instead of <logiccolor>/* */</logiccolor>.
 
-While both styles of comments (braces <colorinline cspro_v0>{ }</colorinline> and double slashes <logiccolor>//</logiccolor>) are allowed in <link message_file_mgf.csdoc>message files</link>, be aware that when using braces, comments can NOT span over multiple lines. Nor can you embed a comment within a message line or place a comment at the end of a message line. Comments can only appear on a line by itself.
 
-<subheader>Example 1</subheader>
+<subheader>Comments Within Messages</subheader>
 
-The entire first line is a comment. In line 2, the comment is embedded within the logic. On line 3, the comment trails the logic.
+Three styles of comments are allowed in <link message_file_mgf.csdoc>message files</link>: single-line comments (<logiccolor>//</logiccolor>), and both the new and old logic versions of multiline comments (<logiccolor>/* */</logiccolor>, <colorinline cspro_v0>{ }</colorinline>). When commenting message files, the start of the comment must appear at the beginning of a line. Unlike in logic, multiline comments cannot appear in the middle of a line. A multiline comment can end on the same line that it started, or at the beginning of a subsequent line.
 
-<color cspro_v0>
-PROC HHDAY
 
-1	{ Do not allow June to have more than 30 days }
-2	if HHMONTH = 6 {June} and HHDAY > 30 then
-3		errmsg(1, "June", 30, HHDAY); // if error, then display message
-4		reenter;
-5	endif;
-</color>
+<subheader>Example (Logic)</subheader>
 
-The entire first line is a comment. In line 2, the comment is embedded within the logic. On line 3, the comment trails the logic.
+<logic>
+/* Do not allow June to have more than 30 days
+   or for July to have more than 31 days. */
+if ( HHMONTH = 6 /* June */ and HHDAY > 30 ) or
+   ( HHMONTH = 7 /* July */ and HHDAY > 31 ) then
 
-<subheader>Example 2</subheader>
+	errmsg(1, "June", 30, HHDAY); // if error, then display message
+	reenter;
 
-<color cspro_v0>
-PROC GLOBAL
+endif;
+</logic>
 
-  { This is not necessarily recommended, but comments
- // can be embbed using both styles of comment symbols.
-    I can choose to end the multi-line comment I started
-    on line 1 whenever desired.
+The first two lines are commented using a multiline comment. A multiline comment is also used, albeit on a single line, to indicate the month names. Following the <logiccolor>errmsg</logiccolor>, a single-line comment marks the rest of that line as a comment.
 
-	I have introduced the alias statements as the dictionary
-	I was given only used P02, P03, P04, etc., making it very
-	easy for me to make a typo and hence, refer to the wrong
-	variable and cause a major mistake in my program. }
 
-   alias P02_REL : P02;	// relationship
-   alias P03_SEX : P03;
-   alias P04_AGE : P04;
-
-   // impute age in our hot deck using sex & relationship
-   Array HD_P04AGE_SexByRel(P03_VS1(+), P02_VS1(+)) save;
-</color>
-
-<seealso message_file_mgf.csdoc />
+<seealso logic_version.csdoc />
