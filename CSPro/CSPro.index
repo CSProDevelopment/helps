@@ -191,11 +191,13 @@
   { "path": "accept_function.csdoc", "~title": "Accept Function" }, 
   { "path": "action_invoker.csdoc", "title": "Action Invoker", 
     "subindex": [ 
+      { "path": "action_invoker_binary_data.csdoc", "title": "Binary Data Representation" }, 
       { "path": "action_invoker_execution_cspro_logic.csdoc", "title": "Execution: CSPro Logic" }, 
       { "path": "action_invoker_execution_javascript_embedded.csdoc", "title": "Execution: JavaScript (Embedded)" }, 
       { "path": "action_invoker_execution_javascript_web.csdoc", "title": "Execution: JavaScript (From Web Views)" }, 
       { "path": "action_invoker_execution_json.csdoc", "title": "Execution: JSON" }, 
       { "path": "CS_Clipboard.csdoc", "title": "Namespace: Clipboard" }, 
+      { "path": "CS_Hash.csdoc", "title": "Namespace: Hash" }, 
       { "path": "action_invoker.csdoc", "title": "Overview" }
     ]
   }, 
@@ -453,6 +455,7 @@
   }, 
   { "path": "batch_edit_application_file_bch.csdoc", "~title": "Batch Edit Application File (.bch)" }, 
   { "path": "generate_binary_data_entry_application.csdoc", "title": "Binary Application" }, 
+  { "path": "action_invoker_binary_data.csdoc", "title": "Binary Data" }, 
   { "path": "binary_data_entry_application_file_pen.csdoc", "~title": "Binary Data Entry Application File (.pen)" }, 
   { "path": "strip_function.csdoc", "title": "Blanks", 
     "subindex": [ 
@@ -512,6 +515,7 @@
       { "path": "do_statement.csdoc", "~title": "Do Statement" }
     ]
   }, 
+  { "path": "action_invoker_binary_data.csdoc", "title": "Bytes Format" }, 
   { "path": "OnStop_global_function.csdoc", "title": "Callback Functions", 
     "subindex": [ 
       { "path": "OnChangeLanguage_global_function.csdoc", "~title": "OnChangeLanguage Global Function" }, 
@@ -1021,7 +1025,7 @@
   { "path": "data_sources.csdoc", "~title": "Data Sources", 
     "subindex": [ 
       { "path": "data_sources.csdoc", "title": "CSPro DB" }, 
-      { "path": "data_sources.csdoc", "title": "Encrypted CSPro DB" }, 
+      { "path": "data_source_csdbe.csdoc", "title": "Encrypted CSPro DB" }, 
       { "path": "data_source_memory.csdoc", "title": "In-Memory" }, 
       { "path": "data_source_json.csdoc", "title": "JSON" }, 
       { "path": "data_sources.csdoc", "title": "None" }, 
@@ -1130,7 +1134,7 @@
   }, 
   { "path": "designer_font_preferences.csdoc", "~title": "Designer Font Preferences" }, 
   { "path": "develop_comprehensive_test_file.csdoc", "~title": "Develop Comprehensive Test File" }, 
-  { "path": "diagnostics_function.csdoc", "~title": "Diagnostics Function" }, 
+  { "path": "diagnostics_function.csdoc", "~title": "diagnostics Function" }, 
   { "path": "data_dictionary.csdoc", "title": "Dictionary", 
     "subindex": [ 
       { "path": "data_dictionary.csdoc", "title": "About" }, 
@@ -1272,7 +1276,7 @@
       { "path": "encode_function.csdoc", "title": "URIComponent" }
     ]
   }, 
-  { "path": "data_sources.csdoc", "title": "Encrypted CSPro DB Data Source" }, 
+  { "path": "data_source_csdbe.csdoc", "~title": "Encrypted CSPro DB Data Source" }, 
   { "path": "encrypted_data.csdoc", "~title": "Encrypted Data" }, 
   { "path": "encrypted_data.csdoc", "title": "Encryption", 
     "subindex": [ 
@@ -1775,7 +1779,13 @@
   { "path": "errmsg_function.csdoc", "title": "Hard Checks" }, 
   { "path": "hardware_and_software_requirements.csdoc", "~title": "Hardware and Software Requirements" }, 
   { "path": "has_operator.csdoc", "~title": "Has Operator" }, 
-  { "path": "hash_function.csdoc", "~title": "Hash Function" }, 
+  { "path": "CS_Hash.csdoc", "~title": "Hash Action Invoker Namespace", 
+    "subindex": [ 
+      { "path": "CS_Hash_createHash.csdoc", "~title": "Hash.createHash Action" }, 
+      { "path": "CS_Hash_createMd5.csdoc", "~title": "Hash.createMd5 Action" }
+    ]
+  }, 
+  { "path": "hash_function.csdoc", "~title": "hash Function" }, 
   { "path": "HashMap.csdoc", "~title": "HashMap Object", 
     "subindex": [ 
       { "path": "HashMap_clear_function.csdoc", "~title": "HashMap.clear Function" }, 

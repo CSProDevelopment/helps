@@ -1,10 +1,12 @@
-﻿<title>Diagnostics Function</title>
+﻿<title>diagnostics Function</title>
+
 
 <subheader>Format</subheader>
 
 <logicsyntax>
 s = diagnostics(『<arg>property</arg>』『, <arg>argument</arg>, ...』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -19,12 +21,14 @@ The function takes a string expression <arg>property</arg> and then optional str
 	<cell><b>releasedate</b></cell><cell></cell><cell>The date that this version of CSPro was released (in YYYYMMDD format).</cell>
 	<cell><b>beta</b></cell><cell></cell><cell>Whether the current CSPro version is a beta version (1 if true, 0 if false).</cell>
 	<cell><b>serializer</b></cell><cell></cell><cell>The version of a <link binary_data_entry_application_file_pen.csdoc>.pen file</link> that would be created with the current version of CSPro.</cell>
-	<cell><b>md5</b></cell><cell>File name</cell><cell>The MD5 hash value of the file.</cell>
+	<cell><b>md5</b></cell><cell>File name</cell><cell>The MD5 hash value of the file. This can also be created by using the action <action>Hash.createMd5</action>.</cell>
 </table>
+
 
 <subheader>Return Value</subheader>
 
 The function returns a string containing the diagnostic information. If the property is invalid, then the function returns a blank string.
+
 
 <subheader>Example</subheader>
 
@@ -34,6 +38,7 @@ PROC MATERNITY_QUEST
 preproc
 
 	if diagnostics("version") <> "<definition CSPro::version />" then
-		errmsg("This application has not been tested with this version of CSPro. Things may behave differently than expected.");
+        errmsg("This application has not been tested with this version of CSPro. "
+               "Things may behave differently than expected.");
 	endif;
 </logic>

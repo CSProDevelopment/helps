@@ -862,6 +862,7 @@
         "title": "Data Sources", 
         "documents": [
           { "path": "data_source_text.csdoc", "~title": "Text Data Source" }, 
+          { "path": "data_source_csdbe.csdoc", "~title": "Encrypted CSPro DB Data Source" }, 
           { "path": "data_source_json.csdoc", "~title": "JSON Data Source" }, 
           { "path": "data_source_memory.csdoc", "~title": "In-Memory Data Source" }, 
           { "path": "data_source_tab.csdoc", "~title": "Tab Delimited Data Source" }, 
@@ -1277,7 +1278,7 @@
             "documents": [
               { "path": "compress_function.csdoc", "~title": "Compress Function" }, 
               { "path": "decompress_function.csdoc", "~title": "Decompress Function" }, 
-              { "path": "diagnostics_function.csdoc", "~title": "Diagnostics Function" }, 
+              { "path": "diagnostics_function.csdoc", "~title": "diagnostics Function" }, 
               { "path": "encode_function.csdoc", "~title": "Encode Function" }, 
               { "path": "errmsg_function.csdoc", "~title": "ErrMsg Function" }, 
               { "path": "execsystem_function_desktop.csdoc", "~title": "ExecSystem Function (Desktop)" }, 
@@ -1288,7 +1289,7 @@
               { "path": "getlanguage_function.csdoc", "~title": "GetLanguage Function" }, 
               { "path": "getsymbol_function.csdoc", "~title": "GetSymbol Function" }, 
               { "path": "getvaluelabel_function.csdoc", "~title": "GetValueLabel Function" }, 
-              { "path": "hash_function.csdoc", "~title": "Hash Function" }, 
+              { "path": "hash_function.csdoc", "~title": "hash Function" }, 
               { "path": "htmldialog_function.csdoc", "~title": "HtmlDialog Function" }, 
               { "path": "invalueset_function.csdoc", "~title": "InValueSet Function" }, 
               { "path": "invoke_function.csdoc", "~title": "Invoke Function" }, 
@@ -1448,11 +1449,25 @@
             ]
           }, 
           {
+            "title": "Formatting Options", 
+            "documents": [
+              { "path": "action_invoker_binary_data.csdoc", "title": "Binary Data Representation" }
+            ]
+          }, 
+          {
             "title": "Clipboard Namespace", 
             "documents": [
               { "path": "CS_Clipboard.csdoc", "~title": "Clipboard Action Invoker Namespace" }, 
               { "path": "CS_Clipboard_getText.csdoc", "~title": "Clipboard.getText Action" }, 
               { "path": "CS_Clipboard_putText.csdoc", "~title": "Clipboard.putText Action" }
+            ]
+          }, 
+          {
+            "title": "Hash Namespace", 
+            "documents": [
+              { "path": "CS_Hash.csdoc", "~title": "Hash Action Invoker Namespace" }, 
+              { "path": "CS_Hash_createHash.csdoc", "~title": "Hash.createHash Action" }, 
+              { "path": "CS_Hash_createMd5.csdoc", "~title": "Hash.createMd5 Action" }
             ]
           }
         ]

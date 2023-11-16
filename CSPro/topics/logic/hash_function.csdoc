@@ -1,10 +1,12 @@
-﻿<title>Hash Function</title>
+﻿<title>hash Function</title>
+
 
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = hash(<arg>value</arg> 『, <arg>length</arg>『, <arg>salt</arg>』』);
+s = hash(<arg>value</arg>『, <arg>length</arg>『, <arg>salt</arg>』』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -16,19 +18,24 @@ Optionally, you can specify a numeric expression <arg>length</arg>, which specif
 
 You can also specify a string expression, <arg>salt</arg>, which is an additional input in generating the hash value. You must store this salt value somewhere to be able to use this hash function to perform any checks. More information on hash values, key derivation algorithms, and salt values is readily available online.
 
+Hash values can also be created, with additional options, using the action <action>Hash.createHash</action>.
+
+
 <subheader>Return Value</subheader>
 
-The function returns a hash value represented as a hexadecimal string.
+The function returns a hash value represented as a hexadecimal string. When using <link logic_version.csdoc>logic version</link> CSPro 8.0+, the hexadecimal characters are returned in lowercase; when using the original logic version, the characters are returned in uppercase.
+
 
 <subheader>Example</subheader>
 
 <logic>
-string user_password = prompt("Enter your password", password);
+string userPassword = prompt("Enter your password", password);
 
-if hash(user_password) <> USER_PASSWORD_HASH then
+if hash(userPassword) <> strip(USER_PASSWORD_HASH) then
 	errmsg("Invalid password. You cannot access this system.");
 	stop(1);
 endif;
 </logic>
 
-<seealso HashMap.csdoc />
+
+<seealso CS_Hash_createHash.csdoc HashMap.csdoc />

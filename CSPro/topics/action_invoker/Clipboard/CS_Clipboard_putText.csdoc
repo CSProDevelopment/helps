@@ -17,6 +17,8 @@ CS.Clipboard.putText(<arg>text</arg> := ...)
 
 The <action>Clipboard.putText</action> <link action_invoker.csdoc>action</link> puts text onto the clipboard. The text will be available to other applications, or from within CSPro using the <action>Clipboard.getText</action> action.
 
+On Android, for security reasons, the text copied to the clipboard is temporarily shown to the user.
+
 
 <subheader>Return Value</subheader>
 
@@ -25,7 +27,7 @@ The action returns undefined.
 
 <subheader>Exceptions</subheader>
 
-The action does not throw exceptions on Windows. On Android, the action can throw an exception if there is an error accessing the clipboard.
+The action throws an exception if any of its arguments are not specified in a valid form. On Android, the action throws an exception if there is an error accessing the clipboard.
 
 
 <include include_clipboard_examples.hgi />
