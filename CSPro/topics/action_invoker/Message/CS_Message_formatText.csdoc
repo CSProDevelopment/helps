@@ -1,0 +1,72 @@
+﻿<title>Message.formatText Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Message.formatText(<arg>number</arg> := ... ‖ <arg>text</arg> := ...『, <arg>type</arg> := ...』
+                       『, <arg>arguments</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>number</arg></cell><cell>The message number.</cell><cell>number~!~not required</cell>
+    <cell><arg>text</arg></cell><cell>The base (unformatted) text for the message.</cell><cell>string~!~not required</cell>
+    <cell><arg>type</arg></cell><cell>The message set to query if specifying a message <arg>number</arg>.~!~The default value is <logiccolor>"user"</logiccolor>.</cell><cell>string~!~not required</cell>
+    <cell><arg>arguments</arg></cell><cell>The inserted values for each % formatting placeholder.</cell><cell>array~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Message.formatText</action> <link action_invoker.csdoc>action</link> creates a formatted string, optionally replacing <link message_formatting_options.csdoc>% placeholders</link> with supplied replacement values. The base text can be specified by specified by:
+
+<list>
+    <li>Providing a <arg>message</arg> number. By default, the message text is retrieved from user-defined messages, but by specifying the <arg>type</arg> as <logiccolor>"system"</logiccolor> (as opposed to <logiccolor>"user"</logiccolor>), message text from <link collaborating_on_cspro_development.csdoc>system messages</link> is used. </li>
+    <li>Providing the base <arg>text</arg> directly. If a message <arg>number</arg> is used, and does not exist, then the <arg>text</arg> is used as the base text.</li>
+</list>
+
+Supply <arg>arguments</arg> to replace the % placeholders using an array. Each argument is sequentially inserted into the text string. Arguments can be numeric or string expressions, but the type of the argument must match the type of the receiving field in the base text.
+
+
+<subheader>Return Value</subheader>
+
+The action returns a string containing the formatted text. The base text for messages is retrieved in the <link multiple_language_applications.csdoc>current language</link>, if applicable.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if the message number does not exist in the specified message set and no message text is provided. The action also throws an exception if an insufficient number of arguments is provided, or if the type of an argument does not match the % placeholder.
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<logic>
+List string messageArguments = "Hello", "<definition CSPro::version />";
+
+string formattedMessage = CS.Message.formatText(text := "%s from CSPro %0.1f!",
+                                                arguments := messageArguments);
+
+// result: Hello from CSPro <definition CSPro::version />!
+</logic>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+// format the system message 1101
+const parameterMessage = CS.Message.formatText({
+    number: 1101,
+    type: "system",
+    text: "The parameter %s does not support %d arguments",
+    arguments: [
+        "Heron",
+        3
+    ]
+});
+
+// result: The parameter Heron does not support 3 arguments
+</color>
+
+
+<seealso CS_Message.csdoc CS_Message_getText.csdoc message_formatting_options.csdoc maketext_function.csdoc />

@@ -1,0 +1,52 @@
+﻿<title>Message.getText Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Message.getText(<arg>number</arg> := ...『, <arg>type</arg> := ...』
+                    『, <arg>text</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+	<cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+	<cell><arg>number</arg></cell><cell>The message number.</cell><cell>number~!~required</cell>
+	<cell><arg>type</arg></cell><cell>The message set to query.~!~The default value is <logiccolor>"user"</logiccolor>.</cell><cell>string~!~not required</cell>
+	<cell><arg>text</arg></cell><cell>Default text for this message (if not found in a message set).</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Message.getText</action> <link action_invoker.csdoc>action</link> returns the base (unformatted) text for a message defined in a <link message_file_mgf.csdoc>message file</link>. By default, the message text is retrieved from user-defined messages, but by specifying the <arg>type</arg> as <logiccolor>"system"</logiccolor> (as opposed to <logiccolor>"user"</logiccolor>), message text from <link collaborating_on_cspro_development.csdoc>system messages</link> is returned.
+
+
+<subheader>Return Value</subheader>
+
+The action returns a string containing the message text, or the default text if no message with the number exists. The message text is returned in the <link multiple_language_applications.csdoc>current language</link>, if applicable.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if the message number does not exist in the specified message set and no default message text is provided.
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<logic>
+string userMessage = CS.Message.getText(number := 12001,
+                                        text := "Default Text for Message 12001");
+</logic>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+const partialSaveMessage = CS.Message.getText({
+	number: 89222,
+	type: "system"
+});
+</color>
+
+
+<seealso CS_Message.csdoc CS_Message_formatText.csdoc tr_function.csdoc />
