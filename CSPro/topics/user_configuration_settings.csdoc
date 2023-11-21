@@ -3,9 +3,10 @@
 
 With a data entry or batch edit application active, select <b>View</b> -> <b>User and Configuration Settings</b>. A dialog box will open that lets you add, modify, or delete user and configuration settings. These settings are attribute-value pairs that are alternate ways to store information (rather than using external dictionaries, working storage dictionaries, or text files). A setting, the "value," is stored in a way that can be looked up using an "attribute" key. Both the value and attribute are strings.
 
+
 <subheader>User Settings</subheader>
 
-User settings are accessed from logic with the <logiccolor>loadsetting</logiccolor> function and are modified using the <logiccolor>savesetting</logiccolor> function. Unless otherwise specified, all CSPro applications on a device share the same settings, which make user settings a convenient way to share information across different applications. For example, a menu program might save some information:
+User settings are accessed from logic using the <logiccolor>loadsetting</logiccolor> function or <action>Settings.getValue</action> action. User settings are modified using the <logiccolor>savesetting</logiccolor> function or <action>Settings.putValue</action> action. Unless otherwise specified, all CSPro applications on a device share the same settings, which make user settings a convenient way to share information across different applications. For example, a menu program might save some information:
 
 <logic>
 PROC INTERVIEWER_NAME
@@ -41,4 +42,5 @@ syncconnect(FTP, ftpServerUrl);
 
 For this to work, you need to use the dialog box to add an attribute <logiccolor>"ftpServerUrl"</logiccolor> with the FTP server URL as its value.
 
-<seealso config_modifier.csdoc loadsetting_function.csdoc savesetting_function.csdoc csentry_settings_modification.csdoc />
+
+<seealso config_modifier.csdoc loadsetting_function.csdoc savesetting_function.csdoc CS_Settings.csdoc csentry_settings_modification.csdoc />

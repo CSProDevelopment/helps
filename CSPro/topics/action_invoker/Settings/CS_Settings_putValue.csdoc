@@ -1,0 +1,42 @@
+﻿<title>Settings.putValue Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.Settings.putValue(<arg>key</arg> := ..., <arg>value</arg> := ...『, <arg>source</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>key</arg></cell><cell>The key that uniquely identifies the setting.</cell><cell>string~!~required</cell>
+    <cell><arg>value</arg></cell><cell>The value to associate with the <arg>key</arg>.</cell><cell nowrap>string, number, boolean, array, object~!~required</cell>
+    <cell><arg>source</arg></cell><cell>The name of the settings database.~!~The default value is <logiccolor>"UserSettings"</logiccolor>.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Settings.putValue</action> <link action_invoker.csdoc>action</link> sets a value in a settings database, associating the <arg>value</arg> with the unique identifier <arg>key</arg>. The setting is stored in a table of attribute-value pairs and can be retrieved using <action>Settings.getValue</action>. If the <logiccolor>value</logiccolor> is a blank string, the setting is removed from the database.
+
+The default <arg>source</arg> database, <logiccolor>"UserSettings"</logiccolor>, corresponds to the <i>User Settings</i> database used by the <logiccolor>savesetting</logiccolor> function. These settings can be viewed and modified in the CSPro Designer using the <topic user_configuration_settings.csdoc /> dialog. You can use a custom settings database by specifying the name of a database, which will be created automatically if it does not exist.
+
+The file from which settings are retrieved can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file. The settings are stored in a SQLite file and the settings should not be considered secure as they can accessed by other applications.
+
+Settings from the <i>User Settings</i> database, but not custom databases, can also be set using the <logiccolor>savesetting</logiccolor> function. Only string and numeric values can be set in this database, but custom databases also support boolean values, arrays, and objects.
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or a non-supported value is provided for the <i>User Settings</i> database.
+
+
+<include include_settings_examples.hgi />
+
+
+<seealso CS_Settings.csdoc CS_Settings_getValue.csdoc savesetting_function.csdoc />
