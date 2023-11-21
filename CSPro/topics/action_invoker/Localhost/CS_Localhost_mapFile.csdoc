@@ -1,0 +1,102 @@
+﻿<title>Localhost.mapFile Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Localhost.mapFile(<arg>path</arg> := ...『, <arg>contentType</arg> := ...』
+                      『, <arg>evaluateImmediately</arg> := ...』
+                      『, <arg>pathOverride</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of the file to map.</cell><cell>string~!~required</cell>
+    <cell><arg>contentType</arg></cell><cell>The <link https://en.wikipedia.org/wiki/Media_type>MIME type</link> of the mapped file.</cell><cell nowrap>string~!~not required</cell>
+    <cell><arg>evaluateImmediately</arg></cell><cell>Whether to immediately load and cache the file.~!~The default value is <logiccolor>false</logiccolor>.</cell><cell nowrap>boolean~!~not required</cell>
+    <cell><arg>pathOverride</arg></cell><cell>An alternative path to use when creating the mapping.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Localhost.mapFile</action> <link action_invoker.csdoc>action</link> creates a <link localhost_url.csdoc>localhost URL</link> that provides access to a file on the local file system, specified by <arg>path</arg>. Because <link html_in_cspro.csdoc>web views</link> do not easily allow access to files on the local file system, this action is particularly useful when used <link action_invoker_execution_javascript_web.csdoc>running actions from web views</link>.
+
+By specifying <arg>contentType</arg>, you can override how the local web server defines the <link "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type">Content-Type header</link> when serving the file content. If not specified, the MIME type is deduced from the file's extension. For example, a file with the extension ".jpg" would correspond to the content type "image/jpeg".
+
+The <arg>evaluateImmediately</arg> argument, when set to <logiccolor>true</logiccolor>, results in the immediate loading of the file. The contents of the file are cached, so if the file changes after the localhost URL is created, the URL will access the original cached contents. When not evaluating the contents immediately, the URL will access the contents of the file at the time of the request. At that point, if the file no longer exists, the local web server will respond with a <link https://en.wikipedia.org/wiki/HTTP_404>404 error</link>.
+
+For some advanced uses, particularly when mapping HTML files that use relative paths to images or other resources, you may want to map the file as if exists in a different directory. The <arg>pathOverride</arg> argument allows you to spoof the location of the mapped file.
+
+
+<subheader>Return Value</subheader>
+
+The action returns a string containing the localhost URL that can be used to access the file. The URL is valid as long as the CSPro application is running.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the file does not exist. If specifying a <arg>pathOverride</arg>, exceptions are thrown if trying to map as a directory, or as a file in a directory that does not exist.
+
+
+<subheader>Example (CSPro)</subheader>
+
+<logic>
+string url1 = CS.Localhost.mapFile(path := "PopulationPyramid.html");
+
+// if PopulationPyramid.html uses resources that are in different directory, we can override the path:
+string url2 = CS.Localhost.mapFile(path := "PopulationPyramid.html");
+                                   pathOverride := "../Resources/PopulationPyramid.html");
+
+// url1 may look like: http://localhost:62028/lfs/C/CSProWork/SwissPopulationSurvey/PopulationPyramid.html
+// url2 may look like: http://localhost:62028/vf/1/vfsC:/CSProWork/Resources/PopulationPyramid.html
+
+// by viewing the second URL, any relative paths used in PopulationPyramid.html are evaluated from
+// C:\CSProWork\Resources, not C:\CSProWork\SwissPopulationSurvey
+view(url2);
+</logic>
+
+
+<subheader>Example (HTML + JavaScript)</subheader>
+
+<color HTML>
+<p><a href="#" onclick="selectImage(); return false;">Select an Image to Show</a></p>
+
+<script>
+    const CS = new CSProActionInvoker();
+
+    function selectImage() {
+        // prompt the user to select an image on the local file system
+        CS.Path.selectFileAsync({
+            filter: "|FileType.Image"
+        })
+        .then(path => {
+            return ( path !== undefined ) ? path :
+                                            Promise.reject("User did not select an image.");
+        })
+        .then(selectedPath => {
+            // if a file was selected, map it so that we can access it from this web view
+            return CS.Localhost.mapFile({
+                path: selectedPath
+            });
+        })
+        .then(imageUrl => {
+            // add the image to the bottom of the page
+            const img = document.createElement("img");
+            img.src = imageUrl;
+
+            const div = document.createElement("div");
+            div.appendChild(img);
+
+            document.body.appendChild(div);
+        })
+        .catch(e => {
+            console.log(e);
+        });
+    }
+</script>
+</color>
+
+
+
+<seealso CS_Localhost.csdoc localhost_url.csdoc />

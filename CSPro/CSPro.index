@@ -198,6 +198,7 @@
       { "path": "action_invoker_execution_json.csdoc", "title": "Execution: JSON" }, 
       { "path": "CS_Clipboard.csdoc", "title": "Namespace: Clipboard" }, 
       { "path": "CS_Hash.csdoc", "title": "Namespace: Hash" }, 
+      { "path": "CS_Localhost.csdoc", "title": "Namespace: Localhost" }, 
       { "path": "CS_Message.csdoc", "title": "Namespace: Message" }, 
       { "path": "CS_Settings.csdoc", "title": "Namespace: Settings" }, 
       { "path": "action_invoker.csdoc", "title": "Overview" }
@@ -1847,10 +1848,10 @@
       { "path": "htmldialog_function.csdoc", "title": "Custom HTML Dialogs" }, 
       { "path": "properties_advanced_features.csdoc", "title": "Disabling HTML UI" }, 
       { "path": "encode_function.csdoc", "title": "Encoding Strings For Output" }, 
-      { "path": "external_libraries.csdoc", "title": "JavaScript Libraries" }, 
       { "path": "frequencies_file.csdoc", "title": "Frequency File" }, 
       { "path": "html_dialog_ui.csdoc", "~title": "HTML Dialog Boxes" }, 
       { "path": "javascript_interface.csdoc", "~title": "JavaScript Interface" }, 
+      { "path": "external_libraries.csdoc", "title": "JavaScript Libraries" }, 
       { "path": "listing_file.csdoc", "~title": "Listing File" }, 
       { "path": "localhost_url.csdoc", "~title": "Localhost URL" }, 
       { "path": "prepare_tables_for_posting_to_the_web.csdoc", "~title": "Prepare Tables for Posting to the Web" }, 
@@ -2201,6 +2202,14 @@
   { "path": "loadsetting_function.csdoc", "~title": "loadsetting Function" }, 
   { "path": "syncconnect_function_dropbox_local.csdoc", "title": "LocalDropbox Synchronization" }, 
   { "path": "syncconnect_function_files_local.csdoc", "title": "LocalFiles Synchronization" }, 
+  { "path": "CS_Localhost.csdoc", "~title": "Localhost Action Invoker Namespace", 
+    "subindex": [ 
+      { "path": "CS_Localhost_mapActionResult.csdoc", "~title": "Localhost.mapActionResult Action" }, 
+      { "path": "CS_Localhost_mapFile.csdoc", "~title": "Localhost.mapFile Action" }, 
+      { "path": "CS_Localhost_mapSymbol.csdoc", "~title": "Localhost.mapSymbol Action" }, 
+      { "path": "CS_Localhost_mapText.csdoc", "~title": "Localhost.mapText Action" }
+    ]
+  }, 
   { "path": "localhost_url.csdoc", "~title": "Localhost URL" }, 
   { "path": "locate_function.csdoc", "~title": "Locate Function" }, 
   { "path": "run_production_data_entry.csdoc", "title": "Lock" }, 
@@ -4108,7 +4117,12 @@
       { "path": "prepare_tables_for_posting_to_the_web.csdoc", "~title": "Prepare Tables for Posting to the Web" }
     ]
   }, 
-  { "path": "html_in_cspro.csdoc", "title": "Web View" }, 
+  { "path": "html_in_cspro.csdoc", "title": "Web View", 
+    "subindex": [ 
+      { "path": "external_libraries.csdoc", "title": "JavaScript Libraries" }, 
+      { "path": "localhost_url.csdoc", "~title": "Localhost URL" }
+    ]
+  }, 
   { "path": "add_weights_to_a_table.csdoc", "title": "Weights", 
     "subindex": [ 
       { "path": "add_weights_to_a_table.csdoc", "title": "Add Weights to Table" }, 

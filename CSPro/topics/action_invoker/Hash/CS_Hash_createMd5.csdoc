@@ -8,17 +8,17 @@ s = CS.Hash.createMd5(<arg>path</arg> := ... ‖ <arg>text</arg> := ... ‖ <arg
 </logicsyntax>
 
 <indent><table 3 header nowrap>
-	<cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
-	<cell><arg>path</arg></cell><cell>The path of a file to hash.</cell><cell>string~!~not required</cell>
-	<cell><arg>text</arg></cell><cell>A text string to hash.</cell><cell>string~!~not required</cell>
-	<cell><arg>bytes</arg></cell><cell>Bytes to hash.</cell><cell>string~!~not required</cell>
-	<cell><arg>bytesFormat</arg></cell><cell>The <link action_invoker_binary_data.csdoc>format of the bytes</link> (if specifying <arg>bytes</arg>).~!~The default value is <logiccolor>"autodetect"</logiccolor>.</cell><cell>string~!~not required</cell>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of a file to hash.</cell><cell>string~!~not required</cell>
+    <cell><arg>text</arg></cell><cell>A text string to hash.</cell><cell>string~!~not required</cell>
+    <cell><arg>bytes</arg></cell><cell>Bytes to hash.</cell><cell>string~!~not required</cell>
+    <cell><arg>bytesFormat</arg></cell><cell>The <link action_invoker_binary_data.csdoc>format of the bytes</link> (if specifying <arg>bytes</arg>).~!~The default value is <logiccolor>"autodetect"</logiccolor>.</cell><cell>string~!~not required</cell>
 </table></indent>
 
 
 <subheader>Description</subheader>
 
-The <action>Hash.createMd5</action> <link action_invoker.csdoc>action</link> creates a <link "https://en.wikipedia.org/wiki/MD5">MD5 hash</link> based on the contents of a file, text, or bytes. One, and only one, of the arguments <arg>path</arg>, <arg>text</arg>, or <arg>bytes</arg> must be provided. If specifying <arg>text</arg>, the UTF-8 representation of the text is hashed. If specifying <arg>bytes</arg>, the optional <arg>bytesFormat</arg> argument dictates how <link action_invoker_binary_data.csdoc>binary data</link> is converted from string format.
+The <action>Hash.createMd5</action> <link action_invoker.csdoc>action</link> creates a <link "https://en.wikipedia.org/wiki/MD5">MD5 hash</link> based on the contents of a file, text, or bytes. One, and only one, of the arguments <arg>path</arg>, <arg>text</arg>, or <arg>bytes</arg> must be provided. If specifying <arg>text</arg>, the <link unicode_primer.csdoc>UTF-8</link> representation of the text is hashed. If specifying <arg>bytes</arg>, the optional <arg>bytesFormat</arg> argument dictates how <link action_invoker_binary_data.csdoc>binary data</link> is converted from string format.
 
 It is also possible to create MD5 hashes using the action <action>Hash.createHash</action> and specifying <logiccolor>"MD5"</logiccolor> as the <arg>type</arg>.
 
@@ -44,11 +44,11 @@ List string imagePaths;
 dirlist(imagePaths, ".", filter := "*.jpg");
 
 do numeric ctr = 1 while ctr <= imagePaths.length()
-	string imageMd5 = CS.Hash.createMd5(path := imagePaths(ctr));
+    string imageMd5 = CS.Hash.createMd5(path := imagePaths(ctr));
 
-	if previouslySyncedFileMd5s.seek(imageMd5) = 0 then
-		// TODO: the image has not been synced
-	endif;
+    if previouslySyncedFileMd5s.seek(imageMd5) = 0 then
+        // TODO: the image has not been synced
+    endif;
 enddo;
 </logic>
 

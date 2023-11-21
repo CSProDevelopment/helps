@@ -1,0 +1,51 @@
+﻿<title>Localhost.mapText Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Localhost.mapText(<arg>text</arg> := ...『, <arg>contentType</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>text</arg></cell><cell>The text to map.</cell><cell>string~!~required</cell>
+    <cell><arg>contentType</arg></cell><cell>The <link https://en.wikipedia.org/wiki/Media_type>MIME type</link> of the mapped content.~!~The default value is <logiccolor>"text/plain"</logiccolor>.</cell><cell nowrap>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Localhost.mapText</action> <link action_invoker.csdoc>action</link> creates a <link localhost_url.csdoc>localhost URL</link> that provides access to the <arg>text</arg> when accessed from a local web server. The text is mapped in its <link unicode_primer.csdoc>UTF-8</link> representation.
+
+By specifying <arg>contentType</arg>, you can override how the local web server defines the <link "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type">Content-Type header</link> when serving the text content. For example, if the text is HTML content, you would set <arg>contentType</arg> to <logiccolor>"text/html"</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The action returns a string containing the localhost URL that can be used to access the text. The URL is valid as long as the CSPro application is running.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form.
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<logic>
+// create a simple text report displaying the date/time in a variety
+// of formats and display it in the embedded web browser
+string dateReport = "Date Report\n" +
+                    "-----------\n" +
+                    maketext("\nsysdate: %d", sysdate("YYYYMMDD")) +
+                    maketext("\nsystime: %d", systime()) +
+                    maketext("\ntimestamp: %d", timestamp()) +
+                    maketext("\ntimestring: %s", timestring());
+
+string url = CS.Localhost.mapText(text := dateReport);
+view(url);
+</logic>
+
+
+<seealso CS_Localhost.csdoc localhost_url.csdoc />
