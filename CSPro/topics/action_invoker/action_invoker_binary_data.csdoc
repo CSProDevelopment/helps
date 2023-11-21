@@ -26,7 +26,7 @@ When specifying a format for the binary data that Action Invoker returns, there 
 	<li><logiccolor>"Base64"</logiccolor>: The string returned represents bytes in <link "https://en.wikipedia.org/wiki/Base64">Base64 format</link>.</li>
 	<li><logiccolor>"dataUrl"</logiccolor>: The string returned contains a <link "https://en.wikipedia.org/wiki/Data_URI_scheme">data URL</link>.</li>
 	<li><logiccolor>"hex"</logiccolor>: The string returned represents bytes in <link "https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal format</link>. The hexadecimal characters are returned in lowercase.</li>
-	<li><logiccolor>"localhostUrl"</logiccolor>: The string returned contains a localhost URL that can be used to access the binary data, served using a local web server. This URL is only valid as long as the application is running.</li>
+	<li><logiccolor>"localhostUrl"</logiccolor>: The string returned contains a <link localhost_url.csdoc>localhost URL</link> that can be used to access the binary data, served using a local web server. This URL is only valid as long as the application is running.</li>
 </list>
 
 No exceptions are thrown while returning binary data.

@@ -4,8 +4,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = CS.Message.formatText(<arg>number</arg> := ... ‖ <arg>text</arg> := ...『, <arg>type</arg> := ...』
-                       『, <arg>arguments</arg> := ...』)
+s = CS.Message.formatText(<arg>number</arg> := ... ‖ <arg>text</arg> := ...『, <arg>type</arg> := ...』『, <arg>arguments</arg> := ...』)
 </logicsyntax>
 
 <indent><table 3 header nowrap>
@@ -27,6 +26,8 @@ The <action>Message.formatText</action> <link action_invoker.csdoc>action</link>
 </list>
 
 Supply <arg>arguments</arg> to replace the % placeholders using an array. Each argument is sequentially inserted into the text string. Arguments can be numeric or string expressions, but the type of the argument must match the type of the receiving field in the base text.
+
+If you want to format text from a <link html_in_cspro.csdoc>web view</link>, you can also use the <link external_libraries.csdoc>sprintf-js</link> JavaScript library.
 
 
 <subheader>Return Value</subheader>
