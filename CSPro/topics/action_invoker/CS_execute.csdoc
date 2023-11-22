@@ -1,0 +1,67 @@
+﻿<title>execute Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.execute(<arg>action</arg> := ...『, <arg>arguments</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>action</arg></cell><cell>The name of the action to execute.</cell><cell>string~!~required</cell>
+    <cell><arg>arguments</arg></cell><cell>Arguments for the action.</cell><cell nowrap>object~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>execute</action> <link action_invoker.csdoc>action</link> executes another action with the action name specified as a string argument <arg>action</arg>. Action names are specified without the prefix <logiccolor>"CS."</logiccolor>, e.g., <logiccolor>"Clipboard.getText"</logiccolor> for <action>Clipboard.getText</action>. If the action to be called requires arguments, they can be forwarded to the action using <arg>arguments</arg>.
+
+Although <action>execute</action> can be used to execute any action, generally you will want to call the action directly. However, <action>execute</action> provides a generalized framework for executing actions by calling a single action as an entry point. A related action, <action>Localhost.mapActionResult</action>, executes an action and maps the result as a <link localhost_url.csdoc>localhost URL</link>.
+
+
+<subheader>Return Value</subheader>
+
+The action returns the result of the other action executed.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, if the action name is not valid, or if the other action executed throws an exception.
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<logic>
+// calling an action directly
+string clipboardText = CS.Clipboard.getText();
+
+// calling an action indirectly
+clipboardText = CS.execute(action := "Clipboard.getText");
+</logic>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+// calling an action directly
+let birdHash = CS.Hash.createHash({
+    text: "Eurasian Hoopoe",
+    salt: "Bucerotiformes",
+    saltFormat: "text"
+});
+
+// calling an action indirectly
+birdHash = CS.execute({
+    action: "Hash.createHash",
+    arguments: {
+        text: "Eurasian Hoopoe",
+        salt: "Bucerotiformes",
+        saltFormat: "text"
+    }
+});
+</color>
+
+
+<seealso action_invoker.csdoc CS_Localhost_mapActionResult.csdoc />

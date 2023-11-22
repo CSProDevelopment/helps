@@ -7,8 +7,62 @@
 s = CS.Localhost.mapActionResult(<arg>action</arg> := ...『, <arg>arguments</arg> := ...』)
 </logicsyntax>
 
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>action</arg></cell><cell>The name of the action to execute.</cell><cell>string~!~required</cell>
+    <cell><arg>arguments</arg></cell><cell>Arguments for the action.</cell><cell nowrap>object~!~not required</cell>
+</table></indent>
 
-HELP_TODO...link to execute
+
+<subheader>Description</subheader>
+
+The <action>Localhost.mapActionResult</action> <link action_invoker.csdoc>action</link> executes another action with the action name specified as a string argument <arg>action</arg>. The result of the action is mapped as a <link localhost_url.csdoc>localhost URL</link> that provides access to the other action's result when accessed from a local web server. Action names are specified without the prefix <logiccolor>"CS."</logiccolor>, e.g., <logiccolor>"Clipboard.getText"</logiccolor> for <action>Clipboard.getText</action>. If the action to be called requires arguments, they can be forwarded to the action using <arg>arguments</arg>.
+
+This action is primarily for advanced uses, such as passing data to a <link html_in_cspro.csdoc>web view</link> that may be too large to pass directly using an action such as <action>UI.postWebMessage</action>.
+
+A related action, <action>execute</action>, executes an action and directly returns the result.
 
 
-<seealso CS_Localhost.csdoc localhost_url.csdoc />
+<subheader>Return Value</subheader>
+
+The action returns a string containing the localhost URL that can be used to access the result of the other action executed. The URL is valid as long as the CSPro application is running. If the other action returns undefined, the local web server will respond with a <link https://en.wikipedia.org/wiki/HTTP_404>404 error</link> when accessing the URL.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, if the action name is not valid, or if the other action executed throws an exception.
+
+
+<subheader>Example (HTML + JavaScript)</subheader>
+
+<color HTML>
+<script>
+    const CS = new CSProActionInvoker();
+
+    // get the directory listing for the application directory, mapping the result as a URL
+    const directoryListingUrl = CS.Localhost.mapActionResult({
+        action: "Path.getDirectoryListing",
+        arguments: {
+            path: ".",
+            recursive: true,
+            detailed: true
+        }
+    });
+
+    // request the result of the directory listing using the URL
+    const request = new XMLHttpRequest();
+    request.open("GET", directoryListingUrl, true);
+
+    request.onload = () => {
+        if( request.status >= 200 && request.status < 400 ) {
+            const directoryListing = JSON.parse(request.responseText);
+            // do something with directoryListing
+        }
+    };
+
+    request.send();
+</script>
+</color>
+
+
+<seealso CS_Localhost.csdoc localhost_url.csdoc CS_execute.csdoc />
