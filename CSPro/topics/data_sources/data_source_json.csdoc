@@ -1,6 +1,42 @@
 ﻿<title>JSON Data Source</title>
 
-HELP_TODO
 
+<subheader>JSON (.json)</subheader>
+<list>
+	<li>A text-based data source that stores cases in a JSON array of objects:</li>
+	<indent>
+	[ { case 1 }, { case 2 }, …, { case N } ]
+	</indent>
+	<li>The file is written in UTF-8 format without a BOM, but files with a BOM can be read and manipulated</li>
+	<li>The file is written in UTF-8 format without a BOM, but files with a BOM can be read and manipulated</li>
+	<li>All case data except for synchronization information is stored as part of the JSON case, so this data source is similar to CSPro DB in that it supports deleting/undeleting cases and files with duplicate keys (because, like CSPro DB, the index key is the UUID, not the case key)</li>
+	<li>When used as a CSEntry main data file, or associated with an external dictionary, an index will be created for the file (with the extension .csidx, as with text files)</li>
+	<li>If a file has multiple cases with the same UUID, an index cannot be created and the file will not be opened (when an index is needed)</li>
+	<indent>When running CSIndex on a JSON data file, an index will be created even if there are multiple cases with the same key, but as with CSPro DB and other formats, the CSIndex tool will allow you to remove cases with the same key</indent>
+<li>Binary data associated with the JSON data source is stored, by default, in a directory named: filename + ' (files)'</li>
+<indent>
+Binary data is saved using the name: &ltmd5&gt.&ltevaluated extension if available&gt
+<indent>
+However, if the MD5 is, say, 8277e0910d750195b448797616e091ad, and the routine says to save it as 8277e0910d750195b448797616e091ad.png but 8277e0910d750195b448797616e091ad.jpg exists, then the version with the different extension will be used (and not overwritten)
+</indent>
+</indent>
+<indent>
+Binary data is loaded by searching for a file with the following name: &ltmd5&gt.*
+</indent>
+<indent>
+It is possible to embed binary data in the file (see below); the data will be saved as a data URL
+</indent>
+</list>
+
+<subheader>Connection String Options</subheader>
+<list>
+<li>json-format=compact [default is not compact]</li>
+<li>verbose [defined means true; the default is not defined, meaning not verbose]</li>
+<li>write-blank-values [defined means true; the default is not defined, meaning that NOTAPPL values and blank strings will not be written to the the file]</li>
+<li>write-labels [defined means true; the default is not defined, meaning that for each value, only a “code” entry is written, not “code” and “label” entries]</li>
+<li>binary-data=embed or &ltdirectory name&gt</li>
+<indent>If embed, the binary data is saved to the .json file in Base64 format as data URLs</indent>
+<indent>If a directory name is given, it is used instead of the “ (files)” default directory where binary data is saved; the directory name is evaluated relative to the JSON data file; e.g.,: binary-data=../My Files</indent>
+</list>
 
 <seealso data_sources.csdoc />

@@ -1,6 +1,28 @@
 ﻿<title>Text Data Source</title>
 
-HELP_TODO <link newline_handling.csdoc>Note: newlines in items / notes / statuses are written out with the NL character</link> 
+<html><a id="text"></a></html>
+<subheader>Text (.lst, .dat, user's choice)</subheader>
+
+Text is the default file association for Listing, Freq, and Impute Freq Files, though it can be used for all other file designations, except the (Saved) Array file (which must use the <b>".sva"</b> extension). The generated file is ANSI-based, viewable by any web-browser (such as Firefox or Opera) or any ASCII editor (such as Notepad or Wordpad).
+
+Depending on the file being specified, a default file extension may or may not be given. For example, Listing and Impute Freq Files will be given an <b>".lst"</b> extension by default, although no default file extension is given to Freq Files. If a non-text file designation was used for Input or Lookup Files and the file type is changed to Text, a default file type of <b>".dat"</b> will be given. (For example, MyCensus.csdb will change to MyCensus.dat if the Source Type is changed from .csdb to Text.) No default extension is given for Write Files. Whatever extension is used, you can change it to whatever you prefer (for example, <b>".txt"</b>).
+
+<subheader>Limitations</subheader>
+<list>
+	<li>Does not support binary data </li>
+	<li>Does not support undeleting cases </li>
+	<li>Does not support opening as external dictionary when file has duplicate keys </li>
+	<li>Does not support syncing data </li>
+</list>
+
+<table 2>
+<subheader>Other Text Data Files</subheader>
+<cell><link index_file_csidx.csdoc>.csidx</link></cell><cell>Index for text data files (in binary format)</cell>
+<cell><link notes_file_csnot.csdoc>.csnot</link></cell><cell>Notes (entered by the operator) for text data files</cell>
+<cell><link status_file_sts.csdoc>.sts</link></cell><cell>Status file, listing information about what cases have been verified or partially entered, for text data files</cell>
+</table 2>
+
+<link newline_handling.csdoc>Note: newlines in items / notes / statuses are written out with the NL character</link> 
 
 
 <seealso data_sources.csdoc />

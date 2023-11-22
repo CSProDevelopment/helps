@@ -1,6 +1,23 @@
 ﻿<title>Semicolon Delimited Data Source</title>
 
-HELP_TODO <link newline_handling.csdoc>Note: newlines in items are removed</link> 
+<subheader>Semicolon-delimited (user's choice)</subheader>
+
+This option is available for the file generated from any <logiccolor>impute</logiccolor> function calls that use the <logiccolor>stat</logiccolor> option. However, only non-repeating records will be written to the file; repeating records will be ignored. In order for CSPro to know you want a semicolon-delimited file, you must use the "type" connection string as follows:
+
+<pff>myFile.out|type=Semicolon</pff>
+
+When this parameter is added, CSPro will change the Source Type to "Semicolon-delimited". Note when this option is used for Impute Stat files, a dictionary will be created with the same name.
+
+<subheader>Limitations</subheader>
+<list>
+	<li>Does not support binary data </li>
+	<li>Does not support undeleting cases </li>
+	<li>Does not support opening as external dictionary when file has duplicate keys </li>
+	<li>Does not support syncing data </li>
+	<li>Write-Only</li>
+</list>
+
+<link newline_handling.csdoc>Note: newlines in items are removed</link> 
 
 
 <seealso data_sources.csdoc />

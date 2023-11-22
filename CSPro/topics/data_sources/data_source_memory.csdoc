@@ -1,6 +1,23 @@
 ﻿<title>In-Memory Data Source</title>
 
-HELP_TODO
+<subheader>In-Memory (.json)</subheader>
+
+This data source is similar to None except that all cases persist in memory for the duration of the program run (or rather, until the data source is closed), meaning:
+<list>
+<li>CSEntry shows any cases added to the repository until CSEntry closes</li>
+<li>After adding a case using an external dictionary using writecase, it can be retrieved with loadcase as with a data file</li>
+</list>
+
+<subheader>Limitations</subheader>
+<list>
+	<li>Does not support binary data </li>
+	<li>Does not support undeleting cases </li>
+	<li>Does not support opening as external dictionary when file has duplicate keys </li>
+	<li>Does not support syncing data </li>
+</list>
+<subheader>Connection String Options</subheader>
+
+To use this in a connection string: |type=Memory
 
 
 <seealso data_sources.csdoc />
