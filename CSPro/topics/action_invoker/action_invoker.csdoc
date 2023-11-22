@@ -1,6 +1,27 @@
 ﻿<title>Action Invoker Overview</title>
 
 
+The Action Invoker is a system that executes routines, called "actions," in a standard way across a variety of environments. Similar to <link logic_alphabetical_list.csdoc>CSPro logic functions</link>, each action takes some number of arguments and generally returns a result.
+
+Most actions are part of a namespace, a grouping of related functionality. The actions are summarized on the namespace pages, the <link logic_alphabetical_list.csdoc>alphabetical list of functions</link> page, and in action-specific documentation. Additionally, the actions are described in a parsable format in a file included with CSPro:
+
+<html><span style="white-space:nowrap;"></html><i>C:\Program Files (x86)\CSPro <definition CSPro::version />\action-definitions.json</i><html></span></html>.
+
+<subheader>Execution Environments</subheader>
+
+Action Invoker actions can be run in a variety of ways, with each format described on one of following pages:
+
+<list>
+    <li><link action_invoker_execution_cspro_logic.csdoc>CSPro logic</link></li>
+    <li><link action_invoker_execution_javascript_embedded.csdoc>JavaScript (embedded)</link></li>
+    <li><link action_invoker_execution_javascript_web.csdoc>JavaScript (run from web views)</link></li>
+    <li><link action_invoker_execution_json.csdoc>JSON</link></li>
+    <li><link action_invoker_execution_android.csdoc>Android Intent</link></li>
+</list>
+
+For security purposes you may have to use an <link action_invoker_access_token.csdoc>access token</link> when using the Action Invoker from JavaScript run from web views, or when using an Android Intent.
+
+
 <subheader>Functionality</subheader>
 
 The following actions are not part of a namespace:

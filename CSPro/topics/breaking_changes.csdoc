@@ -6,56 +6,58 @@ In general, newer versions of CSPro can execute applications and process data cr
 <subheader>CSPro 8.0</subheader>
 
 <list>
-	<li>The specification files for files with the following extensions are now saved in <link JSON_specification_files.csdoc>JSON format</link>: .bch, .cmp, .csprops, .dcf, .ent, .exf, .fqf, .ssf, .xl2cs, .xtb. The most significant change concerns <link data_dictionary_file_dcf.csdoc>dictionaries</link> (.dcf), as any external tools that parse CSPro dictionaries must be modified to handle the new format.</li>
-	<li>In previous versions, <link newline_handling.csdoc>newline characters</link> were written to <link data_source_text.csdoc>text data sources</link> (and corresponding <link notes_file_csnot.csdoc>notes</link> files) as two characters: "\n". Newlines in those contexts are now written as <logiccolor>'␤'</logiccolor>, so when reading old data files, what was previously interpreted as a single character newline (<logiccolor>"\n"</logiccolor>) will instead be interpreted two as characters: <logiccolor>"\\n"</logiccolor>.</li>
-	<li>Lines written using <logiccolor>File.write</logiccolor> or <logiccolor>filewrite</logiccolor> are now terminated with a single <logiccolor>"\n"</logiccolor> character, no longer with <logiccolor>"\r\n"</logiccolor>.</li>
-	<li>Creating dynamic value sets using <logiccolor>Array</logiccolor> objects is no longer possible.</li>
-	<li>The <logiccolor>box</logiccolor> / <logiccolor>endbox</logiccolor> syntax for <link recode_statement.csdoc>recoding variables</link> is no longer supported.</li>
-	<li>The templated reporting system introduced in CSPro 7.1 has been removed.</li>
+    <li>The specification files for files with the following extensions are now saved in <link JSON_specification_files.csdoc>JSON format</link>: .bch, .cmp, .csprops, .dcf, .ent, .exf, .fqf, .ssf, .xl2cs, .xtb. The most significant change concerns <link data_dictionary_file_dcf.csdoc>dictionaries</link> (.dcf), as any external tools that parse CSPro dictionaries must be modified to handle the new format.</li>
+    <li>In previous versions, <link newline_handling.csdoc>newline characters</link> were written to <link data_source_text.csdoc>text data sources</link> (and corresponding <link notes_file_csnot.csdoc>notes</link> files) as two characters: "\n". Newlines in those contexts are now written as <logiccolor>'␤'</logiccolor>, so when reading old data files, what was previously interpreted as a single character newline (<logiccolor>"\n"</logiccolor>) will instead be interpreted two as characters: <logiccolor>"\\n"</logiccolor>.</li>
+    <li>Lines written using <logiccolor>File.write</logiccolor> or <logiccolor>filewrite</logiccolor> are now terminated with a single <logiccolor>"\n"</logiccolor> character, no longer with <logiccolor>"\r\n"</logiccolor>.</li>
+    <li>Creating dynamic value sets using <logiccolor>Array</logiccolor> objects is no longer possible.</li>
+    <li>The <logiccolor>box</logiccolor> / <logiccolor>endbox</logiccolor> syntax for <link recode_statement.csdoc>recoding variables</link> is no longer supported.</li>
+    <li>The templated reporting system introduced in CSPro 7.1 has been removed.</li>
+	<li>Android devices running CSEntry must be running version 5.0 (Lollipop) or higher.</li>
+    <li>CSWeb now requires <link "https://www.php.net/releases/8.0">PHP 8</link>.</li>
 </list>
 
 
 <subheader>CSPro 7.4</subheader>
 
 <list>
-	<li>The internal format of <link data_sources.csdoc>CSPro DB</link> files changed and can no longer be opened in previous versions of CSPro.</li>
+    <li>The internal format of <link data_sources.csdoc>CSPro DB</link> files changed and can no longer be opened in previous versions of CSPro.</li>
 </list>
 
 
 <subheader>CSPro 7.2</subheader>
 
 <list>
-	<li>Synchronizing files and data using .pnc files is no longer possible.</li>
-	<li>Implicit compilation mode, which allowed for on-the-fly variable declarations, has been removed.</li>
+    <li>Synchronizing files and data using .pnc files is no longer possible.</li>
+    <li>Implicit compilation mode, which allowed for on-the-fly variable declarations, has been removed.</li>
 </list>
-		
-		
+
+
 <subheader>CSPro 7.0</subheader>
 
 <list>
-	<li>The format of the <link notes_file_csnot.csdoc>notes file</link> associated with <link data_sources.csdoc>text data files</link> changed (as well as the extension from .not to .csnot).</li>
+    <li>The format of the <link notes_file_csnot.csdoc>notes file</link> associated with <link data_sources.csdoc>text data files</link> changed (as well as the extension from .not to .csnot).</li>
 </list>
 
 
 <subheader>CSPro 6.2</subheader>
 
 <list>
-	<li>The <logiccolor>fileexist</logiccolor> function no longer returns true if the path exists as a directory (as opposed to a file).</li>
+    <li>The <logiccolor>fileexist</logiccolor> function no longer returns true if the path exists as a directory (as opposed to a file).</li>
 </list>
-        
+
 
 <subheader>CSPro 6.0</subheader>
 
 <list>
-	<li>The format of the <link binary_data_entry_application_file_pen.csdoc>compiled data entry</link> format changed (as well as the extension from .enc to .pen). CSEntry can no longer run .enc files.</li>
-	<li>The <logiccolor>seed</logiccolor> function returns a different sequence of random numbers.</li>
+    <li>The format of the <link binary_data_entry_application_file_pen.csdoc>compiled data entry</link> format changed (as well as the extension from .enc to .pen). CSEntry can no longer run .enc files.</li>
+    <li>The <logiccolor>seed</logiccolor> function returns a different sequence of random numbers.</li>
 </list>
 
 
 <subheader>CSPro 5.0</subheader>
 
 <list>
-	<li>Specification and data files are saved in <link unicode_primer.csdoc>UTF-8 format</link> with a BOM (byte order mark). Reading these files in external tools that expect an ANSI encoding may result in problems.</li>
+    <li>Specification and data files are saved in <link unicode_primer.csdoc>UTF-8 format</link> with a BOM (byte order mark). Reading these files in external tools that expect an ANSI encoding may result in problems.</li>
 </list>
 
 
