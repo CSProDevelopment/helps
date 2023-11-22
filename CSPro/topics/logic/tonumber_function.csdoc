@@ -1,23 +1,30 @@
 ﻿<title>ToNumber Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 d = tonumber(<arg>string_expression</arg>);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
 The <logiccolor>tonumber</logiccolor> function converts a <arg>string_expression</arg> into a number. Leading blanks in the string are ignored. The conversion stops at the first non-numeric character encountered.
 
+Special processing for <link boolean_values.csdoc>boolean values</link> converts <logiccolor>"true"</logiccolor> to <logiccolor>1</logiccolor> and <logiccolor>"false"</logiccolor> to <logiccolor>0</logiccolor>.
+
+
 <subheader>Return Value</subheader>
 
 The function returns a decimal number. If the string begins with a non-numeric character (other than a blank), the function returns <logiccolor>default</logiccolor>.
+
 
 <subheader>Example</subheader>
 
 <logic>
 numeric districtParameter = tonumber(sysparm("DISTRICT"));
 </logic>
+
 
 <seealso edit_function.csdoc maketext_function.csdoc />

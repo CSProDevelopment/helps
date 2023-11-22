@@ -6,12 +6,14 @@ There are two numeric values in the CSPro language that translate to boolean val
 numeric value = 2;
 
 if value then
-	errmsg("This will be displayed");
+    errmsg("This will be displayed");
 endif;
 
 if value = true then
-	errmsg("This will not be displayed");
+    errmsg("This will not be displayed");
 endif;
 </logic>
+
+The <logiccolor>tonumber</logiccolor> function will convert the string expressions <logiccolor>"true"</logiccolor> and <logiccolor>"false"</logiccolor> to <logiccolor>1</logiccolor> and <logiccolor>0</logiccolor>.
 
 <seealso special_values.csdoc />
