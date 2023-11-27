@@ -1,4 +1,4 @@
-﻿<title>Action Invoker Execution From CSPro Logic</title>
+﻿<title>Action Invoker Execution from CSPro Logic</title>
 
 
 <subheader>Overview</subheader>
@@ -42,7 +42,7 @@ If the second example were written without the <logiccolor>@</logiccolor> operat
 
 <subheader>Return Values</subheader>
 
-The results of all actions are returned as strings containing <link JSON_primer.csdoc>JSON</link>. This JSON return value can be of type undefined, string, number, boolean, array, or object. Because it is difficult to work with JSON in CSPro logic, a <link logic_settings.csdoc>logic setting</link>, enabled by default, allows you to modify how results are returned to make them easier to use in CSPro logic. The following table gives examples of how return values are handled given the setting:
+The results of all actions are returned as strings containing <link JSON_primer.csdoc>JSON</link>, or a value representing undefined. This return value can be of type undefined, string, number, boolean, array, or object. Because it is difficult to work with JSON in CSPro logic, a <link logic_settings.csdoc>logic setting</link>, enabled by default, allows you to modify how results are returned to make them easier to use in CSPro logic. The following table gives examples of how return values are handled given the setting:
 
 <table 3 header nowrap>
     <cell>Return Type</cell><cell>As JSON</cell><cell>Converted for CSPro Logic</cell>

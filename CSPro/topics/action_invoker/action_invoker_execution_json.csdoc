@@ -1,3 +1,111 @@
-﻿<title>Action Invoker Executing Using JSON</title>
+﻿<title>Action Invoker Execution Using JSON</title>
 
-HELP_TODO
+
+<subheader>Overview</subheader>
+
+It is possible to run <link action_invoker.csdoc>Action Invoker</link> actions by specifying the action and arguments using <link JSON_primer.csdoc>JSON</link>. This format can be executed in <link CSCode::language_cspro_action_invoker_json.csdoc>CSCode</link>, or from other <link action_invoker_execution_android.csdoc>Android applications</link>.
+
+A JSON object is used to specify each action. The action's name is specified using the name <arg>action</arg> and any arguments to the action are specified as part of the same object. For example, the following code puts the text <logiccolor>"CSPro"</logiccolor> onto the clipboard:
+
+<color JSON>
+{
+  "action": "Clipboard.putText",
+  "text": "CSPro"
+}
+</color>
+
+Multiple actions can be specified by using an array of objects. Each action is processed sequentially. For example:
+
+<color JSON>
+[
+  {
+    "action": "File.copy",
+    "source": "Dayton.jpg",
+    "destination": "Dayton (City in Ohio).jpg"
+  },
+  {
+    "action": "File.copy",
+    "source": "Dayton (City in Ohio).jpg",
+    "destination": "Dayton (City in United States).jpg"
+  }
+]
+</color>
+
+
+<subheader>Argument Types</subheader>
+
+Arguments to actions are specified in one of the JSON types: string, number, boolean, array, or object. The help page for each action will list the type, or types, permitted for each argument.
+
+
+<subheader>Return Values</subheader>
+
+The results of all actions are returned as a string containing JSON. When specifying a single action, the result is a single object. When specifying multiple actions, the result is an array of objects. Each result object contains <arg>type</arg>, which specifies the result type. Result types can be of type undefined, string, number, boolean, array, object, or exception. If the type is not undefined, another property, <arg>value</arg>, contains the result. For example, with this input:
+
+<color JSON>
+[
+  {
+    "action": "Clipboard.putText",
+    "text": "Action Invoker - JSON Example"
+  },
+  {
+    "action": "Clipboard.getText"
+  },
+  {
+    "action": "Clipboard.GETTEXT"
+  }
+]
+</color>
+
+The result is:
+
+<color JSON>
+[
+  {
+    "type": "undefined"
+  },
+  {
+    "type": "string",
+    "value": "Action Invoker - JSON Example"
+  },
+  {
+    "type": "exception",
+    "value": "Action Invoker error: The component of the action name must be specified in the proper case: 'GETTEXT' -> 'getText'"
+  }
+]
+</color>
+
+When executing actions from CSCode, you can choose to view results in JSON format, or in a parsed, more readable, format.
+
+
+<subheader>Exception Handling</subheader>
+
+At runtime, if any of the arguments are invalid, or if there was an error executing the action, the Action Invoker throws an <link "https://en.wikipedia.org/wiki/Exception_handling">exception</link>. As shown in the example above, the result of the action will be of <arg>type</arg> <logiccolor>"exception"</logiccolor>, with the exception message specified in <arg>value</arg>.
+
+By default, when specifying multiple actions, an exception will result in the termination of processing and subsequent actions will not be executed. However, all JSON execution environments provide options to continue processing actions even when an exception is thrown.
+
+
+<subheader>Executing Actions That Use "action" as an Argument</subheader>
+
+Because <arg>action</arg> is used to specify the name of the action to execute, it is not possible to directly execute actions that use <arg>action</arg> as an argument. In these rare instances, you can use the <action>execute</action> action to specify the arguments, which can then contain <arg>action</arg> as one of the arguments. For example, the <action>Localhost.mapActionResult</action> executes another action with the action name specified using the argument <arg>action</arg>. This example shows the workaround used to execute this in JSON format:
+
+<color JSON>
+{
+  "action": "execute",
+  "arguments": {
+    "action": "Localhost.mapActionResult",
+    "arguments": {
+      "action": "Message.formatText",
+      "arguments": {
+        "text": "%s, %s",
+        "arguments": [
+          "Hello",
+          "World!"
+        ]
+      }
+    }
+  }
+}
+</color>
+
+
+<seealso action_invoker.csdoc />
