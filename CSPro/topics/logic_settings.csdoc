@@ -8,11 +8,11 @@ Logic settings are saved to the application file (<link data_entry_application_f
 
 <subheader>Case Sensitivity</subheader>
 
-If checked, the compiler will enforce case sensitivity when processing:
+<b>Symbol names</b>: If checked, the compiler will enforce case sensitivity when processing:
 
 <list>
-	<li>Symbol names such as dictionary and form names, logic variables, etc.</li>
-	<li>Special callback functions such as <link OnKey_global_function.csdoc>OnKey</link>.</li>
+    <li>Symbol names such as dictionary and form names, logic variables, etc.</li>
+    <li>Special callback functions such as <link OnKey_global_function.csdoc>OnKey</link>.</li>
 </list>
 
 Although CSPro logic is case-insensitive, many other programming languages are case-sensitive, meaning that "AGE" is different from "age". Having CSPro enforce case sensitivity may help you write better (and more careful) code. CSPro dictionary and form variables are added to logic as uppercase names.
@@ -25,8 +25,8 @@ Note that even with this checked, variable names must be unique on a case-insens
 The <link logic_version.csdoc>logic version</link> controls how <link string_literals.csdoc>string literals</link> and <link comments.csdoc>multiline comments</link> are handled, as well as whether strings are right-padded <link string_comparisons.csdoc>during comparisons</link>.
 
 <list>
-	<li>Original (the only version up to CSPro 7.7)</li>
-	<li>CSPro 8.0+</li>
+    <li>Original (the only version up to CSPro 7.7)</li>
+    <li>CSPro 8.0+</li>
 </list>
 
 For new applications, using the latest logic version is recommended. A comprehensive description of differences in the versions is available here: <topic logic_version.csdoc />.
@@ -34,7 +34,13 @@ For new applications, using the latest logic version is recommended. A comprehen
 
 <subheader>Action Invoker</subheader>
 
-HELP_TODO
+Several settings control <link action_invoker.csdoc>Action Invoker</link> execution:
+
+<b>From CSPro logic, automatically convert results that are string, boolean, and undefined to CSPro formats</b>: When called from CSPro logic, Action Invoker results are returned as a string containing <link JSON_primer.csdoc>JSON</link>. If checked, CSPro will convert this JSON string into a string more easily handled by CSPro. More details are available at <topic action_invoker_execution_cspro_logic.csdoc />.
+
+<b>From external callers</b>: HELP_TODO
+
+<b>Registered access tokens</b>: HELP_TODO (one per line)
 
 
 <subheader>CSPro Default Settings</subheader>
@@ -42,9 +48,9 @@ HELP_TODO
 By clicking <b>Set as Default</b>, the logic settings shown will become the default logic settings for new applications, as well as for tools that use logic. It is recommended that you decide what settings fit your needs and then use these settings for all new applications. If no default settings have been set, new applications are created using:
 
 <list>
-	<li><b>Case Sensitivity</b>: No</li>
-	<li><b>Logic Version</b>: Original</li>
-	<li><b>Action Invoker</b>: Convert results for CSPro logic; allow users to approve when no access token is provided</li>
+    <li><b>Case Sensitivity</b>: No</li>
+    <li><b>Logic Version</b>: Original</li>
+    <li><b>Action Invoker</b>: Convert results for CSPro logic; allow users to approve when no access token is provided</li>
 </list>
 
 

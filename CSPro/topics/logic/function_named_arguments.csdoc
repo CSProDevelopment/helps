@@ -1,18 +1,21 @@
 ﻿<title>Function Named Arguments</title>
 
-Some CSPro functions have optional arguments that can only be specified by supplying the name of the parameter, followed by the <logiccolor>:=</logiccolor> operator, and then the argument. The general form is:
+
+<subheader>CSPro Logic</subheader>
+
+Some CSPro logic functions have optional arguments that can only be specified by supplying the name of the parameter, followed by the <logiccolor>:=</logiccolor> operator, and then the argument. Named arguments appear in the text editor colored in a <font #aa1464><b>reddish color</b></font>. The general form is:
 
 <logicsyntax>
 <arg>function_name</arg>(『<arg>required_arguments</arg>』, <arg>parameter_name1</arg> := <arg>argument1</arg>『, ...』);
 </logicsyntax>
 
-For example, the <logiccolor>ValueSet.add</logiccolor> function allows you to specify the name of an image to associate with a value:
+For example, the <logiccolor>ValueSet.add</logiccolor> function allows you to specify the filename of an image to associate with a value:
 
 <logic>
 flowers_vs.add("Rose", 1, image := "red-rose.jpg");
 </logic>
 
-Multiple named arguments can be supplied in any order. Both of these statements are the same:
+Multiple named arguments can be supplied in any order. Both of these statements are identical:
 
 <logic>
 flowers_vs.add("Rose", 1, image := "red-rose.jpg", textColor := "#ff0000");
@@ -20,3 +23,12 @@ flowers_vs.add("Rose", 1, textColor := "#ff0000", image := "red-rose.jpg");
 </logic>
 
 For functions that use named arguments, the arguments that can be specified will be documented in the help page for that function.
+
+
+<subheader>Action Invoker</subheader>
+
+When using the <link action_invoker.csdoc>Action Invoker</link> from <link action_invoker_execution_cspro_logic.csdoc>CSPro logic</link>, named arguments are used to identify each argument. For example:
+
+<logic>
+string manualText = CS.File.readText(path := "manual.txt");
+</logic>

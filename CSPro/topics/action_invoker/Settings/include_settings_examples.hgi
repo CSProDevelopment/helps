@@ -11,7 +11,7 @@ preproc
     // restore the language that was in use when the user last ran this survey, defaulting to English
     string language = CS.Settings.getValue(source := SettingsSource,
                                            key := LanguageKey,
-                                           value := @string "EN");
+                                           value := "EN");
     setlanguage(language);
 
 postproc
@@ -19,7 +19,7 @@ postproc
     // save the language in use
     CS.Settings.putValue(source := SettingsSource,
                          key := LanguageKey,
-                         value := @string getlanguage());
+                         value := getlanguage());
 </logic>
 
 

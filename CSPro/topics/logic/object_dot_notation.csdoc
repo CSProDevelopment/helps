@@ -1,6 +1,9 @@
-﻿<title>Logic Objects and Dot Notation</title>
+﻿<title>Dot Notation, Logic Objects, and Namespaces</title>
 
-A CSPro logic object is a variable that is similar to the objects that exist in other programming languages that are "object-oriented." CSPro logic is not fully object-oriented, but some variables have functions (sometimes called "methods") that can be called by using both the variable name as well as the function name.
+
+<subheader>Object Dot Notation</subheader>
+
+A CSPro logic object is a variable that is similar to the objects that exist in other programming languages that are <link "https://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented</link>. CSPro logic is not fully object-oriented, but some variables have functions&mdash;sometimes called methods&mdash;that can be called by using both the variable name as well as the function name.
 
 <logicsyntax>
 <arg>variable_name</arg>.<arg>function_name</arg>();
@@ -11,6 +14,7 @@ The following objects have functions that can be called on the object:
 <include include_object_list.hgi / >
 
 A list of available functions can be found in each of those summary pages.
+
 
 One way to understand dot notation is to think of it as a shorthand way to specify what variable should be used when performing an operation. For example, here are two ways to work through the elements of a list:
 
@@ -39,4 +43,21 @@ This could also be written using multiple dots:
 numeric selected_province = PROVINCE_VS.labels.show("Select a province");
 </logic>
 
+
+<subheader>Namespace Dot Notation</subheader>
+
+When using dot notation on objects, the function generally operates on the properties of the object. Some functions, called <link "https://en.wikipedia.org/wiki/Method_(computer_programming)#Static_methods">static</link> in many programming languages, do not require an instance of an object to run but still require using dot notation.
+
+Similarly, many programming languages have the concept of <link "https://en.wikipedia.org/wiki/Namespace">namespaces</link>, often used to group related functionality. In CSPro logic, some functions are defined in namespaces, and the <link action_invoker.csdoc>Action Invoker</link> makes heavy use of namespaces. To execute functions within a namespace, you must use dot notation. For example:
+
+<logic>
+// function in the logic's Barcode namespace
+BLOOD_SAMPLE = Barcode.read("Scan the blood sample barcode");
+
+// action in the Action Invoker's File namespace
+string manualText = CS.File.readText(path := "manual.txt");
+</logic>
+
+
 <seealso variables.csdoc />
+
