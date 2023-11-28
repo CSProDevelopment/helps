@@ -21,7 +21,7 @@ The <action>Settings.putValue</action> <link action_invoker.csdoc>action</link> 
 
 The default <arg>source</arg> database, <logiccolor>"UserSettings"</logiccolor>, corresponds to the <i>User Settings</i> database used by the <logiccolor>savesetting</logiccolor> function. These settings can be viewed and modified in the CSPro Designer using the <topic user_configuration_settings.csdoc /> dialog. You can use a custom settings database by specifying the name of a database, which will be created automatically if it does not exist.
 
-The file from which settings are retrieved can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file. The settings are stored in a SQLite file and the settings should not be considered secure as they can accessed by other applications.
+The file from which settings are retrieved can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file. The settings are stored in a <link sqlite_in_cspro.csdoc>SQLite database</link> and the settings should not be considered secure as they can accessed by other applications.
 
 Settings from the <i>User Settings</i> database, but not custom databases, can also be set using the <logiccolor>savesetting</logiccolor> function. Only string and numeric values can be set in this database, but custom databases also support boolean values, arrays, and objects.
 

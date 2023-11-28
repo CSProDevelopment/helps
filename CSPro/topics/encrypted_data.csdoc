@@ -15,15 +15,15 @@ An Encrypted CSPro DB file is like a CSPro DB file and can be used in any CSPro 
 While the data in the file is encrypted, it is also a good idea:
 
 <list>
-	<li>To encrypt the entire drive where the CSPro application and data files reside, using encryption such as Windows BitLocker or Android's full-disk encryption.</li>
-	<li>Not to store passwords in plaintext anywhere (such as in a CSPro logic file or in a PFF file, as is done in the above image).</li>
-	<li>To synchronize your data using a secure protocol (such as CSWeb over https). If you encrypt your data file on a tablet but then transfer the data over http using <logiccolor>syncdata</logiccolor>, that defeats much of the purpose of encrypting.</li>
+    <li>To encrypt the entire drive where the CSPro application and data files reside, using encryption such as Windows BitLocker or Android's full-disk encryption.</li>
+    <li>Not to store passwords in plaintext anywhere (such as in a CSPro logic file or in a PFF file, as is done in the above image).</li>
+    <li>To synchronize your data using a secure protocol (such as CSWeb over https). If you encrypt your data file on a tablet but then transfer the data over http using <logiccolor>syncdata</logiccolor>, that defeats much of the purpose of encrypting.</li>
 </list>
 
 
 <subheader>Technical Details</subheader>
 
-Encrypted CSPro DB files are SQLite files encrypted using the <link https://www.hwaci.com/sw/sqlite/see.html>SQLite Encryption Extension (SEE)</link> using "AES-256 in OFB mode." The specified password is not used as the key input to SEE but is instead hashed to create a 256-byte key that is used to encrypt the file. If allowed, this hash, not the password, is <link dictionary_security_options.csdoc>cached on the machine</link>. A fixed salt is used during the hashing process because there is no suitable place to store a dynamic salt. This means that the same password will always result in the same encryption key.
+Encrypted CSPro DB files are SQLite files encrypted using the <link https://www.hwaci.com/sw/sqlite/see.html>SQLite Encryption Extension (SEE)</link> using "AES-256 in OFB mode." The specified password is not used as the key input to SEE but is instead <link CS_Hash_createHash.csdoc>hashed</link> to create a 256-byte key that is used to encrypt the file. If allowed, this hash, not the password, is <link dictionary_security_options.csdoc>cached on the machine</link>. A fixed salt is used during the hashing process because there is no suitable place to store a dynamic salt. This means that the same password will always result in the same encryption key.
 
 
-<seealso dictionary_security_options.csdoc data_sources.csdoc connection_string.csdoc />
+<seealso dictionary_security_options.csdoc data_sources.csdoc connection_string.csdoc sqlite_in_cspro.csdoc />

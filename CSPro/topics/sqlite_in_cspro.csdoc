@@ -1,0 +1,32 @@
+﻿<title>SQLite Use in CSPro</title>
+
+
+<subheader>Overview</subheader>
+
+<link "https://www.sqlite.org">SQLite</link> is a relational database engine that "is the most used database engine in the world." SQLite is in the <link "https://www.sqlite.org/copyright.html">public domain</link> but CSPro uses the <link "https://sqlite.org/com/see.html">SQLite Encryption Extension (SEE)</link>, an add-on that allows CSPro to interact with encrypted databases. CSPro uses SQLite for a variety of reasons, including:
+
+<list>
+    <li><link "http://HELP_TODO">CSPro DB data sources</link> (.csdb)</li>
+    <li><link data_source_csdbe.csdoc>Encrypted CSPro DB data sources</link> (.csdbe)</li>
+    <li><link index_file_csidx.csdoc>Data source index files</link> (.csidx)</li>
+    <li><link paradata.csdoc>Paradata logs</link> (.cslog)</li>
+    <li><link offline_maps.csdoc>MBTiles offline mapping</link> (.mbtiles)</li>
+    <li>CommonStore settings storage (CommonStore.db)</li>
+</list>
+
+Because SQLite is such a popular format, there are many free viewers for SQLite that allow you to access unencrypted databases outside of CSPro.
+
+
+<subheader>Working With SQLite Databases in CSPro</subheader>
+
+Within CSPro, there are several ways to interact with SQLite databases:
+
+<list>
+    <li>Execute a SQL query using the CSPro logic functions <logiccolor>sqlquery</logiccolor> and <logiccolor>paradata</logiccolor>.</li>
+    <li>Run SQL queries on paradata logs using the <link ParadataViewer::query_constructor.csdoc>Paradata Viewer</link>.</li>
+</list>
+
+
+<subheader>Encrypted SQLite Databases</subheader>
+
+When working with an encrypted SQLite database in CSPro, the database is opened using "AES-256 in OFB mode." In instances when a password is used to open the database, the specified password is not used as the key input to SEE but is instead <link CS_Hash_createHash.csdoc>hashed</link> to create a 256-byte key that is used to encrypt the file. A fixed salt is used for Encrypted CSPro DB data sources, but in other instances a random salt may be used.
