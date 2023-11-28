@@ -10,7 +10,7 @@ Most actions are part of a namespace, a grouping of related functionality. The a
 Action Invoker actions can be run in a variety of ways, with each format described on one of following pages:
 
 <list>
-    <li><link action_invoker_execution_cspro_logic.csdoc>CSPro logic</link></li>
+    <li><link action_invoker_execution_cspro_logic.csdoc>CSPro Logic</link></li>
     <li><link action_invoker_execution_javascript_embedded.csdoc>JavaScript (embedded)</link></li>
     <li><link action_invoker_execution_javascript_web.csdoc>JavaScript (run from web views)</link></li>
     <li><link action_invoker_execution_json.csdoc>JSON</link></li>
@@ -27,6 +27,7 @@ The following actions are not part of a namespace:
 <table 2 header nowrap>
     <cell>Action</cell><cell>Description</cell>
     <cell><action>execute</action></cell><cell>Executes an action with the action name specified as an argument.</cell>
+    <cell><action>registerAccessToken</action></cell><cell>Registers an <link action_invoker_access_token.csdoc>access token</link> to provide access to the Action Invoker from external callers.</cell>
 </table>
 
 

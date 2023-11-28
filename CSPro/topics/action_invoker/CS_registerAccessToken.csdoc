@@ -1,0 +1,51 @@
+﻿<title>registerAccessToken Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.registerAccessToken(<arg>accessToken</arg> := ...)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>accessToken</arg></cell><cell>The <link action_invoker_access_token.csdoc>access token</link>.</cell><cell>string~!~required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>registerAccessToken</action> <link action_invoker.csdoc>action</link> registers an <link action_invoker_access_token.csdoc>access token</link>, permitting access to the Action Invoker from external callers that use this access token. Registered access tokens are added to the list of permitted access tokens specified as part of an application's <link logic_settings.csdoc>logic settings</link>. Multiple access tokens can be registered to a single application.
+
+This action can only be executed from <link action_invoker_access_token.csdoc>trusted environments</link>.
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if the action is executed from an environment that is not trusted.
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<logic>
+// register the access token
+CS.registerAccessToken(accessToken := "b082da4b-6a3b-4069-aa07-0a2dd6f0b715");
+</logic>
+
+
+<subheader>Example (HTML + JavaScript)</subheader>
+
+<color HTML>
+<script>
+    // use the Action Invoker with the registered access token
+    const CS = new CSProActionInvoker("b082da4b-6a3b-4069-aa07-0a2dd6f0b715");
+</script>
+</color>
+
+
+<seealso action_invoker.csdoc action_invoker_access_token.csdoc />

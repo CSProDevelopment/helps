@@ -1,0 +1,13 @@
+<subheader>Argument Types</subheader>
+
+Arguments to actions are specified in one of the <link JSON_primer.csdoc>JSON types</link>: string, number, boolean, array, or object. The help page for each action will list the type, or types, permitted for each argument.
+
+
+<subheader>Return Values</subheader>
+
+On successful execution, the result of an action is returned as undefined, or one of the JSON types: string, number, boolean, array, or object. On error, an exception is thrown.
+
+
+<subheader>Exception Handling</subheader>
+
+At runtime, if any of the arguments are invalid, or if there was an error executing the action, the Action Invoker throws an <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">exception</link>. Each action's help page will indicate if the action throws exceptions. If so, you will want to wrap the action call in <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch">try/catch</link>, or add a <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch">catch method</link> when calling the action asynchronously.

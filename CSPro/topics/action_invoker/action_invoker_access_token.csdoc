@@ -1,3 +1,22 @@
 ﻿<title>Action Invoker Access Tokens</title>
 
-HELP_TODO
+
+An <link action_invoker.csdoc>Action Invoker</link> access token is a string that contains a value that allows a caller to execute an action. For security purposes you may have to use an access token when using the Action Invoker from an external caller, an environment that may not necessarily be trusted. When an external caller tries to execute an action, the caller's access token, if provided, is checked against the application's <link logic_settings.csdoc>logic settings</link>. If the application does not require an access token, or the provided access token is in the list of valid access tokens, the action is executed.
+
+By default, if a valid access token is not present, CSPro will ask the user to approve the external caller's request to access CSPro functionality and data. The user's choice, to allow or disallow access, will apply to that action, and any subsequent actions executed from the caller's environment. If you do not want the user to have the permission to allow requests, you should <link logic_settings.csdoc>always require access tokens</link>. When creating new applications, the default setting is to allow users to approve access when an access token is not used.
+
+Access tokens that are not defined as part of the logic settings can be registered used the <action>registerAccessToken</action> action, but this action can only be called from trusted environments.
+
+The following table shows environments where the Action Invoker is available, whether calls from that environment are implicitly trusted, and how to use access tokens otherwise:
+
+<table 3 header nowrap>
+    <cell>Execution Environment</cell><cell>Trusted</cell><cell>Access Token Requirement</cell>
+    <cell><link action_invoker_execution_cspro_logic.csdoc>CSPro Logic</link></cell><cell><font green>✔</font></cell><cell></cell>
+    <cell><link action_invoker_execution_javascript_embedded.csdoc>JavaScript (embedded)</link></cell><cell><font green>✔</font></cell><cell></cell>
+    <cell><link action_invoker_execution_javascript_web.csdoc>JavaScript (run from web views)</link></cell><cell><font red>✘</font></cell><cell>Access token or user permission required when not displayed using <link CSCode::introduction.csdoc>CSCode</link> or <link CSView::introduction.csdoc>CSView</link>.</cell>
+    <cell><link action_invoker_execution_json.csdoc>JSON</link></cell><cell><font green>✔</font></cell><cell></cell>
+    <cell><link action_invoker_execution_android.csdoc>Android Intent</link></cell><cell><font red>✘</font></cell><cell>Access token, refresh token, or user permission required.</cell>
+</table>
+
+
+<seealso action_invoker.csdoc logic_settings.csdoc CS_registerAccessToken.csdoc />

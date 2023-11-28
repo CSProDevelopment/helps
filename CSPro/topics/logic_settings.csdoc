@@ -38,9 +38,15 @@ Several settings control <link action_invoker.csdoc>Action Invoker</link> execut
 
 <b>From CSPro logic, automatically convert results that are string, boolean, and undefined to CSPro formats</b>: When called from CSPro logic, Action Invoker results are returned as a string containing <link JSON_primer.csdoc>JSON</link>. If checked, CSPro will convert this JSON string into a string more easily handled by CSPro. More details are available at <topic action_invoker_execution_cspro_logic.csdoc />.
 
-<b>From external callers</b>: HELP_TODO
+<b>From external callers</b>: This settings controls whether <link action_invoker_access_token.csdoc>external callers</link> require <link action_invoker_access_token.csdoc>access tokens</link> when using the Action Invoker:
 
-<b>Registered access tokens</b>: HELP_TODO (one per line)
+<list>
+    <li>Always allow (without access token)</li>
+    <li>Allow user to approve when no access token provided (the default setting)</li>
+    <li>Always require an access token</li>
+</list>
+
+<b>Registered access tokens</b>: You can specify valid access tokens to associate with your application by specifying each access token, one per line. You can also register access tokens in logic using <action>registerAccessToken</action>.
 
 
 <subheader>CSPro Default Settings</subheader>

@@ -1,3 +1,102 @@
-﻿<title>Action Invoker Execution in JavaScript Run From Web Pages</title>
+﻿<title>Action Invoker Execution from JavaScript Run from Web Views</title>
 
-HELP_TODO
+
+<subheader>Overview</subheader>
+
+Running <link action_invoker.csdoc>Action Invoker</link> actions from a <link html_in_cspro.csdoc>web view</link> displayed by CSPro requires using JavaScript to call into the Action Invoker with the proper permissions granted using <link action_invoker_access_token.csdoc>access tokens</link>.
+
+Unlike when using <link action_invoker_execution_javascript_embedded.csdoc>embedded JavaScript</link>, the Action Invoker is not automatically added to the <link "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM</link>. To access this functionality, add the following script tag:
+
+<color HTML>
+<script src="/action-invoker.js"></script>
+</color>
+
+The local web server that is run when a web view is displayed will properly find this script file, which is located in the <link html_in_cspro.csdoc><i>html</i> directory</link>.
+
+To use the Action Invoker, you must first create an instance of the <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</link> <colorinline JavaScript>CSProActionInvoker</colorinline>, which is defined in <i>action-invoker.js</i>. You can name the object anything, but in the help documentation, the object is named <logiccolor>CS</logiccolor> to match how the Action Invoker is used in <link action_invoker_execution_cspro_logic.csdoc>CSPro logic</link> and <link action_invoker_execution_javascript_embedded.csdoc>embedded JavaScript</link>:
+
+<color JavaScript>
+const CS = new CSProActionInvoker();
+</color>
+
+Each Action Invoker namespace is an object of <colorinline JavaScript>CSProActionInvoker</colorinline>, with its actions available as methods in two forms:
+
+<list>
+    <li><b>Synchronous</b> (sequentially): Use the action name.</li>
+    <li><b>Asynchronous</b> (concurrently): Use the action name followed by <i>Async</i>. These methods return a <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</link> to run the action. Asynchronous actions are run in a separate thread from the web view.</li>
+</list>
+
+If applicable, an action's arguments are specified by passing an object to the method with the arguments defined by using the action's argument names as the object's properties. For example, the following code puts the text <logiccolor>"CSPro"</logiccolor> onto the clipboard:
+
+<color JavaScript>
+CS.Clipboard.putText({
+    text: "CSPro"
+});
+</color>
+
+
+When calling actions asynchronously, you can use standard Promise handling, including <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises#chaining">chaining</link>. This example shows how to use <link "https://developer.mozilla.org/en-US/docs/Web/API/Window/alert">alert</link> to display the text contents of a file selected by the operator:
+
+<color JavaScript>
+CS.Path.selectFileAsync({
+    title: "Select a Text File",
+    filter: "*.txt"
+})
+.then((selectedPath) => {
+    if( selectedPath === undefined ) {
+        throw new Error("You must select a file.");
+    }
+
+    return CS.File.readTextAsync({
+        path: selectedPath
+    });
+})
+.then((fileText) => {
+    alert("The file contents are:\n\n" + fileText);
+})
+.catch((error) => {
+    alert(error);
+});
+</color>
+
+
+<include include_javascript_arguments_return_exception.hgi />
+
+
+<subheader>Access Tokens</subheader>
+
+Because content shown in web views may not necessarily come from trusted sources, <link action_invoker_access_token.csdoc>access tokens</link> are used to control access to the Action Invoker. When using JavaScript from <link action_invoker_access_token.csdoc>untrusted web views</link>, there are two ways to specify an access token. You can instantiate the <colorinline JavaScript>CSProActionInvoker</colorinline> class by passing the access token as an argument to the constructor:
+
+<color JavaScript>
+const CS = new CSProActionInvoker("the-access-token");
+</color>
+
+Alternatively, you can set the object's <colorinline JavaScript>accessToken</colorinline> property prior to executing an action:
+
+<color JavaScript>
+CS.accessToken = "the-access-token";
+</color>
+
+
+<subheader>User Interface Implications</subheader>
+
+Because of threading issues with the web view, if an action displays UI elements as part of its operations, you must use the asynchronous, non-blocking, version of the action. If you do not, the action may appear unresponsive or the web view may hang.
+
+The <link html_in_cspro.csdoc>Chromium-based web view</link> has a different <colorinline JavaScript>window</colorinline> object on Windows and Android, so the <colorinline JavaScript>CSProActionInvoker</colorinline> class includes a method, <colorinline JavaScript>getWindowForEventListener</colorinline>, that gives the proper object for the platform. This can be used as follows:
+
+<color JavaScript>
+CS.getWindowForEventListener().addEventListener("message", (event) => {
+    // ...
+});
+</color>
+
+Each web view is assigned an ID that uniquely identifies the window. It is available by calling <action>UI.enumerateWebViews</action>:
+
+<color JavaScript>
+const thisWebViewId = CS.UI.enumerateWebViews().webViewId;
+</color>
+
+When displaying multiple, stacked, web views, you may need this ID when calling actions such as <action>UI.postWebMessage</action>, which sends a message to the <colorinline JavaScript>window</colorinline> object.
+
+
+<seealso action_invoker.csdoc action_invoker_access_token.csdoc action_invoker_execution_javascript_embedded.csdoc />
