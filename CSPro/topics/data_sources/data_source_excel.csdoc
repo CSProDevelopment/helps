@@ -1,7 +1,13 @@
 ﻿<title>Excel Data Source</title>
 
-<html><a id="excel"></a></html>
-<include ../include_source_type_excel.hgi />
+<subheader>Excel (.xlsx)</subheader>
+
+This option is available for all file associations except the Input, Write, and (Saved) Array Files. This will create a native Excel file, which handles commas and single and double quotes correctly. When creating an Excel file, a separate tabsheet will be produced for each record type found.
+
+Additionally, with the usage of <link CSPro::connection_string.csdoc>connection strings</link>, you can further control what is written to your Excel file. For example, if you only want the population record, and would also like to see columns for both the values (e.g., 1, 2) and corresponding labels (e.g., male, female) for each dictionary item found, the following <link CSPro::export_attributes.csdoc>Export Attributes</link> should be appended to the file name:
+
+<pff>.\POP_REC.xlsx|record=POP_REC&header=labels&values=codes-and-labels</pff>
+
 
 <subheader>Limitations</subheader>
 <list>
@@ -10,6 +16,14 @@
 	<li>Does not support opening as external dictionary when file has duplicate keys </li>
 	<li>Does not support syncing data </li>
 	<li>Write-Only</li>
+</list>
+
+<subheader> <link export_attributes.csdoc>Export Attributes</link> </subheader>
+<list>
+<li> <link export_attribute_record.csdoc>record</link> [If writing only a single record, contains record name]</li>
+<li> <link export_attribute_mapped_special_values.csdoc>mapped-special-values</link> [code or  notappl. Default is code. Controls how special values are written to non-CSPro file.] </li>
+<li> <link export_attribute_header.csdoc>header</link> [none, names, or labels. Controls whether there is a header written to the first line of the file and what is in it.]</li>
+<li> <link export_attribute_values.csdoc>values</link> [codes, labels, or codes-and-labels. Controls how values are written to the file.] </li>
 </list>
 
 <seealso data_sources.csdoc />

@@ -6,6 +6,7 @@ This data source is similar to None except that all cases persist in memory for 
 <list>
 <li>CSEntry shows any cases added to the repository until CSEntry closes</li>
 <li>After adding a case using an external dictionary using writecase, it can be retrieved with loadcase as with a data file</li>
+<li>This data source is useful when data is needed only in a short scope and no new files need to be saved</li>
 </list>
 
 <subheader>Limitations</subheader>
@@ -15,7 +16,7 @@ This data source is similar to None except that all cases persist in memory for 
 	<li>Does not support opening as external dictionary when file has duplicate keys </li>
 	<li>Does not support syncing data </li>
 </list>
-<subheader>Connection String Options</subheader>
+<subheader><link connection_string.csdoc>Connection String Attributes</link></subheader>
 
 To use this in a connection string: |type=Memory
 

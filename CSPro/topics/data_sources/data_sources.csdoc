@@ -31,20 +31,32 @@ Standard file types are those found within the Source Type dropdown of the <b>CS
 <html><a id="None"></a></html>
 <link data_source_none.csdoc><subheader>None</subheader></link>
 
+No file is used as input/output.
+
 <html><a id="csdb"></a></html>
 <link data_source_csdbe.csdoc><subheader>CSPro DB (.csdb)</subheader></link>
+
+CSPro's default file type for Input/Output/External data files. Usable with CSPro features and CSPro's Data Viewer.
 
 <html><a id="csdbe"></a></html>
 <link data_source_csdbe.csdoc><subheader>CSPro DB Encrypted (.csdbe)</subheader></link>
 
+A .csdb data file with encryption and a password. Usable in all the same places as a .csdb file, including CSPro's Data Viewer.
+
 <html><a id="csv"></a></html>
 <link data_source_csv.csdoc><subheader>Comma-Delimited (.csv)</subheader></link>
+
+A data file of plaintext values separated by commas. It is viewable by any text editor.
 
 <html><a id="tsv"></a></html>
 <link data_source_csv.csdoc><subheader>Tab-Delimited (.tsv)</subheader></link>
 
+A data file of plaintext values separated by tabs. It is viewable by any text editor.
+
 <html><a id="excel"></a></html>
 <link data_source_excel.csdoc><subheader>Excel (.xlsx)</subheader></link>
+
+A data file in Microsoft Excel's .xlsx format. Usable with Excel.
 
 <html><a id="html"></a></html>
 <subheader>HTML (.html)</subheader>
@@ -54,14 +66,22 @@ This option is available for Listing, Freq, and Impute Freq Files. It is a text-
 <html><a id="R"></a></html>
 <link data_source_R.csdoc><subheader>R (.Rdata)</subheader></link>
 
+A data file in R's .Rdata format. Usable with R.
+
 <html><a id="sas"></a></html>
 <link data_source_sas.csdoc><subheader>SAS (.xpt & xpt.sas pair)</subheader></link>
+
+A data file in SAS's .xpt & xpt.sas pair format. Usable with SAS.
 
 <html><a id="spss"></a></html>
 <link data_source_spss.csdoc><subheader>SPSS (.sav)</subheader></link>
 
+A data file in SPSS's .sav format. Usable with SPSS.
+
 <html><a id="stata"></a></html>
 <link data_source_stata.csdoc><subheader>Stata (.dta)</subheader></link>
+
+A data file in Stata's .dta format. Usable with Stata.
 
 <html><a id="table"></a></html>
 <subheader>CSPro Table (.tbw)</subheader>
@@ -71,12 +91,17 @@ The CSPro table file type is available for Freq and Impute Freq Files. CSPro's <
 <html><a id="text"></a></html>
 <link data_source_text.csdoc><subheader>Text (.lst, .dat, user's choice)</subheader></link>
 
+A plaintext file with the .dat, .lst, .txt, or other file extensions. Usable with text editors.
+
 <html><a id="memory"></a></html>
 <link data_source_memory.csdoc><subheader>In Memory</subheader></link>
+
+No file is used as input/output. Cases persist in memory for the duration of the program run.
 
 <html><a id="JSON"></a></html>
 <link data_source_json.csdoc><subheader>JSON (.json)</subheader></link>
 
+A file in JavaScript Object Notation format. Usable with CSPro 8.0 features other than syncing.
 
 <b><font 1.5 purple>Special File Types</font></b>
 
@@ -108,3 +133,19 @@ Saving out arrays between runs has many uses, especially when working with <link
 
 <html><a id="semicolon"></a></html>
 <link data_source_semicolon.csdoc><subheader>Semicolon-delimited (user'schoice)</subheader></link>
+
+A data file of plaintext values separated by semicolons. It is viewable by any text editor.
+
+<b><font 1.5 purple>Limitations</font></b>
+<list>
+<li>Only CSPro DB / Encrypted CSPro DB / JSON support binary data</li>
+<li>Only CSPro DB / Encrypted CSPro DB / JSON support undeleting cases</li>
+<li>Only CSPro DB / Encrypted CSPro DB / JSON support opening as an external dictionary when the file has duplicate keys (because they use UUIDs)</li>
+<li>Only CSPro DB / Encrypted CSPro DB support syncing data</li>
+<li>Comma-Delimited / Tab-Delimited / Semicolon-Delimited / Excel / R / SAS / SPSS / Stata are write-only</li>
+</list>
+
+
+<b><font 1.5 purple><link export_attributes.csdoc>Export Attributes</link></font></b>
+
+CSPro and write-only file types have numerous connection string attributes available when exporting.

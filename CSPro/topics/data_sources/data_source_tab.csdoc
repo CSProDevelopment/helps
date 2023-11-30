@@ -1,7 +1,9 @@
 ﻿<title>Tab Delimited Data Source</title>
 
-<html><a id="csv_tsv"></a></html>
-<include ../include_source_type_csv_tsv.hgi />
+<subheader>Tab-delimited (.tsv)</subheader>
+
+A data file of plaintext values separated by tabs. As a text-based file it is useful for easy readability by humans and programs such as Excel, Notepad, Wordpad, etc. This option is available for Output and External (i.e., lookup) files. It can also be used for the file generated from any <logiccolor>impute</logiccolor> function calls that use the <logiccolor>stat</logiccolor> option. However, only non-repeating records will be written to the .<b>tsv</b> file; repeating records will be ignored.
+
 
 <subheader>Limitations</subheader>
 <list>
@@ -12,7 +14,19 @@
 	<li>Write-Only</li>
 </list>
 
-<link newline_handling.csdoc>Note: newlines in items are written out using the same escaping structure of CSV files, but that Excel doesn't recognize this ... https://en.wikipedia.org/wiki/Tab-separated_values</link> 
+<subheader> <link export_attributes.csdoc>Export Attributes</link> </subheader>
+<list>
+<li> <link export_attribute_record.csdoc>record</link> [If writing only a single record, contains record name]</li>
+<li> <link export_attribute_mapped_special_values.csdoc>mapped-special-values</link> [<b>code</b> or <b>notappl</b>. Default is code. Controls how special values are written to non-CSPro file.] </li>
+<li> <link export_attribute_encoding.csdoc>encoding</link> [<b>ansi</b>, <b>utf-8</b>, <b>utf-8bom</b>, or <b>unicode</b>. Default is utf-8bom. Decides encoding of output file.]</li>
+<li> <link export_attribute_header.csdoc>header</link> [<b>none</b>, <b>names</b>, or <b>labels</b>. Controls whether there is a header written to the first line of the file and what is in it.]</li>
+<li> <link export_attribute_values.csdoc>values</link> [<b>codes</b>, <b>labels</b>, or <b>codes-and-labels</b>. Controls how values are written to the file.] </li>
+<li> <link export_attribute_decimal_mark.csdoc>decimal-mark</link> [<b>point</b> or <b>comma</b>. Defalt point. Controls how decimals are marked.] </li>
+</list>
+
+<link newline_handling.csdoc>Note: newlines in items are written out using the same escaping structure of CSV files, but  Excel doesn't recognize this.</link>
+
+<link https://en.wikipedia.org/wiki/Tab-separated_values>https://en.wikipedia.org/wiki/Tab-separated_values</link>
 
 
 <seealso data_sources.csdoc />

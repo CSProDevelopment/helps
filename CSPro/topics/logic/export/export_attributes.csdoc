@@ -1,10 +1,8 @@
 ﻿<title>Export Attributes</title>
 
-This page explains the numerous types of <link connection_string.csdoc>connection string</link> attributes available to you when working with files in the CSPro run dialogs. The following matrix presents all string attributes, and what file types they can be used by:
+This page explains the numerous types of <link connection_string.csdoc>connection string</link> attributes available to you when working with files in the CSPro run dialogs.
 
-<center><image connection_string_attributes.png /></center>
-
-The attributes listed above are presented below as section headings. When combined with the file name in a run dialog, using connection string attributes (properties) allows you to more tightly control how files are created. As outlined on the <link connection_string.csdoc>connection string</link> page, a connection string is made up of several components:
+The attributes are presented below as section headings. When combined with the file name in a run dialog, using connection string attributes (properties) allows you to more tightly control how files are created. As outlined on the <link connection_string.csdoc>connection string</link> page, a connection string is made up of several components:
 
 <logicsyntax>
 <arg>file_name</arg> | <arg>property_name1</arg>=<arg>property_value1</arg> & <arg>property_name2</arg>=<arg>property_value2</arg> & <arg>property_name3</arg>=<arg>property_value3</arg>
@@ -40,3 +38,6 @@ The <b>vector</b> attribute is available for R data sources. There are three opt
 The <b>factor</b> attribute is available for R data sources. There are two options: discrete and all.
 
 <font red>...describe this attribute</font>
+
+
+<seealso data_sources.csdoc />

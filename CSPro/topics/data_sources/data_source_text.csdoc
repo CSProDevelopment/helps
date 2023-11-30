@@ -3,9 +3,9 @@
 <html><a id="text"></a></html>
 <subheader>Text (.lst, .dat, user's choice)</subheader>
 
-Text is the default file association for Listing, Freq, and Impute Freq Files, though it can be used for all other file designations, except the (Saved) Array file (which must use the <b>".sva"</b> extension). The generated file is ANSI-based, viewable by any web-browser (such as Firefox or Opera) or any ASCII editor (such as Notepad or Wordpad).
+Plain text file with the user's choice of file extensions. Useful for easy readability by humans and programs. Text is the default file association for Listing, Freq, and Impute Freq Files, though it can be used for all other file designations, except the (Saved) Array file (which must use the <b>".sva"</b> extension). The generated file is ANSI-based, viewable by any web-browser (such as Firefox or Opera) or any ASCII editor (such as Notepad or Wordpad).
 
-Depending on the file being specified, a default file extension may or may not be given. For example, Listing and Impute Freq Files will be given an <b>".lst"</b> extension by default, although no default file extension is given to Freq Files. If a non-text file designation was used for Input or Lookup Files and the file type is changed to Text, a default file type of <b>".dat"</b> will be given. (For example, MyCensus.csdb will change to MyCensus.dat if the Source Type is changed from .csdb to Text.) No default extension is given for Write Files. Whatever extension is used, you can change it to whatever you prefer (for example, <b>".txt"</b>).
+Depending on the file being specified, a default file extension may or may not be given. For example, Listing and Impute Freq Files will be given an <b>".lst"</b> extension by default, although no default file extension is given to Freq Files. If a non-text file designation was used for Input or Lookup Files and the file type is changed to Text, a default file type of <b>".dat"</b> will be given. (For example, MyCensus.csdb will change to MyCensus.dat if the Source Type is changed from .csdb to Text.) No default extension is given for Write Files. Whatever extension is used, you can change it to whatever you prefer (for example, <b>".txt"</b>). <b>".dat"</b> fiiles can have Export Attributes. 
 
 <subheader>Limitations</subheader>
 <list>
@@ -13,6 +13,13 @@ Depending on the file being specified, a default file extension may or may not b
 	<li>Does not support undeleting cases </li>
 	<li>Does not support opening as external dictionary when file has duplicate keys </li>
 	<li>Does not support syncing data </li>
+</list>
+
+<subheader> <link export_attributes.csdoc>Export Attributes</link> </subheader>
+<list>
+<li> <link export_attribute_mapped_special_values.csdoc>mapped-special-values</link> [code or  notappl. Default is code. Controls how special values are written to non-CSPro file.] </li>
+<li> <link export_attribute_dictionary.csdoc>dictionary</link> [Dictionary file name]</li>
+<li> password [The password that opens an encrypted data file]</li>
 </list>
 
 <table 2>
