@@ -1,0 +1,36 @@
+﻿<title>File.writeBytes Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.File.writeBytes(<arg>path</arg> := ..., <arg>bytes</arg> := ...『, <arg>bytesFormat</arg> := ...』))
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of the file to write.</cell><cell>string~!~required</cell>
+    <cell><arg>bytes</arg></cell><cell>The bytes to write.</cell><cell>string~!~required</cell>
+    <cell><arg>bytesFormat</arg></cell><cell>The <link action_invoker_binary_data.csdoc>format</link> of <arg>bytes</arg>.~!~The default value is <logiccolor>"autodetect"</logiccolor>.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>File.writeBytes</action> <link action_invoker.csdoc>action</link> writes <arg>bytes</arg> to a binary file specified as <arg>path</arg>. The optional <arg>bytesFormat</arg> argument dictates how <link action_invoker_binary_data.csdoc>binary data</link> is converted from string format. If a file already exists at <arg>path</arg>, it is overwritten with the new contents.
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the file cannot be created or fully written.
+
+
+<include include_bytes_example.hgi />
+
+
+<seealso CS_File.csdoc CS_File_readBytes.csdoc CS_File_writeBytes.csdoc CS_File_writeLines.csdoc />

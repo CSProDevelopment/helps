@@ -75,6 +75,13 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>export</logiccolor></cell><cell>Writes a record to an export file.</cell>
     <cell 2>&nbsp;</cell>
     <cell><logiccolor>File</logiccolor></cell><cell>Declares one or more File objects used in the application.</cell>
+    <cell><action>File.copy</action> <sup>(CS)</sup></cell><cell>Copies one or more files.</cell>
+    <cell><action>File.readBytes</action> <sup>(CS)</sup></cell><cell>Reads a file as binary, returning the entire file's content as bytes.</cell>
+    <cell><action>File.readLines</action> <sup>(CS)</sup></cell><cell>Reads a file as text, returning the entire file's content as an array of strings.</cell>
+    <cell><action>File.readText</action> <sup>(CS)</sup></cell><cell>Reads a file as text, returning the entire file's content as a string.</cell>
+    <cell><action>File.writeBytes</action> <sup>(CS)</sup></cell><cell>Writes bytes as a binary file.</cell>
+    <cell><action>File.writeLines</action> <sup>(CS)</sup></cell><cell>Writes an array of strings as lines to a text file.</cell>
+    <cell><action>File.writeText</action> <sup>(CS)</sup></cell><cell>Writes a string as a text file.</cell>
     <cell><logiccolor>fileconcat</logiccolor></cell><cell>Concatenates a list of files or a set of files described by a wildcard specification.</cell>
     <cell><logiccolor>filecopy</logiccolor></cell><cell>Copies a file to another file.</cell>
     <cell><logiccolor>filecreate</logiccolor></cell><cell>Creates a new file with the given file name.</cell>

@@ -16,6 +16,8 @@ If a <arg>string_variable</arg> is provided as a argument, a single line of text
 
 Alternatively, a string <link List.csdoc>List</link> can be used as an argument. In this case, all remaining lines in the file are read and stored in <arg>string_list</arg>.
 
+File text can also be read using the <action>File.readText</action> and <action>File.readLines</action> actions.
+
 
 <subheader>Return Value</subheader>
 
@@ -33,12 +35,12 @@ PROC APPLICATION_FF
 
 preproc
 
-	string operatorid_override;
+    string operatorid_override;
 
-	if fileread(OperatorIdOverrideFile, operatorid_override) then
-		setoperatorid(operatorid_override);
-	endif;
+    if fileread(OperatorIdOverrideFile, operatorid_override) then
+        setoperatorid(operatorid_override);
+    endif;
 </logic>
 
 
-<seealso filewrite_function.csdoc File_read_function.csdoc />
+<seealso filewrite_function.csdoc File_read_function.csdoc CS_File_readText.csdoc CS_File_readLines.csdoc />

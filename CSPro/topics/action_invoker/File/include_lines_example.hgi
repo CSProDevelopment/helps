@@ -1,0 +1,20 @@
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+// read all the lines from a file
+CS.File.readLinesAsync({
+	path: "text-file.txt"
+})
+.then(lines => {
+	// remove whitespace from the end of each line
+	const trimmedLines = lines.map(line => line.trimEnd());
+
+	// write the lines
+	return CS.File.writeLinesAsync({
+		path: "text-file (trimmed).txt",
+		lines: trimmedLines
+	});
+})
+.then(() => console.log("Successfully read, trimmed, and wrote the lines."))
+.catch(error => console.log(error));
+</color>

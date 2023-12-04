@@ -1,0 +1,38 @@
+﻿<title>File.writeText Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.File.writeText(<arg>path</arg> := ..., <arg>text</arg> := ...『, <arg>encoding</arg> := ...』))
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of the file to write.</cell><cell>string~!~required</cell>
+    <cell><arg>text</arg></cell><cell>The text to write.</cell><cell>string~!~required</cell>
+    <cell><arg>encoding</arg></cell><cell>The <link unicode_primer.csdoc>encoding</link> to use while writing the text.~!~The default value is <logiccolor>"UTF-8"</logiccolor>.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>File.writeText</action> <link action_invoker.csdoc>action</link> writes a string, <arg>text</arg>, to a text file specified as <arg>path</arg>. If a file already exists at <arg>path</arg>, it is overwritten with the new contents.
+
+<include include_encoding_output.hgi />
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the file cannot be created or fully written.
+
+
+<include include_text_example.hgi />
+
+
+<seealso CS_File.csdoc CS_File_readText.csdoc CS_File_writeBytes.csdoc CS_File_writeLines.csdoc File_write_function.csdoc />

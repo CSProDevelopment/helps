@@ -1,0 +1,9 @@
+<subheader>Example (CSPro)</subheader>
+
+<logic>
+// read the text stored in readme.txt
+string fileText = CS.File.readText(path := "readme.txt");
+
+// write the text in uppercase form
+CS.File.writeText(path := "readme (uppercase).txt", text := toupper(fileText));
+</logic>

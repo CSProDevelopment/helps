@@ -1,0 +1,7 @@
+The <arg>encoding</arg> argument allows you specify how the contents of the file are <link unicode_primer.csdoc>encoded</link> to text. Options include:
+
+<list>
+	<li><logiccolor>"ANSI"</logiccolor>: The contents are encoded as part of the <link "https://en.wikipedia.org/wiki/Windows_code_page">Windows code page</link>.</li>
+	<li><logiccolor>"UTF-8"</logiccolor>: The contents are encoded as <link unicode_primer.csdoc>UTF-8</link> and written without a byte order mark (BOM).</li>
+	<li><logiccolor>"UTF-8-BOM"</logiccolor>: The contents are encoded as <link unicode_primer.csdoc>UTF-8</link> and written with a three-byte BOM.</li>
+</list>

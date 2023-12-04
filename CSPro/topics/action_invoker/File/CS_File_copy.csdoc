@@ -1,0 +1,98 @@
+﻿<title>File.copy Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.File.copy(<arg>source</arg> := ..., <arg>destination</arg> := ...『, <arg>overwrite</arg> := ...』))
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>source</arg></cell><cell>The source path or <link sharable_uri.csdoc>sharable URI</link> of file(s) to copy.</cell><cell>string, array~!~required</cell>
+    <cell><arg>destination</arg></cell><cell>The destination path, or directory, of the file(s) to be copied.</cell><cell>string~!~required</cell>
+    <cell><arg>overwrite</arg></cell><cell>If true, destination file(s) are replaced if they already exist.~!~The default value is <logiccolor>true</logiccolor>.</cell><cell>boolean~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>File.copy</action> <link action_invoker.csdoc>action</link> copies one or more files. It can copy a single file to another file, or it can copy a group of files to a directory. The <arg>source</arg> argument, detailing the files to copy, can be specified as:
+
+<list>
+    <li>A single string representing a file path or <link sharable_uri.csdoc>sharable URI</link>.</li>
+    <li>A single string using wildcard characters <logiccolor>"*"</logiccolor> and <logiccolor>"?"</logiccolor> to specify a group of files.</li>
+    <li>An array of strings containing strings specified in one of the two above forms.</li>
+</list>
+
+If multiple files are specified when evaluating <arg>source</arg>, the <arg>destination</arg> must be a directory where all of the files are copied, using their original names. When copying only a single file, if <arg>destination</arg> is a directory, the source file is copied to that directory using its original name; otherwise, <arg>destination</arg> is considered the path of the new, copied file.
+
+The <arg>overwrite</arg> flag lets you conditionally copy files based on whether a file already exists. If set to <logiccolor>false</logiccolor>, an exception is thrown if the destination file already exists.
+
+
+<subheader>Return Value</subheader>
+
+The action returns the fully evaluated destination path, or array of destination paths, of the copied file(s). An array of strings containing the paths is returned unless <arg>source</arg> is a single string that does not contain wildcard characters, in which case a single string is returned.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if:
+
+<list>
+    <li>The source file(s) do not exist.</li>
+    <li>Multiple source files are specified but the destination is not a directory.</li>
+    <li>The destination file exists but the overwrite flag is <logiccolor>false</logiccolor>.</li>
+</list>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+In the following examples, the return value is displayed as <link JSON_primer.csdoc>JSON</link>:
+
+Copying a single file, specifying the output path as a file: <colorinline JSON>"C:/AMO/Honey (copy).txt"</colorinline>
+
+<color JavaScript>
+CS.File.copy({
+    source: "C:/AMO/Honey.txt",
+    destination: "C:/AMO/Honey (copy).txt"
+});
+</color>
+
+Copying a single file, demonstrating behavior differences when the destination path exists:
+
+<list>
+    <li>If "Tastes" already exists as a directory: <colorinline JSON>"C:/AMO/Tastes/Honey.txt"</colorinline></li>
+    <li>If "Tastes" already exists as a file, or does not exist at all: <colorinline JSON>"C:/AMO/Tastes"</colorinline></li>
+</list>
+
+<color JavaScript>
+CS.File.copy({
+    source: "C:/AMO/Honey.txt",
+    destination: "C:/AMO/Tastes"
+});
+</color>
+
+Copying a single file that uses a wildcard to a directory: <colorinline JSON>[ "C:/AMO/Tastes/Honey.txt" ]</colorinline>
+
+<color JavaScript>
+CS.File.copy({
+    source: "C:/AMO/Honey.*",
+    destination: "C:/AMO/Tastes/"
+});
+</color>
+
+Copying multiple files to a directory: <colorinline JSON>[ "C:/AMO/Tastes/Honey.txt", "C:/AMO/Tastes/Milk.txt" ]</colorinline>
+
+<color JavaScript>
+CS.File.copy({
+    source: [
+        "C:/AMO/Honey.*",
+        "C:/AMO/Milk.txt",
+    ],
+    destination: "C:/AMO/Tastes/"
+});
+</color>
+
+
+<seealso CS_File.csdoc filecopy_function.csdoc sharable_uri.csdoc />
