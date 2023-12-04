@@ -1,0 +1,43 @@
+﻿<title>Sqlite.close Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.Sqlite.close(<arg>db</arg> := ...)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>db</arg></cell><cell>The database ID returned by <action>Sqlite.open</action>.</cell><cell>number~!~required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Sqlite.close</action> <link action_invoker.csdoc>action</link> closes a <link sqlite_in_cspro.csdoc>SQLite database</link> previously opened by <action>Sqlite.open</action>. Only files <link CS_Sqlite_open.csdoc>opened</link> using <arg>path</arg> are closed, so if the database was opened using <arg>name</arg>, it is not actually closed, as data source and paradata resources may still be in use by other parts of CSPro.
+
+Further information about closing databases is available on the SQLite website: <link "https://www.sqlite.org/c3ref/close.html">sqlite3_close</link>.
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if:
+
+<list>
+    <li>The database ID is not valid.</li>
+    <li>The database cannot be closed.</li>
+</list>
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<include include_states_example.hgi />
+
+
+<seealso CS_Sqlite.csdoc CS_Sqlite_open.csdoc />

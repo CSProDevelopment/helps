@@ -1,0 +1,80 @@
+﻿<title>Sqlite.open Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+d = CS.Sqlite.open(<arg>path</arg> := ... ‖ <arg>name</arg> := ...『, <arg>openFlags</arg> := ...』
+                『, <arg>encryptionKey</arg> := ...』『, <arg>encryptionKeyFormat</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of a file to open.</cell><cell>string~!~not required</cell>
+    <cell><arg>name</arg></cell><cell>The name of a <link data_dictionary.csdoc>dictionary</link> or "<link paradata.csdoc>paradata</link>".</cell><cell>string~!~not required</cell>
+    <cell><arg>openFlags</arg></cell><cell>Flags to control how the database is opened.~!~The default value is <logiccolor>"read"</logiccolor>.</cell><cell>string~!~not required</cell>
+    <cell><arg>encryptionKey</arg></cell><cell>An encryption key to use when opening or creating a database.</cell><cell>string~!~not required</cell>
+    <cell><arg>encryptionKeyFormat</arg></cell><cell>The <link action_invoker_binary_data.csdoc>format</link> of <arg>encryptionKey</arg>.~!~The default value is <logiccolor>"autodetect"</logiccolor>.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Sqlite.open</action> <link action_invoker.csdoc>action</link> opens a <link sqlite_in_cspro.csdoc>SQLite database</link> and returns an ID that can be used for future operations. After performing any <link CS_Sqlite_exec.csdoc>querying</link> or <link CS_Sqlite_rekey.csdoc>rekeying</link> operations, <link CS_Sqlite_close.csdoc>close</link> the database so that its resources are properly released.
+
+Either <arg>path</arg> or <arg>name</arg> must be specified. Based on the argument, the following kind of SQLite database is opened:
+
+<list>
+    <li><arg>path</arg> with a non-blank string: A file on the disk is opened.</li>
+    <li><arg>path</arg> with a blank string: A <link "https://www.sqlite.org/c3ref/open.html#:~:text=temporary%20on%2Ddisk%20database">temporary on-disk database</link> is opened. It will be deleted automatically when <link CS_Sqlite_close.csdoc>closed</link>.</li>
+    <li><arg>name</arg> with a <link data_dictionary.csdoc>dictionary</link> name: A reference to the SQLite database <link sqlite_in_cspro.csdoc>associated with the data source</link> is returned. Typically this is used to <link csdb_relational_format.csdoc>query a CSPro DB</link> data source. Not all data sources have associated SQLite databases.</li>
+    <li><arg>name</arg> with <logiccolor>"paradata"</logiccolor>: The reference to the currently-open <link paradata.csdoc>paradata log</link> is returned. </li>
+</list>
+
+When using <arg>name</arg>, no SQLite database is opened but instead a reference to an already-open SQLite database is returned, so <arg>openFlags</arg> is ignored. The read/write permissions of the database are maintained from how the database was initially opened by CSPro.
+
+When specifying a file to open, the <arg>openFlags</arg> argument can be one of the following:
+
+<list>
+    <li><logiccolor>"read"</logiccolor>: The database is opened in read-only mode, with an error occurring is the database does not exist.</li>
+    <li><logiccolor>"readWrite"</logiccolor>: The database is opened in read and write mode, with an error occurring is the database does not exist.</li>
+    <li><logiccolor>"readWriteCreate"</logiccolor>: The database is opened in read and write mode, with a new database created if it does not already exist.</li>
+</list>
+
+When opening or creating an encrypted SQLite database, you must specify an encryption key. The <arg>encryptionKey</arg> argument specifies the key, with the the optional <arg>encryptionKeyFormat</arg> argument indicating <link action_invoker_binary_data.csdoc>how to process</link> the <arg>encryptionKey</arg> argument. If opening an <link data_source_csdbe.csdoc>Encrypted CSPro DB data source</link>, you can use <action>Hash.createHash</action> action to convert a password into the encryption key necessary to open the database.
+
+Further information about opening databases is available on the SQLite website: <link "https://www.sqlite.org/c3ref/open.html">sqlite3_open_v2</link>, <link "https://sqlite.org/com/see.html">sqlite3_key</link>.
+
+
+<subheader>Return Value</subheader>
+
+The action returns a numeric database ID that is used to identify this database in calls to future <action>Sqlite</action> actions.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or:
+
+<list>
+    <li>When opening a file, if the SQLite database could not be opened or created.</li>
+    <li>When opening a file, if the encryption key is not valid, or if the file is already encrypted and no encryption key is provided.</li>
+    <li>When opening a dictionary, if there is no SQLite database associated with the data source.</li>
+    <li>When opening paradata, if no paradata log is open.</li>
+</list>
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<include include_states_example.hgi />
+
+
+<subheader>Additional Examples</subheader>
+
+<list>
+    <li><link CS_Sqlite_examples_data_source.csdoc>Opening and querying data sources</link>.</li>
+    <li><link CS_Sqlite_examples_paradata.csdoc>Opening and querying paradata</link>.</li>
+    <li><link sqlite_callback_functions.csdoc>Querying using callback functions</link>.</li>
+</list>
+
+
+<seealso CS_Sqlite.csdoc CS_Sqlite_close.csdoc />

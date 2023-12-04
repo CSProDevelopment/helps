@@ -22,11 +22,17 @@ Because SQLite is such a popular format, there are many free viewers for SQLite 
 Within CSPro, there are several ways to interact with SQLite databases:
 
 <list>
+    <li>Perform a variety of operations on SQLite databases using the actions in the <action>Sqlite</action> namespace, part of the <link action_invoker.csdoc>Action Invoker</link>.</li>
     <li>Execute a SQL query using the CSPro logic functions <logiccolor>sqlquery</logiccolor> and <logiccolor>paradata</logiccolor>.</li>
     <li>Run SQL queries on paradata logs using the <link ParadataViewer::query_constructor.csdoc>Paradata Viewer</link>.</li>
 </list>
+
+Using the <logiccolor>sql</logiccolor> function modifier, you can call <link user_defined_functions.csdoc>user-defined functions</link> from SQL queries.
 
 
 <subheader>Encrypted SQLite Databases</subheader>
 
 When working with an encrypted SQLite database in CSPro, the database is opened using "AES-256 in OFB mode." In instances when a password is used to open the database, the specified password is not used as the key input to SEE but is instead <link CS_Hash_createHash.csdoc>hashed</link> to create a 256-byte key that is used to encrypt the file. A fixed salt is used for Encrypted CSPro DB data sources, but in other instances a random salt may be used.
+
+
+<seealso CS_Sqlite.csdoc sqlite_callback_functions.csdoc />

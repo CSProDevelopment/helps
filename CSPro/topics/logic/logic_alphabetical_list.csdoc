@@ -262,6 +262,10 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>soccurs</logiccolor></cell><cell>Returns the number of occurrences of a record.</cell>
     <cell><logiccolor>sort</logiccolor></cell><cell>Sorts occurrences of records or items based on the value of an item.</cell>
     <cell><logiccolor>special</logiccolor></cell><cell>Determines whether a variable's value is <logiccolor>missing</logiccolor>, <logiccolor>refused</logiccolor>, <logiccolor>notappl</logiccolor>, or <logiccolor>default</logiccolor>.</cell>
+    <cell><action>Sqlite.close</action> <sup>(CS)</sup></cell><cell>Closes a previously opened SQLite database.</cell>
+    <cell><action>Sqlite.exec</action> <sup>(CS)</sup></cell><cell>Executes a SQL statement on a SQLite database.</cell>
+    <cell><action>Sqlite.open</action> <sup>(CS)</sup></cell><cell>Opens a SQLite database and returns an ID that can be used for future operations.</cell>
+    <cell><action>Sqlite.rekey</action> <sup>(CS)</sup></cell><cell>Changes, removes, or adds an encryption key to a SQLite database.</cell>
     <cell><logiccolor>sqlquery</logiccolor></cell><cell>Executes a query on a <link sqlite_in_cspro.csdoc>SQLite database</link> and returns a result set in a variety of formats.</cell>
     <cell><logiccolor>sqrt</logiccolor></cell><cell>Returns the square root of a numeric expression.</cell>
     <cell><logiccolor>startswith</logiccolor></cell><cell>Returns whether a string begins with a specified prefix.</cell>

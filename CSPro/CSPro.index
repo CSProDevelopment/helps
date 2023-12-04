@@ -212,6 +212,7 @@
       { "path": "CS_Localhost.csdoc", "title": "Namespace: Localhost" }, 
       { "path": "CS_Message.csdoc", "title": "Namespace: Message" }, 
       { "path": "CS_Settings.csdoc", "title": "Namespace: Settings" }, 
+      { "path": "CS_Sqlite.csdoc", "title": "Namespace: Sqlite" }, 
       { "path": "CS_OnActionInvokerResult.csdoc", "~title": "OnActionInvokerResult Global Function" }, 
       { "path": "CS_registerAccessToken.csdoc", "~title": "registerAccessToken Action" }
     ]
@@ -1068,7 +1069,7 @@
       { "path": "sysdate_function.csdoc", "~title": "SysDate Function" }, 
       { "path": "systime_function.csdoc", "~title": "SysTime Function" }, 
       { "path": "timestamp_function.csdoc", "~title": "timestamp Function" }, 
-      { "path": "timestring_function.csdoc", "~title": "TimeString Function" }
+      { "path": "timestring_function.csdoc", "~title": "timestring Function" }
     ]
   }, 
   { "path": "dateadd_function.csdoc", "~title": "DateAdd Function" }, 
@@ -2694,14 +2695,14 @@
       { "path": "paradata_log_file_cslog.csdoc", "title": ".cslog" }, 
       { "path": "tool_list.csdoc", "title": "Concatenator" }, 
       { "path": "logtext_function.csdoc", "~title": "LogText Function" }, 
-      { "path": "paradata_function.csdoc", "~title": "Paradata Function" }, 
+      { "path": "paradata_function.csdoc", "~title": "paradata Function" }, 
       { "path": "properties_paradata.csdoc", "title": "Properties" }, 
       { "path": "syncparadata_function.csdoc", "title": "Sync" }, 
       { "path": "tool_list.csdoc", "title": "Viewer" }
     ]
   }, 
   { "path": "tool_list.csdoc", "title": "Paradata Concatenator" }, 
-  { "path": "paradata_function.csdoc", "~title": "Paradata Function" }, 
+  { "path": "paradata_function.csdoc", "~title": "paradata Function" }, 
   { "path": "paradata_log_file_cslog.csdoc", "~title": "Paradata Log File (.cslog)" }, 
   { "path": "properties_paradata.csdoc", "~title": "Paradata Properties" }, 
   { "path": "tool_list.csdoc", "title": "Paradata Viewer" }, 
@@ -3108,8 +3109,7 @@
       { "path": "Report_save_function.csdoc", "~title": "Report.save Function" }, 
       { "path": "Report_view_function.csdoc", "~title": "Report.view Function" }, 
       { "path": "Report_write_function.csdoc", "~title": "Report.write Function" }, 
-      { "path": "change_report_properties.csdoc", "title": "Report Properties" }, 
-      { "path": "sqlquery_function.csdoc", "~title": "SqlQuery Function" }
+      { "path": "change_report_properties.csdoc", "title": "Report Properties" }
     ]
   }, 
   { "path": "change_data_entry_options.csdoc", "title": "Required", 
@@ -3515,9 +3515,27 @@
   }, 
   { "path": "specify_application_file_names.csdoc", "~title": "Specify Application File Names" }, 
   { "path": "external_libraries.csdoc", "title": "sprintf-js" }, 
+  { "path": "sqlite_callback_functions.csdoc", "title": "sql Function Modifier" }, 
   { "path": "csdb_relational_format.csdoc", "title": "SQL Queries in CSPro DB" }, 
-  { "path": "sqlite_in_cspro.csdoc", "title": "SQLite" }, 
-  { "path": "sqlquery_function.csdoc", "~title": "SqlQuery Function" }, 
+  { "path": "sqlite_in_cspro.csdoc", "title": "SQLite", 
+    "subindex": [ 
+      { "path": "csdb_relational_format.csdoc", "title": "Querying CSPro DB Files" }, 
+      { "path": "CS_Sqlite.csdoc", "~title": "Sqlite Action Invoker Namespace" }, 
+      { "path": "sqlite_callback_functions.csdoc", "~title": "SQLite Callback Functions" }
+    ]
+  }, 
+  { "path": "CS_Sqlite.csdoc", "~title": "Sqlite Action Invoker Namespace", 
+    "subindex": [ 
+      { "path": "sqlite_callback_functions.csdoc", "title": "Examples: Callback Functions" }, 
+      { "path": "CS_Sqlite_examples_data_source.csdoc", "title": "Examples: Data Sources" }, 
+      { "path": "CS_Sqlite_examples_paradata.csdoc", "title": "Examples: Paradata" }, 
+      { "path": "CS_Sqlite_close.csdoc", "~title": "Sqlite.close Action" }, 
+      { "path": "CS_Sqlite_exec.csdoc", "~title": "Sqlite.exec Action" }, 
+      { "path": "CS_Sqlite_open.csdoc", "~title": "Sqlite.open Action" }, 
+      { "path": "CS_Sqlite_rekey.csdoc", "~title": "Sqlite.rekey Action" }
+    ]
+  }, 
+  { "path": "sqlquery_function.csdoc", "~title": "sqlquery Function" }, 
   { "path": "sqrt_function.csdoc", "title": "Sqrt" }, 
   { "path": "add_summary_statistics_to_a_table.csdoc", "title": "Standard Deviation", 
     "subindex": [ 
@@ -3778,8 +3796,7 @@
       { "path": "Report_save_function.csdoc", "~title": "Report.save Function" }, 
       { "path": "Report_view_function.csdoc", "~title": "Report.view Function" }, 
       { "path": "Report_write_function.csdoc", "~title": "Report.write Function" }, 
-      { "path": "change_report_properties.csdoc", "title": "Report Properties" }, 
-      { "path": "sqlquery_function.csdoc", "~title": "SqlQuery Function" }
+      { "path": "change_report_properties.csdoc", "title": "Report Properties" }
     ]
   }, 
   { "path": "temporary_data_file.csdoc", "~title": "Temporary Data File" }, 
@@ -3823,7 +3840,7 @@
     ]
   }, 
   { "path": "timestamp_function.csdoc", "~title": "timestamp Function" }, 
-  { "path": "timestring_function.csdoc", "~title": "TimeString Function" }, 
+  { "path": "timestring_function.csdoc", "~title": "timestring Function" }, 
   { "path": "formats_for_a_part_of_a_table.csdoc", "title": "Title" }, 
   { "path": "advance_statement.csdoc", "title": "To", 
     "subindex": [ 

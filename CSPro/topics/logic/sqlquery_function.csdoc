@@ -1,4 +1,4 @@
-﻿<title>SqlQuery Function</title>
+﻿<title>sqlquery Function</title>
 
 
 <subheader>Format</subheader>
@@ -12,6 +12,7 @@ d = sqlquery(<arg>sqlite_database</arg>『, <arg>result_set</arg>』, <arg>sql_q
 
 The <logiccolor>sqlquery</logiccolor> function executes a query on a <link sqlite_in_cspro.csdoc>SQLite database</link> and returns a result set in a variety of formats. This function is intended for advanced users who are familiar with writing SQL expressions. While many files used by CSPro applications are text files, there are some files that are stored as SQLite databases, including <link csdb_relational_format.csdoc>CSPro DB data files</link> and <link paradata.csdoc>paradata logs</link>. You can query these files with this function.
 
+You can also query SQLite databases using the <action>Sqlite.exec</action> action, which has more functionality than this function.
 
 The first argument, <arg>sqlite_database</arg>, must be one of the following:
 
@@ -90,10 +91,10 @@ do numeric ctr = 1 while ctr <= numberSessions
     numeric endTimestamp = tonumber(entrySessions(ctr, 3));
 
     errmsg("Operator '%s' worked on %s at %s for %0.2f minutes",
-        entrySessions(ctr, 1),
-        edit("9999-99-99", sysdate("YYYYMMDD", startTimestamp)),
-        edit("99:99", systime("HHMM", startTimestamp)),
-        ( endTimestamp - startTimestamp ) / 60);
+           entrySessions(ctr, 1),
+           edit("9999-99-99", sysdate("YYYYMMDD", startTimestamp)),
+           edit("99:99", systime("HHMM", startTimestamp)),
+           ( endTimestamp - startTimestamp ) / 60);
 enddo;
 </logic>
 
@@ -119,27 +120,27 @@ sqlquery(paradata, WS_ENTRY_SESSIONS_REC, SessionQuery);
 
 do numeric ctr = 1 while ctr <= count(WS_ENTRY_SESSIONS_REC)
     errmsg("Operator '%s' worked on %s at %s for %0.2f minutes",
-        strip(OPERATOR_NAME(ctr)),
-        edit("9999-99-99", sysdate("YYYYMMDD", START_TIMESTAMP(ctr))),
-        edit("99:99", systime("HHMM", END_TIMESTAMP(ctr))),
-        ( END_TIMESTAMP(ctr) - START_TIMESTAMP(ctr) ) / 60);
+           strip(OPERATOR_NAME(ctr)),
+           edit("9999-99-99", sysdate("YYYYMMDD", START_TIMESTAMP(ctr))),
+           edit("99:99", systime("HHMM", END_TIMESTAMP(ctr))),
+           ( END_TIMESTAMP(ctr) - START_TIMESTAMP(ctr) ) / 60);
 enddo;
 </logic>
 
 
 <subheader>Example - Using Callback Functions</subheader>
 
-Adding the directive <logiccolor>sql</logiccolor> after the <logiccolor>function</logiccolor> keyword when defining a <link function_statement.csdoc>user-defined function</link> indicates that the SQLite query can call back into CSPro logic. These functions can accept <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor> arguments as part of the query. In the following example, the same results are displayed as in the previous two examples but without having to store the result set.
+Adding the directive <logiccolor>sql</logiccolor> after the <logiccolor>function</logiccolor> keyword when defining a <link user_defined_functions.csdoc>user-defined function</link> indicates that the query can <link sqlite_callback_functions.csdoc>call back into CSPro logic</link>. In the following example, the same results are displayed as in the previous two examples but without having to store the result set.
 
 <logic>
 PROC GLOBAL
 
 function sql DisplayEntrySession(string operatorName, numeric startTime, numeric endTime)
     errmsg("Operator '%s' worked on %s at %s for %0.2f minutes",
-        operatorName,
-        edit("9999-99-99", sysdate("YYYYMMDD",startTime)),
-        edit("99:99", systime("HHMM",endTime)),
-        ( endTime - startTime ) / 60);
+           operatorName,
+           edit("9999-99-99", sysdate("YYYYMMDD",startTime)),
+           edit("99:99", systime("HHMM",endTime)),
+           ( endTime - startTime ) / 60);
 end;
 
 PROC EXAMPLE
@@ -160,4 +161,4 @@ PROC EXAMPLE
 </logic>
 
 
-<seealso csdb_relational_format.csdoc paradata_function.csdoc />
+<seealso CS_Sqlite_exec.csdoc sqlite_callback_functions.csdoc csdb_relational_format.csdoc paradata_function.csdoc />

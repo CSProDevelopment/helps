@@ -1,0 +1,179 @@
+﻿<title>Sqlite.exec Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Sqlite.exec(<arg>db</arg> := ..., <arg>sql</arg> := ...
+                『, <arg>bindings</arg> := ...』
+                『, <arg>rowFormat</arg> := ...』
+                『, <arg>bytesFormat</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>db</arg></cell><cell>The database ID returned by <action>Sqlite.open</action>.</cell><cell>number~!~required</cell>
+    <cell><arg>sql</arg></cell><cell>The SQL statement(s) to execute.</cell><cell nowrap>string, array~!~required</cell>
+    <cell><arg>bindings</arg></cell><cell>The bindings for the SQL statement.</cell><cell nowrap>array, object~!~not required</cell>
+    <cell><arg>rowFormat</arg></cell><cell>The format to return results from a query.~!~The default value is <logiccolor>"object"</logiccolor>.</cell><cell nowrap>string~!~not required</cell>
+    <cell><arg>bytesFormat</arg></cell><cell>The <link action_invoker_binary_data.csdoc>format</link> of binary data returned when querying a <link "https://www.sqlite.org/datatype3.html">blob</link>.~!~The default value is <logiccolor>"dataUrl"</logiccolor>.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Sqlite.exec</action> <link action_invoker.csdoc>action</link> executes one or more SQL statements on a <link sqlite_in_cspro.csdoc>SQLite database</link> previously opened by <action>Sqlite.open</action>.
+
+The <arg>sql</arg> argument specifies the SQL statement. If specified as an array of strings, the action will execute each query in the order present in the array.
+
+You can use <link sqlite_callback_functions.csdoc>SQLite callback functions</link> in your query, which allows you to call some core CSPro functionality as well as <link function_statement.csdoc>user-defined functions</link> marked with the <logiccolor>sql</logiccolor> directive. <include include_sqlite_callback_timestring.hgi />
+
+Further information about executing queries on databases is available on the SQLite website: <link "https://www.sqlite.org/c3ref/prepare.html">sqlite3_prepare_v2</link>, <link "https://www.sqlite.org/c3ref/bind_blob.html">sqlite3_bind_*</link>, <link "https://www.sqlite.org/c3ref/step.html">sqlite3_step</link>, and <link "https://www.sqlite.org/c3ref/column_blob.html">sqlite3_column_*</link>.
+
+
+<subheader>Specifying Bindings</subheader>
+
+SQL statements can contain <link "https://www.sqlite.org/c3ref/bind_blob.html">bindings</link>, which allow you to dynamically customize the query without having to modify the query text itself. If specifying more than one SQL statement, only one can contain bindings. Two common ways of specifying bindings include:
+
+<list>
+    <li><logiccolor>"?"</logiccolor> (by position): The <arg>bindings</arg> argument should be specified as an array, with each element of the array bound positionally.</li>
+    <li><logiccolor>"@name"</logiccolor> (by name): The <arg>bindings</arg> argument should be specified as an object, with each the object's key used to bound its value by parameter name.</li>
+</list>
+
+The difference in specifying bindings is shown below using JavaScript:
+
+<color JavaScript>
+// by position using an array; returns 69.12
+CS.Sqlite.exec({
+    db: dbId,
+    sql: "SELECT ? + ?;",
+    bindings: [ 12.34, 56.78 ]
+});
+
+// by name using an object; returns 69.12
+CS.Sqlite.exec({
+    db: dbId,
+    sql: "SELECT @arg1 + @arg2;",
+    bindings: { "@arg1": 12.34, "@arg2": 56.78 }
+});
+</color>
+
+The array or object used for binding can contain strings, numbers, booleans, or objects. Only objects with a key <arg>bytes</arg> are processed. These are processed for binary data to bind as a blob. If the object has a <arg>bytesFormat</arg> key, it will be used to <link action_invoker_binary_data.csdoc>decode the string</link> into binary data. For example, this binds the text <logiccolor>"天津"</logiccolor> as a blob containing its <link unicode_primer.csdoc>UTF-8 representation</link>:
+
+<color JavaScript>
+// bind binary data; returns "data:;base64,5aSp5rSl"
+CS.Sqlite.exec({
+    db: dbId,
+    sql: "SELECT ?;",
+    bindings: [ { bytes: "天津", bytesFormat: "text" } ]
+});
+</color>
+
+
+<subheader>Specifying Results</subheader>
+
+The action returns results in a variety of ways; the <arg>rowFormat</arg> argument allows you to specify how you want results returned:
+
+<list>
+    <li><logiccolor>"object"</logiccolor>: Return the results as an array of objects, with the key of each object corresponding to the column name of the results.</li>
+    <li><logiccolor>"array"</logiccolor>: Return the results as an array of arrays, with each subarray containing each column's data.</li>
+    <li><logiccolor>"scalarArray"</logiccolor>: Return the results as a one-dimensional array when the result only contains a single column. If the result contains multiple columns, the result will appear as if <logiccolor>"array"</logiccolor> were specified.</li>
+</list>
+
+The <arg>rowFormat</arg> argument defaults to <logiccolor>"object"</logiccolor>. When explicitly specified, the results are returned as described above. However, if <arg>rowFormat</arg> is not specified, there is special processing for scalar results, which are results for queries that result in a single value (a single column and a single row). If returning a scalar result, the result is returned as a number or string, rather than as an object or array.
+
+A few examples demonstrate how results are returned:
+
+<b>No result</b>: The following statement does not have results:
+
+<color SQL>
+BEGIN TRANSACTION;
+</color>
+
+<indent>In all cases, the action returns undefined.</indent>
+
+
+<b>Scalar value</b>: The following statement results in a scalar value:
+
+<color SQL>
+SELECT `resident_pop` FROM `census2020`
+WHERE `name` = 'Virginia';
+</color>
+
+<indent><table 2 header nowrap>
+    <cell><arg>rowFormat</arg></cell><cell>Result in JSON</cell>
+    <cell>(not specified)</cell><cell><colorinline JSON>8631393</colorinline></cell>
+    <cell><logiccolor>"object"</logiccolor></cell><cell><colorinline JSON>[ { "resident_pop": 8631393 } ]</colorinline></cell>
+    <cell><logiccolor>"array"</logiccolor></cell><cell><colorinline JSON>[ [ 8631393 ] ]</colorinline></cell>
+    <cell><logiccolor>"scalarArray"</logiccolor></cell><cell><colorinline JSON>[ 8631393 ]</colorinline></cell>
+</table></indent>
+
+
+<b>Scalar array</b>: The following statement results in one column, multiple rows:
+
+<color SQL>
+SELECT `state` FROM `census2020`
+WHERE `state` LIKE 'A%';
+</color>
+
+<indent><table 2 header nowrap>
+    <cell><arg>rowFormat</arg></cell><cell>Result in JSON</cell>
+    <cell>(not specified)</cell><cell><colorinline JSON>[ { "state": "AK" }, { "state": "AL" }, { "state": "AR" }, { "state": "AZ" } ]</colorinline></cell>
+    <cell><logiccolor>"object"</logiccolor></cell><cell><colorinline JSON>[ { "state": "AK" }, { "state": "AL" }, { "state": "AR" }, { "state": "AZ" } ]</colorinline></cell>
+    <cell><logiccolor>"array"</logiccolor></cell><cell><colorinline JSON>[ [ "AK" ], [ "AL" ], [ "AR" ], [ "AZ" ] ]</colorinline></cell>
+    <cell><logiccolor>"scalarArray"</logiccolor></cell><cell><colorinline JSON>[ "AK", "AL", "AR", "AZ" ]</colorinline></cell>
+</table></indent>
+
+
+<b>Non-scalar array</b>: The following statement results in multiple columns, multiple rows:
+
+
+<color SQL>
+SELECT `state`, `resident_pop` FROM `census2020`
+WHERE `state` LIKE 'V%';
+</color>
+
+<indent><table 2 header nowrap>
+    <cell><arg>rowFormat</arg></cell><cell>Result in JSON</cell>
+    <cell>(not specified)</cell><cell><colorinline JSON>[ { "state": "VT", "resident_pop": 643077 }, { "state": "VA", "resident_pop": 8631393 } ]</colorinline></cell>
+    <cell><logiccolor>"object"</logiccolor></cell><cell><colorinline JSON>[ { "state": "VT", "resident_pop": 643077 }, { "state": "VA", "resident_pop": 8631393 } ]</colorinline></cell>
+    <cell><logiccolor>"array"</logiccolor></cell><cell><colorinline JSON>[ [ "VT", 643077 ], [ "VA", 8631393 ] ]</colorinline></cell>
+    <cell><logiccolor>"scalarArray"</logiccolor></cell><cell><colorinline JSON>[ [ "VT", 643077 ], [ "VA", 8631393 ] ]</colorinline></cell>
+</table></indent>
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined if the executed query does not end in a result with rows. If there are rows, the action returns a string, number, array, or object based on the value of <arg>rowFormat</arg>, as described above.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if:
+
+<list>
+    <li>The database ID is not valid.</li>
+    <li>The SQL statement(s) cannot be compiled or if there is an error executing the statement(s).</li>
+    <li>More than one SQL statement contains parameters to be bound.</li>
+    <li>A binding could not be processed.</li>
+</list>
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<include include_states_example.hgi />
+
+
+<subheader>Example (JavaScript)</subheader>
+
+
+<subheader>Additional Examples</subheader>
+
+<list>
+    <li><link CS_Sqlite_examples_data_source.csdoc>Opening and querying data sources</link>.</li>
+    <li><link CS_Sqlite_examples_paradata.csdoc>Opening and querying paradata</link>.</li>
+    <li><link sqlite_callback_functions.csdoc>Querying using callback functions</link>.</li>
+</list>
+
+
+<seealso CS_Sqlite.csdoc sqlite_callback_functions.csdoc sqlquery_function.csdoc />
