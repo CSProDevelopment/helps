@@ -1,0 +1,5 @@
+﻿// get driving directions from the White House to the U.S. Census Bureau using an Organic Maps deep link
+SystemApp organic_maps;
+organic_maps.exec(maketext("om://route?sll=%v,%v&saddr=%s&dll=%v,%v&daddr=%s&type=vehicle",
+                           38.897778, -77.036389, encode(PercentEncoding, "White House"),
+                           38.84839,  -76.931098, encode(PercentEncoding, "U.S. Census Bureau")));

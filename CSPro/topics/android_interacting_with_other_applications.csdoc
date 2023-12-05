@@ -1,0 +1,54 @@
+﻿<title>Interacting With Other Android Applications</title>
+
+Most users using <link android_development.csdoc>CSEntry on Android</link> will be content working within the confines of the CSPro ecosystem. However, some users may want to share data between Android applications. To facilitate this, CSPro supports several ways to interact with other Android applications.
+
+<subheader>Launching Other Applications</subheader>
+
+Using the <logiccolor>SystemApp</logiccolor> object and the <logiccolor>SystemApp.exec</logiccolor> function, you can open other applications from within a CSPro application. Due to <link "https://support.google.com/googleplay/android-developer/answer/10158779">limitations</link> imposed by Google that restrict what applications can be opened, using a <link "https://developer.android.com/training/app-links#deep-links">deep link</link> to open the other application is the best approach. For example:
+
+<logic>
+<include "logic/SystemApp/include_android_deep_link_example.hgi" />
+</logic>
+
+
+<subheader>Sharing Files With Other Applications</subheader>
+
+Android's <link "https://source.android.com/docs/core/storage/scoped">scoped storage</link> prevents applications from accessing potentially sensitive data created by other applications. Other applications will not be able to access data in the <i><definition android_package_name /></i> directory. If you would like to share files with other applications, there are a few options:
+
+<b>Copy a file to the Downloads directory</b>: All applications are able to write to the Downloads directory. To copy a file to that directory, you can access the directory's path using the <logiccolor>pathname</logiccolor> or <logiccolor>Path.concat</logiccolor> functions. For example:
+
+<logic>
+CS.File.copy(source := "file-in-application-directory.jpg",
+             destination := Path.concat(Downloads, "file-in-downloads-directory.jpg"));
+</logic>
+
+<b>Copy a system document</b>: Some files, especially <link "https://developer.android.com/training/data-storage/shared/media">media files</link> are accessible to CSEntry. These files cannot be opened directly, but can be copied to the <i><definition android_package_name /></i> directory and manipulated from that location. These files must be copied using a <link sharable_uri.csdoc>sharable URI</link>. For example, this code allows the user to select a system document and then copies it to the application's directory:
+
+<logic>
+string selectDocumentJson = CS.System.selectDocument();
+
+if selectDocumentJson <> "" then
+    HashMap string selectDocumentResult;
+    selectDocumentResult.updateValueFromJson(selectDocumentJson);
+
+    CS.File.copy(source := selectDocumentResult("path"),
+                 destination := selectDocumentResult("name"));
+endif;
+</logic>
+
+<b>Make a file available to other applications</b>: If you are launching another application using <logiccolor>SystemApp.exec</logiccolor>, or <link action_invoker_execution_android.csdoc>calling into CSEntry using the Action Invoker</link>, you may want to create a reference to a file in the <i><definition android_package_name /></i> directory and make it available to the other application. You can do this by creating a <link sharable_uri.csdoc>sharable URI</link> and passing this URI to the other application. The other application can then use this URI to access the file. For example:
+
+<include "action_invoker/System/include_getSharableUri_example.hgi" />
+
+
+<subheader>Action Invoker Execution from Other Android Applications</subheader>
+
+It is possible to <link action_invoker_execution_android.csdoc>call into CSEntry</link> and execute <link action_invoker.csdoc>Action Invoker </link> actions by specifying the actions using JSON, passing that JSON in an <link "https://developer.android.com/reference/android/content/Intent">Intent</link>, and <link "https://developer.android.com/training/basics/intents/result">processing the result</link> returned by ActionInvokerActivity. For more details:
+
+<list>
+    <li><topic action_invoker_execution_android.csdoc /></li>
+    <li><link "<definition github_ActionInvokerDemo_url />">ActionInvokerDemo Application on GitHub</link></li>
+</list>
+
+
+<seealso android_development.csdoc SystemApp_exec_function.csdoc CS_System.csdoc />

@@ -1,0 +1,62 @@
+﻿<title>System.getSharableUri Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.System.getSharableUri(<arg>path</arg> := ...『, <arg>permissions</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of file(s) from which to create <link sharable_uri.csdoc>sharable URI(s)</link>.</cell><cell>string, array~!~required</cell>
+    <cell><arg>permissions</arg></cell><cell>Permissions to apply to the sharable URI(s).~!~The default value is <logiccolor>"read"</logiccolor>.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>System.getSharableUri</action> <link action_invoker.csdoc>action</link> creates a <link sharable_uri.csdoc>sharable URI</link> that can be used by external applications to reference a file. The primary use for this action is to allow <link android_interacting_with_other_applications.csdoc>other Android applications</link> to access data or files in the <i><definition android_package_name /></i> directory.
+
+The <arg>path</arg> argument, enumerating the files, can be specified as:
+
+<list>
+    <li>A single string representing a file path.</li>
+    <li>A single string using wildcard characters <logiccolor>"*"</logiccolor> and <logiccolor>"?"</logiccolor> to specify a group of files.</li>
+    <li>An array of strings containing strings specified in one of the two above forms.</li>
+</list>
+
+The <arg>permissions</arg> argument allows you to set the status of the file when used by other applications. The options include:
+
+<list>
+    <li><logiccolor>"read"</logiccolor>: The recipient of the sharable URI can only read the file (<link "https://developer.android.com/reference/android/content/Intent#FLAG_GRANT_READ_URI_PERMISSION">FLAG_GRANT_READ_URI_PERMISSION</link>).</li>
+    <li><logiccolor>"readWrite"</logiccolor>: In addition to read permissions, the recipient can also write to the file (<link "https://developer.android.com/reference/android/content/Intent#FLAG_GRANT_WRITE_URI_PERMISSION">FLAG_GRANT_WRITE_URI_PERMISSION</link>).</li>
+</list>
+
+
+<subheader>Return Value</subheader>
+
+The action returns the sharable URI, or array of sharable URIs. An array of strings containing the sharable URIs is returned unless <arg>path</arg> is a single string that does not contain wildcard characters, in which case a single string is returned.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the file(s) specified in <arg>path</arg> do not exist.
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<include "include_getSharableUri_example.hgi" />
+
+
+<subheader>Example (JSON)</subheader>
+
+<color JSON>
+{
+  "action": "System.getSharableUri",
+  "path": "Data/*.csdb"
+}
+</color>
+
+
+<seealso CS_System.csdoc CS_System_selectDocument.csdoc sharable_uri.csdoc />

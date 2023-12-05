@@ -1,0 +1,5 @@
+<logic>
+SystemApp other_application;
+other_application.setArgument("data", CS.System.getSharableUri(path := "file-in-application-directory.jpg"));
+other_application.exec("com.example.other.application");
+</logic>
