@@ -42,7 +42,7 @@ CS.Path.selectFileAsync({
     title: "Select a Text File",
     filter: "*.txt"
 })
-.then((selectedPath) => {
+.then(selectedPath => {
     if( selectedPath === undefined ) {
         throw new Error("You must select a file.");
     }
@@ -51,10 +51,10 @@ CS.Path.selectFileAsync({
         path: selectedPath
     });
 })
-.then((fileText) => {
+.then(fileText => {
     alert("The file contents are:\n\n" + fileText);
 })
-.catch((error) => {
+.catch(error => {
     alert(error);
 });
 </color>
@@ -85,7 +85,7 @@ Because of threading issues with the web view, if an action displays UI elements
 The <link html_in_cspro.csdoc>Chromium-based web view</link> has a different <colorinline JavaScript>window</colorinline> object on Windows and Android, so the <colorinline JavaScript>CSProActionInvoker</colorinline> class includes a method, <colorinline JavaScript>getWindowForEventListener</colorinline>, that gives the proper object for the platform. This can be used as follows:
 
 <color JavaScript>
-CS.getWindowForEventListener().addEventListener("message", (event) => {
+CS.getWindowForEventListener().addEventListener("message", event => {
     // ...
 });
 </color>

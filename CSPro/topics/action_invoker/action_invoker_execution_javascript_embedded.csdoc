@@ -25,7 +25,7 @@ When calling actions asynchronously, you can use standard Promise handling, incl
 CS.File.readTextAsync({
     path: "Simple CAPI.ent"
 })
-.then((entryApplicationJson) => {
+.then(entryApplicationJson => {
     const entryApplication = JSON.parse(entryApplicationJson);
 
     if( entryApplication.dictionaries === undefined ) {
@@ -36,11 +36,11 @@ CS.File.readTextAsync({
         path: entryApplication.dictionaries[0].path
     });
 })
-.then((dictionaryJson) => {
+.then(dictionaryJson => {
     const dictionary = JSON.parse(dictionaryJson);
     console.log(`The dictionary name is ${dictionary.name}.`);
 })
-.catch((error) => {
+.catch(error => {
     console.log(`There was an reading the application or dictionary: ${error}`);
 });
 </color>

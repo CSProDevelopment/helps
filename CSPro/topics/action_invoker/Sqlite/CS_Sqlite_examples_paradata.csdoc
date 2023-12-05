@@ -64,7 +64,7 @@ try {
     // display the results
     print("Operators and Work Times (in Minutes)");
 
-    operatorWorkTimes.forEach((operatorWorkTime) => {
+    operatorWorkTimes.forEach(operatorWorkTime => {
         const minutesWorked = new Number(operatorWorkTime.secondsWorked / 60);
         print(`Operator "${operatorWorkTime.operatorid}" worked ${minutesWorked.toFixed(2)} minutes`);
     });

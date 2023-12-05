@@ -73,7 +73,7 @@ try {
     // display the results
     print(`Population Aged ${minAge} - ${maxAge} by Province (Largest to Smallest)`);
 
-    populationCountByProvince.forEach((populationCount) => {
+    populationCountByProvince.forEach(populationCount => {
         print(`Province ${populationCount.province}: ${populationCount.population}`);
     });
 }
