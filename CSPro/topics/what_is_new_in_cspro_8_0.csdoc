@@ -9,100 +9,112 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 <subheader>General</subheader>
 
 <list>
-	<li>Many specification files are now saved in <link JSON_specification_files.csdoc>JSON format</link>, which facilitates working with them in other programming languages or when using other tools. Once you save files in this format, you will not be able to open them in earlier versions of CSPro. A <link CSCode::language_cspro_specification_file_json.csdoc>specification file downgrader</link> provides a way to convert some JSON specification files to formats compatible with versions of CSPro up to version 7.7.</li>
-	<li>A new framework, the <link action_invoker.csdoc>Action Invoker</link>, provides a standard way of running actions from <link action_invoker_execution_cspro_logic.csdoc>CSPro logic</link>, <link action_invoker_execution_javascript_embedded.csdoc>embedded JavaScript</link>, <link action_invoker_execution_javascript_web.csdoc>JavaScript executed on web pages</link>, and in <link action_invoker_execution_json.csdoc>JSON format</link>.</li>
-	<li>New <link logic_settings.csdoc>logic settings</link> control how <link comments.csdoc>multiline comments</link> and <link string_literals.csdoc>string literals</link> are handled, as well as whether strings are right-padded <link string_comparisons.csdoc>during comparisons</link>. It is also possible to have the compiler enforce <link logic_settings.csdoc>case sensitivity</link> of variable names.</li>
-	<li>A new tool, <link CSCode::introduction.csdoc>CSCode</link>, is a text editor with support for tabbed editing of documents. The tool also facilitates <link CSCode::language_javascript.csdoc>running JavaScript</link>, <link CSCode::language_json.csdoc>editing and validating JSON</link>, <link CSCode::language_cspro_html_dialog.csdoc>designing HTML dialogs</link>, <link CSCode::language_cspro_specification_file_json.csdoc>validating specification files</link>, and more.</li>
-	<li>A new tool, <link CSView::introduction.csdoc>CSView</link>, displays files in a web browser that has access to the <link action_invoker.csdoc>Action Invoker</link>. The tool can be launched <link CSView::run_production_views.csdoc>via a PFF</link>, and is associated with <link CSView::supported_files.csdoc>.cshtml files</link> on Windows, so it can be used as a starting point for some programs.</li>
-	<li>A new <link data_entry_application_types.csdoc>data entry application type</link>, <i>Operational Control Application</i>, facilitates creating "menu" programs. Other new features to simplify working with menu programs include the <logiccolor>persistent</logiccolor> variable modifier as well as the <link change_field_properties.csdoc>Always Visual Value</link> field attribute.</li>
-	<li><link listing_file.csdoc>Listing files</link> and <link frequencies_file.csdoc>frequencies</link> can be written to JSON format.</li>
+    <li>Many specification files are now saved in <link JSON_specification_files.csdoc>JSON format</link>, which facilitates working with them in other programming languages or when using other tools. Once you save files in this format, you will not be able to open them in earlier versions of CSPro. A <link CSCode::language_cspro_specification_file_json.csdoc>specification file downgrader</link> provides a way to convert some JSON specification files to formats compatible with versions of CSPro up to version 7.7.</li>
+    <li>A new framework, the <link action_invoker.csdoc>Action Invoker</link>, provides a standard way of running actions from <link action_invoker_execution_cspro_logic.csdoc>CSPro logic</link>, <link action_invoker_execution_javascript_embedded.csdoc>embedded JavaScript</link>, <link action_invoker_execution_javascript_web.csdoc>JavaScript executed from web views</link>, using <link action_invoker_execution_json.csdoc>JSON</link>, or from other <link action_invoker_execution_android.csdoc>Android applications</link>.</li>
+    <li>New <link logic_settings.csdoc>logic settings</link> control how <link comments.csdoc>multiline comments</link> and <link string_literals.csdoc>string literals</link> are handled, as well as whether strings are right-padded <link string_comparisons.csdoc>during comparisons</link>. It is also possible to have the compiler enforce <link logic_settings.csdoc>case sensitivity</link> of variable names.</li>
+    <li>A new tool, <link CSCode::introduction.csdoc>CSCode</link>, is a text editor with support for tabbed editing of documents. The tool also facilitates <link CSCode::language_javascript.csdoc>running JavaScript</link>, <link CSCode::language_json.csdoc>editing and validating JSON</link>, <link CSCode::language_cspro_html_dialog.csdoc>designing and testing HTML dialogs</link>, <link CSCode::language_cspro_specification_file_json.csdoc>validating specification files</link>, and more.</li>
+    <li>A new tool, <link CSView::introduction.csdoc>CSView</link>, displays files in a web browser that has access to the <link action_invoker.csdoc>Action Invoker</link>. The tool can be launched <link CSView::run_production_views.csdoc>via a PFF</link>, and is associated with <link CSView::supported_files.csdoc>.cshtml files</link> on Windows, so it can be used as a starting point for some programs.</li>
+    <li>A new <link data_entry_application_types.csdoc>data entry application type</link>, <i>Operational Control Application</i>, facilitates creating "menu" programs. Other new features to simplify working with menu programs include the <logiccolor>persistent</logiccolor> variable modifier as well as the <link change_field_properties.csdoc>Always Visual Value</link> field attribute.</li>
+    <li><link listing_file.csdoc>Listing files</link> and <link frequencies_file.csdoc>frequencies</link> can be written as JSON.</li>
 </list>
 
 
 <subheader>Data Sources</subheader>
 
 <list>
-	<li>A new <link data_sources.csdoc>data source</link>, <link data_source_json.csdoc>JSON</link>, allows cases to be stored in JSON format in a file comprising a single JSON array of case objects. The data source allows duplicate cases (like CSPro DB) but does not support synchronization.</li>
-	<li>A new <link data_sources.csdoc>data source</link>, <link data_source_memory.csdoc>In-Memory</link>, allows for the temporary collection or processing of case data for one or more cases. This case data is stored only in memory and expires at the end ofan application's run.</li>
+    <li>A new <link data_sources.csdoc>data source</link>, <link data_source_json.csdoc>JSON</link>, allows cases to be stored as JSON in a file comprising a single JSON array of case objects. The data source allows duplicate cases (like CSPro DB) but does not support synchronization.</li>
+    <li>A new <link data_sources.csdoc>data source</link>, <link data_source_memory.csdoc>In-Memory</link>, allows for the temporary collection or processing of case data for one or more cases. This case data is stored only in memory and expires at the end ofan application's run.</li>
 </list>
 
 
 <subheader>CSPro Designer</subheader>
 
 <list>
-	<li>The <link create_a_cspro_application.csdoc>New File dialog</link> has been redesigned. Note that the first option has changed to the <link data_entry_application_types.csdoc>CAPI Data Entry Application</link> type.</li>
-	<li>The Files tab context menu has an option, Pack Application, that simplifies creating a ZIP file of an application's components (by automating the <link CSPack::introduction_to_pack_application.csdoc>Pack Application</link> process).</li>
-	<li><link "https://en.wikipedia.org/wiki/Approximate_string_matching">Approximate string matching</link> is used to better suggest symbol and functions names in the logic editor's autocomplete feature as well as in compiler errors.</li>
-	<li>The messages defined in <link message_file_mgf.csdoc>message files</link> are now checked for validity while compiling an application. Double-clicking on an error or warning in the compiler output window that originated from an external message file will result in that file being opened in <link CSCode::introduction.csdoc>CSCode</link>.</li>
-	<li>The menus for editing <link data_entry_menu.csdoc>data entry</link> and <link batch_editing_menu.csdoc>batch</link> applications have changed, with a new menu, <b>Code</b>, containing logic-related options, and the <b>CAPI</b> menu renamed to <b>Question Text</b>.</li>
-	<li>A new dialog, <link string_encoder_dialog.csdoc>String Encoder</link>, simplifies working with <link string_literals.csdoc>string literals</link> by encoding and decoding text into a variety of string literal formats. Additionally, the shortcut <b>Ctrl + "</b> pastes the text on the clipboard as a <link string_literals.csdoc>string literal</link>, escaping characters as needed.</li>
-	<li>Another new dialog, <link path_adjuster_dialog.csdoc>Path Adjuster</link>, facilitates working with absolute and relative paths in CSPro logic.</li>
+    <li>The <link create_a_cspro_application.csdoc>New File dialog</link> has been redesigned. Note that the first option has changed to the <link data_entry_application_types.csdoc>CAPI Data Entry Application</link> type.</li>
+    <li>The Files tab context menu has an option, Pack Application, that simplifies creating a ZIP file of an application's components (by automating the <link CSPack::introduction_to_pack_application.csdoc>Pack Application</link> process).</li>
+    <li><link "https://en.wikipedia.org/wiki/Approximate_string_matching">Approximate string matching</link> is used to better suggest symbol and functions names in the logic editor's autocomplete feature as well as in compiler errors.</li>
+    <li>The messages defined in <link message_file_mgf.csdoc>message files</link> are now checked for validity while compiling an application. Double-clicking on an error or warning in the compiler output window that originated from an external message file will result in that file being opened in <link CSCode::introduction.csdoc>CSCode</link>.</li>
+    <li>The menus for editing <link data_entry_menu.csdoc>data entry</link> and <link batch_editing_menu.csdoc>batch</link> applications have changed, with a new menu, <b>Code</b>, containing logic-related options, and the <b>CAPI</b> menu renamed to <b>Question Text</b>.</li>
+    <li>A new dialog, <link string_encoder_dialog.csdoc>String Encoder</link>, simplifies working with <link string_literals.csdoc>string literals</link> by encoding and decoding text into a variety of string literal formats. Additionally, the shortcut <b>Ctrl + "</b> pastes the text on the clipboard as a <link string_literals.csdoc>string literal</link>, escaping characters as needed.</li>
+    <li>Another new dialog, <link path_adjuster_dialog.csdoc>Path Adjuster</link>, facilitates working with absolute and relative paths in CSPro logic.</li>
 </list>
 
 
 <subheader>Dictionaries</subheader>
 
 <list>
-	<li>Dictionary <link value_set_images.csdoc>value set images</link> are now specified using the <link dictionary_property_panel.csdoc>dictionary property panel</link>.</li>
-	<li><link labels.csdoc>Labels</link> can now use the tilde and pipe characters (~ and |). Single and double quotation marks can also be used together in <link record_type.csdoc>record types</link> and alphanumeric <link value_properties.csdoc>value set codes</link>.</li>
-	<li>When using <link relative_and_absolute_mode.csdoc>relative positioning</link>, the <link starting_position.csdoc>start positions</link> of non-ID items are no longer written to the <link data_dictionary_file_dcf.csdoc>dictionary file</link>.</li>
-	<li>There is no limit to the length of notes, which previously could not be longer than 32,000 characters.</li>
+    <li>Dictionary <link value_set_images.csdoc>value set images</link> are now specified using the <link dictionary_property_panel.csdoc>dictionary property panel</link>.</li>
+    <li><link labels.csdoc>Labels</link> can now use the tilde and pipe characters (~ and |). Single and double quotation marks can also be used together in <link record_type.csdoc>record types</link> and alphanumeric <link value_properties.csdoc>value set codes</link>.</li>
+    <li>When using <link relative_and_absolute_mode.csdoc>relative positioning</link>, the <link starting_position.csdoc>start positions</link> of non-ID items are no longer written to the <link data_dictionary_file_dcf.csdoc>dictionary file</link>.</li>
+    <li>There is no limit to the length of notes, which previously could not be longer than 32,000 characters.</li>
 </list>
 
 
 <subheader>Android</subheader>
 
 <list>
-	<li>Production PFFs for the <link CSPack::introduction_to_pack_application.csdoc>Pack Application</link> tool can now be executed on Android.</li>
-	<li>Security restrictions added by Google for Android 11+ devices prevent the <logiccolor>SystemApp</logiccolor> object from launching most applications. More details, and workarounds,  are detailed on the <logiccolor>SystemApp.exec</logiccolor> page.</li>
-	<li>The aspect ratio of photos taken using the device's camera can be modified using the <link csentry_settings_modification.csdoc>CSEntry.Setting.CameraAspectRatio</link> setting.</li>
+    <li>Android devices running CSEntry must be running version 5.0 (Lollipop) or higher.</li>
+    <li>Other Android applications can now communicate with CSPro applications using the <link action_invoker_execution_android.csdoc>Action Invoker</link>. Other ways to interact between Android applications has now been <link android_interacting_with_other_applications.csdoc>documented</link>.</li>
+    <li>Production PFFs for the <link CSPack::introduction_to_pack_application.csdoc>Pack Application</link> tool can now be executed on Android.</li>
+    <li>Security restrictions added by Google for Android 11+ devices prevent the <logiccolor>SystemApp</logiccolor> object from launching most applications. More details, and workarounds,  are detailed on the <logiccolor>SystemApp.exec</logiccolor> page.</li>
+    <li>The aspect ratio of photos taken using the device's camera can be modified using the <link csentry_settings_modification.csdoc>CSEntry.Setting.CameraAspectRatio</link> setting.</li>
 </list>
 
 
 <subheader>Logic</subheader>
 
 <list>
-	<li>When using the new <link logic_version.csdoc>logic version</link>, CSPro 8.0+:
-		<list>
-			<li><link comments.csdoc>Multline comments</link> use <logiccolor>/* */</logiccolor> instead of <colorinline cspro_v0>{ }</colorinline>.</li>
-			<li><link string_literals.csdoc>String literals</link> allow escape sequences (<logiccolor>"line 1\nline 2"</logiccolor>) and can be defined as verbatim string literals (<logiccolor>@"this is a backslash: \"</logiccolor>).</li>
-			<li>When <link string_comparisons.csdoc>comparing strings</link> using <logiccolor>compare</logiccolor>, <logiccolor>compareNoCase</logiccolor>, or <link operators.csdoc>operators</link> such as <logiccolor>=</logiccolor> or <logiccolor><></logiccolor>, the shorter string is no longer right-padded during the comparison (e.g., <logiccolor>"a"</logiccolor> no longer is equal to <logiccolor>"a   "</logiccolor>).</li>
-			<li>Newline characters, now introducible using <logiccolor>"\n"</logiccolor>, are handled throughout CSPro as one would generally expect, but are <link newline_handling.csdoc>turned to</link> the <link "https://www.w3.org/TR/xml-entity-names/024.html">Unicode ␤</link> character when multiline text is not permitted (such as text data files).</li>
-		</list>
-	</li>
-	<li>A new function, <logiccolor>compareNoCase</logiccolor>, complements <logiccolor>compare</logiccolor> by comparing strings in a case-insensitive manner.</li>
-	<li><link https://en.wikipedia.org/wiki/QR_code>QR code</link> images can be created using the <logiccolor>Barcode.createQRCode</logiccolor> and <logiccolor>Image.createQRCode</logiccolor> functions.</li>
-	<li>The <logiccolor>timestamp</logiccolor> function can return UNIX time values by parsing <link https://www.rfc-editor.org/rfc/rfc3339>RFC 3339</link> / <link https://en.wikipedia.org/wiki/ISO_8601>ISO 8601</link> strings, or by specifying a specific date value.</li>
-	<li>A new function, <logiccolor>Map.clear</logiccolor>, resets all properties of a <link Map.csdoc>Map object</link>.</li>
-	<li>A new variable modifier, <logiccolor>persistent</logiccolor>, allows logic variables to retain their values from one run of an application to another.</li>
-	<li>The <logiccolor>config</logiccolor> variable modifier can now be used with <logiccolor>numeric</logiccolor> variables, and can be used with variables not declared in <logiccolor>PROC GLOBAL</logiccolor>.</li>
-	<li>Frequency tables can be written directly to <link templated_reports.csdoc>templated reports</link> by using the <logiccolor>Freq.save</logiccolor> function.</li>
-	<li>String expressions can be assigned to <link Document.csdoc>Document</link> objects.</li>
-	<li>Lines written using <logiccolor>File.write</logiccolor> or <logiccolor>filewrite</logiccolor> are now terminated with a single <logiccolor>"\n"</logiccolor> character, no longer with <logiccolor>"\r\n"</logiccolor>.</li>
-	<li>Double-clicking on an error or warning in the compiler output window that originated from an <link logic_file_apc.csdoc>external logic file</link> while holding the <b>Ctrl</b> button will result in that file being opened in <link CSCode::introduction.csdoc>CSCode</link>, no longer Notepad++.</li>
-	<li>Some logic features have been <link deprecated_features.csdoc>removed</link> or are slated for removal:
-		<list>
-			<li>Creating dynamic value sets using <logiccolor>Array</logiccolor> objects has been removed. The <logiccolor>ValueSet</logiccolor> object should be used instead. When running a .pen file created prior to CSPro 8.0, the functions will execute properly (though this will not be the case in a future release).</li>
-			<li>The <logiccolor>box</logiccolor> / <logiccolor>endbox</logiccolor> syntax for <link recode_statement.csdoc>recoding variables</link> has been removed. When running a .pen file created prior to CSPro 8.0, the functions will execute properly (though this will not be the case in a future release).</li>
-			<li>The functions <logiccolor>report</logiccolor> and <logiccolor>setreportdata</logiccolor>, used to create reports prior to the introduction of <topic templated_reports.csdoc />, have been removed. When running a .pen file created prior to CSPro 8.0, the functions will execute properly (though this will not be the case in a future release).</li>
-			<li>The <logiccolor>itemlist</logiccolor> function has been removed. When running a .pen file created prior to CSPro 8.0, the function returns a blank string.</li>
-			<li>The type indicators <logiccolor>sint</logiccolor>, <logiccolor>lint</logiccolor>, and <logiccolor>float</logiccolor> can no longer be used when declaring <logiccolor>Array</logiccolor> objects.</li>
-		</list>
-	</li>
+    <li>When using the new <link logic_version.csdoc>logic version</link>, CSPro 8.0+:
+        <list>
+            <li><link comments.csdoc>Multline comments</link> use <logiccolor>/* */</logiccolor> instead of <colorinline cspro_v0>{ }</colorinline>.</li>
+            <li><link string_literals.csdoc>String literals</link> allow escape sequences (<logiccolor>"line 1\nline 2"</logiccolor>) and can be defined as verbatim string literals (<logiccolor>@"this is a backslash: \"</logiccolor>).</li>
+            <li>When <link string_comparisons.csdoc>comparing strings</link> using <logiccolor>compare</logiccolor>, <logiccolor>compareNoCase</logiccolor>, or <link operators.csdoc>operators</link> such as <logiccolor>=</logiccolor> or <logiccolor><></logiccolor>, the shorter string is no longer right-padded during the comparison (e.g., <logiccolor>"a"</logiccolor> no longer is equal to <logiccolor>"a   "</logiccolor>).</li>
+            <li>Newline characters, now introducible using <logiccolor>"\n"</logiccolor>, are handled throughout CSPro as one would generally expect, but are <link newline_handling.csdoc>turned to</link> the <link "https://www.w3.org/TR/xml-entity-names/024.html">Unicode ␤</link> character when multiline text is not permitted (such as text data files).</li>
+        </list>
+    </li>
+    <li>A new variable modifier, <logiccolor>persistent</logiccolor>, allows logic variables to retain their values from one run of an application to another.</li>
+    <li>A new function, <logiccolor>compareNoCase</logiccolor>, complements <logiccolor>compare</logiccolor> by comparing strings in a case-insensitive manner.</li>
+    <li><link https://en.wikipedia.org/wiki/QR_code>QR code</link> images can be created using the <logiccolor>Barcode.createQRCode</logiccolor> and <logiccolor>Image.createQRCode</logiccolor> functions.</li>
+    <li>A new function, <logiccolor>Map.clear</logiccolor>, resets all properties of a <link Map.csdoc>Map object</link>.</li>
+    <li>The <logiccolor>timestamp</logiccolor> function can return UNIX time values by parsing <link https://www.rfc-editor.org/rfc/rfc3339>RFC 3339</link> / <link https://en.wikipedia.org/wiki/ISO_8601>ISO 8601</link> strings, or by specifying a specific date value.</li>
+    <li>The <logiccolor>config</logiccolor> variable modifier can now be used with <logiccolor>numeric</logiccolor> variables, and can be used with variables not declared in <logiccolor>PROC GLOBAL</logiccolor>.</li>
+    <li>Frequency tables can be written directly to <link templated_reports.csdoc>templated reports</link> by using the <logiccolor>Freq.save</logiccolor> function.</li>
+    <li>String expressions can be assigned to <link Document.csdoc>Document</link> objects.</li>
+    <li>Lines written using <logiccolor>File.write</logiccolor> or <logiccolor>filewrite</logiccolor> are now terminated with a single <logiccolor>"\n"</logiccolor> character, no longer with <logiccolor>"\r\n"</logiccolor>.</li>
+    <li>The <logiccolor>tonumber</logiccolor> function processes <link boolean_values.csdoc>boolean values</link>, converting <logiccolor>"true"</logiccolor> to <logiccolor>1</logiccolor> and <logiccolor>"false"</logiccolor> to <logiccolor>0</logiccolor>.</li>
+    <li>Double-clicking on an error or warning in the compiler output window that originated from an <link logic_file_apc.csdoc>external logic file</link> while holding the <b>Ctrl</b> button will result in that file being opened in <link CSCode::introduction.csdoc>CSCode</link>, no longer Notepad++.</li>
+    <li>Some logic features have been <link deprecated_features.csdoc>removed</link> or are slated for removal:
+        <list>
+            <li>Creating dynamic value sets using <logiccolor>Array</logiccolor> objects has been removed. The <logiccolor>ValueSet</logiccolor> object should be used instead. When running a .pen file created prior to CSPro 8.0, the functions will execute properly (though this will not be the case in a future release).</li>
+            <li>The <logiccolor>box</logiccolor> / <logiccolor>endbox</logiccolor> syntax for <link recode_statement.csdoc>recoding variables</link> has been removed. When running a .pen file created prior to CSPro 8.0, the functions will execute properly (though this will not be the case in a future release).</li>
+            <li>The functions <logiccolor>report</logiccolor> and <logiccolor>setreportdata</logiccolor>, used to create reports prior to the introduction of <topic templated_reports.csdoc />, have been removed. When running a .pen file created prior to CSPro 8.0, the functions will execute properly (though this will not be the case in a future release).</li>
+            <li>The <logiccolor>itemlist</logiccolor> function has been removed. When running a .pen file created prior to CSPro 8.0, the function returns a blank string.</li>
+            <li>The type indicators <logiccolor>sint</logiccolor>, <logiccolor>lint</logiccolor>, and <logiccolor>float</logiccolor> can no longer be used when declaring <logiccolor>Array</logiccolor> objects.</li>
+        </list>
+    </li>
 </list>
 
 
 <subheader>Action Invoker</subheader>
 
 <list>
-	<li>HELP_TODO</li>
+    <li>A new action, <action>execute</action>, executes an <link action_invoker.csdoc>action</link> with the action name specified as an argument.</li>
+    <li>A new action, <action>registerAccessToken</action>, registers an <link action_invoker_access_token.csdoc>access token</link> to provide access to the Action Invoker from external callers.</li>
+    <li>A new namespace, <action>Clipboard</action>, provides access to the device's clipboard, with the actions: <action>Clipboard.getText</action> and <action>Clipboard.putText</action>.</li>
+    <li>A new namespace, <action>File</action>, facilitates reading from and writing to files, and provides ways to manipulate files on the file system with the actions: <action>File.copy</action>, <action>File.readBytes</action>, <action>File.readLines</action>, <action>File.readText</action>, <action>File.writeBytes</action>, <action>File.writeLines</action>, and <action>File.writeText</action>.</li>
+    <li>A new namespace, <action>Hash</action>, creates hash values with the actions: <action>Hash.createHash</action> and <action>Hash.createMd5</action>.</li>
+    <li>A new namespace, <action>Localhost</action>, creates <link localhost_url.csdoc>localhost URLs</link> that can be used to serve content from the local file system or from memory with the actions: <action>Localhost.mapActionResult</action>, <action>Localhost.mapFile</action>, <action>Localhost.mapSymbol</action>, and <action>Localhost.mapText</action>.</li>
+    <li>A new namespace, <action>Message</action>, facilitates working with <link message_file_mgf.csdoc>messages</link> and formatting text with the actions: <action>Message.formatText</action> and <action>Message.getText</action>.</li>
+    <li>A new namespace, <action>Settings</action>, provides ways to set and retrieve settings that persist across application runs with the actions: <action>Settings.getValue</action> and <action>Settings.putValue</action>.</li>
+    <li>A new namespace, <action>Sqlite</action>, facilitates working with <link sqlite_in_cspro.csdoc>SQLite databases</link> with the actions: <action>Sqlite.close</action>, <action>Sqlite.exec</action>, <action>Sqlite.open</action>, and <action>Sqlite.rekey</action>.</li>
+    <li>A new namespace, <action>System</action>, provides ways to work with system resources with the actions: <action>System.getSharableUri</action> and <action>System.selectDocument</action>.</li>
 </list>
 
 
 <subheader>HTML and JavaScript</subheader>
 
 <list>
-	<li>Five additional <link html_in_cspro.csdoc>JavaScript libraries</link> are included in the <i>html/external</i> directory on both Windows and Android: <link "https://www.chartjs.org">Chart.js</link>, <link "https://handlebarsjs.com">Handlebars.js</link>, <link "https://jqueryui.com">jQuery UI</link>, <link "https://lindell.me/JsBarcode">JsBarcode</link>, and <link "https://github.com/alexei/sprintf.js">sprintf-js</link>.</li>
+    <li>Five additional <link html_in_cspro.csdoc>JavaScript libraries</link> are included in the <i>html/external</i> directory on both Windows and Android: <link "https://www.chartjs.org">Chart.js</link>, <link "https://handlebarsjs.com">Handlebars.js</link>, <link "https://jqueryui.com">jQuery UI</link>, <link "https://lindell.me/JsBarcode">JsBarcode</link>, and <link "https://github.com/alexei/sprintf.js">sprintf-js</link>.</li>
 </list>
 
 
@@ -110,16 +122,17 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 
 <list>
     <li>A new tool, <link CSDocument::introduction.csdoc>CSDocument</link>, allows users to author documents using a simple, limited, markup language. <link CSDocument::cspro_document.csdoc>Documents</link> and <link CSDocument::cspro_document_set.csdoc>Document Sets</link> can be exported to HTML, PDF, and CHM (Compiled HTML Help) formats.</li>
-	<li>The <link CSPack::introduction_to_pack_application.csdoc>Pack Application</link> tool has been redesigned and supports packing multiple applications or inputs. Pack specifications can also be saved to a .cspack file for reuse.</li>
-	<li>It is no longer possible to override Excel to CSPro parameters from the <link Excel2CSPro::running_conversions_from_the_command_line.csdoc>command line</link>, though some overrides can still be specified in the PFF.</li>
-	<li>The Table Retrieval and Table Retrieval Setup tools have been removed from the CSPro installation. Users still needing these tools can find them on <link https://<definition csprousers_website />><definition csprousers_website /></link>.</li>
+    <li>The <link CSPack::introduction_to_pack_application.csdoc>Pack Application</link> tool has been redesigned and supports packing multiple applications or inputs. Pack specifications can also be saved to a .cspack file for reuse.</li>
+    <li>It is no longer possible to override Excel to CSPro parameters from the <link Excel2CSPro::running_conversions_from_the_command_line.csdoc>command line</link>, though some overrides can still be specified in the PFF.</li>
+    <li>The Table Retrieval and Table Retrieval Setup tools have been removed from the CSPro installation. Users still needing these tools can find them on <link https://<definition csprousers_website />><definition csprousers_website /></link>.</li>
 </list>
 
 
 <subheader>CSWeb</subheader>
 
 <list>
-	<li>The <link CSWeb::additional_configuration_options.csdoc>Additional Configuration Options</link> has a Process Cases Options which allows only the needed dictionary variables for breaking out to a relational database to be specified.</li>
+    <li>CSWeb now requires <link "https://www.php.net/releases/8.0">PHP 8</link>.</li>
+    <li>The <link CSWeb::additional_configuration_options.csdoc>Additional Configuration Options</link> has a Process Cases Options which allows only the needed dictionary variables for breaking out to a relational database to be specified.</li>
 </list>
 
 

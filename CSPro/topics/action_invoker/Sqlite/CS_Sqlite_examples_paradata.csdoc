@@ -1,0 +1,88 @@
+﻿<title>Sqlite Action Examples: Paradata</title>
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+This example queries the <link paradata.csdoc>paradata log</link> currently associated with the application:
+
+<logic>
+// open the SQLite database associated with the current paradata log
+numeric dbParadata = tonumber(CS.Sqlite.open(name := "paradata"));
+
+// query for the Wi-Fi network name that was last recorded as part of the device state event
+string wifiName = CS.Sqlite.exec(
+    db := dbParadata,
+    sql := "SELECT `text`.`text` "
+           "FROM `device_state_event` "
+           "JOIN `event` ON `event`.`id` = `device_state_event`.`id` "
+           "JOIN `text` ON `text`.`id` = `device_state_event`.`wifi_ssid_text` "
+           "ORDER BY `event`.`time` DESC "
+           "LIMIT 1;");
+
+// close the database
+CS.Sqlite.close(db := dbParadata);
+
+// display the results of the query
+when wifiName;
+    "" -> errmsg("No Wi-Fi connection recorded.");
+       -> errmsg("The last Wi-Fi connection was to: %s", wifiName);
+endwhen;
+</logic>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+This example opens a paradata log not associated with the currently running application and calculates the number of minutes that each operator worked:
+
+<color JavaScript>
+let dbParadata;
+
+try {
+    // open the paradata log, which is a SQLite database
+    dbParadata = CS.Sqlite.open({
+        path: "My Paradata.cslog"
+    });
+
+    const operatorWorkTimes = CS.Sqlite.exec({
+        db: dbParadata,
+        sql: "SELECT `operatorid`, SUM(`end_time` - `start_time`) AS `secondsWorked` FROM " +
+             "( " +
+             "    SELECT `operatorid_info`.`operatorid` AS `operatorid`, `event_start`.`time` AS `start_time`, `event_end`.`time` AS `end_time` " +
+             "    FROM `session_event` AS `session_event_start` " +
+             "    JOIN `event` AS `event_start` ON `session_event_start`.`id` = `event_start`.`id` " +
+             "    JOIN `session_event` AS `session_event_end` " +
+             "    JOIN `event` AS `event_end` ON `session_event_end`.`id` = `event_end`.`id` AND `event_start`.`session_instance` = `event_end`.`session_instance` " +
+             "    JOIN `session_instance` ON `event_start`.`session_instance` = `session_instance`.`id` " +
+             "    JOIN `session_info` ON `session_instance`.`session_info` = `session_info`.`id` " +
+             "    JOIN `operatorid_info` ON `session_info`.`operatorid_info` = `operatorid_info`.`id` " +
+             "    WHERE `session_event_start`.`action` = 1 AND `session_event_end`.`action` = 0 " +
+             ") " +
+             "GROUP BY `operatorid` " +
+             "ORDER BY `operatorid`;"
+    });
+
+    // display the results
+    print("Operators and Work Times (in Minutes)");
+
+    operatorWorkTimes.forEach(operatorWorkTime => {
+        const minutesWorked = new Number(operatorWorkTime.secondsWorked / 60);
+        print(`Operator "${operatorWorkTime.operatorid}" worked ${minutesWorked.toFixed(2)} minutes`);
+    });
+}
+catch(error) {
+    print("Error interacting with paradata: " + error);
+}
+finally {
+    // close the database, suppressing any errors
+    try {
+        CS.Sqlite.close({
+            db: dbParadata
+        });
+    }
+    catch {
+    }
+}
+</color>
+
+
+<seealso CS_Sqlite.csdoc paradata.csdoc CS_Sqlite_examples_data_source.csdoc sqlite_callback_functions.csdoc  />

@@ -1,3 +1,77 @@
-﻿<title>Action Invoker Execution in CSPro Logic</title>
+﻿<title>Action Invoker Execution from CSPro Logic</title>
 
-HELP_TODO
+
+<subheader>Overview</subheader>
+
+Running <link action_invoker.csdoc>Action Invoker</link> actions from CSPro logic requires calling functions using <link object_dot_notation.csdoc>dot notation</link>. All actions are contained within the <logiccolor>CS</logiccolor> namespace, so when calling an action, write <logiccolor>CS.</logiccolor> before the action name. Additional namespaces can be specified, separated by dots, followed by the action name. Specify arguments for the action using the <link function_named_arguments.csdoc>named arguments</link> syntax. For example, the following code puts the text <logiccolor>"CSPro"</logiccolor> onto the clipboard:
+
+<logic>
+CS.Clipboard.putText(text := "CSPro");
+</logic>
+
+
+<subheader>Argument Types</subheader>
+
+Arguments to actions are specified in one of the following types: string, number, boolean, array, or object. The help page for each action will list the type, or types, permitted for each argument. Because CSPro logic does not natively support all types, and does not support objects at all, you can use the <logiccolor>@</logiccolor> operator to specify the type. The following table specifies how arguments can be specified:
+
+<table 3 header nowrap>
+    <cell>Argument Type</cell><cell>CSPro Type Supported</cell><cell>Additional CSPro Type Supported with @ Operator</cell>
+    <cell><b>string</b></cell><cell><logiccolor>string</logiccolor></cell><cell><i>n/a</i></cell>
+    <cell><b>number</b></cell><cell><logiccolor>numeric</logiccolor></cell><cell><i>n/a</i></cell>
+    <cell><b>boolean</b></cell><cell><logiccolor>numeric</logiccolor></cell><cell><i>n/a</i></cell>
+    <cell><b>array</b></cell><cell><logiccolor>Array</logiccolor>, <logiccolor>List</logiccolor></cell><cell><logiccolor>string</logiccolor></cell>
+    <cell><b>object</b></cell><cell><i>n/a</i></cell><cell><logiccolor>string</logiccolor></cell>
+</table>
+
+For example, this code copies one file, specified as a string, to the directory "Images":
+
+<logic>
+CS.File.copy(source := "Image01.jpg",
+             destination := "Images");
+</logic>
+
+By using <logiccolor>@array</logiccolor>, this code indicates that the <arg>source</arg> argument is an array, not a string. This copies two files:
+
+<logic>
+CS.File.copy(source := @array "[ \"Image01.jpg\", \"Image02.jpg\" ]",
+             destination := "Images");
+</logic>
+
+If the second example were written without the <logiccolor>@</logiccolor> operator specifying the argument type , CSPro would interpret the array argument as a string, which would ultimately result in a runtime error.
+
+
+<subheader>Return Values</subheader>
+
+The results of all actions are returned as strings containing <link JSON_primer.csdoc>JSON</link>, or a value representing undefined. This return value can be of type undefined, string, number, boolean, array, or object. Because it is difficult to work with JSON in CSPro logic, a <link logic_settings.csdoc>logic setting</link>, enabled by default, allows you to modify how results are returned to make them easier to use in CSPro logic. The following table gives examples of how return values are handled given the setting:
+
+<table 3 header nowrap>
+    <cell>Return Type</cell><cell>As JSON</cell><cell>Converted for CSPro Logic</cell>
+    <cell><b>undefined</b></cell><cell><logiccolor>""</logiccolor></cell><cell><logiccolor>""</logiccolor></cell>
+    <cell><b>string</b></cell><cell><logiccolor>"\"text\""</logiccolor></cell><cell><logiccolor>"text"</logiccolor></cell>
+    <cell><b>number</b></cell><cell><logiccolor>"44"</logiccolor></cell><cell><logiccolor>"44"</logiccolor></cell>
+    <cell><b>boolean</b></cell><cell><logiccolor>"true"</logiccolor></cell><cell><logiccolor>"1"</logiccolor></cell>
+    <cell><b>array</b></cell><cell><logiccolor>"[1, 2, 3]"</logiccolor></cell><cell><logiccolor>"[1, 2, 3]"</logiccolor></cell>
+    <cell><b>object</b></cell><cell><logiccolor>"{ \"key\": \"value\" }"</logiccolor></cell><cell><logiccolor>"{ \"key\": \"value\" }"</logiccolor></cell>
+</table>
+
+Even with the conversion, the result is a string. If you want to convert it further to a native CSPro type:
+
+<table 2 header nowrap>
+    <cell>Return Type</cell><cell>Conversion Strategy</cell>
+    <cell><b>number</b></cell><cell>Use the <logiccolor>tonumber</logiccolor> function.</cell>
+    <cell><b>boolean</b></cell><cell>Use the <logiccolor>tonumber</logiccolor> function.</cell>
+    <cell><b>array</b></cell><cell>Use the <logiccolor>Symbol.updateValueFromJson</logiccolor> function with an <logiccolor>Array</logiccolor> or <logiccolor>List</logiccolor> object.</cell>
+    <cell><b>object</b></cell><cell>At this time, CSPro logic does not provide a way to work with objects. Consider using <link action_invoker_execution_javascript_embedded.csdoc>JavaScript</link> to work with actions that return objects.</cell>
+</table>
+
+If you would like to process the result of an action before it is returned, you can add an <logiccolor>OnActionInvokerResult</logiccolor> callback function to your code. If that function returns a non-blank string, the result will not be converted for CSPro logic, regardless of the logic setting.
+
+
+<subheader>Exception Handling</subheader>
+
+When compiling actions, the compiler will issue errors if any required arguments are missing, or if the type of an argument is invalid. However, unlike many other logic functions, no additional checking is done during compilation. At runtime, if any of the arguments are invalid, or if there was an error executing the action, the Action Invoker throws an <link "https://en.wikipedia.org/wiki/Exception_handling">exception</link>. Because CSPro logic does not support handling exceptions, if an exception is thrown, CSPro will display a runtime error message and return a blank string.
+
+To be notified when an exception is thrown, and to potentially process it, you can add an <logiccolor>OnActionInvokerResult</logiccolor> callback function to your code. If that function suppresses the exception, no runtime error message will display.
+
+
+<seealso action_invoker.csdoc CS_OnActionInvokerResult.csdoc  function_named_arguments.csdoc />

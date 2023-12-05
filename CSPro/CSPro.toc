@@ -557,7 +557,8 @@
               { "path": "android_development.csdoc", "~title": "Android Development" }, 
               { "path": "android_limitations.csdoc", "~title": "Android Limitations" }, 
               { "path": "android_navigation.csdoc", "~title": "Android Navigation" }, 
-              { "path": "csentry_settings_modification.csdoc", "~title": "CSEntry Settings Modification" }
+              { "path": "csentry_settings_modification.csdoc", "~title": "CSEntry Settings Modification" }, 
+              { "path": "android_interacting_with_other_applications.csdoc", "~title": "Interacting With Other Android Applications" }
             ]
           }
         ]
@@ -862,6 +863,7 @@
         "title": "Data Sources", 
         "documents": [
           { "path": "data_source_text.csdoc", "~title": "Text Data Source" }, 
+          { "path": "data_source_csdbe.csdoc", "~title": "Encrypted CSPro DB Data Source" }, 
           { "path": "data_source_json.csdoc", "~title": "JSON Data Source" }, 
           { "path": "data_source_memory.csdoc", "~title": "In-Memory Data Source" }, 
           { "path": "data_source_tab.csdoc", "~title": "Tab Delimited Data Source" }, 
@@ -893,7 +895,7 @@
               { "path": "function_parameters_optional.csdoc", "~title": "Optional Function Parameters" }, 
               { "path": "function_arguments_ref.csdoc", "~title": "Passing Function Arguments by Reference" }, 
               { "path": "additional_function_examples.csdoc", "~title": "Additional Examples of User-Defined Functions" }, 
-              { "path": "object_dot_notation.csdoc", "~title": "Logic Objects and Dot Notation" }
+              { "path": "object_dot_notation.csdoc", "~title": "Dot Notation, Logic Objects, and Namespaces" }
             ]
           }, 
           {
@@ -1235,7 +1237,7 @@
               { "path": "edit_function.csdoc", "~title": "Edit Function" }, 
               { "path": "getbuffer_function.csdoc", "~title": "GetBuffer Function" }, 
               { "path": "length_function.csdoc", "~title": "Length Function" }, 
-              { "path": "maketext_function.csdoc", "~title": "MakeText Function" }, 
+              { "path": "maketext_function.csdoc", "~title": "maketext Function" }, 
               { "path": "message_formatting_options.csdoc", "~title": "Message Formatting Options" }, 
               { "path": "pos_function.csdoc", "~title": "Pos Function" }, 
               { "path": "poschar_function.csdoc", "~title": "PosChar Function" }, 
@@ -1277,7 +1279,7 @@
             "documents": [
               { "path": "compress_function.csdoc", "~title": "Compress Function" }, 
               { "path": "decompress_function.csdoc", "~title": "Decompress Function" }, 
-              { "path": "diagnostics_function.csdoc", "~title": "Diagnostics Function" }, 
+              { "path": "diagnostics_function.csdoc", "~title": "diagnostics Function" }, 
               { "path": "encode_function.csdoc", "~title": "Encode Function" }, 
               { "path": "errmsg_function.csdoc", "~title": "ErrMsg Function" }, 
               { "path": "execsystem_function_desktop.csdoc", "~title": "ExecSystem Function (Desktop)" }, 
@@ -1288,28 +1290,28 @@
               { "path": "getlanguage_function.csdoc", "~title": "GetLanguage Function" }, 
               { "path": "getsymbol_function.csdoc", "~title": "GetSymbol Function" }, 
               { "path": "getvaluelabel_function.csdoc", "~title": "GetValueLabel Function" }, 
-              { "path": "hash_function.csdoc", "~title": "Hash Function" }, 
-              { "path": "htmldialog_function.csdoc", "~title": "HtmlDialog Function" }, 
+              { "path": "hash_function.csdoc", "~title": "hash Function" }, 
+              { "path": "htmldialog_function.csdoc", "~title": "htmldialog Function" }, 
               { "path": "invalueset_function.csdoc", "~title": "InValueSet Function" }, 
               { "path": "invoke_function.csdoc", "~title": "Invoke Function" }, 
               { "path": "ischecked_function.csdoc", "~title": "IsChecked Function" }, 
-              { "path": "loadsetting_function.csdoc", "~title": "LoadSetting Function" }, 
+              { "path": "loadsetting_function.csdoc", "~title": "loadsetting Function" }, 
               { "path": "logtext_function.csdoc", "~title": "LogText Function" }, 
               { "path": "maxvalue_function.csdoc", "~title": "MaxValue Function" }, 
               { "path": "minvalue_function.csdoc", "~title": "MinValue Function" }, 
-              { "path": "paradata_function.csdoc", "~title": "Paradata Function" }, 
+              { "path": "paradata_function.csdoc", "~title": "paradata Function" }, 
               { "path": "pathconcat_function.csdoc", "~title": "PathConcat Function" }, 
               { "path": "pathname_function.csdoc", "~title": "PathName Function" }, 
-              { "path": "savesetting_function.csdoc", "~title": "SaveSetting Function" }, 
+              { "path": "savesetting_function.csdoc", "~title": "savesetting Function" }, 
               { "path": "setlanguage_function.csdoc", "~title": "SetLanguage Function" }, 
               { "path": "setproperty_function.csdoc", "~title": "SetProperty Function" }, 
               { "path": "setvalueset_function.csdoc", "~title": "SetValueSet Function" }, 
               { "path": "setvaluesets_function.csdoc", "~title": "SetValueSets Function" }, 
               { "path": "special_function.csdoc", "~title": "Special Function" }, 
-              { "path": "sqlquery_function.csdoc", "~title": "SqlQuery Function" }, 
+              { "path": "sqlquery_function.csdoc", "~title": "sqlquery Function" }, 
               { "path": "stop_function.csdoc", "~title": "Stop Function" }, 
               { "path": "sysparm_function.csdoc", "~title": "SysParm Function" }, 
-              { "path": "tr_function.csdoc", "~title": "Tr Function" }, 
+              { "path": "tr_function.csdoc", "~title": "tr Function" }, 
               { "path": "trace_function.csdoc", "~title": "Trace Function" }, 
               { "path": "uuid_function.csdoc", "~title": "UUID Function" }, 
               { "path": "view_function.csdoc", "~title": "View Function" }, 
@@ -1332,7 +1334,7 @@
               { "path": "sysdate_function.csdoc", "~title": "SysDate Function" }, 
               { "path": "systime_function.csdoc", "~title": "SysTime Function" }, 
               { "path": "timestamp_function.csdoc", "~title": "timestamp Function" }, 
-              { "path": "timestring_function.csdoc", "~title": "TimeString Function" }
+              { "path": "timestring_function.csdoc", "~title": "timestring Function" }
             ]
           }, 
           {
@@ -1427,9 +1429,11 @@
         "title": "HTML and JavaScript Integration", 
         "documents": [
           { "path": "html_in_cspro.csdoc", "~title": "HTML in CSPro" }, 
-          { "path": "html_dialog_ui.csdoc", "~title": "HTML Dialog Boxes" }, 
+          { "path": "localhost_url.csdoc", "~title": "Localhost URL" }, 
+          { "path": "external_libraries.csdoc", "~title": "External Libraries" }, 
           { "path": "javascript_interface.csdoc", "~title": "JavaScript Interface" }, 
-          { "path": "JSON_primer.csdoc", "~title": "JSON Primer" }
+          { "path": "JSON_primer.csdoc", "~title": "JSON Primer" }, 
+          { "path": "html_dialog_ui.csdoc", "~title": "HTML Dialog Boxes" }
         ]
       }, 
       {
@@ -1442,9 +1446,102 @@
             "title": "Execution Environments", 
             "documents": [
               { "path": "action_invoker_execution_cspro_logic.csdoc", "title": "CSPro Logic" }, 
+              { "path": "CS_OnActionInvokerResult.csdoc", "~title": "OnActionInvokerResult Global Function" }, 
               { "path": "action_invoker_execution_javascript_embedded.csdoc", "title": "JavaScript (Embedded)" }, 
-              { "path": "action_invoker_execution_javascript_web.csdoc", "title": "JavaScript (Run From Web Pages)" }, 
-              { "path": "action_invoker_execution_json.csdoc", "title": "JSON" }
+              { "path": "action_invoker_execution_javascript_web.csdoc", "title": "JavaScript (From Web Views)" }, 
+              { "path": "action_invoker_execution_json.csdoc", "title": "JSON" }, 
+              { "path": "action_invoker_execution_android.csdoc", "title": "Android Intent" }
+            ]
+          }, 
+          {
+            "title": "Security and Formatting Options", 
+            "documents": [
+              { "path": "action_invoker_access_token.csdoc", "title": "Access Token" }, 
+              { "path": "action_invoker_binary_data.csdoc", "title": "Binary Data Representation" }
+            ]
+          }, 
+          {
+            "title": "Base Actions", 
+            "documents": [
+              { "path": "CS_execute.csdoc", "~title": "execute Action" }, 
+              { "path": "CS_registerAccessToken.csdoc", "~title": "registerAccessToken Action" }
+            ]
+          }, 
+          {
+            "title": "Clipboard Namespace", 
+            "documents": [
+              { "path": "CS_Clipboard.csdoc", "~title": "Clipboard Action Invoker Namespace" }, 
+              { "path": "CS_Clipboard_getText.csdoc", "~title": "Clipboard.getText Action" }, 
+              { "path": "CS_Clipboard_putText.csdoc", "~title": "Clipboard.putText Action" }
+            ]
+          }, 
+          {
+            "title": "File Namespace", 
+            "documents": [
+              { "path": "CS_File.csdoc", "~title": "File Action Invoker Namespace" }, 
+              { "path": "CS_File_copy.csdoc", "~title": "File.copy Action" }, 
+              { "path": "CS_File_readBytes.csdoc", "~title": "File.readBytes Action" }, 
+              { "path": "CS_File_readLines.csdoc", "~title": "File.readLines Action" }, 
+              { "path": "CS_File_readText.csdoc", "~title": "File.readText Action" }, 
+              { "path": "CS_File_writeBytes.csdoc", "~title": "File.writeBytes Action" }, 
+              { "path": "CS_File_writeLines.csdoc", "~title": "File.writeLines Action" }, 
+              { "path": "CS_File_writeText.csdoc", "~title": "File.writeText Action" }
+            ]
+          }, 
+          {
+            "title": "Hash Namespace", 
+            "documents": [
+              { "path": "CS_Hash.csdoc", "~title": "Hash Action Invoker Namespace" }, 
+              { "path": "CS_Hash_createHash.csdoc", "~title": "Hash.createHash Action" }, 
+              { "path": "CS_Hash_createMd5.csdoc", "~title": "Hash.createMd5 Action" }
+            ]
+          }, 
+          {
+            "title": "Localhost Namespace", 
+            "documents": [
+              { "path": "CS_Localhost.csdoc", "~title": "Localhost Action Invoker Namespace" }, 
+              { "path": "CS_Localhost_mapActionResult.csdoc", "~title": "Localhost.mapActionResult Action" }, 
+              { "path": "CS_Localhost_mapFile.csdoc", "~title": "Localhost.mapFile Action" }, 
+              { "path": "CS_Localhost_mapSymbol.csdoc", "~title": "Localhost.mapSymbol Action" }, 
+              { "path": "CS_Localhost_mapText.csdoc", "~title": "Localhost.mapText Action" }
+            ]
+          }, 
+          {
+            "title": "Message Namespace", 
+            "documents": [
+              { "path": "CS_Message.csdoc", "~title": "Message Action Invoker Namespace" }, 
+              { "path": "CS_Message_formatText.csdoc", "~title": "Message.formatText Action" }, 
+              { "path": "CS_Message_getText.csdoc", "~title": "Message.getText Action" }
+            ]
+          }, 
+          {
+            "title": "Settings Namespace", 
+            "documents": [
+              { "path": "CS_Settings.csdoc", "~title": "Settings Action Invoker Namespace" }, 
+              { "path": "CS_Settings_getValue.csdoc", "~title": "Setting.getValue Action" }, 
+              { "path": "CS_Settings_putValue.csdoc", "~title": "Settings.putValue Action" }
+            ]
+          }, 
+          {
+            "title": "Sqlite Namespace", 
+            "documents": [
+              { "path": "CS_Sqlite.csdoc", "~title": "Sqlite Action Invoker Namespace" }, 
+              { "path": "CS_Sqlite_close.csdoc", "~title": "Sqlite.close Action" }, 
+              { "path": "CS_Sqlite_exec.csdoc", "~title": "Sqlite.exec Action" }, 
+              { "path": "CS_Sqlite_open.csdoc", "~title": "Sqlite.open Action" }, 
+              { "path": "CS_Sqlite_rekey.csdoc", "~title": "Sqlite.rekey Action" }, 
+              { "path": "sqlite_callback_functions.csdoc", "~title": "SQLite Callback Functions" }, 
+              { "path": "CS_Sqlite_examples_data_source.csdoc", "~title": "Sqlite Action Examples: Data Sources" }, 
+              { "path": "CS_Sqlite_examples_paradata.csdoc", "~title": "Sqlite Action Examples: Paradata" }
+            ]
+          }, 
+          {
+            "title": "System Namespace", 
+            "documents": [
+              { "path": "CS_System.csdoc", "~title": "System Action Invoker Namespace" }, 
+              { "path": "CS_System_getSharableUri.csdoc", "~title": "System.getSharableUri Action" }, 
+              { "path": "CS_System_selectDocument.csdoc", "~title": "System.selectDocument Action" }, 
+              { "path": "sharable_uri.csdoc", "~title": "Sharable URI" }
             ]
           }
         ]
@@ -1523,6 +1620,7 @@
             "documents": [
               { "path": "file_types.csdoc", "~title": "File Types" }, 
               { "path": "JSON_specification_files.csdoc", "~title": "JSON Specification Files" }, 
+              { "path": "sqlite_in_cspro.csdoc", "~title": "SQLite Use in CSPro" }, 
               { "path": "importing_data_to_cspro_format.csdoc", "~title": "Importing Data to CSPro Format" }, 
               { "path": "locking_application_files.csdoc", "~title": "Locking Application Files" }, 
               { "path": "temporary_data_file.csdoc", "~title": "Temporary Data File" }, 

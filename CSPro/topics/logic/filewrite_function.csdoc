@@ -24,12 +24,12 @@ File CsvFile;
 
 PROC EXAMPLE
 
-	filewrite(CsvFile, "Name,Sex,Age");
+    filewrite(CsvFile, "Name,Sex,Age");
 
-	do numeric counter = 1 while counter <= totocc(PERSON_REC)
-		filewrite(CsvFile, "%s,%d,%d", encode(CSV, NAME(counter)), SEX(counter), AGE(counter));
-	enddo;
+    do numeric counter = 1 while counter <= totocc(PERSON_REC)
+        filewrite(CsvFile, "%s,%d,%d", encode(CSV, NAME(counter)), SEX(counter), AGE(counter));
+    enddo;
 </logic>
 
 
-<seealso fileread_function.csdoc File_write_function.csdoc write_function.csdoc message_formatting_options.csdoc encode_function.csdoc  />
+<seealso fileread_function.csdoc File_write_function.csdoc CS_File_writeText.csdoc CS_File_writeLines.csdoc write_function.csdoc message_formatting_options.csdoc encode_function.csdoc  />

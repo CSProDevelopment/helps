@@ -1,0 +1,18 @@
+<logic>
+// query for an image
+string selectDocumentJson = CS.System.selectDocument(contentType := "image/*");
+
+if selectDocumentJson <> "" then
+    // convert the JSON into a CSPro-usable format using a HashMap
+    HashMap string selectDocumentResult;
+    selectDocumentResult.updateValueFromJson(selectDocumentJson);
+
+    // create the new image path, using the original filename
+    dircreate("Images");
+    string imagePath = Path.concat("Images", selectDocumentResult("name"));
+
+    // copy the document to the Images directory
+    CS.File.copy(source := selectDocumentResult("path"),
+                 destination := imagePath);
+endif;
+</logic>

@@ -1,0 +1,39 @@
+﻿<title>SQLite Callback Functions</title>
+
+
+When executing a query on a <link sqlite_in_cspro.csdoc>SQLite database</link> using the <action>Sqlite.exec</action> action or the <logiccolor>sqlquery</logiccolor> function, it is possible, from SQLite, to call back into CSPro to execute some logic functions or <link user_defined_functions.csdoc>user-defined functions</link>.
+
+
+<subheader>Calling CSPro Logic Functions</subheader>
+
+The following CSPro logic functions are available for use in SQL queries:
+
+<table 2 header nowrap>
+    <cell>Logic Function Name</cell><cell>SQLite Function Name</cell>
+    <cell><logiccolor>timestring</logiccolor></cell><cell>cspro_timestring</cell>
+</table>
+
+<include include_sqlite_callback_timestring.hgi />
+
+
+<subheader>Calling User-Defined Functions</subheader>
+
+When defining a <link user_defined_functions.csdoc>user-defined function</link>, adding the directive <logiccolor>sql</logiccolor> after the <logiccolor>function</logiccolor> keyword indicates that the SQL query can call back into CSPro logic. These functions can accept <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor> arguments as part of the query, and can return values of those types.
+
+For example, this function is marked with <logiccolor>sql</logiccolor>:
+
+<logic>
+function sql string SumNumbers(numeric value1, numeric value2)
+    exit maketext("The sum of %v and %v is %v.", value1, value2, value1 + value2);
+end;
+</logic>
+
+This function can then be called as part of a SQL query:
+
+<color SQL>
+-- result: The sum of 12.1 and 4.2 is 16.3.
+SELECT SumNumbers(12.1, 4.2);
+</color>
+
+
+<seealso CS_Sqlite.csdoc CS_Sqlite_exec.csdoc sqlquery_function.csdoc />

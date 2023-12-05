@@ -1,0 +1,46 @@
+﻿<title>Binary Data in the Action Invoker</title>
+
+The <link action_invoker.csdoc>Action Invoker</link> does not directly allow binary data as an input or return it as an output, so it uses routines to convert binary data to and from string representations.
+
+
+<subheader>Inputs: Converting a String to Binary Data</subheader>
+
+When specifying a format to describe binary data passed to the Action Invoker as an input, typically using the argument <arg>bytesFormat</arg>, there are five options, with the default option, if none is specified, as <logiccolor>"autodetect"</logiccolor>:
+
+<list>
+	<li><logiccolor>"autodetect"</logiccolor>: When autodetecting the format, the binary data string is examined as if it were a data URL, and if not a data URL, is assumed to be encoded as Base64.</li>
+	<li><logiccolor>"Base64"</logiccolor>: The binary data string represents bytes in <link "https://en.wikipedia.org/wiki/Base64">Base64 format</link>.</li>
+	<li><logiccolor>"dataUrl"</logiccolor>: The binary data string contains a <link "https://en.wikipedia.org/wiki/Data_URI_scheme">data URL</link>.</li>
+	<li><logiccolor>"hex"</logiccolor>: The binary data string represents bytes in <link "https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal format</link>.</li>
+	<li><logiccolor>"text"</logiccolor>: The binary data string contains text that is converted to bytes in its <link unicode_primer.csdoc>UTF-8 representation</link>.</li>
+</list>
+
+An exception is thrown if the input binary data string is not valid when using a data URL or hexadecimal characters.
+
+
+<subheader>Outputs: Returning Binary Data as a String</subheader>
+
+When specifying a format for the binary data that Action Invoker returns, there are four options, with the default option, if none is specified, as <logiccolor>"dataUrl"</logiccolor>:
+
+<list>
+	<li><logiccolor>"Base64"</logiccolor>: The string returned represents bytes in <link "https://en.wikipedia.org/wiki/Base64">Base64 format</link>.</li>
+	<li><logiccolor>"dataUrl"</logiccolor>: The string returned contains a <link "https://en.wikipedia.org/wiki/Data_URI_scheme">data URL</link>.</li>
+	<li><logiccolor>"hex"</logiccolor>: The string returned represents bytes in <link "https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal format</link>. The hexadecimal characters are returned in lowercase.</li>
+	<li><logiccolor>"localhostUrl"</logiccolor>: The string returned contains a <link localhost_url.csdoc>localhost URL</link> that can be used to access the binary data, served using a local web server. This URL is only valid as long as the application is running.</li>
+</list>
+
+No exceptions are thrown while returning binary data.
+
+
+<subheader>Example</subheader>
+
+Here is the presentation of the text <logiccolor>"Hello, World!"</logiccolor> in the four direct input formats:
+
+<list>
+	<li><b>Base64</b>: <logiccolor>"SGVsbG8sIFdvcmxkIQ=="</logiccolor></li>
+	<li><b>Data URL</b>: <logiccolor>"data:text/plain;base64,SGVsbG8sIFdvcmxkIQ=="</logiccolor></li>
+	<li><b>Hex</b>: <logiccolor>"48656c6c6f2c20576f726c6421"</logiccolor></li>
+	<li><b>Text</b>: <logiccolor>"Hello, World!"</logiccolor></li>
+</list>
+
+The <b>localhost URL</b> output format may look something like: <logiccolor>"http://localhost:50505/vf/1"</logiccolor>.

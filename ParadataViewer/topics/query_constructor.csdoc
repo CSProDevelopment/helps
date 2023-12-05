@@ -1,6 +1,6 @@
 ﻿<title>Use the Query Constructor</title>
 
-The Query Constructor is accessible by selecting the appropriate option from the <b>View</b> menu, or by pressing <b>Ctrl + Q</b>. The Query Constructor presents a text box where you can enter a SQL query to execute on the paradata log, which is a SQLite file. This option is for advanced users to test their queries before adding them to reports.
+The Query Constructor is accessible by selecting the appropriate option from the <b>View</b> menu, or by pressing <b>Ctrl + Q</b>. The Query Constructor presents a text box where you can enter a SQL query to execute on the paradata log, which is a <link CSPro::sqlite_in_cspro.csdoc>SQLite file</link>. This option is for advanced users to test their queries before adding them to reports.
 
 The results of the queries will always be displayed as tables, which can be saved to Excel. If there is an error in the query, a description of the error will be displayed.
 
@@ -8,6 +8,6 @@ When showing the SQL statements pane, you can automatically open the Query Const
 
 To test this feature, use this query to see the number of the days between the first and last recorded paradata events:
 
-<indent><html><xmp>
+<color SQL>
 SELECT ( MAX(`time`) - MIN(`time`) ) / 60 / 60 / 24 FROM `event`;
-</xmp></html></indent>
+</color>

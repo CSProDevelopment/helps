@@ -1,0 +1,42 @@
+﻿<title>Setting.getValue Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Settings.getValue(<arg>key</arg> := ...『, <arg>value</arg> := ...』『, <arg>source</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>key</arg></cell><cell>The key that uniquely identifies the setting.</cell><cell>string~!~required</cell>
+    <cell><arg>value</arg></cell><cell>A value to return if the setting is not defined.</cell><cell nowrap>string, number, boolean, array, object~!~not required</cell>
+    <cell><arg>source</arg></cell><cell>The name of the settings database.~!~The default value is <logiccolor>"UserSettings"</logiccolor>.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Settings.getValue</action> <link action_invoker.csdoc>action</link> returns a value from a settings database. Using the identifier <arg>key</arg>, the setting is retrieved from a table of attribute-value pairs. A setting's value is set using <action>Settings.putValue</action>.
+
+The default <arg>source</arg> database, <logiccolor>"UserSettings"</logiccolor>, corresponds to the <i>User Settings</i> database used by the <logiccolor>loadsetting</logiccolor> function. These settings can be viewed and modified in the CSPro Designer using the <topic user_configuration_settings.csdoc /> dialog. You can use a custom settings database by specifying the name of a database, which will be created automatically if it does not exist.
+
+The file from which settings are retrieved can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file. The settings are stored in a <link sqlite_in_cspro.csdoc>SQLite database</link> and the settings should not be considered secure as they can accessed by other applications.
+
+Settings from the <i>User Settings</i> database, but not custom databases, can also be retrieved using the <logiccolor>loadsetting</logiccolor> function.
+
+
+<subheader>Return Value</subheader>
+
+The action returns the setting using the type that it was stored in the database. For example, if <action>Settings.putValue</action> is used to store an array, then <action>Settings.getValue</action> will also return an array.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if the setting does not exist and no default value is provided.
+
+
+<include include_settings_examples.hgi />
+
+
+<seealso CS_Settings.csdoc CS_Settings_putValue.csdoc loadsetting_function.csdoc />

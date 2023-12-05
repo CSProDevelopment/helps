@@ -1,0 +1,29 @@
+﻿<title>Localhost URL</title>
+
+<subheader>Overview</subheader>
+
+When a CSPro application runs, a <link html_in_cspro.csdoc>local web server</link> is launched that can serve content located on the local file system or stored in memory. In a variety of contexts, CSPro creates URLs, referred to as "localhost URLs," that are handled by the local web server. Typically these URLs are valid as long as the CSPro application is running, but some expire after a period of time. All localhost URLs are inaccessible once the CSPro application stops, as the local web server is disconnected at that point.
+
+As an example, when a <link templated_reports.csdoc>templated report</link> is displayed, CSPro evaluates the report content and creates a localhost URL that serves the content that is stored in memory. That URL is displayed in a web view, and when that web view closes, the localhost URL is released and is no long valid.
+
+
+<subheader>Creating Localhost URLs</subheader>
+
+Most users will not need to create localhost URLs directly, but for advanced applications, particularly ones that make use of <link html_in_cspro.csdoc>HTML</link> or use the <link action_invoker.csdoc>Action Invoker</link> from a <link action_invoker_execution_javascript_web.csdoc>web view</link>, you may need to map content so that is accessible from another domain. The <action>Localhost</action> namespace, part of the Action Invoker, provides actions to create localhost URLs from <link CS_Localhost_mapFile.csdoc>files</link>, <link CS_Localhost_mapText.csdoc>text</link>, and <link CS_Localhost_mapSymbol.csdoc>binary symbol data</link>.
+
+
+<subheader>Windows: Local Web Server</subheader>
+
+On Windows, the local web server uses <i>localhost</i> as the host and chooses a dynamic port, checking for one that is not in use. You can try to have CSPro use a <link CSCode::localhost_settings.csdoc>specific port</link>, but if that port is in use, a different one will be used. Other programs can access data using the localhost URL as the local web server is accessible to all Windows programs. A localhost URL created on Windows looks similar to:
+
+<indent>http://localhost:58651/vf/1/vfsC:/Program%20Files%20(x86)/CSPro%20<definition CSPro::version />/readme.txt</indent>
+
+
+<subheader>Android: WebView Asset Loader</subheader>
+
+On Android, a true local web server is not available, so instead CSPro uses <link "https://developer.android.com/reference/androidx/webkit/WebViewAssetLoader">WebViewAssetLoader</link> to simulate a web server. Other Android applications cannot access data using localhost URLs as they are only valid from web views from within the <link <definition google_play />>Android CSEntry application</link>. A localhost URL created on Android looks similar to:
+
+<indent>https://appassets.androidplatform.net/lfs/1/storage/emulated/csentry/sync.log</indent>
+
+
+<seealso html_in_cspro.csdoc CS_Localhost.csdoc />

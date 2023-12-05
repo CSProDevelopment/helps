@@ -3,13 +3,13 @@
 
 <subheader>Format</subheader>
 
-<logicsyntax>// Android format</logicsyntax>
 <logicsyntax>
+// Android format
 b = system_app_name.exec(『<arg>package_name</arg>『, <arg>activity_name</arg>』』);
 </logicsyntax>
 
-<logicsyntax>// Windows format</logicsyntax>
 <logicsyntax>
+// Windows format
 b = system_app_name.exec(<arg>executable_name</arg>);
 </logicsyntax>
 
@@ -26,14 +26,16 @@ The function returns a logical value of 1 (true) if the system application is st
 
 <subheader>Android Limitations</subheader>
 
-Starting with Android 11, the version of CSEntry installed using <link <definition google_play />>Google Play</link> is <link https://support.google.com/googleplay/android-developer/answer/10158779?hl=en>prohibited from querying</link> for applications not explicitly specified. Google insists that this restriction is to protect sensitive information. The following packages are specified:
+Starting with Android 11, the version of CSEntry installed using <link <definition google_play />>Google Play</link> is <link "https://support.google.com/googleplay/android-developer/answer/10158779">prohibited from querying</link> for applications not explicitly specified. Google insists that this restriction is to protect sensitive information. The following packages are explicitly specified in the version of CSEntry in Google Play:
 
 <list>
-	<li>Google Maps (<link https://play.google.com/store/apps/details?id=com.google.android.apps.maps>com.google.android.apps.maps</link>)</li>
-	<li>Organic Maps (<link https://play.google.com/store/apps/details?id=app.organicmaps>app.organicmaps</link>)</li>
+    <li>Google Maps (<link "https://play.google.com/store/apps/details?id=com.google.android.apps.maps">com.google.android.apps.maps</link>)</li>
+    <li>Organic Maps (<link "https://play.google.com/store/apps/details?id=app.organicmaps">app.organicmaps</link>)</li>
 </list>
 
 If you want to execute an application not in the above list, you can sideload a non-Google Play version of CSEntry. This version can query for all applications. To get this version, you must contact the <link mailto:<definition mailing_list />>CSPro development team</link>. Alternatively, you can request that the developers add your desired application to the specified list.
+
+One workaround to this limitation is to use <link "https://developer.android.com/training/app-links#deep-links">deep links</link> instead of a package name. If the package name cannot be resolved, CSPro will attempt to "view" the argument used for the package name. Because deep links are handled by <link "https://developer.android.com/reference/android/content/Intent#ACTION_VIEW">Intent.ACTION_VIEW</link>, you can use this to open applications not explicitly specified by CSEntry.
 
 
 <subheader>Android Example</subheader>
@@ -45,12 +47,7 @@ On Android, the optional string expression <arg>package_name</arg> specifies the
 </logic>
 
 <logic>
-// get driving directions from the White House to the U.S. Census Bureau using an Organic Maps deep link
-SystemApp organic_maps;
-organic_maps.setArgument("data", maketext("om://route?sll=%v,%v&saddr=%s&dll=%v,%v&daddr=%s&type=vehicle",
-										  38.897778, -77.036389, encode(PercentEncoding, "White House"),
-										  38.84839,  -76.931098, encode(PercentEncoding, "U.S. Census Bureau")));
-organic_maps.exec("app.organicmaps");
+<include include_android_deep_link_example.hgi />
 </logic>
 
 
@@ -63,4 +60,4 @@ On Windows, a system application is an executable specified by the string expres
 </logic>
 
 
-<seealso SystemApp.csdoc SystemApp_setArgument_function.csdoc SystemApp_getResult_function.csdoc />
+<seealso SystemApp.csdoc SystemApp_setArgument_function.csdoc SystemApp_getResult_function.csdoc android_interacting_with_other_applications.csdoc />

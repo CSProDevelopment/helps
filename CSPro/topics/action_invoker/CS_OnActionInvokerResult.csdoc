@@ -1,0 +1,71 @@
+﻿<title>OnActionInvokerResult Global Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+function string OnActionInvokerResult(string <arg>action</arg>, string <arg>result</arg>, string <arg>resultType</arg>)
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+<logiccolor>OnActionInvokerResult</logiccolor> is a special global function. It is called when processing a result from the <link action_invoker.csdoc>Action Invoker</link> when called from <link action_invoker_execution_cspro_logic.csdoc>CSPro logic</link>. As with other <link user_defined_functions.csdoc>user-defined functions</link>, it must be defined in the <logiccolor>PROC GLOBAL</logiccolor> section.
+
+The function must return a string value and have three string parameters. When the Action Invoker finishes processing an action, or the action ends in an exception, <logiccolor>OnActionInvokerResult</logiccolor> is called with the following arguments:
+
+<list>
+    <li><arg>action</arg>: The name of the executed action.</li>
+    <li><arg>result</arg>: The result of the action in <link JSON_primer.csdoc>JSON</link>, or the exception message as a string.</li>
+    <li><arg>resultType</arg>: The result type: undefined, string, number, boolean, array, object, or exception.</li>
+</list>
+
+
+<subheader>Return Value</subheader>
+
+If the function returns a blank string, <logiccolor>""</logiccolor>, the result of the action, or the exception, is processed as it normally would be. However, if a non-blank string is returned, that string is returned as the action result. When an exception is processed, if a non-blank string is returned, CSPro will not display the runtime error message.
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC GLOBAL
+
+numeric aiSuccess;
+string aiErrorMessage;
+
+function string OnActionInvokerResult(string action, string result, string resultType)
+
+    // instead of displaying exception messages, set aiSuccess to true on success,
+    // and on failure, store the error message in aiErrorMessage
+    if resultType = "exception" then
+        aiSuccess = false;
+        aiErrorMessage = result;
+
+        // returning non-blank prevents CSPro from displaying the exception message
+        exit " ";
+
+    else
+        aiSuccess = true;
+        aiErrorMessage = "";
+
+        // returning blank maintains the original result
+        exit "";
+
+    endif;
+
+end;
+
+PROC EXAMPLE
+
+    CS.File.copy(source := "Rusty Blackbird.jpg", destination := "Vulnerable Birds/");
+
+    if aiSuccess then
+        errmsg("File copied successfully.");
+    else
+        errmsg("File copy error: %s", aiErrorMessage);
+    endif;
+</logic>
+
+
+<seealso action_invoker_execution_cspro_logic.csdoc user_defined_functions.csdoc function_statement.csdoc  />

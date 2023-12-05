@@ -1,0 +1,38 @@
+﻿<title>File.writeLines Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.File.writeLines(<arg>path</arg> := ..., <arg>lines</arg> := ...『, <arg>encoding</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of the file to write.</cell><cell>string~!~required</cell>
+    <cell><arg>lines</arg></cell><cell>The array of strings to write.</cell><cell>array~!~required</cell>
+    <cell><arg>encoding</arg></cell><cell>The <link unicode_primer.csdoc>encoding</link> to use while writing the text.~!~The default value is <logiccolor>"UTF-8"</logiccolor>.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>File.writeLines</action> <link action_invoker.csdoc>action</link> writes an array of strings, <arg>lines</arg>, as lines to a text file specified as <arg>path</arg>. After writing each line, the action writes a newline character: <logiccolor>'\n'</logiccolor>. If a file already exists at <arg>path</arg>, it is overwritten with the new contents.
+
+<include include_encoding_output.hgi />
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the file cannot be created or fully written.
+
+
+<include include_lines_example.hgi />
+
+
+<seealso CS_File.csdoc CS_File_readLines.csdoc CS_File_writeBytes.csdoc CS_File_writeText.csdoc File_write_function.csdoc />

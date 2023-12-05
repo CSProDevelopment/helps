@@ -16,6 +16,8 @@ If a <arg>string_variable</arg> is provided as a argument, a single line of text
 
 Alternatively, a string <link List.csdoc>List</link> can be used as an argument. In this case, all remaining lines in the file are read and stored in <arg>string_list</arg>.
 
+File text can also be read using the <action>File.readText</action> and <action>File.readLines</action> actions.
+
 
 <subheader>Return Value</subheader>
 
@@ -33,7 +35,7 @@ occupation_codes_file.open("Occupation Codes.txt");
 string code;
 
 while occupation_codes_file.read(code) do
-	// do something with the single code
+    // do something with the single code
 enddo;
 
 // approach 2
@@ -46,4 +48,4 @@ occupation_codes_file.close();
 </logic>
 
 
-<seealso File.csdoc File_write_function.csdoc fileread_function.csdoc />
+<seealso File.csdoc File_write_function.csdoc fileread_function.csdoc CS_File_readText.csdoc CS_File_readLines.csdoc />

@@ -1,0 +1,99 @@
+﻿<title>Sqlite.rekey Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.Sqlite.rekey(<arg>db</arg> := ..., <arg>encryptionKey</arg> := ...『, <arg>encryptionKeyFormat</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>db</arg></cell><cell>The database ID returned by <action>Sqlite.open</action>.</cell><cell>number~!~required</cell>
+    <cell><arg>encryptionKey</arg></cell><cell>The new encryption key, or a blank string to remove the encryption.</cell><cell>string~!~required</cell>
+    <cell><arg>encryptionKeyFormat</arg></cell><cell>The <link action_invoker_binary_data.csdoc>format</link> of <arg>encryptionKey</arg>.~!~The default value is <logiccolor>"autodetect"</logiccolor>.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Sqlite.rekey</action> <link action_invoker.csdoc>action</link> changes, removes, or adds an encryption key to a <link sqlite_in_cspro.csdoc>SQLite database</link> previously opened by <action>Sqlite.open</action>. Only databases opened using the <arg>path</arg> argument can be rekeyed.
+
+The <arg>encryptionKey</arg> argument specifies the new key, with the the optional <arg>encryptionKeyFormat</arg> argument indicating <link action_invoker_binary_data.csdoc>how to process</link> the <arg>encryptionKey</arg> argument. If rekeying a database to make it openable as an <link data_source_csdbe.csdoc>Encrypted CSPro DB data source</link>, you can use the <action>Hash.createHash</action> action to convert a password into the encryption key necessary to rekey the database. If <arg>encryptionKey</arg> is a blank string, any encryption on the database is removed.
+
+Further information about rekeying databases is available on the SQLite website: <link "https://sqlite.org/com/see.html">sqlite3_rekey</link>.
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if:
+
+<list>
+    <li>The database ID is not valid.</li>
+    <li>The database was <link CS_Sqlite_open.csdoc>opened</link> using <arg>name</arg>, meaning that it is a <link data_sources.csdoc>data source</link> or <link paradata.csdoc>paradata log</link>.</li>
+    <li>The database could not be rekeyed.</li>
+</list>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+This example shows how you can take an <link data_source_csdbe.csdoc>Encrypted CSPro DB data source</link> and remove the encryption to turn it into a <link "http://HELP_TODO">CSPro DB data source</link>.
+
+<color JavaScript>
+let dbId;
+
+try {
+    const inputPath = "Popstan Census (encrypted).csdbe";
+    const outputPath = "Popstan Census (no encryption).csdb";
+    const password = "my-password";
+
+    // create a copy of the data source
+    const inputBytes = CS.File.copy({
+        source: inputPath,
+        destination: outputPath
+    });
+
+    // hash the password to get the encryption key used for Encrypted CSPro DB data sources
+    const passwordHash = CS.Hash.createHash({
+        text: password,
+        type: "EncryptedCSProDB"
+    });
+
+    // open the database with the encryption key, which is returned in hexadecimal format by Hash.createHash
+    const dbId = CS.Sqlite.open({
+        path: outputPath,
+        openFlags: "readWrite",
+        encryptionKey: passwordHash,
+        encryptionKeyFormat: "hex"
+    });
+
+    // remove the encryption
+    CS.Sqlite.rekey({
+        db: dbId,
+        encryptionKey: ""
+    });
+
+    print("Success!");
+}
+catch(error) {
+    print("Error removing encryption from Encrypted CSPro DB: " + error);
+}
+finally {
+    // close the database, suppressing any errors
+    try {
+        CS.Sqlite.close({
+            db: dbId
+        });
+    }
+    catch {
+    }
+}
+</color>
+
+
+<seealso CS_Sqlite.csdoc CS_Hash_createHash.csdoc />

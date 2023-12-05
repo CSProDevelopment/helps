@@ -1,0 +1,52 @@
+<subheader>Example (CSPro Logic)</subheader>
+
+<logic>
+PROC FRESHWATER_BIRDS_FF
+
+preproc
+
+    string SettingsSource = "FreshwaterBirdsSurvey";
+    string LanguageKey = "language";
+
+    // restore the language that was in use when the user last ran this survey, defaulting to English
+    string language = CS.Settings.getValue(source := SettingsSource,
+                                           key := LanguageKey,
+                                           value := "EN");
+    setlanguage(language);
+
+postproc
+
+    // save the language in use
+    CS.Settings.putValue(source := SettingsSource,
+                         key := LanguageKey,
+                         value := getlanguage());
+</logic>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+// save the user credentials for later use
+CS.Settings.putValue({
+    source: "FreshwaterBirdsSurvey",
+    key: "credentials",
+    value: {
+        username: "GBH",
+        lastAccessTimestamp: new Date().getTime()
+    }
+});
+
+// ... at a later point, query for the saved user credentials
+const credentials = CS.Settings.getValue({
+    source: "FreshwaterBirdsSurvey",
+    key: "credentials",
+    value: {}
+});
+
+// only use the user credentials if the date is within a day of the last access
+const secondsBetweenAccess = new Date().getTime() - credentials.lastAccessTimestamp;
+
+if( secondsBetweenAccess <= ( 24 * 60 * 60 ) ) {
+    // use the credentials
+}
+</color>

@@ -1,0 +1,29 @@
+﻿<title>Sharable URI</title>
+
+In CSPro, a sharable URI is a way to reference files in a way that works across applications that are not part of the CSPro ecosystem. The primary use for sharable URIs is to share them with <link android_interacting_with_other_applications.csdoc>other Android applications</link> so that those applications can access data or files in the <i><definition android_package_name /></i> directory. The way that sharable URIs look depends on the operating system:
+
+On Windows, a sharable URI is the same as a file path. For example:
+
+<indent><i>C:\AMO\Chautauqua-5K-results.pdf</i></indent>
+
+On Android, a sharable URI is a <link "https://developer.android.com/guide/topics/providers/content-provider-basics#ContentURIs">content URI</link>. For example:
+
+<indent><i>content://<definition android_package_name />.fileprovider/root/storage/emulated/0/Android/data/<definition android_package_name />/files/csentry/AMO/Chautauqua-5K-results.pdf</i></indent>
+
+
+In CSPro you can work with sharable URIs using the <link action_invoker.csdoc>Action Invoker</link> in the following ways:
+
+<table 2 header nowrap>
+    <cell>Action</cell><cell>Description</cell>
+    <cell><action>System.getSharableUri</action></cell><cell>Create a sharable URI that can be used by external applications to reference a file.</cell>
+    <cell><action>System.selectDocument</action></cell><cell>Retrieve a sharable URI for one or more documents shared by the system.</cell>
+    <cell><action>File.copy</action></cell><cell>Copy a file specified using a sharable URI.</cell>
+</table>
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<include "include_selectDocument_example.hgi" />
+
+
+<seealso android_interacting_with_other_applications.csdoc CS_System.csdoc />

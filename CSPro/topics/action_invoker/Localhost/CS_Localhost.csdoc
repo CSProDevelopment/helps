@@ -1,0 +1,17 @@
+﻿<title>Localhost Action Invoker Namespace</title>
+
+The <action>Localhost</action> namespace, part of the <link action_invoker.csdoc>Action Invoker</link>, provides actions to create <link localhost_url.csdoc>localhost URLs</link> that can be used to serve content from the local file system or from memory.
+
+
+<subheader>Functionality</subheader>
+
+<table 2 header nowrap>
+    <cell>Action</cell><cell>Description</cell>
+    <cell><action>Localhost.mapActionResult</action></cell><cell>Creates a localhost URL that provides access to the result of an Action Invoker action.</cell>
+    <cell><action>Localhost.mapFile</action></cell><cell>Creates a localhost URL to access a file on the local file system.</cell>
+    <cell><action>Localhost.mapSymbol</action></cell><cell>Creates a localhost URL that provides access to a <link "http://HELP_TODO/link_appropriately">binary symbol's</link> data.</cell>
+    <cell><action>Localhost.mapText</action></cell><cell>Creates a localhost URL that provides access to supplied text.</cell>
+</table>
+
+
+<seealso action_invoker.csdoc />

@@ -1,0 +1,36 @@
+﻿<title>Localhost.mapSymbol Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Localhost.mapSymbol(<arg>name</arg> := ...『, <arg>contentType</arg> := ...』
+                        『, <arg>evaluateImmediately</arg> := ...』)
+
+</logicsyntax>
+
+
+HELP_TODO ... waiting for binary items ... DEVELOPMENT NOTES:
+
+<list>
+    <li>Version 2: s = Localhost.createMapping(BINARY_OBJECT, …)</li>
+    <li>The binary object–for now an Audio, Document, Geometry, or Image object–is mapped to a URL that can be used in question text, reports, and other things shown in the embedded browser (e.g., showing a HTML file with the view function)</li>
+    <li>The URL lasts for the duration of the application</li>
+    <li>By default, the object is only accessed when requested by the web browser, so the object must have content at that point, not at the point the Localhost.createMapping is called</li>
+    <li>The consequence of the last point is that the same object cannot be used multiple times in a HTML view; e.g., this would fail as both url1 and url2 would display “image 2.jpg” (the mapping is to the my_image object, not to the at-the-moment contents of the object):
+    ~!~my_image.load("image 1.jpg");
+    string url1 = Localhost.createMapping(my_image);
+    my_image.load("image 2.jpg");
+    string url2 = Localhost.createMapping(my_image);</li>
+    <li>To address the previous point, if evaluateImmediately = true, the object’s data is loaded when the mapping is created, so it does not need to exist when requested by the web browser</li>
+    <li>If a contentType is not provided, CSPro will try to figure out a proper MIME type based on the object’s contents. Overriding the content type allows the user to specify a MIME type that defines what the object contains. By default, CSPro will try to figure out a proper MIME type, but for unknown types, this allows the user to specify the contents of data; e.g., “application/pdf”</li>
+</list>
+
+
+<list>
+    <li>In question text and report fills, ~~binary_object~~ and ~~~binary_object~~~ will be filled in with the result of Localhost.createMapping(binary_object):
+    ~!~e.g.: &lt;img src=”~~~binary_object~~~” /&gt;</li>
+</list>
+
+
+<seealso CS_Localhost.csdoc localhost_url.csdoc />

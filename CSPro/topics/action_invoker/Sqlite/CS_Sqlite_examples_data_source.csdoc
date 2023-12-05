@@ -1,0 +1,96 @@
+﻿<title>Sqlite Action Examples: Data Sources</title>
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+These examples use the Popstan Census dictionary included in the CSPro examples, querying a <link "http://HELP_TODO">CSPro DB data source</link>, <i>Popstan Census.csdb</i>, that is associated with the application using the name <logiccolor>CEN2000</logiccolor>.
+
+<logic>
+// open the SQLite database associated with the CEN2000 data source
+numeric dbPopstan = tonumber(CS.Sqlite.open(name := "CEN2000"));
+
+// count the number of people who have private toilets
+numeric peopleWithPrivateToilets = tonumber(
+    CS.Sqlite.exec(db := dbPopstan,
+                   sql := "SELECT COUNT(*) FROM `cases` "
+                          "JOIN `level-1` ON `level-1`.`case-id` = `cases`.`id` "
+                          "JOIN `housing` ON `housing`.`level-1-id` = `level-1`.`level-1-id` "
+                          "JOIN `person` ON `person`.`level-1-id` = `housing`.`level-1-id` "
+                          "WHERE `cases`.`deleted` = 0 AND `housing`.`h08_toilet` = 1;"));
+
+// get a list of the provinces where data has been collected
+List numeric provinceList;
+provinceList.updateValueFromJson(
+    CS.Sqlite.exec(db := dbPopstan,
+                   sql := "SELECT `level-1`.`province` FROM `cases` "
+                          "JOIN `level-1` ON `level-1`.`case-id` = `cases`.`id` "
+                          "WHERE `cases`.`deleted` = 0 "
+                          "GROUP BY `level-1`.`province` "
+                          "ORDER BY `level-1`.`province`;",
+                   rowFormat := "scalarArray"));
+
+// close the database
+CS.Sqlite.close(db := dbPopstan);
+</logic>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+This example shows how to open an <link data_source_csdbe.csdoc>Encrypted CSPro DB data source</link> from outside of CSPro logic, using the <action>Hash.createHash</action> action to convert the password into an encryption key. It uses the Popstan Census dictionary included in the CSPro examples, querying <i>Popstan Census.csdbe</i>, a data source encrypted with the password <logiccolor>"cspro"</logiccolor>.
+
+<color JavaScript>
+let dbId;
+
+try {
+    // hash the password to get the encryption key used for Encrypted CSPro DB data sources
+    const csbdeEncryptionKey = CS.Hash.createHash({
+        text: "cspro",
+        type: "EncryptedCSProDB"
+    });
+
+    // open the database with the encryption key, which is returned in hexadecimal format by Hash.createHash
+    dbId = CS.Sqlite.open({
+        path: "Popstan Census.csdbe",
+        encryptionKey: csbdeEncryptionKey,
+        encryptionKeyFormat: "hex"
+    });
+
+    // get the count of people in each province in the following age ranges:
+    const minAge = 0;
+    const maxAge = 18;
+
+    let populationCountByProvince = CS.Sqlite.exec({
+        db: dbId,
+        sql: "SELECT `level-1`.`province`, COUNT(*) AS `population` FROM `cases` " +
+             "JOIN `level-1` ON `level-1`.`case-id` = `cases`.`id` " +
+             "JOIN `person` ON `person`.`level-1-id` = `level-1`.`level-1-id`  " +
+             "WHERE `cases`.`deleted` = 0 AND `person`.`p04_age` >= ? AND `person`.`p04_age` <= ? " +
+             "GROUP BY `level-1`.`province` " +
+             "ORDER BY `population` DESC;",
+        bindings: [ minAge, maxAge ]
+    });
+
+    // display the results
+    print(`Population Aged ${minAge} - ${maxAge} by Province (Largest to Smallest)`);
+
+    populationCountByProvince.forEach(populationCount => {
+        print(`Province ${populationCount.province}: ${populationCount.population}`);
+    });
+}
+catch(error) {
+    print("Error interacting with Encrypted CSPro DB: " + error);
+}
+finally {
+    // close the database, suppressing any errors
+    try {
+        CS.Sqlite.close({
+            db: dbId
+        });
+    }
+    catch {
+    }
+}
+</color>
+
+
+<seealso CS_Sqlite.csdoc data_sources.csdoc csdb_relational_format.csdoc CS_Sqlite_examples_paradata.csdoc sqlite_callback_functions.csdoc />

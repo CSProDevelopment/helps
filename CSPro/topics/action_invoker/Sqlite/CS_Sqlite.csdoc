@@ -1,0 +1,26 @@
+﻿<title>Sqlite Action Invoker Namespace</title>
+
+The <action>Sqlite</action> namespace, part of the <link action_invoker.csdoc>Action Invoker</link>, provides actions to work with <link sqlite_in_cspro.csdoc>SQLite databases</link>.
+
+
+<subheader>Functionality</subheader>
+
+<table 2 header nowrap>
+    <cell>Action</cell><cell>Description</cell>
+    <cell><action>Sqlite.close</action></cell><cell>Closes a previously opened SQLite database.</cell>
+    <cell><action>Sqlite.exec</action></cell><cell>Executes a SQL statement on a SQLite database.</cell>
+    <cell><action>Sqlite.open</action></cell><cell>Opens a SQLite database and returns an ID that can be used for future operations.</cell>
+    <cell><action>Sqlite.rekey</action></cell><cell>Changes, removes, or adds an encryption key to a SQLite database.</cell>
+</table>
+
+
+<subheader>Examples</subheader>
+
+<list>
+    <li><link CS_Sqlite_examples_data_source.csdoc>Opening and querying data sources</link>.</li>
+    <li><link CS_Sqlite_examples_paradata.csdoc>Opening and querying paradata</link>.</li>
+    <li><link sqlite_callback_functions.csdoc>Querying using callback functions</link>.</li>
+</list>
+
+
+<seealso action_invoker.csdoc sqlite_in_cspro.csdoc />

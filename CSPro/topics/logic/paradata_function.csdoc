@@ -1,4 +1,4 @@
-﻿<title>Paradata Function</title>
+﻿<title>paradata Function</title>
 
 
 <subheader>Format</subheader>
@@ -13,12 +13,12 @@ d = paradata(<arg>action_type</arg>『, <arg>argument1</arg>, ..., <arg>argument
 The <logiccolor>paradata</logiccolor> function performs an action related to the <link paradata.csdoc>paradata log</link>. The first argument, <arg>action_type</arg>, must be one of the following:
 
 <table 2>
-	<cell><arg>action_type</arg></cell><cell><b>Description</b></cell>
-	<cell><b>concat</b></cell><cell>Concatenates several paradata logs into a single log. The first argument is the file name of the output log. The subsequent arguments are the file names (as string expressions or string <logiccolor>List</logiccolor> objects) of input logs. You can concatenate into the currently open paradata log, but in that case you must also include the currently open paradata log as an input.</cell>
-	<cell><b>query</b></cell><cell>Executes a query on the paradata log. This is the same as: <logiccolor>sqlquery(filename(paradata), ...)</logiccolor>.</cell>
-	<cell><b>open</b></cell><cell>Opens a paradata log to start logging events. Specify the file name as a string expression as the sole argument.</cell>
-	<cell><b>close</b></cell><cell>Closes the currently open paradata log.</cell>
-	<cell><b>flush</b></cell><cell>Writes all cached paradata events to the log. This is rarely needed, and may only be necessary if you want to query the paradata log from an external application.</cell>
+    <cell><arg>action_type</arg></cell><cell><b>Description</b></cell>
+    <cell><b>concat</b></cell><cell>Concatenates several paradata logs into a single log. The first argument is the file name of the output log. The subsequent arguments are the file names (as string expressions or string <logiccolor>List</logiccolor> objects) of input logs. You can concatenate into the currently open paradata log, but in that case you must also include the currently open paradata log as an input.</cell>
+    <cell><b>query</b></cell><cell>Executes a query on the paradata log. This is the same as: <logiccolor>sqlquery(filename(paradata), ...)</logiccolor>. You can also query paradata logs using the <action>Sqlite.exec</action> action.</cell>
+    <cell><b>open</b></cell><cell>Opens a paradata log to start logging events. Specify the file name as a string expression as the sole argument.</cell>
+    <cell><b>close</b></cell><cell>Closes the currently open paradata log.</cell>
+    <cell><b>flush</b></cell><cell>Writes all cached paradata events to the log. This is rarely needed, and may only be necessary if you want to query the paradata log from an external application.</cell>
 </table>
 
 It is not recommended that you open or close paradata logs via logic, as the log will not contain all of the initializing features that exist when specifying the paradata log when the application begins (and via the PFF file).
@@ -45,13 +45,13 @@ paradata(concat, filename(paradata), filename(paradata), logs_list);
 
 <logic>
 string message_events_query = maketext(
-	"SELECT COUNT(*) "
-	"FROM message_event "
-	"JOIN event ON message_event.id = event.id "
-	"JOIN case_instance ON event.case_instance = case_instance.id "
-	"JOIN case_info ON case_instance.case_info = case_info.id "
-	"WHERE case_info.uuid = '%s';",
-	uuid(DICT_NAME));
+    "SELECT COUNT(*) "
+    "FROM message_event "
+    "JOIN event ON message_event.id = event.id "
+    "JOIN case_instance ON event.case_instance = case_instance.id "
+    "JOIN case_info ON case_instance.case_info = case_info.id "
+    "WHERE case_info.uuid = '%s';",
+    uuid(DICT_NAME));
 
 numeric message_events_for_this_case = paradata(query, message_events_query);
 </logic>

@@ -1,0 +1,35 @@
+﻿<title>File.readBytes Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.File.readBytes(<arg>path</arg> := ...『, <arg>bytesFormat</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of the file to read.</cell><cell>string~!~required</cell>
+    <cell><arg>bytesFormat</arg></cell><cell>The <link action_invoker_binary_data.csdoc>format</link> in which the bytes are returned.~!~The default value is <logiccolor>"dataUrl"</logiccolor>.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>File.readBytes</action> <link action_invoker.csdoc>action</link> reads a file, specified as <arg>path</arg>, in binary format, returning the entire file's content as bytes. The argument <arg>bytesFormat</arg> allows you to specify the <link action_invoker_binary_data.csdoc>format</link> of the returned binary data.
+
+
+<subheader>Return Value</subheader>
+
+The action returns the file's content in bytes, represented as a string in one of the <link action_invoker_binary_data.csdoc>output formats</link> used for binary data.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the file does not exist or cannot be read.
+
+
+<include include_bytes_example.hgi />
+
+
+<seealso CS_File.csdoc CS_File_writeBytes.csdoc CS_File_readBytes.csdoc CS_File_readLines.csdoc />

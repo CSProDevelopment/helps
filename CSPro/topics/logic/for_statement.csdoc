@@ -16,7 +16,7 @@ The <logiccolor>for</logiccolor> statement executes one or more statements repea
 
 The numeric variable <arg>counter</arg> contains the number of the current occurrence being examined. It cannot be changed inside the loop, but it can be referenced. Its starting value is 1 and its ending value is determined by the number of occurrences of the group. It is possible to declare a variable local to the loop by adding <logiccolor>numeric</logiccolor> before the <arg>counter</arg> variable.
 
-If the group name is a record, item, or relation, then the appropriate keyword <logiccolor>record</logiccolor>, <logiccolor>item</logiccolor>, or <logiccolor>Relation</logiccolor> can be used before the name.
+If the group name is a record, item, or relation, then the appropriate keyword <logiccolor>Record</logiccolor>, <logiccolor>Item</logiccolor>, or <logiccolor>Relation</logiccolor> can be used before the name.
 
 The <logiccolor>for</logiccolor> statement should be coded outside of the group it references. In the example below, note that the code is executed in <logiccolor>PROC QUEST</logiccolor>. It should not be located in <logiccolor>PROC PERSON_REC_EDT</logiccolor> or in a procedure for any of the data items within the person record.
 

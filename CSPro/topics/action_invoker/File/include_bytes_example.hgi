@@ -1,0 +1,33 @@
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+// read all the bytes from a file
+CS.File.readBytesAsync({
+    path: "legacy.amo",
+    bytesFormat: "hex"
+})
+.then(hexBytes => {
+    // remove every other byte, represented in hexadecimal format (two characters per byte), from the file
+    let removeNextByte = false;
+
+    for( let i = 0; i < hexBytes.length; ) {
+        if( removeNextByte ) {
+            hexBytes = hexBytes.substring(0, i) + hexBytes.substr(i + 2);
+            removeNextByte = false;
+        }
+        else {
+            removeNextByte = true;
+            i += 2;
+        }
+    }
+
+    // write the bytes
+    return CS.File.writeBytesAsync({
+        path: "legacy (every-other-byte).amo",
+        bytes: hexBytes,
+        bytesFormat: "hex"
+    });
+})
+.then(() => console.log("Successfully read, removed half the content, and wrote the bytes."))
+.catch(error => console.log(error));
+</color>

@@ -1,0 +1,57 @@
+﻿<title>System.selectDocument Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.System.selectDocument(『<arg>contentType</arg> := ...』『, <arg>multiple</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>contentType</arg></cell><cell>The <link "https://en.wikipedia.org/wiki/Media_type">MIME type</link>, or types, of documents displayed.~!~The default value is <logiccolor>"*/*"</logiccolor>.</cell><cell nowrap>string, array~!~not required</cell>
+    <cell><arg>multiple</arg></cell><cell>If true, the operator can select multiple documents.~!~The default value is <logiccolor>false</logiccolor>.</cell><cell>boolean~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>System.selectDocument</action> <link action_invoker.csdoc>action</link> displays a dialog that allows the operator to select one or more documents shared by the system, returning a <link sharable_uri.csdoc>sharable URI</link> that provides access to these documents. This action is primarily for use in applications run on Android when you may want to <link android_interacting_with_other_applications.csdoc>access files created by other applications</link> or media such as photos taken by the device. On Android, such files are not available to CSPro directly, so this action provides a framework for accessing system documents.
+
+The <arg>contentType</arg> argument allows you to specify the content from which you would like the operator to select. For example, specfiying <logiccolor>"image/*"</logiccolor> would only allow the operator to select image files. When specified as an array, it is possible to specify multiple types (e.g., <logiccolor>"image/jpeg"</logiccolor> and <logiccolor>"image/png"</logiccolor>).
+
+The <arg>multiple</arg> argument indicates whether the operator can select multiple documents.
+
+
+<subheader>Return Value</subheader>
+
+If no documents are selected, the action returns undefined. Otherwise the action returns an object with two properties:
+
+<list>
+    <li><arg>path</arg>: The path, or sharable URI, of the document.</li>
+    <li><arg>name</arg>: The filename of the document, which may not necessarily be part of the path.</li>
+</list>
+
+For example, on Android, this object, represented in <link JSON_primer.csdoc>JSON</link>, may look like this:
+
+<color JSON>
+{
+  "path": "content://com.android.providers.media.documents/document/image%03A1000002937",
+  "name": "carn03.jpg"
+}
+</color>
+
+If <arg>multiple</arg> is <logiccolor>true</logiccolor>, an array of objects is returned, even if the operator only selects one document.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form.
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<include "include_selectDocument_example.hgi" />
+
+
+<seealso CS_System.csdoc CS_System_getSharableUri.csdoc sharable_uri.csdoc />

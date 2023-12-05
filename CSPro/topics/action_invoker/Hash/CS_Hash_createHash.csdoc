@@ -1,0 +1,74 @@
+﻿<title>Hash.createHash Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Hash.createHash(<arg>path</arg> := ... ‖ <arg>text</arg> := ... ‖ <arg>bytes</arg> := ...『, <arg>bytesFormat</arg> := ...』
+                    『, <arg>type</arg> := ...』
+                    『, <arg>length</arg> := ...』
+                    『, <arg>iterations</arg> := ...』
+                    『, <arg>salt</arg> := ...』『, <arg>saltFormat</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of a file to hash.</cell><cell>string~!~not required</cell>
+    <cell><arg>text</arg></cell><cell>A text string to hash.</cell><cell>string~!~not required</cell>
+    <cell><arg>bytes</arg></cell><cell>Bytes to hash.</cell><cell>string~!~not required</cell>
+    <cell><arg>bytesFormat</arg></cell><cell>The <link action_invoker_binary_data.csdoc>format</link> of <arg>bytes</arg>.~!~The default value is <logiccolor>"autodetect"</logiccolor>.</cell><cell>string~!~not required</cell>
+    <cell><arg>type</arg></cell><cell>The hash algorithm.~!~The default value is <logiccolor>"PBKDF2_SHA256"</logiccolor>.</cell><cell>string~!~not required</cell>
+    <cell><arg>length</arg></cell><cell>The length of the hash value in bytes.~!~The default value is 32.</cell><cell>number~!~not required</cell>
+    <cell><arg>iterations</arg></cell><cell>The number of times the value is hashed.~!~The default value is 1024.</cell><cell>number~!~not required</cell>
+    <cell><arg>salt</arg></cell><cell>A salt to add to the hash.</cell><cell>string~!~not required</cell>
+    <cell><arg>saltFormat</arg></cell><cell>The <link action_invoker_binary_data.csdoc>format</link> of <arg>salt</arg>.~!~The default value is <logiccolor>"autodetect"</logiccolor>.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Hash.createHash</action> <link action_invoker.csdoc>action</link> creates a hash value based on the contents of a file, text, or bytes. One, and only one, of the arguments <arg>path</arg>, <arg>text</arg>, or <arg>bytes</arg> must be provided. If specifying <arg>text</arg>, the <link unicode_primer.csdoc>UTF-8</link> representation of the text is hashed. If specifying <arg>bytes</arg>, the optional <arg>bytesFormat</arg> argument dictates how <link action_invoker_binary_data.csdoc>binary data</link> is converted from string format.
+
+Three hash types are supported, specified using the <arg>type</arg> argument:
+
+<list>
+    <li><logiccolor>"PBKDF2_SHA256"</logiccolor>: Calculates a hash using a SHA-256 key derivation algorithm.</li>
+    <li><logiccolor>"MD5"</logiccolor>: Creates a <link "https://en.wikipedia.org/wiki/MD5">MD5 hash</link>. (The action <action>Hash.createMd5</action> also creates MD5 hashes.)</li>
+    <li><logiccolor>"EncryptedCSProDB"</logiccolor>: Calculates a hash using the algorithm used to turn a text password into an encryption key used to open <link data_source_csdbe.csdoc>Encrypted CSPro DB data sources</link>.</li>
+</list>
+
+The default type, <logiccolor>"PBKDF2_SHA256"</logiccolor>, returns hash values identical to the <logiccolor>hash</logiccolor> logic function.
+
+The optional number <arg>length</arg> specifies the desired length of the hash value in bytes. The string returned will always be twice the value of <arg>length</arg>. The maximum value for <arg>length</arg> is 500. The optional number <arg>iterations</arg> specifies the number of times the input is hashed. You can also specify a <arg>salt</arg> (and its <link action_invoker_binary_data.csdoc>format</link>, <arg>saltFormat</arg>), which is an additional input in generating the hash value. You must store this salt value somewhere to be able to use this hash function to perform any checks. The <arg>length</arg>, <arg>iterations</arg>, and <arg>salt</arg> arguments are ignored when creating MD5 hashes, and hashes for Encrypted CSPro DB data sources, as those values are predefined for those hash types.
+
+More information on hash values, key derivation algorithms, and salt values is readily available online.
+
+
+<subheader>Return Value</subheader>
+
+The action returns the hash value represented as a hexadecimal string. The hexadecimal characters are returned in lowercase.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, if the file does not exist, or if the <arg>bytes</arg> or <arg>salt</arg> values cannot be successfully converted from their binary formats.
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<logic>
+// check the password against the hash value stored in the data file of staff members,
+// created using the random salt stored in USER_PASSWORD_SALT
+string userPassword = prompt("Enter your password", password);
+
+string hashedPassword = CS.Hash.createHash(text := userPassword,
+                                           salt := strip(USER_PASSWORD_SALT), saltFormat := "text");
+
+if hashedPassword <> strip(USER_PASSWORD_HASH) then
+    errmsg("Invalid password. You cannot access this system.");
+    stop(1);
+endif;
+</logic>
+
+
+<seealso CS_Hash.csdoc CS_Hash_createMd5.csdoc CS_Sqlite_rekey.csdoc hash_function.csdoc />

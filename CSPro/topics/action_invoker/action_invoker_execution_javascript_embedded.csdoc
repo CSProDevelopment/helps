@@ -1,3 +1,52 @@
-﻿<title>Action Invoker Execution in Embedded JavaScript</title>
+﻿<title>Action Invoker Execution from Embedded JavaScript</title>
 
-HELP_TODO
+
+<subheader>Overview</subheader>
+
+Running <link action_invoker.csdoc>Action Invoker</link> actions from <link CSCode::language_javascript.csdoc>JavaScript</link> requires calling static methods contained in an object, <logiccolor>CS</logiccolor>, that is automatically added to the global scope. Each Action Invoker namespace is an object of <logiccolor>CS</logiccolor>, with its actions available as static methods in two forms:
+
+<list>
+    <li><b>Synchronous</b> (sequentially): Use the action name.</li>
+    <li><b>Asynchronous</b> (concurrently): Use the action name followed by <i>Async</i>. These methods return a <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</link> to run the action (even though these actions are not actually run in a separate thread).</li>
+</list>
+
+If applicable, an action's arguments are specified by passing an object to the method with the arguments defined by using the action's argument names as the object's properties. For example, the following code puts the text <logiccolor>"CSPro"</logiccolor> onto the clipboard:
+
+<color JavaScript>
+CS.Clipboard.putText({
+    text: "CSPro"
+});
+</color>
+
+
+When calling actions asynchronously, you can use standard Promise handling, including <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises#chaining">chaining</link>. This example shows how to execute two actions asynchronously, first to read a <link data_entry_application_file_ent.csdoc>data entry application</link> and then to read its associated <link data_dictionary_file_dcf.csdoc>dictionary</link>:
+
+<color JavaScript>
+CS.File.readTextAsync({
+    path: "Simple CAPI.ent"
+})
+.then(entryApplicationJson => {
+    const entryApplication = JSON.parse(entryApplicationJson);
+
+    if( entryApplication.dictionaries === undefined ) {
+        throw new Error("The application does not have an associated dictionary.");
+    }
+
+    return CS.File.readTextAsync({
+        path: entryApplication.dictionaries[0].path
+    });
+})
+.then(dictionaryJson => {
+    const dictionary = JSON.parse(dictionaryJson);
+    console.log(`The dictionary name is ${dictionary.name}.`);
+})
+.catch(error => {
+    console.log(`There was an reading the application or dictionary: ${error}`);
+});
+</color>
+
+
+<include include_javascript_arguments_return_exception.hgi />
+
+
+<seealso action_invoker.csdoc action_invoker_execution_javascript_web.csdoc />
