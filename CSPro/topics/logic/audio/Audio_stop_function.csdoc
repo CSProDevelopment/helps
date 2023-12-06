@@ -12,6 +12,8 @@ d = audio_name.stop();
 
 The <logiccolor>Audio.stop</logiccolor> function ends the background recording session for an <link Audio.csdoc>Audio</link> object. Background recording is started with the function <logiccolor>Audio.record</logiccolor>. The call to <logiccolor>Audio.stop</logiccolor> should be made to finish the recording session started with <logiccolor>Audio.record</logiccolor>. This function is <b>not</b> used for interactive recording with <logiccolor>Audio.recordInteractive</logiccolor>.
 
+Audio recording is only supported on Android. This function will do nothing on Windows.
+
 
 <subheader>Return Value</subheader>
 

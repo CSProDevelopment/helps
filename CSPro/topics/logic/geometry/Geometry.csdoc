@@ -10,20 +10,20 @@ In logic, a <logiccolor>Geometry</logiccolor> is an object that can be used to d
 A Geometry is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
 
 <table 2 header nowrap>
-	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor Geometry>load</logiccolor></cell><cell>Read geometry from a GeoJSON file.</cell>
-	<cell><logiccolor Geometry>save</logiccolor></cell><cell>Write geometry to a GeoJSON file.</cell>
-	<cell><logiccolor Geometry>clear</logiccolor></cell><cell>Delete all data from the geometry.</cell>
-	<cell><logiccolor Geometry>tracePolygon</logiccolor></cell><cell>Allow user to draw polygon by tapping points on a map. (Android only.)</cell>
-	<cell><logiccolor Geometry>walkPolygon</logiccolor></cell><cell>Allow user to draw polygon by walking the perimeter and saving the locations using the GPS. (Android only.)</cell>
-	<cell><logiccolor Geometry>area</logiccolor></cell><cell>Compute the area of a polygon.</cell>
-	<cell><logiccolor Geometry>perimeter</logiccolor></cell><cell>Compute the perimeter of a polygon.</cell>
-	<cell><logiccolor Geometry>maxLatitude</logiccolor></cell><cell>Get the largest latitude value of the geometry.</cell>
-	<cell><logiccolor Geometry>maxLongitude</logiccolor></cell><cell>Get the largest longitude value of the geometry.</cell>
-	<cell><logiccolor Geometry>minLatitude</logiccolor></cell><cell>Get the smallest latitude value of the geometry.</cell>
-	<cell><logiccolor Geometry>minLongitude</logiccolor></cell><cell>Get the smallest longitude value of the geometry.</cell>
-	<cell><logiccolor Geometry>getProperty</logiccolor></cell><cell>Retrieve one of the geometry's properties.</cell>
-	<cell><logiccolor Geometry>setProperty</logiccolor></cell><cell>Set the value of one of the geometry's properties.</cell>
+    <cell>Function</cell><cell>Description</cell>
+    <cell><logiccolor Geometry>load</logiccolor></cell><cell>Read geometry from a GeoJSON file.</cell>
+    <cell><logiccolor Geometry>save</logiccolor></cell><cell>Write geometry to a GeoJSON file.</cell>
+    <cell><logiccolor Geometry>clear</logiccolor></cell><cell>Delete all data from the geometry.</cell>
+    <cell><logiccolor Geometry>tracePolygon</logiccolor></cell><cell>Allow user to draw polygon by tapping points on a map. (Android only.)</cell>
+    <cell><logiccolor Geometry>walkPolygon</logiccolor></cell><cell>Allow user to draw polygon by walking the perimeter and saving the locations using the GPS. (Android only.)</cell>
+    <cell><logiccolor Geometry>area</logiccolor></cell><cell>Compute the area of a polygon.</cell>
+    <cell><logiccolor Geometry>perimeter</logiccolor></cell><cell>Compute the perimeter of a polygon.</cell>
+    <cell><logiccolor Geometry>maxLatitude</logiccolor></cell><cell>Get the largest latitude value of the geometry.</cell>
+    <cell><logiccolor Geometry>maxLongitude</logiccolor></cell><cell>Get the largest longitude value of the geometry.</cell>
+    <cell><logiccolor Geometry>minLatitude</logiccolor></cell><cell>Get the smallest latitude value of the geometry.</cell>
+    <cell><logiccolor Geometry>minLongitude</logiccolor></cell><cell>Get the smallest longitude value of the geometry.</cell>
+    <cell><logiccolor Geometry>getProperty</logiccolor></cell><cell>Retrieve one of the geometry's properties.</cell>
+    <cell><logiccolor Geometry>setProperty</logiccolor></cell><cell>Set the value of one of the geometry's properties.</cell>
 </table>
 
 In addition to these object functions, Geometry objects can be used as arguments to the <logiccolor>filename</logiccolor>, <logiccolor>Map.addGeometry</logiccolor>, <logiccolor>Map.clearGeometry</logiccolor>, and <logiccolor>Map.removeGeometry</logiccolor> functions.
@@ -59,4 +59,4 @@ When a Geometry object is used as an argument to a <link user_defined_functions.
 </logic>
 
 
-<seealso Map.csdoc />
+<seealso Document.csdoc Map.csdoc />
