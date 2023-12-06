@@ -1,3 +1,25 @@
 ﻿<title>CSPro Action Invoker (JSON Format)</title>
 
-HELP_TODO <link CSPro::action_invoker_execution_json.csdoc>link to CSPro docs</link>
+<subheader>Coloring</subheader>
+JSON
+
+<subheader>Default Extensions</subheader>
+None
+
+<subheader>Run Menu</subheader>
+<list>
+	<li>Validate</li>
+		<indent><li> Checks that the JSON is valid and that it is proper syntax needed for the Action Invoker </li></indent>
+	<li>Run</li>
+	<li>Stop</li>
+	<li>Format JSON</li>
+	<li>Compact JSON</li>
+	<li>Display Results as JSON</li>
+		<indent><li> If checked, the raw results from the Action Invoker are returned. Otherwise, the parsed results are shown. Saved setting.</li></indent>
+	<li>Abort on First Exception</li>
+		<indent><li> If checked, an exception stops termination (this is the default). Otherwise, all actions are executed regardless of thrown exceptions. Saved setting.</li></indent>
+</list>
+
+<link CSPro::action_invoker_execution_json.csdoc>Action Invoker JSON execution</link>
+
+<seealso introduction.csdoc />
