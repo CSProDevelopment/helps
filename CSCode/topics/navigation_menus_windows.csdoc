@@ -23,17 +23,17 @@
 		<cell>Find Next</cell><cell>Find the next occurrence of text in the current file.</cell>
 		<cell>Replace</cell><cell>Replace text with new text in the current file.</cell>
 	<cell 2>&nbsp;</cell>
-	<cell 2><subheader>Language</subheader></cell>
+	<cell ><subheader>Language</subheader></cell><cell><subheader>Default File Extension</subheader></cell>
 		<cell><topic language_cspro_logic.csdoc /></cell><cell> .apc </cell>
 		<cell><link language_cspro_report.csdoc>CSPro Report (HTML)</link></cell><cell> .html/.htm</cell>
 		<cell><topic language_cspro_report.csdoc /></cell><cell> [no default extensions]</cell>
 		<cell><topic language_cspro_messages.csdoc /></cell><cell> .mgf</cell>
 		<cell><link language_cspro_action_invoker_json.csdoc> CSPro Action Invoker </link></cell><cell> [no default extensions]</cell>
-		<cell><topic language_cspro_html_dialog.csdoc /></cell><cell> .html (in dialogs directory)</cell>
+		<cell><topic language_cspro_html_dialog.csdoc /></cell><cell> .html (In CSPro8.0\html\dialogs folder)</cell>
 		<cell><topic language_cspro_document.csdoc /></cell><cell> .csdoc</cell>
-		<cell><topic language_cspro_specification_file_json.csdoc /></cell><cell> .ent, .bch, .xtb,.csprops, .dcf, .cmp, .csds, .cspack, .exf, .fqf, .ssf, .xl2cs</cell>
-		<cell><topic language_cspro_specification_file_ini.csdoc /></cell><cell> .ent, .bch, .xtb,.csprops, .dcf, .cmp, .exf, .fqf, .ssf, .xl2c</cell>
-		<cell><topic language_html.csdoc /></cell><cell> .cshtml</cell>
+		<cell><topic language_cspro_specification_file_json.csdoc /></cell><cell> .ent, .bch, .xtb,.csprops, .dcf, .cmp, .csds, .cspack, .exf, .fqf, .ssf,  .xl2cs</cell>
+		<cell><topic language_cspro_specification_file_ini.csdoc /></cell><cell> .ent, .bch, .xtb,.csprops, .dcf, .cmp, .exf, .fqf, .ssf, .xl2cs (pre-8.0 files)</cell>
+		<cell><topic language_html.csdoc /></cell><cell> .html, .cshtml</cell>
 		<cell><topic language_javascript.csdoc /></cell><cell> .js, .mjs</cell>
 		<cell><topic language_json.csdoc /></cell><cell> .json .geojson</cell>
 		<cell><topic language_sql.csdoc /></cell><cell> .sql</cell>
@@ -67,9 +67,9 @@
 		<cell>Javascript Module</cell><cell> Javascript </cell>
 	<cell 2>&nbsp;</cell>
 	<cell 2><subheader>Window</subheader></cell>
-		<cell>Build</cell><cell> Shows compilation/validation errors. Used by CSPro Messages/Action Invoker, Javascript, JSON. Click on error to go to line.</cell>
-		<cell>Output</cell><cell> Shows results. Used by CSPro Action Invoker/HTML Dialog, Javascript. </cell>
-		<cell>HTML Viewer</cell><cell> Shows HTML in browser. Used by CSPro Report (HTML), HTML, document context menu. </cell>
+		<cell>Build</cell><cell> Shows compilation/validation errors. (Javascript, JSON, CSPro Messages/Action Invoker)</cell>
+		<cell>Output</cell><cell> Shows results. (Javascript, CSPro Action Invoker/HTML Dialog) </cell>
+		<cell>HTML Viewer</cell><cell> Shows HTML in browser. (Document context menu, HTML CSPro Report, HTML)</cell>
 		<cell>Windows...</cell><cell> Shows all documents, and lets you save/close/activate specific ones.</cell>
 	<cell 2>&nbsp;</cell>
 	<cell 2><subheader>Document Context Menu (Right-Click on document)</subheader></cell>
@@ -83,5 +83,7 @@
 	<cell>Localhost -> Open in HTML Viewer</cell><cell> Displays file in HTML Viewer window using a localhost URL </cell>
 	<cell>Localhost -> Open in External Browser</cell><cell> Opens file in default web browser using a localhost URL </cell>
 </table>
+
+<seealso CSCode_keys.csdoc />
 
 <seealso introduction.csdoc />
