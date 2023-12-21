@@ -74,6 +74,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
     </li>
     <li>A new variable modifier, <logiccolor>persistent</logiccolor>, allows logic variables to retain their values from one run of an application to another.</li>
     <li>Two new functions, <logiccolor>Symbol.getName</logiccolor> and <logiccolor>Symbol.getLabel</logiccolor>, return a symbol's <link names.csdoc>name</link> or <link labels.csdoc>label</link>.</li>
+    <li>Two new functions, <logiccolor>Symbol.getJson</logiccolor> and <logiccolor>Symbol.getValueJson</logiccolor>, facilitate converting <link object_dot_notation.csdoc>objects</link> to their JSON representation. Another new function, <logiccolor>Symbol.updateValueFromJson</logiccolor>, allows the modification of objects by specifying a new value using JSON.</li>
     <li>A new function, <logiccolor>compareNoCase</logiccolor>, complements <logiccolor>compare</logiccolor> by comparing strings in a case-insensitive manner.</li>
     <li><link https://en.wikipedia.org/wiki/QR_code>QR code</link> images can be created using the <logiccolor>Barcode.createQRCode</logiccolor> and <logiccolor>Image.createQRCode</logiccolor> functions.</li>
     <li>A new function, <logiccolor>Map.clear</logiccolor>, resets all properties of a <link Map.csdoc>Map object</link>.</li>

@@ -1,0 +1,43 @@
+﻿<title>Symbol.getValueJson Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = symbol_name.getValueJson();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Symbol.getValueJson</logiccolor> function returns the <link JSON_primer.csdoc>JSON</link> representation of a symbol's value. You can use the <logiccolor>Symbol.getJson</logiccolor> function if you want to work with the symbol's metadata, or both the metadata and value.
+
+The following table describes the value-related serialization routines available for CSPro objects and contains links to the description of the JSON format for each object.
+
+<include symbol_json_summary_table.hgi />
+
+
+<subheader>Return Value</subheader>
+
+The function returns the JSON representation of the symbol's value. If the function is called on a symbol that does not support the serialization of its value as JSON, a runtime error is issued and the function returns a blank string.
+
+
+<subheader>Example</subheader>
+
+<logic>
+List string usmca_countries = "Canada", "Mexico", "United States";
+errmsg("%s", usmca_countries.getValueJson());
+</logic>
+
+The JSON result may look similar to:
+
+<color JSON>
+[
+  "Canada",
+  "Mexico",
+  "United States"
+]
+</color>
+
+
+<seealso Symbol_getJson_function.csdoc Symbol_updateValueFromJson_function.csdoc />
