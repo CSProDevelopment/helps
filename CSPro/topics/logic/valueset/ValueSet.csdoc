@@ -8,14 +8,15 @@ In logic, a <logiccolor>ValueSet</logiccolor> is an object that contains informa
 A ValueSet is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
 
 <table 2 header nowrap>
-	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor ValueSet>add</logiccolor></cell><cell>Adds a single value, or all the values from an existing value set, to the value set.</cell>
-	<cell><logiccolor ValueSet>clear</logiccolor></cell><cell>Removes all values from the value set.</cell>
-	<cell><logiccolor ValueSet>length</logiccolor></cell><cell>Returns the size of the value set.</cell>
-	<cell><logiccolor ValueSet>randomize</logiccolor></cell><cell>Randomizes the order of entries in the value set.</cell>
-	<cell><logiccolor ValueSet>remove</logiccolor></cell><cell>Removes the value with the specified code from the value set.</cell>
-	<cell><logiccolor ValueSet>show</logiccolor></cell><cell>Displays the value set's labels (similarly to <logiccolor>accept</logiccolor>) and returns the code of the operator's selection.</cell>
-	<cell><logiccolor ValueSet>sort</logiccolor></cell><cell>Sorts the order of entries in the value set by either label or code.</cell>
+    <cell>Function</cell><cell>Description</cell>
+    <cell><logiccolor ValueSet>add</logiccolor></cell><cell>Adds a single value, or all the values from an existing value set, to the value set.</cell>
+    <cell><logiccolor ValueSet>clear</logiccolor></cell><cell>Removes all values from the value set.</cell>
+    <cell><logiccolor ValueSet>length</logiccolor></cell><cell>Returns the size of the value set.</cell>
+    <cell><logiccolor ValueSet>randomize</logiccolor></cell><cell>Randomizes the order of entries in the value set.</cell>
+    <cell><logiccolor ValueSet>remove</logiccolor></cell><cell>Removes the value with the specified code from the value set.</cell>
+    <cell><logiccolor ValueSet>show</logiccolor></cell><cell>Displays the value set's labels (similarly to <logiccolor>accept</logiccolor>) and returns the code of the operator's selection.</cell>
+    <cell><logiccolor ValueSet>sort</logiccolor></cell><cell>Sorts the order of entries in the value set by either label or code.</cell>
+    <include "../Symbol/all_symbols_with_json_in_out.hgi" />
 </table>
 
 In addition to these object functions, ValueSet objects contain two built-in <link List.csdoc>List</link> objects: <logiccolor>valueset_name.codes</logiccolor> and <logiccolor>valueset_name.labels</logiccolor>, which contain the codes and labels for the value set. These are read-only List objects and can be used in most ways that List objects can be used.
@@ -41,15 +42,15 @@ PROC RESPONDENT
 
 preproc
 
-	ValueSet respondent_valueset;
+    ValueSet respondent_valueset;
 
-	do numeric counter = 1 while counter <= count(PERSON_REC)
-		if AGE(counter) >= 15 and USUAL_MEMBER(counter) = 1 then
-			respondent_valueset.add(NAME(counter), counter);
-		endif;
-	enddo;
+    do numeric counter = 1 while counter <= count(PERSON_REC)
+        if AGE(counter) >= 15 and USUAL_MEMBER(counter) = 1 then
+            respondent_valueset.add(NAME(counter), counter);
+        endif;
+    enddo;
 
-	setvalueset(RESPONDENT, respondent_valueset);
+    setvalueset(RESPONDENT, respondent_valueset);
 </logic>
 
 

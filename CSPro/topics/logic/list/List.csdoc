@@ -8,17 +8,18 @@ In logic, a <logiccolor>List</logiccolor> is similar to an <link Array.csdoc>one
 A List is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
 
 <table 2 header nowrap>
-	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor List>add</logiccolor></cell><cell>Adds a single value, or a List of values, to the end of a List.</cell>
-	<cell><logiccolor List>clear</logiccolor></cell><cell>Removes all values from the List.</cell>
-	<cell><logiccolor List>insert</logiccolor></cell><cell>Inserts a single value, or a List of values, at a given position in the List.</cell>
-	<cell><logiccolor List>length</logiccolor></cell><cell>Returns the size of the List.</cell>
-	<cell><logiccolor List>remove</logiccolor></cell><cell>Removes the value at a given position from the List.</cell>
-	<cell><logiccolor List>removeDuplicates</logiccolor></cell><cell>Removes duplicate values from the List.</cell>
-	<cell><logiccolor List>removeIn</logiccolor></cell><cell>Removes values from the List that are specified in an <link in_operator.csdoc>in list</link>.</cell>
-	<cell><logiccolor List>seek</logiccolor></cell><cell>Returns the index of a specified value.</cell>
-	<cell><logiccolor List>show</logiccolor></cell><cell>Displays the List object's values (similarly to <logiccolor>accept</logiccolor>) and returns the index of the operator's selection.</cell>
-	<cell><logiccolor List>sort</logiccolor></cell><cell>Sorts the List object's values in ascending or descending order.</cell>
+    <cell>Function</cell><cell>Description</cell>
+    <cell><logiccolor List>add</logiccolor></cell><cell>Adds a single value, or a List of values, to the end of a List.</cell>
+    <cell><logiccolor List>clear</logiccolor></cell><cell>Removes all values from the List.</cell>
+    <cell><logiccolor List>insert</logiccolor></cell><cell>Inserts a single value, or a List of values, at a given position in the List.</cell>
+    <cell><logiccolor List>length</logiccolor></cell><cell>Returns the size of the List.</cell>
+    <cell><logiccolor List>remove</logiccolor></cell><cell>Removes the value at a given position from the List.</cell>
+    <cell><logiccolor List>removeDuplicates</logiccolor></cell><cell>Removes duplicate values from the List.</cell>
+    <cell><logiccolor List>removeIn</logiccolor></cell><cell>Removes values from the List that are specified in an <link in_operator.csdoc>in list</link>.</cell>
+    <cell><logiccolor List>seek</logiccolor></cell><cell>Returns the index of a specified value.</cell>
+    <cell><logiccolor List>show</logiccolor></cell><cell>Displays the List object's values (similarly to <logiccolor>accept</logiccolor>) and returns the index of the operator's selection.</cell>
+    <cell><logiccolor List>sort</logiccolor></cell><cell>Sorts the List object's values in ascending or descending order.</cell>
+    <include "../Symbol/all_symbols_with_json_in_out.hgi" />
 </table>
 
 In addition to these object functions, List objects can be filled when used as arguments to functions such as <logiccolor>dirlist</logiccolor>, <logiccolor>keylist</logiccolor>, and <logiccolor>HashMap.getKeys</logiccolor>.
@@ -48,7 +49,7 @@ When a List is used as an argument to a <link user_defined_functions.csdoc>user-
 List string respondent_query;
 
 do numeric counter = 1 while counter <= count(NAME)
-	respondent_query.add(NAME(counter));
+    respondent_query.add(NAME(counter));
 enddo;
 
 numeric respondent_index = respondent_query.show("Who in the household is responding to questions?");

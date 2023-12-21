@@ -1,10 +1,12 @@
 ﻿<title>GetLabel Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 s = getlabel(<arg>dictionary_symbol</arg> 『, value』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
@@ -14,28 +16,31 @@ The <arg>value</arg> argument can only be used if the dictionary symbol is an it
 
 When using the <arg>value</arg> argument, a value's code can be returned rather than the value label by using the optional <logiccolor>by label</logiccolor> (as opposed to the default <logiccolor>by code</logiccolor> behavior).
 
+
 <subheader>Return Value</subheader>
 
 The function returns a string containing the label.
+
 
 <subheader>Example</subheader>
 
 <logic>
 PROC EXAMPLE
 
-	write("%s", getlabel(SEX));						 // Sex
-	write("Crop Type = %s", getlabel(CROP_VS2, 23)); // Crop Type = Maize
+    write("%s", getlabel(SEX));                      // Sex
+    write("Crop Type = %s", getlabel(CROP_VS2, 23)); // Crop Type = Maize
 
 PROC RELATIONSHIP
 
-	write("%s = %s", getlabel($), getlabel($, $));	 // Relationship = Head,
-													 // Relationship = Child, etc.
+    write("%s = %s", getlabel($), getlabel($, $));   // Relationship = Head,
+                                                     // Relationship = Child, etc.
 
 PROC BY_EXAMPLE
 
-	write("%s", getlabel(SEX by code, 1));			 // Male
-	write("%s", getlabel(SEX by label, "Male"));	 // 1
+    write("%s", getlabel(SEX by code, 1));           // Male
+    write("%s", getlabel(SEX by label, "Male"));     // 1
 
 </logic>
 
-<seealso getvaluelabel_function.csdoc getsymbol_function.csdoc getimage_function.csdoc />
+
+<seealso getvaluelabel_function.csdoc getsymbol_function.csdoc getimage_function.csdoc Symbol_getLabel_function.csdoc />

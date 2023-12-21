@@ -1,0 +1,37 @@
+﻿<title>Symbol.getLabel Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = symbol_name.getLabel(『language := <arg>language_name</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Symbol.getLabel</logiccolor> function returns the <link labels.csdoc>label</link> for a symbol. Many symbols do not have a label, in which case the <link Symbol_getName_function.csdoc>name</link> is returned. However, when the function is used with a <link item_description.csdoc>dictionary item</link>, the label, as defined in the dictionary, is returned. When called on an <link object_dot_notation.csdoc>object</link> passed to a function by <link function_arguments_ref.csdoc>reference</link>, the label of the original symbol is returned.
+
+An optional <link function_named_arguments.csdoc>named argument</link> allows you to get the label in a particular language, defined by the string <arg>language_name</arg>. If undefined or blank, the label for the current language is returned. If specified, the label for the language is returned. If no label exists for that language, the function returns a blank string.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the symbol label.
+
+
+<subheader>Example</subheader>
+
+<logic>
+errmsg("%s", BIRD_NAME.getLabel());                 // Bird Name
+errmsg("%s", BIRD_NAME.getLabel(language := "FR")); // Nom de l'oiseau
+
+// set the current language to French
+setlanguage("FR");
+
+errmsg("%s", BIRD_NAME.getLabel());                 // Nom de l'oiseau
+errmsg("%s", BIRD_NAME.getLabel(language := "EN")); // Bird Name
+</logic>
+
+
+<seealso Symbol_getName_function.csdoc getlabel_function.csdoc />
