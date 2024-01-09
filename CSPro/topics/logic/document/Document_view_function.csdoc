@@ -7,13 +7,12 @@
 b = document_name.view();
 </logicsyntax>
 
-
 <subheader>Description</subheader>
 
 The <logiccolor>Document.view</logiccolor> function displays the contents of the file stored in a <link Document.csdoc>Document</link> object. The function is equivalent to calling:
 
 <logic>
-view(document_name);
+view(dict_name);
 </logic>
 
 If the Document contains an image or HTML, the content will be shown in an embedded window. For other files, an external application is launched to display the file using the system's default viewer for that file type.

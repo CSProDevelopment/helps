@@ -1,0 +1,41 @@
+﻿<title>View Dictionary Questionnaire</title>
+
+Within the data dictionary, you can view a questionnaire/pseudo paper version of the dictionary items by either:
+
+<list>
+    <li>clicking on the questionnaire view icon <image questionnaire_view.png /> from the dictionary toolbar, or </li>
+    <li>selecting <b>Questionnaire</b> from the <b>View</b> menu</li>
+</list>
+
+To return to the dictionary view, you can either:
+
+<list>
+    <li>press the dictionary view icon <image dictionary_view.png />, or</li>
+    <li>select <b>Dictionary</b> from the <b>View</b> menu</li>
+</list>
+
+The Questionnaire View for the dictionary displays a non-editable, scrollable view of all dictionary items, presented in their order of definition within the dictionary. The view will present collapsible blocks, with each block corresponding to a dictionary record, as shown below.
+
+<center><image questionnaire_view_from_dcf.png /></center>
+
+The questionnaire view for the dictionary is comprised of the following parts:
+
+<b>Side menu view</b>: Clicking on the questionnaire view menu <image questionnaire_view_menu.png /> will display a list of all dictionary items along the left side of the questionnaire. Clicking on any item will jump to and highlight that item on the questionnaire, scrolling the questionnaire view if needed. If the item list is long, a scrollbar for the side menu will also appear. Click on <image questionnaire_view_menu.png /> again to dismiss the menu.
+
+<b>Record view</b>: Each dictionary record will be presented within a white floating box. On the left side of the box's title bar a minus sign will appear. Toggling on this will collapse and re-expand the view for that record, changing the image from a - to a +. The title bar also displays the label for that record, followed by a list of all record items beneath the title bar.
+
+If the record repeats, this will be indicated by a <image questionnaire_view_repeating_record.png /> appearing between the title bar and the record item list. Clicking on <image questionnaire_view_repeating_record.png /> will toggle the roster orientation from horizontal to vertical and back again. Depending on how many items are in the record, horizontal and/or vertical scroll bars will appear.
+
+<b>Item view</b>: Each item will display its unique dictionary name, followed by a colon (':') and its label. The input display area will vary depending on how it was defined in the dictionary:
+
+<list>
+<li>If the item is numeric with discrete values (i.e., 1=Male, 2=Female), then the responses will have radio buttons, followed by the dictionary value.</li>
+<li>If the item is numeric continuous (i.e., only a range is defined, such as 0-120 for age), then a grey shaded box with tic marks indicating the number of characters the item allows will be shown.</li>
+<li>If the item is numeric and has a combination of discrete and continous values (i.e., Age=0-120, Don't know=999), then the display will be a combination of radio buttons for each value defined in the dictionary, with a grey box signalling entry for any continuous values.</li>
+<li>If the item is alpha, a grey box with tic marks will be shown. Note that depending on the screen size and/or length of the alpha item, this may cause a horizontal scroll bar to appear.</li></list>
+
+<b>Scroll Bars:</b> If an item appears within a singly-occurring record, then the scroll bar will appear immediately below the item (or below the roster if the field repeats within the singly-occurring record). However if the alpha item appears within a repeating record, then no scroll bar will appear, as the scroll bar will be on the roster.
+
+Note that rows within repeating records can be collapsed (as shown in the screenshot above, which depicts a vertical orientation--the default view is horizontal).
+
+<seealso view_questionnaire_from_fmf.csdoc view_questionnaire_from_bch.csdoc />

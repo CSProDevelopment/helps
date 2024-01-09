@@ -1,922 +1,146 @@
 ﻿<title>OnKey Global Function</title>
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-    background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<logicsyntax>
+function OnKey (key_value);
+</logicsyntax>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<subheader>Description</subheader>
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-     style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-     size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
-     style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-     color="#0000FF" face="Courier New" size="2">function</font></b> <font
-     style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-     face="Courier New" size="2">OnKey</font><font style="font-family: 'Courier New';
-                                                     font-size: 10pt;"
-                                                     face="Courier New"
-                                                     size="2">(key-value);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-     style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-     size="2">Description:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
- <span style="font-weight: bold;">OnKey</span> global function allows you
- to trap keystrokes in order to perform special actions or to change the
- action of the key. It also can be used to disable or remap keys. This
- function must be placed in the <a href="cspro_program_structure.html">Global</a>
- Procedure.</p>
-<p style="text-align: left; margin-left: 18.70pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-     style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- an OnKey global function is coded, every keystroke the operator types
- is sent to the OnKey function for processing. If the OnKey function returns
- a value, then the return value is processed by the field as the keystroke.
- If a statement in the OnKey function causes movement to another field
- within the case, then the movement is executed. If no OnKey function is
- coded, then keystrokes are unmodified.</font></p>
-<p style="text-align: left; margin-left: 18.70pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">The
- <b><font style="font-weight: bold;">key value</font></b> is a number code
- identifying what key was pressed on the keyboard. Its value can be used
- within the function. See detailed description below.</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-     font-size: 10pt; font-family: Arial;">You can use the <a href="OnKey_Character_Map.html">OnKey
- Character Map</a> to determine the value of characters.</p>
-<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-     font-family: Arial; font-size: 10pt;">&#160;</p>
-<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-     font-family: Arial; font-size: 10pt;">Calls to this function are ignored
- when executed on mobile devices.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-     style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-     size="2">Returned value:</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-     style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Like
- any global function, the OnKey global function returns an integer value.
- The value should be either the value of the key pressed (the same as the
- value passed to the function), a substituted key value (remapping the
- key), or zero (0) to indicate that the key is to be ignored.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-     style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-     size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-     style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-     face="Courier New" size="2">function</font> <font style="font-family: 'Courier New';
-                                                         font-size: 10pt;"
-                                                         face="Courier New"
-                                                         size="2">OnKey(<font color="#0000FF">numeric</font> x)</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-     style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-     face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
-                                                             font-size: 10pt;"
-                                                             face="Courier New"
-                                                             size="2">x
- in 114:116</font> <font style="font-family: 'Courier New'; font-size: 10pt;"
-                         color="#0000FF" face="Courier New" size="2">then</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
-         face="Courier New" size="2">// F3, F4, F5</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-     style="font-family: 'Courier New'; font-size: 10pt;" color="#008000"
-     face="Courier New" size="2">&#160;&#160;&#160;&#160;// don't allow
- these keys to work, eat the key </font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-     style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-     size="2">&#160;&#160;&#160;&#160;OnKey =</font> <font style="font-family: 'Courier New';
-                                                             font-size: 10pt;"
-                                                             color="#FF0000"
-                                                             face="Courier New"
-                                                             size="2">0</font><font
-     style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-     size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-     style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-     face="Courier New" size="2">&#160;&#160;elseif</font> <font style="font-family: 'Courier New';
-     font-size: 10pt;" face="Courier New" size="2">x = 2069</font> <font
-     style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-     face="Courier New" size="2">then</font> <font style="font-family: 'Courier New';
-                                                     font-size: 10pt;"
-                                                     color="#008000" face="Courier New"
-                                                     size="2"> // Ctrl+E
- go to END_FIELD</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-     style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-     face="Courier New" size="2">&#160;&#160;&#160;&#160;move to</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-         size="2">END_FIELD;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-     style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-     face="Courier New" size="2">&#160;&#160;else</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-     style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-     size="2">&#160;&#160;&#160;&#160;OnKey = x;</font> <font style="font-family: 'Courier New';
-     font-size: 10pt;" color="#008000" face="Courier New" size="2"> // return
- rest of keys </font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-     style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-     face="Courier New" size="2">&#160;&#160;endif</font><font style="font-family: 'Courier New';
-     font-size: 10pt;" face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-     style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-     face="Courier New" size="2">end</font><font style="font-family: 'Courier New';
-                                                 font-size: 10pt;" face="Courier New"
-                                                 size="2">;</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><u><font
-     style="font-family: Arial; font-size: 10pt; font-weight: bold; text-decoration: underline; "
-     face="Arial" size="2">Keyboard Key Values</font></u></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-     style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- key values passed into and out of the</font> <b><font style="font-family: Arial;
-                                                         font-size: 10pt;
-                                                         font-weight: bold;"
-                                                         face="Arial" size="2">OnKey</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">function
- are given below.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">Single
- key values are given below. When Shift, Ctrl, and/or Alt are held down
- while pressing another key, the following values are added to the code
- of the other key.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<table cellspacing="0" width="17.943%">
-    <col style="width: 62.802%;" />
-    <col style="width: 37.198%;" />
-    <tr style="vertical-align: top;">
-        <td style="width: 62.802%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-weight: bold; font-size: 10pt; text-decoration: none; "><u><font
-         style="text-decoration: none; ">Keys</font></u></p></td>
-        <td style="width: 37.198%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-weight: bold; font-size: 10pt; text-decoration: none; "><u><font
-         style="text-decoration: none; ">Add</font></u></p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 62.802%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Shift</p></td>
-        <td style="width: 37.198%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">1000</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 62.802%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Ctrl</p></td>
-        <td style="width: 37.198%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">2000</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 62.802%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Shift+Ctrl</p></td>
-        <td style="width: 37.198%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">3000</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 62.802%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Alt</p></td>
-        <td style="width: 37.198%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">4000</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 62.802%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Alt+Shift</p></td>
-        <td style="width: 37.198%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">5000</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 62.802%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Alt+Ctrl</p></td>
-        <td style="width: 37.198%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">6000</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 62.802%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Alt+Shift+Ctrl</p></td>
-        <td style="width: 37.198%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">7000</p></td>
-    </tr>
-</table>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-     style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
- example, if Shift, Ctrl, and/or Alt are held down when A is pressed</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<table cellspacing="0" width="19.256%">
-    <col style="width: 69.318%;" />
-    <col style="width: 30.682%;" />
-    <tr style="vertical-align: top;">
-        <td style="width: 69.318%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-weight: bold; font-size: 10pt;">Keys</p></td>
-        <td style="width: 30.682%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-weight: bold; font-size: 10pt;">Code</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 69.318%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">A</p></td>
-        <td style="width: 30.682%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">65</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 69.318%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Shift+A</p></td>
-        <td style="width: 30.682%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">1065</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 69.318%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Ctrl+A</p></td>
-        <td style="width: 30.682%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">2065</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 69.318%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Shift+Ctrl+A</p></td>
-        <td style="width: 30.682%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">3065</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 69.318%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Alt+A</p></td>
-        <td style="width: 30.682%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">4065</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 69.318%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Alt+Shift+A</p></td>
-        <td style="width: 30.682%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">5065</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 69.318%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Alt+Ctrl+A</p></td>
-        <td style="width: 30.682%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">6065</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 69.318%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">Alt+Shift+Ctrl+A</p></td>
-        <td style="width: 30.682%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">7065</p></td>
-    </tr>
-</table>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-     style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-     size="2">Numbers</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-     style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
- the number keys across the top of the keyboard, or on the numeric keypad
- when the &quot;NumLock&quot; button is depressed, the following keyboard
- key value will be returned:</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;">&#160;</p>
-<table cellspacing="0" width="11.16%">
-    <col style="width: 47.061%;" />
-    <col style="width: 52.939%;" />
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-weight: bold; font-size: 10pt;">Key</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-weight: bold; font-size: 10pt;">Code</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">0</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">48</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">1</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">49</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">2</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">50</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">3</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">51</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">4</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">52</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">5</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">53</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">6</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">54</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">7</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">55</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">8</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">56</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">9</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">57</p></td>
-    </tr>
-</table>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-     style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-     size="2">Letters</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-     style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
- the letters a-z and A-Z, the following keyboard key values will be returned.
- Please note that the status of the CapsLock key does not effect the code.
- However, if the Ctrl, Shift, and/or Alt keys are being held down, they
- will change the code returned. See above.</font></p>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<table cellspacing="0" width="11.16%">
-    <col style="width: 47.061%;" />
-    <col style="width: 52.939%;" />
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-weight: bold; font-size: 10pt;">Key</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-weight: bold; font-size: 10pt;">Code</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">a</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">65</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">b</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">66</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">c</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">67</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">d</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">68</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">e</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">69</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">f</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">70</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">g</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">71</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">h</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">72</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">i</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">73</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">j</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">74</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">k</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">75</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">l</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">76</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">m</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">77</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">n</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">78</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">o</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">79</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">p</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">80</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">q</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">81</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">r</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">82</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">s</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">83</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">t</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">84</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">u</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">85</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">v</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">86</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">w</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">87</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">x</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">88</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">y</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">89</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">z</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">90</p></td>
-    </tr>
-</table>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-     font-weight: bold;"><b><font style="font-weight: bold;">Function Keys</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-     font-weight: bold;">&#160;</p>
-<table cellspacing="0" width="11.16%">
-    <col style="width: 47.061%;" />
-    <col style="width: 52.939%;" />
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-weight: bold; font-size: 10pt;">Key</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-weight: bold; font-size: 10pt;">Code</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F1</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">112</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F2</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">113</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F3</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">114</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F4</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">115</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">&#160;</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">&#160;</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F5</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">116</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F6</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">117</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F7</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">118</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F8</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">119</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">&#160;</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">&#160;</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F9</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">120</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F10</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">121</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F11</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">122</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">F12</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">123</p></td>
-    </tr>
-</table>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-     text-indent: -36.00pt; font-weight: bold;"><b><font style="font-weight: bold;">Non-numeric
- Numpad Keys:</font></b></p>
-<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-     text-indent: -36.00pt;">&#160;</p>
-<table cellspacing="0" width="32.822%">
-    <col style="width: 28.334%;" />
-    <col style="width: 71.666%;" />
-    <tr style="vertical-align: top;">
-        <td style="width: 28.334%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-weight: bold; font-size: 10pt;">Key</p></td>
-        <td style="width: 71.666%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-weight: bold; font-size: 10pt;">Code</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 28.334%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Num Lock</p></td>
-        <td style="width: 71.666%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">144</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 28.334%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">/</p></td>
-        <td style="width: 71.666%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">111&#160;(with or without num lock)</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 28.334%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">*</p></td>
-        <td style="width: 71.666%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">106&#160;(with or without num lock)</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 28.334%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">-&#160;</p></td>
-        <td style="width: 71.666%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">109&#160;(with or without num lock)</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 28.334%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">+</p></td>
-        <td style="width: 71.666%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">107&#160;(with or without num lock)</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 28.334%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;"><b><font style="font-weight: bold;">.</font></b>&#160;</p></td>
-        <td style="width: 71.666%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">110 (with num lock—46 without)</p></td>
-    </tr>
-</table>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-     text-indent: -36.00pt; font-weight: bold;"><b><font style="font-weight: bold;">Miscellaneous
- Keys:</font></b></p>
-<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-     text-indent: -36.00pt;">&#160;</p>
-<table cellspacing="0" width="33.369%">
-    <col style="width: 36.916%;" />
-    <col style="width: 63.084%;" />
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-weight: bold; font-size: 10pt;">Key</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-weight: bold; font-size: 10pt;">Code</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">SysReq</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">no code returned</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Bksp</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">8</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Tab</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">9</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Enter&#160;</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">13 (with or without num lock)</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Break</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">19</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Caps</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">20</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Escape</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">27</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Space</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">32</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Page Up</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">33</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Page Down</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">34</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">End</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">35</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Home&#160;</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">36</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Left Arrow</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">37</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Up Arrow&#160;</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">38</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Right Arrow&#160;</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">39</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Down Arrow</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">40</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Insert</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">45</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Delete</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">46</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Wnd</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">91 (flying window)</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Scroll Lock</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">145</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">;</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">186</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">=</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">187</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">,</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">188 (comma)</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">-</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">189</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">.</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">190 (period)</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">/</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">191</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">`</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">192 (accent)</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">[</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">219</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">]</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">221</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">\</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">220</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 36.916%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">'</p></td>
-        <td style="width: 63.084%; padding-right: 10px; padding-left: 10px;"><p
-             style="font-size: 10pt;">222</p></td>
-    </tr>
-</table>
-<p style="text-align: left; margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-     font-weight: bold;"><b><font style="font-weight: bold;">Control Keys:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<table cellspacing="0" width="11.16%">
-    <col style="width: 47.061%;" />
-    <col style="width: 52.939%;" />
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-weight: bold; font-size: 10pt;">Key</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-weight: bold; font-size: 10pt;">Code</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Shift</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">1016</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Ctrl</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">2017</p></td>
-    </tr>
-    <tr style="vertical-align: top;">
-        <td style="width: 47.061%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">Alt</p></td>
-        <td style="width: 52.939%; padding-right: 10px; padding-left: 10px;"><p
-             style="text-align: center; font-size: 10pt;">4018</p></td>
-    </tr>
-</table>
-</body>
-</html>
+The OnKey global function allows you to trap keystrokes in order to perform special actions or to change the action of the key. It also can be used to disable or remap keys. This function must be placed in the <link cspro_program_structure.csdoc>Global</link> procedure.
 
+If an OnKey global function is coded, every keystroke the operator types is sent to the OnKey function for processing. If the OnKey function returns a value, then the return value is processed by the field as the keystroke. If a statement in the OnKey function causes movement to another field within the case, then the movement is executed. If no OnKey function is coded, then keystrokes are unmodified.
+
+The key value is a number code identifying what key was pressed on the keyboard. Its value can be used within the function. See detailed description below.
+
+You can use the <link OnKey_Character_Map.csdoc>OnKey Character Map</link> to determine the value of characters.
+
+Calls to this function are ignored when executed on mobile devices.
+
+<subheader>Return Value</subheader>
+
+Like any global function, the OnKey global function returns an integer value. The value should be either the value of the key pressed (the same as the value passed to the function), a substituted key value (remapping the key), or zero (0) to indicate that the key is to be ignored.
+
+<subheader>Example</subheader>
+
+<logic>
+function OnKey(numeric x)
+
+  if x in 114:116 then      // F3, F4, F5
+    OnKey = 0;              // don't allow these keys to work, eat the key
+  elseif x = 2069 then      // Ctrl+E goes to END_FIELD
+    move to END_FIELD;
+  else
+    OnKey = x;              // return the value of any other key
+  endif;
+end;
+</logic>
+
+<subheader>Keyboard Key Values</subheader>
+
+A summary of key values passed into and out of the OnKey function are given below. If in doubt, use the <link OnKey_Character_Map.csdoc>OnKey Character Map</link> to determine the value of characters. It can be accessed from CSPro's <b>View</b> menu option.
+
+<b>Numbers</b>
+
+For the number keys across the top of the keyboard or on the numeric keypad when the "NumLock" button is depressed, the value 48 should be added to the number. For example, the keyboard key value returned for the range <b>0-9</b> is <b>48-57</b> respectively.
+
+<b>Letters</b>
+
+For the 26 a-z letters the code range 65-90 will be returned. If uppercase letters are sought, then you must add the Shift key value (1000) to the 65-90 range, yielding 1065-1090. If the Ctrl and/or Alt keys are being held down that will impact the value returned too; however, the CapsLock key does not impact the code returned.
+
+<b>Control Keys</b>
+
+If the control keys Shift, Ctrl, or Alt are pressed in isolation, i.e., are not combined with any other keystroke, they will have the following key values:
+
+<table 2 nowrap>
+    <cell><b>Key</b></cell><cell><b>Code</b></cell>
+    <cell>Shift</cell><cell>1016</cell>
+    <cell>Ctrl</cell><cell>2017</cell>
+    <cell>Alt</cell><cell>4018</cell>
+</table>
+
+<b>Control Key Combos</b>
+
+If the control keys Shift, Ctrl, and/or Alt are pressed in combination with another key, the following base values should be added to the code of the other key.
+
+<table 2 nowrap>
+    <cell><b>Keys</b></cell><cell><b>Add</b></cell>
+    <cell>Shift</cell><cell>1000</cell>
+    <cell>Ctrl</cell><cell>2000</cell>
+    <cell>Shift+Ctrl</cell><cell>3000</cell>
+    <cell>Alt</cell><cell>4000</cell>
+    <cell>Alt+Shift</cell><cell>5000</cell>
+    <cell>Alt+Ctrl</cell><cell>6000</cell>
+    <cell>Alt+Shift+Ctrl</cell><cell>7000</cell>
+</table>
+
+For example, if Shift, Ctrl, and/or Alt are held down when 'a' is pressed, it causes the following codes:
+
+<table 2 nowrap>
+    <cell><b>Keys</b></cell><cell><b>Code</b></cell>
+    <cell>a</cell><cell>65</cell>
+    <cell>Shift+a</cell><cell>1065</cell>
+    <cell>Ctrl+a</cell><cell>2065</cell>
+    <cell>Shift+Ctrl+a</cell><cell>3065</cell>
+    <cell>Alt+a</cell><cell>4065</cell>
+    <cell>Alt+Shift+a</cell><cell>5065</cell>
+    <cell>Alt+Ctrl+a</cell><cell>6065</cell>
+    <cell>Alt+Shift+Ctrl+a</cell><cell>7065</cell>
+</table>
+
+<b>Function Keys</b>
+
+The 12 function keys F1-F12 return the key value 112-123.
+
+<b>Non-numeric Numpad Keys</b>
+
+<table 2 nowrap>
+    <cell><b>Key</b></cell><cell><b>Code</b></cell>
+    <cell>NumLock</cell><cell>144</cell>
+    <cell>*</cell><cell>106 (with or without NumLock)</cell>
+    <cell>+</cell><cell>107 (with or without NumLock)</cell>
+    <cell>-</cell><cell>109 (with or without NumLock)</cell>
+    <cell>.</cell><cell>110 (with or without NumLock)</cell>
+    <cell>/</cell><cell>111 (with or without NumLock)</cell>
+</table>
+
+<b>Miscellaneous Keys</b>
+
+<table 2 nowrap>
+    <cell><b>Key</b></cell><cell><b>Code</b></cell>
+    <cell>SysReq</cell><cell>no code returned</cell>
+    <cell>Bksp</cell><cell>8</cell>
+    <cell>Tab</cell><cell>9</cell>
+    <cell>Enter</cell><cell>13 (with or without NumLock)</cell>
+    <cell>Break</cell><cell>19</cell>
+    <cell>Caps</cell><cell>20</cell>
+    <cell>Escape</cell><cell>27</cell>
+    <cell>Space</cell><cell>32</cell>
+    <cell>Page Up</cell><cell>33</cell>
+    <cell>Page Down</cell><cell>34</cell>
+    <cell>End</cell><cell>35</cell>
+    <cell>Home</cell><cell>36</cell>
+    <cell>Left Arrow</cell><cell>37</cell>
+    <cell>Up Arrow</cell><cell>38</cell>
+    <cell>Right Arrow</cell><cell>39</cell>
+    <cell>Down Arrow</cell><cell>40</cell>
+    <cell>Insert</cell><cell>45</cell>
+    <cell>Delete</cell><cell>46</cell>
+    <cell>Wnd</cell><cell>91 (the flying window)</cell>
+    <cell>Scroll Lock</cell><cell>145</cell>
+    <cell>;</cell><cell>186</cell>
+    <cell>=</cell><cell>187</cell>
+    <cell>,</cell><cell>188 (comma)</cell>
+    <cell>-</cell><cell>189 (dash/minus)</cell>
+    <cell>.</cell><cell>190 (dot/period)</cell>
+    <cell>/</cell><cell>191</cell>
+    <cell>`</cell><cell>192 (accent)</cell>
+    <cell>[</cell><cell>219</cell>
+    <cell>]</cell><cell>221</cell>
+    <cell>\</cell><cell>220</cell>
+    <cell>'</cell><cell>222 (regular quote)</cell>
+</table>
 
 <seealso cspro_program_structure.csdoc user_defined_functions.csdoc onkey_character_map.csdoc />
 
-<html><!---♻---></html>

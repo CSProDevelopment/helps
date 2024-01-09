@@ -1,69 +1,70 @@
 ﻿<title>Menu Summary</title>
 
-The following is a summary of the <b>Text Viewer</b> menus:
+The following is a summary of the <b>CSEntry/Data Entry</b> menus for Windows:
 
 <table 2>
-	<cell 2><subheader>File</subheader></cell>
-	<cell><link open_an_application.csdoc>Open Application</link></cell><cell>Open a new data entry application.</cell>
-	<cell><link open_a_data_file.csdoc>Open Data File</link></cell><cell>Open a new file for data entry in the current application.</cell>
-	<cell><link save_partial_case.csdoc>Save Partial Case</link></cell><cell>Partially save the current case and continue entry.</cell>
-	<cell><link synchronize_data.csdoc>Synchronize</link></cell><cell>Synchronize the data with a remote server.</cell>
-	<cell 2>&nbsp;</cell>
-	<cell 2><subheader>Mode</subheader></cell>
-	<cell><link begin_adding_cases.csdoc>Add Case</link></cell><cell>Switch to add mode.</cell>
-	<cell><link begin_modifying_cases.csdoc>Modify Case</link></cell><cell>Switch to modify mode. </cell>
-	<cell><link begin_verifying_cases.csdoc>Verify Case</link></cell><cell>Switch to verify mode.</cell>
-	<cell><link pause_data_entry.csdoc>Pause</link></cell><cell>Pause data entry (stops statistics clock).</cell>
-	<cell><link stop_data_entry.csdoc>Stop</link></cell><cell>Stop data entry in current mode.</cell>
-	<cell 2>&nbsp;</cell>
-	<cell 2><subheader>Edit</subheader></cell>
-	<cell><link insert_a_case.csdoc>Insert Case</link></cell><cell>Insert new case.</cell>
-	<cell><link delete_a_case.csdoc>Delete Case</link></cell><cell>Delete selected case.</cell>
-	<cell><link select_a_case.csdoc>Find Case</link></cell><cell>Find case with particular identifier.</cell>
-	<cell><link insert_a_level_occurrence.csdoc>Insert Level Occ</link></cell><cell>Insert a new level before the current level.</cell>
-	<cell><link add_a_level_occurrence.csdoc>Add Level Occ</link></cell><cell>Add a new level at the end of this level.</cell>
-	<cell><link delete_a_level_occurrence.csdoc>Delete Level Occ</link></cell><cell>Delete the selected level within a case.</cell>
-	<cell><link insert_a_group_occurrence.csdoc>Insert Group Occ</link></cell><cell>Insert a new occurrence before this occurrence.</cell>
-	<cell><link insert_a_group_occurrence.csdoc>Insert Group Occ After</link></cell><cell>Insert a new occurrence after this occurrence.</cell>
-	<cell><link delete_a_group_occurrence.csdoc>Delete Group Occ</link></cell><cell>Delete this occurrence.</cell>
-	<cell><link sort_a_group_occurrence.csdoc>Sort Group Occ</link></cell><cell>Sort occurrences based on values of this field.</cell>
-	<cell><link add_a_note.csdoc>Edit Field Note</link></cell><cell>Add, modify, or delete field note.</cell>
-	<cell><link add_a_note.csdoc>Edit Case Note</link></cell><cell>Add, modify, or delete a case note.</cell>
-	<cell><link edit_interactively.csdoc>Interactive Edit</link></cell><cell>Search cases for range and/or edit errors (in modify mode).</cell>
-	<cell 2>&nbsp;</cell>
-	<cell 2><subheader>Navigation</subheader></cell>
-	<cell><link move_around_a_case_in_add_mode.csdoc>Previous Screen</link></cell><cell>Skip to previous screen.</cell>
-	<cell><link move_around_a_case_in_add_mode.csdoc>Next Screen</link></cell><cell>Advance to next screen.</cell>
-	<cell><link move_between_cases.csdoc>First Case</link></cell><cell>Go to first case in tree order.</cell>
-	<cell><link move_between_cases.csdoc>Previous Case</link></cell><cell>Go to previous case in tree order.</cell>
-	<cell><link move_between_cases.csdoc>Next Case</link></cell><cell>Go to next case in tree order</cell>
-	<cell><link move_between_cases.csdoc>Last Case</link></cell><cell>Go to last case in tree order.</cell>
-	<cell><link move_around_a_case_in_add_mode.csdoc>End Group Occurrence</link></cell><cell>Skip to next occurrence of this group of fields.</cell>
-	<cell><link move_around_a_case_in_add_mode.csdoc>End Group</link></cell><cell>Skip to next field after this group of fields.</cell>
-	<cell><link move_around_a_case_in_add_mode.csdoc>End Level Occurrence</link></cell><cell>Skip to next occurrence of this level.</cell>
-	<cell><link move_around_a_case_in_add_mode.csdoc>End Level</link></cell><cell>Skip to next level after this level.</cell>
-	<cell><link save_a_case.csdoc>Advance to End</link></cell><cell>Advance to the furthest point reached.</cell>
-	<cell><link go_to_a_field.csdoc>Go To</link></cell><cell>Go to a particular field in the current case.</cell>
-	<cell><link persistent_fields.csdoc>Previous Persistent</link></cell><cell>Go to previous persistent field.</cell>
-	<cell 2>&nbsp;</cell>
-	<cell 2><subheader>View</subheader></cell>
-	<cell><link change_view.csdoc>Full Screen</link></cell><cell>Hide the trees and show full screen view.</cell>
-	<cell><link change_view.csdoc>Show Case Labels</link></cell><cell>Show case labels (if they exist) rather than case IDs in the file tree.</cell>
-	<cell><link change_view.csdoc>Cases in Sort Order</link></cell><cell>Show cases in file tree in sort order rather than physical order.</cell>
-	<cell><link change_view.csdoc>View Partial Cases Only</link></cell><cell>Show only partial cases in file tree.</cell>
-	<cell><link change_view.csdoc>Case Tree</link></cell><cell>Toggles the case tree on and off.</cell>
-	<cell><link change_view.csdoc>Names in Case Tree</link></cell><cell>Show names in case tree.</cell>
-	<cell><link change_view.csdoc>Show Refusal Options</link></cell><cell>Shows any <link CSPro::refused_value.csdoc>refused</link> values defined in the current field's value set.</cell>
-	<cell><link show_fields.csdoc>Show Values (verify)</link></cell><cell>Show all data values (in verify mode).</cell>
-	<cell><link view_operator_statistics.csdoc>Operator Statistics</link></cell><cell>Show operator statistics data file.</cell>
-	<cell 2>&nbsp;</cell>
-	<cell 2><subheader>Options</subheader></cell>
-	<cell><link edit_interactively.csdoc>Interactive Edit Options</link></cell><cell>Change search options for interactive edit.</cell>
-	<cell><link change_capi_language.csdoc>Change Language</link></cell><cell>Change current language of the CAPI question text.</cell>
-	<cell><link view_hide_or_move_response_box.csdoc>Show Responses (This Field)</link></cell><cell>Show or hide response box for this field.</cell>
-	<cell><link view_hide_or_move_response_box.csdoc>Show Responses (All Fields)</link></cell><cell>Show or hide response box for this and all other fields.</cell>
-	<cell 2>&nbsp;</cell>
-	<cell 2><subheader>Help</subheader></cell>
-	<cell><link get_help.csdoc>Help Topics</link></cell><cell>Get help on current application.</cell>
-	<cell><link get_help.csdoc>About Data Entry</link></cell><cell>Get information about the software.</cell>
+    <cell 2><subheader>File</subheader></cell>
+    <cell><link open_an_application.csdoc>Open Application</link></cell><cell>Open a new data entry application.</cell>
+    <cell><link open_a_data_file.csdoc>Open Data File</link></cell><cell>Open a new file for data entry in the current application.</cell>
+    <cell><link save_partial_case.csdoc>Save Partial Case</link></cell><cell>Partially save the current case and continue entry.</cell>
+    <cell><link synchronize_data.csdoc>Synchronize</link></cell><cell>Synchronize the data with a remote server.</cell>
+    <cell 2>&nbsp;</cell>
+    <cell 2><subheader>Mode</subheader></cell>
+    <cell><link begin_adding_cases.csdoc>Add Case</link></cell><cell>Switch to add mode.</cell>
+    <cell><link begin_modifying_cases.csdoc>Modify Case</link></cell><cell>Switch to modify mode. </cell>
+    <cell><link begin_verifying_cases.csdoc>Verify Case</link></cell><cell>Switch to verify mode.</cell>
+    <cell><link pause_data_entry.csdoc>Pause</link></cell><cell>Pause data entry (stops statistics clock).</cell>
+    <cell><link stop_data_entry.csdoc>Stop</link></cell><cell>Stop data entry in current mode.</cell>
+    <cell 2>&nbsp;</cell>
+    <cell 2><subheader>Edit</subheader></cell>
+    <cell><link insert_a_case.csdoc>Insert Case</link></cell><cell>Insert new case.</cell>
+    <cell><link delete_a_case.csdoc>Delete Case</link></cell><cell>Delete selected case.</cell>
+    <cell><link select_a_case.csdoc>Find Case</link></cell><cell>Find case with particular identifier.</cell>
+    <cell><link insert_a_level_occurrence.csdoc>Insert Level Occ</link></cell><cell>Insert a new level before the current level.</cell>
+    <cell><link add_a_level_occurrence.csdoc>Add Level Occ</link></cell><cell>Add a new level at the end of this level.</cell>
+    <cell><link delete_a_level_occurrence.csdoc>Delete Level Occ</link></cell><cell>Delete the selected level within a case.</cell>
+    <cell><link insert_a_group_occurrence.csdoc>Insert Group Occ</link></cell><cell>Insert a new occurrence before this occurrence.</cell>
+    <cell><link insert_a_group_occurrence.csdoc>Insert Group Occ After</link></cell><cell>Insert a new occurrence after this occurrence.</cell>
+    <cell><link delete_a_group_occurrence.csdoc>Delete Group Occ</link></cell><cell>Delete this occurrence.</cell>
+    <cell><link sort_a_group_occurrence.csdoc>Sort Group Occ</link></cell><cell>Sort occurrences based on values of this field.</cell>
+    <cell><link add_a_note.csdoc>Edit Field Note</link></cell><cell>Add, modify, or delete field note.</cell>
+    <cell><link add_a_note.csdoc>Edit Case Note</link></cell><cell>Add, modify, or delete a case note.</cell>
+    <cell><link edit_interactively.csdoc>Interactive Edit</link></cell><cell>Search cases for range and/or edit errors (in modify mode).</cell>
+    <cell 2>&nbsp;</cell>
+    <cell 2><subheader>Navigation</subheader></cell>
+    <cell><link move_around_a_case_in_add_mode.csdoc>Previous Screen</link></cell><cell>Skip to previous screen.</cell>
+    <cell><link move_around_a_case_in_add_mode.csdoc>Next Screen</link></cell><cell>Advance to next screen.</cell>
+    <cell><link move_between_cases.csdoc>First Case</link></cell><cell>Go to first case in tree order.</cell>
+    <cell><link move_between_cases.csdoc>Previous Case</link></cell><cell>Go to previous case in tree order.</cell>
+    <cell><link move_between_cases.csdoc>Next Case</link></cell><cell>Go to next case in tree order</cell>
+    <cell><link move_between_cases.csdoc>Last Case</link></cell><cell>Go to last case in tree order.</cell>
+    <cell><link move_around_a_case_in_add_mode.csdoc>End Group Occurrence</link></cell><cell>Skip to next occurrence of this group of fields.</cell>
+    <cell><link move_around_a_case_in_add_mode.csdoc>End Group</link></cell><cell>Skip to next field after this group of fields.</cell>
+    <cell><link move_around_a_case_in_add_mode.csdoc>End Level Occurrence</link></cell><cell>Skip to next occurrence of this level.</cell>
+    <cell><link move_around_a_case_in_add_mode.csdoc>End Level</link></cell><cell>Skip to next level after this level.</cell>
+    <cell><link save_a_case.csdoc>Advance to End</link></cell><cell>Advance to the furthest point reached.</cell>
+    <cell><link go_to_a_field.csdoc>Go To</link></cell><cell>Go to a particular field in the current case.</cell>
+    <cell><link persistent_fields.csdoc>Previous Persistent</link></cell><cell>Go to previous persistent field.</cell>
+    <cell 2>&nbsp;</cell>
+    <cell 2><subheader>View</subheader></cell>
+    <cell><link change_view.csdoc>Full Screen</link></cell><cell>Hide the trees and show full screen view.</cell>
+    <cell><link change_view.csdoc>Show Case Labels</link></cell><cell>Show case labels (if they exist) rather than case IDs in the file tree.</cell>
+    <cell><link change_view.csdoc>Cases in Sort Order</link></cell><cell>Show cases in file tree in sort order rather than physical order.</cell>
+    <cell><link change_view.csdoc>View Partial Cases Only</link></cell><cell>Show only partial cases in file tree.</cell>
+    <cell><link change_view.csdoc>Case Tree</link></cell><cell>Toggles the case tree on and off.</cell>
+    <cell><link change_view.csdoc>Names in Case Tree</link></cell><cell>Show names in case tree.</cell>
+    <cell><link change_view.csdoc>Show Refusal Options</link></cell><cell>Shows any <link CSPro::refused_value.csdoc>refused</link> values defined in the current field's value set.</cell>
+    <cell><link show_fields.csdoc>Show Values (verify)</link></cell><cell>Show all data values (in verify mode).</cell>
+    <cell> <link view_questionnaire_from_csentry.csdoc>Questionnaire</link></cell><cell>Displays the case as a questionnaire within an embedded window.</cell>
+    <cell><link view_operator_statistics.csdoc>Operator Statistics</link></cell><cell>Show operator statistics data file.</cell>
+    <cell 2>&nbsp;</cell>
+    <cell 2><subheader>Options</subheader></cell>
+    <cell><link edit_interactively.csdoc>Interactive Edit Options</link></cell><cell>Change search options for interactive edit.</cell>
+    <cell><link change_capi_language.csdoc>Change Language</link></cell><cell>Change current language of the CAPI question text.</cell>
+    <cell><link view_hide_or_move_response_box.csdoc>Show Responses (This Field)</link></cell><cell>Show or hide response box for this field.</cell>
+    <cell><link view_hide_or_move_response_box.csdoc>Show Responses (All Fields)</link></cell><cell>Show or hide response box for this and all other fields.</cell>
+    <cell 2>&nbsp;</cell>
+    <cell 2><subheader>Help</subheader></cell>
+    <cell><link get_help.csdoc>Help Topics</link></cell><cell>Get help on current application.</cell>
+    <cell><link get_help.csdoc>About Data Entry</link></cell><cell>Get information about the software.</cell>
 </table>
