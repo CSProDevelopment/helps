@@ -1,0 +1,40 @@
+﻿<title>View Form Questionnaire</title>
+
+Within the data entry application, you can view a questionnaire/pseudo paper version of the form fields by either:
+
+<list>
+    <li>clicking on the questionnaire view icon <image questionnaire_view.png /> from the form toolbar, or </li>
+    <li>selecting <b>Questionnaire</b> from the <b>View</b> menu</li>
+</list>
+
+To return to the data entry application, you can either:
+
+<list>
+    <li>click on the form icon <image formview.jpg />, logic icon <image logic.jpg />, or CAPI text icon <image question.jpg /> from the toolbar</li>
+    <li>press <b>Ctrl+M, Ctrl+L,</b> or <b>Ctrl+Q</b> respectively</li>
+    <li>choose any of the above options from the <b>View</b> menu</li>
+</list>
+
+The Questionnaire View for the form displays a non-editable, scrollable view of all fields, presented in their order of entry (note this may not align with the order in which they appear on the form, if fields were moved around after being dropped onto the form). Similar to the <link view_questionnaire_from_dcf.csdoc>questionnaire view for the dictionary</link>, the view will present collapsible blocks; however, here the blocks correspond to the forms defined within the application, rather than the records defined within the dictionary.
+
+<center><image questionnaire_view_from_fmf.png /></center>
+
+The questionnaire view for the form is comprised of the following parts:
+
+<b>Side menu view</b>: Clicking on the questionnaire view menu <image questionnaire_view_menu.png /> will display a list of all form fields along the left side of the questionnaire. Clicking on any field will jump to and highlight that field on the questionnaire, scrolling the questionnaire view if needed. If the field list is long, a scrollbar for the side menu will also appear. Click on <image questionnaire_view_menu.png /> again to dismiss the menu.
+
+<b>Form view</b>: Each form will be presented within a white floating box. On the left side of the box's title bar a minus sign will appear. Toggling on this will collapse and re-expand the view for that form, changing the image from a - to a +. The title bar also displays the form's label, followed by a list of all form fields beneath the title bar.
+
+If the form repeats, this will be indicated by a <image questionnaire_view_repeating_record.png /> appearing between the title bar and the form's field list. Clicking on <image questionnaire_view_repeating_record.png /> will toggle the roster orientation from horizontal to vertical and back again. Depending on how many fields are on the form, horizontal and/or vertical scroll bars will appear.
+
+<b>Field view</b>: Each field will display its unique dictionary name, followed by a colon (':') and the dictionary label. Unique to the questionnaire form view is the presence of the CAPI question text. The input display area will vary depending on how the field was defined in the dictionary:
+
+<list>
+<li>If the field is numeric with discrete values (i.e., 1=Male, 2=Female), then the responses will use radio buttons.</li>
+<li>If the field is numeric continuous (i.e., only a range is defined, such as 0-120 for age), then a grey shaded box with tic marks indicating the number of characters the field allows will be shown.</li>
+<li>If the field is numeric and has a combination of discrete and continous values (i.e., Age=0-120, Don't know=999), then the display will be a combination of radio buttons for each value defined in the dictionary, with a grey box signalling entry for any continuous values.</li>
+<li>If the field is alpha, a grey box with tic marks will be shown. Note that depending on the screen size and/or length of the alpha field, this may cause a horizontal scroll bar to appear.</li></list>
+
+<b>Scroll Bars:</b> If a field appears within a singly-occurring record, then the scroll bar will appear immediately below the field (or below the roster if the field repeats within the singly-occurring record). However if the alpha item appears within a repeating record, then no scroll bar will appear, as the scroll bar will be on the roster.
+
+<seealso view_questionnaire_from_dcf.csdoc view_questionnaire_from_bch.csdoc />

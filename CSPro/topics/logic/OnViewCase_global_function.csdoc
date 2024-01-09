@@ -1,0 +1,37 @@
+﻿<title>OnViewCase Global Function</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+function OnViewCase()
+// your logic, if any
+end;
+
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <logiccolor>OnViewCase</logiccolor> function allows you to trap calls made to the <b>View > Questionnaire</b> menu option during data entry. If no logic is provided within the function, it acts to disable the menu option&mdash;however, the <b>Questionnaire</b> menu selection will still appear to be active. The function must be placed within the  <link cspro_program_structure.csdoc>Global</link> procedure as shown in the first example below.
+
+<subheader>Example 1</subheader>
+
+<logic>
+PROC GLOBAL
+
+function OnViewCase()
+    // disable the View > Questionnaire menu option during data entry
+end;
+</logic>
+
+<subheader>Example 2</subheader>
+
+If you think enumerators might get confused by the <b>View > Questionnaire</b> option appearing active but nothing happens when selected, you could choose to issue a message alerting them to the disabling.
+
+<logic>
+PROC GLOBAL
+
+function OnViewCase()
+  errmsg ("Case data view has been disabled");
+end;
+</logic>
+
