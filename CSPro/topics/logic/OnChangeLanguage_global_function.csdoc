@@ -1,64 +1,26 @@
 ﻿<title>OnChangeLanguage Global Function</title>
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<logicsyntax>
+function OnChangeLanguage();
+</logicsyntax>
 
-<body>
+<subheader>Description</subheader>
 
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-     font-size: 10pt; font-weight: bold;" face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><b><font
-     style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-     color="#0000FF" face="Courier New" size="2">function</font></b> <font
-     style="font-family: 'Courier New'; font-size: 10pt;" face="Courier New"
-     size="2">OnChangeLanguage();</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-     font-size: 10pt; font-weight: bold;" face="Arial" size="2">Description:</font></b></p>
-<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-     style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- <span style="font-weight: bold;">OnChangeLanguage</span> global function
- allows you to execute certain code after the user has changed the CAPI
- language via the CSEntry Options menu. This function must be placed in
- the</font> <a href="cspro_program_structure.html"><font style="font-family: Arial;
-                                                             font-size: 10pt;"
-                                                             face="Arial"
-                                                             size="2">Global</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Procedure.</font></p>
-<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font style="font-family: Arial;
-     font-size: 10pt; font-weight: bold;" face="Arial" size="2">Returned
- value:</font></b></p>
-<p style="margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font><span
-     style="font-family: Arial; font-size: 10pt;">The return value of the
- function is ignored.</span></font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; font-family: Arial;
-     font-size: 10pt; font-weight: bold;"><b><font style="font-weight: bold;">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<div style="word-wrap: break-word; margin: 0px; padding: 0px; border: 0px;
-     background-color: #ffffff; font-family: 'Courier New'; font-size: 10pt;">
-    <span><font color="#0000FF">function</font> OnChangeLanguage()<br />
-    &#160;&#160;&#160;&#160;<font color="#0000FF">setvaluesets</font>(<font
-     color="#0000FF">concat</font>(<font color="#FF00FF">&quot;_&quot;</font>,<font
-     color="#0000FF">getlanguage</font>()));<br />
-    <font color="#0000FF">end</font>;</span>
-</div>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="margin-left: 18.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-     text-indent: -18.00pt; font-size: 10pt; font-family: Arial, sans-serif;"><b><font
-     style="font-weight: bold;">See also:</font></b> <a href="cspro_program_structure.html"
-                                                         style="font-size: 10pt;
-                                                         font-family: Arial, sans-serif;">Global
- Procedure</a>, <a href="user_defined_functions.html" style="font-size: 10pt;
-                     font-family: Arial, sans-serif;">User Defined Functions</a></p>
-</body>
-</html>
+The OnChangeLanguage global function allows you to execute certain code after the user has changed the CAPI language via the CSEntry Options menu. This function must be placed in the <link cspro_program_structure.csdoc>Global</link> procedure.
 
 
-<html><!---♻---></html>
+<subheader>Returned value</subheader>
+
+The return value of the function is ignored.
+
+<subheader>Example</subheader>
+
+<logic>
+function OnChangeLanguage()
+    setvaluesets(concat("_",getlanguage()));
+end;
+</logic>
+
+<seealso cspro_program_structure.csdoc user_defined_functions.csdoc />

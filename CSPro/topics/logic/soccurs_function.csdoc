@@ -1,123 +1,70 @@
 ﻿<title>SOccurs Function</title>
 
+<subheader>Format</subheader>
+<logicsyntax>
+i = soccurs(<arg>record_name</arg>);
+</logicsyntax>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Description</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+Depending on where <logiccolor>soccurs</logiccolor> is invoked, it either returns the current occurrence of the repeating record, or the total number of occurrences for the repeating record. If a non-repeating record is given as an argument, the return code will always be zero (<logiccolor>0</logiccolor>). When counting records, the behavior for <logiccolor>soccurs</logiccolor> is identical to <link noccurs_function.csdoc>noccurs</link>.
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">i =</font> <b><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-weight: bold;"
-													 color="#0000FF" face="Courier New"
-													 size="2">soccurs</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(record-name);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Description:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">The</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">soccurs</font></b> <font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">function
- returns the total number of occurrences of a record.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">During
- data entry, you may determine the current occurrence of a record. The
- occurrence value is updated after the first entry into the first field.
- If the</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-						 face="Arial" size="2">soccurs</font></b> <font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">function
- is executed prior to the roster or form it specifies then it returns 0.
- If it is executed from a field within the roster or form, it returns the
- current occurrence number after the first field is on the path. For example,
- its value in the PREPROC of the first occurrence of the first item entered
- in a form or roster is zero (0), i.e., before entry. After entry its value
- will always be one (1). This is true for each occurrence keyed, the</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">soccurs</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">function
- is not incremented until the cursor is in or has passed through the first
- field on the record. If it is executed after the form or roster, it returns
- the total number of occurrences in the form or roster. If the form does
- not repeat,</font> <a href="noccurs_function.html"><font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">noccurs</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">will
- return 1 (a roster must always repeat). When used in Data entry</font>
- <a href="noccurs_function.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">noccurs</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">and</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">soccurs</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">functions
- are the same.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">During batch editing,</font> <b><font style="font-family: Arial;
-													 font-size: 10pt; font-weight: bold;"
-													 color="#000000" face="Arial"
-													 size="2">soccurs</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">always returns the total number of record occurrences
- found.</font></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Return value:</font></b></p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">The function returns the number of occurrences as an integer
- value.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; margin-left: 12px;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">NUM_HH_MEMBERS =</font> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#0000FF" face="Courier New" size="2">soccurs</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">(PERSON_REC);</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also:</font></b> <a href="totocc_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Totocc
- Function</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="curocc_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Curocc
- Function</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="noccurs_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Noccurs
- Function</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="count_function.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Count
- Function</font></a></p>
-</body>
-</html>
+<b>During data entry</b>, if <logiccolor>soccurs</logiccolor> is executed:
+
+<list>
+<li>prior to the input of any field from the record, <logiccolor>soccurs</logiccolor> returns zero (<logiccolor>0</logiccolor>).</li>
+<li><i>from within the first form or roster created from the record</i>, <logiccolor>soccurs</logiccolor> returns the current occurrence, once the first field is keyed.</li>
+<li><i>from within a second or later form or roster created from the record</i>, <logiccolor>soccurs</logiccolor> returns the maximum number of records so far keyed.</li>
+</list>
+
+For example, assume PERSON_RECORD contains 10 items&mdash;relationship, sex, age, and 7 other items. If a single repeating form or roster contains all 10 items, then soccurs always returns the current record occurrence, once the first field is keyed. However if this record had been split up into two or more forms/rosters, then soccurs will return the current occurrence from any field on the first form/roster (once entry of the first field is complete), but the total number of occurrences from any field within the second+ form/roster.
+
+<b>During batch editing</b>, soccurs always returns the total number of record occurrences found.
+
+<subheader>Return value</subheader>
+
+The function returns the number of occurrences as an integer value.
+
+<subheader>Example 1</subheader>
+
+Within a <b>data entry application</b>, the following values will hold:
+
+<logic>
+PROC GLOBAL
+
+PROC HH_LEVEL
+preproc
+    // will always return 0, as no field from the record has yet been entered
+    NUM_HH_MEMBERS = soccurs(PERSON_RECORD);
+
+PROC PERSON_ROSTER
+preproc
+    // will always return 0, as no field from the record has yet been entered
+    NUM_HH_MEMBERS = soccurs(PERSON_RECORD);
+
+postproc
+    // will always return the total number of persons keyed, as entry is now complete
+    NUM_HH_MEMBERS = soccurs(PERSON_RECORD);
+</logic>
 
 
-<html><!---♻---></html>
+<subheader>Example 2</subheader>
+
+Within a <b>batch edit application</b>, the following values will hold:
+
+<logic>
+PROC GLOBAL
+
+PROC HH_LEVEL
+preproc
+    // will always return 0, as the case has not yet loaded
+    NUM_HH_MEMBERS = soccurs(PERSON_RECORD);
+
+PROC FIRST_FORM
+preproc
+    // will always return the total number of persons found, as the case is now loaded
+    NUM_HH_MEMBERS = soccurs(PERSON_RECORD);
+</logic>
+
+
+<seealso Totocc_Function.csdoc Curocc_Function.csdoc Noccurs_Function.csdoc Count_Function.csdoc />

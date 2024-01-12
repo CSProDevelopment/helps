@@ -1,11 +1,13 @@
 ﻿<title>Data Entry Path</title>
 
-CSPro supports a powerful feature called data entry path. The path can either be "turned on" or "turned off," depending on the data entry <link operator_vs_system_controlled.csdoc>application type</link> selected on the <link change_data_entry_options.csdoc>Data Entry Options</link> dialog box. Operator controlled applications always have path turned off, while system controlled applications always have path turned on.
+<b>CSPro</b> supports a powerful feature called data entry path. The path can be either turned on or turned off, depending on the data entry <link operator_vs_system_controlled.csdoc>application type</link> selected on the <link change_data_entry_options.csdoc>Data Entry Options</link> dialog box. Operator-controlled applications always have the path turned off (meaning all fields are considered <i>off path</i>), whereas system-controlled applications always have the path turned on (meaning all fields are considered <i>on path</i>).
 
-<subheader>Path On</subheader>
+<subheader>Path On (System Controlled)</subheader>
 
-CSEntry will keep track of the order in which the data entry operator entered all <link data_entry_elements.csdoc>fields</link>. If the operator goes backward, the cursor will go to the fields in the reverse order in which they were entered. For example, if the logic causes the cursor to skip over a set of fields, the cursor will also skip over these fields when the operator goes backwards. Fields that were skipped can never be entered, unless the operator goes backwards and chooses different values to avoid the skip. This helps ensure the integrity of the data file.
+CSEntry will keep track of the order in which the data entry operator entered all <link data_entry_elements.csdoc>fields</link>. If the operator moves backward under a system-controlled application, the cursor will revisit the fields in the reverse order in which they were entered.
 
-<subheader>Path Off</subheader>
+For example, if logic is added that causes CSEntry to skip over a set of fields, then CSEntry will skip over these fields when the operator goes backwards too. Fields that were skipped can never be entered, unless the operator goes backwards and enters different values to avoid the logic skip. This helps to ensure the integrity of the data file. Within a system-controlled application, keyed fields are considered <i>on path</i>, and unkeyed fields are considered <i>off path</i>.
 
-CSEntry will not keep track of the order in which the data entry operator entered the fields. If the operator goes backward, the cursor will go to the preceding field even if it had originally been skipped.
+<subheader>Path Off (Operator Controlled)</subheader>
+
+CSEntry will <b>not</b> keep track of the order in which the data entry operator entered the fields in an operator-controlled application. If the operator moves backward, then the cursor will go to the preceding field, even if it had originally been skipped over. Within an operator-controlled application, ALL fields are considered "off-path".

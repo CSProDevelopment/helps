@@ -3,12 +3,12 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = view(<arg>dict_name</arg> ‖ <arg>filename</arg> ‖ <arg>object_name</arg> ‖ <arg>website_address</arg>『, <arg>optional_named_arguments</arg>』);
+b = view(<arg>dict_name</arg> ‖ <arg>file_name</arg> ‖ <arg>object_name</arg> ‖ <arg>website_address</arg>『, <arg>optional_named_arguments</arg>』);
 </logicsyntax>
 
 <subheader>Description</subheader>
 
-The <logiccolor>view</logiccolor> function is a multipurpose tool that can be used to display a variety of media. If a <arg>dict_name</arg> is provided, it must reference the unique name of a dictionary associated with the application; all other arguments (<arg>filename</arg>, <arg>object_name</arg>, and <arg>website_address</arg>) must be a string expression, with any necessary pathing information provided. If an embedded window is launched, data entry can not resume until the window is closed. However if a separate application is launched, data entry can resume with the other application still active. Details for each argument type is as follows:
+The <logiccolor>view</logiccolor> function is a multipurpose tool that can be used to display a variety of media. If a <arg>dict_name</arg> is provided, it must reference the unique name of a dictionary associated with the application; all other arguments (<arg>file_name</arg>, <arg>object_name</arg>, and <arg>website_address</arg>) must be a string expression, with any necessary pathing information provided. If an embedded window is launched, data entry can not resume until the window is closed. However if a separate application is launched, data entry can resume with the other application still active. Details for each argument type is as follows:
 
 <font red>smg: greg, can we put the desc for dict_name in an hgi file so i can pull it in to the case_view_function? because the behavior will be the same i think/hope?</font>
 
@@ -17,7 +17,7 @@ The <logiccolor>view</logiccolor> function is a multipurpose tool that can be us
 ~!~
 <list>
 <li><b>Note regarding logic placement&mdash;</b><logiccolor>view</logiccolor>(<arg>dict_name</arg>) can be invoked from any <logiccolor>PROC</logiccolor> except an application's <link preproc_statement.csdoc>preproc</link> or <link postproc_statement.csdoc>postproc</link>, as no case-level data is loaded at that time. Doing so will generate a compile-time error.</li><li><b> Note regarding external dictionaries&mdash;</b>if you are referencing an external dictionary being used within the application as a <link lookup_files.csdoc>lookup</link> file, then the last case loaded will be displayed. If no case has yet been loaded, then the questionnaire will display without any case data. You can change that by first making a <link loadcase_function.csdoc>loadcase</link> call on the external dictionary to put a specific case in memory.</li></list></li>
-<li><b>filename</b>&mdash;displays the contents of a file, launching the viewer associated with the file type. For example, if an Excel or Word document is referenced, Excel or Word will launch outside of CSPro. <arg>filename</arg> must appear within quotes.</li>
+<li><b>file_name</b>&mdash;displays the contents of a file, launching the viewer associated with the file type. For example, if an Excel or Word document is referenced, Excel or Word will launch outside of CSPro. <arg>file_name</arg> must appear within quotes.</li>
 <li><b>object_name</b>&mdash;displays the contents of the file such as a <link Document.csdoc>Document</link>, <link Freq.csdoc>Freq</link>, <link Image.csdoc>Image</link>, or <link templated_reports.csdoc>Report</link>. The viewer associated with the file type will be launched. <arg>object_name</arg> must appear within quotes.</li>
 <li><b>website_address</b>&mdash;when a website URL or a local file with an <i>.html</i>, <i>.htm</i>, or <i>.cshtml</i> extension is provided, it is shown within an embedded window. <arg>website_address</arg> must appear within quotes.</li>
 </list>

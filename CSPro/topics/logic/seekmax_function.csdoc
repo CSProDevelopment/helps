@@ -1,47 +1,29 @@
 ﻿<title>SeekMax Function</title>
 
+<subheader>Format</subheader>
+<logicsyntax>
+i = seekmax(<arg>multiple_item</arg> condition『, <arg>numeric_expr</arg>』);
+</logicsyntax>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-</head>
+<subheader>Description</subheader>
 
-<body>
+The <logiccolor>seekmax</logiccolor> function returns the occurrence number of the item with the greatest value that satisfies a certain condition in a multiply-occurring item. If <arg>numeric_expr</arg> is included, the function starts searching the multiply-occurring record for a true condition starting at occurrence <arg>numeric_expr</arg>.
 
-<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px;"><span style="font-weight: bold;">Format:</span><br />
-<span style="font-family: 'Courier New', monospace;">i =</span> <span style="color: #0000ff;
-	 font-weight: bold; font-family: 'Courier New', monospace;">seekmax</span><span
-	 style="font-family: 'Courier New', monospace;">(multiple-item condition[,</span><span
-	 style="font-style: italic; font-family: 'Courier New', monospace;">numeric-expr</span><span
-	 style="font-family: 'Courier New', monospace;">]);</span></p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px;"><span style="font-weight: bold;">Description:</span><br />
-The <span style="font-weight: bold;">seekmax</span> function returns the
- occurrence number of the item with the greatest value that satisfies a
- certain condition in a multiply occurring item. If <span style="font-style: italic;">numeric-expr</span>
- is included, the function starts searching the multiply occurring record
- for a true condition starting at occurrence <span style="font-style: italic;">numeric-expr</span>.</p>
-<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 12px;
-	 text-indent: -12px;"><span style="font-weight: bold;">Return value:</span><br />
-The function returns the occurrence number of an item that meets the condition
- or 0 if no such item is found.</p>
-</body>
-</html>
+<subheader>Return value</subheader>
 
-
-<html><!---♻---></html>
+The function returns the occurrence number of an item that meets the condition, or zero (<logiccolor>0</logiccolor>) if no such item is found.
 
 <subheader>Example</subheader>
 
 <logic>
-// seekmax
-numeric eldest_index = seekmax(AGE);
-numeric eldest_aged_12to64_index = seekmax(AGE in 12:64);
+numeric oldest_person_index = seekmax(AGE);    // oldest person
 
-// seekmin
-numeric youngest_aged_65plus_index = seekmin(AGE in 65:95);
+numeric oldest_student_under65_index =
+        seekmax(AGE in 10:64 and ATTENDING_SCHOOL=true);
+
+// CEB=children ever born
+
+numeric oldest_mother_index = seekmax(SEX=2 and CEB > 0);
 </logic>
 
-<seealso count_function.csdoc has_operator.csdoc seek_function.csdoc seekmin_function.csdoc max_function.csdoc />
+<seealso Count_Function.csdoc Has_Operator.csdoc Seek_Function.csdoc SeekMin_Function.csdoc Max_Function.csdoc />

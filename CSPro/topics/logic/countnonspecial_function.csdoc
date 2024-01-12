@@ -28,20 +28,20 @@ The <logiccolor>countvalid</logiccolor> function is a synonym for this function.
 <logic>
 PROC GLOBAL
 
-	numeric tempVal = notappl;
-	Array tempArray(2, 3) = 1, 2, 3, notappl, missing, default;
+    numeric tempVal = notappl;
+    Array tempArray(2, 3) = 1, 2, 3, notappl, missing, default;
 
 PROC EXAMPLE
 
-	countnonspecial(5, tempVal, default, 28 + 31, 3 / 0); // returns 2
+    countnonspecial(5, tempVal, default, 28 + 31, 3 / 0); // returns 2
 
-	tempVal = 0.123456789;
-	countnonspecial(5, tempVal, default, 28 + 31, 3 / 0); // returns 3
+    tempVal = 0.123456789;
+    countnonspecial(5, tempVal, default, 28 + 31, 3 / 0); // returns 3
 
-	countnonspecial(5, tempVal, default, 28 + 31, 3 / 0, tempArray); // returns 6
+    countnonspecial(5, tempVal, default, 28 + 31, 3 / 0, tempArray); // returns 6
 
-	tempArray(2, 1) = 0;
-	countnonspecial(5, tempVal, default, 28 + 31, 3 / 0, tempArray); // returns 7
+    tempArray(2, 1) = 0;
+    countnonspecial(5, tempVal, default, 28 + 31, 3 / 0, tempArray); // returns 7
 </logic>
 
 
@@ -52,8 +52,8 @@ PROC EXAMPLE
 PROC SEX
 
 if SEX <> 2 and countnonspecial(FERTILITY(curocc())) > 3 then
-	errmsg("Sex (%d) is not female but 4+ fertility entries defined so sex changed to female", SEX);
-	impute(SEX, 2);
+    errmsg("Sex (%d) is not female but 4+ fertility entries defined so sex changed to female", SEX);
+    impute(SEX, 2);
 endif;
 </logic>
 

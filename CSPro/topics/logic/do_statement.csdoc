@@ -1,366 +1,59 @@
 ﻿<title>Do Statement</title>
 
+<subheader>Format</subheader>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<logicsyntax>
+do 『『varying』 <arg>var</arg> = expression』 while/until condition 『by expression』
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+  statements;
 
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Format:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">do</font></b> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#FF00FF" face="Courier New" size="2">[[</font><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">varying</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">]</font> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#000000"
-												 face="Courier New" size="2">var
- = expression</font><font style="font-family: 'Courier New'; font-size: 10pt;"
-							 color="#FF00FF" face="Courier New" size="2">]</font>
- <b><font style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-			 color="#0000FF" face="Courier New" size="2">while</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">/</font><b><font style="font-family: 'Courier New';
-													 font-size: 10pt; font-weight: bold;"
-													 color="#0000FF" face="Courier New"
-													 size="2">until</font></b>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">condition</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#FF00FF"
-															 face="Courier New"
-															 size="2">[</font><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">by</font></b> <font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">expression</font><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#FF00FF"
-	 face="Courier New" size="2">]</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;statements;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: 'Courier New'; font-size: 10pt; font-weight: bold;"
-	 color="#0000FF" face="Courier New" size="2">enddo</font></b><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#FF00FF" face="Arial"
-	 size="2">&#160;[ ]</font> <font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">indicates
- that this part is optional.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Description:</font></b></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">The</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">do</font></b> <font style="font-family: Arial;
-												 font-size: 10pt;" face="Arial"
-												 size="2">statement</font>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">executes one or more statements repeatedly, in a loop,
- either while a logical condition is true, or until a logical condition
- is no longer true. The</font> <b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">do</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">and</font> <b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">enddo</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">keywords are required. You must use a</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">while</font></b> <font style="font-family: Arial;
-													 font-size: 10pt;"
-													 color="#000000" face="Arial"
-													 size="2">or</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 color="#000000" face="Arial" size="2">until</font></b> <font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">phrase to terminate the loop. The condition is evaluated
- on each repetition of the loop before any of the statements within the
- loop are executed.</font></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">&#160;</p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
-								 color="#000000" face="Arial" size="2">When
- the</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-					 color="#000000" face="Arial" size="2">while</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">option is used, it means the statements within the loop
- (between</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-							 color="#000000" face="Arial" size="2">do</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">and</font> <b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">enddo</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">) are executed</font> <b><font style="font-family: Arial;
-											 font-size: 10pt; font-weight: bold;"
-											 color="#000000" face="Arial"
-											 size="2">while</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">the condition remains true. That is, if the condition
- is</font> <font style="font-family: Arial; font-size: 10pt;" color="#000000"
-				 face="Arial" size="2">true,</font> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 color="#000000"
-															 face="Arial"
-															 size="2">the
- statements are executed. If the condition becomes false, execution moves
- to the first statement following the</font> <b><font style="font-family: Arial;
-														 font-size: 10pt;
-														 font-weight: bold;"
-														 color="#000000"
-														 face="Arial" size="2">enddo</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">keyword.</font></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">&#160;</p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
-								 color="#000000" face="Arial" size="2">When
- the</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-					 color="#000000" face="Arial" size="2">until</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">option is used, the statements within the</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">do</font></b> <font style="font-family: Arial;
-												 font-size: 10pt;" color="#000000"
-												 face="Arial" size="2">are
- executed</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-							 color="#000000" face="Arial" size="2">until</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">the condition becomes true. That is, if the condition
- is</font> <font style="font-family: Arial; font-size: 10pt;" color="#000000"
-				 face="Arial" size="2">false</font> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 color="#000000"
-															 face="Arial"
-															 size="2">the
- statements are executed. If the condition becomes</font> <b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">true</font></b><font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">,
- execution moves to the first statement following the</font> <b><font style="font-family: Arial;
-	 font-size: 10pt; font-weight: bold;" color="#000000" face="Arial"
-	 size="2">enddo</font></b> <font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">keyword.</font></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">&#160;</p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;"><font style="font-family: Arial; font-size: 10pt;"
-								 color="#000000" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 color="#000000" face="Arial" size="2">by</font></b> <font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">phase adds the indicated number or numeric expression (expression)
- to the variable after each repetition of the loop. If the</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">by</font></b> <font style="font-family: Arial;
-												 font-size: 10pt;" color="#000000"
-												 face="Arial" size="2">phrase
- is present, at the end of each repetition of the loop, the expression
- is evaluated. The result of the expression is added to the numeric variable
- in the varying clause. If the</font> <b><font style="font-family: Arial;
-												 font-size: 10pt; font-weight: bold;"
-												 color="#000000" face="Arial"
-												 size="2">by</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">phrase is omitted, 1 is added to the variable at the
- end of each repetition of the loop. For example, if you wanted to process
- only odd-numbered records, you could increment your loop</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">by</font></b> <font style="font-family: 'Courier New';
-												 font-size: 10pt;" color="#FF0000"
-												 face="Courier New" size="2">2</font><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">.</font></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">&#160;</p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">In the <b><font style="font-weight: bold;">varying</font></b>
- clause, the variable must be a numeric variable. The variable assignment
- is performed once, before the first repetition of the loop. The <b><font
-	 style="font-weight: bold;">varying</font></b> keyword has no effect
- on the command, and so may be omitted. It is possible to declare a <a
-	 href="numeric_statement.html">numeric</a> variable after the <span
-	 style="font-weight: bold;">varying</span><span> keyword, in which
- case the numeric variable's scope is the duration of the do loop.</span></p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">&#160;</p>
-<p style="margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-align: left;">You can exit the loop early by using <font class="code_colorization">
-	 <font color="blue"><a href="break_statement.html" class="code_colorization_keyword_link">
-	 <span style="color: blue;">break</span></a></font></font> and you can continue execution with the next iteration 
-	 of the loop by using <font class="code_colorization"><font color="blue"><a href="next_statement.html" class="code_colorization_keyword_link">
-	 <span style="color: blue;">next</span></a></font></font>.</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">Example:</font></b></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">HEAD = 0;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">do varying</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">i =</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-		 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">until</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">HEAD &gt;</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#FF0000"
-															 face="Courier New"
-															 size="2">0</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">or</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#000000" face="Courier New"
-													 size="2">i &gt;</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">totocc</font><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">(PERSON)</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#000000"
-															 face="Courier New"
-															 size="2">RELATIONSHIP(i)
- =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-				 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#0000FF"
-															 face="Courier New"
-															 size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;HEAD = i;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;endif</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">enddo</font><font style="font-family: Arial;
-													 font-size: 10pt;"
-													 color="#000000" face="Arial"
-													 size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">This same example could be rewritten using the</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">while</font></b> <font style="font-family: Arial;
-													 font-size: 10pt;"
-													 color="#000000" face="Arial"
-													 size="2">condition
- as follows:</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">HEAD = 0;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">do varying </font><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">i =</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-		 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
-													 font-size: 10pt;"
-													 color="#0000FF" face="Courier New"
-													 size="2">while</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-		 face="Courier New" size="2">HEAD =</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#FF0000"
-														 face="Courier New"
-														 size="2">0</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">and</font> <font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">i &lt;=</font>
- <font style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-		 face="Courier New" size="2">totocc</font><font style="font-family: 'Courier New';
-														 font-size: 10pt;"
-														 color="#000000"
-														 face="Courier New"
-														 size="2">(PERSON)</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;if</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#000000"
-															 face="Courier New"
-															 size="2">RELATIONSHIP(i)
- =</font> <font style="font-family: 'Courier New'; font-size: 10pt;" color="#FF0000"
-				 face="Courier New" size="2">1</font> <font style="font-family: 'Courier New';
-															 font-size: 10pt;"
-															 color="#0000FF"
-															 face="Courier New"
-															 size="2">then</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#000000"
-	 face="Courier New" size="2">&#160;&#160;&#160;&#160;HEAD = i;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">&#160;&#160;endif</font><font style="font-family: 'Courier New';
-	 font-size: 10pt;" color="#000000" face="Courier New" size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: 'Courier New'; font-size: 10pt;" color="#0000FF"
-	 face="Courier New" size="2">enddo</font><font style="font-family: Arial;
-													 font-size: 10pt;"
-													 color="#000000" face="Arial"
-													 size="2">;</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">It is purely a matter of preference as to which method should
- be used.</font></p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;">&#160;</p>
-<p style="margin-top: 0.00pt; margin-bottom: 0.00pt; text-align: left;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">See also:</font></b> <a href="for_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
- Statement</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="while_statement.html"><font
-style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">While Statement</font></a><font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">,</font> <a href="if_statement.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- Statement</font></a></p>
-</body>
-</html>
+enddo;
+</logicsyntax>
 
+<subheader>Description</subheader>
 
-<html><!---♻---></html>
+The <logiccolor>do</logiccolor> statement executes one or more statements repeatedly, in a loop, either while a logical condition is true, or until a logical condition is no longer true. The <logiccolor>do</logiccolor> and <logiccolor>enddo</logiccolor> keywords are required. You must use a while or until phrase to terminate the loop. The condition is evaluated on each repetition of the loop before any of the statements within the loop are executed.
+
+If the <logiccolor>varying</logiccolor> clause is used, the variable must be a numeric variable. The variable assignment is performed once, before the first evaluation of the loop. The <logiccolor>varying</logiccolor> keyword has no effect on the command, and so may be omitted. It is possible to declare a <link numeric_statement.csdoc>numeric</link> variable after the varying keyword, in which case the numeric variable's scope is the duration of the do loop.
+
+When the <logiccolor>while</logiccolor> option is used, it means the statements within the loop (between <logiccolor>do</logiccolor> and <logiccolor>enddo</logiccolor>) are executed while the condition remains true. That is, if the condition is true, the statements are executed. If the condition becomes false, execution moves to the first statement following the enddo keyword.
+
+When the <logiccolor>until</logiccolor> option is used, the statements within the do are executed until the condition becomes true. That is, if the condition is false the statements are executed. If the condition becomes true, execution moves to the first statement following the enddo keyword.
+
+After the <logiccolor>while</logiccolor> or <logiccolor>until</logiccolor> condition is evaluated, CSPro increments the internal loop counter (if <arg>var</arg> is not used) or <arg>var</arg> itself (if it is used) by 1. If you wish to use a different value to increment (or decrement) the loop, use the <logiccolor>by</logiccolor> option. The number or numeric expression that follows it can be positive (or negative), and will be added (or subtracted) after each repetition of the loop. For example, if you only wanted to process odd-numbered records, you could increment <arg>var</arg> by 2. If you wanted to start with 100 and count backwards, you can decrement by -1.
+
+You can also exit a loop early (i.e., before all logic threads have been evaluated) by using <logiccolor>break</logiccolor>; likewise, you can begin processing the next iteration of the loop before all threads have been evaluated by using <logiccolor>next</logiccolor>.
+
+<subheader>Example</subheader>
+
+<logic>
+PROC MARITAL_STATUS
+
+HEAD = 0;
+
+do varying i = 1 until HEAD > 0 or i > totocc(PERSON)
+
+    if RELATIONSHIP(i) = 1 then
+        HEAD = i;
+    endif;
+enddo;
+</logic>
+
+This same example could be rewritten using the <logiccolor>while</logiccolor> condition as follows:
+
+<logic>
+PROC MARITAL_STATUS
+
+HEAD = 0;
+
+do varying i = 1 while HEAD = 0 and i <= totocc(PERSON)
+
+    if RELATIONSHIP(i) = 1 then
+        HEAD = i;
+    endif;
+enddo;
+</logic>
+
+It is purely a matter of preference as to which method should be used.
+
+<seealso for_statement.csdoc while_statement.csdoc if_statement.csdoc />
