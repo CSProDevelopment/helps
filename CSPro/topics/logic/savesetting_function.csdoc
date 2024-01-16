@@ -16,7 +16,7 @@ The file from which settings are retrieved can be modified by altering the <pffc
 
 All settings can be cleared using the following command: <logiccolor>savesetting(clear);</logiccolor>
 
-Settings can also be set using the <action>Settings.putValue</action> action.
+Settings can also be set using the <action>Settings.putValue</action> action. The <logiccolor>persistent</logiccolor> variable modifier can also be used to serialize settings across application runs.
 
 
 <subheader>Return Value</subheader>
@@ -31,18 +31,18 @@ PROC INTERVIEWER_NAME
 
 preproc
 
-	string InterviewerNameKey = "InterviewerName";
+    string InterviewerNameKey = "InterviewerName";
 
-	INTERVIEWER_NAME = loadsetting(InterviewerNameKey);
+    INTERVIEWER_NAME = loadsetting(InterviewerNameKey);
 
 postproc
 
-	if INTERVIEWER_NAME = "" then
-		errmsg("You must enter the interviewer's name.");
-		reenter;
-	endif;
+    if strip(INTERVIEWER_NAME) = "" then
+        errmsg("You must enter the interviewer's name.");
+        reenter;
+    endif;
 
-	savesetting(InterviewerNameKey, INTERVIEWER_NAME);
+    savesetting(InterviewerNameKey, INTERVIEWER_NAME);
 </logic>
 
 

@@ -13,10 +13,11 @@ CSPro can create <link html_in_cspro.csdoc>HTML</link> reports using case data a
 Each templated report is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
 
 <table 2 header nowrap>
-	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor Report>save</logiccolor></cell><cell>Saves the report to a file.</cell>
-	<cell><logiccolor Report>view</logiccolor></cell><cell>Displays the report in an embedded web browser.</cell>
-	<cell><logiccolor Report>write</logiccolor></cell><cell>Writes text to the report.</cell>
+    <cell>Function</cell><cell>Description</cell>
+    <cell><logiccolor Report>save</logiccolor></cell><cell>Saves the report to a file.</cell>
+    <cell><logiccolor Report>view</logiccolor></cell><cell>Displays the report in an embedded web browser.</cell>
+    <cell><logiccolor Report>write</logiccolor></cell><cell>Writes text to the report.</cell>
+    <include "../Symbol/all_symbols_with_json_out.hgi" />
 </table>
 
 In addition to these object functions, templated reports can be used as arguments to the <logiccolor>filename</logiccolor> and <logiccolor>view</logiccolor> functions.
@@ -70,18 +71,18 @@ A templated report can be previewed in both data entry and batch by pressing <b>
 
 <report HTML>
 <?
-	numeric partial_count = 0;
-	numeric complete_count = 0;
+    numeric partial_count = 0;
+    numeric complete_count = 0;
 
-	forcase HOUSEHOLD_DICT do
-		if ispartial(HOUSEHOLD_DICT) then
-			inc(partial_count);
-		else
-			inc(complete_count);
-		endif;
-	endfor;
+    forcase HOUSEHOLD_DICT do
+        if ispartial(HOUSEHOLD_DICT) then
+            inc(partial_count);
+        else
+            inc(complete_count);
+        endif;
+    endfor;
 ?>
-	<p><b>~~getsymbol(HOUSEHOLD_DICT)~~</b> has ~~partial_count~~ partial case(s) and ~~complete_count~~ complete case(s).</p>
+    <p><b>~~getsymbol(HOUSEHOLD_DICT)~~</b> has ~~partial_count~~ partial case(s) and ~~complete_count~~ complete case(s).</p>
 </report>
 
 

@@ -1,0 +1,24 @@
+﻿<title>JSON Representation of Symbols Overview</title>
+
+
+<subheader>Logic Functionality</subheader>
+
+CSPro symbols can be represented in <link JSON_primer.csdoc>JSON</link>. Every symbol has metadata, and many symbol types have routines for representing their values in JSON. The following table describes ways to access a symbol's JSON representation or to modify the symbol based on a JSON representation of the value.
+
+<table 2 header nowrap>
+    <cell>Function / Action</cell><cell>Description</cell>
+    <cell><logiccolor>Symbol.getJson</logiccolor></cell><cell>Returns a symbol's metadata and value.</cell>
+    <cell><logiccolor>Symbol.getValueJson</logiccolor></cell><cell>Returns a symbol's value.</cell>
+    <cell><logiccolor>Symbol.updateValueFromJson</logiccolor></cell><cell>Modifies a symbol based on a JSON representation of the value.</cell>
+    <cell><action>Logic.getSymbol</action></cell><cell>Returns a symbol's metadata and value.</cell>
+    <cell><action>Logic.getSymbolMetadata</action></cell><cell>Returns a symbol's metadata.</cell>
+    <cell><action>Logic.getSymbolValue</action></cell><cell>Returns a symbol's value.</cell>
+    <cell><action>Logic.updateSymbolValue</action></cell><cell>Modifies a symbol based on a JSON representation of the value.</cell>
+</table>
+
+
+<subheader>JSON Representation of Symbols</subheader>
+
+The following table describes the value-related serialization routines available for CSPro objects and contains links to the description of the JSON representation for each object.
+
+<include "Symbol/symbol_json_summary_table.hgi" />

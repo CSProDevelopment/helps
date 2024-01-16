@@ -1,0 +1,40 @@
+﻿<title>Symbol.updateValueFromJson Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = symbol_name.updateValueFromJson(<arg>json</arg>);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Symbol.updateValueFromJson</logiccolor> function updates the value of a symbol based on the symbol's <link JSON_primer.csdoc>JSON</link> representation, passed to the function as the string expression <arg>json</arg>.
+
+You can also use the <logiccolor>Logic.updateSymbolValue</logiccolor> action to update a symbol's value.
+
+The following table describes the value-related serialization routines available for CSPro objects and contains links to the description of the <link symbols_json_representation.csdoc>JSON representation</link> for each object.
+
+<include symbol_json_summary_table.hgi />
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if the symbol's value was successfully updated from its JSON representation and 0 (<logiccolor>false</logiccolor>) otherwise.
+
+
+<subheader>Example</subheader>
+
+<logic>
+List string usmca_countries
+usmca_countries.updateValueFromJson("[ \"Canada\", \"Mexico\", \"United States\" ]");
+
+// 3 countries are part of USMCA, including Canada and United States.
+errmsg("%d countries are part of USMCA, including %s and %s.",
+       usmca_countries.length(),
+       usmca_countries(1), usmca_countries(usmca_countries.length()));
+</logic>
+
+
+<seealso Symbol_getJson_function.csdoc Symbol_getValueJson_function.csdoc CS_Logic_updateSymbolValue.csdoc />

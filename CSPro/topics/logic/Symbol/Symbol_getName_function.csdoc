@@ -1,0 +1,44 @@
+﻿<title>Symbol.getName Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = symbol_name.getName();
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Symbol.getName</logiccolor> function returns the <link names.csdoc>name</link> of a symbol. Typically the name of the symbol is identical to the name as it appears written in logic, but when called on an <link object_dot_notation.csdoc>object</link> passed to a function by <link function_arguments_ref.csdoc>reference</link>, the name of the original symbol is returned.
+
+
+<subheader>Return Value</subheader>
+
+The function returns the symbol name.
+
+
+<subheader>Example</subheader>
+
+<logic>
+function ResampleImage(Image my_image)
+
+    if my_image.width() = default then
+        errmsg("You cannot resample '%s' because it does not contain an image.", my_image.getName());
+        exit;
+    endif;
+
+    my_image.resample(maxWidth := 800, maxHeight := 600);
+
+end;
+
+PROC EXAMPLE
+
+    Image image_without_content;
+
+    // the function will display: You cannot resample 'image_without_content' because it does not contain an image.
+    ResampleImage(image_without_content);
+</logic>
+
+
+<seealso Symbol_getLabel_function.csdoc />

@@ -14,7 +14,7 @@ The <logiccolor>loadsetting</logiccolor> function, using the string expression <
 
 The file from which settings are retrieved can be modified by altering the <pffcolor>CommonStore</pffcolor> attribute of a PFF file.
 
-Settings can also be retrieved using the <action>Settings.getValue</action> action.
+Settings can also be retrieved using the <action>Settings.getValue</action> action. The <logiccolor>persistent</logiccolor> variable modifier can also be used to serialize settings across application runs.
 
 
 <subheader>Return Value</subheader>
@@ -28,9 +28,9 @@ The function returns a string containing the value associated with the attribute
 PROC GLOBAL
 
 function OnChangeLanguage()
-	// save the selected language so that the change is persistent,
-	// being available the next time that the program is run
-	savesetting("Language", getlanguage());
+    // save the selected language so that the change is persistent,
+    // being available the next time that the program is run
+    savesetting("Language", getlanguage());
 end;
 
 
@@ -38,8 +38,8 @@ PROC MY_APPLICATION_FF
 
 preproc
 
-	// set the language at the start of the program, defaulting to English
-	setlanguage(loadsetting("Language", "EN"));
+    // set the language at the start of the program, defaulting to English
+    setlanguage(loadsetting("Language", "EN"));
 </logic>
 
 

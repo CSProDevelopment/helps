@@ -10,11 +10,12 @@ The physical name of the file can be specified in the Define File Associations d
 A File is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
 
 <table 2 header nowrap>
-	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor File>open</logiccolor></cell><cell>Associates the File object with an existing or a new file on the disk (equivalent to <logiccolor>setfile</logiccolor>).</cell>
-	<cell><logiccolor File>close</logiccolor></cell><cell>Closes the open file (equivalent to <logiccolor>close</logiccolor>).</cell>
-	<cell><logiccolor File>read</logiccolor></cell><cell>Reads one or more lines of text from the file (equivalent to <logiccolor>fileread</logiccolor>).</cell>
-	<cell><logiccolor File>write</logiccolor></cell><cell>Writes one or more lines of text to a file (equivalent to <logiccolor>filewrite</logiccolor>).</cell>
+    <cell>Function</cell><cell>Description</cell>
+    <cell><logiccolor File>open</logiccolor></cell><cell>Associates the File object with an existing or a new file on the disk (equivalent to <logiccolor>setfile</logiccolor>).</cell>
+    <cell><logiccolor File>close</logiccolor></cell><cell>Closes the open file (equivalent to <logiccolor>close</logiccolor>).</cell>
+    <cell><logiccolor File>read</logiccolor></cell><cell>Reads one or more lines of text from the file (equivalent to <logiccolor>fileread</logiccolor>).</cell>
+    <cell><logiccolor File>write</logiccolor></cell><cell>Writes one or more lines of text to a file (equivalent to <logiccolor>filewrite</logiccolor>).</cell>
+    <include "../Symbol/all_symbols_with_json_out.hgi" />
 </table>
 
 In addition to these object functions, File objects can be used as arguments to functions such as <logiccolor>filecopy</logiccolor>, <logiccolor>filedelete</logiccolor>, <logiccolor>fileempty</logiccolor>, <logiccolor>fileexist</logiccolor>, <logiccolor>filename</logiccolor>, <logiccolor>filerename</logiccolor>, <logiccolor>filesize</logiccolor>, <logiccolor>open</logiccolor>, and <logiccolor>pathname</logiccolor>.

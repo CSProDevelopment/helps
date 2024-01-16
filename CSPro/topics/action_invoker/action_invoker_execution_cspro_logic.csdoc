@@ -37,7 +37,7 @@ CS.File.copy(source := @array "[ \"Image01.jpg\", \"Image02.jpg\" ]",
              destination := "Images");
 </logic>
 
-If the second example were written without the <logiccolor>@</logiccolor> operator specifying the argument type , CSPro would interpret the array argument as a string, which would ultimately result in a runtime error.
+If the second example were written without the <logiccolor>@</logiccolor> operator specifying the argument type, CSPro would interpret the array argument as a string, which would ultimately result in a runtime error.
 
 
 <subheader>Return Values</subheader>
@@ -49,7 +49,7 @@ The results of all actions are returned as strings containing <link JSON_primer.
     <cell><b>undefined</b></cell><cell><logiccolor>""</logiccolor></cell><cell><logiccolor>""</logiccolor></cell>
     <cell><b>string</b></cell><cell><logiccolor>"\"text\""</logiccolor></cell><cell><logiccolor>"text"</logiccolor></cell>
     <cell><b>number</b></cell><cell><logiccolor>"44"</logiccolor></cell><cell><logiccolor>"44"</logiccolor></cell>
-    <cell><b>boolean</b></cell><cell><logiccolor>"true"</logiccolor></cell><cell><logiccolor>"1"</logiccolor></cell>
+    <cell><b>boolean</b></cell><cell><logiccolor>"true"</logiccolor> / <logiccolor>"false"</logiccolor></cell><cell><logiccolor>"1"</logiccolor> / <logiccolor>"0"</logiccolor></cell>
     <cell><b>array</b></cell><cell><logiccolor>"[1, 2, 3]"</logiccolor></cell><cell><logiccolor>"[1, 2, 3]"</logiccolor></cell>
     <cell><b>object</b></cell><cell><logiccolor>"{ \"key\": \"value\" }"</logiccolor></cell><cell><logiccolor>"{ \"key\": \"value\" }"</logiccolor></cell>
 </table>

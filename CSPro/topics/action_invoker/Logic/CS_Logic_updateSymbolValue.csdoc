@@ -1,0 +1,43 @@
+﻿<title>Logic.updateSymbolValue Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.Logic.updateSymbolValue(<arg>name</arg> := ..., <arg>value</arg> := ...)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>name</arg></cell><cell>The name of the symbol.</cell><cell>string~!~required</cell>
+    <cell><arg>value</arg></cell><cell>The new value for the symbol.</cell><cell>string, number, array, object~!~required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Logic.updateSymbolValue</action> <link action_invoker.csdoc>action</link> updates the value of the symbol with the specified <arg>name</arg> to a new <arg>value</arg> specified using the symbol's <link JSON_primer.csdoc>JSON</link> representation.
+
+You can also use the <logiccolor>Symbol.updateValueFromJson</logiccolor> function to update a symbol's value.
+
+The following table describes the value-related serialization routines available for CSPro objects and contains links to the description of the <link symbols_json_representation.csdoc>JSON representation</link> for each object.
+
+<include "../../logic/Symbol/symbol_json_summary_table.hgi" />
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, if no symbol has the specified name, or if the value is not specified in a way that can be converted to the symbol.
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<include include_sort_list_example.hgi />
+
+
+<seealso CS_Logic.csdoc CS_Logic_getSymbol.csdoc CS_Logic_getSymbolMetadata.csdoc CS_Logic_getSymbolValue.csdoc Symbol_updateValueFromJson_function.csdoc />

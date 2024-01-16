@@ -8,11 +8,12 @@ In logic, a <logiccolor>Freq</logiccolor> can be one of two things: an <link Fre
 A Freq is a CSPro logic object and the following functions can be called via <link object_dot_notation.csdoc>dot notation</link>:
 
 <table 2 header nowrap>
-	<cell>Function</cell><cell>Description</cell>
-	<cell><logiccolor Freq>clear</logiccolor></cell><cell>Resets all tallies to 0.</cell>
-	<cell><logiccolor Freq>save</logiccolor></cell><cell>Saves frequency tables to a file.</cell>
-	<cell><logiccolor Freq>tally</logiccolor></cell><cell>Tallies the frequencies.</cell>
-	<cell><logiccolor Freq>view</logiccolor></cell><cell>Displays frequency tables in an embedded web browser.</cell>
+    <cell>Function</cell><cell>Description</cell>
+    <cell><logiccolor Freq>clear</logiccolor></cell><cell>Resets all tallies to 0.</cell>
+    <cell><logiccolor Freq>save</logiccolor></cell><cell>Saves frequency tables to a file.</cell>
+    <cell><logiccolor Freq>tally</logiccolor></cell><cell>Tallies the frequencies.</cell>
+    <cell><logiccolor Freq>view</logiccolor></cell><cell>Displays frequency tables in an embedded web browser.</cell>
+    <include "../Symbol/all_symbols_with_json_out.hgi" />
 </table>
 
 In addition to these object functions, Freq objects can be used as an argument to the <logiccolor>view</logiccolor> function.
@@ -40,7 +41,7 @@ When a Freq object is used as an argument to a <link user_defined_functions.csdo
 
 // show the detailed household status report when some households are incomplete
 if hh_status_freq(1) > 0 then
-	ShowDetailedHouseholdStatusReport();
+    ShowDetailedHouseholdStatusReport();
 endif;
 </logic>
 
