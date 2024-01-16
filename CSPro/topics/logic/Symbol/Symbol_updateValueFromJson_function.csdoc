@@ -12,7 +12,9 @@ b = symbol_name.updateValueFromJson(<arg>json</arg>);
 
 The <logiccolor>Symbol.updateValueFromJson</logiccolor> function updates the value of a symbol based on the symbol's <link JSON_primer.csdoc>JSON</link> representation, passed to the function as the string expression <arg>json</arg>.
 
-The following table describes the value-related serialization routines available for CSPro objects and contains links to the description of the JSON representation for each object.
+You can also use the <logiccolor>Logic.updateSymbolValue</logiccolor> action to update a symbol's value.
+
+The following table describes the value-related serialization routines available for CSPro objects and contains links to the description of the <link symbols_json_representation.csdoc>JSON representation</link> for each object.
 
 <include symbol_json_summary_table.hgi />
 
@@ -35,4 +37,4 @@ errmsg("%d countries are part of USMCA, including %s and %s.",
 </logic>
 
 
-<seealso Symbol_getJson_function.csdoc Symbol_getValueJson_function.csdoc />
+<seealso Symbol_getJson_function.csdoc Symbol_getValueJson_function.csdoc CS_Logic_updateSymbolValue.csdoc />

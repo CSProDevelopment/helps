@@ -656,6 +656,7 @@
       { "path": "change_form_properties.csdoc", "title": "Form Properties" }, 
       { "path": "change_formatting.csdoc", "title": "Formatting in CAPI" }, 
       { "path": "change_forms_file_properties.csdoc", "title": "Forms File Properties" }, 
+      { "path": "properties_json_serialization.csdoc", "~title": "JSON Serialization Properties" }, 
       { "path": "change_level_properties.csdoc", "title": "Level Properties" }, 
       { "path": "properties_mapping.csdoc", "~title": "Mapping Properties" }, 
       { "path": "change_the_order_of_entry.csdoc", "title": "Order of Entry" }, 
@@ -2145,11 +2146,17 @@
   { "path": "data_source_json.csdoc", "~title": "JSON Data Source" }, 
   { "path": "symbols_json_representation.csdoc", "title": "JSON Representations", 
     "subindex": [ 
+      { "path": "properties_json_serialization.csdoc", "title": "Serialization Properties" }, 
       { "path": "symbols_json_representation.csdoc", "title": "Symbol Overview" }
     ]
   }, 
-  { "path": "Symbol_getJson_function.csdoc", "title": "JSON Symbol Serialization", 
+  { "path": "symbols_json_representation.csdoc", "title": "JSON Symbol Serialization", 
     "subindex": [ 
+      { "path": "CS_Logic_getSymbol.csdoc", "~title": "Logic.getSymbol Action" }, 
+      { "path": "CS_Logic_getSymbolMetadata.csdoc", "~title": "Logic.getSymbolMetadata Action" }, 
+      { "path": "CS_Logic_getSymbolValue.csdoc", "~title": "Logic.getSymbolValue Action" }, 
+      { "path": "CS_Logic_updateSymbolValue.csdoc", "~title": "Logic.updateSymbolValue Action" }, 
+      { "path": "properties_json_serialization.csdoc", "title": "Serialization Properties" }, 
       { "path": "Symbol_getJson_function.csdoc", "~title": "Symbol.getJson Function" }, 
       { "path": "Symbol_getValueJson_function.csdoc", "~title": "Symbol.getValueJson Function" }, 
       { "path": "Symbol_updateValueFromJson_function.csdoc", "~title": "Symbol.updateValueFromJson Function" }
@@ -2309,7 +2316,11 @@
   { "path": "CS_Logic.csdoc", "~title": "Logic Action Invoker Namespace", 
     "subindex": [ 
       { "path": "CS_Logic_eval.csdoc", "~title": "Logic.eval Action" }, 
-      { "path": "CS_Logic_invoke.csdoc", "~title": "Logic.invoke Action" }
+      { "path": "CS_Logic_getSymbol.csdoc", "~title": "Logic.getSymbol Action" }, 
+      { "path": "CS_Logic_getSymbolMetadata.csdoc", "~title": "Logic.getSymbolMetadata Action" }, 
+      { "path": "CS_Logic_getSymbolValue.csdoc", "~title": "Logic.getSymbolValue Action" }, 
+      { "path": "CS_Logic_invoke.csdoc", "~title": "Logic.invoke Action" }, 
+      { "path": "CS_Logic_updateSymbolValue.csdoc", "~title": "Logic.updateSymbolValue Action" }
     ]
   }, 
   { "path": "logic_file_apc.csdoc", "~title": "Logic File (.apc)" }, 
@@ -2971,6 +2982,7 @@
       { "path": "change_form_properties.csdoc", "title": "Form" }, 
       { "path": "change_forms_file_properties.csdoc", "title": "Form File" }, 
       { "path": "item_properties.csdoc", "title": "Item" }, 
+      { "path": "properties_json_serialization.csdoc", "title": "JSON Serialization" }, 
       { "path": "level_properties.csdoc", "title": "Level (Dictionary)" }, 
       { "path": "change_level_properties.csdoc", "title": "Level (Form)" }, 
       { "path": "properties_mapping.csdoc", "title": "Mapping" }, 

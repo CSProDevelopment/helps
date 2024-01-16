@@ -1,0 +1,19 @@
+<color JavaScript>
+function sortList(symbolName) {
+    // get the List object from CSPro
+    const list = CS.Logic.getSymbolValue({
+        name: symbolName
+    });
+
+    // sort the List, which is represented as an array
+    list.sort();
+
+    // update the CSPro object
+    CS.Logic.updateSymbolValue({
+        name: symbolName,
+        value: list
+    });
+}
+
+sortList("usmca_countries");
+</color>

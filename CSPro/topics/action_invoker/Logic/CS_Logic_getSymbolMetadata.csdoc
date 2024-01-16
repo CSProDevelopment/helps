@@ -1,0 +1,54 @@
+﻿<title>Logic.getSymbolMetadata Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Logic.getSymbolMetadata(<arg>name</arg> := ...『, <arg>serializationOptions</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>name</arg></cell><cell>The name of the symbol.</cell><cell>string~!~required</cell>
+    <cell><arg>serializationOptions</arg></cell><cell>Options for how the symbol should be serialized. <note type="todo" text="link to serializationOptions help here and in the description" /></cell><cell>object~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Logic.getSymbolMetadata</action> <link action_invoker.csdoc>action</link> returns the <link JSON_primer.csdoc>JSON</link> representation of the metadata of the symbol with the specified <arg>name</arg>. The optional <arg>serializationOptions</arg> argument allows you to specify how the symbol should be serialized, potentially overriding the <link properties_json_serialization.csdoc>default application settings</link>.
+
+You can use the <action>Logic.getSymbolValue</action> action if you only want to work with the symbol's value, or <action>Logic.getSymbol</action> if you want both the metadata and value. You can also use the <logiccolor>Symbol.getJson</logiccolor> function to get a symbol's JSON metadata and value.
+
+All symbols support the serialization of the symbol metadata. The following table describes the value-related serialization routines available for CSPro objects and contains links to the description of the <link symbols_json_representation.csdoc>JSON representation</link> for each object.
+
+<include "../../logic/Symbol/symbol_json_summary_table.hgi" />
+
+
+<subheader>Return Value</subheader>
+
+The action returns an object with the symbol's metadata.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if no symbol has the specified name.
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+function doSomethingWithExternalDictionary(dictionaryName) {
+    // proceed only if the symbol is an external dictionary
+    const dictionary = CS.Logic.getSymbolMetadata({
+        name: dictionaryName
+    });
+
+    if( dictionary.type != "Dictionary" || dictionary.dictionaryType != "external" ) {
+        throw new Error(`${dictionaryName} is not an external dictionary.`);
+    }
+}
+</color>
+
+
+<seealso CS_Logic.csdoc CS_Logic_getSymbol.csdoc CS_Logic_getSymbolValue.csdoc CS_Logic_updateSymbolValue.csdoc Symbol_getJson_function.csdoc />
