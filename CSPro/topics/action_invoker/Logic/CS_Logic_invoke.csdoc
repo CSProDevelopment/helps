@@ -1,0 +1,88 @@
+﻿<title>Logic.invoke Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Logic.invoke(<arg>function</arg> := ...『, <arg>arguments</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>function</arg></cell><cell>The name of the <link user_defined_functions.csdoc>user-defined function</link>.</cell><cell>string~!~required</cell>
+    <cell><arg>arguments</arg></cell><cell>The arguments to the user-defined function.</cell><cell nowrap>object~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Logic.invoke</action> <link action_invoker.csdoc>action</link> executes a <link user_defined_functions.csdoc>user-defined function </link> using runtime binding. The <arg>function</arg> argument specifies the name of the function, and any arguments required by the function can be passed by specifying <arg>arguments</arg>. Each of the <arg>arguments</arg> object's names is matched with the name of a function parameter, and the value is bound to that parameter using the rules for <link symbols_json_representation.csdoc>representing symbols in JSON</link>.
+
+Because logic functions can display UI elements, it is a good idea to use the <link action_invoker_execution_javascript_web.csdoc>asynchronous</link> version of this action when using this action from a <link action_invoker_execution_javascript_web.csdoc>web view</link>.
+
+Functions can also be executed at runtime using the <action>Logic.eval</action> action and the <logiccolor>invoke</logiccolor> function.
+
+
+<subheader>Return Value</subheader>
+
+The action returns the user-defined function's return value as a number or string.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if:
+
+<list>
+    <li>No function has the specified name.</li>
+    <li>No argument is provided for a required function parameter.</li>
+    <li>An argument cannot be converted from JSON to its logic version.</li>
+</list>
+
+
+<subheader>Example (HTML + JavaScript)</subheader>
+
+This example uses the asynchronous version of <action>Logic.invoke</action> to ensure that the UI elements of the <logiccolor>List.show</logiccolor> function call are displayed correctly.
+
+<color HTML>
+<script>
+    const CS = new CSProActionInvoker();
+
+    CS.Logic.invokeAsync({
+        function: "QueryUser",
+        arguments: {
+            message: "Did you attend any of these universities?",
+            options: [
+                "Harvard University",
+                "University of Virginia"
+            ]
+        }
+    })
+    .then(selection => {
+        console.log(`Selection was ${selection}.`);
+    })
+    .catch(e => {
+        CS.UI.alertAsync({
+            text: e.message
+        });
+    });
+</script>
+</color>
+
+The logic function that is called by the above JavaScript:
+
+<logic>
+// this function displays a message and presents a list of options from which the user can select
+function numeric QueryUser(string message, optional List string options)
+
+    // add OK as a default option if no options are provided
+    if options.length() = 0 then
+        options.add("OK");
+    endif;
+
+    exit options.show(message);
+
+end;
+</logic>
+
+
+<seealso CS_Logic.csdoc CS_Logic_eval.csdoc invoke_function.csdoc user_defined_functions.csdoc />

@@ -1,0 +1,80 @@
+﻿<title>Logic.eval Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Logic.eval(<arg>logic</arg> := ...)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>logic</arg></cell><cell>The <link introduction_to_cspro_language.csdoc>logic</link> statement(s).</cell><cell>string~!~required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Logic.eval</action> <link action_invoker.csdoc>action</link> evaluates and runs one or more logic statements.
+
+As of CSPro <definition CSPro::version />, the full compiler is not available at runtime and thus the action can only call execute <link user_defined_functions.csdoc>user-defined functions</link> that use <logiccolor>numeric</logiccolor> and <logiccolor>string</logiccolor> parameters. This limitation also means that only numeric constants and string literals can be passed as arguments to the CSPro function. This limitation will be removed in a future version.
+
+Because logic functions can display UI elements, it is a good idea to use the <link action_invoker_execution_javascript_web.csdoc>asynchronous</link> version of this action when using this action from a <link action_invoker_execution_javascript_web.csdoc>web view</link>.
+
+User-defined functions can also be executed at runtime using the <action>Logic.invoke</action> action and the <logiccolor>invoke</logiccolor> function.
+
+
+<subheader>Return Value</subheader>
+
+The action returns the result of the last statement as a number or string.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if there is an error compiling the logic.
+
+
+<subheader>Example (HTML + JavaScript)</subheader>
+
+This example uses the asynchronous version of <action>Logic.eval</action> to ensure that the UI elements of the <logiccolor>Report.view</logiccolor> function call are displayed correctly.
+
+<color HTML>
+<h1>District Reports</h1>
+
+<p>Select a province or district report to view:</p>
+
+<ul>
+    <li><a href="#" onclick="showDistrictReport(1); return false;">Artesia</a>
+        <ul>
+            <li><a href="#" onclick="showDistrictReport(1, 1); return false;">Dongo</a></li>
+            <li><a href="#" onclick="showDistrictReport(1, 2); return false;">Varda</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    const CS = new CSProActionInvoker();
+
+    function showDistrictReport(province, district) {
+        CS.Logic.evalAsync({
+            logic: `ShowDistrictReport(${province}, ${district ? district : "notappl"});`
+        })
+        .catch(e => {
+            CS.UI.alertAsync({
+                text: e.message
+            });
+        });
+    }
+</script>
+</color>
+
+The logic function that is called by the above JavaScript:
+
+<logic>
+function ShowDistrictReport(numeric province, numeric district)
+    // generate report...
+end;
+</logic>
+
+
+<seealso CS_Logic.csdoc CS_Logic_invoke.csdoc />
