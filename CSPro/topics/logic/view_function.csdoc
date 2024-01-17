@@ -3,51 +3,54 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = view(<arg>dict_name</arg> ‖ <arg>filename</arg> ‖ <arg>object_name</arg> ‖ <arg>website_address</arg>『, <arg>optional_named_arguments</arg>』);
+b = view(<arg>file_name</arg> ‖ <arg>website_url</arg> ‖ <arg>object_name</arg>『, <arg>viewer_arguments</arg>』);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
-The <logiccolor>view</logiccolor> function is a multipurpose tool that can be used to display a variety of media. If a <arg>dict_name</arg> is provided, it must reference the unique name of a dictionary associated with the application; all other arguments (<arg>filename</arg>, <arg>object_name</arg>, and <arg>website_address</arg>) must be a string expression, with any necessary pathing information provided. If an embedded window is launched, data entry can not resume until the window is closed. However if a separate application is launched, data entry can resume with the other application still active. Details for each argument type is as follows:
+The <logiccolor>view</logiccolor> function displays a variety of media. <include "include_embedded_browser.hgi" />
 
-<font red>smg: greg, can we put the desc for dict_name in an hgi file so i can pull it in to the case_view_function? because the behavior will be the same i think/hope?</font>
+The first argument to the function indicates what to view:
 
 <list>
-<li><b>dict_name</b>&mdash;during data entry, a questionnaire view of the active case will appear within an embedded window. The active case is defined by the field that you are on if the case is being keyed, so if you are on an external form, it will show the case being entered on the external form. Any fields with keyed data will be shown within a box; field data that has not yet been entered will be shown as a shaded grey box. CAPI text will also display on the questionnaire. The Questionnaire View can be maximized or closed, but it can not be minimized. <arg>dict_name</arg> must be a unique CSPro dictionary name&mdash;do not quote the name or give the name as a string.
-~!~
-<list>
-<li><b>Note regarding logic placement&mdash;</b><logiccolor>view</logiccolor>(<arg>dict_name</arg>) can be invoked from any <logiccolor>PROC</logiccolor> except an application's <link preproc_statement.csdoc>preproc</link> or <link postproc_statement.csdoc>postproc</link>, as no case-level data is loaded at that time. Doing so will generate a compile-time error.</li><li><b> Note regarding external dictionaries&mdash;</b>if you are referencing an external dictionary being used within the application as a <link lookup_files.csdoc>lookup</link> file, then the last case loaded will be displayed. If no case has yet been loaded, then the questionnaire will display without any case data. You can change that by first making a <link loadcase_function.csdoc>loadcase</link> call on the external dictionary to put a specific case in memory.</li></list></li>
-<li><b>filename</b>&mdash;displays the contents of a file, launching the viewer associated with the file type. For example, if an Excel or Word document is referenced, Excel or Word will launch outside of CSPro. <arg>filename</arg> must appear within quotes.</li>
-<li><b>object_name</b>&mdash;displays the contents of the file such as a <link Document.csdoc>Document</link>, <link Freq.csdoc>Freq</link>, <link Image.csdoc>Image</link>, or <link templated_reports.csdoc>Report</link>. The viewer associated with the file type will be launched. <arg>object_name</arg> must appear within quotes.</li>
-<li><b>website_address</b>&mdash;when a website URL or a local file with an <i>.html</i>, <i>.htm</i>, or <i>.cshtml</i> extension is provided, it is shown within an embedded window. <arg>website_address</arg> must appear within quotes.</li>
+    <li><arg>file_name</arg> (string expression): The contents of the file are displayed, either in an embedded web browser, or using the system's default viewer for that file type. For example, if an Excel document is referenced, the function will open the document in Excel. However, if a HTML document is referenced, it will be shown in an embedded web browser. Documents are considered HTML if they have one of the following extensions: <i>.html</i>, <i>.htm</i>, or <i>.cshtml</i>.</li>
+    <li><arg>website_url</arg> (string expression): An embedded web browser is used to display the website.</li>
+    <li><arg>object_name</arg>: The contents of the object are displayed, generally in an embedded web browser. Passing an object to the <logiccolor>view</logiccolor> function is identical to calling the <i>view</i> function on the object using <link object_dot_notation.csdoc>dot notation</link>. For example, the following calls are identical:~!~~!~
+    <indent><logiccolor Image>image_name.view();</logiccolor>~!~~!~<logiccolor>view(image_name);</logiccolor></indent>
+    ~!~The following objects support viewing: <link Case.csdoc>Case</link>, <link Document.csdoc>Document</link>, <link Freq.csdoc>Freq</link>, <link Image.csdoc>Image</link>, and <link templated_reports.csdoc>Report</link>.</li>
 </list>
 
-<subheader>Optional Named Arguments</subheader>
+If an embedded web browser is used, any logic coded after the <logiccolor>view</logiccolor> function call will not execute until the window is closed. However, if a separate application is launched, the application will continue while the external application is still active.
 
-<include include_view_named_arguments.hgi />
+An alternative way to view files is to use <link CSView::introduction.csdoc>CSView</link>, which can be launched from logic by <link CSView::run_production_views.csdoc>creating a PFF</link> and calling <logiccolor>Pff.exec</logiccolor>.
 
-An alternative way to view html or text files is to use <link CSView::introduction.csdoc>CSView</link>, which can launched from logic by <link CSView::run_production_views.csdoc>creating a PFF</link> and calling <logiccolor>Pff.exec</logiccolor>.
+
+<include "include_viewer_arguments.hgi" />
+
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true) if the file exists and the external application or embedded web browser could be launched successfully and 0 (false) otherwise.
+The function returns a logical value of <logiccolor>1</logiccolor> (<logiccolor>true</logiccolor>) if the file exists, or the object has data, and the embedded web browser or external application was launched successfully, and <logiccolor>0</logiccolor> (<logiccolor>false</logiccolor>) otherwise.
+
 
 <subheader>Examples</subheader>
 
 <logic>
-// provide the unique dictionary name to see its case contents
-view (CENSUS_DICT);
-
-// provide the URL of an external website as a string
+// provide the URL of a website as a string
 view("https://<definition census_website />");
 
-// provide the name of a local html file as a string
+// provide the name of a local HTML file as a string
 view("hh-report.html", title := "Household Completion Report",
-                       width := 400, height := 600,
+                       width := 600, height := 400,
                        showCloseButton := false);
 
 // provide the name of a local image file as a string
 view("../Nineties Images/carn03.jpg");
+
+// provide the dictionary name to see its case contents
+view(CENSUS_DICT);
 </logic>
+
 
 <seealso execsystem_function_desktop.csdoc execsystem_function_mobile.csdoc html_in_cspro.csdoc javascript_interface.csdoc CSView::introduction.csdoc />

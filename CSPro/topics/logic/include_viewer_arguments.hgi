@@ -1,0 +1,12 @@
+﻿<subheader>Viewer Arguments</subheader>
+
+Optional <link function_named_arguments.csdoc>named arguments</link> can be used to control how the embedded web browser displays on Windows:
+
+<list>
+    <li><logiccolor>title :=</logiccolor> string expression giving the title of the window.</li>
+    <li><logiccolor>width :=</logiccolor> numeric expression specifying the width of the window in <link display_dimensions.csdoc>display units</link>.</li>
+    <li><logiccolor>height :=</logiccolor> numeric expression specifying the height of the window in <link display_dimensions.csdoc>display units</link>.</li>
+    <li><logiccolor>showCloseButton :=</logiccolor> conditional expression that, if false, hides the window's <i>Close</i> button.</li>
+</list>
+
+If either the height or width is specified, then both values have to be provided. Hiding the <i>Close</i> button also removes the margin around the web browser, so the browser will fill the entire embedded window.
