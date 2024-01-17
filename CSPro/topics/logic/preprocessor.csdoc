@@ -17,15 +17,18 @@ Before CSPro logic is compiled, it passes through a preprocessor that allows you
 The preprocessor uses the language's familiar  <logiccolor>if</logiccolor>/<logiccolor>elseif</logiccolor>/<logiccolor>else</logiccolor>/<logiccolor>endif</logiccolor> keywords but with four differences:
 
 <list ordered>
-	<li>The keyword must be preceded by a <logiccolor>#</logiccolor> character.</li>
-	<li>The <logiccolor>#</logiccolor> must be the first non-whitespace character on the line.</li>
-	<li>The whole condition must be specified on a single line.</li>
-	<li>A condition should not end with a <logiccolor>then</logiccolor> keyword.</li>
+    <li>The keyword must be preceded by a <logiccolor>#</logiccolor> character.</li>
+    <li>The <logiccolor>#</logiccolor> must be the first non-whitespace character on the line.</li>
+    <li>The whole condition must be specified on a single line.</li>
+    <li>A condition should not end with a <logiccolor>then</logiccolor> keyword.</li>
 </list>
 
 An <logiccolor>#if</logiccolor> and <logiccolor>#endif</logiccolor> pair must exist, and optionally <logiccolor>#elseif</logiccolor> and <logiccolor>#else</logiccolor> can be included as part of a preprocessor block.
 
-The preprocessor is activated before the rest of logic is compiled and thus has limited functionality. Simple math expressions and conditional checks are possible, and there are two functions that can be called:
+
+<subheader>Conditional Functionality</subheader>
+
+The preprocessor is activated before the rest of logic is compiled and thus has limited functionality. Simple math expressions and conditional checks are possible, and there are two functions that can be called as part of conditional checks:
 
 <logicsyntax>
 AppType(<arg>app_type</arg>)
@@ -38,6 +41,17 @@ exists(<arg>symbol_name</arg>)
 </logicsyntax>
 
 This function returns true if a symbol exists at compile-time. The function checks for symbols that exist as part of an application (dictionary names, form names, etc.), and not symbols that are created during compilation (user-defined functions, objects, etc.).
+
+
+<subheader>Other Functionality</subheader>
+
+Another function can be used to set properties for the application, or for objects:
+
+<logicsyntax>
+#setProperty(『<arg>object_name</arg>,』 <arg>property_name</arg>, <arg>property_value</arg>);
+</logicsyntax>
+
+Currently this function is only used to modify the <link case_read_optimization.csdoc>case read optimization</link>.
 
 
 <subheader>Example 1</subheader>
@@ -60,7 +74,7 @@ function string GetEAName(numeric province, numeric district, numeric ea)
 
 #endif
 
-	exit ea_name;
+    exit ea_name;
 
 end;
 </logic>
@@ -74,12 +88,12 @@ function ValidateLiteracy()
     if HH_EDUCATION in 3:6 and HH_LITERACY <> 1 then
 
 #if AppType(Entry)
-		errmsg("Person with education level %d should be literate. Please correct.", HH_EDUCATION);
-		reenter;
+        errmsg("Person with education level %d should be literate. Please correct.", HH_EDUCATION);
+        reenter;
 
 #elseif AppType(Batch)
-		errmsg("Person with education level %d should be literate. Literacy imputed to 1 (literate).", HH_EDUCATION);
-		impute(HH_LITERACY, 1);
+        errmsg("Person with education level %d should be literate. Literacy imputed to 1 (literate).", HH_EDUCATION);
+        impute(HH_LITERACY, 1);
 
 #endif
 
