@@ -2,42 +2,24 @@
 
 In logic, a <logiccolor>Case</logiccolor> object facilitates the management of CSPro's case-based data.
 
+
 <subheader>Functionality</subheader>
 
 A Case object is a CSPro logic object that allows the following functions to be called via <link object_dot_notation.csdoc>dot notation</link>:
 
-<font red>smg: taking a stab below abt what functions case will allow</font>
-
-<font red>smg: greg needs to allow logiccolor to accept "case" within the tag</font>
-
 <table 2 header nowrap>
     <cell>Function</cell><cell>Description</cell>
-    <cell><logiccolor>clear</logiccolor></cell><cell>Clears the Case object's contents.</cell>
-    <cell><logiccolor>load</logiccolor></cell><cell>Reads a file and stores its contents to a Case object.</cell>
-    <cell><logiccolor>open</logiccolor></cell><cell>complete this if used.</cell>
-    <cell><logiccolor>read</logiccolor></cell><cell>complete this if used.</cell>
-    <cell><logiccolor>save</logiccolor></cell><cell>Writes the contents of the case object to a <font red>file (smg: a file, or a csdb file?)</font>.</cell>
-    <cell><logiccolor>view</logiccolor></cell><cell>Displays the contents of the file held by the Case object.</cell>
-    <cell><logiccolor>write</logiccolor></cell><cell>complete this if used.</cell>
+    <cell><logiccolor Case>view</logiccolor></cell><cell>Displays the <link view_questionnaire.csdoc>questionnaire view</link> for the case.</cell>
 </table>
 
-In addition to these object functions, Case objects can be used as arguments to the <logiccolor>filename</logiccolor> and <logiccolor>view</logiccolor> functions.
+In addition to this object function, Case objects can be used as arguments to the <logiccolor>view</logiccolor> function.
 
-
-<subheader>Assignments</subheader>
-
-Case objects can be assigned to other Case objects, which will replace the Case's contents with the contents from the assigned Case object.
-
-<logicsyntax>
-<arg>case_name</arg> = <arg>another_case_name</arg>;
-</logicsyntax>
-
-When a case is used as an argument to a <link user_defined_functions.csdoc>user-defined function</link>, it is <link function_arguments_ref.csdoc>passed by reference</link>. <font red>smg: true?</font>
 
 <subheader>Example</subheader>
 
-<font red>smg: will there be a file named include_case_example.hgi to include, or should I put an example here inline?</font>
+<logic>
+PROC HOUSEHOLD_FORM
 
-<font red>smg: should we list any of the below objects, or other objects, for the see also block?</font>
-
-<seealso Image.csdoc file.csdoc document.csdoc />
+    // view the contents of the current case
+    CENSUS_DICT.view();
+</logic>

@@ -1,11 +1,28 @@
 ﻿<title>Questionnaire View</title>
 
 
+<subheader>Overview</subheader>
+
+The questionnaire view is a CSPro feature that displays the contents of a case and its components (dictionary, forms, question text) in a read-only mode that facilitates reviewing or printing. The questionnaire is displayed in an <link html_in_cspro.csdoc>embedded web browser</link>.
+
+The questionnaire view is available in the following contexts:
+
+<table 2 header nowrap>
+    <cell>Description</cell><cell>Context</cell>
+    <cell><topic view_questionnaire_from_dcf.csdoc /></cell><cell>Editing a dictionary.</cell>
+    <cell><topic view_questionnaire_from_fmf.csdoc /></cell><cell>Editing a data entry application.</cell>
+    <cell><topic view_questionnaire_from_bch.csdoc /></cell><cell>Editing a batch application.</cell>
+    <cell><topic CSEntry::view_questionnaire_from_csentry.csdoc /></cell><cell>From the case listing, or when entering data using <link CSEntry::introduction_to_data_entry.csdoc>CSEntry</link>.</cell>
+    <cell><topic Case_view_function.csdoc /></cell><cell>Coded using logic.</cell>
+    <cell></cell><cell> </cell>
+</table>
+
+
 <subheader>Disabling Questionnaire View Within CSEntry</subheader>
 
 There are two ways that an enumerator can view a questionnaire while using CSEntry. It is possible to disable this functionality for instances when you may not want an enumerator to view an entire case:
 
 <list>
     <li>The enumerator can right-click (or hard-press) on the case listing and select <b>View Questionnaire</b>. This displays the selected case. To disable this functionality, add <font monospace>Lock=View</font> to the <link run_production_data_entry.csdoc> data entry PFF</link>.</li>
-    <li>While collecting data, the enumerator can select <b>View > Questionnaire</b>. This displays the currently-open case. To disable this functionality, add an <logiccolor>OnViewQuestionnaire</logiccolor> function override that does nothing. This special global function is called anytime an enumerators attempts to view a case.</li>
+    <li>While collecting data, the enumerator can select <b>View > Questionnaire</b>. This displays the currently-open case. To disable this functionality, add an <link OnViewQuestionnaire_global_function.csdoc>OnViewQuestionnaire</link> function override that suppresses the display. This special global function is called anytime an enumerator attempts to view a questionnaire.</li>
 </list>

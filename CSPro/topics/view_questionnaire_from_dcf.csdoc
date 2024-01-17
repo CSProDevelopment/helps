@@ -1,20 +1,20 @@
 ﻿<title>View Dictionary Questionnaire</title>
 
-Within the data dictionary, you can view a questionnaire/pseudo paper version of the dictionary items by either:
+Within the data dictionary, you can view a <link view_questionnaire.csdoc>questionnaire/pseudo paper version</link> of the dictionary items by either:
 
 <list>
-    <li>clicking on the questionnaire view icon <image questionnaire_view.png /> from the dictionary toolbar, or </li>
-    <li>selecting <b>Questionnaire</b> from the <b>View</b> menu</li>
+    <li>Clicking on the questionnaire view icon <image questionnaire_view.png /> from the dictionary toolbar, or</li>
+    <li>Selecting <b>Questionnaire</b> from the <b>View</b> menu.</li>
 </list>
 
-To return to the dictionary view, you can either:
+To return to the dictionary editor, you can either:
 
 <list>
-    <li>press the dictionary view icon <image dictionary_view.png />, or</li>
-    <li>select <b>Dictionary</b> from the <b>View</b> menu</li>
+    <li>Press the dictionary view icon <image dictionary_view.png />, or</li>
+    <li>Select <b>Dictionary</b> from the <b>View</b> menu.</li>
 </list>
 
-The Questionnaire View for the dictionary displays a non-editable, scrollable view of all dictionary items, presented in their order of definition within the dictionary. The view will present collapsible blocks, with each block corresponding to a dictionary record, as shown below.
+The questionnaire view for the dictionary displays a non-editable, scrollable view of all dictionary items, presented in their order of definition within the dictionary. The view will present collapsible blocks, with each block corresponding to a dictionary record, as shown below.
 
 <center><image questionnaire_view_from_dcf.png /></center>
 
@@ -29,13 +29,14 @@ If the record repeats, this will be indicated by a <image questionnaire_view_rep
 <b>Item view</b>: Each item will display its unique dictionary name, followed by a colon (':') and its label. The input display area will vary depending on how it was defined in the dictionary:
 
 <list>
-<li>If the item is numeric with discrete values (i.e., 1=Male, 2=Female), then the responses will have radio buttons, followed by the dictionary value.</li>
-<li>If the item is numeric continuous (i.e., only a range is defined, such as 0-120 for age), then a grey shaded box with tic marks indicating the number of characters the item allows will be shown.</li>
-<li>If the item is numeric and has a combination of discrete and continous values (i.e., Age=0-120, Don't know=999), then the display will be a combination of radio buttons for each value defined in the dictionary, with a grey box signalling entry for any continuous values.</li>
-<li>If the item is alpha, a grey box with tic marks will be shown. Note that depending on the screen size and/or length of the alpha item, this may cause a horizontal scroll bar to appear.</li></list>
+    <li>If the item is numeric with discrete values (e.g., 1=Male, 2=Female), then the responses will have radio buttons, followed by the dictionary value.</li>
+    <li>If the item is numeric continuous (e.g., only a range is defined, such as 0-120 for age), then a gray shaded box with tick marks indicating the number of characters the item allows will be shown.</li>
+    <li>If the item is numeric and has a combination of discrete and continuous values (e.g., Age=0-120, Don't know=999), then the display will be a combination of radio buttons for each value defined in the dictionary, with a gray box signaling entry for any continuous values.</li>
+    <li>If the item is alpha, a gray shaded box with tick marks will be shown. Note that depending on the screen size and/or length of the alpha item, this may cause a horizontal scroll bar to appear.</li>
+</list>
 
-<b>Scroll Bars:</b> If an item appears within a singly-occurring record, then the scroll bar will appear immediately below the item (or below the roster if the field repeats within the singly-occurring record). However if the alpha item appears within a repeating record, then no scroll bar will appear, as the scroll bar will be on the roster.
+<b>Scroll bars:</b> If an item appears within a singly-occurring record, then the scroll bar will appear immediately below the item (or below the roster if the field repeats within the singly-occurring record). However, if the alpha item appears within a repeating record, then no scroll bar will appear, as the scroll bar will be on the roster.
 
-Note that rows within repeating records can be collapsed (as shown in the screenshot above, which depicts a vertical orientation--the default view is horizontal).
+Note that rows within repeating records can be collapsed (as shown in the screenshot above, which depicts a vertical orientation, though the default view is horizontal).
 
-<seealso view_questionnaire_from_fmf.csdoc view_questionnaire_from_bch.csdoc />
+<seealso view_questionnaire.csdoc />

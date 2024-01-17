@@ -1,14 +1,16 @@
 ﻿<title>OnKey Global Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-function OnKey (key_value);
+function numeric OnKey(numeric <arg>key_value</arg>);
 </logicsyntax>
+
 
 <subheader>Description</subheader>
 
-The OnKey global function allows you to trap keystrokes in order to perform special actions or to change the action of the key. It also can be used to disable or remap keys. This function must be placed in the <link cspro_program_structure.csdoc>Global</link> procedure.
+The <logiccolor>OnKey</logiccolor> global function allows you to trap keystrokes in order to perform special actions or to change the action of the key. It also can be used to disable or remap keys. This function must be placed in the <link cspro_program_structure.csdoc>Global</link> procedure.
 
 If an OnKey global function is coded, every keystroke the operator types is sent to the OnKey function for processing. If the OnKey function returns a value, then the return value is processed by the field as the keystroke. If a statement in the OnKey function causes movement to another field within the case, then the movement is executed. If no OnKey function is coded, then keystrokes are unmodified.
 
@@ -18,28 +20,36 @@ You can use the <link OnKey_Character_Map.csdoc>OnKey Character Map</link> to de
 
 Calls to this function are ignored when executed on mobile devices.
 
+
 <subheader>Return Value</subheader>
 
-Like any global function, the OnKey global function returns an integer value. The value should be either the value of the key pressed (the same as the value passed to the function), a substituted key value (remapping the key), or zero (0) to indicate that the key is to be ignored.
+The <logiccolor>OnKey</logiccolor> function must return a number. The value should be either the value of the key pressed (the same as the value passed to the function), a substituted key value (remapping the key), or zero (0) to indicate that the key is to be ignored.
 
 <subheader>Example</subheader>
 
 <logic>
-function OnKey(numeric x)
+function numeric OnKey(numeric key_value)
 
-  if x in 114:116 then      // F3, F4, F5
-    OnKey = 0;              // don't allow these keys to work, eat the key
-  elseif x = 2069 then      // Ctrl+E goes to END_FIELD
-    move to END_FIELD;
-  else
-    OnKey = x;              // return the value of any other key
-  endif;
+    // F3, F4, F5: don't allow these keys to work, eat the key
+    if key_value in 114:116 then
+        OnKey = 0;
+
+    // Ctrl+E goes to END_FIELD
+    elseif key_value = 2069 then
+        move to END_FIELD;
+
+    // return the value of any other key
+    else
+        OnKey = key_value;
+
+    endif;
+
 end;
 </logic>
 
 <subheader>Keyboard Key Values</subheader>
 
-A summary of key values passed into and out of the OnKey function are given below. If in doubt, use the <link OnKey_Character_Map.csdoc>OnKey Character Map</link> to determine the value of characters. It can be accessed from CSPro's <b>View</b> menu option.
+A summary of key values passed into and out of the <logiccolor>OnKey</logiccolor> function are given below. If in doubt, use the <link OnKey_Character_Map.csdoc>OnKey Character Map</link> to determine the value of characters. It can be accessed from CSPro's <b>View</b> menu option.
 
 <b>Numbers</b>
 
@@ -143,4 +153,3 @@ The 12 function keys F1-F12 return the key value 112-123.
 </table>
 
 <seealso cspro_program_structure.csdoc user_defined_functions.csdoc onkey_character_map.csdoc />
-
