@@ -1,3 +1,11 @@
 ﻿<title>Questionnaire View</title>
 
-<note text="HELP_TODO" />
+
+<subheader>Disabling Questionnaire View Within CSEntry</subheader>
+
+There are two ways that an enumerator can view a questionnaire while using CSEntry. It is possible to disable this functionality for instances when you may not want an enumerator to view an entire case:
+
+<list>
+    <li>The enumerator can right-click (or hard-press) on the case listing and select <b>View Questionnaire</b>. This displays the selected case. To disable this functionality, add <font monospace>Lock=View</font> to the <link run_production_data_entry.csdoc> data entry PFF</link>.</li>
+    <li>While collecting data, the enumerator can select <b>View > Questionnaire</b>. This displays the currently-open case. To disable this functionality, add an <logiccolor>OnViewQuestionnaire</logiccolor> function override that does nothing. This special global function is called anytime an enumerators attempts to view a case.</li>
+</list>
