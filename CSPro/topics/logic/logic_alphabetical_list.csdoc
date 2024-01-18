@@ -16,6 +16,8 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>advance</logiccolor></cell><cell>Moves forward field by field to a specified field during data entry.</cell>
     <cell><logiccolor>alias</logiccolor></cell><cell>Creates an aliased name for a dictionary item, typically to shorten or standardize names.</cell>
     <cell><logiccolor>alpha</logiccolor></cell><cell>Declares alphanumeric variables used in the application.</cell>
+    <cell><action>Application.getFormFile</action> <sup>(CS)</sup></cell><cell>Returns a <link forms_file_fmf.csdoc>form file</link> associated with an application or loaded from the disk.</cell>
+    <cell><action>Application.getQuestionText</action> <sup>(CS)</sup></cell><cell>Returns <link question_text_file_qsf.csdoc>question text</link> associated with an application or loaded from the disk.</cell>
     <cell><logiccolor>Array</logiccolor></cell><cell>Declares an <link Array.csdoc>Array</link> object for storing a collection of numbers or strings.</cell>
     <cell><logiccolor>ask</logiccolor></cell><cell>Conditionally jumps forward to the next field during data entry.</cell>
     <cell><logiccolor>Audio</logiccolor></cell><cell>Declares an <link Audio.csdoc>Audio</link> object for recording or playing audio.</cell>
@@ -50,6 +52,7 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>delete</logiccolor></cell><cell>Removes a record or item occurrence from the current case.</cell>
     <cell><logiccolor>demode</logiccolor></cell><cell>Returns the current data entry mode.</cell>
     <cell><logiccolor>diagnostics</logiccolor></cell><cell>Returns troubleshooting information about CSPro.</cell>
+    <cell><action>Dictionary.getDictionary</action> <sup>(CS)</sup></cell><cell>Returns a <link introduction_to_data_dictionary.csdoc>dictionary</link> associated with an application or loaded from the disk.</cell>
     <cell><logiccolor>dircreate</logiccolor></cell><cell>Creates a new directory with the given directory name.</cell>
     <cell><logiccolor>dirdelete</logiccolor></cell><cell>Deletes an empty directory or group of empty directories.</cell>
     <cell><logiccolor>direxist</logiccolor></cell><cell>Determines whether a directory exists.</cell>

@@ -1,0 +1,14 @@
+<logic>
+// construct the input needed for the questionnaire view, using the external dictionary
+// attached to this application but getting the forms and question text from the disk
+string questionnaireViewInput =
+    maketext("{ \"dictionary\": %s, \"forms\": %s, \"questionText\": %s, \"case\": %s }",
+             CS.Dictionary.getDictionary(name := "MARINE_DICT"),
+             CS.Application.getFormFile(path := "Marine Mammals Survey.fmf"),
+             CS.Application.getQuestionText(path := "Marine Mammals Survey.ent.qsf"),
+             CS.Data.getCase(name := "MARINE_DICT"));
+
+// pass this input to the questionnaire view
+CS.UI.view(path := Path.concat(html, "questionnaire-view", "index.html"),
+           inputData := @object questionnaireViewInput);
+</logic>

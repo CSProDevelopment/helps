@@ -1,0 +1,59 @@
+﻿<title>Application.getQuestionText Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Application.getQuestionText(<arg>name</arg> := ... ‖ <arg>path</arg> := ...)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>name</arg></cell><cell>The name of an <link data_entry_application_file_ent.csdoc>application</link>.</cell><cell>string~!~not required</cell>
+    <cell><arg>path</arg></cell><cell>The path of a <link question_text_file_qsf.csdoc>question text file</link> to read.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Application.getQuestionText</action> <link action_invoker.csdoc>action</link> returns the question text associated with an application or loaded from the disk. One, and only one, of the arguments <arg>name</arg> or <arg>path</arg> must be provided.
+
+If specifying <arg>name</arg>, you can also specify the name of a <link forms_file_fmf.csdoc>form file</link> or a <link introduction_to_data_dictionary.csdoc>dictionary</link>. When using a form file or dictionary, the application associated with that entity is returned.
+
+
+<subheader>Return Value</subheader>
+
+The action returns the question text.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if:
+
+<list>
+    <li>No application, or associated form file or dictionary, exists with the specified name.</li>
+    <li>The name identifies an application that does not have question text.</li>
+    <li>The question text file does not exist or cannot be read.</li>
+</list>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+// write to the console the name of all entities with question text
+const questionText = CS.Application.getQuestionText({
+    path: "Census Data Entry.ent.qsf"
+});
+
+questionText.questions.forEach(question => {
+    console.log(question.name);
+});
+</color>
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<include "../Dictionary/include_questionnaire_view_example.hgi" />
+
+
+<seealso CS_Application.csdoc CS_Dictionary.csdoc />
