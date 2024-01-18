@@ -10,13 +10,13 @@ s = CS.Logic.getSymbolValue(<arg>name</arg> := ...『, <arg>serializationOptions
 <indent><table 3 header nowrap>
     <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
     <cell><arg>name</arg></cell><cell>The name of the symbol.</cell><cell>string~!~required</cell>
-    <cell><arg>serializationOptions</arg></cell><cell>Options for how the symbol should be serialized. <note type="todo" text="link to serializationOptions help here and in the description" /></cell><cell>object~!~not required</cell>
+    <cell><arg>serializationOptions</arg></cell><cell>Options for how the symbol should be serialized.</cell><cell>object~!~not required</cell>
 </table></indent>
 
 
 <subheader>Description</subheader>
 
-The <action>Logic.getSymbolValue</action> <link action_invoker.csdoc>action</link> returns the <link JSON_primer.csdoc>JSON</link> representation of the value of the symbol with the specified <arg>name</arg>. The optional <arg>serializationOptions</arg> argument allows you to specify how the symbol should be serialized, potentially overriding the <link properties_json_serialization.csdoc>default application settings</link>.
+The <action>Logic.getSymbolValue</action> <link action_invoker.csdoc>action</link> returns the <link JSON_primer.csdoc>JSON</link> representation of the value of the symbol with the specified <arg>name</arg>. The optional <arg>serializationOptions</arg> argument allows you to specify how the symbol <link JSON_serialization_options.csdoc>should be serialized</link>, potentially overriding the <link properties_json_serialization.csdoc>default application settings</link>.
 
 You can use the <action>Logic.getSymbolMetadata</action> action if you want to work with the symbol's metadata, or <action>Logic.getSymbol</action> if you want both the metadata and value. You can also use the <logiccolor>Symbol.getValueJson</logiccolor> function to get a symbol's JSON value.
 
