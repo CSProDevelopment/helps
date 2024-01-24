@@ -1,0 +1,40 @@
+﻿<title>UI.alert Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.UI.alert(<arg>text</arg> := ... 『, <arg>title</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>text</arg></cell><cell>The message to display.</cell><cell>string ~!~required</cell>
+    <cell><arg>title</arg></cell><cell>The dialog's title.</cell><cell>string ~!~not required</cell>
+</table></indent>
+
+<subheader>Description</subheader>
+
+The <action>UI.alert</action> <link action_invoker.csdoc>action</link> creates an alert dialog. This dialog displays the <arg>text</arg> parameter. The dialog has no title by default, but can be given one with the optional <arg>title</arg> parameter.
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form.
+
+<subheader>Example (JavaScript)</subheader>
+
+Creating an alert dialogue displaying text "exampleText" with title "optionalTitle":
+
+<color JavaScript>
+CS.UI.alert({
+    text: "exampleText",
+    title: "optionalTitle"
+});
+</color>
+
+
+<seealso CS_UI.csdoc />

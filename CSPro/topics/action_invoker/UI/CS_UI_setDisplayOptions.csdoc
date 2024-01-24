@@ -1,0 +1,49 @@
+﻿<title>UI.setDisplayOptions Action</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.UI.setDisplayOptions(
+            『<arg>width</arg> := ...』
+            『,<arg>height</arg> := ...』
+            『,<arg>resizable</arg> := ...』
+            『,<arg>borderColor</arg> := ...』
+            『,<arg>titleBarColor</arg> := ...』
+            『,<arg>titleBarHeight</arg> := ...』
+            『,<arg>keyboard</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>width</arg></cell><cell>The desired width, in display units, of the dialog.</cell><cell>number, string ~!~not required</cell>
+    <cell><arg>height</arg></cell><cell>The desired height, in display units, of the dialog.</cell><cell>number, string ~!~not required</cell>
+    <cell><arg>resizable</arg></cell><cell>If false, the dialog can be resized. This setting only applies on Windows.</cell><cell>boolean ~!~not required</cell>
+    <cell><arg>borderColor</arg></cell><cell>The color of the dialog border. This setting only applies on Windows.</cell><cell>string ~!~not required</cell>
+    <cell><arg>titleBarColor</arg></cell><cell>The color of the dialog's title bar. This setting only applies on Windows.</cell><cell>string ~!~not required</cell>
+    <cell><arg>titleBarHeight</arg></cell><cell>The height of the dialog's title bar. This setting only applies on Windows.</cell><cell>number ~!~not required</cell>
+    <cell><arg>keyboard</arg></cell><cell>If false, the soft keyboard is brought to the forefront when the dialog is shown. This setting only applies on Android.</cell><cell>boolean ~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>UI.setDisplayOptions</action> <link action_invoker.csdoc>action</link> sets the display options for the current web view. This works for the question text window as well as HTML dialogs shown using htmlDialog.
+
+<subheader>Return Value</subheader>
+
+The action returns a boolean, True if any display options were set, or False if no display options were set.
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form.
+
+<subheader>Example (JavaScript)</subheader>
+
+Example returning True, setting height and width to 400 display units:
+
+<color JavaScript>
+s = CS.UI.setDisplayOptions({width: 400, height: 400});
+</color>
+
+
+<seealso CS_UI.csdoc />

@@ -1,0 +1,36 @@
+﻿<title>UI.closeDialog Action</title>
+
+<subheader>Format</subheader>
+<logicsyntax>
+s = CS.UI.closeDialog(『<arg>result</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>result</arg></cell><cell>The result to return.</cell><cell>string ~!~not required</cell>
+</table></indent>
+
+<subheader>Description</subheader>
+
+The <action>UI.closeDialog</action> <link action_invoker.csdoc>action</link> closes the current dialog, optionally returning a <arg>result</arg> argument to the calling function (such as htmlDialog).
+
+<subheader>Return Value</subheader>
+
+The action returns a boolean, True if the dialog was closed or False if the dialog was not closed.
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form.
+
+<subheader>Example (JavaScript)</subheader>
+
+Closing a dialog and giving the result "closed by closeDialog".
+
+<color JavaScript>
+let s = CS.UI.closeDialog({
+    result: "closed by closeDialog"
+});
+</color>
+
+
+<seealso CS_UI.csdoc />

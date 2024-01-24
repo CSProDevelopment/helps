@@ -1,0 +1,35 @@
+﻿<title>UI.getMaxDisplayDimensions Action</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.UI.getMaxDisplayDimensions()
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <action>UI.getMaxDisplayDimensions</action> <link action_invoker.csdoc>action</link> returns the maximum dimensions, in display units, of the dialogs that CSPro can show.
+
+<subheader>Return Value</subheader>
+
+The action returns an object with two properties:
+
+<list>
+    <li><arg>width</arg>: A number containing the maximum possible width of the web view in display units.</li>
+    <li><arg>height</arg>: A number containing the maximum possible height of the web view in display units.</li>
+</list>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+let s = CS.UI.getMaxDisplayDimensions();
+</color>
+
+The returned object may look like this:
+
+<color JavaScript>
+{"width":1382,"height":741}
+</color>
+
+<seealso CS_UI.csdoc />

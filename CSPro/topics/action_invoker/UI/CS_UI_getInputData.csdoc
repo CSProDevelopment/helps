@@ -1,0 +1,24 @@
+﻿<title>UI.getInputData Action</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.UI.getInputData()
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <action>UI.getInputData</action> <link action_invoker.csdoc>action</link> returns the input data associated with the current web view (used by functions such as htmlDialog).
+
+<subheader>Return Value</subheader>
+
+The action returns the input data given to the web view as an object.
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+let s = CS.UI.getInputData();
+</color>
+
+
+<seealso CS_UI.csdoc />

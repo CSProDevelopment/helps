@@ -1,0 +1,23 @@
+﻿<title>UI Action Invoker Namespace</title>
+
+The <action>UI</action> namespace, part of the <link action_invoker.csdoc>Action Invoker</link>, provides actions to create and affect displays for User Interfaces.
+
+
+<subheader>Functionality</subheader>
+
+<table 2 header nowrap>
+    <cell>Action</cell><cell>Description</cell>
+    <cell><action>UI.alert</action></cell><cell>Displays an alert dialog.</cell>
+    <cell><action>UI.closeDialog</action></cell><cell>Closes the current dialog, optionally returning a result to the calling function (such as htmlDialog).</cell>
+    <cell><action>UI.enumerateWebViews</action></cell><cell>Returns information about all of the web views currently showing.</cell>
+    <cell><action>UI.getDisplayOptions</action></cell><cell>Gets the display options associated with current web view. This works for the question text window as well as HTML dialogs shown using htmlDialog.</cell>
+    <cell><action>UI.getInputData</action></cell><cell>Gets the input data associated with the current web view (used by functions such as htmlDialog).</cell>
+    <cell><action>UI.getMaxDisplayDimensions</action></cell><cell>Returns the maximum dimensions, in display units, of the dialogs that CSPro can show.</cell>
+    <cell><action>UI.postWebMessage</action></cell><cell>Posts a message to a web view.</cell>
+    <cell><action>UI.setDisplayOptions</action></cell><cell>Sets the display options for the current web view. This works for the question text window as well as HTML dialogs shown using htmlDialog.</cell>
+    <cell><action>UI.showDialog</action></cell><cell>Shows a HTML dialog.</cell>
+    <cell><action>UI.view</action></cell><cell>Views a file or web page in a new web view.</cell>
+</table>
+
+
+<seealso action_invoker.csdoc CS_System.csdoc CS_File.csdoc />

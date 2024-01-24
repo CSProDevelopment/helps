@@ -1,0 +1,33 @@
+﻿<title>UI.enumerateWebViews Action</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.UI.enumerateWebViews()
+</logicsyntax>
+
+<subheader>Description</subheader>
+
+The <action>UI.enumerateWebViews</action> <link action_invoker.csdoc>action</link> returns information about all of the web views currently showing.
+
+<subheader>Return Value</subheader>
+The action returns an object with two properties:
+<list>
+    <li><arg>webViewId</arg>: A number containing the web view ID of the JavaScript code executing the action (if applicable).</li>
+    <li><arg>webViews</arg>: An array containing details about each web view currently showing. The topmost showing web view is the first entry in the array.</li>
+</list>
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+let s = CS.UI.enumerateWebViews();
+</color>
+
+With a single executing webview showing, the returned object may look like this:
+
+<color JavaScript>
+{"webViewId":123456789,"webViews":[{"webViewId":123456789}]}
+</color>
+
+
+<seealso CS_UI.csdoc />

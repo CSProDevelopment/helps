@@ -1,0 +1,39 @@
+﻿<title>UI.postWebMessage Action</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.UI.alert(<arg>message</arg> := ... 『, <arg>targetOrigin</arg> := ...』 『, <arg>webViewId</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>message</arg></cell><cell>The message</cell><cell>string ~!~required</cell>
+    <cell><arg>targetOrigin</arg></cell><cell>The parameter used by the JavaScript Window.postMessage() method. This is only used on Android.</cell><cell>string ~!~not required</cell>
+    <cell><arg>webViewId</arg></cell><cell>If specified, the message is posted to the web view with this ID. It not specified, the message is posted to the topmost web view.</cell><cell>number ~!~not required</cell>
+</table></indent>
+
+<subheader>Description</subheader>
+
+The <action>UI.postWebMessage</action> <link action_invoker.csdoc>action</link> posts a <arg>message</arg> to a web view. By default this is posted to the topmost web view, however a <arg>webViewId</arg> can be specified.
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, if no web view is showing, or if the webViewId isn't valid
+
+<subheader>Example (JavaScript)</subheader>
+
+Creating an web message displaying text "Honey" to the topmost web view:
+
+<color JavaScript>
+CS.UI.postWebMessage({
+    message: "Honey"
+});
+</color>
+
+
+<seealso CS_UI.csdoc />

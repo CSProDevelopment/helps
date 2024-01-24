@@ -1,0 +1,50 @@
+﻿<title>UI.view Action</title>
+
+<subheader>Format 1</subheader>
+<logicsyntax>
+CS.UI.view(<arg>url</arg> := ...  『, <arg>inputData</arg> := ...  』 『, <arg>displayOptions</arg> := ... 』)
+</logicsyntax>
+
+<subheader>Format 2</subheader>
+<logicsyntax>
+CS.UI.view(<arg>path</arg> := ...  『, <arg>inputData</arg> := ...  』 『, <arg>displayOptions</arg> := ,,, 』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The filename of the file to view. Either \"path\" or \"url\" must be specified.</cell><cell>string ~!~required</cell>
+    <cell><arg>url</arg></cell><cell>The URL to view. Either \"path\" or \"url\" must be specified.</cell><cell>string ~!~required</cell>
+    <cell><arg>inputData</arg></cell><cell>The input data for a viewed web page, which can be retrieved using the UI.getInputData action.</cell><cell>string, number, boolean, array, object ~!~not required</cell>
+    <cell><arg>displayOptions</arg></cell><cell>The display options to use when showing the web view.</cell><cell>object ~!~not required</cell>
+</table></indent>
+
+<subheader>Description</subheader>
+
+The <action>UI.view</action> <link action_invoker.csdoc>action</link> opens a page to view either a file at a given <arg>path</arg> or a webpage at a given <arg>url</arg>. A web page can be given an optional argument <arg>inputData</arg> and its display modified with the optional argument <arg>displayOptions</arg>.
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the file specified doesn't exist.
+
+<subheader>Example (JavaScript)</subheader>
+
+Displaying a jpg file in the same directory, with empty inputData and displayOptions setting height and width to 75%.
+
+
+<color JavaScript>
+CS.UI.view({
+    path: "oriole.jpg",
+    inputData: {},
+    displayOptions: {
+        width: "75%",
+        height: "75%"
+  }
+});
+</color>
+
+
+<seealso CS_UI.csdoc />

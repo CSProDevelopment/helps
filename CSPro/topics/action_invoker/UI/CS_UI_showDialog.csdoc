@@ -1,0 +1,43 @@
+﻿<title>UI.showDialog Action</title>
+
+<subheader>Format</subheader>
+<logicsyntax>
+CS.UI.view(<arg>path</arg> := ...  『, <arg>inputData</arg> := ...  』 『, <arg>displayOptions</arg> := ,,, 』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The filename of the file to view.</cell><cell>string ~!~required</cell>
+    <cell><arg>inputData</arg></cell><cell>The input data for a viewed web page, which can be retrieved using the UI.getInputData action.</cell><cell>string, number, boolean, array, object ~!~not required</cell>
+    <cell><arg>displayOptions</arg></cell><cell>The display options to use when showing the web view.</cell><cell>object ~!~not required</cell>
+</table></indent>
+
+<subheader>Description</subheader>
+
+The <action>UI.showDialog</action> <link action_invoker.csdoc>action</link> shows a HTML dialog for a file at a given <arg>path</arg>. A web page can be given an optional argument <arg>inputData</arg> and its display modified with the optional argument <arg>displayOptions</arg>.
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the dialog file specified by the <arg>path</arg> does not exist on the disk.
+
+<subheader>Example (JavaScript)</subheader>
+
+Displaying an html dialog in the same directory, with empty inputData and displayOptions setting height and width to 75%.
+
+<color JavaScript>
+CS.UI.showDialog({
+    path: "exampleDialog.html",
+    inputData: {},
+    displayOptions: {
+        width: "75%",
+        height: "75%"
+  }
+});
+</color>
+
+
+<seealso CS_UI.csdoc />
