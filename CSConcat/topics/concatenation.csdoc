@@ -7,8 +7,8 @@ You can also use <b>Concatenate Data</b> to add files to an existing file. You c
 The <b>Concatenate Data</b> tool supports two different methods of concatenation:
 
 <list>
-	<li><b>Concatenate cases</b>: Reads cases from each input file and writes them to the output file, skipping invalid and duplicate cases. This mode requires a data dictionary that describes the format of the input and output data files so that cases may be validated and duplicates may be identified. Concatenate cases mode may be used with all types of CSPro data files.</li>
-	<li><b>Concatenate file contents</b>: Simply appends one file to the end of another regardless of the file contents. May be used with text files including CSPro data files in the text format used by older versions of CSPro. This mode will not work for CSPro data files that are not text files (such as CSPro DB files).</li>
+    <li><b>Concatenate cases</b>: Reads cases from each input file and writes them to the output file, skipping invalid and duplicate cases. This mode requires a data dictionary that describes the format of the input and output data files so that cases may be validated and duplicates may be identified. Concatenate cases mode may be used with all types of CSPro data files.</li>
+    <li><b>Concatenate file contents</b>: Simply appends one file to the end of another regardless of the file contents. May be used with text files including CSPro <link CSPro::data_sources.csdoc>data files</link> in the text format used by older versions of CSPro. This mode will not work for CSPro data files that are not text files (such as <link CSPro::data_source_csdb.csdoc>CSPro DB</link> files).</li>
 </list>
 
 <b>Unicode Note</b>: When creating a text formatted output file, the file has a UTF-8 text encoding regardless of the encoding of the input files. Files with an ANSI encoding will automatically be converted to UTF-8.

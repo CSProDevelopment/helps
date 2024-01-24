@@ -1,10 +1,11 @@
 ﻿<title>Encrypted Data</title>
 
+
 <subheader>Overview</subheader>
 
-Using the <link data_sources.csdoc>Encrypted CSPro DB</link> data source, you can read from and write to a data file that is protected by a password. The file cannot be opened without the password, meaning that it is important to implement a sufficient password management policy to ensure that you do not lose data during the data collection process.
+Using the <link data_source_csdbe.csdoc>Encrypted CSPro DB</link> data source, you can read from and write to a data file that is protected by a password. The file cannot be opened without the password, meaning that it is important to implement a sufficient password management policy to ensure that you do not lose data during the data collection process.
 
-An Encrypted CSPro DB file is like a CSPro DB file and can be used in any CSPro application. The only difference is that, upon opening the file, CSPro requires the specification of a password. There are two ways to specify a password:
+An Encrypted CSPro DB data source is like a <link data_source_csdb.csdoc>CSPro DB</link> data source and can be used in any CSPro application. The only difference is that, upon opening the file, CSPro requires the specification of a password. There are two ways to specify a password:
 
 <b>Password entry</b>: A dialog box will appear allowing the user to enter the password. The password must be at least four characters. If the data file does not exist and is being created for the first time, the user must enter the password twice to ensure that the password is entered correctly. You can reduce the number of times that a user must enter the password by allowing the password to be <link dictionary_security_options.csdoc>cached for a specified duration</link> on the machine. When opening an existing file, if the password is not correct, the user will be prompted to enter the password again.
 
@@ -26,4 +27,4 @@ While the data in the file is encrypted, it is also a good idea:
 Encrypted CSPro DB files are SQLite files encrypted using the <link https://www.hwaci.com/sw/sqlite/see.html>SQLite Encryption Extension (SEE)</link> using "AES-256 in OFB mode." The specified password is not used as the key input to SEE but is instead <link CS_Hash_createHash.csdoc>hashed</link> to create a 256-byte key that is used to encrypt the file. If allowed, this hash, not the password, is <link dictionary_security_options.csdoc>cached on the machine</link>. A fixed salt is used during the hashing process because there is no suitable place to store a dynamic salt. This means that the same password will always result in the same encryption key.
 
 
-<seealso dictionary_security_options.csdoc data_sources.csdoc connection_string.csdoc sqlite_in_cspro.csdoc />
+<seealso dictionary_security_options.csdoc data_source_csdbe.csdoc connection_string.csdoc sqlite_in_cspro.csdoc />

@@ -1,18 +1,20 @@
 ﻿<title>FileConcat Function</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 b = fileconcat(『<arg>dictionary_name</arg>,』 <arg>output_file_name</arg>, <arg>file_name1</arg>『, ..., <arg>file_nameN</arg>』);
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
 The <logiccolor>fileconcat</logiccolor> function concatenates a number of files into a single file. The files to concatenate can be either individual file names or wildcard file specifications. The function supports <link CSConcat::concatenation.csdoc>two different methods of concatenation</link>:
 
 <list>
-	<li><b>Concatenate cases</b>: Reads cases from each input file and writes them to the output file, skipping invalid and duplicate cases. This mode requires a data dictionary that describes the format of the input and output data files so that cases may be validated and duplicates may be identified. Concatenate cases mode may be used with all types of <link data_sources.csdoc>CSPro data files</link>.</li>
-	<li><b>Concatenate file contents</b>: Simply appends one file to the end of another regardless of the file contents. This mode will not work for CSPro data files that are not text files (such as CSPro DB files).</li>
+    <li><b>Concatenate cases</b>: Reads cases from each input file and writes them to the output file, skipping invalid and duplicate cases. This mode requires a data dictionary that describes the format of the input and output data files so that cases may be validated and duplicates may be identified. Concatenate cases mode may be used with all types of <link data_sources.csdoc>data sources</link>.</li>
+    <li><b>Concatenate file contents</b>: Simply appends one file to the end of another regardless of the file contents. This mode will not work for CSPro data sources that are not <link data_source_text.csdoc>text</link> (such as <link data_source_csdb.csdoc>CSPro DB</link> data sources).</li>
 </list>
 
 To peform a <b>case</b> concatenation, you must specify a <arg>dictionary_name</arg> that specifies the layout of the data files being concatenated. When the dictionary is specified, the files are combined by reading each case from each of the input files and writing them to the output file. In this mode, invalid cases and duplicate cases are automatically removed from the output file.
@@ -21,9 +23,11 @@ To perform <b>content</b> concatenation, do not specify a dictionary. In this ca
 
 The <arg>output_file_name</arg> is a string expression giving the name of the output file that will contain the concatenated data. The arguments <arg>file_name1</arg> to <arg>file_nameN</arg> are either string expressions or string <link List.csdoc>lists</link> that contain the names of specific files or a wildcard specification of a group of files.
 
+
 <subheader>Return Value</subheader>
 
 The function returns a logical value of 1 (true) if successful and 0 (false) otherwise.
+
 
 <subheader>Example 1 - Case Concatenation</subheader>
 
@@ -31,17 +35,19 @@ The function returns a logical value of 1 (true) if successful and 0 (false) oth
 fileconcat(CENSUS_DICT, "14combined.csdb", "../Data/14*.csdb");
 </logic>
 
+
 <subheader>Example 2 - Case Concatenation With Encrypted Files</subheader>
 
 If you wish to create an encrypted output file, use a .csdbe extension:
 
 <logic>fileconcat(CENSUS_DICT, "output.csdbe", "input.csdb");</logic>
 
-In this scenario the user will be prompted to provide a password for the output file. If you prefer to specify the password yourself, include it in the output file specification using a <topic connection_string.csdoc />:
+In this scenario the user will be prompted to provide a password for the output file. If you prefer to specify the password yourself, include it in the output file specification using a <link connection_string.csdoc>connection string</link>:
 
 <logic>fileconcat(CENSUS_DICT, "output.csdbe|password=1234", "input.csdb");</logic>
 
 Likewise if the input file was a .csdbe file, the user will have to provide the password during the run; or, you can include the password as a connection string.
+
 
 <subheader>Example 3 - Content Concatenation</subheader>
 
@@ -50,5 +56,6 @@ Likewise if the input file was a .csdbe file, the user will have to provide the 
 <logic>
 fileconcat("DMV.txt", "District of Columbia.txt", "Maryland.txt", "Virginia.txt");
 </logic>
+
 
 <seealso filecopy_function.csdoc />

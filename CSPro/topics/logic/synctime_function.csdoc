@@ -9,7 +9,7 @@ d = synctime(<arg>dictionary_name</arg>『, <arg>device_identifier</arg>, <arg>c
 
 <subheader>Description</subheader>
 
-The <logiccolor>synctime</logiccolor> function returns the <link timestamp_function.csdoc>UNIX time</link> of the last synchronization of a data file or a specific case, or <logiccolor>notappl</logiccolor> if no such synchronization has occurred. The <arg>dictionary_name</arg> argument indicates which data file's details are returned. This dictionary can be either the dictionary for the main data file or an external dictionary. CSPro uses the data file that is currently associated with this dictionary, either because it was specified when the application was started or via a call to <logiccolor>setfile</logiccolor> from application logic. Unlike the other synchronization functions, this function can be called without connecting to a server as it returns metadata stored offline in the <link data_sources.csdoc>CSPro DB</link> file.
+The <logiccolor>synctime</logiccolor> function returns the <link timestamp_function.csdoc>UNIX time</link> of the last synchronization of a data file or a specific case, or <logiccolor>notappl</logiccolor> if no such synchronization has occurred. The <arg>dictionary_name</arg> argument indicates which data file's details are returned. This dictionary can be either the dictionary for the main data file or an external dictionary. CSPro uses the data file that is currently associated with this dictionary, either because it was specified when the application was started or via a call to <logiccolor>setfile</logiccolor> from application logic. Unlike the other synchronization functions, this function can be called without connecting to a server as it returns metadata stored offline in the <link data_source_csdb.csdoc>CSPro DB</link> file.
 
 
 Providing an optional string expression <arg>device_identifier</arg> allows you to query the last synchronization time to a specific device. You can supply the identifier by using a name. A name like <logiccolor>"Bluetooth"</logiccolor> will return information on the last synchronization with <i>any</i> Bluetooth device. A name like <logiccolor>"https://www.myserver.org/api"</logiccolor> will return information on the last synchronization with the specified server.
@@ -25,13 +25,13 @@ The optional string expression <arg>case_identifier</arg> allows you to specify 
 The function returns the time of the last synchronization, or <logiccolor>notappl</logiccolor> if there was not a synchronization. In summary:
 
 <indent>
-	<table 3 header nowrap>
-		<cell>Device Identifier</cell><cell>Case Identifier</cell><cell>Last Synchronization Time...</cell>
-		<cell>Undefined or Blank</cell><cell>Undefined or Blank</cell><cell>...of any case to any device</cell>
-		<cell>Not Blank</cell><cell>Undefined or Blank</cell><cell>...of any case to the specified device</cell>
-		<cell>Blank</cell><cell>Not Blank</cell><cell>...of the specified case to any device</cell>
-		<cell>Not Blank</cell><cell>Not Blank</cell><cell>...of the specified case to the specified device</cell>
-	</table>
+    <table 3 header nowrap>
+        <cell>Device Identifier</cell><cell>Case Identifier</cell><cell>Last Synchronization Time...</cell>
+        <cell>Undefined or Blank</cell><cell>Undefined or Blank</cell><cell>...of any case to any device</cell>
+        <cell>Not Blank</cell><cell>Undefined or Blank</cell><cell>...of any case to the specified device</cell>
+        <cell>Blank</cell><cell>Not Blank</cell><cell>...of the specified case to any device</cell>
+        <cell>Not Blank</cell><cell>Not Blank</cell><cell>...of the specified case to the specified device</cell>
+    </table>
 </indent>
 
 
@@ -41,7 +41,7 @@ The function returns the time of the last synchronization, or <logiccolor>notapp
 numeric unsynced_cases = countcases(SURVEY_DICT where synctime(SURVEY_DICT, "", uuid(SURVEY_DICT)) = notappl);
 
 if unsynced_cases > 0 then
-	errmsg("There are %d cases on your device that have not been synced to any device.", unsynced_cases);
+    errmsg("There are %d cases on your device that have not been synced to any device.", unsynced_cases);
 endif;
 </logic>
 
@@ -53,8 +53,8 @@ string ServerUrl = "https://www.myserver.org/api";
 numeric SecondsInWeek = 60 * 60 * 24 * 7;
 
 when synctime(SURVEY_DICT, ServerUrl);
-	 notappl 						   -> errmsg("You have never synced. Please sync as soon as possible.");
-	 < ( timestamp() - SecondsInWeek ) -> errmsg("You have not synced in a week. Please sync as soon as possible.");
+     notappl                           -> errmsg("You have never synced. Please sync as soon as possible.");
+     < ( timestamp() - SecondsInWeek ) -> errmsg("You have not synced in a week. Please sync as soon as possible.");
 endwhen;
 </logic>
 

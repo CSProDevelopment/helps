@@ -1,6 +1,6 @@
 ﻿<title>CSPro DB File Format</title>
 
-CSPro DB files are <link sqlite_in_cspro.csdoc>SQLite database</link> files. SQLite is a file-based relational database which means that it is possible to use SQL commands to query the CSPro data. SQL queries can be run from a CSPro program using the <logiccolor>sqlquery</logiccolor> function. In addition, there are also many free viewers for SQLite that allow you to access the data outside of CSPro.
+<link data_source_csdb.csdoc>CSPro DB</link> files are <link sqlite_in_cspro.csdoc>SQLite database</link> files. SQLite is a file-based relational database which means that it is possible to use SQL commands to query the CSPro data. SQL queries can be run from a CSPro program using the <logiccolor>sqlquery</logiccolor> function. In addition, there are also many free viewers for SQLite that allow you to access the data outside of CSPro.
 
 <i>Note that this information applies only to CSPro DB files created in version 7.4 or later. Data files created in earlier versions store all the data from a case in a single database column so it is not possible to access individual items using SQL.</i>
 
@@ -58,4 +58,4 @@ GROUP BY province, district, enumeration_area
 
 Modifying a CSPro DB file using SQL commands is strongly discouraged. Editing the schema or using update and insert queries to modify the data in a CSPro DB file can leave the file in a state where it can no longer be read by CSPro. In addition, any modifications to cases in the data file that do not correctly update the <b>file_revisions</b> and <b>vector_clock</b> tables will leave the file in a state where data synchronization will no longer work correctly. All modifications to the CSPro DB file should be done using CSPro data entry or batch edit applications or CSPro tools.
 
-<seealso sqlite_in_cspro.csdoc sqlquery_function.csdoc data_sources.csdoc />
+<seealso sqlite_in_cspro.csdoc sqlquery_function.csdoc data_source_csdb.csdoc />

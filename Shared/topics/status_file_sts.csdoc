@@ -3,16 +3,16 @@
 The status file stores information about which cases are partially entered and the last field entered. It also keeps track of the cases that have been verified. CSEntry uses this information to:
 
 <list>
-	<li>Show which cases in the data file are partially entered.</li>
-	<li>Restart partially entered cases at the last field location entered.</li>
-	<li>Show the number and percent of verified cases in the operator statistics.</li>
+    <li>Show which cases in the data file are partially entered.</li>
+    <li>Restart partially entered cases at the last field location entered.</li>
+    <li>Show the number and percent of verified cases in the operator statistics.</li>
 </list>
 
 The .sts file is a text file and you can view this file in Text Viewer.
 
 If necessary, you can modify this file in a text editor. However, you should manipulate this file with extreme caution. If you modify it incorrectly, you can lose information about partially entered cases or which cases have been verified.
 
-Status information for non-text files (such as <link CSPro::data_sources.csdoc>CSPro DB</link> files) is stored within the file itself and not in a .sts file.
+Status information for non-text files (such as a <link CSPro::data_source_csdb.csdoc>CSPro DB data source</link>) is stored within the file itself and not in a .sts file.
 
 
 <seealso CSPro::newline_handling.csdoc />

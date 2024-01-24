@@ -10,7 +10,7 @@ The <arg>file_name</arg> is the file name of the data source. It can be specifie
 
 Multiple properties can be specified, with each grouping separated by the ampersand & character. The property name is listed, followed by an equals = sign, and then the property value is given. Most property values can be defined in human-readable text, but if the value contains special characters such as & or = characters, it must be <link https://en.wikipedia.org/wiki/Percent-encoding>percent-encoded</link>.
 
-The property "type" is used by CSPro to specify the type of a data file. Generally this is not necessary to define because the data file type can be deduced from the file extension, but in one case it is necessary. This, for example, is how the <link data_sources.csdoc>none data source</link> is specified in a PFF:
+The property "type" is used by CSPro to specify the type of a data file. Generally this is not necessary to define because the data file type can be deduced from the file extension, but in one case it is necessary. This, for example, is how the <link data_source_none.csdoc>None data source</link> is specified in a PFF:
 
 <pff>
 InputData=|type=None
@@ -34,9 +34,9 @@ Or specified for the PFF:
 Properties include:
 
 <indent><table 2 header>
-	<cell><b>Property</b></cell><cell><b>Description</b></cell>
-	<cell><i>password</i></cell><cell>The password that opens an <link encrypted_data.csdoc>encrypted data</link> file.</cell>
-	<cell><i>cache</i></cell><cell>Indicates to CSPro that cases should be cached in memory. This may be useful to advanced users who want to optimize programs that do a lot of case lookups.</cell>
+    <cell><b>Property</b></cell><cell><b>Description</b></cell>
+    <cell><i>password</i></cell><cell>The password that opens an <link encrypted_data.csdoc>encrypted data</link> file.</cell>
+    <cell><i>cache</i></cell><cell>Indicates to CSPro that cases should be cached in memory. This may be useful to advanced users who want to optimize programs that do a lot of case lookups.</cell>
 </table></indent>
 
 
