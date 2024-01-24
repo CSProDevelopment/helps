@@ -10,7 +10,7 @@ s = symbol_name.getValueJson(『serializationOptions := <arg>serialization_optio
 
 <subheader>Description</subheader>
 
-The <logiccolor>Symbol.getValueJson</logiccolor> function returns the <link JSON_primer.csdoc>JSON</link> representation of a symbol's value. The optional <arg>serialization_options</arg> argument allows you to specify how the symbol should be serialized, potentially overriding the <link properties_json_serialization.csdoc>default application settings</link>. <note type="todo" text="link to serializationOptions help" />
+The <logiccolor>Symbol.getValueJson</logiccolor> function returns the <link JSON_primer.csdoc>JSON</link> representation of a symbol's value. The optional <arg>serialization_options</arg> argument allows you to specify how the symbol <link JSON_serialization_options.csdoc>should be serialized</link>, potentially overriding the <link properties_json_serialization.csdoc>default application settings</link>.
 
 You can use the <logiccolor>Symbol.getJson</logiccolor> function if you want to work with the symbol's metadata, or both the metadata and value. You can also use the <action>Logic.getSymbolValue</action> action to get a symbol's value.
 

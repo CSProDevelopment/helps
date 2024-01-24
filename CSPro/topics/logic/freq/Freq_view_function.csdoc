@@ -3,20 +3,23 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = freq_name.view() 『<arg>formatting_options</arg>』;
+b = freq_name.view(『<arg>viewer_arguments</arg>』) 『<arg>formatting_options</arg>』;
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-The <logiccolor>Freq.view</logiccolor> function generates <link frequencies_file.csdoc>HTML frequencies</link> based on the values in a <link Freq.csdoc>Freq object</link> and displays the frequency tables in an embedded web browser.
+The <logiccolor>Freq.view</logiccolor> function generates <link frequencies_file.csdoc>HTML frequencies</link> based on the values in a <link Freq.csdoc>Freq object</link> and displays the frequency tables in an <link html_in_cspro.csdoc>embedded web browser</link>.
 
 Optional <link freq_formatting_options.csdoc>formatting options</link> allow you to control how the frequency tables are generated. The formatting options include the following commands: <logiccolor>valueset</logiccolor>, <logiccolor>distinct</logiccolor>, <logiccolor>vset</logiccolor>, <logiccolor>heading</logiccolor>, <logiccolor>stat</logiccolor>, <logiccolor>percentiles</logiccolor>, <logiccolor>nofreq</logiccolor>, <logiccolor>decimals</logiccolor>, <logiccolor>sort</logiccolor>, <logiccolor>nonetpercents</logiccolor>, and <logiccolor>pagelength</logiccolor>.
 
 
+<include "../include_viewer_arguments.hgi" />
+
+
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true) if the frequencies are successfully displayed, and 0 (false) otherwise.
+The function returns a logical value of <logiccolor>1</logiccolor> (<logiccolor>true</logiccolor>) if the frequencies are successfully displayed, and <logiccolor>0</logiccolor> (<logiccolor>false</logiccolor>) otherwise.
 
 
 <subheader>Example</subheader>

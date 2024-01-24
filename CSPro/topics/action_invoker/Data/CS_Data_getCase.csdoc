@@ -1,0 +1,74 @@
+﻿<title>Data.getCase Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Data.getCase(『<arg>name</arg> := ...』
+                  『, <arg>key</arg> := ... ‖ <arg>uuid</arg> := ...』
+                  『, <arg>serializationOptions</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>name</arg></cell><cell>The name of a <link introduction_to_data_dictionary.csdoc>dictionary</link> associated with an application.</cell><cell>string~!~not required</cell>
+    <cell><arg>key</arg></cell><cell>The <link key_function.csdoc>key</link> (case IDs) of a specific case to lookup.</cell><cell>string~!~not required</cell>
+    <cell><arg>uuid</arg></cell><cell>The <link uuid_function.csdoc>UUID</link> of a specific case to lookup.</cell><cell>string~!~not required</cell>
+    <cell><arg>serializationOptions</arg></cell><cell>Options for how the case should be serialized.</cell><cell>object~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Data.getCase</action> <link action_invoker.csdoc>action</link> returns a specific case, or the current case, associated with a <link introduction_to_data_dictionary.csdoc>dictionary</link>. The optional <arg>serializationOptions</arg> argument allows you to specify how the case <link JSON_serialization_options.csdoc>should be serialized</link>, potentially overriding the <link properties_json_serialization.csdoc>default application settings</link>.
+
+Typically <arg>name</arg> identifies a dictionary, but you can also specify the name of an <link data_entry_application_file_ent.csdoc>application</link> or <link forms_file_fmf.csdoc>form file</link>. When using an application name, or if <arg>name</arg> is not specified, the case associated with the application's <link dictionary_types.csdoc>main</link> dictionary is returned. When using a form file name, the case associated with that form file's dictionary is returned.
+
+If neither <arg>key</arg> nor <arg>uuid</arg> are specified, the current case associated with the dictionary is returned. If one of those arguments is specified, the case identified by that argument is returned. If both <arg>key</arg> and <arg>uuid</arg> are specified, then the <arg>uuid</arg> value is prioritized.
+
+Because CSPro optimizes the reading of case data, you may need to disable the dictionary's <link case_read_optimization.csdoc>Read Optimization</link> setting when using this action on external dictionaries or in batch applications.
+
+
+<subheader>Return Value</subheader>
+
+The action returns the case.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if:
+
+<list>
+    <li>No dictionary, or associated dictionary, exists with the specified name.</li>
+    <li>No case exists as specified by the <arg>key</arg> or <arg>uuid</arg> arguments.</li>
+    <li>An error occurs while reading the case from the <link data_sources.csdoc>data source</link>.</li>
+</list>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+// get the case with a specific key
+let caseData = CS.Data.getCase({
+    name: "CLIMATE_DICT",
+    key: "010112600910970251",
+    serializationOptions: {
+        writeLabels: true
+    }
+});
+
+// write to the console the value of all ID items along with their labels
+for( const [name, idOrRecord] of Object.entries(caseData.CLIMATE_LEVEL) ) {
+    if( !Array.isArray(idOrRecord) ) {
+        console.log(`${name}: ${idOrRecord.code} - ${idOrRecord.label}`);
+    }
+}
+</color>
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<include "../Dictionary/include_questionnaire_view_example.hgi" />
+
+
+<seealso CS_Data.csdoc CS_Application_getQuestionnaireContent.csdoc />

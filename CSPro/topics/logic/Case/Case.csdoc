@@ -1,0 +1,25 @@
+﻿<title>Case Object</title>
+
+In logic, a <logiccolor>Case</logiccolor> object facilitates the management of CSPro's case-based data.
+
+
+<subheader>Functionality</subheader>
+
+A Case object is a CSPro logic object that allows the following functions to be called via <link object_dot_notation.csdoc>dot notation</link>:
+
+<table 2 header nowrap>
+    <cell>Function</cell><cell>Description</cell>
+    <cell><logiccolor Case>view</logiccolor></cell><cell>Displays the <link view_questionnaire.csdoc>questionnaire view</link> for the case.</cell>
+</table>
+
+In addition to this object function, Case objects can be used as arguments to the <logiccolor>view</logiccolor> function.
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC HOUSEHOLD_FORM
+
+    // view the contents of the current case
+    CENSUS_DICT.view();
+</logic>

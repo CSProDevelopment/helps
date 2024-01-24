@@ -1,0 +1,26 @@
+﻿<title>Case Read Optimization</title>
+
+
+<subheader>Optimization Overview</subheader>
+
+When reading cases from a <link data_sources.csdoc>data source</link>, CSPro optimizes the reading of <link item_description.csdoc>items</link> so that only items used in the application are read. This results in the faster execution of applications, particularly batch applications and <link tool_list.csdoc>tools</link>, which may use only a few of the dictionary's items.
+
+When compiling an application, CSPro keeps track of items that are referenced in logic. These are the items that are read when reading a case (either as part of the application or via a function call such as <logiccolor>loadcase</logiccolor>). In addition to the items referenced in logic, all items are read in the following scenarios:
+
+<list>
+    <li>Data entry applications: All items for the <link dictionary_types.csdoc>main</link> dictionary are read.</li>
+    <li>Batch applications: All items for the <link dictionary_types.csdoc>main</link> dictionary are read when outputting data (as specified in the <link run_production_batch_edits.csdoc>PFF</link> or using <logiccolor>setoutput</logiccolor>).</li>
+    <li><link dictionary_types.csdoc>External</link> dictionaries: All items are read if they may be written (e.g., using <logiccolor>writecase</logiccolor>).</li>
+    <li>Other logic functions: All items are read when logic functions are used that depend on having all items (e.g., <logiccolor>Case.view</logiccolor>).</li>
+</list>
+
+
+<subheader>Optimization Override</subheader>
+
+The default behavior is suitable for most applications, but sometimes you may want to turn off case read optimization. For example, if using an action such as <action>Data.getCase</action>, the CSPro compiler does not know which dictionary will be bound to that action at runtime, so the optimization may lead to items not being read that you will eventually want at runtime.
+
+There are two ways to override this behavior, which is set on a per-<link introduction_to_data_dictionary.csdoc>dictionary</link> basis. You can use the <link dictionary_property_panel.csdoc>dictionary property panel</link> to disable <b>Read Optimization</b>. This setting is applicable for every application that uses the dictionary. Alternatively, to control this on a per-application basis, you can use the <link preprocessor.csdoc>preprocessor</link> to disable the setting:
+
+<logic>
+#setProperty(DICT_NAME, @"readOptimization", false);
+</logic>

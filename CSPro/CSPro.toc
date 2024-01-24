@@ -60,7 +60,8 @@
               { "path": "synchronization.csdoc", "~title": "Synchronization Overview" }, 
               { "path": "paradata.csdoc", "~title": "Paradata" }, 
               { "path": "multiple_language_applications.csdoc", "~title": "Multiple Language Applications" }, 
-              { "path": "mapping.csdoc", "~title": "Mapping" }
+              { "path": "mapping.csdoc", "~title": "Mapping" }, 
+              { "path": "view_questionnaire.csdoc", "~title": "Questionnaire View" }
             ]
           }, 
           {
@@ -175,6 +176,7 @@
               { "path": "creating_a_dictionary_for_a_new_file.csdoc", "~title": "Creating a Dictionary for a New File" }, 
               { "path": "creating_a_dictionary_for_an_existing_file.csdoc", "~title": "Creating a Dictionary for an Existing File" }, 
               { "path": "data_dictionary_screen_layout.csdoc", "~title": "Data Dictionary Screen Layout" }, 
+              { "path": "view_questionnaire_from_dcf.csdoc", "~title": "View Dictionary Questionnaire" }, 
               { "path": "dictionary_property_panel.csdoc", "~title": "Dictionary Property Panel" }, 
               { "path": "data_dictionary_tree.csdoc", "~title": "Data Dictionary Tree" }, 
               { "path": "relative_and_absolute_mode.csdoc", "~title": "Relative and Absolute Mode" }, 
@@ -239,6 +241,7 @@
               { "path": "user_defined_functions.csdoc", "~title": "User-Defined Functions" }, 
               { "path": "Array.csdoc", "~title": "Array Object" }, 
               { "path": "Audio.csdoc", "~title": "Audio Object" }, 
+              { "path": "Case.csdoc", "~title": "Case Object" }, 
               { "path": "Document.csdoc", "~title": "Document Object" }, 
               { "path": "File.csdoc", "~title": "File Object" }, 
               { "path": "Freq.csdoc", "~title": "Freq Object" }, 
@@ -272,6 +275,7 @@
               { "path": "find_and_replace_logic.csdoc", "~title": "Find and Replace Logic" }, 
               { "path": "compile_logic.csdoc", "~title": "Compile Logic / An Application" }, 
               { "path": "onkey_character_map.csdoc", "~title": "OnKey Character Map" }, 
+              { "path": "OnViewQuestionnaire_global_function.csdoc", "~title": "OnViewQuestionnaire Global Function" }, 
               { "path": "user_configuration_settings.csdoc", "~title": "User and Configuration Settings" }, 
               { "path": "string_encoder_dialog.csdoc", "~title": "String Encoder Dialog" }, 
               { "path": "path_adjuster_dialog.csdoc", "~title": "Path Adjuster Dialog" }, 
@@ -375,6 +379,7 @@
                   { "path": "generate_default_data_entry_forms.csdoc", "~title": "Generate Default Data Entry Forms" }, 
                   { "path": "drag_option_menu.csdoc", "~title": "Drag Options Menu" }, 
                   { "path": "data_entry_forms_screen_layout.csdoc", "~title": "Data Entry Forms Screen Layout" }, 
+                  { "path": "view_questionnaire_from_fmf.csdoc", "~title": "View Form Questionnaire" }, 
                   { "path": "data_entry_tree.csdoc", "~title": "Forms Tree" }, 
                   { "path": "run_a_data_entry_application.csdoc", "~title": "Run a Data Entry Application" }, 
                   { "path": "run_production_data_entry.csdoc", "~title": "Run Production Data Entry" }, 
@@ -574,6 +579,7 @@
             "documents": [
               { "path": "create_a_new_batch_edit_application.csdoc", "~title": "Create a New Batch Edit Application" }, 
               { "path": "batch_application_screen_layout.csdoc", "~title": "Batch Application Screen Layout" }, 
+              { "path": "view_questionnaire_from_bch.csdoc", "~title": "View Batch Questionnaire" }, 
               { "path": "batch_edit_tree.csdoc", "~title": "Batch Edit Tree" }, 
               { "path": "run_a_batch_edit_application.csdoc", "~title": "Run a Batch Edit Application" }
             ]
@@ -867,7 +873,8 @@
           { "path": "data_source_json.csdoc", "~title": "JSON Data Source" }, 
           { "path": "data_source_memory.csdoc", "~title": "In-Memory Data Source" }, 
           { "path": "data_source_tab.csdoc", "~title": "Tab Delimited Data Source" }, 
-          { "path": "data_source_semicolon.csdoc", "~title": "Semicolon Delimited Data Source" }
+          { "path": "data_source_semicolon.csdoc", "~title": "Semicolon Delimited Data Source" }, 
+          { "path": "case_read_optimization.csdoc", "~title": "Case Read Optimization" }
         ]
       }, 
       {
@@ -937,6 +944,12 @@
               { "path": "Barcode.csdoc", "~title": "Barcode Namespace" }, 
               { "path": "Barcode_read_function.csdoc", "~title": "Barcode.read Function" }, 
               { "path": "Barcode_createQRCode_function.csdoc", "~title": "Barcode.createQRCode Function" }
+            ]
+          }, 
+          {
+            "title": "Case Object", 
+            "documents": [
+              { "path": "Case_view_function.csdoc", "~title": "Case.view Function" }
             ]
           }, 
           {
@@ -1478,11 +1491,34 @@
             ]
           }, 
           {
+            "title": "Application Namespace", 
+            "documents": [
+              { "path": "CS_Application.csdoc", "~title": "Application Action Invoker Namespace" }, 
+              { "path": "CS_Application_getFormFile.csdoc", "~title": "Application.getFormFile Action" }, 
+              { "path": "CS_Application_getQuestionnaireContent.csdoc", "~title": "Application.getQuestionnaireContent Action" }, 
+              { "path": "CS_Application_getQuestionText.csdoc", "~title": "Application.getQuestionText Action" }
+            ]
+          }, 
+          {
             "title": "Clipboard Namespace", 
             "documents": [
               { "path": "CS_Clipboard.csdoc", "~title": "Clipboard Action Invoker Namespace" }, 
               { "path": "CS_Clipboard_getText.csdoc", "~title": "Clipboard.getText Action" }, 
               { "path": "CS_Clipboard_putText.csdoc", "~title": "Clipboard.putText Action" }
+            ]
+          }, 
+          {
+            "title": "Data Namespace", 
+            "documents": [
+              { "path": "CS_Data.csdoc", "~title": "Data Action Invoker Namespace" }, 
+              { "path": "CS_Data_getCase.csdoc", "~title": "Data.getCase Action" }
+            ]
+          }, 
+          {
+            "title": "Dictionary Namespace", 
+            "documents": [
+              { "path": "CS_Dictionary.csdoc", "~title": "Dictionary Action Invoker Namespace" }, 
+              { "path": "CS_Dictionary_getDictionary.csdoc", "~title": "Dictionary.getDictionary Action" }
             ]
           }, 
           {
@@ -1686,7 +1722,8 @@
           {
             "title": "Appendix I - JSON Representations", 
             "documents": [
-              { "path": "symbols_json_representation.csdoc", "title": "Symbols" }
+              { "path": "symbols_json_representation.csdoc", "title": "Symbols" }, 
+              { "path": "JSON_serialization_options.csdoc", "~title": "JSON Serialization Options" }
             ]
           }
         ]

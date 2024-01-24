@@ -55,8 +55,8 @@ DISTRICT=05
 The <pffcolor>[Run Information]</pffcolor> block is required. While <pffcolor>Version</pffcolor> and <pffcolor>AppType</pffcolor> must appear exactly as shown in the example above, there are two optional properties:
 
 <list>
-	<li><pffcolor>Description</pffcolor>=if specified, it will be used instead of the name of the file in the list of applications (mobile only) and in the window title during data entry (all platforms).</li>
-	<li><pffcolor>ShowInApplicationListing</pffcolor>=determines whether the application associated with this PFF is displayed on the mobile Entry Applications screen. The possible options are: <b>Always</b> (default), <b>Never</b>, and <b>Hidden</b>. Operators must manually elect to show hidden applications, whereas PFFs with the <b>Never</b> option will never be shown. <b>Always</b> (the default) is a good choice for menu applications or other programs that you always want your interviewers to see. <b>Never</b> is a good choice for the applications the menu program launches, as you will likely not want those programs being launched directly without parameters being set first. <b>Hidden</b> is useful for utility programs that you want supervisors or IT staff to have access to, but that you don't want the interviewers to be aware of.</li>
+    <li><pffcolor>Description</pffcolor>=if specified, it will be used instead of the name of the file in the list of applications (mobile only) and in the window title during data entry (all platforms).</li>
+    <li><pffcolor>ShowInApplicationListing</pffcolor>=determines whether the application associated with this PFF is displayed on the mobile Entry Applications screen. The possible options are: <b>Always</b> (default), <b>Never</b>, and <b>Hidden</b>. Operators must manually elect to show hidden applications, whereas PFFs with the <b>Never</b> option will never be shown. <b>Always</b> (the default) is a good choice for menu applications or other programs that you always want your interviewers to see. <b>Never</b> is a good choice for the applications the menu program launches, as you will likely not want those programs being launched directly without parameters being set first. <b>Hidden</b> is useful for utility programs that you want supervisors or IT staff to have access to, but that you don't want the interviewers to be aware of.</li>
 </list>
 
 
@@ -65,35 +65,36 @@ The <pffcolor>[Run Information]</pffcolor> block is required. While <pffcolor>Ve
 The <pffcolor>[DataEntryInit]</pffcolor> block is optional. It gives you the opportunity to customize the following runtime characteristics:
 
 <list>
-	<li><pffcolor>OperatorID</pffcolor>=specifies the <link getoperatorid_function.csdoc>operator ID</link> for the purposes of logging <link operator_statistics_file_log.csdoc>operator statistics</link>. If this line is not present but your data entry application has been set to <link change_data_entry_options.csdoc>ask for this</link>, CSEntry will prompt the operator for one at runtime.</li>
-	<li><pffcolor>StartMode</pffcolor>=determines the mode in which CSEntry starts. The possible options are: <b>Add</b>, <b>Modify</b>, and <b>Verify</b>. If this line is not present, one of two things will occur: if the data file does not exist, then the program will start in <b>Add</b> mode; if the data file does exist, then CSEntry will wait for the operator to choose their desired mode. The operator's choices may be constrained due to options indicated in the <pffcolor>Lock</pffcolor> feature.
-	~!~You can also specify the case upon which to act by adding a semicolon and the case IDs of an existing case (for example: <pffcolor>StartMode</pffcolor>=<b>Modify</b>;010502). This will open CSEntry in <b>Modify</b> mode and open the case indicated by the ID. If the <pffcolor>StartMode</pffcolor> conflicts with the <pffcolor>Lock</pffcolor> parameter settings, then the <pffcolor>StartMode</pffcolor> parameter will take precedence.</li>
-	<li><pffcolor>Key</pffcolor>= specifies the case ID to automatically open. If a key is provided that exists in the data file, CSEntry will open that case and then close once the case has been entered. If the case does not exist, a new case is created and the IDs automatically filled from the values specified. If only a partial key is provided, then only the values specified are prefilled. (For example, if the IDs are cluster and household number and the key only specifies the cluster, then the cluster will be automatically filled but the interviewer will have to specify the household number.) The <pffcolor>StartMode</pffcolor> attribute takes precedence over the <pffcolor>Key</pffcolor> attribute. You generally will use only one, if any, in your design. This attribute is typically used in menu programs, often with the output of the <logiccolor>key</logiccolor> logic function.</li>
-	<li><pffcolor>AutoAdd</pffcolor>=indicates whether, while in <b>Add</b> mode, CSEntry should continuously add cases, meaning that after a case is added, CSEntry will begin adding another case. The possible options are: <b>Yes</b> (default) and <b>No</b>.</li>
-	<li><pffcolor>FullScreen</pffcolor>=determines whether CSEntry will open the application in full screen mode, with no case tree on the left. The possible options are: <b>Yes</b>, <b>No</b> (default), and <b>NoMenus</b>. The parameter <b>NoMenus</b> will open CSEntry in a tablet-friendly mode whereby the case tree and the CSEntry menus and title bar are not shown.</li>
-	<li><pffcolor>NoFileOpen</pffcolor>=determines whether CSEntry will permit the operator to open another data file while running a data entry application. The possible options are: <b>Yes</b> (default) and <b>No</b>.</li>
-	<li><pffcolor>Lock</pffcolor>=indicates what CSEntry modes the operator cannot access. The possible options are:~!~~!~
-		<list>
-			<li><b>Add</b>: The operator cannot add new cases.</li>
-			<li><b>Modify</b>: The operator cannot modify existing cases.</li>
-			<li><b>Verify</b>: The operator cannot verify existing cases.</li>
-			<li><b>Stats</b>: The operator cannot view <link operator_statistics_file_log.csdoc>operator statistics</link>.</li>
-			<li><b>Delete</b>: The operator cannot delete cases.</li>
-			<li><b>CaseListing</b>: On mobile CSEntry, the Case Listing screen will be bypassed.</li>
-		</list>
-	Multiple modes can be specified by listing each mode, separated by a comma.
-	</li>
-	<li><pffcolor>Interactive</pffcolor>=specifies the default way that CSEntry runs in <link CSEntry::edit_interactively.csdoc>Interactive Edit</link> mode. The possible options are:~!~~!~
-		<list>
-			<li><b>Ask</b>: The default option, CSEntry will ask the operator how to run Interactive Edit.</li>
-			<li><b>Both</b>: CSEntry will display both out-of-range messages and errors generated from the <logiccolor>errmsg</logiccolor> function.</li>
-			<li><b>ErrMsg</b>: CSEntry will only display errors generated from the <logiccolor>errmsg</logiccolor> function.</li>
-			<li><b>Range</b>: CSEntry will only display out-of-range message.</li>
-			<li><b>Off</b>: Interative Edit mode will be disabled.</li>
-		</list>
-	If the mode is followed by a comma and <b>Lock</b>, then the mode cannot be changed by the operator. Otherwise, unless the option is <b>Off</b>, the operator can change the mode from within CSEntry.
-		</li>
-	<li><pffcolor>CaseListingFilter</pffcolor>=filters the cases in the data file shown to the operator. The filter string can use regular expressions. If you have multiple operators entering data to the same data file, this can be a way to prevent operators from interacting with data entered by other operators. The filter is matched against the IDs of each case.</li>
+    <li><pffcolor>OperatorID</pffcolor>=specifies the <link getoperatorid_function.csdoc>operator ID</link> for the purposes of logging <link operator_statistics_file_log.csdoc>operator statistics</link>. If this line is not present but your data entry application has been set to <link change_data_entry_options.csdoc>ask for this</link>, CSEntry will prompt the operator for one at runtime.</li>
+    <li><pffcolor>StartMode</pffcolor>=determines the mode in which CSEntry starts. The possible options are: <b>Add</b>, <b>Modify</b>, and <b>Verify</b>. If this line is not present, one of two things will occur: if the data file does not exist, then the program will start in <b>Add</b> mode; if the data file does exist, then CSEntry will wait for the operator to choose their desired mode. The operator's choices may be constrained due to options indicated in the <pffcolor>Lock</pffcolor> feature.
+    ~!~You can also specify the case upon which to act by adding a semicolon and the case IDs of an existing case (for example: <pffcolor>StartMode</pffcolor>=<b>Modify</b>;010502). This will open CSEntry in <b>Modify</b> mode and open the case indicated by the ID. If the <pffcolor>StartMode</pffcolor> conflicts with the <pffcolor>Lock</pffcolor> parameter settings, then the <pffcolor>StartMode</pffcolor> parameter will take precedence.</li>
+    <li><pffcolor>Key</pffcolor>= specifies the case ID to automatically open. If a key is provided that exists in the data file, CSEntry will open that case and then close once the case has been entered. If the case does not exist, a new case is created and the IDs automatically filled from the values specified. If only a partial key is provided, then only the values specified are prefilled. (For example, if the IDs are cluster and household number and the key only specifies the cluster, then the cluster will be automatically filled but the interviewer will have to specify the household number.) The <pffcolor>StartMode</pffcolor> attribute takes precedence over the <pffcolor>Key</pffcolor> attribute. You generally will use only one, if any, in your design. This attribute is typically used in menu programs, often with the output of the <logiccolor>key</logiccolor> logic function.</li>
+    <li><pffcolor>AutoAdd</pffcolor>=indicates whether, while in <b>Add</b> mode, CSEntry should continuously add cases, meaning that after a case is added, CSEntry will begin adding another case. The possible options are: <b>Yes</b> (default) and <b>No</b>.</li>
+    <li><pffcolor>FullScreen</pffcolor>=determines whether CSEntry will open the application in full screen mode, with no case tree on the left. The possible options are: <b>Yes</b>, <b>No</b> (default), and <b>NoMenus</b>. The parameter <b>NoMenus</b> will open CSEntry in a tablet-friendly mode whereby the case tree and the CSEntry menus and title bar are not shown.</li>
+    <li><pffcolor>NoFileOpen</pffcolor>=determines whether CSEntry will permit the operator to open another data file while running a data entry application. The possible options are: <b>Yes</b> (default) and <b>No</b>.</li>
+    <li><pffcolor>Lock</pffcolor>=indicates what CSEntry modes the operator cannot access. The possible options are:~!~~!~
+        <list>
+            <li><b>Add</b>: The operator cannot add new cases.</li>
+            <li><b>Modify</b>: The operator cannot modify existing cases.</li>
+            <li><b>Verify</b>: The operator cannot verify existing cases.</li>
+            <li><b>Delete</b>: The operator cannot delete cases.</li>
+            <li><b>View</b>: The operator cannot use the <link view_questionnaire.csdoc>questionnaire view</link> to view cases from the case listing.</li>
+            <li><b>Stats</b>: The operator cannot view <link operator_statistics_file_log.csdoc>operator statistics</link>.</li>
+            <li><b>CaseListing</b>: On mobile CSEntry, the Case Listing screen will be bypassed.</li>
+        </list>
+    Multiple modes can be specified by listing each mode, separated by a comma.
+    </li>
+    <li><pffcolor>Interactive</pffcolor>=specifies the default way that CSEntry runs in <link CSEntry::edit_interactively.csdoc>Interactive Edit</link> mode. The possible options are:~!~~!~
+        <list>
+            <li><b>Ask</b>: The default option, CSEntry will ask the operator how to run Interactive Edit.</li>
+            <li><b>Both</b>: CSEntry will display both out-of-range messages and errors generated from the <logiccolor>errmsg</logiccolor> function.</li>
+            <li><b>ErrMsg</b>: CSEntry will only display errors generated from the <logiccolor>errmsg</logiccolor> function.</li>
+            <li><b>Range</b>: CSEntry will only display out-of-range message.</li>
+            <li><b>Off</b>: Interative Edit mode will be disabled.</li>
+        </list>
+    If the mode is followed by a comma and <b>Lock</b>, then the mode cannot be changed by the operator. Otherwise, unless the option is <b>Off</b>, the operator can change the mode from within CSEntry.
+        </li>
+    <li><pffcolor>CaseListingFilter</pffcolor>=filters the cases in the data file shown to the operator. The filter string can use regular expressions. If you have multiple operators entering data to the same data file, this can be a way to prevent operators from interacting with data entered by other operators. The filter is matched against the IDs of each case.</li>
 </list>
 
 
@@ -102,12 +103,12 @@ The <pffcolor>[DataEntryInit]</pffcolor> block is optional. It gives you the opp
 The <pffcolor>[Files]</pffcolor> block is required. A description of the files, not all of which have to be specified, is as follows:
 
 <list>
-	<li><pffcolor>Application</pffcolor>=the name of the data entry application that you created.</li>
-	<li><pffcolor>InputData</pffcolor>=the data file that an operator will be creating, modifying, or verifying with this data entry application.</li>
-	<li><pffcolor>Paradata</pffcolor>=the name of a file where <link paradata.csdoc>events</link> logged during the application's run are saved.</li>
-	<li><pffcolor>CommonStore</pffcolor>=if you use the <logiccolor>loadsetting</logiccolor> or <logiccolor>savesetting</logiccolor> functions in your program, this file overrides the default location where these settings are saved.</li>
-	<li><pffcolor>HtmlDialogs</pffcolor>=the name of a directory that contains custom <link html_dialog_ui.csdoc>HTML dialogs</link> that override the default CSPro ones.</li>
-	<li><pffcolor>BaseMap</pffcolor>=the name of the online map or the filename of an offline map used for <link map_base_map_specification.csdoc>CSPro mapping</link>.</li>
+    <li><pffcolor>Application</pffcolor>=the name of the data entry application that you created.</li>
+    <li><pffcolor>InputData</pffcolor>=the data file that an operator will be creating, modifying, or verifying with this data entry application.</li>
+    <li><pffcolor>Paradata</pffcolor>=the name of a file where <link paradata.csdoc>events</link> logged during the application's run are saved.</li>
+    <li><pffcolor>CommonStore</pffcolor>=if you use the <logiccolor>loadsetting</logiccolor> or <logiccolor>savesetting</logiccolor> functions in your program, this file overrides the default location where these settings are saved.</li>
+    <li><pffcolor>HtmlDialogs</pffcolor>=the name of a directory that contains custom <link html_dialog_ui.csdoc>HTML dialogs</link> that override the default CSPro ones.</li>
+    <li><pffcolor>BaseMap</pffcolor>=the name of the online map or the filename of an offline map used for <link map_base_map_specification.csdoc>CSPro mapping</link>.</li>
 </list>
 
 
@@ -121,9 +122,9 @@ If the <pffcolor>[ExternalFiles]</pffcolor> block is present, it means that a se
 The <pffcolor>[Parameters]</pffcolor> block is optional. This section defines parameters for the data entry run.
 
 <list>
- 	<li><pffcolor>Parameter</pffcolor>=allows you to pass in a string to your program. The parameter can be any length, although the string that retrieves the value in your program (via the <logiccolor>sysparm</logiccolor> function) must be large enough to accommodate it. Once the parameter is retrieved, it can be parsed by your program for further usage.</li>
-	<li><pffcolor>Language</pffcolor>=specifies the initial language of the program. The parameter must match the name of a language specified in the question text, dictionary, or message file.</li>
- 	<li><pffcolor>OnExit</pffcolor>=specifies a PFF file to run after the data entry program closes. This can be useful, for example, if you want to relaunch a menu program after collecting data.</li>
+    <li><pffcolor>Parameter</pffcolor>=allows you to pass in a string to your program. The parameter can be any length, although the string that retrieves the value in your program (via the <logiccolor>sysparm</logiccolor> function) must be large enough to accommodate it. Once the parameter is retrieved, it can be parsed by your program for further usage.</li>
+    <li><pffcolor>Language</pffcolor>=specifies the initial language of the program. The parameter must match the name of a language specified in the question text, dictionary, or message file.</li>
+    <li><pffcolor>OnExit</pffcolor>=specifies a PFF file to run after the data entry program closes. This can be useful, for example, if you want to relaunch a menu program after collecting data.</li>
 </list>
 
 When starting a new case, if the name of a parameter matches the name of a dictionary item, the value of that item will be set to the value specified in the PFF. This is similar to how the persistent fields are processed (see below), but this works for non-persistent fields.

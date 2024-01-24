@@ -1,0 +1,34 @@
+﻿<title>Case.view Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+b = dictionary_name.view(『<arg>viewer_arguments</arg>』);
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <logiccolor>Case.view</logiccolor> function displays the <link view_questionnaire.csdoc>questionnaire view</link> for the case held by the <link Case.csdoc>Case</link> object, presenting the questionnaire within an embedded window. As of CSPro <definition CSPro::version />, a <link data_dictionary.csdoc>dictionary</link> is considered a Case object.
+
+
+<include "../include_viewer_arguments.hgi" />
+
+
+<subheader>Return Value</subheader>
+
+The function returns a logical value of <logiccolor>1</logiccolor> (<logiccolor>true</logiccolor>) if the case was displayed, <logiccolor>0</logiccolor> (<logiccolor>false</logiccolor>) if there was an error viewing the case.
+
+
+<subheader>Example</subheader>
+
+<logic>
+PROC HOUSEHOLD_FORM
+
+    // view the contents of the current case
+    CENSUS_DICT.view();
+</logic>
+
+
+<seealso Case.csdoc view_questionnaire.csdoc />

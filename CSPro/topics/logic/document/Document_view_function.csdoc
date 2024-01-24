@@ -4,24 +4,23 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = document_name.view();
+b = document_name.view(『<arg>viewer_arguments</arg>』);
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-The <logiccolor>Document.view</logiccolor> function displays the contents of the file stored in a <link Document.csdoc>Document</link> object. The function is equivalent to calling:
+The <logiccolor>Document.view</logiccolor> function displays the contents of the file stored in a <link Document.csdoc>Document</link> object.
 
-<logic>
-view(document_name);
-</logic>
+If the Document contains data that <link view_function.csdoc>can be displayed</link> using an <link html_in_cspro.csdoc>embedded web brower</link>, the content is shown in an embedded window. For other types of data, an external application is launched to display the data using the system's default viewer for that file type.
 
-If the Document contains an image or HTML, the content will be shown in an embedded window. For other files, an external application is launched to display the file using the system's default viewer for that file type.
+
+<include "../include_viewer_arguments.hgi" />
 
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true) if the file was displayed, 0 (false) if there was an error viewing the file, and <logiccolor>default</logiccolor> if the Document object was empty.
+The function returns a logical value of <logiccolor>1</logiccolor> (<logiccolor>true</logiccolor>) if the file was displayed, <logiccolor>0</logiccolor> (<logiccolor>false</logiccolor>) if there was an error viewing the file, and <logiccolor>default</logiccolor> if the Document object was empty.
 
 
 <subheader>Example</subheader>

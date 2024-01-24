@@ -1,0 +1,76 @@
+﻿<title>Application.getFormFile Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Application.getFormFile(『<arg>name</arg> := ... ‖ <arg>path</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>name</arg></cell><cell>The name of a <link forms_file_fmf.csdoc>form file</link> associated with an application.</cell><cell>string~!~not required</cell>
+    <cell><arg>path</arg></cell><cell>The path of a form file to read.</cell><cell>string~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Application.getFormFile</action> <link action_invoker.csdoc>action</link> returns a form file associated with an application or loaded from the disk. One, and only one, of the arguments <arg>name</arg> or <arg>path</arg> must be provided.
+
+If specifying <arg>name</arg>, you can also specify the name of an <link data_entry_application_file_ent.csdoc>application</link> or <link introduction_to_data_dictionary.csdoc>dictionary</link>. When using an application name, the application's main form file is returned. When using a dictionary name, the form file associated with that dictionary is returned.
+
+If neither <arg>name</arg> nor <arg>path</arg> are specified, the application's main form file is returned.
+
+
+<subheader>Return Value</subheader>
+
+The action returns the form file.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if:
+
+<list>
+    <li>No form file, or associated form file, exists with the specified name.</li>
+    <li>The name identifies a dictionary that does not have an associated form file.</li>
+    <li>The form file does not exist or cannot be read.</li>
+</list>
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+// write to the console all of the field names and their capture types
+const formFile = CS.Application.getFormFile({
+    path: "Census Data Entry.fmf"
+});
+
+function iterateOverItems(entity) {
+    if( entity.items === undefined ) {
+        return;
+    }
+
+    entity.items.forEach(item => {
+        if( item.type === "field" ) {
+            console.log(`${item.name}: ${item.capture.type}`);
+        }
+        else {
+            iterateOverItems(item);
+        }
+    });
+}
+
+formFile.levels.forEach(level => {
+    iterateOverItems(level);
+});
+</color>
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<include "../Dictionary/include_questionnaire_view_example.hgi" />
+
+
+<seealso CS_Application.csdoc CS_Application_getQuestionnaireContent.csdoc />

@@ -16,6 +16,9 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>advance</logiccolor></cell><cell>Moves forward field by field to a specified field during data entry.</cell>
     <cell><logiccolor>alias</logiccolor></cell><cell>Creates an aliased name for a dictionary item, typically to shorten or standardize names.</cell>
     <cell><logiccolor>alpha</logiccolor></cell><cell>Declares alphanumeric variables used in the application.</cell>
+    <cell><action>Application.getFormFile</action> <sup>(CS)</sup></cell><cell>Returns a <link forms_file_fmf.csdoc>form file</link> associated with an application or loaded from the disk.</cell>
+    <cell><action>Application.getQuestionnaireContent</action> <sup>(CS)</sup></cell><cell>Returns the questionnaire content associated with an application, form file, or dictionary.</cell>
+    <cell><action>Application.getQuestionText</action> <sup>(CS)</sup></cell><cell>Returns the <link question_text_file_qsf.csdoc>question text</link> associated with an application or loaded from the disk.</cell>
     <cell><logiccolor>Array</logiccolor></cell><cell>Declares an <link Array.csdoc>Array</link> object for storing a collection of numbers or strings.</cell>
     <cell><logiccolor>ask</logiccolor></cell><cell>Conditionally jumps forward to the next field during data entry.</cell>
     <cell><logiccolor>Audio</logiccolor></cell><cell>Declares an <link Audio.csdoc>Audio</link> object for recording or playing audio.</cell>
@@ -42,6 +45,7 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>curocc</logiccolor></cell><cell>Returns the current occurrence number for a repeating form, roster, or record.</cell>
     <cell><logiccolor>currentkey</logiccolor></cell><cell>Returns the key (ID string) comprised of the case's current IDs.</cell>
     <cell 2>&nbsp;</cell>
+    <cell><action>Data.getCase</action> <sup>(CS)</sup></cell><cell>Returns a specific case, or the current case, associated with a dictionary.</cell>
     <cell><logiccolor>dateadd</logiccolor></cell><cell>Calculates a new date from a starting date and a period of elapsed time.</cell>
     <cell><logiccolor>datediff</logiccolor></cell><cell>Calculates the difference between two dates.</cell>
     <cell><logiccolor>datevalid</logiccolor></cell><cell>Determines whether a date in the format YYYYMMDD is valid.</cell>
@@ -50,6 +54,7 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>delete</logiccolor></cell><cell>Removes a record or item occurrence from the current case.</cell>
     <cell><logiccolor>demode</logiccolor></cell><cell>Returns the current data entry mode.</cell>
     <cell><logiccolor>diagnostics</logiccolor></cell><cell>Returns troubleshooting information about CSPro.</cell>
+    <cell><action>Dictionary.getDictionary</action> <sup>(CS)</sup></cell><cell>Returns a <link introduction_to_data_dictionary.csdoc>dictionary</link> associated with an application or loaded from the disk.</cell>
     <cell><logiccolor>dircreate</logiccolor></cell><cell>Creates a new directory with the given directory name.</cell>
     <cell><logiccolor>dirdelete</logiccolor></cell><cell>Deletes an empty directory or group of empty directories.</cell>
     <cell><logiccolor>direxist</logiccolor></cell><cell>Determines whether a directory exists.</cell>
@@ -189,15 +194,17 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>noinput</logiccolor></cell><cell>Prevents input for the current field during data entry.</cell>
     <cell><logiccolor>numeric</logiccolor></cell><cell>Declares numeric variables used in the application.</cell>
     <cell 2>&nbsp;</cell>
+    <cell><logiccolor>OnActionInvokerResult</logiccolor></cell><cell>Provides a way to process a result from the <link action_invoker.csdoc>Action Invoker</link> when called from <link action_invoker_execution_cspro_logic.csdoc>CSPro logic</link>.</cell>
     <cell><logiccolor>OnChangeLanguage</logiccolor></cell><cell>Provides control over actions to occur after a user has changed the language.</cell>
     <cell><logiccolor>OnChar</logiccolor></cell><cell>Allows users to trap characters in order to perform special actions or to change the action of the character.</cell>
     <cell><logiccolor>onfocus</logiccolor></cell><cell>Declares that the following statements are executed just before an object becomes active.</cell>
     <cell><logiccolor>OnKey</logiccolor></cell><cell>Allows users to trap keystrokes in order to perform special actions or to change the action of the key.</cell>
-    <cell><logiccolor>OnRefused</logiccolor></cell><cell>Provides a way to override the selection of a <link refused_value.csdoc>refused value</link>.</cell>
     <cell><logiccolor>onoccchange</logiccolor></cell><cell>Declares that the following statements are executed when the group's current occurrence changes.</cell>
+    <cell><logiccolor>OnRefused</logiccolor></cell><cell>Provides a way to override the selection of a <link refused_value.csdoc>refused value</link>.</cell>
     <cell><logiccolor>OnStop</logiccolor></cell><cell>Provides control over stopping or exiting data entry.</cell>
     <cell><logiccolor>OnSyncMessage</logiccolor></cell><cell>Allows users to respond to a message sent by a Bluetooth client using <logiccolor>syncmessage</logiccolor>.</cell>
     <cell><logiccolor>OnSystemMessage</logiccolor></cell><cell>Provides a way to override the displaying of system error messages.</cell>
+    <cell><logiccolor>OnViewQuestionnaire</logiccolor></cell><cell>Provides a way to override the displaying of the <link view_questionnaire.csdoc>questionnaire view</link>.</cell>
     <cell><logiccolor>open</logiccolor></cell><cell>Opens a dictionary or external file.</cell>
     <cell 2>&nbsp;</cell>
     <cell><logiccolor>paradata</logiccolor></cell><cell>Performs an action on the <link paradata.csdoc>paradata log</link>.</cell>

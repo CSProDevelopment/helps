@@ -3,19 +3,13 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = image_name.view();
+b = image_name.view(『<arg>viewer_arguments</arg>』);
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-The <logiccolor>Image.view</logiccolor> function displays the image held by the <link Image.csdoc>Image</link> object. The function is equivalent to calling:
-
-<logic>
-view(image_name);
-</logic>
-
-The image will be show in an embedded window. If you prefer to display the image using the system's default viewer for the image type, you can use the following syntax:
+The <logiccolor>Image.view</logiccolor> function displays the image held by the <link Image.csdoc>Image</link> object. The image will be show in an <link html_in_cspro.csdoc>embedded web brower</link>. If you prefer to display the image using the system's default viewer for the image type, you can use the following syntax:
 
 <logic>
 view(filename(image_name));
@@ -24,9 +18,12 @@ view(filename(image_name));
 This approach will only work if the image has been saved to the disk.
 
 
+<include "../include_viewer_arguments.hgi" />
+
+
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if the image was displayed, 0 (<logiccolor>false</logiccolor>) if there was an error viewing the image, and <logiccolor>default</logiccolor> if the Image object does not contain an image.
+The function returns a logical value of <logiccolor>1</logiccolor> (<logiccolor>true</logiccolor>) if the image was displayed, <logiccolor>0</logiccolor> (<logiccolor>false</logiccolor>) if there was an error viewing the image, and <logiccolor>default</logiccolor> if the Image object does not contain an image.
 
 
 <subheader>Example</subheader>

@@ -3,34 +3,53 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-b = view(<arg>filename</arg> ‖ <arg>website_address</arg> ‖ <arg>object_name</arg>『, <arg>optional_named_arguments</arg>』);
+b = view(<arg>file_name</arg> ‖ <arg>website_url</arg> ‖ <arg>object_name</arg>『, <arg>viewer_arguments</arg>』);
 </logicsyntax>
 
 
 <subheader>Description</subheader>
 
-The <logiccolor>view</logiccolor> function displays the contents of a file or shows a website. The function expects a string expression representing a file (<arg>filename</arg>) or a website URL (<arg>website_address</arg>), or a CSPro object (<arg>object_name</arg>) such as a <link Document.csdoc>Document</link>, <link Freq.csdoc>Freq</link>, <link Image.csdoc>Image</link>, or <link templated_reports.csdoc>Report</link>. If a website URL or a file with the extension <i>.html</i>, <i>.htm</i>, or <i>.cshtml</i> is provided, it is shown in an embedded window. For other files, an external application is launched to display the file using the system's default viewer for that file type.
+The <logiccolor>view</logiccolor> function displays a variety of media. <include "include_embedded_browser.hgi" />
 
-<include include_view_named_arguments.hgi />
+The first argument to the function indicates what to view:
 
-An alternative way to view files is to use <link CSView::introduction.csdoc>CSView</link>, which can launched from logic by <link CSView::run_production_views.csdoc>creating a PFF</link> and calling <logiccolor>Pff.exec</logiccolor>.
+<list>
+    <li><arg>file_name</arg> (string expression): The contents of the file are displayed, either in an embedded web browser, or using the system's default viewer for that file type. For example, if an Excel document is referenced, the function will open the document in Excel. However, if a HTML document is referenced, it will be shown in an embedded web browser. Documents are considered HTML if they have one of the following extensions: <i>.html</i>, <i>.htm</i>, or <i>.cshtml</i>.</li>
+    <li><arg>website_url</arg> (string expression): An embedded web browser is used to display the website.</li>
+    <li><arg>object_name</arg>: The contents of the object are displayed, generally in an embedded web browser. Passing an object to the <logiccolor>view</logiccolor> function is identical to calling the <i>view</i> function on the object using <link object_dot_notation.csdoc>dot notation</link>. For example, the following calls are identical:~!~~!~
+    <indent><logiccolor Image>image_name.view();</logiccolor>~!~~!~<logiccolor>view(image_name);</logiccolor></indent>
+    ~!~The following objects support viewing: <link Case.csdoc>Case</link>, <link Document.csdoc>Document</link>, <link Freq.csdoc>Freq</link>, <link Image.csdoc>Image</link>, and <link templated_reports.csdoc>Report</link>.</li>
+</list>
+
+If an embedded web browser is used, any logic coded after the <logiccolor>view</logiccolor> function call will not execute until the window is closed. However, if a separate application is launched, the application will continue while the external application is still active.
+
+An alternative way to view files is to use <link CSView::introduction.csdoc>CSView</link>, which can be launched from logic by <link CSView::run_production_views.csdoc>creating a PFF</link> and calling <logiccolor>Pff.exec</logiccolor>.
+
+
+<include "include_viewer_arguments.hgi" />
 
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true) if the file exists and the external application or embedded web browser could be launched successfully and 0 (false) otherwise.
+The function returns a logical value of <logiccolor>1</logiccolor> (<logiccolor>true</logiccolor>) if the file exists, or the object has data, and the embedded web browser or external application was launched successfully, and <logiccolor>0</logiccolor> (<logiccolor>false</logiccolor>) otherwise.
 
 
 <subheader>Examples</subheader>
 
 <logic>
+// provide the URL of a website as a string
 view("https://<definition census_website />");
 
+// provide the name of a local HTML file as a string
+view("hh-report.html", title := "Household Completion Report",
+                       width := 600, height := 400,
+                       showCloseButton := false);
+
+// provide the name of a local image file as a string
 view("../Nineties Images/carn03.jpg");
 
-view("hh-report.html", title := "Household Completion Report",
-					   width := 400, height := 600,
-					   showCloseButton := false);
+// provide the dictionary name to see its case contents
+view(CENSUS_DICT);
 </logic>
 
 

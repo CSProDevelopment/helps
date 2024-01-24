@@ -1,14 +1,6 @@
 ﻿[
-  { "path": "create_fills_in_questions.csdoc", "title": "~~", 
-    "subindex": [ 
-      { "path": "create_fills_in_questions.csdoc", "~title": "Create Fills In Questions" }
-    ]
-  }, 
-  { "path": "create_fills_in_questions.csdoc", "title": "~~~", 
-    "subindex": [ 
-      { "path": "create_fills_in_questions.csdoc", "~title": "Create Fills In Questions" }
-    ]
-  }, 
+  { "path": "create_fills_in_questions.csdoc", "title": "~~" }, 
+  { "path": "create_fills_in_questions.csdoc", "title": "~~~" }, 
   { "path": "operators.csdoc", "title": "-", 
     "subindex": [ 
       { "path": "operators.csdoc", "title": "Operator" }, 
@@ -207,14 +199,18 @@
       { "path": "action_invoker_execution_javascript_web.csdoc", "title": "Execution: JavaScript (from Web Views)" }, 
       { "path": "action_invoker_execution_json.csdoc", "title": "Execution: JSON" }, 
       { "path": "action_invoker_execution_javascript_web.csdoc", "title": "getWindowForEventListener (JavaScript)" }, 
+      { "path": "CS_Application.csdoc", "title": "Namespace: Application" }, 
       { "path": "CS_Clipboard.csdoc", "title": "Namespace: Clipboard" }, 
+      { "path": "CS_Data.csdoc", "title": "Namespace: Data" }, 
+      { "path": "CS_Dictionary.csdoc", "title": "Namespace: Dictionary" }, 
       { "path": "CS_File.csdoc", "title": "Namespace: File" }, 
       { "path": "CS_Hash.csdoc", "title": "Namespace: Hash" }, 
       { "path": "CS_Localhost.csdoc", "title": "Namespace: Localhost" }, 
+      { "path": "CS_Logic.csdoc", "title": "Namespace: Logic" }, 
       { "path": "CS_Message.csdoc", "title": "Namespace: Message" }, 
       { "path": "CS_Settings.csdoc", "title": "Namespace: Settings" }, 
       { "path": "CS_Sqlite.csdoc", "title": "Namespace: Sqlite" }, 
-      { "path": "CS_Sqlite.csdoc", "title": "Namespace: System" }, 
+      { "path": "CS_System.csdoc", "title": "Namespace: System" }, 
       { "path": "CS_OnActionInvokerResult.csdoc", "~title": "OnActionInvokerResult Global Function" }, 
       { "path": "CS_registerAccessToken.csdoc", "~title": "registerAccessToken Action" }
     ]
@@ -334,6 +330,13 @@
       { "path": "add_files_to_an_application.csdoc", "title": "Add a File" }, 
       { "path": "tool_list.csdoc", "title": "Deployment" }, 
       { "path": "save_an_application_with_a_new_name.csdoc", "title": "Save As" }
+    ]
+  }, 
+  { "path": "CS_Application.csdoc", "~title": "Application Action Invoker Namespace", 
+    "subindex": [ 
+      { "path": "CS_Application_getFormFile.csdoc", "~title": "Application.getFormFile Action" }, 
+      { "path": "CS_Application_getQuestionnaireContent.csdoc", "~title": "Application.getQuestionnaireContent Action" }, 
+      { "path": "CS_Application_getQuestionText.csdoc", "~title": "Application.getQuestionText Action" }
     ]
   }, 
   { "path": "tool_list.csdoc", "title": "Application Deployment" }, 
@@ -548,7 +551,8 @@
       { "path": "refused_value.csdoc", "title": "OnRefused Global Function" }, 
       { "path": "OnStop_global_function.csdoc", "~title": "OnStop Global Function" }, 
       { "path": "syncmessage_function.csdoc", "title": "OnSyncMessage Global Function" }, 
-      { "path": "OnSystemMessage_global_function.csdoc", "~title": "OnSystemMessage Global Function" }
+      { "path": "OnSystemMessage_global_function.csdoc", "~title": "OnSystemMessage Global Function" }, 
+      { "path": "OnViewQuestionnaire_global_function.csdoc", "~title": "OnViewQuestionnaire Global Function" }
     ]
   }, 
   { "path": "Image_takePhoto_function.csdoc", "title": "Camera" }, 
@@ -616,6 +620,11 @@
   { "path": "map_case_list.csdoc", "title": "Case Listing", 
     "subindex": [ 
       { "path": "map_case_list.csdoc", "title": "Displaying the Case Listing on a Map" }
+    ]
+  }, 
+  { "path": "Case.csdoc", "~title": "Case Object", 
+    "subindex": [ 
+      { "path": "Case_view_function.csdoc", "~title": "Case.view Function" }
     ]
   }, 
   { "path": "string_comparisons.csdoc", "title": "Case Sensitivity", 
@@ -993,6 +1002,11 @@
       { "path": "tool_list.csdoc", "title": "Sort" }
     ]
   }, 
+  { "path": "CS_Data.csdoc", "~title": "Data Action Invoker Namespace", 
+    "subindex": [ 
+      { "path": "CS_Data_getCase.csdoc", "~title": "Data.getCase Action" }
+    ]
+  }, 
   { "path": "data_dictionary.csdoc", "title": "Data Dictionary (see 'Dictionary')" }, 
   { "path": "data_dictionary_file_dcf.csdoc", "~title": "Data Dictionary File (.dcf)" }, 
   { "path": "create_a_new_batch_edit_application.csdoc", "title": "Data Edit Application", 
@@ -1206,6 +1220,11 @@
     ]
   }, 
   { "path": "set_access_statement.csdoc", "title": "Dictionary Access Parameters" }, 
+  { "path": "CS_Dictionary.csdoc", "~title": "Dictionary Action Invoker Namespace", 
+    "subindex": [ 
+      { "path": "CS_Dictionary_getDictionary.csdoc", "~title": "Dictionary.getDictionary Action" }
+    ]
+  }, 
   { "path": "dictionary_analysis.csdoc", "~title": "Dictionary Analysis" }, 
   { "path": "dictionary_macros.csdoc", "~title": "Dictionary Macros" }, 
   { "path": "dictionary_security_options.csdoc", "~title": "Dictionary Security Options" }, 
@@ -2146,6 +2165,7 @@
   { "path": "data_source_json.csdoc", "~title": "JSON Data Source" }, 
   { "path": "symbols_json_representation.csdoc", "title": "JSON Representations", 
     "subindex": [ 
+      { "path": "JSON_serialization_options.csdoc", "title": "Serialization Options" }, 
       { "path": "properties_json_serialization.csdoc", "title": "Serialization Properties" }, 
       { "path": "symbols_json_representation.csdoc", "title": "Symbol Overview" }
     ]
@@ -2156,6 +2176,7 @@
       { "path": "CS_Logic_getSymbolMetadata.csdoc", "~title": "Logic.getSymbolMetadata Action" }, 
       { "path": "CS_Logic_getSymbolValue.csdoc", "~title": "Logic.getSymbolValue Action" }, 
       { "path": "CS_Logic_updateSymbolValue.csdoc", "~title": "Logic.updateSymbolValue Action" }, 
+      { "path": "JSON_serialization_options.csdoc", "title": "Serialization Options" }, 
       { "path": "properties_json_serialization.csdoc", "title": "Serialization Properties" }, 
       { "path": "Symbol_getJson_function.csdoc", "~title": "Symbol.getJson Function" }, 
       { "path": "Symbol_getValueJson_function.csdoc", "~title": "Symbol.getValueJson Function" }, 
@@ -3019,7 +3040,11 @@
       { "path": "questionnaire_and_dictionary_organization.csdoc", "title": "Organization" }, 
       { "path": "questionnaire_and_dictionary_organization.csdoc", "title": "Questions" }, 
       { "path": "questionnaire_and_dictionary_organization.csdoc", "title": "Responses" }, 
-      { "path": "questionnaire_and_dictionary_organization.csdoc", "title": "Section" }
+      { "path": "questionnaire_and_dictionary_organization.csdoc", "title": "Section" }, 
+      { "path": "view_questionnaire.csdoc", "title": "View" }, 
+      { "path": "view_questionnaire_from_bch.csdoc", "title": "View of Batch Edit Application" }, 
+      { "path": "view_questionnaire_from_fmf.csdoc", "title": "View of Data Entry Application" }, 
+      { "path": "view_questionnaire_from_dcf.csdoc", "title": "View of Dictionary" }
     ]
   }, 
   { "path": "questionnaire_and_dictionary_organization.csdoc", "~title": "Questionnaire and Dictionary Organization" }, 
@@ -3050,6 +3075,7 @@
       { "path": "File_read_function.csdoc", "~title": "File.read Function" }
     ]
   }, 
+  { "path": "case_read_optimization.csdoc", "title": "Read Optimization" }, 
   { "path": "add_reader_breaks.csdoc", "title": "Reader Breaks" }, 
   { "path": "move_things.csdoc", "title": "Rearrange Things in a Form" }, 
   { "path": "recode_statement.csdoc", "~title": "Recode Statement" }, 
@@ -4221,6 +4247,7 @@
   }, 
   { "path": "view_function.csdoc", "~title": "View Function", 
     "subindex": [ 
+      { "path": "Case_view_function.csdoc", "~title": "Case.view Function" }, 
       { "path": "Document_view_function.csdoc", "~title": "Document.view Function" }, 
       { "path": "Freq_view_function.csdoc", "~title": "Freq.view Function" }, 
       { "path": "Image_view_function.csdoc", "~title": "Image.view Function" }, 

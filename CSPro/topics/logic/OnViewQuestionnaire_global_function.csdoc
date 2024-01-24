@@ -1,0 +1,69 @@
+﻿<title>OnViewQuestionnaire Global Function</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+function numeric OnViewQuestionnaire(『numeric <arg>dictionary_name</arg>』)
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+<logiccolor>OnViewQuestionnaire</logiccolor> is a special global function. It is called during a data entry application when a user attempts to open the <link view_questionnaire.csdoc>questionnaire view</link> from the menu (<b>View > Questionnaire</b>). This function allows you to disable the viewing of questionnaires, or display the questionnaire using a custom action. As with other <link user_defined_functions.csdoc>user-defined functions</link>, it must be defined in the <logiccolor>PROC GLOBAL</logiccolor> section.
+
+The function can be defined without parameters, or with a single string parameter. If one string parameter is provided, then it will receive the name of the dictionary that forms the basis of the questionnaire.
+
+
+<subheader>Return Value</subheader>
+
+Return <logiccolor>0</logiccolor>, or a <link special_values.csdoc>special value</link>, to prevent the default behavior of viewing the questionnaire. Returning any other value means that the questionnaire will be viewed.
+
+
+<subheader>Example 1</subheader>
+
+In this example, the function prevents non-supervisors from opening the questionnaire view for the staff dictionary.
+
+<logic>
+PROC GLOBAL
+
+function numeric OnViewQuestionnaire(string dictionary_name)
+
+    // only allow supervisors to view cases from the STAFF_DICT dictionary
+    if dictionary_name = "STAFF_DICT" and STAFF_ROLE <> "SUPERVISOR" then
+        errmsg("Staff with role '%s' are unable to view the '%s' questionnaire.", STAFF_ROLE, dictionary_name);
+        exit 0;
+    endif;
+
+    // allow the viewing of the questionnaire
+    exit 1;
+
+end;
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+In this example, the input to view the main dictionary is constructed without the question text, overriding the default behavior that would show this information.
+
+<logic>
+function numeric OnViewQuestionnaire(string dictionary_name)
+
+    // construct the input needed for the questionnaire view
+    string questionnaireViewInput =
+        maketext("{ \"dictionary\": %s, \"forms\": %s, \"case\": %s }",
+                 CS.Dictionary.getDictionary(name := dictionary_name),
+                 CS.Application.getFormFile(name := dictionary_name),
+                 CS.Data.getCase(name := dictionary_name));
+
+    // pass this input to the questionnaire view
+    CS.UI.view(path := Path.concat(html, "questionnaire-view", "index.html"),
+               inputData := @object questionnaireViewInput);
+
+    exit 0;
+
+end;
+</logic>
+
+
+<seealso view_questionnaire.csdoc />
