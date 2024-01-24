@@ -4,7 +4,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = CS.Dictionary.getDictionary(<arg>name</arg> := ... ‖ <arg>path</arg> := ...)
+s = CS.Dictionary.getDictionary(『<arg>name</arg> := ... ‖ <arg>path</arg> := ...』)
 </logicsyntax>
 
 <indent><table 3 header nowrap>
@@ -18,7 +18,9 @@ s = CS.Dictionary.getDictionary(<arg>name</arg> := ... ‖ <arg>path</arg> := ..
 
 The <action>Dictionary.getDictionary</action> <link action_invoker.csdoc>action</link> returns a dictionary associated with an application or loaded from the disk. One, and only one, of the arguments <arg>name</arg> or <arg>path</arg> must be provided.
 
-If specifying <arg>name</arg>, you can also specify the name an <link data_entry_application_file_ent.csdoc>application</link> or <link forms_file_fmf.csdoc>form file</link>. When using an application name, the application's <link dictionary_types.csdoc>main</link> dictionary is returned. When using a form file name, the dictionary associated with the forms is returned.
+If specifying <arg>name</arg>, you can also specify the name of an <link data_entry_application_file_ent.csdoc>application</link> or <link forms_file_fmf.csdoc>form file</link>. When using an application name, the application's <link dictionary_types.csdoc>main</link> dictionary is returned. When using a form file name, the dictionary associated with the forms is returned.
+
+If neither <arg>name</arg> nor <arg>path</arg> are specified, the application's main dictionary is returned.
 
 
 <subheader>Return Value</subheader>
@@ -64,4 +66,4 @@ dictionary.levels.forEach(level => {
 <include include_questionnaire_view_example.hgi />
 
 
-<seealso CS_Dictionary.csdoc CS_Application.csdoc />
+<seealso CS_Dictionary.csdoc CS_Application_getQuestionnaireContent.csdoc />

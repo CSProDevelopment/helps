@@ -4,7 +4,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = CS.Application.getFormFile(<arg>name</arg> := ... ‖ <arg>path</arg> := ...)
+s = CS.Application.getFormFile(『<arg>name</arg> := ... ‖ <arg>path</arg> := ...』)
 </logicsyntax>
 
 <indent><table 3 header nowrap>
@@ -19,6 +19,8 @@ s = CS.Application.getFormFile(<arg>name</arg> := ... ‖ <arg>path</arg> := ...
 The <action>Application.getFormFile</action> <link action_invoker.csdoc>action</link> returns a form file associated with an application or loaded from the disk. One, and only one, of the arguments <arg>name</arg> or <arg>path</arg> must be provided.
 
 If specifying <arg>name</arg>, you can also specify the name of an <link data_entry_application_file_ent.csdoc>application</link> or <link introduction_to_data_dictionary.csdoc>dictionary</link>. When using an application name, the application's main form file is returned. When using a dictionary name, the form file associated with that dictionary is returned.
+
+If neither <arg>name</arg> nor <arg>path</arg> are specified, the application's main form file is returned.
 
 
 <subheader>Return Value</subheader>
@@ -71,4 +73,4 @@ formFile.levels.forEach(level => {
 <include "../Dictionary/include_questionnaire_view_example.hgi" />
 
 
-<seealso CS_Application.csdoc CS_Dictionary.csdoc />
+<seealso CS_Application.csdoc CS_Application_getQuestionnaireContent.csdoc />

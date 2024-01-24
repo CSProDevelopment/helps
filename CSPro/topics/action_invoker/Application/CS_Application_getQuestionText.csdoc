@@ -4,7 +4,7 @@
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = CS.Application.getQuestionText(<arg>name</arg> := ... ‖ <arg>path</arg> := ...)
+s = CS.Application.getQuestionText(『<arg>name</arg> := ... ‖ <arg>path</arg> := ...』)
 </logicsyntax>
 
 <indent><table 3 header nowrap>
@@ -18,7 +18,9 @@ s = CS.Application.getQuestionText(<arg>name</arg> := ... ‖ <arg>path</arg> :=
 
 The <action>Application.getQuestionText</action> <link action_invoker.csdoc>action</link> returns the question text associated with an application or loaded from the disk. One, and only one, of the arguments <arg>name</arg> or <arg>path</arg> must be provided.
 
-If specifying <arg>name</arg>, you can also specify the name of a <link forms_file_fmf.csdoc>form file</link> or a <link introduction_to_data_dictionary.csdoc>dictionary</link>. When using a form file or dictionary, the application associated with that entity is returned.
+If specifying <arg>name</arg>, you can also specify the name of a <link forms_file_fmf.csdoc>form file</link> or a <link introduction_to_data_dictionary.csdoc>dictionary</link>. When using a form file or dictionary, the question text associated with that entity's application is returned.
+
+If neither <arg>name</arg> nor <arg>path</arg> are specified, the application's question text is returned.
 
 
 <subheader>Return Value</subheader>
@@ -56,4 +58,4 @@ questionText.questions.forEach(question => {
 <include "../Dictionary/include_questionnaire_view_example.hgi" />
 
 
-<seealso CS_Application.csdoc CS_Dictionary.csdoc />
+<seealso CS_Application.csdoc CS_Application_getQuestionnaireContent.csdoc />

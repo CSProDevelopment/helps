@@ -20,7 +20,9 @@ The function can be defined without parameters, or with a single string paramete
 Return <logiccolor>0</logiccolor>, or a <link special_values.csdoc>special value</link>, to prevent the default behavior of viewing the questionnaire. Returning any other value means that the questionnaire will be viewed.
 
 
-<subheader>Example</subheader>
+<subheader>Example 1</subheader>
+
+In this example, the function prevents non-supervisors from opening the questionnaire view for the staff dictionary.
 
 <logic>
 PROC GLOBAL
@@ -35,6 +37,30 @@ function numeric OnViewQuestionnaire(string dictionary_name)
 
     // allow the viewing of the questionnaire
     exit 1;
+
+end;
+</logic>
+
+
+<subheader>Example 2</subheader>
+
+In this example, the input to view the main dictionary is constructed without the question text, overriding the default behavior that would show this information.
+
+<logic>
+function numeric OnViewQuestionnaire(string dictionary_name)
+
+    // construct the input needed for the questionnaire view
+    string questionnaireViewInput =
+        maketext("{ \"dictionary\": %s, \"forms\": %s, \"case\": %s }",
+                 CS.Dictionary.getDictionary(name := dictionary_name),
+                 CS.Application.getFormFile(name := dictionary_name),
+                 CS.Data.getCase(name := dictionary_name));
+
+    // pass this input to the questionnaire view
+    CS.UI.view(path := Path.concat(html, "questionnaire-view", "index.html"),
+               inputData := @object questionnaireViewInput);
+
+    exit 0;
 
 end;
 </logic>

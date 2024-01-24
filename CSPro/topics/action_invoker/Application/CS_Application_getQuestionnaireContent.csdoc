@@ -1,0 +1,81 @@
+﻿<title>Application.getQuestionnaireContent Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Application.getQuestionnaireContent(『<arg>name</arg> := ...』
+                                         『, <arg>key</arg> := ... ‖ <arg>uuid</arg> := ...』
+                                         『, <arg>serializationOptions</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>name</arg></cell><cell>The name of a <link forms_file_fmf.csdoc>form file</link> or <link introduction_to_data_dictionary.csdoc>dictionary</link> associated with an <link data_entry_application_file_ent.csdoc>application</link>, or the name of an application.</cell><cell>string~!~not required</cell>
+    <cell><arg>key</arg></cell><cell>The <link key_function.csdoc>key</link> (case IDs) of a specific case to attach to the questionnaire content.</cell><cell>string~!~not required</cell>
+    <cell><arg>uuid</arg></cell><cell>The <link uuid_function.csdoc>UUID</link> of a specific case to attach to the questionnaire content.</cell><cell>string~!~not required</cell>
+    <cell><arg>serializationOptions</arg></cell><cell>Options for how the case should be serialized (if applicable).</cell><cell>object~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Application.getQuestionnaireContent</action> <link action_invoker.csdoc>action</link> returns the questionnaire content associated with an application, form file, or dictionary. Questionnaire content, which can be used an input to the <link view_questionnaire.csdoc>questionnaire view</link>, is considered:
+
+<list>
+    <li>The dictionary, returned with the name <colorinline JSON>"dictionary"</colorinline>.</li>
+    <li>The form file, returned with the name <colorinline JSON>"forms"</colorinline>.</li>
+    <li>The question text, returned with the name <colorinline JSON>"questionText"</colorinline>. This is only included when <arg>name</arg> specifies an entity that is associated with a data entry application that uses question text.</li>
+    <li>The case, returned with the name <colorinline JSON>"case"</colorinline>. The optional <arg>serializationOptions</arg> argument allows you to specify how the case <link JSON_serialization_options.csdoc>should be serialized</link>, potentially overriding the <link properties_json_serialization.csdoc>default application settings</link>.</li>
+</list>
+
+Each of these content values is the same as returned by the actions: <action>Dictionary.getDictionary</action>, <action>Application.getFormFile</action>, <action>Application.getQuestionText</action>, and <action>Data.getCase</action>.
+
+If <arg>name</arg> is not specified, the questionnaire content associated with the application's <link dictionary_types.csdoc>main</link> dictionary is returned.
+
+If neither <arg>key</arg> nor <arg>uuid</arg> are specified, the current case associated with the dictionary is returned. If one of those arguments is specified, the case identified by that argument is returned. If both <arg>key</arg> and <arg>uuid</arg> are specified, then the <arg>uuid</arg> value is prioritized.
+
+Because CSPro optimizes the reading of case data, you may need to disable the dictionary's <link case_read_optimization.csdoc>Read Optimization</link> setting when using this action on external dictionaries or in batch applications.
+
+
+<subheader>Return Value</subheader>
+
+The action returns the questionnaire content with the dictionary, forms, and, if available, the question text and case data.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form, or if:
+
+<list>
+    <li>No dictionary, or associated dictionary, exists with the specified name.</li>
+    <li>No case exists as specified by the <arg>key</arg> or <arg>uuid</arg> arguments.</li>
+    <li>An error occurs while reading the case from the <link data_sources.csdoc>data source</link>.</li>
+</list>
+
+
+<subheader>Example (CSPro Logic)</subheader>
+
+<logic>
+if selcase("Select a Case to View", CEN2000, "") then
+
+    // construct the input needed for the questionnaire view from the selected case
+    string questionnaireViewInput = CS.Application.getQuestionnaireContent(name := "CEN2000");
+
+    // pass this input to the questionnaire view
+    CS.UI.view(path := Path.concat(html, "questionnaire-view", "index.html"),
+               inputData := @object questionnaireViewInput);
+
+endif;
+</logic>
+
+Note that although this example demonstrates a use of this action, a simpler way to do the above is:
+
+<logic>
+if selcase("Select a Case to View", CEN2000, "") then
+    CEN2000.view();
+endif;
+</logic>
+
+
+<seealso CS_Application.csdoc view_questionnaire.csdoc />

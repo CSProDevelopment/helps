@@ -17,7 +17,8 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>alias</logiccolor></cell><cell>Creates an aliased name for a dictionary item, typically to shorten or standardize names.</cell>
     <cell><logiccolor>alpha</logiccolor></cell><cell>Declares alphanumeric variables used in the application.</cell>
     <cell><action>Application.getFormFile</action> <sup>(CS)</sup></cell><cell>Returns a <link forms_file_fmf.csdoc>form file</link> associated with an application or loaded from the disk.</cell>
-    <cell><action>Application.getQuestionText</action> <sup>(CS)</sup></cell><cell>Returns <link question_text_file_qsf.csdoc>question text</link> associated with an application or loaded from the disk.</cell>
+    <cell><action>Application.getQuestionnaireContent</action> <sup>(CS)</sup></cell><cell>Returns the questionnaire content associated with an application, form file, or dictionary.</cell>
+    <cell><action>Application.getQuestionText</action> <sup>(CS)</sup></cell><cell>Returns the <link question_text_file_qsf.csdoc>question text</link> associated with an application or loaded from the disk.</cell>
     <cell><logiccolor>Array</logiccolor></cell><cell>Declares an <link Array.csdoc>Array</link> object for storing a collection of numbers or strings.</cell>
     <cell><logiccolor>ask</logiccolor></cell><cell>Conditionally jumps forward to the next field during data entry.</cell>
     <cell><logiccolor>Audio</logiccolor></cell><cell>Declares an <link Audio.csdoc>Audio</link> object for recording or playing audio.</cell>
@@ -44,6 +45,7 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>curocc</logiccolor></cell><cell>Returns the current occurrence number for a repeating form, roster, or record.</cell>
     <cell><logiccolor>currentkey</logiccolor></cell><cell>Returns the key (ID string) comprised of the case's current IDs.</cell>
     <cell 2>&nbsp;</cell>
+    <cell><action>Data.getCase</action> <sup>(CS)</sup></cell><cell>Returns a specific case, or the current case, associated with a dictionary.</cell>
     <cell><logiccolor>dateadd</logiccolor></cell><cell>Calculates a new date from a starting date and a period of elapsed time.</cell>
     <cell><logiccolor>datediff</logiccolor></cell><cell>Calculates the difference between two dates.</cell>
     <cell><logiccolor>datevalid</logiccolor></cell><cell>Determines whether a date in the format YYYYMMDD is valid.</cell>

@@ -26,3 +26,10 @@ There are two ways that an enumerator can view a questionnaire while using CSEnt
     <li>The enumerator can right-click (or hard-press) on the case listing and select <b>View Questionnaire</b>. This displays the selected case. To disable this functionality, add <font monospace>Lock=View</font> to the <link run_production_data_entry.csdoc> data entry PFF</link>.</li>
     <li>While collecting data, the enumerator can select <b>View > Questionnaire</b>. This displays the currently-open case. To disable this functionality, add an <link OnViewQuestionnaire_global_function.csdoc>OnViewQuestionnaire</link> function override that suppresses the display. This special global function is called anytime an enumerator attempts to view a questionnaire.</li>
 </list>
+
+
+<subheader>Questionnaire View Input Creation</subheader>
+
+By using the <link action_invoker.csdoc>Action Invoker</link>, it is possible to manually create the input used by the questionnaire view. The action <action>Application.getQuestionnaireContent</action> returns the input necessary to build the questionnaire view, or you can create each component separately. For example:
+
+<include "action_invoker/Dictionary/include_questionnaire_view_example.hgi" />
