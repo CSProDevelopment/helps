@@ -1,138 +1,39 @@
 ﻿<title>Batch Edit Tree</title>
 
+When you create a batch edit application, the edit tree(shown below) will be nearly identical to the dictionary tree. The similarities include the edit tree entries having the same name as their dictionary counterparts and being listed in the same order as the dictionary. The differences include the presence of a blue check mark superimposed on edit tree icons. If present, that means logic exists within the <logiccolor>PROC</logiccolor> for that element.
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<center><image batch_edit_tree.png /></center>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<subheader>Batch Edit File</subheader>
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">When you create a batch edit application, the edit tree will
- be identical to the dictionary tree; that is, edit items will be listed
- as named and ordered in the dictionary. However, there are a few distinctions
- to make, as follows:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: 10.80pt;"><img src="edittree.jpg" alt="Batch Edit Tree"
-								 title="Batch Edit Tree" width="224" height="143"
-								 border="0" /></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-weight: bold;">•&#160;</font></b><b><font style="font-weight: bold;">BatchEdit
- File:</font></b> &#160;<img src="btchfile.jpg" alt="Batch Edits Icon"
-							 title="Batch Edits Icon" width="16" height="16"
-							 border="0" /></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">This is the highest level node, i.e., the root node. It is
- the owner of all code, which is to say [1] level-, record-, and item-related
- code, [2]</font> <a href="user_defined_functions.html"><font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">user-defined
- functions</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 color="#000000" face="Arial" size="2">, and
- the [3]</font> <a href="cspro_program_structure.html"><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">global</font></a> <font style="font-family: Arial;
-	 font-size: 10pt;" color="#000000" face="Arial" size="2">routine.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -7.20pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -7.20pt;"><font style="font-weight: bold;"><b style="font-weight: bold;">&#160;•&#160;</b><b>BatchEdit
- Level:&#160;<img src="level.jpg" alt="Level Icon" title="Level Icon"
-					 width="17" height="17" border="0" /></b></font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">&#160;</font><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">This is the second-tier tree node, just below the root. It
- has a 1-to-1 correspondence with the same-named dictionary level.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-weight: bold;"><b style="font-weight: bold;">•&#160;</b><b>BatchEdit
- Record:&#160;<img src="brecord.jpg" alt="Batch Edit Record Icon"
-					 title="Batch Edit Record Icon" width="10" height="10"
-					 border="0" /></b></font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><font style="font-family: Arial; font-size: 10pt;"
-									 color="#000000" face="Arial" size="2">&#160;This
- is the third-tier tree node, just below its level. It has a 1-to-1 correspondence
- with the same-named dictionary record.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-weight: bold;"><b style="font-weight: bold;">•&#160;</b><b>BatchEdit
- Item:&#160;<img src="bitem.jpg" alt="Batch Edit Item Icon" title="Batch Edit Item Icon"
-				 width="10" height="6" border="0" /></b></font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -18.00pt;"><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">&#160;</font><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">This is the terminal or &quot;leaf&quot;-node; i.e., the
- lowest accessible level. It has a 1-to-1 correspondence with a dictionary
- item.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
- are free to rename any of the above the unique names via the properties
- dialog box, but it is recommended that you retain the original name, so
- that it is easier for you to see which dictionary entity is being referenced.
- The batch edit tree represents the order in which the logic associated
- with each edit item is executed.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- code has been written for a given edit level, record, or item, a check
- mark will appear superimposed on the icon for that entity. This is how,
- at a quick glance, you can see where you have placed programming logic.
- Once one line of code has been written anywhere in the program, a check
- mark will appear on the root node.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
- can never delete edit levels, records, or items (i.e., the entries shown
- on the</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-						 face="Arial" size="2">edit</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">tab). However, you can</font>
- <a href="batch_edit_order.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">change the
- order</font></a> <font style="font-family: Arial; font-size: 10pt;" face="Arial"
-						 size="2">of the logic execution by dragging the
- items within the Batch Edit tree view. When selecting a new edit item,
- the contents of the logic view will change to display the logic for the
- selected entity.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Pressing</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">Ctrl+T</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">in
- the batch edit tree</font> <font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">will allow you
- to switch between the</font> <a href="labels.html"><font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">labels</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">and
- the</font> <a href="names.html"><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">names</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">of
- the items.</font></p>
-</body>
-</html>
+This is the highest level node, i.e., the root node. It "owns" all logic belonging to the application, which consists of all [1] level-, record-, and item-related code, [2] all <link user_defined_functions.csdoc>user-defined functions</link>, and [3] all definitions made within the <logiccolor>PROC GLOBAL</logiccolor> routine. This top-level node is indicated in the tree by the <image batch_button_checked.png /> icon. The blue check mark indicates there is logic associated with the node; for the top-level node, it is always checked, even upon creation of a new batch application.
+
+<subheader>Batch Edit Level</subheader>
+
+This is the second-tier tree node, just below the root. It has a 1-to-1 correspondence with the same-named <link level_description.csdoc>dictionary level</link>.  It is depicted in the tree by the <image batch_level_icon.png /> icon. If logic was present for the level, the icon would be <image batch_level_icon_checked.png />.
+
+<subheader>Batch Edit Record</subheader>
+
+This is the third-tier tree node, just below its level. It has a 1-to-1 correspondence with the same-named dictionary record. It is depicted in the tree by the <image batch_record_icon.png /> icon. If logic was present for the record, it would have the blue check mark superimposed <image batch_record_icon_checked.png />
+
+<subheader>Batch Edit Item</subheader>
+
+This is the terminal or "leaf"-node; i.e., the lowest accessible level. It has a 1-to-1 correspondence with a dictionary <link item_description.csdoc>item</link> and <link sub_items.csdoc>subitem</link> (no distinction is made in batch edit for subitems as is done elsewhere in CSPro). It is depicted in the tree by the <image batch_item_icon.png /> icon. As mentioned above,
+
+<font red>pick up here</font>
+
+You are free to rename any of the above the unique names via the properties dialog box, but it is recommended that you retain the original name, so that it is easier for you to see which dictionary entity is being referenced. The batch edit tree represents the order in which the logic associated with each edit item is executed.
 
 
-<html><!---♻---></html>
-<build-extra "../images/edittree.jpg" "../images/btchfile.jpg" "../images/level.jpg" "../images/brecord.jpg" "../images/bitem.jpg" />
+
+If code has been written for a given edit level, record, or item, a check mark will appear superimposed on the icon for that entity. This is how, at a quick glance, you can see where you have placed programming logic. Once one line of code has been written anywhere in the program, a check mark will appear on the root node.
+
+
+<font red> add links in next two paragraphs and 'see also' block </font>
+
+
+You can never delete edit levels, records, or items (i.e., the entries shown on the edit tab). However, you can change the order of the logic execution by dragging the items within the Batch Edit tree view. When selecting a new edit item, the contents of the logic view will change to display the logic for the selected entity.
+
+Pressing Ctrl+T in the batch edit tree will allow you to switch between the labels and the names of the items.
+
+

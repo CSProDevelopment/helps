@@ -1,79 +1,22 @@
 ﻿<title>Area Captions</title>
 
+When <link area_processing.csdoc>Area Processing</link> is used in a table file, the Area Captions are row captions in which the corresponding <link area_names_file_anm.csdoc>area name</link> is placed for each table. CSPro places area captions just above the total line of the first stub group in the table. An area caption is denoted by the "%AreaName%" text, as shown below:
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<center><image xtab_203.jpg /></center>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+When the table is run, the %AreaName% is replaced by the names from the area names file, as shown below. However if no area names file was given, then the code corresponding to the areas chosen in the <link area_dialog_box.csdoc>Area Dialog</link> will be displayed instead.
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Area
- Captions are, as the name indicates, row captions in which the corresponding
- area name is placed for each table. Area captions are placed just above
- the total line of the first stub group in the table. An area caption is
- denoted by the &quot;%AreaName%&quot; text.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
-	 src="xtab_203.jpg" alt="Area Caption when Designing Table"
-	 title="Area Caption when Designing Table" width="334" height="154"
-	 border="0" /></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">When
- the table is run, the %AreaName% is replaced by the names from the area
- names file.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
-	 src="tblarcaprun.jpg" alt="Area Captions in Table after Tabulation"
-	 title="Area Captions in Table after Tabulation" width="333" height="306"
-	 border="0" /></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- the table is a 'one-row' table, e.g., it has only column items but no
- stub groups, the area name caption replaces the 'Total' stub that would
- otherwise be present and the area caption is 'hidden'.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
-	 src="xtab_204.jpg" alt="One Row Table with Areaname in Stub"
-	 title="One Row Table with Areaname in Stub" width="331" height="116"
-	 border="0" /></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- area caption has the same formatting options as other captions, available
- by right clicking on the caption and choosing Format (Area caption). You
- can hide area captions, as in the example above, you can change the fonts,
- make them span rows, etc…</font></p>
-<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
-	 src="xtab_205.jpg" alt="Format (Area Capton) Dialog Box"
-	 title="Format (Area Capton) Dialog Box" width="550" height="335" border="0" /></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">You
- can also set the default formats for all area captions in all tables in
- your file using</font> <a href="preferences_and_default_formats.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Preferences
- and Default Formats</font></a><font style="font-family: Arial; font-size: 10pt;"
-									 face="Arial" size="2">.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See Also:</font></b> <a href="formats_for_a_part_of_a_table.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Formats
- for a Part of a Table</font></a></p>
-</body>
-</html>
+<center><image tblarcaprun.jpg /></center>
 
+If the table is a 'one-row' table, e.g., it has only column items but no row ("stub") items, then the area name caption replaces the 'Total' stub that would otherwise be present and the area caption is 'hidden'.
 
-<html><!---♻---></html>
-<build-extra "../images/xtab_203.jpg" "../images/tblarcaprun.jpg" "../images/xtab_204.jpg" "../images/xtab_205.jpg" />
+<center><image xtab_204.jpg /></center>
+
+The area caption has the same formatting options as other captions, available by right clicking on the caption and choosing Format (Area caption). You can hide area captions, as in the example above, you can change the fonts, make them span rows, etc…
+
+<center><image xtab_205.jpg /></center>
+
+You can set the default formats for all area captions in all tables in your file using <link preferences_and_default_formats.csdoc>Preferences and Default Formats</link>.
+
+<seealso formats_for_a_part_of_a_table.csdoc area_processing.csdoc area_names_file_anm.csdoc area_dialog_box.csdoc />
+

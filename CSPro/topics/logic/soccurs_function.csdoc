@@ -12,9 +12,9 @@ Depending on where <logiccolor>soccurs</logiccolor> is invoked, it either return
 <b>During data entry</b>, if <logiccolor>soccurs</logiccolor> is executed:
 
 <list>
-<li>prior to the input of any field from the record, <logiccolor>soccurs</logiccolor> returns zero (<logiccolor>0</logiccolor>).</li>
+<li><i>prior to the input of any field from the record</i>, <logiccolor>soccurs</logiccolor> returns zero (<logiccolor>0</logiccolor>).</li>
 <li><i>from within the first form or roster created from the record</i>, <logiccolor>soccurs</logiccolor> returns the current occurrence, once the first field is keyed.</li>
-<li><i>from within a second or later form or roster created from the record</i>, <logiccolor>soccurs</logiccolor> returns the maximum number of records so far keyed.</li>
+<li><i>from within a second roster created from the record OR from a later form created from the record</i>, <logiccolor>soccurs</logiccolor> returns the maximum number of records so far keyed. Note that depending on how the entry is being controlled (or not) for a form or roster, the first form or roster may not contain the maximum number of records keyed thus far.</li>
 </list>
 
 For example, assume PERSON_RECORD contains 10 items&mdash;relationship, sex, age, and 7 other items. If a single repeating form or roster contains all 10 items, then soccurs always returns the current record occurrence, once the first field is keyed. However if this record had been split up into two or more forms/rosters, then soccurs will return the current occurrence from any field on the first form/roster (once entry of the first field is complete), but the total number of occurrences from any field within the second+ form/roster.

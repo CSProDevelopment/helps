@@ -1,146 +1,17 @@
 ﻿<title>Batch Edit Order</title>
 
+If your edits reach a certain level of complexity you may begin to wonder how you can control the order of execution. Simply put, the order in which the items are listed in the <link batch_edit_tree.csdoc>Batch Tree Edit tab</link> controls the order of logic execution.
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+When developing edit specifications, the edit of one variable often depends on the edit of another variable being completed first. But what if the order of items in the dictionary doesn't correspond to the order you need when editing? For example, if your dictionary has the variables in this order: sex, relationship, and age, but you want to edit relationship before sex? When the batch edit application is generated, the edit order will be incorrect.
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+To change that order (of items and records but not levels) simply <link change_edit_order.csdoc>reorder</link> them on the batch edit tree.
 
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.80pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Eventually
- you'll reach the point where you have written edits for many variables
- and you will begin to wonder, just how do you control the order of execution?
- It's in the</font> <a href="batch_edit_tree.html"><font style="font-family: Arial;
-														 font-size: 10pt;"
-														 face="Arial" size="2">batch
- edit tree</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">. The order of the items
- listed in the BatchEdits tree tab shows you the order of logic execution.
- (If there is no associated logic for an edit item, then the order is of
- course not important.)</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">What
- if you don't like the order that's given? Change it. As mentioned above
- in &quot;The Batch Edit Tree&quot; you can</font> <a href="change_edit_order.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">re-order</font></a>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">items
- and records (but not levels) on the batch edit tree. When developing edit
- specifications, the edit of one variable might depend on another edit
- having already been completed (say, relationship before sex). If the dictionary
- wasn't designed in the order you need, then when a batch edit application
- is generated, the order will be incorrect.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Having
- said all this, there are a few nuances to the editing process that you
- may wish to note, specifically with regard to the execution of</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">preproc</font></b><font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">s
- and</font> <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-					 face="Arial" size="2">postproc</font></b><font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">s execution:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•&#160;</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">For
- BatchEdit items, there is no benefit to writing and maintaining</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">preproc</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">and</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">postproc</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">code
- blocks. Because a BatchEdit item is at the lowest level in the order tree,
- no other code would be executed in the interval between a</font> <b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">preproc</font></b> <font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">and</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">postproc</font></b> <font style="font-family: Arial;
-															 font-size: 10pt;"
-															 face="Arial"
-															 size="2">code
- block. Therefore it is suggested that only one code block exist for each
- item. If you do not preface the instructions with either &quot;</font><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">preproc</font></b><font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">&quot; or
- &quot;</font><b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-						 face="Arial" size="2">postproc</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&quot;,
- the code by default will be in the</font> <b><font style="font-family: Arial;
-													 font-size: 10pt; font-weight: bold;"
-													 face="Arial" size="2">postproc</font></b>
- <font style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">block.
- This is the recommended approach; that is, accept the default.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•&#160;</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- a BatchEdit item is within a record that repeats, the logic will be repeated
- for each occurrence of the record. For example, if you have a population
- record that allows 30 occurrences, the logic for each of its member items
- can repeat up to 30 times, depending on the actual number of persons in
- the household. Suppose you have a household with three members: the head,
- the spouse, and a child. The logic for each data item (such as &quot;relationship,&quot;
- &quot;sex,&quot; and &quot;age&quot;) will be executed three times.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•&#160;</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">If
- a record repeats, the associated logic for that record will NOT repeat;
- instead, it will be executed once and only once for questionnaire. For
- example, take that population record again that allows 30 occurrences.
- Whether there are 1 or 5 or 30 people in the household, the associated
- logic for the BatchEdit record will execute only once. Therefore, if you
- have logic that must occur for each person in the household, we suggest
- you place that code under the first BatchEdit item in the record.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.50pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.50pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">&#160;</font><font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">Logic written for
- Level 1 will only execute once for a questionnaire/case. Logic written
- for Levels 2 or 3 will execute for each node, i.e., for each set of records
- contained in that level.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;
-	 text-indent: -10.80pt;"><b><font style="font-family: Arial; font-size: 10pt;
-										 font-weight: bold;" color="#000000"
-										 face="Arial" size="2">•</font></b><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">&#160;Finally,
- logic written at the BatchEdit File node will execute only once for a
- data file. Therefore, if you have global variables that you need to initialize,
- etc., this is the place where that should take place.</font></p>
-</body>
-</html>
+Whether or not you choose to change the edit order, be aware of the following aspects to the editing process, specifically with regard to the <link order_of_executing_batch_edit_events.csdoc>execution</link> of <link preproc_statement.csdoc>preprocs</link> and <link postproc_statement.csdoc>postprocs</link>:
 
+<list>
+    <li><b>Form File&mdash;</b>Logic placed within the <b>Form File's</b> preproc or postproc corresponds to the data file, and so will only execute once. Therefore, if you have logic that needs to occur either before the edits begin or after they end, then this is where that logic should be placed.</li>
+    <li><b>Level&mdash;</b>Logic placed in the <b>Level 1</b> preproc or postproc corresponds to the case, and so will only execute once. Logic written for Levels 2 or 3 will execute for each node, i.e., for each set of records contained in that level.</li>
+    <li><b>Record&mdash;</b>Logic placed in a Level 1 <b>Record</b> preproc or postproc will only execute once, regardless of whether it is a repeating or non-repeating record. Logic placed in a Level 2 or 3 <b>Record</b> preproc or postproc will execute every time a new node is encountered for Level 2 or 3.</li>
+    <li><b>Dictionary Items&mdash;</b>This is the lowest level of hierarchy in the order of execution; no other code would be executed in the interval between an item's preproc and postproc code block. Therefore it is suggested that only one code block exist for each item. If you do not preface the instructions with either preproc or postproc, the code by default will be in the postproc block. If the item is defined in a <b>non-repeating</b> record, then the logic will execute once if at Level 1, and multiple times for each instance of a Level 2 or 3 node. If the item is in a <b>repeating</b> record, the logic will execute at Level 1 for the number of occurrences encountered, and at a Level 2 or 3 node, it will execute for the number of occurrences encountered for the record itself, plus for the number of nodes encountered. For example, if there were 5 person in a level 1 record, the logic would repeat 5 times. However, if there was a repeating agriculture record in level 2 that tracked crops grown for each person in the household, it would repeat for the number of crops found times the number of persons found.</li>
+</list>
 
-<html><!---♻---></html>

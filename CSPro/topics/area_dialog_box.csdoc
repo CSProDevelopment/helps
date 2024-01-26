@@ -1,177 +1,45 @@
 ﻿<title>Area Dialog Box</title>
 <context IDD_AREA ID_AREA />
 
+The Area Dialog box allows you to select <link identification_items.csdoc>identification items</link> (also known as <b>ID items</b>) in order to support <link area_processing.csdoc>area processing</link> in your table.
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<center><image xtab_201.jpg /></center>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+<subheader>Area Structure Section</subheader>
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- dialog box allows you to select the Questionnaire ID items to be used
- for area processing.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: center; margin-top: 0.00pt; margin-bottom: 0.00pt;"><img
-	 src="xtab_201.jpg" alt="Area Dialog Box" title="Area Dialog Box"
-	 width="470" height="433" border="0" /></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Area Structure Section</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Codes
- for these items are used to 'tally' in the specific areas. Area items
- can come from the questionnaire ID items or items on singly occurring
- records. Available single record names will be available in the 'Include
- Items from Record' menu. If selected those items will be added to the
- list under 'Questionnaire Items'.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Note:
- The number of the Area IDs items determine the number of [Levels] needed
- in the Area Name File.</font></p>
-<ul>
-	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
-												 margin-left: 16.80pt;
-												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Select
-	 one or more Questionnaire IDs from the left box (to select multiple
-	 items, hold down the Ctrl key when you make your selections).</font></p></li>
-</ul>
-<ul>
-	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
-												 margin-left: 16.80pt;
-												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Click
-	 the 'Add' button to copy your choices to the Area IDs list.</font></p></li>
-</ul>
-<ul>
-	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
-												 margin-left: 16.80pt;
-												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
-	 remove an item from the Area IDs list, select it and click the 'Remove'
-	 button.</font></p></li>
-</ul>
-<ul>
-	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
-												 margin-left: 16.80pt;
-												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">To
-	 re-order items in the list, select one and click the 'Move Up'/'Move
-	 Down' button as appropriate.</font></p></li>
-</ul>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Tabulation Section</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">In
- future versions, users will be able to decide if areas without any counts
- [no tallies] are displayed in the table or not.</font></p>
-<ul>
-	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
-												 margin-left: 16.80pt;
-												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Show
-	 area in table even if no counts are tallied [always in version 5.0].</font></p></li>
-</ul>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Consolidation Section</font></b></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Generally,
- only tables at the lowest level are created when the data file is processed.
- After these are completed these lowest levels are combined and recombined
- to create the higher level tables.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The
- two options here are Standard or Custom.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">'Standard'
- follows the usual fashion of aggregation, i.e., adding to get total. Each
- lower level is combined to create the next highest level.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: center; margin-left: 10.80pt; margin-top: 0.00pt;
-	 margin-bottom: 0.00pt;"><img src="xtab_202.jpg" alt="Consolidation in Area Dialog Box"
-									 title="Consolidation in Area Dialog Box"
-									 width="471" height="128" border="0" /></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">As
- an example from above, the original tables [created from the data file]
- would be an urban table for each district in each province and a rural
- table for each district in each province.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Standard
- Consolidation would:</font></p>
-<ul>
-	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
-												 margin-left: 16.80pt;
-												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Add
-	 the appropriate urban and rural tables to create the province-district
-	 table.</font></p></li>
-</ul>
-<ul>
-	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
-												 margin-left: 16.80pt;
-												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Add
-	 the appropriate district tables to create the province table.</font></p></li>
-</ul>
-<ul>
-	<li class="p" style="font-size: 10pt;"><p style="text-align: left;
-												 margin-left: 16.80pt;
-												 margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Add
-	 all province tables to create the 'country' table.</font></p></li>
-</ul>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">This
- procedure produces four levels of tables: Urban/Rural, District, Province,
- and Country (given in minor to major order).</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">The</font>
- <b><font style="font-family: Arial; font-size: 10pt; font-weight: bold;"
-			 face="Arial" size="2">Lowest Level</font></b> <font style="font-family: Arial;
-	 font-size: 10pt;" face="Arial" size="2">allows users to select the
- most minor level to be produced. Counts at this level and higher will
- appear in the tabulation but any lower level counts will be discarded.</font></p>
-<p style="text-align: left; margin-left: 10.80pt; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">Custom</font></b> <font style="font-family: Arial; font-size: 10pt;"
-										 face="Arial" size="2">option allows
- some freedom in defining the aggregation or consolidation scheme. See</font>
- <a href="custom_consolidation.html"><font style="font-family: Arial; font-size: 10pt;"
-											 face="Arial" size="2">Custom
- Consolidation</font></a> <font style="font-family: Arial; font-size: 10pt;"
-								 face="Arial" size="2">for more information.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" face="Arial"
-	 size="2">See also:</font></b> <a href="area_processing.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Area
- Processing</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> <a href="create_an_area_names_file.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Create
- an Area Names File</font></a></p>
-</body>
-</html>
+Codes for these items are used to 'tally' in the specific areas. Area items can come from ID items or items on singly-occurring records. A list of single records found in the <link data_dictionary.csdoc>dictionary</link> (if any) will be shown in the <b>Include Items from Record</b> dropdown menu. If a record is chosen, then all items from that record will be added to the <b>Questionnaire Items</b> list.
 
+Select one or more items from the <b>Questionnaire Items</b> list, clicking the <b>Add >></b> button when ready to move your choices to the <b>Area Items</b> list. To select multiple items, hold down the Ctrl key when you make your selections.
 
-<html><!---♻---></html>
-<build-extra "../images/xtab_201.jpg" "../images/xtab_202.jpg" />
+To remove an item from the <b>Area Items</b> list, select it and click the <b>&lt;&lt; Remove</b> button.
+
+To reorder items in the list, select one and click the <b>Move Up</b> and/or <b>Move Down</b> button as appropriate.
+
+<subheader>Tabulation Section</subheader>
+
+In future versions, users will be able to decide if areas without any counts (i.e., no tallies) are displayed in the table.
+
+<subheader>Consolidation Section</subheader>
+
+Generally, only tables at the lowest level are created when the data file is processed. After these are completed these lowest levels are combined and recombined to create the higher level tables. The two options available are <b>Standard</b> or <b>Custom</b>. <b>Standard</b> follows the usual fashion of aggregation, i.e., adding to get the total. Lower levels are summed to obtain the next higher level.
+
+<center><image xtab_202.jpg /></center>
+
+Using the example from above where Province, District, and Urban/Rural were selected, the tables would be an urban table for each district in each province and a rural table for each district in each province.
+
+Standard Consolidation would:
+
+<list>
+    <li>Add the appropriate urban and rural tables to create the province-district table.</li>
+    <li>Add the appropriate district tables to create the province table.</li>
+    <li>Add all province tables to create the 'country' table.</li>
+</list>
+
+This procedure produces four levels of tables, given in minor to major order: Urban/Rural, District, Province, and Country (i.e., Total).
+
+The lowest level allows users to select the most minor level to be produced. Counts at this level and higher will appear in the tabulation but any lower level counts will be discarded.
+
+The <b>Custom</b> option allows some freedom in defining the aggregation or consolidation scheme. See <link custom_consolidation.csdoc>Custom Consolidation</link> for more information.
+
+<seealso area_processing.csdoc create_an_area_names_file.csdoc />
+

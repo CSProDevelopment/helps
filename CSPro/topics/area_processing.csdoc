@@ -1,121 +1,33 @@
 ﻿<title>Area Processing</title>
 
+Area Processing is the generation of tables using a defined hierarchical structure; this can be administrative levels, geographic levels, company organizational codes, whatever codes are available in your data. For example if the geographic hierarchy of a country is province, district, and village (list in major-to-minor order), you may want to produce tables for each of these sub-divisions.
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Adobe RoboHelp 11" />
-<style type="text/css">/*<![CDATA[*/
-body {
-	background-color: #ffffff;
-}
-/*]]>*/</style>
-</head>
+<subheader>Generating Tables With Area Names</subheader>
 
-<body style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">
+In order to use area processing you must first do the following:
 
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Area Processing is the generation of tables by a defined
- hierarchical structure of area codes. If the geographic hierarchy of a
- hypothetical country is region, province, locality (major-to-minor order),
- it may be necessary to produce tables for each of these sub-divisions.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">To use area processing you must have done the following:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-weight: bold;">•</font></b>&#160;<span style="font-family: Arial, sans-serif;"><a
-	 href="create_an_area_names_file.html"><font style="font-family: Arial, sans-serif;"
-												 face="Arial">Created an
- area names file</font></a> <font style="font-family: Arial, sans-serif;"
-									 face="Arial">(.anm)</font></span></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">•&#160;</font></b><font style="font-family: Arial;
-													 font-size: 10pt;"
-													 color="#000000" face="Arial"
-													 size="2">Selected
- one or more Area IDs from the</font> <a href="area_dialog_box.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">area
- IDs dialog box</font></a></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">For example, suppose we wish to perform geographic area processing
- for our top-most units of geography, which are Province and District (choose
- them in the Area IDs dialog box). Each tabulation will be repeated for
- each Province and District in the data file. In addition, a summary entry
- [Total] will be shown for the entire data file. The tabulation will be
- displayed in the following order:</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-left: 12.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Total</font></p>
-<p style="text-align: left; margin-left: 24.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Province 1</font></p>
-<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">District 1 (of Province 1)</font></p>
-<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">District 2 (of Province 1)</font></p>
-<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">District 3 (of Province 1)</font></p>
-<p style="text-align: left; margin-left: 24.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Province 2</font></p>
-<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">District 1 (of Province 2)</font></p>
-<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">District 2 (of Province 2)</font></p>
-<p style="text-align: left; margin-left: 36.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">District 3 (of Province 2)</font></p>
-<p style="text-align: left; margin-left: 24.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">:</font></b></p>
-<p style="text-align: left; margin-left: 24.00pt; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">:</font></b></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><font
-	 style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-	 size="2">Area Processing will apply to</font> <b><font style="font-family: Arial;
-															 font-size: 10pt;
-															 font-weight: bold;"
-															 color="#000000"
-															 face="Arial"
-															 size="2">all</font></b>
- <font style="font-family: Arial; font-size: 10pt;" color="#000000" face="Arial"
-		 size="2">tables in your application.</font></p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><span
-	 style="font-weight: bold;">No File Processing:</span> It is also possible
- to produce tables without creating an area names file. Select the levels
- of geography desired but after clicking on the Traffic Light button in
- CSPro to run your tables, leave the &lt;Area Names&gt; field blank. CSPro
- will use codes from the data file instead of names for each level of geography.
- For example, if province Gluten's code is 20, the tables will show code
- 20 instead of the name Gluten. This can be useful for generating a list
- of every geographic code found in a data file.</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;">&#160;</p>
-<p style="text-align: left; margin-top: 0.00pt; margin-bottom: 0.00pt;"><b><font
-	 style="font-family: Arial; font-size: 10pt; font-weight: bold;" color="#000000"
-	 face="Arial" size="2">See also:</font></b> <a href="area_names_file_anm.html"><font
-	 style="font-family: Arial; font-size: 10pt;" face="Arial" size="2">Area
- Names File</font></a><font style="font-family: Arial; font-size: 10pt;"
-							 face="Arial" size="2">,</font> </p>
-</body>
-</html>
+<list>
+    <li>Create an <link create_an_area_names_file.csdoc>area names file (.anm)</link></li>
+    <li>Selected one or more Area IDs from the <link area_dialog_box.csdoc>Area IDs dialog</link></li>
+</list>
 
+For example, suppose we wish to perform geographic area processing for our top-most units of geography, Province and District. After our area names file has been created and we have selected these two areas via the Area IDs dialog, all tables in our file will be generated with those two areas, in addition to a <b>Total</b> block (the Total block is what you would have seen in your tables if you had not chosen Area Processing). Each tabulation will be displayed in the following order:
 
-<html><!---♻---></html>
+Total
+<indent>Province 1</indent>
+<indent 2>District 1 (of Province 1)</indent>
+<indent 2>District 2 (of Province 1)</indent>
+<indent 2>District 3 (of Province 1)</indent>
+<indent>Province 2</indent>
+<indent 2>District 1 (of Province 2)</indent>
+<indent 2>District 2 (of Province 2)</indent>
+<indent 2>District 3 (of Province 2)</indent>
+<indent>:</indent>
+
+<subheader>Generating Tables Without Area Names</subheader>
+
+You can produce tables without creating an area names file. In this scenario CSPro will display the codes from the data file for each level of geography chosen instead of using whatever names you would have given in the Area Names file. For example, if Province Sawaya's code is 103, then tables will show code 103 instead of the name Sawaya. This can be useful for generating a list of every geographic code found in a data file.
+
+To run tables without the Area Names file, select the levels of geography desired as mentioned above via the <link area_dialog_box.csdoc>Area IDs dialog</link>, but when launching the execution of your table(s), leave the <b>&lt;Area Names></b> field in the <b>Define Tab File Associations </b> dialog blank.
+
+<seealso create_an_area_names_file.csdoc area_dialog_box.csdoc />
