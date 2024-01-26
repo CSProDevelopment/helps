@@ -1,32 +1,79 @@
 ﻿<title>Tab Delimited Data Source</title>
 
-<subheader>Tab-delimited (.tsv)</subheader>
 
-A data file of plaintext values separated by tabs. As a text-based file it is useful for easy readability by humans and programs such as Excel, Notepad, Wordpad, etc. This option is available for Output and External (i.e., lookup) files. It can also be used for the file generated from any <logiccolor>impute</logiccolor> function calls that use the <logiccolor>stat</logiccolor> option. However, only non-repeating records will be written to the .<b>tsv</b> file; repeating records will be ignored.
+<subheader>Overview</subheader>
+
+The <b>Tab Delimited</b> <link data_sources.csdoc>data source</link> allows writing, but not reading, data to a <link "https://en.wikipedia.org/wiki/Tab-separated_values">tab-separated values</link> file. When writing data, each value is separated by a tab. This data source only supports writing the values from one <link record_description.csdoc>record</link>, which by default is the first record defined in the dictionary. To specify writing data from another record, you must define the <colorinline JSON>"record"</colorinline> property in the <link connection_string.csdoc>connection string</link>.
+
+This data source is similar to the other delimited text data sources, <link data_source_csv.csdoc>Comma Delimited (CSV)</link> and <link data_source_semicolon.csdoc>Semicolon Delimited</link>. Many applications that read delimited text can also read Excel files, and using the <link data_source_excel.csdoc>Excel</link> data source may an option in many scenarios.
+
+The Tab Delimited data source is used when a file has the extension <b>.tsv</b>.
 
 
-<subheader>Limitations</subheader>
+<subheader>Functionality</subheader>
+
+The Tab Delimited data source supports the following features:
+
+<table 2 header nowrap>
+    <cell>Feature</cell><cell nowrap>Supported</cell>
+    <cell>Reading cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Writing cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Notes, case labels, and case statuses</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Storage of more than one kind of record</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Binary data items</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Deleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Undeleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell><link synchronization.csdoc>Syncing</link> data</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Cases with duplicate <link key_function.csdoc>keys</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Case identification via <link uuid_function.csdoc>UUID</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Contains an embedded dictionary</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Allows <link CSSort::choose_type_of_sort.csdoc>record sorts</link></cell><cell><center><font red>✘</font></center></cell>
+</table>
+
+
+<subheader>Special Character Handling</subheader>
+
+Because tabs are used to separate values, if a value contains a tab, the value must be escaped before writing. The following characters are <link "https://en.wikipedia.org/wiki/Tab-separated_values#Character_escaping">escaped</link>:
+
 <list>
-	<li>Does not support binary data </li>
-	<li>Does not support undeleting cases </li>
-	<li>Does not support opening as external dictionary when file has duplicate keys </li>
-	<li>Does not support syncing data </li>
-	<li>Write-Only</li>
+    <li><b>Tab</b>: Written as <b>\t</b>.</li>
+    <li><b><link newline_handling.csdoc>Newline</link></b>: Written as <b>\n</b>.</li>
+    <li><b>Backslash</b>: Written as <b>\\</b>.</li>
 </list>
 
-<subheader> <link export_attributes.csdoc>Export Attributes</link> </subheader>
-<list>
-<li> <link export_attribute_record.csdoc>record</link> [If writing only a single record, contains record name]</li>
-<li> <link export_attribute_mapped_special_values.csdoc>mapped-special-values</link> [<b>code</b> or <b>notappl</b>. Default is code. Controls how special values are written to non-CSPro file.] </li>
-<li> <link export_attribute_encoding.csdoc>encoding</link> [<b>ansi</b>, <b>utf-8</b>, <b>utf-8bom</b>, or <b>unicode</b>. Default is utf-8bom. Decides encoding of output file.]</li>
-<li> <link export_attribute_header.csdoc>header</link> [<b>none</b>, <b>names</b>, or <b>labels</b>. Controls whether there is a header written to the first line of the file and what is in it.]</li>
-<li> <link export_attribute_values.csdoc>values</link> [<b>codes</b>, <b>labels</b>, or <b>codes-and-labels</b>. Controls how values are written to the file.] </li>
-<li> <link export_attribute_decimal_mark.csdoc>decimal-mark</link> [<b>point</b> or <b>comma</b>. Defalt point. Controls how decimals are marked.] </li>
-</list>
+For example, a value like <logiccolor>"She said\t \"Hello\""</logiccolor> would be written as:
 
-<link newline_handling.csdoc>Note: newlines in items are written out using the same escaping structure of CSV files, but  Excel doesn't recognize this.</link>
+<indent><font monospace>She said\t "Hello"</font></indent>
 
-<link https://en.wikipedia.org/wiki/Tab-separated_values>https://en.wikipedia.org/wiki/Tab-separated_values</link>
+
+<subheader>Customizable Behavior</subheader>
+
+The following behavior can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. The default behavior is marked with ⁺⁺⁺.
+
+<table 2 header>
+    <cell nowrap>Property Name and Values</cell><cell>Description</cell>
+    <cell 2>&nbsp;</cell>
+    <include properties_decimalMark.hgi />
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"encoding"</colorinline></b></cell><cell>Determines the <link unicode_primer.csdoc>text encoding</link> of the file.</cell>
+    <include properties_encoding_values.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_header.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_mappedSpecialValues.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_record.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_writeCodes.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_writeLabels.hgi />
+</table>
+
+For example, the following connection string, specified in a <link run_production_batch_edits.csdoc>batch PFF</link>, would result in a tab-separated values file containing the codes and labels of the <logiccolor>HOUSING_REC</logiccolor> record:
+
+<pff>
+OutputData=housing.tsv|writeLabels=true&record=HOUSING_REC
+</pff>
 
 
 <seealso data_sources.csdoc />

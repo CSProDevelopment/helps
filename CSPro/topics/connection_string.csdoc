@@ -1,22 +1,23 @@
 ﻿<title>Connection String</title>
 
-A connection string is a text string that details how to open a <link data_sources.csdoc>data source</link>. Generally a connection string is just a file name. Connection strings are used in <link program_information_file_pff.csdoc>PFF files</link> as well as in logic when data sources are specified, such as when using <logiccolor>setfile</logiccolor>. A connection string is made up of several components:
+
+A connection string is a text string that details how to open a <link data_sources.csdoc>data source</link>. Typically a connection string is just a file name. Connection strings are used in <link program_information_file_pff.csdoc>PFF files</link> as well as in logic when data sources are specified, such as when using the <logiccolor>setfile</logiccolor> function. A connection string is made up of several components:
 
 <logicsyntax>
 <arg>file_name</arg> | <arg>property_name1</arg>=<arg>property_value1</arg> & <arg>property_name2</arg>=<arg>property_value2</arg>
 </logicsyntax>
 
-The <arg>file_name</arg> is the file name of the data source. It can be specified as a relative or absolute path. If only the file name is specified, then the connection string is complete. However, if any properties are specified, then the properties must be separated from the file name by a pipe | character.
+The <arg>file_name</arg> argument is the file name of the data source. It can be specified as a relative or absolute path. If only the file name is specified, then the connection string is complete. However, if any properties are specified, then the properties must be separated from the file name by a pipe <logiccolor>'|'</logiccolor> character.
 
-Multiple properties can be specified, with each grouping separated by the ampersand & character. The property name is listed, followed by an equals = sign, and then the property value is given. Most property values can be defined in human-readable text, but if the value contains special characters such as & or = characters, it must be <link https://en.wikipedia.org/wiki/Percent-encoding>percent-encoded</link>.
+Multiple properties can be specified, with each grouping separated by the ampersand <logiccolor>'&'</logiccolor> character. The property name is listed, followed by an equals <logiccolor>'='</logiccolor> sign, and then the property value is given. Most property values can be defined in human-readable text, but if the value contains special characters such as <logiccolor>'&'</logiccolor> or <logiccolor>'='</logiccolor> characters, it must be <link "https://en.wikipedia.org/wiki/Percent-encoding">percent-encoded</link>, which you can do using the <link string_encoder_dialog.csdoc>String Encoder</link>.
 
-The property "type" is used by CSPro to specify the type of a data file. Generally this is not necessary to define because the data file type can be deduced from the file extension, but in one case it is necessary. This, for example, is how the <link data_source_none.csdoc>None data source</link> is specified in a PFF:
+The property <logiccolor>"type"</logiccolor> is used by CSPro to specify the type of a data file. Generally this is not necessary to define because the data file type can be deduced from the file extension, but in a couple cases it is necessary. This, for example, is how the <link data_source_none.csdoc>None data source</link> is specified in a PFF:
 
 <pff>
 InputData=|type=None
 </pff>
 
-Other properties are documented in the topics describing the data sources. An example of one property is the "password" property for <link encrypted_data.csdoc>encrypted data</link> files. It can be specified in logic:
+Other properties are documented in the topics describing the data sources. An example of one property is the <logiccolor>"password"</logiccolor> property for <link data_source_csdbe.csdoc>Encrypted CSPro DB</link> data sources. It can be specified in logic:
 
 <logic>
 string pin_number = prompt("Enter your PIN number:", password, numeric);
@@ -27,17 +28,6 @@ setfile(HOUSEHOLD_DICT, "Household.csdbe|password=" + pin_number);
 Or specified for the PFF:
 
 <center><image file_associations_connection_string.png /></center>
-
-
-<subheader>Properties List</subheader>
-
-Properties include:
-
-<indent><table 2 header>
-    <cell><b>Property</b></cell><cell><b>Description</b></cell>
-    <cell><i>password</i></cell><cell>The password that opens an <link encrypted_data.csdoc>encrypted data</link> file.</cell>
-    <cell><i>cache</i></cell><cell>Indicates to CSPro that cases should be cached in memory. This may be useful to advanced users who want to optimize programs that do a lot of case lookups.</cell>
-</table></indent>
 
 
 <seealso data_sources.csdoc />
