@@ -47,7 +47,7 @@ do numeric ctr = 1 while ctr <= imagePaths.length()
     string imageMd5 = CS.Hash.createMd5(path := imagePaths(ctr));
 
     if previouslySyncedFileMd5s.seek(imageMd5) = 0 then
-        // TODO: the image has not been synced
+        // ... the image has not been synced
     endif;
 enddo;
 </logic>

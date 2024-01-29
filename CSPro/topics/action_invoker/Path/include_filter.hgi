@@ -1,0 +1,7 @@
+For example, <logiccolor>"*.csdb"</logiccolor> would include only the paths of <link data_source_csdb.csdoc>CSPro DB</link> data sources. You can specify multiple wildcard filters by separating each filter with a semicolon. The filter <logiccolor>"*.jpg;*.jpeg;*.bmp"</logiccolor> would include both JPEG and BMP files. In addition to standard wildcard filters, you can use a predefined wildcard expression, specified with the <logiccolor>"|"</logiccolor> prefix:
+
+<list>
+    <li><logiccolor>"|FileType.Audio"</logiccolor>: Files that the <link Audio.csdoc>Audio</link> object can read and write.</li>
+    <li><logiccolor>"|FileType.Geometry"</logiccolor>: Files that the <link Geometry.csdoc>Geometry</link> object can read and write.</li>
+    <li><logiccolor>"|FileType.Image"</logiccolor>: Files that the <link Image.csdoc>Image</link> object can read and write.</li>
+</list>

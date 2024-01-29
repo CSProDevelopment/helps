@@ -1,0 +1,24 @@
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+// get a listing of all images
+const imageListing = CS.Path.getDirectoryListing({
+    path: "Images",
+    filter: "|FileType.Image"
+});
+
+// when there are images...
+if( imageListing.paths.length > 0 ) {
+
+    // ...create the backup directory, suffixed with the UNIX time
+    const backupDirectory = CS.Path.createDirectory({
+        path: `Images-Backup-${Date.now()}`
+    });
+
+    // ...and copy over all the images
+    CS.File.copy({
+        source: imageListing.paths,
+        destination: backupDirectory
+    });
+}
+</color>

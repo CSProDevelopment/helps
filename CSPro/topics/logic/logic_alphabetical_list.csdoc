@@ -209,12 +209,18 @@ The following table lists functions and statements that can be used in logic. Li
     <cell 2>&nbsp;</cell>
     <cell><logiccolor>paradata</logiccolor></cell><cell>Performs an action on the <link paradata.csdoc>paradata log</link>.</cell>
     <cell><logiccolor>Path.concat</logiccolor></cell><cell>Combines multiple strings into one string representing a file path.</cell>
+    <cell><action>Path.createDirectory</action> <sup>(CS)</sup></cell><cell>Creates a directory if it does not already exist.</cell>
+    <cell><action>Path.getDirectoryListing</action> <sup>(CS)</sup></cell><cell>Returns information about the paths in a directory.</cell>
     <cell><logiccolor>Path.getDirectoryName</logiccolor></cell><cell>Extracts the directory name from a file path.</cell>
     <cell><logiccolor>Path.getExtension</logiccolor></cell><cell>Extracts the file extension from a file path.</cell>
     <cell><logiccolor>Path.getFileName</logiccolor></cell><cell>Extracts the file name from a file path.</cell>
     <cell><logiccolor>Path.getFileNameWithoutExtension</logiccolor></cell><cell>Extracts the file name without its extension from a file path.</cell>
+    <cell><action>Path.getPathInfo</action> <sup>(CS)</sup></cell><cell>Returns information about a directory or file path.</cell>
     <cell><logiccolor>Path.getRelativePath</logiccolor></cell><cell>Returns a relative path based on a path's location relative to a directory.</cell>
+    <cell><action>Path.getSpecialPaths</action> <sup>(CS)</sup></cell><cell>Returns special paths, including the download and temp directories.</cell>
+    <cell><logiccolor>Path.selectFile</logiccolor> <sup>(CS)</sup></cell><cell>Shows the operator a visual listing of the file system and returns the path of the file the operator selected.</cell>
     <cell><logiccolor>Path.selectFile</logiccolor></cell><cell>Shows the operator a visual listing of the file system and returns the path of the file the operator selected.</cell>
+    <cell><action>Path.showFileDialog</action> <sup>(CS)</sup></cell><cell>Displays a dialog with a visual listing of the file system, allowing the user to select a file to open or to create a file to save.</cell>
     <cell><logiccolor>pathconcat</logiccolor></cell><cell>Combines multiple strings into one string representing a file path.</cell>
     <cell><logiccolor>pathname</logiccolor></cell><cell>Returns the path of various special directories.</cell>
     <cell><logiccolor>Pff</logiccolor></cell><cell>Declare a <link Pff.csdoc>Pff</link> object that can be used to dynamically modify the way other CSPro applications are executed.</cell>

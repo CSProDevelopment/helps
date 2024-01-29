@@ -12,37 +12,39 @@ s = pathname(<arg>path_type</arg> ‖ <arg>dictionary_name</arg> ‖ <arg>file_h
 The following <arg>path_type</arg> arguments return the folder name associated with a special directory on your device:
 
 <indent><table 2>
-	<cell><arg>path_type</arg></cell><cell><b>Description</b></cell>
-	<cell><b>Application</b></cell><cell>The folder where the application file (.ent or .bch) is located.</cell>
-	<cell><b>CSPro</b></cell><cell>The folder where the CSPro executable files are located.</cell>
-	<cell><b>Downloads</b></cell><cell>The operating system's directory for storing downloaded files.</cell>
-	<cell><b>Html</b></cell><cell>The folder where CSPro's <link html_in_cspro.csdoc>HTML files</link> are located.</cell>
-	<cell><b>InputFile</b></cell><cell>The folder where the main data file (associated with the primary dictionary) is located.</cell>
-	<cell><b>Temp</b></cell><cell>The operating system's temporary directory.</cell>
+    <cell><arg>path_type</arg></cell><cell><b>Description</b></cell>
+    <cell><b>Application</b></cell><cell>The folder where the application file (.ent or .bch) is located.</cell>
+    <cell><b>CSPro</b></cell><cell>The folder where the CSPro executable files are located.</cell>
+    <cell><b>Downloads</b></cell><cell>The operating system's directory for storing downloaded files.</cell>
+    <cell><b>Html</b></cell><cell>The folder where CSPro's <link html_in_cspro.csdoc>HTML files</link> are located.</cell>
+    <cell><b>InputFile</b></cell><cell>The folder where the main data file (associated with the primary dictionary) is located.</cell>
+    <cell><b>Temp</b></cell><cell>The operating system's temporary directory.</cell>
 </table></indent>
 
 There are some options specific to Windows:
 
 <indent><table 2>
-	<cell><arg>path_type</arg></cell><cell><b>Description</b></cell>
-	<cell><b>Desktop</b></cell><cell>The current user's Desktop folder.</cell>
-	<cell><b>Documents</b></cell><cell>The current user's Documents folder.</cell>
-	<cell><b>ProgramFiles32</b></cell><cell>The folder containing installed 32-bit applications.</cell>
-	<cell><b>ProgramFiles64</b></cell><cell>The folder containing installed 64-bit applications. If the computer has only a 32-bit processor, this returns the same value as ProgramFiles32.</cell>
-	<cell><b>Windows</b></cell><cell>The folder contains the Windows operating system.</cell>
+    <cell><arg>path_type</arg></cell><cell><b>Description</b></cell>
+    <cell><b>Desktop</b></cell><cell>The current user's Desktop folder.</cell>
+    <cell><b>Documents</b></cell><cell>The current user's Documents folder.</cell>
+    <cell><b>ProgramFiles32</b></cell><cell>The folder containing installed 32-bit applications.</cell>
+    <cell><b>ProgramFiles64</b></cell><cell>The folder containing installed 64-bit applications. If the computer has only a 32-bit processor, this returns the same value as ProgramFiles32.</cell>
+    <cell><b>Windows</b></cell><cell>The folder contains the Windows operating system.</cell>
 </table></indent>
 
 There are some options specific to mobile devices:
 
 <indent><table 2>
-	<cell><arg>path_type</arg></cell><cell><b>Description</b></cell>
-	<cell><b>CSEntry</b></cell><cell>The folder from which CSPro applications are run.</cell>
-	<cell><b>CSEntryExternal</b></cell><cell>On devices with removable storage (e.g., an SD card), the folder on removable storage to which CSPro applications can write.</cell>
+    <cell><arg>path_type</arg></cell><cell><b>Description</b></cell>
+    <cell><b>CSEntry</b></cell><cell>The folder from which CSPro applications are run.</cell>
+    <cell><b>CSEntryExternal</b></cell><cell>On devices with removable storage (e.g., an SD card), the folder on removable storage to which CSPro applications can write.</cell>
 </table></indent>
 
 If supplying a <arg>dictionary_name</arg>, the function returns the folder name of the dictionary file (.dcf) itself, not of the data file associated with the dictionary. On mobile devices, the function returns the folder name of the .pen file because dictionary files (.dcf) are not used directly when running .pen applications.
 
 If providing a <arg>file_handler</arg> (declared in a <logiccolor>File</logiccolor> statement), the function returns the folder name containing the text file associated with the file handler.
+
+Many of these paths can also be retrieved using the <action>Path.getSpecialPaths</action> action.
 
 
 <subheader>Return Value</subheader>

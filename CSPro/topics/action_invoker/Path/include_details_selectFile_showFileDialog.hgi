@@ -1,0 +1,7 @@
+You can specify a wildcard <arg>filter</arg> that filters the files shown in the visual listing. <include include_filter.hgi />
+
+Provide <arg>startDirectory</arg> to specify the initial directory shown to the operator and <arg>rootDirectory</arg> to control how much of the file system the operator can browse. Specifying a root directory prevents the operator from moving to a location above the root directory. If neither are provided, the operator will initially see files starting in the directory where the currently running application is located, and will have access to other files on that drive. If a root directory is provided without a start directory, the start directory will be set to the root directory. If both a start and root directory are provided, the root directory must be equal to or above the start directory. Generally both directory paths are directories, but they can also be one of the following special values, specified with the <logiccolor>"|"</logiccolor> prefix:
+
+<include include_special_directories.hgi />
+
+By default, both files and directories are shown to the operator. To hide directories, set <arg>showDirectories</arg> to <logiccolor>false</logiccolor>.

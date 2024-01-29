@@ -1,0 +1,43 @@
+﻿<title>Path.getSpecialPaths Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Path.getSpecialPaths()
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <action>Path.getSpecialPaths</action> <link action_invoker.csdoc>action</link> returns special paths, including the download and temp directories. The paths returned include:
+
+<table 2 header nowrap>
+    <cell>Path</cell><cell>Description</cell>
+    <cell><colorinline JSON>"application"</colorinline></cell><cell>The directory where the <link data_entry_application_file_ent.csdoc>application file</link> is located (if applicable).</cell>
+    <cell><colorinline JSON>"CSEntry"</colorinline></cell><cell>The directory from which CSPro applications are run. (Android only.)</cell>
+    <cell><colorinline JSON>"CSPro"</colorinline></cell><cell>The directory where the CSPro executable files are located.</cell>
+    <cell><colorinline JSON>"downloads"</colorinline></cell><cell>The operating system's directory for storing downloaded files.</cell>
+    <cell><colorinline JSON>"html"</colorinline></cell><cell>The directory where CSPro's <link html_in_cspro.csdoc>HTML files</link> are located.</cell>
+    <cell><colorinline JSON>"temp"</colorinline></cell><cell>The operating system's temporary directory.</cell>
+</table>
+
+Directory paths are returned without a trailing slash.
+
+Special paths can also be queried using the <logiccolor>pathname</logiccolor> function.
+
+
+<subheader>Return Value</subheader>
+
+The action returns an object containing the special paths, with the object's property names corresponding to the special path types, and the values corresponding to fully evaluated paths.
+
+
+<subheader>Exceptions</subheader>
+
+The action does not throw exceptions.
+
+
+<include include_example_getSpecialPaths_selectFile.hgi />
+
+
+<seealso CS_Path.csdoc pathname_function.csdoc />

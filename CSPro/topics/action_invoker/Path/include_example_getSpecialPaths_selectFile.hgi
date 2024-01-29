@@ -1,0 +1,14 @@
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+// select an image file from the images included in CSPro's html directory
+const imagePath = CS.Path.selectFile({
+    title: "Select an Image",
+    filter: "|FileType.Image",
+    rootDirectory: CS.Path.getSpecialPaths().html + "/images"
+});
+
+if( imagePath !== undefined ) {
+    // ... do something with the selected image
+}
+</color>

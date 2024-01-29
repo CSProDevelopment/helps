@@ -1,0 +1,19 @@
+﻿<title>Path Action Invoker Namespace</title>
+
+The <action>Path</action> namespace, part of the <link action_invoker.csdoc>Action Invoker</link>, provides actions to query information about the file system or to perform operations on a path.
+
+
+<subheader>Functionality</subheader>
+
+<table 2 header nowrap>
+    <cell>Action</cell><cell>Description</cell>
+    <cell><action>Path.createDirectory</action></cell><cell>Creates a directory if it does not already exist.</cell>
+    <cell><action>Path.getDirectoryListing</action></cell><cell>Returns information about the paths in a directory.</cell>
+    <cell><action>Path.getPathInfo</action></cell><cell>Returns information about a directory or file path.</cell>
+    <cell><action>Path.getSpecialPaths</action></cell><cell>Returns special paths, including the download and temp directories.</cell>
+    <cell><action>Path.selectFile</action></cell><cell>Shows the operator a visual listing of the file system and returns the path of the file the operator selected.</cell>
+    <cell><action>Path.showFileDialog</action></cell><cell>Displays a dialog with a visual listing of the file system, allowing the user to select a file to open or to create a file to save.</cell>
+</table>
+
+
+<seealso action_invoker.csdoc CS_File.csdoc CS_System.csdoc Path.csdoc />

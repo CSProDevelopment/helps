@@ -15,16 +15,16 @@ The <logiccolor>direxist</logiccolor> function determines whether a directory ex
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true) if the directory exists and 0 (false) otherwise.
+The function returns a logical value of <logiccolor>1</logiccolor> (<logiccolor>true</logiccolor>) if the directory exists and <logiccolor>0</logiccolor> (<logiccolor>false</logiccolor>) otherwise.
 
 
 <subheader>Example</subheader>
 
 <logic>
 if direxist("C:/Backups") then
-	// process backups
+    // process backups
 endif;
 </logic>
 
 
-<seealso dircreate_function.csdoc fileexist_function.csdoc />
+<seealso dircreate_function.csdoc fileexist_function.csdoc CS_Path_getPathInfo.csdoc />
