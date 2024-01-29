@@ -1,0 +1,40 @@
+﻿<title>Global Settings</title>
+<context ID_FILE_GLOBAL_SETTINGS IDD_GLOBAL_SETTINGS />
+
+The Global Settings dialog is accessible by selecting <b>File</b> -> <b>Global Settings</b>. The following settings apply to how CSDocument processes, compiles, and builds documents.
+
+
+<subheader>Options</subheader>
+
+<b>Automatically try to associate CSPro Documents with Document Sets in the same or parent directories</b>
+
+<indent>When opening Documents from a Document Set, it is clear to which Document Set the Document belongs. However, if you open a Document separate from its Document Set, or from File Explorer or the command line, CSDocument may not know which Document Set contains the document. If this option is checked, CSDocument will search for all Document Sets in the directory, and parent directories, of the Document, checking if the Document is part of any of the Document Sets. If so, the Document will be associated with that Document Set.</indent>
+
+
+<b>Build CSPro Documents on open and activate</b>
+<note type="todo" text="when ready, document: Build CSPro Documents..." />
+
+<indent>This option is not available yet as part of CSPro <definition CSPro::version />.</indent>
+
+
+<b>Seconds between automatic compilation (blank to disable)</b>
+<note type="todo" text="when ready, document: Seconds between..." />
+
+<indent>This option is not available yet as part of CSPro <definition CSPro::version />.</indent>
+
+
+<subheader>Paths</subheader>
+
+<b>Microsoft HTML Help Compiler</b>
+
+<indent>If you want to export Document Sets to <link export_format_chm.csdoc>CHM (Compiled HTML Help)</link> format, you need Microsoft's <link "https://learn.microsoft.com/en-us/previous-versions/windows/desktop/htmlhelp/microsoft-html-help-downloads">HTML Help Compiler</link>. The path of the compiler may look like:~!~~!~~!~<i>C:\Program Files (x86)\HTML Help Workshop\hhc.exe</i></indent>
+
+
+<b>wkhtmltopdf</b>
+
+<indent>If you want to export Document Sets to <link export_format_pdf.csdoc>PDF</link> format, you need the open source tool <link "https://wkhtmltopdf.og/">wkhtmltopdf</link>. The path of this tool may look like:~!~~!~~!~<i>C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe</i></indent>
+
+
+<b>CSPro Code</b>
+
+<indent>If you are interested in building the <link "<definition github_helps_url />">CSPro help documentation</link>, you need the CSPro source code. The path of this code depends on where you have cloned the repository, but might look like:~!~~!~~!~<i>C:\cspro\cspro</i></indent>
