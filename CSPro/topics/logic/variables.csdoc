@@ -1,13 +1,44 @@
 ﻿<title>Variables</title>
 
-In CSPro you can declare <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor> variables. Variable names must contain only letters, numbers, or the underscore (_) character, and must begin with a letter. Names are case insensitive, that is, uppercase and lowercase letters are considered the same. (For example, <logiccolor>myvar</logiccolor>, <logiccolor>MYVAR</logiccolor>, and <logiccolor>MyVar</logiccolor> are all equivalent.) Variables of all types follow the same rules for names.
+Within CSPro <link logic_file_apc.csdoc>logic</link>, you can declare the following types of variables:
+
+<list>
+    <li>Audio</li>
+    <li>Document</li>
+    <li>Geometry</li>
+    <li>Image</li>
+    <li>Numeric</li>
+    <li>String</li>
+</list>
+
+Variable names can only contain letters, numbers, or the underscore (_) character, and they must begin with a letter. By default, names are case insensitive; that is, uppercase and lowercase letters are considered the same, meaning that variables named <logiccolor>myvar</logiccolor>, <logiccolor>MYVAR</logiccolor>, and <logiccolor>MyVar</logiccolor> are all equivalent.
+
+However, if the <link logic_settings.csdoc>logic setting</link> has been changed within the menu item <b>Options > Application Properties</b>, then myvar, MYVAR, and MyVar would represent three different variables.
+
+Variables can be global or local in scope. If a variable is declared in the <logiccolor>PROC GLOBAL</logiccolor> block, then the variable has a global scope and can be referenced anywhere within your program. However, if a variable is declared at a lower level, such as the <logiccolor>PROC</logiccolor> for a form or block, then the variable is only accessible within that <logiccolor>PROC</logiccolor>.
+
+<subheader>Audio Variables</subheader>
+
+<link Audio.csdoc>Audio</link> variables can be used to record a portion of an interview, or to playback instructions during an interview. An audio could be persons speaking, but it could also be wildlife sounds, music, whatever it is you wish to record/playback.
+
+<subheader>Document Variables</subheader>
+
+<link document.csdoc>Document</link> variables allows for a wide range of "document" types (pdf, docx, xlsx, jpg, etc) to be referenced during an interview. For example, during a census an enumerator may want to display the PDF of an official document that gives them the power to conduct the interview.
+
+<subheader>Geometry Variables</subheader>
+
+<link geometry.csdoc>Geometry</link> variables are often associated with maps. For example, this could be useful during an interview if an enumerator needs to ask the respondent about land usage in their area.
+
+<subheader>Image Variables</subheader>
+
+<link image.csdoc>Image</link> variables allows for the taking or display of photographs, drawings, and other images. It can be useful during an interview to show an image to the respondent to clarify a topic, rather than the enumerator try to explain what they are asking about; this is especially useful if the enumerator is working in an area where numerous languages are spoken.
 
 <subheader>Numeric Variables</subheader>
 
-In CSPro, numeric variables are stored internally in floating point format. They can accommodate numbers of extremely small or large size, positive or negative. Numeric variables can be global in scope, meaning that you can assign or get the value of a variable from any other event, or local in scope, meaning that you can only access the value from within a single event. A numeric variable may be up to 15 digits in size. It is equivalent to a float or double variable.
+In CSPro, numeric variables are stored internally in floating point format. They can accommodate numbers of extremely small or large size, positive or negative.
 
 <subheader>String Variables</subheader>
 
-String variables in CSPro store alphanumeric data. You must declare a string variable using either the <logiccolor>alpha</logiccolor> or <logiccolor>string</logiccolor> statements. As with numeric variables, string variables can be either global or local in scope.
+Alphanumeric data can contain contain any combination of letters, digits, blanks, or other special characters. As no string size is required when declaring a <logiccolor>string</logiccolor> variable, there is no limit to the size of the string. This is an improvement over the <logiccolor>alpha</logiccolor> statement which can not exceed 8,192 characters.
 
-<seealso Array.csdoc string_literals.csdoc object_dot_notation.csdoc />
+<seealso data_type.csdoc Array.csdoc string_literals.csdoc object_dot_notation.csdoc />
