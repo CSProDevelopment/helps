@@ -7,24 +7,12 @@ Using the <link data_source_csdbe.csdoc>Encrypted CSPro DB</link> data source, y
 
 An Encrypted CSPro DB data source is like a <link data_source_csdb.csdoc>CSPro DB</link> data source and can be used in any CSPro application. The only difference is that, upon opening the file, CSPro requires the specification of a password. There are two ways to specify a password:
 
-<b>Password entry</b>: A dialog box will appear allowing the user to enter the password. The password must be at least four characters. If the data file does not exist and is being created for the first time, the user must enter the password twice to ensure that the password is entered correctly. You can reduce the number of times that a user must enter the password by allowing the password to be <link dictionary_security_options.csdoc>cached for a specified duration</link> on the machine. When opening an existing file, if the password is not correct, the user will be prompted to enter the password again.
-
-<b>Connection string</b>: The password can be specified in a <link connection_string.csdoc>connection string</link> used in a PFF file or by <logiccolor>setfile</logiccolor>. If the password is specified in the connection string, then the user will not be prompted to enter a password. If the data file does not exist and is being created for the first time, the specified password will be used to encrypt the file. When opening an existing file, if the password is not correct, the opening of the file will fail. For example, the following connection string opens the file <i>pilot-data.csdbe</i> with the password <i>jiw~d_fpF9</i>.
-
-<center><image file_associations_connection_string.png /></center>
-
-While the data in the file is encrypted, it is also a good idea:
-
-<list>
-    <li>To encrypt the entire drive where the CSPro application and data files reside, using encryption such as Windows BitLocker or Android's full-disk encryption.</li>
-    <li>Not to store passwords in plaintext anywhere (such as in a CSPro logic file or in a PFF file, as is done in the above image).</li>
-    <li>To synchronize your data using a secure protocol (such as CSWeb over https). If you encrypt your data file on a tablet but then transfer the data over http using <logiccolor>syncdata</logiccolor>, that defeats much of the purpose of encrypting.</li>
-</list>
+<include "data_sources/encryption_password_entry.hgi" />
 
 
 <subheader>Technical Details</subheader>
 
-Encrypted CSPro DB files are SQLite files encrypted using the <link https://www.hwaci.com/sw/sqlite/see.html>SQLite Encryption Extension (SEE)</link> using "AES-256 in OFB mode." The specified password is not used as the key input to SEE but is instead <link CS_Hash_createHash.csdoc>hashed</link> to create a 256-byte key that is used to encrypt the file. If allowed, this hash, not the password, is <link dictionary_security_options.csdoc>cached on the machine</link>. A fixed salt is used during the hashing process because there is no suitable place to store a dynamic salt. This means that the same password will always result in the same encryption key.
+<include "data_sources/encryption_technical_details.hgi" />
 
 
 <seealso dictionary_security_options.csdoc data_source_csdbe.csdoc connection_string.csdoc sqlite_in_cspro.csdoc />

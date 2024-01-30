@@ -1,35 +1,49 @@
 ﻿<title>Encrypted CSPro DB Data Source</title>
 
 
-<subheader>CSPro DB (.csdb)</subheader>
+<subheader>Overview</subheader>
 
-<b>.csdb</b> is the default file type for Input, Output, and External (i.e., lookup) files, as well as the file generated from any <logiccolor>impute</logiccolor> function calls that use the <logiccolor>stat</logiccolor> option. Listing files can also be written as .csdb files, though the option must be chosen from the dialog's Source Type dropdown
+The <b>Encrypted CSPro DB</b> <link data_sources.csdoc>data source</link> allows reading and writing data to a <link sqlite_in_cspro.csdoc>SQLite database</link>. This is an encrypted version of the <link data_source_csdb.csdoc>CSPro DB</link> data source, and more information about this data source is documented on that page.
 
-Through the use of <link CSPro::connection_string.csdoc>connection strings</link>, you can choose what you want to write to your output files. For example, suppose you just want one record written out, not all records; this is possible with the following parameters:
-
-<pff>population_rec.csdb|record=POP_REC&type=CSProExport</pff>
-
-When this happens a CSPro dictionary will also be generated; it will have the same filename, with <b>.dcf</b> appended to it. Using the above example, you would see <b>population_rec.csdb.dcf</b> had been created. If you wish to control the dictionary's name, you can do so via the "dictionary" <link CSPro::export_attributes.csdoc>Export Attributes</link> as follows:
-
-<pff>population_rec.csdb|type=CSProExport&record=POP_REC&dictionary=pop_rec.dcf</pff>
-
-Note how the "type" and "record" arguments were switched above. After the pipe symbol has been given, connection strings can be given in any order; they just need to be combined with the ampersand symbol (&).
+The Encrypted CSPro DB data source is used when a file has the extension <b>.csdbe</b>. A version of this data source without encryption, <link data_source_csdb.csdoc>CSPro DB</link>, is used if a file has the extension <b>.csdb</b>.
 
 
+<subheader>Functionality</subheader>
 
-<subheader>CSPro DB Encrypted (.csdbe)</subheader>
+The Encrypted CSPro DB data source supports the following features:
 
-For any source file entry that allows <b>.csdb</b> files, CSPro's encrypted file type (<b>.csdbe</b>) can also be used. For Input and existing Lookup files, this means the file has already been given a password, which must match the file's password or the run will fail. You will be prompted for each file's password after pressing "OK" on the <b>CSBatch</b> file association dialog. Alternatively, you can provide the password along with the filename by using a <link CSPro::connection_string.csdoc>connection string</link>. For example, <logiccolor>"MyOutputFile.csdbe|password=s@feW0rd"</logiccolor>. Be sure to place the pipe symbol immediately after the filename, followed by "password=" and your desired password. See the <link CSPro::export_attributes.csdoc>Export Attributes</link> page for a full explanation of the available options and required syntax.
+<include functionality_csdb.hgi />
 
 
-<subheader> <link export_attributes.csdoc>Export Attributes</link> </subheader>
-<list>
-<li> <link export_attribute_dictionary.csdoc>dictionary</link> [Dictionary file name]</li>
-<li> password [The password that opens an encrypted data file]</li>
-</list>
+<subheader>Encryption Password</subheader>
 
-<seealso data_sources.csdoc />
+Upon opening an Encrypted CSPro DB data source, CSPro requires the specification of a password. There are two ways to specify a password:
 
-<seealso csdb_relational_format.csdoc />
+<include encryption_password_entry.hgi />
 
-<seealso encrypted_data.csdoc />
+
+<subheader>Encryption Technical Details</subheader>
+
+<include encryption_technical_details.hgi />
+
+
+<subheader>Customizable Behavior</subheader>
+
+The following behavior can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. The default behavior is marked with ⁺⁺⁺.
+
+<table 2 header>
+    <cell nowrap>Property Name and Values</cell><cell>Description</cell>
+    <cell 2>&nbsp;</cell>
+    <include properties_cache.hgi />
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"password"</colorinline></b></cell><cell>The password used to encrypt the file.</cell>
+</table>
+
+For example, the following connection string, specified in a <link run_production_data_entry.csdoc>data entry PFF</link>, would attach to an <link dictionary_types.csdoc>external dictionary</link> an Encrypted CSPro DB file with caching enabled and a password specified:
+
+<pff>
+CENSUS_<definition System::year />_DICT=.\Census.csdbe|cache=true&password=jiw~d_fpF9
+</pff>
+
+
+<seealso data_sources.csdoc csdb_relational_format.csdoc data_source_csdb.csdoc />

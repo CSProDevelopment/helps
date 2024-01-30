@@ -1,35 +1,69 @@
 ﻿<title>Text Data Source</title>
 
-<html><a id="text"></a></html>
-<subheader>Text (.lst, .dat, user's choice)</subheader>
 
-Plain text file with the user's choice of file extensions. Useful for easy readability by humans and programs. Text is the default file association for Listing, Freq, and Impute Freq Files, though it can be used for all other file designations, except the (Saved) Array file (which must use the <b>".sva"</b> extension). The generated file is ANSI-based, viewable by any web-browser (such as Firefox or Opera) or any ASCII editor (such as Notepad or Wordpad).
+<subheader>Overview</subheader>
 
-Depending on the file being specified, a default file extension may or may not be given. For example, Listing and Impute Freq Files will be given an <b>".lst"</b> extension by default, although no default file extension is given to Freq Files. If a non-text file designation was used for Input or Lookup Files and the file type is changed to Text, a default file type of <b>".dat"</b> will be given. (For example, MyCensus.csdb will change to MyCensus.dat if the Source Type is changed from .csdb to Text.) No default extension is given for Write Files. Whatever extension is used, you can change it to whatever you prefer (for example, <b>".txt"</b>). <b>".dat"</b> fiiles can have Export Attributes. 
+The <b>Text</b> <link data_sources.csdoc>data source</link> allows reading and writing data to a text file. Items are written positionally, using fixed widths. This data source is versatile and can read data from other applications, as long as the data can be described by a CSPro dictionary, with records specified on multiple lines and items specified positionally. Stating in CSPro 7.0, the <link data_source_csdb.csdoc>CSPro DB</link> data source became the default data source for CSPro, and because that data source has more functionality than Text, you are encouraged to use that format when possible.
 
-<subheader>Limitations</subheader>
+The Text data source is used when a file has the extension <b>.dat</b>, or when it has an extension not associated with another <link data_sources.csdoc>data source</link>. In other words, most extensions will map to a Text data source.
+
+<note type="todo" text="describe the text data file format, including how lines are identified by record type, how ~ is used to mark records as deleted, how it is written as UTF-8 with BOM, and how ANSI files are read" />
+
+
+<subheader>Functionality</subheader>
+
+The Text data source supports the following features:
+
+<table 2 header nowrap>
+    <cell>Feature</cell><cell nowrap>Supported</cell>
+    <cell>Reading cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Writing cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Notes, case labels, and case statuses</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Storage of more than one kind of record</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Binary data items</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Deleting cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Undeleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell><link synchronization.csdoc>Syncing</link> data</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Cases with duplicate <link key_function.csdoc>keys</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Case identification via <link uuid_function.csdoc>UUID</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Contains an embedded dictionary</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Allows <link CSSort::choose_type_of_sort.csdoc>record sorts</link></cell><cell><center><font green>✔</font></center></cell>
+</table>
+
+
+<subheader>Associated Files</subheader>
+
+The Text data file only contains information about the data as defined by a dictionary. Associated case data is written to the following files:
+
 <list>
-	<li>Does not support binary data </li>
-	<li>Does not support undeleting cases </li>
-	<li>Does not support opening as external dictionary when file has duplicate keys </li>
-	<li>Does not support syncing data </li>
+    <li><link notes_file_csnot.csdoc>Notes</link>: Notes entered by the operator are written to a text file with the extension <b>.csnot</b>.</li>
+    <li><link status_file_sts.csdoc>Statuses</link>: Information such as whether a case has been <link ispartial_function.csdoc>partially saved</link> or <link isverified_function.csdoc>verified</link> is written to a text file with the extension <b>.sts</b>. The file also contains information about <link setcaselabel_function.csdoc>case labels</link>.</li>
+    <li><link index_file_csidx.csdoc>Index</link>: The index stores information about where cases are located in the data file, allowing CSPro to quickly lookup cases. Because the index is a SQLite database, it is possible to <link sqlite_in_cspro.csdoc>query</link> the index using SQL statements.</li>
 </list>
 
-<subheader> <link export_attributes.csdoc>Export Attributes</link> </subheader>
-<list>
-<li> <link export_attribute_mapped_special_values.csdoc>mapped-special-values</link> [code or  notappl. Default is code. Controls how special values are written to non-CSPro file.] </li>
-<li> <link export_attribute_dictionary.csdoc>dictionary</link> [Dictionary file name]</li>
-<li> password [The password that opens an encrypted data file]</li>
-</list>
 
-<table 2>
-<subheader>Other Text Data Files</subheader>
-<cell><link index_file_csidx.csdoc>.csidx</link></cell><cell>Index for text data files (in binary format)</cell>
-<cell><link notes_file_csnot.csdoc>.csnot</link></cell><cell>Notes (entered by the operator) for text data files</cell>
-<cell><link status_file_sts.csdoc>.sts</link></cell><cell>Status file, listing information about what cases have been verified or partially entered, for text data files</cell>
-</table 2>
+<subheader>Special Character Handling</subheader>
 
-<link newline_handling.csdoc>Note: newlines in items / notes / statuses are written out with the NL character</link> 
+Because newlines are used to indicate the start of a new record, if a value contains a <link newline_handling.csdoc>newline</link>, the value must be escaped before writing. The <logiccolor>'␤'</logiccolor> character is used to indicate a newline when writing data or writing entries to the <link notes_file_csnot.csdoc>notes</link> and <link status_file_sts.csdoc>status</link> files. For example, a value like <logiccolor>"Line 1\nLine 2"</logiccolor> would be written as:
+
+<indent><font monospace>Line 1␤Line 2</font></indent>
+
+
+<subheader>Customizable Behavior</subheader>
+
+The following behavior can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. The default behavior is marked with ⁺⁺⁺.
+
+<table 2 header>
+    <cell nowrap>Property Name and Values</cell><cell>Description</cell>
+    <cell 2>&nbsp;</cell>
+    <include properties_cache.hgi />
+</table>
+
+For example, the following connection string, specified in a <link run_production_data_entry.csdoc>data entry PFF</link>, would attach to an <link dictionary_types.csdoc>external dictionary</link> a Text file with caching enabled:
+
+<pff>
+CENSUS_<definition System::year />_DICT=.\Census.dat|cache=true
+</pff>
 
 
 <seealso data_sources.csdoc />
