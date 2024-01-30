@@ -166,6 +166,46 @@ The action throws an exception if any of its arguments are not specified in a va
 
 <subheader>Example (JavaScript)</subheader>
 
+<color JavaScript>
+let dbId;
+
+try {
+    // open the SQLite database: census2020.db
+    dbId = CS.Sqlite.open({
+        path: "census2020.db"
+    });
+
+    // query for the number of residents per apportioned representative
+    const residentsPerRepresentativeQuery = CS.Sqlite.exec({
+        db: dbId,
+        sql: "SELECT `name`, `resident_pop` / `apportioned_reps` AS `residents_per_rep` " +
+             "FROM `census2020` " +
+             "WHERE `apportioned_reps` IS NOT NULL " +
+             "ORDER BY `residents_per_rep`;"
+    });
+
+    // display the results
+    print("Number of Residents Per Representative");
+
+    residentsPerRepresentativeQuery.forEach(query => {
+        print(`${query.name} has ${query.residents_per_rep} residents per representative`);
+    });
+}
+catch(error) {
+    print("Error interacting with Census 2020 data: " + error);
+}
+finally {
+    // close the database, suppressing any errors
+    try {
+        CS.Sqlite.close({
+            db: dbId
+        });
+    }
+    catch {
+    }
+}
+</color>
+
 
 <subheader>Additional Examples</subheader>
 

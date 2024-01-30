@@ -78,9 +78,11 @@ CS.accessToken = "the-access-token";
 </color>
 
 
-<subheader>User Interface Implications</subheader>
+<subheader>Threading and User Interface Implications</subheader>
 
-Because of threading issues with the web view, if an action displays UI elements as part of its operations, you must use the asynchronous, non-blocking, version of the action. If you do not, the action may appear unresponsive or the web view may hang.
+The Action Invoker executes actions sequentially and it is not possible to execute more than one action on different threads from the same web view. This means that if you call an action asynchronously, you cannot call an action synchronously until the asynchronous action has completed. A synchronous call will result in an exception if it cannot run within 200 milliseconds of execution. As a rule of thumb, you will have no issues if you only execute actions synchronously or asynchronously. However, if you execute an action asynchronously, it is a good idea to also execute any subsequent actions asynchronously.
+
+Because of other threading issues with the web view, if an action displays UI elements as part of its operations, you must use the asynchronous, non-blocking, version of the action. If you do not, the action may appear unresponsive or the web view may hang.
 
 The <link html_in_cspro.csdoc>Chromium-based web view</link> has a different <colorinline JavaScript>window</colorinline> object on Windows and Android, so the <colorinline JavaScript>CSProActionInvoker</colorinline> class includes a method, <colorinline JavaScript>getWindowForEventListener</colorinline>, that gives the proper object for the platform. This can be used as follows:
 
