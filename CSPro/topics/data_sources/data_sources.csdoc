@@ -1,151 +1,85 @@
 ﻿<title>Data Sources</title>
 
+
 <subheader>Overview</subheader>
 
-With the release of 8.0, CSPro now offers more data source types than ever to read from and write to. In-Memory and JSON are now supported.
+In CSPro, a data source is a file used to store case data. Traditionally, CSPro data files were stored as <link data_source_text.csdoc>text files</link>, but starting with <link what_is_new_in_cspro_7_0.csdoc>CSPro 7.0</link>, the suggested data file format is <link data_source_csdb.csdoc>CSPro DB</link>, a proprietary format that stores all data about cases and supports <link synchronization.csdoc>synchronization</link>.
 
-The following <b>File Associations Matrix</b> provides a summary of the possible file formats found in the CSEntry Run Dialog:
+The format of the cases in a data source is described by a <link data_dictionary.csdoc>dictionary</link> containing <link level_description.csdoc>levels</link>, <link record_description.csdoc>records</link>, and <link item_description.csdoc>items</link>. The way that these entities are serialized depends on the data source used, and is described on the help pages for each data source.
 
-<image file_associations_matrix_entry.png />
 
-If you prefer to jump to a specific Data Source Type, click on one of the links below; otherwise, pick up reading just below this list:
 
-<indent>
-<table 2>
-<cell><html><a href="#None">None</a></html></cell><cell><html><a href="#spss">SPSS</a></html></cell>
-<cell><html><a href="#csdb">CSPro DB</a></html></cell><cell><html><a href="#stata">Stata</a></html></cell>
-<cell><html><a href="#csdbe">CSPro DB Encrypted</a></html></cell><cell><html><a href="#table">Table (CSPro)</a></html></cell>
-<cell><html><a href="#csv_tsv">Comma/Tab-Delimited</a></html></cell><cell><html><a href="#text">Text</a></html></cell>
-<cell><html><a href="#excel">Excel</a></html></cell><cell><html><a href="#exported">CSPro (Exported)</a></html></cell>
-<cell><html><a href="#html">HTML</a></html></cell><cell><html><a href="#mult_files">Multiple Files</a></html></cell>
-<cell><html><a href="#R">R</a></html></cell><cell><html><a href="#array">Saved Arrays</a></html></cell>
-<cell><html><a href="#sas">SAS</a></html></cell><cell><html><a href="#semicolon">Semicolon-Delimited</a></html></cell>
-<cell><html><a href="#memory">In Memory</a></html></cell><cell><html><a href="#JSON">JSON</a></html></cell>
+<subheader>CSPro Data Sources</subheader>
+
+The following are full-fledged data sources that work with CSPro data to facilicate reading and writing cases:
+
+<table 3 header nowrap>
+    <cell>Data Source</cell><cell nowrap>Default Extension</cell><cell>Description</cell>
+    <cell><link data_source_csdb.csdoc>CSPro DB</link></cell><cell nowrap>.csdb</cell><cell>Cases are stored in a <link sqlite_in_cspro.csdoc>SQLite database</link> in a <link csdb_relational_format.csdoc>relational format</link>. This data source has the most functionality and you are encouraged to use it when possible.</cell>
+    <cell><link data_source_csdbe.csdoc>Encrypted CSPro DB</link></cell><cell nowrap>.csdbe</cell><cell>A version of the CSPro DB data source that supports AES-256 encryption.</cell>
+    <cell><link data_source_text.csdoc>Text</link></cell><cell nowrap>.dat</cell><cell>Cases are represented as text lines, with one <link data_file_type_structure.csdoc>record per line</link>, one case following another in the file.</cell>
+    <cell><link data_source_json.csdoc>JSON</link></cell><cell nowrap>.json</cell><cell>Cases are represented in <link JSON_primer.csdoc>JSON</link> as an array of <link Case_json_representation.csdoc>case objects</link>.</cell>
+    <cell><link data_source_none.csdoc>None</link></cell><cell nowrap>&mdash;</cell><cell>A data source, not associated with any file, that does not contain any data.</cell>
+    <cell><link data_source_memory.csdoc>In-Memory</link></cell><cell nowrap>&mdash;</cell><cell>A data source, not associated with any file, that stores cases in memory for the duration of the running application.</cell>
 </table>
-</indent>
-
-<b><font 1.5 purple>Standard File Types</font></b>
-
-Standard file types are those found within the Source Type dropdown of the <b>CSEntry</b> run dialog. A description of the file types supported by CSPro, with the default (or required) file extension that can (or must) be used shown in parentheses. Example <link CSPro::connection_string.csdoc>connection strings</link> are given for several Source Types below; see the <link CSPro::export_attributes.csdoc>Export Attributes</link> page for a full explanation of the available options and required syntax.
-
-<html><a id="None"></a></html>
-<link data_source_none.csdoc><subheader>None</subheader></link>
-
-No file is used as input/output.
-
-<html><a id="csdb"></a></html>
-<link data_source_csdbe.csdoc><subheader>CSPro DB (.csdb)</subheader></link>
-
-CSPro's default file type for Input/Output/External data files. Usable with CSPro features and CSPro's Data Viewer.
-
-<html><a id="csdbe"></a></html>
-<link data_source_csdbe.csdoc><subheader>CSPro DB Encrypted (.csdbe)</subheader></link>
-
-A .csdb data file with encryption and a password. Usable in all the same places as a .csdb file, including CSPro's Data Viewer.
-
-<html><a id="csv"></a></html>
-<link data_source_csv.csdoc><subheader>Comma-Delimited (.csv)</subheader></link>
-
-A data file of plaintext values separated by commas. It is viewable by any text editor.
-
-<html><a id="tsv"></a></html>
-<link data_source_csv.csdoc><subheader>Tab-Delimited (.tsv)</subheader></link>
-
-A data file of plaintext values separated by tabs. It is viewable by any text editor.
-
-<html><a id="excel"></a></html>
-<link data_source_excel.csdoc><subheader>Excel (.xlsx)</subheader></link>
-
-A data file in Microsoft Excel's .xlsx format. Usable with Excel.
-
-<html><a id="html"></a></html>
-<subheader>HTML (.html)</subheader>
-
-This option is available for Listing, Freq, and Impute Freq Files. It is a text-based file, viewable by any web-browser (such as Firefox or Opera) or any ASCII editor (such as Notepad or Wordpad). Only non-repeating records will be output to the file; repeating records will be ignored.
-
-<html><a id="R"></a></html>
-<link data_source_R.csdoc><subheader>R (.Rdata)</subheader></link>
-
-A data file in R's .Rdata format. Usable with R.
-
-<html><a id="sas"></a></html>
-<link data_source_sas.csdoc><subheader>SAS (.xpt & xpt.sas pair)</subheader></link>
-
-A data file in SAS's .xpt & xpt.sas pair format. Usable with SAS.
-
-<html><a id="spss"></a></html>
-<link data_source_spss.csdoc><subheader>SPSS (.sav)</subheader></link>
-
-A data file in SPSS's .sav format. Usable with SPSS.
-
-<html><a id="stata"></a></html>
-<link data_source_stata.csdoc><subheader>Stata (.dta)</subheader></link>
-
-A data file in Stata's .dta format. Usable with Stata.
-
-<html><a id="table"></a></html>
-<subheader>CSPro Table (.tbw)</subheader>
-
-The CSPro table file type is available for Freq and Impute Freq Files. CSPro's <b>.tbw</b> files are viewable in any ASCII editor, though they are meant to be viewed by CSPro's <link TblView::introduction_to_table_viewer.csdoc>Table Viewer</link>. There, you will see the familiar tree structure on the left (containing a list of all tables in the file) with the right side of the window devoted to the table display, presented in an Excel-like format.
-
-<html><a id="text"></a></html>
-<link data_source_text.csdoc><subheader>Text (.lst, .dat, user's choice)</subheader></link>
-
-A plaintext file with the .dat, .lst, .txt, or other file extensions. Usable with text editors.
-
-<html><a id="memory"></a></html>
-<link data_source_memory.csdoc><subheader>In Memory</subheader></link>
-
-No file is used as input/output. Cases persist in memory for the duration of the program run.
-
-<html><a id="JSON"></a></html>
-<link data_source_json.csdoc><subheader>JSON (.json)</subheader></link>
-
-A file in JavaScript Object Notation format. Usable with CSPro 8.0 features other than syncing.
-
-<b><font 1.5 purple>Special File Types</font></b>
-
-The following Source Types are not selectable in CSEntry's Run dialog; instead, they will only appear based on logic found within your application, or <link CSPro::export_attributes.csdoc>Export Attributes</link> provided for the file.
-
-<html><a id="mult_files"></a></html>
-<subheader>Multiple Files</subheader>
-
-This Source Type can only occur for Input Data Files. For it to appear, 2+ data files must be referenced, at which point CSPro will automatically change the source type to "Multiple Files". You will not find this source type in the file association dialog dropdown, it is not a selectable type.
-
-For example, if these files were listed in the File Associations entry for the Input Data File:
-
-<pff>".\C001.dat" ".\C002.dat" ".\C003.dat"</pff>
-
-you would see the "Source Type" change to "Multiple Files". However, if you were to add this manually in the <b>.pff</b> file, it should appear on separate lines as follows:
-
-<pff>
-InputData=.\C001.dat
-InputData=.\C002.dat
-InputData=.\C003.dat
-</pff>
-
-As mentioned above, whenever the <b>type=CSProExport</b> option is used, a dictionary will be generated for each <b>.csdb</b>, <b>.dat</b>, or other CSPro file type being generated.
-
-<html><a id="array"></a></html>
-<subheader>Saved Array (.sva)</subheader>
-
-Saving out arrays between runs has many uses, especially when working with <link CSPro::dynamic_imputation_hot_deck.csdoc>hot decks</link>. If an <logiccolor>Array</logiccolor> declaration appears anywhere in your program with the <logiccolor>save</logiccolor> keyword, <b>CSEntry</b> will add a file entry to the file associations dialog.
-
-<html><a id="semicolon"></a></html>
-<link data_source_semicolon.csdoc><subheader>Semicolon-delimited (user'schoice)</subheader></link>
-
-A data file of plaintext values separated by semicolons. It is viewable by any text editor.
-
-<b><font 1.5 purple>Limitations</font></b>
-<list>
-<li>Only CSPro DB / Encrypted CSPro DB / JSON support binary data</li>
-<li>Only CSPro DB / Encrypted CSPro DB / JSON support undeleting cases</li>
-<li>Only CSPro DB / Encrypted CSPro DB / JSON support opening as an external dictionary when the file has duplicate keys (because they use UUIDs)</li>
-<li>Only CSPro DB / Encrypted CSPro DB support syncing data</li>
-<li>Comma-Delimited / Tab-Delimited / Semicolon-Delimited / Excel / R / SAS / SPSS / Stata are write-only</li>
-</list>
 
 
-<b><font 1.5 purple><link export_attributes.csdoc>Export Attributes</link></font></b>
+<subheader>Export Data Sources</subheader>
 
-CSPro and write-only file types have numerous connection string attributes available when exporting.
+The following export data sources only support writing cases:
+
+<table 3 header nowrap>
+    <cell>Data Source</cell><cell nowrap>Default Extension</cell><cell>Description</cell>
+    <cell><link data_source_csv.csdoc>Comma Delimited (CSV)</link></cell><cell nowrap>.csv</cell><cell>Cases from a single record are written to a <link "https://en.wikipedia.org/wiki/Comma-separated_values">comma-separated values</link> file.</cell>
+    <cell><link data_source_semicolon.csdoc>Semicolon Delimited</link></cell><cell nowrap>.skv</cell><cell>Cases from a single record are written to a <link "https://en.wikipedia.org/wiki/Delimiter-separated_values">semicolon-separated values</link> file.</cell>
+    <cell><link data_source_tab.csdoc>Tab Delimited</link></cell><cell nowrap>.tsv</cell><cell>Cases from a single record are written to a <link "https://en.wikipedia.org/wiki/Tab-separated_values">tab-separated values</link> file.</cell>
+    <cell><link data_source_excel.csdoc>Excel</link></cell><cell nowrap>.xlsx</cell><cell>Cases are written to a <link "https://www.microsoft.com/microsoft-365/excel">Microsoft Excel</link> file.</cell>
+    <cell><link data_source_r.csdoc>R</link></cell><cell nowrap>.RData / .rda</cell><cell>Cases are written to a <link "https://www.loc.gov/preservation/digital/formats/fdd/fdd000470.shtml">R Data</link> file that can be read in <link "https://www.r-project.org">R</link>.</cell>
+    <cell><link data_source_sas.csdoc>SAS</link></cell><cell nowrap>.xpt</cell><cell>Cases are written to a <link "https://www.loc.gov/preservation/digital/formats/fdd/fdd000464.shtml">SAS Transport</link> file that can be read in <link "https://www.sas.com">SAS</link>.</cell>
+    <cell><link data_source_spss.csdoc>SPSS</link></cell><cell nowrap>.sav</cell><cell>Cases from a single record are written to a <link "https://www.loc.gov/preservation/digital/formats/fdd/fdd000469.shtml">SPSS Statistics Data</link> file that can be read in <link "https://www.ibm.com/products/spss-statistics">SPSS</link>.</cell>
+    <cell><link data_source_stata.csdoc>Stata</link></cell><cell nowrap>.dta</cell><cell>Cases from a single record are written to a <link "https://www.loc.gov/preservation/digital/formats/fdd/fdd000471.shtml">Stata Data</link> file that can be read in <link "https://www.stata.com">Stata</link>.</cell>
+    <cell><link data_source_cspro_export.csdoc>CSPro Export</link></cell><cell nowrap>&mdash;</cell><cell>A data source that wraps another data source, allowing you to restrict what records are written.</cell>
+</table>
+
+
+<subheader>Functionality</subheader>
+
+The functionality of each data source is summarized in the following table:
+
+<table 15 header nowrap>
+    <cell>Feature</cell><cell nowrap><center>CSPro DB</center></cell><cell nowrap><center>Encrypted~!~CSPro DB</center></cell><cell nowrap><center>Text</center></cell><cell nowrap><center>JSON</center></cell><cell nowrap><center>None</center></cell><cell nowrap><center>In-Memory</center></cell><cell nowrap><center>Comma~!~Delimited</center></cell><cell nowrap><center>Semicolon~!~Delimited</center></cell><cell nowrap><center>Tab~!~Delimited</center></cell><cell nowrap><center>Excel</center></cell><cell nowrap><center>R</center></cell><cell nowrap><center>SAS</center></cell><cell nowrap><center>SPSS</center></cell><cell nowrap><center>Stata</center></cell>
+    <cell>Reading cases</cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Writing cases</cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell>
+    <cell>Notes, case labels, and case statuses</cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Storage of more than one kind of record</cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Binary data items</cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Deleting cases</cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Undeleting cases</cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell>
+    <cell><link synchronization.csdoc>Syncing</link> data</cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Cases with duplicate <link key_function.csdoc>keys</link></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Case identification via <link uuid_function.csdoc>UUID</link></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Contains an embedded dictionary</cell><cell><center><font green>✔</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Allows <link CSSort::choose_type_of_sort.csdoc>record sorts</link></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font green>✔</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell><cell><center><font red>✘</font></center></cell>
+</table>
+
+Data sources that support <i>notes, case labels, and case statuses</i> store <link notes_file_csnot.csdoc>notes</link> entered by the operator or set in logic, <link setcaselabel_function.csdoc>case labels</link> set in logic, and case status information such as whether a case has been <link ispartial_function.csdoc>partially saved</link> or <link isverified_function.csdoc>verified</link>.
+
+Data sources that contain an embedded dictionary can be opened in <link DataViewer::introduction_to_data_viewer.csdoc>Data Viewer</link> and some tools without the need to specify a dictionary.
+
+
+<subheader>Determining What Data Source Is Used</subheader>
+
+All data sources have behavior that can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. When CSPro analyzes a connection string to determine what data source to use, the default behavior is to match the data source using the file extension. If the extension matches any of the extensions listed in the data source tables above, that data source is used. If it matches none, the <link data_source_text.csdoc>Text</link> data source is used. In other words, most extensions will map to a Text data source.
+
+The <colorinline JSON>"type"</colorinline> property can be used to override this behavior for data sources that do not use a proprietary file format. For example, the <b>.tsv</b> extension is associated with the <link data_source_tab.csdoc>Tab Delimited</link> data source, but if you instead wanted to use that extension for a Text data source, you could use the connection string:
+
+<indent><font monospace>filename.tsv|type=Text</font></indent>
+
+These are the <colorinline JSON>"type"</colorinline> values that can be used to override the default behavior associated with the file extension: <colorinline JSON>"Text"</colorinline>, <colorinline JSON>"JSON"</colorinline>, <colorinline JSON>"CSV"</colorinline>, <colorinline JSON>"Semicolon"</colorinline>, and <colorinline JSON>"Tab"</colorinline>.
+
+The data sources that do not use file names must be specified by specifying the <colorinline JSON>"type"</colorinline>: <colorinline JSON>"None"</colorinline> and <colorinline JSON>"Memory"</colorinline>.
+
+Finally, because <link data_source_cspro_export.csdoc>CSPro Export</link> wraps other data sources, to use it you must specify the <colorinline JSON>"type"</colorinline>: <colorinline JSON>"CSProExport"</colorinline>.
+
+
+<seealso case_read_optimization.csdoc />

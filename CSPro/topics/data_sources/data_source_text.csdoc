@@ -3,11 +3,11 @@
 
 <subheader>Overview</subheader>
 
-The <b>Text</b> <link data_sources.csdoc>data source</link> allows reading and writing data to a text file. Items are written positionally, using fixed widths. This data source is versatile and can read data from other applications, as long as the data can be described by a CSPro dictionary, with records specified on multiple lines and items specified positionally. Stating in CSPro 7.0, the <link data_source_csdb.csdoc>CSPro DB</link> data source became the default data source for CSPro, and because that data source has more functionality than Text, you are encouraged to use that format when possible.
+The <b>Text</b> <link data_sources.csdoc>data source</link> allows reading and writing data to a text file. Items are written positionally, using fixed widths. This data source is versatile and can read data from other applications, as long as the data can be described by a CSPro <link data_dictionary.csdoc>dictionary</link>, with records specified on multiple lines and items specified positionally. Stating in CSPro 7.0, the <link data_source_csdb.csdoc>CSPro DB</link> data source became the default data source for CSPro, and because that data source has more functionality than Text, you are encouraged to use that format when possible.
+
+For a description of how cases are represented in text format, see <topic data_file_type_structure.csdoc />. <note type="todo" text="describe how ~ is used to mark records as deleted, how it is written as UTF-8 with BOM, and how ANSI files are read" />
 
 The Text data source is used when a file has the extension <b>.dat</b>, or when it has an extension not associated with another <link data_sources.csdoc>data source</link>. In other words, most extensions will map to a Text data source.
-
-<note type="todo" text="describe the text data file format, including how lines are identified by record type, how ~ is used to mark records as deleted, how it is written as UTF-8 with BOM, and how ANSI files are read" />
 
 
 <subheader>Functionality</subheader>
@@ -66,4 +66,4 @@ CENSUS_<definition System::year />_DICT=.\Census.dat|cache=true
 </pff>
 
 
-<seealso data_sources.csdoc />
+<seealso data_sources.csdoc data_file_type_structure.csdoc />

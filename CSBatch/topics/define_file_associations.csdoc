@@ -1,7 +1,7 @@
 ﻿<title>Define File Associations</title>
 <context IDD_PIFDLG />
 
-The <b>Define File Associations</b> dialog box is presented when a <b>CSBatch</b> application is executed. This page explains why certain files are asked of you. To find out more about the allowable <b>Source Type</b> options and what can be chosen, see <topic source_file_types_csbatch.csdoc />.
+The <b>Define File Associations</b> dialog box is presented when a <b>CSBatch</b> application is executed. This page explains why certain files are asked of you. To find out more about the allowable <i>Source Type</i> options and what can be chosen, see <topic CSPro::data_sources.csdoc />.
 
 <b>CSBatch</b> requires a minimum of two files to run (an Input Data File and a Listing File), although the minimum number of files you will be solicited for in the <b>Define File Associations</b> dialog is three (you optionally have the choice of specifying an Output Data File). The basic run dialog is shown below:
 
@@ -9,50 +9,51 @@ The <b>Define File Associations</b> dialog box is presented when a <b>CSBatch</b
 
 <b>CSBatch</b> applications will require additional file definitions when one of the following situations occur:
 
-<list><li>1+ lookup files are used</li>
-<li>the <logiccolor>write</logiccolor> or <logiccolor>Freq</logiccolor> functions are used</li>
-<li>the <logiccolor>impute</logiccolor> function is used with the <logiccolor>stat</logiccolor> command, or <logiccolor>set impute(on)</logiccolor> is included</li>
-<li>the <logiccolor>Array</logiccolor> declaration is present with the <logiccolor>save</logiccolor> option</li>
+<list>
+    <li>Lookup files are used.</li>
+    <li><logiccolor>write</logiccolor> functions or <logiccolor>Freq</logiccolor> statements functions are used.</li>
+    <li>the <logiccolor>impute</logiccolor> function is used with the <logiccolor>stat</logiccolor> command, or <logiccolor>set impute(on)</logiccolor> is included.</li>
+    <li>the <logiccolor>Array</logiccolor> declaration is present with the <logiccolor>save</logiccolor> option.</li>
 </list>
 
-If all of these features were used, the expanded <b>CSBatch</b> run dialog would appear as shown below (in actuality, you would have to scroll to see all expected files&mdash;the dialog has been spliced together to facilitate viewing). Note the file associations listed in the "Source Type" column&mdash;those are the default file types expected for each file, though most all files allow more than one option to choose from. Also note that four of the data files provide default filenames, as explained further below.
+If all of these features were used, the expanded <b>CSBatch</b> run dialog would appear as shown below. Note the file associations listed in the <i>Source Type</i> column: those are the default file types expected for each file, though most all files allow more than one option to choose from. Also note that four of the data files provide default filenames, as explained further below.
 
 <image file_associations_batch_full.png />
 
-The following describes the files that will be solicited from you in more detail, in the order (more-or-less) presented in the dialog box (depending on the options chosen), and why each is needed. As mentioned at the top, to find out more about the allowable <b>Source Type</b> options and what can be chosen, see <topic source_file_types_csbatch.csdoc />.
+The following describes the files that will be solicited from you in more detail, in the order (more-or-less) presented in the dialog box (depending on the options chosen), and why each is needed.
 
 
 <subheader>Input Data</subheader>
 
-This is the file that your program will run upon. For example, if your program contains a series of edits to be performed on your data files, this is your place to name those files. You can select a single input file or multiple input files. Rest assured, input data files are never altered&mdash;they will only be opened, read, and closed. Note you also have the option of not using any data file by selecting <link CSPro::data_source_none.csdoc>None</link> as your input data file. This could be useful, for example, when writing a utility application that merges selected fields from 2+ external (lookup) files, based on a very specific universe criteria.
+This is the file that your program will run upon. For example, if your program contains a series of edits to be performed on your data files, this is your place to name those files. You can select a single input file or multiple input files. Input data files are never altered, they are only opened, read, and closed. You also have the option of not using any data file by selecting <link CSPro::data_source_none.csdoc>None</link> as your input data file. This could be useful, for example, when writing a utility application that merges selected fields from 2+ external (lookup) files, based on a very specific universe criteria.
 
 
 <subheader>Output Data</subheader>
 
 The Output Data file is where you can choose to write out the input data file. What you've done to the input data file (or not, if no edits took place), and what format you choose to write out the data will impact the resultant file(s).
 
-Similar to the input file, you can specify <link CSPro::data_source_none.csdoc>None</link> as your output file. However in this scenario, not specifying an output file might be used when you are developing and debugging your program, as you might prefer to see what's going on through the use of <logiccolor>errmsg</logiccolor> function calls rather than reviewing edited data (these user-generated messages will be written to the Listing File).
+Similar to the input file, you can specify <link CSPro::data_source_none.csdoc>None</link> as your output file. In this scenario, not specifying an output file might be used when you are developing and debugging your program, as you might prefer to see what is going on through the use of <logiccolor>errmsg</logiccolor> function calls rather than reviewing edited data.
 
-If you have not made any edits to your input file in the batch application, then any files specified will be, essentially, a copy of the input file. This can be useful if your intent is to write out the input data file into other format(s), such as Excel, SAS, or SPSS; or if you wish to output selected records from your input data file, rather than the entire file. This is now possible starting with CSBatch version 7.7, which has <link source_file_types_csbatch.csdoc>expanded the output feature</link> to allow exporting natively to other file formats.
+If you have not made any edits to your input file in the batch application, then any output files specified will be, essentially, a copy of the input file. This can be useful if your intent is to write out the input data file into other format(s), such as <link CSPro::data_source_excel.csdoc>Excel</link>, <link CSPro::data_source_sas.csdoc>SAS</link>, or <link CSPro::data_source_spss.csdoc>SPSS</link>; or if you wish to <link CSPro::data_source_cspro_export.csdoc>output selected records</link> from your input data file, rather than the entire file.
 
-Finally, in the scenario where you have made a series of edits on the input file (remember the original input data file will never be modified), you will write out the edited file. You can also choose to specify more than one file, should you wish to export the edited data to more than one type of file format. For example, you may wish to continue working with <b>.csdb</b> files, but subject-matter staff may prefer reviewing the edited data using Excel.
+You can also choose to specify more than one file, should you wish to export the edited data to more than one type of file format. For example, you may wish to continue working with <link CSPro::data_source_csdb.csdoc>CSPro DB</link> files, but subject-matter staff may prefer reviewing the edited data using <link CSPro::data_source_r.csdoc>R</link>.
 
 
-<subheader>External Data (dict_name)</subheader>
+<subheader>External Data (dictionary name)</subheader>
 
-For each lookup file included in your application, you will be asked to supply the data file to which the lookup dictionary refers. The name displayed within the parenthesis is the unique (internal) dictionary name. For each lookup file attached to your application, a separate line entry will appear for you to specify the associated data file. If the file does not exist, it will be created (it will be empty if a <logiccolor>writecase</logiccolor> call is not made for the associated dictionary).
+For each lookup file included in your application, you will be asked to supply the data file to which the lookup dictionary refers. The name displayed within the parenthesis is the unique (internal) dictionary name. For each lookup file attached to your application, a separate line entry will appear for you to specify the associated data file. If the file does not exist, it will be created.
 
 You also have the option to specify <link CSPro::data_source_none.csdoc>None</link> for your lookup file. This can be useful if you know what lookup files you plan to use in your application, you have defined the dictionaries, but you do not yet have the data files themselves ready to use.
 
 
 <subheader>&lt;Write File></subheader>
 
-If your program makes one or more <logiccolor>write</logiccolor> function calls, <b>CSBatch</b> will ask you for the file to write them all to. This file will be a text file, regardless of the file extension used. If you fail to name a file, all <logiccolor>write</logiccolor> function text will be placed in the listing file.
+If your program makes one or more <logiccolor>write</logiccolor> function calls, <b>CSBatch</b> will ask you for the file to write them all to. This file will be a text file, regardless of the file extension used. If you fail to name a file, all <logiccolor>write</logiccolor> function text will be written to the <link CSPro::listing_file.csdoc>listing file</link>.
 
 
 <subheader>&lt;Listing File></subheader>
 
-This file contains a summary of the results of your run and must be provided. It will tell you the input data file used, start and stop times, the number of records read, and how many had a "bad structure" (i.e., required records were missing). If there are any <logiccolor>errmsg</logiccolor> functions in your program, they will be written to this file after the summary information just described. As seen in both screenshots above, the default file name with extension will be <b>&lt;AppName>.lst</b>, but both can be changed by the user.
+This file contains a summary of the results of your run and must be provided. It will tell you the input data file used, start and stop times, the number of records read, and how many had a "bad structure" (i.e., required records were missing). If there are any <logiccolor>errmsg</logiccolor> functions in your program, they will be written to this file after the summary information. As seen in both screenshots above, the default file name with extension will be <b>&lt;AppName>.lst</b>, but both can be changed by the user.
 
 
 <subheader>&lt;Freq File></subheader>
@@ -75,4 +76,6 @@ If your program includes one or more <logiccolor>impute</logiccolor> functions t
 If your program uses <logiccolor>Array</logiccolor> objects, you can choose to save the array values between program runs with the optional keyword <logiccolor>save</logiccolor>. When the save option is used, <b>CSBatch</b> will prompt you for a filename. By default the file has the same name as the application, with an <b>.sva</b> file extension. The leading portion of the file name can be changed, but the extension cannot.
 
 
-<seealso source_file_types_csbatch.csdoc />
+<subheader>&lt;Paradata Log></subheader>
+
+Paradata log files contain information about <link CSPro::paradata.csdoc>paradata</link> events stored during an application's run. Files created using this type have the extension <b>.cslog</b> and can be viewed using <link ParadataViewer::introduction_to_paradata_viewer.csdoc>Paradata Viewer</link>.

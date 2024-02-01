@@ -1,7 +1,0 @@
-﻿<subheader>CSPro DB (.csdb)</subheader>
-
-<b>.csdb</b> is the default file type for Input and External (i.e., lookup) files, as well as the file generated from any <logiccolor>impute</logiccolor> function calls that use the <logiccolor>stat</logiccolor> option.
-
-<subheader>CSPro DB Encrypted (.csdbe)</subheader>
-
-For any source file entry that allows <b>.csdb</b> files, CSPro's encrypted file type (<b>.csdbe</b>) can also be used. For Input and existing Lookup files, this means the file has already been given a password, which must match the file's password or the run will fail. You will be prompted for each file's password after pressing "OK" on the <b>CSEntry</b> file association dialog. Alternatively, you can provide the password along with the filename by using a <link CSPro::connection_string.csdoc>connection string</link>. For example, <logiccolor>"MyLookupFile.csdbe|password=s@feW0rd"</logiccolor>. Be sure to place the pipe symbol immediately after the filename, followed by "password=" and your desired password. See the <link CSPro::export_attributes.csdoc>Export Attributes</link> page for a full explanation of the available options and required syntax.
