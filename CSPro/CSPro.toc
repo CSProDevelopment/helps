@@ -868,12 +868,21 @@
       {
         "title": "Data Sources", 
         "documents": [
-          { "path": "data_source_text.csdoc", "~title": "Text Data Source" }, 
-          { "path": "data_source_csdbe.csdoc", "~title": "Encrypted CSPro DB Data Source" }, 
-          { "path": "data_source_json.csdoc", "~title": "JSON Data Source" }, 
-          { "path": "data_source_memory.csdoc", "~title": "In-Memory Data Source" }, 
-          { "path": "data_source_tab.csdoc", "~title": "Tab Delimited Data Source" }, 
-          { "path": "data_source_semicolon.csdoc", "~title": "Semicolon Delimited Data Source" }, 
+          { "path": "data_source_csdb.csdoc", "title": "CSPro DB" }, 
+          { "path": "data_source_csdbe.csdoc", "title": "Encrypted CSPro DB" }, 
+          { "path": "data_source_text.csdoc", "title": "Text" }, 
+          { "path": "data_source_json.csdoc", "title": "JSON" }, 
+          { "path": "data_source_none.csdoc", "title": "None" }, 
+          { "path": "data_source_memory.csdoc", "title": "In-Memory" }, 
+          { "path": "data_source_csv.csdoc", "title": "Comma Delimited (CSV)" }, 
+          { "path": "data_source_semicolon.csdoc", "title": "Semicolon Delimited" }, 
+          { "path": "data_source_tab.csdoc", "title": "Tab Delimited" }, 
+          { "path": "data_source_excel.csdoc", "title": "Excel" }, 
+          { "path": "data_source_r.csdoc", "title": "R" }, 
+          { "path": "data_source_sas.csdoc", "title": "SAS" }, 
+          { "path": "data_source_spss.csdoc", "title": "SPSS" }, 
+          { "path": "data_source_stata.csdoc", "title": "Stata" }, 
+          { "path": "data_source_cspro_export.csdoc", "title": "CSPro Export" }, 
           { "path": "case_read_optimization.csdoc", "~title": "Case Read Optimization" }
         ]
       }, 
@@ -1421,21 +1430,6 @@
               { "path": "getbluetoothname_function.csdoc", "~title": "GetBluetoothName Function" }, 
               { "path": "setbluetoothname_function.csdoc", "~title": "SetBluetoothName Function" }
             ]
-          }, 
-          {
-            "title": "Export Attributes", 
-            "documents": [
-              { "path": "export_attributes.csdoc", "~title": "Export Attributes" }, 
-              { "path": "export_attribute_decimal_mark.csdoc", "~title": "Export Attribute: decimal-mark" }, 
-              { "path": "export_attribute_dictionary.csdoc", "~title": "Export Attribute: dictionary" }, 
-              { "path": "export_attribute_encoding.csdoc", "~title": "Export Attribute: encoding" }, 
-              { "path": "export_attribute_header.csdoc", "~title": "Export Attribute: header" }, 
-              { "path": "export_attribute_mapped_special_values.csdoc", "~title": "Export Attribute: mapped-special-values" }, 
-              { "path": "export_attribute_record.csdoc", "~title": "Export Attribute: record" }, 
-              { "path": "export_attribute_syntax_file.csdoc", "~title": "Export Attribute: syntax-file" }, 
-              { "path": "export_attribute_type.csdoc", "~title": "Export Attribute: type" }, 
-              { "path": "export_attribute_values.csdoc", "~title": "Export Attribute: value" }
-            ]
           }
         ]
       }, 
@@ -1723,6 +1717,7 @@
             "title": "Appendix I - JSON Representations", 
             "documents": [
               { "path": "symbols_json_representation.csdoc", "title": "Symbols" }, 
+              { "path": "Case_json_representation.csdoc", "title": "Case" }, 
               { "path": "JSON_serialization_options.csdoc", "~title": "JSON Serialization Options" }
             ]
           }

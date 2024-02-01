@@ -1,30 +1,31 @@
 ﻿<title>Converting CSPro Data Files to Other Formats</title>
 
+
 <subheader>Conversion Overview</subheader>
 
 Data Viewer can be used to convert from one CSPro data file format to another. For example, you can:
 
 <list>
-	<li>Convert from a CSPro DB file to a text file</li>
-	<li>Convert from a text file to a CSPro DB file</li>
+    <li>Convert from a <link CSPro::data_source_csdb.csdoc>CSPro DB</link> file to a <link CSPro::data_source_text.csdoc>text</link> file.</li>
+    <li>Convert from a text file to a CSPro DB file.</li>
 </list>
 
 When converting between these formats, in addition to the case contents, the following case-related data will also be converted:
 
 <list>
-	<li>Case labels</li>
-	<li>Case and field notes</li>
-	<li>Partial save statuses</li>
-	<li>Verification information</li>
+    <li>Case labels</li>
+    <li>Case and field notes</li>
+    <li>Partial save statuses</li>
+    <li>Verification information</li>
 </list>
 
 
 <subheader>To convert a CSPro data file ...</subheader>
 
 <list ordered>
-	<li><link open_data_files.csdoc>Open the data file</link>.</li>
-	<li>Click the <b>File</b> menu, select <b>Save As</b>, and then select <b>Data</b>.</li>
-	<li>Enter a file name for the converted data file. If the file has the extension <b>.csdb</b>, the file will be saved in CSPro DB format; if the file has the extension <b>.csdbe</b>, you will be prompted to enter a password, after which the file will be saved in Encrypted CSPro DB format; if any other file extension is used, the file will be saved in text format.</li>
+    <li><link open_data_files.csdoc>Open the data file</link>.</li>
+    <li>Click the <b>File</b> menu, select <b>Save As</b>, and then select <b>Data</b>.</li>
+    <li>Enter a file name for the converted data file. If the file has the extension <b>.csdb</b>, the file will be saved in <link CSPro::data_source_csdb.csdoc>CSPro DB</link> format. If the file has the extension <b>.csdbe</b>, you will be prompted to enter a password, after which the file will be saved in <link CSPro::data_source_csdbe.csdoc>Encrypted CSPro DB</link> format. If any other file extension is used, the file will be saved to a format based on the <link CSPro::data_sources.csdoc>data source</link> associated with the extension.</li>
 </list>
 
 

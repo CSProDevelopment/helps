@@ -2,7 +2,7 @@
 
 Most CSPro applications sensibly require data files to operate but there may be times when the contents of a data file are unimportant. Examples of this include a menu program that launches another program based on a user's selection. Such a program generally has no output and thus the contents of the file are meaningless. For batch programs it may be the case that you want to use CSPro functions to perform some task, such as creating content using the <logiccolor>write</logiccolor> statement.
 
-Before CSPro 7.0, it was possible to write "&lt;none&gt;" in the Define File Associations dialog to have CSPro create a temporary data file. Now you can use a <link data_sources.csdoc>none data source</link>.
+Before CSPro 7.0, it was possible to write "&lt;none&gt;" in the Define File Associations dialog to have CSPro create a temporary data file. Now you can use a <link data_source_none.csdoc>None data source</link>.
 
 Data entry applications run as they would with a file specified. Batch applications, however, do not run any logic associated with elements of the dictionary. Instead only the application <logiccolor>preproc</logiccolor> and <logiccolor>postproc</logiccolor> are executed.
 
@@ -12,38 +12,38 @@ PROC GLOBAL
 // this function concatenates all the .dat files in a directory by order of date
 function ConcatenateDatFiles()
 
-	string file_listing_filename = "file_listing.txt";
-	string output_filename = "Output/CombinedFiles.dat";
+    string file_listing_filename = "file_listing.txt";
+    string output_filename = "Output/CombinedFiles.dat";
 
-	// use the DOS dir command to create a file with the list of all .dat files
+    // use the DOS dir command to create a file with the list of all .dat files
     string listing_call = maketext('cmd /c "dir /b /od *.dat > %s"', file_listing_filename);
     execsystem(listing_call, wait);
 
-	// open that file and read all of the contents
-	File file_listing_file;
-	List string file_list;
+    // open that file and read all of the contents
+    File file_listing_file;
+    List string file_list;
 
-	file_listing_file.open(file_listing_filename);
-	file_listing_file.read(file_list);
-	file_listing_file.close();
+    file_listing_file.open(file_listing_filename);
+    file_listing_file.read(file_list);
+    file_listing_file.close();
 
-	filedelete(file_listing_filename);
+    filedelete(file_listing_filename);
 
-	// create and run a pff to concatenate these files
-	Pff concat_pff;
+    // create and run a pff to concatenate these files
+    Pff concat_pff;
 
-	concat_pff.setProperty("AppType", "Concatenate");
-	concat_pff.setProperty("InputData", file_list);
-	concat_pff.setProperty("OutputData", output_filename);
+    concat_pff.setProperty("AppType", "Concatenate");
+    concat_pff.setProperty("InputData", file_list);
+    concat_pff.setProperty("OutputData", output_filename);
     concat_pff.setProperty("Listing", "ConcatenateDatFiles.lst");
     concat_pff.setProperty("ViewListing", "OnError");
     concat_pff.setProperty("ViewResults", "No");
 
-	concat_pff.exec();
+    concat_pff.exec();
 
 end;
 
 PROC CONCATENATE_FF
 
-	ConcatenateDatFiles();
+    ConcatenateDatFiles();
 </logic>

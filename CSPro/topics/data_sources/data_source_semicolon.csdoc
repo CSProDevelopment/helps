@@ -1,6 +1,79 @@
 ﻿<title>Semicolon Delimited Data Source</title>
 
-HELP_TODO <link newline_handling.csdoc>Note: newlines in items are removed</link> 
+
+<subheader>Overview</subheader>
+
+The <b>Semicolon Delimited</b> <link data_sources.csdoc>data source</link> allows writing, but not reading, data to a <link "https://en.wikipedia.org/wiki/Delimiter-separated_values">semicolon-separated values</link> file. When writing data, each value is separated by a semicolon. This data source only supports writing the values from one <link record_description.csdoc>record</link>, which by default is the first record defined in the dictionary. To specify writing data from another record, you must define the <colorinline JSON>"record"</colorinline> property in the <link connection_string.csdoc>connection string</link>.
+
+This data source is similar to the other delimited text data sources, <link data_source_csv.csdoc>Comma Delimited (CSV)</link> and <link data_source_tab.csdoc>Tab Delimited</link>. Many applications that read delimited text can also read Excel files, and using the <link data_source_excel.csdoc>Excel</link> data source may an option in many scenarios.
+
+The Semicolon Delimited data source is used when a file has the extension <b>.skv</b>.
+
+
+<subheader>Functionality</subheader>
+
+The Semicolon Delimited data source supports the following features:
+
+<table 2 header nowrap>
+    <cell>Feature</cell><cell nowrap>Supported</cell>
+    <cell>Reading cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Writing cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Notes, case labels, and case statuses</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Storage of more than one kind of record</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Binary data items</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Deleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Undeleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell><link synchronization.csdoc>Syncing</link> data</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Cases with duplicate <link key_function.csdoc>keys</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Case identification via <link uuid_function.csdoc>UUID</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Contains an embedded dictionary</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Allows <link CSSort::choose_type_of_sort.csdoc>record sorts</link></cell><cell><center><font red>✘</font></center></cell>
+</table>
+
+
+<subheader>Special Character Handling</subheader>
+
+Because semicolons are used to separate values, if a value contains a semicolon, the value must be escaped before writing. The following characters are escaped:
+
+<list>
+    <li><b>Semicolon</b>: Value wrapped in double quotes.</li>
+    <li><b><link newline_handling.csdoc>Newline</link></b>: Character removed from the output.</li>
+    <li><b>Double quote</b>: If the value is wrapped in double quotes because it contains a semicolon, the double quotes character appears twice.</li>
+</list>
+
+For example, a value like <logiccolor>"She said; \"Hello\""</logiccolor> would be written as:
+
+<indent><font monospace>"She said; ""Hello"""</font></indent>
+
+
+<subheader>Customizable Behavior</subheader>
+
+The following behavior can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. The default behavior is marked with ⁺⁺⁺.
+
+<table 2 header>
+    <cell nowrap>Property Name and Values</cell><cell>Description</cell>
+    <cell 2>&nbsp;</cell>
+    <include properties_decimalMark.hgi />
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"encoding"</colorinline></b></cell><cell>Determines the <link unicode_primer.csdoc>text encoding</link> of the file.</cell>
+    <include properties_encoding_values.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_header.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_mappedSpecialValues.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_record.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_writeCodes.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_writeLabels.hgi />
+</table>
+
+For example, the following connection string, specified in a <link run_production_batch_edits.csdoc>batch PFF</link>, would result in a semicolon-separated values file containing the codes and labels of the <logiccolor>HOUSING_REC</logiccolor> record:
+
+<pff>
+OutputData=housing.skv|writeLabels=true&record=HOUSING_REC
+</pff>
 
 
 <seealso data_sources.csdoc />

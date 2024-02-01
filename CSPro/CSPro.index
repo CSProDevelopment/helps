@@ -47,9 +47,8 @@
   { "path": "logic_file_apc.csdoc", "title": ".app" }, 
   { "path": "batch_edit_application_file_bch.csdoc", "title": ".bch" }, 
   { "path": "file_types.csdoc", "title": ".cmp" }, 
-  { "path": "data_sources.csdoc", "title": ".csdb" }, 
-  { "path": "csdb_relational_format.csdoc", "title": ".csdb format" }, 
-  { "path": "data_sources.csdoc", "title": ".csdbe" }, 
+  { "path": "data_source_csdb.csdoc", "title": ".csdb" }, 
+  { "path": "data_source_csdbe.csdoc", "title": ".csdbe" }, 
   { "path": "file_types.csdoc", "title": ".csdoc" }, 
   { "path": "file_types.csdoc", "title": ".csdocset" }, 
   { "path": "file_types.csdoc", "title": ".csds" }, 
@@ -58,8 +57,10 @@
   { "path": "paradata_log_file_cslog.csdoc", "title": ".cslog" }, 
   { "path": "notes_file_csnot.csdoc", "title": ".csnot" }, 
   { "path": "application_properties_file_csprops.csdoc", "title": ".csprops" }, 
+  { "path": "data_source_csv.csdoc", "title": ".csv" }, 
   { "path": "data_source_text.csdoc", "title": ".dat" }, 
   { "path": "data_dictionary_file_dcf.csdoc", "title": ".dcf" }, 
+  { "path": "data_source_stata.csdoc", "title": ".dta" }, 
   { "path": "binary_data_entry_application_file_pen.csdoc", "title": ".enc" }, 
   { "path": "data_entry_application_file_ent.csdoc", "title": ".ent" }, 
   { "path": "file_types.csdoc", "title": ".exf" }, 
@@ -82,6 +83,8 @@
   }, 
   { "path": "file_types.csdoc", "title": ".pffRunner" }, 
   { "path": "question_text_file_qsf.csdoc", "title": ".qsf" }, 
+  { "path": "data_source_r.csdoc", "title": ".RData" }, 
+  { "path": "data_source_spss.csdoc", "title": ".sav" }, 
   { "path": "data_source_semicolon.csdoc", "title": ".skv" }, 
   { "path": "file_types.csdoc", "title": ".ssf" }, 
   { "path": "status_file_sts.csdoc", "title": ".sts" }, 
@@ -92,6 +95,8 @@
   { "path": "tables_file_tbw.csdoc", "title": ".tbw" }, 
   { "path": "data_source_tab.csdoc", "title": ".tsv" }, 
   { "path": "file_types.csdoc", "title": ".xl2cs" }, 
+  { "path": "data_source_excel.csdoc", "title": ".xlsx" }, 
+  { "path": "data_source_sas.csdoc", "title": ".xpt" }, 
   { "path": "tabulation_application_file_xtb.csdoc", "title": ".xtb" }, 
   { "path": "table_specifications_file_xts.csdoc", "title": ".xts" }, 
   { "path": "operators.csdoc", "title": "/", 
@@ -398,19 +403,6 @@
   { "path": "statements.csdoc", "title": "Assignment Statements" }, 
   { "path": "HashMap.csdoc", "title": "Associative Array" }, 
   { "path": "action_invoker_execution_javascript_web.csdoc", "title": "Asynchronous Execution" }, 
-  { "path": "export_attributes.csdoc", "title": "Attributes", 
-    "subindex": [ 
-      { "path": "export_attribute_decimal_mark.csdoc", "~title": "Export Attribute: decimal-mark" }, 
-      { "path": "export_attribute_dictionary.csdoc", "~title": "Export Attribute: dictionary" }, 
-      { "path": "export_attribute_encoding.csdoc", "~title": "Export Attribute: encoding" }, 
-      { "path": "export_attribute_header.csdoc", "~title": "Export Attribute: header" }, 
-      { "path": "export_attribute_mapped_special_values.csdoc", "~title": "Export Attribute: mapped-special-values" }, 
-      { "path": "export_attribute_record.csdoc", "~title": "Export Attribute: record" }, 
-      { "path": "export_attribute_syntax_file.csdoc", "~title": "Export Attribute: syntax-file" }, 
-      { "path": "export_attribute_type.csdoc", "~title": "Export Attribute: type" }, 
-      { "path": "export_attribute_values.csdoc", "~title": "Export Attribute: value" }
-    ]
-  }, 
   { "path": "Audio.csdoc", "~title": "Audio Object", 
     "subindex": [ 
       { "path": "Audio_clear_function.csdoc", "~title": "Audio.clear Function" }, 
@@ -624,7 +616,8 @@
   }, 
   { "path": "Case.csdoc", "~title": "Case Object", 
     "subindex": [ 
-      { "path": "Case_view_function.csdoc", "~title": "Case.view Function" }
+      { "path": "Case_view_function.csdoc", "~title": "Case.view Function" }, 
+      { "path": "Case_json_representation.csdoc", "title": "JSON Representation" }
     ]
   }, 
   { "path": "string_comparisons.csdoc", "title": "Case Sensitivity", 
@@ -799,6 +792,7 @@
   { "path": "drop_down.csdoc", "title": "Combo Box" }, 
   { "path": "coming_back_later.csdoc", "title": "Coming Back Later (CAPI)" }, 
   { "path": "encode_function.csdoc", "title": "Comma-Separated Values Encoding" }, 
+  { "path": "data_source_csv.csdoc", "~title": "Comma Delimited (CSV) Data Source" }, 
   { "path": "comments.csdoc", "~title": "Comments", 
     "subindex": [ 
       { "path": "comments.csdoc", "title": "About" }, 
@@ -958,8 +952,12 @@
       { "path": "create_a_cspro_application.csdoc", "title": "Create" }
     ]
   }, 
-  { "path": "csdb_relational_format.csdoc", "title": "CSPro DB Data Format" }, 
-  { "path": "data_sources.csdoc", "title": "CSPro DB Data Source" }, 
+  { "path": "data_source_csdb.csdoc", "~title": "CSPro DB Data Source", 
+    "subindex": [ 
+      { "path": "csdb_relational_format.csdoc", "title": "Data Format" }
+    ]
+  }, 
+  { "path": "data_source_cspro_export.csdoc", "~title": "CSPro Export Data Source" }, 
   { "path": "cspro_program_structure.csdoc", "~title": "CSPro Program Structure", 
     "subindex": [ 
       { "path": "cspro_program_structure.csdoc", "title": "Declaration Section" }, 
@@ -970,6 +968,7 @@
   { "path": "action_invoker_execution_javascript_web.csdoc", "title": "CSProActionInvoker" }, 
   { "path": "encode_function.csdoc", "title": "CSV", 
     "subindex": [ 
+      { "path": "data_source_csv.csdoc", "~title": "Comma Delimited (CSV) Data Source" }, 
       { "path": "encode_function.csdoc", "title": "CSV Encoding" }, 
       { "path": "listing_file.csdoc", "~title": "Listing File" }
     ]
@@ -1066,15 +1065,21 @@
   { "path": "data_source_options.csdoc", "~title": "Data Source Options" }, 
   { "path": "data_sources.csdoc", "~title": "Data Sources", 
     "subindex": [ 
-      { "path": "data_sources.csdoc", "title": "CSPro DB" }, 
+      { "path": "data_source_csv.csdoc", "title": "Comma Delimited (CSV)" }, 
+      { "path": "data_source_csdb.csdoc", "title": "CSPro DB" }, 
+      { "path": "data_source_cspro_export.csdoc", "title": "CSPro Export" }, 
       { "path": "data_source_csdbe.csdoc", "title": "Encrypted CSPro DB" }, 
+      { "path": "data_source_excel.csdoc", "title": "Excel" }, 
       { "path": "data_source_memory.csdoc", "title": "In-Memory" }, 
       { "path": "data_source_json.csdoc", "title": "JSON" }, 
-      { "path": "data_sources.csdoc", "title": "None" }, 
+      { "path": "data_source_none.csdoc", "title": "None" }, 
+      { "path": "data_source_r.csdoc", "title": "R" }, 
+      { "path": "data_source_sas.csdoc", "title": "SAS" }, 
       { "path": "data_source_semicolon.csdoc", "title": "Semicolon Delimited" }, 
-      { "path": "data_source_tab.csdoc", "title": "Tab" }, 
-      { "path": "data_source_text.csdoc", "title": "Text" }, 
-      { "path": "data_sources.csdoc", "title": "Text" }
+      { "path": "data_source_spss.csdoc", "title": "SPSS" }, 
+      { "path": "data_source_stata.csdoc", "title": "Stata" }, 
+      { "path": "data_source_tab.csdoc", "title": "Tab Delimited" }, 
+      { "path": "data_source_text.csdoc", "title": "Text" }
     ]
   }, 
   { "path": "data_type.csdoc", "~title": "Data Type" }, 
@@ -1409,6 +1414,7 @@
   }, 
   { "path": "tool_list.csdoc", "title": "Excel", 
     "subindex": [ 
+      { "path": "data_source_excel.csdoc", "title": "Data Source" }, 
       { "path": "tool_list.csdoc", "title": "Excel to CSPro Tool" }, 
       { "path": "frequencies_file.csdoc", "title": "Frequency File" }, 
       { "path": "listing_file.csdoc", "~title": "Listing File" }
@@ -1443,7 +1449,9 @@
   { "path": "compiler_mode.csdoc", "title": "Explicit Mode" }, 
   { "path": "tool_list.csdoc", "title": "Export", 
     "subindex": [ 
-      { "path": "tool_list.csdoc", "title": "Data" }
+      { "path": "tool_list.csdoc", "title": "Data" }, 
+      { "path": "data_source_cspro_export.csdoc", "title": "Data Source" }, 
+      { "path": "export_statement.csdoc", "title": "Statement" }
     ]
   }, 
   { "path": "export_statement.csdoc", "~title": "Export Statement" }, 
@@ -1545,11 +1553,11 @@
       { "path": "area_names_file_anm.csdoc", "~title": "Area Names File (.anm)" }, 
       { "path": "batch_edit_application_file_bch.csdoc", "~title": "Batch Edit Application File (.bch)" }, 
       { "path": "binary_data_entry_application_file_pen.csdoc", "~title": "Binary Data Entry Application File (.pen)" }, 
-      { "path": "data_sources.csdoc", "title": "CSPro DB File (.csdb)" }, 
+      { "path": "data_source_csdb.csdoc", "title": "CSPro DB Data Source (.csdb)" }, 
       { "path": "data_dictionary_file_dcf.csdoc", "~title": "Data Dictionary File (.dcf)" }, 
       { "path": "data_entry_application_file_ent.csdoc", "~title": "Data Entry Application File (.ent)" }, 
       { "path": "edit_order_file_ord.csdoc", "~title": "Edit Order File (.ord)" }, 
-      { "path": "data_sources.csdoc", "title": "Encrypted CSPro DB File (.csdbe)" }, 
+      { "path": "data_source_csdbe.csdoc", "title": "Encrypted CSPro Data Source (.csdbe)" }, 
       { "path": "forms_file_fmf.csdoc", "~title": "Forms File (.fmf)" }, 
       { "path": "frequency_specification_file_fqf.csdoc", "~title": "Frequency Specification File (.fqf)" }, 
       { "path": "index_file_csidx.csdoc", "~title": "Index File (.csidx)" }, 
@@ -2155,6 +2163,7 @@
   { "path": "external_libraries.csdoc", "title": "JsBarcode" }, 
   { "path": "JSON_primer.csdoc", "title": "JSON", 
     "subindex": [ 
+      { "path": "data_source_json.csdoc", "title": "Data Source" }, 
       { "path": "encode_function.csdoc", "title": "Encoding JSON Strings" }, 
       { "path": "frequencies_file.csdoc", "title": "Frequency File" }, 
       { "path": "Geometry_load_function.csdoc", "title": "GeoJSON" }, 
@@ -2165,6 +2174,7 @@
   { "path": "data_source_json.csdoc", "~title": "JSON Data Source" }, 
   { "path": "symbols_json_representation.csdoc", "title": "JSON Representations", 
     "subindex": [ 
+      { "path": "Case_json_representation.csdoc", "title": "Case" }, 
       { "path": "JSON_serialization_options.csdoc", "title": "Serialization Options" }, 
       { "path": "properties_json_serialization.csdoc", "title": "Serialization Properties" }, 
       { "path": "symbols_json_representation.csdoc", "title": "Symbol Overview" }
@@ -2626,7 +2636,7 @@
   { "path": "run_production_data_entry.csdoc", "title": "NoFileOpen" }, 
   { "path": "freq_formatting_options.csdoc", "title": "NoFreq" }, 
   { "path": "noinput_statement.csdoc", "~title": "NoInput Statement" }, 
-  { "path": "data_sources.csdoc", "title": "None Data Source" }, 
+  { "path": "data_source_none.csdoc", "title": "None Data Source" }, 
   { "path": "freq_formatting_options.csdoc", "title": "NoNetPercents" }, 
   { "path": "operators.csdoc", "title": "Not", 
     "subindex": [ 
@@ -3049,6 +3059,7 @@
   }, 
   { "path": "questionnaire_and_dictionary_organization.csdoc", "~title": "Questionnaire and Dictionary Organization" }, 
   { "path": "questions.csdoc", "~title": "Questions" }, 
+  { "path": "data_source_r.csdoc", "~title": "R Data Source" }, 
   { "path": "radio_button.csdoc", "~title": "Radio Button" }, 
   { "path": "random_function.csdoc", "title": "Random" }, 
   { "path": "randomin_function.csdoc", "~title": "RandomIn Function" }, 
@@ -3300,6 +3311,7 @@
   { "path": "run_tabulate_interactively.csdoc", "~title": "Run Tabulate Interactively" }, 
   { "path": "javascript_interface.csdoc", "title": "runLogic (JavaScript)" }, 
   { "path": "javascript_interface.csdoc", "title": "runLogicAsync (JavaScript)" }, 
+  { "path": "data_source_sas.csdoc", "~title": "SAS Data Source" }, 
   { "path": "gps_interactive_modes.csdoc", "title": "Satellite Mode (GPS)" }, 
   { "path": "save_an_application.csdoc", "title": "Save", 
     "subindex": [ 
@@ -3609,11 +3621,12 @@
   }, 
   { "path": "specify_application_file_names.csdoc", "~title": "Specify Application File Names" }, 
   { "path": "external_libraries.csdoc", "title": "sprintf-js" }, 
+  { "path": "data_source_spss.csdoc", "~title": "SPSS Data Source" }, 
   { "path": "sqlite_callback_functions.csdoc", "title": "sql Function Modifier" }, 
   { "path": "csdb_relational_format.csdoc", "title": "SQL Queries in CSPro DB" }, 
   { "path": "sqlite_in_cspro.csdoc", "title": "SQLite", 
     "subindex": [ 
-      { "path": "csdb_relational_format.csdoc", "title": "Querying CSPro DB Files" }, 
+      { "path": "csdb_relational_format.csdoc", "title": "Querying CSPro DB Data Sources" }, 
       { "path": "CS_Sqlite.csdoc", "~title": "Sqlite Action Invoker Namespace" }, 
       { "path": "sqlite_callback_functions.csdoc", "~title": "SQLite Callback Functions" }
     ]
@@ -3646,6 +3659,7 @@
       { "path": "impute_function.csdoc", "~title": "Impute Function" }
     ]
   }, 
+  { "path": "data_source_stata.csdoc", "~title": "Stata Data Source" }, 
   { "path": "statement_format_symbols.csdoc", "~title": "Statement Format Symbols" }, 
   { "path": "statements.csdoc", "~title": "Statements", 
     "subindex": [ 

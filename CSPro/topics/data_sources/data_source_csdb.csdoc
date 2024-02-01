@@ -1,0 +1,42 @@
+﻿<title>CSPro DB Data Source</title>
+
+
+<subheader>Overview</subheader>
+
+The <b>CSPro DB</b> <link data_sources.csdoc>data source</link> allows reading and writing data to a <link sqlite_in_cspro.csdoc>SQLite database</link>. This data source, introduced in CSPro 7.0, is the default data source for collecting data, and is the most used CSPro data source, followed by <link data_source_text.csdoc>text files</link>. Unless there is a requirement that your data be in text format, you are encouraged to use the CSPro DB data source, as it has the most functionality of all data sources.
+
+The <link csdb_relational_format.csdoc>structure of the SQLite database</link> is based on the dictionary. Each record in the dictionary corresponds to a table in the database. The database tables have the same name as the record in the dictionary. Each item in the record corresponds to a column in the table with the same name as the dictionary item. Because the CSPro DB data source is a SQLite database, it is possible to <link sqlite_in_cspro.csdoc>query the data</link> using SQL statements.
+
+The CSPro DB data source is used when a file has the extension <b>.csdb</b>. An encrypted version of this data source, <link data_source_csdbe.csdoc>Encrypted CSPro DB</link>, is used if a file has the extension <b>.csdbe</b>.
+
+
+<subheader>Functionality</subheader>
+
+The CSPro DB data source supports the following features:
+
+<include functionality_csdb.hgi />
+
+
+<subheader>Binary Data</subheader>
+
+The CSPro DB data source stores <link "http://HELP_TODO/link_appropriately">binary data</link> as <link "https://www.sqlite.org/c3ref/bind_blob.html">blobs</link> in a <b>binary-data</b> table. When reading case data, binary data is <link "https://en.wikipedia.org/wiki/Lazy_loading">loaded asynchronously</link>, read from the SQLite database only when needed by the application.
+
+
+<subheader>Customizable Behavior</subheader>
+
+The following behavior can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. The default behavior is marked with ⁺⁺⁺.
+
+<table 2 header>
+    <cell nowrap>Property Name and Values</cell><cell>Description</cell>
+    <cell 2>&nbsp;</cell>
+    <include properties_cache.hgi />
+</table>
+
+For example, the following connection string, specified in a <link run_production_data_entry.csdoc>data entry PFF</link>, would attach to an <link dictionary_types.csdoc>external dictionary</link> a CSPro DB file with caching enabled:
+
+<pff>
+CENSUS_<definition System::year />_DICT=.\Census.csdb|cache=true
+</pff>
+
+
+<seealso data_sources.csdoc csdb_relational_format.csdoc data_source_csdbe.csdoc />

@@ -1,6 +1,38 @@
 ﻿<title>In-Memory Data Source</title>
 
-HELP_TODO
+
+<subheader>Overview</subheader>
+
+The <b>In-Memory</b> <link data_sources.csdoc>data source</link> is not associated with a file. It allows you to read and write cases just as you can to file-based data sources, with the cases persisting in memory for the duration of the running application, or until the data source is <link close_function.csdoc>closed</link>. This data source is useful for performing temporary case-related calculations or management.
+
+The initial behavior of the In-Memory data source is as if a file were opened with no cases. After writing a case, the data source will report that it has a case and loading that specific case will succeed. When used as the data source attached to the main dictionary of a data entry application, cases added will show in the case listing, but these cases will not exist once the program closes.
+
+A similar data source, <link data_source_none.csdoc>None</link>, is also not associated with a data file, but cases do not persist in memory.
+
+Typically CSPro uses a file extension to determine what kind of data source to open, but because there is no file associated with an In-Memory data source, you must use the <link connection_string.csdoc>connection string</link> to specify that you want to use an In-Memory data source. For example, the following connection string, specified in a <link run_production_data_entry.csdoc>data entry PFF</link>, would result in the main dictionary being attached to an In-Memory data source:
+
+<pff>InputData=|type=Memory</pff>
+
+
+<subheader>Functionality</subheader>
+
+The In-Memory data source supports the following features:
+
+<table 2 header nowrap>
+    <cell>Feature</cell><cell nowrap>Supported</cell>
+    <cell>Reading cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Writing cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Notes, case labels, and case statuses</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Storage of more than one kind of record</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Binary data items</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Deleting cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Undeleting cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell><link synchronization.csdoc>Syncing</link> data</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Cases with duplicate <link key_function.csdoc>keys</link></cell><cell><center><font green>✔</font></center></cell>
+    <cell>Case identification via <link uuid_function.csdoc>UUID</link></cell><cell><center><font green>✔</font></center></cell>
+    <cell>Contains an embedded dictionary</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Allows <link CSSort::choose_type_of_sort.csdoc>record sorts</link></cell><cell><center><font red>✘</font></center></cell>
+</table>
 
 
 <seealso data_sources.csdoc />

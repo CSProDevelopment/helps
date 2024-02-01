@@ -1,0 +1,53 @@
+﻿<title>Stata Data Source</title>
+
+
+<subheader>Overview</subheader>
+
+The <b>Stata</b> <link data_sources.csdoc>data source</link> allows writing, but not reading, data to a <link "https://www.stata.com">Stata</link> file, written natively in the <link "https://www.loc.gov/preservation/digital/formats/fdd/fdd000471.shtml">Stata Data Format (.dta)</link>. In addition to values, Stata <link "https://www.stata.com/manuals/dlabel.pdf">value labels</link> are written, created from CSPro's <link value_sets_description.csdoc>value set labels</link>. This data source only supports writing the values from one <link record_description.csdoc>record</link>, which by default is the first record defined in the dictionary. To specify writing data from another record, you must define the <colorinline JSON>"record"</colorinline> property in the <link connection_string.csdoc>connection string</link>.
+
+This data source is similar to the other data sources that write to formats used by statistical software: <link data_source_r.csdoc>R</link>, <link data_source_sas.csdoc>SAS</link>, and <link data_source_spss.csdoc>SPSS</link>.
+
+The Stata data source is used when a file has the extension <b>.dta</b>.
+
+
+<subheader>Functionality</subheader>
+
+The Stata data source supports the following features:
+
+<table 2 header nowrap>
+    <cell>Feature</cell><cell nowrap>Supported</cell>
+    <cell>Reading cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Writing cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Notes, case labels, and case statuses</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Storage of more than one kind of record</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Binary data items</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Deleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Undeleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell><link synchronization.csdoc>Syncing</link> data</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Cases with duplicate <link key_function.csdoc>keys</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Case identification via <link uuid_function.csdoc>UUID</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Contains an embedded dictionary</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Allows <link CSSort::choose_type_of_sort.csdoc>record sorts</link></cell><cell><center><font red>✘</font></center></cell>
+</table>
+
+
+<subheader>Customizable Behavior</subheader>
+
+The following behavior can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. The default behavior is marked with ⁺⁺⁺.
+
+<table 2 header>
+    <cell nowrap>Property Name and Values</cell><cell>Description</cell>
+    <cell 2>&nbsp;</cell>
+    <include properties_mappedSpecialValues.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_record.hgi />
+</table>
+
+For example, the following connection string, specified in a <link run_production_batch_edits.csdoc>batch PFF</link>, would result in a Stata file containing the values of the <logiccolor>HOUSING_REC</logiccolor> record:
+
+<pff>
+OutputData=housing.dta|record=HOUSING_REC
+</pff>
+
+
+<seealso data_sources.csdoc />

@@ -1,0 +1,60 @@
+﻿<title>SAS Data Source</title>
+
+
+<subheader>Overview</subheader>
+
+The <b>SAS</b> <link data_sources.csdoc>data source</link> allows writing, but not reading, data to a <link "https://www.sas.com">SAS</link> file, written natively in the <link "https://www.loc.gov/preservation/digital/formats/fdd/fdd000464.shtml">SAS Transport File (.xpt)</link> format. This file is written along with a <link "https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/hostwin/n0sk6o15955yoen19n9ghdziqw1u.htm">SAS program (.sas)</link> file that contains CSPro's <link value_sets_description.csdoc>value set labels</link> along with the syntax necessary to use the <link "https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/movefile/n1lw02ym8bqdxjn1pvzh62he3jlj.htm">XPORT Engine</link> to import the values.
+
+This data source is similar to the other data sources that write to formats used by statistical software: <link data_source_r.csdoc>R</link>, <link data_source_spss.csdoc>SPSS</link>, and <link data_source_stata.csdoc>Stata</link>.
+
+The SAS data source is used when a file has the extension <b>.xpt</b>.
+
+
+<subheader>Functionality</subheader>
+
+The SAS data source supports the following features:
+
+<table 2 header nowrap>
+    <cell>Feature</cell><cell nowrap>Supported</cell>
+    <cell>Reading cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Writing cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Notes, case labels, and case statuses</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Storage of more than one kind of record</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Binary data items</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Deleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Undeleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell><link synchronization.csdoc>Syncing</link> data</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Cases with duplicate <link key_function.csdoc>keys</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Case identification via <link uuid_function.csdoc>UUID</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Contains an embedded dictionary</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Allows <link CSSort::choose_type_of_sort.csdoc>record sorts</link></cell><cell><center><font red>✘</font></center></cell>
+</table>
+
+
+<subheader>Customizable Behavior</subheader>
+
+The following behavior can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. The default behavior is marked with ⁺⁺⁺.
+
+<table 2 header>
+    <cell nowrap>Property Name and Values</cell><cell>Description</cell>
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"encoding"</colorinline></b></cell><cell>Determines the <link unicode_primer.csdoc>text encoding</link> of the SAS program (.sas) syntax file.</cell>
+    <include properties_encoding_values.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_mappedSpecialValues_without_suppress.hgi />
+    <cell><indent><colorinline JSON>"native"</colorinline></indent></cell><cell><indent>The value is mapped to SAS's <link "https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/lepg/p0ueqauvtyb2hqn1mj79t26azlxv.htm">special missing values</link>: <logiccolor>missing</logiccolor> is mapped to <b>.A</b> and <logiccolor>refused</logiccolor> is mapped to <b>.B</b>.</indent></cell>
+    <include properties_mappedSpecialValues_suppress.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_record.hgi />
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"syntaxPath"</colorinline></b></cell><cell>By default, the SAS program (.sas) syntax file is written in the same directory as the SAS transport file (.xpt), with the same name as the transport file, followed by <b>.sas</b>. This property allows you to give a custom name for the program file. The property is evaluated relative to the path of the data file.</cell>
+</table>
+
+For example, the following connection string, specified in a <link run_production_batch_edits.csdoc>batch PFF</link>, would result in a SAS file containing the values of the <logiccolor>HOUSING_REC</logiccolor> record written using SAS's special missing values, with an overridden name for the SAS program file (rather than the default <i>housing.xpt.sas</i>).
+
+<pff>
+OutputData=housing.xpt|mappedSpecialValues=native&syntaxPath=housing-sas-export.sas&record=HOUSING_REC
+</pff>
+
+
+<seealso data_sources.csdoc />

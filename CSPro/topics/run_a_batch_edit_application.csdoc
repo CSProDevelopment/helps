@@ -5,21 +5,24 @@ Press <image run_button.png />; or press <b>Ctrl+R</b>; or select <b>Run</b> fro
 
 <center><image file_associations_batch_min.png /></center>
 
+
 The following rows are required:
 
 <list>
-	<li><b>Input Data</b>: This asks for the name of the data file against which you wish to run your batch application. This data file will not be modified in any way; it will only be opened, read, and closed. You can also select <link data_sources.csdoc>none</link> as your input data file; useful, for example, when writing menu applications that do not require an input data file.</li>
-	<li><b>Output Data</b>: The output file is where the results of correcting your data will be written. If you are not making any corrections in your program, then the generated file will be an exact copy of the original data file. If you are making corrections to your data file, then this will be the corrected data file. If you do not need a corrected data file, and are simply running the program to generate a report, you can select <link data_sources.csdoc>none</link> as the output.</li>
-	<li><b>&lt;Listing File></b>: This asks for the name of the file to which you want to write the results of the run. Results from <logiccolor>errmsg</logiccolor> functions will be written here. This file will always be generated, regardless of whether or not your program includes <logiccolor>errmsg</logiccolor> commands. Listing files generally have the extension <link listing_file.csdoc>.lst</link>.</li>
+    <li><b>Input Data</b>: This asks for the name of the data file against which you wish to run your batch application. This data file will not be modified in any way; it will only be opened, read, and closed. You can also select <link data_source_none.csdoc>None</link> as your input data file; useful, for example, when writing menu applications that do not require an input data file.</li>
+    <li><b>Output Data</b>: The output file is where the results of correcting your data will be written. If you are not making any corrections in your program, then the generated file will be an exact copy of the original data file. If you are making corrections to your data file, then this will be the corrected data file. If you do not need a corrected data file, and are simply running the program to generate a report, you can select <link data_source_none.csdoc>None</link> as the output.</li>
+    <li><b>&lt;Listing File></b>: This asks for the name of the file to which you want to write the results of the run. Results from <logiccolor>errmsg</logiccolor> functions will be written here. This file will always be generated, regardless of whether or not your program includes <logiccolor>errmsg</logiccolor> commands. Listing files generally have the extension <link listing_file.csdoc>.lst</link>.</li>
 </list>
+
 
 The following rows are optional, based on the logic in your application:
 
 <list>
-	<li><b>&lt;Freq File></b>: If your program contains any <logiccolor>Freq</logiccolor> statements, the tabulated frequencies will be written to this file. If you do not specify a frequency file, the frequencies will be written to the listing file (if possible).</li>
-	<li><b>&lt;Impute Freq File></b>: If your program contains any <logiccolor>impute</logiccolor> statements, the results of this command will be written to this file. The default file extension is .impute_freq.lst, but you can use whatever you'd like. This field is optional; therefore, if your program contains impute commands, but you forget to specify a frequency file, no file will be generated. Similarly, if you indicate a frequency file but your program does not contain any impute commands, no file will be generated.</li>
-	<li><b>&lt;Impute Stat Data></b>: If your program includes one or more <logiccolor>impute</logiccolor> statements that use the <logiccolor>stat</logiccolor> command, the imputation statistics will be saved to the data file specified.</li>
-	<li><b>&lt;Write File></b>: If you have any <logiccolor>write</logiccolor> function calls in your program, the results will be saved to this file. This field is optional. If no write file is specified, the <logiccolor>write</logiccolor> function's output is saved to the listing file.</li>
+    <li><b>&lt;Freq File></b>: If your program contains any <logiccolor>Freq</logiccolor> statements, the tabulated frequencies will be written to this file. If you do not specify a frequency file, the frequencies will be written to the listing file (if possible).</li>
+    <li><b>&lt;Impute Freq File></b>: If your program contains any <logiccolor>impute</logiccolor> statements, the results of this command will be written to this file. The default file extension is .impute_freq.lst, but you can use whatever you'd like. This field is optional; therefore, if your program contains impute commands, but you forget to specify a frequency file, no file will be generated. Similarly, if you indicate a frequency file but your program does not contain any impute commands, no file will be generated.</li>
+    <li><b>&lt;Impute Stat Data></b>: If your program includes one or more <logiccolor>impute</logiccolor> statements that use the <logiccolor>stat</logiccolor> command, the imputation statistics will be saved to the data file specified.</li>
+    <li><b>&lt;Write File></b>: If you have any <logiccolor>write</logiccolor> function calls in your program, the results will be saved to this file. This field is optional. If no write file is specified, the <logiccolor>write</logiccolor> function's output is saved to the listing file.</li>
 </list>
+
 
 In addition to these rows, there may be rows where you can specify the names of <link lookup_files.csdoc>lookup files</link>, <link File.csdoc>external files</link>, and the <link paradata_log_file_cslog.csdoc>paradata log</link>.

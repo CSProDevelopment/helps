@@ -1,5 +1,49 @@
 ﻿<title>Encrypted CSPro DB Data Source</title>
 
-HELP_TODO
 
-<seealso data_sources.csdoc />
+<subheader>Overview</subheader>
+
+The <b>Encrypted CSPro DB</b> <link data_sources.csdoc>data source</link> allows reading and writing data to a <link sqlite_in_cspro.csdoc>SQLite database</link>. This is an encrypted version of the <link data_source_csdb.csdoc>CSPro DB</link> data source, and more information about this data source is documented on that page.
+
+The Encrypted CSPro DB data source is used when a file has the extension <b>.csdbe</b>. A version of this data source without encryption, <link data_source_csdb.csdoc>CSPro DB</link>, is used if a file has the extension <b>.csdb</b>.
+
+
+<subheader>Functionality</subheader>
+
+The Encrypted CSPro DB data source supports the following features:
+
+<include functionality_csdb.hgi />
+
+
+<subheader>Encryption Password</subheader>
+
+Upon opening an Encrypted CSPro DB data source, CSPro requires the specification of a password. There are two ways to specify a password:
+
+<include encryption_password_entry.hgi />
+
+
+<subheader>Encryption Technical Details</subheader>
+
+<include encryption_technical_details.hgi />
+
+
+<subheader>Customizable Behavior</subheader>
+
+The following behavior can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. The default behavior is marked with ⁺⁺⁺.
+
+<table 2 header>
+    <cell nowrap>Property Name and Values</cell><cell>Description</cell>
+    <cell 2>&nbsp;</cell>
+    <include properties_cache.hgi />
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"password"</colorinline></b></cell><cell>The password used to encrypt the file.</cell>
+</table>
+
+For example, the following connection string, specified in a <link run_production_data_entry.csdoc>data entry PFF</link>, would attach to an <link dictionary_types.csdoc>external dictionary</link> an Encrypted CSPro DB file with caching enabled and a password specified:
+
+<pff>
+CENSUS_<definition System::year />_DICT=.\Census.csdbe|cache=true&password=jiw~d_fpF9
+</pff>
+
+
+<seealso data_sources.csdoc csdb_relational_format.csdoc data_source_csdb.csdoc />

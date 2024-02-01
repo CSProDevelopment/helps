@@ -1,0 +1,59 @@
+﻿<title>Excel Data Source</title>
+
+
+<subheader>Overview</subheader>
+
+The <b>Excel</b> <link data_sources.csdoc>data source</link> allows writing, but not reading, data to <link "https://www.microsoft.com/microsoft-365/excel">Microsoft Excel's</link> <link "https://learn.microsoft.com/openspecs/office_standards/ms-xlsx/">.xlsx format</link>. By default, a single workbook is created with each <link record_description.csdoc>record</link> written as a separate worksheet.
+
+Because Excel files can be read by both Microsoft Office and other programs, using this data source allows you to share data with a large number of users in a format that they are likely familiar with.
+
+The Excel data source is used when a file has the extension <b>.xlsx</b>.
+
+
+<subheader>Functionality</subheader>
+
+The Excel data source supports the following features:
+
+<table 2 header nowrap>
+    <cell>Feature</cell><cell nowrap>Supported</cell>
+    <cell>Reading cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Writing cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Notes, case labels, and case statuses</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Storage of more than one kind of record</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Binary data items</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Deleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Undeleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell><link synchronization.csdoc>Syncing</link> data</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Cases with duplicate <link key_function.csdoc>keys</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Case identification via <link uuid_function.csdoc>UUID</link></cell><cell><center><font red>✘</font></center></cell>
+    <cell>Contains an embedded dictionary</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Allows <link CSSort::choose_type_of_sort.csdoc>record sorts</link></cell><cell><center><font red>✘</font></center></cell>
+</table>
+
+
+<subheader>Customizable Behavior</subheader>
+
+The following behavior can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. The default behavior is marked with ⁺⁺⁺.
+
+<table 2 header>
+    <cell nowrap>Property Name and Values</cell><cell>Description</cell>
+    <cell 2>&nbsp;</cell>
+    <include properties_header.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_mappedSpecialValues.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_record.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_writeCodes.hgi />
+    <cell 2>&nbsp;</cell>
+    <include properties_writeLabels.hgi />
+</table>
+
+For example, the following connection string, specified in a <link run_production_batch_edits.csdoc>batch PFF</link>, would result in an Excel file containing the codes and labels of the <logiccolor>HOUSING_REC</logiccolor> record:
+
+<pff>
+OutputData=housing.xlsx|writeLabels=true&record=HOUSING_REC
+</pff>
+
+
+<seealso data_sources.csdoc />

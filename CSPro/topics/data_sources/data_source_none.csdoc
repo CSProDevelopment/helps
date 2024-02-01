@@ -1,0 +1,38 @@
+﻿<title>None Data Source</title>
+
+
+<subheader>Overview</subheader>
+
+The <b>None</b> <link data_sources.csdoc>data source</link> is not associated with a file. It can be used as an initial data source when you want to control when a data source associated with a dictionary is opened (by using a logic function such as <logiccolor>setfile</logiccolor>).
+
+The initial behavior of the None data source is as if a file were opened with no cases. However, even after writing a case, the data source reports that it is empty. That is, loading specific cases will always fail, and writing cases will always succeed, even though the contents of the case are ignored. A None data source shares similarities with <link dictionary_types.csdoc>Working Storage dictionaries</link>.
+
+A similar data source, <link data_source_memory.csdoc>In-Memory</link>, is also not associated with a data file, but cases written persist in memory until the data source is closed.
+
+Typically CSPro uses a file extension to determine what kind of data source to open, but because there is no file associated with a None data source, you must use the <link connection_string.csdoc>connection string</link> to specify that you want to use a None data source. For example, the following connection string, specified in a <link run_production_data_entry.csdoc>data entry PFF</link>, would result in the main dictionary being attached to a None data source:
+
+<pff>InputData=|type=None</pff>
+
+
+<subheader>Functionality</subheader>
+
+The None data source supports the following features:
+
+<table 2 header nowrap>
+    <cell>Feature</cell><cell nowrap>Supported</cell>
+    <cell>Reading cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Writing cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Notes, case labels, and case statuses</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Storage of more than one kind of record</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Binary data items</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Deleting cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Undeleting cases</cell><cell><center><font red>✘</font></center></cell>
+    <cell><link synchronization.csdoc>Syncing</link> data</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Cases with duplicate <link key_function.csdoc>keys</link></cell><cell><center><font green>✔</font></center></cell>
+    <cell>Case identification via <link uuid_function.csdoc>UUID</link></cell><cell><center><font green>✔</font></center></cell>
+    <cell>Contains an embedded dictionary</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Allows <link CSSort::choose_type_of_sort.csdoc>record sorts</link></cell><cell><center><font green>✔</font></center></cell>
+</table>
+
+
+<seealso data_sources.csdoc />

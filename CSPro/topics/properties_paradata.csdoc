@@ -9,27 +9,27 @@ To view options related to <link paradata.csdoc>paradata</link> collection, sele
 A paradata event contains information about some aspect of an application's processing. You have three options for paradata collection:
 
 <list>
-	<li><b>All events</b>: This enables paradata collection for all events.</li>
-	<li><b>Some events</b>: This enables paradata collection for some events. You can select the events that you would like to collect by checking or unchecking the checkbox next to the name of each event. You may want to disable some events to reduce the size of the paradata log or if you are concerned about collecting sensitive information.</li>
-	<li><b>No events</b>: This disables paradata collection.</li>
+    <li><b>All events</b>: This enables paradata collection for all events.</li>
+    <li><b>Some events</b>: This enables paradata collection for some events. You can select the events that you would like to collect by checking or unchecking the checkbox next to the name of each event. You may want to disable some events to reduce the size of the paradata log or if you are concerned about collecting sensitive information.</li>
+    <li><b>No events</b>: This disables paradata collection.</li>
 </list>
 
 The following is a summary of each kind of event that CSPro can collect:
 
 <list>
-	<li><b>Data Source</b>: Information about interactions with CSPro data files, including what files were used, what cases were loaded and saved, etc.</li>
-	<li><b>Device State</b>: Details about the data collection device, including indicators about whether GPS, Bluetooth, and Wi-Fi were enabled; what mobile network the device was using; etc.</li>
-	<li><b>External Application</b>: Information about external applications (or CSPro data entry applications) launched from CSPro.</li>
-	<li><b>Field Entry</b>: Details about each field entered, including how long the interviewer spent answering the question, how the program reached that field, etc.</li>
-	<li><b>Field Movement</b>: Information about each field movement, including how the program reached and exited each field.</li>
-	<li><b>Field Validation</b>: Details about CSPro's validation of each entered field, including information on which value set was used and whether or not the field was successfully validated.</li>
-	<li><b>GPS</b>: Information about GPS collection, including the duration to take fresh GPS readings.</li>
-	<li><b>Impute</b>: Details about which items were imputed, including the initial and imputed values. Only numeric imputations are recorded.</li>
-	<li><b>Language Change</b>: Information about which language was initially used and records of language changes during the course of data collection.</li>
-	<li><b>Message</b>: Details about any error message triggered during data collection.</li>
-	<li><b>Note</b>: Information about notes left by interviewers (or via logic) during the execution of the program.</li>
-	<li><b>Operator Selection</b>: Details about selections made by the operator as a result of requests coming from functions such as <logiccolor>accept</logiccolor> or the <logiccolor>userbar</logiccolor>.</li>
-	<li><b>Property</b>: Information about what CSPro settings were used, or changed, during the program's run.</li>
+    <li><b>Data Source</b>: Information about interactions with CSPro <link data_sources.csdoc>data sources</link>, including what files were used, what cases were loaded and saved, etc.</li>
+    <li><b>Device State</b>: Details about the data collection device, including indicators about whether GPS, Bluetooth, and Wi-Fi were enabled; what mobile network the device was using; etc.</li>
+    <li><b>External Application</b>: Information about external applications (or CSPro data entry applications) launched from CSPro.</li>
+    <li><b>Field Entry</b>: Details about each field entered, including how long the interviewer spent answering the question, how the program reached that field, etc.</li>
+    <li><b>Field Movement</b>: Information about each field movement, including how the program reached and exited each field.</li>
+    <li><b>Field Validation</b>: Details about CSPro's validation of each entered field, including information on which value set was used and whether or not the field was successfully validated.</li>
+    <li><b>GPS</b>: Information about GPS collection, including the duration to take fresh GPS readings.</li>
+    <li><b>Impute</b>: Details about which items were imputed, including the initial and imputed values. Only numeric imputations are recorded.</li>
+    <li><b>Language Change</b>: Information about which language was initially used and records of language changes during the course of data collection.</li>
+    <li><b>Message</b>: Details about any error message triggered during data collection.</li>
+    <li><b>Note</b>: Information about notes left by interviewers (or via logic) during the execution of the program.</li>
+    <li><b>Operator Selection</b>: Details about selections made by the operator as a result of requests coming from functions such as <logiccolor>accept</logiccolor> or the <logiccolor>userbar</logiccolor>.</li>
+    <li><b>Property</b>: Information about what CSPro settings were used, or changed, during the program's run.</li>
 </list>
 
 You can explore these events in more detail using the Paradata Viewer's <link ParadataViewer::table_metadata.csdoc>Table Metadata</link> feature.
@@ -42,10 +42,10 @@ For advanced users writing SQL queries on the paradata tables, note that the bas
 Some of the events listed above can store sensitive information in the paradata log, which is why you can disable the collection of this information while still storing the non-sensitive portions of the event:
 
 <list>
-	<li><b>Field values</b>: The Field Validation event can store each value entered into a field. This can be useful if you want to look at the frequency of valid and invalid values, but if you do not want such data stored in the paradata log, you should disable this. The Note event also uses this option to determine if note text should be stored in the paradata log.</li>
-	<li><b>GPS coordinates</b>: The GPS event can store the coordinates (latitude and longitude) and altitude of the interviewers. If you do not want this data stored in the paradata log, you should disable the storage of these three values, though other information (e.g., accuracy) will still be stored.</li>
-	<li><b>Cases loaded via logic loops</b>: This is not an option related to sensitive information, but if your application loops through external data files in logic (using <logiccolor>forcase</logiccolor> or <logiccolor>loadcase</logiccolor>), the paradata log will become very large quickly due to a preponderance of Data Source events. You can disable this information if you do not plan to analyze it.</li>
-	<li><b>Initial property values</b>: If this option is enabled, the initial property settings will be stored as Property events in the paradata log when your application begins. This can lead to a large amount of paradata that is potentially not useful. If disabled, only information about changes to properties will be stored.</li>
+    <li><b>Field values</b>: The Field Validation event can store each value entered into a field. This can be useful if you want to look at the frequency of valid and invalid values, but if you do not want such data stored in the paradata log, you should disable this. The Note event also uses this option to determine if note text should be stored in the paradata log.</li>
+    <li><b>GPS coordinates</b>: The GPS event can store the coordinates (latitude and longitude) and altitude of the interviewers. If you do not want this data stored in the paradata log, you should disable the storage of these three values, though other information (e.g., accuracy) will still be stored.</li>
+    <li><b>Cases loaded via logic loops</b>: This is not an option related to sensitive information, but if your application loops through external data files in logic (using <logiccolor>forcase</logiccolor> or <logiccolor>loadcase</logiccolor>), the paradata log will become very large quickly due to a preponderance of Data Source events. You can disable this information if you do not plan to analyze it.</li>
+    <li><b>Initial property values</b>: If this option is enabled, the initial property settings will be stored as Property events in the paradata log when your application begins. This can lead to a large amount of paradata that is potentially not useful. If disabled, only information about changes to properties will be stored.</li>
 </list>
 
 The default setting is for all of these options to be disabled.
@@ -56,8 +56,8 @@ The default setting is for all of these options to be disabled.
 Most events are triggered by some action (e.g., an error message appearing), but two events can occur in the background, even if the interviewer is not doing anything. These background events only occur in data entry applications:
 
 <list>
-	<li><b>Device state</b>: Information about the device as described above in the Device State event.</li>
-	<li><b>GPS location</b>: Unless a GPS reading is in progress, the device's GPS unit will be turned on and CSEntry will attempt to take a GPS reading. Once a GPS reading with accuracy 10 meters or less is taken, or once two minutes have elapsed, the GPS unit will be turned off.</li>
+    <li><b>Device state</b>: Information about the device as described above in the Device State event.</li>
+    <li><b>GPS location</b>: Unless a GPS reading is in progress, the device's GPS unit will be turned on and CSEntry will attempt to take a GPS reading. Once a GPS reading with accuracy 10 meters or less is taken, or once two minutes have elapsed, the GPS unit will be turned off.</li>
 </list>
 
 The value listed indicates the number of minutes between events occurring, or 0 if the event should be disabled. For example, a value of 30 for GPS location means that CSEntry will attempt to store the GPS coordinates of the interviewer every half hour.

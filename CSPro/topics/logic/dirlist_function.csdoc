@@ -5,8 +5,8 @@
 
 <logicsyntax>
 b = dirlist(<arg>list_to_receive_paths</arg>, <arg>directory_path</arg>
-			『, filter := <arg>wildcard</arg>』
-			『, recursive := <arg>recursive_flag</arg>』);
+            『, filter := <arg>wildcard</arg>』
+            『, recursive := <arg>recursive_flag</arg>』);
 </logicsyntax>
 
 
@@ -17,18 +17,18 @@ The <logiccolor>dirlist</logiccolor> function fills <arg>list_to_receive_paths</
 The <arg>directory_path</arg> can be one of the following:
 
 <list>
-	<li>A string expression specifying a directory.</li>
-	<li>One of the path types documented in the <logiccolor>pathname</logiccolor> function.</li>
-	<li>A <link media_store.csdoc>media type</link>, which will list the files of the specified media type on Android. These files can reside in multiple directories.</li>
+    <li>A string expression specifying a directory.</li>
+    <li>One of the path types documented in the <logiccolor>pathname</logiccolor> function.</li>
+    <li>A <link media_store.csdoc>media type</link>, which will list the files of the specified media type on Android. These files can reside in multiple directories.</li>
 </list>
 
 
-Using <link function_named_arguments.csdoc>named arguments</link>, you can specify a string expression, <arg>wildcard</arg>, that is applied to filter the paths added to the string List. For example, <logiccolor>"*.csdb"</logiccolor> would include only <link data_sources.csdoc>CSPro DB</link> files. You can specify multiple wildcard filters by separating each filter with a semicolon. The filter <logiccolor>"*.jpg;*.jpeg;*.bmp"</logiccolor> would include both JPEG and BMP files. Instead of using a string expression, you can also use a predefined wildcard expression:
+Using <link function_named_arguments.csdoc>named arguments</link>, you can specify a string expression, <arg>wildcard</arg>, that is applied to filter the paths added to the string List. For example, <logiccolor>"*.csdb"</logiccolor> would include only <link data_source_csdb.csdoc>CSPro DB</link> data sources. You can specify multiple wildcard filters by separating each filter with a semicolon. The filter <logiccolor>"*.jpg;*.jpeg;*.bmp"</logiccolor> would include both JPEG and BMP files. Instead of using a string expression, you can also use a predefined wildcard expression:
 
 <list>
-	<li><logiccolor>FileType.Audio</logiccolor>: Files that the <link Audio.csdoc>Audio</link> object can read and write.</li>
-	<li><logiccolor>FileType.Geometry</logiccolor>: Files that the <link Geometry.csdoc>Geometry</link> object can read and write.</li>
-	<li><logiccolor>FileType.Image</logiccolor>: Files that the <link Image.csdoc>Image</link> object can read and write.</li>
+    <li><logiccolor>FileType.Audio</logiccolor>: Files that the <link Audio.csdoc>Audio</link> object can read and write.</li>
+    <li><logiccolor>FileType.Geometry</logiccolor>: Files that the <link Geometry.csdoc>Geometry</link> object can read and write.</li>
+    <li><logiccolor>FileType.Image</logiccolor>: Files that the <link Image.csdoc>Image</link> object can read and write.</li>
 </list>
 
 
@@ -50,7 +50,7 @@ List string map_files;
 dirlist(map_files, "C:/Survey/Maps", filter := "*.shp;*.tpk", recursive := true);
 
 do numeric ctr = 1 while ctr <= map_files.length()
-	write("%s", map_files(ctr));
+    write("%s", map_files(ctr));
 enddo;
 </logic>
 
