@@ -3,12 +3,12 @@
 <link https://en.wikipedia.org/wiki/JSON>JSON</link>, an acronym for <b>J</b>ava<b>S</b>cript <b>O</b>bject <b>N</b>otation, is a format for representing objects in text format using property/value pairs. The format is widely used by web-based applications, and details about the JSON format can be readily found <link https://en.wikipedia.org/wiki/JSON>online</link>. A general overview and an example will demonstrate basic features:
 
 <list>
-    <li>Objects are surrounded by curly brackets { }.</li>
-    <li>Property names appear in quoted strings.</li>
+    <li>Objects are surrounded by curly brackets <colorinline JSON>{ }</colorinline>.</li>
+    <li>Property names appear in <colorinline JSON>"quoted strings"</colorinline >.</li>
     <li>Subsequent property/value pairs are separated by a comma.</li>
     <li>Numeric values can be specified directly.</li>
     <li>String values are specified using a properly constructed string with certain characters escaped. The <logiccolor>encode</logiccolor> function can create such strings by using the <logiccolor>JsonString</logiccolor> option.</li>
-    <li>Arrays are surrounded by square brackets [ ].</li>
+    <li>Arrays are surrounded by square brackets <colorinline JSON>[ ]</colorinline>.</li>
 </list>
 
 
@@ -39,6 +39,3 @@ JSON is used throughout CSPro in a variety of ways, including:
     <li><link frequencies_file.csdoc>Frequency files</link> can be written to JSON format.</li>
     <li><link action_invoker.csdoc>Action Invoker</link> actions can be <link action_invoker_execution_json.csdoc>specified in JSON</link>.</li>
 </list>
-
-
-<seealso javascript_interface.csdoc />

@@ -4,7 +4,7 @@
 
 For those with experience using <link html_in_cspro.csdoc>HTML</link>, it is possible to format the question using HTML tags and CSS styles. To view the HTML code, click on the <b>Code</b> button on the question text editor toolbar.
 
-CSPro supports all tags and attributes in standard HTML5, including images, tables, and CSS styles.
+CSPro supports all tags and attributes in standard <link "https://developer.mozilla.org/en-US/docs/Glossary/HTML5">HTML5</link>, including images, tables, and CSS styles.
 
 The HTML for each question does not include the &lt;html&gt; or &lt;body&gt; tags. The HTML question text is inserted into to a complete HTML document that already has those tags.
 
@@ -29,14 +29,28 @@ Finally the document adds some basic styling to tables such as borders and paddi
 References to external files such as images and stylesheets may be included in the HTML question text. All paths must be relative paths based on the location of the application (.ent or .pen) file. Absolute paths are not supported. When deploying your application, make sure to copy the external files as well or include them in a <link resource_folders.csdoc>resource folder</link>.
 
 
-<subheader>JavaScript Interface</subheader>
+<subheader>Using JavaScript to Interact With CSPro</subheader>
 
-A <link javascript_interface.csdoc>JavaScript interface</link> exists to facilitate the invocation of <link user_defined_functions.csdoc>user-defined functions</link> from question text. This feature allows advanced users to take advantage of the power of JavaScript to allow some interaction between question text and CSPro logic. For example:
+You can use the <link action_invoker_execution_javascript_web.csdoc>Action Invoker</link>, called using JavaScript, to interact with various CSPro features. For example, you can call <link user_defined_functions.csdoc>user-defined functions</link> from question text. This feature allows advanced users to take advantage of the power of JavaScript to allow some interaction between question text and CSPro logic. For example:
 
 <report HTML>
-<p>You are entering person ~~curocc()~~. When all persons have been recorded,
-<a href="javascript:CSPro.runLogicAsync('EndPersonRoster();');">click here</a>.</p>
+<p>
+    You are entering person ~~curocc()~~.
+    If all persons have been recorded, <a href="#" onclick="endRoster(); return false;">end the roster (with a household size of ~~curocc() - 1~~)</a>.
+</p>
+<script src="/action-invoker.js"></script>
+<script>
+    function endRoster() {
+        let CS = new CSProActionInvoker();
+
+        CS.Logic.evalAsync({
+            logic: "EndPersonRoster();"
+        });
+    }
+</script>
 </report>
+
+To use the Action Invoker from question text, you need proper permissions granted using <link action_invoker_access_token.csdoc>access tokens</link>.
 
 
 <seealso html_in_cspro.csdoc change_formatting.csdoc question_text_file_qsf.csdoc />

@@ -15,12 +15,12 @@ Numeric, string, and alphanumeric variables are local to the function. That is, 
 A user-defined function:
 
 <list>
-	<li>Returns a single value, either numeric or alphanumeric.</li>
-	<li>Can contain CSPro statements and functions, as well as other user-defined functions. If no return value is assigned to the function, the value <logiccolor>default</logiccolor> (or a blank string) is returned.</li>
+    <li>Returns a single value, either numeric or alphanumeric.</li>
+    <li>Can contain CSPro statements and functions, as well as other user-defined functions. If no return value is assigned to the function, the value <logiccolor>default</logiccolor> (or a blank string) is returned.</li>
 </list>
 
 The <logiccolor>function</logiccolor> statement allows the creation of a user-defined function.
 
-You can use the <logiccolor>invoke</logiccolor> function to call a function with the function name specified only at runtime. Additionally, you can execute user-defined functions while viewing HTML content by using the <link javascript_interface.csdoc>JavaScript interface</link>.
+You can use the <logiccolor>invoke</logiccolor> function or <action>Logic.invoke</action> action to call a function with the function name specified only at runtime. Additionally, you can execute user-defined functions while viewing <link html_in_cspro.csdoc>HTML content</link> by using the <link action_invoker_execution_javascript_web.csdoc>Action Invoker</link>.
 
 <seealso function_statement.csdoc additional_function_examples.csdoc />
