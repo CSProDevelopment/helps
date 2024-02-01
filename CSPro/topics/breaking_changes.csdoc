@@ -11,9 +11,10 @@ In general, newer versions of CSPro can execute applications and process data cr
     <li>Lines written using <logiccolor>File.write</logiccolor> or <logiccolor>filewrite</logiccolor> are now terminated with a single <logiccolor>"\n"</logiccolor> character, no longer with <logiccolor>"\r\n"</logiccolor>.</li>
     <li>Creating dynamic value sets using <logiccolor>Array</logiccolor> objects is no longer possible.</li>
     <li>The <logiccolor>box</logiccolor> / <logiccolor>endbox</logiccolor> syntax for <link recode_statement.csdoc>recoding variables</link> is no longer supported.</li>
-    <li>The templated reporting system introduced in CSPro 7.1 has been removed.</li>
+    <li>The templated reporting system introduced in <link what_is_new_in_cspro_7_1.csdoc>CSPro 7.1</link> has been removed.</li>
     <li>Android devices running CSEntry must be running version 5.0 (Lollipop) or higher.</li>
-    <li>CSWeb now requires <link "https://www.php.net/releases/8.0">PHP 8</link>.</li>
+    <li>It is no longer possible to override <link Excel2CSPro::introduction_to_excel_to_cspro.csdoc>Excel to CSPro</link> parameters from the <link Excel2CSPro::running_conversions_from_the_command_line.csdoc>command line</link>, though some overrides can still be specified in the PFF.</li>
+    <li><link CSWeb::introduction_to_csweb.csdoc>CSWeb</link> now requires <link "https://www.php.net/releases/8.0">PHP 8</link>.</li>
 </list>
 
 
@@ -35,7 +36,7 @@ In general, newer versions of CSPro can execute applications and process data cr
 <subheader>CSPro 7.0</subheader>
 
 <list>
-    <li>The format of the <link notes_file_csnot.csdoc>notes file</link> associated with <link data_source_text.csdoc>Text data sources</link> changed (as well as the extension from .not to .csnot).</li>
+    <li>The format of the <link notes_file_csnot.csdoc>notes file</link> associated with <link data_source_text.csdoc>Text</link> data sources changed (as well as the extension from .not to .csnot).</li>
 </list>
 
 

@@ -1,13 +1,22 @@
 ﻿<title>Variables</title>
 
-In CSPro you can declare <logiccolor>numeric</logiccolor> or <logiccolor>string</logiccolor> variables. Variable names must contain only letters, numbers, or the underscore (_) character, and must begin with a letter. Names are case insensitive, that is, uppercase and lowercase letters are considered the same. (For example, <logiccolor>myvar</logiccolor>, <logiccolor>MYVAR</logiccolor>, and <logiccolor>MyVar</logiccolor> are all equivalent.) Variables of all types follow the same rules for names.
+Within CSPro <link introduction_to_cspro_language.csdoc>logic</link>, you can declare <logiccolor>numeric</logiccolor> and <logiccolor>string</logiccolor> variables, or the following <link object_dot_notation.csdoc>objects</link>:
+
+<include include_object_list.hgi / >
+
+Variable names can only contain letters, numbers, or the underscore (_) character, and they must begin with a letter. By default, names are case insensitive; that is, uppercase and lowercase letters are considered the same, meaning that variables named <logiccolor>myvar</logiccolor>, <logiccolor>MYVAR</logiccolor>, and <logiccolor>MyVar</logiccolor> are all equivalent.
+
+Variables can be global or local in scope. If a variable is declared in the <logiccolor>PROC GLOBAL</logiccolor> block, then the variable has a global scope and can be referenced anywhere within your program. However, if a variable is declared at a lower level, such as the <logiccolor>PROC</logiccolor> for a form or block, then the variable is only accessible within that <logiccolor>PROC</logiccolor>.
+
 
 <subheader>Numeric Variables</subheader>
 
-In CSPro, numeric variables are stored internally in floating point format. They can accommodate numbers of extremely small or large size, positive or negative. Numeric variables can be global in scope, meaning that you can assign or get the value of a variable from any other event, or local in scope, meaning that you can only access the value from within a single event. A numeric variable may be up to 15 digits in size. It is equivalent to a float or double variable.
+In CSPro, numeric variables are stored internally in floating point format. They can accommodate numbers of extremely small or large size, positive or negative, as well as <link special_values.csdoc>special values</link>.
+
 
 <subheader>String Variables</subheader>
 
-String variables in CSPro store alphanumeric data. You must declare a string variable using either the <logiccolor>alpha</logiccolor> or <logiccolor>string</logiccolor> statements. As with numeric variables, string variables can be either global or local in scope.
+Alphanumeric data can contain any combination of letters, digits, blanks, or other special characters. As no string size is required when declaring a <logiccolor>string</logiccolor> variable, there is no limit to the size of the string. This is an improvement over the <logiccolor>alpha</logiccolor> statement which cannot exceed 8,192 characters.
 
-<seealso Array.csdoc string_literals.csdoc object_dot_notation.csdoc />
+
+<seealso data_type.csdoc object_dot_notation.csdoc string_literals.csdoc />

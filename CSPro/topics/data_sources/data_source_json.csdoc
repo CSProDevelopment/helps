@@ -42,7 +42,7 @@ The JSON data source stores all case-related information in the file, but also h
 
 <subheader>Binary Data</subheader>
 
-The JSON data source stores <link "http://HELP_TODO/link_appropriately">binary data</link> in one of two ways:
+The JSON data source stores <link binary_dictionary_items.csdoc>binary data</link> in one of two ways:
 
 <list>
     <li><b>Saved to the disk</b>: By default, binary data files are saved in a subdirectory, located in the same directory as the JSON file, with the suffix " (files)". Files are named using the <link CS_Hash_createMd5.csdoc>MD5</link> of the binary data, followed by the file extension, if known. For example, binary data <i>carn03.jpg</i>, collected as part of <i>memory.json</i>, might be saved as: <i>memory.json (files)/244358f4725ac956bb74b3a17a588eb9.jpg</i>. When reading case data, binary data on the disk is <link "https://en.wikipedia.org/wiki/Lazy_loading">loaded asynchronously</link>, read from the disk only when needed by the application.</li>
