@@ -1,0 +1,48 @@
+﻿<title>CSPro Export Data Source</title>
+
+
+<subheader>Overview</subheader>
+
+The <b>CSPro Export</b> <link data_sources.csdoc>data source</link> allows writing, but not reading, data to any of CSPro's supported data sources. This data source wraps another data source, allows you to restrict which <link record_description.csdoc>records</link> are output, and creates a <link data_dictionary.csdoc>dictionary</link> that describes the output data. This data source is primarily intended for outputting your data to other formats.
+
+Typically CSPro uses a file extension to determine what kind of data source to open, but because there is no file associated with a CSPro Export data source, you must use the <link connection_string.csdoc>connection string</link> to specify that you want to use a CSPro Export data source. For example, the following connection string, specified in a <link run_production_batch_edits.csdoc>batch PFF</link>, would result in cases being written using the <link data_source_json.csdoc>JSON</link> data source, wrapped by the CSPro Export data source:
+
+<pff>
+OutputData=.\census-<definition System::year />.json|type=CSProExport
+</pff>
+
+Because multiple <pffcolor>OutputData</pffcolor> entries can be provided for batch applications, it is possible to use the CSPro Export data source more than once during a batch run. For example:
+
+<pff>
+OutputData=.\census-<definition System::year />-person.json|type=CSProExport&record=PERSON_REC
+OutputData=.\census-<definition System::year />-housing.json|type=CSProExport&record=HOUSING_REC
+</pff>
+
+This would result in two output JSON files, one containing only the data from <logiccolor>PERSON_REC</logiccolor>, with a corresponding dictionary <i>census-<definition System::year />-person.json.dcf</i>, and another file with the data from <logiccolor>HOUSING_REC</logiccolor>, with a corresponding dictionary <i>census-<definition System::year />-housing.json.dcf</i>.
+
+
+<subheader>Functionality</subheader>
+
+The CSPro Export data source inherits the functionality of the data source it wraps. For example, if the wrapped data source supports <link "http://HELP_TODO/link_appropriately">binary data</link>, then binary data will be written by CSPro Export. However, because the CSPro Export data source can only be used for writing, any reading functionality supported by the wrapped data source cannot be used.
+
+
+<subheader>Customizable Behavior</subheader>
+
+The following behavior can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. In addition to these properties, any properties supported by the wrapped data source are also handled.
+
+<table 2 header>
+    <cell nowrap>Property Name and Values</cell><cell>Description</cell>
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"dictionaryPath"</colorinline></b></cell><cell>By default, the <link data_dictionary_file_dcf.csdoc>dictionary file</link> is written in the same directory as the data file, with the same name as the data file, followed by <b>.dcf</b>. This property allows you to give a custom name for the dictionary. The property is evaluated relative to the path of the data file.</cell>
+    <cell 2>&nbsp;</cell>
+    <include properties_record.hgi />
+</table>
+
+For example, the following connection string, specified in a <link run_production_batch_edits.csdoc>batch PFF</link>, would result in cases from the <logiccolor>SCHOOL_REC</logiccolor> record being written using the <link data_source_json.csdoc>CSPro DB</link> data source with an overridden name for the dictionary (rather than the default <i>school.csdb.dcf</i>).
+
+<pff>
+OutputData=.\school.csdb|type=CSProExport&record=SCHOOL_REC&dictionaryPath=school-export.dcf
+</pff>
+
+
+<seealso data_sources.csdoc />

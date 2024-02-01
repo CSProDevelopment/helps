@@ -47,13 +47,13 @@ The following behavior can be customized by specifying properties in the <link c
     <cell 2>&nbsp;</cell>
     <include properties_record.hgi />
     <cell 2>&nbsp;</cell>
-    <cell><b><colorinline JSON>"syntaxPath"</colorinline></b></cell><cell>By default, the SAS program (.sas) syntax file is written in the same location as the SAS transport file (.xpt), with the same name as the transport file, followed by <b>.sas</b>. This property allows you to give a custom name for the program file. The property is evaluated relative to the path of the data file.</cell>
+    <cell><b><colorinline JSON>"syntaxPath"</colorinline></b></cell><cell>By default, the SAS program (.sas) syntax file is written in the same directory as the SAS transport file (.xpt), with the same name as the transport file, followed by <b>.sas</b>. This property allows you to give a custom name for the program file. The property is evaluated relative to the path of the data file.</cell>
 </table>
 
 For example, the following connection string, specified in a <link run_production_batch_edits.csdoc>batch PFF</link>, would result in a SAS file containing the values of the <logiccolor>HOUSING_REC</logiccolor> record written using SAS's special missing values, with an overridden name for the SAS program file (rather than the default <i>housing.xpt.sas</i>).
 
 <pff>
-OutputData=housing.xpt|mappedSpecialValues=native&syntaxPath=CSProExport.sas&record=HOUSING_REC
+OutputData=housing.xpt|mappedSpecialValues=native&syntaxPath=housing-sas-export.sas&record=HOUSING_REC
 </pff>
 
 

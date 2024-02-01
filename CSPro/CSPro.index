@@ -952,8 +952,12 @@
       { "path": "create_a_cspro_application.csdoc", "title": "Create" }
     ]
   }, 
-  { "path": "csdb_relational_format.csdoc", "title": "CSPro DB Data Format" }, 
-  { "path": "data_source_csdb.csdoc", "title": "CSPro DB Data Source" }, 
+  { "path": "data_source_csdb.csdoc", "~title": "CSPro DB Data Source", 
+    "subindex": [ 
+      { "path": "csdb_relational_format.csdoc", "title": "Data Format" }
+    ]
+  }, 
+  { "path": "data_source_cspro_export.csdoc", "~title": "CSPro Export Data Source" }, 
   { "path": "cspro_program_structure.csdoc", "~title": "CSPro Program Structure", 
     "subindex": [ 
       { "path": "cspro_program_structure.csdoc", "title": "Declaration Section" }, 
@@ -1063,6 +1067,7 @@
     "subindex": [ 
       { "path": "data_source_csv.csdoc", "title": "Comma Delimited (CSV)" }, 
       { "path": "data_source_csdb.csdoc", "title": "CSPro DB" }, 
+      { "path": "data_source_cspro_export.csdoc", "title": "CSPro Export" }, 
       { "path": "data_source_csdbe.csdoc", "title": "Encrypted CSPro DB" }, 
       { "path": "data_source_excel.csdoc", "title": "Excel" }, 
       { "path": "data_source_memory.csdoc", "title": "In-Memory" }, 
@@ -1444,7 +1449,9 @@
   { "path": "compiler_mode.csdoc", "title": "Explicit Mode" }, 
   { "path": "tool_list.csdoc", "title": "Export", 
     "subindex": [ 
-      { "path": "tool_list.csdoc", "title": "Data" }
+      { "path": "tool_list.csdoc", "title": "Data" }, 
+      { "path": "data_source_cspro_export.csdoc", "title": "Data Source" }, 
+      { "path": "export_statement.csdoc", "title": "Statement" }
     ]
   }, 
   { "path": "export_statement.csdoc", "~title": "Export Statement" }, 
