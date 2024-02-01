@@ -1,6 +1,6 @@
 ﻿<title>Binary Dictionary Items</title>
 
-With the release of CSPro version 8.0, four new (binary) data types have been introduced for <link item_description.csdoc>dictionary items</link>:
+In addition to the standard numeric and alpha <link data_type.csdoc>data types</link>, dictionary items can wrap the following <link object_dot_notation.csdoc>CSPro objects</link> that contain binary data:
 
 <list>
     <li><link Audio.csdoc>Audio</link></li>
@@ -9,104 +9,69 @@ With the release of CSPro version 8.0, four new (binary) data types have been in
     <li><link Image.csdoc>Image</link></li>
 </list>
 
-These binary data types are only available if the dictionary option <link binary_dictionary_items.csdoc>Enable Binary Items (experimental)</link> has been checked. Once checked and once 1+ binary dictionary items have been added, you can not uncheck the option unless all binary dictionary items have been removed from your dictionary.
+These binary data types are only available if the dictionary option <link data_dictionary_menu.csdoc>Enable Binary Items (experimental)</link> has been checked. Once enabled, you cannot disable the option unless all binary dictionary items have been removed from your dictionary.
 
-Binary data items can only be used with csdb files; text-based data files will not support this option (you will get a run-time error when attempting to run an application that contains binary dictionary items with a text-based data file).
+Binary dictionary items cannot have <link value_sets_description.csdoc>value sets</link> and many <link item_properties.csdoc>item properties</link> do not apply to these items.
 
-<subheader>Binary Dictionary Item Usage Within CSPro Applications</subheader>
+Binary dictionary items can only be used when using the following <link data_sources.csdoc>data sources</link>: <link data_source_csdb.csdoc>CSPro DB</link>, <link data_source_csdbe.csdoc>Encrypted CSPro DB</link>, <link data_source_json.csdoc>JSON</link>, <link data_source_none.csdoc>None</link>, and <link data_source_memory.csdoc>In-Memory</link>. When using a data source that does not support binary data, such as <link data_source_text.csdoc>Text</link>, you will get a runtime error when attempting to run an application that contains binary dictionary items.
 
-For now, binary dictionary items can not be added to forms. Instead, you will need to write logic within your data entry (or other) application that references these items in order to create and/or manipulate them. The functions available with the <link Audio.csdoc>Audio</link>, <link Document.csdoc>Document</link>, <link Geometry.csdoc>Geometry</link>, and <link Image.csdoc>Image</link> objects can be used by the corresponding binary dictionary data types, as shown in the examples below.
-
-<subheader>Example 1&mdash;Audio Items</subheader>
-
-Make an audio recording during the interview when occupation is collected. Do not exceed 2 minutes (120 seconds) of recording time. If an audio recording is already present, <link accept_function.csdoc>ask</link> the interviewer if it should be removed (deleted) first. If it is not deleted, the recording will be appended to the existing audio.
-
-<logic>
-PROC GLOBAL
-numeric duration;
-
-PROC OCCUPATION
-preproc
-
-duration = AUDIO_DICT_ITEM.length();
-
-if duration <> 0 then
-    if accept ("An existing audio of %d seconds exists--overwrite it?", "Yes", "No") = 1 then
-        AUDIO_DICT_ITEM.clear();
-        duration=0;
-    endif;
-endif;
-
-AUDIO_DICT_ITEM.record(120-duration);   // do not record more than 120 seconds
-
-postproc
-AUDIO_DICT_ITEM.stop(); // stop the recording, in case it's < 120 seconds
-</logic>
-
-<subheader>Example 2&mdash;Image Items</subheader>
-
-Take a photograph of the building's roof during the interview. In order to avoid unnecessarily large images from being taken, you may wish to use the <link Image_resample_function.csdoc>resample function</link> to adjust the image size. In the example below, if either the width or height exceeds 1200 pixels, we will reduce the image size by half.
-
-<logic>
-PROC BUILDING_ROOF_TYPE
-
-IMAGE_DICT_ITEM.takePhoto();
-
-if IMAGE_DICT_ITEM.width()  > 1200 or
-   IMAGE_DICT_ITEM.height() > 1200 then
-
-   IMAGE_DICT_ITEM.resample (IMAGE_DICT_ITEM.width()/2, IMAGE_DICT_ITEM.height()/2);
-endif;
-</logic>
-
-<subheader>Binary Dictionary Item Usage With CSPro Tools</subheader>
-
-There is no support for binary dictionary items within the utilities <link CSFreq::introduction_to_tabulate_frequencies.csdoc>CSFreq</link> (Tabulate Frequencies) or <link CSExport::introduction_to_export_data.csdoc>CSExport</link> (Export Data). You will note that binary dictionary items do not appear in the tree for either utility.
-
-<link DataViewer::introduction_to_data_viewer.csdoc>DataViewer</link>
-
-When viewing a case within CSPro's DataViewer, if any binary items exist in the case they will "displayed" within the field. If an image has been stored, a preview of that image will appear. If it is an audio clip, you have the option to play it within DataViewer. For all binary dictionary data types you have the option to open the file (in read-only mode) or save to a new file by clicking on the thumbnail or choosing the "open" and "save" options listed beneath each file.
-
-<link CSDiff::introduction_to_compare_data.csdoc>CSDiff (Compare Data)</link>
-
-When a binary dictionary item is chosen for comparison, the size of the file associated with that item will be compared, regardless of the file name or file type. If the file sizes are the same, then the contents will be compared.
-
-<b>Example 1</b>&mdash;suppose CaseID 001 in file1.csdb stored "proxy.pdf" for the binary dictionary (document) item DOC_BINARY_DCF. Then suppose CaseID 001 in file2.csdb stored that same file "proxy.pdf" for the same item DOC_BINARY_DCF; however, "proxy.pdf" had been modified since it was stored in file1.csdb. CSDiff would see the file size difference and immediately report it.
-
-<b>Example 2</b>&mdash;suppose CaseID 126 in Region1.csdb stored "Region1.png" for the binary dictionary (image) item MAP_BINARY_DCF. Then suppose CaseID 126 in Region2.csdb stored a different file named "Region126.jpg" for the same item MAP_BINARY_DCF. If Region1.png and Region126.jpg had the same size, then CSDiff would proceed to evaluate the contents of the files, at which point they would be flagged as different.
-
-<link CSSort::introduction_to_sort_data.csdoc>CSSort (Sort Data)</link>
-
-If a binary dictionary item was chosen as the sort key, then the size of the file that was associated with the binary dictionary item will be used as the sort value.
-
-<font red>Greg, see my slack notes to you  re: this. Does CSSort work on csdb files? (the helps imply not). if they do, then we need to update the cssort intro page pdq</font>
-
-<link CSReFmt::introduction_to_reformat_data.csdoc>CSReFmt (Reformat Data)</link>
-
-The reformat utility works essentially as before with a few nuances:
-
-<list>
-    <li><b>Image/Audio -> Document</b> is allowed.</li>
-    <li><b>Binary -> Audio</b> is allowed if MIME is the supported audio type.</li>
-    <li><b>Binary -> Image</b> is allowed if MIME is the supported image type.</li>
-    <li><b>Geometry</b> dictionary items can only be mapped to geometry dictionary items.</li>
-    <li><b>Numeric/Alpha -> Binary items</b> will not be carried over to the new data file, as the conversion does not make sense. <b>CSReFmt</b> will report on these anomalies in the "Differences" area.</li>
-    <li><b>Binary Items -> Numeric/Alpha</b> will not be carried over to the new data file, as the conversion does not make sense. <b>CSReFmt</b> will report on these anomalies in the "Differences" area.</li>
-</list>
 
 <subheader>Syncing Binary Dictionary Items</subheader>
 
-CSPro does not perform any file compression; therefore, including binary dictionary items in your case has the potential to create very large cases. When syncing these cases, they can slow down or possibly even cause the syncing activities to grind to a halt. Therefore, careful consideration should be given to how and when these items are used.
+Binary dictionary items are <link synchronization.csdoc>synchronized</link> as part of a call to <logiccolor>syncdata</logiccolor>. If binary data has already been uploaded to a synchronization server, the data will not be uploaded again. However, it is still a good idea to be aware of the size of the binary data that you synchronize, as syncing these cases can slow down syncing activities significantly.
 
-<font red>WHAT ELSE GREG?</font>
 
-<subheader>Caveats to Using Binary Dictionary Item</subheader>
+<subheader>Usage Within CSPro Applications</subheader>
 
-The following issues should be considered before using Binary Dictionary Items:
+As of CSPro <definition CSPro::version />, binary dictionary items cannot be added to forms. Instead, you will need to write logic within your application that references these items in order to manipulate them. The functions available with the <link Audio.csdoc>Audio</link>, <link Document.csdoc>Document</link>, <link Geometry.csdoc>Geometry</link>, and <link Image.csdoc>Image</link> objects can be used on the binary dictionary items when valid (an occurrence of the parent record exists). For example:
 
-<list>
-    <li>As mentioned above, CSPro does not perform any file compression, using these data types can result in very large data files, which can slow down your syncing activities.</li>
-    <li>These features have not been fully tested (hence the "experimental" tag), and so should be used with caution.</li>
-    <li><font red>Anything else Greg?</font></li>
-</list>
+<logic>
+PROC ROOF_TYPE
 
+    if accept("Do you want to take a photo of the roof?", "Yes", "No") = 1 then
+
+        // take a photo, storing the image in the binary dictionary item ROOF_IMAGE
+        if ROOF_IMAGE.takePhoto() then
+
+            // because these images will be synced, ensure that the photo is not too large
+            ROOF_IMAGE.resample(maxWidth := 1200, maxHeight := 800);
+
+        endif;
+
+    endif;
+</logic>
+
+
+<subheader>Usage Within CSPro Tools</subheader>
+
+While binary dictionary items are experimental, they cannot be used within the <link CSExport::introduction_to_export_data.csdoc>Export Data</link> and <link CSFreq::introduction_to_tabulate_frequencies.csdoc>Tabulate Frequencies</link> tools. You will note that binary dictionary items do not appear in the tree. However, the rest of CSPro's <link tool_list.csdoc>tools</link> work with binary data.
+
+
+<link DataViewer::introduction_to_data_viewer.csdoc>Data Viewer</link>: When viewing a case within Data Viewer, if any binary dictionary items exist in the case, they will displayed within the field. If an image has been stored, a preview of that image appears. If it is an audio clip, you have the option to play it within Data Viewer. For all binary data types you have the option to open the file (in read-only mode) or save to a new file by clicking on the thumbnail or choosing the <i>Open</i> and <i>Save</i> options listed beneath each file.
+
+
+<link CSDiff::introduction_to_compare_data.csdoc>Compare Data</link>: When a binary dictionary item is chosen for comparison, the size of the file associated with that item is compared, regardless of the file name or file type. If the file sizes are the same, then the contents will be compared.
+
+
+<link CSReFmt::introduction_to_reformat_data.csdoc>Reformat Data</link>: Reformating binary dictionary items is possible in a few scenarios:
+
+<indent><table 3 header nowrap>
+    <cell>Input</cell><cell nowrap>Output</cell><cell>Outcome</cell>
+    <cell>Alpha</cell><cell nowrap>Binary Dictionary Item</cell><cell>Fails</cell>
+    <cell>Binary Dictionary Item</cell><cell nowrap>Alpha</cell><cell>Fails</cell>
+    <cell>Binary Dictionary Item</cell><cell nowrap>Audio</cell><cell>Succeeds if the MIME type is a valid audio type</cell>
+    <cell>Binary Dictionary Item</cell><cell nowrap>Document</cell><cell>Succeeds</cell>
+    <cell>Binary Dictionary Item</cell><cell nowrap>Geometry</cell><cell>Succeeds if the MIME type is GeoJSON</cell>
+    <cell>Binary Dictionary Item</cell><cell nowrap>Image</cell><cell>Succeeds if the MIME type is a valid image type</cell>
+    <cell>Binary Dictionary Item</cell><cell nowrap>Numeric</cell><cell>Fails</cell>
+    <cell>Numeric</cell><cell nowrap>Binary Dictionary Item</cell><cell>Fails</cell>
+</table></indent>
+
+
+<link CSSort::introduction_to_sort_data.csdoc>Sort Data</link>: If a binary dictionary item is chosen as the sort key, the size of the file associated with the binary dictionary item is used as the sort value.
+
+
+<note type="todo" text="split the information in this file into more relevant sections in CSSort [add a page on how sorts work by variable type], CSReFmt [add a page on how items are reformatted], etc." />
+
+
+<seealso data_type.csdoc />
