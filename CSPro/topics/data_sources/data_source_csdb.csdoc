@@ -19,7 +19,7 @@ The CSPro DB data source supports the following features:
 
 <subheader>Binary Data</subheader>
 
-The CSPro DB data source stores <link "http://HELP_TODO/link_appropriately">binary data</link> as <link "https://www.sqlite.org/c3ref/bind_blob.html">blobs</link> in a <b>binary-data</b> table. When reading case data, binary data is <link "https://en.wikipedia.org/wiki/Lazy_loading">loaded asynchronously</link>, read from the SQLite database only when needed by the application.
+The CSPro DB data source stores <link binary_dictionary_items.csdoc>binary data</link> as <link "https://www.sqlite.org/c3ref/bind_blob.html">blobs</link> in a <b>binary-data</b> table. When reading case data, binary data is <link "https://en.wikipedia.org/wiki/Lazy_loading">loaded asynchronously</link>, read from the SQLite database only when needed by the application.
 
 
 <subheader>Customizable Behavior</subheader>
