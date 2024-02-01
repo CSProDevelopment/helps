@@ -8,29 +8,31 @@ When serializing logic symbols, or case data, to JSON, the default settings used
 
 <subheader>Symbol Options</subheader>
 
-The following options control how some symbols are serialized:
+The following options control how some symbols are serialized. The default behavior is marked with ⁺⁺⁺.
 
 <table 3 header nowrap>
-    <cell>Property Name</cell><cell>Possible Values</cell><cell>Description</cell>
-    <cell><colorinline JSON>"ArrayFormat"</colorinline></cell><cell><colorinline JSON>"full"</colorinline>~!~~!~<colorinline JSON>"sparse"</colorinline></cell><cell>Determines how Array objects are written.<note type="todo" text="HELP_TODO link to Array serialization description" />~!~The default value is: <colorinline JSON>"full"</colorinline>.</cell>
+    <cell>Property Name</cell><cell nowrap>Possible Values</cell><cell>Description</cell>
+    <cell><colorinline JSON>"ArrayFormat"</colorinline></cell><cell nowrap><colorinline JSON>"full"</colorinline> ⁺⁺⁺~!~~!~<colorinline JSON>"sparse"</colorinline></cell><cell>Determines how Array objects are written.<note type="todo" text="HELP_TODO link to Array serialization description" /></cell>
     <cell 3>&nbsp;</cell>
-    <cell><colorinline JSON>"binaryDataFormat"</colorinline></cell><cell><colorinline JSON>"dataUrl"</colorinline>~!~~!~<colorinline JSON>"localhostUrl"</colorinline></cell><cell>Determines how the data of symbols that contain binary data (e.g., <logiccolor>Image</logiccolor>) is written.<note type="todo" text="HELP_TODO link to binary data serialization description, if exists" />~!~The default value is: <colorinline JSON>"localhostUrl"</colorinline>.</cell>
+    <cell><colorinline JSON>"binaryDataFormat"</colorinline></cell><cell nowrap><colorinline JSON>"dataUrl"</colorinline>~!~~!~<colorinline JSON>"localhostUrl"</colorinline> ⁺⁺⁺</cell><cell>Determines how the data of symbols that contain binary data (e.g., <logiccolor>Image</logiccolor>) is written.<note type="todo" text="HELP_TODO link to binary data serialization description, if exists" /></cell>
     <cell 3>&nbsp;</cell>
-    <cell><colorinline JSON>"HashMapFormat"</colorinline></cell><cell><colorinline JSON>"array"</colorinline>~!~~!~<colorinline JSON>"object"</colorinline></cell><cell>Determines how HashMap objects are written.<note type="todo" text="HELP_TODO link to HashMap serialization description" />~!~The default value is: <colorinline JSON>"object"</colorinline>.</cell>
+    <cell><colorinline JSON>"HashMapFormat"</colorinline></cell><cell nowrap><colorinline JSON>"array"</colorinline>~!~~!~<colorinline JSON>"object"</colorinline> ⁺⁺⁺</cell><cell>Determines how HashMap objects are written.<note type="todo" text="HELP_TODO link to HashMap serialization description" /></cell>
+    <cell 3>&nbsp;</cell>
+    <cell><colorinline JSON>"jsonFormat"</colorinline></cell><cell nowrap><colorinline JSON>"compact"</colorinline> ⁺⁺⁺~!~~!~<colorinline JSON>"pretty"</colorinline></cell><cell>Determines if the JSON is written with no extra spacing (compact), or in a more readable format with spaces and newlines (pretty).</cell>
 </table>
 
 
 <subheader>Case Options</subheader>
 
-The following options control how case data is serialized:
+The following options control how case data is serialized. The default behavior is marked with ⁺⁺⁺.
 
 <table 3 header nowrap>
-    <cell>Property Name</cell><cell>Possible Values</cell><cell>Description</cell>
-    <cell><colorinline JSON>"binaryDataFormat"</colorinline></cell><cell><colorinline JSON>"dataUrl"</colorinline>~!~~!~<colorinline JSON>"localhostUrl"</colorinline></cell><cell>Determines how the data of binary dictionary items is written.<note type="todo" text="HELP_TODO link to binary dictionary items description, if exists" />~!~The default value is: <colorinline JSON>"localhostUrl"</colorinline>.</cell>
+    <cell>Property Name</cell><cell nowrap>Possible Values</cell><cell>Description</cell>
+    <cell><colorinline JSON>"binaryDataFormat"</colorinline></cell><cell nowrap><colorinline JSON>"dataUrl"</colorinline>~!~~!~<colorinline JSON>"localhostUrl"</colorinline> ⁺⁺⁺</cell><cell>Determines how the data of binary dictionary items is written.<note type="todo" text="HELP_TODO link to binary dictionary items description, if exists" /></cell>
     <cell 3>&nbsp;</cell>
-    <cell><colorinline JSON>"writeFieldStatuses"</colorinline></cell><cell><colorinline JSON>true</colorinline>~!~~!~<colorinline JSON>false</colorinline></cell><cell>If true, the <link highlighted_function.csdoc>entry status</link> of fields in a data entry applications is written.~!~The default value is: <colorinline JSON>true</colorinline>.</cell>
+    <cell><colorinline JSON>"writeFieldStatuses"</colorinline></cell><cell nowrap><colorinline JSON>true</colorinline> ⁺⁺⁺~!~~!~<colorinline JSON>false</colorinline></cell><cell>If true, the <link highlighted_function.csdoc>entry status</link> of fields in a data entry applications is written.</cell>
     <cell 3>&nbsp;</cell>
-    <cell><colorinline JSON>"writeLabels"</colorinline></cell><cell><colorinline JSON>true</colorinline>~!~~!~<colorinline JSON>false</colorinline></cell><cell>If true, the <link value_sets_description.csdoc>value set label</link> associated with the item is written along with the code.~!~The default value is: <colorinline JSON>false</colorinline>.</cell>
+    <cell><colorinline JSON>"writeLabels"</colorinline></cell><cell nowrap><colorinline JSON>true</colorinline>~!~~!~<colorinline JSON>false</colorinline> ⁺⁺⁺</cell><cell>If true, the <link value_sets_description.csdoc>value set label</link> associated with the item is written along with the code.</cell>
 </table>
 
 

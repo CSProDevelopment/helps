@@ -1,47 +1,92 @@
 ﻿<title>JSON Data Source</title>
 
 
-<subheader>JSON (.json)</subheader>
+<subheader>Overview</subheader>
+
+The <b>JSON</b> <link data_sources.csdoc>data source</link> allows reading and writing data to a text file containing a <link JSON_primer.csdoc>JSON</link> array of <link Case_json_representation.csdoc>case objects</link>. Because JSON is widely used, and human readable, using this data source may be a good way to archive your data, or to work with your data in other applications. However, unless there is a requirement that your data be in JSON format, during data collection you are encouraged to use the CSPro DB data source as it has the most functionality of all data sources.
+
+The JSON data source reads and writes <link unicode_primer.csdoc>UTF-8</link> text, and treats all files as UTF-8, even those without a BOM (byte order mark).
+
+The JSON data source is used when a file has the extension <b>.json</b>.
+
+
+<subheader>Functionality</subheader>
+
+The JSON data source supports the following features:
+
+<table 2 header nowrap>
+    <cell>Feature</cell><cell nowrap>Supported</cell>
+    <cell>Reading cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Writing cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Notes, case labels, and case statuses</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Storage of more than one kind of record</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Binary data items</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Deleting cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell>Undeleting cases</cell><cell><center><font green>✔</font></center></cell>
+    <cell><link synchronization.csdoc>Syncing</link> data</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Cases with duplicate <link key_function.csdoc>keys</link></cell><cell><center><font green>✔</font></center></cell>
+    <cell>Case identification via <link uuid_function.csdoc>UUID</link></cell><cell><center><font green>✔</font></center></cell>
+    <cell>Contains an embedded dictionary</cell><cell><center><font red>✘</font></center></cell>
+    <cell>Allows <link CSSort::choose_type_of_sort.csdoc>record sorts</link></cell><cell><center><font red>✘</font></center></cell>
+</table>
+
+
+<subheader>Associated Files</subheader>
+
+The JSON data source stores all case-related information in the file, but also has one associated file:
+
 <list>
-	<li>A text-based data source that stores cases in a JSON array of objects:</li>
-	<indent>
-	[ { case 1 }, { case 2 }, …, { case N } ]
-	</indent>
-	<li>Useful when integrating with html, CSPro 8.0, or other code that can be configured to accept JSON. As a text-based file it is also useful for easy readability by humans and programs such as Excel, Notepad, Wordpad, etc.</li>
-	<li>The file is written in UTF-8 format without a BOM, but files with a BOM can be read and manipulated</li>
-	<li>All case data except for synchronization information is stored as part of the JSON case, so this data source is similar to CSPro DB in that it supports deleting/undeleting cases and files with duplicate keys (because, like CSPro DB, the index key is the UUID, not the case key)</li>
-	<li>When used as a CSEntry main data file, or associated with an external dictionary, an index will be created for the file (with the extension .csidx, as with text files)</li>
-	<li>If a file has multiple cases with the same UUID, an index cannot be created and the file will not be opened (when an index is needed)</li>
-	<indent>When running CSIndex on a JSON data file, an index will be created even if there are multiple cases with the same key, but as with CSPro DB and other formats, the CSIndex tool will allow you to remove cases with the same key</indent>
-<li>Binary data associated with the JSON data source is stored, by default, in a directory named: filename + ' (files)'</li>
-<indent>
-Binary data is saved using the name: &ltmd5&gt.&ltevaluated extension if available&gt
-<indent>
-However, if the MD5 is, say, 8277e0910d750195b448797616e091ad, and the routine says to save it as 8277e0910d750195b448797616e091ad.png but 8277e0910d750195b448797616e091ad.jpg exists, then the version with the different extension will be used (and not overwritten)
-</indent>
-</indent>
-<indent>
-Binary data is loaded by searching for a file with the following name: &ltmd5&gt.*
-</indent>
-<indent>
-It is possible to embed binary data in the file (see below); the data will be saved as a data URL
-</indent>
+    <li><link index_file_csidx.csdoc>Index</link>: The index stores information about where cases are located in the data file, allowing CSPro to quickly lookup cases. Because the index is a SQLite database, it is possible to <link sqlite_in_cspro.csdoc>query</link> the index using SQL statements.</li>
 </list>
 
-<subheader><link connection_string.csdoc>Connection String Attributes</link></subheader>
+
+<subheader>Binary Data</subheader>
+
+The JSON data source stores <link "http://HELP_TODO/link_appropriately">binary data</link> in one of two ways:
+
 <list>
-<li>json-format=<b>compact</b> [default is not compact]</li>
-<li>verbose [defined means true; the default is not defined, meaning not verbose]</li>
-<li>write-blank-values [defined means true; the default is not defined, meaning that NOTAPPL values and blank strings will not be written to the the file]</li>
-<li>write-labels [defined means true; the default is not defined, meaning that for each value, only a “code” entry is written, not “code” and “label” entries]</li>
-<li>binary-data=<b>embed</b> or &ltdirectory name&gt</li>
-<indent>If embed, the binary data is saved to the .json file in Base64 format as data URLs</indent>
-<indent>If a directory name is given, it is used instead of the “ (files)” default directory where binary data is saved; the directory name is evaluated relative to the JSON data file; e.g.,: binary-data=../My Files</indent>
+    <li><b>Saved to the disk</b>: By default, binary data files are saved in a subdirectory, located in the same directory as the JSON file, with the suffix " (files)". Files are named using the <link CS_Hash_createMd5.csdoc>MD5</link> of the binary data, followed by the file extension, if known. For example, binary data <i>carn03.jpg</i>, collected as part of <i>memory.json</i>, might be saved as: <i>memory.json (files)/244358f4725ac956bb74b3a17a588eb9.jpg</i>. When reading case data, binary data on the disk is <link "https://en.wikipedia.org/wiki/Lazy_loading">loaded asynchronously</link>, read from the disk only when needed by the application.</li>
+    <li><b>Embedded</b>: Alternatively, the binary data can be embedded in the JSON file, encoded as a <link "https://en.wikipedia.org/wiki/Data_URI_scheme">data URL</link>. This option will result in larger data files, but results in a single file containing all case data.</li>
 </list>
 
-<subheader>Limitations</subheader>
-<list>
-	<li>Does not support syncing data </li>
-</list>
+
+<subheader>Customizable Behavior</subheader>
+
+The following behavior can be customized by specifying properties in the <link connection_string.csdoc>connection string</link>. The default behavior is marked with ⁺⁺⁺.
+
+<table 2 header>
+    <cell nowrap>Property Name and Values</cell><cell>Description</cell>
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"binaryDataDirectory"</colorinline></b></cell><cell>By default, binary data saved to the disk is stored in a subdirectory with the suffix "(files)". This property allows you to specify a different directory where you want to read and write binary data. The property is evaluated relative to the path of the data file.</cell>
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"binaryDataFormat"</colorinline></b></cell><cell>Determines how binary data is stored (as described above).</cell>
+    <cell><indent><colorinline JSON>"dataUrl"</colorinline></indent></cell><cell><indent>Binary data is embedded in the file as a data URL.</indent></cell>
+    <cell><indent><colorinline JSON>"disk"</colorinline> ⁺⁺⁺</indent></cell><cell><indent>Binary data is saved to the disk.</indent></cell>
+    <cell 2>&nbsp;</cell>
+    <include properties_cache.hgi />
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"jsonFormat"</colorinline></b></cell><cell>Determines the <link JSON_serialization_options.csdoc>amount of whitespace</link> used when writing cases.</cell>
+    <cell><indent><colorinline JSON>"compact"</colorinline></indent></cell><cell><indent>Cases are written with no extra spacing.</indent></cell>
+    <cell><indent><colorinline JSON>"pretty"</colorinline> ⁺⁺⁺</indent></cell><cell><indent>Cases are written in a more readable format with spaces and newlines.</indent></cell>
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"verbose"</colorinline></b></cell><cell>Determines if cases are written in <link "https://en.wikipedia.org/wiki/Verbose_mode">verbose mode</link>, outputting all case details rather than only those with defined, non-default, values.</cell>
+    <cell><indent><colorinline JSON>true</colorinline></indent></cell><cell><indent>Cases are written in verbose mode.</indent></cell>
+    <cell><indent><colorinline JSON>false</colorinline> ⁺⁺⁺</indent></cell><cell><indent>Cases are not written in verbose mode.</indent></cell>
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"writeBlankValues"</colorinline></b></cell><cell>Determines if items without a value (<logiccolor>notappl</logiccolor> numbers, blank strings, etc.), are written.</cell>
+    <cell><indent><colorinline JSON>true</colorinline></indent></cell><cell><indent>Blank values are written as objects without content.</indent></cell>
+    <cell><indent><colorinline JSON>false</colorinline> ⁺⁺⁺</indent></cell><cell><indent>Blank values are not written.</indent></cell>
+    <cell 2>&nbsp;</cell>
+    <cell><b><colorinline JSON>"writeLabels"</colorinline></b></cell><cell>Determines if the <link value_sets_description.csdoc>value set label</link> associated with the item is written along with the code.</cell>
+    <cell><indent><colorinline JSON>true</colorinline></indent></cell><cell><indent>Both codes and labels are written.</indent></cell>
+    <cell><indent><colorinline JSON>false</colorinline> ⁺⁺⁺</indent></cell><cell><indent>Only codes are written.</indent></cell>
+</table>
+
+For example, the following connection string, specified in a <link run_production_data_entry.csdoc>data entry PFF</link>, would attach to an <link dictionary_types.csdoc>external dictionary</link> a JSON file where labels are written and the binary data directory is overridden to a subdirectory named "Images":
+
+<pff>
+CENSUS_<definition System::year />_DICT=.\Census.json|writeLabels=true&binaryDataDirectory=Images
+</pff>
+
 
 <seealso data_sources.csdoc />
