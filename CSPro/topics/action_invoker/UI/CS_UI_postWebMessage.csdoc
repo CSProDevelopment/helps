@@ -1,39 +1,41 @@
 ﻿<title>UI.postWebMessage Action</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
-CS.UI.alert(<arg>message</arg> := ... 『, <arg>targetOrigin</arg> := ...』 『, <arg>webViewId</arg> := ...』)
+CS.UI.postWebMessage(<arg>message</arg> := ...『, <arg>webViewId</arg> := ...』『, <arg>targetOrigin</arg> := ...』)
 </logicsyntax>
+
 
 <indent><table 3 header nowrap>
     <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
-    <cell><arg>message</arg></cell><cell>The message</cell><cell>string ~!~required</cell>
-    <cell><arg>targetOrigin</arg></cell><cell>The parameter used by the JavaScript Window.postMessage() method. This is only used on Android.</cell><cell>string ~!~not required</cell>
-    <cell><arg>webViewId</arg></cell><cell>If specified, the message is posted to the web view with this ID. It not specified, the message is posted to the topmost web view.</cell><cell>number ~!~not required</cell>
+    <cell><arg>message</arg></cell><cell>The message to post.</cell><cell>string ~!~required</cell>
+    <cell><arg>webViewId</arg></cell><cell>If specified, the message is posted to the web view with this ID.</cell><cell>number ~!~not required</cell>
+    <cell><arg>targetOrigin</arg></cell><cell>The target origin used by <link "https://developer.android.com/reference/android/webkit/WebView#postWebMessage(android.webkit.WebMessage,%20android.net.Uri)">WebView.postWebMessage</link> on Android.</cell><cell>string ~!~not required</cell>
 </table></indent>
+
 
 <subheader>Description</subheader>
 
-The <action>UI.postWebMessage</action> <link action_invoker.csdoc>action</link> posts a <arg>message</arg> to a web view. By default this is posted to the topmost web view, however a <arg>webViewId</arg> can be specified.
+The <action>UI.postWebMessage</action> <link action_invoker.csdoc>action</link> <link "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage">posts a message</link> to a <link html_in_cspro.csdoc>web view</link>. The <arg>message</arg> must be specified as a string.
+
+By default, this message is posted to the topmost web view, but the target web view can be specified by providing a <arg>webViewId</arg>. This web view ID, a unique number that uniquely identifies web views that CSPro displays, can be determined using the <action>UI.enumerateWebViews</action> action.
+
+To listen for web messages in a cross-platform way, <link action_invoker_execution_javascript_web.csdoc>read about how to use</link> the <colorinline JavaScript>CSProActionInvoker.getWindowForEventListener</colorinline> method.
+
 
 <subheader>Return Value</subheader>
 
 The action returns undefined.
 
+
 <subheader>Exceptions</subheader>
 
-The action throws an exception if any of its arguments are not specified in a valid form, if no web view is showing, or if the webViewId isn't valid
-
-<subheader>Example (JavaScript)</subheader>
-
-Creating an web message displaying text "Honey" to the topmost web view:
-
-<color JavaScript>
-CS.UI.postWebMessage({
-    message: "Honey"
-});
-</color>
+The action throws an exception if any of its arguments are not specified in a valid form, if no web view is showing, or if <arg>webViewId</arg> is not associated with a web view currently showing.
 
 
-<seealso CS_UI.csdoc />
+<include include_enumerateWebViews_postWebMessage_example.hgi />
+
+
+<seealso CS_UI.csdoc CS_UI_enumerateWebViews.csdoc />

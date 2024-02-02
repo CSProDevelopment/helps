@@ -1,24 +1,49 @@
 ﻿<title>UI.getInputData Action</title>
 
+
 <subheader>Format</subheader>
 
 <logicsyntax>
 s = CS.UI.getInputData()
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <action>UI.getInputData</action> <link action_invoker.csdoc>action</link> returns the input data associated with the current web view (used by functions such as htmlDialog).
+The <action>UI.getInputData</action> <link action_invoker.csdoc>action</link> returns the input data associated with the current <link html_in_cspro.csdoc>web view</link>. If no input data exists and multiple web views are showing, then the input data for the topmost web view with input data is returned.
+
+
+This action has an impact in the following scenarios when input data can be specified:
+
+<list>
+    <li>Displaying a <link html_dialog_ui.csdoc>HTML dialog</link> using <action>UI.showDialog</action> (or <logiccolor>htmldialog</logiccolor>).</li>
+    <li>Display a <link html_in_cspro.csdoc>web view</link> using <action>UI.view</action>.</li>
+</list>
+
 
 <subheader>Return Value</subheader>
 
-The action returns the input data given to the web view as an object.
+The action returns the input data, or undefined if no input data exists.
 
-<subheader>Example (JavaScript)</subheader>
 
-<color JavaScript>
-let s = CS.UI.getInputData();
+<subheader>Exceptions</subheader>
+
+The action does not throw exceptions.
+
+
+<subheader>Example (HTML + JavaScript)</subheader>
+
+<color HTML>
+<script>
+    const CS = new CSProActionInvoker();
+
+    const input = CS.UI.getInputData();
+
+    if( input.operationTitle ) {
+        document.getElementById("title").value = input.operationTitle;
+    }
+</script>
 </color>
 
 
-<seealso CS_UI.csdoc />
+<seealso CS_UI.csdoc CS_UI_showDialog.csdoc CS_UI_view.csdoc  />

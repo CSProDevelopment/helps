@@ -7,34 +7,27 @@
 s = CS.UI.getDisplayOptions()
 </logicsyntax>
 
+
 <subheader>Description</subheader>
 
-The <action>UI.getDisplayOptions</action> <link action_invoker.csdoc>action</link> gets the display options associated with current web view. This works for the question text window as well as HTML dialogs shown using htmlDialog.
+The <action>UI.getDisplayOptions</action> <link action_invoker.csdoc>action</link> returns the display options associated with the current <link html_in_cspro.csdoc>web view</link>. These display options may be useful to examine before using <action>UI.setDisplayOptions</action> to size an <link html_dialog_ui.csdoc>HTML dialog</link> shown using <action>UI.showDialog</action>.
+
+Display options are returned by web views that show <link html_dialog_ui.csdoc>HTML dialogs</link> or display <link html_question_text.csdoc>HTML question text</link>.
+
 
 <subheader>Return Value</subheader>
 
-The action returns an object with six properties:
+If no web view is showing that uses displays options, the action returns undefined. Otherwise, the action returns an object containing the current values for the display options that have been set, or the default value for the options (when applicable):
 
-<list>
-    <li><arg>width</arg>: A number containing the width of the web view in display units.</li>
-    <li><arg>height</arg>: A number containing the height of the web view in display units.</li>
-    <li><arg>resizable</arg>: A boolean containing whether or not the web view can be resized.</li>
-    <li><arg>borderColor</arg>: A string containing the color code for the web view border.</li>
-    <li><arg>titleBarColor</arg>: A string containing the color code for the web view title bar.</li>
-    <li><arg>titleBarHeight</arg>: A number containing the height of the web view title bar in display units.</li>
-</list>
-
-<subheader>Example (JavaScript)</subheader>
-
-<color JavaScript>
-let s = CS.UI.getDisplayOptions();
-</color>
-
-The returned object may look like this:
-
-<color JavaScript>
-{"width":1036, "height":555, "resizable":true, "borderColor":"#000000", "titleBarColor":"#eeeeee", "titleBarHeight":6}
-</color>
+<include include_displayOptions.hgi />
 
 
-<seealso CS_UI.csdoc />
+<subheader>Exceptions</subheader>
+
+The action does not throw exceptions.
+
+
+<include include_displayOptions_example.hgi />
+
+
+<seealso CS_UI.csdoc CS_UI_setDisplayOptions.csdoc />

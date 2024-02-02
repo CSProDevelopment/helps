@@ -1,7 +1,5 @@
 ﻿<title>htmldialog Function</title>
 
-The <logiccolor>htmldialog</logiccolor> function allows for the customization of CSPro dialogs in two ways. First, HTML templates can receive dynamic input data from the CSPro application which can be used as text in the dialogs or to change the behavior of the dialog. Second, user-created HTML templates give the application developer complete control of the appearance and behavior of the dialogs.
-
 
 <subheader>Format</subheader>
 
@@ -16,16 +14,20 @@ s = htmldialog(<arg>html_filename</arg>『, inputData := <arg>input_data</arg>�
 
 <subheader>Description</subheader>
 
-The <logiccolor>htmldialog</logiccolor> function must be passed a a string expression, <arg>html_filename</arg>, that specifies the HTML template to be used for the dialog.
+The <logiccolor>htmldialog</logiccolor> function allows for the customization of CSPro dialogs in two ways. First, HTML templates can receive dynamic input data from the CSPro application which can be used as text in the dialogs or to change the behavior of the dialog. Second, user-created HTML templates give the application developer complete control of the appearance and behavior of the dialogs.
+
+The function must be passed a a string expression, <arg>html_filename</arg>, that specifies the HTML template to be used for the dialog.
 
 In the first version, the optional string expression <arg>input_data</arg> argument allows input data to be passed to the HTML template.
 
 In the second version, the optional <link function_named_arguments.csdoc>named argument</link> <arg>input_data</arg> allows input data to be passed to the HTML template. The optional named argument <arg>display_options</arg> argument is a <link JSON_primer.csdoc>JSON</link> string that allows control of the display settings. All possible display options are shown below in a table.
 
+You can use <link CSCode::introduction.csdoc>CSCode</link> to <link CSCode::language_cspro_html_dialog.csdoc>design and test HTML dialogs</link>. HTML dialogs can also be shown using the <action>UI.showDialog</action> function.
+
 
 <subheader>Return Value</subheader>
 
-The function returns a string. The contents of the string are determined by the HTML template and returned by a JavaScript call to <colorinline JavaScript>CSPro.returnData()</colorinline>.
+The function returns a string. The contents of the string are determined by the HTML template and returned by a JavaScript call, using the <link action_invoker_execution_javascript_web.csdoc>Action Invoker</link>, to <action>UI.closeDialog</action>.
 
 
 <subheader>HTML Templates</subheader>
@@ -89,4 +91,4 @@ string result = htmldialog("user-defined-dialog.html",
 </logic>
 
 
-<seealso html_in_cspro.csdoc action_invoker_execution_javascript_web.csdoc />
+<seealso html_in_cspro.csdoc action_invoker_execution_javascript_web.csdoc CS_UI_showDialog.csdoc />

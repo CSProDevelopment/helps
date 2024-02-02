@@ -326,16 +326,15 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>trace</logiccolor></cell><cell>Controls a window or file that can contain debugging information.</cell>
     <cell 2>&nbsp;</cell>
     <cell><action>UI.alert</action> <sup>(CS)</sup></cell><cell>Displays an alert dialog.</cell>
-    <cell><action>UI.closeDialog</action> <sup>(CS)</sup></cell><cell>Closes the current dialog, optionally returning a result to the calling function (such as htmlDialog).</cell>
-    <cell><action>UI.enumerateWebViews</action> <sup>(CS)</sup></cell><cell>Returns information about all of the web views currently showing.</cell>
-    <cell><action>UI.getDisplayOptions</action> <sup>(CS)</sup></cell><cell>Gets the display options associated with current web view. This works for the question text window as well as HTML dialogs shown using htmlDialog.</cell>
-    <cell><action>UI.getInputData</action> <sup>(CS)</sup></cell><cell>Gets the input data associated with the current web view (used by functions such as htmlDialog).</cell>
-    <cell><action>UI.getMaxDisplayDimensions</action> <sup>(CS)</sup></cell><cell>  Returns the maximum dimensions, in display units, of the dialogs that CSPro can show.</cell>
-    <cell><action>UI.postWebMessage</action> <sup>(CS)</sup></cell><cell>Posts a message to a web view.</cell>
-    <cell><action>UI.setDisplayOptions</action> <sup>(CS)</sup></cell><cell>    Sets the display options for the current web view. This works for the question text window as well as HTML dialogs shown using htmlDialog.</cell>
-    <cell><action>UI.showDialog</action> <sup>(CS)</sup></cell><cell>Shows a HTML dialog.</cell>
-    <cell><action>UI.view</action> <sup>(CS)</sup></cell><cell>Views a file or web page in a new web view.</cell>
-    <cell 2>&nbsp;</cell>
+    <cell><action>UI.closeDialog</action> <sup>(CS)</sup></cell><cell>Closes the current <link html_dialog_ui.csdoc>HTML dialog</link>, optionally returning a result to an action like <action>UI.showDialog</action>.</cell>
+    <cell><action>UI.enumerateWebViews</action> <sup>(CS)</sup></cell><cell>Returns information about all of the <link html_in_cspro.csdoc>web views</link> currently showing.</cell>
+    <cell><action>UI.getDisplayOptions</action> <sup>(CS)</sup></cell><cell>Returns the display options associated with the current <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.getInputData</action> <sup>(CS)</sup></cell><cell>Returns the input data associated with the current <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.getMaxDisplayDimensions</action> <sup>(CS)</sup></cell><cell>Returns the maximum dimensions, in <link display_dimensions.csdoc>display units</link>, of <link html_in_cspro.csdoc>HTML dialogs</link> that CSPro can show.</cell>
+    <cell><action>UI.postWebMessage</action> <sup>(CS)</sup></cell><cell>Posts a message to a <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.setDisplayOptions</action> <sup>(CS)</sup></cell><cell>Sets the display options for the current <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.showDialog</action> <sup>(CS)</sup></cell><cell>Shows a <link html_dialog_ui.csdoc>HTML dialog</link>.</cell>
+    <cell><action>UI.view</action> <sup>(CS)</sup></cell><cell>Views a file or web page in a new <link html_in_cspro.csdoc>web view</link>.</cell>
     <cell><logiccolor>universe</logiccolor></cell><cell>Specifies a condition that must be true for execution of a procedure or function to continue.</cell>
     <cell><logiccolor>userbar</logiccolor></cell><cell>Controls the optional display bar in a data entry application.</cell>
     <cell><logiccolor>uuid</logiccolor></cell><cell>Returns a human-readable string containing a universally unique identifier.</cell>

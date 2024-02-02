@@ -1,0 +1,18 @@
+<subheader>Example (HTML + JavaScript)</subheader>
+
+<color HTML>
+<script>
+    const CS = new CSProActionInvoker();
+
+    // there should be at least two web views since the question text is showing
+    const webViews = CS.UI.enumerateWebViews();
+
+    console.assert(webViews.webViews.length >= 2 && webViews.webViewId == webViews.webViews[0].webViewId);
+
+    // post a web message to the question text, which will be the last web view in the array
+    CS.UI.postWebMessage({
+        message: `Posting a message to the question text window at ${new Date().toISOString()}.`,
+        webViewId: webViews.webViews[webViews.webViews.length - 1].webViewId
+    });
+</script>
+</color>
