@@ -1,0 +1,51 @@
+﻿<title>UI.setDisplayOptions Action</title>
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.UI.setDisplayOptions(『<arg>width</arg> := ...』
+                          『, <arg>height</arg> := ...』
+                          『, <arg>resizable</arg> := ...』
+                          『, <arg>borderColor</arg> := ...』
+                          『, <arg>titleBarColor</arg> := ...』
+                          『, <arg>titleBarHeight</arg> := ...』
+                          『, <arg>keyboard</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>width</arg></cell><cell><i>All display option arguments are~!~described in a table below.</i></cell><cell>number, string ~!~not required</cell>
+    <cell><arg>height</arg></cell><cell></cell><cell>number, string ~!~not required</cell>
+    <cell><arg>resizable</arg></cell><cell></cell><cell>boolean ~!~not required</cell>
+    <cell><arg>borderColor</arg></cell><cell></cell><cell>string ~!~not required</cell>
+    <cell><arg>titleBarColor</arg></cell><cell></cell><cell>string ~!~not required</cell>
+    <cell><arg>titleBarHeight</arg></cell><cell></cell><cell>number ~!~not required</cell>
+    <cell><arg>keyboard</arg></cell><cell></cell><cell>boolean ~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>UI.setDisplayOptions</action> <link action_invoker.csdoc>action</link> sets the display options for the current <link html_in_cspro.csdoc>web view</link>. Display options can be set for web views showing <link html_dialog_ui.csdoc>HTML dialogs</link> or displaying <link html_question_text.csdoc>HTML question text</link>.
+
+A web view's default and initial display options can be retrieved using <action>UI.getDisplayOptions</action>.
+
+All display options apply to HTML dialogs, whereas the question text window only responds to the <colorinline JSON>"height"</colorinline> property:
+
+<include include_displayOptions.hgi />
+
+
+<subheader>Return Value</subheader>
+
+The action returns a boolean value indicating if any web view successfully processed the display options.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form.
+
+
+<include include_displayOptions_example.hgi />
+
+
+<seealso CS_UI.csdoc CS_UI_getDisplayOptions.csdoc />

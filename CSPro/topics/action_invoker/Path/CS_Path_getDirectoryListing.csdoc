@@ -1,0 +1,116 @@
+﻿<title>Path.getDirectoryListing Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Path.getDirectoryListing(<arg>path</arg> := ...
+                             『, <arg>recursive</arg> := ...』
+                             『, <arg>filter</arg> := ...』
+                             『, <arg>filterDirectories</arg> := ...』
+                             『, <arg>type</arg> := ...』
+                             『, <arg>detailed</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of a directory.</cell><cell>string~!~required</cell>
+    <cell><arg>recursive</arg></cell><cell>If true, the listing will include paths in <arg>path</arg>'s subdirectories.~!~The default value is <logiccolor>false</logiccolor>.</cell><cell>boolean~!~not required</cell>
+    <cell><arg>filter</arg></cell><cell>A wildcard used to filter the files and, if applicable, the directories.</cell><cell>string~!~not required</cell>
+    <cell><arg>filterDirectories</arg></cell><cell>If true, the <arg>filter</arg> will also apply to directories. ~!~The default value is <logiccolor>false</logiccolor>.</cell><cell>boolean~!~not required</cell>
+    <cell><arg>type</arg></cell><cell>If defined, the paths included can be filtered using the value <logiccolor>"file"</logiccolor> or <logiccolor>"directory"</logiccolor>.</cell><cell>string~!~not required</cell>
+    <cell><arg>detailed</arg></cell><cell>If true, the returned paths will include details in the format of <action>Path.getPathInfo</action>.~!~The default value is <logiccolor>false</logiccolor>.</cell><cell>boolean~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Path.getDirectoryListing</action> <link action_invoker.csdoc>action</link> returns information about the paths in the directory specified as <arg>path</arg>. Generally <arg>path</arg> is a directory, but it can also be one of the following special values, specified with the <logiccolor>"|"</logiccolor> prefix:
+
+<include include_special_directories.hgi />
+
+By default, only files and directories located in the specified directory are returned. The <arg>recursive</arg> argument can be used to recursively add paths, getting information about the specified directory as well as any subdirectories.
+
+Information about both files and directories is returned, but this can be modified by specifying a <arg>type</arg>. Hidden and system files are never included. Directory paths are returned without a trailing slash.
+
+When <arg>detailed</arg> is <logiccolor>true</logiccolor>, the path information is returned in the format as returned by <action>Path.getPathInfo</action>. If <logiccolor>false</logiccolor>, the path information is returned as a string containing the fully evaluated path.
+
+You can specify a wildcard <arg>filter</arg> that restricts the paths returned by the action. By default, the wildcard filter applies only to the names of files, but by setting <arg>filterDirectories</arg> to <logiccolor>true</logiccolor>, the filter will also apply to the names of directories. The filter does not apply to a path's directory but only its name component. <include include_filter.hgi />
+
+A directory listing can also be retrieved using the <logiccolor>dirlist</logiccolor> function.
+
+
+<subheader>Return Value</subheader>
+
+The action returns an object containing the properties:
+
+<table 2 header nowrap>
+    <cell>Property</cell><cell>Value</cell>
+    <cell><colorinline JSON>"path"</colorinline></cell><cell>A string containing the fully evaluated directory path.</cell>
+    <cell><colorinline JSON>"parent"</colorinline></cell><cell>A string containing the path's fully evaluated parent directory (if applicable).</cell>
+    <cell><colorinline JSON>"paths"</colorinline></cell><cell>An array containing the information about paths in the directory, returned as objects or strings (depending on <arg>detailed</arg>).</cell>
+</table>
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the directory does not exist.
+
+
+<subheader>Example 1 (JavaScript)</subheader>
+
+<color JavaScript>
+// get a list of the HTML dialogs included with CSPro
+const htmlDialogs = CS.Path.getDirectoryListing({
+    path: CS.Path.getSpecialPaths().html + "/dialogs",
+    filter: "*.html"
+});
+</color>
+
+Possible result:
+
+<color JSON>
+{
+  "path": "C:\\Program Files (x86)\\CSPro <definition CSPro::version />\\html\\dialogs",
+  "parent": "C:\\Program Files (x86)\\CSPro <definition CSPro::version />\\html",
+  "paths": [
+    "C:\\Program Files (x86)\\CSPro <definition CSPro::version />\\html\\dialogs\\choice.html",
+    "C:\\Program Files (x86)\\CSPro <definition CSPro::version />\\html\\dialogs\\text-input.html"
+  ]
+}
+</color>
+
+<subheader>Example 2 (JavaScript)</subheader>
+
+<color JavaScript>
+// get a detailed list of the HTML dialogs included with CSPro, starting with 'c'
+const htmlDialogs = CS.Path.getDirectoryListing({
+    path: CS.Path.getSpecialPaths().html + "/dialogs",
+    filter: "c*.html",
+    detailed: true
+});
+</color>
+
+Possible result:
+
+<color JSON>
+{
+  "path": "C:\\Program Files (x86)\\CSPro <definition CSPro::version />\\html\\dialogs",
+  "parent": "C:\\Program Files (x86)\\CSPro <definition CSPro::version />\\html",
+  "paths": [
+    {
+      "path": "C:/Program Files (x86)/CSPro <definition CSPro::version />/html/dialogs/choice.html",
+      "name": "choice.html",
+      "extension": "html",
+      "contentType": "text/html",
+      "exists": true,
+      "type": "file",
+      "modifiedTime": "<definition System::year />-01-01T06:24:00Z",
+      "size": 10583
+    }
+  ]
+}
+</color>
+
+
+<seealso CS_Path.csdoc CS_Path_getPathInfo.csdoc />

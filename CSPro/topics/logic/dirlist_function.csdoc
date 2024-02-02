@@ -34,10 +34,12 @@ Using <link function_named_arguments.csdoc>named arguments</link>, you can speci
 
 By default, only files and directories located in the directory are added to the List. To recursively add paths, creating a listing of the specified directory as well as any subdirectories, set the numeric expression <arg>recursive_flag</arg> to <logiccolor>true</logiccolor>.
 
+A directory listing can also be retrieved using the <action>Path.getDirectoryListing</action> action.
+
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (<logiccolor>true</logiccolor>) if successful and 0 (<logiccolor>false</logiccolor>) if the directory does not exist or cannot be accessed. If the List is read-only, the function returns <logiccolor>default</logiccolor>.
+The function returns a logical value of <logiccolor>1</logiccolor> (<logiccolor>true</logiccolor>) if successful and <logiccolor>0</logiccolor> (<logiccolor>false</logiccolor>) if the directory does not exist or cannot be accessed. If the List is read-only, the function returns <logiccolor>default</logiccolor>.
 
 
 <subheader>Example 1</subheader>
@@ -65,4 +67,4 @@ dirlist(image_files, Media.Images, filter := FileType.Image);
 </logic>
 
 
-<seealso Path_selectFile_function.csdoc dircreate_function.csdoc direxist_function.csdoc />
+<seealso CS_Path_getDirectoryListing.csdoc  Path_selectFile_function.csdoc dircreate_function.csdoc direxist_function.csdoc />

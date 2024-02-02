@@ -1,15 +1,32 @@
 ﻿<title>Media Store</title>
 
 
-On Android, the <link https://developer.android.com/reference/android/provider/MediaStore>Media Store</link> is a mechanism for accessing audio, image, and video content that can be shared across applications. The media of the given type is not necessarily stored in a single directory. The media can all be accessed using the following identifiers:
+On Android, the <link "https://developer.android.com/reference/android/provider/MediaStore">Media Store</link> is a mechanism for accessing audio, image, and video content that can be shared across applications. The media of the given type is not necessarily stored in a single directory. The media can all be accessed using the following identifiers:
 
 <list>
-	<li><logiccolor>Media.Audio</logiccolor>: Audio files.</li>
-	<li><logiccolor>Media.Images</logiccolor>: Image files.</li>
-	<li><logiccolor>Media.Video</logiccolor>: Video files.</li>
+    <li><logiccolor>Media.Audio</logiccolor>: Audio files.</li>
+    <li><logiccolor>Media.Images</logiccolor>: Image files.</li>
+    <li><logiccolor>Media.Video</logiccolor>: Video files.</li>
 </list>
 
-You can use the <logiccolor>dirlist</logiccolor> function to retrieve a list of these files or you can use the <logiccolor>Path.selectFile</logiccolor> function to show the operator a visual listing of these files.
+
+You can use the following actions and functions to retrieve a list of these files:
+
+<list>
+    <li><logiccolor>dirlist</logiccolor></li>
+    <li><action>Path.getDirectoryListing</action></li>
+</list>
+
+
+You can use the following actions and functions to show the operator a visual listing of these files:
+
+<list>
+    <li><action>Path.selectFile</action> (action)</li>
+    <li><logiccolor>Path.selectFile</logiccolor> (function)</li>
+    <li><action>Path.showFileDialog</action></li>
+</list>
+
+Because of Android <link android_interacting_with_other_applications.csdoc>security restrictions</link>, CSEntry may not have permission to list all files in the Media Store. The <action>System.selectDocument</action> action can be used in these cases to gain access to such files.
 
 Using any of the identifiers on Windows will result in an empty list of files.
 

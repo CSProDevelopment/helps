@@ -1,0 +1,70 @@
+﻿<title>UI.view Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.UI.view(<arg>path</arg> := ... ‖ <arg>url</arg> := ...,
+        『, <arg>inputData</arg> := ...  』
+        『, <arg>displayOptions</arg> := ...』)
+</logicsyntax>
+
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of the file to view.</cell><cell>string ~!~not required</cell>
+    <cell><arg>url</arg></cell><cell>The URL to view.</cell><cell>string ~!~not required</cell>
+    <cell><arg>inputData</arg></cell><cell>The input data for a viewed web page.</cell><cell>string, number, boolean, array, object ~!~not required</cell>
+    <cell><arg>displayOptions</arg></cell><cell>The display options to use when showing the web view.</cell><cell>object ~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>UI.view</action> <link action_invoker.csdoc>action</link> displays a file or web page in a new <link html_in_cspro.csdoc>web view</link>. If you would prefer to display HTML in a modal dialog, you can use the <action>UI.showDialog</action> action.
+
+One, and only one, of the arguments <arg>path</arg> or <arg>url</arg> must be provided.
+
+Specify <arg>inputData</arg> if you want to pass input data to the web view, which the web view can retrieve using <action>UI.getInputData</action>.
+
+Optional <arg>displayOptions</arg> allow you to pass display options to the web view. These are only used on Windows and control how the embedded web browser displays. These options include:
+
+<list>
+    <li><colorinline JSON>"title"</colorinline>: string giving the title of the window.</li>
+    <li><colorinline JSON>"width"</colorinline>: number specifying the width of the window in <link display_dimensions.csdoc>display units</link>.</li>
+    <li><colorinline JSON>"height"</colorinline>: number specifying the height of the window in display units.</li>
+    <li><colorinline JSON>"showCloseButton"</colorinline> boolean value that, if false, hides the window's <i>Close</i> button.</li>
+</list>
+
+If either the height or width is specified, then both values must be provided. Hiding the <i>Close</i> button also removes the margin around the web browser, so the browser will fill the entire embedded window.
+
+An alternative way to view files is to use the <logiccolor>view</logiccolor> function, or to use <link CSView::introduction.csdoc>CSView</link>, which can be launched from logic by <link CSView::run_production_views.csdoc>creating a PFF</link> and calling <logiccolor>Pff.exec</logiccolor>.
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the file does not exist or cannot be read.
+
+
+<subheader>Example (CSPro)</subheader>
+
+<logic>
+// construct the input needed for the questionnaire view
+string questionnaireViewInput =
+    maketext("{ \"dictionary\": %s, \"forms\": %s, \"case\": %s }",
+             CS.Dictionary.getDictionary(name := "PLANETS_DICT"),
+             CS.Application.getFormFile(name := "PLANETS_DICT"),
+             CS.Data.getCase(name := "PLANETS_DICT"));
+
+// pass this input to the questionnaire view
+CS.UI.view(path := Path.concat(html, "questionnaire-view", "index.html"),
+           inputData := @object questionnaireViewInput);
+</logic>
+
+
+<seealso CS_UI.csdoc CS_UI_closeDialog.csdoc CS_UI_showDialog.csdoc view_function.csdoc />

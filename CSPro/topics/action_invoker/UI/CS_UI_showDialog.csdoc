@@ -1,0 +1,77 @@
+﻿<title>UI.showDialog Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.UI.showDialog(<arg>path</arg> := ...
+                  『, <arg>inputData</arg> := ...  』
+                  『, <arg>displayOptions</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of the <link html_dialog_ui.csdoc>HTML dialog</link> to show.</cell><cell>string ~!~required</cell>
+    <cell><arg>inputData</arg></cell><cell>The input data for the dialog.</cell><cell>string, number, boolean, array, object ~!~not required</cell>
+    <cell><arg>displayOptions</arg></cell><cell>The display options to use when initially showing the dialog.</cell><cell>object ~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>UI.showDialog</action> <link action_invoker.csdoc>action</link> shows a <link html_dialog_ui.csdoc>HTML dialog</link>. HTML dialogs are shown as modal dialogs without an initial size, so the width and height of the dialog window must be specified. If you want to display HTML without worrying about sizing the window, you should use the <action>UI.view</action> action.
+
+The <arg>path</arg> identifies an HTML dialog to show. CSPro includes <link html_in_cspro.csdoc>HTML templates</link> in the installation folder for the dialogs that it uses for functions like <logiccolor>errmsg</logiccolor> or <logiccolor>prompt</logiccolor>. If <arg>path</arg> does not identify a file provided by the user, it is evaluated based on the location of CSPro's HTML templates, or based on the overridden <pffcolor>HtmlDialogs</pffcolor> property defined in the <link run_production_data_entry.csdoc>PFF file</link>. This allows you to show either custom or CSPro dialogs.
+
+Specify <arg>inputData</arg> if you want to pass input data to the dialog, which the dialog can retrieve using <action>UI.getInputData</action>.
+
+Optional <arg>displayOptions</arg> allow you to pass initial display options to the dialog that can help with sizing the dialog. These options will be used by the window that hosts the dialog, and can also be queried using <action>UI.getDisplayOptions</action>. These options include:
+
+<include include_displayOptions.hgi />
+
+If a width and height are not specified to size the HTML dialog, CSPro will wait a few seconds before showing the dialog as it expectantly waits for a call to <action>UI.setDisplayOptions</action>. This behavior is undesirable so it is important to specify the dialog's dimensions, either using <action>UI.setDisplayOptions</action> or by specifying <arg>displayOptions</arg>.
+
+You can use <link CSCode::introduction.csdoc>CSCode</link> to <link CSCode::language_cspro_html_dialog.csdoc>design and test HTML dialogs</link>. HTML dialogs can also be shown using the <logiccolor>htmldialog</logiccolor> function.
+
+
+<subheader>Return Value</subheader>
+
+The action returns any result set by the HTML dialog using the <action>UI.closeDialog</action> action. If no result was set, the action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the dialog file does not exist or cannot be read.
+
+
+<subheader>Example (HTML + JavaScript)</subheader>
+
+This example uses the <link action_invoker_execution_javascript_web.csdoc>asynchronous version</link> of <action>UI.showDialog</action> to ensure that the action does not block the current thread:
+
+<color HTML>
+<script>
+    const CS = new CSProActionInvoker();
+
+    // use the text-input.html dialog, used by the prompt logic function, to query for a password
+    CS.UI.showDialogAsync({
+        path: "text-input.html",
+        inputData: {
+            title: "Enter a Password",
+            password: true
+        }
+    })
+    .then(result => {
+        if( result !== undefined ) {
+            document.getElementById("password").value = result.textInput;
+        }
+    })
+    .catch(e => {
+        CS.UI.alertAsync({
+            text: e.message
+        });
+    });
+</script>
+</color>
+
+
+<seealso CS_UI.csdoc CS_UI_alert.csdoc CS_UI_closeDialog.csdoc CS_UI_getInputData.csdoc CS_UI_setDisplayOptions.csdoc CS_UI_view.csdoc html_in_cspro.csdoc  htmldialog_function.csdoc />

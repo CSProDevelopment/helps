@@ -1,4 +1,26 @@
-﻿<title>JavaScript Interface</title>
+﻿<title>JavaScript Interface (deprecated)</title>
+
+<i><b>Feature Upgrade</b>: Starting with <link what_is_new_in_cspro_8_0.csdoc>CSPro 8.0</link>, you should no longer use this feature, the JavaScript interface, that was introduced in <link what_is_new_in_cspro_7_7.csdoc>CSPro 7.7</link>. All functionality, and more, can be achieved using the <link action_invoker_execution_javascript_web.csdoc>Action Invoker</link>. The JavaScript interface will be removed in a future version of CSPro. This documentation is for reference only and should not be used for new projects.</i>
+
+
+<subheader>Converting JavaScript Interface Calls to Action Invoker Actions</subheader>
+
+If you are converting a project that used the JavaScript interface, the following table lists the equivalent <link action_invoker.csdoc>actions</link> that can be called from <link action_invoker_execution_javascript_web.csdoc>web views</link>. Note that, unlike the JavaScript interface, you need proper permissions granted using <link action_invoker_access_token.csdoc>access tokens</link>.
+
+<table 2 header>
+    <cell>JavaScript Interface Method</cell><cell>Action</cell>
+    <cell><colorinline JavaScript>CSPro.do("close")</colorinline></cell><cell><action>UI.closeDialog</action></cell>
+    <cell><colorinline JavaScript>CSPro.getAsyncResult</colorinline></cell><cell><i>No longer necessary as asynchronous calls return a <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</link>.</i></cell>
+    <cell><colorinline JavaScript>CSPro.getInputData</colorinline></cell><cell><action>UI.getInputData</action></cell>
+    <cell><colorinline JavaScript>CSPro.getMaxDisplayWidth</colorinline></cell><cell><action>UI.getMaxDisplayDimensions</action></cell>
+    <cell><colorinline JavaScript>CSPro.getMaxDisplayHeight</colorinline></cell><cell><action>UI.getMaxDisplayDimensions</action></cell>
+    <cell><colorinline JavaScript>CSPro.invoke</colorinline></cell><cell><action>Logic.invoke</action></cell>
+    <cell><colorinline JavaScript>CSPro.invokeAsync</colorinline></cell><cell><action>Logic.invokeAsync</action></cell>
+    <cell><colorinline JavaScript>CSPro.returnData</colorinline></cell><cell><action>UI.closeDialog</action></cell>
+    <cell><colorinline JavaScript>CSPro.runLogic</colorinline></cell><cell><action>Logic.eval</action></cell>
+    <cell><colorinline JavaScript>CSPro.runLogicAsync</colorinline></cell><cell><action>Logic.evalAsync</action></cell>
+    <cell><colorinline JavaScript>CSPro.setDisplayOptions</colorinline></cell><cell><action>UI.setDisplayOptions</action></cell>
+</table>
 
 
 <subheader>Overview</subheader>
@@ -70,7 +92,7 @@ This method is occasionally available to run operations that only exist in some 
 <indent 2>Runs an operation with an optional token and optionally returns a result. The parameter <colorinline JavaScript>action</colorinline> is a string identifying the operation to run. This method executes synchronously.~!~
 At present there is only one command, which is recognized by the embedded browser used by <logiccolor>view</logiccolor>:
 <list>
-	<li><colorinline JavaScript>"close"</colorinline>: Closes the browser (as though the user hit the OK button on Windows or the back button on Android).</li>
+    <li><colorinline JavaScript>"close"</colorinline>: Closes the browser (as though the user hit the OK button on Windows or the back button on Android).</li>
 </list>
 </indent>
 
@@ -88,7 +110,7 @@ CSPro logic:
 
 <logic>
 function ViewOccupationList()
-	view("ISCO.pdf");
+    view("ISCO.pdf");
 end;
 </logic>
 
@@ -118,7 +140,7 @@ CSPro logic:
 
 <logic>
 function ShowDistrictReport(numeric province, numeric district = notappl)
-	// generate report...
+    // generate report...
 end;
 </logic>
 
@@ -126,17 +148,17 @@ An alternate way to call the function using a JavaScript function:
 
 <color HTML>
 <script>
-	function showDistrictReport(province, district) {
-		let input = {
-			"province": province,
-			"district": district
-		};
+    function showDistrictReport(province, district) {
+        let input = {
+            "province": province,
+            "district": district
+        };
         CSPro.invokeAsync("ShowDistrictReport", JSON.stringify(input));
-	}
+    }
 </script>
 
 <a href="javascript:showDistrictReport(1, 2);">Show District Report: Varna</a>
 </color>
 
 
-<seealso html_in_cspro.csdoc />
+<seealso html_in_cspro.csdoc action_invoker_execution_javascript_web.csdoc />

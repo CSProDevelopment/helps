@@ -1,0 +1,33 @@
+﻿<title>UI.getDisplayOptions Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.UI.getDisplayOptions()
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <action>UI.getDisplayOptions</action> <link action_invoker.csdoc>action</link> returns the display options associated with the current <link html_in_cspro.csdoc>web view</link>. These display options may be useful to examine before using <action>UI.setDisplayOptions</action> to size an <link html_dialog_ui.csdoc>HTML dialog</link> shown using <action>UI.showDialog</action>.
+
+Display options are returned by web views that show <link html_dialog_ui.csdoc>HTML dialogs</link> or display <link html_question_text.csdoc>HTML question text</link>.
+
+
+<subheader>Return Value</subheader>
+
+If no web view is showing that uses displays options, the action returns undefined. Otherwise, the action returns an object containing the current values for the display options that have been set, or the default value for the options (when applicable):
+
+<include include_displayOptions.hgi />
+
+
+<subheader>Exceptions</subheader>
+
+The action does not throw exceptions.
+
+
+<include include_displayOptions_example.hgi />
+
+
+<seealso CS_UI.csdoc CS_UI_setDisplayOptions.csdoc />

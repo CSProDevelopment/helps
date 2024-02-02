@@ -1,0 +1,23 @@
+﻿<title>UI Action Invoker Namespace</title>
+
+The <action>UI</action> namespace, part of the <link action_invoker.csdoc>Action Invoker</link>, provides actions to display <link html_dialog_ui.csdoc>HTML dialogs</link>, interact with <link html_in_cspro.csdoc>web views</link>, and otherwise work with the system's user interface.
+
+
+<subheader>Functionality</subheader>
+
+<table 2 header nowrap>
+    <cell>Action</cell><cell>Description</cell>
+    <cell><action>UI.alert</action></cell><cell>Displays an alert dialog.</cell>
+    <cell><action>UI.closeDialog</action></cell><cell>Closes the current <link html_dialog_ui.csdoc>HTML dialog</link>, optionally returning a result to an action like <action>UI.showDialog</action>.</cell>
+    <cell><action>UI.enumerateWebViews</action></cell><cell>Returns information about all of the <link html_in_cspro.csdoc>web views</link> currently showing.</cell>
+    <cell><action>UI.getDisplayOptions</action></cell><cell>Returns the display options associated with the current <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.getInputData</action></cell><cell>Returns the input data associated with the current <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.getMaxDisplayDimensions</action></cell><cell>Returns the maximum dimensions, in <link display_dimensions.csdoc>display units</link>, of <link html_in_cspro.csdoc>HTML dialogs</link> that CSPro can show.</cell>
+    <cell><action>UI.postWebMessage</action></cell><cell>Posts a message to a <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.setDisplayOptions</action></cell><cell>Sets the display options for the current <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.showDialog</action></cell><cell>Shows a <link html_dialog_ui.csdoc>HTML dialog</link>.</cell>
+    <cell><action>UI.view</action></cell><cell>Views a file or web page in a new <link html_in_cspro.csdoc>web view</link>.</cell>
+</table>
+
+
+<seealso action_invoker.csdoc />

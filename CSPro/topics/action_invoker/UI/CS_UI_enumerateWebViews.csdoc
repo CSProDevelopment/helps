@@ -1,0 +1,53 @@
+﻿<title>UI.enumerateWebViews Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.UI.enumerateWebViews()
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <action>UI.enumerateWebViews</action> <link action_invoker.csdoc>action</link> returns information about all of the <link html_in_cspro.csdoc>web views</link> currently showing.
+
+
+<subheader>Return Value</subheader>
+
+The action returns an object with two properties:
+
+<table 2 header nowrap>
+    <cell>Property</cell><cell>Value</cell>
+    <cell><colorinline JSON>"webViewId"</colorinline></cell><cell>If applicable, a number containing an ID that uniquely identifies the web view from which this <link action_invoker_execution_javascript_web.csdoc>action is executing</link>.</cell>
+    <cell><colorinline JSON>"webViews"</colorinline></cell><cell>An array containing details about each web view currently showing. The topmost showing web view is the first entry in the array.</cell>
+</table>
+
+For example, this object, represented in <link JSON_primer.csdoc>JSON</link>, may look like this when called from a <link html_dialog_ui.csdoc>HTML dialog</link> from an application that uses <link html_question_text.csdoc>HTML question text</link>:
+
+<color JSON>
+{
+  "webViewId": 19917272,
+  "webViews": [
+    {
+      "webViewId": 19917272
+    },
+    {
+      "webViewId": 21877240
+    }
+  ]
+}
+</color>
+
+The first web view ID in the array represents the web view showing the HTML dialog, and the second web view ID represents the web view showing the question text.
+
+
+<subheader>Exceptions</subheader>
+
+The action does not throw exceptions.
+
+
+<include include_enumerateWebViews_postWebMessage_example.hgi />
+
+
+<seealso CS_UI.csdoc CS_UI_postWebMessage.csdoc />

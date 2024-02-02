@@ -1,0 +1,81 @@
+﻿<title>Path.getPathInfo Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Path.getPathInfo(<arg>path</arg> := ...)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of a directory or file.</cell><cell>string~!~required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Path.getPathInfo</action> <link action_invoker.csdoc>action</link> returns information about a <arg>path</arg>, including about whether the path exists. Information about directories is specified without a trailing slash.
+
+The action returns information that can also be retrieved using the following functions: <logiccolor>direxist</logiccolor>, <logiccolor>fileexist</logiccolor>, <logiccolor>filesize</logiccolor>, <logiccolor>filetime</logiccolor>, <logiccolor>Path.getExtension</logiccolor>, and <logiccolor>Path.getFileName</logiccolor>.
+
+The path information for all paths in a directory can be retrieved using the <action>Path.getDirectoryListing</action> action.
+
+
+<subheader>Return Value</subheader>
+
+The action returns an object containing the properties:
+
+<table 2 header nowrap>
+    <cell>Property</cell><cell>Value</cell>
+    <cell><colorinline JSON>"path"</colorinline></cell><cell>A string containing the fully evaluated path.</cell>
+    <cell><colorinline JSON>"name"</colorinline></cell><cell>A string containing the name of the path (the path with the directory information removed).</cell>
+    <cell><colorinline JSON>"exists"</colorinline></cell><cell>A boolean value indicating if the path exists.</cell>
+</table>
+
+If the path exists, the object also contains:
+
+<table 2 header nowrap>
+    <cell>Property</cell><cell>Value</cell>
+    <cell><colorinline JSON>"type"</colorinline></cell><cell>A string indicating if the path is a <colorinline JSON>"directory"</colorinline> or <colorinline JSON>"file"</colorinline>.</cell>
+    <cell><colorinline JSON>"modifiedTime"</colorinline></cell><cell>A number containing the modified date and time of the path in <link timestamp_function.csdoc>UNIX time</link>.</cell>
+</table>
+
+If the path exists and is a file, the object also contains:
+
+<table 2 header nowrap>
+    <cell>Property</cell><cell>Value</cell>
+    <cell><colorinline JSON>"extension"</colorinline></cell><cell>A string containing the file extension without a preceding period.</cell>
+    <cell><colorinline JSON>"contentType"</colorinline></cell><cell>A string with the <link "https://en.wikipedia.org/wiki/Media_type">MIME type</link> of the file (if known).</cell>
+    <cell><colorinline JSON>"size"</colorinline></cell><cell>A number containing the size of the file in bytes.</cell>
+</table>
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form.
+
+
+<subheader>Example (JavaScript)</subheader>
+
+<color JavaScript>
+// select an image
+const imagePath = CS.Path.selectFile({
+    title: "Select an Image",
+    filter: "|FileType.Image"
+});
+
+if( imagePath !== undefined ) {
+    // ensure that the file size is one megabyte or less
+    const imagePathInfo = CS.Path.getPathInfo({
+        path: imagePath
+    });
+
+    if( imagePathInfo.size > ( 1024 * 1024 ) ) {
+        throw new Error(`The image '${imagePathInfo.name}' is ${imagePathInfo.size} bytes but the maximum image size is 1 MB.`);
+    }
+}
+</color>
+
+
+<seealso CS_Path.csdoc CS_Path_getDirectoryListing.csdoc />

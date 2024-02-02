@@ -190,6 +190,7 @@
   { "path": "action_invoker_access_token.csdoc", "title": "Access Token", 
     "subindex": [ 
       { "path": "logic_settings.csdoc", "~title": "Logic Settings" }, 
+      { "path": "action_invoker_execution_android.csdoc", "title": "Refresh Token" }, 
       { "path": "CS_registerAccessToken.csdoc", "~title": "registerAccessToken Action" }
     ]
   }, 
@@ -213,10 +214,13 @@
       { "path": "CS_Localhost.csdoc", "title": "Namespace: Localhost" }, 
       { "path": "CS_Logic.csdoc", "title": "Namespace: Logic" }, 
       { "path": "CS_Message.csdoc", "title": "Namespace: Message" }, 
+      { "path": "CS_Path.csdoc", "title": "Namespace: Path" }, 
       { "path": "CS_Settings.csdoc", "title": "Namespace: Settings" }, 
       { "path": "CS_Sqlite.csdoc", "title": "Namespace: Sqlite" }, 
       { "path": "CS_System.csdoc", "title": "Namespace: System" }, 
+      { "path": "CS_UI.csdoc", "title": "Namespace: UI" }, 
       { "path": "CS_OnActionInvokerResult.csdoc", "~title": "OnActionInvokerResult Global Function" }, 
+      { "path": "action_invoker_execution_android.csdoc", "title": "Refresh Token" }, 
       { "path": "CS_registerAccessToken.csdoc", "~title": "registerAccessToken Action" }
     ]
   }, 
@@ -951,7 +955,6 @@
       { "path": "cspro_menu.csdoc", "title": "General Menu Summary" }, 
       { "path": "cspro_initial_screen_layout.csdoc", "title": "Initial Screen Layout" }, 
       { "path": "what_is_cspro.csdoc", "title": "Introduction" }, 
-      { "path": "javascript_interface.csdoc", "~title": "JavaScript Interface" }, 
       { "path": "cspro_toolbar.csdoc", "title": "Toolbar Summary" }, 
       { "path": "tool_list.csdoc", "title": "Tools" }, 
       { "path": "what_is_cspro.csdoc", "title": "What is" }
@@ -1254,9 +1257,8 @@
   }, 
   { "path": "display_dimensions.csdoc", "~title": "Display Dimensions", 
     "subindex": [ 
-      { "path": "javascript_interface.csdoc", "title": "getMaxDisplayHeight (JavaScript)" }, 
-      { "path": "javascript_interface.csdoc", "title": "getMaxDisplayWidth (JavaScript)" }, 
       { "path": "getproperty_function.csdoc", "title": "Height" }, 
+      { "path": "CS_UI_getMaxDisplayDimensions.csdoc", "~title": "UI.getMaxDisplayDimensions Action" }, 
       { "path": "getproperty_function.csdoc", "title": "Width" }
     ]
   }, 
@@ -1266,11 +1268,7 @@
   { "path": "display_dimensions.csdoc", "title": "Display Units" }, 
   { "path": "freq_formatting_options.csdoc", "title": "Distinct" }, 
   { "path": "distribute_finished_tables_to_other_users.csdoc", "~title": "Distribute Finished Tables to Other Users" }, 
-  { "path": "do_statement.csdoc", "~title": "Do Statement", 
-    "subindex": [ 
-      { "path": "javascript_interface.csdoc", "title": "do (JavaScript)" }
-    ]
-  }, 
+  { "path": "do_statement.csdoc", "~title": "Do Statement" }, 
   { "path": "Document.csdoc", "~title": "Document Object", 
     "subindex": [ 
       { "path": "Document_clear_function.csdoc", "~title": "Document.clear Function" }, 
@@ -1694,7 +1692,7 @@
   { "path": "user_defined_functions.csdoc", "title": "Functions", 
     "subindex": [ 
       { "path": "logic_alphabetical_list.csdoc", "title": "Alphabetical Listing" }, 
-      { "path": "javascript_interface.csdoc", "title": "Executing Using JavaScript" }, 
+      { "path": "CS_Logic_invoke.csdoc", "title": "Executing Using the Action Invoker" }, 
       { "path": "additional_function_examples.csdoc", "title": "Function Pointers" }, 
       { "path": "function_named_arguments.csdoc", "title": "Named Arguments" }, 
       { "path": "function_parameters_optional.csdoc", "~title": "Optional Function Parameters" }, 
@@ -1751,7 +1749,6 @@
     ]
   }, 
   { "path": "get_help.csdoc", "~title": "Get Help" }, 
-  { "path": "javascript_interface.csdoc", "title": "getAsyncResult (JavaScript)" }, 
   { "path": "getbluetoothname_function.csdoc", "~title": "GetBluetoothName Function" }, 
   { "path": "getbuffer_function.csdoc", "~title": "GetBuffer Function" }, 
   { "path": "getcapturetype_function.csdoc", "~title": "GetCaptureType Function" }, 
@@ -1779,7 +1776,6 @@
     ]
   }, 
   { "path": "getimage_function.csdoc", "~title": "GetImage Function" }, 
-  { "path": "javascript_interface.csdoc", "title": "getInputData (JavaScript)" }, 
   { "path": "Symbol_getJson_function.csdoc", "title": "getJson Function", 
     "subindex": [ 
       { "path": "Symbol_getJson_function.csdoc", "~title": "Symbol.getJson Function" }
@@ -1817,8 +1813,6 @@
       { "path": "Map_getMarkerLongitude_function.csdoc", "~title": "Map.getMarkerLongitude Function" }
     ]
   }, 
-  { "path": "javascript_interface.csdoc", "title": "getMaxDisplayHeight (JavaScript)" }, 
-  { "path": "javascript_interface.csdoc", "title": "getMaxDisplayWidth (JavaScript)" }, 
   { "path": "Symbol_getName_function.csdoc", "title": "getName Function", 
     "subindex": [ 
       { "path": "Symbol_getName_function.csdoc", "~title": "Symbol.getName Function" }
@@ -1947,7 +1941,6 @@
       { "path": "encode_function.csdoc", "title": "Encoding Strings For Output" }, 
       { "path": "frequencies_file.csdoc", "title": "Frequency File" }, 
       { "path": "html_dialog_ui.csdoc", "~title": "HTML Dialog Boxes" }, 
-      { "path": "javascript_interface.csdoc", "~title": "JavaScript Interface" }, 
       { "path": "external_libraries.csdoc", "title": "JavaScript Libraries" }, 
       { "path": "listing_file.csdoc", "~title": "Listing File" }, 
       { "path": "localhost_url.csdoc", "~title": "Localhost URL" }, 
@@ -2086,12 +2079,7 @@
   { "path": "introduction_to_production_tabulations.csdoc", "~title": "Introduction to Production Tabulations" }, 
   { "path": "introduction_to_run_in_parts.csdoc", "~title": "Introduction to Run in Parts" }, 
   { "path": "invalueset_function.csdoc", "~title": "InValueSet Function" }, 
-  { "path": "invoke_function.csdoc", "~title": "Invoke Function", 
-    "subindex": [ 
-      { "path": "javascript_interface.csdoc", "title": "invoke (JavaScript)" }, 
-      { "path": "javascript_interface.csdoc", "title": "invokeAsync (JavaScript)" }
-    ]
-  }, 
+  { "path": "invoke_function.csdoc", "~title": "Invoke Function" }, 
   { "path": "ischecked_function.csdoc", "~title": "IsChecked Function" }, 
   { "path": "timestamp_function.csdoc", "title": "ISO 8601" }, 
   { "path": "ispartial_function.csdoc", "~title": "IsPartial Function" }, 
@@ -2141,22 +2129,7 @@
       { "path": "action_invoker_execution_javascript_web.csdoc", "title": "Action Invoker Execution (from Web Views)" }
     ]
   }, 
-  { "path": "javascript_interface.csdoc", "~title": "JavaScript Interface", 
-    "subindex": [ 
-      { "path": "javascript_interface.csdoc", "title": "CSPro.do" }, 
-      { "path": "javascript_interface.csdoc", "title": "CSPro.getAsyncResult" }, 
-      { "path": "javascript_interface.csdoc", "title": "CSPro.getInputData" }, 
-      { "path": "javascript_interface.csdoc", "title": "CSPro.getMaxDisplayHeight" }, 
-      { "path": "javascript_interface.csdoc", "title": "CSPro.getMaxDisplayWidth" }, 
-      { "path": "javascript_interface.csdoc", "title": "CSPro.invoke" }, 
-      { "path": "javascript_interface.csdoc", "title": "CSPro.invokeAsync" }, 
-      { "path": "javascript_interface.csdoc", "title": "CSPro.returnData" }, 
-      { "path": "javascript_interface.csdoc", "title": "CSPro.runLogic" }, 
-      { "path": "javascript_interface.csdoc", "title": "CSPro.runLogicAsync" }, 
-      { "path": "javascript_interface.csdoc", "title": "CSPro.setDisplayOptions" }, 
-      { "path": "html_in_cspro.csdoc", "~title": "HTML in CSPro" }
-    ]
-  }, 
+  { "path": "javascript_interface.csdoc", "~title": "JavaScript Interface (deprecated)" }, 
   { "path": "external_libraries.csdoc", "title": "JavaScript Libraries", 
     "subindex": [ 
       { "path": "external_libraries.csdoc", "title": "Bootstrap" }, 
@@ -2851,6 +2824,16 @@
       { "path": "data_entry_path.csdoc", "title": "On" }
     ]
   }, 
+  { "path": "CS_Path.csdoc", "~title": "Path Action Invoker Namespace", 
+    "subindex": [ 
+      { "path": "CS_Path_createDirectory.csdoc", "~title": "Path.createDirectory Action" }, 
+      { "path": "CS_Path_getDirectoryListing.csdoc", "~title": "Path.getDirectoryListing Action" }, 
+      { "path": "CS_Path_getPathInfo.csdoc", "~title": "Path.getPathInfo Action" }, 
+      { "path": "CS_Path_getSpecialPaths.csdoc", "~title": "Path.getSpecialPaths Action" }, 
+      { "path": "CS_Path_selectFile.csdoc", "~title": "Path.selectFile Action" }, 
+      { "path": "CS_Path_showFileDialog.csdoc", "~title": "Path.showFileDialog Action" }
+    ]
+  }, 
   { "path": "path_adjuster_dialog.csdoc", "~title": "Path Adjuster Dialog" }, 
   { "path": "Path.csdoc", "~title": "Path Namespace", 
     "subindex": [ 
@@ -3151,6 +3134,7 @@
       { "path": "tool_list.csdoc", "title": "Data" }
     ]
   }, 
+  { "path": "action_invoker_execution_android.csdoc", "title": "Refresh Token" }, 
   { "path": "refused_value.csdoc", "~title": "Refused Value", 
     "subindex": [ 
       { "path": "special_values.csdoc", "~title": "Special Values" }
@@ -3266,7 +3250,6 @@
       { "path": "tool_list.csdoc", "title": "Tables" }
     ]
   }, 
-  { "path": "javascript_interface.csdoc", "title": "returnData (JavaScript)" }, 
   { "path": "review_edit_specifications.csdoc", "~title": "Review Edit Specifications" }, 
   { "path": "timestamp_function.csdoc", "title": "RFC 3339" }, 
   { "path": "saving_tables_as_text_html_or_rich_text.csdoc", "title": "Rich Text Format", 
@@ -3324,8 +3307,6 @@
   { "path": "run_format_interactively.csdoc", "~title": "Run Format Interactively" }, 
   { "path": "run_tabulate_in_batch.csdoc", "~title": "Run Tabulate in Batch" }, 
   { "path": "run_tabulate_interactively.csdoc", "~title": "Run Tabulate Interactively" }, 
-  { "path": "javascript_interface.csdoc", "title": "runLogic (JavaScript)" }, 
-  { "path": "javascript_interface.csdoc", "title": "runLogicAsync (JavaScript)" }, 
   { "path": "data_source_sas.csdoc", "~title": "SAS Data Source" }, 
   { "path": "gps_interactive_modes.csdoc", "title": "Satellite Mode (GPS)" }, 
   { "path": "save_an_application.csdoc", "title": "Save", 
@@ -3384,11 +3365,6 @@
     ]
   }, 
   { "path": "forms_design.csdoc", "title": "Screens" }, 
-  { "path": "javascript_interface.csdoc", "title": "Scripting", 
-    "subindex": [ 
-      { "path": "javascript_interface.csdoc", "title": "JavaScript" }
-    ]
-  }, 
   { "path": "find_dictionary_elements.csdoc", "title": "Search Dictionary Elements" }, 
   { "path": "formats_for_a_part_of_a_table.csdoc", "title": "Secondary Stub Head", 
     "subindex": [ 
@@ -3456,7 +3432,6 @@
   { "path": "setcapturepos_function.csdoc", "~title": "SetCapturePos Function" }, 
   { "path": "setcapturetype_function.csdoc", "~title": "SetCaptureType Function" }, 
   { "path": "setcaselabel_function.csdoc", "~title": "SetCaseLabel Function" }, 
-  { "path": "javascript_interface.csdoc", "title": "setDisplayOptions (JavaScript)" }, 
   { "path": "setfile_function.csdoc", "~title": "SetFile Function" }, 
   { "path": "setfont_function.csdoc", "~title": "SetFont Function" }, 
   { "path": "setlanguage_function.csdoc", "~title": "SetLanguage Function" }, 
@@ -4091,6 +4066,20 @@
       { "path": "create_tables_with_multiple_variables.csdoc", "title": "Table" }
     ]
   }, 
+  { "path": "CS_UI.csdoc", "~title": "UI Action Invoker Namespace", 
+    "subindex": [ 
+      { "path": "CS_UI_alert.csdoc", "~title": "UI.alert Action" }, 
+      { "path": "CS_UI_closeDialog.csdoc", "~title": "UI.closeDialog Action" }, 
+      { "path": "CS_UI_enumerateWebViews.csdoc", "~title": "UI.enumerateWebViews Action" }, 
+      { "path": "CS_UI_getDisplayOptions.csdoc", "~title": "UI.getDisplayOptions Action" }, 
+      { "path": "CS_UI_getInputData.csdoc", "~title": "UI.getInputData Action" }, 
+      { "path": "CS_UI_getMaxDisplayDimensions.csdoc", "~title": "UI.getMaxDisplayDimensions Action" }, 
+      { "path": "CS_UI_postWebMessage.csdoc", "~title": "UI.postWebMessage Action" }, 
+      { "path": "CS_UI_setDisplayOptions.csdoc", "~title": "UI.setDisplayOptions Action" }, 
+      { "path": "CS_UI_showDialog.csdoc", "~title": "UI.showDialog Action" }, 
+      { "path": "CS_UI_view.csdoc", "~title": "UI.view Action" }
+    ]
+  }, 
   { "path": "include_exclude_special_values_in_a_variable.csdoc", "title": "Undefined Values", 
     "subindex": [ 
       { "path": "include_exclude_special_values_in_a_variable.csdoc", "title": "Dump" }, 
@@ -4280,7 +4269,8 @@
       { "path": "Document_view_function.csdoc", "~title": "Document.view Function" }, 
       { "path": "Freq_view_function.csdoc", "~title": "Freq.view Function" }, 
       { "path": "Image_view_function.csdoc", "~title": "Image.view Function" }, 
-      { "path": "Report_view_function.csdoc", "~title": "Report.view Function" }
+      { "path": "Report_view_function.csdoc", "~title": "Report.view Function" }, 
+      { "path": "CS_UI_view.csdoc", "~title": "UI.view Action" }
     ]
   }, 
   { "path": "viewing_multiple_and_facing_pages.csdoc", "~title": "Viewing Multiple and Facing Pages" }, 

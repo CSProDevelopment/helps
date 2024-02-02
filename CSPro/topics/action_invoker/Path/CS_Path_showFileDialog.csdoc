@@ -1,0 +1,82 @@
+﻿<title>Path.showFileDialog Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Path.showFileDialog(『<arg>type</arg> := ...』
+                         『, <arg>title</arg> := ...』
+                         『, <arg>filter</arg> := ...』
+                         『, <arg>startDirectory</arg> := ...』
+                         『, <arg>rootDirectory</arg> := ...』
+                         『, <arg>showDirectories</arg> := ...』
+                         『, <arg>name</arg> := ...』
+                         『, <arg>confirmOverwrite</arg> := ...』
+                         『, <arg>useNativeDialog</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>type</arg></cell><cell>The dialog type: <logiccolor>"open"</logiccolor> for opening files or <logiccolor>"save"</logiccolor> for saving files.~!~The default value is <logiccolor>"open"</logiccolor>.</cell><cell>string~!~not required</cell>
+    <cell><arg>title</arg></cell><cell>The title of the dialog.</cell><cell>string~!~not required</cell>
+    <cell><arg>filter</arg></cell><cell>A wildcard used to filter the files.</cell><cell>string~!~not required</cell>
+    <cell><arg>startDirectory</arg></cell><cell>The path of the directory to be initially shown to the operator.</cell><cell>string~!~not required</cell>
+    <cell><arg>rootDirectory</arg></cell><cell>The path of the directory above which the operator cannot navigate.</cell><cell>string~!~not required</cell>
+    <cell><arg>showDirectories</arg></cell><cell>If false, the operator will not see subdirectories and will not be able to navigate to a parent directory.~!~The default value is <logiccolor>true</logiccolor>.</cell><cell>boolean~!~not required</cell>
+    <cell><arg>name</arg></cell><cell>The initial filename, or a suggested filename.</cell><cell>string~!~not required</cell>
+    <cell><arg>confirmOverwrite</arg></cell><cell>If true, a confirmation message will appear when trying to overwrite an existing file.~!~The default value is <logiccolor>true</logiccolor>.</cell><cell>boolean~!~not required</cell>
+    <cell><arg>useNativeDialog</arg></cell><cell>If true, on Windows, instead of displaying an <link html_dialog_ui.csdoc>HTML dialog</link>, the native Windows open/save file dialogs will display.~!~The default value is <logiccolor>false</logiccolor>.</cell><cell>boolean~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Path.showFileDialog</action> <link action_invoker.csdoc>action</link> displays a dialog with a visual listing of the file system, allowing the user to select a file to open or to create a file to save. Hidden and system files are not shown to the operator.
+
+<include include_details_selectFile_showFileDialog.hgi />
+
+If specifiying <arg>useNativeDialog</arg> to use the native Windows open/save file dialogs, the <arg>rootDirectory</arg> and <arg>showDirectories</arg> arguments are ignored and the operator will have access to the entire file system.
+
+
+<subheader>Return Value</subheader>
+
+The action returns a string containing the fully evaluated path of the selected file, or undefined if no file was selected.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if either the start or root directories do not exist.
+
+
+<subheader>Example (JavaScript): Open File Dialog</subheader>
+
+<color JavaScript>
+const pdfPath = CS.Path.showFileDialog({
+    title: "Select a PDF",
+    filter: "*.pdf"
+});
+
+if( pdfPath !== undefined ) {
+    // ...
+}
+</color>
+
+
+<subheader>Example (JavaScript): Save File Dialog</subheader>
+
+<color JavaScript>
+const imagePath = CS.Path.showFileDialog({
+    type: "save",
+    title: "Save Roof Image As",
+    filter: "*.jpg",
+    rootDirectory: "household-images",
+    name: "roof.jpg"
+});
+
+if( imagePath !== undefined ) {
+    // ...
+}
+</color>
+
+
+<seealso CS_Path.csdoc CS_Path_selectFile.csdoc />

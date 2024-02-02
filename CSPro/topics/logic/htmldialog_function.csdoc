@@ -1,7 +1,5 @@
 ﻿<title>htmldialog Function</title>
 
-The <logiccolor>htmldialog</logiccolor> function allows for the customization of CSPro dialogs in two ways. First, HTML templates can receive dynamic input data from the CSPro application which can be used as text in the dialogs or to change the behavior of the dialog. Second, user-created HTML templates give the application developer complete control of the appearance and behavior of the dialogs.
-
 
 <subheader>Format</subheader>
 
@@ -16,16 +14,20 @@ s = htmldialog(<arg>html_filename</arg>『, inputData := <arg>input_data</arg>�
 
 <subheader>Description</subheader>
 
-The <logiccolor>htmldialog</logiccolor> function must be passed a a string expression, <arg>html_filename</arg>, that specifies the HTML template to be used for the dialog.
+The <logiccolor>htmldialog</logiccolor> function allows for the customization of CSPro dialogs in two ways. First, HTML templates can receive dynamic input data from the CSPro application which can be used as text in the dialogs or to change the behavior of the dialog. Second, user-created HTML templates give the application developer complete control of the appearance and behavior of the dialogs.
+
+The function must be passed a a string expression, <arg>html_filename</arg>, that specifies the HTML template to be used for the dialog.
 
 In the first version, the optional string expression <arg>input_data</arg> argument allows input data to be passed to the HTML template.
 
 In the second version, the optional <link function_named_arguments.csdoc>named argument</link> <arg>input_data</arg> allows input data to be passed to the HTML template. The optional named argument <arg>display_options</arg> argument is a <link JSON_primer.csdoc>JSON</link> string that allows control of the display settings. All possible display options are shown below in a table.
 
+You can use <link CSCode::introduction.csdoc>CSCode</link> to <link CSCode::language_cspro_html_dialog.csdoc>design and test HTML dialogs</link>. HTML dialogs can also be shown using the <action>UI.showDialog</action> function.
+
 
 <subheader>Return Value</subheader>
 
-The function returns a string. The contents of the string are determined by the HTML template and returned by a JavaScript call to <colorinline JavaScript>CSPro.returnData()</colorinline>.
+The function returns a string. The contents of the string are determined by the HTML template and returned by a JavaScript call, using the <link action_invoker_execution_javascript_web.csdoc>Action Invoker</link>, to <action>UI.closeDialog</action>.
 
 
 <subheader>HTML Templates</subheader>
@@ -37,41 +39,37 @@ Writing a user-created HTML template can be simplified by first selecting an exi
 
 <subheader>Input Data</subheader>
 
-The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a <link JSON_primer.csdoc>JSON</link> string that represents multiple values. The string contents of the input data are retrieved by calling <colorinline JavaScript>CSPro.getInputData()</colorinline> from the script block of the HTML template.
+The input data argument is a mechanism to pass data from the CSPro application to the HTML template. The contents of the input data could be a simple text string that represents a single value or a <link JSON_primer.csdoc>JSON</link> string that represents multiple values. The contents of the input data are retrieved by calling the <action>UI.getInputData</action> action from the script block of the HTML template.
 
 <color JavaScript>
-// Simple string
-var inputString = CSPro.getInputData();
-
-// JSON string
-var inputJSON = JSON.parse(CSPro.getInputData());
+const inputData = CS.UI.getInputData();
 </color>
 
 
 <subheader>Display Options</subheader>
 
-The display options can be set using the optional named argument <arg>display_options</arg> in CSPro logic, or can be specifed as part of the HTML dialog by executing a JavaScript call to <colorinline JavaScript>CSPro.setDisplayOptions(displayOptions)</colorinline>.
+The display options can be set using the optional named argument <arg>display_options</arg> in CSPro logic, or can be specified as part of the HTML dialog by calling the <action>UI.setDisplayOptions</action> action.
 
 <table 3 header nowrap>
-	<cell>Name</cell><cell>Platform</cell><cell>Values</cell>
-	<cell>width</cell><cell>Both</cell><cell>Width in <link display_dimensions.csdoc>display units</link></cell>
-	<cell>height</cell><cell>Both</cell><cell>Height in <link display_dimensions.csdoc>display units</link></cell>
-	<cell>resizable</cell><cell>Windows</cell><cell>True, False</cell>
-	<cell>borderColor</cell><cell>Windows</cell><cell>CSS name or hex code (e.g., "black" or "#000000")</cell>
-	<cell>titleBarColor</cell><cell>Windows</cell><cell>CSS name or hex code</cell>
-	<cell>titleBarHeight</cell><cell>Windows</cell><cell>Height in <link display_dimensions.csdoc>display units</link></cell>
-	<cell>keyboard</cell><cell>Android</cell><cell>True, False (whether to show an on-screen keyboard)</cell>
+    <cell>Name</cell><cell>Platform</cell><cell>Values</cell>
+    <cell>width</cell><cell>Both</cell><cell>Width in <link display_dimensions.csdoc>display units</link></cell>
+    <cell>height</cell><cell>Both</cell><cell>Height in <link display_dimensions.csdoc>display units</link></cell>
+    <cell>resizable</cell><cell>Windows</cell><cell>True, False</cell>
+    <cell>borderColor</cell><cell>Windows</cell><cell>CSS name or hex code (e.g., "black" or "#000000")</cell>
+    <cell>titleBarColor</cell><cell>Windows</cell><cell>CSS name or hex code</cell>
+    <cell>titleBarHeight</cell><cell>Windows</cell><cell>Height in <link display_dimensions.csdoc>display units</link></cell>
+    <cell>keyboard</cell><cell>Android</cell><cell>True, False (whether to show an on-screen keyboard)</cell>
 </table>
 
-The default values for <i>resizeable</i> and <i>keyboard</i> are false. If a width and height are not specified, CSPro will wait a few seconds before showing the dialog as it expectantly waits for a call to <colorinline JavaScript>CSPro.setDisplayOptions(displayOptions)</colorinline>. This behavior is undesirable so it is important to specify the dialog width and height.
+The default values for <i>resizable</i> and <i>keyboard</i> are false. If a width and height are not specified, CSPro will wait a few seconds before showing the dialog as it expectantly waits for a call to <action>UI.setDisplayOptions</action>. This behavior is undesirable so it is important to specify the dialog width and height.
 
 
 <subheader>Example: Existing HTML Template</subheader>
 
 <logic>
 string input_data = '{ "title": "Enter Some Data!",'
-					'  "multiline": true,'
-					'  "allowEmptyText": false }';
+                    '  "multiline": true,'
+                    '  "allowEmptyText": false }';
 
 string result = htmldialog("text-input.html", input_data);
 </logic>
@@ -82,15 +80,15 @@ string result = htmldialog("text-input.html", input_data);
 <logic>
 string input_data = "Hello world!";
 string display_options = maketext('{ "width": "%d",'
-								  '  "height": %d,'
-								  '  "borderColor": "#FF0000" }',
-								  tonumber(getproperty("MaxDisplayWidth")) * 0.8,
-							      tonumber(getproperty("MaxDisplayHeight")) * 0.8);
+                                  '  "height": %d,'
+                                  '  "borderColor": "#FF0000" }',
+                                  tonumber(getproperty("MaxDisplayWidth")) * 0.8,
+                                  tonumber(getproperty("MaxDisplayHeight")) * 0.8);
 
 string result = htmldialog("user-defined-dialog.html",
-						   inputData := input_data,
-						   displayOptions := display_options);
+                           inputData := input_data,
+                           displayOptions := display_options);
 </logic>
 
 
-<seealso html_in_cspro.csdoc javascript_interface.csdoc />
+<seealso html_in_cspro.csdoc action_invoker_execution_javascript_web.csdoc CS_UI_showDialog.csdoc />

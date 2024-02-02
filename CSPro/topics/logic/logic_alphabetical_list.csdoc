@@ -138,7 +138,7 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>hideocc</logiccolor></cell><cell>Visually hides an occurrence row in a roster.</cell>
     <cell><logiccolor>high</logiccolor></cell><cell>Returns the maximum value in a group of numeric expressions.</cell>
     <cell><logiccolor>highlighted</logiccolor></cell><cell>Returns whether a field is on path or reached during data entry.</cell>
-    <cell><logiccolor>htmldialog</logiccolor></cell><cell>Displays a custom dialog designed in <link html_in_cspro.csdoc>HTML</link> and <link javascript_interface.csdoc>JavaScript</link>.</cell>
+    <cell><logiccolor>htmldialog</logiccolor></cell><cell>Displays a custom dialog designed in <link html_in_cspro.csdoc>HTML</link> and <link action_invoker_execution_javascript_web.csdoc>JavaScript</link>.</cell>
     <cell 2>&nbsp;</cell>
     <cell><logiccolor>if</logiccolor></cell><cell>Executes statements conditionally.</cell>
     <cell><logiccolor>Image</logiccolor></cell><cell>Declares an <link Image.csdoc>Image</link> object for storing and manipulating images.</cell>
@@ -209,12 +209,18 @@ The following table lists functions and statements that can be used in logic. Li
     <cell 2>&nbsp;</cell>
     <cell><logiccolor>paradata</logiccolor></cell><cell>Performs an action on the <link paradata.csdoc>paradata log</link>.</cell>
     <cell><logiccolor>Path.concat</logiccolor></cell><cell>Combines multiple strings into one string representing a file path.</cell>
+    <cell><action>Path.createDirectory</action> <sup>(CS)</sup></cell><cell>Creates a directory if it does not already exist.</cell>
+    <cell><action>Path.getDirectoryListing</action> <sup>(CS)</sup></cell><cell>Returns information about the paths in a directory.</cell>
     <cell><logiccolor>Path.getDirectoryName</logiccolor></cell><cell>Extracts the directory name from a file path.</cell>
     <cell><logiccolor>Path.getExtension</logiccolor></cell><cell>Extracts the file extension from a file path.</cell>
     <cell><logiccolor>Path.getFileName</logiccolor></cell><cell>Extracts the file name from a file path.</cell>
     <cell><logiccolor>Path.getFileNameWithoutExtension</logiccolor></cell><cell>Extracts the file name without its extension from a file path.</cell>
+    <cell><action>Path.getPathInfo</action> <sup>(CS)</sup></cell><cell>Returns information about a directory or file path.</cell>
     <cell><logiccolor>Path.getRelativePath</logiccolor></cell><cell>Returns a relative path based on a path's location relative to a directory.</cell>
+    <cell><action>Path.getSpecialPaths</action> <sup>(CS)</sup></cell><cell>Returns special paths, including the download and temp directories.</cell>
+    <cell><logiccolor>Path.selectFile</logiccolor> <sup>(CS)</sup></cell><cell>Shows the operator a visual listing of the file system and returns the path of the file the operator selected.</cell>
     <cell><logiccolor>Path.selectFile</logiccolor></cell><cell>Shows the operator a visual listing of the file system and returns the path of the file the operator selected.</cell>
+    <cell><action>Path.showFileDialog</action> <sup>(CS)</sup></cell><cell>Displays a dialog with a visual listing of the file system, allowing the user to select a file to open or to create a file to save.</cell>
     <cell><logiccolor>pathconcat</logiccolor></cell><cell>Combines multiple strings into one string representing a file path.</cell>
     <cell><logiccolor>pathname</logiccolor></cell><cell>Returns the path of various special directories.</cell>
     <cell><logiccolor>Pff</logiccolor></cell><cell>Declare a <link Pff.csdoc>Pff</link> object that can be used to dynamically modify the way other CSPro applications are executed.</cell>
@@ -319,6 +325,16 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>tr</logiccolor></cell><cell>Translates a string literal into an appropriate string based on the application's current language.</cell>
     <cell><logiccolor>trace</logiccolor></cell><cell>Controls a window or file that can contain debugging information.</cell>
     <cell 2>&nbsp;</cell>
+    <cell><action>UI.alert</action> <sup>(CS)</sup></cell><cell>Displays an alert dialog.</cell>
+    <cell><action>UI.closeDialog</action> <sup>(CS)</sup></cell><cell>Closes the current <link html_dialog_ui.csdoc>HTML dialog</link>, optionally returning a result to an action like <action>UI.showDialog</action>.</cell>
+    <cell><action>UI.enumerateWebViews</action> <sup>(CS)</sup></cell><cell>Returns information about all of the <link html_in_cspro.csdoc>web views</link> currently showing.</cell>
+    <cell><action>UI.getDisplayOptions</action> <sup>(CS)</sup></cell><cell>Returns the display options associated with the current <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.getInputData</action> <sup>(CS)</sup></cell><cell>Returns the input data associated with the current <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.getMaxDisplayDimensions</action> <sup>(CS)</sup></cell><cell>Returns the maximum dimensions, in <link display_dimensions.csdoc>display units</link>, of <link html_in_cspro.csdoc>HTML dialogs</link> that CSPro can show.</cell>
+    <cell><action>UI.postWebMessage</action> <sup>(CS)</sup></cell><cell>Posts a message to a <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.setDisplayOptions</action> <sup>(CS)</sup></cell><cell>Sets the display options for the current <link html_in_cspro.csdoc>web view</link>.</cell>
+    <cell><action>UI.showDialog</action> <sup>(CS)</sup></cell><cell>Shows a <link html_dialog_ui.csdoc>HTML dialog</link>.</cell>
+    <cell><action>UI.view</action> <sup>(CS)</sup></cell><cell>Views a file or web page in a new <link html_in_cspro.csdoc>web view</link>.</cell>
     <cell><logiccolor>universe</logiccolor></cell><cell>Specifies a condition that must be true for execution of a procedure or function to continue.</cell>
     <cell><logiccolor>userbar</logiccolor></cell><cell>Controls the optional display bar in a data entry application.</cell>
     <cell><logiccolor>uuid</logiccolor></cell><cell>Returns a human-readable string containing a universally unique identifier.</cell>

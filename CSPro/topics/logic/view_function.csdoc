@@ -23,7 +23,7 @@ The first argument to the function indicates what to view:
 
 If an embedded web browser is used, any logic coded after the <logiccolor>view</logiccolor> function call will not execute until the window is closed. However, if a separate application is launched, the application will continue while the external application is still active.
 
-An alternative way to view files is to use <link CSView::introduction.csdoc>CSView</link>, which can be launched from logic by <link CSView::run_production_views.csdoc>creating a PFF</link> and calling <logiccolor>Pff.exec</logiccolor>.
+An alternative way to view files is to use the <action>UI.view</action> action, or to use <link CSView::introduction.csdoc>CSView</link>, which can be launched from logic by <link CSView::run_production_views.csdoc>creating a PFF</link> and calling <logiccolor>Pff.exec</logiccolor>.
 
 
 <include "include_viewer_arguments.hgi" />
@@ -53,4 +53,4 @@ view(CENSUS_DICT);
 </logic>
 
 
-<seealso execsystem_function_desktop.csdoc execsystem_function_mobile.csdoc html_in_cspro.csdoc javascript_interface.csdoc CSView::introduction.csdoc />
+<seealso html_in_cspro.csdoc action_invoker_execution_javascript_web.csdoc CSView::introduction.csdoc />

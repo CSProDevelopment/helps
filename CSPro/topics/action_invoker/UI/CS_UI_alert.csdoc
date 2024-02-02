@@ -1,0 +1,47 @@
+﻿<title>UI.alert Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.UI.alert(<arg>text</arg> := ... 『, <arg>title</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>text</arg></cell><cell>The message to display.</cell><cell>string ~!~required</cell>
+    <cell><arg>title</arg></cell><cell>The dialog's title.</cell><cell>string ~!~not required</cell>
+</table></indent>
+
+<subheader>Description</subheader>
+
+The <action>UI.alert</action> <link action_invoker.csdoc>action</link> displays an alert dialog using the same <link html_dialog_ui.csdoc>HTML dialog</link> used by the <logiccolor>errmsg</logiccolor> function. The dialog displays the <arg>text</arg>. The dialog's title defaults to <logiccolor>"Alert"</logiccolor>, but this can be overridden by providing a <arg>title</arg>.
+
+
+<subheader>Return Value</subheader>
+
+The action returns undefined.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form.
+
+
+<subheader>Example (HTML + JavaScript)</subheader>
+
+This example uses the <link action_invoker_execution_javascript_web.csdoc>asynchronous version</link> of <action>UI.alert</action> to ensure that the action does not block the current thread:
+
+<color HTML>
+<script>
+    const CS = new CSProActionInvoker();
+
+    CS.UI.alertAsync({
+        title: "Synchronization Error",
+        text: "There was an error sending the data to the server!"
+    });
+</script>
+</color>
+
+
+<seealso CS_UI.csdoc CS_UI_showDialog.csdoc />

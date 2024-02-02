@@ -22,7 +22,7 @@ If the file exists, the function returns the size of the file in bytes. If the f
 
 <logic>
 if filesize("report.txt") > 0 then
-	errmsg("The report already exists!");
+    errmsg("The report already exists!");
 endif;
 </logic>
 
@@ -36,8 +36,8 @@ File reportFile;
 
 PROC EXAMPLE
 
-	numeric reportSize = filesize(reportFile);
+    numeric reportSize = filesize(reportFile);
 </logic>
 
 
-<seealso fileempty_function.csdoc fileexist_function.csdoc />
+<seealso fileempty_function.csdoc fileexist_function.csdoc CS_Path_getPathInfo.csdoc />

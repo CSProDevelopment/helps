@@ -114,9 +114,11 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
     <li>A new namespace, <action>Localhost</action>, creates <link localhost_url.csdoc>localhost URLs</link> that can be used to serve content from the local file system or from memory with the actions: <action>Localhost.mapActionResult</action>, <action>Localhost.mapFile</action>, <action>Localhost.mapSymbol</action>, and <action>Localhost.mapText</action>.</li>
     <li>A new namespace, <action>Logic</action>, provides ways to interact with <link introduction_to_cspro_language.csdoc>CSPro logic</link> and an application's <link symbols_json_representation.csdoc>symbols</link> with the actions: <action>Logic.eval</action>, <action>Logic.getSymbol</action>, <action>Logic.getSymbolMetadata</action>, <action>Logic.getSymbolValue</action>, <action>Logic.invoke</action>, and <action>Logic.updateSymbolValue</action>.</li>
     <li>A new namespace, <action>Message</action>, facilitates working with <link message_file_mgf.csdoc>messages</link> and formatting text with the actions: <action>Message.formatText</action> and <action>Message.getText</action>.</li>
+    <li>A new namespace, <action>Path</action>, provides ways to query information about the file system or to perform operations on a path with the actions: <action>Path.createDirectory</action>, <action>Path.getDirectoryListing</action>, <action>Path.getPathInfo</action>, <action>Path.getSpecialPaths</action>, <action>Path.selectFile</action>, and <action>Path.showFileDialog</action>.</li>
     <li>A new namespace, <action>Settings</action>, provides ways to set and retrieve settings that persist across application runs with the actions: <action>Settings.getValue</action> and <action>Settings.putValue</action>.</li>
     <li>A new namespace, <action>Sqlite</action>, facilitates working with <link sqlite_in_cspro.csdoc>SQLite databases</link> with the actions: <action>Sqlite.close</action>, <action>Sqlite.exec</action>, <action>Sqlite.open</action>, and <action>Sqlite.rekey</action>.</li>
     <li>A new namespace, <action>System</action>, provides ways to work with system resources with the actions: <action>System.getSharableUri</action> and <action>System.selectDocument</action>.</li>
+    <li>A new namespace, <action>UI</action>, provides ways to display <link html_dialog_ui.csdoc>HTML dialogs</link>, interact with <link html_in_cspro.csdoc>web views</link>, and otherwise work with the system's user interface with the actions: <action>UI.alert</action>, <action>UI.closeDialog</action>, <action>UI.enumerateWebViews</action>, <action>UI.getDisplayOptions</action>, <action>UI.getInputData</action>, <action>UI.getMaxDisplayDimensions</action>, <action>UI.postWebMessage</action>, <action>UI.setDisplayOptions</action>, <action>UI.showDialog</action>, and <action>UI.view</action>.</li>
 </list>
 
 
@@ -124,6 +126,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
 
 <list>
     <li>Five additional <link html_in_cspro.csdoc>JavaScript libraries</link> are included in the <i>html/external</i> directory on both Windows and Android: <link "https://www.chartjs.org">Chart.js</link>, <link "https://handlebarsjs.com">Handlebars.js</link>, <link "https://jqueryui.com">jQuery UI</link>, <link "https://lindell.me/JsBarcode">JsBarcode</link>, and <link "https://github.com/alexei/sprintf.js">sprintf-js</link>.</li>
+    <li>The <link javascript_interface.csdoc>JavaScript interface</link> introduced in <link what_is_new_in_cspro_7_7.csdoc>CSPro 7.7</link> is now <link deprecated_features.csdoc>deprecated</link> and will be removed in a future release. All functionality, and more, can be achieved using the <link action_invoker_execution_javascript_web.csdoc>Action Invoker</link>.</li>
 </list>
 
 

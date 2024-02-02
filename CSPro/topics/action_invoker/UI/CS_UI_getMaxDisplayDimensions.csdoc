@@ -1,0 +1,60 @@
+﻿<title>UI.getMaxDisplayDimensions Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.UI.getMaxDisplayDimensions()
+</logicsyntax>
+
+
+<subheader>Description</subheader>
+
+The <action>UI.getMaxDisplayDimensions</action> <link action_invoker.csdoc>action</link> returns the maximum dimensions, in <link display_dimensions.csdoc>display units</link>, of <link html_in_cspro.csdoc>HTML dialogs</link> that CSPro can show.
+
+
+<subheader>Return Value</subheader>
+
+The action returns an object with two properties:
+
+<table 2 header nowrap>
+    <cell>Property</cell><cell>Value</cell>
+    <cell><colorinline JSON>"width"</colorinline></cell><cell>A number containing the maximum possible width of HTML dialogs.</cell>
+    <cell><colorinline JSON>"height"</colorinline></cell><cell>A number containing the maximum possible height of HTML dialogs.</cell>
+</table>
+
+For example, this object, represented in <link JSON_primer.csdoc>JSON</link>, may look like this:
+
+<color JSON>
+{
+  "width": 1382,
+  "height": 741
+}
+</color>
+
+
+<subheader>Exceptions</subheader>
+
+The action does not throw exceptions.
+
+
+<subheader>Example (HTML + JavaScript)</subheader>
+
+This example uses the <link action_invoker_execution_javascript_web.csdoc>asynchronous version</link> of <action>UI.setDisplayOptions</action> to ensure that the action does not block the current thread:
+
+<color HTML>
+<script>
+    const CS = new CSProActionInvoker();
+
+    // size the HTML dialog to 80% of the maximum possible width and height
+    const maxDisplayDimensions = CS.UI.getMaxDisplayDimensions()
+
+    CS.UI.setDisplayOptionsAsync({
+        width: maxDisplayDimensions.width * 0.8,
+        height: maxDisplayDimensions.height * 0.8,
+    });
+</script>
+</color>
+
+
+<seealso CS_UI.csdoc display_dimensions.csdoc />

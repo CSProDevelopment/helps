@@ -19,16 +19,16 @@ Prior to CSPro 6.2, the function determined whether either a file or a directory
 
 <subheader>Return Value</subheader>
 
-The function returns a logical value of 1 (true) if the file exists and 0 (false) otherwise.
+The function returns a logical value of <logiccolor>1</logiccolor> (<logiccolor>true</logiccolor>) if the file exists and <logiccolor>0</logiccolor> (<logiccolor>false</logiccolor>) otherwise.
 
 
 <subheader>Example</subheader>
 
 <logic>
 if fileexist(householdPffFilename) then
-	filedelete(householdPffFilename);
+    filedelete(householdPffFilename);
 endif;
 </logic>
 
 
-<seealso fileempty_function.csdoc filesize_function.csdoc direxist_function.csdoc />
+<seealso fileempty_function.csdoc filesize_function.csdoc direxist_function.csdoc CS_Path_getPathInfo.csdoc />

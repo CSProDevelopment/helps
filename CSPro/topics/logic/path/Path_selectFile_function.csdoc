@@ -45,6 +45,9 @@ To specify the initial directory shown to the operator, you can specify a <arg>s
 By default, both files and directories are shown to the operator. To hide directories, set the numeric expression <arg>show_directories_flag</arg> to <logiccolor>false</logiccolor>.
 
 
+The <action>Path.selectFile</action> action can also be used to show a visual listing of the file system to the operator.
+
+
 <subheader>Return Value</subheader>
 
 The function returns a string with the path of the selected file, or a blank string is no file was selected.
@@ -83,4 +86,4 @@ string image_filename = Path.selectFile(title := "Select Your Favorite Image",
 </logic>
 
 
-<seealso Path.csdoc dirlist_function.csdoc />
+<seealso Path.csdoc CS_Path_selectFile.csdoc dirlist_function.csdoc />

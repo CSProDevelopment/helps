@@ -1,0 +1,22 @@
+<subheader>Example (HTML + JavaScript)</subheader>
+
+This example uses the <link action_invoker_execution_javascript_web.csdoc>asynchronous version</link> of <action>UI.setDisplayOptions</action> to ensure that the action does not block the current thread:
+
+<color HTML>
+<script>
+    const CS = new CSProActionInvoker();
+
+    // get the initial display options
+    const displayOptions = CS.UI.getDisplayOptions();
+
+    // if the user has not provided an explicit width and height, size the dialog
+    // to 100% of the available width and 50% of the available height
+    if( !displayOptions.width || !displayOptions.height ) {
+        displayOptions.width = "100%";
+        displayOptions.height = "50%";
+
+        // size the dialog by setting the display options
+        CS.UI.setDisplayOptionsAsync(displayOptions);
+    }
+</script>
+</color>

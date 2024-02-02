@@ -1,0 +1,36 @@
+﻿<title>Path.createDirectory Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Path.createDirectory(<arg>path</arg> := ...)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>path</arg></cell><cell>The path of the directory to create.</cell><cell>string~!~required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Path.createDirectory</action> <link action_invoker.csdoc>action</link> creates a directory if it does not already exist. If necessary, parent directories will be added to support the creation of the directory.
+
+Directories can also be created using the <logiccolor>dircreate</logiccolor> function.
+
+
+<subheader>Return Value</subheader>
+
+The action returns a string containing the fully evaluated path of the directory.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if the directory cannot be created.
+
+
+<include include_example_createDirectory_getDirectoryListing.hgi />
+
+
+<seealso CS_Path.csdoc dircreate_function.csdoc />

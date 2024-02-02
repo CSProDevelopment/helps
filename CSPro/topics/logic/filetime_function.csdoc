@@ -26,13 +26,13 @@ dirlist(photos_list, "../Photos", "*.jpg");
 
 do numeric counter = 1 while counter <= photos_list.length()
 
-	// only sync photos that weren't previously synced
-	if filetime(photos_list(counter)) > last_sync_timestamp then
-		syncfile(PUT, photos_list(counter), "/Photos/");
-	endif;
+    // only sync photos that were not previously synced
+    if filetime(photos_list(counter)) > last_sync_timestamp then
+        syncfile(PUT, photos_list(counter), "/Photos/");
+    endif;
 
 enddo;
 </logic>
 
 
-<seealso timestamp_function.csdoc timestring_function.csdoc />
+<seealso timestamp_function.csdoc timestring_function.csdoc CS_Path_getPathInfo.csdoc />

@@ -1,0 +1,46 @@
+﻿<title>Path.selectFile Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+s = CS.Path.selectFile(『<arg>title</arg> := ...』
+                     『, <arg>filter</arg> := ...』
+                     『, <arg>startDirectory</arg> := ...』
+                     『, <arg>rootDirectory</arg> := ...』
+                     『, <arg>showDirectories</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>title</arg></cell><cell>The title of the dialog.</cell><cell>string~!~not required</cell>
+    <cell><arg>filter</arg></cell><cell>A wildcard used to filter the files.</cell><cell>string~!~not required</cell>
+    <cell><arg>startDirectory</arg></cell><cell>The path of the directory to be initially shown to the operator.</cell><cell>string~!~not required</cell>
+    <cell><arg>rootDirectory</arg></cell><cell>The path of the directory above which the operator cannot navigate.</cell><cell>string~!~not required</cell>
+    <cell><arg>showDirectories</arg></cell><cell>If false, the operator will not see subdirectories and will not be able to navigate to a parent directory.~!~The default value is <logiccolor>true</logiccolor>.</cell><cell>boolean~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>Path.selectFile</action> <link action_invoker.csdoc>action</link> shows the operator a visual listing of the file system and returns the path of the file the operator selected. Hidden and system files are not shown to the operator.
+
+<include include_details_selectFile_showFileDialog.hgi />
+
+The <logiccolor>Path.selectFile</logiccolor> function can also be used to show a visual listing of the file system to the operator.
+
+
+<subheader>Return Value</subheader>
+
+The action returns a string containing the fully evaluated path of the selected file, or undefined if no file was selected.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws an exception if any of its arguments are not specified in a valid form or if either the start or root directories do not exist.
+
+
+<include include_example_getSpecialPaths_selectFile.hgi />
+
+
+<seealso CS_Path.csdoc CS_Path_showFileDialog.csdoc Path_selectFile_function.csdoc />

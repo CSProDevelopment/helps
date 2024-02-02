@@ -10,8 +10,8 @@ When using display dimensions, you will generally want to use a scaled value for
 
 <logic>
 view("https://<definition csprousers_forum />",
-	 width := tonumber(getproperty("MaxDisplayWidth")) * 0.75,
-	 height := tonumber(getproperty("MaxDisplayHeight")) * 0.75);
+     width := tonumber(getproperty("MaxDisplayWidth")) * 0.75,
+     height := tonumber(getproperty("MaxDisplayHeight")) * 0.75);
 </logic>
 
-<seealso getproperty_function.csdoc javascript_interface.csdoc />
+<seealso CS_UI_getMaxDisplayDimensions.csdoc getproperty_function.csdoc />

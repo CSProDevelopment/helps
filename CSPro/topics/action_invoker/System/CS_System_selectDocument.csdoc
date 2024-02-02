@@ -27,10 +27,11 @@ The <arg>multiple</arg> argument indicates whether the operator can select multi
 
 If no documents are selected, the action returns undefined. Otherwise the action returns an object with two properties:
 
-<list>
-    <li><arg>path</arg>: The path, or sharable URI, of the document.</li>
-    <li><arg>name</arg>: The filename of the document, which may not necessarily be part of the path.</li>
-</list>
+<table 2 header nowrap>
+    <cell>Property</cell><cell>Value</cell>
+    <cell><colorinline JSON>"path"</colorinline></cell><cell>The path, or sharable URI, of the document.</cell>
+    <cell><colorinline JSON>"name"</colorinline></cell><cell>The filename of the document, which may not necessarily be part of the path.</cell>
+</table>
 
 For example, on Android, this object, represented in <link JSON_primer.csdoc>JSON</link>, may look like this:
 
