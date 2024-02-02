@@ -80,6 +80,7 @@ This is a detailed list of changes in CSPro 8.0. For a more general overview, se
     <li>A new function, <logiccolor>compareNoCase</logiccolor>, complements <logiccolor>compare</logiccolor> by comparing strings in a case-insensitive manner.</li>
     <li><link https://en.wikipedia.org/wiki/QR_code>QR code</link> images can be created using the <logiccolor>Barcode.createQRCode</logiccolor> and <logiccolor>Image.createQRCode</logiccolor> functions.</li>
     <li>A new function, <logiccolor>Case.view</logiccolor>, displays the <link view_questionnaire.csdoc>questionnaire view</link> for a case.</li>
+    <li>Additional new functions: <logiccolor>Item.getValueLabel</logiccolor>, <logiccolor>Item.hasValue</logiccolor>, and <logiccolor>Item.isValid</logiccolor>.<note type="todo" text="describe the Item functions" /></li>
     <li>A new function, <logiccolor>Map.clear</logiccolor>, resets all properties of a <link Map.csdoc>Map object</link>.</li>
     <li>The <logiccolor>timestamp</logiccolor> function can return UNIX time values by parsing <link https://www.rfc-editor.org/rfc/rfc3339>RFC 3339</link> / <link https://en.wikipedia.org/wiki/ISO_8601>ISO 8601</link> strings, or by specifying a specific date value.</li>
     <li>The <logiccolor>config</logiccolor> variable modifier can now be used with <logiccolor>numeric</logiccolor> variables, and can be used with variables not declared in <logiccolor>PROC GLOBAL</logiccolor>.</li>
