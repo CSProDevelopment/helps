@@ -1,0 +1,53 @@
+﻿<title>CSDocument Menu</title>
+
+The following is a summary of the menu options available while working within the CSDocument development environment:
+
+<table 3>
+    <cell 3><subheader>File</subheader></cell>
+    <cell><link cspro_document.csdoc>New Document</link></cell><cell><b>Ctrl+N</b></cell><cell>Create a new CSDocument</cell>
+    <cell><link cspro_document_set.csdoc>New Document Set</link></cell><cell></cell><cell>Create a new CSDocument Set</cell>
+    <cell>Open</cell><cell><b>Ctrl+O</b></cell><cell>Open an existing CSDocument (.csdoc) or CSDocumentSet (.csdocset)</cell>
+    <cell>Close</cell><cell><b>Ctrl+W</b></cell><cell>Close the currently active file</cell>
+    <cell>Close All</cell><cell><b>Ctrl+Shift+W</b></cell><cell>Close all files (prompting you to save any files not yet saved)</cell>
+    <cell>Save</cell><cell><b>Ctrl+S</b></cell><cell>Save the currently active file</cell>
+    <cell>Save As</cell><cell></cell><cell>Save the current file to a new file name</cell>
+    <cell>Save All</cell><cell><b>Ctrl+Shift+S</b></cell><cell>Save all files</cell>
+    <cell><link global_settings.csdoc>Global Settings</link></cell><cell></cell><cell>Modify global settings for the CSDocument application</cell>
+    <cell 3>&nbsp;</cell>
+    <cell 3><subheader>Edit</subheader></cell>
+    <cell>Undo</cell><cell><b>Ctrl+Z</b></cell><cell>Undo your last change</cell>
+    <cell>Redo</cell><cell><b>Ctrl+Y</b></cell><cell>Redo (reinstate) your last change</cell>
+    <cell>Cut</cell><cell><b>Ctrl+X</b></cell><cell>Cut (delete) the currently-selected text (puts it on the clipboard)</cell>
+    <cell>Copy</cell><cell><b>Ctrl+C</b></cell><cell>Copy the currently-selected text</cell>
+    <cell>Paste</cell><cell><b>Ctrl+V</b></cell><cell>Paste text from the clipboard</cell>
+    <cell>Delete</cell><cell><b>Del</b></cell><cell>Delete the currently-selected text (does not put it on the clipboard)</cell>
+    <cell>Select All</cell><cell><b>Ctrl+A</b></cell><cell>Select all text in the current file</cell>
+    <cell>Find</cell><cell><b>Ctrl+F</b></cell><cell>Find text in the document</cell>
+    <cell>Find Next</cell><cell><b>F3</b></cell><cell>Find the next instance of text in the file</cell>
+    <cell>Replace</cell><cell><b>Ctrl+H</b></cell><cell>Replace text with new text in the file</cell>
+    <cell>Word Wrap</cell><cell></cell><cell>Toggles the document view between word wrapping on or off</cell>
+    <cell 3>&nbsp;</cell>
+    <cell 3><subheader>Build</subheader></cell>
+    <cell>Build Document</cell><cell><b>Ctrl+K</b></cell><cell>Build (compile) the current file, displaying results in the right window</cell>
+    <cell>Build Document to Clipboard</cell><cell></cell><cell>Saves the output of the current file's build to the clipboard</cell>
+    <cell>Export Document</cell><cell></cell><cell>Export the current file to other formats</cell>
+    <cell>Link With Document Set</cell><cell></cell><cell><i>If the current document is not associated with a document set,</i> this option will prompt the user to select a document set to associate it with.</cell>
+    <cell>Remove Document Set Link (CSPro Document Help)</cell><cell></cell><cell><i>If the current document is associated with a document set,</i> this option allows the user to disassociate the file from that set.</cell>
+    <cell>Compile Entire Document Set</cell><cell></cell><cell><i>If the current document is associated with a document set,</i> this option allows the user to <b>Build</b> (compile) all active files, displaying results in the right window</cell>
+    <cell>Build Document Set</cell><cell><b>Ctrl+Shift+K</b></cell><cell><i>If the current document is associated with a document set,</i> this option allows the user to <b>Build</b> (compile) all files associated with the current document set</cell>
+    <cell 3>&nbsp;</cell>
+    <cell 3><subheader>Format</subheader></cell>
+    <cell>View Syntax</cell><cell></cell><cell>View the formatting styles allowed within  CSDocuments</cell>
+    <cell>Bold</cell><cell><b>Ctrl+B</b></cell><cell>Inserts bold tags, around the selected text (if any)</cell>
+    <cell>Italics</cell><cell><b>Ctrl+I</b></cell><cell>Inserts italic tags, around the selected text (if any)</cell>
+    <cell>Font</cell><cell></cell><cell>Inserts font tags, around the selected text (if any)</cell>
+    <cell>Subheader</cell><cell></cell><cell>Inserts subheader tags, around the selected text (if any)</cell>
+    <cell>Center</cell><cell></cell><cell>Inserts center tags, around the selected text (if any)</cell>
+    <cell>Link</cell><cell></cell><cell>Inserts link tags, around the selected text (if any)</cell>
+    <cell>Table</cell><cell></cell><cell>Inserts table tags (defaulting to 2 columns), and one row of cell tags, around the selected text (if any)</cell>
+    <cell>Logic Color</cell><cell><b>Ctrl+Shift+L</b></cell><cell>Inserts tags that will colorize CSPro logic as in the CSPro environment</cell>
+    <cell>Syntax Argument</cell><cell><b>Ctrl+Shift+G</b></cell><cell>Inserts logic argument tags, around the selected text (if any)</cell>
+    <cell>List Builder</cell><cell></cell><cell>Inserts list tags and one row, around the selected text (if any)</cell>
+</table>
+
+<note type="todo" text="review" />

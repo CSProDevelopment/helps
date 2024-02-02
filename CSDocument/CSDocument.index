@@ -1,8 +1,23 @@
 ﻿[
   { "path": "cspro_document.csdoc", "title": ".csdoc" }, 
   { "path": "cspro_document_set.csdoc", "title": ".csdocset" }, 
-  { "path": "cspro_document.csdoc", "title": "CSPro Document" }, 
-  { "path": "cspro_document_set.csdoc", "title": "CSPro Document Set" }, 
+  { "path": "export_format_chm.csdoc", "title": "CHM Export" }, 
+  { "path": "cspro_document.csdoc", "~title": "CSPro Document" }, 
+  { "path": "cspro_document_set.csdoc", "~title": "CSPro Document Set" }, 
+  { "path": "export_format_html.csdoc", "title": "Export", 
+    "subindex": [ 
+      { "path": "export_format_chm.csdoc", "title": "CHM" }, 
+      { "path": "export_format_html.csdoc", "title": "HTML" }, 
+      { "path": "export_format_pdf.csdoc", "title": "PDF" }
+    ]
+  }, 
   { "path": "get_help.csdoc", "~title": "Get Help" }, 
-  { "path": "introduction.csdoc", "title": "Introduction" }
+  { "path": "global_settings.csdoc", "~title": "Global Settings" }, 
+  { "path": "export_format_html.csdoc", "~title": "HTML Export" }, 
+  { "path": "global_settings.csdoc", "title": "HTML Help Compiler" }, 
+  { "path": "introduction.csdoc", "title": "Introduction" }, 
+  { "path": "menu.csdoc", "title": "Menu" }, 
+  { "path": "export_format_pdf.csdoc", "~title": "PDF Export" }, 
+  { "path": "definitions_special.csdoc", "~title": "Special Definitions" }, 
+  { "path": "global_settings.csdoc", "title": "wkhtmltopdf" }
 ]

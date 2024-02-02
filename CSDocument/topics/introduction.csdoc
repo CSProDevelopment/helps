@@ -1,20 +1,56 @@
 ﻿<title>Introduction to CSDocument</title>
 <context IDR_MAINFRAME />
 
-HELP_TODO
+<b>CSDocument</b> is a <link CSPro::tool_list.csdoc>CSPro tool</link> that is used to author documents using a simple, limited, markup language. <link cspro_document.csdoc>CSPro Documents</link> and multiple documents contained within a <link cspro_document_set.csdoc>CSPro Document Set</link> can be exported to <link export_format_html.csdoc>HTML</link>, <link export_format_pdf.csdoc>PDF</link>, and <link export_format_chm.csdoc>CHM (Compiled HTML Help)</link> formats. The help documentation that you are currently reading is created using this tool, with the documentation hosted on <link "<definition github_helps_url />">GitHub</link>.
 
 This guide contains the following information:
 
-<subheader>How to ...</subheader>
+
+<subheader>Files ...</subheader>
 
 <list>
-	<li><topic get_help.csdoc /></li>
+    <li><topic cspro_document.csdoc /></li>
+    <li><topic cspro_document_set.csdoc /></li>
 </list>
 
 
-<subheader>File Formats ...</subheader>
+<subheader>CSPro Document Tags ...</subheader>
 
 <list>
-	<li><topic cspro_document.csdoc /></li>
-	<li><topic cspro_document_set.csdoc /></li>
+    <li><topic definitions_special.csdoc /></li>
 </list>
+
+
+<subheader>Export Outputs ...</subheader>
+
+<list>
+    <li><topic export_format_html.csdoc /></li>
+    <li><topic export_format_pdf.csdoc /></li>
+    <li><topic export_format_chm.csdoc /></li>
+</list>
+
+
+<subheader>Settings ...</subheader>
+
+<list>
+    <li><topic global_settings.csdoc /></li>
+</list>
+
+
+<subheader>Troubleshooting ...</subheader>
+
+<list>
+    <li><topic get_help.csdoc /></li>
+</list>
+
+
+<note type="todo" text="add link to menu.csdoc and determine where that should go in the TOC " />
+
+<note type="todo" text="if document the build/output windows, contexts: ID_WINDOW_BUILD ID_WINDOW_OUTPUT" />
+
+<note type="todo" text="document Build menu somewhere" />
+
+<note type="todo" text="document command line arguments somewhere" />
+
+<note type="todo" text="standardize how docs are called; CSPro Document / Document / something else ?" />
+<note type="todo" text="standardize how doc sets are called; CSPro Document Set / Document Set ?" />
