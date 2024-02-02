@@ -5,7 +5,7 @@
 
 It is possible to run <link action_invoker.csdoc>Action Invoker</link> actions by specifying the action and arguments using <link JSON_primer.csdoc>JSON</link>. This format can be executed in <link CSCode::language_cspro_action_invoker_json.csdoc>CSCode</link>, or from other <link action_invoker_execution_android.csdoc>Android applications</link>.
 
-A JSON object is used to specify each action. The action's name is specified using the name <arg>action</arg> and any arguments to the action are specified as part of the same object. For example, the following code puts the text <logiccolor>"CSPro"</logiccolor> onto the clipboard:
+A JSON object is used to specify each action. The action's name is specified using the name <arg>action</arg> and any arguments to the action are specified as part of the same object. For example, the following code puts the text <colorinline JSON>"CSPro"</colorinline> onto the clipboard:
 
 <color JSON>
 {
@@ -38,6 +38,8 @@ Arguments to actions are specified in one of the JSON types: string, number, boo
 
 
 <subheader>Return Values</subheader>
+
+<note type="todo" text="can the result be null, like from Logic.getSymbolValue?" />
 
 The results of all actions are returned as a string containing JSON. When specifying a single action, the result is a single object. When specifying multiple actions, the result is an array of objects. Each result object contains <arg>type</arg>, which specifies the result type. Result types can be of type undefined, string, number, boolean, array, object, or exception. If the type is not undefined, another property, <arg>value</arg>, contains the result. For example, with this input:
 
@@ -79,7 +81,7 @@ When executing actions from CSCode, you can choose to view results in JSON forma
 
 <subheader>Exception Handling</subheader>
 
-At runtime, if any of the arguments are invalid, or if there was an error executing the action, the Action Invoker throws an <link "https://en.wikipedia.org/wiki/Exception_handling">exception</link>. As shown in the example above, the result of the action will be of <arg>type</arg> <logiccolor>"exception"</logiccolor>, with the exception message specified in <arg>value</arg>.
+At runtime, if any of the arguments are invalid, or if there was an error executing the action, the Action Invoker throws an <link "https://en.wikipedia.org/wiki/Exception_handling">exception</link>. As shown in the example above, the result of the action will be of <arg>type</arg> <colorinline JSON>"exception"</colorinline>, with the exception message specified in <arg>value</arg>.
 
 By default, when specifying multiple actions, an exception will result in the termination of processing and subsequent actions will not be executed. However, all JSON execution environments provide options to continue processing actions even when an exception is thrown.
 

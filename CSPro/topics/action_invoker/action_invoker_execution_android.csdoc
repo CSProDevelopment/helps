@@ -1,6 +1,45 @@
 ﻿<title>Action Invoker Execution from Other Android Applications</title>
 
-HELP_TODO
+
+<subheader>Overview</subheader>
+
+Running <link action_invoker.csdoc>Action Invoker</link> actions from other Android applications is possible by specifying the <link action_invoker_execution_json.csdoc>actions using JSON</link>, passing that JSON in an <link "https://developer.android.com/reference/android/content/Intent">Intent</link>, and <link "https://developer.android.com/training/basics/intents/result">processing the result</link> returned by ActionInvokerActivity. An example of calling into CSEntry, and processing results, is available on GitHub:
+
+<list>
+    <li>ActionInvokerDemo Application: <link "<definition github_ActionInvokerDemo_url />"><definition github_ActionInvokerDemo_url /></link></li>
+</list>
+
+
+<subheader>Calling ActionInvokerActivity</subheader>
+
+To run the Action Invoker from another Android application, create an <link "https://developer.android.com/reference/android/content/Intent">Intent</link> and then add <i>extras</i> to the Intent, including:
+
+<list>
+    <li><colorinline JavaScript>ACTION</colorinline>: The JSON specification of actions. This string is required, and contains a single action specified as an object, or multiple actions specified as an array of objects. For more information about how to specify actions using JSON, read <topic action_invoker_execution_json.csdoc />.</li>
+    <li><colorinline JavaScript>TITLE</colorinline>: This string is displayed by CSEntry when running the actions. The title is optional.</li>
+    <li><colorinline JavaScript>ACCESS_TOKEN</colorinline>: This string contains an <link action_invoker_access_token.csdoc>access token</link> that provides permission to use the Action Invoker. The access token is optional, and if not provided, CSPro will ask the user to approve the external caller's request to access CSPro functionality and data.</li>
+    <li><colorinline JavaScript>REFRESH_TOKEN</colorinline>: This optional string contains a refresh token received from the Action Invoker that, once a user has approved access to the Action Invoker, allows repeated use without an access token for a period of time.</li>
+    <li><colorinline JavaScript>ABORT_ON_EXCEPTION</colorinline>: This boolean indicates whether the Action Invoker should abort upon an exception occurring. This value is optional and defaults to true. This setting applies only when the JSON specified in <colorinline JavaScript>ACTION</colorinline> contains multiple actions.</li>
+</list>
+
+Using this Intent, <link "https://developer.android.com/training/basics/intents/result">launch an activity for result</link>, calling:
+
+<list>
+    <li>Package: <colorinline JavaScript>"gov.census.cspro.csentry"</colorinline></li>
+    <li>Class: <colorinline JavaScript>"gov.census.cspro.ActionInvokerActivity"</colorinline></li>
+</list>
+
+
+<subheader>Processing the Result</subheader>
+
+The result comes with two extras:
+
+<list>
+    <li><colorinline JavaScript>RESULT</colorinline>: A string containing the result of the action or actions, in the format described on the <topic action_invoker_execution_json.csdoc /> page.</li>
+    <li><colorinline JavaScript>REFRESH_TOKEN</colorinline>: If the user approved access to the Action Invoker, a refresh token string is provided. This refresh token can be used to call back into the Action Invoker without needing the user to approve access multiple times. This refresh token is valid for <b>one hour</b>.</li>
+</list>
+
+When the Action Invoker returns a refresh token, you will want to use it when calling back into the Action Invoker. The purpose of this refresh token is so that you can call into the Action Invoker multiple times without multiple requests for approval providing a suboptimal experience for the user.
 
 
 <seealso action_invoker.csdoc action_invoker_access_token.csdoc android_interacting_with_other_applications.csdoc />
