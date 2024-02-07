@@ -1,4 +1,114 @@
 ﻿﻿<title>JSON Representation: Case</title>
 
+Case data can be output in JSON format. This outputs the data as an array of objects. Each object contains a single case.
+A case has multiple levels in JSON.
 
-<note type="todo" text="HELP_TODO" />
+The highest level of the case object is the root. This always contains the following items:
+<list>
+<li>    <arg>key</arg>, a string containing the case key </li>
+<li>    <arg>uuid</arg>, a string containing the case uuid </li>
+</list>
+The root will contain the following items only if Verbose is specified:
+<list>
+<li>    <arg>label</arg>, a string containing the label</li>
+<li>    <arg>deleted</arg>, a boolean containing whether the case is deleted </li>
+<li>    <arg>verified</arg>, a boolean containing whether the case is verified </li>
+</list>
+The root will contain the following items only if Verbose is specified, or they contain occurrences:
+<list>
+<li>    <arg>partialSave</arg>, either null if the case is verbose and not partial, or an object containing the string <arg>mode</arg>, the string <arg>name</arg>, the string <arg>levelKey</arg> (if verbose), and the array <arg>occurrences</arg>. </li>
+<li>    <arg>notes</arg>, either an empty array if the case is verbose and has no notes, or an array of note objects. Note objects contain the string <arg>text</arg>, the time <arg>modifiedTime</arg>, the string <arg>operatorId</arg>, the string <arg>name</arg>, the string <arg>levelKey</arg> (if verbose), and the array <arg>occurrences</arg>.</li>
+</list>
+
+Then the Case Data will be listed, following a heirarchy based on the Dictionary.
+The first level of the dictionary will be the top level of the object. This level will be an object containing all ID items for that level, all records listed in that level, and the level directly below it in the dictionary if there is one.
+
+Levels (other than the topmost level) are arrays. If there are no occurrences of that level, the array will be empty. If there were occurrences, each occurrence will be listed as an object in that array. Each occurrence in a level is composed of the ID items, followed by the Records, followed by the level directly below it in the dictionary if there is one.
+
+Records are arrays. Like levels, they contain objects for each occurrence of data they have. Unlike levels, they do not list any further Records, or lower Levels below them. Records only contain non-ID items.
+
+Items are objects. Items contain a <arg>code</arg> with their value, which can be a string or a numeric. If the item has no value, no code will be listed and it will be an empty object. If the "writeLabels=true" connection string attribute is specified, the Item will contain the value's string <arg>label</arg> as well. File objects (such as Images, Audios, Documents, and Geometries) do not contain a code or label like alpha/numeric items. Instead they contain a string <arg>signature</arg> and object <arg>metadata</arg>. The <arg>metadata</arg> object contains the string <arg>filename</arg> for the file name of the file and the string <arg>mime</arg> for the file type.
+
+
+[
+{
+  "key": "1",
+  "uuid": "b5512c5f-8acd-4df7-b5d5-e7dbff10ad00",
+  "label": "",
+  "deleted": false,
+  "verified": false,
+  "partialSave": null,
+  "notes": [],
+  "BINARY_DICT_LEVEL": {
+    "BINARY_DICT_ID": {
+      "code": 1
+    },
+    "BINARY_DICT_REC": [
+      {
+        "VALUE": {
+          "code": 2
+        },
+        "MY_IMAGE": {
+          "metadata": {
+            "filename": "1705030747953827.jpg",
+            "mime": "image/jpeg"
+          },
+          "signature": "76e63fa382854ec202232eb975bbd29a"
+        },
+        "STRING_VALUE": {
+          "code": "greg"
+        }
+      }
+    ],
+    "REPEATING_REC": [],
+    "SINGLE_NOT_REQUIRED_REC": [
+      {
+        "SINGLE_NOT_REQUIRED_VALUE": {},
+        "REPEATING_IMAGE": [],
+        "IMAGE_ON_NOT_REQUIRED_REC": {}
+      }
+    ],
+    "REPEATING_SING_ITEMS_REC": [
+      {
+        "ITEM_1": {},
+        "ITEM_2": {},
+        "ITEM_DOC": {}
+      }
+    ],
+    "SECOND_LEVEL": [
+      {
+        "L2ID": {
+          "code": 1
+        },
+        "NEW_RECORD": [
+          {
+            "L2_NUMERIC": {
+              "code": 1
+            },
+            "L2_BINARY": {},
+            "L2_STRING": {
+              "code": "l2"
+            }
+          }
+        ]
+      },
+      {
+        "L2ID": {
+          "code": 2
+        },
+        "NEW_RECORD": [
+          {
+            "L2_NUMERIC": {
+              "code": 2
+            },
+            "L2_BINARY": {},
+            "L2_STRING": {
+              "code": "l2"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+]
