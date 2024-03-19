@@ -22,5 +22,5 @@ The default behavior is suitable for most applications, but sometimes you may wa
 There are two ways to override this behavior, which is set on a per-<link introduction_to_data_dictionary.csdoc>dictionary</link> basis. You can use the <link dictionary_property_panel.csdoc>dictionary property panel</link> to disable <b>Read Optimization</b>. This setting is applicable for every application that uses the dictionary. Alternatively, to control this on a per-application basis, you can use the <link preprocessor.csdoc>preprocessor</link> to disable the setting:
 
 <logic>
-#setProperty(DICT_NAME, @"readOptimization", false);
+#setProperty(DICT_NAME, "readOptimization", false);
 </logic>

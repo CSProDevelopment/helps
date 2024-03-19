@@ -44,7 +44,7 @@ Parameter=your choice
 Language=LINGALA
 OnExit=.\Menu.pff
 
-[DataEntryIDs]
+[DataEntryIds]
 PROVINCE=12
 DISTRICT=05
 </pff>
@@ -130,9 +130,9 @@ The <pffcolor>[Parameters]</pffcolor> block is optional. This section defines pa
 When starting a new case, if the name of a parameter matches the name of a dictionary item, the value of that item will be set to the value specified in the PFF. This is similar to how the persistent fields are processed (see below), but this works for non-persistent fields.
 
 
-<subheader>[DataEntryIDs]</subheader>
+<subheader>[DataEntryIds]</subheader>
 
-The <pffcolor>[DataEntryIDs]</pffcolor> block is for use with any <link change_field_properties.csdoc>persistent IDs</link> that you have defined. CSEntry will assign the specified values to the indicated persistent fields when a new data file is created. This feature allows automatic definition of persistent fields, such as geographic IDs. If you provide values and run this on an existing data file, and the PFF file values do not match the values in the data file, then the PFF values will be ignored. The syntax is as follows:
+The <pffcolor>[DataEntryIds]</pffcolor> block is for use with any <link change_field_properties.csdoc>persistent IDs</link> that you have defined. CSEntry will assign the specified values to the indicated persistent fields when a new data file is created. This feature allows automatic definition of persistent fields, such as geographic IDs. If you provide values and run this on an existing data file, and the PFF file values do not match the values in the data file, then the PFF values will be ignored. The syntax is as follows:
 
 <logicsyntax>
 <arg>id_item_name</arg>=<arg>initial_value</arg>
