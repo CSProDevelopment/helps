@@ -9,5 +9,17 @@ The following special definitions can be used as part of a <link cspro_document.
     <cell><b>System::year</b></cell><cell>The year when the document was built.</cell><cell nowrap><definition System::year /></cell>
 </table>
 
+<subheader>Example</subheader>
+
+Within your CSDocument file if you wrote:
+
+<indent>This documentation was developed for CSPro version <font #46AACD>&lt;definition</font><font green> CSPro::version</font><font #46AACD> /></font> </indent>
+
+Your build would display as:
+
+<indent>This documentation was developed for CSPro version <definition CSPro::version /> </indent>
+
+<seealso csdocument_syntax.csdoc />
 
 <note type="todo" text="link to the rest of the tags" />
+

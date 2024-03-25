@@ -1,0 +1,200 @@
+﻿<title>CSDocument Syntax</title>
+
+<subheader>Document Headers</subheader>
+
+<note type="comment" text="Greg, I'm using green instead of #47B041 in the font tags, as I don't think anyone will notice the slight shading difference, whereas for us it makes the page just a smidge easier to read/less obtuse" />
+
+<b>Page Header</b>
+
+A heading should be placed at the top of all <link CSPro::file_types.csdoc>csdoc</link> files via the <font #46AACD>&lt;title></font> tag, much as you would expect to find in a book's chapter. This adds several extra features, for in addition to placing a heading at the top of the page, the text is also brought into the table of contents (.toc) file, the index (.index) for the .csdocset, and as the display text when using the <font #46AACD>&lt;topic></font> tag. Two options for the <font #46AACD>&lt;title></font> tag are available:
+
+<indent><font #46AACD>&lt;title></font>Page Title<font #46AACD>&lt;/title></font></indent>
+<indent><font #46AACD>&lt;title</font><font green> noheader</font><font #46AACD>></font>Page Title (not displayed)<font #46AACD>&lt;/title></font></indent>
+
+The first option should be your default, but the second option is provided in the event you do not wish to display a title on the page; however, the title will still be placed in the table of contents, used in the index, and displayed on any <font #46AACD>&lt;topic></font> call.
+
+<b>Subheader</b>
+
+Placing subheaders within a page is useful to help further organize your information. The subheading "Creating Document Headers" above was created with this tag. The syntax is simply:
+
+<indent><font #46AACD>&lt;subheader></font>Page Subheader<font #46AACD>&lt;/subheader></font></indent>
+
+<subheader>Text Formatting</subheader>
+
+While CSDocument does not provide extensive formatting options, it does provide for many of the most common ones, described in the subsections below showing the required html tags.
+
+<b>1. Bold & Italics</b>
+
+<indent><font #46AACD>&lt;b></font><b>bold text</b><font #46AACD>&lt;/b></font></indent>
+<indent><font #46AACD>&lt;i></font><i>italic text</i><font #46AACD>&lt;/i></font> </indent>
+
+<b>2. Font Color, Font Size, and Font Face Options</b>
+
+There are three basic options available with the <font #46AACD>&lt;font>&lt;/font></font> tag&mdash;(a) font color, (b) font size, and (c) font face (i.e., font style, such as monospace or courier). While the three font options are described separatedly below, they can be used in combination, such as:
+
+<indent><font #46AACD>&lt;font </font><font green>red 1.5 monospace</font><font #46AACD>></font>red text will use monospace and be 1.5 times larger than normal<font #46AACD>&lt;/font></font></indent>
+
+<b>2a. Font Color</b>
+
+CSDocument supports the following three methods for colorizing your text:
+
+<list ordered>
+    <li><b>Color by name&mdash;</b>Originally, 16 colors were defined (Aqua, Black, Blue, Fuchsia, Gray, Green, Lime, Maroon, Navy, Olive, Purple, Red, Silver, Teal, White, and Yellow). There are now over 200, which most browsers support. We recommend if the 16 named colors are not sufficient, to use the hexadecimal value described next.</li>
+    <li><b>Color by hexadecimal value&mdash;</b>Hexadecimal codes are 6 digits, where the first two digits represent a red value (RR), the next two represent the green value (GG), and the last two represent the blue value (BB). Note the hash/pound sign (#) must precede the code. The <link https://www.w3schools.com/html/html_colors_hex.asp>W3Schools</link> website offers a nice tool to help you find a color you like and gives you its corresponding code.</li>
+    <li><b>Color by rgb() property&mdash;</b>The RGB (red, green, blue) call accepts three values, one each for red, green, and blue. The value can be an integer between 0 and 255 or a percentage of that color. However, not all websites accept this, and so it is safer to use colorization by name or hexadecimal value.</li>
+</list>
+
+Below are examples of the two recommended methods, color by name and by hexadecimal value:
+
+<indent><font #46AACD>&lt;font</font> <font green>red</font><font #46AACD>></font><font red>Red text using name</font><font #46AACD>&lt;/font></font></indent>
+<indent><font #46AACD>&lt;font</font> <font green>magenta</font><font #46AACD>></font><font magenta>Magenta text using name</font><font #46AACD>&lt;/font></font></indent>
+<indent><font #46AACD>&lt;font</font> #<font green>ff00ff</font><font #46AACD>></font><font #ff00ff>Magenta text using the hexadecimal value</font><font #46AACD>&lt;/font></font></indent>
+
+<b>2b. Font Sizing</b>
+
+Fonts can be made smaller or larger by writing a number within the font tag.
+
+<indent><font #46AACD>&lt;font</font><font green> 1.5</font><font #46AACD>></font><font 1.5>Text is 50% larger</font><font #46AACD>&lt;/font></font></indent>
+<indent><font #46AACD>&lt;font</font><font green> 0.9</font><font #46AACD>></font><font 0.9>Text is 90% of the regular size</font><font #46AACD>&lt;/font></font></indent>
+
+<b>2c. Font Face</b>
+
+The only font face that is supported is monospace, a non-proportional font similar to courier. To reference it simply write:
+
+<indent><font #46AACD>&lt;font</font><font green> monospace</font><font #46AACD>></font><font monospace>The monospace font is non-proportional</font><font #46AACD>&lt;/font></font></indent>
+
+<subheader>Text Positioning</subheader>
+
+Text can be centered, indented, or written as a subscript, useful when writing footnotes.
+
+<b>To center text,</b> use the <font #46AACD>&lt;center>&lt;/center></font> tag:
+
+<indent><font #46AACD>&lt;center></font>centered text<font #46AACD>&lt;/center></font></indent>
+
+<b>To indent text,</b> use the <font #46AACD>&lt;indent>&lt;/indent></font> tag, with an optional argument indicating the number of times the text should be indented. For example,
+
+<indent><font #46AACD>&lt;indent></font>text is indented once<font #46AACD>&lt;/indent></font></indent>
+<indent 2><font #46AACD>&lt;indent 2></font>text is indented two times<font #46AACD>&lt;/indent></font></indent>
+<indent 3><font #46AACD>&lt;indent 3></font>text is indented three times<font #46AACD>&lt;/indent></font></indent>
+
+<b>To make text superscripted,</b> use the <font #46AACD>&lt;sup>&lt;/sup></font> tag:
+
+<indent>Make the text <font #46AACD>&lt;sup></font><sup>superscripted</sup><font #46AACD>&lt;/sup></font></indent>
+<indent>footnote<font #46AACD>&lt;sup></font><sup>1</sup><font #46AACD>&lt;/sup></font></indent>
+
+<subheader>Adding Lists</subheader>
+
+Lists can be created using the syntax shown below. Lead with <font #46AACD>&lt;list></font>, follow it with a list of text blocks embedded within <font #46AACD>&lt;li> &lt;/li></font> tags, then close the list with the end list tag <font #46AACD>&lt;/list></font>. This will generate a list of bulleted items. If you want a numbered list instead (1, 2, ..., N), then insert the "ordered" attribute inside the opening list statement (i.e., <font #46AACD>&lt;list</font> <font green>ordered</font><font #46AACD>></font>).
+
+<indent><font #46AACD>&lt;list </font> <font green> 『, ordered 』</font><font #46AACD> ></font></indent>
+<indent 2><font #46AACD>&lt;li> </font> list item 1<font #46AACD> &lt;/li></font></indent>
+<indent 2><font #46AACD>&lt;li> </font> list item 2<font #46AACD> &lt;/li></font></indent>
+<indent 2><font #46AACD>&lt;li> </font> list item N<font #46AACD> &lt;/li></font></indent>
+<indent><font #46AACD>&lt;/list> </font></indent>
+
+The above would generate:
+
+<list>
+<li> list item 1 </li>
+<li> list item 2 </li>
+<li> list item N </li>
+</list>
+
+If the "ordered" attribute had been included, the list would look like this:
+
+<list ordered>
+<li> list item 1 </li>
+<li> list item 2 </li>
+<li> list item N </li>
+</list>
+
+<note type="todo" text="insert help on tables here" />
+
+<subheader>Adding Images</subheader>
+
+The image syntax is shown below. Note if the image path or file name has any embedded spaces, the file name must be quoted.
+
+<indent><font #46AACD>&lt;image</font> <font green> imageFileName 『, nochm 』, 『, width # 』, 『, height# 』 </font><font #46AACD> /></font></indent>
+
+<b>Example 1&mdash;</b>Just a file reference:
+
+<indent><font #46AACD>&lt;image</font><font green> myPhoto.png</font><font #46AACD> /></font></indent>
+
+<b>Example 2&mdash;</b>Adjust image size. Specify the width, height, or both. If both are specified and the image is smaller than the given dimensions, it will be scaled up; if the image is larger it will be scaled down. If only one dimension is given the other dimension will scale in relation to the original image size to maintain the same proportion.
+
+<indent><font #46AACD>&lt;image</font><font green> "Province level map of Popstan.png" width 600 height 400</font><font #46AACD> /></font></indent>
+
+<b>Example 3&mdash;</b>Omit the image from the online help. If your document will be used to generate help pages, adding the "nochm" option will suppress it from appearing in the F1 helps; however, the image will still appear in any helps that are exported to a PDF file.
+
+<indent><font #46AACD>&lt;image</font><font green> "Large Map Of the World.png" nochm</font><font #46AACD> /></font></indent>
+
+<subheader>Adding Notes</subheader>
+
+When developing a page it can be useful to insert notes about the status of the page or an activity. If you wish to categorize your note, CSDocument allows for four types of notes: todo, comment, warning, and error. Either attribute (text or type) can appear first. Notes do not appear on the compiled page. Be aware that using the type='error' attribute will not allow the page to build. The syntax for the note tag is as follows:
+
+<indent><font #46AACD>&lt;note</font> <font gray>text="..."</font> <font green>『</font>, <font gray>type=</font><font green>"comment" ‖ "todo" ‖ "warning" ‖ "error" 』</font><font #46AACD>/></font></indent>
+
+<b>A Simple Note (no attribute used):</b>
+
+<indent>&nbsp;&nbsp;<font #46AACD>&lt;note</font> <font gray>text=</font><font green>"pick up here tomorrow"</font><font #46AACD>/></font></indent>
+
+<b>Notes Using Attributes:</b>
+
+<indent><font #46AACD>&lt;note</font> <font gray>type=</font><font green>"comment"</font><font gray> text=</font><font green>"this section needs work"</font><font #46AACD>/></font></indent>
+<indent><font #46AACD>&lt;note</font> <font gray>type=</font><font green>"todo"</font><font gray> text=</font><font green>"get more information from the project manager on this feature"</font><font #46AACD>/></font></indent>
+<indent><font #46AACD>&lt;note</font> <font gray>type=</font><font green>"warning"</font><font gray> text=</font><font green>"we should do more work on this section before we release"</font><font #46AACD>/></font></indent>
+<indent><font #46AACD>&lt;note</font> <font gray>type=</font><font green>"error"</font><font gray> text=</font><font green>"this page is not complete until we add in release information"</font><font #46AACD>/></font></indent>
+
+<subheader>Using the "See Also" Block</subheader>
+
+At the bottom of a help page you may wish to refer the reader to other pages. You can do this via a "see also" list, which which create hyperlinks to the documents listed. There are two optoins for the <font #46AACD>&lt;seealso></font> tag. The first example will present the files in the order listed:
+
+<indent><font #46AACD>&lt;seealso</font><font green> abc.csdoc xyz.csdoc</font><font #46AACD> /></font></indent>
+
+would result in hyperlinks for the two document names as follows:
+
+<indent><b>See also:</b> <font blue>abc xyz</font></indent>
+
+<note type="comment" text="Greg, abc and xyz should be underlined" />
+
+In the second example we have added the keyword "ordered" after "See also". This will alphabetize the documents listed, so you don't have to think about it. Putting this in your CSDocument:
+
+<indent><font #46AACD>&lt;seealso</font><font green> ordered myHelp3.csdoc myHelp1.csdoc myHelp2.csdoc</font><font #46AACD> /></font></indent>
+
+would generate the following "See also" entry:
+
+<indent><b>See also:</b> <font blue>myHelp1 myHelp2 myHelp3</font></indent>
+
+<note type="comment" text="Greg, ditto here, the above should be underlined" />
+
+<subheader>Miscellaneous Syntax Commands</subheader>
+
+<b>Special Definitions&mdash;</b>CSDocument allows for the insertion of special values by using the definitions tag:
+
+<indent><font #46AACD>&lt;definitions</font><font green> 『special definition』</font><font #46AACD> /></font></indent>
+
+Refer to the <link definitions_special.csdoc>definitions</link> page for a list of the special definitions you can use within your documents.
+
+<b>Escape Characters</b>
+
+<list ordered>
+    <li>Left angle bracket (<b>&lt;</b>)&mdash;Since this symbol marks the beginning of a tag within a CSDocument, if you need to write the &lt; symbol itself (for example, "x &lt; 5"), you will need to use the escape sequence "<b>&amp;lt;</b>"</li>
+    <li>The ampersand symbol (<b>&amp;</b>)&mdash;Since this symbol is used to indicate the beginning of an escape sequence, if you need to write the symbol itself (for example, "we bought green &amp red apples"), you will need to write "<b>&amp;amp;</b>"</li>
+    <li>Non-breaking spaces&mdash;To force spaces to appear in your text, use the escape sequence "<b>&ampnbsp;</b>"</li>
+</list>
+
+<b>Using HTML Commands&mdash;</b>You can use html commands by inserting the html tags around your markup language: <font #46AACD>&lt;html></font>markup<font #46AACD>&lt;html></font>
+
+<b>Text Callout&mdash;</b>To insert a highlighted block of text, as shown below, use the <font #46AACD>&lt;callout></font>text<font #46AACD>&lt;/callout></font> tags.
+
+<indent><callout>your <font red>red text</font> here</callout></indent>
+
+<b>PDF Options</b>
+
+<b>Pagebreak&mdash;</b>When exporting a CSDocument page to a PDF (Build > Export Document), you can force a page break by using the pagebreak tag: <font #46AACD>&lt;pagebreak /></font>. Note this only works when exporting to a PDF writer that supports print media.
+
+<b>Forced Newline&mdash;</b>When exporting a CSDocument page to a PDF (Build > Export Document), you can force a new line by writing the newline sequence: <b>&#126;!&#126;</b> (a tilde + exclamation mark + tilde).
+
+<note type="todo" text="add help for link and include" />
+<note type="todo" text="add help for logic, AI, msg, pff, and 'other' colorization" />
+<note type="todo" text="document the context sensitive tags?" />
