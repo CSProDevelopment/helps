@@ -1,10 +1,10 @@
-﻿<title>UI.closeDialog Action</title>
+﻿<title>UI.close Action</title>
 
 
 <subheader>Format</subheader>
 
 <logicsyntax>
-s = CS.UI.closeDialog(『<arg>result</arg> := ...』)
+s = CS.UI.close(『<arg>result</arg> := ...』)
 </logicsyntax>
 
 <indent><table 3 header nowrap>
@@ -15,7 +15,7 @@ s = CS.UI.closeDialog(『<arg>result</arg> := ...』)
 
 <subheader>Description</subheader>
 
-The <action>UI.closeDialog</action> <link action_invoker.csdoc>action</link> closes the current <link html_dialog_ui.csdoc>HTML dialog</link> or <link html_in_cspro.csdoc>web view</link>. An optional <arg>result</arg> can be provided, which serves as the return value for an action like <action>UI.showDialog</action>.
+The <action>UI.close</action> <link action_invoker.csdoc>action</link> closes the current <link html_dialog_ui.csdoc>HTML dialog</link> or <link html_in_cspro.csdoc>web view</link>. An optional <arg>result</arg> can be provided, which serves as the return value for an action like <action>UI.showDialog</action>.
 
 This action has an impact in the following scenarios:
 
@@ -25,10 +25,12 @@ This action has an impact in the following scenarios:
     <li>Displaying HTML using <link CSCode::introduction.csdoc>CSCode</link> or <link CSCode::introduction.csdoc>CSView</link>.</li>
 </list>
 
+Prior to <link what_is_new_in_cspro_8_1.csdoc>CSPro 8.1</link>, this action was named <action>UI.closeDialog</action>.
+
 
 <subheader>Return Value</subheader>
 
-The action returns a boolean value indicating if a dialog successfully closed.
+The action returns a boolean value indicating if a dialog or web view successfully closed.
 
 
 <subheader>Exceptions</subheader>
@@ -38,14 +40,14 @@ The action throws an exception if any of its arguments are not specified in a va
 
 <subheader>Example (HTML + JavaScript)</subheader>
 
-This example uses the <link action_invoker_execution_javascript_web.csdoc>asynchronous version</link> of <action>UI.closeDialog</action> to ensure that the action does not block the current thread:
+This example uses the <link action_invoker_execution_javascript_web.csdoc>asynchronous version</link> of <action>UI.close</action> to ensure that the action does not block the current thread:
 
 
 <color HTML>
 <script>
     const CS = new CSProActionInvoker();
 
-    CS.UI.closeDialogAsync({
+    CS.UI.closeAsync({
         result: {
             userName: document.getElementById("userName").value,
             password: document.getElementById("password").value,
