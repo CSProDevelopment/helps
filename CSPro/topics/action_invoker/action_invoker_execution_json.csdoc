@@ -71,7 +71,10 @@ The result is:
   },
   {
     "type": "exception",
-    "value": "Action Invoker error: The component of the action name must be specified in the proper case: 'GETTEXT' -> 'getText'"
+    "value": {
+      "name": "ActionInvokerError",
+      "message": "The component of the action name must be specified in the proper case: 'GETTEXT' -> 'getText'"
+    }
   }
 ]
 </color>
@@ -81,9 +84,9 @@ When executing actions from CSCode, you can choose to view results in JSON forma
 
 <subheader>Exception Handling</subheader>
 
-At runtime, if any of the arguments are invalid, or if there was an error executing the action, the Action Invoker throws an <link "https://en.wikipedia.org/wiki/Exception_handling">exception</link>. As shown in the example above, the result of the action will be of <arg>type</arg> <colorinline JSON>"exception"</colorinline>, with the exception message specified in <arg>value</arg>.
+At runtime, if any of the arguments are invalid, or if there was an error executing the action, the Action Invoker throws an <link "https://en.wikipedia.org/wiki/Exception_handling">exception</link>. As shown in the example above, the result of the action will be of <arg>type</arg> <colorinline JSON>"exception"</colorinline>, with the exception object specified in <arg>value</arg>.
 
-By default, when specifying multiple actions, an exception will result in the termination of processing and subsequent actions will not be executed. However, all JSON execution environments provide options to continue processing actions even when an exception is thrown.
+By default, when specifying multiple actions, an exception will result in the termination of processing and subsequent actions will not be executed. However, all JSON execution environments provide options to continue processing actions even when an exception is thrown. You can throw an exception in the JSON execution environment by using the <action>throwException</action> action.
 
 
 <subheader>Executing Actions That Use "action" as an Argument</subheader>

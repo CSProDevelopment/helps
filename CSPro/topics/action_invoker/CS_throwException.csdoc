@@ -21,7 +21,9 @@ CS.throwException(<arg>message</arg> := ...
 
 The <action>throwException</action> <link action_invoker.csdoc>action</link> throws an exception in the current execution environment. The arguments are based on properties present in JavaScript's <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</link> object. The <arg>message</arg> is the text used to described the error, typically specified as an easily understood description of the error. The <arg>name</arg> can be used to categorize classes of error messages. The <arg>cause</arg> allows you to provide more context for the error.
 
-All <link action_invoker.csdoc>execution contexts</link> other than CSPro Logic support exception handling. Exceptions that are thrown using this action are handled as if they were thrown using native exception handling. In the CSPro Logic execution context, thrown exceptions are displayed as error messages.
+All <link action_invoker.csdoc>execution environments</link> other than CSPro Logic support exception handling. Exceptions that are thrown using this action are handled as if they were thrown using native exception handling. In the CSPro Logic execution environment, thrown exceptions are displayed as error messages.
+
+If you want to throw an exception from one execution environment to another, the <action>UI.close</action> action supports throwing an exception from a <link html_dialog_ui.csdoc>HTML dialog</link> or <link html_in_cspro.csdoc>web view</link> that is introduced to the calling execution environment.
 
 
 <subheader>Return Value</subheader>
@@ -69,4 +71,4 @@ catch(error) {
 </color>
 
 
-<seealso action_invoker.csdoc />
+<seealso action_invoker.csdoc CS_UI_close.csdoc />
