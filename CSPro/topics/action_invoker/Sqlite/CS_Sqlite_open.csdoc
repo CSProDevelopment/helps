@@ -20,7 +20,7 @@ d = CS.Sqlite.open(<arg>path</arg> := ... ‖ <arg>name</arg> := ...『, <arg>op
 
 <subheader>Description</subheader>
 
-The <action>Sqlite.open</action> <link action_invoker.csdoc>action</link> opens a <link sqlite_in_cspro.csdoc>SQLite database</link> and returns an ID that can be used for future operations. After performing any <link CS_Sqlite_exec.csdoc>querying</link> or <link CS_Sqlite_rekey.csdoc>rekeying</link> operations, <link CS_Sqlite_close.csdoc>close</link> the database so that its resources are properly released.
+The <action>Sqlite.open</action> <link action_invoker.csdoc>action</link> opens a <link sqlite_in_cspro.csdoc>SQLite database</link> and returns a <link action_invoker_resource_ids.csdoc>resource ID</link> that can be used for future operations. After performing any <link CS_Sqlite_exec.csdoc>querying</link> or <link CS_Sqlite_rekey.csdoc>rekeying</link> operations, <link CS_Sqlite_close.csdoc>close</link> the database so that its resources are properly released.
 
 Either <arg>path</arg> or <arg>name</arg> must be specified. Based on the argument, the following kind of SQLite database is opened:
 
@@ -48,7 +48,7 @@ Further information about opening databases is available on the SQLite website: 
 
 <subheader>Return Value</subheader>
 
-The action returns a numeric database ID that is used to identify this database in calls to future <action>Sqlite</action> actions.
+The action returns a numeric <link action_invoker_resource_ids.csdoc>resource ID</link> that is used to identify this database in calls to future <action>Sqlite</action> actions.
 
 
 <subheader>Exceptions</subheader>

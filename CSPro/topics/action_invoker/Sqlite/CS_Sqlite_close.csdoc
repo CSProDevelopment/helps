@@ -9,13 +9,13 @@ CS.Sqlite.close(<arg>db</arg> := ...)
 
 <indent><table 3 header nowrap>
     <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
-    <cell><arg>db</arg></cell><cell>The database ID returned by <action>Sqlite.open</action>.</cell><cell>number~!~required</cell>
+    <cell><arg>db</arg></cell><cell>The <link action_invoker_resource_ids.csdoc>resource ID</link> returned by <action>Sqlite.open</action>.</cell><cell>number~!~not required</cell>
 </table></indent>
 
 
 <subheader>Description</subheader>
 
-The <action>Sqlite.close</action> <link action_invoker.csdoc>action</link> closes a <link sqlite_in_cspro.csdoc>SQLite database</link> previously opened by <action>Sqlite.open</action>. Only files <link CS_Sqlite_open.csdoc>opened</link> using <arg>path</arg> are closed, so if the database was opened using <arg>name</arg>, it is not actually closed, as data source and paradata resources may still be in use by other parts of CSPro.
+The <action>Sqlite.close</action> <link action_invoker.csdoc>action</link> closes a <link sqlite_in_cspro.csdoc>SQLite database</link> previously opened by <action>Sqlite.open</action>. Only files <link CS_Sqlite_open.csdoc>opened</link> using <arg>path</arg> are closed, so if the database was opened using <arg>name</arg>, it is not actually closed, as data source and paradata resources may still be in use by other parts of CSPro. The <arg>db</arg> resource ID must be specified explicitly when using multiple databases in a single execution environment.
 
 Further information about closing databases is available on the SQLite website: <link "https://www.sqlite.org/c3ref/close.html">sqlite3_close</link>.
 

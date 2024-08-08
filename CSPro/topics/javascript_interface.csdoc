@@ -9,14 +9,14 @@ If you are converting a project that used the JavaScript interface, the followin
 
 <table 2 header>
     <cell>JavaScript Interface Method</cell><cell>Action</cell>
-    <cell><colorinline JavaScript>CSPro.do("close")</colorinline></cell><cell><action>UI.closeDialog</action></cell>
+    <cell><colorinline JavaScript>CSPro.do("close")</colorinline></cell><cell><action>UI.close</action></cell>
     <cell><colorinline JavaScript>CSPro.getAsyncResult</colorinline></cell><cell><i>No longer necessary as asynchronous calls return a <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</link>.</i></cell>
     <cell><colorinline JavaScript>CSPro.getInputData</colorinline></cell><cell><action>UI.getInputData</action></cell>
     <cell><colorinline JavaScript>CSPro.getMaxDisplayWidth</colorinline></cell><cell><action>UI.getMaxDisplayDimensions</action></cell>
     <cell><colorinline JavaScript>CSPro.getMaxDisplayHeight</colorinline></cell><cell><action>UI.getMaxDisplayDimensions</action></cell>
     <cell><colorinline JavaScript>CSPro.invoke</colorinline></cell><cell><action>Logic.invoke</action></cell>
     <cell><colorinline JavaScript>CSPro.invokeAsync</colorinline></cell><cell><action>Logic.invokeAsync</action></cell>
-    <cell><colorinline JavaScript>CSPro.returnData</colorinline></cell><cell><action>UI.closeDialog</action></cell>
+    <cell><colorinline JavaScript>CSPro.returnData</colorinline></cell><cell><action>UI.close</action></cell>
     <cell><colorinline JavaScript>CSPro.runLogic</colorinline></cell><cell><action>Logic.eval</action></cell>
     <cell><colorinline JavaScript>CSPro.runLogicAsync</colorinline></cell><cell><action>Logic.evalAsync</action></cell>
     <cell><colorinline JavaScript>CSPro.setDisplayOptions</colorinline></cell><cell><action>UI.setDisplayOptions</action></cell>

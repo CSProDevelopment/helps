@@ -316,6 +316,7 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>SystemApp</logiccolor></cell><cell>Declares a <link SystemApp.csdoc>SystemApp</link> object for interacting with external applications.</cell>
     <cell><logiccolor>systime</logiccolor></cell><cell>Returns the current system time.</cell>
     <cell 2>&nbsp;</cell>
+    <cell><action>throwException</action> <sup>(CS)</sup></cell><cell>Throws an exception in the current execution environment.</cell>
     <cell><logiccolor>timestamp</logiccolor></cell><cell>Returns the current UNIX time.</cell>
     <cell><logiccolor>timestring</logiccolor></cell><cell>Returns a custom formatted date and time string.</cell>
     <cell><logiccolor>tolower</logiccolor></cell><cell>Changes all uppercase letters in a string to lowercase.</cell>
@@ -326,7 +327,7 @@ The following table lists functions and statements that can be used in logic. Li
     <cell><logiccolor>trace</logiccolor></cell><cell>Controls a window or file that can contain debugging information.</cell>
     <cell 2>&nbsp;</cell>
     <cell><action>UI.alert</action> <sup>(CS)</sup></cell><cell>Displays an alert dialog.</cell>
-    <cell><action>UI.closeDialog</action> <sup>(CS)</sup></cell><cell>Closes the current <link html_dialog_ui.csdoc>HTML dialog</link>, optionally returning a result to an action like <action>UI.showDialog</action>.</cell>
+    <cell><action>UI.close</action> <sup>(CS)</sup></cell><cell>Closes the current <link html_dialog_ui.csdoc>HTML dialog</link> or <link html_in_cspro.csdoc>web view</link>, optionally returning a result to an action like <action>UI.showDialog</action>.</cell>
     <cell><action>UI.enumerateWebViews</action> <sup>(CS)</sup></cell><cell>Returns information about all of the <link html_in_cspro.csdoc>web views</link> currently showing.</cell>
     <cell><action>UI.getDisplayOptions</action> <sup>(CS)</sup></cell><cell>Returns the display options associated with the current <link html_in_cspro.csdoc>web view</link>.</cell>
     <cell><action>UI.getInputData</action> <sup>(CS)</sup></cell><cell>Returns the input data associated with the current <link html_in_cspro.csdoc>web view</link>.</cell>
