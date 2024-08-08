@@ -1,0 +1,72 @@
+﻿<title>throwException Action</title>
+
+
+<subheader>Format</subheader>
+
+<logicsyntax>
+CS.throwException(<arg>message</arg> := ...
+               『, <arg>name</arg> := ...』
+               『, <arg>cause</arg> := ...』)
+</logicsyntax>
+
+<indent><table 3 header nowrap>
+    <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
+    <cell><arg>message</arg></cell><cell>The error message.</cell><cell>string~!~required</cell>
+    <cell><arg>name</arg></cell><cell>The name of the error.~!~The default value is <logiccolor>"ActionInvokerError"</logiccolor>.</cell><cell>string~!~not required</cell>
+    <cell><arg>cause</arg></cell><cell>The cause of the error.</cell><cell>string, number, boolean, array, object~!~not required</cell>
+</table></indent>
+
+
+<subheader>Description</subheader>
+
+The <action>throwException</action> <link action_invoker.csdoc>action</link> throws an exception in the current execution environment. The arguments are based on properties present in JavaScript's <link "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</link> object. The <arg>message</arg> is the text used to described the error, typically specified as an easily understood description of the error. The <arg>name</arg> can be used to categorize classes of error messages. The <arg>cause</arg> allows you to provide more context for the error.
+
+All <link action_invoker.csdoc>execution contexts</link> other than CSPro Logic support exception handling. Exceptions that are thrown using this action are handled as if they were thrown using native exception handling. In the CSPro Logic execution context, thrown exceptions are displayed as error messages.
+
+
+<subheader>Return Value</subheader>
+
+The action does not return.
+
+
+<subheader>Exceptions</subheader>
+
+The action throws a different exception from the one intended if any of its arguments are not specified in a valid form.
+
+
+<subheader>Example (JavaScript)</subheader>
+
+This example shows how the same exception can be thrown using the JavaScript Error object, or by using the Action Invoker.
+
+<color JavaScript>
+function Divide(dividend, divisor) {
+    if( divisor != 0 ) {
+        return dividend / divisor;
+    }
+
+    // using JavaScript Error
+    const error = new Error(`You cannot divide ${dividend} by ${divisor}.`, { cause: [ dividend, divisor ] });
+    error.name = "DivideByZeroError";
+    throw error;
+
+    // using the Action Invoker
+    CS.throwException({
+        message: `You cannot divide ${dividend} by ${divisor}.`,
+        name: "DivideByZeroError",
+        cause: [ dividend, divisor ]
+    });
+}
+
+try {
+    Divide(808, 0);
+}
+catch(error) {
+    CS.UI.alert({
+        title: error.name,
+        text: error.message
+    });
+}
+</color>
+
+
+<seealso action_invoker.csdoc />
