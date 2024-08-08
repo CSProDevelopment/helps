@@ -1,0 +1,22 @@
+﻿<title>Action Invoker Resource IDs</title>
+
+
+The <link action_invoker.csdoc>Action Invoker</link> does not have the concept of <link object_dot_notation.csdoc>objects</link> that can manage resources. Instead, actions that use resources return a numeric resource ID, which is then used to identify the resource in subsequent actions. Resources ID are used in the following areas:
+
+<list>
+    <li><action>Sqlite</action> actions that access <link sqlite_in_cspro.csdoc>SQLite databases</link>.</li>
+</list>
+
+
+In certain circumstances, you do not need to specify the resource ID as it will be calculated implicitly. Within a single <link action_invoker.csdoc>execution environment</link>, if only one resource of a specific type is open, then you do not need to specify the resource ID as it can be calculated implicitly because there is only one resource of that type open. For example:
+
+<list>
+    <li>In CSPro logic, if you <link Sqlite\CS_Sqlite_open.csdoc>opened</link> a single SQLite database and then used it in several actions from <link action_invoker_execution_cspro_logic.csdoc>CSPro logic</link>, you would not need to specify the resource ID.</li>
+    <li>In CSPro logic, if you opened a single SQLite database, and then <link CS_UI_view.csdoc>launched a web view</link> that wanted to use that database, you would need to specify the resource ID from actions in the web view because the web view is in a <link action_invoker_execution_javascript_web.csdoc>different execution environment</link> than CSPro logic.</li>
+    <li>In CSPro logic, if you opened two SQLite databases, you would need to specify the resource ID up to the point at which one of the databases was <link CS_Sqlite_close.csdoc>closed</link>, leaving only a single resource of type SQLite open in CSPro logic.</li>
+</list>
+
+A resource ID can always be specified explicitly, so if you are unsure about how many resources of a given type may be open when executing an action, the safest approach is to always explicitly specify the resource ID.
+
+
+<seealso action_invoker.csdoc />

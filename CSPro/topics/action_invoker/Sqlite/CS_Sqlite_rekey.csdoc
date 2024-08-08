@@ -9,7 +9,7 @@ CS.Sqlite.rekey(<arg>db</arg> := ..., <arg>encryptionKey</arg> := ...『, <arg>e
 
 <indent><table 3 header nowrap>
     <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
-    <cell><arg>db</arg></cell><cell>The database ID returned by <action>Sqlite.open</action>.</cell><cell>number~!~required</cell>
+    <cell><arg>db</arg></cell><cell>The <link action_invoker_resource_ids.csdoc>resource ID</link> returned by <action>Sqlite.open</action>.</cell><cell>number~!~not required</cell>
     <cell><arg>encryptionKey</arg></cell><cell>The new encryption key, or a blank string to remove the encryption.</cell><cell>string~!~required</cell>
     <cell><arg>encryptionKeyFormat</arg></cell><cell>The <link action_invoker_binary_data.csdoc>format</link> of <arg>encryptionKey</arg>.~!~The default value is <logiccolor>"autodetect"</logiccolor>.</cell><cell>string~!~not required</cell>
 </table></indent>
@@ -17,7 +17,7 @@ CS.Sqlite.rekey(<arg>db</arg> := ..., <arg>encryptionKey</arg> := ...『, <arg>e
 
 <subheader>Description</subheader>
 
-The <action>Sqlite.rekey</action> <link action_invoker.csdoc>action</link> changes, removes, or adds an encryption key to a <link sqlite_in_cspro.csdoc>SQLite database</link> previously opened by <action>Sqlite.open</action>. Only databases opened using the <arg>path</arg> argument can be rekeyed.
+The <action>Sqlite.rekey</action> <link action_invoker.csdoc>action</link> changes, removes, or adds an encryption key to a <link sqlite_in_cspro.csdoc>SQLite database</link> previously opened by <action>Sqlite.open</action>. Only databases opened using the <arg>path</arg> argument can be rekeyed. The <arg>db</arg> resource ID must be specified explicitly when using multiple databases in a single execution environment.
 
 The <arg>encryptionKey</arg> argument specifies the new key, with the the optional <arg>encryptionKeyFormat</arg> argument indicating <link action_invoker_binary_data.csdoc>how to process</link> the <arg>encryptionKey</arg> argument. If rekeying a database to make it openable as an <link data_source_csdbe.csdoc>Encrypted CSPro DB data source</link>, you can use the <action>Hash.createHash</action> action to convert a password into the encryption key necessary to rekey the database. If <arg>encryptionKey</arg> is a blank string, any encryption on the database is removed.
 

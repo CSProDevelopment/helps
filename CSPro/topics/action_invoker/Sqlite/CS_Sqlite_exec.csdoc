@@ -12,7 +12,7 @@ s = CS.Sqlite.exec(<arg>db</arg> := ..., <arg>sql</arg> := ...
 
 <indent><table 3 header nowrap>
     <cell>Argument</cell><cell>Description</cell><cell nowrap>Types / Required</cell>
-    <cell><arg>db</arg></cell><cell>The database ID returned by <action>Sqlite.open</action>.</cell><cell>number~!~required</cell>
+    <cell><arg>db</arg></cell><cell>The <link action_invoker_resource_ids.csdoc>resource ID</link> returned by <action>Sqlite.open</action>.</cell><cell>number~!~not required</cell>
     <cell><arg>sql</arg></cell><cell>The SQL statement(s) to execute.</cell><cell nowrap>string, array~!~required</cell>
     <cell><arg>bindings</arg></cell><cell>The bindings for the SQL statement.</cell><cell nowrap>array, object~!~not required</cell>
     <cell><arg>rowFormat</arg></cell><cell>The format to return results from a query.~!~The default value is <logiccolor>"object"</logiccolor>.</cell><cell nowrap>string~!~not required</cell>
@@ -22,7 +22,7 @@ s = CS.Sqlite.exec(<arg>db</arg> := ..., <arg>sql</arg> := ...
 
 <subheader>Description</subheader>
 
-The <action>Sqlite.exec</action> <link action_invoker.csdoc>action</link> executes one or more SQL statements on a <link sqlite_in_cspro.csdoc>SQLite database</link> previously opened by <action>Sqlite.open</action>.
+The <action>Sqlite.exec</action> <link action_invoker.csdoc>action</link> executes one or more SQL statements on a <link sqlite_in_cspro.csdoc>SQLite database</link> previously opened by <action>Sqlite.open</action>. The <arg>db</arg> resource ID must be specified explicitly when using multiple databases in a single execution environment.
 
 The <arg>sql</arg> argument specifies the SQL statement. If specified as an array of strings, the action will execute each query in the order present in the array.
 
