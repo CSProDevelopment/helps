@@ -1,35 +1,50 @@
 ﻿﻿<title>JSON Representation: Case</title>
 
-Case data can be output in JSON format. This outputs the data as an array of objects. Each object contains a single case.
-A case has multiple levels in JSON.
+Case data can be output in JSON format. This outputs the data as an array of objects. Each object represents a single case.
 
-The highest level of the case object is the root. This always contains the following items:
+<link JSONCaseData.html>Action Invoker</link>
+
+The base of the case object is the root. This always contains the following items:
 <list>
 <li>    <arg>key</arg>, a string containing the case key </li>
 <li>    <arg>uuid</arg>, a string containing the case uuid </li>
 </list>
-The root will contain the following items only if Verbose is specified:
+
+The root will contain the following items only if Verbose is specified for the output pff:
 <list>
 <li>    <arg>label</arg>, a string containing the label</li>
 <li>    <arg>deleted</arg>, a boolean containing whether the case is deleted </li>
 <li>    <arg>verified</arg>, a boolean containing whether the case is verified </li>
 </list>
-The root will contain the following items only if Verbose is specified, or they contain occurrences:
+
+The root will contain the following items only if Verbose is specified, or occurrences are present:
 <list>
-<li>    <arg>partialSave</arg>, either null if the case is verbose and not partial, or an object containing the string <arg>mode</arg>, the string <arg>name</arg>, the string <arg>levelKey</arg> (if verbose), and the array <arg>occurrences</arg>. </li>
-<li>    <arg>notes</arg>, either an empty array if the case is verbose and has no notes, or an array of note objects. Note objects contain the string <arg>text</arg>, the time <arg>modifiedTime</arg>, the string <arg>operatorId</arg>, the string <arg>name</arg>, the string <arg>levelKey</arg> (if verbose), and the array <arg>occurrences</arg>.</li>
+<li>    <arg>partialSave</arg>, null if the case not partial, or an object if the case is partial. This object contains the following items: </li>
+<indent><li><arg>mode</arg>, a string containing saved mode (add, modify, etc)</li></indent>
+<indent><li><arg>name</arg>, a string containing the name of the partial save's location</li></indent>
+<indent><li><arg>levelKey</arg>, a string containing the level key (if verbose)</li></indent>
+<indent><li><arg>occurrences</arg>, an array containing all occurrences by <arg>record</arg>, <arg>item</arg>, and <arg>subitem</arg> location
+</li></indent>
+<li>    <arg>notes</arg>, an empty array if the case is verbose and has no notes, or an array of note objects. Each note object in the array contains the following: </li>
+<indent><li><arg>text</arg>, a string containing the text of the note</li></indent>
+<indent><li><arg>modifiedTime</arg>, a string containing the time the note was modified</li></indent>
+<indent><li><arg>operatorId</arg>, a string containing the ID of the operator who made the note</li></indent>
+<indent><li><arg>name</arg>, a string containing the name of where the note was made</li></indent>
+<indent><li><arg>levelKey</arg>, a string containing the level key (if verbose)</li></indent>
+<indent><li><arg>occurrences</arg>, an array containing all occurrences by <arg>record</arg>, <arg>item</arg>, and <arg>subitem</arg> location</li></indent>
 </list>
 
-Then the Case Data will be listed, following a heirarchy based on the Dictionary.
-The first level of the dictionary will be the top level of the object. This level will be an object containing all ID items for that level, all records listed in that level, and the level directly below it in the dictionary if there is one.
+Then the Case Data will be listed, following a heirarchy based on the Dictionary. The <arg>first level</arg> of the dictionary is an object containing all <arg>ID items</arg> for that level, all <arg>records</arg> listed in that level, and the <arg>second level</arg> directly below it in the dictionary if there is one.
 
-Levels (other than the topmost level) are arrays. If there are no occurrences of that level, the array will be empty. If there were occurrences, each occurrence will be listed as an object in that array. Each occurrence in a level is composed of the ID items, followed by the Records, followed by the level directly below it in the dictionary if there is one.
+<arg>Records</arg> are arrays. They contain objects for each occurrence of data they have. They only contain non-ID <arg>items</arg>.
 
-Records are arrays. Like levels, they contain objects for each occurrence of data they have. Unlike levels, they do not list any further Records, or lower Levels below them. Records only contain non-ID items.
+Repeating items are arrays containing all instances of an item.
 
-Items are objects. Items contain a <arg>code</arg> with their value, which can be a string or a numeric. If the item has no value, no code will be listed and it will be an empty object. If the "writeLabels=true" connection string attribute is specified, the Item will contain the value's string <arg>label</arg> as well. File objects (such as Images, Audios, Documents, and Geometries) do not contain a code or label like alpha/numeric items. Instead they contain a string <arg>signature</arg> and object <arg>metadata</arg>. The <arg>metadata</arg> object contains the string <arg>filename</arg> for the file name of the file and the string <arg>mime</arg> for the file type.
+<arg>Items</arg> are objects. Alphanumeric tems contain a <arg>code</arg> with their value, which can be a string or a numeric. If the item has no value, no code will be listed and it will be an empty object. If the "writeLabels=true" connection string attribute is specified, the Item will contain the value's string <arg>label</arg> as well. File objects (such as Images, Audios, Documents, and Geometries) do not contain a code or label like alpha/numeric items. Instead they contain a string <arg>signature</arg> and object <arg>metadata</arg>. The <arg>metadata</arg> object contains the string <arg>filename</arg> for the file name of the file and the string <arg>mime</arg> for the file type.
 
 
+JSON Example:
+<color JSON>
 [
 {
   "key": "1",
@@ -112,3 +127,10 @@ Items are objects. Items contain a <arg>code</arg> with their value, which can b
   }
 }
 ]
+</color>
+
+Multiple-level dictionaries (advanced)
+
+If there are multiple levels in the dictionary, the 2nd level will be an array of objects contained within the 1st level. Each object in the array is a different occurrence of data at that level. If there is a 3rd level, it will be an array of objects contained within each of the 2nd level objects.
+
+Levels (other than the topmost level) are arrays. If there are no occurrences of that level, the array will be empty. If there were occurrences, each occurrence will be listed as an object in that array. Each occurrence in a level is composed of the ID items, followed by the Records, followed by the level directly below it in the dictionary if there is one.
