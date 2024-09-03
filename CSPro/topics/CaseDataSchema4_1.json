@@ -1,0 +1,2297 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "CSPro Case Data OpenAPI",
+    "description": "CSPro Case Data Schemas represented in OpenAPI format.",
+    "contact": {
+      "email": "cspro@lists.census.gov"
+    },
+    "version": "4.1"
+  },
+  "externalDocs": {
+    "description": "Find out more about CSPro.",
+    "url": "https://www.csprousers.org/"
+  },
+  "tags": [
+    {
+      "name": "cases",
+      "x-displayName": "cases",
+      "externalDocs": {
+        "description": "Find out more about CSPro.",
+        "url": "https://www.csprousers.org/"
+      },
+      "description": "Full data for the file.\n<SchemaDefinition schemaRef=\"#/components/schemas/cases\"></SchemaDefinition>\n"
+    },
+    {
+      "name": "case",
+      "x-displayName": "case",
+      "description": "Represents a case data structure.\n<SchemaDefinition schemaRef=\"#/components/schemas/case\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "partialSave",
+      "x-displayName": "partialSave",
+      "description": "Details on partial save, if applicable.\n<SchemaDefinition schemaRef=\"#/components/schemas/partialSave\"></SchemaDefinition>\n"
+    },
+    {
+      "name": "notes",
+      "x-displayName": "notes",
+      "description": "An array containing all notes for the case.\n<SchemaDefinition schemaRef=\"#/components/schemas/notes\"></SchemaDefinition>\n"
+    },
+    {
+      "name": "note",
+      "x-displayName": "note",
+      "description": "A note.\n<SchemaDefinition schemaRef=\"#/components/schemas/note\"></SchemaDefinition>\n"
+    },
+    {
+      "name": "occurrences",
+      "x-displayName": "occurrences",
+      "description": "Occurrences of partialSave/note.\n<SchemaDefinition schemaRef=\"#/components/schemas/occurrences\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "level-1",
+      "x-displayName": "level-1",
+      "description": "Represents the top level of the data structure.\n<SchemaDefinition schemaRef=\"#/components/schemas/level-1\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "IDItem",
+      "x-displayName": "IDItem",
+      "description": "ID Items are alphanumeric..\n <SchemaDefinition schemaRef=\"#/components/schemas/IDItem\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "caseRecord",
+      "x-displayName": "caseRecord",
+      "description": "Contains one or more items. \n<SchemaDefinition schemaRef=\"#/components/schemas/caseRecord\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "noValueCaseItem",
+      "x-displayName": "noValueCaseItem",
+      "description": "An item that was not filled out in this case.\n<SchemaDefinition schemaRef=\"#/components/schemas/noValueCaseItem\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "binaryCaseItem",
+      "x-displayName": "binaryCaseItem",
+      "description": "Non-alphanumeric items with attached files (Audio, Document, Geometry, or Image).\n<SchemaDefinition schemaRef=\"#/components/schemas/binaryCaseItem\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "fileMetadata",
+      "x-displayName": "fileMetadata",
+      "description": "The filename and extension metadata associated with an attached file.\n<SchemaDefinition schemaRef=\"#/components/schemas/fileMetadata\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "numericCaseItem",
+      "x-displayName": "numericCaseItem",
+      "description": "Item with Numeric data type.\n<SchemaDefinition schemaRef=\"#/components/schemas/numericCaseItem\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "stringCaseItem",
+      "x-displayName": "stringCaseItem",
+      "description": "Item with Alpha data type.\n<SchemaDefinition schemaRef=\"#/components/schemas/stringCaseItem\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "repeatingCaseItem",
+      "x-displayName": "repeatingCaseItem",
+      "description": "An array containing instances of an item.\n<SchemaDefinition schemaRef=\"#/components/schemas/repeatingCaseItem\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "level-2",
+      "x-displayName": "level-2",
+      "description": "The level below level 1. Contains an array of level occurrences.\n<SchemaDefinition schemaRef=\"#/components/schemas/level-2\"></SchemaDefinition>\n"
+    },
+	  {
+      "name": "level-3",
+      "x-displayName": "level-3",
+      "description": "The level below level 2. Contains an array of level occurrences. CSPro does not allow any lower levels than this.\n<SchemaDefinition schemaRef=\"#/components/schemas/level-3\"></SchemaDefinition>\n"
+    }
+  ],
+   "x-tagGroups": [
+    {
+      "name": "Models",
+      "tags": [
+        "cases",
+        "case",
+        "partialSave",
+        "notes",
+        "note",
+        "occurrences",
+        "level-1",
+        "IDItem",
+        "caseRecord",
+        "noValueCaseItem",
+        "binaryCaseItem",
+        "fileMetadata",
+        "numericCaseItem",
+        "stringCaseItem",
+        "repeatingCaseItem",
+        "level-2",
+        "level-3"
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "cases": {
+        "type": "array",
+        "description": "Full data for the file.",
+        "items": { "$ref": "#/components/schemas/case" },
+        "minItems": 0,
+        "example":
+          [
+            {
+              "key": "010103000110210241", 
+              "uuid": "097c274f-aa1d-4058-8ae9-33c0616cf700", 
+              "label": "", 
+              "deleted": false, 
+              "verified": false, 
+              "partialSave": null, 
+              "notes": [], 
+              "QUEST": {
+                "PROVINCE": {
+                  "code": 1, 
+                  "label": "Artesia"
+                }, 
+                "DISTRICT": {
+                  "code": 1, 
+                  "label": "1"
+                }, 
+                "VILLAGE": {
+                  "code": 30, 
+                  "label": "30"
+                }, 
+                "EA": {
+                  "code": 1, 
+                  "label": "1"
+                }, 
+                "UR": {
+                  "code": 1, 
+                  "label": "Urban"
+                }, 
+                "BUILDING": {
+                  "code": 21, 
+                  "label": "Building"
+                }, 
+                "HU": {
+                  "code": 24, 
+                  "label": "24"
+                }, 
+                "HH": {
+                  "code": 1, 
+                  "label": "1"
+                }, 
+                "PERSON": [
+                  {
+                    "LINE": {
+                      "code": 1, 
+                      "label": "1"
+                    }, 
+                    "P02_REL": {
+                      "code": 1, 
+                      "label": "Head"
+                    }, 
+                    "P03_SEX": {
+                      "code": 2, 
+                      "label": "Female"
+                    }, 
+                    "P04_AGE": {
+                      "code": 19, 
+                      "label": "19"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 11, 
+                      "label": "High School"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 1, 
+                      "label": "Literate"
+                    }, 
+                    "P12_WORKING": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {
+                      "code": 93, 
+                      "label": "93"
+                    }, 
+                    "P15A_OCC": {
+                      "code": 9, 
+                      "label": "Construction, other, not reported"
+                    }, 
+                    "P16_IND": {
+                      "code": 29, 
+                      "label": "29"
+                    }, 
+                    "P16A_IND": {
+                      "code": 2, 
+                      "label": "Mining, Quarrying"
+                    }, 
+                    "P17_WK_STATUS": {
+                      "code": 2, 
+                      "label": "Paid employee"
+                    }, 
+                    "ECON_ACTIVE": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P18_BORN": {
+                      "code": 0, 
+                      "label": "None"
+                    }, 
+                    "P19_LIVING": {
+                      "code": 0, 
+                      "label": "None"
+                    }, 
+                    "P20_BORN12": {
+                      "code": 0, 
+                      "label": "0"
+                    }
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 2, 
+                      "label": "2"
+                    }, 
+                    "P02_REL": {
+                      "code": 5, 
+                      "label": "Other relative"
+                    }, 
+                    "P03_SEX": {
+                      "code": 2, 
+                      "label": "Female"
+                    }, 
+                    "P04_AGE": {
+                      "code": 7, 
+                      "label": "7"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 4, 
+                      "label": "Primary"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 9, 
+                      "label": "Not Reported"
+                    }, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {}, 
+                    "ECON_ACTIVE": {}, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 3, 
+                      "label": "3"
+                    }, 
+                    "P02_REL": {
+                      "code": 5, 
+                      "label": "Other relative"
+                    }, 
+                    "P03_SEX": {
+                      "code": 1, 
+                      "label": "Male"
+                    }, 
+                    "P04_AGE": {
+                      "code": 4, 
+                      "label": "4"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {}, 
+                    "P09_ATTEND": {}, 
+                    "P10_HIGH_GR": {}, 
+                    "P11_LITERACY": {}, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {}, 
+                    "ECON_ACTIVE": {}, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }
+                ], 
+                "HOUSING": [
+                  {
+                    "H01_TYPE": {
+                      "code": 1, 
+                      "label": "Single family"
+                    }, 
+                    "H02_WALL": {
+                      "code": 1, 
+                      "label": "Stone/Cement"
+                    }, 
+                    "H03_ROOF": {
+                      "code": 2, 
+                      "label": "Metal"
+                    }, 
+                    "H04_FLOOR": {
+                      "code": 3, 
+                      "label": "Wood"
+                    }, 
+                    "H05_ROOMS": {
+                      "code": 2, 
+                      "label": "02"
+                    }, 
+                    "H06_TENURE": {
+                      "code": 1, 
+                      "label": "Owned"
+                    }, 
+                    "H07_RENT": {
+                      "code": 0, 
+                      "label": "0"
+                    }, 
+                    "H08_TOILET": {
+                      "code": 5, 
+                      "label": "Other"
+                    }, 
+                    "H09_BATH": {
+                      "code": 2, 
+                      "label": "Shared"
+                    }, 
+                    "H10_WATER": {
+                      "code": 2, 
+                      "label": "Outside piped"
+                    }, 
+                    "H11_LIGHT": {
+                      "code": 1, 
+                      "label": "Electric"
+                    }, 
+                    "H12_FUEL": {
+                      "code": 5, 
+                      "label": "Wood"
+                    }, 
+                    "H13_PERSONS": {
+                      "code": 3, 
+                      "label": "3 persons"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "key": "010117100110870031", 
+              "uuid": "ee52f10a-5fd0-4f46-9d6d-84773b2cd42f", 
+              "label": "", 
+              "deleted": false, 
+              "verified": false, 
+              "partialSave": null, 
+              "notes": [], 
+              "QUEST": {
+                "PROVINCE": {
+                  "code": 1, 
+                  "label": "Artesia"
+                }, 
+                "DISTRICT": {
+                  "code": 1, 
+                  "label": "1"
+                }, 
+                "VILLAGE": {
+                  "code": 171, 
+                  "label": "171"
+                }, 
+                "EA": {
+                  "code": 1, 
+                  "label": "1"
+                }, 
+                "UR": {
+                  "code": 1, 
+                  "label": "Urban"
+                }, 
+                "BUILDING": {
+                  "code": 87, 
+                  "label": "Building"
+                }, 
+                "HU": {
+                  "code": 3, 
+                  "label": "3"
+                }, 
+                "HH": {
+                  "code": 1, 
+                  "label": "1"
+                }, 
+                "PERSON": [
+                  {
+                    "LINE": {
+                      "code": 1, 
+                      "label": "1"
+                    }, 
+                    "P02_REL": {
+                      "code": 1, 
+                      "label": "Head"
+                    }, 
+                    "P03_SEX": {
+                      "code": 1, 
+                      "label": "Male"
+                    }, 
+                    "P04_AGE": {
+                      "code": 40, 
+                      "label": "40"
+                    }, 
+                    "P05_MS": {
+                      "code": 1, 
+                      "label": "Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 3, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 9, 
+                      "label": "High School"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 1, 
+                      "label": "Literate"
+                    }, 
+                    "P12_WORKING": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {
+                      "code": 91, 
+                      "label": "Construction Trades"
+                    }, 
+                    "P15A_OCC": {
+                      "code": 9, 
+                      "label": "Construction, other, not reported"
+                    }, 
+                    "P16_IND": {
+                      "code": 95, 
+                      "label": "Personal HHold"
+                    }, 
+                    "P16A_IND": {
+                      "code": 9, 
+                      "label": "Public Administration and not reported"
+                    }, 
+                    "P17_WK_STATUS": {
+                      "code": 2, 
+                      "label": "Paid employee"
+                    }, 
+                    "ECON_ACTIVE": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 2, 
+                      "label": "2"
+                    }, 
+                    "P02_REL": {
+                      "code": 2, 
+                      "label": "Spouse"
+                    }, 
+                    "P03_SEX": {
+                      "code": 2, 
+                      "label": "Female"
+                    }, 
+                    "P04_AGE": {
+                      "code": 41, 
+                      "label": "41"
+                    }, 
+                    "P05_MS": {
+                      "code": 1, 
+                      "label": "Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 3, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 6, 
+                      "label": "Middle School"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 1, 
+                      "label": "Literate"
+                    }, 
+                    "P12_WORKING": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {
+                      "code": 91, 
+                      "label": "Construction Trades"
+                    }, 
+                    "P15A_OCC": {
+                      "code": 9, 
+                      "label": "Construction, other, not reported"
+                    }, 
+                    "P16_IND": {
+                      "code": 95, 
+                      "label": "Personal HHold"
+                    }, 
+                    "P16A_IND": {
+                      "code": 9, 
+                      "label": "Public Administration and not reported"
+                    }, 
+                    "P17_WK_STATUS": {
+                      "code": 2, 
+                      "label": "Paid employee"
+                    }, 
+                    "ECON_ACTIVE": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P18_BORN": {
+                      "code": 12, 
+                      "label": "10+"
+                    }, 
+                    "P19_LIVING": {
+                      "code": 12, 
+                      "label": "10+"
+                    }, 
+                    "P20_BORN12": {
+                      "code": 1, 
+                      "label": "1"
+                    }
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 3, 
+                      "label": "3"
+                    }, 
+                    "P02_REL": {
+                      "code": 3, 
+                      "label": "Child"
+                    }, 
+                    "P03_SEX": {
+                      "code": 1, 
+                      "label": "Male"
+                    }, 
+                    "P04_AGE": {
+                      "code": 20, 
+                      "label": "20"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 3, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 8, 
+                      "label": "Middle School"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 1, 
+                      "label": "Literate"
+                    }, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {
+                      "code": 9, 
+                      "label": "Not Reported"
+                    }, 
+                    "ECON_ACTIVE": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 4, 
+                      "label": "4"
+                    }, 
+                    "P02_REL": {
+                      "code": 3, 
+                      "label": "Child"
+                    }, 
+                    "P03_SEX": {
+                      "code": 2, 
+                      "label": "Female"
+                    }, 
+                    "P04_AGE": {
+                      "code": 15, 
+                      "label": "15"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 3, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 6, 
+                      "label": "Middle School"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 1, 
+                      "label": "Literate"
+                    }, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {
+                      "code": 9, 
+                      "label": "Not Reported"
+                    }, 
+                    "ECON_ACTIVE": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P18_BORN": {
+                      "code": 0, 
+                      "label": "None"
+                    }, 
+                    "P19_LIVING": {
+                      "code": 0, 
+                      "label": "None"
+                    }, 
+                    "P20_BORN12": {
+                      "code": 0, 
+                      "label": "0"
+                    }
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 5, 
+                      "label": "5"
+                    }, 
+                    "P02_REL": {
+                      "code": 3, 
+                      "label": "Child"
+                    }, 
+                    "P03_SEX": {
+                      "code": 1, 
+                      "label": "Male"
+                    }, 
+                    "P04_AGE": {
+                      "code": 13, 
+                      "label": "13"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 3, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 5, 
+                      "label": "Primary"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 1, 
+                      "label": "Literate"
+                    }, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {
+                      "code": 9, 
+                      "label": "Not Reported"
+                    }, 
+                    "ECON_ACTIVE": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 6, 
+                      "label": "6"
+                    }, 
+                    "P02_REL": {
+                      "code": 3, 
+                      "label": "Child"
+                    }, 
+                    "P03_SEX": {
+                      "code": 1, 
+                      "label": "Male"
+                    }, 
+                    "P04_AGE": {
+                      "code": 11, 
+                      "label": "11"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 3, 
+                      "label": "Primary"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 1, 
+                      "label": "Literate"
+                    }, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {
+                      "code": 9, 
+                      "label": "Not Reported"
+                    }, 
+                    "ECON_ACTIVE": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 7, 
+                      "label": "7"
+                    }, 
+                    "P02_REL": {
+                      "code": 3, 
+                      "label": "Child"
+                    }, 
+                    "P03_SEX": {
+                      "code": 2, 
+                      "label": "Female"
+                    }, 
+                    "P04_AGE": {
+                      "code": 9, 
+                      "label": "9"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 3, 
+                      "label": "Primary"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 9, 
+                      "label": "Not Reported"
+                    }, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {}, 
+                    "ECON_ACTIVE": {}, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 8, 
+                      "label": "8"
+                    }, 
+                    "P02_REL": {
+                      "code": 3, 
+                      "label": "Child"
+                    }, 
+                    "P03_SEX": {
+                      "code": 2, 
+                      "label": "Female"
+                    }, 
+                    "P04_AGE": {
+                      "code": 6, 
+                      "label": "6"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 0, 
+                      "label": "None"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 9, 
+                      "label": "Not Reported"
+                    }, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {}, 
+                    "ECON_ACTIVE": {}, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 9, 
+                      "label": "9"
+                    }, 
+                    "P02_REL": {
+                      "code": 3, 
+                      "label": "Child"
+                    }, 
+                    "P03_SEX": {
+                      "code": 1, 
+                      "label": "Male"
+                    }, 
+                    "P04_AGE": {
+                      "code": 4, 
+                      "label": "4"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {}, 
+                    "P09_ATTEND": {}, 
+                    "P10_HIGH_GR": {}, 
+                    "P11_LITERACY": {}, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {}, 
+                    "ECON_ACTIVE": {}, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 10, 
+                      "label": "10"
+                    }, 
+                    "P02_REL": {
+                      "code": 3, 
+                      "label": "Child"
+                    }, 
+                    "P03_SEX": {
+                      "code": 1, 
+                      "label": "Male"
+                    }, 
+                    "P04_AGE": {
+                      "code": 3, 
+                      "label": "3"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {}, 
+                    "P09_ATTEND": {}, 
+                    "P10_HIGH_GR": {}, 
+                    "P11_LITERACY": {}, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {}, 
+                    "ECON_ACTIVE": {}, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 11, 
+                      "label": "11"
+                    }, 
+                    "P02_REL": {
+                      "code": 3, 
+                      "label": "Child"
+                    }, 
+                    "P03_SEX": {
+                      "code": 1, 
+                      "label": "Male"
+                    }, 
+                    "P04_AGE": {
+                      "code": 0, 
+                      "label": "0"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {}, 
+                    "P09_ATTEND": {}, 
+                    "P10_HIGH_GR": {}, 
+                    "P11_LITERACY": {}, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {}, 
+                    "ECON_ACTIVE": {}, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 12, 
+                      "label": "12"
+                    }, 
+                    "P02_REL": {
+                      "code": 4, 
+                      "label": "Parent"
+                    }, 
+                    "P03_SEX": {
+                      "code": 2, 
+                      "label": "Female"
+                    }, 
+                    "P04_AGE": {
+                      "code": 70, 
+                      "label": "70"
+                    }, 
+                    "P05_MS": {
+                      "code": 2, 
+                      "label": "Divorced"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 4, 
+                      "label": "Primary"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 1, 
+                      "label": "Literate"
+                    }, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {
+                      "code": 9, 
+                      "label": "Not Reported"
+                    }, 
+                    "ECON_ACTIVE": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P18_BORN": {
+                      "code": 5, 
+                      "label": "5"
+                    }, 
+                    "P19_LIVING": {
+                      "code": 2, 
+                      "label": "2"
+                    }, 
+                    "P20_BORN12": {
+                      "code": 0, 
+                      "label": "0"
+                    }
+                  }
+                ], 
+                "HOUSING": [
+                  {
+                    "H01_TYPE": {
+                      "code": 6, 
+                      "label": "Homeless (none)"
+                    }, 
+                    "H02_WALL": {}, 
+                    "H03_ROOF": {}, 
+                    "H04_FLOOR": {}, 
+                    "H05_ROOMS": {}, 
+                    "H06_TENURE": {}, 
+                    "H07_RENT": {}, 
+                    "H08_TOILET": {}, 
+                    "H09_BATH": {}, 
+                    "H10_WATER": {}, 
+                    "H11_LIGHT": {}, 
+                    "H12_FUEL": {}, 
+                    "H13_PERSONS": {
+                      "code": 12, 
+                      "label": "10+ persons"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+      },
+      "case": {
+        "type": "object",
+        "description": "Represents a case data structure.",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The case key.",
+            "example": "010103000110210241"
+          },
+          "uuid": {
+            "type": "string",
+            "description": "The case UUID (universally unique identifier).",
+            "example": "097c274f-aa1d-4058-8ae9-33c0616cf700"
+          },
+          "label": {
+            "type": "string",
+            "description": "The case label, if applicable.",
+            "example": ""
+          },
+          "deleted": {
+            "type": "boolean",
+            "description": "Indicates whether the case is deleted.",
+            "example": false
+          },
+          "verified": {
+            "type": "boolean",
+            "description": "Indicates whether the case is verified.",
+            "example": true
+          },
+          "partialSave": {"$ref": "#/components/schemas/partialSave"},
+          "notes": { "$ref": "#/components/schemas/notes" },
+          "level-1": { "$ref": "#/components/schemas/level-1" }
+        },
+        "required": [ "key", "uuid" ],
+        "example":
+            {
+              "key": "010103000110210241", 
+              "uuid": "097c274f-aa1d-4058-8ae9-33c0616cf700", 
+              "label": "", 
+              "deleted": false, 
+              "verified": false, 
+              "partialSave": null, 
+              "notes": [], 
+              "QUEST": {
+                "PROVINCE": {
+                  "code": 1, 
+                  "label": "Artesia"
+                }, 
+                "DISTRICT": {
+                  "code": 1, 
+                  "label": "1"
+                }, 
+                "VILLAGE": {
+                  "code": 30, 
+                  "label": "30"
+                }, 
+                "EA": {
+                  "code": 1, 
+                  "label": "1"
+                }, 
+                "UR": {
+                  "code": 1, 
+                  "label": "Urban"
+                }, 
+                "BUILDING": {
+                  "code": 21, 
+                  "label": "Building"
+                }, 
+                "HU": {
+                  "code": 24, 
+                  "label": "24"
+                }, 
+                "HH": {
+                  "code": 1, 
+                  "label": "1"
+                }, 
+                "PERSON": [
+                  {
+                    "LINE": {
+                      "code": 1, 
+                      "label": "1"
+                    }, 
+                    "P02_REL": {
+                      "code": 1, 
+                      "label": "Head"
+                    }, 
+                    "P03_SEX": {
+                      "code": 2, 
+                      "label": "Female"
+                    }, 
+                    "P04_AGE": {
+                      "code": 19, 
+                      "label": "19"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 2, 
+                      "label": "No"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 11, 
+                      "label": "High School"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 1, 
+                      "label": "Literate"
+                    }, 
+                    "P12_WORKING": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {
+                      "code": 93, 
+                      "label": "93"
+                    }, 
+                    "P15A_OCC": {
+                      "code": 9, 
+                      "label": "Construction, other, not reported"
+                    }, 
+                    "P16_IND": {
+                      "code": 29, 
+                      "label": "29"
+                    }, 
+                    "P16A_IND": {
+                      "code": 2, 
+                      "label": "Mining, Quarrying"
+                    }, 
+                    "P17_WK_STATUS": {
+                      "code": 2, 
+                      "label": "Paid employee"
+                    }, 
+                    "ECON_ACTIVE": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P18_BORN": {
+                      "code": 0, 
+                      "label": "None"
+                    }, 
+                    "P19_LIVING": {
+                      "code": 0, 
+                      "label": "None"
+                    }, 
+                    "P20_BORN12": {
+                      "code": 0, 
+                      "label": "0"
+                    }
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 2, 
+                      "label": "2"
+                    }, 
+                    "P02_REL": {
+                      "code": 5, 
+                      "label": "Other relative"
+                    }, 
+                    "P03_SEX": {
+                      "code": 2, 
+                      "label": "Female"
+                    }, 
+                    "P04_AGE": {
+                      "code": 7, 
+                      "label": "7"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P09_ATTEND": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P10_HIGH_GR": {
+                      "code": 4, 
+                      "label": "Primary"
+                    }, 
+                    "P11_LITERACY": {
+                      "code": 9, 
+                      "label": "Not Reported"
+                    }, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {}, 
+                    "ECON_ACTIVE": {}, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }, 
+                  {
+                    "LINE": {
+                      "code": 3, 
+                      "label": "3"
+                    }, 
+                    "P02_REL": {
+                      "code": 5, 
+                      "label": "Other relative"
+                    }, 
+                    "P03_SEX": {
+                      "code": 1, 
+                      "label": "Male"
+                    }, 
+                    "P04_AGE": {
+                      "code": 4, 
+                      "label": "4"
+                    }, 
+                    "P05_MS": {
+                      "code": 5, 
+                      "label": "Never Married"
+                    }, 
+                    "P06_MOTHER": {
+                      "code": 1, 
+                      "label": "Yes"
+                    }, 
+                    "P07_BIRTH": {
+                      "code": 1, 
+                      "label": "Popstan"
+                    }, 
+                    "P08_RES95": {}, 
+                    "P09_ATTEND": {}, 
+                    "P10_HIGH_GR": {}, 
+                    "P11_LITERACY": {}, 
+                    "P12_WORKING": {}, 
+                    "P13_LOOKING": {}, 
+                    "P14_WHY_NOT": {}, 
+                    "P15_OCC": {}, 
+                    "P15A_OCC": {}, 
+                    "P16_IND": {}, 
+                    "P16A_IND": {}, 
+                    "P17_WK_STATUS": {}, 
+                    "ECON_ACTIVE": {}, 
+                    "P18_BORN": {}, 
+                    "P19_LIVING": {}, 
+                    "P20_BORN12": {}
+                  }
+                ], 
+                "HOUSING": [
+                  {
+                    "H01_TYPE": {
+                      "code": 1, 
+                      "label": "Single family"
+                    }, 
+                    "H02_WALL": {
+                      "code": 1, 
+                      "label": "Stone/Cement"
+                    }, 
+                    "H03_ROOF": {
+                      "code": 2, 
+                      "label": "Metal"
+                    }, 
+                    "H04_FLOOR": {
+                      "code": 3, 
+                      "label": "Wood"
+                    }, 
+                    "H05_ROOMS": {
+                      "code": 2, 
+                      "label": "02"
+                    }, 
+                    "H06_TENURE": {
+                      "code": 1, 
+                      "label": "Owned"
+                    }, 
+                    "H07_RENT": {
+                      "code": 0, 
+                      "label": "0"
+                    }, 
+                    "H08_TOILET": {
+                      "code": 5, 
+                      "label": "Other"
+                    }, 
+                    "H09_BATH": {
+                      "code": 2, 
+                      "label": "Shared"
+                    }, 
+                    "H10_WATER": {
+                      "code": 2, 
+                      "label": "Outside piped"
+                    }, 
+                    "H11_LIGHT": {
+                      "code": 1, 
+                      "label": "Electric"
+                    }, 
+                    "H12_FUEL": {
+                      "code": 5, 
+                      "label": "Wood"
+                    }, 
+                    "H13_PERSONS": {
+                      "code": 3, 
+                      "label": "3 persons"
+                    }
+                  }
+                ]
+              }
+            }
+      },
+      "partialSave": {
+        "type": ["object", "null"],
+        "title": "Partial Save",
+        "description": "Details on partial save, if applicable.",
+        "properties": {
+          "mode": {
+            "type": "string",
+            "description": "The saved mode (Add or Modify)."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the field where the partial save stopped."
+          },
+          "levelKey": {
+            "type": "string",
+            "description": "The key of the level, if applicable."
+          },
+          "occurrences": { "$ref": "#/components/schemas/occurrences" }
+        },
+        "required": [ "mode", "name" ],
+        "example": {
+          "mode": "add", 
+          "name": "P04_AGE", 
+          "levelKey": "", 
+          "occurrences": {
+            "record": 1, 
+            "item": 1, 
+            "subitem": 0
+          }
+        }
+      },
+      "notes": {
+        "type": "array",
+        "title": "notes",
+        "description": "An array containing all notes for the case.",
+        "items": {"$ref": "#/components/schemas/note"},
+        "minItems": 0,
+        "example": [
+          {
+            "text": "First Age in Roster here is 19.", 
+            "modifiedTime": "2024-03-29T14:18:28Z", 
+            "operatorId": "1", 
+            "name": "P04_AGE", 
+            "levelKey": "", 
+            "occurrences": {
+              "record": 1, 
+              "item": 1, 
+              "subitem": 0
+            }
+          }, 
+          {
+            "text": "This is the first case I have done.", 
+            "modifiedTime": "2024-03-29T14:18:43Z", 
+            "operatorId": "", 
+            "name": "CEN2000", 
+            "levelKey": ""
+          }
+        ]
+      },
+      "note": {
+        "type": "object",
+        "description": "A note.",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "The text contents of the note.",
+            "example": "Example notes"
+          },
+          "modifiedTime": {
+            "type": "string",
+            "description": "The date and time the note was modified (ISO 8601 format).",
+            "example": "2024-02-09T19:11:40Z"
+          },
+          "operatorID": {
+            "type": "string",
+            "description": "The ID of the operator who made the note, if applicable.",
+            "example": ""
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the field where the note was made.",
+            "example": "EXAMPLE_STRING_ITEM"
+          },
+          "levelKey": {
+            "type": "string",
+            "description": "The key of the level, if applicable.",
+            "example": ""
+          },
+          "occurrences": { "$ref": "#/components/schemas/occurrences" }
+        },
+        "required": [ "text", "name" ],
+        "example": {
+          "text": "First Age in Roster here is 19.", 
+          "modifiedTime": "2024-03-29T14:18:28Z", 
+          "operatorId": "1", 
+          "name": "P04_AGE", 
+          "levelKey": "", 
+          "occurrences": {
+            "record": 1, 
+            "item": 1, 
+            "subitem": 0
+          }
+        }
+      },
+      "occurrences": {
+        "type": "object",
+        "title": "Occurrences of partialSave/note",
+        "properties": {
+          "record": {
+            "type": "number",
+            "description": "Index of record occurrence. 0-based, so starts at Record 0.",
+            "example": 0
+          },
+          "item": {
+            "type": "number",
+            "description": "Index of item occurrence. 0-based, so starts at Item 0.",
+            "example": 0
+          },
+          "subitem": {
+            "type": "number",
+            "description": "Index of subitem occurrence. 0-based, so starts at Subitem 0.",
+            "example": 0
+          }
+        },
+        "required": [ "record", "item", "subitem" ],
+        "example": {
+          "record": 1, 
+          "item": 1, 
+          "subitem": 0
+        }
+      },
+      "level-1": {
+        "type": "object",
+        "title": "First Level Occurrence",
+        "description": "Represents the top level of the data structure.",
+        "properties": {
+            "IDItem": {"$ref": "#/components/schemas/IDItem"},
+            "caseRecord": {"$ref": "#/components/schemas/caseRecord"},
+            "level-2": {"$ref": "#/components/schemas/level-2"}
+        },
+        "example": 
+          {
+            "PROVINCE": {
+              "code": 1, 
+              "label": "Artesia"
+            }, 
+            "DISTRICT": {
+              "code": 1, 
+              "label": "1"
+            }, 
+            "VILLAGE": {
+              "code": 30, 
+              "label": "30"
+            }, 
+            "EA": {
+              "code": 1, 
+              "label": "1"
+            }, 
+            "UR": {
+              "code": 1, 
+              "label": "Urban"
+            }, 
+            "BUILDING": {
+              "code": 21, 
+              "label": "Building"
+            }, 
+            "HU": {
+              "code": 24, 
+              "label": "24"
+            }, 
+            "HH": {
+              "code": 1, 
+              "label": "1"
+            }, 
+            "PERSON": [
+              {
+                "LINE": {
+                  "code": 1, 
+                  "label": "1"
+                }, 
+                "P02_REL": {
+                  "code": 1, 
+                  "label": "Head"
+                }, 
+                "P03_SEX": {
+                  "code": 2, 
+                  "label": "Female"
+                }, 
+                "P04_AGE": {
+                  "code": 19, 
+                  "label": "19"
+                }, 
+                "P05_MS": {
+                  "code": 5, 
+                  "label": "Never Married"
+                }, 
+                "P06_MOTHER": {
+                  "code": 1, 
+                  "label": "Yes"
+                }, 
+                "P07_BIRTH": {
+                  "code": 1, 
+                  "label": "Popstan"
+                }, 
+                "P08_RES95": {
+                  "code": 1, 
+                  "label": "Popstan"
+                }, 
+                "P09_ATTEND": {
+                  "code": 2, 
+                  "label": "No"
+                }, 
+                "P10_HIGH_GR": {
+                  "code": 11, 
+                  "label": "High School"
+                }, 
+                "P11_LITERACY": {
+                  "code": 1, 
+                  "label": "Literate"
+                }, 
+                "P12_WORKING": {
+                  "code": 1, 
+                  "label": "Yes"
+                }, 
+                "P13_LOOKING": {}, 
+                "P14_WHY_NOT": {}, 
+                "P15_OCC": {
+                  "code": 93, 
+                  "label": "93"
+                }, 
+                "P15A_OCC": {
+                  "code": 9, 
+                  "label": "Construction, other, not reported"
+                }, 
+                "P16_IND": {
+                  "code": 29, 
+                  "label": "29"
+                }, 
+                "P16A_IND": {
+                  "code": 2, 
+                  "label": "Mining, Quarrying"
+                }, 
+                "P17_WK_STATUS": {
+                  "code": 2, 
+                  "label": "Paid employee"
+                }, 
+                "ECON_ACTIVE": {
+                  "code": 1, 
+                  "label": "Yes"
+                }, 
+                "P18_BORN": {
+                  "code": 0, 
+                  "label": "None"
+                }, 
+                "P19_LIVING": {
+                  "code": 0, 
+                  "label": "None"
+                }, 
+                "P20_BORN12": {
+                  "code": 0, 
+                  "label": "0"
+                }
+              }, 
+              {
+                "LINE": {
+                  "code": 2, 
+                  "label": "2"
+                }, 
+                "P02_REL": {
+                  "code": 5, 
+                  "label": "Other relative"
+                }, 
+                "P03_SEX": {
+                  "code": 2, 
+                  "label": "Female"
+                }, 
+                "P04_AGE": {
+                  "code": 7, 
+                  "label": "7"
+                }, 
+                "P05_MS": {
+                  "code": 5, 
+                  "label": "Never Married"
+                }, 
+                "P06_MOTHER": {
+                  "code": 1, 
+                  "label": "Yes"
+                }, 
+                "P07_BIRTH": {
+                  "code": 1, 
+                  "label": "Popstan"
+                }, 
+                "P08_RES95": {
+                  "code": 1, 
+                  "label": "Popstan"
+                }, 
+                "P09_ATTEND": {
+                  "code": 1, 
+                  "label": "Yes"
+                }, 
+                "P10_HIGH_GR": {
+                  "code": 4, 
+                  "label": "Primary"
+                }, 
+                "P11_LITERACY": {
+                  "code": 9, 
+                  "label": "Not Reported"
+                }, 
+                "P12_WORKING": {}, 
+                "P13_LOOKING": {}, 
+                "P14_WHY_NOT": {}, 
+                "P15_OCC": {}, 
+                "P15A_OCC": {}, 
+                "P16_IND": {}, 
+                "P16A_IND": {}, 
+                "P17_WK_STATUS": {}, 
+                "ECON_ACTIVE": {}, 
+                "P18_BORN": {}, 
+                "P19_LIVING": {}, 
+                "P20_BORN12": {}
+              }, 
+              {
+                "LINE": {
+                  "code": 3, 
+                  "label": "3"
+                }, 
+                "P02_REL": {
+                  "code": 5, 
+                  "label": "Other relative"
+                }, 
+                "P03_SEX": {
+                  "code": 1, 
+                  "label": "Male"
+                }, 
+                "P04_AGE": {
+                  "code": 4, 
+                  "label": "4"
+                }, 
+                "P05_MS": {
+                  "code": 5, 
+                  "label": "Never Married"
+                }, 
+                "P06_MOTHER": {
+                  "code": 1, 
+                  "label": "Yes"
+                }, 
+                "P07_BIRTH": {
+                  "code": 1, 
+                  "label": "Popstan"
+                }, 
+                "P08_RES95": {}, 
+                "P09_ATTEND": {}, 
+                "P10_HIGH_GR": {}, 
+                "P11_LITERACY": {}, 
+                "P12_WORKING": {}, 
+                "P13_LOOKING": {}, 
+                "P14_WHY_NOT": {}, 
+                "P15_OCC": {}, 
+                "P15A_OCC": {}, 
+                "P16_IND": {}, 
+                "P16A_IND": {}, 
+                "P17_WK_STATUS": {}, 
+                "ECON_ACTIVE": {}, 
+                "P18_BORN": {}, 
+                "P19_LIVING": {}, 
+                "P20_BORN12": {}
+              }
+            ], 
+            "HOUSING": [
+              {
+                "H01_TYPE": {
+                  "code": 1, 
+                  "label": "Single family"
+                }, 
+                "H02_WALL": {
+                  "code": 1, 
+                  "label": "Stone/Cement"
+                }, 
+                "H03_ROOF": {
+                  "code": 2, 
+                  "label": "Metal"
+                }, 
+                "H04_FLOOR": {
+                  "code": 3, 
+                  "label": "Wood"
+                }, 
+                "H05_ROOMS": {
+                  "code": 2, 
+                  "label": "02"
+                }, 
+                "H06_TENURE": {
+                  "code": 1, 
+                  "label": "Owned"
+                }, 
+                "H07_RENT": {
+                  "code": 0, 
+                  "label": "0"
+                }, 
+                "H08_TOILET": {
+                  "code": 5, 
+                  "label": "Other"
+                }, 
+                "H09_BATH": {
+                  "code": 2, 
+                  "label": "Shared"
+                }, 
+                "H10_WATER": {
+                  "code": 2, 
+                  "label": "Outside piped"
+                }, 
+                "H11_LIGHT": {
+                  "code": 1, 
+                  "label": "Electric"
+                }, 
+                "H12_FUEL": {
+                  "code": 5, 
+                  "label": "Wood"
+                }, 
+                "H13_PERSONS": {
+                  "code": 3, 
+                  "label": "3 persons"
+                }
+              }
+            ]
+          }
+        
+      },
+      "IDItem": {
+        "title": "ID Item",
+        "oneOf": [
+          { "$ref": "#/components/schemas/noValueCaseItem" },
+          { "$ref": "#/components/schemas/numericCaseItem" },
+          { "$ref": "#/components/schemas/stringCaseItem" }
+        ],
+        "description": "ID Items are either numeric, string, or noValueCaseItem.",
+        "example": {
+          "code": 1, 
+          "label": "Artesia"
+        }
+      },
+      "caseRecord": {
+        "type": "array",
+        "title": "Record",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]*$",
+        "items": {
+          "anyOf": [
+            { "$ref": "#/components/schemas/noValueCaseItem" },
+            { "$ref": "#/components/schemas/binaryCaseItem" },
+            { "$ref": "#/components/schemas/numericCaseItem" },
+            { "$ref": "#/components/schemas/stringCaseItem" },
+            { "$ref": "#/components/schemas/repeatingCaseItem" }
+          ]
+        },
+        "description": "Contains one or more items.",
+        "minItems": 0,
+        "example": 
+          [
+            {
+              "H01_TYPE": {
+                "code": 1, 
+                "label": "Single family"
+              }, 
+              "H02_WALL": {
+                "code": 1, 
+                "label": "Stone/Cement"
+              }, 
+              "H03_ROOF": {
+                "code": 2, 
+                "label": "Metal"
+              }, 
+              "H04_FLOOR": {
+                "code": 3, 
+                "label": "Wood"
+              }, 
+              "H05_ROOMS": {
+                "code": 2, 
+                "label": "02"
+              }, 
+              "H06_TENURE": {
+                "code": 1, 
+                "label": "Owned"
+              }, 
+              "H07_RENT": {
+                "code": 0, 
+                "label": "0"
+              }, 
+              "H08_TOILET": {
+                "code": 5, 
+                "label": "Other"
+              }, 
+              "H09_BATH": {
+                "code": 2, 
+                "label": "Shared"
+              }, 
+              "H10_WATER": {
+                "code": 2, 
+                "label": "Outside piped"
+              }, 
+              "H11_LIGHT": {
+                "code": 1, 
+                "label": "Electric"
+              }, 
+              "H12_FUEL": {
+                "code": 5, 
+                "label": "Wood"
+              }, 
+              "H13_PERSONS": {
+                "code": 3, 
+                "label": "3 persons"
+              }
+            }
+          ]
+        
+      },
+      "noValueCaseItem": {
+        "type": "object",
+        "description": "An item that was not filled out in this case.",
+        "additionalProperties": false,
+        "properties": {},
+        "example": {}
+      },
+      "binaryCaseItem": {
+        "type": "object",
+        "title": "Binary Item",
+        "description": "Non-alphanumeric items with attached files (Audio, Document, Geometry, or Image).",
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/fileMetadata"
+          },
+          "signature": {
+            "type": "string",
+            "description": "A unique signature connected with the attached file."
+          }
+        },
+        "required": [ "metadata", "signature" ],
+        "example": {
+          "metadata": {
+            "filename": "1706398758924390.jpg", 
+            "mime": "image/jpeg"
+          }, 
+          "signature": "210a1f2b8e697018ed71f9627904af27"
+        }
+      },
+      "fileMetadata": {
+        "type": "object",
+        "description": "The filename and extension metadata associated with an attached file.",
+        "properties": {
+          "filename": {
+            "type": "string",
+            "description": "The name of the attached file."
+          },
+          "mime": {
+            "type": "string",
+            "description": "Multipurpose Internet Mail Extension, defines format of attached file."
+          }
+        },
+        "required": [ "filename", "mime" ],
+        "example": {
+          "filename": "1706398758924390.jpg", 
+          "mime": "image/jpeg"
+        }
+      },
+      "numericCaseItem": {
+        "type": "object",
+        "title": "Numeric Item",
+        "description": "Item with Numeric data type.",
+        "properties": {
+          "code": {
+            "type": ["number", "null", "string"],
+            "pattern": "Default",
+            "description": "The value of the item. If it is a string, the value must be 'Default'."
+          },
+          "label": {
+            "type": "string",
+            "description": "The label paired with the value, if specified."
+          }
+        },
+        "required": [ "code" ],
+        "example": {
+          "code": 1, 
+          "label": "Artesia"
+        }
+      },
+      "stringCaseItem": {
+        "type": "object",
+        "title": "String Item",
+        "description": "Item with Alpha data type.",
+        "properties": {
+          "code": {
+            "type": ["string"],
+            "description": "The value of the item."
+          },
+          "label": {
+            "type": "string",
+            "description": "The label paired with the value, if specified."
+          }
+        },
+        "required": ["code"],
+        "example": {
+          "code": "Y",
+          "label": "Yes"
+        }
+      },
+      "repeatingCaseItem": {
+        "type": "array",
+        "title": "Repeating Item",
+        "items": {
+          "anyOf": [
+            { "$ref": "#/components/schemas/numericCaseItem" },
+            { "$ref": "#/components/schemas/stringCaseItem" }
+          ]
+        },
+        "description": "An array containing instances of an item.",
+        "minItems": 0,
+        "example": [
+          {
+            "code": 1,
+            "label": "Head of Household"
+          }, 
+          {
+            "code": 9, 
+            "label": "Other"
+          }
+        ]
+      },
+      "level-2": {
+        "type": "array",
+        "title": "Second Level",
+        "description": "The level below level 1. Contains an array of level occurrences.",
+        "items": {
+          "anyOf": [
+            {"$ref": "#/components/schemas/IDItem"},
+            {"$ref": "#/components/schemas/caseRecord"},
+            {"$ref": "#/components/schemas/level-3"}
+          ]
+        },
+        "minItems": 0,
+        "example": [
+          {
+            "L2ID": {
+              "code": 1, 
+              "label": "1"
+            }, 
+            "NEW_RECORD": [
+              {
+                "L2_NUMERIC": {
+                  "code": 1, 
+                  "label": "1"
+                }, 
+                "L2_BINARY": {
+                  "metadata": {
+                    "filename": "1706398758924390.jpg", 
+                    "mime": "image/jpeg"
+                  }, 
+                  "signature": "210a1f2b8e697018ed71f9627904af27"
+                }, 
+                "L2_STRING": {
+                  "code": "l2", 
+                  "label": "l2"
+                }
+              }
+            ], 
+            "THIRD_LEVEL": []
+          }, 
+          {
+            "L2ID": {
+              "code": 2, 
+              "label": "2"
+            }, 
+            "NEW_RECORD": [
+              {
+                "L2_NUMERIC": {
+                  "code": 2, 
+                  "label": "2"
+                }, 
+                "L2_BINARY": {
+                  "metadata": {
+                    "filename": "1705030747953827.jpg", 
+                    "mime": "image/jpeg"
+                  }, 
+                  "signature": "76e63fa382854ec202232eb975bbd29a"
+                }, 
+                "L2_STRING": {
+                  "code": "l2", 
+                  "label": "l2"
+                }
+              }
+            ], 
+            "THIRD_LEVEL": []
+          }
+        ]
+      },
+      "level-3": {
+        "type": "array",
+        "title": "Third Level",
+        "description": "The level below level 2. Contains an array of level occurrences. CSPro does not allow any lower levels than this.",
+        "items": {
+          "anyOf": [
+            {"$ref": "#/components/schemas/IDItem"},
+            {"$ref": "#/components/schemas/caseRecord"}
+          ]
+        },
+        "minItems": 0,
+        "example": []
+      }
+    }
+  }
+}
