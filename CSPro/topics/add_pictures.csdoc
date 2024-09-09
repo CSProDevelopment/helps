@@ -4,15 +4,15 @@
 Pictures and other graphics can be added to your question text. Most common image formats are supported, including JPEG, PNG, GIF, and Bitmap formats. You can insert an image by:
 
 <list ordered>
-	<li>Clicking on the <b>Insert Image</b> on the toolbar in the question text editor.</li>
-	<li>Selecting <b>Insert Image</b> from the <b>CAPI</b> menu.</li>
-	<li>Right-clicking inside the question window and choosing <b>Insert Image</b>.</li>
-	<li>Using the code view and adding an HTML image tag.</li>
+    <li>Clicking on the <b>Insert Image</b> on the toolbar in the question text editor.</li>
+    <li>Selecting <b>Insert Image</b> from the <b>CAPI</b> menu.</li>
+    <li>Right-clicking inside the question window and choosing <b>Insert Image</b>.</li>
+    <li>Using the code view and adding an HTML image tag.</li>
 </list>
 
 <subheader>Image File Storage</subheader>
 
-By default, when you insert an image, the image file is added as a <link resource_folders.csdoc>resource file</link>. A copy of the image will be placed in a directory named <b>Resources/Images</b> that is added to your application. When you generate a <link binary_data_entry_application_file_pen.csdoc>pen file</link> the image will be added to the pen file. This is the simplest way to ensure that all images are copied to the interviewers' devices when you deploy your application.
+By default, when you insert an image, the image file is added as a <link resources.csdoc>resource file</link>. A copy of the image will be placed in a directory named <b>Resources/Images</b> that is added to your application. When you generate a <link binary_data_entry_application_file_pen.csdoc>pen file</link> the image will be added to the pen file. This is the simplest way to ensure that all images are copied to the interviewers' devices when you deploy your application.
 
 If you wish to manage image storage yourself, uncheck the box <b>Include in pen file as image resource?</b> when choosing the image file. When this box is not checked, CSPro does not make a copy of the image file but instead stores the relative path from your application directory to the folder that contains the image file. This means that if you move or copy the application you will also need to move/copy the image file in such a way that the relative path does not change. In general, it is easier to allow CSPro to include image files as resources. However, if you want to share the same image file among multiple applications you may consider managing the image file locations yourself.
 

@@ -2,9 +2,9 @@
 
 The message file for a data entry application stores the error message text that is displayed during data entry. The message file for a batch application stores the error message text that will be included in the execution report. The message file has the extension <b>.mgf</b>. While creating your application, you can view the message text in a window at the bottom of the logic screen.
 
-You can associate multiple message files with an application, which can be useful if you have messages defined in multiple languages. To do this, select <link add_files_to_an_application.csdoc>File -> Add Files</link> and then choose the external message file to add to the application. If you no longer want to use the external message file, you can remove it by selecting <link drop_files_from_an_application.csdoc>File -> Drop Files</link>.
+You can associate multiple message files with an application, which can be useful if you have messages defined in multiple languages. To do this, select <link manage_application_files.csdoc>File -> Manage Application Files</link> and then choose the external message file to add to the application. If you no longer want to use the external message file, you can remove it using the same Manage Application Files interface.
 
-If the name of an external message file begins with "CSProRuntime," then the messages in that file will override the CSPro system messages. See <link collaborating_on_cspro_development.csdoc>Collaborating on CSPro Development </link> for more information about this file.
+If the name of an external message file begins with "CSProRuntime," then the messages in that file will override the CSPro system messages. See <link collaborating_on_cspro_development.csdoc>Collaborating on CSPro Development</link> for more information about this file.
 
 
 <subheader>Basic Messages</subheader>
@@ -53,10 +53,10 @@ The more general the arguments of the message, the more flexible the message. In
 <logic>
 PROC HHDAY
 
-	if HHMONTH = 6 and HHDAY > 30 then
-		errmsg(1, "June", 30, HHDAY);
-		reenter;
-	endif;
+    if HHMONTH = 6 and HHDAY > 30 then
+        errmsg(1, "June", 30, HHDAY);
+        reenter;
+    endif;
 </logic>
 
 
@@ -88,7 +88,7 @@ For example, messages might be grouped in your message file as follows:
 When designing an application that will be used in <link multiple_language_applications.csdoc>multiple languages</link>, you can define multiple messages for a given message number. Use the <link define_languages.csdoc>language name</link>, followed by the message number in parentheses, as shown in this example:
 
 <message>
-101		Hello
+101     Hello
 ZH(101) 你好
 FR(101) Bonjour
 </message>
