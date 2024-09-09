@@ -1,18 +1,27 @@
 ﻿<title>Manage Application Files</title>
-<context IDD_MANAGE_FILES ID_FILE_MANAGE_FILES />
+<context ID_FILE_MANAGE_FILES IDD_MANAGE_FILES IDD_PAGE_DISPLAY_TEXT />
 
 
 <subheader>Overview</subheader>
 
-A CSPro application (<link data_entry_application_file_ent.csdoc>data entry</link>, <link batch_edit_application_file_bch.csdoc>batch</link>, or <link tabulation_application_file_xtb.csdoc>tabulation</link>) can contain auxiliary files that are incorporated into the application. For example, many users add multiple <link data_dictionary_file_dcf.csdoc>dictionaries</link> to an application to gain access to <link lookup_files.csdoc>lookup files</link>. Other common auxiliary files include secondary <link forms_file_fmf.csdoc>form files</link>, external <link logic_file_apc.csdoc>logic files</link>, and <link templated_reports.csdoc>templated reports</link>.
+A CSPro application (<link data_entry_application_file_ent.csdoc>data entry</link>, <link batch_edit_application_file_bch.csdoc>batch edit</link>, or <link tabulation_application_file_xtb.csdoc>tabulation</link>) can contain auxiliary files that are incorporated into the application. For example, many users add multiple <link data_dictionary_file_dcf.csdoc>dictionaries</link> to an application to gain access to <link lookup_files.csdoc>lookup files</link>. Other common auxiliary files include secondary <link forms_file_fmf.csdoc>form files</link>, external <link logic_file_apc.csdoc>logic files</link>, and <link templated_reports.csdoc>templated reports</link>.
 
 To add or remove auxiliary files to an application, from the <b>File</b> menu, select <b>Manage Application Files</b>. A dialog shows a tree containing the application, its dependent files, and its auxiliary files. A button, <b>Add File</b>, displays a list of files that can be added to the application. Another button, <b>Remove File</b>, removes an auxiliary file from an application. The Remove File button will be disabled if a file is an application dependency that cannot be removed. When removing a file, it will no longer be associated with the application, but it will not be deleted from the disk.
 
 
-<subheader>Auxiliary Files</subheader>
+<subheader>Manageable Files</subheader>
 
 The following auxiliary files can be added to an application using the <b>Add File</b> button:
 
 <list>
-    <li><link templated_reports.csdoc>Templated Reports</link>: Multiple reports can be added at one time. If a report file does not exist, it will be created. Multiple reports with the same file path can be added, but each report must have a unique name.</li>
+    <li><link change_forms_file_properties.csdoc>Form File</link>: Multiple <link forms_file_fmf.csdoc>form files</link> can be added at one time. Each form file must already exist. The form file's dependent dictionary will be added along with form file.</li>
+    <li><link change_report_properties.csdoc>Report</link>: Multiple <link templated_reports.csdoc>reports</link> can be added at one time. If a report file does not exist, it will be created. Multiple reports with the same file path can be added, but each report must have a unique name.</li>
+</list>
+
+
+In addition, the properties for these dependent files can be modified:
+
+<list>
+    <li><link properties_application.csdoc>Application</link></li>
+    <li><link renaming_tables_and_table_applications.csdoc>Table Specification</link></li>
 </list>
