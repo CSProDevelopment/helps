@@ -34,10 +34,10 @@ The <pffcolor>[Run Information]</pffcolor> block is required and must appear exa
 The <pffcolor>[Files]</pffcolor> block is required and defines all files that could be used by CSPack. Only <pffcolor>Application</pffcolor> is required.
 
 <list>
-	<li><pffcolor>Application</pffcolor>= the name of the application to be zipped. It must have an extension .cspack, .ent, .bch, or .xtb.</li>
-	<li><pffcolor>ZipFile</pffcolor>= the name of the ZIP file that will be produced by CSPack. If using a .cspack specification file, this entry is not required, and if present it will override the name of the ZIP file specified in the specification file.</li>
-	<li><pffcolor>ExtraFile</pffcolor>= the name of an additional file to include in the ZIP file. You can specify more than extra file.</li>
-	<li><pffcolor>Listing</pffcolor>= the name of the listing file that will be created.</li>
+    <li><pffcolor>Application</pffcolor>= the name of the application to be zipped. It must have an extension .cspack, .ent, .bch, or .xtb.</li>
+    <li><pffcolor>ZipFile</pffcolor>= the name of the ZIP file that will be produced by CSPack. If using a .cspack specification file, this entry is not required, and if present it will override the name of the ZIP file specified in the specification file.</li>
+    <li><pffcolor>ExtraFile</pffcolor>= the name of an additional file to include in the ZIP file. You can specify more than extra file.</li>
+    <li><pffcolor>Listing</pffcolor>= the name of the listing file that will be created.</li>
 </list>
 
 
@@ -46,7 +46,7 @@ The <pffcolor>[Files]</pffcolor> block is required and defines all files that co
 The <pffcolor>[Parameters]</pffcolor> block is optional.
 
 <list>
-	<li><pffcolor>ViewListing</pffcolor>= determines whether or not the CSPack report is displayed with Text Viewer at the end of the run. If <pffcolor>ViewListing</pffcolor>=Never, then the report is not displayed. If <pffcolor>ViewListing</pffcolor>=OnError, then you will only see the report if any error occurred during ZIP operation. If <pffcolor>ViewListing</pffcolor>=Always, then the results will always be shown. If the line is missing the results will be displayed by default.</li>
+    <li><pffcolor>ViewListing</pffcolor>= determines whether or not the CSPack report is displayed with Text Viewer at the end of the run. If <pffcolor>ViewListing</pffcolor>=Never, then the report is not displayed. If <pffcolor>ViewListing</pffcolor>=OnError, then you will only see the report if any error occurred during ZIP operation. If <pffcolor>ViewListing</pffcolor>=Always, then the results will always be shown. If the line is missing the results will be displayed by default.</li>
 </list>
 
 
@@ -68,16 +68,16 @@ In this instance, the name of the ZIP file created will be the name of the appli
 The CSPack tool was redesigned for CSPro 8.0. If running a PFF created up to CSPro 7.7:
 
 <list>
-	<li><pffcolor>Silent</pffcolor>= determines whether or not to run CSPack interactively, and can be "Yes" or "No." If running silently, the main CSPack dialog box will not display and the pack operation will take place without user intervention. If <pffcolor>Silent</pffcolor>="Yes", the PFF file must contain <pffcolor>Application</pffcolor> and <pffcolor>ZipFile</pffcolor> entries in the <pffcolor>[Files]</pffcolor> section.</li>
-	<li><pffcolor>PackInclude</pffcolor>= specifies whether to include any extra files in the ZIP file. Options, which can be separated by commas, include:
-		<list>
-			<li><b>InputFile</b>: includes the application's input data file.</li>
-			<li><b>ExternalFiles</b>: includes any data files associated with the application's external dictionaries.</li>
-			<li><b>UserFiles</b>: includes any files associated with the application as user files (generated in logic).</li>
-			<li><b>VSImages</b>: includes any value set images associated with the application's dictionaries.</li>
-			<li><b>Resources</b>: includes any files in the application's resource folders.</li>
-		</list>
-	</li>
+    <li><pffcolor>Silent</pffcolor>= determines whether or not to run CSPack interactively, and can be "Yes" or "No." If running silently, the main CSPack dialog box will not display and the pack operation will take place without user intervention. If <pffcolor>Silent</pffcolor>="Yes", the PFF file must contain <pffcolor>Application</pffcolor> and <pffcolor>ZipFile</pffcolor> entries in the <pffcolor>[Files]</pffcolor> section.</li>
+    <li><pffcolor>PackInclude</pffcolor>= specifies whether to include any extra files in the ZIP file. Options, which can be separated by commas, include:
+        <list>
+            <li><b>InputFile</b>: includes the application's input data file.</li>
+            <li><b>ExternalFiles</b>: includes any data files associated with the application's external dictionaries.</li>
+            <li><b>UserFiles</b>: includes any files associated with the application as user files (generated in logic).</li>
+            <li><b>VSImages</b>: includes any value set images associated with the application's dictionaries.</li>
+            <li><b>Resources</b>: includes any files added to the application as resources.</li>
+        </list>
+    </li>
 </list>
 
 These PFF flags are not used in CSPro 8.0+ and support for them will eventually be removed.

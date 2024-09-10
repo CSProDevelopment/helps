@@ -1,9 +1,10 @@
 ﻿<title>Application Properties</title>
-<context ID_OPTIONS_PROPERTIES IDD_PROPERTIES />
+<context ID_OPTIONS_APPLICATION_PROPERTIES IDD_PROPERTIES IDD_PAGE_PROPERTIES_APPLICATION />
 
-Data entry, batch edit, and tabulation applications have a variety of properties that can be modified. To view or modify these properties, from the <b>Options</b> menu, select <b>Application Properties</b>. A dialog shows the properties organized by topic. The property sections are listed on the left, with the various options for that section on the right. The button <b>Reset Section Properties</b> resets the properties for the current section to their default settings.
 
-Application properties are saved to a file with the extension <link application_properties_file_csprops.csdoc>.csprops</link>. When a new application is created, with all properties at their default state, no application properties file is associated with the application. When you modify any properties away from their default state, you will be prompted to associate an application properties file with your application. CSPro will suggest a default filename based on your application filename. You can use this filename, select an existing application properties file, or you can provide a different filename.
+<link data_entry_application_file_ent.csdoc>Data entry</link>, <link batch_edit_application_file_bch.csdoc>batch edit</link>, and <link tabulation_application_file_xtb.csdoc>tabulation</link> applications have a variety of properties that can be modified. To view or modify these properties, from the <b>Options</b> menu, select <b>Application Properties</b>. A dialog shows the properties organized by topic. The property sections are listed on the left, with the various options for that section on the right. The button <b>Reset Section Properties</b> resets the properties for the current section to their default settings.
+
+Application properties can be externalized and saved to a file with the extension <link application_properties_file_csprops.csdoc>.csprops</link>. When saving properties to a file external to your application, it is possible to share properties across multiple applications.
 
 Each properties section is documented in a separate help page:
 
@@ -17,3 +18,9 @@ Each properties section is documented in a separate help page:
     <cell 2><link properties_json_serialization.csdoc>JSON Serialization</link></cell>
     <cell 2><link properties_advanced_features.csdoc>Advanced Features</link></cell>
 </table>
+
+
+In addition to these properties, you can change the name and label of the application itself by opening the <b>File</b> menu and selecting <b>Manage Application Files</b>.
+
+
+<seealso manage_application_files.csdoc />

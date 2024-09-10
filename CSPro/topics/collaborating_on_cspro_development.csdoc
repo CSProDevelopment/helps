@@ -1,6 +1,6 @@
 ﻿<title>Collaborating on CSPro Development</title>
 
-CSPro <definition CSPro::version /> is not an open source project but it is in the public domain, meaning that it can be used and distributed at no cost. However, if you are interested in collaborating on the CSPro development, there are currently three projects, changes to which are distributed with CSPro.
+CSPro <definition CSPro::version /> is not yet an open source project but it is in the public domain, meaning that it can be used and distributed at no cost. However, if you are interested in collaborating on the CSPro development, there are currently three projects, changes to which are distributed with CSPro.
 
 
 <subheader>Multiple Language Runtime Messages</subheader>
@@ -19,7 +19,7 @@ The complete list of system-level, English-language messages used by CSPro can b
     <cell>CSProRuntime.vi.mgf</cell><cell>Vietnamese</cell>
 </table>
 
-<b>Note:</b> If you add an <link message_file_mgf.csdoc>external message file</link> to your application that begins with "CSProRuntime", the messages in that file will override the system messages that CSPro uses.
+<b>Note:</b> You can override CSPro's default messages by adding to your an application a message file containing <link change_message_properties.csdoc>system message overrides</link>.
 
 
 <subheader>Help Documentation</subheader>

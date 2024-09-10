@@ -1,16 +1,23 @@
 ﻿<title>Change Report Properties</title>
-<context IDD_REPORT_PROPERTIES />
+<context ID_ADD_REPORT IDD_PAGE_PROPERTIES_REPORT />
 
-To bring up the <b>Report Properties</b> dialog, expand <b>Reports</b> in the <link trees.csdoc>tree</link> and then right-click on a <link templated_reports.csdoc>templated report</link> and select <b>Properties</b>.
+To modify the properties for a <link templated_reports.csdoc>templated report</link>, open the <b>File</b> menu and select <b>Manage Application Files</b>, or expand <b>Reports</b> in the <link trees.csdoc>tree</link> and then right-click on a templated report and select <b>Properties</b>. Properties include:
 
-<center><image report_properties.png /></center>
-
-<subheader>File</subheader>
-
-This is the full filename of the templated report.
 
 <subheader>Name</subheader>
 
 This is the name of the templated report. The name must be unique and must contain only letters, numbers, or the underscore character. The name must begin with a letter.
 
-<seealso templated_reports.csdoc />
+
+<subheader>Escape ~~ Fills</subheader>
+
+This property determines how text is escaped when written to the report when using ~~ fills ~~:
+
+<list>
+    <li><b>HTML</b>: Fills are escaped for writing to HTML.</li>
+    <li><b>Comma Delimited (CSV)</b>: Fills are escaped for writing as <link "https://en.wikipedia.org/wiki/Comma-separated_values">comma-separated values</link>.</li>
+    <li><b>None</b>: Fills are not escaped.</li>
+</list>
+
+
+<seealso templated_reports.csdoc manage_application_files.csdoc />

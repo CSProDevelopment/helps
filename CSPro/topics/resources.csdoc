@@ -1,0 +1,39 @@
+﻿<title>Resources</title>
+<context ID_ADD_RESOURCE_DIRECTORY ID_ADD_RESOURCE_FILE IDD_PAGE_PROPERTIES_RESOURCE />
+
+
+<subheader>Overview</subheader>
+
+There may be times, when deploying an application, especially to a mobile device, that you will want to include some auxiliary files that the application uses. Such files might include <link lookup_files.csdoc>lookup files</link> or <link value_set_images.csdoc>value set images</link>. To simplify the deployment of such an application, these files can be packaged in with the data entry <link binary_data_entry_application_file_pen.csdoc>.pen file</link>. The files will be compressed in the .pen file and then decompressed when the user opens the application. CSPro will recreate the directory structure that existed on the device that created the .pen file. Files that already exist on the device will be overwritten only if the timestamp of the .pen file is newer than the timestamp of the file on the device.
+
+When decompressing data on mobile devices, files will only be saved in the <i>csentry</i> directory or in any of its subdirectories.
+
+To add a resource directory or file, open the <b>File</b> menu and select <b>Manage Application Files</b>. You can add a resource by selecting <b>Add File</b> and then selecting <b>Resource (Directory)</b> or <b>Resource (File)</b>. Your application may have more than one resource. If you want to remove a resource, select the resource and select <b>Remove File</b>.
+
+By default, all files in a resource directory, and its subdirectories, will be included in the .pen file, so it is important to think about how to structure your data entry application so that only relevant files are bundled together in the .pen file. You might, for example, have an Images directory where you put all the <link value_set_images.csdoc>value set images</link> that your application uses.
+
+
+<subheader>Resource Properties</subheader>
+
+Resource properties include:
+
+
+<subheader>Include Resource(s) in the Compiled Application</subheader>
+
+When true, the resources are built into the compiled application (.pen). This facilitates the deployment of an application to another computer or a mobile device. The default value is true.
+
+
+<subheader>Includes Files in Directory and Subdirectories (Recursive)</subheader>
+
+This property, which applies only to resource directories, indicates that in addition to the files in the directory, that files in subdirectories should also be treated as resources. The default value is true.
+
+
+<subheader>Filename Filter(s)</subheader>
+
+This property, which applies only to resource directories, specifies a wildcard filter that will be used when determining what files in the directory are treated as resources. The default value is blank, which means all files. When set, the filter does not apply to a path's directory but only its name component. <include action_invoker/Path/include_filter.hgi />
+
+
+By clicking on the <b>Calculate Resource Files</b> button when viewing a resource directory, you can see what files will be treated as resources based on the recursive and filter properties.
+
+
+<seealso lookup_files.csdoc value_set_images.csdoc manage_application_files.csdoc  />

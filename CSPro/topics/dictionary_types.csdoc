@@ -1,9 +1,8 @@
 ﻿<title>Dictionary Types</title>
-<context IDD_DICTTYPE />
 
-Every dictionary associated with an application has a type value that indicates how it is being used. For the primary dictionary (i.e., the one upon which your application was created), this will be your <b>main</b> dictionary. Other dictionaries (ones that are inserted either directly or secondarily via a forms file) can have additional properties, as explained below.
+Every dictionary associated with an application has a type value that indicates how it is being used. For the primary dictionary (i.e., the one upon which your application was created), this will be your <b>main</b> dictionary. Other dictionaries (ones that are <link manage_application_files.csdoc>inserted</link> either directly or secondarily via a forms file) can have additional properties, as explained below.
 
-To see your dictionary's type, go to the Files tab, right-click on the dictionary in question, and select <b>Dictionary Type</b>. You will then see the following four choices (which may or may not be active, depending on their use):
+To see your dictionary's type, open the <b>File</b> menu and select <b>Manage Application Files</b>, or go to the <b>Files</b> tab, right-click on the dictionary in question, and select <b>Properties</b>. You will then see the following four choices (which may or may not be active, depending on their use):
 
 <table 2 header nowrap>
     <cell>Type</cell><cell>Description</cell>
@@ -16,4 +15,4 @@ To see your dictionary's type, go to the Files tab, right-click on the dictionar
     <cell><b>Special Output</b></cell><cell>This option is provided for backward compatibility with ISSA Batch Edit Applications. Only non-primary dictionaries used in Batch Edit Applications can have a "special output" type. Refer to the ISSA Manual for further instruction.</cell>
 </table>
 
-<seealso case_read_optimization.csdoc />
+<seealso change_dictionary_properties.csdoc case_read_optimization.csdoc />

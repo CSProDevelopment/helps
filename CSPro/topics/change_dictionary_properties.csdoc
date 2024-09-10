@@ -1,0 +1,29 @@
+﻿<title>Change Dictionary Properties</title>
+<context ID_ADD_DICTIONARY_EXTERNAL ID_ADD_DICTIONARY_WORKING IDD_PAGE_PROPERTIES_DICTIONARY />
+
+To modify the properties for a <link data_dictionary_file_dcf.csdoc>dictionary</link>, open the <b>File</b> menu and select <b>Manage Application Files</b>. Properties include:
+
+
+<subheader>Type</subheader>
+
+This property determines the <link dictionary_types.csdoc>dictionary type</link>, with the following options:
+
+<list>
+    <li><b>Main</b></li>
+    <li><b>External</b></li>
+    <li><b>Working</b></li>
+    <li><b>Special Output</b> (only valid for <link batch_edit_application_file_bch.csdoc>batch edit applications</link>)</li>
+</list>
+
+
+<subheader>Synchronize Data as Part of Simple Synchronization</subheader>
+
+When true, the dictionary's data is synchronized as part of a <link synchronization_simple.csdoc>Simple Synchronization routine</link>. The default value is true for the main dictionary and false for other dictionary types.
+
+
+<subheader>Include Value Set Images in the Compiled Application</subheader>
+
+When true, <link value_set_images.csdoc>value set images</link> are built into the <link binary_data_entry_application_file_pen.csdoc>compiled application (.pen)</link>. This facilitates the deployment of an application to another computer or a mobile device. The default value is false.
+
+
+<seealso dictionary_types.csdoc manage_application_files.csdoc />

@@ -1,10 +1,9 @@
 ﻿<title>Message File (.mgf)</title>
 
-The message file for a data entry application stores the error message text that is displayed during data entry. The message file for a batch application stores the error message text that will be included in the execution report. The message file has the extension <b>.mgf</b>. While creating your application, you can view the message text in a window at the bottom of the logic screen.
 
-You can associate multiple message files with an application, which can be useful if you have messages defined in multiple languages. To do this, select <link add_files_to_an_application.csdoc>File -> Add Files</link> and then choose the external message file to add to the application. If you no longer want to use the external message file, you can remove it by selecting <link drop_files_from_an_application.csdoc>File -> Drop Files</link>.
+The message file for a <link data_entry_application_file_ent.csdoc>data entry application</link> stores the error message text that is displayed during data entry. The message file for a <link batch_edit_application_file_bch.csdoc>batch application</link> stores the error message text that will be included in the execution report. The message file has the extension <b>.mgf</b>. While creating your application, you can view the message text in a window at the bottom of the logic screen.
 
-If the name of an external message file begins with "CSProRuntime," then the messages in that file will override the CSPro system messages. See <link collaborating_on_cspro_development.csdoc>Collaborating on CSPro Development </link> for more information about this file.
+You can associate multiple message files with an application, which can be useful if you have messages defined in multiple languages. To do this, select <link manage_application_files.csdoc>File -> Manage Application Files</link> and then choose the external message file to add to the application. If you no longer want to use the external message file, you can remove it using the same interface.
 
 
 <subheader>Basic Messages</subheader>
@@ -53,10 +52,10 @@ The more general the arguments of the message, the more flexible the message. In
 <logic>
 PROC HHDAY
 
-	if HHMONTH = 6 and HHDAY > 30 then
-		errmsg(1, "June", 30, HHDAY);
-		reenter;
-	endif;
+    if HHMONTH = 6 and HHDAY > 30 then
+        errmsg(1, "June", 30, HHDAY);
+        reenter;
+    endif;
 </logic>
 
 
@@ -88,7 +87,7 @@ For example, messages might be grouped in your message file as follows:
 When designing an application that will be used in <link multiple_language_applications.csdoc>multiple languages</link>, you can define multiple messages for a given message number. Use the <link define_languages.csdoc>language name</link>, followed by the message number in parentheses, as shown in this example:
 
 <message>
-101		Hello
+101     Hello
 ZH(101) 你好
 FR(101) Bonjour
 </message>
@@ -131,4 +130,19 @@ FR("first line\nsecond line") "première ligne\ndeuxième ligne"
 </message>
 
 
-<seealso multiple_language_applications.csdoc CS_Message.csdoc tr_function.csdoc />
+<subheader>System Message Overrides</subheader>
+
+By changing the <link change_message_properties.csdoc>type of messages</link>, you can indicate that the messages in the file should be considered system message overrides, not user-defined messages. With this setting, these messages override CSPro's runtime, system-level messages. These messages must use the same numbering scheme used by CSPro's system messages.
+
+For example, the English text for message 89251 is: "Do you want to discard the current questionnaire?" By using a message file with system message overrides, you could customize this message:
+
+<message>
+89251 តើអ្នកចង់បោះបង់ការសម្ភាសន៍បច្ចុប្បន្នទេ?
+</message>
+
+When overriding system messages, be careful to use the same <b>%</b> formats used in the default English message.
+
+Another way to override system messages is to add a message file with a name beginning with "CSProRuntime" to the same directory where the application resides. CSPro will automatically load these messages as system message overrides, regardless of whether the file was explicitly <link manage_application_files.csdoc>added to the application</link>.
+
+
+<seealso change_message_properties.csdoc multiple_language_applications.csdoc CS_Message.csdoc tr_function.csdoc />

@@ -4,13 +4,27 @@
 This is a detailed list of changes in CSPro 8.1. For a more general overview, see the <i>readme.txt</i> file located in the CSPro installation folder.
 
 
+<subheader>General</subheader>
+
+<list>
+    <li>A new dialog, <link manage_application_files.csdoc>Manage Application Files</link>, replaces the Add Files and Drop Files dialogs, providing a central place to manage an application's files and each file's properties. New properties include:~!~~!~
+        <list>
+            <li><link properties_application.csdoc>Application</link>: the name and label can be modified.</li>
+            <li><link change_dictionary_properties.csdoc>Dictionary</link>: options to allow external dictionaries to be synchronized as part of a <link synchronization_simple.csdoc>Simple Synchronization routine</link> and to build <link value_set_images.csdoc>value set images</link> into a <link binary_data_entry_application_file_pen.csdoc>compiled application (.pen)</link>.</li>
+            <li><link change_message_properties.csdoc>Messages</link>: the message type&mdash;user-defined or system overrides&mdash;is now specified as a property, no longer based on the filename starting with "CSProRuntime".</li>
+            <li><link change_report_properties.csdoc>Report</link>: <link templated_reports.csdoc>~~ fills</link> can be escaped for writing to CSV format.</li>
+            <li><link resources.csdoc>Resources</link>: in addition to directories, it is now possible to add single files as resources, and options provide control over what files in directories are processed.</li>
+        </list></li>
+</list>
+
+
 <subheader>Action Invoker</subheader>
 
 <list>
     <li>A new action, <action>throwException</action>, throws an exception in the current execution environment.</li>
     <li>The <action>UI.closeDialog</action> action has been renamed <action>UI.close</action>, though the old name will remain as an alias for some time. A new argument allows the <link html_dialog_ui.csdoc>HTML dialog</link> or <link html_in_cspro.csdoc>web view</link> to be closed without a valid result but instead with an exception that is thrown in the execution environment that launched the dialog or web view.</li>
     <li>The <link action_invoker_execution_json.csdoc>JSON format of exceptions</link> has changed from a string to an object with <link CS_throwException.csdoc>message, name, and cause</link> properties.</li>
-    <li><link action_invoker_resource_ids.csdoc>Resource IDs</link>, such as those used by the <action>Sqlite</action> namespace's actions, do not need to be specified when they can be <link action_invoker_resource_ids.csdoc>calculated implicitly</link></li>.
+    <li><link action_invoker_resource_ids.csdoc>Resource IDs</link>, such as those used by the <action>Sqlite</action> namespace's actions, do not need to be specified when they can be <link action_invoker_resource_ids.csdoc>calculated implicitly</link>.</li>
 </list>
 
 
